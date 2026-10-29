@@ -111,6 +111,18 @@ for _ in range(6):  # fetch_readmes works in time-boxed passes
 # 2. repos: diff ---------------------------------------------------------------------------
 items = {slug(it["repo"]): it for it in read_jsonl(DATA / "items.jsonl")}
 hashes = jload(HASHES, {})
+META_FILE = DATA / "repo_meta.json"
+META_KEYS = ["kind", "description", "topics", "language", "stars", "license", "homepage", "pushed_at", "archived",
+             "accounts", "lists", "sources"]
+old_meta = jload(META_FILE, {})
+
+def write_meta():
+    """One line per repo, sorted: a weekly refresh shows up as a small, readable diff in a single file."""
+    rows = []
+    for s_, it_ in sorted(items.items(), key=lambda x: x[1]["id"]):
+        m = {k: it_[k] for k in META_KEYS if k in it_ and it_[k] not in (None, "", [], False)}
+        rows.append(json.dumps(it_["id"]) + ": " + json.dumps(m, ensure_ascii=False, separators=(",", ":"), sort_keys=True))
+    META_FILE.write_text("{\n" + ",\n".join(rows) + "\n}\n")
 existing = {p.stem: p for p in SUMS.glob("*.json")}
 new = [s for s in items if s not in existing]
 removed = [s for s in existing if s not in items]
@@ -123,13 +135,8 @@ for s, it in items.items():
             hashes[s] = sha                                  # first sight: baseline, no re-summary
         elif sha and sha != hashes[s] and days_since(rec.get("generated", "")) >= RESUMMARIZE_AFTER_DAYS:
             changed.append(s)
-        # refresh cheap metadata (stars, lists, accounts, sources, ...) without calling the model
-        upd = {k: v for k, v in it.items() if rec.get(k) != v}
-        if upd and not DRY:
-            rec.update(upd)
-            if it.get("license"): rec["summary"]["license"] = it["license"]
-            existing[s].write_text(json.dumps(rec, ensure_ascii=False, indent=1)); meta_updates += 1
-        elif upd: meta_updates += 1
+        if any(old_meta.get(it["id"], {}).get(k) != it.get(k) for k in META_KEYS if k in it):
+            meta_updates += 1
 report.update({"repos_total": len(items), "repos_new": len(new), "repos_changed": len(changed),
                "repos_removed": len(removed), "repos_metadata_refreshed": meta_updates})
 
@@ -202,6 +209,7 @@ if (repo_jobs or page_jobs) and not res and not pres:
     fail(f"all {len(repo_jobs) + len(page_jobs)} Claude calls failed; first errors: {report.get('call_errors')}")
 
 HASHES.write_text(json.dumps(hashes, indent=0, sort_keys=True))
+write_meta()
 ATTEMPTS.write_text(json.dumps(attempts, indent=0, sort_keys=True))
 
 # 5. licenses + site --------------------------------------------------------------------------

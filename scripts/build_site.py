@@ -6,7 +6,7 @@ Reads summaries/*.json and data/repo_links.jsonl; writes docs/index.html, docs/r
 import html, json, math, re, shutil, time, collections
 from common import *
 
-DOCS = ROOT / "docs"
+DOCS = ROOT / os.environ.get("STARS_SITE_OUT", "_site")   # build output; deployed by GitHub Actions, not committed
 SITE_SRC = ROOT / "site"
 OWNER_URL = "https://github.com/sjagannath05"
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -47,8 +47,21 @@ def load_pages():
                        "desc": desc, "section": src.get("section", ""), "sources": m.get("sources", [])})
     return done, unread
 
+META_FILE = DATA / "repo_meta.json"
+
 def load():
     recs = [json.loads(p.read_text()) for p in sorted(SUMS.glob("*.json"))]
+    # live metadata (stars, last push, Lists, accounts, license...) lives in one file so weekly
+    # refreshes change a single file instead of rewriting every summary
+    meta = json.loads(META_FILE.read_text()) if META_FILE.exists() else {}
+    for r in recs:
+        m = meta.get(r["id"])
+        if not m: continue
+        r.update({k: v for k, v in m.items() if k != "license"})
+        if m.get("license"):
+            r["license"] = m["license"]
+            if (r["summary"].get("license") or "").lower() in ("", "unknown", "noassertion", "other"):
+                r["summary"]["license"] = m["license"]
     links = collections.defaultdict(dict)
     for l in read_jsonl(DATA / "repo_links.jsonl"):
         links[l["repo_id"]].setdefault(l["label"], l["url"])
@@ -276,7 +289,7 @@ def main():
     (DOCS / ".nojekyll").write_text("")
     size = sum(p.stat().st_size for p in DOCS.rglob("*") if p.is_file())
     print(f"built {len(recs)} repo pages, {len(pages)} tool/article pages, {len(unread)} link-only cards "
-          f"into docs/ ({size/1e6:.1f} MB, index.js {(DOCS/'assets'/'index.js').stat().st_size/1e6:.1f} MB)")
+          f"into {DOCS.name}/ ({size/1e6:.1f} MB, index.js {(DOCS/'assets'/'index.js').stat().st_size/1e6:.1f} MB)")
 
 if __name__ == "__main__":
     main()

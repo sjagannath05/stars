@@ -1,19 +1,24 @@
-name: Weekly update
+name: Update and deploy
 
 on:
   schedule:
-    - cron: "37 21 * * 6"   # every Sunday 03:07 IST (Saturday 21:37 UTC)
-  workflow_dispatch: {}      # "Run workflow" button in the Actions tab
+    - cron: "37 21 * * 6"          # every Sunday 03:07 IST (Saturday 21:37 UTC): full update
+  workflow_dispatch: {}             # "Run workflow" button: full update
+  push:                             # site or builder changed: rebuild and redeploy only (no API calls)
+    branches: [main]
+    paths: ["site/**", "scripts/build_site.py", "scripts/common.py", ".github/workflows/update.yml"]
 
 permissions:
-  contents: write
+  contents: write    # commit refreshed data and summaries
+  pages: write       # deploy to GitHub Pages
+  id-token: write
 
 concurrency:
   group: stars-update
   cancel-in-progress: false
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -28,9 +33,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r scripts/requirements-update.txt
-          python -m playwright install --with-deps chromium
+          if [ "${{ github.event_name }}" != "push" ]; then python -m playwright install --with-deps chromium; fi
 
-      - name: Update index and rebuild site
+      - name: Update index (scheduled or manual runs)
+        if: github.event_name != 'push'
         working-directory: scripts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -38,14 +44,34 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python update.py
 
-      - name: Commit and push
+      - name: Build site only (pushes)
+        if: github.event_name == 'push'
+        working-directory: scripts
+        run: python build_site.py
+
+      - name: Commit data changes
+        if: github.event_name != 'push'
         run: |
           git config user.name "stars-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git add data summaries summaries-pages
           if git diff --cached --quiet; then
-            echo "Nothing changed this week."
+            echo "No data changes this week."
           else
             git commit -m "weekly update: $(cat data/last_update.txt)"
             git push
           fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
