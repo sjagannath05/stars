@@ -1,0 +1,93 @@
+{
+ "id": "kjeon10/bannerhither",
+ "repo": "KJeon10/BannerHither",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "BannerHither - Menu bar app that moves macOS notification banners to the display you are looking at: the screen under the mouse pointer, the screen of the active window, or a fixed display."
+  }
+ ],
+ "summary": {
+  "one_liner": "BannerHither is a macOS menu bar app that moves system notification banners to whichever display you are using, instead of the primary display where macOS always draws them.",
+  "what_it_does": "BannerHither watches NotificationCenter through the public Accessibility API and, when a banner appears, sets the banner window's position so it lands on a chosen display. The target can be the screen under the mouse pointer, the screen of the active window (with the mouse screen as fallback), or one fixed display; a \"System default\" option leaves macOS behaviour alone. It runs as a menu bar item with no Dock icon, with Start/Stop, Launch at Login, a test notification with a 3-second delay, and a Copy Diagnostics item. The README says it moves the whole NotificationCenter window rather than reading notification contents, and it can optionally check for updates once a day. Advanced settings (poll interval, resizing the window to the target display, an alternative update feed) are set through UserDefaults since they have no menu item.",
+  "use_cases": [
+   "show macOS notifications on my external monitor",
+   "move notification banners to the screen I'm working on",
+   "multi-monitor notification placement",
+   "keep banners off the primary display",
+   "pin notifications to one fixed display",
+   "debug notification window position on macOS"
+  ],
+  "how_to_run": [
+   "brew install --cask KJeon10/tap/bannerhither",
+   "Or download BannerHither-<version>.dmg from the Releases page and drag BannerHither.app to Applications",
+   "git clone <repository URL>",
+   "cd BannerHither",
+   "make build # produces build/BannerHither.app",
+   "open build/BannerHither.app"
+  ],
+  "stack": [
+   "Swift/Xcode (implied by Xcode 16 build requirement)",
+   "macOS Accessibility API",
+   "make",
+   "Homebrew cask",
+   "UserDefaults"
+  ],
+  "notable": [
+   "Moves the entire NotificationCenter window via AXPosition, so clicks, swipes and close buttons keep working",
+   "Acts only on banner-appear and repositioning transitions, so banners don't follow the mouse once shown",
+   "Universal binary with UI in English, Korean, Japanese, Simplified Chinese, German, French and Spanish",
+   "Needs only the Accessibility permission; no notification contents are read",
+   "Optional daily update check; the app does not self-install updates"
+  ],
+  "caveats": [
+   "Relies on undocumented NotificationCenter behaviour that Apple may change in any macOS update",
+   "Only macOS 26.6 is verified; macOS 14.0 to 15.x is stated to build and should work but is untested",
+   "Not tested with 'Displays have separate Spaces' off, Stage Manager, or on the lock screen; mirrored displays are not separate targets"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "macos notifications",
+   "notification banners",
+   "multi-monitor",
+   "multiple displays",
+   "external monitor",
+   "second monitor",
+   "menu bar app",
+   "accessibility api",
+   "notificationcenter",
+   "banner placement",
+   "display selection",
+   "mouse pointer screen",
+   "active window screen",
+   "fixed display",
+   "macos utility",
+   "swift",
+   "homebrew cask",
+   "bannerhither",
+   "pingplace alternative",
+   "shoveit alternative",
+   "notificationnanny alternative",
+   "move notifications to other screen",
+   "notifications on wrong monitor",
+   "send notifications to my second display",
+   "dual monitor setup",
+   "launch at login menu bar",
+   "open source notification tool",
+   "macos sonoma tool",
+   "mit license mac app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4580,
+  "output": 1303
+ },
+ "generated": "2026-10-29"
+}

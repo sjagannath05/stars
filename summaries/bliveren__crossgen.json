@@ -1,0 +1,98 @@
+{
+ "id": "bliveren/crossgen",
+ "repo": "Bliveren/CrossGen",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎨 Graphics (20)",
+   "entry": "CrossGen - Local-first AI image workspace for generating, editing, organizing, and reusing images through a desktop app, JSON CLI, and MCP-compatible agents."
+  }
+ ],
+ "summary": {
+  "one_liner": "CrossGen is a local-first AI image workspace: an Electron desktop app plus a JSON CLI and MCP stdio server for generating, editing, organizing, and reusing images with OpenAI, Gemini, and compatible providers.",
+  "what_it_does": "The desktop app lets you save API keys and Base URLs, run model discovery, and generate or edit images, with History and a Gallery that store results locally. Crop, annotate, add text, and pick colors in a preview/edit area, then save results to Gallery or drag them back in as image-to-image references. The same queue, provider settings, and Gallery are exposed through a packaged `crossgen` CLI with JSON output and an MCP stdio server (`--mcp`) for agents such as Codex, Claude Code, and Cursor. MCP and CLI default to read-only; write and generate modes are opt-in, and paid generation requires confirmation. The README also describes GPT Image 2/2.5 and Gemini (\"Nano Banana 3\") model handling, including confirming exact provider model IDs before enabling a launch. Some of this (GPT Image 2.5 Sketch, the 0.3.5 release) is described as in development, and the download link still points at v0.3.4.",
+  "use_cases": [
+   "generate image batches from prompts on a local desktop",
+   "edit or inpaint an existing image with a reference",
+   "let a coding agent generate UI or app assets via MCP",
+   "export selected generated images into a project folder",
+   "organize and tag reusable AI image assets",
+   "script image generation from a terminal with JSON output"
+  ],
+  "how_to_run": [
+   "Download the latest desktop release (macOS Apple Silicon .dmg, Windows x64 .exe, Linux x64 AppImage) from GitHub Releases",
+   "Open the app, go to API access, add an API key and Base URL, and run model discovery",
+   "crossgen doctor --agent --json",
+   "crossgen models list --json",
+   "crossgen generate --prompt \"A precise isometric app icon\" --model gpt-image-2.5-sunburst --quality xhigh --yes --wait --json",
+   "crossgen mcp config --client codex --mode readonly --json"
+  ],
+  "stack": [
+   "Electron",
+   "React",
+   "Tailwind CSS",
+   "pnpm",
+   "Node.js (development only)",
+   "MCP (stdio server)",
+   "OpenAI Images and Responses APIs",
+   "Gemini image models"
+  ],
+  "notable": [
+   "Desktop app, JSON CLI, and MCP server share one durable generation queue, History, and Gallery",
+   "MCP access modes (readonly, write, generate) with paid generation and path disclosure gated by explicit confirmation",
+   "Model discovery confirms exact provider model IDs before enabling GPT Image 2/2.5 or Gemini launches",
+   "crossgen:// AppLink lets an API aggregator hand over a provider config after a confirmation dialog",
+   "Bundled crossgen-artist agent skill and Codex plugin"
+  ],
+  "caveats": [
+   "The v0.3.5 features described are in development; the README says the download link still points to v0.3.4 and a real-provider release gate is still pending",
+   "Desktop release packages are listed only for macOS Apple Silicon, Windows x64, and Linux x64; the README does not describe other platforms",
+   "Using GPT Image 2.5 and Gemini features depends on the API key's model discovery results; paid requests are involved and the README says real-provider gates need explicit cost approval"
+  ],
+  "license": "MIT",
+  "category": "local ai image generation",
+  "keywords": [
+   "ai image generator",
+   "local image generation",
+   "desktop image app",
+   "electron image app",
+   "mcp server",
+   "model context protocol",
+   "mcp stdio",
+   "codex image tool",
+   "claude code mcp",
+   "cursor mcp",
+   "cli image generation",
+   "json cli",
+   "gpt image 2",
+   "gpt image 2.5",
+   "gemini image",
+   "nano banana",
+   "openai images api",
+   "image to image",
+   "image editing",
+   "inpainting",
+   "mask editing",
+   "gallery manager",
+   "image history",
+   "reference images",
+   "generate images from terminal",
+   "ai asset generation for coding",
+   "openai compatible gateway",
+   "api aggregator",
+   "local first",
+   "export generated images",
+   "mit licensed ai tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11806,
+  "output": 1547
+ },
+ "generated": "2026-10-29"
+}

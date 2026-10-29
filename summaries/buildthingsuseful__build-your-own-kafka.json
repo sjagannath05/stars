@@ -1,0 +1,87 @@
+{
+ "id": "buildthingsuseful/build-your-own-kafka",
+ "repo": "buildthingsuseful/build-your-own-kafka",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Distributed Systems",
+   "entry": "Java: _Building Your Own Kafka-like System From Scratch: A Step-by-Step Guide_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A tutorial-style Java project for building a simplified Kafka-like distributed messaging system (SimpleKafka) step by step, with ZooKeeper-based coordination, brokers, and clients.",
+  "what_it_does": "The README is a guide for building SimpleKafka incrementally over seven stages: project setup, a core protocol layer, ZooKeeper integration, a storage layer, a broker, a client library, and higher-level producer and consumer APIs, followed by a testing stage. It says the stages are meant to be followed alongside a separate step-by-step Medium article, so much of the detail lives outside this README. The testing section shows how to compile with Maven, start ZooKeeper, launch three broker instances on different ports, and run a producer and a consumer against a test topic. It also lists concepts to observe while testing: partition distribution, leader and follower replication, controller election through ZooKeeper, log segments and offset indices, and the binary client-broker protocol.",
+  "use_cases": [
+   "learn how Kafka's architecture works",
+   "build a toy message broker for study",
+   "understand partition leader and follower replication",
+   "practice distributed systems design in Java",
+   "run a local multi-broker messaging demo with ZooKeeper"
+  ],
+  "how_to_run": [
+   "mvn clean package",
+   "zkServer start (or zookeeper-server-start with a zk.cfg file on port 2181)",
+   "java -cp target/simple-kafka-1.0-SNAPSHOT.jar com.simplekafka.broker.SimpleKafkaBroker 1 localhost 9091 2181 (repeat for brokers 2 and 3 on ports 9092 and 9093)",
+   "java -cp target/simple-kafka-1.0-SNAPSHOT.jar com.simplekafka.client.SimpleKafkaProducer localhost 9091 test-topic",
+   "java -cp target/simple-kafka-1.0-SNAPSHOT.jar com.simplekafka.client.SimpleKafkaConsumer localhost 9091 test-topic 0"
+  ],
+  "stack": [
+   "Java",
+   "Maven",
+   "ZooKeeper"
+  ],
+  "notable": [
+   "Staged build-it-yourself curriculum, from project setup through producer and consumer APIs",
+   "Brokers coordinate through ZooKeeper, with controller election and leader failover",
+   "Includes a custom binary client-broker protocol",
+   "Companion Medium article is referenced for the detailed walkthrough"
+  ],
+  "caveats": [
+   "Stage-by-stage instructions are not in the README; it points to an external Medium article for them",
+   "Requires a running ZooKeeper instance, and the README gives several alternative startup commands that depend on local installation",
+   "No license is stated in the README"
+  ],
+  "license": "unknown",
+  "category": "distributed messaging tutorial",
+  "keywords": [
+   "kafka",
+   "kafka clone",
+   "simplified kafka",
+   "build your own kafka",
+   "distributed messaging",
+   "message broker",
+   "pub sub",
+   "java",
+   "maven",
+   "zookeeper",
+   "leader election",
+   "partition replication",
+   "controller election",
+   "log segments",
+   "offset index",
+   "binary protocol",
+   "producer consumer",
+   "topic partitioning",
+   "tutorial",
+   "learn kafka internals",
+   "step by step guide",
+   "toy message queue",
+   "event streaming from scratch",
+   "multi-broker local cluster",
+   "fault tolerance demo",
+   "distributed systems learning",
+   "message persistence",
+   "alternative to apache kafka"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2718,
+  "output": 1276
+ },
+ "generated": "2026-10-29"
+}

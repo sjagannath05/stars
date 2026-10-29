@@ -1,0 +1,92 @@
+{
+ "id": "google-research/timesfm",
+ "repo": "google-research/timesfm",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Machine Learning",
+   "entry": "timesfm - A pretrained foundation model from Google Research for time-series forecasting, with non-commercial default weights."
+  }
+ ],
+ "summary": {
+  "one_liner": "TimesFM is a pretrained decoder-only time-series foundation model from Google Research for zero-shot forecasting, with the 3.0 weights under a non-commercial license.",
+  "what_it_does": "The repository provides the TimesFM time-series forecasting model code and links to its checkpoints on Hugging Face. TimesFM 3.0 supports univariate and multivariate forecasting, with past-only and past-and-future covariates. Its predict_batch interface takes lists of NumPy arrays of varying context lengths and returns point forecasts plus 9 quantiles (0.1 to 0.9). An MLX backend runs the model on Apple silicon without PyTorch. Earlier versions (1.0, 2.0, and 2.5) are archived or kept under v1 and src/timesfm, and the README mentions fine-tuning with LoRA via HuggingFace Transformers and PEFT.",
+  "use_cases": [
+   "zero-shot time-series forecasting",
+   "multivariate forecasting with covariates",
+   "generating quantile forecast intervals",
+   "demand or sales forecasting experiments",
+   "fine-tuning a forecasting model with LoRA",
+   "running forecasts on Apple silicon"
+  ],
+  "how_to_run": [
+   "pip install timesfm[torch]",
+   "pip install timesfm[mlx]  # Apple silicon, no PyTorch required",
+   "git clone the repository, cd timesfm",
+   "uv venv && source .venv/bin/activate",
+   "uv pip install -e .[torch]",
+   "Load checkpoint google/timesfm-3.0-pytorch via ModelConfig and call predict_batch (see README examples)"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "MLX",
+   "NumPy",
+   "HuggingFace Transformers",
+   "PEFT (LoRA)",
+   "Flax",
+   "XReg"
+  ],
+  "notable": [
+   "TimesFM 3.0 adds native multivariate forecasting with past-only and past-and-future covariates",
+   "MLX backend for Apple silicon, numerically matched to the PyTorch backend",
+   "Outputs point forecasts plus 9 quantiles per horizon step",
+   "Available as a managed service in Google Cloud BigQuery ML, Google Sheets, and Vertex Model Garden",
+   "Includes an agent skill file (SKILL.md) and LoRA fine-tuning example"
+  ],
+  "caveats": [
+   "TimesFM 3.0 pretrained weights use a non-commercial license and may not be used for commercial or production purposes when self-hosted",
+   "Commercial use of 3.0 is only permitted through authorized Google Cloud services",
+   "The open version is not an officially supported Google product"
+  ],
+  "license": "Apache-2.0 for source code and weights up to 2.5; timesfm-non-commercial-license-v1.0 for TimesFM 3.0 weights",
+  "category": "time-series forecasting",
+  "keywords": [
+   "time series forecasting",
+   "time-series foundation model",
+   "timesfm",
+   "zero-shot forecasting",
+   "pretrained forecasting model",
+   "multivariate forecasting",
+   "covariates forecasting",
+   "quantile forecast",
+   "probabilistic forecasting",
+   "decoder-only transformer",
+   "pytorch forecasting",
+   "mlx apple silicon",
+   "lora fine-tuning",
+   "huggingface forecasting model",
+   "google research forecasting",
+   "predict future values",
+   "forecast sales over time",
+   "forecast demand time series",
+   "prediction intervals",
+   "bigquery ml forecasting",
+   "numpy time series",
+   "flax inference",
+   "non-commercial model weights",
+   "agent skill forecasting",
+   "forecast stock or sensor data"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5597,
+  "output": 1343
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "doekman/osagitfilter",
+ "repo": "doekman/osagitfilter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📦 Git (23)",
+   "entry": "osagitfilter - Filter to put OSA languages (AppleScript, JavaScript) into git, as if they where plain text-files."
+  }
+ ],
+ "summary": {
+  "one_liner": "A git filter that lets OSA-compiled script files (.scpt, such as AppleScript and JavaScript for Automation) be stored in git and diffed as readable text.",
+  "what_it_does": "Provides a git clean/smudge-style filter that converts compiled OSA language files (.scpt, including AppleScript and JavaScript) into text so git can show full textual diffs. The setup.sh script configures the filter in the user's git configuration with the commands \"configure\", \"configure --no-git\", and \"reset\". A repository opts in by adding \"*.scpt filter=osa\" to its .gitattributes file. Logging can be enabled with \"configure --git-log\", and \"rotate\" creates a new log file while keeping old ones. Logs are written to ~/Library/Logs/Catsdeep/osagitfilter.log. By default the filter guards against committing AppleScript files with Debugging Mode from AppleScript Debugger switched on. The README points to \"osagitfilter --help\" for more options and to git add --renormalize for applying the filter to files already committed as binaries.",
+  "use_cases": [
+   "diff AppleScript files in git",
+   "version control for .scpt scripts",
+   "track JavaScript for Automation changes in git",
+   "prevent committing AppleScript Debugger mode",
+   "store compiled macOS automation scripts in a repository"
+  ],
+  "how_to_run": [
+   "Clone this repository or download the latest release and unzip it to the folder where you want to install it",
+   "./setup.sh configure",
+   "In the root of your repository, run: echo \"*.scpt filter=osa\" >> .gitattributes",
+   "Optional: ./setup.sh configure --git-log to enable logging",
+   "Optional: ./setup.sh reset to remove the configuration",
+   "To re-apply to existing files: git add --renormalize ."
+  ],
+  "stack": [
+   "shell script (setup.sh)",
+   "git filters and gitattributes",
+   "macOS Open Scripting Architecture (OSA)"
+  ],
+  "notable": [
+   "Turns binary .scpt files into diffable text inside git without changing how scripts are edited",
+   "Guards against committing AppleScript Debugger scripts with debugging mode on",
+   "Setup is a single configure command, with a reset option to undo it",
+   "Logging to a macOS Console-readable log file, with rotation for chatty git clients like GitHub Desktop"
+  ],
+  "caveats": [
+   "Requires macOS, since OSA and Console.app are Apple-specific",
+   "Each repository must add the .gitattributes line manually",
+   "Existing binary .scpt files need git add --renormalize to pick up the filter"
+  ],
+  "license": "unknown",
+  "category": "git diff filter",
+  "keywords": [
+   "osagitfilter",
+   "git filter",
+   "gitattributes",
+   "osa",
+   "open scripting architecture",
+   "applescript",
+   "javascript for automation",
+   "scpt",
+   "git diff",
+   "textual diff",
+   "binary diff",
+   "version control",
+   "macos",
+   "git config",
+   "setup.sh",
+   "renormalize",
+   "applescript debugger",
+   "script debugger",
+   "track script changes",
+   "diff compiled scripts",
+   "store applescript in git",
+   "share scripts with team",
+   "git log",
+   "console.app",
+   "mac automation",
+   "git attributes filter",
+   "text diff for binary files"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2155,
+  "output": 1195
+ },
+ "generated": "2026-10-29"
+}

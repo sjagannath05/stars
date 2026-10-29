@@ -1,0 +1,86 @@
+{
+ "id": "mrdwarf7/ai-context-linter",
+ "repo": "MrDwarf7/ai-context-linter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🤖 AI-Related Tools",
+   "entry": "AI Context Linter - GitHub Action that lints AI coding context files (CLAUDE.md, .cursorrules, AGENTS.md) for security issues, structural problems, and AI anti-patterns."
+  }
+ ],
+ "summary": {
+  "one_liner": "A GitHub Action that lints AI coding context files (CLAUDE.md, .cursorrules, AGENTS.md and similar) for leaked secrets, structural problems, and vague or conflicting instructions.",
+  "what_it_does": "The action auto-detects AI context files in a repository, including CLAUDE.md, .cursorrules, AGENTS.md, COPILOT.md, .windsurfrules, and .clinerules, and runs 12 rules against them. Security rules flag hardcoded API keys (OpenAI, Stripe, GitHub PAT, Slack tokens) and leaked home directory paths as errors. Structure rules warn on files over a token limit, long text with no ## headings, empty sections, and a missing overview. Anti-pattern rules flag vague instructions, directly conflicting rules, and redundant directives. Best-practice and file-type rules give informational suggestions, such as tool guidance for CLAUDE.md and file scope patterns for .cursorrules. It reports an issues-found count and a files-checked count as outputs, and can be configured through a .ai-context-linter.yml file that sets maxTokens and disabledRules.",
+  "use_cases": [
+   "lint CLAUDE.md in CI",
+   "check cursorrules for mistakes",
+   "detect API keys in agent instruction files",
+   "validate AGENTS.md before merging",
+   "enforce context file quality on pull requests",
+   "catch vague instructions for AI coding agents"
+  ],
+  "how_to_run": [
+   "- uses: MrDwarf7/ai-context-linter@v1",
+   "- uses: MrDwarf7/ai-context-linter@v1 with files: '**/{CLAUDE.md,.cursorrules,AGENTS.md}' max-tokens: '3000' fail-on-warnings: 'false'",
+   "Optional: create .ai-context-linter.yml in repo root with maxTokens and disabledRules, then set with config: '.ai-context-linter.yml'"
+  ],
+  "stack": [
+   "GitHub Actions"
+  ],
+  "notable": [
+   "Covers multiple AI agent context file formats (Claude Code, Cursor, Copilot, Windsurf, Cline, AGENTS.md) in one action",
+   "Security rules check for leaked API keys and private home directory paths before they reach an agent",
+   "Configurable via a YAML file with token limits and per-rule disabling",
+   "Severity levels separate build-failing errors from warnings and informational suggestions"
+  ],
+  "caveats": [
+   "The README does not state platform limits beyond running as a GitHub Action, and it does not describe how the rules are implemented",
+   "The README includes a promotional section for paid AI context templates, which is separate from the tool itself"
+  ],
+  "license": "MIT",
+  "category": "github action linting",
+  "keywords": [
+   "ai context linter",
+   "claude.md linter",
+   "cursorrules linter",
+   "agents.md validation",
+   "github action",
+   "ci linting",
+   "lint ai instructions",
+   "context file checker",
+   "secret scanning",
+   "api key detection",
+   "hardcoded api keys",
+   "prompt file validation",
+   "copilot instructions check",
+   "windsurfrules",
+   "clinerules",
+   "ai coding agent",
+   "claude code",
+   "cursor ide",
+   "static analysis",
+   "markdown linter",
+   "token limit check",
+   "yaml config linter",
+   "pull request check",
+   "continuous integration",
+   "anti-pattern detection",
+   "conflicting rules detector",
+   "lint my claude file",
+   "check my ai instructions",
+   "catch secrets in repo docs",
+   "ci check for agent config",
+   "awesome ai tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3031,
+  "output": 1306
+ },
+ "generated": "2026-10-29"
+}

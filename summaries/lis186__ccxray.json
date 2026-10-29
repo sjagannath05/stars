@@ -1,0 +1,100 @@
+{
+ "id": "lis186/ccxray",
+ "repo": "lis186/ccxray",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "ccxray by lis186 - A transparent HTTP proxy and real-time dashboard that sits between Claude Code and the Anthropic API. Captures every request and response without configuration, presenting them in a Miller-column interface with session grouping, token/cost tracking, and context-window visualization."
+  }
+ ],
+ "summary": {
+  "one_liner": "A zero-config HTTP proxy and real-time dashboard that records every API call between Claude Code, Codex, or Grok and their upstream APIs so you can inspect agent sessions, tokens, costs, and context usage.",
+  "what_it_does": "Runs as a local HTTP proxy that Claude Code, Codex, or Grok CLI traffic is routed through, recording each request and response to local log files under ~/.ccxray/logs. A browser dashboard shows sessions grouped by project in a Miller-column layout, with a workflow timeline of turn cards, parallel lanes for subagents, and per-turn token and cost figures. It tracks cache warmth and TTL, estimates subscription plan from cache usage fields, and shows 5-hour and weekly rate-limit usage for Claude and Codex accounts. Additional features include a system prompt tracker with diff view, request interception with editing before forwarding, an optional context HUD appended to Claude responses, and a usage analytics CLI (ccxray usage). Summaries can optionally be exported to Google Cloud Storage via setup.",
+  "use_cases": [
+   "Inspect what system prompts and tools Claude Code sends",
+   "Track token usage and cost per session or project",
+   "Debug why an agent turn is slow or using lots of context",
+   "Monitor Claude and Codex rate-limit quotas across accounts",
+   "Pause and edit API requests before they reach Anthropic",
+   "Compare multiple concurrent agent sessions in one dashboard"
+  ],
+  "how_to_run": [
+   "npx ccxray claude",
+   "npm install -g ccxray",
+   "ccxray setup",
+   "ccxray setup --check",
+   "ccxray status",
+   "docker build -t ccxray . && docker run -p 5577:5577 ccxray"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "npm",
+   "Docker",
+   "Herdr plugin",
+   "gcloud (optional, for GCS export)"
+  ],
+  "notable": [
+   "Zero-config: launching via ccxray claude routes traffic through the proxy and opens the dashboard automatically",
+   "Hub sharing on macOS and Linux so multiple terminals feed one dashboard",
+   "Fail-open design: if the proxy cannot load, the agent starts directly (unless CCXRAY_FAIL_CLOSED=1)",
+   "Workflow timeline with parallel lanes for orchestrator and subagents, plus keyboard-first navigation",
+   "Request intercept and edit before forwarding to the upstream API"
+  ],
+  "caveats": [
+   "Codex support is Beta; ChatGPT-login sessions with certain Codex versions fail through the proxy (issue #671)",
+   "Windows has no shared hub; each launch needs its own port",
+   "Licensed PolyForm Noncommercial, so commercial use is restricted",
+   "Summary export can include user identity and repo names and is not comprehensively scrubbed"
+  ],
+  "license": "PolyForm Noncommercial 1.0.0",
+  "category": "llm api observability",
+  "keywords": [
+   "ccxray",
+   "http proxy",
+   "llm proxy",
+   "api traffic inspector",
+   "claude code",
+   "codex cli",
+   "grok cli",
+   "anthropic api",
+   "openai responses",
+   "token usage tracking",
+   "cost tracking",
+   "context window visualization",
+   "rate limit monitor",
+   "agent session dashboard",
+   "request logging",
+   "intercept api requests",
+   "system prompt diff",
+   "miller columns",
+   "session timeline",
+   "cache ttl",
+   "mitm debugging",
+   "observability for ai agents",
+   "see what my coding agent is sending",
+   "track claude spending",
+   "monitor claude code cost",
+   "debug ai agent calls",
+   "watch api requests live",
+   "record llm api calls",
+   "usage dashboard",
+   "prompt inspection",
+   "local proxy for claude",
+   "npx ccxray",
+   "zero config proxy",
+   "agent telemetry",
+   "python-free nodejs tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10144,
+  "output": 1363
+ },
+ "generated": "2026-10-29"
+}

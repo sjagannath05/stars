@@ -1,0 +1,87 @@
+{
+ "id": "thewicklowwolf/channeltube",
+ "repo": "TheWicklowWolf/ChannelTube",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "ChannelTube ⚠ - Download video or audio from YouTube channels on a schedule via yt-dlp. AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ChannelTube is a Docker-based tool that syncs and downloads video or audio from YouTube channels on a schedule, using yt-dlp.",
+  "what_it_does": "Runs as a Docker container with a web interface on port 5000 that synchronizes content from YouTube channels using yt-dlp. It fetches new items at hours you set in a comma-separated schedule, with a deadband of up to 10 minutes from the scheduled start. Video and audio go to separate mounted folders. Format IDs, fallback video and audio codecs, thread count, and a short-video cutoff (default 180 seconds) are configurable via environment variables. Subtitles can be none, embedded, or saved externally, for chosen languages. Optional features include nightly yt-dlp auto-updates (stable or nightly builds), including video ID in filenames, and a Plex and/or Jellyfin library scan after new content arrives. A cookies.txt file in the config folder can be used for yt-dlp.",
+  "use_cases": [
+   "Download new videos from YouTube channels automatically",
+   "Archive YouTube channel audio as a music or podcast library",
+   "Keep a local copy of channel uploads for a media server",
+   "Schedule nightly YouTube syncs in a home media setup",
+   "Refresh a Plex or Jellyfin library after new YouTube downloads"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the image thewicklowwolf/channeltube:latest, mapping /channeltube/config, /channeltube/downloads, /channeltube/audio_downloads and port 5000",
+   "Run docker compose up -d",
+   "Open the web interface on port 5000 and add YouTube channels",
+   "Optionally set environment variables such as PUID, PGID, subtitles, and auto_update_hour"
+  ],
+  "stack": [
+   "Docker",
+   "yt-dlp",
+   "Python",
+   "Plex (optional integration)",
+   "Jellyfin (optional integration)"
+  ],
+  "notable": [
+   "Scheduled sync by hour of day, with separate video and audio download directories",
+   "Optional Plex and Jellyfin library scan triggered when new content is retrieved",
+   "Configurable yt-dlp format IDs and fallback codecs via environment variables",
+   "Subtitle handling with none, embed, or external options and language selection",
+   "Cookies file support for yt-dlp via the config folder"
+  ],
+  "caveats": [
+   "The README does not describe a platform beyond Docker, and does not state limits on channel count or volume",
+   "Relies on yt-dlp, so downloads depend on YouTube behaviour and yt-dlp updates",
+   "Cookies setup is a manual browser-export process"
+  ],
+  "license": "AGPL-3.0",
+  "category": "youtube channel downloader",
+  "keywords": [
+   "youtube downloader",
+   "channel sync",
+   "yt-dlp",
+   "scheduled download",
+   "docker",
+   "self-hosted",
+   "video archive",
+   "audio download",
+   "youtube to mp3",
+   "plex integration",
+   "jellyfin integration",
+   "media server",
+   "subtitles download",
+   "cookies.txt",
+   "auto update yt-dlp",
+   "download youtube channel",
+   "keep youtube videos locally",
+   "automatic youtube downloads",
+   "podcast from youtube",
+   "youtube audio archive",
+   "docker compose",
+   "cron style schedule",
+   "media management",
+   "youtube sync tool",
+   "download new uploads",
+   "pull videos from channels"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2694,
+  "output": 1253
+ },
+ "generated": "2026-10-29"
+}

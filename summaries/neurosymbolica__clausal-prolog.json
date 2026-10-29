@@ -1,0 +1,103 @@
+{
+ "id": "neurosymbolica/clausal-prolog",
+ "repo": "neurosymbolica/clausal-prolog",
+ "kind": "star",
+ "description": "A Neurosymbolic Prolog built on Python",
+ "topics": [],
+ "language": "Python",
+ "stars": 10,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-25",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Clausal Prolog is an ISO-conformant Prolog implemented in Python, designed to run symbolic logic and neural/Python code in one process.",
+  "what_it_does": "The project provides a Prolog engine in Python with three source surfaces: .clausal files (cut-free ISO-style Prolog, the default), .pl files (regular ISO Prolog including cut), and .seam files (Python-syntax modules with a ++expr escape and adapters). Modules are loaded through Python's standard import system once the clausal package is imported. The engine includes CLP(Z), CLP(B), CLP(Q), CLP(R) and dif/2 constraints, SLG tabling with well-founded negation, DCG rules, and a large standard library. Queries run on Python's asyncio event loop, and Python libraries can be reached through library(...) facades and allowlisted seam bridges. Tests can be written inline as test/1 and test/2 clauses and run with a standalone runner or pytest.",
+  "use_cases": [
+   "write cut-free Prolog logic programs in Python",
+   "combine neural network predictions with symbolic rules",
+   "constraint solving over integers and puzzles like SEND+MORE",
+   "querying Prolog predicates from Python code",
+   "running tabled Prolog queries with recursion over cycles",
+   "using Python libraries such as SciPy or PyTorch from Prolog"
+  ],
+  "how_to_run": [
+   "pip install clausal",
+   "clausal family.clausal -g \"grandparent(tom, X)\"",
+   "clausal --test family.clausal",
+   "python -m clausal.testing path/to/dir/",
+   "python -m pytest tests/ clausal/examples/ -q"
+  ],
+  "stack": [
+   "Python 3.13+",
+   "C extensions",
+   "greenlet",
+   "asyncio",
+   "Prolog (ISO, Clausal Prolog)",
+   "optional clausal-* packages wrapping SciPy, PyTorch, JAX, scikit-learn, spaCy, SymPy, OpenCV, PyYAML, ACL2"
+  ],
+  "notable": [
+   "Cut-free Clausal Prolog surface that enforces purity at load time, with dif/2 and if_/3 in place of cut and if-then-else",
+   "Three source surfaces (.clausal, .pl, .seam) importable with Python's standard import system",
+   "Queries run on Python's own asyncio event loop, with backtracking across awaits (experimental)",
+   "Python interop through library(...) facades and allowlisted python_bridges rather than arbitrary Python calls",
+   "Modules require an end_module/1 declaration by default"
+  ],
+  "caveats": [
+   "Requires Python 3.13 or newer and a C compiler when building from source",
+   "Files named .clausal that contain seam Python code must be renamed to .seam after the 1.0 extension change",
+   "Asyncio support and direct .pl import are marked experimental; full ISO Prolog needs the Scryer or Trealla embeddings, which are not on PyPI yet"
+  ],
+  "license": "MIT",
+  "category": "prolog neurosymbolic python",
+  "keywords": [
+   "prolog",
+   "iso prolog",
+   "clausal prolog",
+   "neurosymbolic ai",
+   "neuro-symbolic",
+   "python prolog interpreter",
+   "logic programming",
+   "prolog in python",
+   "clp(z)",
+   "constraint logic programming",
+   "tabling",
+   "slg resolution",
+   "dcg grammar",
+   "well-founded semantics",
+   "dif constraint",
+   "asyncio",
+   "python interop",
+   "seam files",
+   "scryer prolog",
+   "trealla prolog",
+   "rule-based reasoning",
+   "explainable ai rules",
+   "combine neural network with logic",
+   "symbolic reasoning from python",
+   "run prolog from python",
+   "write logic rules in python",
+   "constraint puzzle solver",
+   "prolog test runner",
+   "pip install prolog",
+   "logic rules without retraining",
+   "call python libraries from prolog",
+   "sudoku or send more money puzzle"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6349,
+  "output": 1382
+ },
+ "generated": "2026-10-29"
+}

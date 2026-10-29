@@ -1,0 +1,92 @@
+{
+ "id": "suor/django-cacheops",
+ "repo": "Suor/django-cacheops",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Caching",
+   "entry": "django-cacheops - A slick ORM cache with automatic granular event-driven invalidation."
+  }
+ ],
+ "summary": {
+  "one_liner": "django-cacheops is a Django app that adds automatic, event-driven invalidated ORM queryset caching backed by Redis, plus time-based function, view and template-fragment caching.",
+  "what_it_does": "Caches Django ORM query results (get, fetch, count, aggregate, exists) in Redis and invalidates them automatically when relevant model rows change, with per-model rules set in a CACHEOPS settings dict. It supports manual per-queryset caching via .cache() and opting out via .nocache(). Decorators @cached and @cached_as cache arbitrary functions or views by time or by queryset dependency, and template fragment caching is available for Django templates and a Jinja2 extension. Redis can be configured by dict, URL, or Sentinel, and the README describes transaction handling, dog-pile lock prevention, and a reapconjs command for cleaning up leftover invalidation sets. Simple time-invalidated caching can use redis or the filesystem.",
+  "use_cases": [
+   "speed up slow Django ORM queries",
+   "automatically invalidate cached querysets on model changes",
+   "cache expensive Django view or function results",
+   "cache Django template fragments",
+   "share a Redis instance across multiple Django sites"
+  ],
+  "how_to_run": [
+   "pip install django-cacheops",
+   "Add 'cacheops' to INSTALLED_APPS",
+   "Set CACHEOPS_REDIS to a Redis host dict or URL such as redis://localhost:6379/1",
+   "Configure the CACHEOPS dict to choose models and ops to cache, e.g. 'auth.*': {'ops': {'fetch', 'get'}, 'timeout': 3600}",
+   "Use Model.objects.filter(...).cache() for manual caching or @cached_as(Model) for functions"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "Redis",
+   "redis-py client",
+   "Jinja2"
+  ],
+  "notable": [
+   "Automatic granular invalidation driven by model signals, keyed on simple field conditions such as exact match, __in and __isnull=True",
+   "Transaction-aware: caching turns off while a transaction is dirty and invalidation runs on outer commit",
+   "Dog-pile prevention via lock=True on cached_as and querysets",
+   "Supports Redis Sentinel, Unix sockets, and a custom Redis client class",
+   "Cache read and invalidation signals for collecting hit/miss stats"
+  ],
+  "caveats": [
+   "Several query conditions do not invalidate granularly (non-exact lookups, text/file/binary fields, select_related updates), and mass updates do not invalidate by default",
+   "Does not work with raw SQL or .raw(), and does not work correctly with multi-table inheritance",
+   "Requires a running Redis 4.0+ server; needs Python 3.8+ and Django 3.2+"
+  ],
+  "license": "unknown",
+  "category": "django orm caching",
+  "keywords": [
+   "django cache",
+   "orm caching",
+   "queryset caching",
+   "redis cache",
+   "automatic cache invalidation",
+   "cache invalidation",
+   "django-cacheops",
+   "cached_as",
+   "template fragment caching",
+   "jinja2 cache extension",
+   "dog-pile prevention",
+   "redis sentinel",
+   "cache django views",
+   "memoize function results",
+   "speed up django database queries",
+   "reduce database load django",
+   "cache model queries",
+   "event-driven invalidation",
+   "transaction-aware cache",
+   "filesystem cache",
+   "time-based cache",
+   "django performance",
+   "cache get and count queries",
+   "cache fetch results",
+   "redis backend for django",
+   "memcached alternative",
+   "cache python functions",
+   "django query optimization",
+   "cache invalidation on save",
+   "reapconjs cleanup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8141,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

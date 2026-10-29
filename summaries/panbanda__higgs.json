@@ -1,0 +1,95 @@
+{
+ "id": "panbanda/higgs",
+ "repo": "panbanda/higgs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Higgs - Dashboard and chat app for the Higgs inference server: runs MLX models on Apple Silicon behind OpenAI- and Anthropic-compatible APIs, routes to remote providers, and traces every request."
+  }
+ ],
+ "summary": {
+  "one_liner": "Higgs is a Rust-based local LLM inference server for Apple Silicon, built on MLX, that exposes OpenAI- and Anthropic-compatible APIs, routes to remote providers, and ships a desktop console showing per-request performance.",
+  "what_it_does": "Serves open-weight MLX models from Hugging Face IDs or local paths on a Mac, with an OpenAI-compatible endpoint (/v1/chat/completions, /v1/completions, /v1/embeddings, /v1/models) and an Anthropic-compatible one (/v1/messages, /v1/messages/count_tokens). It proxies requests to providers such as OpenAI, Anthropic and Ollama behind the same URL, translating between wire formats, with regex routes, aliases, a default provider, and an optional auto-router. Metrics are exposed at /metrics and /v1/system, including time to first token, decode tokens per second, and prefix-cache hits. A CLI provides serve, start/stop daemon, a terminal attach dashboard, init, doctor, shellenv, and exec commands to point tools like Claude Code or Aider at the server. A desktop app (ui) offers a dashboard, model and provider views, a chat with a per-request trace waterfall, and a config editor.",
+  "use_cases": [
+   "run local LLMs on a Mac with Apple Silicon",
+   "point Claude Code, Aider or other OpenAI clients at a local model",
+   "route requests to local and remote providers through one endpoint",
+   "measure time to first token and tokens per second for local inference",
+   "serve Hugging Face MLX checkpoints behind an API",
+   "inspect and replay chat requests with a performance trace"
+  ],
+  "how_to_run": [
+   "brew install panbanda/brews/higgs",
+   "higgs serve --model mlx-community/Qwen3.6-35B-A3B-4bit",
+   "eval \"$(higgs shellenv)\"",
+   "higgs init",
+   "higgs doctor",
+   "higgs start"
+  ],
+  "stack": [
+   "Rust",
+   "MLX",
+   "Metal shaders (mlx.metallib)",
+   "Cargo",
+   "TOML configuration",
+   "Desktop app (apps/desktop, pnpm, TypeScript)"
+  ],
+  "notable": [
+   "Translates between OpenAI and Anthropic wire formats so existing clients work unchanged",
+   "Desktop chat includes a request trace waterfall covering prefill, cache hits, generation and tool calls, with Replay and Copy as curl",
+   "Benchmarks in the README compare decode throughput and memory against mlx_lm, vllm-mlx, llama.cpp and Ollama on an M4 Max",
+   "Supports prefix caching, continuous batching for transformer families, and quantized KV cache",
+   "Metrics and dashboard endpoints do not count toward traffic statistics"
+  ],
+  "caveats": [
+   "Apple Silicon only; built on MLX and requires a Mac",
+   "Source builds need Rust 1.88+, Xcode Command Line Tools and mlx.metallib next to the executable",
+   "Desktop app .dmg is unsigned and needs right-click Open on first launch",
+   "Only MLX checkpoints are supported; unknown model families are rejected"
+  ],
+  "license": "MIT",
+  "category": "local llm inference",
+  "keywords": [
+   "local llm",
+   "mlx",
+   "apple silicon",
+   "mac llm server",
+   "openai compatible api",
+   "anthropic compatible api",
+   "llm router",
+   "inference server",
+   "rust",
+   "hugging face models",
+   "mlx checkpoints",
+   "claude code local",
+   "aider local model",
+   "ollama alternative",
+   "llama.cpp alternative",
+   "vllm-mlx alternative",
+   "mlx_lm alternative",
+   "prefix caching",
+   "continuous batching",
+   "kv cache quantization",
+   "time to first token metrics",
+   "tokens per second benchmark",
+   "llm request tracing",
+   "proxy to openai and anthropic",
+   "run llm offline on mac",
+   "self-hosted llm endpoint",
+   "desktop llm dashboard",
+   "chat with local model on mac",
+   "llm config toml"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5505,
+  "output": 1478
+ },
+ "generated": "2026-10-29"
+}

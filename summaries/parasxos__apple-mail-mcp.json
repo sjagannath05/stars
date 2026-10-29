@@ -1,0 +1,98 @@
+{
+ "id": "parasxos/apple-mail-mcp",
+ "repo": "parasxos/apple-mail-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📧 Mail (8)",
+   "entry": "apple-mail-mcp - Fast access to Apple Mail from the command line and AI clients (MCP). Sub-millisecond full-text search using Mail's own SQLite index, verified sends, reviewed bulk triage."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local MCP server that lets AI clients search, read, triage, and send email through Apple Mail on macOS, using Mail's own SQLite index for fast full-text search.",
+  "what_it_does": "The server runs locally on a Mac and opens the Mail store read-only, returning only what a client requests. It provides 21 tools in groups: read (search_emails with full-body search, get_email, get_thread, list_mailboxes, get_attachment, refresh_mail), send (send_email, reply_email, create_draft, schedule_email, list_scheduled, cancel_scheduled), triage (triage_plan, triage_plan_delete, triage_apply, mailbox_create, mailbox_delete), and meta (doctor diagnostics and an audit ledger). Triage works as a reviewed plan: nothing moves until approved, messages are re-checked before being touched, and results are verified against Mail's records. Identity selection is done through a ~/.email-mcp/identities.toml file that maps From addresses to send lanes (SSH sendmail or SMTP). Exchange accounts can have scheduled sends executed server-side and drafts filed in the real Drafts folder. The README reports benchmarks on a 300k-message store, with the method documented in docs/benchmarks.md.",
+  "use_cases": [
+   "search old email by body text in Apple Mail",
+   "let an AI assistant read and summarize mailbox threads",
+   "bulk-file or delete newsletters with a reviewed plan",
+   "send or reply to email from Claude or Cursor",
+   "schedule delayed email that sends from Exchange",
+   "create drafts in Outlook-compatible Drafts folder"
+  ],
+  "how_to_run": [
+   "uvx apple-mailbox-mcp setup",
+   "claude mcp add --transport stdio --scope user apple-mail -- uvx apple-mailbox-mcp",
+   "Claude Desktop: add {\"mcpServers\": {\"apple-mail\": {\"command\": \"uvx\", \"args\": [\"apple-mailbox-mcp\"]}}} to claude_desktop_config.json",
+   "Codex CLI: add [mcp_servers.apple-mail] with command = \"uvx\" and args = [\"apple-mailbox-mcp\"] to ~/.codex/config.toml",
+   "Run doctor to diagnose send lane problems",
+   "Grant Full Disk Access and Automation → Mail permissions when macOS prompts"
+  ],
+  "stack": [
+   "Python (installed via uvx/pipx)",
+   "Apple Mail SQLite index",
+   "AppleScript",
+   "MCP stdio transport",
+   "SSH sendmail",
+   "SMTP",
+   "1Password CLI (op://) for app passwords"
+  ],
+  "notable": [
+   "Full-body search via Mail's own SQLite index, with p95 under 1 ms on a 300k-message store per the README",
+   "Exchange accounts can fetch message bodies Mail never downloaded, from the server",
+   "Scheduled sends are frozen in full and can run server-side via Exchange even with the Mac asleep",
+   "Triage uses a plan-approve-apply workflow and deletes go to Mail's Trash",
+   "Identity-based send lanes chosen by the From address"
+  ],
+  "caveats": [
+   "macOS only; requires Apple Mail and Full Disk Access / Automation permissions",
+   "Non-Exchange scheduled sends rely on a local background sender and only deliver on its next pass or after wake",
+   "First body-index build on a 100k+ mailbox can take minutes"
+  ],
+  "license": "unknown",
+  "category": "apple mail automation",
+  "keywords": [
+   "apple mail",
+   "mac mail",
+   "mcp server",
+   "model context protocol",
+   "stdio mcp",
+   "claude desktop",
+   "claude code",
+   "cursor",
+   "vs code copilot",
+   "codex cli",
+   "email search",
+   "full-text search",
+   "mail index sqlite",
+   "search email bodies",
+   "ai email assistant",
+   "email triage",
+   "bulk email filing",
+   "send email from ai",
+   "reply to email",
+   "draft email",
+   "scheduled email",
+   "send later",
+   "exchange email",
+   "outlook drafts",
+   "smtp",
+   "ssh sendmail",
+   "local email automation",
+   "mailbox cleanup",
+   "uvx",
+   "applescript alternative",
+   "read email from ai",
+   "manage mac email with ai"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4232,
+  "output": 1544
+ },
+ "generated": "2026-10-29"
+}

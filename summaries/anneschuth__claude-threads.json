@@ -1,0 +1,97 @@
+{
+ "id": "anneschuth/claude-threads",
+ "repo": "anneschuth/claude-threads",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "Claude Threads by Anne Schuth - Streams a locally-running Claude Code session live into a Slack or Mattermost thread so a whole team can watch, type, and approve actions together — \"screen-sharing for AI pair programming, but everyone can type.\" Mature and well-maintained (npm-published with CI and coverage), with reaction-based tool approvals, git-worktree isolation, multi-account rotation, and p"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted bot that runs a local Claude Code session and streams it live into a Slack or Mattermost thread, where teammates can watch and steer it.",
+  "what_it_does": "The bot runs on your machine and spawns a Claude Code session in a local working directory when someone mentions it in a channel. Output, tool calls, diffs, and a task list stream into the thread, and people can reply or react with emoji to steer the session. Permission prompts appear as 👍/✅/👎 reactions, with three modes (default, auto, bypass) switchable per session. Sessions can invite teammates, use git worktrees, schedule routines, and watch channels for triggers. Claude gets nine MCP tools for chat actions such as posting files, reading permalinks, reacting, and DMing, each with its own guardrail. It works with a Claude subscription or API key, and an optional account pool rotates between accounts.",
+  "use_cases": [
+   "Pair-program with Claude Code with teammates in a Slack or Mattermost thread",
+   "Run coding tasks on a local checkout from chat without a cloud sandbox",
+   "Approve or deny AI tool use through emoji reactions in a team channel",
+   "Schedule recurring Claude tasks that post to a channel",
+   "Keep code on self-hosted infrastructure while using Claude from chat",
+   "Isolate AI-made changes on a git branch via worktrees"
+  ],
+  "how_to_run": [
+   "bun install -g claude-threads (with Bun, recommended)",
+   "npm install -g claude-threads (with npm)",
+   "cd /your/project",
+   "claude-threads (runs the interactive setup wizard)",
+   "Mention the bot in a channel, e.g. @claude help me fix the bug in src/auth.ts"
+  ],
+  "stack": [
+   "TypeScript/JavaScript",
+   "Bun 1.2.21+ or Node 20+",
+   "Claude Code CLI",
+   "Slack API",
+   "Mattermost",
+   "MCP (Model Context Protocol)",
+   "ElevenLabs Scribe (optional transcription)"
+  ],
+  "notable": [
+   "Multiplayer sessions: invite teammates, gate uninvited messages behind owner approval, and add Co-Authored-By trailers to commits",
+   "Emoji-based permission control with three modes switchable mid-session",
+   "Runs on your own machine against local checkouts, MCP servers, and plugins, with Mattermost support for self-hosted chat",
+   "Built-in channel memory, scheduled routines, and event watches driven by natural language",
+   "Multi-account pool routes new sessions to the account with the most subscription headroom"
+  ],
+  "caveats": [
+   "You must run the bot yourself on a machine that has the repository",
+   "On native Windows, auto-restart requires Git for Windows' bash; otherwise WSL is needed",
+   "Voice-note transcription requires configuring ElevenLabs Scribe"
+  ],
+  "license": "Apache-2.0",
+  "category": "chat-driven coding agent",
+  "keywords": [
+   "claude code",
+   "slack bot",
+   "mattermost bot",
+   "ai pair programming",
+   "chat coding assistant",
+   "team chat ai",
+   "self-hosted ai coding",
+   "local claude session",
+   "streaming thread",
+   "emoji approval",
+   "permission prompts",
+   "tool approval",
+   "git worktree",
+   "multi-account rotation",
+   "mcp server",
+   "mcp tools",
+   "claude subscription",
+   "anthropic api key",
+   "scheduled routines",
+   "channel memory",
+   "co-authored-by commits",
+   "slack integration",
+   "mattermost integration",
+   "remote control claude",
+   "run claude from chat",
+   "let my team watch ai coding",
+   "share ai session with teammates",
+   "alternative to claude code in slack",
+   "alternative to cloud coding agents",
+   "typescript cli",
+   "npm package",
+   "voice notes transcription"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6682,
+  "output": 1450
+ },
+ "generated": "2026-10-29"
+}

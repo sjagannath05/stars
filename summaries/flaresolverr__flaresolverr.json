@@ -1,0 +1,88 @@
+{
+ "id": "flaresolverr/flaresolverr",
+ "repo": "FlareSolverr/FlareSolverr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "FlareSolverr | Proxy server to bypass Cloudflare protection for indexers"
+  }
+ ],
+ "summary": {
+  "one_liner": "FlareSolverr is a proxy server that uses a headless Chrome browser to solve Cloudflare and DDoS-GUARD challenges and returns the HTML and cookies to other HTTP clients.",
+  "what_it_does": "It runs an idle HTTP proxy server that accepts JSON commands (request.get, request.post, sessions.create, sessions.list, sessions.destroy). On each request it launches a Chrome browser via Selenium and undetected-chromedriver, opens the URL, and waits until the Cloudflare challenge is solved or a timeout (maxTimeout, default 60 seconds) is reached. It then returns the page HTML, cookies, and user agent so other HTTP clients can reuse them. Persistent browser sessions can keep cookies across requests, with optional per-session proxies, TTL rotation, and cookie injection. Extra options include screenshots, disabling media loading, waiting before returning, and a Turnstile tab-count parameter. It also exposes an optional Prometheus exporter and is configured through environment variables such as LOG_LEVEL, PROXY_URL, TZ, and LANG.",
+  "use_cases": [
+   "bypass Cloudflare protection for scraping",
+   "get cookies to use with other HTTP clients past a Cloudflare challenge",
+   "proxy requests for indexers blocked by Cloudflare",
+   "reuse a browser session across many requests",
+   "monitor solve rates with Prometheus"
+  ],
+  "how_to_run": [
+   "docker run -d --name=flaresolverr -p 127.0.0.1:8191:8191 -e LOG_LEVEL=info --restart unless-stopped ghcr.io/flaresolverr/flaresolverr:latest",
+   "docker compose up -d (using the repository's docker-compose.yml)",
+   "pip install -r requirements.txt (from source, Python 3.11, Chrome or Chromium, Xvfb on Linux)",
+   "python src/flaresolverr.py"
+  ],
+  "stack": [
+   "Python 3.11",
+   "Selenium",
+   "undetected-chromedriver",
+   "Chrome / Chromium",
+   "Docker",
+   "Prometheus exporter"
+  ],
+  "notable": [
+   "Accepts simple JSON POST commands, so any HTTP client can use it without a browser",
+   "Persistent sessions with optional TTL rotation and per-session proxies",
+   "Precompiled binaries, Docker images for x86, x86-64, ARM32 and ARM64, and a systemd unit example",
+   "Optional screenshot capture and tmpfs /tmp guidance to reduce disk wear",
+   "Prometheus metrics for request counts and durations"
+  ],
+  "caveats": [
+   "Each request launches a full browser, which uses a lot of memory; running many requests at once needs substantial RAM",
+   "The README states that none of the captcha solvers currently work",
+   "Precompiled binaries are only for x64, and source install is also x64-only per the README; use Docker for other architectures",
+   "The README warns not to expose it to the internet because it can be abused"
+  ],
+  "license": "unknown",
+  "category": "cloudflare bypass proxy",
+  "keywords": [
+   "flaresolverr",
+   "cloudflare bypass",
+   "ddos-guard bypass",
+   "cloudflare challenge solver",
+   "headless chrome proxy",
+   "selenium proxy",
+   "undetected-chromedriver",
+   "cookie extraction",
+   "http proxy server",
+   "indexer proxy",
+   "prodowa alternative",
+   "scraping blocked by cloudflare",
+   "get past cloudflare captcha",
+   "solve cloudflare js challenge",
+   "browser session reuse",
+   "docker cloudflare proxy",
+   "prometheus exporter",
+   "turnstile token",
+   "headless browser api",
+   "bypass anti-bot protection",
+   "web scraping proxy",
+   "cookie and user agent for http clients",
+   "self-hosted cloudflare solver",
+   "chromium docker container",
+   "request.get json api"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7732,
+  "output": 1425
+ },
+ "generated": "2026-10-29"
+}

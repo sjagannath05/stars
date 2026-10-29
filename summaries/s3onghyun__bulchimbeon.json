@@ -1,0 +1,95 @@
+{
+ "id": "s3onghyun/bulchimbeon",
+ "repo": "s3onghyun/bulchimbeon",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Bulchimbeon - Menu bar app that keeps the Mac awake only while AI coding agents are working, with lid-closed mode and heat and battery safeguards."
+  }
+ ],
+ "summary": {
+  "one_liner": "Bulchimbeon is a macOS menu bar app (with a Linux daemon and tray icon) that keeps the Mac awake only while AI coding agents such as Claude Code or Codex are actively working, then lets it sleep.",
+  "what_it_does": "It detects running AI coding agents (Claude Code, Codex, Gemini CLI, Cursor Agent, Copilot CLI, Aider, OpenCode, plus user-defined ones) by scanning the user's own processes, and counts an agent as working only when it has a caffeinate child process or its process tree uses at least 2% CPU averaged over 60 seconds. It holds a sleep lock while on duty and hands over after 5 minutes (adjustable) of quiet. Watch modes include keeping the display on, letting the display sleep, or staying awake with the lid closed (which needs admin approval and runs pmset disablesleep). It also offers timed watches, a battery stand-down threshold, heat advisories with automatic cooling pauses, a watchdog that restores lid sleep, and a once-a-day update check that only installs after the user confirms. The README also describes a Linux version with a systemd user daemon, CLI status and doctor commands, and a StatusNotifier tray icon.",
+  "use_cases": [
+   "keep Mac awake while AI agent runs overnight",
+   "prevent sleep during long coding agent tasks",
+   "stop caffeinate from being left on by accident",
+   "keep closed laptop running agent with lid closed",
+   "stay awake during builds and tests triggered by an agent",
+   "Linux daemon to inhibit suspend while coding agents work"
+  ],
+  "how_to_run": [
+   "brew install --cask s3onghyun/tap/bulchimbeon",
+   "Or download the latest macOS zip from Releases and move it to /Applications",
+   "open -a Bulchimbeon (first launch needs System Settings > Privacy & Security > Open Anyway)",
+   "Linux: brew install s3onghyun/tap/bulchimbeon-linux && brew services start bulchimbeon-linux"
+  ],
+  "stack": [
+   "Swift",
+   "macOS IOPMAssertion and pmset",
+   "libproc",
+   "Go 1.27+ (Linux daemon)",
+   "systemd, logind, D-Bus (Linux)",
+   "Homebrew"
+  ],
+  "notable": [
+   "Watches from outside: detects agents by process metadata and CPU use, so no hooks or agent config changes are needed",
+   "Lid-closed mode with a watchdog that restores normal sleep within 5 seconds after the watch ends or the app quits",
+   "Heat advisory and combat rest that pause the watch when the Mac overheats and resume once it cools",
+   "Pixel-art private menu bar mascot with a patrol mode and multilingual UI (Korean, English, Simplified Chinese)",
+   "Linux port that shares the same duty engine and golden test cases"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later; the app is ad-hoc signed and not yet notarized, so macOS blocks the first launch",
+   "Lid-closed mode requires an admin password each time it is turned on; Linux lid closing still suspends by default",
+   "Agents running in Docker or over SSH on another host are not detected"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "keep mac awake",
+   "prevent sleep",
+   "caffeinate alternative",
+   "amphetamine alternative",
+   "adrafinil alternative",
+   "menu bar app",
+   "ai coding agent",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "aider",
+   "opencode",
+   "cursor agent",
+   "copilot cli",
+   "lid closed mode",
+   "disablesleep",
+   "pmset",
+   "iopmassertion",
+   "power assertion",
+   "sleep inhibitor",
+   "linux suspend inhibitor",
+   "systemd user service",
+   "tray icon",
+   "stop mac sleeping",
+   "keep laptop awake overnight",
+   "run agent while lid closed",
+   "battery safeguard",
+   "heat warning",
+   "swift",
+   "homebrew cask",
+   "go daemon",
+   "process monitoring"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12145,
+  "output": 1486
+ },
+ "generated": "2026-10-29"
+}

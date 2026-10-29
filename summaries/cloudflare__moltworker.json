@@ -1,0 +1,95 @@
+{
+ "id": "cloudflare/moltworker",
+ "repo": "cloudflare/moltworker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Deployment & Infrastructure",
+   "entry": "cloudflare/moltworker — Cloudflare sandbox runtime"
+  }
+ ],
+ "summary": {
+  "one_liner": "A proof-of-concept that packages the OpenClaw personal AI assistant to run inside a Cloudflare Sandbox container on Cloudflare Workers.",
+  "what_it_does": "Deploys the OpenClaw (formerly Moltbot/Clawdbot) gateway and Control UI to a Cloudflare Sandbox container, so the assistant runs as an always-on hosted service. It supports connecting to Telegram, Discord, and Slack via bot tokens, and uses device pairing with an admin UI at /_admin/ to approve new devices. Optional R2 storage backs up config, paired devices, and conversation history so they survive container restarts. It can route model calls through Cloudflare AI Gateway (Anthropic, OpenAI, Workers AI, Groq and others) or use a direct Anthropic or OpenAI key. It also includes a Chrome DevTools Protocol shim for headless browser automation, with built-in screenshot and video skills.",
+  "use_cases": [
+   "Self-host a personal AI assistant on Cloudflare",
+   "Run an always-on AI chat bot connected to Telegram, Discord, or Slack",
+   "Route LLM API calls through Cloudflare AI Gateway",
+   "Headless browser automation, screenshots, and scraping from an agent",
+   "Deploy an AI agent to Cloudflare Containers without managing servers"
+  ],
+  "how_to_run": [
+   "npm install",
+   "npx wrangler secret put ANTHROPIC_API_KEY",
+   "export MOLTBOT_GATEWAY_TOKEN=$(openssl rand -hex 32) and store it with npx wrangler secret put MOLTBOT_GATEWAY_TOKEN",
+   "npm run deploy",
+   "Enable Cloudflare Access on the workers.dev domain and set CF_ACCESS_TEAM_DOMAIN and CF_ACCESS_AUD, then redeploy",
+   "Pair your device via /_admin/ before using the Control UI"
+  ],
+  "stack": [
+   "Cloudflare Workers",
+   "Cloudflare Sandbox containers",
+   "Wrangler",
+   "Node.js / npm",
+   "OpenClaw",
+   "Cloudflare Access",
+   "Cloudflare R2",
+   "Cloudflare AI Gateway",
+   "Chrome DevTools Protocol"
+  ],
+  "notable": [
+   "Runs OpenClaw in a managed Cloudflare Sandbox container rather than on a self-hosted machine",
+   "Device pairing requires explicit admin approval for each new device, on top of a gateway token",
+   "Optional R2 backup/restore keeps paired devices and chat history across restarts",
+   "Includes a CDP shim and built-in cloudflare-browser skill for screenshots and video capture",
+   "Cost guide with a standard-1 instance estimate of about $34.50/month, plus SANDBOX_SLEEP_AFTER to cut idle costs"
+  ],
+  "caveats": [
+   "Explicitly experimental and unsupported; may break without notice",
+   "Requires the Workers Paid plan ($5/month) plus roughly $26-30/month in container compute if run 24/7; the README estimates about $34.50/month total",
+   "Cold starts take 1-2 minutes; wrangler dev has known WebSocket limitations, so full functionality needs deployment to Cloudflare"
+  ],
+  "license": "unknown",
+  "category": "self-hosted ai assistant",
+  "keywords": [
+   "openclaw",
+   "moltbot",
+   "clawdbot",
+   "cloudflare workers",
+   "cloudflare sandbox",
+   "cloudflare containers",
+   "personal ai assistant",
+   "self-host ai assistant",
+   "ai chatbot deployment",
+   "telegram bot",
+   "discord bot",
+   "slack bot",
+   "wrangler deploy",
+   "cloudflare access",
+   "r2 persistence",
+   "ai gateway",
+   "anthropic claude",
+   "openai api",
+   "headless browser automation",
+   "chrome devtools protocol",
+   "cdp",
+   "serverless ai agent",
+   "run ai agent in container",
+   "always-on ai bot",
+   "device pairing",
+   "control ui",
+   "hosted ai assistant",
+   "deploy chatbot without servers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10056,
+  "output": 1509
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,109 @@
+{
+ "id": "dockur/windows",
+ "repo": "dockur/windows",
+ "kind": "star",
+ "description": "Windows inside a Docker container.",
+ "topics": [
+  "docker",
+  "docker-container",
+  "virtualization",
+  "windows",
+  "windows-virtual-desktop",
+  "windows-virtual-machine",
+  "windows-virtual-machines",
+  "windows-vm"
+ ],
+ "language": "Shell",
+ "stars": 53717,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-08",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Docker container image that automatically downloads, installs, and runs Windows (and many legacy versions) inside a KVM-accelerated virtual machine, viewed through a web browser or RDP.",
+  "what_it_does": "Runs a Windows virtual machine inside a Docker container, downloading the selected Windows ISO and installing it hands-free. Users pick a version with the VERSION environment variable, covering Windows 11, 10, 8.1, 7, Vista, XP, 2000, ME, 98, 95, Windows Server 2003 to 2025, Tiny11/Tiny10 and ReactOS. The installed system is reachable through a web viewer on port 8006 and via RDP on port 3389. Configuration covers CPU cores, RAM, disk size, multiple disks, disk and USB passthrough, host folder sharing, audio streaming, and Active Directory domain join. Networking options include NAT, user-mode, macvlan and macvtap, with an optional DHCP mode so Windows gets its own router-assigned IP. Memory ballooning is available for dynamic RAM allocation.",
+  "use_cases": [
+   "Run Windows in a container on a Linux server",
+   "Test software on old Windows versions like XP or 98",
+   "Spin up a disposable Windows VM with Docker Compose",
+   "Run Windows Server for lab or Active Directory testing",
+   "Provide a Windows backend for WinBoat, WinApps or WinPodX",
+   "Access a Windows desktop from a browser or RDP client"
+  ],
+  "how_to_run": [
+   "Install Docker or Podman on a Linux host with KVM support",
+   "Create a compose file with image dockurr/windows, VERSION set (e.g. \"11\"), /dev/kvm and /dev/net/tun devices, NET_ADMIN capability, and ports 8006 and 3389",
+   "Mount a volume to /storage for the VM data",
+   "Or run: docker run -it --rm --name windows -e \"VERSION=11\" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v \"${PWD:-.}/windows:/storage\" --stop-timeout 120 docker.io/dockurr/windows",
+   "Open http://localhost:8006 in a browser and wait for the automatic installation to finish",
+   "Optionally connect with an RDP client using username Docker and password admin"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Podman",
+   "KVM",
+   "QEMU",
+   "Shell"
+  ],
+  "notable": [
+   "Fully automatic, hands-free Windows installation from a VERSION setting, with no manual ISO handling",
+   "Supports a wide range of releases from Windows 95 and XP through Windows 11 and Server 2025",
+   "Optional macvlan and DHCP mode gives the Windows VM its own IP address on the home network",
+   "Serves as the backend for desktop integration projects WinBoat, WinPodX and WinApps",
+   "Memory ballooning and USB passthrough options"
+  ],
+  "caveats": [
+   "Requires KVM access (/dev/kvm); Docker Desktop on Linux, macOS, and Windows 10 is not supported because containers lack KVM access",
+   "Needs at least 2 GB RAM and 32 GB free disk; default disk is 64 GB and default RAM allocation is 4 GB",
+   "The README says the web viewer is mainly for installation and RDP is recommended for daily use; audio is off unless enabled",
+   "Windows licensing is the user's responsibility; the project does not distribute Windows"
+  ],
+  "license": "MIT",
+  "category": "windows in docker",
+  "keywords": [
+   "windows in docker",
+   "run windows in container",
+   "windows virtual machine",
+   "docker windows vm",
+   "kvm windows",
+   "qemu windows container",
+   "windows docker compose",
+   "windows server container",
+   "legacy windows xp container",
+   "windows 98 emulation",
+   "windows 11 docker",
+   "run windows on linux",
+   "rdp windows container",
+   "web viewer windows vm",
+   "windows virtual desktop",
+   "podman windows",
+   "virtual machine in docker",
+   "automatic windows installer",
+   "windows iso container",
+   "vm in container",
+   "winboat backend",
+   "winapps backend",
+   "winpodx",
+   "macvlan windows",
+   "tiny11 docker",
+   "reactos container",
+   "test software on old windows",
+   "share files with host windows vm",
+   "windows on linux server",
+   "alternative to vmware in docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7346,
+  "output": 1605
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "alexta69/metube",
+ "repo": "alexta69/metube",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "MeTube - Web GUI for youtube-dl, with playlist support. Allows downloading videos from dozens of websites. AGPL-3.0 Python/Nodejs/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "MeTube | Web GUI for yt-dlp with playlist support"
+  }
+ ],
+ "summary": {
+  "one_liner": "MeTube is a self-hosted web UI for yt-dlp that downloads videos, audio, subtitles and thumbnails from YouTube and hundreds of other sites to your server.",
+  "what_it_does": "MeTube accepts links from YouTube and many other sites, then downloads single videos, whole playlists or entire channels to the server. It supports subscriptions to channels and playlists that queue new uploads automatically. Quality, format and folder can be chosen per download, and server-wide yt-dlp options and named presets can be set through environment variables. Filenames are controlled by yt-dlp output templates, with separate templates for playlist and channel items. Configuration covers concurrency limits, download and temp directories, HTTPS, reverse-proxy URL prefixes and CORS for browser extensions.",
+  "use_cases": [
+   "download YouTube videos to a home server",
+   "download full playlists or channels",
+   "automatically grab new channel uploads via subscriptions",
+   "extract audio-only downloads",
+   "archive subtitles and thumbnails",
+   "run a web-based downloader behind a reverse proxy"
+  ],
+  "how_to_run": [
+   "docker run -d -p 8081:8081 -v /path/to/downloads:/downloads ghcr.io/alexta69/metube",
+   "Or use Docker Compose with the ghcr.io/alexta69/metube image, port 8081:8081 and a downloads volume",
+   "Open http://<host>:8081 in your browser"
+  ],
+  "stack": [
+   "Python",
+   "Node.js",
+   "Docker",
+   "yt-dlp"
+  ],
+  "notable": [
+   "Web GUI for yt-dlp with playlist and channel support",
+   "Subscriptions queue new uploads from channels and playlists automatically",
+   "Three levels of yt-dlp options: global, presets, and per-download overrides",
+   "Multi-arch Docker images (amd64/arm64) on GitHub Container Registry and Docker Hub",
+   "Nightly yt-dlp update option via YTDL_NIGHTLY_UPDATE_TIME"
+  ],
+  "caveats": [
+   "Per-download yt-dlp override field allows running commands in the container, so it is for trusted users only",
+   "Scope is limited to downloading; tagging and library management are left to other tools",
+   "Interrupted downloads cannot resume when TEMP_DIR is a RAM disk"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted video downloader",
+  "keywords": [
+   "metube",
+   "yt-dlp",
+   "youtube-dl",
+   "web gui",
+   "self-hosted",
+   "video downloader",
+   "playlist downloader",
+   "channel downloader",
+   "youtube downloader",
+   "audio extraction",
+   "mp3 downloader",
+   "docker",
+   "docker compose",
+   "subscriptions",
+   "auto download new videos",
+   "download youtube videos to server",
+   "download playlist",
+   "archive youtube channel",
+   "subtitles download",
+   "thumbnail download",
+   "reverse proxy",
+   "yt-dlp web interface",
+   "python",
+   "nodejs",
+   "agpl",
+   "media management",
+   "download videos from many sites",
+   "home media server downloader"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5753,
+  "output": 1151
+ },
+ "generated": "2026-10-29"
+}

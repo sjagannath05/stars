@@ -1,0 +1,96 @@
+{
+ "id": "louis030195/hyperconsciousness",
+ "repo": "louis030195/hyperconsciousness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Hyperconsciousness - Developer-alpha Rust knowledge store with encrypted, append-only records and an MCP server for agent access through scoped, expiring grants. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "HC (hyperconsciousness) is a developer-alpha, encrypted, append-only knowledge store in Rust that one trusted node owns and that agents reach through scoped, expiring grants via an MCP/HTTP server.",
+  "what_it_does": "HC stores notes and imported records in an encrypted, append-only store, with a CLI named `hc` for writing, reading, searching, and checking status. Access is controlled by grants that specify record kinds, tags, sensitivity level, read or write scope, and an expiry (for example, one day of read-only access to notes tagged \"demo\"). An MCP server exposes tools such as search, recent, record, remember, files, and access requests, and an HTTP server offers OAuth/DPoP, capture, and owner-approval APIs. The README also describes an opt-in lexical relevance mode for multiword search, an audit and revoke command, and an optional local dashboard (HC Atlas) for inspecting storage, file metadata, identity, and grants. It includes an installer for macOS and Linux, a Windows ZIP option, and a catalog of ingestion skills for sources such as Slack, GitHub, and Google Workspace.",
+  "use_cases": [
+   "give an AI agent time-limited read access to personal notes",
+   "keep an encrypted personal knowledge base",
+   "share a company knowledge store with members and agents",
+   "search notes and imported chats through MCP",
+   "audit and revoke agent access to a store",
+   "ingest chats and tools into a searchable store"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh  (macOS/Linux installer; URL missing from README)",
+   "git clone the repository, then: cargo build --release --locked",
+   "install -m 755 target/release/hc \"$HOME/.local/bin/hc\"",
+   "HC_STORE=\"$PWD/hc-demo\" && hc start --dir \"$HC_STORE\"",
+   "hc grant \"$HC_DEVICE\" --kinds note --tags demo --sensitivity normal --days 1 --dir \"$HC_STORE\"",
+   "cd dashboard && bun install --frozen-lockfile && bun run build && bun run start  (optional dashboard)"
+  ],
+  "stack": [
+   "Rust 1.88.0",
+   "Cargo",
+   "MCP (Model Context Protocol) server",
+   "HTTP server with OAuth/DPoP",
+   "Bun (optional dashboard)",
+   "npm packaging",
+   "Python 3 (ingestion skill installer)"
+  ],
+  "notable": [
+   "Grant-based access: scoped, expiring permissions limit what an agent's MCP calls return",
+   "Append-only encrypted record format with signed records and integrity verification for MCP reads",
+   "Single trusted node model: other devices query it through its authenticated API",
+   "Ingestion skill catalog covering chats, Slack, Google Workspace, GitHub, CRM and more, installable into Codex or Claude Code skill folders",
+   "Background update checks at most every six hours for installer-managed copies, with opt-out"
+  ],
+  "caveats": [
+   "Developer alpha: APIs and commands may change, and no independent security audit is claimed",
+   "Grants do not sandbox a process that has access to the owner's OS account, files, or keys; hosted model providers can see plaintext returned through grants",
+   "Mac builds are not notarized, Linux builds need Ubuntu 24.04-compatible libraries, and Windows is supported via ZIP only; desktop, iOS, Android, and mobile apps are out of scope"
+  ],
+  "license": "MIT",
+  "category": "encrypted knowledge store",
+  "keywords": [
+   "knowledge store",
+   "encrypted notes",
+   "append-only log",
+   "rust cli",
+   "mcp server",
+   "model context protocol",
+   "ai agent access",
+   "scoped access grants",
+   "expiring permissions",
+   "agent permissions",
+   "personal knowledge base",
+   "second brain",
+   "note taking cli",
+   "local-first notes",
+   "self-hosted knowledge base",
+   "share notes with an agent",
+   "give agent limited access",
+   "revoke agent access",
+   "audit access log",
+   "oauth dpop",
+   "http api",
+   "lexical search",
+   "full text search cli",
+   "ingest slack chats",
+   "codex skills",
+   "claude code skills",
+   "backup and recovery",
+   "company knowledge sharing",
+   "developer alpha",
+   "hc cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4682,
+  "output": 1553
+ },
+ "generated": "2026-10-29"
+}

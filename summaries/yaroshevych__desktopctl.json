@@ -1,0 +1,95 @@
+{
+ "id": "yaroshevych/desktopctl",
+ "repo": "yaroshevych/desktopctl",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Desktop Control - GPU-accelerated CLI for AI agents to control any macOS app via screen, mouse, and keyboard."
+  }
+ ],
+ "summary": {
+  "one_liner": "DesktopCtl is a local macOS command-line tool that lets AI agents observe the screen and control apps through mouse, keyboard, and native menus.",
+  "what_it_does": "The tool is split into a background daemon (DesktopCtl.app / desktopctld) that handles screen perception, state, execution, and verification, and a stateless desktopctl CLI that sends actions and queries over local IPC. It provides OCR-based screen tokenization so agents can target elements by text or token, with coordinate fallback. It offers deterministic click, type, and wait primitives plus post-action verification. It can enumerate and invoke native macOS menu items through Accessibility. The README says processing runs fully locally and that screenshots are not sent to the cloud. Configuration and runtime data live in a Linux-style directory under DESKTOPCTL_HOME or XDG paths.",
+  "use_cases": [
+   "let an AI agent click and type in macOS apps",
+   "automate keyboard and mouse actions on Mac",
+   "read on-screen text with OCR for agent grounding",
+   "invoke native macOS menu items from scripts",
+   "wait for UI state before the next action",
+   "build local desktop automation without cloud screenshots"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash  (installer from README; the URL was missing in the provided text)",
+   "make install",
+   "desktopctl app open Notes --json",
+   "desktopctl keyboard press cmd+f --active-window <id> --no-observe",
+   "desktopctl screen tokenize --active-window <id>",
+   "desktopctl menu list --active-window <id>"
+  ],
+  "stack": [
+   "Rust (cargo)",
+   "just command runner",
+   "macOS Accessibility API",
+   "OCR",
+   "GPU-accelerated text recognition"
+  ],
+  "notable": [
+   "Selector-first automation using --text and --token with coordinate fallback",
+   "Runs locally; README states no screenshots are sent to the cloud",
+   "Works with any desktop AI agent or model, including non-vision models via OCR tokens",
+   "Stable JSON output contracts for agent integrations",
+   "Native macOS menu enumeration and invocation by #menu_* IDs"
+  ],
+  "caveats": [
+   "macOS only, and currently Apple Silicon only per the installation section",
+   "Requires Accessibility and Screen Recording permissions for DesktopCtl.app",
+   "App is ad-hoc signed, not Developer ID signed or notarized; installer strips quarantine attribute",
+   "Status is active development; multi-platform support is roadmap only"
+  ],
+  "license": "unknown",
+  "category": "desktop automation cli",
+  "keywords": [
+   "desktop automation",
+   "computer use agent",
+   "ai agent macos",
+   "macos automation",
+   "screen control",
+   "mouse and keyboard automation",
+   "gui automation",
+   "ocr screen reading",
+   "accessibility api",
+   "menu automation",
+   "rust cli",
+   "local ai agent",
+   "on-device automation",
+   "screen tokenization",
+   "click and type automation",
+   "wait for ui element",
+   "control mac apps from script",
+   "agent tool calling desktop",
+   "computer vision automation",
+   "private screen automation",
+   "apple silicon automation",
+   "gpu accelerated ocr",
+   "json cli for agents",
+   "daemon ipc cli",
+   "control any macos app",
+   "automate notes app",
+   "let ai operate my computer",
+   "desktopctl",
+   "computer use local",
+   "keyboard press shortcut automation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3354,
+  "output": 1237
+ },
+ "generated": "2026-10-29"
+}

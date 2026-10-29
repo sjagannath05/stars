@@ -1,0 +1,100 @@
+{
+ "id": "pkhorenyan/termstead",
+ "repo": "pkhorenyan/termstead",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📺 Terminal (27)",
+   "entry": "Termstead - Native SSH client with a session tree, jump hosts, split panes and SFTP beside the terminal."
+  }
+ ],
+ "summary": {
+  "one_liner": "Termstead is a native macOS SSH, RDP and Telnet client with a session tree, tabs, split panes, SFTP beside the terminal, and passwords stored in the macOS Keychain.",
+  "what_it_does": "Termstead organizes saved sessions in a tree of groups and subgroups, with pinned favorites, search and keyboard navigation. Each connection runs in a tab and each tab runs the system OpenSSH client, with jump host chains, port forwarding (local, remote and SOCKS) and an SFTP tab that reuses the open connection. The window can be split into two or four panes, and broadcast input can send typing to all visible panes. It also offers a local Mac terminal tab, snippets, per-session text logs, automatic reconnection after network drops, and RDP remote desktops in tabs via FreeRDP. Passwords and key passphrases are stored in the login Keychain, and the app can import hosts from ~/.ssh/config.",
+  "use_cases": [
+   "manage many SSH servers from one Mac app",
+   "connect to servers through jump hosts",
+   "browse and transfer files to remote servers with SFTP",
+   "open Windows remote desktops (RDP) alongside SSH tabs",
+   "run the same command across several servers at once",
+   "tunnel traffic with SSH port forwarding",
+   "connect to network switches and routers over Telnet"
+  ],
+  "how_to_run": [
+   "brew install --cask pkhorenyan/tap/termstead",
+   "Or download Termstead.dmg from Releases, open it and drag Termstead to Applications",
+   "Build from source: brew install xcodegen cmake ninja",
+   "scripts/build-rdp-deps.sh # FreeRDP and OpenSSL for the RDP engine, once",
+   "xcodegen generate",
+   "xcodebuild -project Termstead.xcodeproj -scheme Termstead -configuration Release -derivedDataPath build build"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftTerm",
+   "OpenSSH (system ssh)",
+   "FreeRDP",
+   "OpenSSL",
+   "Sparkle",
+   "XcodeGen",
+   "CMake",
+   "Ninja"
+  ],
+  "notable": [
+   "Runs the system OpenSSH client rather than its own SSH code, so agent, ssh config, known_hosts and ProxyJump work as in Terminal",
+   "RDP desktops are drawn by FreeRDP in a separate process so a crash does not take down Termstead",
+   "Broadcast input across split panes with per-pane opt-out",
+   "SFTP follows the terminal's current folder and reuses the open connection",
+   "Session settings and snippets stored as JSON under Application Support"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later",
+   "Telnet is unencrypted, as the README itself warns",
+   "Building from source needs a separate FreeRDP and OpenSSL build step before the Xcode build"
+  ],
+  "license": "GPL-3.0",
+  "category": "macos ssh client",
+  "keywords": [
+   "ssh client",
+   "mac ssh client",
+   "macos terminal",
+   "ssh terminal app",
+   "sftp browser",
+   "file transfer over ssh",
+   "rdp client",
+   "remote desktop mac",
+   "telnet client",
+   "jump host",
+   "proxyjump",
+   "ssh tunnel",
+   "port forwarding",
+   "ssh port forward",
+   "split terminal panes",
+   "broadcast input",
+   "keychain passwords",
+   "session manager",
+   "server manager",
+   "mobaxterm alternative",
+   "iterm alternative for ssh",
+   "putty alternative mac",
+   "ssh config import",
+   "session logs",
+   "snippets",
+   "terminal tabs",
+   "openssh gui",
+   "remote servers manager",
+   "connect to linux servers",
+   "gpl licensed ssh app",
+   "swift terminal app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5100,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

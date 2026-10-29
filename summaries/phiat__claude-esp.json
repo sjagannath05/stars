@@ -1,0 +1,93 @@
+{
+ "id": "phiat/claude-esp",
+ "repo": "phiat/claude-esp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability",
+   "entry": "claude-esp by phiat - Go-based TUI that streams Claude Code hidden output (thinking, tool calls, subagents) to a separate terminal. Watch multiple sessions simultaneously, filter by content type, and track background tasks. Ideal for debugging or understanding what Claude is doing under the hood without interrupting your main session."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Go terminal UI that streams Claude Code's hidden output (thinking, tool calls, subagent activity) into a separate terminal while the main session runs.",
+  "what_it_does": "Reads Claude Code's JSONL transcript files from the ~/.claude/projects directory and displays thinking blocks, tool calls, tool results and subagent output in a Bubbletea TUI. Sessions and subagents appear in a hierarchical tree, and multiple sessions can be watched at once. Filters toggle visibility of thinking, tool input, tool output and text per session or agent. The README also lists inline session events such as compaction boundaries, hook output, cost summaries, and background-task progress, plus per-agent context percentages and token totals in the header. Changes are detected with fsnotify, with a polling fallback on filesystems that lack notifications.",
+  "use_cases": [
+   "Watch what Claude Code is doing while the main session stays uncluttered",
+   "Debug agent behavior by inspecting hidden thinking and tool calls",
+   "Monitor several concurrent Claude Code sessions in one view",
+   "Track subagent and background task progress",
+   "Review tool outputs that Claude Code collapses by default",
+   "Inspect session cost and token usage"
+  ],
+  "how_to_run": [
+   "go install github.com/phiat/claude-esp@latest",
+   "git clone <repo> && cd claude-esp && go build -o claude-esp .",
+   "Run claude in your main terminal as normal",
+   "Run claude-esp in a second terminal or tmux pane",
+   "claude-esp -a   # list active sessions",
+   "claude-esp -n   # skip history and show only new output"
+  ],
+  "stack": [
+   "Go 1.23+",
+   "Bubbletea",
+   "Lipgloss",
+   "fsnotify"
+  ],
+  "notable": [
+   "Hierarchical tree of sessions with nested main and subagent nodes, with agent type labels read from .meta.json",
+   "Auto-collapse of idle sessions (-c) with pinning on manual expand",
+   "Solo mode and per-agent visibility toggles for focusing on one stream",
+   "Surfaces many Claude Code session event types inline, including hook errors, cost summaries and cron fires",
+   "Polling fallback for NFS and some WSL2 cross-filesystem setups"
+  ],
+  "caveats": [
+   "Requires Go 1.23 or later to build from source; pre-built binaries are provided for Linux, macOS and Windows",
+   "Depends on Claude Code's on-disk JSONL transcript format, which the README does not promise to keep stable",
+   "Only sessions modified within the active window (default 5 minutes) are discovered by default"
+  ],
+  "license": "MIT",
+  "category": "terminal observability tooling",
+  "keywords": [
+   "claude code",
+   "claude-esp",
+   "terminal ui",
+   "tui",
+   "golang",
+   "go",
+   "bubbletea",
+   "lipgloss",
+   "fsnotify",
+   "jsonl",
+   "stream output",
+   "thinking output",
+   "tool calls",
+   "subagent tracking",
+   "background tasks",
+   "observability",
+   "debugging ai agent",
+   "monitor claude sessions",
+   "watch multiple sessions",
+   "tmux split pane",
+   "hidden output viewer",
+   "see claude thinking",
+   "ctrl+o alternative",
+   "token usage",
+   "session cost",
+   "log viewer",
+   "live tail",
+   "agent monitoring",
+   "auto-collapse sessions",
+   "pre-built binaries"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4432,
+  "output": 1250
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "juliusbrussee/caveman",
+ "repo": "JuliusBrussee/caveman",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Skills",
+   "entry": "Caveman by Julius Brussee - A plugin that conserves message tokens by communicating in fragmented \"caveman speak\" - sort of a clever form of compression. Now accompanied by a whole caveman ecosystem including a memory system, caveman spec kit, and a caveman agent."
+  }
+ ],
+ "summary": {
+  "one_liner": "Caveman is a Claude Code and multi-agent plugin/CLI that cuts AI agent token use by having the agent answer in terse \"caveman speak\", compress tool output and files it reads, and route models automatically.",
+  "what_it_does": "The README describes six parts: \"Say less\" (terse agent answers with code and commands left exact), \"Read less\" (compresses logs, JSON, CSV, YAML, test output before the model reads them, with originals kept on disk), \"Auto\" (picks model and effort per request via a free Caveman account), \"Blocks\" (reusable scripts the agent keeps and reruns instead of rewriting, with a caveman-blocks CLI), \"Waste fixes\" (finds token waste and keeps Anthropic's prompt cache warm while paused), and \"Browse\" (compressed web page output). It installs via npx @caveman-ai/cli and also as a Claude Code plugin, Gemini CLI extension, or skill via npx skills add. Slash commands include /caveman, /ultracave, /megacave, /caveman-commit, /caveman-review, and /caveman-compress for memory files like CLAUDE.md. The README also describes a separate hosted product, Caveman Cloud, for observability and evals of agents you build. Reported benchmarks are the author's and third-party claims (Adobe Research, Elastic, JetBrains), with caveats stated inline.",
+  "use_cases": [
+   "reduce Claude Code token costs",
+   "compress logs and test output before an AI agent reads them",
+   "terse agent responses to save tokens",
+   "compress CLAUDE.md memory files",
+   "reuse scripts across agent sessions instead of rewriting them",
+   "automatically pick cheaper models for easy coding tasks"
+  ],
+  "how_to_run": [
+   "npx @caveman-ai/cli@latest",
+   "npx skills add JuliusBrussee/caveman -g",
+   "claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman",
+   "gemini extensions install <repo URL, not shown in README text>",
+   "caveman status",
+   "caveman login # optional, for Auto routing"
+  ],
+  "stack": [
+   "Node.js 22.13+",
+   "Python (caveman-blocks)",
+   "PowerShell (Windows installer)",
+   "Claude Code plugin system",
+   "Gemini CLI extensions",
+   "tiktoken o200k (token counting in benchmarks)"
+  ],
+  "notable": [
+   "Compresses tool outputs and files the agent reads (CSV, logs, JSON, YAML, test output) with originals kept on disk",
+   "Caveman voice based on ASD-STE100 controlled English; prompts the user writes are never rewritten",
+   "Blocks feature keeps agent-written scripts in the repo and suggests existing blocks when a script is retyped",
+   "Works across many agents (Claude Code, Codex, Gemini CLI, OpenCode, Aider and others listed)",
+   "Benchmarks are cited from Adobe Research, Elastic, and JetBrains, with limits noted"
+  ],
+  "caveats": [
+   "Auto routing requires a free Caveman account and sends your asks and metadata to Caveman Cloud when enabled; telemetry is on by default in the CLI unless turned off",
+   "Blocks is pre-release (v0.1.0-rc.5), Python only, with no sandbox yet",
+   "Some install paths need workarounds on npm 12+ (allow-git flag), and the Claude web/mobile setup is described as not tested end to end"
+  ],
+  "license": "Apache-2.0",
+  "category": "ai agent token reduction",
+  "keywords": [
+   "token reduction",
+   "claude code plugin",
+   "claude code skill",
+   "reduce llm costs",
+   "token compression",
+   "caveman speak",
+   "terse ai responses",
+   "compress tool output",
+   "compress claude.md",
+   "prompt cache",
+   "model routing",
+   "code mode scripts",
+   "gemini cli extension",
+   "codex",
+   "opencode",
+   "aider",
+   "agent cost optimization",
+   "shorter ai answers",
+   "save tokens in coding agent",
+   "cut api bills for ai coding",
+   "log compression",
+   "json compression",
+   "test output compression",
+   "reusable agent scripts",
+   "npx skills",
+   "llm observability",
+   "agent evals",
+   "apache license ai tool",
+   "lower claude code costs",
+   "make the ai answer shorter",
+   "compress memory files"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8390,
+  "output": 1565
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "ridafkih/keeper.sh",
+ "repo": "ridafkih/keeper.sh",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Calendar & Contacts",
+   "entry": "Keeper.sh - Calendar syncing tool that pulls and pushes events between calendar sources and destinations via iCal/ICS or OAuth, with support for anonymized busy/free events. (Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Keeper.sh is an AGPL-3.0 calendar syncing tool that pulls events from Google, Outlook, iCloud, Fastmail, CalDAV, or iCal/ICS links and pushes them to other calendars so busy times line up.",
+  "category": "calendar syncing",
+  "keywords": [
+   "calendar sync",
+   "calendar syncing",
+   "calendar aggregation",
+   "google calendar sync",
+   "outlook calendar sync",
+   "icloud calendar sync",
+   "fastmail calendar",
+   "caldav sync",
+   "ical feed",
+   "ics subscription",
+   "ical aggregation",
+   "busy free sync",
+   "anonymized busy events",
+   "mcp server",
+   "model context protocol",
+   "ai agent calendar access",
+   "rest api calendar",
+   "self-hosted calendar sync",
+   "docker calendar",
+   "bun typescript",
+   "postgres redis calendar",
+   "oidc sso calendar",
+   "merge multiple calendars",
+   "sync work and personal calendars",
+   "avoid double booking",
+   "agenda across calendars",
+   "calendar mirror tool"
+  ],
+  "what_it_does": "Keeper.sh reads events from source calendars (Google, Outlook, iCloud, Fastmail, CalDAV, and remote iCal/ICS links) and writes them to destination calendars so time slots align across all of them. Google, Outlook, iCloud, Fastmail and CalDAV can be sources or destinations, while iCal/ICS links are pull-only. Per-source privacy settings can strip event names, descriptions and locations, replacing titles with a calendar or event name template. It tracks mappings so events deleted at the source are removed from destinations, and its cleanup only touches events it created. It also exposes a combined iCal feed, a REST API under /api/v1 authenticated by API tokens, and an MCP server with tools for listing, creating, updating, deleting and RSVPing to events, finding free time, and triggering or pausing sync.",
+  "use_cases": [
+   "combine work, personal and business calendars into one view",
+   "stop meetings overlapping across several calendars",
+   "share busy/free status without event details",
+   "subscribe to one combined iCal feed from any calendar app",
+   "let an AI agent read or manage calendar events via MCP",
+   "self-host a calendar sync service with Docker"
+  ],
+  "how_to_run": [
+   "Self-hosting: run the keeper-standalone:2 Docker image behind a reverse proxy (recommended starting point)",
+   "Generate a .env with BETTER_AUTH_SECRET and ENCRYPTION_KEY using openssl rand -base64 32",
+   "Set TRUSTED_ORIGINS if accessing from a URL other than the configured one",
+   "Optionally set GOOGLE_CLIENT_ID/SECRET and MICROSOFT_CLIENT_ID/SECRET for those integrations",
+   "Development: bun install, generate and trust a local root CA, then bun dev (requires Bun 1.3.11+ and Docker)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Bun",
+   "PostgreSQL",
+   "Redis",
+   "BullMQ",
+   "Caddy",
+   "Docker",
+   "Vite",
+   "better-auth",
+   "Polar (optional billing)",
+   "Resend (optional email)",
+   "OpenTelemetry (optional)"
+  ],
+  "notable": [
+   "Incremental sync for Google and Outlook using provider sync tokens and delta links",
+   "Optional realtime push via WEBHOOK_PUBLIC_URL, with polling as the default",
+   "Deletion tracking via mapping rows so remote copies are removed later; cleanup only touches events Keeper.sh created",
+   "Built-in OIDC SSO support (Authentik, Keycloak, Pocket ID, etc.) and optional disabling of local auth",
+   "Official hosted version at keeper.sh; self-hosting includes all Pro features"
+  ],
+  "caveats": [
+   "Google and Microsoft destinations require you to register your own OAuth apps when self-hosting",
+   "Self-hosting means you handle the server, domain, upgrades, backups and maintenance",
+   "Free hosted tier is limited: 2 linked accounts, 3 sync mappings, 30-minute refresh, 25 API requests per day"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15046,
+  "output": 1539
+ },
+ "generated": "2026-10-29"
+}

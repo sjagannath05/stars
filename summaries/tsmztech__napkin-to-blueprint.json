@@ -1,0 +1,94 @@
+{
+ "id": "tsmztech/napkin-to-blueprint",
+ "repo": "tsmztech/napkin-to-blueprint",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "SDLC",
+   "entry": "napkin-to-blueprint by Tapas Mukherjee - A five-stage pipeline of Claude Code slash commands and specialized subagents that turns a raw product idea into a build-ready blueprint: an interview-driven brief, researched feature definitions, per-feature specs with acceptance criteria, and an architecture with a database schema."
+  }
+ ],
+ "summary": {
+  "one_liner": "n2b (Napkin to Blueprint) is a five-stage pipeline of slash commands and subagents that runs inside Claude Code, Codex, OpenCode, or Cursor and turns a raw product idea into a build-ready product blueprint, without writing application code.",
+  "what_it_does": "Stage 1 interviews the user about the idea and writes a structured project brief, reading any existing notes first. Stage 2 uses researcher, visionary, and synthesizer agents to produce a seven-document product definition (market research, personas, journeys, prioritized feature list, scope, success metrics, assumptions), checked by a completeness audit. Stage 3 writes per-feature specs with verbatim acceptance criteria, run in batches with checkpoints, plus a dependency map and reconciliation log. Stage 4 produces a feasibility analysis, a recommended architecture with documented alternatives, and a database schema. Stage 5 optionally exports the blueprint for targets such as a dev brief, Jira CSV, backlog JSON/CSV, agent workspace, GitHub Spec Kit, PRD for Task Master/BMAD, or prompt packs for Lovable, v0, Bolt, and Replit. An installer (npx) places the commands into the chosen runtime's directory, and a /n2b:status command reports progress and next steps.",
+  "use_cases": [
+   "turn a raw app idea into a product spec before coding",
+   "generate feature specs with acceptance criteria",
+   "create a PRD or architecture doc from an idea",
+   "prepare a handoff package for a dev team or coding agent",
+   "write a Jira backlog from a product idea",
+   "produce prompts for vibe-coding tools like Lovable or Bolt"
+  ],
+  "how_to_run": [
+   "npx napkin-to-blueprint@latest",
+   "npx napkin-to-blueprint@latest --claude",
+   "Restart the runtime, then run /n2b:s1-init (Claude Code form)",
+   "/n2b:s2-define",
+   "/n2b:s3-specify (repeat with --continue until done)",
+   "/n2b:s4-architect, then optionally /n2b:s5-export <target>"
+  ],
+  "stack": [
+   "Node.js (>= 16) for the installer",
+   "Markdown commands, workflows, and agent definitions",
+   "JSON model catalog and config templates",
+   "Claude Code, Codex CLI (>= 0.130.0), OpenCode, or Cursor as host runtime"
+  ],
+  "notable": [
+   "Runs inside existing AI coding agents across four runtimes, with translated command formats per host",
+   "Deliberately stops at the blueprint and does not build the product",
+   "Stage 5 exports to many targets, including Spec Kit, Jira, PRD, and vibe-coding prompt packs, each checked by a fidelity gate",
+   "Smoke mode (--smoke) caps Stage 2 features so the full pipeline can be rehearsed quickly",
+   "Model tier profiles route 16 agent roles to different models per provider"
+  ],
+  "caveats": [
+   "Requires an AI coding runtime (Claude Code, Codex, OpenCode, or Cursor); Codex needs CLI 0.130.0 or later and may need a folder rename for skills",
+   "Stage 3 runs in multiple batches and needs several command invocations, consuming provider quota",
+   "Does not write application code, scaffold projects, or set up databases; output is an input to a build"
+  ],
+  "license": "MIT",
+  "category": "product planning pipeline",
+  "keywords": [
+   "napkin to blueprint",
+   "n2b",
+   "product blueprint",
+   "idea to spec",
+   "claude code slash commands",
+   "claude code subagents",
+   "product requirements document",
+   "prd generator",
+   "feature specification",
+   "acceptance criteria",
+   "architecture generator",
+   "database schema design",
+   "spec driven development",
+   "github spec kit alternative",
+   "task master alternative",
+   "bmad alternative",
+   "jira export",
+   "backlog generator",
+   "vibe coding prompts",
+   "lovable prompt pack",
+   "bolt prompt pack",
+   "v0 prompt pack",
+   "agents md export",
+   "codex skills",
+   "cursor commands",
+   "opencode agents",
+   "validate startup idea",
+   "plan a new app before coding",
+   "turn my app idea into a plan",
+   "write user stories from an idea",
+   "market research for a product idea"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7637,
+  "output": 1512
+ },
+ "generated": "2026-10-29"
+}

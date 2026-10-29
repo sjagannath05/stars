@@ -1,0 +1,92 @@
+{
+ "id": "spieglt/cloaker",
+ "repo": "spieglt/cloaker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "Cloaker - simple drag-and-drop, password-based file encryption."
+  }
+ ],
+ "summary": {
+  "one_liner": "Cloaker is a simple drag-and-drop desktop app for password-based file encryption and decryption, written in pure Rust with an egui GUI.",
+  "what_it_does": "Users drop a file onto the window, set a password, and pick an output location to encrypt it; dropping an encrypted file back in, entering the password, and choosing an output location decrypts it. The file format is libsodium-compatible: XChaCha20-Poly1305 secretstream for the data, with the key derived by crypto_pwhash (Argon2id, interactive limits). Since version 5.0 the implementation is pure Rust (dryoc, RustCrypto argon2 and scrypt), so there is no C library to build. Files are interoperable with earlier Cloaker versions and with Cloaker.js, a mobile/web version the author mentions. The README says the tests check every format against libsodium itself. Builds are produced with cargo build --release, and the README describes packaging as a Windows single .exe, a Mac .app bundle, and a Linux AppImage.",
+  "use_cases": [
+   "encrypt a single file with a password",
+   "decrypt a file encrypted with Cloaker",
+   "share a password-protected file",
+   "simple local file encryption without installing software",
+   "exchange files readable by Cloaker.js or earlier Cloaker versions"
+  ],
+  "how_to_run": [
+   "cd cloaker/gui; cargo build --release",
+   "Run the executable at cloaker/gui/target/release/cloaker (.exe on Windows)",
+   "Optional Linux AppImage: see the linuxdeploy steps in the README"
+  ],
+  "stack": [
+   "Rust",
+   "egui",
+   "dryoc",
+   "RustCrypto argon2",
+   "RustCrypto scrypt",
+   "libsodium-compatible secretstream",
+   "Argon2id"
+  ],
+  "notable": [
+   "Drag-and-drop encryption and decryption with a password, no installation needed on Windows or Mac",
+   "Pure Rust implementation since 5.0, replacing the earlier Qt/C++ GUI, with no C library to build",
+   "File format interoperable with libsodium, earlier Cloaker versions, and Cloaker.js",
+   "Linux AppImage and Mac .app packaging described in the README"
+  ],
+  "caveats": [
+   "Lost or forgotten passwords mean the data cannot be recovered, per the README's data loss disclaimer",
+   "Versions before 4 cannot read files written by 4 or 5",
+   "Decrypting files from Cloaker 1.0 or 1.1 requires the filename to end in .cloaker"
+  ],
+  "license": "unknown",
+  "category": "file encryption tool",
+  "keywords": [
+   "file encryption",
+   "password encryption",
+   "encrypt file with password",
+   "decrypt file",
+   "drag and drop encryption",
+   "simple file encryptor",
+   "cloaker",
+   "rust",
+   "egui",
+   "libsodium",
+   "xchacha20-poly1305",
+   "secretstream",
+   "argon2id",
+   "argon2",
+   "scrypt",
+   "dryoc",
+   "cloaker.js",
+   "password protect file",
+   "encrypt files on mac",
+   "encrypt files on windows",
+   "encrypt files on linux",
+   "appimage",
+   "cross-platform encryption",
+   "file locker",
+   "secure file sharing",
+   "encrypted file format",
+   "crypto_pwhash",
+   "cargo build",
+   "open source encryption utility",
+   "protect document with password",
+   "privacy tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3057,
+  "output": 1242
+ },
+ "generated": "2026-10-29"
+}

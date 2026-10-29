@@ -1,0 +1,93 @@
+{
+ "id": "stefanoginella/aicontainer",
+ "repo": "stefanoginella/aicontainer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "aicontainer by stefanoginella - Sandboxed devcontainer for running Claude Code, Codex, and OpenCode in bypass / auto-approve mode."
+  }
+ ],
+ "summary": {
+  "one_liner": "aicontainer is a devcontainer setup that runs Claude Code, Codex, and OpenCode in bypass/auto-approve mode inside a sandbox so a compromised dependency cannot reach the real home directory, SSH keys, or host credentials.",
+  "what_it_does": "The project directory is the only writable host path, mounted at /workspace; the host home, ~/.ssh, and the SSH agent are not mounted into the container. Host Git and tool preferences are copied through a networkless sanitizer that keeps only allowlisted fields and strips credentials, hooks, statusLine, and Git credential helpers, aliases, and includes. A networkless credential bridge shares login tokens between projects while transcripts, memory, and settings stay per project. The aic CLI validates managed files and the resolved Compose model before Docker starts, and a digest-pinned socket proxy gives no Docker object access by default, with read or read-write as explicit opt-ins. Cloud-metadata and link-local addresses are always blocked, an outbound network allowlist is optional, and a shared PreToolUse hook refuses obvious .env reads, curl-pipe-to-shell, and writes to sandbox control files across all three tools.",
+  "use_cases": [
+   "run Claude Code in auto-approve mode safely",
+   "sandbox AI coding agents from host secrets",
+   "isolate AI coding CLIs per project",
+   "keep .env files and SSH keys away from an AI agent",
+   "use Codex and OpenCode in a devcontainer",
+   "share AI tool logins across multiple projects"
+  ],
+  "how_to_run": [
+   "npm install -g aicontainer",
+   "aic doctor",
+   "aic init",
+   "aic up",
+   "aic shell",
+   "claude"
+  ],
+  "stack": [
+   "Node.js",
+   "Docker Engine 25+",
+   "Docker Compose 2.35+",
+   "devcontainer",
+   "Claude Code",
+   "Codex",
+   "OpenCode"
+  ],
+  "notable": [
+   "Filesystem isolation: only the project directory is writable from the host, with host home and SSH agent kept out of the container",
+   "Three explicit Docker-access modes, with no Docker object access by default",
+   "Sanitized copy of host Git and tool config, with credentials and hooks stripped",
+   "Shared PreToolUse guardrail hook across Claude Code, Codex, and OpenCode",
+   "Compose model validated by aic before Docker starts"
+  ],
+  "caveats": [
+   "Outbound network is mostly open by default; the allowlist is an opt-in",
+   ".env block is best-effort only, so unrecoverable secrets should stay out of the project directory",
+   "Opening an unknown repo's .devcontainer directly in VS Code bypasses aic validation; README advises running aic init --force and reviewing first"
+  ],
+  "license": "MIT",
+  "category": "ai agent sandboxing",
+  "keywords": [
+   "devcontainer",
+   "sandbox",
+   "claude code",
+   "codex",
+   "opencode",
+   "auto-approve",
+   "bypass mode",
+   "ai coding agent",
+   "docker",
+   "docker compose",
+   "container isolation",
+   "run ai agent safely",
+   "protect .env files",
+   "prompt injection protection",
+   "sandbox ai coding tool",
+   "isolate ai assistant",
+   "vs code dev containers",
+   "credential sharing between projects",
+   "network allowlist",
+   "docker socket proxy",
+   "guardrail hook",
+   "pretooluse hook",
+   "node cli",
+   "aic",
+   "dev environment per project",
+   "keep ssh keys from ai",
+   "safe claude code setup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3237,
+  "output": 1285
+ },
+ "generated": "2026-10-29"
+}

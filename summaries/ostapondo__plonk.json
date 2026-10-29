@@ -1,0 +1,102 @@
+{
+ "id": "ostapondo/plonk",
+ "repo": "ostapondo/plonk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Window Management",
+   "entry": "Plonk - Menu bar window manager with snap zones, hotkeys, and saved workspaces that relaunch your apps and put every window back on its monitor; an AI agent can drive it over MCP. [![Open-Source Software][OSS Icon]](https://github.com/ostapondo/plonk) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Plonk - Ten menu bar utilities in one app: a window manager with snap zones you draw yourself, workspaces that reopen your apps on the right monitor, on-device OCR, keep-awake, screenshot annotation, pointer tools and a shortcut guide. An AI agent can drive all of it over MCP."
+  }
+ ],
+ "summary": {
+  "one_liner": "Plonk is a native, local macOS menu bar toolbox (Apple silicon, macOS 13+) bundling window snap zones and saved workspaces with screenshots, on-device OCR, a screen ruler, keep-awake, pointer tools, a shortcut guide, and an MCP server for AI agents.",
+  "what_it_does": "Plonk is a suite of macOS tools behind one menu bar icon, sharing a settings file, shortcuts, a command palette and a local API. The window module lets you draw snap zones, save workspaces that remember each monitor and relaunch apps on the right displays, and move windows by drag, shortcut or voice. The capture side covers region, window and full-screen screenshots with annotation, pinned live crops, and OCR that copies text from screenshots or paused video without uploading. Other modules include a ruler that measures in points and pixels, keep-awake sessions tied to timers or processes, pointer tools, and a shortcut guide that reads the front app's menu shortcuts. Plonk ships an MCP server and a plonk CLI so agents can drive layouts, workspaces, screenshots, OCR and keep-awake, and each module can be switched off. The README says the project is early (version 0.4.x, one author), and the MCP tool names and HTTP API may change between minor versions.",
+  "use_cases": [
+   "arrange windows into custom snap zones on multiple monitors",
+   "save and relaunch a set of apps and documents as a workspace",
+   "copy text from screenshots or videos with on-device OCR",
+   "keep a Mac awake until a build or process finishes",
+   "let an AI agent control window layouts and take screenshots via MCP",
+   "measure interface sizes in points and pixels"
+  ],
+  "how_to_run": [
+   "brew install --cask ostapondo/plonk/plonk",
+   "claude mcp add plonk -- npx -y plonk-mcp",
+   "codex mcp add plonk -- npx -y plonk-mcp",
+   "(cd App && swift build)",
+   "./scripts/build.sh"
+  ],
+  "stack": [
+   "Swift (menu bar app in App/)",
+   "TypeScript (MCP server in mcp/)",
+   "Node.js 18+ (npx plonk-mcp, CLI)",
+   "Model Context Protocol (MCP)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Snap zones are drawn by the user, and workspaces restore each app to the correct monitor",
+   "On-device OCR and voice command recognition, with no cloud upload",
+   "Ships an MCP server, a plonk CLI, and a Claude Code plugin and Claude Desktop bundle",
+   "Each module can be turned off, which removes its shortcuts, menu items and agent tools",
+   "Release binaries come with GitHub build attestations and a SHA-256 file for verification"
+  ],
+  "caveats": [
+   "Apple silicon only; the README says Intel builds are untested",
+   "Releases are signed with a self-made certificate and not notarized, so macOS Gatekeeper needs a manual step or the quarantine flag cleared",
+   "Conflicts with tiling managers such as yabai and Amethyst, which should not run alongside it"
+  ],
+  "license": "MIT",
+  "category": "macos window management",
+  "keywords": [
+   "window manager",
+   "macos window manager",
+   "menu bar app",
+   "snap zones",
+   "window snapping",
+   "tile windows",
+   "workspaces",
+   "save desk layout",
+   "restore apps",
+   "multi monitor",
+   "screenshot tool",
+   "screen capture",
+   "annotate screenshot",
+   "ocr",
+   "copy text from screen",
+   "screen ruler",
+   "measure pixels",
+   "keep awake",
+   "caffeinate alternative",
+   "prevent sleep",
+   "mcp server",
+   "ai agent tools",
+   "claude code plugin",
+   "claude desktop",
+   "codex mcp",
+   "command palette",
+   "shortcut guide",
+   "rectangle alternative",
+   "magnet alternative",
+   "yabai alternative",
+   "amethyst alternative",
+   "swift app",
+   "hotkeys",
+   "voice commands"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6268,
+  "output": 1443
+ },
+ "generated": "2026-10-29"
+}

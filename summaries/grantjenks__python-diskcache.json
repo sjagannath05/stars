@@ -1,0 +1,90 @@
+{
+ "id": "grantjenks/python-diskcache",
+ "repo": "grantjenks/python-diskcache",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Caching",
+   "entry": "diskcache - SQLite and file-backed cache backend, compatible with Django."
+  }
+ ],
+ "summary": {
+  "one_liner": "DiskCache is a pure-Python, Apache2-licensed disk- and file-backed cache library backed by SQLite, with a Django-compatible API.",
+  "what_it_does": "Provides a Cache object that stores key/value pairs in a SQLite database and filesystem directory, and a FanoutCache that shards across multiple caches. A DjangoCache class integrates it with Django's cache framework. Built on those types are Deque and Index, which are cross-process, persistent replacements for collections.deque and dict. The README also lists recipes for cross-process synchronization: memoization with cache stampede prevention, a cross-process Lock, and a throttle decorator. Supports LRU and LFU eviction and tag metadata on keys. Installable with pip and needs no C compiler or separate server process.",
+  "use_cases": [
+   "local caching without running Memcached or Redis",
+   "caching results in a Django web app",
+   "sharing a cache between multiple processes",
+   "persistent dict-like storage on disk",
+   "memoizing expensive function calls with stampede prevention",
+   "cross-process locking or rate throttling"
+  ],
+  "how_to_run": [
+   "pip install diskcache",
+   "from diskcache import Cache, FanoutCache, DjangoCache",
+   "cache = Cache('tmp')",
+   "cache[b'key'] = b'value'"
+  ],
+  "stack": [
+   "Python",
+   "SQLite",
+   "memory-mapped files"
+  ],
+  "notable": [
+   "Pure-Python with no C extension or separate server process",
+   "Django-compatible cache backend via DjangoCache",
+   "Cross-process Deque and Index containers built on the cache",
+   "Built-in recipes for memoize_stampede, Lock, and throttle",
+   "Compared against dbm, shelve, sqlitedict, and pickleDB in README tables"
+  ],
+  "caveats": [
+   "README timing comparisons are rough and self-reported; the README says benchmarks are not a substitute for real measurements",
+   "Tested versions listed are CPython 3.6 through 3.10; README does not state support for later versions"
+  ],
+  "license": "Apache-2.0",
+  "category": "disk-backed caching library",
+  "keywords": [
+   "diskcache",
+   "disk cache",
+   "file-backed cache",
+   "sqlite cache",
+   "python cache library",
+   "pure python cache",
+   "django cache backend",
+   "django cachebackend",
+   "fanoutcache",
+   "sharded cache",
+   "persistent cache",
+   "cross-process cache",
+   "deque",
+   "persistent dict",
+   "index mapping",
+   "memoize",
+   "memoization",
+   "stampede prevention",
+   "cross-process lock",
+   "throttle",
+   "lru eviction",
+   "lfu eviction",
+   "memcached alternative",
+   "redis alternative",
+   "shelve alternative",
+   "sqlitedict alternative",
+   "cache results to disk",
+   "store cache without redis",
+   "share cache between processes",
+   "cache function results in python",
+   "apache2 licensed caching"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7446,
+  "output": 1079
+ },
+ "generated": "2026-10-29"
+}

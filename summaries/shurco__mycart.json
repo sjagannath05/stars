@@ -1,0 +1,98 @@
+{
+ "id": "shurco/mycart",
+ "repo": "shurco/mycart",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "E-commerce",
+   "entry": "myCart ⚠ - Shopping cart in 1 file (with support for payment by card or cryptocurrency). MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "myCart is an MIT-licensed, Go-based shopping cart in a single binary with an embedded SQLite database (PostgreSQL optional), an admin dashboard, and a storefront for selling digital files, license keys, and free products.",
+  "what_it_does": "The project ships as one executable that runs a storefront and an admin panel built with SvelteKit and TailwindCSS. It stores data in SQLite by default or PostgreSQL if chosen at install time, and provides install, migrate, update, and db backup/restore/copy commands. Products can be physical-style items, digital files, or license keys, and products priced at 0 are processed through a built-in Dummy Payment provider. Payment providers documented in the README are Stripe, PayPal, SpectroCoin, and Coinbase Commerce, with webhooks supported. Optional customer accounts let buyers sign in to see orders, re-download files, and view license keys, and the admin panel supports branding uploads, eight interface languages, and product variants.",
+  "use_cases": [
+   "run an online store selling digital downloads",
+   "sell software license keys",
+   "accept card or crypto payments on a small shop",
+   "offer free downloads or samples to collect emails",
+   "self-host a lightweight e-commerce site",
+   "migrate a shop from SQLite to PostgreSQL"
+  ],
+  "how_to_run": [
+   "brew install shurco/tap/mycart",
+   "curl -L | sh",
+   "docker run --rm shurco/mycart:latest init",
+   "docker run --name mycart -p '8080:8080' -v ./lc_base:/lc_base -v ./lc_digitals:/lc_digitals -v ./lc_uploads:/lc_uploads -v ./site:/site shurco/mycart:latest",
+   "./mycart serve"
+  ],
+  "stack": [
+   "Go",
+   "SvelteKit",
+   "TailwindCSS",
+   "SQLite",
+   "PostgreSQL",
+   "Docker",
+   "Nginx",
+   "Vite",
+   "Bun"
+  ],
+  "notable": [
+   "Single-file binary with embedded SQLite by default; no separate database server needed",
+   "Free products (price 0) automatically use a built-in Dummy Payment provider",
+   "Opt-in customer accounts with a buyer cabinet for re-downloading files and viewing license keys",
+   "Hardened sessions with separate keys and cookies for admin and customers, plus same-origin checks",
+   "One-command move of a shop from SQLite to PostgreSQL with dry-run and row-count verification"
+  ],
+  "caveats": [
+   "Version is v0.x and under active development; backward compatibility is not guaranteed before v1.0.0",
+   "The project is being renamed from litecart after a trademark claim, so names and references may change",
+   "SpectroCoin payments are not credited until callback merchant ID and API ID are configured"
+  ],
+  "license": "MIT",
+  "category": "e-commerce shopping cart",
+  "keywords": [
+   "shopping cart",
+   "e-commerce",
+   "online store",
+   "self-hosted store",
+   "digital downloads",
+   "license keys",
+   "sell digital files",
+   "go shopping cart",
+   "sqlite",
+   "postgresql",
+   "stripe",
+   "paypal",
+   "spectrocoin",
+   "coinbase commerce",
+   "crypto payments",
+   "litecart",
+   "docker compose store",
+   "sveltekit admin panel",
+   "free products",
+   "customer accounts",
+   "admin dashboard",
+   "storefront",
+   "payment gateway",
+   "sell software keys",
+   "webhook",
+   "shopify alternative",
+   "woocommerce alternative",
+   "self-hosted ecommerce",
+   "single binary",
+   "multilingual store",
+   "product variants"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14460,
+  "output": 1308
+ },
+ "generated": "2026-10-29"
+}

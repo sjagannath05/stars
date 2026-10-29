@@ -1,0 +1,99 @@
+{
+ "id": "phinn/kinetaios",
+ "repo": "phinn/KinetAios",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "KinetAios - Local-first multi-engine AI agent dashboard: run Claude Code, Codex, and a built-in ReAct engine side by side with shared cross-engine memory, MCP, and 40+ tools."
+  }
+ ],
+ "summary": {
+  "one_liner": "KinetAios is a local-first Electron desktop dashboard for running multiple AI agent sessions on Windows 11 and macOS, across a built-in ReAct engine, Claude Code, Codex, and DeepSeek Harness.",
+  "what_it_does": "Runs many concurrent agent sessions with streaming answers, each with a selectable engine (Direct V1/V2/V3, Claude Code via the claude CLI, Codex via the codex CLI, or DeepSeek Harness via the dsh CLI) and a per-session model. Provides 30+ built-in tools (shell with confirmation, file read/write/edit, grep, glob, web fetch and search, git diff, sub-agents, teams) plus native computer-use actions such as screenshots and mouse/keyboard control. Stores history in SQLite with FTS5 and extracts long-term facts about the user that are shared across engines and sessions. Acts as both an MCP client (auto-discovers configured servers) and an MCP server exposing a run_agent tool over HTTP+SSE. Includes a plugin SDK, pipelines that chain engines, session branching and export, a Git and file browser, and a global hotkey quick panel.",
+  "use_cases": [
+   "run Claude Code and Codex agents side by side in one window",
+   "keep AI chat memory across sessions and engines on my own machine",
+   "automate shell, file editing and web research with an LLM agent",
+   "chain multiple AI engines into a pipeline",
+   "control a desktop with AI screenshots and mouse/keyboard actions",
+   "open a quick AI prompt panel with a global hotkey"
+  ],
+  "how_to_run": [
+   "git clone <repo-url>",
+   "cd KinetAios",
+   "npm install",
+   "npm run build",
+   "npm start"
+  ],
+  "stack": [
+   "Electron",
+   "TypeScript",
+   "Node.js 18+",
+   "better-sqlite3",
+   "SQLite FTS5",
+   "esbuild",
+   "vanilla TypeScript renderer (no framework)",
+   "MCP (Model Context Protocol)",
+   "electron-builder"
+  ],
+  "notable": [
+   "Four agent engines switchable per session, with Pipeline handoff of context between them",
+   "Long-term memory stored locally in SQLite and shared across all engines",
+   "Built-in MCP client and server (run_agent tool, token auth)",
+   "Native computer-use tools (screenshot, window capture, mouse, keyboard) on Windows and macOS",
+   "Plugin SDK with 20+ built-in plugins for tools, slash commands, hooks and panels"
+  ],
+  "caveats": [
+   "Global hotkey only works while the app is running; window close defaults to minimize",
+   "Windows installers must be built on Windows; cross-building from macOS is unreliable",
+   "Builds are unsigned by default, so SmartScreen and Gatekeeper warn until a signing cert and notarization are added",
+   "Requires your own LLM API key; the Claude Code and Codex engines depend on those CLIs being installed"
+  ],
+  "license": "GPL-3.0",
+  "category": "desktop ai agent dashboard",
+  "keywords": [
+   "ai agent dashboard",
+   "local-first ai",
+   "electron app",
+   "claude code gui",
+   "codex desktop",
+   "multi-engine agent",
+   "react agent",
+   "mcp client",
+   "mcp server",
+   "model context protocol",
+   "sqlite long-term memory",
+   "agent memory",
+   "global hotkey quick panel",
+   "computer use",
+   "screenshot automation",
+   "llm api key client",
+   "openai compatible client",
+   "anthropic client",
+   "windows and mac ai app",
+   "run multiple ai chats",
+   "ai pipeline orchestration",
+   "chat with my files",
+   "shell agent",
+   "plugin system",
+   "git diff viewer",
+   "self-hosted ai assistant",
+   "offline chat history",
+   "desktop llm client",
+   "alternative to claude desktop",
+   "alternative to cherry studio",
+   "ai coding assistant desktop"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8884,
+  "output": 1410
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,104 @@
+{
+ "id": "flowpeek/flowpeek",
+ "repo": "FlowPeek/flowpeek",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "FlowPeek - Previews the Mermaid diagram already on screen, read from a selection, the clipboard, the block under the pointer, or a file."
+  }
+ ],
+ "summary": {
+  "one_liner": "FlowPeek is a free, open-source macOS menu-bar app that draws Mermaid diagrams it finds on screen (under the pointer, in a selection, on the clipboard, or in a file) without sending anything off the Mac.",
+  "category": "mermaid diagram viewer",
+  "keywords": [
+   "mermaid",
+   "mermaid diagram",
+   "mermaid viewer",
+   "diagram preview",
+   "macos",
+   "menu bar app",
+   "flowchart viewer",
+   "sequence diagram",
+   "quick look",
+   "quick look extension",
+   "mmd file",
+   "mermaid file preview",
+   "accessibility api",
+   "wkwebview",
+   "render diagram on screen",
+   "preview diagram from clipboard",
+   "terminal diagram",
+   "coding agent output",
+   "vs code diagram",
+   "sublime text plugin",
+   "diagram shelf",
+   "diagram history",
+   "offline renderer",
+   "svg export",
+   "png export",
+   "pdf export",
+   "semantic search diagrams",
+   "view diagram in terminal",
+   "see mermaid rendered",
+   "share diagram as image",
+   "open source diagram tool",
+   "brew cask"
+  ],
+  "what_it_does": "It is a menu-bar app that finds Mermaid source in what is on screen and draws it. You can hold Option and point at a block, copy it to the clipboard, or select it, and it renders the diagram. It also outlines Mermaid blocks printed in Terminal, iTerm2 and Ghostty, including full-screen programs in Ghostty, and reads the caret position in VS Code and the plugin-based integration for Sublime Text. A Quick Look extension previews .mmd and .mermaid files in Finder, and double-clicking one opens a read-only preview window. Every diagram it draws is kept on a searchable \"shelf\" with a text search and a fallback meaning-based search that runs on the Mac. Drawn diagrams can be zoomed, panned, copied as an image, or saved as PNG, PDF or SVG. An optional AI feature, off by default, can write Mermaid from a description using a provider key the user supplies.",
+  "use_cases": [
+   "preview a Mermaid diagram in a pull request or docs page",
+   "see the diagram a coding agent printed in the terminal",
+   "render Mermaid text copied to the clipboard",
+   "preview .mmd files in Finder with Quick Look",
+   "find and reopen a previously drawn diagram",
+   "export a Mermaid diagram as SVG, PNG or PDF"
+  ],
+  "how_to_run": [
+   "brew install --cask flowpeek/tap/flowpeek",
+   "Or download the notarized disk image from the latest release",
+   "Grant Accessibility permission on first launch",
+   "Hold Option and point at a Mermaid block, then press Space",
+   "Or copy or select Mermaid text and use the badge or button that appears",
+   "Build from source: xcodebuild -project FlowPeek.xcodeproj -scheme FlowPeek -derivedDataPath /private/tmp/flowpeek-derived build"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "SwiftUI",
+   "WebKit (WKWebView)",
+   "Mermaid 11.17.2 (vendored)",
+   "Pele 1.7.0 (vendored)",
+   "Sparkle 2.9.2",
+   "Quick Look extension",
+   "macOS Accessibility API",
+   "macOS Keychain",
+   "Xcode 26"
+  ],
+  "notable": [
+   "Reads diagrams already on screen, including ones a coding agent printed into a terminal, with no file written to disk",
+   "Renders offline with bundled Mermaid under a strict CSP; no network request when drawing",
+   "Ghostty support asks the terminal for its grid size with a read-only ioctl to handle full-screen programs",
+   "VS Code and Sublime Text need setup steps (an accessibility setting or an optional plugin) to expose text",
+   "Only Accessibility permission is requested; no Screen Recording or Input Monitoring"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later and the Accessibility permission for most gestures; copying works without it",
+   "VS Code needs Screen Reader Accessibility Mode or editor.accessibilitySupport set to on; Sublime Text needs an optional plugin",
+   "Terminal apps that paint text on a canvas, such as VS Code's integrated terminal, expose no text and cannot be read",
+   "The AI feature needs the user's own provider account and key, and is off until enabled",
+   "Distribution is outside the Mac App Store because App Sandbox is disabled"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8521,
+  "output": 1623
+ },
+ "generated": "2026-10-29"
+}

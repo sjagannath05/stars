@@ -1,0 +1,122 @@
+{
+ "id": "manaflow-ai/cmux",
+ "repo": "manaflow-ai/cmux",
+ "kind": "star",
+ "description": "Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. Built for multitasking, organization, and programmability.",
+ "topics": [
+  "amp",
+  "claude-code",
+  "cli",
+  "codex",
+  "coding-agents",
+  "gemini",
+  "ghostty",
+  "macos",
+  "multiplexer",
+  "multitasking",
+  "opencode",
+  "organization",
+  "parallel-agents",
+  "programmability",
+  "terminal",
+  "terminal-multiplexer",
+  "tmux",
+  "workspace-manager"
+ ],
+ "language": "Swift",
+ "stars": 28588,
+ "license": "NOASSERTION",
+ "homepage": "https://cmux.com",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "desktop",
+  "my stack"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "cmux is a native macOS terminal app built on libghostty that adds vertical workspace tabs, notification rings for AI coding agents, an in-app scriptable browser, and a CLI/socket API.",
+  "category": "macos terminal app",
+  "keywords": [
+   "terminal",
+   "macos terminal",
+   "ghostty",
+   "libghostty",
+   "swift",
+   "appkit",
+   "coding agents",
+   "ai agents",
+   "claude code",
+   "codex",
+   "opencode",
+   "gemini cli",
+   "terminal multiplexer",
+   "tmux alternative",
+   "vertical tabs",
+   "sidebar tabs",
+   "split panes",
+   "workspace manager",
+   "notifications",
+   "osc 9",
+   "osc 777",
+   "agent hooks",
+   "in-app browser",
+   "browser automation",
+   "socket api",
+   "cli",
+   "ssh workspaces",
+   "session restore",
+   "parallel agents",
+   "multitasking",
+   "run multiple ai agents in terminal"
+  ],
+  "what_it_does": "cmux is a macOS terminal application that uses libghostty for rendering and reads the user's existing Ghostty config for themes, fonts, and colors. Its sidebar shows vertical tabs (workspaces) with git branch, linked PR status, working directory, listening ports, and latest notification text. Panes and tabs light up when a coding agent needs attention, driven by terminal escape sequences (OSC 9/99/777) or the `cmux notify` CLI wired into agent hooks. It includes an in-app browser pane with a scriptable API that can snapshot, click, fill forms, and evaluate JavaScript. Everything can be controlled through the cmux CLI and a Unix socket API, and the README describes SSH workspaces, a `cmux claude-teams` command for Claude Code teammate splits, and session restore of layout, directories, scrollback, and browser history.",
+  "use_cases": [
+   "run several Claude Code or Codex sessions in parallel and see which needs input",
+   "replace GUI-less tmux splits with a native macOS terminal",
+   "open remote machines as workspaces over SSH",
+   "let an agent drive and verify a dev server in a browser pane",
+   "restore terminal layout and sessions after relaunching macOS app",
+   "script terminal workspaces from the command line"
+  ],
+  "how_to_run": [
+   "brew tap manaflow-ai/cmux",
+   "brew install --cask cmux",
+   "Or download the .dmg from the releases page and drag cmux to Applications",
+   "cmux hooks setup (optional, to enable agent session resume)"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "libghostty",
+   "Sparkle (auto-update)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Native Swift/AppKit app, not Electron, with libghostty rendering and Ghostty config compatibility",
+   "Notification rings on panes and sidebar unread badges when agents need attention",
+   "Scriptable in-app browser ported from agent-browser, with accessibility snapshots and JS evaluation",
+   "SSH and claude-teams commands that turn remote sessions and Claude Code teammates into native splits",
+   "Session restore with opt-in local tmux/zellij owners and resumable agent sessions via hooks"
+  ],
+  "caveats": [
+   "macOS only; the README says it is not offered on other platforms",
+   "Some features need extra setup: agent hooks for resume, opt-in local tmux, and cmux ssh-tmux/mosh-tmux for persistence across logout or power loss",
+   "Live process state is not preserved across quit; only layout, directories, scrollback, and best-effort resume are restored",
+   "Server components under web/ and relay services use Business Source License 1.1, not GPL; production or self-hosting needs a commercial license",
+   "iOS app is in beta and some features (cloud VMs, cmux AI, voice mode) are Founder's Edition early access"
+  ],
+  "license": "NOASSERTION"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9667,
+  "output": 1438
+ },
+ "generated": "2026-10-29"
+}

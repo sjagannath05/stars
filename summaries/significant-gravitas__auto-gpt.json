@@ -1,0 +1,90 @@
+{
+ "id": "significant-gravitas/auto-gpt",
+ "repo": "Significant-Gravitas/Auto-GPT",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "AutoGPT is a platform for building a team of AI \"Experts\" (specialist agents) that Otto, a coordinating agent, can brief in plain English, with a hosted option and a self-hosted Docker option.",
+  "what_it_does": "The README presents AutoGPT as a system where a coordinating agent named Otto takes a task, brings in specialist Experts (such as Maria for SEO content, Max for sales research, and Frankie for executive assistant work), and returns their results. Each Expert's role can be shaped with instructions, context, skills, and connected apps, and users can create their own. A visual workflow builder lets users define repeatable steps, branch logic, and connect tools, with a marketplace of starter workflows. The README also mentions an API and MCP server for running workflows from code or an AI coding agent. Users can choose which accounts each Expert accesses, set spending controls, and review activity. The repo also contains AutoGPT Classic, the original standalone project, described as living in classic/ under MIT.",
+  "use_cases": [
+   "Delegate content briefs and article drafts to an AI agent",
+   "Research sales prospects and draft outreach emails",
+   "Prepare meeting context and a daily digest with an AI assistant",
+   "Build repeatable automated workflows with a visual builder",
+   "Self-host an AI agent platform on your own infrastructure",
+   "Run agent workflows from code or an AI coding agent via API/MCP"
+  ],
+  "how_to_run": [
+   "docker run -d --name autogpt --restart unless-stopped --shm-size 2g --ulimit nofile=65536:65536 --log-driver json-file --log-opt max-size=50m --log-opt max-file=5 -p 127.0.0.1:3000:3000 -e AUTOGPT_PUBLIC_URL= -v autogpt-data:/data significantgravitas/autogpt:latest",
+   "Wait a few minutes for first boot, then open the web UI and create an account.",
+   "docker exec autogpt autogpt-admin promote you@example.com",
+   "Read the single-container self-hosting guide for requirements, ports, model providers, backups, and upgrades.",
+   "Alternatively, use the one-command installer on Linux, macOS, or Windows (per README).",
+   "For Docker Compose or source development, follow the manual self-hosting guide and autogpt_platform/ docs."
+  ],
+  "stack": [
+   "Docker",
+   "Docker Hub image (significantgravitas/autogpt)",
+   "Docker Compose (manual self-hosting)"
+  ],
+  "notable": [
+   "Otto coordinator agent that delegates work across specialist Experts and reports back",
+   "Visual workflow builder with blocks, branching, and a workflow marketplace",
+   "API and MCP server for driving workflows from code or AI coding agents",
+   "Split licensing: autogpt_platform/ under Polyform Shield, classic/ under MIT"
+  ],
+  "caveats": [
+   "The hosted Platform is a paid service with plans and usage pricing; self-hosting requires your own model credentials or a local model and infrastructure management",
+   "Platform license (Polyform Shield) forbids selling it as a competing hosted service",
+   "Self-hosting requires managing updates, operations, and backups yourself"
+  ],
+  "license": "Mixed: Polyform Shield for autogpt_platform/, MIT for classic/ and everything else",
+  "category": "AI agent platform",
+  "keywords": [
+   "autogpt",
+   "ai agents",
+   "ai agent platform",
+   "multi-agent",
+   "ai experts",
+   "agent orchestration",
+   "workflow builder",
+   "visual workflow builder",
+   "docker self-host",
+   "self-hosted ai agents",
+   "docker compose",
+   "mcp server",
+   "api for agents",
+   "seo content automation",
+   "sales prospect research",
+   "executive assistant ai",
+   "email drafts automation",
+   "recurring ai tasks",
+   "routines automation",
+   "hosted ai agent service",
+   "polyform shield",
+   "mit license",
+   "autogpt classic",
+   "delegate work to ai",
+   "run ai team in plain english",
+   "automate content briefs",
+   "automate sales outreach",
+   "build my own ai agent",
+   "ai coding agent integration"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3264,
+  "output": 1493
+ },
+ "generated": "2026-10-29"
+}

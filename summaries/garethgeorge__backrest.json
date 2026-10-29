@@ -1,0 +1,96 @@
+{
+ "id": "garethgeorge/backrest",
+ "repo": "garethgeorge/backrest",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Backup",
+   "entry": "Backrest | Web UI and orchestrator for restic backups"
+  }
+ ],
+ "summary": {
+  "one_liner": "Backrest is a web UI and background orchestrator built on top of the restic backup tool, for creating repos, scheduling snapshots, and browsing or restoring files.",
+  "what_it_does": "Backrest wraps the restic CLI in a WebUI for creating repositories, browsing snapshots, and restoring files. It can run in the background to schedule snapshots and run repo maintenance operations such as prune, check, and forget on a cron-style schedule. It can import existing restic repositories and supports pre/post backup shell command hooks. Notifications are configurable for Discord, Slack, Shoutrrr, Gotify, and Healthchecks. Storage can be any restic backend (S3, B2, Azure, GCS, local, SFTP) or any rclone remote. It is distributed as a standalone Go binary that needs restic, which it downloads automatically if not present.",
+  "use_cases": [
+   "Scheduled backups of home or NAS data",
+   "Browsing and restoring files from restic snapshots",
+   "Managing existing restic repositories through a web interface",
+   "Backing up to S3, B2, SFTP, or rclone remotes",
+   "Getting backup success or failure notifications via Discord, Slack, or Gotify",
+   "Running backups in Docker or on a NAS"
+  ],
+  "how_to_run": [
+   "curl -fsSL <install script URL> | bash",
+   "curl -fsSL <install script URL> | bash -s -- --allow-remote-access",
+   "brew tap garethgeorge/homebrew-backrest-tap && brew install backrest && brew services start backrest",
+   "docker run via the Docker Compose example using image ghcr.io/garethgeorge/backrest:latest on port 9898",
+   "Build: (cd webui && pnpm i && pnpm run build) then (cd cmd/backrest && go build .)"
+  ],
+  "stack": [
+   "Go",
+   "restic",
+   "TypeScript",
+   "Node.js",
+   "pnpm",
+   "protobuf / buf",
+   "rclone",
+   "Docker",
+   "Nix"
+  ],
+  "notable": [
+   "Web UI wraps restic while still allowing direct restic CLI access for advanced use",
+   "Single lightweight binary; restic is downloaded automatically if not installed",
+   "Opinionated cron-style scheduling of snapshots and repo health operations",
+   "Works with all restic storage backends and any rclone remote",
+   "Runs on Linux, macOS, Windows, FreeBSD, and Docker"
+  ],
+  "caveats": [
+   "Windows and macOS have extra setup steps, such as granting Full Disk Access on macOS",
+   "The Arch AUR package is third-party and not maintained by the Backrest project",
+   "Default bind is localhost only; remote access requires changing BACKREST_PORT or using the --allow-remote-access flag"
+  ],
+  "license": "unknown",
+  "category": "self-hosted backup tool",
+  "keywords": [
+   "backrest",
+   "restic",
+   "restic web ui",
+   "backup web interface",
+   "backup scheduler",
+   "restic gui",
+   "web-based backup",
+   "backup orchestrator",
+   "snapshot browser",
+   "restore files from snapshot",
+   "rclone backup",
+   "s3 backup",
+   "b2 backup",
+   "sftp backup",
+   "nas backup",
+   "docker backup",
+   "self-hosted backup",
+   "cron backups",
+   "prune and check repos",
+   "backup notifications",
+   "discord backup alerts",
+   "gotify notifications",
+   "encrypted backups",
+   "back up my files to cloud storage",
+   "schedule backups on a server",
+   "backup to a nas",
+   "go backup binary",
+   "pre backup hooks",
+   "alternative to restic cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5114,
+  "output": 1310
+ },
+ "generated": "2026-10-29"
+}

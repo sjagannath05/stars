@@ -1,0 +1,103 @@
+{
+ "id": "mudler/localai",
+ "repo": "mudler/LocalAI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Generative Artificial Intelligence (GenAI)",
+   "entry": "LocalAI - Run your AI models locally and generate images and audio (alternative to OpenAI and Claude). (Source Code, Clients) MIT Docker/K8S"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "AI & LLMs",
+   "entry": "LocalAI | Drop-in OpenAI API replacement for running LLMs, image and audio models on your own hardware"
+  }
+ ],
+ "summary": {
+  "one_liner": "LocalAI is an open-source, self-hostable OpenAI/Anthropic/ElevenLabs-compatible AI engine that runs LLMs, vision, voice, image and video models on your own hardware.",
+  "what_it_does": "LocalAI serves text generation, speech-to-text, text-to-speech, image, video, embeddings, reranking and object detection models behind one API that mimics OpenAI, Anthropic and ElevenLabs endpoints. Backends (such as llama.cpp, vLLM, whisper.cpp, stable-diffusion, MLX) are separate OCI images pulled on demand when a model needs them. Models can be loaded from the model gallery, Hugging Face, the Ollama registry, YAML configs or standard OCI registries. The README also describes multi-user features (API key auth, quotas, roles), built-in agents with tool use, RAG and MCP, a Realtime speech-to-speech API, distributed mode with PostgreSQL and NATS, and a built-in WebUI. Hardware acceleration is listed for NVIDIA CUDA, AMD ROCm, Intel oneAPI, Apple Silicon Metal, Vulkan and CPU-only. The project also maintains several native C/C++/GGML backends.",
+  "use_cases": [
+   "run open-weight LLMs locally behind an OpenAI-compatible API",
+   "self-host speech-to-text and text-to-speech services",
+   "generate images or video on your own GPU",
+   "swap OpenAI API calls to a private local endpoint",
+   "run a multi-user private AI server with API keys and quotas",
+   "build RAG or tool-using agents against local models"
+  ],
+  "how_to_run": [
+   "docker run -ti --name local-ai -p 8080:8080 localai/localai:latest  (CPU only)",
+   "docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-gpu-nvidia-cuda-12  (NVIDIA CUDA 12)",
+   "docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-gpu-vulkan  (Vulkan GPU)",
+   "local-ai run llama-3.2-1b-instruct:q4_k_m  (load a model from the gallery)",
+   "local-ai run huggingface://TheBloke/phi-2-GGUF/phi-2.Q8_0.gguf  (load a model from Hugging Face)"
+  ],
+  "stack": [
+   "Go (local-ai CLI and server)",
+   "C/C++",
+   "llama.cpp",
+   "vLLM",
+   "whisper.cpp",
+   "stable-diffusion",
+   "MLX",
+   "Docker / OCI images",
+   "PostgreSQL and NATS (distributed mode)"
+  ],
+  "notable": [
+   "Modular backends: each engine ships as its own image and is pulled only when a model needs it",
+   "Drop-in compatibility with OpenAI, Anthropic and ElevenLabs APIs, plus an Ollama-compatible API per the news section",
+   "Native C/C++/GGML backends maintained by the project (e.g. parakeet.cpp, vllm.cpp, face-detect.cpp)",
+   "Covers many modalities (LLM, vision, voice, image, video, 3D, detection) behind one API",
+   "Runs on NVIDIA, AMD, Intel, Apple Silicon, Vulkan or CPU-only hardware"
+  ],
+  "caveats": [
+   "The macOS DMG is not signed by Apple and needs a quarantine-removal command after install",
+   "Feature-rich project with a large surface; the README lists 60+ backends and many optional components that each need their own setup",
+   "Some listed features (vllm.cpp) are described as alpha development builds"
+  ],
+  "license": "MIT",
+  "category": "local llm inference server",
+  "keywords": [
+   "local ai",
+   "self-hosted llm",
+   "openai alternative",
+   "openai-compatible api",
+   "drop-in openai replacement",
+   "run llms locally",
+   "local model server",
+   "llama.cpp",
+   "whisper.cpp",
+   "stable diffusion",
+   "image generation",
+   "text to speech",
+   "speech to text",
+   "transcription server",
+   "embeddings api",
+   "reranker",
+   "vision api",
+   "realtime api",
+   "mcp model context protocol",
+   "rag agents",
+   "docker llm",
+   "gpu inference",
+   "nvidia cuda",
+   "amd rocm",
+   "apple silicon mlx",
+   "vulkan inference",
+   "private ai on my own hardware",
+   "ollama alternative",
+   "anthropic api compatible",
+   "multi-user ai server",
+   "self-host ai models"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8097,
+  "output": 1586
+ },
+ "generated": "2026-10-29"
+}

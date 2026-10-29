@@ -1,0 +1,97 @@
+{
+ "id": "johnwarne/upvote-rss",
+ "repo": "johnwarne/upvote-rss",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Feed Readers",
+   "entry": "Upvote RSS ⚠ - Generate rich RSS feeds from Reddit, Hacker News, Lemmy, Mbin, and more. (Demo, Source Code) MIT Docker/PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Upvote RSS is a self-hostable PHP web app that generates RSS feeds of popular posts from Reddit, Hacker News, Lemmy, Lobste.rs, PieFed, Mbin, and GitHub.",
+  "what_it_does": "It builds RSS feeds from the most popular posts on social aggregation sites, with filters such as score, a threshold based on recent hot posts, or a target number of posts per day. Feeds can include embedded media (videos, galleries, images), parsed article content with featured images, estimated reading time, score, and permalinks. Optional top comments can be added, with an option to filter pinned moderator comments. Reddit feeds can also filter or blur NSFW posts and use a custom Reddit domain. Optional AI summaries are supported via Ollama, OpenAI, Google Gemini, Anthropic, Mistral, DeepSeek, or any OpenAI-compatible provider. A web front end previews the feed and gives a URL to paste into a feed reader.",
+  "use_cases": [
+   "Follow popular Reddit subreddits at a low volume in an RSS reader",
+   "Get top Hacker News or Lobsters posts as a daily feed",
+   "Subscribe to Lemmy, PieFed, or Mbin communities via RSS",
+   "Track trending GitHub repositories by language or topic",
+   "Add AI-generated article summaries to a feed reader",
+   "Limit feed size to a fixed number of posts per day"
+  ],
+  "how_to_run": [
+   "docker run -d --restart unless-stopped -p 8675:80 ghcr.io/johnwarne/upvote-rss:latest",
+   "Or with docker compose: use image ghcr.io/johnwarne/upvote-rss:latest, map port 8675:80, and optionally set REDDIT_USER, REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET",
+   "Manual: clone the repository with PHP >= 8.2 installed and open index.php in a browser",
+   "Optionally create a .env file in the root directory to set environment variables such as Redis, Ollama, or OpenAI settings"
+  ],
+  "stack": [
+   "PHP >= 8.2",
+   "Docker",
+   "Readability.php",
+   "Predis",
+   "Monolog",
+   "Readability.js (optional)",
+   "Mercury Parser (optional)",
+   "Browserless (optional)",
+   "Redis (optional)",
+   "APCu (optional)"
+  ],
+  "notable": [
+   "Filters by posts-per-day target, so feed volume stays predictable",
+   "Supports many platforms, including Lemmy, PieFed, and Mbin, in addition to Reddit and Hacker News",
+   "Multiple AI summary providers with a fallback order",
+   "Reddit access needs a user-created Reddit app, since Reddit's API policies require it",
+   "Filesystem, Redis, and APCu caching options"
+  ],
+  "caveats": [
+   "Reddit subreddit lookup requires Reddit API credentials set through environment variables",
+   "Author states the project is intended to be low-maintenance with limited free time for updates",
+   "Feed generation can be slow, especially when article content and AI summaries are both enabled; the README suggests raising MAX_EXECUTION_TIME"
+  ],
+  "license": "MIT",
+  "category": "rss feed generation",
+  "keywords": [
+   "rss feed generator",
+   "reddit rss",
+   "hacker news rss",
+   "lemmy rss",
+   "lobsters rss",
+   "github trending rss",
+   "mbin",
+   "piefed",
+   "self-hosted feed reader",
+   "feed reader",
+   "rss reader",
+   "subreddit to rss",
+   "popular posts feed",
+   "posts per day filter",
+   "ai article summary",
+   "ollama summaries",
+   "openai summaries",
+   "docker rss",
+   "php rss app",
+   "readability parser",
+   "mercury parser",
+   "reddit api feed",
+   "nsfw filter feed",
+   "top comments in rss",
+   "low volume social feed",
+   "follow subreddit in rss reader",
+   "aggregate feed",
+   "daily digest feed",
+   "redis cache",
+   "self-hosted rss"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7745,
+  "output": 1463
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,85 @@
+{
+ "id": "jech/galene",
+ "repo": "jech/galene",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Video Conferencing",
+   "entry": "Galene - Video conferencing server that is easy to deploy and that requires moderate server resources. (Source Code) MIT Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "Galene is a self-hostable videoconferencing server written in Go, designed to be easy to deploy and to need only moderate server resources.",
+  "what_it_does": "Galene is a videoconferencing system that the README describes as fully featured, easy to deploy, and light on server resources. The quick start builds a single Go binary with CGO disabled, creates a groups directory, and writes a JSON group file that defines users, passwords and permissions (for example \"op\" for operator). After starting the ./galene process, users open the server in a browser and log in with a configured username and password. The README points to separate documents covering full installation, usage and administration, writing clients, the client protocol, and an administrative API. Contribution is through the project's mailing list or GitHub pull requests, and the author asks that general discussion happen on the mailing list rather than GitHub.",
+  "use_cases": [
+   "self-hosted video conferencing",
+   "running a video meeting server for a small group",
+   "hosting video calls on modest hardware",
+   "setting up group-based video rooms with user permissions",
+   "building a custom videoconferencing client against a server protocol"
+  ],
+  "how_to_run": [
+   "git clone <repository URL from README>",
+   "cd galene",
+   "CGO_ENABLED=0 go build -ldflags='-s -w'",
+   "mkdir groups",
+   "echo '{\"users\": {\"vimes\": {\"password\":\"sybil\", \"permissions\":\"op\"}}}' > groups/night-watch.json",
+   "./galene &"
+  ],
+  "stack": [
+   "Go",
+   "JavaScript (browser client, implied by client documentation)"
+  ],
+  "notable": [
+   "Single Go binary built with a plain go build command and CGO disabled",
+   "Groups defined as JSON files with per-user passwords and permissions",
+   "Separate documentation for installation, administration, client writing, protocol, and admin API",
+   "Designed to require moderate server resources"
+  ],
+  "caveats": [
+   "Quick start serves a self-signed certificate, so browsers show an unknown certificate warning",
+   "The quick start uses a sample demo account with a weak password that must be changed for real use",
+   "Full installation details are in a separate document (galene-install.md), not in this README"
+  ],
+  "license": "MIT",
+  "category": "video conferencing server",
+  "keywords": [
+   "videoconferencing",
+   "video conferencing server",
+   "self-hosted video calls",
+   "video meeting software",
+   "go videoconferencing",
+   "webrtc",
+   "galene",
+   "group video calls",
+   "low resource video server",
+   "lightweight video conferencing",
+   "alternative to zoom",
+   "alternative to jitsi",
+   "host my own video meetings",
+   "run video chat on my server",
+   "multi-user video rooms",
+   "user permissions for meetings",
+   "admin api",
+   "client protocol",
+   "single binary server",
+   "go build",
+   "mailing list contribution",
+   "self-signed certificate",
+   "video chat for small group",
+   "private video calls",
+   "onprem video conferencing",
+   "moderate server resources"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1929,
+  "output": 1091
+ },
+ "generated": "2026-10-29"
+}

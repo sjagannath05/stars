@@ -1,0 +1,89 @@
+{
+ "id": "docat-org/docat",
+ "repo": "docat-org/docat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "DOCAT - Host your docs. Simple. Versioned. Fancy. MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "DOCAT is a self-hostable server for publishing multiple versioned documentation projects, such as mkdocs or sphinx builds, side by side.",
+  "what_it_does": "Docat hosts several documentation projects, each with multiple versions, so readers can open older versions of docs. It does not write documentation; it only serves output from generators like mkdocs, sphinx, or mdbook. A CLI tool called docatl and plain curl calls can upload docs, for example by pushing a folder under a project name and version and tagging it as latest. A project can be claimed, which returns a token required to add or delete versions. The README recommends putting HTTP basic auth in front of POST, PUT, and DELETE calls by customizing the bundled NGINX config. The frontend header and footer can be customized through a config.json file, and the maximum upload size is set with MAX_UPLOAD_SIZE.",
+  "use_cases": [
+   "host versioned documentation for multiple projects",
+   "serve older versions of mkdocs or sphinx docs",
+   "publish internal documentation sites for a team",
+   "upload documentation builds from CI with curl or docatl",
+   "password-protect a documentation upload API with basic auth"
+  ],
+  "how_to_run": [
+   "mkdir -p docat-run/doc",
+   "docker run --detach --volume $PWD/docat-run:/var/docat/ --publish 8000:80 ghcr.io/docat-org/docat",
+   "Open localhost:8000 to view the instance",
+   "docatl push --host ./docs PROJECT VERSION --tag latest"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "NGINX",
+   "docatl CLI",
+   "React frontend (web/, yarn)",
+   "uv"
+  ],
+  "notable": [
+   "Serves multiple versions of multiple documentation projects from one instance",
+   "Works with the output of any static doc generator; it does not write docs itself",
+   "Project claim tokens control who can add or delete versions",
+   "Ships as a Docker image with optional volumes for persistent state",
+   "Frontend header and footer customizable via config.json"
+  ],
+  "caveats": [
+   "By default anyone can upload or add versions; basic auth must be configured manually for public hosting",
+   "Authentication setup requires custom NGINX configuration and a .htpasswd file",
+   "Upload size defaults to 100M and is limited by the MAX_UPLOAD_SIZE setting"
+  ],
+  "license": "MIT",
+  "category": "self-hosted documentation hosting",
+  "keywords": [
+   "documentation hosting",
+   "versioned docs",
+   "host documentation",
+   "self-hosted docs",
+   "docs server",
+   "multi-version documentation",
+   "mkdocs hosting",
+   "sphinx hosting",
+   "mdbook hosting",
+   "static docs site",
+   "docatl",
+   "docker documentation server",
+   "http basic auth",
+   "nginx docs",
+   "upload docs via curl",
+   "project token claim",
+   "documentation versions",
+   "publish docs for team",
+   "host old doc versions",
+   "docs portal",
+   "python docs server",
+   "docker container docs",
+   "config.json header footer",
+   "max upload size",
+   "documentation archive server",
+   "versioned documentation portal",
+   "internal documentation site"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3051,
+  "output": 1161
+ },
+ "generated": "2026-10-29"
+}

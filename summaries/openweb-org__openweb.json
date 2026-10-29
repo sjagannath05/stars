@@ -1,0 +1,94 @@
+{
+ "id": "openweb-org/openweb",
+ "repo": "openweb-org/openweb",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "OpenWeb by openweb-org - An agent-native skill that accesses 90+ websites by calling their underlying APIs directly (typed JSON in, JSON out) instead of screenshotting and parsing the DOM, with auth auto-resolved locally from your existing browser session. Security is first-class — every operation is tagged read/write/delete/transact behind permission tiers, SSRF protection runs on each request, a"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenWeb is an agent-native tool that accesses 90+ websites by calling their underlying APIs directly and returning structured JSON, instead of driving the browser DOM.",
+  "what_it_does": "It packages each website as a self-contained spec-driven site package (manifest, OpenAPI spec, adapters, examples, and agent-facing docs). The runtime builds each request, resolves auth (cookies, JWT, CSRF, signing) from the user's existing browser session, and dispatches it over HTTP, browser-backed fetch, SSR extraction, or WebSocket depending on the operation. Operations are typed with params, response schemas, and examples. Each operation is tagged read, write, delete, or transact, and permission tiers gate the non-read ones. SSRF protection is applied to each request. It is used via a CLI (npx @openweb-org/openweb) or as an agent skill, and the README describes a discovery workflow for adding new sites.",
+  "use_cases": [
+   "query website data as structured JSON without screenshots",
+   "automate read-only lookups across social, shopping, or news sites",
+   "give an AI agent access to websites through their APIs",
+   "add a new website as an agent-callable API",
+   "gate write, delete, or purchase actions behind permissions"
+  ],
+  "how_to_run": [
+   "npx @openweb-org/openweb sites",
+   "npx @openweb-org/openweb wikipedia getPageSummary '{\"title\":\"World_Wide_Web\"}'",
+   "npm install -g @openweb-org/openweb",
+   "openweb sites",
+   "pnpm install && pnpm build",
+   "pnpm test && pnpm lint"
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "pnpm",
+   "Chrome DevTools Protocol",
+   "OpenAPI (openapi.yaml)",
+   "JavaScript"
+  ],
+  "notable": [
+   "Transport is chosen automatically per operation: direct HTTP, browser-backed fetch, SSR, or adapter/intercept",
+   "Auth is resolved locally from the existing browser session; no tokens handled by the caller",
+   "Each operation is tagged read/write/delete/transact with permission tiers",
+   "Agent-driven workflow to discover and add new sites, with 90+ built in",
+   "Packages declare auth and transport via x-openweb extensions in the OpenAPI spec"
+  ],
+  "caveats": [
+   "Tested on macOS with Google Chrome; Linux only lightly tested and Windows not yet tested",
+   "Requires Chrome installed",
+   "Write and delete operations need permission config, and sites may rate-limit or ban accounts that automate against them"
+  ],
+  "license": "MIT",
+  "category": "agent web api access",
+  "keywords": [
+   "web api access",
+   "agent tooling",
+   "structured json",
+   "browser automation alternative",
+   "direct api calls",
+   "dom scraping alternative",
+   "ai agent website access",
+   "claude code skill",
+   "cli website client",
+   "session cookie auth",
+   "csrf handling",
+   "ssrf protection",
+   "permission tiers",
+   "typed api",
+   "openapi spec",
+   "browser-backed fetch",
+   "headless chrome cdp",
+   "reduce llm tokens",
+   "scrape without screenshots",
+   "call website api from terminal",
+   "add website to agent",
+   "website wrapper",
+   "read write delete transact",
+   "social media api cli",
+   "shopping site api",
+   "npm cli tool",
+   "typescript",
+   "pnpm monorepo",
+   "access websites as json",
+   "agent skill install"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4817,
+  "output": 1216
+ },
+ "generated": "2026-10-29"
+}

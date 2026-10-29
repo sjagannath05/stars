@@ -1,0 +1,96 @@
+{
+ "id": "kanaka/mal",
+ "repo": "kanaka/mal",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Programming Language",
+   "entry": "(any): _mal - Make a Lisp_"
+  },
+  {
+   "list": "charlax/professional-programming",
+   "section": "Compilers",
+   "entry": "kanaka/mal: mal - Make a Lisp"
+  }
+ ],
+ "summary": {
+  "one_liner": "mal (Make a Lisp) is a Clojure-inspired Lisp interpreter built as a learning tool, implemented in dozens of host languages across 11 incremental steps.",
+  "what_it_does": "The repository contains mal, a Clojure-inspired Lisp, implemented separately in 89 languages (95 implementations, 118 runtime modes) under impls/. Each implementation is split into 11 incremental, testable steps (step0_repl through stepA_mal) that introduce core Lisp concepts such as read/print, eval, environments, if/fn/do, tail-call optimization, file loading, quoting, macros, and try/catch. The final step is self-hosting, meaning mal can run its own mal implementation. A shared test suite of almost 800 functional tests in tests/ can be run against any implementation, and the top-level Makefile provides targets for REPLs, performance tests, language statistics, and Docker-based runs. Several related projects are listed, including a Mal-to-LLVM compiler, a Tiny C Compiler backend, and a Mal-to-Python compiler.",
+  "use_cases": [
+   "learn how interpreters and Lisp evaluators work",
+   "step-by-step tutorial for writing a Lisp in another language",
+   "compare language implementations side by side",
+   "run a small Clojure-style Lisp REPL",
+   "test an interpreter against a shared functional test suite",
+   "study self-hosting language design"
+  ],
+  "how_to_run": [
+   "make DOCKERIZE=1 \"repl^IMPL^stepX\"",
+   "make DOCKERIZE=1 \"repl^IMPL\"  (uses stepA by default)",
+   "cd impls/IMPL && make  (then run ./stepX_YYY, language-specific)",
+   "make \"test^IMPL^stepX\"  (e.g. make \"test^ruby^step3\")",
+   "make \"test^IMPL\" to test one implementation, or make test for all"
+  ],
+  "stack": [
+   "Clojure-inspired Lisp language spec",
+   "Many host languages including Ada, C, C++, Go, Haskell, Java, JavaScript/Node, Python, Ruby, Rust, Swift, WebAssembly (Wam)",
+   "Make",
+   "Docker",
+   "Python test harness (runtest.py)",
+   "readline/libedit/linenoise (optional line editing)"
+  ],
+  "notable": [
+   "Same Lisp implemented in 89 languages, each with the same 11 incremental steps",
+   "Self-hosting: the final step can run mal's own mal implementation",
+   "Shared test suite of almost 800 functional tests across all implementations",
+   "Docker images per implementation for building and testing without local toolchains",
+   "Includes a Clojure-flavoured PHP project (frock) and a Mal-to-LLVM compiler among related projects"
+  ],
+  "caveats": [
+   "Runtime performance is explicitly not a primary goal; the performance tests are described as neither statistically valid nor comprehensive",
+   "Some implementations need specific or proprietary tooling: MATLAB is commercial, the Q implementation needs a manual download and is kept separately, and Swift 2 is no longer easily buildable",
+   "Several implementations are tied to old toolchain versions (e.g. Julia 0.4, Clojure 1.5, Python2) and may not build on current systems"
+  ],
+  "license": "MPL 2.0 (Mozilla Public License 2.0)",
+  "category": "lisp interpreter tutorial",
+  "keywords": [
+   "mal",
+   "make a lisp",
+   "lisp interpreter",
+   "clojure-inspired lisp",
+   "interpreter tutorial",
+   "build your own lisp",
+   "make-a-lisp",
+   "self-hosting",
+   "tail-call optimization",
+   "macros",
+   "lisp in many languages",
+   "compiler learning",
+   "language implementation",
+   "repl",
+   "functional test suite",
+   "step-by-step interpreter",
+   "learn interpreters",
+   "write a programming language",
+   "scheme-like lisp",
+   "lisp evaluator",
+   "mpl 2.0",
+   "polyglot implementations",
+   "lisp repl docker",
+   "teach lisp internals",
+   "interpreter comparison across languages",
+   "lisp tutorial",
+   "how to write an interpreter"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15093,
+  "output": 1515
+ },
+ "generated": "2026-10-29"
+}

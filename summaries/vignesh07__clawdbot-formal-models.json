@@ -1,0 +1,82 @@
+{
+ "id": "vignesh07/clawdbot-formal-models",
+ "repo": "vignesh07/clawdbot-formal-models",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Security",
+   "entry": "clawdbot-formal-models — TLA+ security models"
+  }
+ ],
+ "summary": {
+  "one_liner": "A regression suite of TLA+ security models for Clawdbot, checked with the TLC model checker, where \"green\" models should pass and deliberately buggy \"red\" models should produce counterexample traces.",
+  "what_it_does": "The repo holds TLA+ specifications under tla/specs and TLC model configs under tla/models, with a make target to run a chosen model. Green models are expected to pass with no invariant violation, while red models are intentionally buggy variants that should fail and emit a counterexample trace. A docs folder covers how to interpret results, a claim inventory, and a verification roadmap. It also includes a conformance step: a script (scripts/extract-tool-groups.mjs) reads tool-group expansions and tool-name aliases from the Clawdbot main repo's tool-policy.ts and writes generated/tool-groups.json. The README says CI currently runs TLC targets directly, and a planned mode would check that generated artifacts do not drift from the main repo.",
+  "use_cases": [
+   "Model-checking security properties of Clawdbot agent tool policies",
+   "Running TLC regression checks on TLA+ security specs",
+   "Verifying that formal models match Clawdbot's tool-group constants",
+   "Demonstrating security bugs via counterexample traces",
+   "Reviewing documented security claims and verification roadmap"
+  ],
+  "how_to_run": [
+   "Install Java 11+ (Java 21 recommended)",
+   "make <target>  (run a specific TLC target; see docs/formal-models.md for the recommended run set)",
+   "node scripts/extract-tool-groups.mjs  (regenerate generated/tool-groups.json; expects the Clawdbot repo checked out at ../clawdbot)"
+  ],
+  "stack": [
+   "TLA+",
+   "TLC model checker",
+   "Java",
+   "Node.js (extraction script)"
+  ],
+  "notable": [
+   "Green/red model pairing: red variants are deliberately buggy and should produce counterexample traces",
+   "Conformance checks extract tool-group and alias constants from the Clawdbot TypeScript source",
+   "Pinned tla2tools.jar shipped in tools/tla for reproducible runs",
+   "Structured as a security regression suite rather than a one-off proof"
+  ],
+  "caveats": [
+   "Requires Java and a local TLC setup; the conformance script expects a sibling clawdbot checkout at ../clawdbot",
+   "Conformance drift checking in CI is described as planned, not yet implemented",
+   "README lists open fidelity gaps: pairing-store concurrency/locking, provider-specific ingress nuances, routing identity-link semantics"
+  ],
+  "license": "unknown",
+  "category": "formal verification security",
+  "keywords": [
+   "tla+",
+   "tlc model checker",
+   "formal verification",
+   "formal methods",
+   "security models",
+   "model checking",
+   "counterexample trace",
+   "invariant checking",
+   "security regression suite",
+   "clawdbot",
+   "agent tool policy",
+   "tool groups",
+   "tool-policy conformance",
+   "java tla2tools",
+   "specification testing",
+   "red green models",
+   "threat model",
+   "verify security properties",
+   "check my security design",
+   "formal spec for ai agent",
+   "prove invariants",
+   "find security bugs in design",
+   "tlc counterexamples",
+   "distributed protocol verification"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2140,
+  "output": 1164
+ },
+ "generated": "2026-10-29"
+}

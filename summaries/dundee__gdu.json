@@ -1,0 +1,106 @@
+{
+ "id": "dundee/gdu",
+ "repo": "dundee/gdu",
+ "kind": "star",
+ "description": "Fast disk usage analyzer with console interface written in Go",
+ "topics": [
+  "cli",
+  "disk-usage",
+  "filesystem",
+  "golang",
+  "hacktoberfest"
+ ],
+ "language": "Go",
+ "stars": 6165,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop",
+  "dev tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Gdu is a fast, parallel disk usage analyzer for the terminal written in Go, with an interactive console UI, non-interactive output modes, and an optional browser-based web UI.",
+  "what_it_does": "Scans one or more directories in parallel and shows which folders and files take up space, in an interactive console interface or as plain text output for scripts. It can export the analysis to JSON, import a saved JSON file, or store results in SQLite or BadgerDB for later reuse. Scans can be filtered by ignored paths (plain or regex patterns, .gitignore-style files), file types, mtime ranges, and filesystem boundaries. Interactive use supports deletion (which can be disabled with --no-delete), viewing files, and spawning a shell. The README also describes a web UI with a treemap and donut chart, plus a \"cleanup projections\" view that highlights regenerable caches and build directories without deleting anything.",
+  "use_cases": [
+   "find what is filling up my disk",
+   "analyze disk usage on a Linux server over SSH",
+   "export disk usage report to JSON",
+   "find the largest files in a directory",
+   "compare directory sizes in a browser treemap",
+   "identify safe-to-delete caches and build folders"
+  ],
+  "how_to_run": [
+   "curl -L <release archive URL> | tar xz",
+   "chmod +x gdu_linux_amd64",
+   "mv gdu_linux_amd64 /usr/bin/gdu",
+   "docker run --rm --init --interactive --tty --privileged --volume /:/mnt/root ghcr.io/dundee/gdu /mnt/root",
+   "gdu --web /some/dir"
+  ],
+  "stack": [
+   "Go",
+   "Docker (optional)",
+   "SQLite (optional database storage)",
+   "BadgerDB (optional database storage)",
+   "YAML configuration"
+  ],
+  "notable": [
+   "Web UI with treemap, donut chart, and cleanup projections embedded in the binary",
+   "Memory-efficient non-interactive mode that tracks only top-level totals",
+   "Can browse inside tar and zip archives with --archive-browsing",
+   "Optional SQLite or BadgerDB storage to reload past analyses without rescanning",
+   "Benchmarks against ncdu, dua, dust, du, and others in the README"
+  ],
+  "caveats": [
+   "README says it is aimed primarily at SSDs; HDDs work but gain less from parallelism",
+   "Web UI deletion and reveal rely on a per-run token and loopback origin checks; binding to a non-loopback address exposes scan details on the network",
+   "Deleting while a filter is active is blocked unless GDU_ALLOW_DELETE_WITH_FILTER=1 is set"
+  ],
+  "license": "MIT",
+  "category": "terminal disk analyzer",
+  "keywords": [
+   "disk usage analyzer",
+   "disk usage",
+   "du alternative",
+   "ncdu alternative",
+   "dua alternative",
+   "dust alternative",
+   "gdu",
+   "golang cli",
+   "go disk tool",
+   "console interface",
+   "terminal ui",
+   "tui disk analyzer",
+   "ncurses style file browser",
+   "find large files",
+   "what is using my disk space",
+   "disk space analyzer linux",
+   "directory size tool",
+   "folder size report",
+   "json export disk usage",
+   "treemap disk usage",
+   "web ui disk analyzer",
+   "cleanup caches disk space",
+   "node_modules cleanup",
+   "sqlite analysis storage",
+   "badgerdb storage",
+   "gitignore filter scan",
+   "parallel directory scan",
+   "ssd disk scan",
+   "hard link counting",
+   "disk space on remote server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9243,
+  "output": 1257
+ },
+ "generated": "2026-10-29"
+}

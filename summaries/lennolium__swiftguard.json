@@ -1,0 +1,93 @@
+{
+ "id": "lennolium/swiftguard",
+ "repo": "Lennolium/swiftGuard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "swiftGuard - Tool for protecting USB ports from unauthorized access. [![Open-Source Software][OSS Icon]](https://github.com/Lennolium/swiftGuard) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "swiftGuard is a macOS menu-bar (tray) app that monitors USB ports and shuts down or hibernates the Mac when an unauthorized device is connected or a connected device is unplugged.",
+  "what_it_does": "It watches USB ports continuously, including during sleep, and raises a manipulation alert when a non-whitelisted device connects or a previously connected device is removed. Users can whitelist devices so they can be connected without triggering the alarm. The settings menu lets you pick the action (Shutdown or Hibernate), set a countdown delay of 0 to 60 seconds during which the alarm can be defused from the menu, and enable automatic start at login. Alerts are reset by clicking the Manipulation entry in the main menu. The README also describes a CLI mode that runs the app as a Python script without a GUI, with settings and logs stored in files under the user's Library folder. The app only contacts the internet at startup to check for updates.",
+  "use_cases": [
+   "lock down a Mac when someone plugs in a USB drive",
+   "prevent data exfiltration over USB",
+   "auto-shutdown laptop when removed from a USB key tether",
+   "protect a home server or NAS from physical USB access",
+   "add anti-forensic protection in public places like cafes",
+   "USB port guard for compliance with data protection rules"
+  ],
+  "how_to_run": [
+   "Download swiftGuard_arm64.dmg (Apple Silicon) or swiftGuard.dmg (Intel) from the Releases tab and open it.",
+   "Drag swiftGuard into the Applications folder and open it (right-click > Open if warned about an unidentified developer).",
+   "Grant the macOS permissions requested on first run and test that shutdown or hibernation works.",
+   "Enable automatic startup at login in the app's settings menu.",
+   "CLI option: clone the repository, create a virtual environment, run 'pip install poetry' and 'poetry install', then run 'swiftguard' (or 'swiftguardgui' for the GUI)."
+  ],
+  "stack": [
+   "Python",
+   "Poetry",
+   "Qt",
+   "macOS"
+  ],
+  "notable": [
+   "Tray app that stays out of the way, running in the macOS system tray",
+   "Works in sleep mode and treats removal of previously connected devices as an alarm",
+   "Whitelist for trusted devices plus a configurable countdown to defuse before the action runs",
+   "Shutdown or hibernate as the selectable action",
+   "Based on usbkill and BusKill, aiming to revive an abandoned project"
+  ],
+  "caveats": [
+   "macOS only; the README lists Linux support only as a future roadmap item",
+   "Relies on macOS permissions and the user should test shutdown or hibernate before relying on it",
+   "The README recommends FileVault for disk encryption, since the app itself does not encrypt data",
+   "The README says Apple silicon support is on the 'Next' roadmap, though the DMG for arm64 is already offered"
+  ],
+  "license": "GNU GPL3",
+  "category": "usb port security",
+  "keywords": [
+   "usb port protection",
+   "usb lock",
+   "usb kill switch",
+   "macos security",
+   "macos tray app",
+   "menu bar app",
+   "auto shutdown",
+   "hibernate mac",
+   "intrusion response",
+   "anti-forensic",
+   "whitelist usb devices",
+   "block unauthorized usb",
+   "physical security",
+   "data exfiltration prevention",
+   "usbkill alternative",
+   "buskill alternative",
+   "python qt app",
+   "poetry python",
+   "countdown timer shutdown",
+   "lock mac when usb removed",
+   "usb device monitor",
+   "laptop theft protection",
+   "headless mac cli",
+   "gpl3 security tool",
+   "raspberry pi nas protection",
+   "filevault companion",
+   "secure my mac from usb",
+   "usb whitelist tool",
+   "shutdown when usb unplugged",
+   "open source usb guard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5211,
+  "output": 1342
+ },
+ "generated": "2026-10-29"
+}

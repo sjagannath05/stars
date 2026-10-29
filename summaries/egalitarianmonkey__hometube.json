@@ -1,0 +1,117 @@
+{
+ "id": "egalitarianmonkey/hometube",
+ "repo": "EgalitarianMonkey/hometube",
+ "kind": "star",
+ "description": "HomeTube is a friendly video downloader managing single video URL into organized content structure for automatic home media server experience.",
+ "topics": [
+  "docker",
+  "homelab",
+  "jellyfin",
+  "open-source",
+  "plex",
+  "selfhosted",
+  "sponsorblock",
+  "youtube-downloader",
+  "yt-dlp"
+ ],
+ "language": "Python",
+ "stars": 1545,
+ "license": "AGPL-3.0",
+ "homepage": "https://hometube.latentnoise.dev",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop",
+  "dev tools"
+ ],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "HomeTube ⚠ - Web UI to download videos and playlists from 1700+ sites into a Plex or Jellyfin library, with quality selection, SponsorBlock sponsor removal, subtitles, clip cutting and resilient playlist sync. (Source Code) AGPL-3.0 Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "HomeTube is a Streamlit web UI that downloads single videos and playlists (via yt-dlp) and files them into a folder structure that Plex, Jellyfin or Emby can watch, with optional SponsorBlock sponsor removal.",
+  "what_it_does": "HomeTube provides a web interface where you paste a video or playlist URL and it downloads the best available quality using yt-dlp, then moves the file to a chosen destination folder with well-named files for media server libraries. It offers quality profiles and download strategies (auto best, best only, choose profile, choose format) and can be configured to use cookies from a file or local browser. SponsorBlock support detects and marks sponsor segments on YouTube, with management in the UI. Playlist sync tracks videos by ID, supports filename patterns with placeholders, detects renames and reorders, and can archive removed entries into an Archives folder. It also offers clip cutting, subtitle embedding, format conversion, audio extraction, custom yt-dlp arguments, and an optional Jellyfin library refresh notification. The README also describes a newer separate engine called Content, which is a different project surface sharing the same idea.",
+  "use_cases": [
+   "download YouTube videos into a Plex or Jellyfin library",
+   "archive and sync YouTube playlists locally",
+   "remove sponsors from downloaded YouTube videos",
+   "cut clips from online videos for a home media server",
+   "batch download videos to a homelab NAS",
+   "save videos from many sites with yt-dlp via a web UI"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/EgalitarianMonkey/hometube && cd hometube",
+   "cp .env.sample .env",
+   "docker run -p 8501:8501 --env-file .env -v <videos_host>:/data/videos -v <tmp_host>:/data/tmp -v <config_host>:/config ghcr.io/egalitarianmonkey/hometube:latest",
+   "python -m venv hometube-env && source hometube-env/bin/activate && pip install \".[local]\"",
+   "streamlit run app/main.py"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Streamlit",
+   "yt-dlp",
+   "FFmpeg",
+   "Docker",
+   "SponsorBlock"
+  ],
+  "notable": [
+   "Moves finished downloads into media-server-friendly folder layouts for Plex, Jellyfin or Emby",
+   "Playlist sync tracks videos by ID, detects renames and reorders, and can archive removed videos",
+   "Quality selection analyzes available codecs and tries up to two profiles",
+   "SponsorBlock integration with UI-managed sponsor segments",
+   "Custom yt-dlp arguments can be set per download or globally via environment variable"
+  ],
+  "caveats": [
+   "Cookies are described as highly recommended and needed for reliable downloads; cookies file or browser extraction must be set up",
+   "Browser cookie extraction does not work natively inside Docker, per the README",
+   "Test coverage is stated as 22% of statements; the README also promotes a separate hosted service and a newer engine called Content"
+  ],
+  "license": "AGPL-3.0",
+  "category": "video downloader homelab",
+  "keywords": [
+   "youtube downloader",
+   "yt-dlp",
+   "yt-dlp web ui",
+   "plex library",
+   "jellyfin library",
+   "emby",
+   "media server downloader",
+   "selfhosted video downloader",
+   "homelab video",
+   "sponsorblock",
+   "remove sponsors",
+   "playlist sync",
+   "youtube playlist archive",
+   "docker compose video downloader",
+   "streamlit app",
+   "download youtube to nas",
+   "save videos for plex",
+   "clip cutting",
+   "embed subtitles",
+   "ffmpeg",
+   "cookies authentication",
+   "offline video library",
+   "download videos for home theater",
+   "youtube to plex",
+   "share downloads on my network",
+   "organize downloaded videos",
+   "audio extraction",
+   "video format conversion",
+   "mp4 mkv download",
+   "self-hosted alternative to paid downloader"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13375,
+  "output": 1397
+ },
+ "generated": "2026-10-29"
+}

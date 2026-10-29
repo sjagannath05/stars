@@ -1,0 +1,103 @@
+{
+ "id": "assemblyai/blurt",
+ "repo": "AssemblyAI/blurt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Blurt - Free, open-source dictation for macOS: hold a key, talk, and polished text lands in whatever app you're typing in. Powered by AssemblyAI speech-to-text (bring your own API key)."
+  }
+ ],
+ "summary": {
+  "one_liner": "Blurt is a free, MIT-licensed native macOS dictation app that pastes AssemblyAI-transcribed, LLM-cleaned speech into whatever app has focus, using your own API key.",
+  "category": "macos dictation app",
+  "keywords": [
+   "speech to text",
+   "voice dictation",
+   "macos dictation",
+   "dictate text",
+   "speech recognition",
+   "voice typing",
+   "push to talk",
+   "hold key to talk",
+   "assemblyai",
+   "assemblyai api",
+   "swift",
+   "swiftui",
+   "appkit",
+   "native mac app",
+   "dictation app",
+   "transcription",
+   "voice to text",
+   "speak instead of typing",
+   "bring your own api key",
+   "open source dictation",
+   "built-in macos dictation alternative",
+   "menu bar app",
+   "global hotkey",
+   "clipboard paste",
+   "sparkle updates",
+   "ios keyboard dictation",
+   "text shortcuts",
+   "custom vocabulary",
+   "llm cleanup",
+   "dictation engine swift package",
+   "share voice notes into any app",
+   "type with my voice on mac"
+  ],
+  "what_it_does": "Blurt records microphone audio while a single modifier key (right Command by default, or right Option or fn) is held or toggled, then sends it in one HTTPS POST to AssemblyAI's dictation API. That call returns transcription with server-side LLM cleanup, and Blurt pastes the result into the focused app via a synthesized Cmd+V, saving and restoring the prior clipboard. Users can supply custom style instructions (up to four), key vocabulary terms, and text shortcuts that expand phrases locally after the response. Context sent with each request is limited to recent in-session dictations and the text before the cursor, with a README-described privacy design. The repo also contains the BlurtEngine Swift package, which is documented as embeddable, and an in-development iPhone app and keyboard. A floating overlay shows mic level and pipeline phase, and Sparkle handles update checks.",
+  "use_cases": [
+   "dictate text into any Mac app",
+   "voice typing in chat or documents",
+   "push-to-talk dictation on macOS",
+   "replace built-in macOS dictation with a faster option",
+   "build a custom dictation app on the BlurtEngine package",
+   "dictate code comments or terminal input by voice"
+  ],
+  "how_to_run": [
+   "Install Xcode 26+ (full Xcode, not just Command Line Tools), Homebrew, and an Apple Development certificate",
+   "scripts/bootstrap.sh (one-time toolchain install from Brewfile)",
+   "scripts/dev-build.sh (builds and installs 'Blurt Dev' to /Applications)",
+   "open -a \"Blurt Dev\"",
+   "scripts/check.sh (full repo health check)",
+   "swift test (engine unit tests only)"
+  ],
+  "stack": [
+   "Swift 6",
+   "AppKit",
+   "SwiftUI",
+   "AVFoundation (AVCaptureSession)",
+   "Sparkle",
+   "XcodeGen",
+   "Homebrew",
+   "AssemblyAI dictation API",
+   "macOS Keychain",
+   "CGEventTap",
+   "Accessibility APIs"
+  ],
+  "notable": [
+   "Single lone-modifier trigger with tap-to-toggle and hold-to-talk, and the event tap swallows no keystrokes",
+   "One HTTP request per utterance performs both transcription and LLM cleanup, with no local models",
+   "Context privacy: no app, window title, field, or selection is sent; password fields are never read",
+   "Dependency-free BlurtEngine Swift package with protocol seams, offered for embedding in other dictation apps",
+   "Optional synth cue sounds modeled on Yamaha DX7 and Roland Juno-106"
+  ],
+  "caveats": [
+   "Requires an AssemblyAI API key; audio and context are sent to AssemblyAI, so their privacy policy applies",
+   "macOS 15 or later is required; the Liquid Glass UI needs macOS 26",
+   "Building from source needs full Xcode 26+ and an Apple Development certificate",
+   "The iPhone app and keyboard are described as in development"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5462,
+  "output": 1480
+ },
+ "generated": "2026-10-29"
+}

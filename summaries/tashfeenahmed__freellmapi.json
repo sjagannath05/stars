@@ -1,0 +1,104 @@
+{
+ "id": "tashfeenahmed/freellmapi",
+ "repo": "tashfeenahmed/freellmapi",
+ "kind": "star",
+ "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+ "topics": [],
+ "language": "TypeScript",
+ "stars": 43503,
+ "license": "MIT",
+ "homepage": "https://freellmapi.co",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A self-hosted OpenAI-compatible router that pools free-tier LLM API keys from many providers behind a single /v1 endpoint, with routing, failover and encrypted key storage.",
+  "category": "self-hosted llm gateway",
+  "keywords": [
+   "llm gateway",
+   "llm router",
+   "openai-compatible api",
+   "openai proxy",
+   "free llm api",
+   "free tier aggregator",
+   "llm failover",
+   "automatic fallback",
+   "rate limit routing",
+   "api key pooling",
+   "encrypted api keys",
+   "self-hosted llm",
+   "local llm proxy",
+   "multi-provider llm",
+   "chat completions endpoint",
+   "openai sdk base url",
+   "claude code backend",
+   "codex cli backend",
+   "mcp server",
+   "lm studio",
+   "ollama",
+   "vllm",
+   "llama.cpp",
+   "sqlite key storage",
+   "aes-256-gcm",
+   "model fallback chain",
+   "share one api key across apps",
+   "use free llm models in my coding agent",
+   "typescript llm proxy",
+   "anthropic messages api",
+   "llm usage tracking"
+  ],
+  "what_it_does": "The project exposes a single OpenAI-compatible /v1 API (chat completions, responses, completions, embeddings, images, video, speech, transcriptions, models) that forwards requests to whichever configured free-tier provider and model is currently best available. It also serves an Anthropic Messages surface, native Gemini and opt-in Ollama surfaces, and a \"fusion\" virtual model that synthesizes answers from several models. Provider keys are stored AES-256-GCM encrypted in SQLite, and clients only use one unified bearer token. A router tracks per-key RPM/RPD/TPM/TPD usage, retries the next model on 429 or 5xx with cooldowns, and offers several routing strategies plus named fallback-chain profiles. The README also describes a React dashboard for keys, chain ordering, playground and analytics, an MCP server, and an optional response cache and prompt compression. A paid \"premium\" tier provides a faster signed model-catalog feed; the README states the router itself stays MIT-licensed and free.",
+  "use_cases": [
+   "Point an OpenAI SDK or coding agent at one local endpoint that spreads requests across free providers",
+   "Automatically fail over to another free model when one provider is rate-limited",
+   "Run Claude Code, Codex CLI or Gemini CLI against a pool of free models",
+   "Keep multiple free-tier provider API keys in one encrypted local store",
+   "Prototype or learn against free LLM tiers without paying per token",
+   "Connect a local model server such as LM Studio, vLLM or Ollama alongside cloud free tiers"
+  ],
+  "how_to_run": [
+   "curl -fsSL <install script URL from README> | bash   (Docker required; sets up ~/freellmapi and starts the container)",
+   "Open the Keys page in the dashboard, add provider keys, reorder the Fallback Chain",
+   "Copy the unified freellmapi-... key from the Keys page and set it as api_key with base_url pointing at your /v1 server",
+   "Dev setup: npm install && npm run dev (server on :3001, dashboard on :5173)",
+   "Optional: npx freellmapi setup-claude --url --api-key (configures Claude Code; see README for other agents)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 20+",
+   "React (dashboard)",
+   "SQLite",
+   "Docker",
+   "AES-256-GCM",
+   "Ed25519 (catalog signature verification)",
+   "MCP"
+  ],
+  "notable": [
+   "One OpenAI-compatible /v1 endpoint over many free providers, with an X-Routed-Via header showing which provider served each response",
+   "Per-key rate tracking that learns provider ceilings so routing stays under free-tier caps",
+   "Also speaks Anthropic Messages, native Gemini and opt-in Ollama wire formats",
+   "Virtual 'fusion' model fans a prompt out to several free models and a judge model synthesizes the answer",
+   "Desktop tray app for macOS and Windows, plus a dashboard translated into 60 languages"
+  ],
+  "caveats": [
+   "The README says it is for personal experimentation and learning, not production; free tiers have no SLA and variable latency",
+   "Free installs receive the signed model catalog from a monthly snapshot (about 30 days behind the live feed); the live feed is part of a paid premium tier ($19/yr or $49 lifetime)",
+   "Quality dips late in the day as top free models hit daily caps; no frontier models per the README"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8743,
+  "output": 1640
+ },
+ "generated": "2026-10-29"
+}

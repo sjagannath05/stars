@@ -1,0 +1,98 @@
+{
+ "id": "zitadel/zitadel",
+ "repo": "zitadel/zitadel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "ZITADEL | Identity infrastructure with multi-tenancy, SSO and passkeys"
+  }
+ ],
+ "summary": {
+  "one_liner": "ZITADEL is an open-source, API-first identity and access management platform offering SSO, MFA, passkeys, OIDC/SAML, SCIM and multi-tenant organizations, available self-hosted or as a SaaS cloud.",
+  "what_it_does": "ZITADEL provides authentication and identity management, including single sign-on, username/password login, passkeys (FIDO2/WebAuthn), MFA (OTP, U2F, email and SMS OTP), LDAP, enterprise and social identity providers, OpenID Connect, SAML 2.0 and device authorization. It supports machine-to-machine auth via JWT Profile, PAT and client credentials, plus token exchange and impersonation. Its multi-tenancy model runs Identity System, then Organizations, then Projects, with B2B onboarding, delegated role management and domain discovery. Every resource is exposed through gRPC, connectRPC and REST/HTTP JSON APIs, and each mutation is written as an event that can be audited or streamed out via webhooks. Self-hosting is done with Docker Compose or Kubernetes, and the README names PostgreSQL (14 or later) as the database.",
+  "use_cases": [
+   "add single sign-on to a SaaS product",
+   "self-host an identity provider",
+   "multi-tenant B2B customer login",
+   "passkey and MFA rollout",
+   "OIDC or SAML integration for applications",
+   "SCIM user provisioning",
+   "audit logging of identity events"
+  ],
+  "how_to_run": [
+   "curl -LO (docker-compose.yml, per README link)",
+   "curl -LO (.env.example, per README link)",
+   "cp .env.example .env",
+   "docker compose up -d --wait"
+  ],
+  "stack": [
+   "Go",
+   "PostgreSQL",
+   "Docker Compose",
+   "Kubernetes",
+   "gRPC",
+   "connectRPC",
+   "REST/HTTP JSON",
+   "OIDC",
+   "SAML 2.0",
+   "SCIM 2.0"
+  ],
+  "notable": [
+   "Event-sourced audit trail: every mutation stored as an immutable event, streamable via webhooks",
+   "Strict multi-tenant hierarchy: Instances, Organizations, Projects",
+   "API-first with gRPC, connectRPC and REST for every resource",
+   "Same codebase for ZITADEL Cloud and self-hosted deployments",
+   "Zero-downtime updates without external session stores"
+  ],
+  "caveats": [
+   "Requires PostgreSQL 14 or later as a database dependency",
+   "Production self-hosting needs Docker Compose or Kubernetes setup; professional support is offered separately",
+   "Cloud SaaS uses pay-as-you-go pricing after a free start"
+  ],
+  "license": "AGPL-3.0",
+  "category": "identity and access management",
+  "keywords": [
+   "iam",
+   "identity management",
+   "identity provider",
+   "idp",
+   "sso",
+   "single sign on",
+   "oidc",
+   "openid connect",
+   "saml",
+   "scim",
+   "passkeys",
+   "fido2",
+   "webauthn",
+   "mfa",
+   "two factor authentication",
+   "multi-tenancy",
+   "b2b organizations",
+   "oauth",
+   "auth server",
+   "self-hosted login",
+   "keycloak alternative",
+   "auth0 alternative",
+   "okta alternative",
+   "fusionauth alternative",
+   "user authentication",
+   "share logins across my apps",
+   "audit trail",
+   "postgresql",
+   "rbac",
+   "machine to machine auth"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3683,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

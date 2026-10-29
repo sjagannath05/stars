@@ -1,0 +1,101 @@
+{
+ "id": "mem0ai/mem0",
+ "repo": "mem0ai/mem0",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "mem0 - An intelligent memory layer for AI agents enabling personalized interactions."
+  },
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "Mem0 - The memory layer for Personalized AI"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mem0 is a memory layer for AI assistants and agents that stores, retrieves, and personalizes context across user, session, and agent state, offered as a Python/npm library, a self-hosted server, and a managed cloud platform.",
+  "what_it_does": "Provides an API to add conversation messages and facts as memories, then search them by query with filters such as user_id. The library is installed via pip (mem0ai) or npm (mem0ai), and a basic example wraps an OpenAI chat loop so each reply is informed by retrieved memories and new memories are written back after each turn. A self-hosted server runs via docker compose with an admin bootstrap command and auth enabled by default, and a managed Cloud Platform is also offered. A CLI (@mem0/cli or mem0-cli) supports init, add, and search from the terminal. The README describes an April 2026 memory algorithm using single-pass ADD-only extraction, entity linking, and multi-signal retrieval (semantic, BM25 keyword, entity matching), with benchmark scores on LoCoMo, LongMemEval, and BEAM; these figures are for the managed platform, and the README says open-source users should expect similar but not identical results. Agent skills for coding assistants are also provided via npx skills add.",
+  "use_cases": [
+   "Give a chatbot long-term memory of user preferences across sessions",
+   "Customer support bot that recalls past tickets and user history",
+   "Personalized AI assistant that remembers user details",
+   "Self-hosting a shared memory service for a team",
+   "Adding persistent memory to LangGraph or CrewAI agents",
+   "Managing agent memories from the command line"
+  ],
+  "how_to_run": [
+   "pip install mem0ai",
+   "pip install mem0ai[nlp] && python -m spacy download en_core_web_sm (optional, for BM25 and entity extraction)",
+   "npm install mem0ai (JavaScript SDK)",
+   "cd server && make bootstrap (self-hosted server, one command)",
+   "cd server && docker compose up -d (self-hosted server, manual setup via browser wizard)"
+  ],
+  "stack": [
+   "Python",
+   "TypeScript/JavaScript (npm mem0ai)",
+   "Docker Compose",
+   "OpenAI models (default gpt-5-mini LLM, text-embedding-3-small embeddings)",
+   "spaCy (optional nlp extra)",
+   "Qdrant (referenced for vector migration)"
+  ],
+  "notable": [
+   "Single-pass ADD-only memory extraction, so memories accumulate rather than being overwritten",
+   "Hybrid retrieval combining semantic search, BM25 keyword matching, and entity linking",
+   "Multiple deployment paths: library, self-hosted server, managed cloud, and CLI",
+   "Agent-oriented signup: agents can mint an API key via the mem0 init --agent command",
+   "Accompanying research paper (arXiv 2504.19413) and open-sourced evaluation framework"
+  ],
+  "caveats": [
+   "Requires an LLM; defaults to OpenAI gpt-5-mini and text-embedding-3-small unless configured otherwise",
+   "Benchmark numbers come from the managed platform with proprietary optimizations; open-source results are expected to differ",
+   "Self-hosted auth is on by default and needs admin setup; the README notes AUTH_DISABLED=true is for local dev only",
+   "Some advanced features are listed as teasers in self-hosted mode and fully included only in the Cloud Platform"
+  ],
+  "license": "Apache 2.0",
+  "category": "ai agent memory",
+  "keywords": [
+   "mem0",
+   "ai memory layer",
+   "long-term memory for llm",
+   "agent memory",
+   "chatbot memory",
+   "personalized ai",
+   "conversational memory",
+   "semantic search",
+   "bm25 keyword search",
+   "entity linking",
+   "hybrid retrieval",
+   "vector memory",
+   "self-hosted memory server",
+   "memory api",
+   "python sdk",
+   "npm sdk",
+   "memory cli",
+   "docker compose",
+   "openai memory",
+   "langgraph memory",
+   "crewai memory",
+   "customer support bot memory",
+   "remember user preferences",
+   "persistent context for ai assistant",
+   "store chat history for agents",
+   "alternative to vector database for memory",
+   "llm ops",
+   "rag memory",
+   "coding assistant skills",
+   "benchmark locomo longmemeval",
+   "apache 2.0 license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4987,
+  "output": 1518
+ },
+ "generated": "2026-10-29"
+}

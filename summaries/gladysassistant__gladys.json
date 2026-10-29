@@ -1,0 +1,89 @@
+{
+ "id": "gladysassistant/gladys",
+ "repo": "GladysAssistant/Gladys",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Internet of Things (IoT)",
+   "entry": "Gladys - Privacy-first home assistant. (Source Code) Apache-2.0 Nodejs/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Home Automation",
+   "entry": "Gladys | Home Assistant for smart living"
+  }
+ ],
+ "summary": {
+  "one_liner": "Gladys Assistant is an open-source, privacy-first smart home assistant that runs locally, installed via Docker.",
+  "what_it_does": "The README describes Gladys Assistant as a privacy-first, open-source smart home assistant. It provides a Docker command to start a local instance, with options for setting the server port, timezone, SQLite database path, and volume mounts for the Docker socket, device paths, and udev/dbus. It also mentions a Docker Compose installation option. Installation guidance for mini-PCs, NAS devices, and Raspberry Pi is delegated to an external official website. The README includes development setup links for macOS/Linux and Windows, plus a contributing guide that references an AGENTS.md file for AI-assisted development.",
+  "use_cases": [
+   "run a local smart home hub",
+   "control smart home devices privately",
+   "self-host a home automation assistant",
+   "install on Raspberry Pi or NAS",
+   "contribute to an open-source home automation project"
+  ],
+  "how_to_run": [
+   "sudo docker run -d --log-driver json-file --log-opt max-size=10m --cgroupns=host --restart=always --privileged --network=host --name gladys -e NODE_ENV=production -e SERVER_PORT=80 -e TZ=Europe/Paris -e SQLITE_FILE_PATH=/var/lib/gladysassistant/gladys-production.db -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/gladysassistant:/var/lib/gladysassistant -v /dev:/dev -v /run/udev:/run/udev:ro -v /run/dbus:/run/dbus:ro gladysassistant/gladys:v5"
+  ],
+  "stack": [
+   "Node.js",
+   "Docker",
+   "SQLite"
+  ],
+  "notable": [
+   "Privacy-first design: runs as a local instance on your own hardware",
+   "Single Docker command to start, with a Docker Compose alternative mentioned",
+   "Explicit support for AI-assisted contributions via an AGENTS.md file",
+   "Community-driven project with an all-contributors credit list"
+  ],
+  "caveats": [
+   "The docker run command uses --privileged and mounts the Docker socket and /dev, which grants broad host access",
+   "Detailed installation steps are on an external website and not in the README",
+   "The README does not list supported smart home devices or protocols"
+  ],
+  "license": "Apache-2.0",
+  "category": "smart home assistant",
+  "keywords": [
+   "smart home assistant",
+   "home automation",
+   "home assistant alternative",
+   "privacy-first smart home",
+   "self-hosted home automation",
+   "open source smart home",
+   "local smart home hub",
+   "docker smart home",
+   "gladys assistant",
+   "nodejs home automation",
+   "sqlite",
+   "raspberry pi home automation",
+   "nas home automation",
+   "iot hub",
+   "internet of things platform",
+   "self-hosted iot",
+   "docker compose home automation",
+   "privacy smart home hub",
+   "run smart home locally",
+   "control smart home devices",
+   "domotique",
+   "home automation docker container",
+   "udev dbus devices",
+   "apache 2.0 home automation",
+   "smart living",
+   "local home server",
+   "mini pc home automation",
+   "ai-assisted contributions",
+   "run smart home offline"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2951,
+  "output": 1198
+ },
+ "generated": "2026-10-29"
+}

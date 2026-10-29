@@ -1,0 +1,99 @@
+{
+ "id": "root-gg/plik",
+ "repo": "root-gg/plik",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "Plik - Scalable and friendly temporary file upload system. (Demo) MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Plik is a self-hosted, scalable temporary file upload system, similar to WeTransfer, with a web interface and command-line client.",
+  "what_it_does": "Plik lets users upload files through a Vue 3 web interface or a command-line client, then share download links. It supports several storage backends (local disk, S3, OpenStack Swift, Google Cloud Storage) and metadata backends (SQLite, PostgreSQL, MySQL). Uploads can have a configurable TTL with automatic cleanup, be set to OneShot (deleted after the first download), or use stream mode where nothing is stored. Uploads can be password-protected with BasicAuth or end-to-end encrypted with Age, and the CLI and web app can interoperate on encrypted files. Users can also preview files (syntax highlighting, Markdown, Mermaid diagrams, media player), archive files from the CLI or web, and export Prometheus metrics. Authentication providers include Local, Google, GitHub, OVH and OIDC, and an MCP server is available for AI assistant integration.",
+  "use_cases": [
+   "share large files temporarily with others",
+   "self-hosted WeTransfer alternative",
+   "one-time file download links",
+   "upload files from the command line with curl",
+   "encrypted file sharing with Age",
+   "stream files directly from uploader to downloader"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 rootgg/plik",
+   "wget <release archive URL> && tar xzvf plik-server-1.4.3-linux-amd64.tar.gz",
+   "cd plik-server-1.4.3-linux-amd64/server && ./plikd",
+   "sudo apt update && sudo apt install plik-server && sudo systemctl start plikd",
+   "git clone <repository URL> && cd plik && make && cd server && ./plikd",
+   "helm repo add plik <repository URL> && helm install plik plik/plik"
+  ],
+  "stack": [
+   "Go",
+   "Vue 3",
+   "Docker",
+   "SQLite",
+   "PostgreSQL",
+   "MySQL",
+   "Age encryption",
+   "Helm/Kubernetes",
+   "Prometheus"
+  ],
+  "notable": [
+   "Single Go server with a Vue 3 web UI in 12 languages and light, dark and custom themes",
+   "Stream mode: data passes from uploader to downloader without being stored",
+   "End-to-end encryption with Age, interoperable between CLI and web",
+   "Pluggable storage (local, S3, Swift, GCS) and metadata (SQLite, PostgreSQL, MySQL) backends",
+   "Includes an MCP server for AI assistant integration"
+  ],
+  "caveats": [
+   "Some authentication providers (Google, GitHub, OVH, OIDC) require external configuration",
+   "Debian/Ubuntu packages and Helm chart are separate install paths that depend on repository setup"
+  ],
+  "license": "MIT",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "temporary file upload",
+   "self-hosted file transfer",
+   "wetransfer alternative",
+   "plik",
+   "file upload server",
+   "one-time download",
+   "oneshot download",
+   "ttl file expiry",
+   "stream mode",
+   "age encryption",
+   "end-to-end encrypted upload",
+   "basicauth uploads",
+   "command line upload",
+   "curl upload",
+   "s3 storage backend",
+   "openstack swift",
+   "google cloud storage",
+   "sqlite",
+   "postgresql",
+   "mysql",
+   "oidc login",
+   "prometheus metrics",
+   "mcp server",
+   "helm chart",
+   "docker file sharing",
+   "go file server",
+   "send large files",
+   "share files with my team",
+   "upload file get link",
+   "file preview markdown",
+   "mermaid diagrams"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2503,
+  "output": 1345
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "wespeakenglish/pollusensweb",
+ "repo": "WeSpeakEnglish/polluSensWeb",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Internet of Things (IoT)",
+   "entry": "polluSensWeb - Web-based serial interface and charting tool for visualizing and logging data from UART pollution sensors (PM2.5, VOC, etc). Features live data acquisition, dynamic charts, CSV export, and webhook integration. (Demo, Source Code, Clients) MIT Javascript"
+  }
+ ],
+ "summary": {
+  "one_liner": "polluSensWeb is a browser-based tool that connects to UART air quality sensors via the Web Serial API, then parses, charts, logs, and exports their readings.",
+  "what_it_does": "It opens a serial connection to a UART sensor from the browser, sends configured commands, and buffers incoming bytes into frames using start/end bytes and length. Each frame's checksum is validated, and signal values are extracted from JSON-defined expressions. Parsed data is shown in multiple dynamic, customizable live charts and in a log of raw hex packets with checksum results. Collected data since connection can be exported to CSV, and readings can be sent to an HTTP endpoint through configurable webhook headers and JSON body templates. Sensor definitions come from a sensors.json file with about 39 listed sensors, and custom JSON configurations can be uploaded.",
+  "use_cases": [
+   "visualize air quality sensor data in the browser",
+   "log PM2.5 and VOC readings to CSV",
+   "teaching labs and education with air sensors",
+   "rapid IoT sensor prototyping over serial",
+   "send sensor readings to an HTTP webhook",
+   "add support for a custom UART sensor via JSON"
+  ],
+  "how_to_run": [
+   "Open the hosted live version (linked in README) in a supported Chromium browser",
+   "Or extract the release archive or git clone and open index.html in the browser",
+   "Load sensors.js via the Custom JSON Sensor Configuration input in the UI",
+   "For self-hosting, set DEFAULT_SENSOR_LIST and PROXY_URL at the top of pollusensweb.js to your own addresses"
+  ],
+  "stack": [
+   "JavaScript",
+   "Web Serial API",
+   "PHP CORS proxy (for self-hosting)",
+   "JSON sensor configuration"
+  ],
+  "notable": [
+   "Supports dozens of UART air quality and environmental sensors (Plantower, Sensirion, SenseAir, Honeywell, Nova, and others) via JSON config",
+   "Multi-command sequences with per-command baud rate switching, useful for 1-Wire over UART",
+   "Sensor configs can inherit from other sensors and override commands",
+   "Webhooks with templated headers and JSON bodies, including per-field placeholders"
+  ],
+  "caveats": [
+   "Requires a Chromium-based browser (Chrome, Edge, Brave, Opera); Web Serial API is not supported in Firefox or Safari",
+   "Webhooks need network access; the rest works offline after load",
+   "Self-hosting requires editing the source to point at your own sensor list and CORS proxy"
+  ],
+  "license": "MIT",
+  "category": "iot sensor visualization",
+  "keywords": [
+   "web serial api",
+   "uart sensor",
+   "air quality monitor",
+   "pm2.5 sensor",
+   "voc sensor",
+   "plantower pms5003",
+   "sensirion sps30",
+   "co2 sensor senseair",
+   "serial port charting",
+   "browser serial plotter",
+   "live sensor chart",
+   "csv export sensor data",
+   "webhook sensor data",
+   "iot prototyping",
+   "teaching lab sensors",
+   "esp serial monitor alternative",
+   "real-time data logging",
+   "json sensor configuration",
+   "frame parser checksum",
+   "monitor air quality in browser",
+   "log sensor readings to csv",
+   "send sensor data to http endpoint",
+   "pollution sensor dashboard",
+   "self-hosted sensor dashboard",
+   "arduino serial plotter alternative",
+   "chart serial data from device",
+   "custom uart sensor setup",
+   "javascript serial monitor",
+   "offline sensor visualization",
+   "environmental sensor logging"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7082,
+  "output": 1276
+ },
+ "generated": "2026-10-29"
+}

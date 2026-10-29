@@ -1,0 +1,103 @@
+{
+ "id": "bitwize-ai/logue",
+ "repo": "bitwize-ai/Logue",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📔 Notes (26)",
+   "entry": "Logue - Privacy-first AI meeting notes and writing assistant with on-device transcription, smart minutes, action items, and 60+ writing modes — runs entirely on Apple Silicon."
+  }
+ ],
+ "summary": {
+  "one_liner": "Logue is a local-first macOS workspace for documents, tasks and meetings that transcribes meetings, writes minutes and runs an on-device AI agent, all on Apple Silicon via MLX.",
+  "what_it_does": "Provides a Notion/Obsidian-style workspace with nested spaces, a block editor, typed properties, relations, wiki links with backlinks, a document graph, saved views and 55 templates. Records meetings with real-time transcription, speaker diarization and system audio capture, then generates Smart Minutes, highlights and action items that feed a task list. An agent (\"Ask Logue\") uses documents, meetings, calendar, reminders and files through the app, a floating Command Center panel, or a Chrome extension. Inference, transcription and diarization run on-device via MLX; documents are encrypted at rest or can be stored as plain .md files in a folder. Optional external AI providers and web search are opt-in.",
+  "use_cases": [
+   "take and transcribe meeting notes on a Mac",
+   "generate meeting minutes and action items",
+   "organise documents and tasks in a local notes workspace",
+   "chat with an on-device AI assistant over my own documents",
+   "edit writing with AI grammar and tone suggestions",
+   "keep notes as plain markdown files in a folder"
+  ],
+  "how_to_run": [
+   "git clone --recurse-submodules <repo-url>",
+   "cd Logue",
+   "xcodebuild -downloadComponent MetalToolchain",
+   "brew install xcodegen swiftformat swiftlint",
+   "xcodegen generate",
+   "xcodebuild build -project Logue.xcodeproj -scheme Logue -destination 'platform=macOS' CODE_SIGN_IDENTITY=\"-\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit (NSTextView)",
+   "MLX",
+   "Apple SpeechTranscriber",
+   "FluidAudio (Sortformer diarization)",
+   "ScreenCaptureKit",
+   "LangGraph-Swift",
+   "Sparkle",
+   "XcodeGen",
+   "SwiftLint",
+   "SwiftFormat",
+   "FTS5"
+  ],
+  "notable": [
+   "Fully on-device AI via MLX on Apple Silicon, with no meeting bot joining calls",
+   "Meeting recordings resume and rebuild transcripts after disconnects or app quit",
+   "Chrome extension talks to the app over a loopback-only bridge",
+   "Plain markdown storage option that treats a ~/Logue folder as the live store",
+   "Saved views with nested filter groups and typed document properties"
+  ],
+  "caveats": [
+   "Requires macOS 26 (Tahoe) or later on Apple Silicon (M1 or newer) and Xcode 26+ to build",
+   "Not sandboxed, by design, so it is not App Store-style software",
+   "Documents are encrypted unless plain markdown storage is turned on; meeting data is always encrypted"
+  ],
+  "license": "MIT License",
+  "category": "macos ai notes app",
+  "keywords": [
+   "macos notes app",
+   "local-first workspace",
+   "on-device ai",
+   "apple silicon",
+   "mlx",
+   "meeting transcription",
+   "speaker diarization",
+   "meeting minutes generator",
+   "action items extraction",
+   "task list",
+   "block editor",
+   "wiki links backlinks",
+   "markdown notes",
+   "obsidian alternative",
+   "notion alternative",
+   "privacy-first notes",
+   "offline ai assistant",
+   "chrome extension ai",
+   "writing assistant",
+   "grammar suggestions",
+   "fact checking writing",
+   "ai agent local",
+   "transcribe meetings without bot",
+   "system audio recording",
+   "swiftui",
+   "swift",
+   "screencapturekit",
+   "encrypted notes",
+   "plain markdown folder",
+   "saved views filters",
+   "private meeting notes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7834,
+  "output": 1383
+ },
+ "generated": "2026-10-29"
+}

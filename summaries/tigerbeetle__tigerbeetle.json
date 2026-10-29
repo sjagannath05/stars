@@ -1,0 +1,87 @@
+{
+ "id": "tigerbeetle/tigerbeetle",
+ "repo": "tigerbeetle/tigerbeetle",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "Tigerbeetle | The financial transactions database designed for mission critical safety and performance."
+  }
+ ],
+ "summary": {
+  "one_liner": "TigerBeetle is a financial transactions database built for safety and performance, aimed at OLTP-style debit/credit ledger workloads.",
+  "what_it_does": "The README describes TigerBeetle as a database for financial transactions, designed for mission-critical safety and performance. It runs as a cluster of replicas, and the quickstart shows a single-replica setup on Linux: formatting a data file, starting the server on a port, and opening an interactive REPL. In the REPL you create accounts with id, code, and ledger fields, create transfers between accounts, and look accounts up to see debits and credits (pending and posted). The README links to documentation on its design decisions, a talk about its local storage engine and global consensus protocol, and an engineering methodology document called TIGER_STYLE.md. The README is short and does not list a full feature set beyond these examples.",
+  "use_cases": [
+   "record double-entry financial transfers between accounts",
+   "run a ledger for payments or balances",
+   "track pending and posted debits and credits",
+   "back a payments system needing high transaction throughput",
+   "evaluate a purpose-built OLTP database for finance"
+  ],
+  "how_to_run": [
+   "curl -Lo tigerbeetle.zip <URL> && unzip tigerbeetle.zip",
+   "./tigerbeetle version",
+   "./tigerbeetle format --cluster=0 --replica=0 --replica-count=1 --development 0_0.tigerbeetle",
+   "./tigerbeetle start --addresses=3000 --development 0_0.tigerbeetle",
+   "./tigerbeetle repl --cluster=0 --addresses=3000",
+   "In the REPL: create_accounts id=1 code=10 ledger=700, id=2 code=10 ledger=700; then create_transfers id=1 debit_account_id=1 credit_account_id=2 amount=10 ledger=700 code=10;"
+  ],
+  "stack": [
+   "Zig (implied by TIGER_STYLE.md and the tigerbeetle binary; not explicitly stated)",
+   "tigerbeetle CLI with format, start, repl, and version commands"
+  ],
+  "notable": [
+   "Purpose-built double-entry debit/credit ledger with pending and posted balances",
+   "Single binary with format, start, and an interactive REPL for trying queries",
+   "Consensus-based replica cluster design, described in linked talks",
+   "Engineering methodology documented in TIGER_STYLE.md"
+  ],
+  "caveats": [
+   "The quickstart uses --development mode, which is not a production configuration",
+   "The README does not describe installation beyond downloading a zip archive, and the download URL is missing from the text",
+   "The README is brief and points to external docs for design and architecture details"
+  ],
+  "license": "unknown",
+  "category": "financial transaction database",
+  "keywords": [
+   "tigerbeetle",
+   "financial transactions database",
+   "ledger database",
+   "double-entry bookkeeping",
+   "debit credit ledger",
+   "oltp database",
+   "transaction processing",
+   "payments backend",
+   "consensus replication",
+   "replica cluster",
+   "pending and posted transfers",
+   "accounts and transfers",
+   "repl shell",
+   "zig",
+   "high performance database",
+   "mission critical database",
+   "fintech infrastructure",
+   "money movement",
+   "balance tracking",
+   "financial ledger",
+   "self-hosted ledger",
+   "single binary database",
+   "record payments between accounts",
+   "run a ledger for my app",
+   "database for payments",
+   "safe transaction storage",
+   "tiger style",
+   "replicated state machine"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2267,
+  "output": 1272
+ },
+ "generated": "2026-10-29"
+}

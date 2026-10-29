@@ -1,0 +1,98 @@
+{
+ "id": "disler/fusion-harness",
+ "repo": "disler/fusion-harness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "Fusion Harness by disler - Fuses 2–5 frontier models instead of racing them — one architect, one primary builder, and up to three secondary builders — giving N-way opinions, debate, fusion, coordinated implementation, direct one-agent routing, and gate-first validation. Ships as a composable Pi extension with pre-built model stacks and install/prime commands, and a video walkthrough of the whole a"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Pi coding-agent extension that fuses 2–5 frontier models (one architect, one primary builder, up to three secondary builders) into N-way opinions, debate, fusion, coordinated implementation, and gate-first validation rather than picking a single model.",
+  "category": "multi-model agent harness",
+  "keywords": [
+   "multi-model",
+   "multi-llm",
+   "ensemble llm",
+   "model fusion",
+   "n-way debate",
+   "llm debate",
+   "pi coding agent",
+   "pi extension",
+   "coding agent",
+   "agentic coding",
+   "architect builder",
+   "parallel agents",
+   "multi-agent orchestration",
+   "read-only opinions",
+   "single writer lease",
+   "gate-first validation",
+   "uv acceptance gate",
+   "model stack yaml",
+   "compare models",
+   "combine llm answers",
+   "use several ai models together",
+   "claude fable",
+   "gemini flash",
+   "deepseek",
+   "task dag",
+   "parallel coding agents",
+   "llm routing",
+   "model switching",
+   "just recipes",
+   "typescript",
+   "bun"
+  ],
+  "what_it_does": "It is a composable extension for the Pi coding agent that runs 2–5 configured models against the same problem instead of choosing one. Commands include /fh-opinion (every model answers read-only), /fh-debate (multi-round read-only debate where agents see each other's labeled opinions), /fh-fusion (read-only research followed by one temporary writer agent that produces a fused result, which is then synced to every slot with ACK checks), and /fh-collaborate (models plan independently, the architect merges plans into a dependency DAG, and tasks execute with one shared-CWD writer at a time). /fh-only routes a single prompt to one slot, and /fh-model switches models per slot for the session. /fh-auto-validate writes a uv acceptance gate before building and has the builder iterate until the gate passes. Model stacks are defined in explicit YAML files with per-slot thinking levels, colors, and system prompt overrides. The README describes a single-writer invariant and a model bar widget showing speed, cost, and context per slot.",
+  "use_cases": [
+   "compare answers from several frontier models on the same coding question",
+   "run a multi-round debate between models to reach a decision",
+   "have one model write code while others review and research read-only",
+   "split a feature into parallel tasks across different models",
+   "gate-first test-driven building with an acceptance check",
+   "route a single prompt to a chosen model in an agent session"
+  ],
+  "how_to_run": [
+   "npm install -g @earendil-works/pi-coding-agent",
+   "brew install just jq uv",
+   "npm install",
+   "cp .env.example .env  (then fill provider API keys)",
+   "npm test",
+   "just fusion"
+  ],
+  "stack": [
+   "Pi coding agent (@earendil-works/pi-coding-agent)",
+   "TypeScript",
+   "Bun",
+   "Node.js",
+   "just (command runner)",
+   "uv (Python tooling for acceptance gates)",
+   "jq",
+   "YAML"
+  ],
+  "notable": [
+   "Single-writer invariant: read-only tool allowlists for opinion and debate, and a CWD-scoped atomic writer lease so only one agent modifies the checkout",
+   "Fusion context sync: the fused result is delivered to every model and each must reply with an exact SHA-256-tracked ACK",
+   "Dependency-driven collaboration DAG where independent tasks run in parallel and write tasks are serialized",
+   "Explicit YAML model stacks with validation rules, plus pre-built recipes such as just fusion and just fusion5"
+  ],
+  "caveats": [
+   "Requires several paid provider API keys (Anthropic, Gemini, Fireworks, OpenAI, OpenRouter) and the Pi coding agent installed globally",
+   "Stacks are validated at startup; invalid or unavailable model configs fail launch",
+   "Session transcripts for secondary slots are discarded when pi quits; only the Main host keeps context across restarts is not stated, so transcripts are not resumed",
+   "Multi-model runs are costly and slower than single-model use, and the README does not give cost estimates"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7352,
+  "output": 1471
+ },
+ "generated": "2026-10-29"
+}

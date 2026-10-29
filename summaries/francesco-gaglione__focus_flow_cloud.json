@@ -1,0 +1,100 @@
+{
+ "id": "francesco-gaglione/focus_flow_cloud",
+ "repo": "francesco-gaglione/focus_flow_cloud",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "Focus Flow - Complete ecosystem for time management using the Pomodoro technique. MIT Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "FocusFlow is a self-hostable Pomodoro time-management ecosystem with a Rust backend and a Tauri v2 + SvelteKit desktop/Android client.",
+  "what_it_does": "The monorepo contains a Rust backend (Axum, Diesel, Tokio) that handles Pomodoro session tracking, a RESTful API documented with OpenAPI/Swagger, WebSocket broadcasting so clients stay in sync, and Web Push reminders via VAPID. The native client app, built with Tauri v2 and SvelteKit, provides a timer UI, task management with categories and priorities, month and week calendar views with task blocks, and a statistics view covering sessions, tasks by priority and category, overdue trends, and peak hours. The app shows system notifications for Pomodoro transitions and reminders. Users enter their backend server URL on first launch. The backend can be run with Docker Compose or Kubernetes manifests in the k8s/ directory.",
+  "use_cases": [
+   "self-host a pomodoro timer backend",
+   "track focus sessions and breaks",
+   "sync timer state across devices",
+   "organize and schedule to-do tasks",
+   "review productivity statistics",
+   "desktop and Android pomodoro app"
+  ],
+  "how_to_run": [
+   "docker-compose up (backend image ghcr.io/francesco-gaglione/focusflowcloud:latest with a postgres:15-alpine db service)",
+   "cd k8s && kubectl apply -f namespace.yaml (then the remaining manifests in the order listed in the README)",
+   "cd backend && docker-compose up -d db",
+   "diesel migration run",
+   "just backend-run",
+   "cd app && bun install && bun run tauri:dev"
+  ],
+  "stack": [
+   "Rust",
+   "Axum",
+   "Diesel",
+   "Tokio",
+   "PostgreSQL",
+   "Tauri v2",
+   "SvelteKit",
+   "TypeScript",
+   "Bun",
+   "just",
+   "Docker",
+   "Kubernetes",
+   "WebSockets",
+   "Web Push (VAPID)"
+  ],
+  "notable": [
+   "Real-time state sync across clients over WebSockets",
+   "Clean architecture / domain-driven backend with OpenAPI/Swagger docs",
+   "Native apps for macOS, Windows, Linux and Android from Releases",
+   "Client asks for server URL on first launch, so no config files are needed in the app",
+   "Conventional Commits drive automatic versioning and changelogs"
+  ],
+  "caveats": [
+   "Full setup details are in an external documentation link that the README points to but does not include",
+   "Local development requires Rust 1.77+, Bun, Docker and Tauri prerequisites for your platform",
+   "Kubernetes manifests must be applied in a specific order; the README gives no further K8s guidance"
+  ],
+  "license": "MIT",
+  "category": "pomodoro time management",
+  "keywords": [
+   "pomodoro",
+   "pomodoro timer",
+   "focus timer",
+   "time management",
+   "focus sessions",
+   "productivity tracker",
+   "to-do list",
+   "task management",
+   "task scheduling",
+   "calendar view",
+   "statistics dashboard",
+   "rust backend",
+   "axum",
+   "diesel",
+   "postgresql",
+   "tauri",
+   "sveltekit",
+   "websocket sync",
+   "web push notifications",
+   "self-hosted",
+   "docker compose",
+   "kubernetes manifests",
+   "desktop app",
+   "android app",
+   "track work and breaks",
+   "share timer across devices",
+   "self-hosted productivity app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3740,
+  "output": 1258
+ },
+ "generated": "2026-10-29"
+}

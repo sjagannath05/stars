@@ -1,0 +1,82 @@
+{
+ "id": "piero24/plugnplaymac",
+ "repo": "Piero24/PlugNPlayMac",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "PlugNPlayMac - A script to automate tasks when connect a device to your Mac"
+  }
+ ],
+ "summary": {
+  "one_liner": "A shell-script automation that opens and closes chosen Mac apps when an external monitor is connected or disconnected, gated on a specific Wi-Fi network.",
+  "what_it_does": "The README describes a set of shell scripts that run when a Mac is connected to a specific external monitor. The main script opens configured apps (MonitorControl, Elgato Stream Deck, Google Drive, and others in the author's setup) and closes them on disconnect. A separate config file sets which apps to open, which monitor names and Wi-Fi networks trigger the script, and the battery charge limit. The script uses caffeinate to prevent sleep and bclm to limit battery charging, with a Swift file included for battery limiting. An installer copies files to their paths, and a .plist launches the script at startup. Logs are written to /tmp/plug.and.play.mac.log.",
+  "use_cases": [
+   "Auto-launch apps when plugging a Mac into a monitor at home",
+   "Close apps automatically on monitor disconnect",
+   "Prevent Mac sleep with caffeinate while docked",
+   "Limit MacBook battery charging with bclm",
+   "Run startup automation via launchd plist",
+   "Restrict automation to a specific home Wi-Fi network"
+  ],
+  "how_to_run": [
+   "git clone the repository",
+   "./PlugNPlayMac/PNPMacInstaller.sh",
+   "Grant Full Disk Access to /bin/bash and /usr/local/bin/PlugNPlayMac/blcm in System Settings > Privacy & Security > Full Disk Access",
+   "Reboot your Mac",
+   "Run ./PlugNPlayMac/PNPMacInstaller.sh again"
+  ],
+  "stack": [
+   "Shell script (bash)",
+   "Swift",
+   "launchd plist",
+   "bclm",
+   "caffeinate"
+  ],
+  "notable": "[\"Replaces Amphetamine with the preinstalled caffeinate tool to reduce background apps\", \"Wi-Fi network check so apps only open at home, not at a similarly named office monitor\", \"Shortcut for Apple Shortcuts app to toggle functions from the menu bar\", \"Battery charge limit via bclm, with 80/100 limits on Apple Silicon and 50-100 on Intel\"]</notable>\n<parameter name=\"caveats\">[\"Requires macOS Ventura or higher and manual Full Disk Access setup plus a reboot\", \"bclm on Apple Silicon only supports 80 or 100 charge limits; Intel supports 50-100\", \"Tested only on a few specific MacBook Pro models; the README says installation still involves manual steps\"]",
+  "license": "MIT",
+  "category": "macos automation scripts",
+  "keywords": [
+   "macos automation",
+   "shell script",
+   "bash",
+   "launchd",
+   "launch agent",
+   "auto open apps",
+   "monitor connect",
+   "external display",
+   "docking automation",
+   "wifi trigger",
+   "caffeinate",
+   "prevent sleep",
+   "bclm",
+   "battery charge limit",
+   "battery health",
+   "aldente alternative",
+   "amphetamine alternative",
+   "monitorcontrol",
+   "stream deck",
+   "apple shortcuts",
+   "menu bar toggle",
+   "startup script",
+   "mac login items",
+   "workspace setup",
+   "home office setup",
+   "desk setup automation",
+   "open apps when plugged in",
+   "close apps on disconnect",
+   "plug and play mac",
+   "macbook automation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4524,
+  "output": 1238
+ },
+ "generated": "2026-10-29"
+}

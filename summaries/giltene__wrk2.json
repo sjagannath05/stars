@@ -1,0 +1,83 @@
+{
+ "id": "giltene/wrk2",
+ "repo": "giltene/wrk2",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Load generation and production workloads",
+   "entry": "wrk2 - Issues requests on a fixed schedule and times each from when it was due, so server stalls reach the percentiles."
+  }
+ ],
+ "summary": {
+  "one_liner": "wrk2 is an HTTP benchmarking tool derived from wrk that sends requests at a constant target rate and records latency from when each request was scheduled, so server stalls show up in the percentiles.",
+  "what_it_does": "Runs HTTP load at a fixed total requests-per-second rate (set with -R/--rate, default 1000) spread across a configurable number of threads and connections. Latency is measured from the time each request was supposed to be sent, which corrects for Coordinated Omission. Per-run latency is stored in HdrHistogram rather than per-sample buffers, giving high-percentile accuracy. The --latency flag prints a percentile distribution, and --u_latency also prints an uncorrected distribution for comparison. An optional LuaJIT scripting API (init, request, response, done) customizes requests and reporting, with example scripts in scripts/. The README says measured latencies are accurate to roughly ±1 ms due to OS sleep behavior.",
+  "use_cases": [
+   "measure HTTP server latency percentiles under constant load",
+   "benchmark a web service at a fixed requests-per-second rate",
+   "detect latency stalls that closed-loop load tools hide",
+   "compare corrected and uncorrected latency distributions",
+   "scripted HTTP load tests with Lua"
+  ],
+  "how_to_run": [
+   "wrk -t2 -c100 -d30s -R2000 http://<target>",
+   "wrk -t2 -c100 -d30s -R2000 --latency http://<target>",
+   "wrk -t2 -c100 -d30s -R2000 --u_latency http://<target>"
+  ],
+  "stack": [
+   "C",
+   "LuaJIT",
+   "HdrHistogram"
+  ],
+  "notable": [
+   "Constant-throughput load with latency timed from the scheduled send time, avoiding Coordinated Omission",
+   "Lossless latency recording with HdrHistogram, accurate into the high 9s percentiles",
+   "--u_latency flag reports an uncorrected distribution alongside the corrected one",
+   "Keeps wrk's Lua scripting API and its latency and requests stats objects"
+  ],
+  "caveats": [
+   "Latency accuracy is about ±1 ms due to OS sleep time behavior, per the README",
+   "Experimental/development mode according to the README",
+   "Calibration takes 10 seconds, so runs shorter than 10-20 seconds may not be informative"
+  ],
+  "license": "unknown",
+  "category": "http load testing",
+  "keywords": [
+   "wrk2",
+   "http benchmarking",
+   "load testing",
+   "constant throughput",
+   "coordinated omission",
+   "latency percentiles",
+   "hdrhistogram",
+   "hdr histogram",
+   "wrk alternative",
+   "requests per second",
+   "fixed rate load generator",
+   "lua scripting",
+   "luajit",
+   "p99 latency",
+   "tail latency",
+   "web server benchmark",
+   "stress test http",
+   "load generator",
+   "benchmark api",
+   "throughput testing",
+   "latency measurement",
+   "http performance testing",
+   "rate limited load",
+   "measure server stalls",
+   "benchmark website speed",
+   "capacity testing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13171,
+  "output": 1144
+ },
+ "generated": "2026-10-29"
+}

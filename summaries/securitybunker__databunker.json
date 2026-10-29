@@ -1,0 +1,92 @@
+{
+ "id": "securitybunker/databunker",
+ "repo": "securitybunker/databunker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Database Management",
+   "entry": "Databunker - Network-based, self-hosted, GDPR compliant, secure database for personal data or PII. (Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Databunker is a self-hosted, Go-based API service for tokenizing and storing personal data (PII/PHI/KYC) with encryption and GDPR-oriented features.",
+  "what_it_does": "Databunker stores personal records behind a REST API and returns UUID tokens that applications can use to reference them instead of keeping the data in the main database. The README says records are encrypted with AES-256 and that search uses hash-based indexing. It states it blocks SQL and GraphQL injection by design and keeps bulk retrieval disabled by default. It lists GDPR data-subject operations (right of access, restriction/consent withdrawal, erasure, rectification, portability) as built in, plus consent management and an audit trail. The README says it supports MySQL and PostgreSQL and includes an OpenAPI specification and a Docker image for running a demo. A Node.js SDK is shown in an example.",
+  "use_cases": [
+   "Tokenize and store user PII outside the main application database",
+   "Back a KYC process for a crypto or financial startup",
+   "Handle GDPR data-subject requests such as access and erasure",
+   "Keep audit trails of customer profile changes",
+   "Replace a user table with an API-based record store",
+   "Store temporary identities for secure data exchange"
+  ],
+  "how_to_run": [
+   "docker pull securitybunker/databunker",
+   "docker run -p 3000:3000 -d --rm --name dbunker securitybunker/databunker demo",
+   "curl -s -X POST -H \"X-Bunker-Token: DEMO\" -H \"Content-Type: application/json\" -d '{\"first\":\"John\",\"last\":\"Doe\",\"login\":\"john\",\"email\":\"user@gmail.com\"}'  (create a user record against the demo instance)"
+  ],
+  "stack": [
+   "Go",
+   "MySQL",
+   "PostgreSQL",
+   "Docker",
+   "REST API / OpenAPI",
+   "Node.js SDK (databunker-sdk)"
+  ],
+  "notable": [
+   "Tokenization: returns UUID tokens to reference personal records from application code",
+   "Hash-based indexing for searching encrypted records",
+   "Built-in GDPR request handling (access, erasure, rectification, portability, consent withdrawal)",
+   "Bulk retrieval disabled by default",
+   "Passport.js support is listed in the README"
+  ],
+  "caveats": [
+   "Credit-card tokenization and enterprise security features are described as part of a separate paid 'Databunker Pro' offering",
+   "The README's resource and demo links are empty in this text, so setup beyond the Docker demo is not fully documented here",
+   "Compliance claims (HIPAA, PCI DSS, SOC2, ISO27001) are stated marketing-style and not independently verified in the README"
+  ],
+  "license": "MIT",
+  "category": "personal data vault",
+  "keywords": [
+   "personal data tokenization",
+   "pii storage",
+   "self-hosted pii vault",
+   "gdpr compliance",
+   "gdpr right to be forgotten",
+   "data subject access request",
+   "consent management",
+   "pseudonymization",
+   "tokenization api",
+   "uuid tokens",
+   "aes-256 encryption",
+   "hash-based indexing",
+   "sql injection protection",
+   "graphql security",
+   "kyc backend",
+   "hipaa phi storage",
+   "audit trail",
+   "golang api",
+   "go vault",
+   "mysql",
+   "postgresql",
+   "docker container",
+   "openapi rest api",
+   "passport.js",
+   "data segregation",
+   "user table replacement",
+   "store customer data securely",
+   "privacy by design",
+   "alternative to hashicorp vault for pii",
+   "self hosted gdpr tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3746,
+  "output": 1311
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "sortlist/overloop-cli",
+ "repo": "sortlist/overloop-cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Unsorted category",
+   "entry": "Overloop CLI - AI-powered outbound engine. Source 450M+ contacts, launch email + LinkedIn campaigns, manage conversations. JSON output, agent-native. npm i -g overloop-cli"
+  }
+ ],
+ "summary": {
+  "one_liner": "A command-line client for the Overloop sales-automation API v2 that lets developers and AI agents manage prospects, campaigns, sourcings, and conversations with JSON output.",
+  "what_it_does": "The CLI wraps the Overloop API v2 with commands for prospects, organizations, lists, campaigns, campaign steps, enrollments, sourcings, conversations, users, custom fields, sending addresses, and an exclusion list. Campaigns can be created with inline steps (delay, email) and activated or paused from the terminal. Sourcings can be estimated, created, started, paused, and cloned, with search options queried by field. Enrollments can be created individually or in bulk (up to 100 prospects). Every command prints JSON, so output can be piped into jq or read by an AI agent. Authentication is via an interactive login that stores an API key in ~/.overloop/config.json, or via the OVERLOOP_API_KEY environment variable.",
+  "use_cases": [
+   "automate cold email outreach campaigns",
+   "source prospects by job title and location",
+   "enroll prospects into sales sequences",
+   "manage a blocklist of emails and domains",
+   "script sales workflows from the terminal",
+   "let an AI agent operate an outbound sales pipeline"
+  ],
+  "how_to_run": [
+   "npm install -g overloop-cli",
+   "overloop login",
+   "export OVERLOOP_API_KEY=your_api_key",
+   "overloop prospects:list --per-page 100 | jq '.data[] | .email'",
+   "npx skills add sortlist/overloop-cli"
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "Overloop API v2",
+   "jq (optional, for JSON output processing)"
+  ],
+  "notable": [
+   "Agent-native: ships a SKILL.md installable into AI agents such as Cursor and Claude Code",
+   "All command output is JSON for scripting and piping",
+   "Sourcing estimate previews match counts before creating a sourcing",
+   "Inline campaign steps are chained automatically, avoiding manual step linking"
+  ],
+  "caveats": [
+   "Beta: APIs and tool interfaces may change between versions",
+   "API rate limit is 600 requests per minute per key",
+   "Individually created campaign steps must be chained with --previous-step-id or they do not appear in the UI"
+  ],
+  "license": "MIT",
+  "category": "sales automation cli",
+  "keywords": [
+   "sales automation",
+   "outbound sales",
+   "sales outreach cli",
+   "overloop",
+   "overloop cli",
+   "cold email campaigns",
+   "linkedin outreach",
+   "prospecting tool",
+   "lead sourcing",
+   "prospect database",
+   "campaign enrollment",
+   "sales sequences",
+   "drip campaigns",
+   "exclusion list",
+   "blocklist domains",
+   "json cli",
+   "agent-native cli",
+   "ai agent tools",
+   "claude code skill",
+   "cursor skill",
+   "node cli",
+   "npm global install",
+   "api client",
+   "sales api v2",
+   "conversation management",
+   "email outreach automation",
+   "source contacts",
+   "find prospects by location",
+   "bulk enroll prospects",
+   "automate sales from terminal",
+   "scriptable sales workflows"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4920,
+  "output": 1157
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "modelscope/funasr",
+ "repo": "modelscope/FunASR",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "funasr - Industrial-grade speech recognition toolkit with speaker diarization and emotion detection."
+  }
+ ],
+ "summary": {
+  "one_liner": "FunASR is an open-source speech recognition toolkit from ModelScope offering ASR, VAD, punctuation, speaker diarization, emotion and audio-event models, with offline, streaming, and CPU/edge deployment options.",
+  "what_it_does": "The toolkit provides a Python AutoModel interface and a funasr CLI for transcribing audio files into text, optionally with timestamps, speaker labels, and SRT/JSON output. Pipelines can combine ASR with FSMN-VAD (or optional Silero VAD), ct-punc punctuation, and CAM++ speaker embeddings. A streaming mode processes audio in chunks with a per-session cache for live transcription. Separate models cover emotion recognition (emotion2vec+large) and audio events (SenseVoiceSmall). The README also documents a FastAPI-based funasr-server with an OpenAI-style transcription endpoint, a Docker streaming runtime, and a llama.cpp/GGUF build that runs as a binary without Python. The README lists several third-party models (MOSS-Transcribe-Diarize, Qwen3-ASR, GLM-ASR-Nano, Whisper) with notes on their separate licenses.",
+  "use_cases": [
+   "Transcribe audio or video recordings to text",
+   "Generate SRT subtitles from audio files",
+   "Identify speakers in a recording",
+   "Live or streaming speech-to-text",
+   "Self-host a speech recognition HTTP API",
+   "Run offline speech recognition on CPU or edge devices",
+   "Detect emotion in speech"
+  ],
+  "how_to_run": [
+   "pip install torch torchaudio",
+   "pip install funasr",
+   "funasr audio.wav --output-format json",
+   "python -m pip install funasr fastapi uvicorn python-multipart",
+   "funasr-server --host 127.0.0.1 --port 8000 --model sensevoice --device cpu"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "torchaudio",
+   "FastAPI",
+   "uvicorn",
+   "llama.cpp (GGUF runtime)",
+   "Hugging Face Transformers",
+   "Docker"
+  ],
+  "notable": [
+   "Model zoo covers ASR (SenseVoiceSmall, Paraformer, Fun-ASR-Nano), VAD, punctuation, speaker embeddings, and emotion models in one toolkit",
+   "Native CPU/edge build via llama.cpp with GGUF weights and no Python at runtime, with Vulkan and CUDA packages",
+   "Streaming transcription with chunked input and per-session cache",
+   "CLI designed for scripting and AI agents, with JSON and SRT output",
+   "Optional MCP server and OpenAI-compatible API for agent frameworks"
+  ],
+  "caveats": [
+   "Model weights carry separate licenses from the MIT-licensed toolkit code; check each model card",
+   "Some checkpoints are third-party (e.g., MOSS-Transcribe-Diarize) and support varies by serving backend; the README advises benchmarking on your own audio",
+   "The HTTP server is unauthenticated by default and the README says to keep it on loopback unless the security guide is followed"
+  ],
+  "license": "MIT License for toolkit source code; pretrained model weights are licensed separately per model card",
+  "category": "speech recognition toolkit",
+  "keywords": [
+   "speech recognition",
+   "speech-to-text",
+   "asr",
+   "automatic speech recognition",
+   "speaker diarization",
+   "speaker identification",
+   "voice activity detection",
+   "vad",
+   "punctuation restoration",
+   "emotion recognition",
+   "streaming transcription",
+   "real-time transcription",
+   "subtitles srt",
+   "whisper alternative",
+   "sensevoice",
+   "paraformer",
+   "gguf",
+   "llama.cpp",
+   "cpu transcription",
+   "edge speech recognition",
+   "openai compatible api",
+   "transcription server",
+   "audio to text",
+   "pytorch asr",
+   "mcp server",
+   "transcribe audio file",
+   "meeting transcription",
+   "chinese speech recognition",
+   "multilingual transcription",
+   "offline transcription"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7506,
+  "output": 1425
+ },
+ "generated": "2026-10-29"
+}

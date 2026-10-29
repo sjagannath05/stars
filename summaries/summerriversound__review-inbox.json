@@ -1,0 +1,91 @@
+{
+ "id": "summerriversound/review-inbox",
+ "repo": "SummerRiversound/review-inbox",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Mods",
+   "entry": "Review Inbox by SummerRiversound - Claude Code mod that keeps GitHub work in a band above the prompt and a drawer: pull requests awaiting review, each summarized before it is opened, the user's own open PRs, and issues that mention or are assigned to them. Picked PRs go into the prompt as review requests carrying a review-style line learned from past review comments."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code mod that shows your GitHub review queue, your own PRs, and assigned or mentioning issues in a band above the prompt and a drawer, with optional background auto-reviews.",
+  "what_it_does": "Review Inbox adds a status band above the Claude Code prompt and a drawer opened with /review-inbox, using the GitHub CLI (gh) under your own login. The To review tab lists PRs waiting for your review, each with a plain-language summary, risk markers, size and how long the request has waited. The My PRs tab shows your open PRs by state (changes requested, CI failing, conflicts, waiting, approved, merge queue, draft), and the Assigned & mentioned tab lists issues assigned to you and items that mention you. Selected PRs are added to your prompt as review requests, including a review-style line learned from your past review comments. Saved searches, a Notifications tab, and per-card buttons for follow-up prompts are also included. Optional settings enable direct GitHub writes (approve, mark ready, update branch, rerun failed CI, assign) and an auto review mode that stores reviews as your pending review on GitHub.",
+  "use_cases": [
+   "Track pull requests waiting for my review",
+   "Summarize PRs before opening them",
+   "Monitor my own PRs for CI failures and requested changes",
+   "Find issues assigned to or mentioning me",
+   "Background-draft code reviews for incoming PRs",
+   "Get GitHub notifications inside Claude Code"
+  ],
+  "how_to_run": [
+   "gh auth login",
+   "/plugin marketplace add <marketplace source, left blank in the README>",
+   "/plugin install review-inbox@review-inbox",
+   "/review-inbox"
+  ],
+  "stack": [
+   "Claude Code 2.1.287 or later (mods / function-hook plugins)",
+   "GitHub CLI (gh)",
+   "git",
+   "TypeScript hooks",
+   "Claude models (sonnet by default, opus optional) for summaries and auto reviews"
+  ],
+  "notable": [
+   "Band above the prompt shows only counts that need you, colored by how long the oldest review request has waited",
+   "Auto review drafts reviews in the background and keeps them as a pending review you post yourself",
+   "Review style is learned weekly from your own past review comments",
+   "Next-step buttons (Address comments, Fix CI, Resolve conflict) work in a new worktree without touching your branch",
+   "Interface and summaries available in nine languages"
+  ],
+  "caveats": [
+   "Auto review uses noticeably more tokens, with tens of thousands per PR and more on opus",
+   "Requires Claude Code 2.1.287 or later, and mods are in early access with API that may change",
+   "Notifications tab needs gh's own sign-in or a classic token; Windows without WSL keeps run folders in place",
+   "Lists are capped at 100 items per category"
+  ],
+  "license": "MIT",
+  "category": "claude code plugin",
+  "keywords": [
+   "claude code mod",
+   "claude code plugin",
+   "github pull requests",
+   "pr review queue",
+   "review requests",
+   "code review inbox",
+   "github cli",
+   "gh cli",
+   "pending review",
+   "auto review",
+   "ai code review",
+   "pr summaries",
+   "my open prs",
+   "ci status",
+   "merge conflicts",
+   "github notifications",
+   "issue tracker",
+   "assigned issues",
+   "saved searches",
+   "terminal dashboard",
+   "status band",
+   "review my teammates pr",
+   "see prs waiting on me",
+   "track pull requests in terminal",
+   "automated pr review",
+   "github enterprise server",
+   "multilingual interface",
+   "review style learning"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14448,
+  "output": 1297
+ },
+ "generated": "2026-10-29"
+}

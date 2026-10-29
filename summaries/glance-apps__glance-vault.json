@@ -1,0 +1,99 @@
+{
+ "id": "glance-apps/glance-vault",
+ "repo": "glance-apps/glance-vault",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "dayGLANCE - Day planner with drag-and-drop time blocking, inbox, recurring tasks, habits, routines, goals, projects and Pomodoro focus mode, plus iCal and CalDAV calendar sync. Data stays in the browser, with optional WebDAV or GLANCEvault sync. (Source Code, Clients) MIT Javascript/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "glance-vault is an optional self-hosted Node/TypeScript backend for the GLANCE apps that provides zero-knowledge sync, cross-device intents, and content-addressed media storage over SQLite.",
+  "category": "self-hosted sync backend",
+  "keywords": [
+   "sync server",
+   "self-hosted sync",
+   "zero-knowledge sync",
+   "glance",
+   "dayglance",
+   "lastglance",
+   "lifeglance",
+   "sqlite",
+   "express",
+   "better-sqlite3",
+   "typescript",
+   "docker",
+   "docker compose",
+   "sse",
+   "server-sent events",
+   "real-time push",
+   "device token",
+   "bearer token auth",
+   "per-account credentials",
+   "blob storage",
+   "media storage",
+   "content-addressed storage",
+   "salt store",
+   "healthcheck",
+   "reverse proxy",
+   "caddy",
+   "nginx",
+   "rate limiting",
+   "keep my apps in sync across devices",
+   "sync tasks between devices",
+   "self-host sync for planner",
+   "obsidian bridge sync"
+  ],
+  "what_it_does": "The server stores sync rows per app namespace with a per-account monotonic sequence number, supporting batch upserts, incremental list fetches, single-row reads, and soft-deletes with tombstones. It also stores a key-derivation salt per account so new devices can derive the same key, and provides an account-scoped SSE endpoint that sends nudges (not content) when data changes. Cross-device intents and a content-addressed blob store are part of the design. Authentication is a shared Bearer device token by default, or an optional per-account mode with enrollment, credential revocation, and usage accounting. Optional per-account quotas, per-IP rate limiting, and CORS allow-listing are configurable through environment variables or a JSON config file. The README describes the status as an early phase: the server runs and holds the schema, but client-side consumption of push is still a later step, so clients poll today.",
+  "use_cases": [
+   "sync dayGLANCE data between devices on a home server",
+   "run a private sync backend for the GLANCE apps",
+   "host a sync endpoint behind a reverse proxy with HTTPS",
+   "store encrypted sync envelopes without the server reading them",
+   "enroll multiple devices into per-household accounts",
+   "monitor per-account storage usage on a shared server"
+  ],
+  "how_to_run": [
+   "cp .env.example .env",
+   "Edit .env and set GLANCEVAULT_DEVICE_TOKEN to a long random secret (e.g. openssl rand -hex 32)",
+   "docker compose -f docker-compose.example.yml up --build (development, builds from source)",
+   "For production: cp .env.example .env && docker compose up -d (pulls ghcr.io/glance-apps/glance-vault:latest)",
+   "curl http://localhost:8080/healthz to verify the server is running"
+  ],
+  "stack": [
+   "Node.js",
+   "TypeScript",
+   "Express",
+   "better-sqlite3",
+   "SQLite",
+   "Docker",
+   "Docker Compose",
+   "Server-Sent Events"
+  ],
+  "notable": [
+   "Zero-knowledge design: the server stores the envelope column as opaque bytes and never parses or decrypts it",
+   "Server-Sent Events push that sends only sequence-number nudges, with polling as the fallback",
+   "Optional per-account auth mode with enrollment keys, credential revocation, and usage accounting endpoints",
+   "Byte-for-byte losslessness check script for verifying round-trips of real sync data",
+   "Configurable per-account quotas that are unset (unenforced) by default"
+  ],
+  "caveats": [
+   "Push is single-container and in-process by design; horizontally scaled push is deferred",
+   "Client-side consumption of the push channel is not yet implemented, so clients currently poll",
+   "Default shared auth mode uses one instance-wide token and quotas are advisory since the client claims its own account id; real enforcement needs per-account mode",
+   "Reverse proxies must not buffer /events, or real-time push silently degrades to polling"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16922,
+  "output": 1439
+ },
+ "generated": "2026-10-29"
+}

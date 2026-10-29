@@ -1,0 +1,95 @@
+{
+ "id": "openclaw/clawhub",
+ "repo": "openclaw/clawhub",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Ecosystem & Extensions",
+   "entry": "ClawHub — Skill directory"
+  }
+ ],
+ "summary": {
+  "one_liner": "ClawHub is the public skill registry for OpenClaw, where users publish, version, search, and install text-based agent skills (SKILL.md plus supporting files) and, more recently, code and bundle plugins.",
+  "what_it_does": "The web app lets you browse skills and render their SKILL.md, publish versioned skill releases with changelogs and tags such as \"latest\", and rename or merge owned skills while keeping old slugs as redirects. It also covers souls (SOUL.md) with the same publish and browse flow, and it exposes a package catalog for OpenClaw code plugins and bundle plugins via /packages APIs and CLI commands. Search uses OpenAI embeddings with a Convex vector index rather than keyword matching. The CLI handles login, search, install, pin/unpin, update, and publish, and it has a soft-delete model where hard delete is admin-only. Users can also star, comment, and pin local skill installs so forced updates cannot overwrite them.",
+  "use_cases": [
+   "Publish a versioned agent skill to a shared registry",
+   "Find OpenClaw skills by semantic search",
+   "Install and update agent skills from the command line",
+   "Browse and inspect plugin packages with trust and capability metadata",
+   "Pin a local skill install so updates do not overwrite it",
+   "Self-host or develop the ClawHub registry website"
+  ],
+  "how_to_run": [
+   "bun install",
+   "cp .env.local.example .env.local",
+   "bunx convex dev",
+   "bun run dev",
+   "bun run seed:dev"
+  ],
+  "stack": [
+   "TanStack Start",
+   "React",
+   "Vite",
+   "Nitro",
+   "Convex",
+   "Convex Auth",
+   "GitHub OAuth",
+   "OpenAI embeddings (text-embedding-3-small)",
+   "Bun",
+   "Worktrunk (wt)"
+  ],
+  "notable": [
+   "Native registry for both text-based skills and OpenClaw code/bundle plugins",
+   "Vector search over embeddings instead of keyword matching",
+   "Rename and merge of owned skills with preserved old-slug redirects",
+   "Pinning of local installs to protect frozen copies from updates",
+   "Nix plugin pointer support in SKILL.md frontmatter for nix-clawdbot"
+  ],
+  "caveats": [
+   "Requires a Convex deployment, GitHub OAuth app, JWT keys, and an OpenAI API key for search, so local setup is non-trivial",
+   "Anonymous install telemetry is sent during clawhub sync when logged in unless CLAWHUB_DISABLE_TELEMETRY=1 is set",
+   "Hard delete is restricted to admins; uninstall only affects the local machine"
+  ],
+  "license": "unknown",
+  "category": "agent skill registry",
+  "keywords": [
+   "skill registry",
+   "agent skills",
+   "openclaw",
+   "clawhub",
+   "skill.md",
+   "soul.md",
+   "agent plugin catalog",
+   "publish skills",
+   "semantic search",
+   "vector search",
+   "embeddings search",
+   "convex backend",
+   "tanstack start",
+   "clawhub cli",
+   "install agent skill",
+   "share skills with team",
+   "find ai agent skills",
+   "plugin marketplace",
+   "nix plugin",
+   "skill versioning",
+   "pin skill install",
+   "skill moderation",
+   "self-host skill registry",
+   "package catalog",
+   "discover agent tools",
+   "bun",
+   "react"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4450,
+  "output": 1230
+ },
+ "generated": "2026-10-29"
+}

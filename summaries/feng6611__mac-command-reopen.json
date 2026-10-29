@@ -1,0 +1,83 @@
+{
+ "id": "feng6611/mac-command-reopen",
+ "repo": "Feng6611/mac-command-reopen",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Command Reopen - Makes Cmd+Tab restore minimized and closed windows with zero permissions."
+  }
+ ],
+ "summary": {
+  "one_liner": "Command Reopen is a macOS menu bar utility that makes Cmd+Tab restore minimized or closed app windows by requesting a standard app reopen when you switch to an app with no visible windows.",
+  "category": "macos window utility",
+  "keywords": [
+   "cmd+tab",
+   "macos",
+   "mac menu bar app",
+   "restore minimized windows",
+   "reopen closed windows",
+   "window management",
+   "app switcher",
+   "dock minimized window",
+   "nsworkspace",
+   "cgwindowlistcopywindowinfo",
+   "reopen event",
+   "no accessibility permission",
+   "zero permissions",
+   "alt-tab alternative",
+   "command tab fix",
+   "bring back window",
+   "switch apps",
+   "excluded apps",
+   "swift",
+   "sandboxed mac app",
+   "mac app store",
+   "background utility",
+   "option tab workaround",
+   "window restore",
+   "menubar utility",
+   "focus return",
+   "dock icon reopen",
+   "obsidian plugins"
+  ],
+  "what_it_does": "Command Reopen watches for application activation through NSWorkspace notifications. When you Cmd+Tab to an app that has no visible windows, it checks the public CoreGraphics window list and, if no window exists, sends a standard reopen request, the same one macOS sends when you click an app's Dock icon. This can bring back a minimized window from the Dock or prompt a new default window for a closed one. When you close or minimize an app's last window, focus shifts to your previous app. Apps can be excluded by name or bundle identifier, and the utility runs from the menu bar with an option to hide its icon. The README states that the native switcher is left unchanged and that the app requires no Accessibility or Screen Recording permissions.",
+  "use_cases": [
+   "restore a minimized window with Cmd+Tab",
+   "reopen a closed app window when switching apps",
+   "avoid Accessibility permission for window tools",
+   "keep native Cmd+Tab behavior for selected apps",
+   "return focus to previous app after closing a window"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Swift",
+   "macOS",
+   "NSWorkspace",
+   "CoreGraphics (CGWindowListCopyWindowInfo)"
+  ],
+  "notable": [
+   "Needs zero permissions: no Accessibility or Screen Recording access",
+   "Uses the same reopen request as clicking a Dock icon, not window hacks",
+   "Leaves the native Cmd+Tab switcher UI unchanged",
+   "Per-app exclusion list by name or bundle identifier",
+   "Available on the Mac App Store and as a GitHub build"
+  ],
+  "caveats": [
+   "Whether a window actually appears depends on the app's own handling of standard reopen events",
+   "Mac App Store version sends anonymous product analytics; the GitHub build sends none",
+   "macOS only; the README does not give setup or build steps"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2893,
+  "output": 1066
+ },
+ "generated": "2026-10-29"
+}

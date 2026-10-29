@@ -1,0 +1,101 @@
+{
+ "id": "orangecoloured/analog",
+ "repo": "orangecoloured/analog",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Analytics",
+   "entry": "ANALOG - A minimal analytics tool. Tracks events in a span of 10-30 days. MIT Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ANALOG is a minimal, self-hosted analytics tool that records named events and shows them over a rolling 10–30 day window.",
+  "what_it_does": "It stores event counts through a small Node.js API (POST an event name to /api/events) and serves a web dashboard that plots the events for a configurable time range. The database is pluggable: the README lists MongoDB, PostgreSQL, Redis and SQLite (via libsql/Turso or a local file) and selects one with ANALOG_DATABASE_PROVIDER. Access can be protected with a bearer-style token, optionally only for POST requests. A clean-up step removes old data, triggered either on GET requests or by a scheduled function. The README says it is heavily inspired by piratepx.",
+  "use_cases": [
+   "self-hosted website event tracking",
+   "minimal privacy-friendly analytics dashboard",
+   "counting custom events over the last 10 to 30 days",
+   "deploying a simple analytics page on Render, Koyeb or Vercel",
+   "storing analytics in SQLite, Redis, MongoDB or PostgreSQL"
+  ],
+  "how_to_run": [
+   "Clone this repository.",
+   "Create .env.local with your settings (database provider and connection URL, ports, token).",
+   "Run: npm install",
+   "Run: npm run dev (launches the frontend app and the Node server)",
+   "Alternatively, build with the Dockerfile: docker build -t analog-analytics ., then docker run with ANALOG_STATIC_SERVER=true and the database variables set."
+  ],
+  "stack": [
+   "Node.js",
+   "Vite",
+   "Docker",
+   "libsql",
+   "MongoDB",
+   "PostgreSQL",
+   "Redis",
+   "SQLite",
+   "Netlify",
+   "Vercel",
+   "Render",
+   "Koyeb"
+  ],
+  "notable": [
+   "Pluggable storage backend chosen by a single environment variable",
+   "Dashboard time range configurable from 10 to 30 days",
+   "Deployable as a Docker container or to Netlify, Vercel, Render and Koyeb using included config files",
+   "Simple REST API: GET returns counts per event, POST records an event name",
+   "Optional token protection for the dashboard and for POST requests"
+  ],
+  "caveats": [
+   "Scheduled clean-up may not work on Netlify or Vercel because of runtime limitations",
+   "PostgreSQL should be used with a transaction pooler connection",
+   "Several environment variables need the VITE_ prefix and are baked in at build time",
+   "The README is a brief setup guide with no stated maturity or maintenance status"
+  ],
+  "license": "MIT",
+  "category": "self-hosted analytics",
+  "keywords": [
+   "analytics",
+   "self-hosted analytics",
+   "event tracking",
+   "event counter",
+   "minimal analytics",
+   "web analytics alternative",
+   "piratepx",
+   "nodejs analytics",
+   "vite",
+   "docker analytics",
+   "libsql",
+   "turso",
+   "sqlite analytics",
+   "redis analytics",
+   "mongodb analytics",
+   "postgresql analytics",
+   "supabase",
+   "render deployment",
+   "koyeb",
+   "netlify",
+   "vercel",
+   "vercel cron clean up",
+   "track custom events",
+   "count page events",
+   "share analytics dashboard",
+   "privacy friendly tracking",
+   "rolling 30 day stats",
+   "lightweight usage stats",
+   "self host event tracker",
+   "api events endpoint",
+   "token protected dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3767,
+  "output": 1238
+ },
+ "generated": "2026-10-29"
+}

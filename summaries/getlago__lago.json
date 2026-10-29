@@ -1,0 +1,97 @@
+{
+ "id": "getlago/lago",
+ "repo": "getlago/lago",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "Lago - Metering and usage-based billing. (Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lago is an open-source, API-first billing platform that meters product usage (including AI tokens and compute), applies pricing and credits, and generates invoices and payment collection.",
+  "what_it_does": "Ingests usage events from applications and turns them into billable metrics with support for many pricing models (usage-based, prepaid, graduated, volume, package, minimum commitment, hybrid). It handles subscriptions, prepaid credit wallets, entitlements, invoices, credit notes, taxes, and multiple currencies and entities. It orchestrates payments through providers such as Stripe, Adyen, and GoCardless, with retries and dunning. The README describes REST API, SDKs (Node.js, Python, Ruby, Go), webhooks, an MCP server, and a CLI for programmatic and agent-driven access. A local Docker Compose setup is documented for self-hosting, and a demo script prices sample AI token usage.",
+  "use_cases": [
+   "meter API calls or AI token usage and bill customers",
+   "usage-based or prepaid billing for SaaS products",
+   "generate invoices and collect payments from usage",
+   "self-host a billing and subscription system",
+   "manage credits, allowances and entitlements for customers",
+   "automate billing workflows through an API or AI agent"
+  ],
+  "how_to_run": [
+   "git clone --depth 1 <repository URL>",
+   "cd lago",
+   "echo \"LAGO_RSA_PRIVATE_KEY=\\\"$(openssl genrsa 2048 | openssl base64 -A)\\\"\" >> .env",
+   "docker compose up -d",
+   "Optional local AI pricing demo: ./examples/agentic-ai-demo/run.sh (requires Docker, curl, jq)"
+  ],
+  "stack": [
+   "Ruby",
+   "Docker Compose",
+   "REST API / OpenAPI",
+   "Node.js SDK",
+   "Python SDK",
+   "Go SDK",
+   "Ruby SDK",
+   "Helm charts",
+   "Prometheus"
+  ],
+  "notable": [
+   "Idempotent event ingestion keyed by transaction_id, so retries do not double-bill",
+   "Atomic batch ingestion: an invalid event causes the whole batch to be rejected",
+   "Headless, API-first design with an MCP server and CLI for AI agents",
+   "Supports both direct use (own product) and embedded white-label billing for platforms",
+   "Dedicated workers can be scaled separately for events, invoices, payments and webhooks"
+  ],
+  "caveats": [
+   "Some features (Billing Assistant, enterprise integrations, governance, embedded white-label use) are Premium or available on request",
+   "Managed Lago Cloud is a commercial offering; the README points to contacting sales for it",
+   "Self-hosting requires configuring database, Redis, SMTP, TLS and object storage for production, per the deployment guide"
+  ],
+  "license": "AGPL-3.0",
+  "category": "usage-based billing platform",
+  "keywords": [
+   "usage-based billing",
+   "metering",
+   "billing platform",
+   "invoicing",
+   "subscription billing",
+   "prepaid credits",
+   "usage events",
+   "ai token billing",
+   "llm cost metering",
+   "self-hosted billing",
+   "open source billing",
+   "payment collection",
+   "dunning",
+   "pricing models",
+   "entitlements",
+   "api billing",
+   "mcp server",
+   "billing api",
+   "stripe billing alternative",
+   "chargebee alternative",
+   "lago",
+   "billing for saas",
+   "meter api calls",
+   "track usage and bill customers",
+   "self host invoicing software",
+   "agpl billing software",
+   "docker billing system",
+   "graduated pricing",
+   "credit notes",
+   "revenue analytics"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5976,
+  "output": 1280
+ },
+ "generated": "2026-10-29"
+}

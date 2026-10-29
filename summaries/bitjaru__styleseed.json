@@ -1,0 +1,102 @@
+{
+ "id": "bitjaru/styleseed",
+ "repo": "bitjaru/styleseed",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "StyleSeed by kiwiman - A design engine that takes a different tack from \"feed the model more tokens\": it teaches design *judgment* — ~74 rules pros carry but never write down (\"the refined black isn't #000, it's #2A2A2A\"; \"one accent color, everything else grayscale\") — as plain markdown the agent reads automatically, plus a brand-agnostic skin system, a named motion vocabulary, and /ss-* review s"
+  }
+ ],
+ "summary": {
+  "one_liner": "StyleSeed is an MIT-licensed design-judgment engine that gives coding agents (Claude Code, Codex, Cursor) recorded expert design rules, brand skins, a motion vocabulary, and scored review/verify workflows for building UI.",
+  "what_it_does": "It ships 74 plain-markdown design rules (DESIGN-LANGUAGE.md) that agents read, covering things like avoiding default accent colors, icon-in-chip cliches, and tokens-only hex usage. A context compiler (/styleseed resolve) turns the selected grammar, adapter, brand recipe, and palette into a small hash-verified bundle instead of loading the full handbook. A project design lock (STYLESEED.md) records skin, key color, radius, and motion so later sessions stay consistent. The build loop scores output 0-100 and asks the agent to revise below 80 before presenting, and /styleseed verify renders the screen to check it visually. The package also includes 48 React components, seven built-in token skins, nine brand recipes, eight palette recipes, and five named motion seeds with a keyword library. The README says the score does not replace human design acceptance.",
+  "use_cases": [
+   "enforce consistent UI design in AI-generated frontend code",
+   "score and revise generated screens before showing them",
+   "retrofit a generic-looking existing app with design rules",
+   "keep color, type, and radius decisions consistent across sessions",
+   "generate React components and dashboard pages with a design system",
+   "create social carousels, decks, or documents with a visual style"
+  ],
+  "how_to_run": [
+   "npx -y skills add bitjaru/styleseed -a codex claude-code -y --copy",
+   "Claude Code: /styleseed setup, then /styleseed resolve",
+   "Codex: $styleseed setup, then $styleseed resolve",
+   "Send a build request, e.g. /styleseed build or $styleseed Help improve this screen",
+   "Manual alternative: git clone the repo and copy engine/.claude/skills into .claude/skills or .agents/skills",
+   "Cursor: cp engine/.cursorrules your-project/.cursorrules"
+  ],
+  "stack": [
+   "React 18",
+   "TypeScript",
+   "Tailwind CSS v4",
+   "Radix UI",
+   "Vite 6",
+   "Lucide Icons",
+   "CVA",
+   "framer-motion",
+   "shadcn/ui patterns",
+   "Node.js/npm (installer)"
+  ],
+  "notable": [
+   "Design rules are written as judgment (why and when to apply a pattern) and stored as plain markdown the agent reads automatically",
+   "Enforced score-then-fix loop: the build workflow scores UI and revises below 80 before presentation",
+   "Project design lock (STYLESEED.md) plus a source-hashed context compiler to limit drift and token use",
+   "Brand recipes change structure and components, not just palette; token skins change color and type material",
+   "Named motion vocabulary with five seeds and copy-paste keyword moves, respecting reduced motion"
+  ],
+  "caveats": [
+   "The README states the score is not expert approval and rules are not universal taste; human design acceptance is still required",
+   "Enforcement depends on the agent actually invoking the workflow; a markdown file alone cannot block delivery",
+   "Best results need installation (Node.js/npm) and the skills loaded; without install, the compiler and gates are a weaker manual path",
+   "The optional ss-learn extension is repository-only and not part of the public install"
+  ],
+  "license": "MIT",
+  "category": "design rules for ai agents",
+  "keywords": [
+   "design judgment",
+   "coding agent design",
+   "claude code skill",
+   "codex skill",
+   "cursor rules",
+   "cursorrules",
+   "agents.md",
+   "claude.md",
+   "ui design rules",
+   "ai generated ui looks generic",
+   "vibe coding design",
+   "design system",
+   "design tokens",
+   "shadcn alternative",
+   "react components",
+   "tailwind css",
+   "radix ui",
+   "brand skins",
+   "motion library",
+   "framer motion",
+   "ui quality gate",
+   "design linting",
+   "accessibility audit",
+   "wcag 2.2",
+   "visual regression render",
+   "make my app look professional",
+   "design review for ai code",
+   "retrofit generic ui",
+   "design lock",
+   "stop ai design drift",
+   "frontend design skill",
+   "npx skills add"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16941,
+  "output": 1524
+ },
+ "generated": "2026-10-29"
+}

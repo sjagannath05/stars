@@ -1,0 +1,96 @@
+{
+ "id": "vgrichina/poorcoder",
+ "repo": "vgrichina/poorcoder",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI-Powered Compilers and Code Assistants",
+   "entry": "poorcoder - Lightweight Bash scripts that enhance your terminal coding workflow with web-based AI assistants like Claude or Grok."
+  }
+ ],
+ "summary": {
+  "one_liner": "poorcoder is a set of lightweight Bash scripts that gather project code context for pasting into web-based AI chat interfaces, apply code changes from LLM markdown responses, and generate AI commit messages from git changes.",
+  "category": "ai coding workflow scripts",
+  "keywords": [
+   "bash",
+   "shell scripts",
+   "terminal",
+   "ai coding assistant",
+   "llm",
+   "claude",
+   "grok",
+   "chatgpt",
+   "web ui llm",
+   "subscription llm",
+   "code context",
+   "context generator",
+   "apply llm changes",
+   "apply markdown code blocks",
+   "markdown code applier",
+   "ai commit message",
+   "git commit message generator",
+   "autocommit",
+   "git-context",
+   "llm cli",
+   "llm command line",
+   "openrouter",
+   "pbcopy",
+   "pbpaste",
+   "xclip",
+   "clipboard",
+   "unix philosophy",
+   "alternative to aider",
+   "alternative to cursor",
+   "copy code to llm",
+   "share project code with chatbot",
+   "generate commit messages with ai",
+   "apply chatgpt response to files"
+  ],
+  "what_it_does": "The repository contains four Bash scripts. 'context' collects code from selected files or glob patterns (with include/exclude options and optional git information) so it can be pasted into a web LLM. 'apply-md' reads markdown, typically an LLM response from stdin or the clipboard, extracts code blocks, and writes them to the filesystem, with dry-run, verbose, and create-missing options. 'git-context' produces git-related information meant to help an LLM write commit messages. 'autocommit' wraps git-context and the llm CLI to commit all changes with an AI-generated message, then opens an editor so the user can review it. The README describes a workflow where context is copied to a web chat, and the response is applied back to the project. The README also shows pipelines using the llm CLI with an API-based model.",
+  "use_cases": [
+   "copy project code into a web chat like Claude.ai or Grok",
+   "apply code changes from an LLM response to local files",
+   "generate AI commit messages from git changes",
+   "preview LLM-suggested edits with a dry run",
+   "pipe file context into a command-line LLM for quick fixes",
+   "use a flat-rate chat subscription alongside terminal work"
+  ],
+  "how_to_run": [
+   "git clone <repository-url>",
+   "cd poorcoder",
+   "chmod +x context apply-md git-context autocommit",
+   "cat response.md | ./apply-md",
+   "./context --include=\"src/*.js\" --exclude=\"*.test.js\" | pbcopy",
+   "./autocommit"
+  ],
+  "stack": [
+   "Bash",
+   "git",
+   "llm CLI (optional, for git-context and autocommit)",
+   "pbcopy/pbpaste or xclip (clipboard)"
+  ],
+  "notable": [
+   "Designed for web-based LLM subscriptions instead of API-driven IDE tools",
+   "apply-md turns markdown code blocks from an LLM response into file changes, with dry-run preview",
+   "autocommit generates a commit message from git changes and opens an editor for review",
+   "Project-specific install option copies scripts and prompts into your own repo for customization",
+   "Released into the public domain under The Unlicense"
+  ],
+  "caveats": [
+   "clipboard examples use pbcopy/pbpaste (macOS); the README only names xclip as the Linux alternative",
+   "autocommit and git-context require the llm CLI installed and configured with a model, which implies API usage costs",
+   "The README describes scripts only and gives no test or maintenance information"
+  ],
+  "license": "The Unlicense (public domain)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4680,
+  "output": 1293
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,103 @@
+{
+ "id": "defilantech/llmkube",
+ "repo": "defilantech/LLMKube",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Generative Artificial Intelligence (GenAI)",
+   "entry": "LLMKube - Kubernetes operator for self-hosted LLM inference with pluggable runtimes (llama.cpp, vLLM, TGI, Ollama, vllm-swift), multi-GPU sharding, NVIDIA CUDA + Apple Silicon Metal support, and OpenAI-compatible API. (Source Code) Apache-2.0 Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "LLMKube is a Kubernetes operator that deploys and manages self-hosted LLM inference across mixed hardware (NVIDIA, AMD via Vulkan, Intel, and Apple Silicon), exposing an OpenAI-compatible API.",
+  "what_it_does": "The operator defines Model and InferenceService custom resources that handle model download and caching, GPU scheduling, health checks, scaling, and an OpenAI-compatible /v1/chat/completions endpoint. A ModelRouter CRD adds policy-aware routing between local InferenceServices and external providers (Anthropic, OpenAI, Bedrock, LiteLLM), with fail-closed behavior for regulated data and per-rule timeouts. The optional Metal Agent runs llama-server, mlx-server, and vllm-swift as native macOS processes to use Apple Silicon Metal GPUs, and registers back into the cluster. Foreman is an opt-in agentic add-on with its own CRDs for running coding-agent pipelines on the fleet. The project also ships a CLI with a model catalog, Prometheus/Grafana monitoring, and Helm charts, with an OpenShift/MicroShift preset.",
+  "use_cases": [
+   "Run LLMs on on-prem or air-gapped Kubernetes clusters",
+   "Mix NVIDIA, AMD, Intel, and Apple Silicon hosts in one cluster",
+   "Serve an OpenAI-compatible endpoint for internal apps",
+   "Route PII-sensitive requests to local models and other requests to cloud APIs",
+   "Use Mac Studios as low-latency inference nodes in a Kubernetes cluster",
+   "Run batch agentic coding pipelines on local hardware"
+  ],
+  "how_to_run": [
+   "brew install defilantech/tap/llmkube",
+   "helm repo add llmkube <repo-url>",
+   "helm install llmkube llmkube/llmkube --namespace llmkube-system --create-namespace",
+   "llmkube deploy phi-4-mini",
+   "kubectl port-forward svc/phi-4-mini 8080:8080",
+   "make install && make run  (from source, after git clone)"
+  ],
+  "stack": [
+   "Go",
+   "Kubernetes operator (Kubebuilder)",
+   "Helm",
+   "Docker",
+   "llama.cpp",
+   "vLLM",
+   "TGI",
+   "Ollama",
+   "mlx-server",
+   "vllm-swift",
+   "Prometheus",
+   "OpenTelemetry",
+   "Grafana"
+  ],
+  "notable": [
+   "Metal Agent runs inference as native macOS processes so Apple Silicon Metal GPUs are usable, while the rest of the cluster sees an ordinary Service",
+   "Heterogeneous fleets: NVIDIA, AMD (Vulkan), Intel, and Apple Silicon hosts under one operator and one set of CRDs",
+   "ModelRouter enforces fail-closed routing for PII/PHI with apply-time validation and HTTP 503 at runtime instead of cloud fallback",
+   "Foreman agentic harness adds Workload, AgenticTask, Agent, and FleetNode CRDs on a separate API group"
+  ],
+  "caveats": [
+   "Apple Silicon support requires the separate Metal Agent running natively on macOS outside the cluster",
+   "README says Ollama is simpler for a single model on one laptop; the project targets multi-node Kubernetes setups",
+   "Several features are described as planned or roadmap items (e.g., S3 model source, SafeTensors, multi-node sharding for 70B+ models)",
+   "API group is v1alpha1, indicating an early-stage API"
+  ],
+  "license": "Apache-2.0",
+  "category": "kubernetes llm inference",
+  "keywords": [
+   "kubernetes operator",
+   "llm inference",
+   "self-hosted llm",
+   "llama.cpp",
+   "vllm",
+   "text generation inference",
+   "ollama alternative",
+   "kserve alternative",
+   "localai alternative",
+   "openai-compatible api",
+   "apple silicon metal",
+   "macos gpu inference",
+   "nvidia cuda",
+   "amd vulkan",
+   "intel sycl",
+   "multi-gpu sharding",
+   "gguf models",
+   "crd inferenceservice",
+   "helm chart llm",
+   "model router",
+   "hybrid local cloud llm",
+   "pii routing policy",
+   "air-gapped ai",
+   "on-prem llm deployment",
+   "heterogeneous gpu cluster",
+   "run llm on kubernetes",
+   "host my own chatgpt-style api",
+   "self-hosted openai api",
+   "prometheus gpu monitoring",
+   "agentic coding fleet",
+   "openshift llm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10736,
+  "output": 1659
+ },
+ "generated": "2026-10-29"
+}

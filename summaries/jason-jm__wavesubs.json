@@ -1,0 +1,106 @@
+{
+ "id": "jason-jm/wavesubs",
+ "repo": "jason-jm/wavesubs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "Wave Subs - Generates SRT/ASS subtitles from any video with local AI and auto-translates them, fully offline."
+  }
+ ],
+ "summary": {
+  "one_liner": "Wave Subs is a free, open-source desktop app for macOS (Apple Silicon) and Windows that generates SRT/ASS subtitles from videos using local Whisper speech recognition and local or cloud translation, without uploading the video.",
+  "what_it_does": "It takes a video, audio file, subtitle file, or whole folder and produces subtitles: it uses embedded text subtitle tracks if present, otherwise recognizes speech with whisper.cpp (Whisper Tiny through Large v3) with automatic language detection. Cue timing is aligned to speech using Silero VAD and loudness analysis, and hallucinated or music-only cues are removed. Lines are translated into 29 target languages with local Qwen3 models through llama.cpp, or with any OpenAI-compatible cloud API the user configures. An optional on-screen text mode reads and translates signs and captions using the operating system's OCR. The built-in editor offers video preview, a glossary for consistent names, and a per-file quality report, and batch processing handles whole seasons.",
+  "use_cases": [
+   "generate subtitles for a movie or TV episode with no subtitles",
+   "translate subtitles into another language offline",
+   "batch subtitle a season of videos",
+   "transcribe speech in video or audio files",
+   "edit and time subtitle files with video preview",
+   "keep character names consistent across subtitle episodes"
+  ],
+  "how_to_run": [
+   "brew install --cask jason-jm/wavesubs/wavesubs (macOS, Homebrew)",
+   "scoop bucket add wavesubs (Windows, Scoop; the README's command is malformed)",
+   "scoop install wavesubs (Windows, Scoop)",
+   "Download the DMG, ZIP, or Windows installer from the release page",
+   "Launch the app and download a recommended Whisper model from the Convert page",
+   "Drop in a video, subtitle file, or folder to start"
+  ],
+  "stack": [
+   "whisper.cpp",
+   "llama.cpp",
+   "ffmpeg",
+   "Qwen3 models",
+   "Whisper models",
+   "Silero VAD",
+   "Metal",
+   "Vulkan",
+   "Vision OCR (macOS)",
+   "Windows.Media.Ocr (Windows)",
+   "Hugging Face",
+   "ModelScope",
+   "OpenAI-compatible API"
+  ],
+  "notable": [
+   "Fully local pipeline: recognition, alignment, translation, OCR and editing run on the machine, with no account or analytics",
+   "Recognition model table reports meaning retention by language, and recommends models by RAM",
+   "On-screen text (signs, captions, chat bubbles) is read from the picture and placed next to the dialogue translation",
+   "Glossary and a final pass that unifies spelling of recurring proper nouns across a season",
+   "Supports 18 external subtitle formats with automatic encoding detection"
+  ],
+  "caveats": [
+   "Intel Macs are not supported, and there are no Windows ARM64 builds",
+   "Windows recognition is CPU-only and much slower than Apple Silicon; on-screen text recognition is weaker on Windows",
+   "Local translation models up to 8B are unreliable on proper nouns; the glossary is the recommended fix",
+   "Windows installer is not code-signed, so SmartScreen warns on first run"
+  ],
+  "license": "MIT",
+  "category": "subtitle generation tool",
+  "keywords": [
+   "subtitle generator",
+   "auto subtitles",
+   "video subtitles",
+   "speech to text",
+   "whisper",
+   "whisper.cpp",
+   "llama.cpp",
+   "qwen3",
+   "offline translation",
+   "local ai",
+   "srt",
+   "ass subtitles",
+   "webvtt",
+   "subtitle translation",
+   "translate movie subtitles",
+   "make subtitles for video",
+   "transcribe video",
+   "transcription offline",
+   "auto caption",
+   "subtitle editor",
+   "ffmpeg",
+   "macos subtitle app",
+   "windows subtitle app",
+   "apple silicon",
+   "metal acceleration",
+   "on-screen text translation",
+   "ocr subtitles",
+   "batch subtitle season",
+   "glossary translation",
+   "privacy subtitle tool",
+   "alternative to online subtitle generators",
+   "share subtitles with my team",
+   "subtitle my tv show without uploading"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7600,
+  "output": 1509
+ },
+ "generated": "2026-10-29"
+}

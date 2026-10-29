@@ -1,0 +1,103 @@
+{
+ "id": "rekody/rekody",
+ "repo": "rekody/rekody",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Rekody - Voice dictation CLI for macOS: hold a hotkey, speak, and on-device transcription types the text at the cursor in any app."
+  }
+ ],
+ "summary": {
+  "one_liner": "rekody is an open-source, macOS-only terminal voice dictation tool: hold ⌥Space, speak, release, and the transcribed text is typed at the cursor in any app.",
+  "what_it_does": "Runs as a CLI on macOS that captures microphone audio while you hold (or toggle) ⌥Space and inserts the transcript at the cursor via clipboard paste or native key events. It offers several speech-to-text engines: a streaming on-device Nemotron engine (English, Apple Silicon), local whisper.cpp with Core ML, and cloud options Deepgram, Groq, and Cohere. An optional LLM cleanup step can run through many providers (including Apple on-device Foundation Models, Ollama, and various cloud APIs) with automatic failover, and \"skills\" reshape output into forms like email or commit messages. It also includes a custom vocabulary dictionary, searchable dictation history, a \"fix\" command to correct labels for saved audio, and API keys stored in the macOS Keychain.",
+  "use_cases": [
+   "voice dictation into any macOS app",
+   "hands-free typing at the cursor",
+   "on-device speech-to-text for privacy",
+   "dictating emails or commit messages with LLM cleanup",
+   "building a personal voice fine-tuning dataset",
+   "searching and copying past dictations"
+  ],
+  "how_to_run": [
+   "brew install rekody/rekody/rekody",
+   "curl -fsSL <installer URL> | bash",
+   "git clone <repo URL> && cd rekody && make install",
+   "rekody",
+   "rekody doctor"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo",
+   "CGEventTap",
+   "cpal",
+   "rubato",
+   "whisper.cpp",
+   "Core ML",
+   "Swift (rekody-fm helper)",
+   "Deepgram Nova-3",
+   "Groq Whisper",
+   "Cohere",
+   "NVIDIA Nemotron"
+  ],
+  "notable": [
+   "Streaming transcription with the on-device Nemotron engine, showing words about 160ms behind speech",
+   "Skills: Markdown prompt files that reshape dictation via the LLM, switchable mid-dictation with ⌥Space+Tab",
+   "API keys kept in the macOS Keychain; no telemetry",
+   "Fine-tuning dataset: saves lossless FLAC audio plus transcript locally on opt-in",
+   "Apple Foundation Models on-device cleanup on macOS 26+ with no key needed"
+  ],
+  "caveats": [
+   "macOS only (Apple Silicon or Intel) and requires Accessibility and Microphone permissions",
+   "Nemotron streaming engine is English only and Apple Silicon only",
+   "Skills and AI cleanup do nothing unless an LLM provider is configured; cleanup is disabled automatically with Deepgram",
+   "Desktop HUD is in private preview and distributed separately"
+  ],
+  "license": "MIT",
+  "category": "voice dictation cli",
+  "keywords": [
+   "voice dictation",
+   "speech to text",
+   "macos dictation",
+   "terminal dictation",
+   "push to talk",
+   "whisper",
+   "whisper.cpp",
+   "core ml",
+   "nemotron",
+   "deepgram",
+   "groq",
+   "on-device transcription",
+   "offline speech recognition",
+   "type with my voice",
+   "dictate into any app",
+   "voice typing mac",
+   "hands-free typing",
+   "speech to text cli",
+   "transcription at cursor",
+   "llm cleanup",
+   "ollama dictation",
+   "ai dictation tool",
+   "private voice typing",
+   "dictate emails",
+   "dictation history",
+   "custom vocabulary",
+   "rust cli",
+   "keychain api keys",
+   "alternative to macos dictation",
+   "alternative to superwhisper",
+   "voice to text for coding",
+   "homebrew voice tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6929,
+  "output": 1362
+ },
+ "generated": "2026-10-29"
+}

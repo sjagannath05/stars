@@ -1,0 +1,116 @@
+{
+ "id": "lance0/rustbgpd",
+ "repo": "lance0/rustbgpd",
+ "kind": "star",
+ "description": "An API-first BGP daemon in Rust for programmable route-server and control-plane use cases",
+ "topics": [
+  "bgp",
+  "bgp-daemon",
+  "bmp",
+  "flowspec",
+  "grpc",
+  "mrt",
+  "network-automation",
+  "networking",
+  "route-server",
+  "routing",
+  "rpki",
+  "rust",
+  "sdn"
+ ],
+ "language": "Rust",
+ "stars": 66,
+ "license": "Apache-2.0",
+ "homepage": "https://rbgp.rs",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "net tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "rustbgpd is an API-first BGP daemon written in Rust for route servers, route reflectors, and network automation, controlled through gRPC or the rbgp CLI.",
+  "what_it_does": "The daemon manages BGP peers, applies policy, and injects routes through a gRPC API or the rbgp command-line tool. It lets you inspect unicast route decisions from the live RIB and explain export decisions, including a per-prefix explain command. Policies are written in .rpol files with named prefix and community sets, composition, and unit tests; they can be compiled offline and dry-run against a running daemon's RIB before being applied. It can stream routing events via BMP and MRT feeds, and it supports FlowSpec origination and reconciliation under a scoped controller contract. The README also describes RPKI, Add-Path, and route-reflector reflection for IPv4/IPv6 unicast, with VPN, labeled-unicast, and scoped EVPN Types 1–5 reflection under separate support limits.",
+  "use_cases": [
+   "run an IXP route server with per-member policy",
+   "operate a BGP route reflector",
+   "inject and withdraw routes via API",
+   "monitor BGP sessions with BMP or MRT feeds",
+   "test routing policy before applying it",
+   "originate FlowSpec rules for DDoS mitigation"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd rustbgpd/examples/docker-compose",
+   "docker compose up -d --build",
+   "docker compose exec rustbgpd rbgp -s summary",
+   "docker compose exec rustbgpd rbgp -s top",
+   "docker compose down"
+  ],
+  "stack": [
+   "Rust",
+   "gRPC",
+   "gNMI",
+   "rbgp CLI",
+   "Docker Compose",
+   "FRR (demo peer)"
+  ],
+  "notable": [
+   "Policy language (.rpol) with offline compile, unit tests, and live dry-run against the RIB",
+   "Per-route explain for RIB and export decisions via rbgp",
+   "Narrow v1 compatibility contract for route-server, route-reflector, and scoped FlowSpec surfaces (baseline v0.80.1)",
+   "Default gRPC listener is a local Unix socket; remote admin uses mTLS and authorization",
+   "Docker Compose demo with FRR peer and TUI"
+  ],
+  "caveats": [
+   "Project is alpha overall; features outside the listed v1 surfaces carry no compatibility promise",
+   "Supports Linux x86_64 and aarch64 only; Linux FIB integration is opt-in",
+   "Does not provide VPN PE/VRF or MPLS forwarding, nor a full multi-protocol routing suite"
+  ],
+  "license": "Apache-2.0",
+  "category": "bgp routing daemon",
+  "keywords": [
+   "bgp",
+   "bgp daemon",
+   "rust",
+   "routing daemon",
+   "route server",
+   "route reflector",
+   "ixp route server",
+   "network automation",
+   "grpc api",
+   "gnmi",
+   "rbgp cli",
+   "bmp",
+   "mrt",
+   "flowspec",
+   "rpki",
+   "add-path",
+   "route injection",
+   "rib explain",
+   "policy testing",
+   "rpol policy language",
+   "bgp monitoring",
+   "ddos mitigation",
+   "frr",
+   "bgpd alternative",
+   "gobgp alternative",
+   "control plane",
+   "sdn",
+   "network routing automation",
+   "test bgp policy before applying",
+   "stream routing events",
+   "linux bgp server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3397,
+  "output": 1280
+ },
+ "generated": "2026-10-29"
+}

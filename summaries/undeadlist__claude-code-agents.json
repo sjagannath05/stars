@@ -1,0 +1,99 @@
+{
+ "id": "undeadlist/claude-code-agents",
+ "repo": "undeadlist/claude-code-agents",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Testing",
+   "entry": "Claude Code Agents by Paul - UndeadList - Comprehensive E2E development workflow with helpful Claude Code subagent prompts for solo devs. Run multiple auditors in parallel, automate fix cycles with micro-checkpoint protocols, and do browser-based QA. Includes strict protocols to prevent AI going rogue."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin and per-project kit of 24 subagent prompts and 6 workflow skills for solo developers building Next.js/React/TypeScript apps, covering audits, fix cycles, browser QA, and deploy checks.",
+  "what_it_does": "The repo provides 24 agent definitions in an agents/ folder, including 11 audit agents (code quality, bugs, security, docs, infra, UI, database, performance, dependencies, SEO, API testing) meant to run in parallel, plus fix-planner, code-fixer, test-runner and test-writer agents. It also includes browser agents that use Chrome integration for UI navigation, console monitoring and screenshot comparison, deploy and environment validators, and an architect-reviewer supervisor. Six slash-command skills (/full-audit, /pre-commit, /pre-deploy, /new-feature, /bug-fix, /release-prep) chain these agents into workflows, with reports written to .claude/audits/. The README also documents protocols for limiting AI agents to approved, one-at-a-time changes with checkpoints and revert commands.",
+  "use_cases": [
+   "Run parallel code, security, and performance audits before launch",
+   "Pre-commit and pre-deploy checks for a Next.js app",
+   "Automated find-fix-verify loop using browser QA",
+   "Generating a prioritized FIXES.md from audit findings",
+   "Writing failing tests before a bug fix or new feature",
+   "Drafting PR descriptions and seed test data"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add undeadlist/claude-code-agents (inside Claude Code)",
+   "/plugin install claude-code-agents@undeadlist-claude-code-agents (inside Claude Code)",
+   "claude plugin install claude-code-agents@undeadlist-claude-code-agents --scope user (terminal)",
+   "claude --plugin-dir ./claude-code-agents (test locally without installing)",
+   "npx claude-code-agents (per-project install, run from project directory, Node.js >= 14)",
+   "claude \"Run full-audit workflow on src/\""
+  ],
+  "stack": [
+   "Claude Code (subagents, plugins, skills)",
+   "Next.js",
+   "React",
+   "TypeScript",
+   "Prisma",
+   "npm / pnpm",
+   "Vercel",
+   "Chrome integration",
+   "Bash (setup-project.sh, install.sh)",
+   "Node.js >= 14 (npx installer)"
+  ],
+  "notable": [
+   "Audit agents are designed to run in parallel and write separate reports (AUDIT_CODE.md, AUDIT_SECURITY_DEEP.md, etc.) that fix-planner consolidates into FIXES.md",
+   "Explicit anti-rogue protocols: no unapproved changes, no package installs without approval, micro-checkpoints, and enforcement phrases",
+   "Browser QA agents use Chrome integration to find console errors and UI bugs in a loop",
+   "Installable as a Claude Code plugin or copied per project via npx or curl scripts"
+  ],
+  "caveats": [
+   "Tuned for Next.js/React/TypeScript with Prisma, npm/pnpm and Vercel; other stacks require editing the agent prompts",
+   "Skills such as /full-audit only work when installed as a plugin; per-project installs require natural-language prompts instead",
+   "Browser QA depends on Claude Code's Chrome integration being enabled"
+  ],
+  "license": "MIT",
+  "category": "claude code agents",
+  "keywords": [
+   "claude code",
+   "claude code subagents",
+   "subagent prompts",
+   "claude code plugin",
+   "ai coding agents",
+   "solo developer tools",
+   "nextjs",
+   "react",
+   "typescript",
+   "prisma",
+   "vercel",
+   "code audit",
+   "security audit",
+   "accessibility audit",
+   "dependency audit",
+   "seo audit",
+   "browser qa",
+   "chrome console errors",
+   "end to end workflow",
+   "automated testing",
+   "test writer",
+   "pre-commit checks",
+   "pre-deploy validation",
+   "release prep",
+   "pr description generator",
+   "bug fix workflow",
+   "fix planner",
+   "ai agent guardrails",
+   "prevent ai going rogue",
+   "parallel code review",
+   "startup dev workflow"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7582,
+  "output": 1466
+ },
+ "generated": "2026-10-29"
+}

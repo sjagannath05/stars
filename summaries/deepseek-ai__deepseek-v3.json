@@ -1,0 +1,103 @@
+{
+ "id": "deepseek-ai/deepseek-v3",
+ "repo": "deepseek-ai/DeepSeek-V3",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "DeepSeek",
+   "entry": "DeepSeek-V3"
+  }
+ ],
+ "summary": {
+  "one_liner": "DeepSeek-V3 is a 671B-parameter Mixture-of-Experts language model (37B activated per token) released by DeepSeek-AI with open weights on Hugging Face, along with local inference instructions for several open-source serving frameworks.",
+  "what_it_does": "The README describes the DeepSeek-V3 model: a Mixture-of-Experts LLM with 671B total and 37B activated parameters per token, a 128K context length, and pre-training on 14.8T tokens followed by supervised fine-tuning and reinforcement learning. It lists two Hugging Face downloads (DeepSeek-V3-Base and DeepSeek-V3), and notes that only FP8 weights are provided, with a script (fp8_cast_bf16.py) to convert them to BF16. It includes benchmark tables comparing it against DeepSeek-V2, Qwen2.5 72B, LLaMA3.1 405B, GPT-4o and Claude-3.5-Sonnet. It also points to an official chat website and an OpenAI-compatible API platform. Local deployment options listed are the DeepSeek-Infer demo, SGLang, LMDeploy, TensorRT-LLM, vLLM, LightLLM, AMD GPUs, and Huawei Ascend NPUs, each with varying precision support.",
+  "use_cases": [
+   "run a large open-weight language model locally",
+   "serve a MoE LLM with vLLM or SGLang",
+   "convert FP8 model weights to BF16",
+   "batch inference on a file of prompts",
+   "evaluate an open-source LLM against benchmarks",
+   "access an OpenAI-compatible LLM API"
+  ],
+  "how_to_run": [
+   "git clone the DeepSeek-V3 repository",
+   "cd DeepSeek-V3/inference",
+   "pip install -r requirements.txt",
+   "Download the model weights from Hugging Face into /path/to/DeepSeek-V3",
+   "python convert.py --hf-ckpt-path /path/to/DeepSeek-V3 --save-path /path/to/DeepSeek-V3-Demo --n-experts 256 --model-parallel 16",
+   "torchrun --nnodes 2 --nproc-per-node 8 --node-rank $RANK --master-addr $ADDR generate.py --ckpt-path /path/to/DeepSeek-V3-Demo --config configs/config_671B.json --interactive --temperature 0.7 --max-new-tokens 200"
+  ],
+  "stack": [
+   "Python 3.10",
+   "PyTorch 2.4.1",
+   "Triton 3.0.0",
+   "Transformers 4.46.3",
+   "safetensors",
+   "SGLang",
+   "LMDeploy",
+   "TensorRT-LLM",
+   "vLLM",
+   "LightLLM",
+   "CUDA GPUs (NVIDIA H800 used for training)",
+   "AMD GPUs",
+   "Huawei Ascend NPUs"
+  ],
+  "notable": [
+   "671B-parameter MoE with only 37B parameters active per token",
+   "Auxiliary-loss-free load balancing strategy and Multi-Token Prediction objective, which can also be used for speculative decoding",
+   "FP8 mixed-precision training framework; only FP8 weights are released",
+   "Reasoning distilled from the DeepSeek-R1 series into DeepSeek-V3",
+   "Model weights and MIT-licensed code, with commercial use stated as supported"
+  ],
+  "caveats": [
+   "The DeepSeek-Infer demo is Linux with Python 3.10 only; Mac and Windows are not supported",
+   "Hugging Face Transformers is not directly supported yet, according to the README",
+   "Multi-Token Prediction support is still under development in several frameworks, and some frameworks have only partial FP8 or BF16 support"
+  ],
+  "license": "MIT License for the code repository; model weights are subject to a separate Model License",
+  "category": "large language models",
+  "keywords": [
+   "deepseek-v3",
+   "mixture of experts",
+   "moe language model",
+   "open-weight llm",
+   "llm inference",
+   "local llm deployment",
+   "fp8 weights",
+   "bf16 conversion",
+   "sglang",
+   "vllm",
+   "lmdeploy",
+   "tensorrt-llm",
+   "lightllm",
+   "huawei ascend",
+   "amd gpu inference",
+   "multi-token prediction",
+   "speculative decoding",
+   "model benchmarks",
+   "chat api",
+   "openai-compatible api",
+   "run llm on my own hardware",
+   "self-host large language model",
+   "multi-node llm serving",
+   "llm evaluation",
+   "reasoning distillation",
+   "hugging face model weights",
+   "chinese llm",
+   "commercial use llm",
+   "mit license code",
+   "pipeline parallelism",
+   "batch inference"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9449,
+  "output": 1683
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "apache/spamassassin",
+ "repo": "apache/spamassassin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Email",
+   "entry": "SpamAssassin | Open-source anti-spam platform"
+  }
+ ],
+ "summary": {
+  "one_liner": "Apache SpamAssassin is an open-source anti-spam mail filter that scores email using heuristic, Bayesian, and blocklist-based tests so other tools can act on the result.",
+  "what_it_does": "It examines each email's headers and body text with a scoring framework and plugins, assigning a score that indicates how likely the message is spam. The distribution includes the spamassassin command-line tool, the Mail::SpamAssassin Perl module set for use in SMTP or POP/IMAP proxies, and spamd/spamc, a persistent daemon and lightweight C client for high-volume mail. It has a Bayesian classifier trained with sa-learn, supports DNS blocklists, and includes plugins to report spam to Pyzor, DCC, and Vipul's Razor. It also has an automatic sender reputation system (use_txrep). It does not delete, route, or bounce mail; an external program must act on the score.",
+  "use_cases": [
+   "filter spam at the mail server",
+   "classify incoming email as spam or ham",
+   "train a Bayesian spam filter on my own mail",
+   "run spam scanning for high-volume mail with a daemon",
+   "report spam to collaborative filtering databases",
+   "tag spam headers for a mail client to sort"
+  ],
+  "how_to_run": [
+   "See the INSTALL file in the repository for installation instructions",
+   "Run spamassassin on a message from the command line to score it",
+   "Start spamd as a persistent daemon and call it with spamc",
+   "Train with: sa-learn --spam ~/Mail/saved-spam-folder",
+   "Train with: sa-learn --ham ~/Mail/inbox",
+   "Use sa-update to download updated rulesets"
+  ],
+  "stack": [
+   "Perl",
+   "C (spamc client)",
+   "Mail::SpamAssassin module set",
+   "Pyzor",
+   "DCC",
+   "Vipul's Razor"
+  ],
+  "notable": [
+   "Scoring framework rather than a yes/no verdict, so an external tool decides routing",
+   "Persistent spamd daemon plus lightweight spamc client avoids forking Perl per message",
+   "Bayesian filter that learns from your own spam and ham folders",
+   "Plugin-based architecture with configurable .pre and .cf files",
+   "Part of the Apache Software Foundation"
+  ],
+  "caveats": [
+   "Not a mail router: it does not delete, move, or bounce spam by itself",
+   "DCC and MAPS are disabled by default because they depend on non-open-source or commercial services; some plugins and TextCat are disabled for speed",
+   "Upgrading across major versions requires reading the UPGRADE notes for incompatible changes"
+  ],
+  "license": "unknown",
+  "category": "email spam filtering",
+  "keywords": [
+   "spamassassin",
+   "anti-spam",
+   "spam filter",
+   "email spam filter",
+   "spam classifier",
+   "bayesian filter",
+   "bayesian spam filtering",
+   "spamd",
+   "spamc",
+   "sa-learn",
+   "sa-update",
+   "mail filter",
+   "spam scoring",
+   "ham and spam",
+   "dns blocklist",
+   "pyzor",
+   "dcc",
+   "razor",
+   "collaborative spam filtering",
+   "mail server spam protection",
+   "smtp spam filter",
+   "imap spam filtering",
+   "block unsolicited email",
+   "stop junk email",
+   "classify email as spam",
+   "perl mail filter",
+   "mail transfer agent filter",
+   "self-hosted spam filter",
+   "reputation system email",
+   "sender reputation",
+   "spam tagging headers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5985,
+  "output": 1271
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "canner/wrenai",
+ "repo": "Canner/WrenAI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "WrenAI is an open-source generative BI (GenBI) engine that gives AI agents a governed semantic layer (MDL) and AI context layer so they can generate governed SQL and deploy dashboards across 22+ data sources.",
+  "what_it_does": "The repo provides a CLI (installed via pip as wrenai) and skills that let agents like Claude Code, Cursor, or Codex answer business questions with SQL planned against a Modeling Definition Language (MDL) semantic layer, with dry-plan validation and row limits. Business definitions, enums, joins, and examples are stored as version-controlled YAML and Markdown files (instructions.md, queries.yml). It can build browser-side GenBI dashboards powered by wren-core-wasm and deploy them to Vercel or Cloudflare Pages. A local LanceDB memory index supports hybrid retrieval. The core engine is written in Rust on Apache DataFusion, with Python and npm bindings and LangChain and Pydantic AI integrations. The README also describes a Git Sync feature for pushing the repo to Wren Cloud or a self-hosted install, which is commercial.",
+  "use_cases": [
+   "let AI agents write governed SQL against a business database",
+   "maintain metric definitions and business context as files in Git",
+   "generate and deploy a shareable BI dashboard from an agent",
+   "connect an LLM agent to Postgres, BigQuery, Snowflake, or DuckDB",
+   "add a semantic layer on top of an existing warehouse",
+   "expose a semantic layer to MCP clients and LangChain agents"
+  ],
+  "how_to_run": [
+   "pip install wrenai",
+   "pip install \"wrenai[postgres,memory]\" (add connector extras as needed)",
+   "npx skills add Canner/WrenAI",
+   "In your agent, in a project folder, ask: \"Use Wren to set up my Postgres database.\"",
+   "wren skills get onboarding",
+   "wren query --sql '...'"
+  ],
+  "stack": [
+   "Rust",
+   "Apache DataFusion",
+   "Python",
+   "WebAssembly (wren-core-wasm)",
+   "npm",
+   "LanceDB",
+   "LangChain / LangGraph",
+   "Pydantic AI",
+   "MDL (JSON schema)"
+  ],
+  "notable": [
+   "Semantic layer defined in MDL and stored as reviewable YAML/Markdown in a Git repo the user owns",
+   "Agent skills installed via npx skills add, with workflow guides fetched from the CLI on demand",
+   "Browser-side GenBI dashboards deployable to Vercel or Cloudflare Pages",
+   "22+ data source connectors on one Apache DataFusion engine",
+   "Legacy Docker-based Wren AI app preserved on the legacy/v1 branch"
+  ],
+  "caveats": [
+   "Dashboards, row- and column-level security, Agentic Mode, and Git Sync are commercial (Wren AI Cloud or Enterprise Plus), not part of the Apache-2.0 core",
+   "The earlier chat-first Docker app (Wren GenBI Classic) is archived on legacy/v1 with no new features or security fixes"
+  ],
+  "license": "Apache 2.0",
+  "category": "genbi semantic layer",
+  "keywords": [
+   "genbi",
+   "generative bi",
+   "text-to-sql",
+   "semantic layer",
+   "mdl",
+   "modeling definition language",
+   "ai context layer",
+   "governed sql",
+   "ai agents",
+   "claude code",
+   "cursor",
+   "mcp server",
+   "langchain",
+   "pydantic ai",
+   "apache datafusion",
+   "rust",
+   "wren",
+   "business intelligence",
+   "dashboards",
+   "deploy dashboard vercel",
+   "postgres",
+   "bigquery",
+   "snowflake",
+   "duckdb",
+   "let my agent query my database",
+   "keep metric definitions in git",
+   "share a dashboard with my team",
+   "natural language to sql",
+   "metric definitions",
+   "lancedb memory",
+   "open source bi tool",
+   "wrenai cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6078,
+  "output": 1440
+ },
+ "generated": "2026-10-29"
+}

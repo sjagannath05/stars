@@ -1,0 +1,95 @@
+{
+ "id": "automazeio/ccpm",
+ "repo": "automazeio/ccpm",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Claude Code PM by Ran Aroussi - Really comprehensive and feature-packed project-management workflow for Claude Code. Numerous specialized agents, slash-commands, and strong documentation."
+  }
+ ],
+ "summary": {
+  "one_liner": "CCPM is an Agent Skill that gives coding agents a spec-driven project-management workflow: PRDs become epics, epics become tasks, and tasks sync to GitHub issues for parallel execution.",
+  "what_it_does": "The skill guides an agent through brainstorming and writing a PRD, then parsing it into a technical epic with architecture decisions. The epic is broken into task files with acceptance criteria, effort estimates, and depends_on, parallel, and conflicts_with metadata. A sync step creates a GitHub epic issue with sub-issues, renames local task files to the issue numbers, and sets up a dedicated git worktree. Agents then analyze an issue for independent work streams and run them in parallel, committing with issue-referenced messages. Status, standup, search, and next/blocked reports are produced by bash scripts that read the local project files in .claude/. The README says it is harness-agnostic and follows the agentskills.io standard.",
+  "use_cases": [
+   "Turn a feature idea into a PRD and technical epic",
+   "Break a large feature into parallelizable tasks for AI agents",
+   "Sync local project plans to GitHub issues and sub-issues",
+   "Run multiple agents on independent parts of one issue",
+   "Generate daily standup and blocked-task reports from project files",
+   "Keep traceable context for AI-assisted development across sessions"
+  ],
+  "how_to_run": [
+   "git clone the repository",
+   "ln -s /path/to/ccpm/skill/ccpm .claude/skills/ccpm  (Claude Code, run in project root)",
+   "ln -s /path/to/ccpm/skill/ccpm ~/.factory/skills/ccpm  (Factory / Droid)",
+   "Authenticate the GitHub CLI with: gh auth login",
+   "Optionally install the sub-issue extension: gh extension install yahsan2/gh-sub-issue",
+   "Talk to your agent naturally, e.g. \"I want to build X\" or \"standup\""
+  ],
+  "stack": [
+   "Bash scripts",
+   "Git and git worktrees",
+   "GitHub CLI (gh)",
+   "gh-sub-issue extension",
+   "Markdown files with frontmatter",
+   "Agent Skills standard (agentskills.io)"
+  ],
+  "notable": [
+   "Project state lives in plain markdown files under .claude/, with GitHub Issues as the shared source of truth",
+   "Deterministic operations like status, standup, and search run as bash scripts without LLM token cost",
+   "Each epic gets its own git worktree so parallel agents work in isolation",
+   "Works across multiple agent harnesses that support the Agent Skills standard",
+   "Intentionally avoids the GitHub Projects API, relying on issues, labels, and milestones"
+  ],
+  "caveats": [
+   "Requires the git and gh CLI, authenticated, plus a GitHub repository",
+   "Parent-child sub-issue links need the separate gh-sub-issue extension; otherwise it falls back to task lists",
+   "Benchmark and productivity figures are self-reported in the README and not independently verified",
+   "The original v1 /pm:* slash-command system is only preserved on the v1 branch"
+  ],
+  "license": "unknown",
+  "category": "agent project management",
+  "keywords": [
+   "spec-driven development",
+   "prd",
+   "product requirements document",
+   "epic planning",
+   "task decomposition",
+   "github issues sync",
+   "github sub-issues",
+   "parallel agents",
+   "multi-agent workflow",
+   "git worktree",
+   "agent skill",
+   "agentskills.io",
+   "claude code skill",
+   "codex skill",
+   "cursor skill",
+   "opencode",
+   "factory droid",
+   "amp agent",
+   "standup report",
+   "project tracking markdown",
+   "ai project manager",
+   "break down feature into tasks",
+   "sync plan to github",
+   "traceability prd to code",
+   "gh cli workflow",
+   "bash status scripts",
+   "vibe coding alternative",
+   "agent context persistence",
+   "work item tracking"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6532,
+  "output": 1417
+ },
+ "generated": "2026-10-29"
+}

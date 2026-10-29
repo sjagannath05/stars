@@ -1,0 +1,95 @@
+{
+ "id": "wenyuchiou/agent-collab-skills",
+ "repo": "WenyuChiou/agent-collab-skills",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Agent Collab Skills by Wenyu Chiou - Claude Code marketplace for multi-agent collaboration — task splitter, output reconciler, adversarial debate, shared memory, acceptance gate. Composes with codex-delegate / gemini-delegate."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code skill bundle and optional standard-library Python harness for governing multi-agent collaboration: task splitting, debate, acceptance gating, proposal-only memory, and checkpointed policy evaluation.",
+  "what_it_does": "The repository provides four provider-neutral skills (agent-task-splitter, agent-context-budget, agent-debate, agent-acceptance-gate) that fire on collaboration situations such as fanning out subagents, making a consequential decision between two options, or committing merged lane output. The task splitter produces a lane table with roles, model tiers, disjoint write scopes and capped returns; the debate skill runs two opposed reviewers with a round cap and passes the synthesis to a human; the acceptance gate reconciles results and returns PASS, CONDITIONAL PASS, or FAIL evidence. An optional Python package, agent-collab-harness (command agent-collab), validates and evaluates machine-readable policy and checkpoint files, supports checkpoint migration and goal-slice advancement, and includes a doctor command. Memory is described as proposal-only, with canonical memory changes requiring a recorded human decision in an append-only log. The README says the skills install as a Claude Code plugin marketplace bundle.",
+  "use_cases": [
+   "coordinate multiple Claude Code subagents on one goal",
+   "split work into lanes with disjoint file write scopes",
+   "get two opposing reviews before a consequential decision",
+   "gate commits or pushes on reconciled acceptance evidence",
+   "validate and evaluate agent budget policy and checkpoint files",
+   "resume an unattended multi-session agent run from a checkpoint"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add WenyuChiou/agent-collab-skills",
+   "claude plugin install agent-collab-workspace@agent-collab-skills",
+   "python -m pip install agent-collab-harness",
+   "agent-collab policy validate --policy \"$AGENT_COLLAB_POLICY\" --json",
+   "agent-collab checkpoint validate --checkpoint .coord/checkpoint.json --json",
+   "agent-collab doctor --json"
+  ],
+  "stack": [
+   "Python (standard library only at runtime)",
+   "Claude Code plugin marketplace",
+   "strict JSON policy files",
+   "Mermaid (architecture diagram)"
+  ],
+  "notable": [
+   "Native mode keeps lane tables and briefs in the conversation with no files written to .coord/, while harness mode adds a policy and checkpoint contract for unattended or resumable runs",
+   "Human decisions are HMAC-bound to actions, with keys supplied by a trusted host and pinned by digest in the canonical policy",
+   "Policy evaluation fails closed when a configured policy is unreadable",
+   "Governance layer design: the host supplies models, tools, sessions and sandboxes; this project supplies roles, policy, checkpoints and evidence",
+   "Redirect stubs document migration from the removed output-reconciler, shared-memory and plan-act-reflect skills"
+  ],
+  "caveats": [
+   "The README describes it as a governance layer, not a general agent runtime; the host must supply models, tools and sessions",
+   "Human-authorization features need a trusted host to supply HMAC keys, and the legacy portable v1 policy shape fails closed for human records until upgraded",
+   "The README mentions Claude Code-specific mechanisms (Agent, SendMessage, Workflow, worktrees) for native lanes, so the skills are tied to that host"
+  ],
+  "license": "unknown",
+  "category": "multi-agent collaboration governance",
+  "keywords": [
+   "multi-agent collaboration",
+   "claude code skills",
+   "claude code plugin",
+   "subagent orchestration",
+   "agent orchestration",
+   "task splitter",
+   "fan-out planning",
+   "output reconciliation",
+   "adversarial debate",
+   "two-reviewer debate",
+   "acceptance gate",
+   "proposal-only memory",
+   "shared memory",
+   "checkpoint validation",
+   "policy evaluation",
+   "resumable agent runs",
+   "human approval gate",
+   "budget policy",
+   "context budget",
+   "agent-collab-harness",
+   "agent-collab cli",
+   "python harness",
+   "standard library python",
+   "goal slices",
+   "checkpoint migration",
+   "hmac human decision",
+   "coordinate multiple agents",
+   "split work between agents",
+   "review agent output before commit",
+   "limit agent token budget",
+   "resume interrupted agent work",
+   "alternative to manual agent coordination"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4233,
+  "output": 1597
+ },
+ "generated": "2026-10-29"
+}

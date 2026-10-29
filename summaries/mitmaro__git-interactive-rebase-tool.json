@@ -1,0 +1,94 @@
+{
+ "id": "mitmaro/git-interactive-rebase-tool",
+ "repo": "MitMaro/git-interactive-rebase-tool",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📦 Git (23)",
+   "entry": "Git Interactive Rebase Tool - Full feature terminal based sequence editor for interactive rebase."
+  }
+ ],
+ "summary": {
+  "one_liner": "A cross-platform, full-featured terminal sequence editor for Git interactive rebase, written in Rust.",
+  "category": "git interactive rebase",
+  "keywords": [
+   "git rebase",
+   "interactive rebase",
+   "sequence editor",
+   "git-sequence-editor",
+   "rebase todo",
+   "terminal ui",
+   "tui",
+   "rust",
+   "cargo",
+   "squash commits",
+   "fixup commits",
+   "reorder commits",
+   "edit commit history",
+   "reword commit message",
+   "drop commit",
+   "visual mode",
+   "git config sequence.editor",
+   "rebase-editor",
+   "git-crecord",
+   "cj-git-patchtool",
+   "cross-platform terminal editor",
+   "commit diff viewer",
+   "undo redo rebase",
+   "external editor",
+   "exec command",
+   "squash fixup from terminal",
+   "clean up git history"
+  ],
+  "what_it_does": "Provides a terminal-based editor that Git uses as the sequence editor during interactive rebase (Git 1.7.8+). It lets you set each commit's action to pick, squash, fixup, edit, reword or drop, and reorder commits with a key press. Visual mode allows changing actions and moving multiple lines at once. You can view commit details and full diffs, edit exec commands, toggle break actions, and shell out to an external editor. An optional setting injects exec lines after modified commits, for example to amend messages or run tests on changed commits. Built-in help is available with the ? key.",
+  "use_cases": [
+   "Reorder or squash commits during git rebase -i",
+   "Reword commit messages in a terminal",
+   "Clean up commit history before merging",
+   "Run tests on only modified commits during a rebase",
+   "View commit diffs while rebasing",
+   "Use a visual, keyboard-driven todo list editor for git"
+  ],
+  "how_to_run": [
+   "cargo install --force cargo-make (development only)",
+   "git config --global sequence.editor interactive-rebase-tool",
+   "git rebase -i <base> (uses the tool as the sequence editor)",
+   "GIT_SEQUENCE_EDITOR=interactive-rebase-tool git rebase -i <base> (temporary override)",
+   "cargo make build --release (build from source)",
+   "cargo run -- <todo-file> (run from project root)"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo",
+   "cargo-make",
+   "Tarpaulin (coverage)",
+   "Clippy",
+   "rustfmt",
+   "Git"
+  ],
+  "notable": [
+   "Works as a drop-in git sequence.editor with a single git config line",
+   "Visual mode for changing actions and reordering multiple lines at once",
+   "Optional postModifiedLineExecCommand hook that injects exec lines after changed commits",
+   "Undo and redo support (Control+z / Control+y)",
+   "Packaging for Debian and RPM, with reproducible build support via SOURCE_DATE_EPOCH"
+  ],
+  "caveats": [
+   "Windows before version 10 has rendering issues with saturated dark colors",
+   "Git Bash needs winpty, and Windows Console and Git Bash get only minimal support",
+   "Windows Console in legacy mode is not supported and Cygwin is not officially supported",
+   "Other platforms are not officially supported"
+  ],
+  "license": "GNU General Public License (version 3 or later)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5306,
+  "output": 1199
+ },
+ "generated": "2026-10-29"
+}

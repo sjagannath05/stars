@@ -1,0 +1,95 @@
+{
+ "id": "axeloz/filesharing",
+ "repo": "axeloz/filesharing",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "Files Sharing - File sharing application based on unique and temporary links. GPL-3.0 PHP/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted PHP/Laravel web app for sharing files through unique, temporary bundle links, similar to WeTransfer, with no database required.",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "self-hosted file sharing",
+   "wetransfer alternative",
+   "temporary links",
+   "expiring download links",
+   "share files with my team",
+   "send large files",
+   "file transfer",
+   "bundle download",
+   "zip download",
+   "drag and drop upload",
+   "laravel",
+   "php",
+   "docker",
+   "no database",
+   "json storage",
+   "password protected downloads",
+   "download limit",
+   "download rate limiter",
+   "ip restriction upload",
+   "upload access control",
+   "garbage collector",
+   "expired file cleanup",
+   "multilingual",
+   "gpl-3.0",
+   "nginx reverse proxy",
+   "file preview link",
+   "temporary file hosting",
+   "send files to recipients"
+  ],
+  "what_it_does": "Lets an uploader gather one or more files into a bundle by drag and drop or file browsing, then set a title, description, expiration date, maximum number of downloads and optional password. Each bundle yields two links, a preview link that shows the contents and allows a ZIP download, and a direct download link that skips the preview; both use the same authorization code. Uploads can be restricted by IP address (single, wildcard, CIDR or range) or by login and password, and both can be combined. A scheduled Artisan command removes expired bundle files from storage every five minutes, and a manual purge command is also available. The README says it stores data in JSON files rather than a database, and includes a download rate limiter and English, French, German and Korean translations.",
+  "use_cases": [
+   "Sending large files to clients or colleagues without email attachments",
+   "Running a private WeTransfer-style service on your own server",
+   "Sharing files through links that expire automatically",
+   "Letting external recipients download a bundle as one ZIP",
+   "Collecting uploads from people on a trusted IP range or with login accounts"
+  ],
+  "how_to_run": [
+   "docker run -d -p 8080:80 -v :/app/storage/content --name filesharing -e APP_NAME=\"FileSharing\" axeloz/filesharing:latest (the README example also sets APP_URL, ASSET_URL, upload and rate limit variables)",
+   "Standalone: clone the repo into the webroot and point the web server at ./public",
+   "Run composer install, then yarn --production (or npm install --production), then yarn build (or npm run build)",
+   "Make ./storage writable by PHP, run php artisan key:generate, and copy .env.example to .env to edit it",
+   "Optionally create a user with php artisan fs:user:create",
+   "Add the Laravel scheduler to cron: * * * * * /usr/bin/php /path-to-your-project/artisan schedule:run"
+  ],
+  "stack": [
+   "PHP 8.3+",
+   "Laravel 10.9",
+   "Laravel Mix / Yarn or npm",
+   "Composer",
+   "Docker",
+   "SQLite PHP extension (listed in requirements)",
+   "ZipArchive PHP extension"
+  ],
+  "notable": [
+   "No database server needed; data is kept as JSON files in the storage folder",
+   "Two links per bundle: a preview page and a direct download link, both gated by one authorization code",
+   "Expired bundles are removed automatically by a scheduled Laravel Artisan command every five minutes",
+   "Upload access can be limited by IP range (CIDR, wildcard, start-end) or login, or both",
+   "Ships with a Docker image and environment variables for upload size, file count, duplicate checks and download rate"
+  ],
+  "caveats": [
+   "Uploads are publicly accessible if UPLOAD_LIMIT_IPS is left empty and no users are created, per the README warning",
+   "Large uploads through Nginx need client_max_body_size raised, and PHP upload and memory limits must be set to match UPLOAD_MAX_FILESIZE",
+   "Standalone install needs cron access to run the scheduler for bundle deletion",
+   "Roadmap items such as unit tests, asynchronous ZIP creation and white labeling are not yet implemented"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4746,
+  "output": 1485
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,108 @@
+{
+ "id": "rustmailer/bichon",
+ "repo": "rustmailer/bichon",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Archiving and Digital Preservation (DP)",
+   "entry": "Bichon - Email archiving server that syncs from IMAP accounts, indexes emails for full-text search, and provides a REST API. No external database required, includes WebUI with multi-account support. AGPL-3.0 Rust/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bichon is a self-hosted Rust email archiving server that downloads mail from IMAP accounts, full-text indexes it, and serves a REST API and embedded WebUI.",
+  "category": "email archiving server",
+  "keywords": [
+   "email archiving",
+   "self-hosted email archive",
+   "imap backup",
+   "imap archiver",
+   "email backup server",
+   "full-text email search",
+   "tantivy",
+   "rust email server",
+   "rest api email",
+   "mbox import",
+   "eml import",
+   "pst import",
+   "thunderbird import",
+   "mbox export",
+   "multi-account email",
+   "oauth2 imap",
+   "xoauth2",
+   "email preservation",
+   "long-term email storage",
+   "blake3 deduplication",
+   "zstd compression",
+   "smtp receiver",
+   "email receiving server",
+   "webui email archive",
+   "rbac email",
+   "cron email sync",
+   "search my old emails",
+   "archive gmail",
+   "back up outlook email",
+   "docker email archive",
+   "awesome-selfhosted",
+   "agpl email tool",
+   "email contacts extraction"
+  ],
+  "what_it_does": "Bichon connects to one or more IMAP accounts, using password or OAuth 2.0, and downloads messages concurrently, with incremental UID-based syncing and optional per-account schedules set with cron expressions. Downloaded mail is indexed with Tantivy for full-text search, with filters for date, size, attachments, tags, and threads, and a contacts view built from senders and recipients. Raw emails and attachments are stored in a Zstd-compressed blob store, with BLAKE3 content hashing so identical content is stored once. The project provides a REST API with OpenAPI docs, an embedded React WebUI, and multi-user role-based access control. The bichon-cli tool imports EML, MBOX, Thunderbird profiles and PST files and exports MBOX, and bichon-admin handles password reset and migrations from older versions. The optional embedded SMTP server receives mail only; Bichon does not send email.",
+  "use_cases": [
+   "archive IMAP mailboxes for long-term preservation",
+   "search across multiple email accounts at once",
+   "import old EML, MBOX, PST or Thunderbird mail into an archive",
+   "export account mail as MBOX",
+   "give a team scoped read access to archived email",
+   "feed archived mail to scripts through a REST API"
+  ],
+  "how_to_run": [
+   "docker pull rustmailer/bichon:latest",
+   "mkdir -p ./bichon-data",
+   "docker run -d --name bichon -p 15630:15630 -v $(pwd)/bichon-data:/data --user 1000:1000 -e BICHON_ROOT_DIR=/data -e BICHON_ENCRYPT_PASSWORD=your-secure-password-here rustmailer/bichon:latest",
+   "./bichon --bichon-root-dir /path/to/data --bichon-encrypt-password your-password",
+   "cargo run -- --bichon-root-dir /tmp/bichon-data  (build from source; requires Rust, Node.js 20+, pnpm)"
+  ],
+  "stack": [
+   "Rust",
+   "Tokio",
+   "Poem",
+   "Poem OpenAPI",
+   "Tantivy",
+   "memdb",
+   "bichon-blob",
+   "async-imap",
+   "rustls",
+   "ring",
+   "BLAKE3",
+   "React 18",
+   "TypeScript",
+   "Vite",
+   "ShadCN UI",
+   "Docker"
+  ],
+  "notable": [
+   "Archiver only: it downloads and indexes mail and does not send, compose, or reply",
+   "Three embedded storage layers (Tantivy, bichon-blob, memdb) with no external database",
+   "Content deduplication by BLAKE3 hash, with attachments stored separately and the original EML reconstructable byte-for-byte",
+   "Metrics-only API tokens for Prometheus scraping",
+   "Imports from EML, MBOX (including Gmail variant), Thunderbird, and PST"
+  ],
+  "caveats": [
+   "Data directories must be on a local filesystem; NFS/SMB and similar network storage can cause corruption",
+   "Default admin password is admin@bichon and must be changed after first login",
+   "Re-encrypting stored secrets after changing BICHON_ENCRYPT_PASSWORD is not yet supported",
+   "Enterprise SSO, S3-compatible storage and an MCP server are listed as unfinished roadmap items"
+  ],
+  "license": "GNU Affero General Public License v3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15035,
+  "output": 1575
+ },
+ "generated": "2026-10-29"
+}

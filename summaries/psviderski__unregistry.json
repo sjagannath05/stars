@@ -1,0 +1,111 @@
+{
+ "id": "psviderski/unregistry",
+ "repo": "psviderski/unregistry",
+ "kind": "star",
+ "description": "Push docker images directly to remote servers without an external registry",
+ "topics": [
+  "containerd",
+  "docker",
+  "golang",
+  "kubernetes",
+  "oci",
+  "registry",
+  "uncloud"
+ ],
+ "language": "Go",
+ "stars": 4888,
+ "license": "Apache-2.0",
+ "homepage": "https://uncloud.run",
+ "pushed_at": "2026-07-14",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Unregistry is a lightweight container image registry that serves images from the Docker daemon's containerd store, and its `docker pussh` plugin pushes images straight to remote Docker servers over SSH without an external registry.",
+  "what_it_does": "Unregistry runs as a registry that reads and writes images in containerd's image store, which Docker uses underneath. The included `docker pussh` CLI plugin takes a local image and a user@server target, opens an SSH tunnel, starts a temporary unregistry container on the server, forwards a random local port to it, and runs `docker push` so only missing layers transfer. The image then becomes available to the remote Docker daemon, and the temporary container and tunnel are torn down. Options include a custom SSH port, an identity file, a custom SSH config file, a specific platform for multi-platform images, and a pinned unregistry image version. The README also documents running unregistry standalone as a local registry on port 5000.",
+  "use_cases": [
+   "deploy a locally built image to a production server without a registry",
+   "push Docker images to a remote host from CI/CD",
+   "transfer only changed layers of an image over SSH",
+   "distribute images in air-gapped or isolated networks",
+   "run a simple local Docker registry backed by the Docker daemon",
+   "avoid paying for or hosting a private container registry"
+  ],
+  "how_to_run": [
+   "brew install psviderski/tap/docker-pussh",
+   "mkdir -p ~/.docker/cli-plugins && ln -sf $(brew --prefix)/bin/docker-pussh ~/.docker/cli-plugins/docker-pussh",
+   "docker pussh myapp:latest user@server.example.com",
+   "docker pussh myapp:latest ubuntu@192.168.1.100 -i ~/.ssh/id_rsa",
+   "docker run -d -p 5000:5000 --name unregistry -v /run/containerd/containerd.sock:/run/containerd/containerd.sock ghcr.io/psviderski/unregistry"
+  ],
+  "stack": [
+   "Go",
+   "Docker CLI plugin",
+   "containerd",
+   "OpenSSH client",
+   "Docker Distribution",
+   "Docker image: ghcr.io/psviderski/unregistry"
+  ],
+  "notable": [
+   "Pushes only missing image layers over an SSH tunnel, with no registry, no public exposure, and no intermediate storage",
+   "Uses containerd image store so pushed images are immediately available to Docker without a second pull",
+   "Works as a standalone local registry by mounting the containerd socket",
+   "Built on Docker Distribution and inspired by Spegel, per the README",
+   "Created for the Uncloud multi-host container deployment tool"
+  ],
+  "caveats": [
+   "Windows is not supported; the README suggests WSL 2 instead",
+   "Remote server needs Docker running, SSH access with docker permissions, and internet access to ghcr.io on first use unless the image is preloaded manually",
+   "Unregistry container runs as root to access the containerd socket",
+   "Without containerd image store enabled, images are stored twice and unmanaged containerd images can fill disk over time; enabling the store can temporarily hide existing classic-store images"
+  ],
+  "license": "Apache-2.0",
+  "category": "docker image deployment",
+  "keywords": [
+   "docker",
+   "container image",
+   "push docker image",
+   "docker registry alternative",
+   "no registry",
+   "docker pussh",
+   "ssh",
+   "remote docker server",
+   "deploy docker image",
+   "containerd",
+   "oci registry",
+   "image transfer",
+   "rsync for docker images",
+   "docker save load alternative",
+   "layer deduplication",
+   "docker cli plugin",
+   "unregistry",
+   "uncloud",
+   "private image deployment",
+   "self-hosted registry alternative",
+   "docker hub alternative",
+   "air-gapped docker",
+   "ci/cd docker deploy",
+   "send image to server",
+   "transfer docker image over ssh",
+   "go",
+   "kubernetes tooling",
+   "distribution registry",
+   "local docker registry",
+   "homelab docker",
+   "multi-platform image push"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5220,
+  "output": 1444
+ },
+ "generated": "2026-10-29"
+}

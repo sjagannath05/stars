@@ -1,0 +1,104 @@
+{
+ "id": "yuuichieguchi/calyx",
+ "repo": "yuuichieguchi/Calyx",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Terminal Apps",
+   "entry": "Calyx - Native macOS terminal for running and supervising coding agents in parallel. [![Open-Source Software][OSS Icon]](https://github.com/yuuichieguchi/Calyx) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Calyx is a native macOS terminal app, built on libghostty, for running and supervising multiple coding agents (Claude Code, Codex, OpenCode, Hermes, Grok, pi) in parallel.",
+  "what_it_does": "Calyx provides a terminal workspace with tabs, split panes, and tab groups, and shows every connected coding agent's state (working, blocked, idle, done) in an Agents Sidebar with unread badges and click-to-focus. An opt-in Approval Inbox queues permission prompts from Claude Code, Codex, always-approve Grok sessions, and pi tool calls into one panel, and it can answer AskUserQuestion prompts. A Git sidebar shows working changes, commit graph, and diffs, where line-level review comments can be submitted to an agent pane. Calyx exposes panes, command logs, browser tabs, language servers (LSP), and peer messaging to agents through a built-in MCP server and bundled CLI, and it offers persistent daemon-backed sessions, remote sessions over SSH, and a Mission Map overview of all panes. Worktree Tasks create a branch and linked worktree for an agent, and an optional Usage Tracking feature records Claude Code token counts locally.",
+  "use_cases": [
+   "run several coding agents in parallel without watching every terminal",
+   "approve or deny agent tool calls from one place",
+   "review agent-made diffs and send line comments back to the agent",
+   "let coding agents message each other across terminal panes",
+   "keep terminal sessions alive across app quit or crashes",
+   "start an agent on a new git branch in its own worktree",
+   "track Claude Code token usage per project locally"
+  ],
+  "how_to_run": [
+   "brew install --cask calyx",
+   "Download Calyx.zip from the latest release and move Calyx.app to /Applications",
+   "git clone --recursive <repo-url> && cd Calyx",
+   "cd ghostty && zig build -Demit-xcframework=true -Dxcframework-target=native && cd ..",
+   "cp -R ghostty/macos/GhosttyKit.xcframework . && xcodegen generate",
+   "xcodebuild -project Calyx.xcodeproj -scheme Calyx -configuration Debug build"
+  ],
+  "stack": [
+   "Swift 6.4",
+   "AppKit",
+   "SwiftUI",
+   "libghostty (Metal)",
+   "Zig",
+   "XcodeGen",
+   "MCP",
+   "Sparkle"
+  ],
+  "notable": [
+   "Approval Inbox: opt-in, notification-style panel for permission prompts across all panes, with an Options pull-down and nothing auto-approved unless opted in",
+   "Mission Map (Cmd+Shift+M) lays out all panes as cards showing agent state, branch, current tool, and pending approvals",
+   "Built-in MCP server (AI Agent IPC) lets agents discover peers, send messages, and read command output with secret redaction",
+   "Persistent sessions via a daemon that survive app quit and crashes, plus remote sessions over SSH via calyx-session",
+   "Scriptable browser with 25 calyx browser CLI commands"
+  ],
+  "caveats": [
+   "Requires macOS 26 Tahoe or later on Apple Silicon only (arm64)",
+   "Building from source needs Xcode 27+, Zig matching ghostty's build.zig.zon, and XcodeGen; a Developer ID signing workaround is documented",
+   "External pull requests are not accepted; bug reports and feature ideas are welcome as issues",
+   "Grok and pi approval requests are denied if not answered in Calyx; pi tool calls run unreviewed when the integration is off"
+  ],
+  "license": "MIT",
+  "category": "macos terminal for agents",
+  "keywords": [
+   "terminal",
+   "macos terminal",
+   "coding agents",
+   "ai agent terminal",
+   "claude code",
+   "codex",
+   "opencode",
+   "multiple agents in parallel",
+   "agent supervision",
+   "approval inbox",
+   "permission prompts",
+   "mcp server",
+   "libghostty",
+   "ghostty",
+   "metal rendering",
+   "split panes",
+   "tab groups",
+   "git diff review",
+   "diff viewer",
+   "worktree",
+   "git worktree tasks",
+   "persistent sessions",
+   "tmux alternative",
+   "ssh remote sessions",
+   "agent ipc",
+   "agent messaging",
+   "language server mcp",
+   "lsp proxy",
+   "browser automation cli",
+   "command palette",
+   "mission map",
+   "token usage tracking",
+   "swift terminal app",
+   "run agents in parallel",
+   "watch agents without babysitting terminals"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12185,
+  "output": 1615
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,118 @@
+{
+ "id": "dani-garcia/vaultwarden",
+ "repo": "dani-garcia/vaultwarden",
+ "kind": "star",
+ "description": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
+ "topics": [
+  "bitwarden",
+  "bitwarden-rs",
+  "docker",
+  "rocket",
+  "rust",
+  "vaultwarden"
+ ],
+ "language": "Rust",
+ "stars": 69858,
+ "license": "AGPL-3.0",
+ "homepage": "",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "my company",
+  "webtools"
+ ],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Password Managers",
+   "entry": "Vaultwarden - Lightweight Bitwarden server API implementation written in Rust. GPL-3.0 Rust/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "Vaultwarden | Unofficial Bitwarden server"
+  }
+ ],
+ "summary": {
+  "one_liner": "Vaultwarden is an unofficial, lightweight server implementation of the Bitwarden Client API written in Rust, compatible with official Bitwarden clients and intended for self-hosting.",
+  "what_it_does": "The README describes a nearly complete implementation of the Bitwarden Client API, covering the personal vault, Send, attachments, website icons and personal API keys. It also lists organization features (collections, password sharing, member roles, groups, event logs, admin password reset, directory connector, policies) and multi/two-factor authentication methods (authenticator, email, FIDO2 WebAuthn, YubiKey, Duo). Emergency access and a Vaultwarden admin backend are included, along with a modified web vault client bundled in the container images. The project is positioned as a lighter alternative to the official resource-heavy Bitwarden service. It was formerly named Bitwarden_RS and was renamed to avoid branding confusion with the official server.",
+  "use_cases": [
+   "self-host a password manager server",
+   "run a Bitwarden-compatible backend for official clients",
+   "lightweight alternative to the official Bitwarden server",
+   "store passwords, attachments and Sends for a family or small team",
+   "deploy a password vault in Docker or Podman",
+   "enable FIDO2, YubiKey or Duo two-factor login on a self-hosted vault"
+  ],
+  "how_to_run": [
+   "docker pull vaultwarden/server:latest",
+   "docker run --detach --name vaultwarden --env DOMAIN=\"<your-url>\" --volume /vw-data/:/data/ --restart unless-stopped --publish 127.0.0.1:8000:80 vaultwarden/server:latest",
+   "Alternatively, create a compose.yaml with the vaultwarden/server:latest image, a ./vw-data/:/data/ volume and port 127.0.0.1:8000:80, then start it with Docker Compose",
+   "Put a reverse proxy with HTTPS in front of the server (the web vault requires a secure context)"
+  ],
+  "stack": [
+   "Rust",
+   "Rocket web framework",
+   "Docker",
+   "Podman",
+   "Bitwarden web vault client (bundled)"
+  ],
+  "notable": [
+   "Compatible with official Bitwarden clients, including mobile, desktop and browser apps",
+   "Covers many Bitwarden features such as Organizations, Send, Emergency Access and multiple 2FA methods",
+   "Ships a Vaultwarden admin backend and a bundled modified web vault",
+   "Formerly known as bitwarden_rs; renamed to separate from the official server"
+  ],
+  "caveats": [
+   "The web vault requires HTTPS and a secure context for the Web Crypto API, so a reverse proxy or TLS setup is recommended",
+   "Not associated with Bitwarden, Inc.; the maintainers provide no liability for data loss and recommend regular backups",
+   "Community-built packages may lag behind the latest version or deviate in configuration"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted password manager",
+  "keywords": [
+   "vaultwarden",
+   "bitwarden",
+   "bitwarden server",
+   "bitwarden-rs",
+   "bitwarden compatible server",
+   "password manager",
+   "self-hosted password manager",
+   "password vault",
+   "rust",
+   "rocket",
+   "docker",
+   "podman",
+   "docker compose",
+   "container image",
+   "self-hosting",
+   "selfhosted",
+   "password sharing",
+   "two factor authentication",
+   "fido2",
+   "webauthn",
+   "yubikey",
+   "duo",
+   "emergency access",
+   "organizations",
+   "vault server",
+   "lightweight alternative",
+   "share passwords with family",
+   "host my own password manager",
+   "reverse proxy https",
+   "client api implementation",
+   "web vault"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3277,
+  "output": 1358
+ },
+ "generated": "2026-10-29"
+}

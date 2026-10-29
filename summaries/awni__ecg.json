@@ -1,0 +1,96 @@
+{
+ "id": "awni/ecg",
+ "repo": "awni/ecg",
+ "kind": "star",
+ "description": "Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network",
+ "topics": [],
+ "language": "Python",
+ "stars": 822,
+ "license": "GPL-3.0",
+ "homepage": "https://stanfordmlgroup.github.io/projects/ecg2/",
+ "pushed_at": "2023-03-24",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Python research codebase for training and running a deep neural network that classifies arrhythmias in ambulatory (Holter-style) electrocardiogram recordings, from the Nature Medicine paper by Hannun et al.",
+  "what_it_does": "The repository provides scripts to train a deep neural network on ECG data using a JSON config file (ecg/train.py) and to make predictions on a dataset with a saved model (ecg/predict.py). Models are saved as .hdf5 files after each epoch. A setup.sh script installs the requirements, with CPU-only or GPU builds selected by an environment variable. The README points to a cinc17 subdirectory README that walks through downloading the Physionet 2017 challenge dataset and training and evaluating a model on it. The README does not describe the network architecture or the detailed output format beyond this.",
+  "use_cases": [
+   "train an arrhythmia classifier on ECG recordings",
+   "classify arrhythmias in ambulatory electrocardiograms",
+   "reproduce the Nature Medicine ECG paper results",
+   "run predictions on ECG data with a saved model",
+   "experiment with the Physionet 2017 challenge dataset"
+  ],
+  "how_to_run": [
+   "git clone git@github.com:awni/ecg.git",
+   "pip install virtualenv",
+   "virtualenv -p python2.7 ecg_env && source ecg_env/bin/activate",
+   "./setup.sh   (CPU only; use env TF=gpu ./setup.sh for GPU)",
+   "mkdir saved && python ecg/train.py path_to_config.json",
+   "python ecg/predict.py <dataset .json> <model .hdf5>"
+  ],
+  "stack": [
+   "Python 2.7",
+   "TensorFlow (implied by the TF=gpu setup option)",
+   "HDF5 model files",
+   "virtualenv"
+  ],
+  "notable": [
+   "Based on a peer-reviewed Nature Medicine paper, with a citation provided",
+   "Includes a worked example for the Physionet 2017 (CinC17) challenge dataset",
+   "Training is driven by JSON config files",
+   "Saves a model checkpoint after each epoch"
+  ],
+  "caveats": [
+   "Targets Python 2.7, an end-of-life Python version",
+   "README is brief; setup and dataset details are delegated to a separate cinc17 README",
+   "Released as research code, with no stated support or maintenance commitment"
+  ],
+  "license": "GPL-3.0",
+  "category": "ecg arrhythmia deep learning",
+  "keywords": [
+   "ecg",
+   "electrocardiogram",
+   "arrhythmia detection",
+   "arrhythmia classification",
+   "holter monitor",
+   "ambulatory ecg",
+   "deep neural network",
+   "deep learning",
+   "cardiology",
+   "heart rhythm",
+   "physionet",
+   "cinc17",
+   "physionet 2017 challenge",
+   "tensorflow",
+   "keras",
+   "hdf5 model",
+   "train classifier",
+   "time series classification",
+   "medical machine learning",
+   "biomedical signal processing",
+   "heart arrhythmia ai",
+   "ecg classification model",
+   "python ecg",
+   "reproduce research paper",
+   "nature medicine",
+   "cardiologist-level ai",
+   "predict heartbeat abnormalities",
+   "wearable ecg analysis",
+   "json config training",
+   "gpl license",
+   "research code"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2131,
+  "output": 1213
+ },
+ "generated": "2026-10-29"
+}

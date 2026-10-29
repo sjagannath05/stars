@@ -1,0 +1,111 @@
+{
+ "id": "homeserverhq/hshq",
+ "repo": "homeserverhq/hshq",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Self-hosting Solutions",
+   "entry": "HomeServerHQ - All-in-one home server infrastructure and installer. Have a fully configured email server, VPN, and public website(s) set up in less than an hour, even behind CGNAT. (Source Code) GPL-3.0 Shell"
+  }
+ ],
+ "summary": {
+  "one_liner": "HomeServerHQ is a Bash-based all-in-one installer that sets up a home server plus a cloud VPS \"RelayServer\" to host email, VPN access, and public websites from behind CGNAT, with a bundle of integrated open source services.",
+  "what_it_does": "The installation and management utility installs both a HomeServer (at home) and a RelayServer (a rented VPS) along with a suite of bundled open source tools. The HomeServer creates an outgoing persistent WireGuard tunnel to the RelayServer, which handles incoming mail and https traffic so that email servers and public websites can run from home without opening ports on the router. The RelayServer includes a reverse proxy for websites, a Postfix mail relay with RSpamD spam detection and store-and-forward for up to 30 days, and port forwarding rules. The README says installed services are automatically added to Portainer, Caddy (https), Authelia (SSO), UptimeKuma (monitoring), and Heimdall (home page), and that databases are exported hourly with Ofelia. It also describes multi-domain hosting and joining or hosting other HomeServers in private networks. The README claims 160+ supported services and names Mailu as the mail server project.",
+  "use_cases": [
+   "host an email server from home behind CGNAT",
+   "host public websites from a home server",
+   "remotely access home network from phone or laptop via VPN",
+   "set up a self-hosted home server with minimal IT knowledge",
+   "relay mail and https traffic through a cheap VPS",
+   "share a private network with other home servers"
+  ],
+  "how_to_run": [
+   "cd ~",
+   "mkdir -p hshq/data/lib",
+   "wget -q4 -O hshq/data/lib/hshqlib.sh <URL from README>",
+   "bash hshq.sh",
+   "Alternatively, install a custom ISO (Debian 12 or Ubuntu 24, desktop or server) and double-click 'Install HSHQ'",
+   "Set up the RelayServer VPS via the HSHQ Web Utility (06 My Network -> 14 Set Up Hosted VPN)"
+  ],
+  "stack": [
+   "Bash",
+   "WireGuard",
+   "Docker",
+   "Portainer",
+   "Caddy",
+   "Authelia",
+   "Postfix",
+   "Mailu",
+   "RSpamD",
+   "ClamAV",
+   "UptimeKuma",
+   "Heimdall",
+   "Ofelia",
+   "Wazuh",
+   "SmallStep ACME"
+  ],
+  "notable": [
+   "Two-server design: a HomeServer at home plus a lightweight RelayServer VPS that accepts public traffic, so no ports need opening on the home router",
+   "Mail relay routes incoming mail to the correct internal host and stores it for up to 30 days if the home server is unreachable",
+   "Each supported service is auto-integrated with reverse proxy, SSO, monitoring, and dashboard",
+   "Ships as custom Linux ISOs (Debian 12, Ubuntu 24) with a guided install",
+   "Ability to host multiple domains and networks, with a separate reverse proxy instance per network"
+  ],
+  "caveats": [
+   "Requires a rented VPS (README estimates $5-$10/month) plus a domain name; estimated ~$400 hardware and ~$15/month ongoing costs",
+   "Supported distributions are limited to Debian 12.9, Ubuntu 22.04/24.04, and Mint 22",
+   "IPv4 only at present; IPv6 is on the roadmap",
+   "Professional support is a paid subscription ($40/year per README); the project is otherwise free"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted home server",
+  "keywords": [
+   "home server",
+   "self-hosting",
+   "all-in-one installer",
+   "email server at home",
+   "host email from home",
+   "behind cgnat",
+   "no open ports",
+   "port forwarding",
+   "wireguard vpn",
+   "relayserver vps",
+   "reverse proxy",
+   "caddy",
+   "postfix relay",
+   "mailu",
+   "authelia sso",
+   "portainer",
+   "uptimekuma monitoring",
+   "heimdall dashboard",
+   "docker stack",
+   "bash installer",
+   "debian iso",
+   "ubuntu home server",
+   "self-hosted website",
+   "remote access home network",
+   "private network",
+   "reverse tunnel",
+   "nextcloud alternative",
+   "cloudron alternative",
+   "yunohost alternative",
+   "umbrel alternative",
+   "casaos alternative",
+   "tailscale alternative",
+   "cloudflare tunnels alternative",
+   "headscale alternative",
+   "spam filtering mail relay",
+   "open source home lab"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10385,
+  "output": 1606
+ },
+ "generated": "2026-10-29"
+}

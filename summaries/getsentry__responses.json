@@ -1,0 +1,93 @@
+{
+ "id": "getsentry/responses",
+ "repo": "getsentry/responses",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Testing",
+   "entry": "responses - A utility library for mocking out the requests Python library."
+  }
+ ],
+ "summary": {
+  "one_liner": "Responses is a Python utility library for mocking out the requests library so tests can register fake HTTP responses instead of hitting real servers.",
+  "category": "python testing library",
+  "keywords": [
+   "python mocking",
+   "requests mock",
+   "mock http requests",
+   "fake http responses",
+   "unit testing requests",
+   "mock requests library",
+   "pytest requests mock",
+   "unittest requests mock",
+   "http stub",
+   "response mocking",
+   "request matchers",
+   "mock api calls in tests",
+   "test http client",
+   "record http responses",
+   "replay recorded responses",
+   "yaml recorded responses",
+   "mock external api in tests",
+   "intercept requests calls",
+   "requests-mock alternative",
+   "httpretty alternative",
+   "responses library",
+   "callback mock response",
+   "ordered registry",
+   "assert request call count",
+   "mock retry behavior",
+   "stop real http calls in tests",
+   "pip install responses",
+   "python test doubles",
+   "multipart form data matcher",
+   "json body matcher"
+  ],
+  "what_it_does": "Lets you register mock responses for requests calls by method and URL, either by passing a Response object or direct arguments, and by using decorators, shortcuts like responses.get/post, or a context manager. Unmatched requests raise a ConnectionError. It provides matchers for JSON and URL-encoded bodies, query parameters or query strings, request kwargs, multipart/form-data, headers, and fragment identifiers, plus support for custom matchers. Dynamic responses can be produced with callbacks, including regex URL matching. It can assert call counts and inspect calls, and supports ordered registries for sequence-dependent responses, passthrough to real servers, and a beta recorder that saves real responses to YAML and replays them.",
+  "use_cases": [
+   "mock a third-party API in unit tests",
+   "simulate HTTP error codes like 404 or 500",
+   "verify request headers, bodies, or query params sent by code",
+   "test retry logic with a sequence of responses",
+   "test redirect chains",
+   "record real API responses to a YAML file for later replay"
+  ],
+  "how_to_run": [
+   "pip install responses",
+   "import responses and decorate a test function with @responses.activate",
+   "call responses.get/post/put(url, json=..., status=...) to register mock responses",
+   "run requests calls in the test as usual and assert on the results"
+  ],
+  "stack": [
+   "Python 3.8+",
+   "requests >= 2.30.0",
+   "pytest (for its test suite)",
+   "urllib3 (Retry example)",
+   "mypy",
+   "tox",
+   "pre-commit"
+  ],
+  "notable": [
+   "Only mocks the requests library; calls made through other HTTP clients are not covered by the README",
+   "Ordered registry makes responses depend on call order, useful for retry tests",
+   "Beta recorder saves real responses to YAML and can replay them into the registry",
+   "Optional pytest fixture via the separate pytest-responses package"
+  ],
+  "caveats": [
+   "Requires Python 3.8 or newer and requests 2.30.0 or newer",
+   "Recording and replay features are marked BETA and their API may change",
+   "Several arguments are deprecated (match_querystring, stream on Response) with migration paths given"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15998,
+  "output": 1158
+ },
+ "generated": "2026-10-29"
+}

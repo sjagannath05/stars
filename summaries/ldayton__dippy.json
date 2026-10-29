@@ -1,0 +1,83 @@
+{
+ "id": "ldayton/dippy",
+ "repo": "ldayton/Dippy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Dippy by Lily Dayton - Auto-approve safe bash commands using AST-based parsing, while prompting for destructive operations. Solves permission fatigue without disabling safety. Supports Claude Code, Gemini CLI, and Cursor."
+  }
+ ],
+ "summary": {
+  "one_liner": "Dippy is a shell command hook for Claude Code that auto-approves safe bash commands and prompts for destructive ones, built on a hand-written bash parser.",
+  "category": "ai agent permission hook",
+  "keywords": [
+   "claude code hook",
+   "bash command approval",
+   "auto approve shell commands",
+   "permission fatigue",
+   "pretooluse hook",
+   "shell command filter",
+   "bash parser",
+   "ast parsing",
+   "safe commands allowlist",
+   "destructive command blocking",
+   "gemini cli",
+   "cursor",
+   "claude code permissions",
+   "deny rules",
+   "deny messages",
+   "command safety checker",
+   "ai coding assistant safety",
+   "reduce approval prompts",
+   "homebrew tap",
+   "python bash parser",
+   "parable parser",
+   "git status auto approve",
+   "dippy config",
+   "shell hook",
+   "llm agent guardrails",
+   "avoid manual approval clicks",
+   "bash command review"
+  ],
+  "what_it_does": "Dippy runs as a shell command hook that Claude Code invokes before each Bash tool call. It parses the command with Parable, the author's own hand-written bash parser, and auto-approves read-only or otherwise safe commands such as ls, git status, cat, and cloud or container inspection calls. It handles pipelines, chains with && and pipes, safe redirects like 2>/dev/null, and command substitution. Commands that write files, mutate state, or are destructive (for example git stash drop, npm unpublish, kubectl delete, or a rm -rf chain) are blocked so the user is prompted. Users can add config rules in ~/.dippy/config or a project .dippy file, including deny rules with custom messages intended to steer the assistant. The README also says it supports Claude Code, Gemini CLI, and Cursor.</what_it_does>\n<parameter name=\"how_to_run\">[\"brew tap ldayton/dippy\", \"brew install dippy\", \"git clone <repository URL (not given in README)>\", \"Add a PreToolUse hook with matcher \\\"Bash\\\" and command \\\"dippy\\\" to ~/.claude/settings.json (or use /hooks)\", \"If installed manually, point the hook command at /path/to/Dippy/bin/dippy-hook\", \"Optionally add deny rules to ~/.dippy/config or a project .dippy file\"]",
+  "use_cases": [
+   "Stop Claude Code from asking approval for ls, git status, and cat",
+   "Let an AI coding assistant run read-only shell commands unattended",
+   "Block destructive shell commands while keeping safe ones automatic",
+   "Steer an AI agent with custom deny messages when it runs a disallowed command",
+   "Prevent agents from writing secrets files or using shell redirects to write files",
+   "Speed up agent-driven development without turning off permissions"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Python",
+   "Parable (author's own hand-written bash parser)",
+   "Homebrew (installation)"
+  ],
+  "notable": [
+   "Uses an AST-based bash parser (Parable) written by the author, with no external dependencies",
+   "Deny rules can carry custom messages that tell the AI what to do instead",
+   "Approves whole chains and pipelines, but blocks the entire chain if one part is unsafe",
+   "Config via ~/.dippy/config globally and .dippy per project",
+   "Claims support for Claude Code, Gemini CLI, and Cursor"
+  ],
+  "caveats": [
+   "README gives no git clone URL for manual install, only a placeholder",
+   "Full documentation and extensions are only referenced via an external wiki",
+   "Claims of up to 40% faster development are the author's marketing, not measured here",
+   "Blocked commands still require manual approval, so safety depends on the rule set"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2643,
+  "output": 1364
+ },
+ "generated": "2026-10-29"
+}

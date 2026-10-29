@@ -1,0 +1,99 @@
+{
+ "id": "congmnguyen/claude-code-wsl2-setup",
+ "repo": "congmnguyen/claude-code-wsl2-setup",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "claude-code-wsl2-setup by congmnguyen - A focused collection of documented scripts that fix the most painful Claude Code papercuts on WSL2 + Windows Terminal — clipboard screenshot paste via a Go daemon, Windows notifications on Stop/PermissionRequest hooks, LSP wiring, a usage-aware status line, and voice-mode audio routing. Each fix is written up with root cause and exact config (including non-o"
+  }
+ ],
+ "summary": {
+  "one_liner": "A collection of documented WSL2 + Windows Terminal fixes for Claude Code, covering screenshot paste, Windows balloon notifications, LSP wiring, a usage-aware statusline, and related bridge utilities.",
+  "what_it_does": "The repository is a set of markdown guides, each describing one fix for running Claude Code under WSL2 with Windows Terminal. Image-paste uses a systemd user service that keeps wsl-screenshot-cli running and saves screenshots under /tmp/.wsl-screenshot-cli/ so a copied Windows screenshot can be pasted as a WSL path. Claude-notify shows a Windows balloon tip on Claude Code Notification events and skips it when Windows Terminal is focused, and codex-notify reuses that script for Codex's notify command. Other guides cover LSP plugins and language servers for TypeScript, Python, Go, and Rust, a statusline showing project, git branch, context fill and 5-hour/7-day usage, terminal tab titles, Shift+Enter newline handling, opening links in the Windows browser, and CapsLock-to-Escape via SharpKeys. A bin/tmux-notify-run script runs detached tmux jobs with logs and a Windows completion notification, and scripts/doctor.sh gives a read-only report of installed pieces and known conflicts. The author notes the setup is no longer tested daily on WSL2.",
+  "use_cases": [
+   "paste Windows screenshots into Claude Code on WSL2",
+   "get Windows notifications when Claude Code finishes or needs permission",
+   "set up language servers for code navigation in Claude Code",
+   "show context window and usage in a Claude Code statusline",
+   "open OAuth and browser links from WSL2 in the Windows browser",
+   "run long tmux jobs with Windows completion alerts"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd claude-code-wsl2-setup",
+   "claude",
+   "Prompt Claude with: Help me set up this repository's WSL2 features. Check my environment, explain the changes, and preserve my existing settings.",
+   "bash scripts/doctor.sh"
+  ],
+  "stack": [
+   "Claude Code",
+   "WSL2",
+   "Windows Terminal",
+   "Bash",
+   "zsh",
+   "tmux",
+   "systemd",
+   "Go",
+   "wsl-screenshot-cli",
+   "SharpKeys",
+   "Figma Desktop MCP"
+  ],
+  "notable": [
+   "Each fix is documented with root cause and exact configuration, including non-obvious steps",
+   "Screenshot paste via a Go-based daemon that writes shots to WSL paths",
+   "Windows balloon notifications on Claude Code hooks, suppressed when Windows Terminal has focus",
+   "Statusline with context-window fill bar and color-coded 5-hour and 7-day usage",
+   "scripts/doctor.sh flags known conflicts such as duplicate screenshot monitors"
+  ],
+  "caveats": [
+   "Targets WSL2 with Windows Terminal; Windows-side behavior needs manual changes and is not tested daily by the author",
+   "Maintenance status: the author moved to Ubuntu + Ghostty and no longer tests this setup daily",
+   "Some steps require changes on the Windows side, such as SharpKeys registry remap and balloon scripts"
+  ],
+  "license": "MIT",
+  "category": "wsl2 claude code setup",
+  "keywords": [
+   "claude code",
+   "wsl2",
+   "windows terminal",
+   "screenshot paste",
+   "clipboard image wsl",
+   "windows notifications",
+   "balloon tip",
+   "lsp setup",
+   "language server",
+   "statusline",
+   "usage monitor",
+   "context window",
+   "tmux",
+   "systemd user service",
+   "wsl-screenshot-cli",
+   "go daemon",
+   "browser oauth wsl",
+   "xdg open",
+   "shift enter newline",
+   "capslock escape",
+   "sharpkeys",
+   "terminal tab title",
+   "codex notify",
+   "claude hooks",
+   "dotfiles setup",
+   "windows linux bridge",
+   "developer environment",
+   "ai coding agent setup",
+   "figma mcp",
+   "doctor script"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3350,
+  "output": 1491
+ },
+ "generated": "2026-10-29"
+}

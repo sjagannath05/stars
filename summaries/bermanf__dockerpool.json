@@ -1,0 +1,88 @@
+{
+ "id": "bermanf/dockerpool",
+ "repo": "bermanf/dockerpool",
+ "kind": "star",
+ "description": "",
+ "topics": [],
+ "language": "Go",
+ "stars": 28,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-02-18",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Go library that manages a pool of reusable Docker containers, with background refill, concurrency limits, and graceful shutdown.",
+  "what_it_does": "Pre-creates Docker containers and hands them out via Acquire() and takes them back via Return(). A background watcher refills idle containers toward a configured minimum and trims excess down to a maximum. Containers can run commands through Exec(), ExecStd() with timeout and output limits, or ExecStream() for streaming stdout/stderr and optional stdin. On restart the pool recovers existing containers by label. Shutdown waits for in-use containers to be returned before removing idle containers and, optionally, the network.",
+  "use_cases": [
+   "running untrusted or user-submitted code in isolated containers",
+   "reusing warm Docker containers to avoid startup latency",
+   "limiting parallel Docker API load in a code runner service",
+   "executing shell commands inside pooled containers from Go"
+  ],
+  "how_to_run": [
+   "go get github.com/bermanf/dockerpool",
+   "Create a pool with dockerpool.New(ctx, dockerpool.Config{...}) setting Name, Network and Image",
+   "pool.Acquire(ctx) to get a container, then container.Exec(ctx, cmd)",
+   "pool.Return(ctx, container) to reuse it, or pool.Remove(ctx, container) to discard it",
+   "defer pool.Shutdown(ctx) to clean up"
+  ],
+  "stack": [
+   "Go",
+   "Docker Engine API"
+  ],
+  "notable": [
+   "Auto-refill background worker keeps a minimum number of idle containers ready",
+   "Container sync on restart recovers existing pool containers via labels",
+   "Configurable concurrency limits for Docker operations during refill, shutdown and Acquire",
+   "Exec variants include timeout, output size limit and streaming with stdin support"
+  ],
+  "caveats": [
+   "Requires a running Docker daemon; the README does not describe other platforms",
+   "Container configuration is passed through Docker SDK types (container.Config, container.HostConfig), so Docker knowledge is needed for advanced setups"
+  ],
+  "license": "MIT",
+  "category": "docker container pooling",
+  "keywords": [
+   "go docker library",
+   "docker container pool",
+   "container pooling",
+   "reusable containers",
+   "warm containers",
+   "auto refill",
+   "graceful shutdown",
+   "docker sdk go",
+   "exec in container",
+   "sandbox code execution",
+   "run untrusted code",
+   "docker exec timeout",
+   "output limit",
+   "stream container output",
+   "concurrency limit docker",
+   "docker network management",
+   "container labels sync",
+   "acquire return container",
+   "pool of containers",
+   "isolated code runner",
+   "execute commands in docker",
+   "container lifecycle manager",
+   "docker api wrapper",
+   "golang container manager",
+   "keep idle containers ready",
+   "share containers between goroutines"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5153,
+  "output": 1069
+ },
+ "generated": "2026-10-29"
+}

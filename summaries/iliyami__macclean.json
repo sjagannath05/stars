@@ -1,0 +1,100 @@
+{
+ "id": "iliyami/macclean",
+ "repo": "iliyami/MacClean",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Cleanup and Uninstall",
+   "entry": "Mac Clean - Free, open-source cleaner, optimizer, and malware scanner. [![Open-Source Software][OSS Icon]](https://github.com/iliyami/MacClean) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mac Sai is a free, open-source, Apple-notarized Mac cleaner, optimizer, and malware scanner built in Swift 6 and SwiftUI as an alternative to CleanMyMac.",
+  "category": "mac cleaner utility",
+  "keywords": [
+   "mac cleaner",
+   "macos cleaner",
+   "cleanmymac alternative",
+   "free mac cleaner",
+   "open source mac cleaner",
+   "mac optimizer",
+   "mac malware scanner",
+   "swift",
+   "swiftui",
+   "homebrew cask",
+   "brew install mac-sai",
+   "system junk cleaner",
+   "uninstaller",
+   "app uninstaller",
+   "leftover files remover",
+   "duplicate finder",
+   "disk usage treemap",
+   "space lens",
+   "large files finder",
+   "browser privacy cleaner",
+   "login items manager",
+   "menu bar system monitor",
+   "universal binary thinning",
+   "project build folder cleaner",
+   "node_modules cleaner",
+   "trash empty",
+   "secure file shredder",
+   "free up disk space mac",
+   "remove unused apps",
+   "browser extensions manager",
+   "notarized mac app"
+  ],
+  "what_it_does": "Mac Sai is a SwiftUI macOS app that organizes about 22 modules into cleanup, protection, performance, applications, and file-management categories. Cleanup covers system junk scanning across 16+ categories, mail attachment cache removal, trash emptying, project build-folder detection (such as node_modules, target, and Pods), and Docker and Xcode simulator pruning. Protection includes a signature-based malware scanner, browser history and cache cleaning, browser extension listing, and saved Wi-Fi management. Applications covers an uninstaller that searches for leftover files, a reset-to-defaults option, unused-app detection, and a Sparkle-feed updater. Files includes a disk treemap, large and old file finder, duplicate detection with APFS clone consolidation, and a secure shredder. A menu-bar widget shows live CPU, memory, disk, and battery stats. Deletion defaults to the Trash, and a dry-run mode is available.",
+  "use_cases": [
+   "Free up disk space on a Mac",
+   "Remove an app and its leftover files",
+   "Find and delete old build folders like node_modules",
+   "Scan a Mac for malware or adware",
+   "Clear browser history, cookies, and cache",
+   "Find large files and duplicate files",
+   "Manage login items and launch agents"
+  ],
+  "how_to_run": [
+   "brew install --cask mac-sai",
+   "Or download the latest notarized DMG from the project's Releases page and drag Mac Sai to Applications",
+   "Build from source: git clone the repository, cd MacSai, then swift build",
+   "swift test (runs the 1,048-test suite)",
+   "bash scripts/build-dmg.sh (builds a local unsigned DMG)"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "AppKit",
+   "GRDB.swift (SQLite)",
+   "Swift Package Manager",
+   "XPC privileged helper (LaunchDaemon)",
+   "SMAppService",
+   "Sparkle appcast feeds",
+   "Mach APIs"
+  ],
+  "notable": [
+   "Apple-notarized and code-signed with Developer ID, with zero telemetry according to the README, which includes commands to verify network use",
+   "Trash-first deletion, a protected-paths blocklist, symlink and TOCTOU guards, and a SafetyGuard that validates every path",
+   "Universal Binary thinning that rewrites fat Mach-O binaries to the native arch via lipo",
+   "Duplicate detection with a Consolidate mode that uses APFS copy-on-write clones instead of deleting copies",
+   "Project Junk only flags build folders when the surrounding project files confirm the project type"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later, and the Swift 6 toolchain (Xcode 16+) for building from source",
+   "The README says it is not an antivirus; the malware scanner is signature-based and flags items for review",
+   "A few modules (Mail Attachments, Privacy, Malware) need Full Disk Access granted manually",
+   "The optional MalwareBazaar hash feed requires the user to supply their own abuse.ch Auth-Key"
+  ],
+  "license": "BSD 3-Clause"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9794,
+  "output": 1543
+ },
+ "generated": "2026-10-29"
+}

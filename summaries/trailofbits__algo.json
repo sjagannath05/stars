@@ -1,0 +1,91 @@
+{
+ "id": "trailofbits/algo",
+ "repo": "trailofbits/algo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Proxy and VPN Tools",
+   "entry": "Algo - Personal IPSEC VPN in the cloud. [![Open-Source Software][OSS Icon]](https://github.com/trailofbits/algo)"
+  }
+ ],
+ "summary": {
+  "one_liner": "Algo VPN is a set of Ansible scripts that deploy a personal WireGuard and IPsec VPN server onto a new cloud virtual machine or an existing Ubuntu server.",
+  "what_it_does": "Algo runs Ansible playbooks from your local machine (or Google Cloud Shell) to provision an Ubuntu 22.04 LTS server with a WireGuard and IPsec VPN. You list the users in config.cfg and the scripts generate per-user configs: WireGuard .conf files and QR codes for iOS, macOS, Android and Windows, plus IPsec certificates and Apple profiles. Helper commands add or remove users later via update-users. Optional features include a local DNS resolver that blocks ads, limited SSH tunneling users, and privacy settings such as log rotation and minimal logging. The README says IPsec is limited to IKEv2 with AES-GCM, SHA2 and P-256, and that legacy protocols like L2TP, IKEv1 and OpenVPN are not installed.",
+  "use_cases": [
+   "Set up a personal VPN server in the cloud",
+   "Route phone and laptop traffic through a server you control",
+   "Create WireGuard configs and QR codes for several devices",
+   "Auto-configure iOS or macOS built-in IPsec VPN",
+   "Add or remove VPN users after deployment",
+   "Tunnel browser traffic through an SSH SOCKS proxy"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/trailofbits/algo",
+   "Edit config.cfg and list the users in the users list",
+   "./algo (macOS/Linux) or .\\algo.ps1 (Windows, uses WSL when needed)",
+   "Import the generated files from the configs/ directory into your VPN client",
+   "./algo update-users (after editing the users list)"
+  ],
+  "stack": [
+   "Ansible",
+   "Python 3.11+",
+   "Ubuntu 22.04 LTS",
+   "WireGuard",
+   "IPsec / strongSwan",
+   "PowerShell (Windows launcher)"
+  ],
+  "notable": [
+   "Deploys a fresh VM to many cloud providers, or to your own Ubuntu server",
+   "Generates Apple IPsec profiles so iOS and macOS need no third-party client for IPsec",
+   "Optional local DNS resolver for ad blocking",
+   "Optional SSH-only tunneling accounts with no shell access",
+   "Privacy controls: log rotation after 7 days and a privacy-monitor script"
+  ],
+  "caveats": [
+   "IPsec user management requires choosing to retain the PKI keys during deployment, and the p12 and CA passwords are shown only once",
+   "Some settings such as cloud provider and other options should be set before deployment, since changing them later may require a new server",
+   "The README says it does not claim anonymity or censorship avoidance, and perfect privacy is impossible"
+  ],
+  "license": "AGPLv3",
+  "category": "self-hosted vpn deployment",
+  "keywords": [
+   "vpn",
+   "personal vpn",
+   "ipsec vpn",
+   "wireguard",
+   "ikev2",
+   "ansible",
+   "ansible playbook",
+   "cloud vpn server",
+   "self-hosted vpn",
+   "self-hosted wireguard",
+   "strongswan",
+   "digitalocean vpn",
+   "amazon lightsail vpn",
+   "ec2 vpn",
+   "vultr vpn",
+   "hetzner vpn",
+   "linode vpn",
+   "vpn for iphone",
+   "vpn for macos",
+   "wireguard qr code",
+   "socks proxy over ssh",
+   "ssh tunnel",
+   "dns ad blocking",
+   "road warrior vpn",
+   "private vpn server",
+   "run my own vpn",
+   "trail of bits"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6751,
+  "output": 1350
+ },
+ "generated": "2026-10-29"
+}

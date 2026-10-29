@@ -1,0 +1,99 @@
+{
+ "id": "openclaw/openclaw-ansible",
+ "repo": "openclaw/openclaw-ansible",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Deployment & Infrastructure",
+   "entry": "openclaw/openclaw-ansible — Automated + hardened installs"
+  }
+ ],
+ "summary": {
+  "one_liner": "An Ansible playbook and collection that automates a hardened Debian/Ubuntu install of OpenClaw with Docker, Tailscale VPN, UFW firewall and Fail2ban.",
+  "what_it_does": "The playbook provisions a Debian 11+ or Ubuntu 20.04+ host for running OpenClaw. It sets up a UFW firewall that only opens SSH and Tailscale ports, installs Fail2ban for SSH brute-force protection, and enables unattended-upgrades for security patches. It installs Docker CE with Compose V2 for sandboxes, Node.js 22.x and pnpm, and then installs OpenClaw on the host (not containerized). In release mode it runs pnpm install -g openclaw@latest; in development mode it clones the OpenClaw repo, runs pnpm install and pnpm build, and symlinks the binary. The repo is also packaged as the openclaw.installer Ansible collection, so it can be imported into other playbooks. macOS support was removed effective 2026-02-06, and the playbook fails on Darwin.",
+  "use_cases": [
+   "Automated hardened server setup for OpenClaw",
+   "Deploying OpenClaw on a Debian or Ubuntu VPS",
+   "Setting up a firewall and SSH protection on a new Linux host",
+   "Provisioning multiple servers with Ansible inventory",
+   "Running OpenClaw from source for development",
+   "Remote access to a server over Tailscale mesh VPN"
+  ],
+  "how_to_run": [
+   "sudo apt update && sudo apt install -y ansible git",
+   "git clone <repository-url> && cd openclaw-ansible",
+   "ansible-galaxy collection install -r requirements.yml",
+   "./run-playbook.sh",
+   "./run-playbook.sh -e openclaw_install_mode=development",
+   "ansible-playbook playbooks/deploy.yml -i inventory.yml"
+  ],
+  "stack": [
+   "Ansible",
+   "ansible-core 2.14+",
+   "Node.js 22.x",
+   "pnpm",
+   "Docker CE",
+   "Docker Compose V2",
+   "Tailscale",
+   "UFW",
+   "Fail2ban",
+   "unattended-upgrades",
+   "systemd"
+  ],
+  "notable": [
+   "Installable as the openclaw.installer Ansible collection, with a deploy playbook and an openclaw role",
+   "Release mode installs from npm; development mode builds from a git clone and adds helper aliases",
+   "Docker containers are kept from publishing ports externally via the DOCKER-USER chain, and the openclaw user is excluded from the docker group",
+   "Includes a post-install security verification that checks firewall, Fail2ban and localhost-only listening"
+  ],
+  "caveats": [
+   "macOS bare-metal installs are disabled; the playbook fails on Darwin",
+   "Requires Debian 11+ or Ubuntu 20.04+ target and ansible-core 2.14+ controller; older distros need manual controller setup",
+   "Onboarding a Gateway daemon and messaging providers is a separate manual step after install"
+  ],
+  "license": "MIT",
+  "category": "ansible server provisioning",
+  "keywords": [
+   "ansible playbook",
+   "ansible collection",
+   "openclaw install",
+   "server hardening",
+   "automated server setup",
+   "ubuntu provisioning",
+   "debian provisioning",
+   "docker ce install",
+   "tailscale vpn",
+   "ufw firewall",
+   "fail2ban",
+   "unattended upgrades",
+   "node.js 22 install",
+   "pnpm global install",
+   "vps setup script",
+   "self-hosted ai gateway",
+   "infrastructure as code",
+   "idempotent server config",
+   "remote access vpn",
+   "secure remote access",
+   "install ai agent on server",
+   "one command server install",
+   "hardened linux install",
+   "deploy to multiple servers",
+   "systemd user service",
+   "development mode build from source",
+   "set up firewall on ubuntu",
+   "automate debian setup",
+   "messaging gateway install",
+   "run openclaw on linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5466,
+  "output": 1438
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "cvelasquez/agent-workbench",
+ "repo": "cvelasquez/agent-workbench",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Alternative Clients",
+   "entry": "Agent Workbench by cvelasquez - Local web UI that runs the unmodified Claude Code CLI in a pseudo-terminal and adds tabs, a browsable history of past sessions, conversations rendered as cards, a context meter, and the agent's multiple-choice questions answered from the UI."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local web UI that runs the unmodified Claude Code, Codex, OpenCode, Antigravity and Pi CLIs in a real terminal and adds tabs, session history, chat-style conversation cards, a context meter, and file, change and note panels around them.",
+  "what_it_does": "It starts the coding-agent CLI already installed on your machine inside a pseudo-terminal, so everything you type goes straight to the CLI. It keeps several agent tabs open at once, each in its own folder, with a status dot showing working, idle or waiting. A sidebar lists past projects and conversations from every supported CLI, with search, archive and resume. The conversation is rendered as cards with folded tool calls, and a context meter shows token use with a Compact button past 70%. Side panels cover git branches and diffs, a project file tree with previews and editing, rendered plans and documents, a notes scratchpad, and a system console. Optional extras include shared memory between CLIs, a history backup, plan usage-limit display, and remote access over SSH with a phone layout and Android app.",
+  "use_cases": [
+   "Run several coding agents side by side in separate project folders",
+   "Resume a past Claude Code or Codex conversation from a sidebar history",
+   "Read agent conversations as formatted cards instead of raw terminal output",
+   "Watch context window usage and compact a long conversation",
+   "Review and merge agent-made git branches from a UI",
+   "Use a coding agent from a phone or another computer over an SSH tunnel"
+  ],
+  "how_to_run": [
+   "npm install -g agent-workbench",
+   "agent-workbench  (run from the project folder; opens the browser)",
+   "npx agent-workbench  (one-off run without installing)",
+   "corepack enable pnpm",
+   "pnpm install",
+   "pnpm dev"
+  ],
+  "stack": [
+   "Node.js 20+ (22.13+ for OpenCode and Antigravity history)",
+   "TypeScript",
+   "Node, Express, ws, node-pty, chokidar",
+   "Vite, React, xterm.js, highlight.js",
+   "pnpm monorepo",
+   "Kotlin (Android app)",
+   "git (for the Changes panel)"
+  ],
+  "notable": [
+   "Runs the unmodified CLI in a real pseudo-terminal; the app adds UI around it rather than calling an AI API itself",
+   "Sessions run on the server, so reloading the browser does not stop a working agent",
+   "Answer a CLI's multiple-choice questions from the conversation view (Claude Code and OpenCode)",
+   "Parallel work via git worktree branches, each in its own folder, with one-click ff-only merge into main",
+   "Server listens only on 127.0.0.1 with a per-start token; remote access is opt-in via SSH tunnel"
+  ],
+  "caveats": [
+   "Best tested on Windows 11 with PowerShell; macOS and Linux get less daily use per the README",
+   "Some features depend on the CLI: questions, plan limits and status line need per-CLI setup or are unavailable for some CLIs",
+   "Claude Code plan limits and Antigravity status require editing the CLI's status line settings yourself",
+   "Linux install compiles the node-pty native module, requiring python3, make and a C++ compiler"
+  ],
+  "license": "MIT",
+  "category": "agent cli web ui",
+  "keywords": [
+   "coding agent ui",
+   "claude code gui",
+   "claude code web interface",
+   "codex cli ui",
+   "opencode ui",
+   "pi coding agent",
+   "antigravity cli",
+   "terminal wrapper",
+   "pseudo-terminal",
+   "xterm.js",
+   "node-pty",
+   "session history browser",
+   "resume conversation",
+   "context window meter",
+   "git worktree branches",
+   "parallel agents",
+   "ssh tunnel remote access",
+   "local web app",
+   "ai coding assistant dashboard",
+   "chat cards terminal",
+   "run agent in browser",
+   "manage multiple agent tabs",
+   "review agent changes",
+   "browse past claude sessions",
+   "electron alternative",
+   "tmux alternative for agents",
+   "run ai cli from phone",
+   "self-hosted agent workbench",
+   "mit licensed coding tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14057,
+  "output": 1474
+ },
+ "generated": "2026-10-29"
+}

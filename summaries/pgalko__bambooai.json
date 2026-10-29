@@ -1,0 +1,113 @@
+{
+ "id": "pgalko/bambooai",
+ "repo": "pgalko/BambooAI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "BambooAI is an LLM-driven data analysis environment that runs model-written Python in a persistent kernel and keeps every computation, output and cited number inspectable and replayable.",
+  "what_it_does": "The Analyst model works a question turn by turn, each turn taking one action such as running a Python cell, reopening an earlier output, searching the web, reading attached documents, asking the user, or writing the report. Executed cells persist in a workspace so follow-up questions can build on earlier computation. Each committed cell is checkpointed, and a failed cell is rolled back. After a report is written, the cited cells are rerun in a fresh kernel against the original data to check that the numbers reproduce. The app also builds a code map and a reach report showing how each number was made and what the code touched outside the data. Adaptive mode adds a separate Reviewer model that can request more tests or narrow conclusions, and completed analyses can be saved as routines that rerun on new data without an LLM. It supports many hosted providers as well as local Ollama and vLLM models.",
+  "use_cases": [
+   "analyse a CSV, Parquet, JSON or XLSX dataset with an LLM",
+   "reproducible AI-driven statistical analysis",
+   "traceable reporting of numbers back to code",
+   "analysing training data from Intervals.icu, Endura or SweatStack",
+   "attaching papers or transcripts to a data analysis",
+   "rerunning a saved analysis method on new data",
+   "running data analysis with local open-weight models"
+  ],
+  "how_to_run": [
+   "pip install bambooai",
+   "bambooai serve",
+   "Docker must be running; first start builds the executor image (several minutes)",
+   "Add model API keys to ~/bambooai/.env, then run bambooai serve again",
+   "Alternative from source: git clone the repo, python3 -m venv .venv, source .venv/bin/activate, pip install -e ., bambooai serve"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "Docker",
+   "Plotly",
+   "pandas",
+   "numpy",
+   "scipy",
+   "statsmodels",
+   "scikit-learn",
+   "matplotlib",
+   "pdfplumber",
+   "python-docx",
+   "Flask",
+   "OpenRouter",
+   "OpenAI",
+   "Anthropic",
+   "Google Gemini",
+   "Groq",
+   "Mistral",
+   "xAI",
+   "DeepSeek",
+   "Ollama",
+   "vLLM"
+  ],
+  "notable": [
+   "Transactional kernel: each committed cell is checkpointed and failed cells are rolled back",
+   "Post-report reproduction check reruns cited cells in a fresh kernel and compares numbers",
+   "Code map showing the recipe behind each reported number, built without calling a model",
+   "Routines: save a finished analysis as a method with a few inputs and rerun it without a model",
+   "Separate Reviewer role with its own model that can challenge the analysis in Adaptive mode"
+  ],
+  "caveats": [
+   "Docker is the default requirement for running model-written code; a local compute alternative exists but is not the default",
+   "Reproduction only establishes computational reproducibility, not that the method or interpretation is correct, according to the README",
+   "Intervals.icu, Endura and SweatStack integrations need API keys or app registration; SweatStack needs your own client ID and secret",
+   "Scanned PDFs are refused because OCR is not supported"
+  ],
+  "license": "unknown",
+  "category": "llm data analysis",
+  "keywords": [
+   "data analysis",
+   "llm analyst",
+   "python kernel",
+   "jupyter-like workspace",
+   "reproducible analysis",
+   "auditable ai analysis",
+   "code provenance",
+   "csv analysis",
+   "parquet",
+   "xlsx analysis",
+   "ai data analyst",
+   "chat with my data",
+   "analyse spreadsheet with ai",
+   "reproduce results",
+   "model-written code execution",
+   "docker executor",
+   "sandboxed python",
+   "ollama local models",
+   "vllm",
+   "openrouter",
+   "multi-model llm workflow",
+   "reviewer agent",
+   "adaptive analysis",
+   "routines",
+   "sports science data",
+   "intervals.icu",
+   "training data analysis",
+   "pdf report export",
+   "web search grounding",
+   "statistical analysis assistant",
+   "analysis reports with figures"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15735,
+  "output": 1494
+ },
+ "generated": "2026-10-29"
+}

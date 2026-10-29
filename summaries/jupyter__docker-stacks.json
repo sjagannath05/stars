@@ -1,0 +1,106 @@
+{
+ "id": "jupyter/docker-stacks",
+ "repo": "jupyter/docker-stacks",
+ "kind": "star",
+ "description": "Ready-to-run Docker images containing Jupyter applications",
+ "topics": [
+  "docker",
+  "ipython",
+  "ipython-notebook",
+  "jupyter",
+  "jupyter-notebook",
+  "jupyter-notebooks",
+  "jupyterhub",
+  "jupyterlab",
+  "notebook",
+  "python"
+ ],
+ "language": "Python",
+ "stars": 8472,
+ "license": "BSD-3-Clause",
+ "homepage": "https://jupyter-docker-stacks.readthedocs.io",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A set of ready-to-run Docker images from the Jupyter project that bundle JupyterLab, Jupyter Notebook, and common interactive computing tools.",
+  "what_it_does": "Provides prebuilt Docker stack images (for example base-notebook, scipy-notebook, datascience-notebook, pytorch-notebook, tensorflow-notebook) published to the Quay.io registry. Running a stack image starts a Jupyter Server with the JupyterLab frontend by default, which is reachable through a port mapped from the container with a secret token printed in the console. Users can mount a host directory into the container to keep work files, and can switch the frontend to classic Jupyter Notebook via the DOCKER_STACKS_JUPYTER_CMD environment variable. Images are published for both x86_64 and aarch64, with some CUDA-enabled variants of the PyTorch and TensorFlow images. The README also documents older images tagged by Ubuntu and Python version, and points to documentation for JupyterHub use and building custom project Dockerfiles.",
+  "use_cases": [
+   "Run a personal JupyterLab server in a container",
+   "Serve JupyterLab to a team through JupyterHub",
+   "Start a disposable notebook environment with a mounted work folder",
+   "Get a preconfigured Python data science environment without local installs",
+   "Use GPU-enabled PyTorch or TensorFlow notebooks",
+   "Base image for writing a custom project Dockerfile"
+  ],
+  "how_to_run": [
+   "docker run -p 10000:8888 quay.io/jupyter/scipy-notebook:2026-07-28",
+   "docker run -it --rm -p 10000:8888 -v \"${PWD}\":/home/jovyan/work quay.io/jupyter/datascience-notebook:2026-07-28"
+  ],
+  "stack": [
+   "Docker",
+   "Python",
+   "Jupyter",
+   "JupyterLab",
+   "JupyterHub",
+   "Jupyter Notebook",
+   "Ubuntu",
+   "Quay.io"
+  ],
+  "notable": [
+   "Multiple prebuilt images targeting different needs (base, scipy, datascience, pytorch, tensorflow, and others), all from one project",
+   "Switch between JupyterLab and classic Notebook at container startup with an environment variable",
+   "Multi-platform builds for x86_64 and aarch64, plus CUDA variants for PyTorch and TensorFlow",
+   "Older Ubuntu and Python combinations remain available as pinned image tags"
+  ],
+  "caveats": [
+   "Images are only pushed to Quay.io since 2023-10-20; Docker Hub copies are no longer updated",
+   "Only one set of images is built at a time; the weekly latest tag tracks Ubuntu 26.04 and Python 3.13, so older environments need pinned tags",
+   "tensorflow-notebook is not published as a multi-platform image in the early 2022 policy, and CUDA variants are limited to specific platforms"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "jupyter docker images",
+  "keywords": [
+   "jupyter docker",
+   "jupyterlab docker",
+   "jupyter notebook container",
+   "docker stacks",
+   "jupyter images",
+   "quay.io jupyter",
+   "jupyterhub docker",
+   "scipy notebook",
+   "datascience notebook",
+   "pytorch notebook",
+   "tensorflow notebook",
+   "gpu notebook docker",
+   "ipython notebook docker",
+   "interactive python container",
+   "run jupyter in docker",
+   "data science environment docker",
+   "reproducible notebook environment",
+   "containerized python notebooks",
+   "jupyter server container",
+   "share notebooks with my team",
+   "dockerfile base image python",
+   "multi-platform docker image",
+   "aarch64 docker python",
+   "cuda notebook",
+   "jupyter alternatives openshift",
+   "repo2docker alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4549,
+  "output": 1399
+ },
+ "generated": "2026-10-29"
+}

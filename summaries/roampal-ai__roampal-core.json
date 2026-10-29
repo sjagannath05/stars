@@ -1,0 +1,101 @@
+{
+ "id": "roampal-ai/roampal-core",
+ "repo": "roampal-ai/roampal-core",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "roampal-core by roampal-ai - Outcome-based persistent memory MCP server for Claude Code and OpenCode. Good advice promoted, bad advice demoted. pip install roampal."
+  }
+ ],
+ "summary": {
+  "one_liner": "roampal-core is an outcome-based persistent memory MCP server for Claude Code and OpenCode that injects relevant past context into each prompt and promotes or demotes memories based on whether the advice worked.",
+  "category": "ai coding memory",
+  "keywords": [
+   "mcp server",
+   "persistent memory",
+   "claude code memory",
+   "opencode plugin",
+   "outcome-based memory",
+   "ai assistant memory",
+   "long-term memory",
+   "context injection",
+   "semantic search",
+   "chromadb",
+   "vector database",
+   "cross-encoder reranker",
+   "onnx runtime",
+   "fastapi",
+   "memory profiles",
+   "per-project memory",
+   "sidecar scoring",
+   "remember past conversations",
+   "stop ai repeating mistakes",
+   "share memory across projects",
+   "claude.md alternative",
+   "auto memory",
+   "memory bank",
+   "pip install memory tool",
+   "local memory for coding agent",
+   "fully local ai memory",
+   "promote good advice",
+   "demote bad advice",
+   "hooks based memory",
+   "tagcascade retrieval",
+   "roampal",
+   "awesome claude code memory"
+  ],
+  "what_it_does": "Roampal runs a local HTTP server (port 27182) that Claude Code hooks and the OpenCode plugin call before each user message to inject relevant memories into the prompt. Memories are stored in five collections (working, history, patterns, memory_bank, books) with promotion, demotion and expiry rules. After each exchange the outcome is scored: in Claude Code the main LLM calls a score_memories tool, while in OpenCode an independent sidecar model scores the exchange. Storage uses ChromaDB with multilingual embeddings and a cross-encoder reranker, all running on CPU via ONNX Runtime. Named memory profiles and directory bindings keep separate memory stores per project or client. The CLI covers setup, server control, stats, diagnostics, book ingestion, and sidecar configuration.",
+  "use_cases": [
+   "give Claude Code memory of past fixes and preferences across sessions",
+   "keep separate memory stores for different projects",
+   "stop an AI coding assistant repeating previously rejected advice",
+   "store personal preferences the assistant should always follow",
+   "ingest reference documents for the AI to search",
+   "run a fully local memory layer for coding agents"
+  ],
+  "how_to_run": [
+   "pip install roampal",
+   "roampal init",
+   "roampal init --claude-code",
+   "roampal init --opencode",
+   "roampal start",
+   "roampal status"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "ChromaDB",
+   "FastAPI",
+   "ONNX Runtime",
+   "cross-encoder reranker",
+   "multilingual embedding model",
+   "MCP (Model Context Protocol)",
+   "Claude Code hooks",
+   "OpenCode plugin"
+  ],
+  "notable": [
+   "Outcome scoring: good advice is promoted and bad advice demoted, rather than just storing everything",
+   "OpenCode scoring uses an independent sidecar model so the main assistant never grades its own answers",
+   "Five memory collections with lifetimes from 24 hours to permanent",
+   "Named memory profiles with per-directory binding and a per-request profile header",
+   "Runs fully on CPU with no GPU; models download automatically on first use"
+  ],
+  "caveats": [
+   "Needs about 500MB RAM and roughly 500MB of disk for models",
+   "Only Claude Code and OpenCode are supported; Claude Code has no independent scorer and relies on the main LLM for scoring",
+   "OpenCode scoring is off until the user explicitly configures a scoring model; Zen free models send data to opencode.ai and may be logged",
+   "Developed primarily on Windows; macOS and Python 3.13 are CI-tested as of v0.6.0"
+  ],
+  "license": "Apache 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9098,
+  "output": 1368
+ },
+ "generated": "2026-10-29"
+}

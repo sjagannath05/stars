@@ -1,0 +1,90 @@
+{
+ "id": "mtlynch/picoshare",
+ "repo": "mtlynch/picoshare",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "PicoShare - Minimalist, easy-to-host service for sharing images and other files. (Clients) AGPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "PicoShare is a minimalist, self-hosted web app for sharing files of any type and size through direct download links.",
+  "what_it_does": "PicoShare runs as a self-hosted web service, started from Go source or a Docker image. It gives each uploaded file a direct download link that anyone can view or download without ads or signups. It does not resize or re-encode uploaded media, so links are available as soon as the upload finishes. Data is stored in a SQLite database, which can optionally be replicated to Litestream-compatible cloud storage and restored on container restart. Access is controlled by an admin passphrase set through an environment variable or a secret file. Configuration covers the listening port, reverse-proxy logging, and the database path.",
+  "use_cases": [
+   "Share large or unusual files with someone via a direct link",
+   "Self-host a private file sharing service",
+   "Send images, video, or audio without re-encoding or resizing",
+   "Run a simple file host on a cloud platform such as fly.io",
+   "Back up a small SQLite-based app to S3-compatible storage with Litestream"
+  ],
+  "how_to_run": [
+   "PS_SHARED_SECRET=somesecretpass PORT=4001 go run cmd/picoshare/main.go",
+   "docker run --env \"PORT=4001\" --env \"PS_SHARED_SECRET=somesecretpass\" --publish 4001:4001/tcp --volume \"${PWD}/data:/data\" --name picoshare mtlynch/picoshare",
+   "Optional: set LITESTREAM_BUCKET, LITESTREAM_ENDPOINT, LITESTREAM_ACCESS_KEY_ID and LITESTREAM_SECRET_ACCESS_KEY to replicate data to cloud storage",
+   "Or use the provided docker-compose.yml with docker-compose up"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "SQLite",
+   "Litestream"
+  ],
+  "notable": [
+   "Direct download links with no signups, ads, or file type or size limits",
+   "Never resizes or re-encodes uploaded media",
+   "Optional Litestream replication of the SQLite database to Litestream-compatible cloud storage",
+   "Single-container deployment with a mounted volume for data"
+  ],
+  "caveats": [
+   "Only one Docker container should run per Litestream location, since writes cannot sync across instances",
+   "Deleted files do not free disk space automatically; the SQLite database must be vacuumed manually while PicoShare is stopped",
+   "Maintained by one person as a hobby project with a deliberately limited feature scope"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "self-hosted file sharing",
+   "file transfer",
+   "direct download link",
+   "share files with my team",
+   "share large files",
+   "upload and share files",
+   "minimalist file host",
+   "picoshare",
+   "go web app",
+   "golang",
+   "docker",
+   "docker compose",
+   "sqlite",
+   "litestream",
+   "litestream replication",
+   "sqlite backup to s3",
+   "s3-compatible storage",
+   "imgur alternative",
+   "wetransfer alternative",
+   "image hosting",
+   "video sharing",
+   "audio sharing",
+   "no re-encoding",
+   "reverse proxy",
+   "fly.io",
+   "admin passphrase",
+   "shared secret",
+   "agpl",
+   "open source",
+   "self-hosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4039,
+  "output": 1239
+ },
+ "generated": "2026-10-29"
+}

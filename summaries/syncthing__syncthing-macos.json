@@ -1,0 +1,96 @@
+{
+ "id": "syncthing/syncthing-macos",
+ "repo": "syncthing/syncthing-macos",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📦 Other (27)",
+   "entry": "syncthing-macosx - Frugal nativemacOS macOS Syncthing application bundle."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu-bar tray app that bundles and wraps the Syncthing daemon so it behaves like a regular Mac application instead of a command-line tool with a web interface.",
+  "what_it_does": "The app bundles its own Syncthing binary and runs it as a background process, managed from a tray icon that shows sync status. From the tray you can open the Syncthing WebGUI in your preferred browser, open shared folders in Finder, and optionally start it at login without configuring a system service. Logs are written to ~/Library/Application Support/Syncthing/syncthing.log. Updates are delivered through Sparkle using GitHub Releases, and the bundled Syncthing's own auto-updater is disabled. The README describes the project as deliberately lean, with no graphs or advanced configuration windows. Extra Syncthing command-line arguments can be set through macOS defaults, and the Syncthing process priority can be set to Normal, Utility, or Background.",
+  "use_cases": [
+   "sync files between Mac and other devices",
+   "run Syncthing on macOS without the command line",
+   "menu bar sync status indicator",
+   "keep a Syncthing install auto-updated on a Mac",
+   "connect a Mac to a local Syncthing instance",
+   "build a signed macOS Syncthing DMG"
+  ],
+  "how_to_run": [
+   "git submodule update --init",
+   "make debug",
+   "make release-dmg"
+  ],
+  "stack": [
+   "Objective-C",
+   "Swift",
+   "Xcode",
+   "Sparkle (auto-update framework)",
+   "CocoaPods",
+   "Python 3 (update-release.py script)",
+   "Golang (Sparkle appcast tool)",
+   "Homebrew"
+  ],
+  "notable": [
+   "Wraps the official Syncthing daemon in a native macOS tray app with a bundled binary",
+   "Auto-updates via Sparkle using GitHub Releases, with its own update mechanism",
+   "Settings stored in NSUserDefaults and editable from the terminal with defaults write",
+   "Can point to a custom Syncthing executable outside the app bundle for power users",
+   "Available as a DMG or via Homebrew cask (syncthing-app)"
+  ],
+  "caveats": [
+   "Syncthing v1 is deprecated and no longer receives updates; v2 needs at least macOS 12",
+   "Only manages a local Syncthing instance; remote instances are not supported",
+   "Another Syncthing instance or wrapper running at the same time will break this app",
+   "Auto-update must be manually disabled on unsupported macOS versions"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar app",
+  "keywords": [
+   "syncthing",
+   "syncthing macos",
+   "macos syncthing app",
+   "syncthing tray app",
+   "menu bar sync",
+   "file sync mac",
+   "peer to peer file sync",
+   "decentralized sync",
+   "sync folders between computers",
+   "share files with my team",
+   "back up folders across devices",
+   "native mac wrapper",
+   "swift macos app",
+   "objective-c macos",
+   "sparkle updater",
+   "sparkle auto update",
+   "dmg installer",
+   "homebrew cask syncthing",
+   "syncthing webgui",
+   "tray status icon",
+   "login item mac",
+   "launch at login",
+   "finder shared folders",
+   "syncthing log file",
+   "syncthing api key",
+   "macos menubar utility",
+   "code signing notarization",
+   "syncthing alternative command line",
+   "resilio sync alternative",
+   "dropbox alternative mac",
+   "self hosted file sync"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5844,
+  "output": 1261
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "fccview/cronmaster",
+ "repo": "fccview/cronmaster",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Cronmaster - Cronjob management UI with human readable syntax, live logging and log history for your cronjobs. AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Cronmaster is a web UI for managing cron jobs and bash scripts on a host, with human-readable scheduling, optional execution logging, and live status updates.",
+  "what_it_does": "Provides a browser interface to view, create, clone and delete cron jobs, with comments and quick presets for common schedules. Jobs can optionally have execution logging that captures stdout, stderr, exit codes and timestamps, with automatic cleanup. Server-Sent Events stream job status and live log output for long-running jobs when logging is enabled. Users can also create, edit and delete bash scripts in an editor with snippets for use in cron jobs. It shows system information such as uptime, memory, CPU, network and GPU. A REST API with optional API key authentication is available, and login can use password and/or OIDC single sign-on.",
+  "use_cases": [
+   "manage cron jobs through a web interface",
+   "schedule recurring bash scripts without editing crontab by hand",
+   "view cronjob output and execution history",
+   "monitor long-running scheduled jobs live",
+   "integrate cron management with external tools via API",
+   "protect a cron dashboard with password or SSO login"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml using the minimal example in the README (image ghcr.io/fccview/cronmaster:latest, port 40123:3000, mounts for docker.sock, scripts, data and snippets)",
+   "Set AUTH_PASSWORD and HOST_CRONTAB_USER in the environment section",
+   "Run: docker compose up --build",
+   "Open the browser at the mapped port",
+   "For local development: yarn install",
+   "Then run yarn dev"
+  ],
+  "stack": [
+   "TypeScript",
+   "Next.js",
+   "Node.js",
+   "Yarn",
+   "Docker"
+  ],
+  "notable": [
+   "Reads and writes crontab files directly so changes sync in real time with the host's cron",
+   "Optional per-job execution logging with live streaming via SSE",
+   "Supports both password and OIDC SSO login at the same time",
+   "Built-in script editor with snippets",
+   "Multi-architecture Docker images for AMD64 and ARM64"
+  ],
+  "caveats": [
+   "Must run as root in Docker; the README says there is no way around this",
+   "Requires mounting the Docker socket and using privileged mode with host PID namespace for the Docker setup",
+   "Deleting a script does not remove cron jobs that reference it"
+  ],
+  "license": "AGPL-3.0",
+  "category": "cron job management",
+  "keywords": [
+   "cron",
+   "crontab",
+   "cronjob manager",
+   "cron web ui",
+   "job scheduler ui",
+   "scheduled tasks",
+   "cron dashboard",
+   "human readable cron",
+   "cron log viewer",
+   "job execution logs",
+   "live log streaming",
+   "bash script manager",
+   "self-hosted cron",
+   "docker cron",
+   "rest api cron",
+   "oidc sso",
+   "password protected dashboard",
+   "crontab editor",
+   "schedule scripts",
+   "automation dashboard",
+   "cron presets",
+   "system monitoring uptime",
+   "sse live updates",
+   "nextjs app",
+   "typescript",
+   "manage cron jobs in browser",
+   "run scripts on a schedule",
+   "see output of scheduled jobs",
+   "alternative to editing crontab by hand"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4331,
+  "output": 1194
+ },
+ "generated": "2026-10-29"
+}

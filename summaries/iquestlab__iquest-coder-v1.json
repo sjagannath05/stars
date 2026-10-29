@@ -1,0 +1,98 @@
+{
+ "id": "iquestlab/iquest-coder-v1",
+ "repo": "IQuestLab/IQuest-Coder-V1",
+ "kind": "star",
+ "description": "",
+ "topics": [],
+ "language": "Python",
+ "stars": 1393,
+ "license": "NOASSERTION",
+ "homepage": "",
+ "pushed_at": "2026-03-02",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "IQuest-Coder-V1 is a family of 7B to 40B code-focused language models, with Instruct, Thinking, and recurrent Loop variants, released as Hugging Face checkpoints.",
+  "what_it_does": "The README introduces the IQuest-Coder-V1 model family and lists checkpoints on Hugging Face at 7B, 14B, and 40B sizes, including Base, Instruct, and Thinking variants and two 40B Loop variants. It gives recommended sampling settings for the Instruct and Thinking models and a Transformers quickstart that loads custom modeling code via auto_map. It describes a Loop architecture in which the model reuses shared parameters across two iterations, and a 40B-Loop-Thinking model presented as an experimental research prototype. It documents vLLM serving commands, including tool-parser and reasoning-parser flags for each model, and shows how to point Claude Code at a locally served model. It also reports benchmark results (e.g., SWE-Bench Verified 76.2%, LiveCodeBench v6 81.1%) and includes a SWE-Bench Verified reproduction framework based on R2E-Gym.",
+  "use_cases": [
+   "running a local or self-hosted code generation model",
+   "serving an OpenAI-compatible code LLM endpoint with vLLM",
+   "using a code model as a backend for CLI coding agents like Claude Code",
+   "code generation and debugging assistance",
+   "tool-use and function-calling with coding models",
+   "reproducing SWE-Bench Verified agent evaluations"
+  ],
+  "how_to_run": [
+   "pip install \"transformers>=4.52.4\"",
+   "python script: load AutoTokenizer and AutoModelForCausalLM from IQuest/IQuest-Coder-V1-40B-Instruct with torch_dtype=\"auto\" and device_map=\"auto\", then apply_chat_template and generate",
+   "vllm serve IQuestLab/IQuest-Coder-V1-40B-Instruct --tensor-parallel-size 8",
+   "vllm serve IQuestLab/IQuest-Coder-V1-7B-Instruct --tool-parser qwen3_coder",
+   "export ANTHROPIC_BASE_URL=... and ANTHROPIC_AUTH_TOKEN=... then run: claude --model IQuestCoder-V1-7B-Instruct",
+   "cd IQuest-Coder-Eval/SWE-Verified/R2E-Gym && pip install -e . && bash benchmark/bench/loopcoder/loopcoder.sh"
+  ],
+  "stack": [
+   "Python",
+   "Hugging Face Transformers",
+   "vLLM",
+   "Claude Code (CLI agent integration)",
+   "OpenCode (CLI agent integration)",
+   "R2E-Gym (SWE-Bench evaluation framework)"
+  ],
+  "notable": [
+   "Loop variants (40B-Loop-Instruct and 40B-Loop-Thinking) use a recurrent two-iteration Transformer with shared parameters and global-local attention gating",
+   "Native 128K context length without extra scaling techniques",
+   "Separate Instruct and Thinking post-training paths, with Thinking models using reasoning-driven reinforcement learning",
+   "Ships trajectory data and an evaluation framework for reproducing SWE-Bench Verified results",
+   "Documented CLI agent setup with Claude Code pointed at a vLLM-served model"
+  ],
+  "caveats": [
+   "README describes the models as research prototypes with weaker instruction-following in some scenarios and limited long-horizon and multi-turn tool performance",
+   "Models generate code but do not execute it; outputs need validation in sandboxed environments",
+   "Loop-Thinking 40B is an experimental prototype not intended to be state-of-the-art; Instruct models should not use a reasoning parser in vLLM"
+  ],
+  "license": "NOASSERTION",
+  "category": "code language models",
+  "keywords": [
+   "code llm",
+   "code generation model",
+   "coding assistant model",
+   "open-weight code model",
+   "hugging face model weights",
+   "vllm serving",
+   "openai-compatible api",
+   "self-hosted coding model",
+   "claude code backend",
+   "cli coding agent",
+   "swe-bench verified",
+   "software engineering agent",
+   "tool use model",
+   "long context 128k",
+   "thinking model reasoning",
+   "loop transformer",
+   "recurrent transformer",
+   "looped language model",
+   "html svg generation",
+   "benchmark reproduction",
+   "local llm for programming",
+   "run code model on my own gpu",
+   "autonomous coding agent",
+   "instruction-tuned code model",
+   "transformers quickstart",
+   "gqa grouped query attention",
+   "code-flow training"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7127,
+  "output": 1627
+ },
+ "generated": "2026-10-29"
+}

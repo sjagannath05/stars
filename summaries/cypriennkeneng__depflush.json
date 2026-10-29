@@ -1,0 +1,92 @@
+{
+ "id": "cypriennkeneng/depflush",
+ "repo": "cypriennkeneng/depflush",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⚙️ System (47)",
+   "entry": "Depflush - Finds what Docker, node_modules, old IDEs and duplicate files leave behind, with a preview and the Trash by default."
+  }
+ ],
+ "summary": {
+  "one_liner": "Depflush is a free macOS app that scans for leftover developer files (Docker leftovers, node_modules and vendor folders, duplicate files, SQL dumps, and caches) and lets you preview and remove them, with the Trash as the default.",
+  "what_it_does": "It lists each candidate item with its size before anything is moved. Docker: build cache and unused re-pullable images are preselected, while locally built images, stopped containers and orphaned volumes are flagged and never preselected. Dependencies: vendor/ folders next to composer.lock and node_modules/ next to package.json in projects untouched for 12 months (configurable). Duplicates: photos and videos in common user folders are compared by size, then partial bytes, then SHA-256, keeping one original. SQL dumps over 100 MB are deduplicated by SHA-256. Caches: 30+ locations including browsers, editors, package managers and old JetBrains IDE versions. A menu bar item shows free space and warns when it drops below a threshold.",
+  "use_cases": [
+   "free up disk space on a Mac used for development",
+   "remove unused Docker images and build cache",
+   "delete old node_modules and vendor folders from inactive projects",
+   "find and remove duplicate photos and videos",
+   "clear package manager and IDE caches",
+   "review cleanup items before deleting them"
+  ],
+  "how_to_run": [
+   "brew install --cask cypriennkeneng/tap/depflush",
+   "Or download Depflush.zip from the latest GitHub release, unzip, and move Depflush to Applications",
+   "git clone the repository",
+   "cd depflush",
+   "./build.sh (builds build/Depflush.app as a universal binary)",
+   "./build.sh --install (builds, copies to ~/Applications and launches)"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "Xcode Command Line Tools"
+  ],
+  "notable": [
+   "Preview-and-confirm workflow; nothing is deleted without confirmation, and the Trash is the default destination",
+   "Risky items such as Docker volumes, containers, locally built images and plugin dependencies are never preselected",
+   "Duplicate detection goes size, then first/last bytes, then SHA-256, and never scans the Photos library, app bundles or iCloud placeholders",
+   "No Xcode project or external dependencies; built with a shell script",
+   "No network calls, analytics or account required"
+  ],
+  "caveats": [
+   "Not notarized by Apple yet, so first launch requires approving it in System Settings → Privacy & Security",
+   "Requires macOS 14 Sonoma or later",
+   "Releases are signed and published by the maintainer; building from source is the alternative"
+  ],
+  "license": "GPL-3.0",
+  "category": "macOS disk cleanup",
+  "keywords": [
+   "mac disk cleaner",
+   "free up disk space mac",
+   "docker cleanup",
+   "docker prune alternative",
+   "node_modules cleaner",
+   "delete node_modules",
+   "vendor folder cleanup",
+   "composer vendor",
+   "duplicate file finder",
+   "find duplicate photos",
+   "duplicate videos mac",
+   "sha-256 duplicate detection",
+   "sql dump deduplication",
+   "cache cleaner",
+   "ide cache cleanup",
+   "jetbrains old versions",
+   "xcode deriveddata",
+   "homebrew cache",
+   "npm cache clear",
+   "pnpm yarn pip cache",
+   "menu bar disk space",
+   "low disk space alert",
+   "move to trash cleanup",
+   "developer disk usage",
+   "swiftui macos app",
+   "gpl open source mac utility",
+   "clean up development leftovers",
+   "reclaim storage on macbook",
+   "ccleaner alternative mac",
+   "dev environment cleanup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3015,
+  "output": 1341
+ },
+ "generated": "2026-10-29"
+}

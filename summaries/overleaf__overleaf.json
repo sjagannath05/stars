@@ -1,0 +1,91 @@
+{
+ "id": "overleaf/overleaf",
+ "repo": "overleaf/overleaf",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Note-taking & Editors",
+   "entry": "Overleaf - Web-based collaborative LaTeX editor. (Source Code) AGPL-3.0 Ruby"
+  }
+ ],
+ "summary": {
+  "one_liner": "Overleaf is an open-source, web-based, real-time collaborative LaTeX editor that can be self-hosted as the Community Edition.",
+  "what_it_does": "The repository holds the source code for Overleaf, an online collaborative LaTeX editor where multiple people can edit a project at the same time. The README describes a hosted version at overleaf.com and a self-hostable Community Edition. Installation is handled through a separate Overleaf Toolkit, which the README links to rather than documenting here. The repo includes two Dockerfiles: one builds a base image with dependencies such as wget and texlive, and the other builds the community image on top of it. Build targets are run from the server-ce directory via make. Services run inside a Phusion base image managed by the runit service manager. The README also mentions an enterprise offering, Overleaf Server Pro, with LDAP/SAML SSO and tracked changes, which is a separate paid product.",
+  "use_cases": [
+   "self-host a collaborative LaTeX editor",
+   "write academic papers with co-authors in real time",
+   "run a local LaTeX editing server for a lab or workplace",
+   "compile LaTeX documents in the browser",
+   "contribute to an open-source online LaTeX editor"
+  ],
+  "how_to_run": [
+   "Installation instructions are in the Overleaf Toolkit (linked from the README; not included in this repo)",
+   "From server-ce/, run make build-base to build the base image",
+   "From server-ce/, run make build-community to build the community image"
+  ],
+  "stack": [
+   "JavaScript/Node.js",
+   "Ruby",
+   "LaTeX / texlive",
+   "Docker",
+   "Phusion base-image",
+   "runit"
+  ],
+  "notable": [
+   "Real-time multi-user editing of LaTeX projects",
+   "Official Docker images built from the repo (base image with texlive plus community image)",
+   "Sandbox Compiles option for isolating LaTeX compiles",
+   "Enterprise Server Pro edition adds SSO (LDAP/SAML) and tracked changes",
+   "Hosted version available at overleaf.com"
+  ],
+  "caveats": [
+   "Community Edition is only appropriate when all users are trusted; without Sandbox Compiles, users have full access to the container's filesystem, network and environment during compiles",
+   "Server Pro with SSO and tracked changes is a paid, officially supported product",
+   "The base image is heavy because it bundles texlive"
+  ],
+  "license": "AGPL-3.0",
+  "category": "collaborative latex editor",
+  "keywords": [
+   "latex editor",
+   "online latex",
+   "collaborative latex",
+   "real-time collaboration",
+   "self-hosted latex",
+   "overleaf",
+   "overleaf community edition",
+   "latex docker",
+   "texlive",
+   "docker compose latex",
+   "sharelatex",
+   "academic writing",
+   "write papers with coauthors",
+   "scientific writing tool",
+   "tex editor in browser",
+   "latex compile server",
+   "sandbox compiles",
+   "runit",
+   "phusion baseimage",
+   "server pro",
+   "ldap saml latex",
+   "tracked changes",
+   "online document collaboration",
+   "collaborative writing",
+   "latex alternative to google docs",
+   "share latex projects with team",
+   "agpl self-hosted editor",
+   "node.js web app",
+   "lab latex server",
+   "pdf from latex online"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2403,
+  "output": 1198
+ },
+ "generated": "2026-10-29"
+}

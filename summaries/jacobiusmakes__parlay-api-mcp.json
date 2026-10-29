@@ -1,0 +1,95 @@
+{
+ "id": "jacobiusmakes/parlay-api-mcp",
+ "repo": "JacobiusMakes/parlay-api-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Data & BI",
+   "entry": "ParlayAPI MCP - Connects AI assistants to sports odds, player props, public event discovery, and account usage; account data tools use each user's own API key and allowances. #mcp #freemium"
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server that gives AI assistants tools for ParlayAPI sports odds, player props, betting-value analysis, public live previews, and account signup.",
+  "what_it_does": "The server exposes ParlayAPI functions as MCP tools for clients such as Claude Desktop, Cursor, and OpenClaw. Several public tools need no key: signup, pricing, live sports and search, a live best-line preview, source-quality metadata, and per-book coverage proof. Keyed tools cover game odds, player props, best line per outcome, consensus odds, and arbitrage, +EV, middles, and parlay grading. The README also lists a \"verdict\" tool that gives a BET/PASS call, and a \"best bets\" tool that ranks +EV plays limited to books the user can bet at. Account tools (signup, checkout link, magic link, saved-book preferences) are described as requiring explicit approval in the client. A quickstart resource with Python and JS samples is also provided.",
+  "use_cases": [
+   "Pull live sports odds and player props into an AI assistant",
+   "Find best available price across sportsbooks",
+   "Scan for arbitrage, +EV, or middle bets",
+   "Grade a multi-leg parlay before placing it",
+   "Check API account tier and remaining credits",
+   "Sign up for a free ParlayAPI key from inside a chat"
+  ],
+  "how_to_run": [
+   "uvx --from parlayapi-mcp==0.3.8 parlayapi-mcp",
+   "pip install parlayapi-mcp==0.3.8",
+   "Add a stdio server entry with command uvx and args [\"parlayapi-mcp\"] to your MCP client config; optionally set PARLAYAPI_KEY in env",
+   "docker build -t parlayapi-mcp:local .",
+   "docker run --rm -i --read-only --cap-drop=ALL --security-opt=no-new-privileges parlayapi-mcp:local",
+   "Claude Desktop: download the -directory.mcpb bundle from the latest desktop release and open it"
+  ],
+  "stack": [
+   "Python",
+   "uv / uvx",
+   "MCP (stdio transport)",
+   "Docker",
+   "MCPB bundle (Claude Desktop)",
+   "Stripe (checkout links)"
+  ],
+  "notable": [
+   "Works keyless for discovery, signup, pricing, and coverage tools; add a key later for paid data",
+   "Signup tool can create a free-tier key (1,000 credits/mo, no card) without leaving the chat, per the README",
+   "Docker setup runs read-only with dropped capabilities and passes the key only at runtime",
+   "Tool table separates no-auth public tools from key-required account and data tools",
+   "Explicit note that the desktop bundle version and the Python package version can differ in checkout handling"
+  ],
+  "caveats": [
+   "Account tools use the user's own allowance; the README says to check current plans and limits",
+   "Data use is governed by ParlayAPI Terms and any written agreement; the MIT license grants no data distribution rights",
+   "The pinned 0.3.6 desktop bundle lacks the 0.3.8 checkout-ownership fix; the README says to check the release page for newer bundles"
+  ],
+  "license": "MIT",
+  "category": "sports odds mcp server",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "sports odds api",
+   "betting odds",
+   "player props",
+   "parlay calculator",
+   "arbitrage finder",
+   "positive ev betting",
+   "best line odds",
+   "middles betting",
+   "consensus odds",
+   "claude desktop integration",
+   "cursor mcp",
+   "openclaw",
+   "stdio server",
+   "uvx",
+   "docker stdio container",
+   "sportsbook odds data",
+   "free sports odds api",
+   "api key signup",
+   "live odds preview",
+   "bookmaker coverage",
+   "bet value verdict",
+   "parlayapi",
+   "python mcp",
+   "fair price vs market",
+   "ai assistant sports betting data",
+   "get odds for my ai agent",
+   "find value bets",
+   "compare odds across books"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4600,
+  "output": 1387
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,86 @@
+{
+ "id": "64characters/telephone",
+ "repo": "64characters/Telephone",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "Telephone - SIP softphone for macOS."
+  }
+ ],
+ "summary": {
+  "one_liner": "Telephone is a VoIP SIP softphone for macOS that lets you make phone calls over the internet or a company network.",
+  "what_it_does": "Telephone is a SIP softphone for Mac, so a phone line that supports the SIP protocol can be used on a Mac in place of a physical phone wherever there is a reasonable network connection. The README describes it only as a softphone for making calls over the Internet or a company network. It has an optional Opus codec. The README covers only the build process: it asks you to build third-party dependencies (Opus, LibreSSL, and PJSIP, a SIP library) with configure/make scripts and patches, then build Telephone itself. It does not document end-user setup, account configuration, or a feature list beyond this.",
+  "use_cases": [
+   "make VoIP calls from a Mac",
+   "use a SIP phone line on a computer",
+   "replace a desk phone with a Mac app",
+   "place calls over a company network",
+   "softphone for SIP providers"
+  ],
+  "how_to_run": [
+   "Download and build Opus (optional codec) with ./configure, make, make install into ThirdParty/Opus",
+   "Download, verify, and build LibreSSL into ThirdParty/LibreSSL",
+   "Download pjproject-2.10, create pjlib/include/pj/config_site.h with the listed defines",
+   "Apply the three patches in ThirdParty/PJSIP/patches with patch -p0",
+   "Configure, make lib, and make install PJSIP with the --with-opus and --with-ssl prefixes",
+   "Build Telephone"
+  ],
+  "stack": [
+   "Objective-C/Swift (macOS app, inferred from macOS focus; not named in README)",
+   "PJSIP 2.10",
+   "LibreSSL 3.1.5",
+   "Opus 1.3.1 (optional)"
+  ],
+  "notable": [
+   "Turns a Mac into a SIP softphone as an alternative to a physical phone",
+   "Builds universal binaries for arm64 and x86_64",
+   "Dependencies are built from source with bundled patches",
+   "Pull requests are not accepted; feedback goes through issues"
+  ],
+  "caveats": [
+   "Requires building PJSIP, LibreSSL, and optionally Opus from source before the app can be built",
+   "Pull requests are not accepted for legal reasons; only issues for feedback",
+   "Build flags target macOS 15.6 minimum"
+  ],
+  "license": "unknown",
+  "category": "macos voip softphone",
+  "keywords": [
+   "sip softphone",
+   "voip client",
+   "macos voip",
+   "mac softphone",
+   "sip phone mac",
+   "internet calling mac",
+   "voip app for mac",
+   "desk phone replacement",
+   "make phone calls over internet",
+   "company network calling",
+   "pjsip",
+   "pjsua",
+   "libressl",
+   "opus codec",
+   "sip protocol client",
+   "universal binary arm64 x86_64",
+   "phone line on mac",
+   "voice over ip macos",
+   "softphone alternative to hardware phone",
+   "sip account client",
+   "build from source macos",
+   "telephony app",
+   "rtp audio calls",
+   "mac voice calling",
+   "voip softphone open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2571,
+  "output": 1147
+ },
+ "generated": "2026-10-29"
+}

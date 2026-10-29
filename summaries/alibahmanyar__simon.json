@@ -1,0 +1,120 @@
+{
+ "id": "alibahmanyar/simon",
+ "repo": "alibahmanyar/simon",
+ "kind": "star",
+ "description": "Minimal, web-based system monitor with Docker support, live metrics, alerts, and a built-in file browser—all bundled into a single binary",
+ "topics": [
+  "alerting",
+  "docker",
+  "docker-monitoring",
+  "embedded-linux",
+  "file-browser",
+  "lightweight",
+  "low-memory",
+  "monitoring",
+  "rust",
+  "self-hosted",
+  "single-binary",
+  "system-metrics",
+  "web-based"
+ ],
+ "language": "Rust",
+ "stars": 161,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-24",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Simon is a lightweight, single-binary, web-based system monitor written in Rust that adds Docker container stats, live metrics, alerts, and a file browser.",
+  "what_it_does": "Simon serves a web interface that shows live and historical CPU, memory, disk usage, disk I/O, and network metrics with interactive charts. It monitors per-container resource usage and lets you view and search Docker container logs through Docker's API. A built-in file browser lets you navigate directories you expose, preview file contents, upload files with drag-and-drop, create folders, move and delete items, and download with HTTP range request support. Alert rules use custom thresholds for CPU, memory, disk, and network, and can notify via Telegram, ntfy, or custom webhooks, with pre-configured notification templates. Configuration is done through CLI flags or environment variables such as port, bind address, update interval, bcrypt password hash, and SQLite database path.",
+  "use_cases": [
+   "monitor a small Linux server or embedded device",
+   "watch Docker container CPU and memory usage",
+   "view and search container logs in a browser",
+   "browse and upload files on a remote machine via web",
+   "set threshold alerts sent to Telegram or ntfy",
+   "self-host a lightweight dashboard on low-power hardware"
+  ],
+  "how_to_run": [
+   "Download the prebuilt binary from the Releases page, then run: chmod +x simon && ./simon",
+   "Or with Docker: docker run -d --name simon -p 30000:30000 -v /sys:/sys:ro -v /var/run/docker.sock:/var/run/docker.sock:ro -v /:/fs:ro -v ./simon-data:/app/simon-data alibahmanyar/simon",
+   "Enable file browsing with the SIMON_SERVE_DIRS environment variable or --serve-dir flag",
+   "Or use Docker Compose with the provided YAML and run: docker-compose up -d",
+   "Build from source: git clone the repo, then run make web-setup, make web, and make release (requires Rust and Bun)"
+  ],
+  "stack": [
+   "Rust",
+   "axum",
+   "sysinfo",
+   "bollard",
+   "tokio",
+   "rusqlite",
+   "SQLite",
+   "Svelte",
+   "SvelteKit",
+   "Chart.js",
+   "Bun",
+   "Docker"
+  ],
+  "notable": [
+   "Single self-contained binary with no external dependencies to install",
+   "Designed for resource-constrained environments such as embedded Linux",
+   "Docker container stats and log viewer built into the same interface",
+   "File browser with range-request downloads for resumable transfers and media streaming",
+   "Alert notifications to Telegram, ntfy, or webhooks with templates"
+  ],
+  "caveats": [
+   "Building from source requires both the Rust toolchain and Bun for the Svelte frontend",
+   "Docker mode needs the Docker socket and host mounts such as /sys and / to be mounted, which grants broad host visibility",
+   "README lists cross-platform support for Linux, Windows, Android, and FreeBSD, but Docker integration details are not specified for each platform"
+  ],
+  "category": "self-hosted system monitoring",
+  "keywords": [
+   "system monitor",
+   "server monitoring",
+   "web dashboard",
+   "rust monitoring",
+   "single binary",
+   "lightweight monitoring",
+   "low memory monitor",
+   "embedded linux monitoring",
+   "docker monitoring",
+   "docker stats",
+   "container metrics",
+   "container logs viewer",
+   "docker log viewer",
+   "file browser",
+   "web file manager",
+   "upload files web",
+   "file download range requests",
+   "live metrics",
+   "cpu memory disk network metrics",
+   "alerting",
+   "threshold alerts",
+   "telegram alerts",
+   "ntfy notifications",
+   "webhook notifications",
+   "self-hosted dashboard",
+   "axum",
+   "sysinfo",
+   "sqlite",
+   "svelte",
+   "raspberry pi monitoring",
+   "htop alternative in browser",
+   "remote server dashboard"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3901,
+  "output": 1423
+ },
+ "generated": "2026-10-29"
+}

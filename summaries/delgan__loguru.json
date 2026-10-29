@@ -1,0 +1,94 @@
+{
+ "id": "delgan/loguru",
+ "repo": "Delgan/loguru",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Logging",
+   "entry": "loguru - A library that aims to bring enjoyable logging to Python."
+  }
+ ],
+ "summary": {
+  "one_liner": "Loguru is a Python logging library that replaces handler/formatter boilerplate with a single pre-configured logger and a simple add() function.",
+  "what_it_does": "Loguru provides one ready-to-use `logger` object that writes to stderr by default, so no setup is needed to start logging. The add() function registers sinks (stderr/stdout, file paths, file-like objects, functions, coroutines, or standard logging Handlers) with optional level, filter, and format settings. File sinks support rotation, retention, and compression options. Messages use brace-style `{}` formatting, and bind()/contextualize()/patch() attach contextual data to records. The README also covers exception capture with catch(), colorized output, serialization to JSON, opt() options for lazy evaluation and raw output, custom levels, a parse() method for extracting data from log files, and interoperability with the standard logging module in both directions. Configuration can also come from environment variables such as LOGURU_FORMAT and LOGURU_LEVEL.",
+  "use_cases": [
+   "add logging to a Python script without configuring handlers",
+   "write application logs to rotating or compressed files",
+   "log exceptions raised inside threads",
+   "emit JSON-structured logs",
+   "add contextual fields such as request or user IDs to log lines",
+   "parse existing log files with regex patterns",
+   "route standard logging output through a single logger",
+   "silence a library's logs unless the developer enables them"
+  ],
+  "how_to_run": [
+   "pip install loguru",
+   "from loguru import logger",
+   "logger.debug(\"That's it, beautiful and simple logging!\")",
+   "logger.add(\"file_{time}.log\")"
+  ],
+  "stack": [
+   "Python",
+   "better_exceptions (optional, for variable values in tracebacks)",
+   "apprise (optional, for notifications)"
+  ],
+  "notable": [
+   "Single global logger with no Handler, Formatter, or Filter classes to configure",
+   "Brace-style str.format message formatting, with template-string support on recent Python",
+   "Exception tracebacks that show variable values via catch() and diagnose",
+   "Built-in file rotation, retention, and compression from keyword arguments",
+   "Bridges to standard logging via handler adapters, and can disable or enable logging per library"
+  ],
+  "caveats": [
+   "The README notes diagnose=True may leak sensitive data in production",
+   "Sinks are not multiprocess-safe unless enqueue=True is used",
+   "Full exception diagnostics do not work in the default Python REPL",
+   "The README's claim of 10x speed refers to a planned future C implementation"
+  ],
+  "license": "unknown",
+  "category": "python logging library",
+  "keywords": [
+   "python logging",
+   "logger",
+   "loguru",
+   "log rotation",
+   "log retention",
+   "log compression",
+   "structured logging",
+   "json logs",
+   "colorized logs",
+   "stderr output",
+   "standard logging bridge",
+   "logging handler",
+   "exception logging",
+   "traceback variables",
+   "log file parsing",
+   "regex log parser",
+   "custom log levels",
+   "contextual logging",
+   "bind context",
+   "print replacement",
+   "easy logging setup",
+   "thread-safe logging",
+   "async logging",
+   "enqueue logs",
+   "environment variable config",
+   "logging.getlogger alternative",
+   "python logs to file",
+   "rotate log files",
+   "disable library logs",
+   "apprise notifications",
+   "python debugging output"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6263,
+  "output": 1213
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "lsjoberg/lurar",
+ "repo": "lsjoberg/lurar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Lurar - Menu-bar parametric EQ for headphones. Loads the AutoEq catalog and applies it system-wide via Apple's Core Audio Process Tap — no virtual audio driver."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu-bar parametric EQ for headphones that applies AutoEq presets system-wide through Apple's Core Audio Process Tap, without a virtual audio driver.",
+  "what_it_does": "Captures audio from every app using a Core Audio Process Tap, runs it through a 10-band vDSP biquad parametric EQ, and sends the result to the selected output device via a raw HAL Audio Unit. It loads the AutoEq headphone catalog (Oratory1990 measurements are mentioned) as built-in presets, and users can add those, fork them into editable presets, or create fully custom ones. Live band editing in an editor window applies to the running engine, with per-device preset recall and a Save/Discard/Delete workflow. Presets are stored as JSON in Application Support and reloaded when the file changes. The README also mentions a loudness offset, crossfeed, a spectrum overlay, and a burn-in tally, plus a release pipeline with signing, notarization, and Sparkle appcast updates.",
+  "use_cases": [
+   "Equalize headphones system-wide on a Mac",
+   "Apply AutoEq headphone correction curves",
+   "Tune a parametric EQ for a specific headphone model",
+   "EQ audio without installing a virtual audio driver",
+   "Route system audio through a DAC with custom EQ",
+   "Per-device EQ preset switching on macOS"
+  ],
+  "how_to_run": [
+   "brew install xcodegen",
+   "./scripts/dev.sh",
+   "./scripts/logs.sh",
+   "brew install --cask lsjoberg/lurar/lurar"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode / xcodegen",
+   "Core Audio Process Tap",
+   "HAL Audio Unit (HALOutput)",
+   "vDSP",
+   "OSLog",
+   "Sparkle",
+   "GitHub Actions",
+   "release-please"
+  ],
+  "notable": [
+   "No virtual audio driver: taps app audio with Core Audio Process Tap and writes to the DAC through a raw HAL Audio Unit",
+   "Loads the AutoEq catalog; built-in presets can be forked with Tweak… and reset to the original curve",
+   "Edits apply to the running engine instantly, with the original curve shown as a dashed reference",
+   "Per-device preset auto-recall and an auto-detect banner for new output devices",
+   "Hot-reloads a user-editable presets.json file"
+  ],
+  "caveats": [
+   "Requires macOS 14.2 or later (Core Audio Process Tap API)",
+   "Apps using HAL hog or exclusive mode cannot be tapped and bypass the EQ",
+   "Third-party HAL drivers such as Rogue Amoeba's ARK can cause silence in the EQ'd path",
+   "Signed release pipeline needs an Apple Developer ID and several GitHub secrets; the README describes dry runs without signing"
+  ],
+  "license": "MIT",
+  "category": "macos audio equalizer",
+  "keywords": [
+   "parametric eq",
+   "headphone equalizer",
+   "autoeq",
+   "macos menu bar app",
+   "system-wide equalizer",
+   "core audio process tap",
+   "hal audio unit",
+   "vdsp biquad",
+   "no virtual audio driver",
+   "blackhole alternative",
+   "headphone correction",
+   "oratory1990",
+   "eq my headphones on mac",
+   "tune headphone sound",
+   "audio equalizer for mac",
+   "equalize all app audio",
+   "dac output eq",
+   "biquad filter",
+   "per device eq preset",
+   "hifiman headphones",
+   "swift audio app",
+   "menu bar eq",
+   "headphone frequency response correction",
+   "loudness offset",
+   "crossfeed",
+   "sparkle auto update"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5685,
+  "output": 1340
+ },
+ "generated": "2026-10-29"
+}

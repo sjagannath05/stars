@@ -1,0 +1,98 @@
+{
+ "id": "multitheftauto/mtasa-blue",
+ "repo": "multitheftauto/mtasa-blue",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Games",
+   "entry": "MTA:SA ⚠ - Add network play functionality to Rockstar North's Grand Theft Auto game series, in which this functionality is not originally found. (Source Code) GPL-3.0 C++"
+  }
+ ],
+ "summary": {
+  "one_liner": "Multi Theft Auto: San Andreas (MTA:SA) is an open-source C++ project that adds network multiplayer to the single-player Grand Theft Auto series via code injection, with Lua scripting for custom game modes.",
+  "what_it_does": "The project injects code into the original GTA game and hooks its engine without modifying the original files, adding networking, a GUI layer, and a Lua scripting interface. Servers and clients can both run and synchronize Lua scripts. Content such as scripts, images, sounds, models and textures is packaged as \"resources\" that include a metadata file and can declare dependencies on other resources. Servers can assign user rights to control access to specific resources. The README describes a minimal sandbox gameplay by default, extendable into custom game modes for up to hundreds of players. The repository includes build instructions for Windows (Visual Studio, premake) and GNU/Linux (GCC, make, or a Docker build image) for the server.",
+  "use_cases": [
+   "host a multiplayer server for GTA San Andreas",
+   "write custom game modes in Lua",
+   "build the MTA server from source",
+   "cross-compile server for ARM or x86",
+   "modify or extend GTA gameplay with scripts",
+   "study code injection and hooking in a game engine"
+  ],
+  "how_to_run": [
+   "Windows: run win-create-projects.bat, open MTASA.sln in the Build directory, compile, then run win-install-data.bat",
+   "GNU/Linux: ./linux-build.sh [--arch=x86|x64|arm|arm64] [--config=debug|release] [--cores=N]",
+   "GNU/Linux (optional): ./linux-install-data.sh",
+   "GNU/Linux manual: ./utils/premake5 gmake then make -C Build/ config=release_x64 all",
+   "Docker: docker pull ghcr.io/multitheftauto/mtasa-blue-build:latest",
+   "Docker build: docker run --rm -v `pwd`:/build ghcr.io/multitheftauto/mtasa-blue-build:latest --arch=x64"
+  ],
+  "stack": [
+   "C++",
+   "Lua",
+   "premake5",
+   "make",
+   "GNU GCC (10 or newer)",
+   "Visual Studio 2026",
+   "Microsoft DirectX SDK",
+   "libncurses",
+   "libmysqlclient",
+   "Docker"
+  ],
+  "notable": [
+   "Works without altering any original game files, using code injection and hooking",
+   "Lua scripting embedded in both the client and server",
+   "Resource system for packaging, dependencies, and automatic transfer of content to clients",
+   "Official build environment shipped as a Docker image",
+   "Formerly closed-source, now open source under GPLv3"
+  ],
+  "caveats": [
+   "Requires an original copy of the proprietary Grand Theft Auto game; the project does not include it",
+   "Linux builds supported only on x86, x86_64, armhf and arm64; ARM builds are experimental and may crash",
+   "Official support for building is from x86_64 only",
+   "Windows build requires Visual Studio 2026 and the Microsoft DirectX SDK"
+  ],
+  "license": "GPL-3.0",
+  "category": "game multiplayer modding",
+  "keywords": [
+   "multi theft auto",
+   "mta:sa",
+   "mtasa",
+   "gta san andreas multiplayer",
+   "gta multiplayer server",
+   "gta online alternative",
+   "network play for single-player game",
+   "lua game modes",
+   "lua scripting",
+   "game server",
+   "code injection",
+   "game engine hooking",
+   "c++",
+   "premake",
+   "gcc build",
+   "docker build",
+   "arm64 build",
+   "cross-compile",
+   "gpl-3.0",
+   "open source game",
+   "resource system",
+   "sandbox game",
+   "self-hosted game server",
+   "play with friends online",
+   "custom game modes",
+   "multiplayer mod",
+   "grand theft auto",
+   "rockstar north"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3924,
+  "output": 1389
+ },
+ "generated": "2026-10-29"
+}

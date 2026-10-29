@@ -1,0 +1,95 @@
+{
+ "id": "pola-rs/polars",
+ "repo": "pola-rs/polars",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Analysis",
+   "entry": "polars - A fast DataFrame library implemented in Rust with a Python API."
+  }
+ ],
+ "summary": {
+  "one_liner": "Polars is a fast analytical query engine for DataFrames written in Rust, with a Python API and bindings for Node.js, R, and SQL.",
+  "what_it_does": "Polars provides a DataFrame library built around composable expressions, supporting both lazy and eager execution with query optimization. Its streaming engine can process datasets larger than available RAM by running queries in a streaming fashion, invoked with collect(engine='streaming'). Execution is multi-threaded and vectorized (SIMD). It supports extension through custom I/O and Expression plugins, and optional acceleration of queries on NVIDIA GPUs. Data interchange uses the Apache Arrow columnar format for zero-copy sharing. The README shows an example lazy query that scans a Parquet file, filters, groups, aggregates, and sorts. Installation is via pip, with instructions for compiling from source using maturin and make targets.",
+  "use_cases": [
+   "fast dataframe processing in Python",
+   "querying large parquet files",
+   "processing datasets larger than RAM",
+   "group-by aggregation and reporting",
+   "data analysis pipelines",
+   "accelerating queries on NVIDIA GPUs"
+  ],
+  "how_to_run": [
+   "pip install polars",
+   "import polars as pl",
+   "df = pl.scan_parquet(\"orders.parquet\").filter(...).group_by(...).agg(...).collect()",
+   "To compile from source: install Rust, run pip install maturin, then cd py-polars and run make build (or another make build-* target)"
+  ],
+  "stack": [
+   "Rust",
+   "Python",
+   "Apache Arrow",
+   "maturin",
+   "Node.js",
+   "R",
+   "SQL"
+  ],
+  "notable": [
+   "Lazy and eager execution with query optimization out of the box",
+   "Streaming engine for larger-than-RAM datasets",
+   "Extensible via I/O and Expression plugins",
+   "Bindings for Python, Rust, Node.js, R, and SQL",
+   "Optional NVIDIA GPU acceleration"
+  ],
+  "caveats": [
+   "Bleeding-edge builds require compiling from source with Rust and maturin; build targets range from fast compile to extremely slow dist builds",
+   "Older CPUs need the LTS_CPU=1 build flag; more than 2^32 rows and x86-64 Python under Rosetta need the advanced installation guide",
+   "GPU acceleration is limited to NVIDIA GPUs"
+  ],
+  "license": "MIT",
+  "category": "dataframe query engine",
+  "keywords": [
+   "polars",
+   "dataframe library",
+   "dataframe",
+   "query engine",
+   "rust dataframe",
+   "python dataframe",
+   "pandas alternative",
+   "lazy evaluation",
+   "eager execution",
+   "streaming engine",
+   "larger than ram",
+   "out of core processing",
+   "parquet",
+   "apache arrow",
+   "columnar data",
+   "simd vectorized",
+   "multi-threaded",
+   "group by aggregation",
+   "data analysis",
+   "tabular data",
+   "gpu acceleration",
+   "nvidia gpu",
+   "expression api",
+   "query optimization",
+   "node.js dataframe",
+   "r dataframe",
+   "sql queries on data",
+   "maturin build",
+   "process big csv files",
+   "analyze large datasets",
+   "fast data wrangling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2907,
+  "output": 1190
+ },
+ "generated": "2026-10-29"
+}

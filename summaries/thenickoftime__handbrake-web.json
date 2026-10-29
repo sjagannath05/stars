@@ -1,0 +1,92 @@
+{
+ "id": "thenickoftime/handbrake-web",
+ "repo": "TheNickOfTime/handbrake-web",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "HandBrake Web - Use one or more instances of HandBrake video transcoder on a headless device via a web interface. AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "HandBrake Web is a web-based interface for running one or more HandBrake CLI transcoder workers on a headless device, coordinated by a central server.",
+  "what_it_does": "It splits video transcoding into a server component, which coordinates jobs and serves the web client, and one or more worker components, which run HandBrakeCLI and process media according to uploaded HandBrake presets. Presets are configured in the HandBrake desktop app, exported as JSON, and uploaded through the web interface. Users can build a job queue, create bulk jobs for videos in the same directory, and set up directory \"Watchers\" that create jobs automatically. Hardware-accelerated encoding is supported for Intel QSV and NVIDIA NVENC, with AMD VCN planned but not implemented. The project also provides a separate minimal HandBrakeCLI Docker image for terminal use.",
+  "use_cases": [
+   "transcode videos on a headless server via browser",
+   "batch convert video library with HandBrake presets",
+   "distribute video encoding across multiple machines",
+   "automatically transcode files added to a watched folder",
+   "use Intel QSV or NVIDIA NVENC for faster encoding"
+  ],
+  "how_to_run": [
+   "Copy the Docker Compose example from the README, defining handbrake-server and handbrake-worker services.",
+   "Replace /path/to/your/data and /path/to/your/media with real host paths; keep the media path identical across containers.",
+   "Set a unique WORKER_ID, and SERVER_URL/SERVER_PORT for each worker.",
+   "Run docker compose up, then open the server web interface on port 9999.",
+   "Upload HandBrake presets exported as JSON in the Presets section.",
+   "See the Setup Guide wiki page for detailed configuration."
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "HandBrakeCLI",
+   "GHCR container images"
+  ],
+  "notable": [
+   "Server and worker split, so the lightweight server can run on low-power hardware while workers do the encoding",
+   "Imports HandBrake desktop presets exported as JSON",
+   "Directory Watchers automatically create jobs from matching files",
+   "Hardware acceleration via Intel QSV and NVIDIA NVENC",
+   "Separate bonus Docker image providing HandBrakeCLI alone"
+  ],
+  "caveats": [
+   "README warns the application is still under heavy development and should be used at your own risk",
+   "Hardware acceleration needs extra configuration; AMD VCN is not yet implemented",
+   "Recommends a single worker per machine, which needs a high core-count CPU or GPU encoding"
+  ],
+  "license": "AGPL-3.0",
+  "category": "video transcoding automation",
+  "keywords": [
+   "handbrake",
+   "handbrakecli",
+   "handbrake web",
+   "video transcoding",
+   "video transcoder",
+   "web interface",
+   "headless video encoding",
+   "distributed encoding",
+   "worker server",
+   "job queue",
+   "bulk video conversion",
+   "batch transcode",
+   "preset import",
+   "directory watcher",
+   "folder watch automation",
+   "intel qsv",
+   "nvidia nvenc",
+   "hardware acceleration",
+   "gpu encoding",
+   "docker compose",
+   "self-hosted transcoding",
+   "media server tools",
+   "convert video files",
+   "shrink video size",
+   "remote video conversion",
+   "handbrake alternative web ui",
+   "agpl",
+   "docker container",
+   "h265 encoding",
+   "video compression service"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3259,
+  "output": 1253
+ },
+ "generated": "2026-10-29"
+}

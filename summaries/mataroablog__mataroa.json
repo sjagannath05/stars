@@ -1,0 +1,101 @@
+{
+ "id": "mataroablog/mataroa",
+ "repo": "mataroablog/mataroa",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Blogging Platforms",
+   "entry": "Mataroa - Naked blogging platform for minimalists. (Source Code) MIT Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mataroa is a minimalist, subdomain-based blogging platform written in Django and PostgreSQL, with Caddy and gunicorn for deployment.",
+  "what_it_does": "Mataroa is a Django blogging platform where each user's blog is served on its own subdomain (username.domain). The main app, `main`, holds all business logic, covering posts, pages, comments, images, analytics, RSS feeds, newsletter subscriptions, and a webring. Blogs can be exported as Hugo, Zola, or epub archives, and posts can be imported. An API uses its own key-based authentication, and posting by email is supported through a Postmark inbound webhook. The README also describes moderation tooling for spam and campaign review, and a Stripe-based optional premium billing setup. Local development uses Docker Compose or uv with PostgreSQL, and a `devdata` command generates sample users and posts.",
+  "use_cases": [
+   "host a minimalist personal blog",
+   "run a multi-user blogging platform on subdomains",
+   "self-host a blog with email posting",
+   "export blog content to Hugo, Zola, or epub",
+   "set up a Django and PostgreSQL blog for development"
+  ],
+  "how_to_run": [
+   "cp .envrc.example .envrc",
+   "uv sync --all-groups",
+   "./reset-database-localdev.sh",
+   "uv run python manage.py migrate",
+   "uv run python manage.py runserver",
+   "docker compose up"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "PostgreSQL",
+   "psycopg",
+   "gunicorn",
+   "Markdown",
+   "Pygments",
+   "bleach",
+   "Stripe",
+   "uv",
+   "Caddy",
+   "Docker Compose",
+   "systemd"
+  ],
+  "notable": [
+   "Subdomain-per-user blog hosting with Caddy handling automatic Let's Encrypt certificates",
+   "Blog export to Hugo, Zola, and epub formats",
+   "Strict, documented dependency policy with no third-party Django apps and no JavaScript libraries",
+   "Stores all content, including images, in PostgreSQL, which simplifies backup and migration"
+  ],
+  "caveats": [
+   "Local development requires editing /etc/hosts and adding an entry for each test user account",
+   "Optional Stripe billing and Postmark email setup need external accounts and extra configuration",
+   "Self-hosting requires DNS wildcard setup and a server provisioned with the included scripts"
+  ],
+  "license": "MIT",
+  "category": "self-hosted blogging platform",
+  "keywords": [
+   "mataroa",
+   "blogging platform",
+   "minimalist blog",
+   "naked blog",
+   "self-hosted blog",
+   "personal blog software",
+   "django blog",
+   "python blog",
+   "postgresql blog",
+   "subdomain blog",
+   "multi-user blog",
+   "blog hosting",
+   "blog engine",
+   "write a blog",
+   "publish my writing online",
+   "host my own blog",
+   "blog by email",
+   "postmark inbound email",
+   "rss feed blog",
+   "newsletter blog",
+   "blog export hugo",
+   "blog export zola",
+   "epub export blog",
+   "webring",
+   "gunicorn django",
+   "caddy reverse proxy",
+   "stripe premium blog",
+   "wordpress alternative",
+   "medium alternative",
+   "docker compose django",
+   "uv python project"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10697,
+  "output": 1196
+ },
+ "generated": "2026-10-29"
+}

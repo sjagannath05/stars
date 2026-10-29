@@ -1,0 +1,91 @@
+{
+ "id": "avian2/unidecode",
+ "repo": "avian2/unidecode",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Text Processing",
+   "entry": "unidecode - ASCII transliterations of Unicode text."
+  }
+ ],
+ "summary": {
+  "one_liner": "Unidecode is a Python library and command-line tool that converts Unicode text to approximate ASCII using context-free, character-by-character transliteration tables.",
+  "what_it_does": "The unidecode() function takes a Unicode string and returns an ASCII-safe approximation, such as turning 'kožušček' into 'kozuscek' or mathematical italic letters into plain Latin letters. An errors argument controls characters with no table entry: ignore (default), strict (raises UnidecodeError), replace (uses '?' or a custom replace_str), or preserve (keeps the original character). A command-line utility reads from stdin, a argument, or a file, with an -e option for encoding. The README also describes unidecode_expect_ascii() and unidecode_expect_nonascii() for performance-critical code. It is a Python port of the Perl Text::Unidecode module, and the mappings are hand-tuned rather than simple accent stripping. Transliteration of Chinese, Japanese and Korean is explicitly not addressed beyond character-level mapping.",
+  "use_cases": [
+   "Generating ASCII URL slugs from article titles",
+   "Passing Unicode text to legacy systems that accept only ASCII",
+   "Creating ASCII machine identifiers from human-readable strings",
+   "Typing non-Roman names on a US keyboard",
+   "Converting symbols and math letters to rough ASCII equivalents",
+   "Command-line transliteration of text files"
+  ],
+  "how_to_run": [
+   "pip install unidecode",
+   "from unidecode import unidecode",
+   "unidecode('kožušček')  # 'kozuscek'",
+   "echo hello | unidecode",
+   "unidecode -c hello",
+   "unidecode hello.txt"
+  ],
+  "stack": [
+   "Python 3.7+",
+   "Python standard library only (no external dependencies named)"
+  ],
+  "notable": [
+   "Hand-tuned transliteration tables that go beyond stripping accents, including symbols and non-Latin scripts",
+   "Selectable error handling via the errors argument: ignore, strict, replace, or preserve",
+   "Command-line utility for stdin, argument, or file input",
+   "Performance-tuned variants unidecode_expect_ascii() and unidecode_expect_nonascii()",
+   "Port of Sean M. Burke's Perl Text::Unidecode module"
+  ],
+  "caveats": [
+   "Not suited for text shown to end users; some transliterations may be offensive or wrong for a given language",
+   "Output can change between versions as tables improve, so generated slugs may break unless stored or the version is pinned",
+   "Character-by-character only; poor quality for Chinese, Japanese and Korean, and no language-specific or locale handling",
+   "Needs a 'wide' (UCS-4) Python build for characters outside the BMP; narrow builds are not supported"
+  ],
+  "license": "GNU GPL v2 or later (as stated in the README copyright section)",
+  "category": "text transliteration library",
+  "keywords": [
+   "unicode to ascii",
+   "transliteration",
+   "unidecode",
+   "ascii conversion",
+   "strip accents",
+   "remove diacritics",
+   "url slug",
+   "slugify",
+   "python unicode",
+   "text normalization",
+   "ascii approximation",
+   "legacy system encoding",
+   "command line transliteration",
+   "text-unidecode",
+   "text::unidecode",
+   "unihandecode",
+   "unicode fallback characters",
+   "make url from title",
+   "ascii identifiers",
+   "non-latin script to latin",
+   "accent removal python",
+   "unicode errors ignore replace",
+   "kozuscek example",
+   "math italic to ascii",
+   "us keyboard text entry",
+   "python 3 unicode library",
+   "gpl python package",
+   "convert unicode to plain text",
+   "ascii-only strings"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5400,
+  "output": 1348
+ },
+ "generated": "2026-10-29"
+}

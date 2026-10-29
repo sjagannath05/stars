@@ -1,0 +1,97 @@
+{
+ "id": "graphify-labs/graphify",
+ "repo": "Graphify-Labs/graphify",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Visualization",
+   "entry": "graphify - Turns code, SQL schemas, docs, papers, images, or videos into a queryable knowledge graph."
+  }
+ ],
+ "summary": {
+  "one_liner": "Graphify turns a project's code, docs, PDFs, images, and videos into a queryable knowledge graph for AI coding assistants, with code parsed locally via tree-sitter.",
+  "what_it_does": "Running /graphify in an AI coding assistant builds a knowledge graph of a folder, written to graphify-out/ as graph.html, GRAPH_REPORT.md, and graph.json. Code is parsed locally with tree-sitter AST without an LLM, and cross-file calls, imports, inheritance, and mixins are resolved across about 40 languages. Docs, PDFs, images, and video/audio go through a semantic pass that uses the assistant's model or a configured API key. Every edge is tagged EXTRACTED (explicit in source) or INFERRED (resolved by graphify). The CLI offers query, path, and explain commands against graph.json, and the report lists god nodes, communities, and surprising connections. The README also describes a hook for auto-rebuilding on commit, an MCP stdio server, and watch mode.",
+  "use_cases": [
+   "query a codebase without grepping files",
+   "map architecture and subsystems of a repo",
+   "trace how two classes or functions connect",
+   "give an AI coding assistant persistent project context",
+   "build a knowledge graph from docs and PDFs alongside code",
+   "review pull requests with graph context"
+  ],
+  "how_to_run": [
+   "uv tool install graphifyy",
+   "graphify install",
+   "/graphify . (run inside your AI assistant)",
+   "graphify query \"what connects auth to the database?\"",
+   "graphify path \"UserService\" \"DatabasePool\""
+  ],
+  "stack": [
+   "Python 3.10+",
+   "tree-sitter",
+   "uv or pipx (install)",
+   "Leiden community detection (optional extra) with networkx Louvain fallback",
+   "faster-whisper and yt-dlp (video extra)",
+   "MCP stdio server (optional extra)"
+  ],
+  "notable": [
+   "Code graph built fully offline with tree-sitter AST, no LLM or API key needed for code-only corpora",
+   "Every edge labeled EXTRACTED or INFERRED so direct reads are distinguishable from inferred links",
+   "Query, path, and explain commands return scoped subgraphs instead of full file reads",
+   "Installs skills for 20+ AI assistants through a single graphify install step",
+   "Optional extras for PDF, Office, video transcription, Neo4j, and FalkorDB pushes"
+  ],
+  "caveats": [
+   "Docs, PDFs, images, and video need an assistant model or a configured API key/backend for the semantic pass",
+   "Without the leiden extra, clustering falls back to networkx Louvain, and switching later reshuffles communities",
+   "Graphify Cloud is a separate paid-after-trial hosted offering (14-day free trial) that the README promotes; features described there are not part of this repo's local tool",
+   "Some platforms lack parallel extraction or hook support (for example Aider and OpenClaw sequential only; Trae has no PreToolUse hook)"
+  ],
+  "license": "unknown",
+  "category": "code knowledge graph",
+  "keywords": [
+   "knowledge graph",
+   "code graph",
+   "codebase graph",
+   "tree-sitter",
+   "ast parsing",
+   "ai coding assistant",
+   "claude code skill",
+   "cursor rules",
+   "codex skill",
+   "mcp server",
+   "code navigation",
+   "query codebase",
+   "architecture map",
+   "dependency graph",
+   "community detection",
+   "leiden clustering",
+   "graph.json",
+   "map my repo",
+   "understand a codebase",
+   "explain code relationships",
+   "find how two functions connect",
+   "chat with my codebase",
+   "replace grep for code search",
+   "document graph",
+   "pdf to graph",
+   "video transcription graph",
+   "code review graph context",
+   "local code indexing",
+   "no embeddings graph",
+   "llm context reduction",
+   "static analysis visualization",
+   "graphify"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11203,
+  "output": 1406
+ },
+ "generated": "2026-10-29"
+}

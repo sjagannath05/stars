@@ -1,0 +1,93 @@
+{
+ "id": "mmathys/noswoosh",
+ "repo": "mmathys/noswoosh",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "noswoosh - Instant, animation-free switching between macOS Spaces with a 3-finger swipe or Ctrl+arrow keys."
+  }
+ ],
+ "summary": {
+  "one_liner": "noswoosh is a macOS daemon that makes switching between Spaces instant and animation-free, triggered by a 3-finger horizontal swipe or Ctrl+←/→.",
+  "what_it_does": "It intercepts real 3-finger horizontal trackpad swipes and replaces them with an instant space switch, leaving vertical swipes (Mission Control, App Exposé) alone. It also binds Ctrl+←/→ to switch one space left or right. Switching is clamped at the first and last space so there is no rubber-band bounce. It synthesizes a Dock-swipe gesture with near-zero progress and high velocity so the switch goes through the Dock's own pipeline. It includes a CLI (list, left, right, setup, teardown, version) for scripting and hotkey tools. The README also documents a workaround for a macOS behavior where landing on an empty desktop yanks the user to another space.",
+  "use_cases": [
+   "switch macOS Spaces without slide animation",
+   "3-finger swipe between desktops instantly",
+   "bind a hotkey to move between Spaces",
+   "script Spaces switching from the command line",
+   "stop Ctrl+arrow desktop switching from animating"
+  ],
+  "how_to_run": [
+   "brew install --cask mmathys/tap/noswoosh",
+   "Grant Accessibility permission to /Applications/noswoosh.app when prompted (or add it in System Settings → Privacy & Security → Accessibility)",
+   "Build from source: git clone the repo, cd noswoosh, ./scripts/install.sh",
+   "swiftc noswoosh.swift -O -o noswoosh -F /System/Library/PrivateFrameworks -framework SkyLight"
+  ],
+  "stack": [
+   "Swift",
+   "SkyLight private framework",
+   "macOS Dock gesture pipeline",
+   "LaunchAgent",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Zero-travel synthetic Dock-swipe gesture makes space switches instant without disabling SIP",
+   "Separate code paths for macOS 26 and macOS 27 due to the 27 IOHID payload requirement",
+   "Works without the global Reduce Motion setting, which is a crossfade rather than a cut",
+   "Includes a fix for the empty-desktop yank that keeps Dock-icon-follow working",
+   "Ctrl+arrow hotkey keeps working even if the swipe event tap is disabled"
+  ],
+  "caveats": [
+   "Not supported on macOS 26.0–26.5; requires 26.6 or later",
+   "Relies on undocumented private APIs that any macOS release may break",
+   "Requires granting Accessibility permission, which cannot be scripted",
+   "Building from source requires Xcode Command Line Tools"
+  ],
+  "license": "MIT",
+  "category": "macos window management",
+  "keywords": [
+   "macos spaces",
+   "virtual desktops",
+   "mission control",
+   "space switching",
+   "instant switch",
+   "no animation",
+   "animation-free",
+   "3-finger swipe",
+   "trackpad gesture",
+   "ctrl arrow keys",
+   "desktop switcher",
+   "swoosh animation",
+   "reduce motion alternative",
+   "yabai alternative",
+   "instantspaceswitcher",
+   "whichspace",
+   "hotkey tool",
+   "skhd",
+   "karabiner",
+   "hammerspoon",
+   "raycast",
+   "homebrew cask",
+   "launchagent daemon",
+   "accessibility permission",
+   "swift",
+   "skylight framework",
+   "switch desktops fast",
+   "remove slide animation macos",
+   "disable space switching animation",
+   "command line spaces control",
+   "multi-display spaces"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5479,
+  "output": 1308
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,103 @@
+{
+ "id": "linuxserver/heimdall",
+ "repo": "linuxserver/Heimdall",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Heimdall - Elegant solution to organise all your web applications. (Source Code) MIT PHP"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Dashboards",
+   "entry": "Heimdall | Simple application dashboard for your web apps"
+  }
+ ],
+ "summary": {
+  "one_liner": "Heimdall is a self-hosted web dashboard for organising links to your web applications, with optional live stats from supported apps and a configurable search bar.",
+  "what_it_does": "Heimdall is a PHP (Laravel 11) application that gives you a single page of tiles linking to your web apps, or to any other URL you choose. Foundation apps are recognised by title and get an icon and default tile colour filled in automatically. Enhanced apps connect to an app's API to show live stats on the dashboard, such as queue size and download speed for NZBGet and Sabnzbd. The dashboard can include a search bar that uses Google, Bing or DuckDuckGo, and it can be used as a browser start page. Search providers are customised through a searchproviders.yaml file, and a Tiles entry lets you search your own dashboard by app name. The app ships with translations for about 20 languages and a built-in setting that blocks server-side requests to private IP addresses unless explicitly enabled.",
+  "use_cases": [
+   "organise links to self-hosted web applications",
+   "browser start page with search",
+   "live download stats for NZBGet or Sabnzbd on a dashboard",
+   "landing page for home server apps",
+   "pin favourite links in one place",
+   "dashboard for internal services behind a reverse proxy"
+  ],
+  "how_to_run": [
+   "cd /path/to/heimdall",
+   "cp .env.example .env",
+   "php artisan key:generate",
+   "php artisan serve",
+   "Alternatively, run the linuxserver.io Docker image (multi-arch: x86-64, armhf, arm64); the README links to instructions but does not include the commands."
+  ],
+  "stack": [
+   "PHP 8.4+",
+   "Laravel 11",
+   "SQLite",
+   "jQuery",
+   "FontAwesome 5",
+   "Huebee colour picker",
+   "Trianglify"
+  ],
+  "notable": [
+   "Enhanced apps show live API stats directly on the dashboard tiles",
+   "Supported apps are auto-filled by typing their title, which sets icon and colour",
+   "Search bar supports Google, Bing or DuckDuckGo, with customisable providers in YAML",
+   "Built-in SSRF protection that blocks private IP requests, with an ALLOW_INTERNAL_REQUESTS switch",
+   "Can run offline by hosting its own apps list (list.json)"
+  ],
+  "caveats": [
+   "Apache needs .htaccess allowed or the rewrite rules copied into the config; otherwise links such as /settings break",
+   "Background images over 2MB need upload_max_filesize raised in php.ini",
+   "Enhanced apps running in other Docker containers may need Docker network addresses, and self-signed certificates need extra CA configuration"
+  ],
+  "license": "MIT",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "dashboard",
+   "application dashboard",
+   "web app launcher",
+   "homepage",
+   "start page",
+   "browser start page",
+   "link organiser",
+   "bookmark manager",
+   "self-hosted dashboard",
+   "homelab dashboard",
+   "server landing page",
+   "php",
+   "laravel",
+   "sqlite",
+   "docker",
+   "linuxserver",
+   "nzbget dashboard",
+   "sabnzbd dashboard",
+   "live stats dashboard",
+   "search bar",
+   "duckduckgo search",
+   "google search start page",
+   "organise web apps",
+   "pin favourite links",
+   "home server portal",
+   "reverse proxy dashboard",
+   "swag nginx",
+   "apache htaccess",
+   "self-signed certificate config",
+   "ssrf protection",
+   "offline app list",
+   "multilingual dashboard",
+   "heimdall alternative to bookmarks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5396,
+  "output": 1305
+ },
+ "generated": "2026-10-29"
+}

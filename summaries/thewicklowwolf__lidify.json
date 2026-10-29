@@ -1,0 +1,87 @@
+{
+ "id": "thewicklowwolf/lidify",
+ "repo": "TheWicklowWolf/Lidify",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Lidify ⚠ - Music discovery tool that provides recommendations based on selected Lidarr artists, using Spotify or LastFM. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lidify is a music discovery tool that recommends artists based on the Lidarr artists you select, using Last.fm (Spotify support was removed per the README).",
+  "what_it_does": "Lidify takes artists you pick from your Lidarr library and finds similar artists to suggest for discovery. The README says that as of November 2024 Spotify API changes prevent its use, so the app now supports only Last.fm, which requires a Last.fm API key and secret. It can add recommended artists to Lidarr via its API, with options for quality and metadata profile IDs, searching for missing albums on add, and a dry-run mode that skips adding. Settings can be provided as environment variables or configured in the web application. It is run as a Docker container exposing port 5000, with auto-start and a configurable delay at startup.",
+  "use_cases": [
+   "discover new music similar to my Lidarr artists",
+   "find recommendations from Last.fm listening data",
+   "automatically add recommended artists to Lidarr",
+   "preview Lidarr additions with a dry run",
+   "schedule music discovery at container startup"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the lidify service using image thewicklowwolf/lidify:latest",
+   "Map /path/to/config to /lidify/config and expose port 5000",
+   "Set last_fm_api_key, last_fm_api_secret and mode=LastFM in environment",
+   "Optionally set lidarr_address and lidarr_api_key or configure them in the app",
+   "Run docker-compose up -d and open the web interface on port 5000"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Lidarr API",
+   "Last.fm API"
+  ],
+  "notable": [
+   "Works alongside Lidarr, adding recommended artists to it through its API",
+   "Last.fm is the only supported discovery source after Spotify API changes",
+   "Dry-run mode to test recommendations without adding artists",
+   "Configurable via environment variables or within the web app"
+  ],
+  "caveats": [
+   "Spotify discovery no longer works due to Spotify API changes as of November 2024; Last.fm is required",
+   "Requires a Lidarr instance and a Last.fm API account",
+   "Setup is in the README only for Docker Compose; no other install method is described"
+  ],
+  "license": "MIT",
+  "category": "music discovery recommendations",
+  "keywords": [
+   "lidify",
+   "lidarr",
+   "music discovery",
+   "artist recommendations",
+   "last.fm",
+   "lastfm api",
+   "spotify alternative",
+   "music recommendation",
+   "docker",
+   "docker compose",
+   "self-hosted music",
+   "lidarr integration",
+   "similar artists",
+   "music library automation",
+   "find new artists",
+   "discover music",
+   "add artists to lidarr",
+   "dry run",
+   "music management",
+   "recommend albums",
+   "arr stack",
+   "usenet music",
+   "self hosted music discovery",
+   "discover new music similar to my library",
+   "automatically add recommended artists",
+   "music recommendations for my server",
+   "lidarr companion tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2485,
+  "output": 1107
+ },
+ "generated": "2026-10-29"
+}

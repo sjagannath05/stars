@@ -1,0 +1,88 @@
+{
+ "id": "mrdwarf7/url-to-md",
+ "repo": "MrDwarf7/url-to-md",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🤖 AI-Related Tools",
+   "entry": "url-to-md - Any URL to clean markdown for LLMs. Free API, no signup required. Strips JS/CSS and outputs LLM-ready content."
+  }
+ ],
+ "summary": {
+  "one_liner": "url2md converts any web URL into clean, LLM-ready markdown by stripping ads, navigation, and boilerplate, with a web UI, a no-key API, and a local Python/Docker setup.",
+  "what_it_does": "Fetches a given URL with a clean user-agent, runs readability extraction (the algorithm Firefox Reader View uses), converts the resulting HTML to markdown with html2text, removes empty elements, and collapses whitespace. The response includes the page title, the markdown body, character count, a rough token estimate (chars divided by 4), line count, and a truncated flag. It can be used through a web page where you paste a URL, through a GET or POST API endpoint, or run locally with Python or Docker. The README states there are no accounts or tracking, and the API needs no key.",
+  "use_cases": [
+   "paste web documentation into an AI coding assistant",
+   "convert a blog post or article to markdown for an LLM prompt",
+   "extract readable content from a URL without ads or navigation",
+   "estimate token count of a web page before sending it to a model",
+   "fetch page content programmatically via a simple HTTP API"
+  ],
+  "how_to_run": [
+   "pip install -r requirements.txt",
+   "python main.py",
+   "docker build -t url2md .",
+   "docker run -p 8000:8000 url2md"
+  ],
+  "stack": [
+   "Python",
+   "html2text",
+   "readability extraction",
+   "Docker"
+  ],
+  "notable": [
+   "Uses readability extraction (same algorithm as Firefox Reader View) before markdown conversion",
+   "Returns a token count estimate and line/char counts alongside the markdown",
+   "No API key or signup required for the hosted API",
+   "Simple GET or POST JSON API"
+  ],
+  "caveats": [
+   "Hosted API is rate-limited to 30 requests per hour per IP",
+   "Token count is a rough estimate (characters divided by 4), not a real tokenizer count",
+   "README does not describe handling of JavaScript-rendered pages or paywalled content"
+  ],
+  "license": "MIT",
+  "category": "url to markdown converter",
+  "keywords": [
+   "url to markdown",
+   "webpage to markdown",
+   "html to markdown",
+   "llm context preparation",
+   "readability extraction",
+   "reader view",
+   "html2text",
+   "web scraper for llm",
+   "clean web content",
+   "strip ads and navigation",
+   "markdown api",
+   "token count estimate",
+   "fastapi",
+   "python",
+   "docker",
+   "self-hosted",
+   "claude context",
+   "cursor coding assistant",
+   "copilot context",
+   "paste web page into ai",
+   "extract article text",
+   "remove boilerplate",
+   "scrape documentation page",
+   "web content for ai",
+   "no signup api",
+   "url reader",
+   "page to text converter",
+   "ai coding tools",
+   "llm input preprocessing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2045,
+  "output": 1027
+ },
+ "generated": "2026-10-29"
+}

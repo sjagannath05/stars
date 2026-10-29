@@ -1,0 +1,96 @@
+{
+ "id": "forceu/gokapi",
+ "repo": "Forceu/gokapi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "Gokapi - Lightweight server to share files, which expire after a set amount of downloads or days. Similar to the discontinued Firefox Send, with the difference that only the admin is allowed to upload files. GPL-3.0 Go/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "File Sharing",
+   "entry": "Gokapi | Lightweight file sharing with expiring links"
+  }
+ ],
+ "summary": {
+  "one_liner": "Gokapi is a self-hosted, lightweight file-sharing server written in Go, where shared files expire after a set number of downloads or days.",
+  "what_it_does": "Gokapi lets you share files through links that expire automatically after a set number of downloads or a set number of days. It is described as a self-hosted alternative to Firefox Send. Only registered users can upload, and user management supports roles for finer permission control. External parties can upload via a file request URL, and those uploads are visible only to the URL's creator. Identical files are deduplicated so they use no extra space. Storage can be local or an optional S3-compatible backend such as AWS S3 or Backblaze B2. It also offers built-in encryption including end-to-end encrypted uploads, OpenID Connect login (e.g. Authelia or Keycloak), a REST API, and customizable UI via custom CSS and JavaScript.",
+  "use_cases": [
+   "share large files with others using expiring links",
+   "self-hosted replacement for Firefox Send",
+   "let outside people upload files to me via a request link",
+   "file sharing with single sign-on via OpenID Connect",
+   "store shared files on S3 or Backblaze B2",
+   "automate file sharing through a REST API"
+  ],
+  "how_to_run": [
+   "docker run --rm --name gokapi -v gokapi-data:/app/data -v gokapi-config:/app/config -p 127.0.0.1:53842:53842 -e TZ=UTC docker.io/f0rc3/gokapi:latest",
+   "Open the Gokapi web interface and follow the setup wizard",
+   "git clone (repository URL) && cd gokapi",
+   "make build",
+   "make test",
+   "docker build -t gokapi:local ."
+  ],
+  "stack": [
+   "Go",
+   "Docker"
+  ],
+  "notable": [
+   "Expiring shares limited by download count or days",
+   "File requests let outside parties upload into the admin's account without user access",
+   "File deduplication so identical files take no extra space",
+   "Built-in end-to-end encrypted uploads",
+   "OpenID Connect integration with identity providers"
+  ],
+  "caveats": [
+   "Only registered users can upload, by design (uploads are admin/user controlled)",
+   "Recommended SSD storage; minimum 256 MB RAM",
+   "S3 support is optional and requires an external S3-compatible service"
+  ],
+  "license": "GPL-3.0 (per awesome-selfhosted listing); README states AGPL3",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "self-hosted file sharing",
+   "expiring links",
+   "expiring file shares",
+   "firefox send alternative",
+   "temporary file hosting",
+   "file transfer server",
+   "file request",
+   "upload request link",
+   "end-to-end encryption",
+   "encrypted uploads",
+   "openid connect",
+   "authelia",
+   "keycloak",
+   "s3 storage",
+   "backblaze b2",
+   "rest api",
+   "go server",
+   "golang",
+   "docker",
+   "docker hub",
+   "share files with my team",
+   "send large files to someone",
+   "one-time download link",
+   "file deduplication",
+   "custom css",
+   "single sign-on",
+   "lightweight file server",
+   "self-hosted dropbox alternative",
+   "wetransfer alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2499,
+  "output": 1171
+ },
+ "generated": "2026-10-29"
+}

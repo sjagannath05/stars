@@ -1,0 +1,92 @@
+{
+ "id": "tanrax/maza-ad-blocking",
+ "repo": "tanrax/maza-ad-blocking",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "DNS",
+   "entry": "Maza ad blocking - Local ad blocker. Like Pi-hole but local and using your operating system. (Source Code) Apache-2.0 Shell"
+  }
+ ],
+ "summary": {
+  "one_liner": "A bash script that blocks ads system-wide by managing the operating system's hosts file (and optionally dnsmasq), so every browser and app benefits without extensions.",
+  "what_it_does": "Maza is a command-line tool (the `maza` command) that downloads a list of ad and tracking domains and writes them into the system hosts file so they resolve to nothing. Commands cover updating the domain database, starting, stopping, and checking status. Users can add their own domains to block, or list domains to ignore, and can switch to a different source list such as Steven Black's. For wildcard (subdomain) blocking, the README describes an optional setup using dnsmasq, with instructions for macOS and Debian/Ubuntu Linux, including pointing the OS DNS settings at the local server. A daily cron job can keep the list updated. The README also describes a tutorial for building a Pi-hole-style DNS server on a Raspberry Pi or VPS.",
+  "use_cases": [
+   "block ads in every browser without extensions",
+   "block ads system-wide on macOS or Linux",
+   "block ads on a Windows Subsystem for Linux setup",
+   "keep the ad-blocking domain list updated automatically",
+   "run a local Pi-hole alternative with dnsmasq",
+   "block custom domains or whitelist domains from blocking"
+  ],
+  "how_to_run": [
+   "Install gnu-sed on macOS: brew install gnu-sed",
+   "Download and install the script: curl -o maza && sudo rm -rf /usr/local/bin/maza && chmod +x maza && sudo mv maza /usr/local/bin",
+   "Back up your hosts file: sudo cp /etc/hosts /etc/hosts.backup",
+   "Start blocking: sudo maza start",
+   "Update the domain database: sudo maza update"
+  ],
+  "stack": [
+   "bash 4.0+",
+   "curl",
+   "gnu-sed (macOS only)",
+   "dnsmasq (optional)"
+  ],
+  "notable": [
+   "Works system-wide through the OS hosts file, so it affects any browser or application without installing extensions",
+   "Single bash script with commands for update, start, stop, and status",
+   "Optional dnsmasq mode adds wildcard/subdomain blocking, which the hosts file cannot do",
+   "Supports custom block lists and an ignore list for domains that should not be blocked",
+   "Includes a tutorial for running it as a self-hosted Pi-hole-style DNS server"
+  ],
+  "caveats": [
+   "The hosts file does not support wildcard subdomains; full DNS-level filtering requires installing and configuring dnsmasq manually",
+   "macOS needs gnu-sed installed and extra cron PATH settings for automatic updates",
+   "Default list is small (about 3.7k domains); larger lists must be set up manually"
+  ],
+  "license": "Apache-2.0",
+  "category": "local ad blocking",
+  "keywords": [
+   "ad blocker",
+   "local ad blocker",
+   "system-wide ad blocking",
+   "hosts file",
+   "hosts file ad blocking",
+   "pi-hole alternative",
+   "pi-hole",
+   "dnsmasq",
+   "wildcard blocking",
+   "subdomain blocking",
+   "bash script",
+   "command line ad blocker",
+   "block ads without extensions",
+   "block ads in all browsers",
+   "block tracking domains",
+   "dns blocklist",
+   "update blocklist",
+   "steven black hosts list",
+   "yoyo adservers list",
+   "macos ad blocker",
+   "linux ad blocker",
+   "wsl ad blocking",
+   "self-hosted dns",
+   "custom domain blocking",
+   "ignore domains whitelist",
+   "ad blocking raspberry pi",
+   "daily cron blocklist update",
+   "local dns server ads",
+   "selfhosted ad blocking",
+   "adless alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4632,
+  "output": 1309
+ },
+ "generated": "2026-10-29"
+}

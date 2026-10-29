@@ -1,0 +1,99 @@
+{
+ "id": "johnno1962/injectioniii",
+ "repo": "johnno1962/InjectionIII",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📱 iOS / macOS (46)",
+   "entry": "InjectionIII - overdue Swift rewrite of Injection."
+  }
+ ],
+ "summary": {
+  "one_liner": "InjectionIII is a macOS app that enables Swift \"hot reloading\" by recompiling edited source files and injecting the new code into a running iOS, tvOS, or macOS app without a full rebuild or restart.",
+  "what_it_does": "The app watches for saved Swift source files, recompiles each changed file into a dynamic library by finding the swift-frontend invocation in recent Xcode build logs, and loads that library into the running app. It uses Apple's linker \"interposing\" (enabled via -Xlinker -interposable in Debug builds) to redirect calls to updated functions and methods, and also updates vtable dispatch for non-final class methods and handles legacy Objective-C swizzling. Developers add a short #if DEBUG snippet that loads a bundle from the app's Resources folder, and classes can implement an @objc injected() method to refresh the UI after injection. The README also covers SwiftUI support via @ObserveInjection and .enableInjection() from the HotSwiftUI or Inject packages, device injection using a copy_bundle.sh build phase script, an optional MCP server (v5.2.1+), and INJECTION_TRACE/INJECTION_DETAIL environment variables for debugging. Xcode 16.3 requires an EMIT_FRONTEND_COMMAND_LINES build setting to keep build-log parsing working.",
+  "use_cases": [
+   "hot reload Swift code in iOS simulator",
+   "update SwiftUI views without rebuilding",
+   "speed up UI tweaking during iOS development",
+   "inject code changes into running app on device",
+   "debug Swift method changes live",
+   "trace function calls with argument values during development"
+  ],
+  "how_to_run": [
+   "Download a release of InjectionIII.app from GitHub or the Mac App Store and launch it",
+   "Add #if DEBUG Bundle(path: \"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle\")?.load() (or tvOSInjection / macOSInjection bundle) to app startup code",
+   "Add -Xlinker and -interposable to Other Linker Flags for the Debug configuration only",
+   "Run the app in the simulator and save a Swift source file to see it report as injected",
+   "For Xcode 16.3+, add user-defined build setting EMIT_FRONTEND_COMMAND_LINES = YES to the Debug configuration",
+   "For devices, run: defaults write com.johnholdsworth.InjectionIII deviceUnlock any, then use the copy_bundle.sh build phase script"
+  ],
+  "stack": [
+   "Swift",
+   "Objective-C",
+   "macOS app (InjectionIII.app)",
+   "Apple linker interposing",
+   "fishhook",
+   "SwiftTrace",
+   "CodeMirror",
+   "canviz",
+   "FSEvents"
+  ],
+  "notable": [
+   "Hot reloads Swift methods and computed properties in a running app without restarting it",
+   "Uses linker interposing rather than only swizzling, so it covers any Swift method",
+   "Reads Xcode build logs to learn how to recompile each changed file; Xcode 16.3 needs a build setting to keep this working",
+   "Supports SwiftUI injection through @ObserveInjection and .enableInjection() from HotSwiftUI or Inject",
+   "Includes an INJECTION_TRACE mode that logs calls to injected functions with their argument values"
+  ],
+  "caveats": [
+   "Cannot inject changes to stored property layout, and adding or removing methods on non-final classes is not supported",
+   "On macOS and device use, the app sandbox and hardened runtime library validation must be turned off during development; the App Store version is sandboxed and works differently",
+   "Adding, renaming, or deleting source files during injection can break it; a rebuild or relaunch may be needed",
+   "The README calls InjectionNext a successor and suggests trying it if InjectionIII's limits are hit"
+  ],
+  "license": "unknown",
+  "category": "swift hot reloading",
+  "keywords": [
+   "hot reloading",
+   "hotreloading",
+   "code injection",
+   "swift",
+   "ios simulator",
+   "macos app",
+   "live code update",
+   "interposing",
+   "dynamic library",
+   "swiftui preview alternative",
+   "injection",
+   "xcode",
+   "swift hot reload",
+   "update app without restart",
+   "live edit running app",
+   "fishhook",
+   "vtable",
+   "swizzling",
+   "injectionnext",
+   "injectionlite",
+   "hotswiftui",
+   "inject package",
+   "file watcher",
+   "build log parsing",
+   "uikit development",
+   "debug swift methods live",
+   "tvos",
+   "visionos device injection",
+   "mcp server",
+   "injection trace"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6219,
+  "output": 1642
+ },
+ "generated": "2026-10-29"
+}

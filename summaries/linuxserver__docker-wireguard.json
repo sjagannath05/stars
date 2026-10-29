@@ -1,0 +1,95 @@
+{
+ "id": "linuxserver/docker-wireguard",
+ "repo": "linuxserver/docker-wireguard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Networking",
+   "entry": "WireGuard | Fast and modern VPN solution"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Docker container image from LinuxServer.io that runs WireGuard VPN in either server mode (generating server and peer configs) or client mode (using dropped-in tunnel configs).",
+  "what_it_does": "Runs the WireGuard VPN inside a Docker container, with the image built on Alpine and managed with s6 overlay. In server mode, setting the PEERS variable to a number or a list of names makes the container generate the server config (wg0.conf) and peer configs, with QR codes shown in the log and saved as text and PNG files under /config. In client mode, the container starts any .conf tunnel files placed in /config/wg_confs/ in alphabetical order. Optional settings cover the server URL and port, internal subnet, peer DNS (with an included CoreDNS forward when set to auto), allowed IPs, persistent keepalive for chosen peers, and per-peer extra subnets for site-to-site use. The README also documents iptables module loading, a read-only filesystem option, PUID/PGID user mapping, and Docker secrets via FILE__ variables.",
+  "use_cases": [
+   "Run a self-hosted WireGuard VPN server for phones and laptops",
+   "Generate WireGuard client configs and QR codes for peers",
+   "Connect a Docker host or containers to an existing WireGuard VPN as a client",
+   "Set up site-to-site VPN between networks",
+   "Route traffic from other containers through a VPN tunnel",
+   "Access home services remotely over an encrypted tunnel"
+  ],
+  "how_to_run": [
+   "Ensure the WireGuard kernel module is enabled on the host (or allow loading it via SYS_MODULE and /lib/modules mount)",
+   "Create a docker-compose.yml with cap_add NET_ADMIN, the sysctl net.ipv4.conf.all.src_valid_mark=1, and UDP port 51820 mapped",
+   "Set PEERS to a number or comma-separated names for server mode, or leave it unset for client mode",
+   "Mount /path/to/wireguard/config to /config",
+   "Run docker compose up -d (or the equivalent docker run command from the README)",
+   "For client mode, place your client .conf file in /config/wg_confs/ before starting"
+  ],
+  "stack": [
+   "Docker",
+   "Alpine Linux",
+   "s6 overlay",
+   "WireGuard (wireguard-tools)",
+   "CoreDNS",
+   "openresolv",
+   "kmod"
+  ],
+  "notable": [
+   "Server mode generates server and peer configs automatically, with QR codes in the log and PNG/text files saved per peer",
+   "Supports multiple tunnel configs in /config/wg_confs/, started in alphabetical order",
+   "Includes documented recipes for keeping local LAN access and for site-to-site VPN (both marked unsupported by LinuxServer.io)",
+   "Standard LinuxServer.io conventions: PUID/PGID mapping, multi-arch (amd64 and arm64), and read-only filesystem support"
+  ],
+  "caveats": [
+   "Client mode does not support read-only container filesystem operation",
+   "Some hosts need the iptables kernel modules loaded manually, and the WireGuard module must be enabled before the container starts",
+   "Portainer may not deploy this image correctly because of cap_add and sysctl handling",
+   "Site-to-site VPN and local-access routing recipes are not supported by LinuxServer.io and are used at your own risk"
+  ],
+  "license": "unknown",
+  "category": "vpn container image",
+  "keywords": [
+   "wireguard",
+   "wireguard vpn",
+   "vpn server",
+   "vpn docker",
+   "docker vpn",
+   "wireguard docker",
+   "linuxserver",
+   "lscr.io",
+   "wg0.conf",
+   "peer config",
+   "qr code vpn",
+   "client config",
+   "site-to-site vpn",
+   "split tunnel",
+   "secure tunnel",
+   "encrypted tunnel",
+   "remote access to home network",
+   "self-hosted vpn",
+   "openvpn alternative",
+   "ipsec alternative",
+   "coredns",
+   "s6 overlay",
+   "alpine docker image",
+   "docker compose vpn",
+   "net_admin capability",
+   "udp 51820",
+   "access home network remotely",
+   "run vpn in container",
+   "wireguard qr code phone"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10091,
+  "output": 1517
+ },
+ "generated": "2026-10-29"
+}

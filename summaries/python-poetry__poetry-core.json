@@ -1,0 +1,81 @@
+{
+ "id": "python-poetry/poetry-core",
+ "repo": "python-poetry/poetry-core",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Package Management",
+   "entry": "poetry-core - Poetry's PEP 517 build backend, usable without Poetry itself."
+  }
+ ],
+ "summary": {
+  "one_liner": "poetry-core is a lightweight, PEP 517-compliant build backend extracted from Poetry, letting pip and other build frontends build Poetry-managed projects without installing Poetry itself.",
+  "what_it_does": "Provides the build backend module poetry.core.masonry.api, which PEP 517 frontends call to build source distributions and wheels from a project's pyproject.toml. The project is enabled by adding a [build-system] table that requires poetry-core and sets build-backend to poetry.core.masonry.api. Once configured, pip can install or wheel a Poetry-managed project from source with only poetry-core as a build dependency. The README says it was split out of Poetry 1.1.0 to make these builds faster, since Poetry's other dependencies are not needed just to build a distribution. The README's contributing section notes that development follows the main poetry repository workflow, using poetry install and pytest.",
+  "use_cases": [
+   "build a Poetry project with pip without installing Poetry",
+   "configure pyproject.toml build-system for a Poetry package",
+   "speed up PEP 517 builds in tox with isolated builds",
+   "create wheel or sdist from a Poetry-managed project",
+   "package Python library from pyproject.toml"
+  ],
+  "how_to_run": [
+   "Add to pyproject.toml: [build-system] requires = [\"poetry-core\"] and build-backend = \"poetry.core.masonry.api\"",
+   "pip install /path/to/poetry/managed/project",
+   "pip wheel /path/to/poetry/managed/project"
+  ],
+  "stack": [
+   "Python",
+   "PEP 517 build backend",
+   "pyproject.toml"
+  ],
+  "notable": [
+   "Usable as a build backend without installing Poetry or its dependencies",
+   "Enabled via a standard [build-system] entry in pyproject.toml",
+   "Extracted from Poetry 1.1.0 onward to speed up PEP 517 builds",
+   "Works with PEP 517 frontends such as pip and tox"
+  ],
+  "caveats": [
+   "The README is brief and points to external documentation for full details",
+   "Intended for building projects; project management features remain in the main Poetry tool"
+  ],
+  "license": "unknown",
+  "category": "python build backend",
+  "keywords": [
+   "poetry-core",
+   "pep 517",
+   "build backend",
+   "pep517 build",
+   "pyproject.toml",
+   "build-system",
+   "poetry.core.masonry.api",
+   "python packaging",
+   "pip wheel",
+   "pip install from source",
+   "wheel builder",
+   "sdist builder",
+   "source distribution",
+   "tox isolated builds",
+   "poetry alternative build backend",
+   "lightweight build backend",
+   "build python package",
+   "package python project",
+   "poetry managed project",
+   "build without poetry",
+   "python wheel creation",
+   "packaging tool",
+   "pip build frontend",
+   "python dependency packaging",
+   "install poetry project with pip"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2029,
+  "output": 1061
+ },
+ "generated": "2026-10-29"
+}

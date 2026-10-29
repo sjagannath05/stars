@@ -1,0 +1,94 @@
+{
+ "id": "luoyuctl/agenttrace",
+ "repo": "luoyuctl/agenttrace",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "agenttrace - Open-source local TUI observability for AI coding agents. Tracks cost, tokens, latency, failures, health, anomalies, reports, and CI gates across Claude Code, Codex CLI, Gemini CLI, Aider, Cursor exports, and more."
+  }
+ ],
+ "summary": {
+  "one_liner": "agenttrace is a local-first terminal TUI and report generator that reads AI coding-agent session logs to show cost, tokens, time, and slow-run diagnosis.",
+  "what_it_does": "It parses session history from many coding agents (Claude Code, Codex CLI, Qwen Code, Cline, Aider, Cursor exports, Hermes Agent, OpenCode, OpenClaw, Pi, Oh My Pi, Kimi CLI, Copilot-style logs, and generic JSON/JSONL traces) without sending data off the machine. It ranks sessions by cost, duration, turns, health, failures, anomalies, model, source, or text search. It reports token usage (input, output, cache), estimated cost, latency, long gaps, hanging sessions, retry loops, slow tools, and context pressure. A single binary opens the TUI or prints CLI output such as --sessions and --overview, and it can write JSON, Markdown, and self-contained HTML reports. Governance reports cover cost audit with pricing fallbacks, prioritized recommendations, observed MCP invocations, context and cache trends, and heuristic Git commit correlation.",
+  "use_cases": [
+   "compare what multiple coding agents spent",
+   "diagnose why an AI agent task ran slowly",
+   "find expensive or failing agent sessions",
+   "generate shareable cost and session reports",
+   "gate CI on agent session metrics",
+   "audit token usage and estimated pricing"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh  (macOS/Linux install script; URL missing from README)",
+   "irm | iex  (Windows PowerShell install script)",
+   "brew install luoyuctl/tap/agenttrace",
+   "npm install -g @zack78/agenttrace",
+   "cargo install --git agenttrace",
+   "agenttrace"
+  ],
+  "stack": [
+   "Rust",
+   "cargo",
+   "Node.js (npm package wrapper)",
+   "Homebrew"
+  ],
+  "notable": [
+   "Local-first: prompts, code, and logs stay on the machine with no hosted backend",
+   "Honest capability levels (Detailed, Aggregate, Limited) per session so partial traces are not presented as complete",
+   "Privacy-safe tool steps: stores metadata and durations, not prompt, response, or argument bodies",
+   "Governance reports with pricing overrides via a local JSON file and explicit estimate/heuristic labeling",
+   "Update command verifies SHA-256 checksum before replacing the binary"
+  ],
+  "caveats": [
+   "Cost figures are estimates, not provider billing; Git delivery correlation is heuristic and does not prove a commit reached main",
+   "Loaded-server MCP coverage is reported as unavailable unless the source log records it",
+   "Install scripts for macOS/Linux and Windows are listed, but the README's install URLs are blank in this text"
+  ],
+  "license": "MIT",
+  "category": "ai agent observability",
+  "keywords": [
+   "agenttrace",
+   "ai coding agent observability",
+   "llm ops",
+   "coding agent cost tracking",
+   "token usage tracker",
+   "claude code logs",
+   "codex cli logs",
+   "gemini cli",
+   "aider logs",
+   "cursor export parser",
+   "terminal tui",
+   "rust cli",
+   "session history viewer",
+   "slow agent diagnosis",
+   "latency analysis",
+   "cost report generator",
+   "html report",
+   "markdown report",
+   "json trace parser",
+   "ci gate for agents",
+   "cost audit",
+   "mcp governance",
+   "local-first analytics",
+   "private llm usage tracking",
+   "track what my ai agents spent",
+   "find slow ai coding sessions",
+   "compare agent costs",
+   "retry loop detection",
+   "pricing estimation",
+   "homebrew tap",
+   "npm global cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4252,
+  "output": 1358
+ },
+ "generated": "2026-10-29"
+}

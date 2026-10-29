@@ -1,0 +1,101 @@
+{
+ "id": "jt196/vanilla-cookbook",
+ "repo": "jt196/vanilla-cookbook",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Recipe Management",
+   "entry": "Vanilla Cookbook - Recipe manager designed with complexity under the hood, keeping the user experience as uncluttered, simply vanilla as possible. (Source Code) GPL-3.0 Docker/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Vanilla Cookbook is a self-hosted recipe manager that parses messy recipe text into clean ingredient lists with minimal setup and an uncluttered interface.",
+  "what_it_does": "It parses free-text ingredient strings into quantity, unit and ingredient parts, and supports scaling recipes while keeping the original text format. It converts US volumetric measures to metric or imperial weights and translates inline temperatures, fractions and ranges. Recipes can be imported via a browser bookmarklet or by pasting a URL, with scraping of hundreds of sites claimed, and exported. It also includes a shopping list, cooking logs with a calendar view, user management with optional OAuth/OpenID Connect login, and public recipe sharing with forking and favouriting. Optional LLM features (Google, OpenAI, Anthropic or Ollama API keys) add HTML parsing fallback, recipe tweaking, translation, prompt-based recipe generation, image analysis and semantic search.",
+  "use_cases": [
+   "self-hosted recipe collection",
+   "importing recipes from websites",
+   "scaling recipe ingredients",
+   "converting cups to grams",
+   "planning a shopping list from recipes",
+   "logging when meals were cooked",
+   "sharing a cookbook with family"
+  ],
+  "how_to_run": [
+   "Download the .env and docker-compose.yml template files from the repo root (curl commands given in README)",
+   "Set ORIGIN in .env to the URL the app will be hosted on",
+   "Create persistence folders: mkdir -p ./db ./uploads",
+   "Run docker-compose up -d",
+   "On first run, enter admin user details",
+   "Local dev: git clone --recursive, cp .env.template .env, pnpm i, pnpm dev:setup, pnpm dev"
+  ],
+  "stack": [
+   "Node.js",
+   "SvelteKit",
+   "SQLite",
+   "Prisma",
+   "better-sqlite3",
+   "pnpm",
+   "Docker",
+   "recipe-ingredient-parser (submodule)"
+  ],
+  "notable": [
+   "Ingredient parsing is text-string based, so users get scaled, structured ingredients without manual data entry",
+   "Single Docker container with a portable SQLite database",
+   "Automated scheduled and pre-migration SQLite backups",
+   "Optional LLM assist features with support for several providers including Ollama for local models",
+   "Progressive Web App with share-to-scrape from mobile browsers"
+  ],
+  "caveats": [
+   "Several features (LLM assist, OAuth) need extra API keys or identity-provider setup",
+   "Reverse proxies such as nginx may need body size and proxy buffer changes to save recipes with images",
+   "Local dev requires native build tools for better-sqlite3",
+   "Upgrading from older images that wrote root-owned files requires a manual ownership migration"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted recipe manager",
+  "keywords": [
+   "recipe manager",
+   "self-hosted recipes",
+   "recipe management",
+   "recipe scraper",
+   "import recipes from url",
+   "ingredient parser",
+   "unit conversion",
+   "cups to grams",
+   "recipe scaling",
+   "shopping list",
+   "cooking log",
+   "meal planning",
+   "docker",
+   "docker-compose",
+   "sqlite",
+   "sveltekit",
+   "nodejs",
+   "pwa",
+   "progressive web app",
+   "oauth login",
+   "openid connect",
+   "ollama",
+   "llm recipe parsing",
+   "semantic search",
+   "recipe translation",
+   "nutrition parsing",
+   "share recipes with family",
+   "cookbook app",
+   "recipe backup",
+   "gpl-3.0",
+   "paperless kitchen",
+   "recipe keeper alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5522,
+  "output": 1330
+ },
+ "generated": "2026-10-29"
+}

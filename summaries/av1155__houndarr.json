@@ -1,0 +1,94 @@
+{
+ "id": "av1155/houndarr",
+ "repo": "av1155/houndarr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Houndarr - Scheduled backlog searches for Radarr, Sonarr, Lidarr, Readarr and Whisparr. Works through missing and cutoff-unmet items in small rate-limited batches with per-item cooldowns and hourly caps, to avoid overloading indexers. (Source Code) AGPL-3.0 Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Houndarr is a self-hosted Docker service that slowly and politely triggers searches in Radarr, Sonarr, Lidarr, Readarr and Whisparr for missing or cutoff-unmet library items.",
+  "what_it_does": "Houndarr works through the backlog of items your *arr instances report as missing or below quality cutoff, in small configurable batches with sleep intervals between cycles. It applies per-item cooldowns and a per-instance hourly API cap to avoid overloading indexers. A download-queue backpressure gate skips cycles when the queue is full, and optional per-instance time windows limit when searches run. It offers a web UI with a live dashboard, run-now buttons, and a filterable log viewer. Per the README, its only network activity is read-only REST calls and search commands to the configured *arr instances; it states it has no telemetry.",
+  "use_cases": [
+   "search for missing movies, episodes, albums or books automatically",
+   "upgrade items below quality cutoff in Radarr or Sonarr",
+   "avoid indexer bans from Search All Missing",
+   "rate-limited backlog searching for a media library",
+   "schedule missing-media searches during set hours"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml using image ghcr.io/av1155/houndarr:latest with port 8877 and a ./data volume",
+   "Run: docker compose up -d",
+   "Open http://<host>:8877 and create the admin account on the setup screen",
+   "Alternatively use docker run with -p 8877:8877 and -v /path/to/data:/data"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "FastAPI",
+   "HTMX",
+   "Tailwind CSS",
+   "Fernet encryption",
+   "bcrypt"
+  ],
+  "notable": [
+   "Small batches, per-item cooldowns and hourly caps to protect indexer API limits",
+   "Per-instance search order: random or chronological",
+   "Instance API keys encrypted at rest with Fernet and never sent back to the browser",
+   "Runs as a single Docker container, non-root after PUID/PGID remapping",
+   "Helm chart available per the README links"
+  ],
+  "caveats": [
+   "Only works alongside existing Radarr, Sonarr, Lidarr, Readarr or Whisparr instances",
+   "Single admin account only; no multi-user support",
+   "Does not manage download clients, Prowlarr or indexers"
+  ],
+  "license": "AGPL-3.0",
+  "category": "media automation tooling",
+  "keywords": [
+   "houndarr",
+   "radarr",
+   "sonarr",
+   "lidarr",
+   "readarr",
+   "whisparr",
+   "missing media search",
+   "cutoff unmet",
+   "backlog search",
+   "rate limiting",
+   "indexer api limits",
+   "arr stack",
+   "self-hosted",
+   "docker",
+   "python",
+   "fastapi",
+   "htmx",
+   "fernet encryption",
+   "search all missing alternative",
+   "upgrade quality cutoff",
+   "scheduled searches",
+   "hourly api cap",
+   "per-item cooldown",
+   "media library automation",
+   "find missing movies",
+   "search missing episodes",
+   "polite indexer searching",
+   "agpl license",
+   "homelab media server",
+   "helm chart",
+   "web dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3538,
+  "output": 1177
+ },
+ "generated": "2026-10-29"
+}

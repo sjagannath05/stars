@@ -1,0 +1,99 @@
+{
+ "id": "qwenlm/qwen3-omni",
+ "repo": "QwenLM/Qwen3-Omni",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Qwen",
+   "entry": "Qwen3-Omni – Unified multimodal family"
+  }
+ ],
+ "summary": {
+  "one_liner": "Qwen3-Omni is Alibaba Qwen's family of natively end-to-end multimodal models that take text, image, audio, and video input and return streaming text and speech output.",
+  "what_it_does": "The README describes three 30B-A3B MoE checkpoints: Instruct (thinker plus talker, audio and text out), Thinking (thinker only, text out, chain-of-thought), and Captioner (fine-tuned from Instruct for detailed, low-hallucination audio captions). It supports speech recognition, translation, music and sound analysis, OCR, grounding, video description, and audio-visual dialogue. Speech input covers 19 languages and speech output covers 10, with text in 119 languages. Inference is shown via Hugging Face Transformers with qwen-omni-utils, vLLM (plus vLLM-Omni and vLLM serve), and the DashScope API. The repo also includes a local Gradio web UI and a Docker image, and it reports benchmark results against GPT-4o, Gemini 2.5 Pro, and Qwen variants. Voice choices for output audio are Ethan, Chelsie, and Aiden.",
+  "use_cases": [
+   "Multimodal chat over images, audio, and video",
+   "Speech recognition and speech translation",
+   "Captioning or analyzing music and sound effects",
+   "OCR and image question answering",
+   "Real-time voice assistant with spoken replies",
+   "Audio-driven function calling for agents",
+   "Serving a multimodal model with vLLM"
+  ],
+  "how_to_run": [
+   "pip install \"transformers>=5.2.0\" accelerate",
+   "pip install qwen-omni-utils -U",
+   "pip install -U flash-attn --no-build-isolation",
+   "pip install vllm",
+   "vllm serve Qwen/Qwen3-Omni-30B-A3B-Instruct --port 8901 --host 127.0.0.1 --dtype bfloat16 --max-model-len 32768 --allowed-local-media-path / -tp 1",
+   "python web_demo.py -c Qwen/Qwen3-Omni-30B-A3B-Instruct"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Hugging Face Transformers",
+   "vLLM",
+   "vLLM-Omni",
+   "qwen-omni-utils",
+   "FlashAttention 2",
+   "Gradio",
+   "Docker",
+   "ffmpeg",
+   "DashScope API"
+  ],
+  "notable": [
+   "Thinker-Talker MoE design with AuT pretraining and a multi-codebook approach aimed at low latency",
+   "Separate Instruct, Thinking, and Captioner checkpoints for different needs",
+   "Option to disable the talker to save about 10GB of GPU memory when audio output is not needed",
+   "Use-audio-in-video flag that treats a video's soundtrack as part of the input",
+   "Official Docker image with Transformers and vLLM environments pre-installed"
+  ],
+  "caveats": [
+   "The README says Transformers inference on MoE models can be very slow; vLLM or the DashScope API are recommended for scale or low latency",
+   "Transformers 5.2.0 or later is recommended, and FlashAttention 2 needs compatible hardware",
+   "Minimum GPU memory for BF16 ranges from about 69 GB for a 15s video to about 145 GB for a 120s video; the README's numbers are theoretical minimums",
+   "The README was truncated, so the full evaluation tables and some sections were not visible"
+  ],
+  "license": "unknown",
+  "category": "multimodal ai models",
+  "keywords": [
+   "qwen3-omni",
+   "multimodal model",
+   "omni-modal",
+   "audio video text model",
+   "speech to speech",
+   "real-time voice assistant",
+   "speech recognition",
+   "audio captioning",
+   "video understanding",
+   "vision language model",
+   "vllm inference",
+   "hugging face transformers",
+   "moe model",
+   "thinker talker",
+   "speech translation",
+   "ocr",
+   "docker deployment",
+   "local web ui",
+   "qwen omni utils",
+   "voice chatbot",
+   "transcribe audio",
+   "describe video content",
+   "analyze music",
+   "multilingual speech model",
+   "open source multimodal llm",
+   "run model locally",
+   "image question answering"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 19576,
+  "output": 1455
+ },
+ "generated": "2026-10-29"
+}

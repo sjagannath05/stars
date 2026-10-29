@@ -1,0 +1,95 @@
+{
+ "id": "henriquesebastiao/downtify",
+ "repo": "henriquesebastiao/downtify",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Downtify ⚠ - Download Spotify music with album art and metadata. (Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Downtify is a self-hosted web app that downloads Spotify, YouTube Music and Deezer links as tagged audio files and plays them back from a shared library.",
+  "what_it_does": "It resolves Spotify track, album, playlist and artist links from public embed pages without the Spotify API, matches them to YouTube Music results by duration, then uses yt-dlp, ffmpeg and mutagen to download, convert (MP3, FLAC, M4A, OGG or OPUS) and embed title, artist, album, year and cover art. It supports free-text search, CSV imports from Soundiiz, TuneMyMusic and Exportify, and Playlist Monitor for scheduled downloads of new playlist tracks and artist releases. A built-in web player offers synced lyrics, and user accounts share one library with per-account likes and playlists. Output is written as M3U playlists and organized folders for media servers such as Jellyfin, Navidrome and Plex. Optional features include Soulseek via slskd, podcasts, a trash for deleted songs, and a library-only mode.",
+  "use_cases": [
+   "Download Spotify playlists as tagged MP3 or FLAC files",
+   "Self-host a music library with a built-in player",
+   "Keep a family or household music library in sync",
+   "Watch artists and playlists for new releases automatically",
+   "Import playlists from Soundiiz, TuneMyMusic or Exportify",
+   "Subscribe to podcasts by RSS feed"
+  ],
+  "how_to_run": [
+   "docker run -d -p 8000:8000 --name downtify -v /path/to/downloads:/downloads -v downtify_data:/data ghcr.io/henriquesebastiao/downtify",
+   "Open http://localhost:8000 and sign in as admin / downtify",
+   "Change the admin password in Settings → General (or set DOWNTIFY_DISABLE_AUTH=true on a private server)",
+   "Paste a Spotify, YouTube Music, Deezer link or search text and start the download"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "yt-dlp",
+   "ffmpeg",
+   "mutagen",
+   "ytmusicapi",
+   "Vite (frontend)"
+  ],
+  "notable": [
+   "No Spotify API keys, account or Premium subscription needed; metadata comes from public embed pages",
+   "Built-in web player with synced lyrics, equalizer and sleep timer",
+   "Playlist Monitor schedules downloads of new tracks and artist releases",
+   "Shared library with per-user accounts, likes and admin content hiding",
+   "Optional Soulseek (slskd) and Navidrome integration, plus M3U playlist export"
+  ],
+  "caveats": [
+   "YouTube often rate-limits downloads; a cookies.txt file is often needed to avoid failures",
+   "The Android app is still in development and no version has been published",
+   "Users are responsible for legal consequences; the README says unauthorized downloading of copyrighted material is not supported"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted music downloader",
+  "keywords": [
+   "spotify downloader",
+   "music downloader",
+   "self-hosted music",
+   "tagged audio files",
+   "download spotify playlists",
+   "youtube music downloader",
+   "yt-dlp",
+   "ffmpeg",
+   "mutagen",
+   "ytmusicapi",
+   "music library",
+   "media server",
+   "navidrome",
+   "jellyfin",
+   "plex",
+   "m3u playlist",
+   "flac mp3 download",
+   "cover art tags",
+   "soulseek",
+   "slskd",
+   "deezer downloader",
+   "podcast downloader",
+   "playlist monitor",
+   "web music player",
+   "docker music app",
+   "share music with family",
+   "download album art metadata",
+   "self-hosted spotify alternative",
+   "offline music library",
+   "playlist sync",
+   "lyrics downloader"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7319,
+  "output": 1327
+ },
+ "generated": "2026-10-29"
+}

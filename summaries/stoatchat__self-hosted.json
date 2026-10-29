@@ -1,0 +1,102 @@
+{
+ "id": "stoatchat/self-hosted",
+ "repo": "stoatchat/self-hosted",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Stoat - Stoat is a user-first chat platform built with modern web technologies. (Source Code) AGPL-3.0/MIT Rust"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Communication",
+   "entry": "Stoat (formerly Revolt) | Chat platform for communities, a Discord alternative"
+  }
+ ],
+ "summary": {
+  "one_liner": "Docker Compose configuration and guide for self-hosting a full Stoat (formerly Revolt) chat instance, including back-end, web front-end, file server, and metadata/image proxy.",
+  "what_it_does": "This repository provides configuration files and step-by-step instructions for deploying a complete Stoat chat instance using Docker. The deployment covers the back-end, web front-end, file server, and metadata and image proxy. A generate_config.sh script creates secrets in secrets.env and a Revolt.toml configuration file, which can be edited by hand. The stack is started with docker compose, and updates are applied by pulling the repo, regenerating config, and pulling new images. The README also includes optional tweaks such as placing Stoat behind another reverse proxy, pinning MongoDB 4.4 or using valkey instead of KeyDB, and exposing the database port. It also lists migration notices and security advisory versions for the backend and web client.",
+  "use_cases": [
+   "host my own Discord-style chat server",
+   "run a private community chat on my own VPS",
+   "deploy Stoat with Docker Compose",
+   "self-host a chat platform with voice and video",
+   "set up a Revolt-compatible chat instance"
+  ],
+  "how_to_run": [
+   "Point your domain's A/AAAA records (or CNAME) at the server",
+   "Install git and Docker (docker-ce with docker-compose-plugin) on Ubuntu Server",
+   "git clone the stoat repository and cd into it",
+   "chmod +x ./generate_config.sh && ./generate_config.sh your.domain",
+   "docker compose up (or docker compose up -d to run detached)"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Caddy",
+   "MongoDB",
+   "KeyDB (or Redis/Valkey)",
+   "MinIO",
+   "LiveKit",
+   "RabbitMQ",
+   "Rust (backend)"
+  ],
+  "notable": [
+   "Single script (generate_config.sh) generates secrets and configuration for the whole stack",
+   "Bundles back-end, web front-end, file server and metadata/image proxy in one deployment",
+   "Documented compatibility swaps for older CPUs (MongoDB 4.4) and ARM systems (valkey)",
+   "Caddy reverse proxy with an option to sit behind another reverse proxy on port 8880",
+   "Detailed upgrade notices for breaking changes dated 2022 through 2026"
+  ],
+  "caveats": [
+   "Most official clients do not support self-hosted instances; the web client and PWA are the best-supported options",
+   "Video streaming above the configured Revolt.toml size limit kicks users (documented incomplete implementation)",
+   "Ports 7881/tcp and 50000-50100/udp must be open to the internet for LiveKit voice/video; Docker bypasses ufw rules",
+   "Losing secrets.env can make all files on the instance inaccessible; upgrades from before Feb 2026 require manual secret migration"
+  ],
+  "license": "AGPL-3.0/MIT",
+  "category": "self-hosted chat platform",
+  "keywords": [
+   "stoat",
+   "revolt",
+   "self-hosted chat",
+   "discord alternative",
+   "docker compose",
+   "docker chat server",
+   "community chat",
+   "group chat server",
+   "self-hosted messaging",
+   "private chat server",
+   "run my own chat",
+   "host a chat for my community",
+   "caddy reverse proxy",
+   "mongodb",
+   "keydb",
+   "redis",
+   "valkey",
+   "minio",
+   "livekit",
+   "voice and video chat",
+   "rabbitmq",
+   "file server",
+   "image proxy",
+   "generate_config.sh",
+   "revolt.toml",
+   "ubuntu vps deployment",
+   "rust chat backend",
+   "webpush notifications",
+   "ssh vps setup",
+   "hostinger"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6071,
+  "output": 1363
+ },
+ "generated": "2026-10-29"
+}

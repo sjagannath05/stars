@@ -1,0 +1,102 @@
+{
+ "id": "databricks-solutions/consort",
+ "repo": "databricks-solutions/consort",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Consort by Kevin Hartman - Spec-first, test-driven agent framework: runs the build loop against live Lakebase Postgres branches under a deterministic orchestrator, with human-approval gates."
+  }
+ ],
+ "summary": {
+  "one_liner": "Consort is a spec-first, test-driven agent framework that builds Postgres-backed application backends on Databricks Lakebase, with a deterministic state-machine orchestrator and human-approval gates.",
+  "what_it_does": "Consort runs a design-then-build loop (/plan -> /design -> /build -> /deploy) in which role agents (spec author, architect, DBA, test strategist, UX designer, and a navigator/driver pair) each handle one part while a deterministic conductor routes between phases. The design phase produces a specification and ordered test list that is frozen at a hashed gate. The build phase writes a failing test, makes it pass against a copy-on-write Lakebase database branch, then refactors, with each git branch paired to its own Lakebase branch. Deploy and promote steps are driven by the orchestrator, which handles deployment verification, PR, CI, merge, and parent-tier migration, with the human approving gates. It is distributed as a Claude Code plugin and an install.sh script for other coding agents, and includes an MCP server and an OpenAI Foundry tool spec. Consort is aimed at transactional app backends, not Delta Lakehouse, ETL, analytics, or BI.",
+  "use_cases": [
+   "building transactional app backends on Postgres",
+   "spec-first development with agents",
+   "test-driven AI-generated code",
+   "gated agent workflows with human approval",
+   "running agent-driven builds against Lakebase database branches",
+   "scaffolding Lakebase-paired projects"
+  ],
+  "how_to_run": [
+   "bash <install script from README> (one command: doctor, Claude Code plugin, toolkit; requires a Lakebase-enabled Databricks workspace)",
+   "Run /consort:start in Claude Code to begin a project",
+   "lakebase-create-project to bootstrap a new Lakebase-paired project",
+   "lakebase-adopt-consort to add Consort to an existing Lakebase-paired project",
+   "bash install.sh --tools <agent> for non-Claude-Code coding agents",
+   "Run consort-drive to start the orchestrator loop"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 20+",
+   "npm",
+   "Python 3.10+",
+   "Databricks CLI v1.0.0+",
+   "Databricks Lakebase (Postgres-compatible)",
+   "GitHub CLI (gh)",
+   "JDK 17+ (Flyway live path)",
+   "Alembic",
+   "Vitest",
+   "MCP server",
+   "Claude Code plugin"
+  ],
+  "notable": [
+   "Deterministic state machine routes phases, so the agent cannot skip or reorder steps",
+   "Each git branch is paired with its own Lakebase branch for isolated, schema-synced databases",
+   "Hashed spec gate freezes the target and test list before building starts",
+   "Repair loop is bounded and never modifies the tests",
+   "Ships as a Claude Code plugin plus an MCP server and an OpenAI Foundry tool spec"
+  ],
+  "caveats": [
+   "Requires a Lakebase-enabled Databricks workspace; no mock mode, so live database access is needed for every test run",
+   "Requires several tools: Node.js 20+, Databricks CLI, Python 3.10+, GitHub CLI, and JDK 17+ for the Flyway path",
+   "Databricks does not provide official support; help is best-effort via GitHub issues"
+  ],
+  "license": "See LICENSE.md",
+  "category": "agent orchestration framework",
+  "keywords": [
+   "spec-first development",
+   "test-driven development",
+   "ai coding agents",
+   "agent orchestration",
+   "deterministic state machine",
+   "human approval gates",
+   "databricks lakebase",
+   "lakebase postgres",
+   "postgres database branching",
+   "copy-on-write database branch",
+   "transactional app backend",
+   "claude code plugin",
+   "claude code agents",
+   "mcp server",
+   "role-based agents",
+   "spec author agent",
+   "test strategist",
+   "dba agent",
+   "navigator driver pair",
+   "schema migrations",
+   "flyway",
+   "alembic",
+   "automated code generation with tests",
+   "gated release workflow",
+   "build a backend api with ai",
+   "scaffold a postgres project",
+   "multi-agent software development",
+   "ai pair programming",
+   "keep ai code correct",
+   "agent workflow orchestrator",
+   "vitest bdd tests"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5572,
+  "output": 1480
+ },
+ "generated": "2026-10-29"
+}

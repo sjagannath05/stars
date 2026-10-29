@@ -1,0 +1,98 @@
+{
+ "id": "farfalleflickan/cmyflix",
+ "repo": "farfalleflickan/cmyflix",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Multimedia Streaming",
+   "entry": "cmyflix - Minimalist Plex/Jellyfin alternative to stream video. AGPL-3.0 C/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "cmyflix is a lightweight, C-based \"DIY Netflix\" that builds JSON databases of local video files and generates static web pages to stream them from any web server.",
+  "category": "self-hosted media streaming",
+  "keywords": [
+   "cmyflix",
+   "netflix clone",
+   "self-hosted streaming",
+   "video streaming server",
+   "media server",
+   "plex alternative",
+   "jellyfin alternative",
+   "emby alternative",
+   "streama alternative",
+   "raspberry pi media server",
+   "odroid",
+   "nas media streaming",
+   "html5 video",
+   "static web pages",
+   "json database",
+   "tmdb metadata",
+   "movie metadata",
+   "tv show organizer",
+   "stream movies at home",
+   "stream tv shows on my nas",
+   "personal netflix",
+   "lightweight media server",
+   "c language",
+   "libcurl",
+   "cjson",
+   "imagemagick",
+   "ffmpeg",
+   "mp4 mkv webm ogv",
+   "deb package",
+   "agpl-3.0"
+  ],
+  "what_it_does": "The program scans a folder of video files and writes JSON databases that store each file's location and metadata. Those databases are then used to generate static HTML pages for TV shows and movies, which can be served by any ordinary web server. The README says it searches for mp4, mkv, ogv and webm files, which are played through HTML5 video. Metadata lookup uses a TMDB API key, and ImageMagick and ffmpeg are listed as requirements. Configuration is read from cmyflix.cfg, looked up next to the binary, in $HOME/.config/cmyflix/, or in /etc/cmyflix/, and a --help menu is available. The project describes itself as a rewrite of an earlier version in C that it says is about 30x faster while keeping almost all functionality. It is intentionally minimal and not designed to be feature-heavy.",
+  "use_cases": [
+   "stream my personal video collection on a NAS",
+   "run a simple media library on a Raspberry Pi",
+   "generate static TV show and movie pages from local files",
+   "serve a home Netflix-style interface from any web server",
+   "organize TV show seasons and movie folders with TMDB metadata"
+  ],
+  "how_to_run": [
+   "Install the build libraries (Ubuntu): libbsd-dev libcjson-dev libcurl4-openssl-dev",
+   "Compile by running: make",
+   "Install from source with: make install",
+   "Or install the pre-compiled .deb package from the release tab",
+   "Create cmyflix.cfg (in the binary folder, $HOME/.config/cmyflix/, or /etc/cmyflix/) and add a TMDB API key",
+   "Run cmyflix --help to see options"
+  ],
+  "stack": [
+   "C",
+   "libcjson (>=1.7.15)",
+   "libcurl (>=7.68)",
+   "libbsd",
+   "ImageMagick",
+   "ffmpeg",
+   "TMDB API",
+   "HTML5 video"
+  ],
+  "notable": [
+   "Generates static HTML pages from JSON databases, so it can run behind any web server without a dynamic backend",
+   "Rewritten in C; the author says it is about 30x faster than the original version",
+   "Deliberately minimal, aimed at low-power boards like Raspberry Pi and Odroid",
+   "Expects a strict folder layout: one folder per show with season sub-folders, and one folder per movie",
+   "Pre-built .deb package available alongside source builds"
+  ],
+  "caveats": [
+   "Only mp4, mkv, ogv and webm files are detected, due to HTML5 format support",
+   "Requires a TMDB API key and external tools (ImageMagick, ffmpeg)",
+   "Expects media in a specific folder structure; the README calls it 'a bit picky'",
+   "Explicitly not designed to be feature-rich; the author points users to other solutions for more functionality",
+   "The README does not mention built-in authentication; it points to an external option for password protection (link not shown in the text)"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2448,
+  "output": 1412
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "rcourtman/presspeech",
+ "repo": "rcourtman/presspeech",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Voice-to-Text",
+   "entry": "Presspeech - Native push-to-talk local dictation app for Apple Silicon Macs using Parakeet TDT v3 (CoreML/ANE). [![Open-Source Software][OSS Icon] ![Freeware][Freeware Icon]](https://github.com/rcourtman/presspeech)"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Presspeech - Push-to-talk dictation for Apple Silicon Macs. Hold a key, speak, release — the transcript pastes at the cursor in about 100 ms, fully on-device."
+  }
+ ],
+ "summary": {
+  "one_liner": "Presspeech is a free, open-source, push-to-talk dictation app for Apple Silicon Macs that transcribes speech on-device with NVIDIA's Parakeet TDT v3 model and pastes the text at the cursor, with a Windows preview.",
+  "what_it_does": "Presspeech is a native macOS menu-bar app: you hold a hotkey (Right Option by default), speak, and release, and the transcript is pasted where your cursor was. Speech recognition runs locally on the Apple Neural Engine via FluidAudio, using the multilingual Parakeet TDT v3 model, and the README reports about 90–150 ms warm inference. Audio is kept in memory and discarded after transcription, and the README says there is no cloud transcription path. It supports hold-to-talk or press-to-toggle, configurable hotkeys, local correction rules and text shortcuts, spoken formatting, and filler-word removal. If focus has moved away from the starting window, or the destination cannot be verified, it skips automatic paste and leaves the text on the clipboard for manual paste. A Windows build is described as a preview (prerelease, unsigned x64 installer).",
+  "use_cases": [
+   "Dictate text into any app on a Mac by holding a key",
+   "Private offline voice typing without a cloud account",
+   "Replace a paid dictation subscription with a free local tool",
+   "Quick speech-to-text for emails, notes and chat drafts",
+   "Preview Windows push-to-talk dictation (prerelease)"
+  ],
+  "how_to_run": [
+   "brew install --cask rcourtman/presspeech/presspeech",
+   "Alternatively, download the version-pinned notarised zip from GitHub Releases and move Presspeech.app to Applications",
+   "Open Presspeech and use Setup Checklist to download the ~500–600 MB speech model and grant Microphone, Accessibility and Input Monitoring permissions",
+   "For development: git clone the repo, cd presspeech/swift, then ./dev-run.sh",
+   "Run self-tests with: swift run Presspeech --self-test all"
+  ],
+  "stack": [
+   "Swift",
+   "FluidAudio",
+   "NVIDIA Parakeet TDT v3",
+   "CoreML / Apple Neural Engine",
+   "Windows build in windows/ directory",
+   "Homebrew Cask"
+  ],
+  "notable": [
+   "Runs the Parakeet TDT v3 speech model fully on-device on the Apple Neural Engine",
+   "Pastes at the cursor and falls back to clipboard when the original destination cannot be verified",
+   "No account or subscription; MIT-licensed source",
+   "Small footprint: README cites a 9.2 MB release zip, about 80 MB RAM, and 0% CPU between dictations",
+   "Documents every network call and includes a first-run guide that explains the model download before launch"
+  ],
+  "caveats": [
+   "macOS only for the released build: Apple Silicon with macOS 14 or later; Windows build is an unsigned prerelease",
+   "First run downloads a ~500–600 MB speech model from Hugging Face, and some releases may send Hugging Face telemetry or tokens on Windows 0.1.12 (per README guidance)",
+   "Automatic paste may fail to detect a move to another field or browser tab within the same window; README advises keeping the starting field selected",
+   "Supports 25 European languages, far fewer than some commercial alternatives"
+  ],
+  "license": "MIT",
+  "category": "macos dictation app",
+  "keywords": [
+   "speech to text",
+   "voice typing",
+   "push to talk",
+   "dictation",
+   "on-device transcription",
+   "offline speech recognition",
+   "private dictation",
+   "macos dictation",
+   "apple silicon",
+   "neural engine",
+   "coreml",
+   "parakeet",
+   "parakeet tdt",
+   "fluidaudio",
+   "whisper alternative",
+   "superwhisper alternative",
+   "wispr flow alternative",
+   "voiceink alternative",
+   "apple dictation alternative",
+   "menu bar app",
+   "hold key to talk",
+   "dictate into any app",
+   "share voice notes as text",
+   "free transcription app",
+   "no subscription dictation",
+   "windows dictation preview",
+   "homebrew cask",
+   "speech recognition mac",
+   "text at cursor",
+   "transcribe my voice"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4837,
+  "output": 1523
+ },
+ "generated": "2026-10-29"
+}

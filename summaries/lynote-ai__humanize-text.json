@@ -1,0 +1,98 @@
+{
+ "id": "lynote-ai/humanize-text",
+ "repo": "lynote-ai/humanize-text",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🆕 Additional AI and Productivity Tools",
+   "entry": "Lynote AI Humanize Text - Open-source AI text humanization toolkit for rewriting AI drafts into natural, human-like writing. Full free web version: https://lynote.ai/ai-humanizer"
+  }
+ ],
+ "summary": {
+  "one_liner": "Open-source Python toolkit that rewrites AI-generated drafts into more natural, human-sounding prose by chaining LLM rewrites with machine-translation hops, and logs every intermediate step.",
+  "category": "ai text humanizer",
+  "keywords": [
+   "ai text humanizer",
+   "humanize ai text",
+   "ai humanizer",
+   "rewrite ai drafts",
+   "make ai writing sound human",
+   "text rewriting",
+   "paraphrasing",
+   "llm rewrite",
+   "machine translation chain",
+   "back-translation",
+   "pipeline trace",
+   "python cli",
+   "docker rest api",
+   "n8n workflow",
+   "deepseek",
+   "openrouter",
+   "litellm",
+   "openai-compatible api",
+   "niutrans",
+   "google translate",
+   "ai detector evasion",
+   "writing assistant",
+   "readability",
+   "style rewriting",
+   "self-hosted text rewriter",
+   "humanizer alternative",
+   "reduce ai detection score",
+   "clean up chatgpt output",
+   "open source humanizer"
+  ],
+  "what_it_does": "The standard pipeline sends input text through four steps: two LLM rewrites (Input to Chinese, then Chinese to Japanese, at temperature 1.3) followed by two machine-translation hops (Japanese to Finnish via Google Translate, then Finnish to English via Niutrans). The CLI accepts a text string or a .txt path, with --verbose to watch steps and --json to output the full trace. The README also describes advanced and focus tiers that add multi-round LLM rewriting and a detection-guided feedback loop, though those are described only at a high level. LLM calls use any OpenAI-compatible endpoint, with examples for DeepSeek, OpenRouter, Atlas Cloud and OrcaRouter. The repo also includes a n8n workflow, a Docker setup for a REST endpoint, a research training-data pipeline for a structure-first rewrite model (code and demo data only, no weights), and five showcase examples. A separate hosted service at lynote.ai and its paid Humanizer API are mentioned.",
+  "use_cases": [
+   "Making an AI-generated draft read more naturally",
+   "Rewriting ChatGPT output before publishing a blog post",
+   "Batch-processing text through a self-hosted REST endpoint",
+   "Automating text rewriting in an n8n workflow",
+   "Studying how multi-step translation chains alter text",
+   "Trying a no-code humanizer without managing API keys"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd humanize-text",
+   "pip install -r requirements.txt",
+   "cp config/config.example.toml config/config.toml  # add your LLM and Niutrans API keys",
+   "python -m src.standard.pipeline --input \"Your AI-generated text here\"",
+   "docker compose up -d  # REST endpoint; see docs/installation.md"
+  ],
+  "stack": [
+   "Python",
+   "OpenAI-compatible LLM APIs (DeepSeek default, OpenRouter, Atlas Cloud, OrcaRouter, LiteLLM)",
+   "Google Translate",
+   "Niutrans translation API",
+   "FastAPI",
+   "Docker",
+   "n8n",
+   "TOML configuration"
+  ],
+  "notable": [
+   "Every pipeline step is visible code and can be traced with --json output",
+   "Chains translations across distant languages (Chinese, Japanese, Finnish, English) using two different MT engines",
+   "Includes an n8n no-code workflow and a Docker REST option besides the Python CLI",
+   "Ships a research structure-first SFT and KTO training-data pipeline with 50 demo records per stage",
+   "Reports a detector verdict on five showcase samples, with explicit caveats that results are not guaranteed"
+  ],
+  "caveats": [
+   "Requires your own LLM API key and a Niutrans key; the default setup is not zero-config",
+   "Detection outcomes are probabilistic and the project guarantees no particular classification",
+   "Translation hops can cause technical terms and citations to drift, so output needs review where exact wording matters",
+   "Model weights and full training datasets are not included; the training pipeline is research-only",
+   "Quality metrics and the 'Overall 9.1' score come from the author's own expert evaluation and are not independently verified"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5821,
+  "output": 1531
+ },
+ "generated": "2026-10-29"
+}

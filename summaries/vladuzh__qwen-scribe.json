@@ -1,0 +1,95 @@
+{
+ "id": "vladuzh/qwen-scribe",
+ "repo": "VladUZH/qwen-scribe",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Qwen Scribe - Private, local transcription and system-wide dictation for Apple Silicon, powered by Qwen3-ASR on MLX."
+  }
+ ],
+ "summary": {
+  "one_liner": "Qwen Scribe is a privacy-focused macOS app for Apple Silicon that transcribes audio and video locally with Qwen3-ASR on MLX, and offers system-wide push-to-talk dictation.",
+  "what_it_does": "Transcribes audio and video files through a local web interface with drag-and-drop, using Qwen3-ASR 1.7B or 0.6B models running on the Mac's Metal GPU via mlx-qwen3-asr. It supports automatic or forced language selection, vocabulary hints, word timestamps, and SRT export, and keeps a searchable local transcript history. A push-to-talk dictation helper records while a chosen modifier key is held, transcribes locally, and pastes the text at the cursor, with a menu-bar status item and a HUD. Files are queued one at a time, with cancel and retry. No account, API key, or cloud service is involved, and transcripts are stored as unencrypted JSON on the Mac.",
+  "use_cases": [
+   "Transcribe meeting or interview recordings privately on a Mac",
+   "Generate SRT subtitles from video files offline",
+   "Dictate text into any app with a push-to-talk key",
+   "Batch-transcribe voice memos and audio files",
+   "Search and export a local history of transcripts"
+  ],
+  "how_to_run": [
+   "make app",
+   "open \"dist/Qwen Scribe.app\"",
+   "./run.sh (terminal alternative, requires Python 3.12+)"
+  ],
+  "stack": [
+   "Python",
+   "FastAPI",
+   "MLX",
+   "Qwen3-ASR",
+   "mlx-qwen3-asr",
+   "Objective-C (native macOS dictation helper)",
+   "AVFoundation",
+   "ffmpeg (optional, for some formats)"
+  ],
+  "notable": [
+   "Fully local: no account, API key, or cloud service; audio and transcripts stay on the Mac",
+   "System-wide push-to-talk dictation with a native macOS helper that restores the previous clipboard after pasting",
+   "Ships its own Python interpreter in the Mac app, so no Python install is needed to run it",
+   "Quantized 8-bit and 4-bit model variants can be prepared on the Mac from upstream weights",
+   "Localhost-only API with Host and browser-origin checks"
+  ],
+  "caveats": [
+   "Requires an Apple Silicon Mac running macOS 14 or newer",
+   "Project is a beta (v0.3.0-beta.1); ad-hoc builds need manual approval in System Settings on first launch, and public Developer ID notarized binaries are not yet available",
+   "Requires Microphone, Input Monitoring, and Accessibility permissions for dictation; file transcription works without them",
+   "Files are capped at 4 GB, and ffmpeg is needed for AVI, Matroska, WebM, Ogg, Opus and WMA"
+  ],
+  "license": "Apache-2.0",
+  "category": "local speech transcription",
+  "keywords": [
+   "speech to text",
+   "transcription",
+   "qwen3-asr",
+   "mlx",
+   "apple silicon",
+   "macos app",
+   "offline transcription",
+   "private transcription",
+   "local transcription",
+   "dictation",
+   "push to talk",
+   "voice typing",
+   "speech recognition",
+   "whisper alternative",
+   "subtitles",
+   "srt export",
+   "word timestamps",
+   "video transcription",
+   "audio transcription",
+   "transcribe voice memos",
+   "transcribe meeting recordings",
+   "dictate into any app",
+   "menu bar app",
+   "metal gpu",
+   "fastapi",
+   "objective-c",
+   "quantized model",
+   "transcript history",
+   "apache-2.0",
+   "no cloud",
+   "keep audio on device"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6493,
+  "output": 1318
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "openai/whisper",
+ "repo": "openai/whisper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "openai-whisper - A general-purpose automatic speech recognition model trained on 680k hours of multilingual and multitask supervised data."
+  }
+ ],
+ "summary": {
+  "one_liner": "Whisper is OpenAI's general-purpose speech recognition model and Python package, covering multilingual transcription, speech translation, and language identification.",
+  "what_it_does": "Provides a Transformer sequence-to-sequence speech model in several sizes (tiny through large, plus turbo) with English-only and multilingual variants. It can transcribe audio in many languages, translate non-English speech into English, and detect the spoken language. A command-line tool (`whisper`) and a Python API (`load_model`, `transcribe`, `detect_language`, `decode`) are included. Audio is processed with a sliding 30-second window. The README notes that the turbo model is optimized for transcription but not trained for translation, so the medium or large models are recommended for translation.",
+  "use_cases": [
+   "transcribe audio files to text",
+   "translate non-English speech into English",
+   "identify the language spoken in a recording",
+   "generate subtitles or transcripts from video or audio",
+   "run speech recognition locally in Python",
+   "choose a speech model by speed versus accuracy"
+  ],
+  "how_to_run": [
+   "pip install -U openai-whisper",
+   "sudo apt update && sudo apt install ffmpeg",
+   "whisper audio.flac audio.mp3 audio.wav --model turbo",
+   "whisper japanese.wav --model medium --language Japanese --task translate",
+   "import whisper; model = whisper.load_model(\"turbo\"); result = model.transcribe(\"audio.mp3\")"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "tiktoken",
+   "ffmpeg",
+   "Rust (only if tiktoken needs building)"
+  ],
+  "notable": [
+   "Single multitask model that replaces several stages of a traditional speech pipeline, including voice activity detection",
+   "Six model sizes with English-only (.en) and multilingual variants, with listed VRAM and relative speed",
+   "turbo model is an optimized version of large-v3 with faster transcription",
+   "Trained on 680k hours of multilingual data according to the awesome-python listing"
+  ],
+  "caveats": [
+   "Requires the ffmpeg command-line tool installed separately",
+   "The turbo model does not perform translation; use medium or large for translation",
+   "Performance varies widely by language; speed figures are only approximate and measured on an A100"
+  ],
+  "license": "MIT License",
+  "category": "speech recognition models",
+  "keywords": [
+   "speech recognition",
+   "automatic speech recognition",
+   "asr",
+   "speech to text",
+   "transcription",
+   "audio transcription",
+   "transcribe audio",
+   "speech translation",
+   "language identification",
+   "whisper",
+   "openai whisper",
+   "speech-to-text model",
+   "subtitles from video",
+   "multilingual transcription",
+   "voice to text",
+   "pytorch speech model",
+   "transformer seq2seq",
+   "tiktoken",
+   "ffmpeg",
+   "turbo model",
+   "large-v3",
+   "whisper.cpp alternative",
+   "offline transcription",
+   "transcribe meeting recordings",
+   "convert audio to text",
+   "english-only speech model",
+   "speech recognition python library",
+   "captions generator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3825,
+  "output": 1139
+ },
+ "generated": "2026-10-29"
+}

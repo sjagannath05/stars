@@ -1,0 +1,98 @@
+{
+ "id": "fosowl/agenticseek",
+ "repo": "Fosowl/agenticSeek",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "General-Purpose Agent Frameworks",
+   "entry": "AgenticSeek — Fully local, privacy-first Manus alternative. Voice-enabled, autonomous web browsing, code writing & execution, and smart agent routing. No API costs — runs entirely on your own hardware. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "AgenticSeek is a self-hosted, voice-enabled AI assistant that browses the web, writes and runs code, and routes tasks to specialized agents, all on the user's own hardware as a local alternative to Manus AI.",
+  "what_it_does": "The README describes an assistant that can search and read the web, fill web forms (marked experimental), and extract information without manual steps. It can write, debug, and run programs in Python, C, Go, Java and other languages, and it can split larger requests into steps handled by multiple agents. A routing system picks an agent for each query, though the README warns routing is an early prototype and may pick the wrong one. It works with local LLM providers (Ollama, LM Studio, or an OpenAI-compatible server such as llama.cpp) and optionally with cloud APIs such as OpenAI, Google, DeepSeek, Hugging Face, TogetherAI, OpenRouter, TrustedRouter and MiniMax. Services like SearXNG and Redis run via Docker Compose, with a web interface on localhost:3000 or a CLI mode run on the host. Speech-to-text is CLI-only and English-only, and is marked in progress.",
+  "use_cases": [
+   "run a private local AI assistant without cloud APIs",
+   "automate web searches and save results to files",
+   "write and execute Python or Go scripts from a prompt",
+   "browse websites and fill web forms hands-free",
+   "plan and split multi-step tasks across agents",
+   "use a home GPU or remote server as the LLM backend"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd agenticSeek",
+   "mv .env.example .env, then set WORK_DIR and SEARXNG_BASE_URL for your run mode",
+   "Edit config.ini: set is_local, provider_name, provider_model (e.g. ollama with deepseek-r1:14b)",
+   "Start the local LLM provider, e.g. ollama serve",
+   "./start_services.sh full (MacOS) or start_services.cmd full (Windows), then open localhost:3000",
+   "CLI mode: ./install.sh, then ./start_services.sh and uv run cli.py"
+  ],
+  "stack": [
+   "Python 3.10",
+   "Docker",
+   "Docker Compose",
+   "Ollama",
+   "LM Studio",
+   "SearXNG",
+   "Redis",
+   "uv",
+   "Selenium / undetected_chromedriver",
+   "ChromeDriver"
+  ],
+  "notable": [
+   "Runs fully local with Ollama, LM Studio, or any OpenAI-compatible server; API keys are optional",
+   "Docker sandboxing: agent code runs as an unprivileged user with API keys removed from its environment",
+   "Optional import of your own browser's logins into the agent browser, with explicit security warnings",
+   "Token-protected backend API, limited to localhost unless extra hosts are allowed",
+   "Remote LLM setup over the network without server-side AgenticSeek code"
+  ],
+  "caveats": [
+   "Local models need serious hardware: README says 14B needs about 12 GB VRAM and 7B performance is poor; 32B+ recommended for most tasks",
+   "Speech-to-text works only in CLI mode and only in English; voice features are marked in progress",
+   "Agent routing and form filling are described as early or experimental and may fail"
+  ],
+  "license": "MIT",
+  "category": "local ai agent assistant",
+  "keywords": [
+   "local ai agent",
+   "manus alternative",
+   "self-hosted ai assistant",
+   "private ai assistant",
+   "offline llm agent",
+   "ollama",
+   "lm studio",
+   "llama.cpp",
+   "searxng",
+   "web browsing agent",
+   "autonomous browsing",
+   "code execution agent",
+   "multi-agent routing",
+   "task planning agent",
+   "voice assistant",
+   "speech to text",
+   "docker compose",
+   "python agent",
+   "browser automation",
+   "selenium",
+   "no api costs",
+   "run llm on my own hardware",
+   "keep data on my device",
+   "ai that writes and runs code",
+   "search the web and save results to a file",
+   "deepseek r1 local",
+   "openai compatible server",
+   "privacy first ai",
+   "mit license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 16236,
+  "output": 1467
+ },
+ "generated": "2026-10-29"
+}

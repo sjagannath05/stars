@@ -1,0 +1,108 @@
+{
+ "id": "qwenlm/qwen",
+ "repo": "QwenLM/Qwen",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Models",
+   "entry": "Qwen - Pretrained large language model proposed by Alibaba Cloud. #free"
+  }
+ ],
+ "summary": {
+  "one_liner": "QwenLM/Qwen is the official repository for the Qwen series of open-weight bilingual (Chinese and English) large language models from Alibaba Cloud, covering base and chat variants from 1.8B to 72B parameters.",
+  "category": "large language models",
+  "keywords": [
+   "qwen",
+   "qwen-7b",
+   "qwen-14b",
+   "qwen-72b",
+   "qwen-chat",
+   "qwen-1.8b",
+   "alibaba cloud llm",
+   "pretrained language model",
+   "open source llm",
+   "chinese english llm",
+   "bilingual chatbot model",
+   "huggingface transformers",
+   "modelscope",
+   "vllm",
+   "fastchat",
+   "gptq quantization",
+   "int4 int8 quantization",
+   "kv cache quantization",
+   "lora finetuning",
+   "q-lora",
+   "full-parameter finetuning",
+   "openai-compatible api",
+   "dashscope api",
+   "function calling",
+   "code interpreter",
+   "react agent",
+   "docker deployment",
+   "web ui demo",
+   "cli chat demo",
+   "long context 32k",
+   "run llm locally",
+   "self-hosted chatbot",
+   "chatgpt alternative"
+  ],
+  "what_it_does": "The repository publishes the Qwen base language models (Qwen-1.8B, 7B, 14B, 72B) and chat-tuned variants (Qwen-Chat), with Int4 and Int8 quantized versions for some sizes. The README covers quickstart inference with Hugging Face Transformers and ModelScope, batch inference, and CPU and multi-GPU loading. It also documents GPTQ quantization and KV cache quantization with memory and speed measurements. Finetuning instructions cover full-parameter tuning, LoRA, and Q-LoRA, with memory tables by sequence length. Deployment options include vLLM with FastChat, a Gradio-style web UI, a CLI demo, an OpenAI-style API server, and Docker images. The README also describes tool use, ReAct-style function calling, a code interpreter benchmark, long-context extension techniques, and access through Alibaba Cloud's DashScope API. The README notes that this repo is no longer actively maintained in favor of QwenLM/Qwen2.",
+  "use_cases": [
+   "run a Chinese and English chatbot locally",
+   "finetune an LLM on custom data with LoRA or Q-LoRA",
+   "deploy an OpenAI-compatible API for a self-hosted model",
+   "quantize a model to Int4 or Int8 to reduce GPU memory",
+   "build a web or CLI chat demo",
+   "build tool-using agents or function calling apps",
+   "serve a model with vLLM for fast inference"
+  ],
+  "how_to_run": [
+   "pip install -r requirements.txt",
+   "pip install flash-attention (optional, from source)",
+   "Load \"Qwen/Qwen-7B-Chat\" with transformers AutoModelForCausalLM and AutoTokenizer (trust_remote_code=True)",
+   "pip install vllm",
+   "pip install -r requirements_web_demo.txt && python web_demo.py",
+   "python cli_demo.py"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Hugging Face Transformers",
+   "ModelScope",
+   "vLLM",
+   "FastChat",
+   "AutoGPTQ",
+   "DeepSpeed",
+   "FSDP",
+   "PEFT",
+   "Docker",
+   "FastAPI",
+   "OpenAI API client",
+   "DashScope SDK"
+  ],
+  "notable": [
+   "Full family from 1.8B to 72B parameters, with base and chat variants and Int4/Int8 quantized checkpoints",
+   "Pretrained on up to 3 trillion tokens with a focus on Chinese and English",
+   "Documented memory and speed profiles for BF16, Int8, and Int4 inference, plus finetuning memory tables",
+   "Long-context support up to 32K tokens using NTK-aware interpolation, window attention, and LogN scaling",
+   "Tool-use and code-interpreter benchmarks reported in the README"
+  ],
+  "caveats": [
+   "The README states this repo is no longer actively maintained; the author points users to QwenLM/Qwen2.",
+   "Qwen-14B-Chat and Qwen-7B-Chat cannot use KV cache quantization together with flash attention at the same time.",
+   "The README says CPU inference is likely to be extremely slow, and recommends qwen.cpp for CPU deployment.",
+   "Larger models need substantial GPU memory; for example, 72B full BF16 inference is listed at 144.69GB across 2xA100."
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 19955,
+  "output": 1632
+ },
+ "generated": "2026-10-29"
+}

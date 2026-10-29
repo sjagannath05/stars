@@ -1,0 +1,90 @@
+{
+ "id": "ksterx/menubarcc",
+ "repo": "ksterx/MenubarCC",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "MenubarCC - Menu bar crab that shows your Claude Code sessions at a glance: walking while Claude works, bouncing when it needs you. [![Open-Source Software][OSS Icon]](https://github.com/ksterx/MenubarCC) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "MenubarCC is a macOS menu bar app that shows the status of your Claude Code sessions through an animated crab icon (Clawd), with sound alerts and stuck-session detection.",
+  "what_it_does": "Clawd, the menu bar icon, walks while a Claude Code session is busy, bounces when a session is waiting for your reply, pulses when a session appears stuck, and sits still when idle. Clicking the icon opens a menu listing every session grouped into Stuck, Active, Waiting, and Idle, with each project folder and how long it has been in that state. A small hook bridge (menubarcc_hook.py) is installed into Claude Code's settings.json to maintain a waiting flag and play sounds on Stop, Notification, and PermissionRequest events. Sounds can be toggled per event or muted globally, and custom sound files can be chosen. Stuck detection can be set to 5 to 60 minutes or turned off, and the app can launch at login and update itself in-app. The app reads local session files under ~/.claude/ and makes a single network call, the update check against GitHub.",
+  "use_cases": [
+   "Monitor several Claude Code sessions at once from the menu bar",
+   "Get alerted when Claude Code needs a reply or permission",
+   "Detect Claude Code sessions that have stalled",
+   "Hear a sound when Claude Code finishes a response",
+   "Keep an eye on which project folders are busy or idle"
+  ],
+  "how_to_run": [
+   "brew tap ksterx/tap",
+   "brew install --cask menubarcc",
+   "Or download MenubarCC-x.y.z.dmg from the Releases page and drag MenubarCC into Applications",
+   "./build.sh 2.0.0 (build from source; outputs dist/MenubarCC.app)"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "Python (hook script menubarcc_hook.py)",
+   "Claude Code settings.json and session status files"
+  ],
+  "notable": [
+   "Menu bar only: no window and no Dock icon",
+   "Hook bridge installs into Claude Code settings with a timestamped backup and removes only its own entries",
+   "Signed with Developer ID and notarized by Apple",
+   "Clawd's animation reflects the most urgent session state (Waiting > Stuck > Active > Idle)",
+   "In-app update check, download, and install"
+  ],
+  "caveats": [
+   "Requires macOS 13 (Ventura) or later",
+   "Apple Silicon (arm64) only",
+   "Requires Claude Code to be installed; Launch at Login requires running from /Applications"
+  ],
+  "license": "MIT",
+  "category": "menu bar monitoring",
+  "keywords": [
+   "claude code",
+   "menu bar",
+   "menubar app",
+   "macos menu bar",
+   "session monitor",
+   "claude code status",
+   "ai coding agent monitor",
+   "clawd crab",
+   "status indicator",
+   "stuck detection",
+   "notification sounds",
+   "hook bridge",
+   "swift appkit",
+   "menu bar tools",
+   "homebrew cask",
+   "launch at login",
+   "in-app updates",
+   "track background tasks",
+   "see which session is waiting",
+   "watch ai agent progress",
+   "get notified when claude finishes",
+   "tell me when claude needs input",
+   "mac status bar app",
+   "developer tools macos",
+   "apple silicon app",
+   "dmg download",
+   "notarized app",
+   "local session files",
+   "terminal session tracker",
+   "keep track of multiple sessions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4380,
+  "output": 1249
+ },
+ "generated": "2026-10-29"
+}

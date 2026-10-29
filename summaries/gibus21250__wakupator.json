@@ -1,0 +1,93 @@
+{
+ "id": "gibus21250/wakupator",
+ "repo": "Gibus21250/Wakupator",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "Wakupator - Wake On LAN Machine Manager based on network traffic. MIT C"
+  }
+ ],
+ "summary": {
+  "one_liner": "Wakupator is a Linux service that wakes sleeping LAN machines via Wake-on-LAN when traffic to their IP/port is detected, by spoofing their IP addresses while they are powered off.",
+  "what_it_does": "Machines on the same LAN register themselves over TCP with a JSON payload (MAC address, name, and a list of IPs with ports) shortly before shutting down. After the machine goes offline, Wakupator spoofs the registered IPv4/IPv6 addresses and monitors traffic to the listed ports. When matching traffic arrives, it sends Wake-on-LAN magic packets, retrying a configurable number of times at a set interval. It logs the wake-up time and total monitoring duration, and also detects when a machine is started manually. Its main goal, per the README, is reducing energy use at the cost of availability.",
+  "use_cases": [
+   "wake a home server on demand when a service is accessed",
+   "save electricity on machines that are not needed 24/7",
+   "wake a machine via SSH connection attempt",
+   "auto-start a Minecraft server when a player connects",
+   "Wake-on-LAN triggered by network traffic"
+  ],
+  "how_to_run": [
+   "cmake -B\"build\" -DCMAKE_BUILD_TYPE=Release",
+   "cmake --build build",
+   "sudo setcap cap_net_raw,cap_net_admin+eip /path/to/wakupator",
+   "wakupator -H 192.168.0.84",
+   "Optionally run as a systemd service with AmbientCapabilities=CAP_NET_RAW CAP_NET_ADMIN (example unit in README)",
+   "Pre-compiled binaries are available from the project's release tab"
+  ],
+  "stack": [
+   "C",
+   "CMake",
+   "cJSON (MIT, bundled in lib/cJSON)",
+   "Linux raw sockets and capabilities",
+   "Wake-on-LAN magic packets (IEEE 802.3)"
+  ],
+  "notable": [
+   "Spoofs IP addresses of powered-off machines so traffic reaches Wakupator before the host firewall",
+   "Works with IPv4 and IPv6, monitoring both TCP and UDP traffic",
+   "Registration is done by sending a JSON payload over TCP; example systemd service and Python script are provided in example/machine",
+   "Configurable wake attempts, retry interval, shutdown timeout, and probe delay",
+   "Detects when a machine is powered on manually, not only via Wakupator"
+  ],
+  "caveats": [
+   "Linux only, and the monitored machine needs Wake-on-LAN enabled in BIOS/UEFI and the OS",
+   "Sensitive to unsolicited internet scans, which can cause unwanted wake-ups; it must stay on the LAN and should not be exposed to the internet",
+   "For IPv6 monitoring with manual boots, Duplicate Address Detection must be disabled on the client; the router must not have static IP/MAC bindings on spoofed addresses"
+  ],
+  "license": "MIT",
+  "category": "wake on lan",
+  "keywords": [
+   "wake on lan",
+   "wol",
+   "magic packet",
+   "wake on traffic",
+   "on-demand wake",
+   "ip spoofing",
+   "arp probe",
+   "ipv6 neighbor solicitation",
+   "raw sockets",
+   "linux capabilities",
+   "cap_net_raw",
+   "home server power saving",
+   "energy saving server",
+   "sleep machine until needed",
+   "start server when accessed",
+   "wake up pc on network request",
+   "lan wake service",
+   "tcp port monitoring",
+   "udp port monitoring",
+   "systemd service",
+   "cmake c project",
+   "cjson",
+   "self-hosted",
+   "raspberry pi",
+   "minecraft server wake",
+   "ssh wake up remote machine",
+   "reduce electricity home lab",
+   "network utilities",
+   "wake sleeping computer by connecting"
+  ],
+  "cwhatever": "\n"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7498,
+  "output": 1412
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "idno/idno",
+ "repo": "idno/idno",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Blogging Platforms",
+   "entry": "Known - Collaborative social publishing platform. (Source Code) Apache-2.0 PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Idno is a PHP-based social publishing platform that supports collaborative, federated posting, with ActivityPub delivery and Webmention support described in its README.",
+  "what_it_does": "The README describes Idno as a social publishing platform written in PHP 8.3+ that needs a supported database backend. It can be installed from unofficial packages, from a git clone with composer dependencies, or via composer create-project. By default it processes events synchronously inside web requests, including Webmention pings, syndication, and ActivityPub delivery. An optional asynchronous event queue moves that work into a background worker (idno.php service-event-queue) that polls the database and dispatches pending events. The README also covers an optional periodic cron service for minute, hourly, and daily tasks, with systemd and cron setup examples. Some third-party libraries it bundles include TinyMCE, HTMLPurifier, Simplepie, and a MongoDB PHP library.",
+  "use_cases": [
+   "self-hosted social publishing",
+   "running a federated personal site with ActivityPub",
+   "sending Webmentions between websites",
+   "collaborative multi-author publishing",
+   "syndicating posts to other services"
+  ],
+  "how_to_run": [
+   "git clone the idno repository and run: cd idno; composer install",
+   "composer create-project idno/idno",
+   "Set event_queue = 'AsynchronousQueue' in config.ini (optional, required for ActivityPub queue delivery)",
+   "sudo -u www-data IDNO_DOMAIN='your.domain' ./idno.php service-event-queue",
+   "Optionally run a systemd unit or cron job to keep the queue worker running",
+   "sudo -u www-data IDNO_DOMAIN='your.domain' ./idno.php service-cron (optional periodic tasks)"
+  ],
+  "stack": [
+   "PHP 8.3+",
+   "Composer",
+   "Symfony EventDispatcher, HttpFoundation, Console",
+   "ToroPHP",
+   "Bootstrap",
+   "jQuery",
+   "TinyMCE",
+   "HTMLPurifier",
+   "Simplepie",
+   "MongoDB PHP Library",
+   "Leaflet.js"
+  ],
+  "notable": [
+   "Optional asynchronous event queue with a background worker, needed for ActivityPub delivery to remote servers",
+   "Synchronous processing by default, with the queue enabled through a single config.ini line",
+   "Supports Webmention, syndication, and ActivityPub in the README",
+   "Installable via composer create-project, including a bleeding-edge dev option",
+   "Includes systemd unit and cron examples for running workers"
+  ],
+  "caveats": [
+   "Requires PHP 8.3+ with selected extensions and a supported database backend",
+   "Described as under active development; the README points to a separate detailed installation guide",
+   "Unofficial packages are periodically built and are not official releases",
+   "ActivityPub delivery depends on keeping the queue worker running; workers must be restarted after updates"
+  ],
+  "license": "Apache-2.0",
+  "category": "social publishing platform",
+  "keywords": [
+   "idno",
+   "social publishing",
+   "php blog platform",
+   "activitypub",
+   "fediverse",
+   "webmention",
+   "federated blogging",
+   "collaborative publishing",
+   "self-hosted social network",
+   "event queue worker",
+   "async queue",
+   "service-event-queue",
+   "composer install",
+   "syndication",
+   "microformats",
+   "self-hosted blog",
+   "multi-author blog",
+   "indieweb",
+   "publish posts to fediverse",
+   "share posts with followers",
+   "php 8.3",
+   "apache license blog software",
+   "cron service",
+   "webmention pings",
+   "decentralized social media",
+   "personal website publishing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4231,
+  "output": 1315
+ },
+ "generated": "2026-10-29"
+}

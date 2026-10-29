@@ -1,0 +1,95 @@
+{
+ "id": "aqua5230/usage",
+ "repo": "aqua5230/usage",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "usage - macOS menu bar app that pins Claude Code, Codex, and Antigravity CLI quota and burn rate to the screen, read from local session files."
+  }
+ ],
+ "summary": {
+  "one_liner": "usage is a macOS menu bar and Windows system tray app that shows Claude Code, Codex, Antigravity, Grok CLI, and Muse Code quota limits and reset countdowns on screen, with a terminal-only mode via uvx.",
+  "what_it_does": "It displays 5-hour (session) and weekly quota for Claude Code, Codex, Antigravity, and Muse Code, plus Grok CLI's weekly credit, with reset countdowns and red coloring as a limit approaches. Token and cost figures for Claude Code, Codex, Grok CLI, and Muse Code are read from local log files, and Antigravity quota comes from its own CLI or Google's quota endpoint using the sign-in that CLI already stores. It can show Claude Code or Codex outage banners from their public status pages. A Claude Code status line hook adds context-window and prompt-cache warnings, and optional helpers such as a side pane, Token Saver, and Quota-Aware mode run inside Claude Code. It also produces HTML, CSV, and PNG token and cost reports, offers 16 panel themes, and provides a `usage status --json` output for scripts and tools like Starship or tmux.",
+  "use_cases": [
+   "monitor Claude Code 5-hour and weekly usage limits",
+   "track Codex quota in the menu bar",
+   "see remaining AI coding quota before hitting a limit",
+   "report token usage and cost for AI coding tools",
+   "show AI quota in a Windows taskbar or tray",
+   "feed quota data into a shell prompt or tmux status bar"
+  ],
+  "how_to_run": [
+   "brew install --cask aqua5230/usage/usage",
+   "brew upgrade --cask usage",
+   "uvx usage-cli",
+   "uv tool install usage-cli",
+   "usage setup"
+  ],
+  "stack": [
+   "macOS",
+   "Windows",
+   "Python 3.13",
+   "uv",
+   "Microsoft Edge WebView2 Runtime",
+   "Homebrew"
+  ],
+  "notable": [
+   "Reads quota and cost from local session and log files rather than requiring a browser or login",
+   "Claude Code status line hook warns about bloated context and cold prompt cache",
+   "Optional Claude Code helpers: side pane, Token Saver, Beginner Mode, Quota-Aware Mode",
+   "Windows taskbar quota label and tray icon with selectable Claude or Codex source",
+   "Muse Code quota fetched by running a small background model call through its CLI"
+  ],
+  "caveats": [
+   "Menu bar and tray UI only on macOS 12+ and Windows 10/11; Linux has terminal interface only",
+   "Muse quota probe makes a real model call that uses a little Muse quota",
+   "Antigravity outage alerts not covered because it has no public status page",
+   "Claude Desktop quota reset times appear only when its local cache confirms them"
+  ],
+  "license": "AGPL-3.0-only",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude code quota",
+   "codex usage",
+   "ai coding usage monitor",
+   "menu bar app",
+   "macos menu bar",
+   "windows system tray",
+   "taskbar quota label",
+   "token usage tracker",
+   "ai cost tracker",
+   "rate limit monitor",
+   "5-hour session limit",
+   "weekly quota",
+   "antigravity cli",
+   "grok cli",
+   "muse code",
+   "status line",
+   "starship prompt",
+   "tmux status",
+   "quota notifications",
+   "token report html",
+   "usage-cli uvx",
+   "ccusage alternative",
+   "tokentracker alternative",
+   "track my claude spending",
+   "see how close i am to my limit",
+   "ai usage dashboard",
+   "claude desktop usage",
+   "python terminal tui",
+   "agpl open source",
+   "claude code side pane"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8827,
+  "output": 1347
+ },
+ "generated": "2026-10-29"
+}

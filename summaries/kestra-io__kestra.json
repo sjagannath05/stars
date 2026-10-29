@@ -1,0 +1,99 @@
+{
+ "id": "kestra-io/kestra",
+ "repo": "kestra-io/kestra",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Kestra - Event-driven, language-agnostic platform to create, schedule, and monitor workflows. In code. Coordinate data pipelines and tasks such as ETL and ELT. (Source Code) Apache-2.0 Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Automation",
+   "entry": "Kestra | Event-driven orchestration platform for data and automation workflows"
+  }
+ ],
+ "summary": {
+  "one_liner": "Kestra is an open-source, event-driven orchestration platform for data, AI, and infrastructure workflows, defined declaratively in YAML and managed from a UI.",
+  "what_it_does": "Kestra lets you build workflows (flows) made of tasks, run them on schedules or in response to events, and monitor them in a web UI. Flows can be written in a YAML editor, built block by block in a No-Code editor, or drafted with an AI Copilot, and all three edit the same definition. Flows can be kept in Git, deployed via CI/CD, and managed with the kestractl CLI, the Terraform provider, or the API. The README describes a plugin ecosystem for extracting data from databases, cloud storage and APIs, running scripts in languages such as Python, Node.js, R, Go and Shell, running Docker or Kubernetes jobs, calling LLM providers, and reacting to message buses like Kafka and AWS SQS. It also lists features for resilience and control, including retries, timeouts, error handling, subflows, backfills, checks, and quotas.",
+  "use_cases": [
+   "schedule and monitor data pipelines",
+   "ETL and ELT coordination",
+   "event-driven automation from message queues or file arrivals",
+   "running scripts in multiple languages as workflow steps",
+   "orchestrating AI agents and RAG pipelines",
+   "managing workflows as code with Git and CI/CD"
+  ],
+  "how_to_run": [
+   "docker run --pull=always --rm -it -p 8080:8080 --user=root --name kestra -v kestra_data:/app/storage -v kestra_db:/app/data -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp -e KESTRA_PLUGINS_AUTO_INSTALL_ENABLED=true kestra/kestra:latest-slim server local",
+   "Open the Kestra UI at the local address on port 8080 and create a flow",
+   "See the README's Installation Guide for Docker Compose, Podman, Kubernetes, AWS, GCP and Azure deployment options"
+  ],
+  "stack": [
+   "Java",
+   "Docker",
+   "gRPC",
+   "YAML",
+   "Vue (plugin UI artifacts)",
+   "Maven Central (plugin installation)"
+  ],
+  "notable": [
+   "Workflows are YAML definitions that stay in sync with edits made in the UI, No-Code editor, AI Copilot, API, or Terraform",
+   "Built-in MCP server exposes flows as tools to MCP-compatible AI agents",
+   "Workers communicate with the control plane over gRPC, so they can run in another region or a restricted network",
+   "Draft revisions let changes be staged while triggers keep running the last published revision",
+   "Plugins can be auto-installed from Maven Central on demand via an environment variable"
+  ],
+  "caveats": [
+   "Plugin auto-install needs network access to Maven Central; the slim image ships without bundled plugins",
+   "Quick start mounts the Docker socket into the container and runs as root",
+   "Several features (such as Cases, Policies, Promote, and Worker Groups 2.0) are described as Enterprise Edition features"
+  ],
+  "license": "Apache-2.0",
+  "category": "workflow orchestration platform",
+  "keywords": [
+   "workflow orchestration",
+   "data orchestration",
+   "workflow automation",
+   "event-driven workflows",
+   "scheduled workflows",
+   "etl",
+   "elt",
+   "data pipelines",
+   "yaml workflows",
+   "workflows as code",
+   "infrastructure as code",
+   "dag",
+   "cron scheduler",
+   "job scheduler",
+   "airflow alternative",
+   "self-hosted automation",
+   "docker workflow engine",
+   "run python scripts on a schedule",
+   "coordinate data pipelines",
+   "grpc workers",
+   "kafka triggers",
+   "mcp server",
+   "ai agents orchestration",
+   "rag pipelines",
+   "low-code workflow builder",
+   "no-code automation",
+   "git version control for flows",
+   "kestractl cli",
+   "terraform provider",
+   "retries and error handling",
+   "backfills",
+   "plugin ecosystem"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7590,
+  "output": 1473
+ },
+ "generated": "2026-10-29"
+}

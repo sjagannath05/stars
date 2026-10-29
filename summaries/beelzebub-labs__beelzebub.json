@@ -1,0 +1,100 @@
+{
+ "id": "beelzebub-labs/beelzebub",
+ "repo": "beelzebub-labs/beelzebub",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "beelzebub ⚠ - Honeypot framework designed to provide a highly secure environment for detecting and analyzing cyber attacks. (Source Code) MIT Docker/K8S/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "Beelzebub is an open-source deception framework that runs configurable decoy services (SSH, HTTP, TCP, TELNET, MCP) to capture and log attacker interactions.",
+  "what_it_does": "Beelzebub lets you define decoy services and their response rules in YAML, then run them as a runtime that listens for attacker contact. Services can use static handlers for fixed responses or LLM-powered responses, which require a configured provider. Custom behavior can be added through trusted Go plugins compiled into the runtime. The framework records evidence such as commands, HTTP request details, and session context, depending on the protocol. Events can be inspected in local logs, published to RabbitMQ, or sent to the optional Beelzebub Platform. The README lists 18 example configurations covering remote access, web, databases, network services, IoT (MQTT), and MCP bait tools. Deployment options named are a local Go binary, Docker Compose, and Kubernetes with Helm.",
+  "use_cases": [
+   "Detecting and analyzing attacks against decoy SSH or HTTP services",
+   "Simulating fake databases such as MySQL, Redis, or PostgreSQL as traps",
+   "Capturing prompt-injection attempts against AI agents using MCP bait tools",
+   "Monitoring decoy runtime activity with Prometheus metrics",
+   "Forwarding attacker interaction events to RabbitMQ",
+   "Running a lab honeypot with Docker Compose"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd beelzebub",
+   "./install.sh --docker",
+   "curl -i <default HTTP decoy URL on port 8080>",
+   "docker compose logs -f beelzebub",
+   "docker compose down"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Docker Compose",
+   "Kubernetes",
+   "Helm",
+   "YAML",
+   "RabbitMQ",
+   "Prometheus"
+  ],
+  "notable": [
+   "Decoy services defined declaratively in YAML, with static or LLM-powered responses",
+   "MCP bait tools for observing suspicious agent tool invocations",
+   "Trusted Go plugins compiled into the runtime via a public SDK",
+   "Structured event output to local logs, RabbitMQ, or the optional Beelzebub Platform",
+   "Prometheus metrics enabled via core.prometheus.enabled, disabled by default"
+  ],
+  "caveats": [
+   "Installer starts many example services including privileged ports; intended for an isolated lab host with authorization",
+   "On Linux the installer can enable host networking, which Docker does not isolate",
+   "LLM-based responses require a configured external provider",
+   "Go plugins execute in-process, so their source must be reviewed and versions pinned"
+  ],
+  "license": "GNU General Public License v3.0",
+  "category": "deception honeypot framework",
+  "keywords": [
+   "honeypot",
+   "deception framework",
+   "decoy services",
+   "cyber attack detection",
+   "attacker behavior analysis",
+   "fake ssh server",
+   "fake http server",
+   "telnet honeypot",
+   "mcp honeypot",
+   "prompt injection detection",
+   "llm decoy",
+   "yaml configuration",
+   "go honeypot",
+   "docker compose honeypot",
+   "kubernetes helm honeypot",
+   "helm chart",
+   "rabbitmq event output",
+   "prometheus metrics",
+   "security research lab",
+   "threat intelligence collection",
+   "attacker logging",
+   "fake database honeypot",
+   "mysql decoy",
+   "redis decoy",
+   "smb ldap decoy",
+   "mqtt iot honeypot",
+   "go plugins",
+   "intrusion analysis",
+   "catch attacker activity",
+   "deploy fake services",
+   "gpl honeypot",
+   "awesome selfhosted network utilities"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3287,
+  "output": 1353
+ },
+ "generated": "2026-10-29"
+}

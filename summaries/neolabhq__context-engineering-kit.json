@@ -1,0 +1,100 @@
+{
+ "id": "neolabhq/context-engineering-kit",
+ "repo": "NeoLabHQ/context-engineering-kit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "Context Engineering Kit by Vlad Goncharov - Hand-crafted collection of advanced context engineering techniques and patterns with minimal token footprint focused on improving agent result quality."
+  }
+ ],
+ "summary": {
+  "one_liner": "A marketplace of Claude Code plugins (also usable with other agents) that bundles prompts, sub-agents, and rules for improving agent output quality through reflection, judging, specification-driven development, and code review.",
+  "what_it_does": "The repository is a plugin marketplace for AI coding agents, installed per plugin in Claude Code via /plugin install. Plugins cover reflection and memory curation (/reflect, /memorize, /critique), subagent-driven task execution with judge verification (/do-and-judge, /do-in-steps, /judge), and a spec-driven workflow (/add-task, /plan-task, /implement-task) built on the arc42 documentation standard. Other plugins provide multi-agent code and PR review, Git commit and PR commands, TDD commands, FPF structured hypothesis reasoning, Kaizen root-cause analysis, Domain-Driven Design and Clean Architecture rules, TypeScript rules, and MCP server setup guides. The README also includes a comparison table estimating accuracy and token overhead for different workflows, though those figures are the authors' own reported numbers. Gemini CLI and Antigravity CLI install all plugins as one bundle, and Cursor, Codex, and OpenCode get skills only through npx skills.",
+  "use_cases": [
+   "Improve quality of code an AI agent writes",
+   "Review local changes or pull requests with multiple agents",
+   "Break a large coding task into specified steps with quality gates",
+   "Analyze root causes of bugs using Five Whys or fishbone methods",
+   "Set up MCP servers such as Context7 or Serena for a project",
+   "Enforce Clean Architecture, SOLID, or DDD rules during code writing"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add NeoLabHQ/context-engineering-kit",
+   "/plugin install reflexion@NeoLabHQ/context-engineering-kit",
+   "npx skills add NeoLabHQ/context-engineering-kit",
+   "npx openskills install NeoLabHQ/context-engineering-kit",
+   "npx openskills sync"
+  ],
+  "stack": [
+   "Claude Code plugins",
+   "Markdown prompts and agent definitions",
+   "agentskills.io skill specification",
+   "Bun (optional, for the reflection hook)",
+   "GitHub CLI (used by Git plugin commands)",
+   "Gemini CLI extensions",
+   "Antigravity CLI plugins"
+  ],
+  "notable": [
+   "Per-plugin install in Claude Code so only chosen agents and skills load into context",
+   "Spec-driven workflow based on the arc42 architecture documentation standard",
+   "Reliability table comparing one-shot, reflect, judge, and planned workflows by number of changed files",
+   "Multi-agent review plugin with impact and confidence filtering and a GitHub Actions option",
+   "Cross-agent support for Claude Code, Gemini CLI, Antigravity, Cursor, Codex, and OpenCode, with reduced features outside Claude Code"
+  ],
+  "caveats": [
+   "Gemini CLI and Antigravity CLI cannot install individual plugins; all are installed as one bundle",
+   "Non-Claude-Code installs via npx skills do not include subagents",
+   "The FPF plugin loads a roughly 600k-token specification into a subagent and can consume token limits quickly",
+   "The spec-driven workflow can take from 30 minutes to a few days and is most useful for complex or existing codebases"
+  ],
+  "license": "unknown",
+  "category": "agent prompt plugins",
+  "keywords": [
+   "context engineering",
+   "claude code plugins",
+   "claude code marketplace",
+   "ai coding agent",
+   "agent prompts",
+   "subagents",
+   "llm-as-judge",
+   "reflexion",
+   "self-refine",
+   "reflect and memorize",
+   "spec-driven development",
+   "arc42",
+   "code review agent",
+   "pull request review",
+   "git commit commands",
+   "tdd commands",
+   "clean architecture rules",
+   "solid principles",
+   "ddd rules",
+   "mcp server setup",
+   "context7",
+   "serena mcp",
+   "cursor skills",
+   "codex skills",
+   "opencode",
+   "gemini cli extension",
+   "antigravity cli",
+   "root cause analysis",
+   "five whys",
+   "multi-agent orchestration",
+   "ai code quality",
+   "reduce llm hallucinations",
+   "claude.md memory",
+   "agentskills"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13304,
+  "output": 1555
+ },
+ "generated": "2026-10-29"
+}

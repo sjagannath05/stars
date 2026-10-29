@@ -1,0 +1,94 @@
+{
+ "id": "alfio-event/alf.io",
+ "repo": "alfio-event/alf.io",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Booking and Scheduling",
+   "entry": "Alf.io - Ticket reservation system. (Demo, Source Code) GPL-3.0 Java"
+  }
+ ],
+ "summary": {
+  "one_liner": "alf.io is a free, open source event attendance and ticket reservation system for event organizers, built in Java on Spring with PostgreSQL.",
+  "what_it_does": "alf.io is described as a free and open source event attendance management system aimed at event organizers who care about privacy, security and fair pricing. The README covers building and running it with Gradle (including a wrapper) and a local PostgreSQL database, and it lists Spring profiles such as dev, demo, disable-jobs and jdbc-session that change runtime behavior. It can be packaged as a Docker image via a Gradle distribution task and a Dockerfile, and a docker-compose setup is provided for development. The README also covers contributing, IDE setup with Lombok, and integration tests run with TestContainers. The README does not list event-specific features in detail beyond the general description.",
+  "use_cases": [
+   "sell tickets for an event",
+   "manage event attendance",
+   "run a ticket reservation system",
+   "self-host event registration",
+   "organize conferences or meetups with fair pricing"
+  ],
+  "how_to_run": [
+   "Install Java 25 (JDK) and PostgreSQL 10 or later",
+   "Start a local PostgreSQL database (README gives a docker run example with user postgres, database alfio)",
+   "./gradlew clean",
+   "./gradlew -Pprofile=dev :bootRun",
+   "Log in as admin using the password printed on the console",
+   "Alternatively: docker-compose up (development mode); build image with ./gradlew distribution then docker build -t alfio/alf.io ./build/dockerize"
+  ],
+  "stack": [
+   "Java 25",
+   "Spring Boot",
+   "PostgreSQL",
+   "Gradle",
+   "Project Lombok",
+   "TestContainers",
+   "Docker",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Privacy, security and fair pricing focus stated in the project description",
+   "Spring profiles for dev mode, demo mode, disabling jobs, and database-persisted sessions",
+   "Row security policies rely on the database user not being a SUPERUSER",
+   "Integration tests run against real PostgreSQL via TestContainers, with Podman setup notes",
+   "Translations managed through POEditor"
+  ],
+  "caveats": [
+   "The README warns the v2 branch may be unstable and untested; it recommends building from a released version",
+   "Running in production with Docker Compose is stated as not officially supported",
+   "Requires Java 25 JDK and PostgreSQL 10 or later"
+  ],
+  "license": "GPL-3.0",
+  "category": "event ticketing system",
+  "keywords": [
+   "ticket reservation",
+   "event ticketing",
+   "event registration",
+   "attendee management",
+   "event attendance",
+   "java",
+   "spring boot",
+   "postgresql",
+   "gradle",
+   "docker compose",
+   "self-hosted ticketing",
+   "sell tickets online",
+   "conference registration",
+   "open source ticketing",
+   "event organizer software",
+   "ticket sales",
+   "privacy focused events",
+   "fair pricing",
+   "testcontainers",
+   "lombok",
+   "docker image",
+   "gpl license",
+   "booking system",
+   "event booking",
+   "registration software",
+   "podman",
+   "pdf ticket",
+   "awesome selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4055,
+  "output": 1161
+ },
+ "generated": "2026-10-29"
+}

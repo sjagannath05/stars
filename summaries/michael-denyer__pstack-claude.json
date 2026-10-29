@@ -1,0 +1,97 @@
+{
+ "id": "michael-denyer/pstack-claude",
+ "repo": "michael-denyer/pstack-claude",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "SDLC",
+   "entry": "pstack-claude by Michael Denyer - Claude Code version of Lauren Tan's Poteto's pstack. Rigorous agent workflows with Cursor primitives translated to other agents. Supports multiple providers."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code port of Lauren Tan's pstack, a set of opinionated agent workflow skills (translated from Cursor) that route coding tasks to a \"poteto-mode\" playbook across several agent harnesses.",
+  "what_it_does": "The repository packages pstack, a stack of agent skills for coding work. Telling the `poteto-mode` skill your goal makes it invoke the matching workflow, such as bug fixing, planning, features, refactoring, performance, investigations, prototypes, PR maintenance, shipping, and longer projects. For bugs, the README describes reproducing the failure, investigating with `how` and `why`, delegating the fix, and rerunning the failing case. A `/create-formal-verification-skill` command targets concurrency bugs and invariants that tests cannot reach, verifying the riskiest property with a suitable tool and leaving a project skill for reruns. The port translates upstream Cursor skills for Claude Code ahead of install and adds a SessionStart hook that routes tasks to `poteto-mode`. It also ships installs for Codex, Pi, GitHub Copilot, Muse, and skills-only harnesses such as OpenCode and Gemini CLI. A `setup-pstack` command configures routing, model defaults, and per-role reasoning effort. The README states there is no server or telemetry, and scripts run locally.",
+  "use_cases": [
+   "route coding tasks to structured agent workflows",
+   "debug a bug with reproduce-then-verify steps",
+   "plan and implement features with an agent",
+   "verify concurrency properties with formal methods",
+   "run a Claude Code skill stack across multiple agent harnesses",
+   "refactor or optimize code with guided agent playbooks"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add michael-denyer/pstack-claude",
+   "/plugin install pstack@pstack-claude",
+   "codex plugin marketplace add michael-denyer/pstack-claude",
+   "pi install git:github.com/michael-denyer/pstack-claude"
+  ],
+  "stack": [
+   "Claude Code plugin system",
+   "Codex plugin",
+   "Pi extension",
+   "GitHub Copilot CLI plugin",
+   "Muse plugin bundle",
+   "Agent skills (SKILL-based, from Cursor skills)",
+   "GitHub CLI (used by PR tools)",
+   "TLA+, Lean, and Kani (referenced for the separate agent-formal-verify plugin)"
+  ],
+  "notable": [
+   "Ports Cursor skills to Claude Code before installation, avoiding runtime name translation by the agent",
+   "SessionStart hook automatically routes tasks to the poteto-mode workflow",
+   "Supports multiple harnesses: Claude Code, Codex, Pi, GitHub Copilot, Muse, and skills-only installs for OpenCode and Gemini CLI",
+   "Named policy forks declared in tools/forks.json, alongside tracking upstream",
+   "Formal verification skill generator for concurrency bugs and invariants"
+  ],
+  "caveats": [
+   "Other harnesses such as OpenCode, Gemini CLI, and skills-only Codex have no routing hook and need manual invocation or a standing instruction",
+   "Codex runs the hook only after manual trust via /hooks; Muse requires explicit plugin approval",
+   "Copilot CLI 1.0.92 may list no plugin skills in copilot -p sessions after caching a computer-use experiment assignment",
+   "Claude Code auto-update is off for third-party marketplaces by default"
+  ],
+  "license": "MIT",
+  "category": "agent workflow skills",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "agent skills",
+   "pstack",
+   "poteto-mode",
+   "cursor skills port",
+   "codex plugin",
+   "github copilot cli plugin",
+   "pi extension",
+   "muse plugin",
+   "opencode skills",
+   "gemini cli skills",
+   "agent workflow",
+   "coding agent playbook",
+   "task routing",
+   "sessionstart hook",
+   "setup-pstack",
+   "bug fix workflow",
+   "reproduce and verify bug",
+   "feature planning agent",
+   "refactoring workflow",
+   "performance investigation agent",
+   "formal verification skill",
+   "concurrency bug verification",
+   "tla+ model checking",
+   "kani rust verification",
+   "multi-provider agent",
+   "debug with ai agent",
+   "share skills across agents",
+   "agent harness port",
+   "markdown skills"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3734,
+  "output": 1587
+ },
+ "generated": "2026-10-29"
+}

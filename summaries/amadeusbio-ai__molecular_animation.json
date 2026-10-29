@@ -1,0 +1,97 @@
+{
+ "id": "amadeusbio-ai/molecular_animation",
+ "repo": "AmadeusBio-ai/Molecular_Animation",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Creative Media",
+   "entry": "Molecular Animation by Yangyi Liu - A new-film skill, agent guide (AGENTS.md) and Python framework with which Claude Code drives Blender over MCP to turn a scientific brief and PDB or AlphaFold structures into a molecular animation film. The agent checks the brief's structural claims, builds the scene from a script, and writes a production record that tags every beat as experimental, simulation-de"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python framework, agent guide and Claude Code skill that drives Blender 5.2 over MCP to turn a scientific brief and PDB or AlphaFold structures into an evidence-tagged molecular animation film.",
+  "what_it_does": "The repository provides \"molanim\", a pure-numpy science layer for reading mmCIF files and assemblies, morphing between atom-matched states, pathway profiles, procedural membranes, ion diffusion and camera paths, plus a Blender layer that builds sphere and ball-and-stick molecules, cavity tubes, interaction markers, a depth-of-field camera rig and a separate label pass. The pipeline.py command line runs new, build, still, preview, render, deliver, doctor, motion, smoke and check steps. Motion (thermal, Brownian, normal modes, side-chain turns) is modelled at literature rates rather than from molecular dynamics simulation. Every beat is tagged experimental, simulation-derived or illustrative in the script, on screen and in a production record. An AGENTS.md guide and a /new-film skill let Claude Code run the workflow through Blender MCP, and the repo includes a channelrhodopsin case study built from PDB 9GO1 and 9GO2.",
+  "use_cases": [
+   "Make a scientific molecular animation film from a written brief",
+   "Animate a protein from a PDB entry in Blender",
+   "Animate an AlphaFold model with evidence labels",
+   "Generate labelled MP4 or WebM films and posters of molecular structures",
+   "Drive Blender from Claude Code to build molecular scenes",
+   "Produce a record of which molecular motions are experimental versus illustrative"
+  ],
+  "how_to_run": [
+   "git clone <repo> && cd Molecular_Animation",
+   "pip install -r requirements.txt",
+   "python pipeline.py doctor",
+   "python -m pytest tests",
+   "python pipeline.py new gfp --pdb 1EMA --title \"Green fluorescent protein\"",
+   "python pipeline.py build gfp"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Blender 5.2",
+   "numpy",
+   "Blender MCP",
+   "Claude Code",
+   "ffmpeg with libx264 and libvpx-vp9",
+   "Cycles renderer (NVIDIA OptiX recommended)"
+  ],
+  "notable": [
+   "Evidence tagging: every beat is labelled experimental, simulation-derived or illustrative in script, film and production record",
+   "Checks structural claims in the brief numerically against the PDB structures before animating them",
+   "Motion modelled at literature rates on one clock per film, with loops that repeat exactly",
+   "Label pass can be exported as data (timeline.label_data) to draw captions over a clean film in a web page",
+   "Agent guide (AGENTS.md) and /new-film skill for Claude Code"
+  ],
+  "caveats": [
+   "Requires Blender 5.2, a Cycles-capable GPU (NVIDIA OptiX recommended) and ffmpeg; previews take minutes and final renders hours",
+   "Built and tested on Windows 11 with an RTX 5060 Ti; macOS and Linux are stated to be untested",
+   "pipeline.py downloads RCSB entries only; AlphaFold models must be loaded manually from a file, and AlphaFold Server outputs are not distributed"
+  ],
+  "license": "Apache License 2.0",
+  "category": "scientific molecular animation",
+  "keywords": [
+   "molecular animation",
+   "protein animation",
+   "blender",
+   "blender python",
+   "pdb structures",
+   "mmcif",
+   "alphafold",
+   "alphafold model animation",
+   "claude code",
+   "ai agent workflow",
+   "blender mcp",
+   "agents.md",
+   "scientific visualization",
+   "structural biology film",
+   "protein video",
+   "molecular visualization",
+   "pymol alternative",
+   "chimerax alternative",
+   "molecular nodes alternative",
+   "vmd alternative",
+   "rendering pipeline",
+   "cycles renderer",
+   "evidence tagging",
+   "scientific storytelling",
+   "science explainer video",
+   "make a protein video",
+   "animate a protein structure",
+   "turn a paper into an animation",
+   "ffmpeg mp4 export",
+   "normal modes",
+   "channelrhodopsin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5861,
+  "output": 1522
+ },
+ "generated": "2026-10-29"
+}

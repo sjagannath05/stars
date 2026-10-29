@@ -1,0 +1,95 @@
+{
+ "id": "nicedreamzapp/narrateclaude",
+ "repo": "nicedreamzapp/NarrateClaude",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "NarrateClaude - Hands-free, on-device voice loop for talking to Claude Code: Apple speech recognition in, cloned-voice text-to-speech out, no cloud."
+  }
+ ],
+ "summary": {
+  "one_liner": "NarrateClaude is a macOS hands-free voice loop that transcribes speech on-device with Apple's speech engine, types it into a Terminal window running Claude Code, and reads replies aloud through a user-supplied TTS voice.",
+  "what_it_does": "The listener (Listen.swift) uses Apple's SFSpeechRecognizer for en-US and treats a sentence as finished when the transcribed text stops changing for 2.5 seconds. A supervisor script (dispatch) respawns the listener, runs a window watchdog, and pipes output through filters into an injector (inject) that types each sentence into the bound Apple Terminal window via AppleScript. A control CLI (dictation) provides setup, start, stop, status, toggle, tail and uninstall commands. Speech playback through afplay pauses recognition to avoid the mic hearing its own replies, and a Claude Code Stop hook (speak-on-stop) reads the last reply aloud via ~/.local/bin/speak. The repo also includes a \"was that for me?\" filter with tune in/out commands and a local LLM judge that fails open, plus an optional voiceprint filter that the README says is not active in v1. The README describes v1 as the runnable code, while a v2 barge-in effort is documented in logs but its code is not published in this repo.",
+  "use_cases": [
+   "Talk to Claude Code hands-free while walking or cooking",
+   "Dictate commands into a Terminal window by voice",
+   "Have Claude Code replies read aloud in a cloned voice",
+   "Run a fully on-device voice assistant for a local coding model",
+   "Voice-control any command-line tool running in Terminal.app",
+   "Study echo-cancellation attempts for barge-in in voice agents"
+  ],
+  "how_to_run": [
+   "git clone the repo to ~/NarrateClaude",
+   "chmod +x dictation/bin/* narrative-claude.sh",
+   "Start claude in Apple Terminal.app, then run ./dictation/bin/dictation setup from inside that window",
+   "Create ~/.local/bin/speak as a TTS wrapper (README offers a macOS say starter option)",
+   "Optionally wrap narrative-claude.sh in a .app bundle for a double-click launcher"
+  ],
+  "stack": [
+   "Swift (Listen.swift, compiled with swiftc)",
+   "Apple SFSpeechRecognizer / Speech framework",
+   "Bash scripts",
+   "AppleScript",
+   "Python (filters, tests via pytest)",
+   "Resemblyzer (voiceprint, optional)",
+   "MLX running Llama-3.2-3B (relevance judge)",
+   "Pocket TTS by Kyutai (user's cloned voice, optional)",
+   "Claude Code"
+  ],
+  "notable": [
+   "Ends sentences by watching transcribed text stabilize rather than microphone volume, so noisy rooms still work",
+   "Pauses recognition while afplay is playing to prevent the assistant hearing itself",
+   "Production hardening: wedge detection, 5-minute preventive respawn, window-ID binding that stops the listener when the Terminal window closes",
+   "Engineering log of seven barge-in/echo-cancellation attempts with measured results, including unsuccessful Apple VPIO attempts",
+   "Listener is general-purpose and can drive any CLI in Terminal.app, not only Claude Code"
+  ],
+  "caveats": [
+   "Terminal.app only; iTerm2, Warp and Ghostty are not supported because the injector uses Terminal-specific AppleScript",
+   "English (en-US) only, hard-coded in Listen.swift",
+   "Half-duplex in v1: no barge-in, and the voiceprint filter is not active with the v1 listener",
+   "Requires macOS on Apple Silicon, Microphone and Speech Recognition permissions, and a user-provided TTS setup; fully offline only if claude points at a local model"
+  ],
+  "license": "MIT",
+  "category": "macos voice assistant",
+  "keywords": [
+   "voice control",
+   "hands-free coding",
+   "speech to text",
+   "text to speech",
+   "on-device speech recognition",
+   "dictation",
+   "claude code",
+   "macos terminal",
+   "apple speech framework",
+   "sfspeechrecognizer",
+   "voice assistant",
+   "local ai",
+   "offline voice assistant",
+   "voice cloning",
+   "applescript",
+   "terminal automation",
+   "talk to my computer",
+   "dictate into terminal",
+   "speak replies aloud",
+   "private voice assistant",
+   "no cloud speech",
+   "barge-in",
+   "echo cancellation",
+   "accessibility voice input",
+   "swift listener",
+   "tts wrapper",
+   "voice loop"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13538,
+  "output": 1602
+ },
+ "generated": "2026-10-29"
+}

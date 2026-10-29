@@ -1,0 +1,97 @@
+{
+ "id": "us/mocker",
+ "repo": "us/mocker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Virtualization",
+   "entry": "Mocker - Container manager built on Apple's Containerization framework. [![Open-Source Software][OSS Icon]](https://github.com/us/mocker) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Mocker - Docker-compatible container CLI for macOS, built on Apple's Containerization framework."
+  }
+ ],
+ "summary": {
+  "one_liner": "Mocker is a Docker-compatible CLI and Compose tool for macOS 26+ that runs containers using Apple's Containerization framework instead of Docker Desktop.",
+  "what_it_does": "Mocker provides a Docker-style command-line interface (run, ps, stop, rm, exec, logs, build, pull, push, images, tag, rmi, inspect, stats) and Docker Compose v2 commands (up, down, ps, logs, restart) with dependency ordering. It also manages networks and volumes, and includes a docker-style context command that only supports the built-in default context. Container lifecycle is delegated to Apple's `container` CLI, while image pull, push, tag and rmi use Apple's Containerization ImageStore directly. Metadata is stored as JSON under ~/.mocker/. The README also describes manifest list commands for multi-arch images, registry login/logout with keychain storage, and a userspace TCP proxy for -p port mapping. A SwiftUI MenuBar app is listed as coming soon.",
+  "use_cases": [
+   "replace Docker Desktop on a Mac",
+   "run docker compose files natively on macOS",
+   "run Docker-style containers on Apple Silicon",
+   "build and push multi-arch images with manifest lists",
+   "manage container networks and volumes from the command line"
+  ],
+  "how_to_run": [
+   "brew tap us/tap",
+   "brew install mocker",
+   "git clone <repository URL>",
+   "cd mocker",
+   "swift build -c release",
+   "cp .build/release/mocker /usr/local/bin/mocker"
+  ],
+  "stack": [
+   "Swift 6",
+   "Xcode 16",
+   "Apple Containerization framework",
+   "Apple container CLI",
+   "swift-argument-parser",
+   "Yams",
+   "SwiftUI"
+  ],
+  "notable": [
+   "Drop-in Docker CLI and Compose compatibility: documented as using the same commands, flags, and output format",
+   "Hybrid backend: lifecycle through Apple's container CLI, image operations through Containerization ImageStore directly",
+   "Actor-based thread safety throughout, per the README",
+   "Documents workarounds for building non-amd64/arm64 images with RUN steps, which fail under the default build VM",
+   "Shell completion for zsh, bash, and fish"
+  ],
+  "caveats": [
+   "Requires macOS 26.0+ and Apple Silicon; Intel Macs are not supported",
+   "Some Docker flags are not supported by Apple's runtime and produce warnings or errors; COMMANDS.md lists which are fully functional",
+   "The MenuBar GUI is marked coming soon and is unchecked on the roadmap",
+   "Benchmarks show container startup about 3.6× slower than Docker Desktop"
+  ],
+  "license": "AGPL-3.0",
+  "category": "macos container tooling",
+  "keywords": [
+   "docker alternative",
+   "docker compose macos",
+   "docker desktop replacement",
+   "apple containerization",
+   "apple container cli",
+   "macos containers",
+   "docker-compatible cli",
+   "container manager",
+   "swift container tool",
+   "oci image build",
+   "multi-arch manifest",
+   "docker compose v2",
+   "run containers on mac",
+   "containers without docker desktop",
+   "apple silicon containers",
+   "container networks volumes",
+   "docker run on mac",
+   "mocker cli",
+   "swift 6 actor",
+   "buildkit build images",
+   "shell completion zsh bash fish",
+   "container logs exec stats",
+   "compose yaml services",
+   "lightweight linux vm containers",
+   "homebrew container tool",
+   "agpl container tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7192,
+  "output": 1291
+ },
+ "generated": "2026-10-29"
+}

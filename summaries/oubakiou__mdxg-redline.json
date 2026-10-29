@@ -1,0 +1,92 @@
+{
+ "id": "oubakiou/mdxg-redline",
+ "repo": "oubakiou/mdxg-redline",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "MDXG Redline by oubakiou - A Claude Code skill plus single-file HTML tool that closes the human-review loop on AI-written docs: a person leaves inline comments in the browser, which export as structured JSON keyed by heading path and line, and the skill polls for that file and applies each comment to the exact lines. Strongly privacy-respecting — the local/CLI build enforces a strict CSP (connect-"
+  }
+ ],
+ "summary": {
+  "one_liner": "A browser-based Markdown review tool, packaged as a single HTML file plus a CLI and a Claude Code skill, that exports inline reviewer comments as structured JSON keyed by heading path and source line.",
+  "what_it_does": "Renders a Markdown file in a single standalone HTML page where a reviewer can select text ranges and leave inline comments. Comments export as JSON with headingPath and sourceLine fields so an LLM can apply them to exact locations. The CLI (npx mdxg-redline) generates a review HTML next to the input file and opens it in the browser, with options for hiding the comments panel, choosing the output directory, and controlling Shiki, Mermaid and KaTeX injection. An md-review skill lets an agent request a review and pick up the feedback JSON from a shared folder. The viewer supports virtual stacked pages, WASD keyboard navigation, footnotes, math, Mermaid diagrams and code highlighting. A --clean subcommand removes generated review and feedback file pairs.",
+  "use_cases": [
+   "reviewing AI-written documentation before accepting it",
+   "leaving inline comments on a Markdown spec for an LLM to revise",
+   "round-trip review loop between an agent and a human reviewer",
+   "reading Markdown files in a browser as a plain viewer",
+   "sharing a single offline HTML file for document review"
+  ],
+  "how_to_run": [
+   "npx mdxg-redline path/to/draft.md",
+   "npx mdxg-redline --no-open path/to/draft.md",
+   "gh skill install oubakiou/mdxg-redline md-review --agent claude-code --scope project",
+   "npx skills add oubakiou/mdxg-redline --skill md-review --agent claude-code --yes",
+   "npx mdxg-redline --clean"
+  ],
+  "stack": [
+   "JavaScript/TypeScript",
+   "Node.js (npx CLI)",
+   "Shiki",
+   "Mermaid",
+   "KaTeX",
+   "File System Access API"
+  ],
+  "notable": [
+   "Ships as a single standalone HTML file that runs fully in the browser with no server required",
+   "Exports comments as JSON keyed by headingPath and sourceLine so changes target exact lines",
+   "Claude Code skill (md-review) that polls for the feedback file in a shared folder",
+   "Implements the MDXG Viewer profile of the Markdown Experience Guidelines, with math, Mermaid and footnote extensions",
+   "Hides open-file and paste options by default so reloading does not discard comments"
+  ],
+  "caveats": [
+   "Writing feedback.json directly relies on the File System Access API, so only Chromium-based browsers support it; Safari and Firefox must use download or clipboard export",
+   "Third-party implementation, not affiliated with Vercel Labs or the upstream mdxg repository; MDXG spec is a preview and may change",
+   "Random fallback ports in dev containers may not reach the host browser unless MDXG_REDLINE_PORT is pinned or forwarded"
+  ],
+  "license": "MIT",
+  "category": "markdown review tooling",
+  "keywords": [
+   "markdown review",
+   "inline comments",
+   "document review",
+   "human review loop",
+   "llm feedback",
+   "claude code skill",
+   "claude code",
+   "agent skill",
+   "structured feedback json",
+   "review html",
+   "markdown viewer",
+   "mdxg",
+   "mdxg viewer",
+   "markdown experience guidelines",
+   "standalone html",
+   "single file html",
+   "npx cli",
+   "review ai-written docs",
+   "comment on markdown",
+   "share docs for feedback",
+   "katex math",
+   "mermaid diagrams",
+   "shiki syntax highlighting",
+   "footnotes",
+   "file system access api",
+   "offline markdown reader",
+   "heading path comments",
+   "line-anchored comments",
+   "review draft spec"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6345,
+  "output": 1364
+ },
+ "generated": "2026-10-29"
+}

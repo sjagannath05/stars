@@ -1,0 +1,97 @@
+{
+ "id": "plasma-umass/scalene",
+ "repo": "plasma-umass/scalene",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "scalene - A high-performance, high-precision CPU, GPU, and memory profiler for Python."
+  }
+ ],
+ "summary": {
+  "one_liner": "Scalene is a Python profiler that measures CPU, GPU, and memory usage per line and per function, with optional AI-generated optimization suggestions.",
+  "what_it_does": "Scalene samples running Python programs to report CPU time, split into Python, native (C/C++ library), and system time, with per-line and per-function breakdowns. It reports NVIDIA GPU time and per-line memory growth, copy volume, and likely memory leaks, using an included specialized memory allocator. It also attributes wall-clock await time in async code to the line where a coroutine is suspended, and shows stitched Python and native call stacks as flame charts and a timeline. Results are viewed in an offline web GUI, in the terminal, or as HTML, and a YAML config file can set options. Optional AI providers (Amazon Bedrock, Microsoft Azure, OpenAI, Ollama) can suggest optimizations for a selected line or code region.",
+  "use_cases": [
+   "find CPU hotspots in a slow Python script",
+   "track down memory growth and likely leaks",
+   "separate Python time from native library time",
+   "spot unintended numpy-to-list copying",
+   "profile pytest test runs",
+   "diagnose I/O bottlenecks in async code",
+   "get AI-suggested code optimizations"
+  ],
+  "how_to_run": [
+   "python3 -m pip install -U scalene",
+   "scalene run your_prog.py",
+   "scalene view",
+   "scalene view --cli",
+   "scalene run -m pytest your_test.py"
+  ],
+  "stack": [
+   "Python",
+   "C/C++ (native memory allocator and extensions)",
+   "Visual Studio Code extension",
+   "Jupyter (%%scalene magic)",
+   "YAML config",
+   "conda (conda-forge)",
+   "pip"
+  ],
+  "notable": [
+   "Separates Python-side time from native library time and system time, so you can see where optimization effort will pay off",
+   "Per-line memory profiling with a specialized allocator, including Python vs. native memory split and likely leak detection",
+   "AI-powered optimization proposals via GPT-4 and other providers, triggered by clicking a line or region in the GUI",
+   "Async profiling that shows per-line await time with mean and peak concurrency",
+   "Standalone self-contained HTML output that works offline"
+  ],
+  "caveats": [
+   "GPU profiling is limited to NVIDIA systems",
+   "AI suggestions need your own provider credentials or a local Ollama model",
+   "Windows memory profiling requires the Visual C++ Redistributable, and building from source needs Visual C++ Build Tools and CMake",
+   "Some PyTorch versions on Mac OS X interfere with Scalene, per the FAQ"
+  ],
+  "license": "unknown",
+  "category": "python performance profiling",
+  "keywords": [
+   "python profiler",
+   "cpu profiler",
+   "memory profiler",
+   "gpu profiler",
+   "line profiler",
+   "performance profiling",
+   "profile python code",
+   "find slow code",
+   "memory leak detection",
+   "hotspot analysis",
+   "sampling profiler",
+   "async profiling",
+   "await time",
+   "flame chart",
+   "ai optimization suggestions",
+   "gpt-4 code suggestions",
+   "cprofile alternative",
+   "py-spy alternative",
+   "numpy copy detection",
+   "pytest profiling",
+   "jupyter profiling",
+   "vs code profiler",
+   "optimize python performance",
+   "why is my python script slow",
+   "native vs python time",
+   "profile my script",
+   "debugging tools",
+   "html profile report",
+   "offline profiler",
+   "multithreading profiler"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9601,
+  "output": 1276
+ },
+ "generated": "2026-10-29"
+}

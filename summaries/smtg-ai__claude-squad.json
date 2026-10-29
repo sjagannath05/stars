@@ -1,0 +1,87 @@
+{
+ "id": "smtg-ai/claude-squad",
+ "repo": "smtg-ai/claude-squad",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Claude Squad by smtg-ai - A terminal app that manages multiple Claude Code, Codex, and other local agents (including Aider) in separate workspaces, allowing you to work on multiple tasks simultaneously."
+  }
+ ],
+ "summary": {
+  "one_liner": "Claude Squad is a terminal app (installed as `cs`) that runs multiple coding agents such as Claude Code, Codex, Gemini, and Aider, each in its own isolated git workspace.",
+  "what_it_does": "Claude Squad lets you start and manage several AI coding agent sessions from one terminal window. Each session runs in its own tmux session and its own git worktree on a separate branch, so parallel tasks do not conflict. You can create sessions with a prompt, attach to reprompt an agent, and pause or resume sessions. Its menu also covers reviewing diffs in a preview/diff tab, committing and pushing a session's branch to GitHub, and checking out changes. An experimental autoyes flag auto-accepts prompts for Claude Code and Aider. Profiles in a JSON config let you define several named launch commands and pick one when creating a session.",
+  "use_cases": [
+   "run several coding agents on different tasks at once",
+   "review AI-generated changes before pushing them",
+   "isolate parallel agent work on separate git branches",
+   "run Claude Code, Codex, Gemini, or Aider from one terminal",
+   "background agent tasks in auto-accept mode"
+  ],
+  "how_to_run": [
+   "brew install claude-squad",
+   "ln -s \"$(brew --prefix)/bin/claude-squad\" \"$(brew --prefix)/bin/cs\"",
+   "curl -fsSL | bash  (manual install; puts cs in ~/.local/bin)",
+   "cs",
+   "cs -p \"codex\"  (launch with a specific assistant)"
+  ],
+  "stack": [
+   "Go (inferred from the binary and install tooling; not stated in README)",
+   "tmux",
+   "git worktrees",
+   "gh (GitHub CLI)"
+  ],
+  "notable": [
+   "Each task gets its own git worktree and branch, so parallel agents do not conflict",
+   "Supports Claude Code, Codex, Gemini, and Aider, plus other local agents via -p flag",
+   "Named profiles in config.json let you switch between launch commands per session",
+   "Review diffs and checkout changes before pushing to GitHub",
+   "Installs as the short `cs` command"
+  ],
+  "caveats": [
+   "Requires tmux and the GitHub CLI (gh) to be installed",
+   "Autoyes mode is marked experimental",
+   "README notes that a timeout waiting for tmux may require updating the underlying program to its latest version"
+  ],
+  "license": "AGPL-3.0",
+  "category": "terminal agent orchestration",
+  "keywords": [
+   "claude squad",
+   "multi-agent terminal",
+   "coding agent manager",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "aider",
+   "tmux",
+   "git worktree",
+   "parallel agents",
+   "agent orchestration",
+   "tui",
+   "terminal ui",
+   "run multiple ai agents",
+   "manage multiple claude sessions",
+   "work on tasks simultaneously",
+   "isolated git workspace",
+   "review ai changes before pushing",
+   "background coding agents",
+   "yolo mode",
+   "auto accept prompts",
+   "cs command",
+   "gh cli",
+   "agent profiles",
+   "go",
+   "agpl"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3003,
+  "output": 1160
+ },
+ "generated": "2026-10-29"
+}

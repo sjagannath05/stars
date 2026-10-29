@@ -1,0 +1,94 @@
+{
+ "id": "nickelsec/bough",
+ "repo": "nickelsec/bough",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability & Monitoring",
+   "entry": "bough by nickelsec - Reads Claude Code JSONL session transcripts and draws a project's history as a creatively-styled diagram: a day, the tasks inside it, and every prompt, with the ones that ended in a commit marked. Segments work from pauses in the record rather than anything the user labelled, and prompts can be searched by the words they contain."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local tool that reads Claude Code, OpenAI Codex CLI and Pi session transcripts and draws a project's work as a diagram of sittings, tasks and prompts, with API-rate cost estimates.",
+  "what_it_does": "It reads JSONL/rollout session transcripts from Claude Code, OpenAI Codex CLI and Pi, and rebuilds three levels: prompts, tasks (runs of prompts toward one goal), and sittings (work sessions split by pauses). Tasks that ended in a git commit are marked, and the commit hash and message are shown; it reads the project's local git history to confirm commits. Each task and sitting carries a cost estimate in tokens and dollars at published API rates, built into the binary. It serves an interactive page on 127.0.0.1 and also offers a plain-text or JSON output mode, with prompts searchable by their words. Everything runs offline, and the tool only reads history and repositories.",
+  "use_cases": [
+   "see what was built in a Claude Code project over time",
+   "estimate what AI coding sessions would have cost at API rates",
+   "find which prompt or task led to a given commit",
+   "review past Codex CLI or Pi sessions by project",
+   "export a project's session structure as JSON",
+   "trace work returning to the same files across sittings"
+  ],
+  "how_to_run": [
+   "brew install nickelsec/tap/bough (macOS)",
+   "curl -fsSL <script> | sh (Linux, or macOS without Homebrew)",
+   "irm <script> | iex (Windows)",
+   "go install github.com/nickelsec/bough/cmd/bough@latest",
+   "bough (opens the project list in the browser)",
+   "bough <project> --text (terminal output instead)"
+  ],
+  "stack": [
+   "Go",
+   "golang.org/x/term",
+   "browser-based local page served on loopback"
+  ],
+  "notable": [
+   "Segments work into tasks and sittings from pauses, context compaction and subject/file changes rather than user labels",
+   "Links task cost to git commits, showing hash and message",
+   "Reads Claude Code, OpenAI Codex CLI and Pi transcripts; Pi providers priced individually, local models shown as (local)",
+   "Cost figures are at published API rates, not a bill; subscriptions are not reflected",
+   "Strictly read-only: no network, no writes to history or repositories"
+  ],
+  "caveats": [
+   "Thresholds are fitted to one developer's history and may not suit others; they are constants requiring code edits to change",
+   "Codex and Pi support is newer and less tested than Claude Code support",
+   "Struggle score is an unverified guess, off by default",
+   "Cost figures are estimates at API rates and do not reflect flat-rate subscriptions; models without published rates show NA"
+  ],
+  "license": "MIT",
+  "category": "ai coding session analytics",
+  "keywords": [
+   "claude code",
+   "claude code transcripts",
+   "codex cli",
+   "openai codex cli",
+   "pi sessions",
+   "session history",
+   "transcript viewer",
+   "api cost estimate",
+   "token cost",
+   "usage cost",
+   "cost tracking",
+   "git commits",
+   "commit mapping",
+   "project history",
+   "prompt search",
+   "session diagram",
+   "visualize ai coding",
+   "terminal ui",
+   "local web page",
+   "loopback server",
+   "offline tool",
+   "golang cli",
+   "jsonl parser",
+   "work sessions",
+   "task segmentation",
+   "what did i build",
+   "how much did ai coding cost",
+   "claude stats alternative",
+   "developer activity log",
+   "export json",
+   "read-only history"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6045,
+  "output": 1274
+ },
+ "generated": "2026-10-29"
+}

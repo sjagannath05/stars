@@ -1,0 +1,99 @@
+{
+ "id": "rsutcliffe/nightwatch",
+ "repo": "rsutcliffe/nightwatch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Nightwatch - Menu-bar app for amateur astronomers that says when tonight will be clear enough for a long imaging session, and what to point at."
+  }
+ ],
+ "summary": {
+  "one_liner": "Nightwatch is a free macOS menu-bar app for amateur astrophotographers that finds tonight's clear imaging window, ranks targets for it, and says when to set up.",
+  "what_it_does": "It fetches cloud, rain chance, dew point, wind and visibility for your site (from Apple Weather when signed for it, otherwise Open-Meteo), plus seeing and transparency from 7Timer and aerosol forecasts from Open-Meteo's air-quality service. It computes darkness, Moon, planets and target visibility locally with Astronomy Engine and applies a user-set go rule (default: 3 h clear run, cloud at or under 25%, targets above 30°). Menu-bar icon, popover sky score, and alerts before and when the clear window opens are driven by that rule. The target browser groups objects visible during the window with DSS2 thumbnails, per-card timelines and field-of-view fit, plus a Tonight's plan page, a week-ahead view, and Events (meteor showers, eclipses, ISS passes, lunar occultations). Users can mark their own horizon by direction (manually or from a phone photo) so targets behind houses or trees are excluded. It also suggests dark-sky sites from bundled certified-site lists and light-pollution grids, and has optional aurora alerts, desktop widgets, Spotlight and Shortcuts actions, and iCloud settings sync.",
+  "use_cases": [
+   "check when tonight's sky is clear enough for astrophotography",
+   "plan which targets to image on a clear night",
+   "find dark sky sites near home",
+   "get alerts when the clear window opens",
+   "plan a week of astrophotography sessions",
+   "check whether a meteor shower, eclipse or ISS pass is visible tonight",
+   "work out which targets are blocked by trees or houses"
+  ],
+  "how_to_run": [
+   "brew install xcodegen",
+   "git clone https://github.com/rsutcliffe/nightwatch && cd nightwatch",
+   "scripts/fetch-data.sh (optional, only to refresh the bundled catalogue)",
+   "scripts/build-app.sh (builds with Xcode, signs ad hoc, installs to /Applications, launches)",
+   "scripts/test.sh (runs tests)"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode 26",
+   "xcodegen",
+   "Astronomy Engine",
+   "Open-Meteo",
+   "Apple Weather (WeatherKit)",
+   "7Timer",
+   "macOS WidgetKit widgets",
+   "Swift packages SkyCore and NightwatchUI",
+   "Python scripts for light-pollution grids"
+  ],
+  "notable": [
+   "Horizon mapping: set how high houses, trees or hills block the sky per compass direction, or measure from a phone photo, and all target times follow it",
+   "Tonight's plan with favourites, suggestions to fill gaps, and per-night choices synced across Macs",
+   "Dark-site finder using bundled light-pollution grids, with suggested dark car parks found from Apple Maps data",
+   "Bright-nights mode suggests the Moon and naked-eye planets when true darkness never arrives in summer at British latitudes",
+   "Accessibility work: VoiceOver descriptions, Reduce Transparency and Increase Contrast support, adjustable text size"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later and Apple silicon for the published download; building from source needs Xcode 26 or later and xcodegen.",
+   "Apple Weather use requires an Apple Developer signing setup tied to the maintainer's team; other builds fall back to Open-Meteo.",
+   "Desktop widget and its helper only work in a signed build; ad hoc builds omit the widget."
+  ],
+  "license": "unknown",
+  "category": "macos astronomy app",
+  "keywords": [
+   "astrophotography",
+   "astronomy planner",
+   "clear sky forecast",
+   "stargazing",
+   "menu bar app",
+   "macos",
+   "swift",
+   "telescope planning",
+   "deep sky targets",
+   "clear window",
+   "cloud forecast",
+   "dark sky sites",
+   "light pollution map",
+   "light pollution",
+   "moon phase",
+   "meteor shower alerts",
+   "iss pass",
+   "lunar occultation",
+   "horizon mask",
+   "sky quality",
+   "open-meteo",
+   "stacking session planner",
+   "night sky planner",
+   "when to image",
+   "best night for stargazing",
+   "observing site finder",
+   "telescope",
+   "messier objects",
+   "widget",
+   "shortcuts automation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13558,
+  "output": 1599
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,108 @@
+{
+ "id": "containerssh/containerssh",
+ "repo": "ContainerSSH/ContainerSSH",
+ "kind": "star",
+ "description": "ContainerSSH: Launch containers on demand",
+ "topics": [
+  "containers",
+  "devsecops",
+  "docker",
+  "kubernetes",
+  "security",
+  "security-tools",
+  "ssh"
+ ],
+ "language": "Go",
+ "stars": 3093,
+ "license": "Apache-2.0",
+ "homepage": "https://containerssh.io/",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "coding",
+  "dev tools",
+  "dkr k8s cloud",
+  "my company",
+  "webtools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "ContainerSSH is an SSH server that launches a container (on Kubernetes or Docker) for each connecting user, with webhook-driven auth and config and audit logging.",
+  "what_it_does": "The README describes an SSH server that starts a container per connection on Kubernetes or Docker. On connect, ContainerSSH calls an external authentication webhook to check username and password or public key, then optionally calls a configuration webhook to choose the backend and container settings. It then launches the container, sending user input to it and returning the container's output. The README also covers embedding ContainerSSH in a Go application, writing config and auth webhook servers with the Go library, loading configuration from YAML files or HTTP, and securing webhooks with certificates. Release artifacts ship with SLSA provenance files that can be checked with slsa-verifier.",
+  "use_cases": [
+   "Provide dynamic SSH lab environments for students or vendors",
+   "Give developers temporary production debugging access with audit logs",
+   "Run an SSH honeypot in isolated containers or VMs",
+   "Create short-lived database credentials on SSH login via webhooks",
+   "Launch disposable containers per SSH session in Kubernetes",
+   "Capture and upload SSH session audit logs to S3"
+  ],
+  "how_to_run": [
+   "Read the Get started guide linked from the README (no install commands are given in the README itself)"
+  ],
+  "stack": [
+   "Go",
+   "Kubernetes",
+   "Docker",
+   "YAML",
+   "slsa-verifier"
+  ],
+  "notable": [
+   "Launches a fresh container per SSH session on Kubernetes or Docker, with cleanup on logout",
+   "Auth and config are handled by external webhook servers, with the Go library providing webhook server and client helpers",
+   "Built-in audit logging and S3 upload, used for honeypot and session recording",
+   "Embeddable as a Go library with lifecycle hooks and log rotation",
+   "Releases include SLSA provenance for artifact verification"
+  ],
+  "caveats": [
+   "The README does not include install or run commands; it points to a Get started page for setup",
+   "Requires container backend infrastructure (Kubernetes or Docker) and separate auth/config webhook servers",
+   "Webhook security needs certificate setup; the 'Securing webhooks' and some sections are empty in the README"
+  ],
+  "license": "Apache-2.0",
+  "category": "ssh container gateway",
+  "keywords": [
+   "ssh server",
+   "containerssh",
+   "launch containers on demand",
+   "ssh containers",
+   "kubernetes ssh",
+   "docker ssh",
+   "ephemeral containers",
+   "on-demand containers",
+   "ssh gateway",
+   "ssh honeypot",
+   "audit logging",
+   "session recording",
+   "webhook authentication",
+   "dynamic configuration webhook",
+   "lab environment",
+   "student lab ssh",
+   "debug production access",
+   "temporary database credentials",
+   "disposable shell environment",
+   "container-based bastion",
+   "jump host alternative",
+   "go library",
+   "embed ssh server",
+   "slsa provenance",
+   "s3 upload logs",
+   "pubkey authentication",
+   "devsecops tooling",
+   "security tools",
+   "run shell in container",
+   "share ssh access with team",
+   "isolated shell sessions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4985,
+  "output": 1172
+ },
+ "generated": "2026-10-29"
+}

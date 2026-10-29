@@ -1,0 +1,98 @@
+{
+ "id": "gbbirkisson/spis",
+ "repo": "gbbirkisson/spis",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Photo Galleries",
+   "entry": "SPIS - A simple, lightweight and fast media server with decent mobile support. GPL-3.0 Docker/Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "SPIS is a lightweight, fast, self-hosted server for browsing images and videos stored on a private machine, with a mobile-friendly web UI.",
+  "what_it_does": "SPIS serves media files from a directory on your own server through a minimal web interface. It processes media (generating thumbnails) on a configurable schedule or at startup, and it can run on Docker or as a standalone binary behind a webserver such as nginx. The UI offers endless scrolling, favorites, slideshows, filtering by year, month, favorites, and subdirectories, and multi-select with long press. Users can define custom shell commands that run on the current media file and appear as buttons in the UI. Configuration comes from CLI flags, environment variables, or a TOML file, and the binary can render nginx, systemd, and docker-compose config templates. The README says the author runs it with about 40,000 images on a Raspberry Pi CM4.",
+  "use_cases": [
+   "self-host a private photo gallery",
+   "browse personal images and videos on a home server",
+   "view a large media library on a Raspberry Pi",
+   "share a media folder with family on phone",
+   "run custom scripts on photos from a web UI",
+   "play slideshows of personal photos"
+  ],
+  "how_to_run": [
+   "docker run -it -p 8080:8080 -v /path/to/your/media:/var/lib/spis/media -v /path/to/save/data:/var/lib/spis/data ghcr.io/gbbirkisson/spis",
+   "cd examples/docker && docker compose up",
+   "Binary: download spis, install nginx, and optionally install ffmpeg/ffprobe for video support",
+   "spis --server-socket ${SPIS_DATA_DIR}/spis.sock template systemd --bin $(which spis) --user www-data > /etc/systemd/system/spis.service",
+   "spis --server-socket /storage/spis/data/spis.sock template nginx --port 8080 > /etc/nginx/sites-available/default"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "nginx",
+   "ffmpeg",
+   "ffprobe",
+   "systemd",
+   "TOML",
+   "FontAwesome",
+   "progressive web app"
+  ],
+  "notable": [
+   "Designed to avoid databases and extra components; configuration is a single flag/env/TOML setup",
+   "Custom commands defined in config run scripts on the current file with {path} substitution and optional hotkeys",
+   "Built-in config templating renders nginx, systemd, and docker-compose files",
+   "Installable as a progressive web app on mobile and desktop",
+   "Never reads media through spis itself during browsing; the webserver serves files directly"
+  ],
+  "caveats": [
+   "Binary install requires a separate webserver such as nginx to serve media",
+   "Video support needs ffmpeg and ffprobe installed and on the PATH",
+   "Either a server address or a UNIX socket must be set, but not both"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted photo gallery",
+  "keywords": [
+   "self-hosted photo gallery",
+   "private image server",
+   "media server",
+   "photo viewer",
+   "video streaming server",
+   "rust",
+   "docker",
+   "nginx",
+   "lightweight media server",
+   "raspberry pi photo server",
+   "view photos on phone",
+   "browse my photos",
+   "share photos with family",
+   "image gallery web app",
+   "slideshow",
+   "favorites",
+   "thumbnail generation",
+   "progressive web app",
+   "pwa",
+   "toml configuration",
+   "systemd service",
+   "ffmpeg",
+   "ffprobe",
+   "home server photos",
+   "photo library",
+   "endless scroll gallery",
+   "custom scripts",
+   "self-hosted alternative to photo management apps",
+   "media browser",
+   "gpl-3.0",
+   "private photo hosting"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5411,
+  "output": 1293
+ },
+ "generated": "2026-10-29"
+}

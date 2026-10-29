@@ -1,0 +1,91 @@
+{
+ "id": "huggingface/sentence-transformers",
+ "repo": "huggingface/sentence-transformers",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "sentence-transformers - Compute embeddings, run retrieval, and rerank results with pretrained and fine-tuned models."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python framework for computing text embeddings, reranking with cross-encoders, and generating sparse and multi-vector (ColBERT-style) representations, using pretrained or fine-tuned models from Hugging Face.",
+  "what_it_does": "The library loads Sentence Transformer (embedding) models and encodes texts into numpy or tensor vectors, then computes similarity between them. It loads Cross Encoder (reranker) models to score query-passage pairs or rank a list of passages for a query. It also supports Sparse Encoder models that produce high-dimensional sparse vectors with a sparsity statistic, and Multi-Vector Encoder models that produce per-token embeddings scored with late-interaction MaxSim. The README says over 15,000 pretrained models are available on Hugging Face, and the framework includes training support for all four model types with many loss functions. Documentation is hosted at SBERT.net.",
+  "use_cases": [
+   "semantic search over a document collection",
+   "reranking search results with a cross-encoder",
+   "computing sentence similarity scores",
+   "paraphrase mining",
+   "fine-tuning a custom embedding model",
+   "retrieval with sparse or late-interaction models"
+  ],
+  "how_to_run": [
+   "pip install -U sentence-transformers",
+   "from sentence_transformers import SentenceTransformer; model = SentenceTransformer(\"sentence-transformers/all-MiniLM-L6-v2\")",
+   "embeddings = model.encode(sentences)",
+   "similarities = model.similarity(embeddings, embeddings)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "PyTorch 2.2+",
+   "transformers v5.0+",
+   "Hugging Face Hub"
+  ],
+  "notable": [
+   "Covers four model types: dense embeddings, cross-encoder rerankers, sparse encoders, and multi-vector late-interaction models under one API",
+   "Access to over 15,000 pretrained models on Hugging Face, including MTEB leaderboard models",
+   "model.rank() returns sorted passages with scores in one call",
+   "Training support with 20+ embedding loss functions, 10+ reranker losses, and 10+ sparse losses",
+   "Optional extras for image, audio, video, ONNX, and OpenVINO"
+  ],
+  "caveats": [
+   "The README says it is experimental software published mainly to give background on the related publication",
+   "Requires PyTorch and transformers, and CUDA setup is referred to the docs rather than detailed",
+   "Some pretrained models may require a Hugging Face login for private or gated access"
+  ],
+  "license": "unknown",
+  "category": "embeddings and reranking",
+  "keywords": [
+   "sentence embeddings",
+   "text embeddings",
+   "sentence-transformers",
+   "semantic search",
+   "reranker",
+   "cross-encoder",
+   "bi-encoder",
+   "sparse encoder",
+   "splade",
+   "colbert",
+   "late interaction",
+   "multi-vector retrieval",
+   "maxsim",
+   "retrieve and rerank",
+   "semantic similarity",
+   "paraphrase mining",
+   "vector search",
+   "dense retrieval",
+   "hybrid retrieval",
+   "clustering text",
+   "fine-tune embedding model",
+   "pretrained embedding models",
+   "hugging face models",
+   "text similarity python",
+   "find similar sentences",
+   "search documents by meaning",
+   "rank search results",
+   "matryoshka embeddings",
+   "multilingual embeddings",
+   "image search embeddings"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5974,
+  "output": 1251
+ },
+ "generated": "2026-10-29"
+}

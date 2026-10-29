@@ -1,0 +1,95 @@
+{
+ "id": "sverrirsig/claude-control",
+ "repo": "sverrirsig/claude-control",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "claude-control by Sverrir Sigurdsson - A native macOS Electron dashboard that auto-discovers running Claude Code CLI sessions and shows live per-session status, git changes, PR checks, and conversation previews across repos and worktrees — and can focus, send input to, approve or reject, kill, or spawn sessions from one place. Electron + Next.js + TypeScript, local-only, via an auto-installed stat"
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS Electron dashboard that auto-discovers running Claude Code CLI sessions and shows their live status, git changes, PR checks, and conversation previews, with quick actions to focus, approve/reject, or manage them.",
+  "category": "session monitors",
+  "keywords": [
+   "claude code",
+   "claude code monitor",
+   "claude cli dashboard",
+   "session monitor",
+   "multi-session manager",
+   "ai coding agent dashboard",
+   "electron app",
+   "macos desktop app",
+   "next.js dashboard",
+   "typescript",
+   "git worktree",
+   "worktree manager",
+   "pull request status",
+   "gh cli",
+   "ci status badges",
+   "tmux",
+   "send-keys",
+   "iterm2",
+   "kitty terminal",
+   "wezterm",
+   "terminal tab focus",
+   "approve tool use",
+   "permission prompt",
+   "hook events",
+   "process monitor",
+   "monitor multiple claude sessions",
+   "see what my claude agents are doing",
+   "manage several coding agents from one window",
+   "local-only dashboard"
+  ],
+  "what_it_does": "Finds running claude CLI processes through the process table and maps each to its working directory and transcript file, using Claude Code hook events when available and mtime-based discovery otherwise. It classifies each session as Working, Idle, Waiting, Errored, or Finished, primarily from hook events with a CPU and transcript heuristic fallback. It shows git branch, changed files and line counts, plus open PR status via the gh CLI, including CI rollup, review decision, and merge conflicts. Each session card shows the last assistant message, active tool, and user prompt, and can extract Linear issue context from MCP tool results. From the dashboard you can focus the terminal tab, approve or reject permission prompts, send input, open editor, git GUI, Finder or PR, and create new sessions with worktree support. Data is derived on each request from the process table, hook event files and JSONL transcripts, with no database.",
+  "use_cases": [
+   "monitor several Claude Code sessions across repos at once",
+   "approve or reject Claude permission prompts without switching windows",
+   "check CI and review status of PRs opened by agent sessions",
+   "jump to the terminal tab running a given Claude session",
+   "create new Claude sessions in git worktrees",
+   "clean up worktrees and branches after agent work"
+  ],
+  "how_to_run": [
+   "git clone <repo URL> && cd claude-control",
+   "npm install",
+   "npm run electron:dev",
+   "npm run electron:build (produces DMG and ZIP in dist/)"
+  ],
+  "stack": [
+   "Electron",
+   "Next.js 16",
+   "TypeScript",
+   "Tailwind CSS 4",
+   "SWR",
+   "Vitest",
+   "AppleScript",
+   "GitHub CLI (gh)",
+   "tmux"
+  ],
+  "notable": [
+   "Hook-based status classification from Claude Code lifecycle events, with a heuristic fallback",
+   "Tab-level focus and keystroke control for iTerm2, Terminal.app, kitty, WezTerm and cmux",
+   "Approve or reject permission prompts from the dashboard, including via tmux send-keys without terminal focus",
+   "Installs its hook events into ~/.claude/settings.json automatically on first launch",
+   "No database; all state is derived on every request from processes, hook files and transcripts"
+  ],
+  "caveats": [
+   "macOS only, because terminal integration uses AppleScript",
+   "Full tab focus needs extra setup for kitty (remote control config and restart) and iTerm2 hotkey windows (Python API enabled); Ghostty, Warp and Alacritty get only basic app-level focus",
+   "Requires Node.js 18 or newer and the GitHub CLI for PR detection; tmux is optional"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5790,
+  "output": 1348
+ },
+ "generated": "2026-10-29"
+}

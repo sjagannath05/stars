@@ -1,0 +1,89 @@
+{
+ "id": "joerick/pyinstrument",
+ "repo": "joerick/pyinstrument",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "pyinstrument - A statistical wall-clock profiler with low overhead and readable call-tree output."
+  }
+ ],
+ "summary": {
+  "one_liner": "pyinstrument is a Python statistical profiler that samples call stacks and shows where wall-clock time goes in a readable call tree.",
+  "what_it_does": "Pyinstrument samples a running Python program and records the call stack, so you can see which functions take the most time. It prints a call-tree readout to the console by default and can also render HTML reports, JSON, pstats files, speedscope files, and saved sessions. It can be used from the command line (`pyinstrument script.py`, `-m module`, `-c code`), or from code via a Profiler object, a `with` block, or a decorator. It also has an IPython/Jupyter `%%pyinstrument` magic and a Django middleware. Async code is handled by tracking time spent awaiting inside tasks, and output can be filtered to hide library frames or show a flat list of functions.",
+  "use_cases": [
+   "find the slow part of a Python program",
+   "profile a script from the command line",
+   "profile a Django request or view",
+   "profile code in a Jupyter notebook cell",
+   "profile async/await code",
+   "generate an interactive HTML profile report",
+   "compare call times with speedscope flame charts"
+  ],
+  "how_to_run": [
+   "pip install pyinstrument",
+   "pyinstrument script.py",
+   "pyinstrument -o profile.html script.py"
+  ],
+  "stack": [
+   "Python 3.8+",
+   "C extension",
+   "Svelte (HTML renderer frontend)",
+   "Django (middleware)",
+   "IPython (magics)"
+  ],
+  "notable": [
+   "Statistical sampling profiler with low overhead and no main-thread restriction",
+   "Async-aware: shows time spent under an await as an [await] node",
+   "Interactive HTML output with timeline mode and collapsible call tree",
+   "Hides library frames by default, based on Python install and virtualenv paths",
+   "Multiple output formats including speedscope and pstats"
+  ],
+  "caveats": [
+   "Profiling inside Docker containers can give odd results because of slow gettimeofday syscalls (issue #83)",
+   "Pickled classes in scripts run via `pyinstrument script.py` may fail because __main__ is not found",
+   "Running from a git checkout requires a build step"
+  ],
+  "license": "unknown",
+  "category": "python profiling tools",
+  "keywords": [
+   "python profiler",
+   "statistical profiler",
+   "wall-clock profiling",
+   "call tree",
+   "performance profiling",
+   "find slow code",
+   "optimize python code",
+   "cprofile alternative",
+   "profile python script",
+   "pyinstrument",
+   "flame chart",
+   "speedscope",
+   "html profile report",
+   "django profiling middleware",
+   "jupyter profiling magic",
+   "ipython %%pyinstrument",
+   "async profiling",
+   "asyncio profiling",
+   "command line profiler",
+   "profile function time",
+   "where is my code slow",
+   "bottleneck finder",
+   "pstats output",
+   "timeline profile",
+   "performance debugging",
+   "debugging tools",
+   "profiling decorator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9753,
+  "output": 1084
+ },
+ "generated": "2026-10-29"
+}

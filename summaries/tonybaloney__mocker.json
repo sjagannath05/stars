@@ -1,0 +1,87 @@
+{
+ "id": "tonybaloney/mocker",
+ "repo": "tonybaloney/mocker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Docker",
+   "entry": "Python: _A proof-of-concept imitation of Docker, written in 100% Python_"
+  }
+ ],
+ "summary": {
+  "one_liner": "mocker is a two-day proof-of-concept imitation of Docker written in pure Python that pulls Docker Hub images and runs them using Linux namespaces, cgroups and network namespaces.",
+  "what_it_does": "The tool downloads an image's layers from the Docker public registry and extracts them into a local folder, and lists the images already downloaded with their sizes. The \"run\" command creates a veth bridge in the root namespace, puts the container in its own network namespace with a veth1 adapter at 10.0.0.3/24 and a default route via 10.0.0.1, and creates a cgroup for its processes. It then chroots into the extracted image directory and executes the image's Cmd with its environment variables, writing output to /tmp/stdout. The README says the image is chrooted from the squashed download rather than mounted as a btrfs snapshot, and that NAT networking is unfinished. It is meant to show how container isolation works and how the Docker image format is structured, not to be a usable container runtime.",
+  "use_cases": [
+   "learn how Docker container isolation works",
+   "demonstrate namespaces and cgroups in a talk or tutorial",
+   "pull Docker Hub images without the Docker daemon",
+   "inspect Docker image layers and format",
+   "run a simple container from a Docker image on Linux"
+  ],
+  "how_to_run": [
+   "./mocker.py pull hello-world",
+   "./mocker.py images",
+   "./mocker.py run library/hello-world"
+  ],
+  "stack": [
+   "Python",
+   "Linux kernel namespaces",
+   "cgroups",
+   "network namespaces",
+   "iproute2"
+  ],
+  "notable": [
+   "Implements container isolation in pure Python using kernel namespaces, cgroups and network namespaces",
+   "Pulls images from the Docker public registry and extracts their layers locally",
+   "Written as an educational companion to a PyCon AU 2017 talk",
+   "Lists downloaded images in a table with name, version, size and file"
+  ],
+  "caveats": [
+   "Linux only; README says it was tested on CentOS 7 and Ubuntu 14",
+   "Explicitly a proof of concept written in two days; the author says not to take it seriously",
+   "Networking is half-finished with no NAT, and some image start commands fail"
+  ],
+  "license": "unknown",
+  "category": "educational container runtime",
+  "keywords": [
+   "docker clone",
+   "docker imitation",
+   "mini docker",
+   "container runtime python",
+   "linux namespaces",
+   "cgroups",
+   "network namespaces",
+   "chroot containers",
+   "pull docker image",
+   "docker hub client",
+   "docker registry python",
+   "image layers extraction",
+   "veth bridge",
+   "iproute2",
+   "container isolation demo",
+   "learn containers",
+   "build your own docker",
+   "docker internals",
+   "proof of concept container",
+   "run containers without docker",
+   "python container tool",
+   "kernel namespaces tutorial",
+   "docker image format",
+   "pycon talk",
+   "linux container from scratch",
+   "lightweight container python",
+   "how docker works",
+   "cgroup demo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4078,
+  "output": 1104
+ },
+ "generated": "2026-10-29"
+}

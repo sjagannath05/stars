@@ -1,0 +1,93 @@
+{
+ "id": "pytorch/pytorch",
+ "repo": "pytorch/pytorch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Deep Learning",
+   "entry": "pytorch - Tensors and dynamic neural networks in Python with strong GPU acceleration."
+  }
+ ],
+ "summary": {
+  "one_liner": "PyTorch is a Python package for tensor computation with GPU acceleration and a tape-based autograd system for building deep neural networks.",
+  "what_it_does": "Provides a NumPy-like Tensor library that can run on CPU or GPU, with a wide set of tensor routines (slicing, indexing, math, linear algebra, reductions). Includes torch.autograd for automatic differentiation over tensor operations, torch.nn for building neural networks, torch.multiprocessing for sharing tensors across processes, and torch.utils such as DataLoader. The README describes dynamic, imperative execution where networks can be changed freely as code runs, and says layers can be written in Python or in C/C++ via an extension API. Installation is covered via Conda or pip binaries, from source (CPU, CUDA, ROCm, Intel GPU, macOS, Windows), and via Docker images.",
+  "use_cases": [
+   "build and train deep neural networks",
+   "GPU-accelerated NumPy-style array math",
+   "deep learning research prototyping",
+   "automatic differentiation for custom models",
+   "multi-process data loading and training",
+   "building PyTorch from source with CUDA or ROCm"
+  ],
+  "how_to_run": [
+   "pip install --group dev  (run from the cloned pytorch directory)",
+   "git submodule sync && git submodule update --init --recursive",
+   "python -m pip install --no-build-isolation -v -e .",
+   "docker run --gpus all --rm -ti --ipc=host pytorch/pytorch:latest"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "C++20 compiler (gcc 11.3+, clang, or MSVC)",
+   "CMake",
+   "CUDA and cuDNN (optional)",
+   "ROCm (optional, Linux)",
+   "Intel GPU support (optional)",
+   "Intel MKL",
+   "NVIDIA NCCL",
+   "Docker"
+  ],
+  "notable": [
+   "Tape-based reverse-mode autograd that lets network behavior change at runtime without rebuilding the graph",
+   "Imperative execution with stack traces pointing to the user's code",
+   "Custom GPU memory allocators for memory efficiency",
+   "C/C++ extension API described as requiring minimal boilerplate",
+   "Pre-built Docker images on Docker Hub with CUDA and cuDNN support"
+  ],
+  "caveats": [
+   "Building from source needs 10 GB+ disk space and 30-60 minutes for the initial build",
+   "Source builds require a C++20 compiler; gcc 11.3 or newer on Linux",
+   "ROCm support is Linux-only; Intel GPU support is Linux and Windows",
+   "Jetson wheels are maintained by individual contributors and require JetPack 4.2+"
+  ],
+  "license": "BSD-style (see LICENSE file)",
+  "category": "deep learning framework",
+  "keywords": [
+   "pytorch",
+   "deep learning",
+   "neural networks",
+   "tensor library",
+   "autograd",
+   "automatic differentiation",
+   "gpu acceleration",
+   "cuda",
+   "rocm",
+   "numpy alternative",
+   "ndarray gpu",
+   "machine learning framework",
+   "dynamic computation graph",
+   "tape-based autograd",
+   "torch.nn",
+   "python deep learning library",
+   "train neural network",
+   "gpu tensor computation",
+   "cudnn",
+   "distributed training",
+   "build pytorch from source",
+   "docker pytorch image",
+   "research prototyping",
+   "intel mkl",
+   "jetson wheels",
+   "deep neural network library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8508,
+  "output": 1226
+ },
+ "generated": "2026-10-29"
+}

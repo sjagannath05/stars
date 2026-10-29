@@ -1,0 +1,101 @@
+{
+ "id": "zekainie/universal-examprep-skill",
+ "repo": "ZeKaiNie/universal-examprep-skill",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "Universal Exam Cram Coach by ZeKai Nie - A multimodal, grounded active-learning tutor engine for college textbooks. Mitigates AI hallucinations and diagram blindness with automated vector figure cropping, homework-solution auto-pairing, and cross-session persistent state. Benchmarked on STEM courseware to run on small models with significant token savings."
+  }
+ ],
+ "summary": {
+  "one_liner": "An AI exam-prep tutor Agent Skill (with a small offline Python CLI) that turns your course slides, notes, homework and past papers into chapter-by-chapter teaching, page-cited quizzes and a mistake log.",
+  "category": "ai study tutor",
+  "keywords": [
+   "exam prep",
+   "final exam cram",
+   "midterm revision",
+   "study from lecture slides",
+   "pdf lecture notes",
+   "pptx slides",
+   "ai tutor that cites sources",
+   "quiz from homework",
+   "past paper practice",
+   "mistake notebook",
+   "cheat sheet generator",
+   "study plan for n days",
+   "figure extraction",
+   "figure cropping",
+   "agent skill",
+   "claude code skill",
+   "codex skill",
+   "cursor skill",
+   "windsurf skill",
+   "gemini cli skill",
+   "antigravity",
+   "small local models",
+   "offline study tool",
+   "python cli",
+   "pypdfium2",
+   "spaced re-quizzing",
+   "grounded answers",
+   "anti-hallucination",
+   "homework solution pairing",
+   "study_state.json",
+   "exam revision",
+   "course materials tutor",
+   "期末复习",
+   "考前突击",
+   "错题本"
+  ],
+  "what_it_does": "The skill reads PDF, PPTX, DOCX, Markdown, TXT, HTML and image files from a materials folder and splits the course into chapters, using file-name numbers or \"Chapter N\" headings. It extracts questions and pairs them with their reference solutions (for example hw2.pdf with hw2solutions.pdf, or textbook labels like \"Problem 1.3.10\"). It crops figures from PDF, PPTX and DOCX files with pypdfium2 so the agent can show them while explaining. Each taught sentence is labelled as coming from the materials, as AI supplement, or as an AI-generated answer, with file and page citations. State such as progress, quiz results, mistakes and notes is kept in a local study_state.json and a workspace folder, so a session can resume later. The command-line tool provides commands for setup, next slice, quiz, grading of choice and short answers, ask/search, mistakes, cheat sheet, and a day-by-day plan to the exam date. The README reports measured setup times and tests with small models such as Gemini Flash-Lite and Claude Haiku.",
+  "use_cases": [
+   "prepare for a final or midterm from lecture slides and notes",
+   "quiz yourself using homework and past exam questions",
+   "get chapter-by-chapter explanations with page citations",
+   "track mistakes and review them before an exam",
+   "build a cheat sheet from course notes",
+   "plan daily study sessions until an exam date",
+   "resume a study session across chats"
+  ],
+  "how_to_run": [
+   "npx skills add ZeKaiNie/universal-examprep-skill",
+   "pip install pypdfium2",
+   "python ~/.claude/skills/universal-exam-cram-coach/coach.py doctor",
+   "Tell your agent: Use the Exam Cram Coach skill. My materials are in <folder>. The exam is in 3 days; teach me from chapter 1.",
+   "python coach.py setup <materials-folder> --days N"
+  ],
+  "stack": [
+   "Python 3.8+",
+   "pypdfium2 (optional, PDF text and figure cropping)",
+   "Node.js 18+ (for npx skills install)",
+   "Agent Skill format (SKILL.md)",
+   "JSON state files"
+  ],
+  "notable": [
+   "Figure cropping: automatically cuts vector drawings and embedded images from lecture PDFs, slides and documents, and attaches answer figures to quiz items",
+   "Homework-solution auto-pairing by base file name and textbook problem labels",
+   "Provenance labels (🟢 from materials, 🟡 AI supplement, ⚠️ AI-generated answer) on every taught sentence",
+   "Local persistent state in study_state.json, resumable across chat sessions without a vector database",
+   "Two editions: lightweight Flash (this root skill) and a full v4.3 edition in full/ with HTML/PDF study guides"
+  ],
+  "caveats": [
+   "Terminals often cannot display figures; desktop or IDE versions of agents are recommended for PDF-heavy courses",
+   "Scanned or handwritten pages are detected and skipped, not used as content",
+   "Excel files and audio are not read",
+   "Textbook problems without statements in the folder show only the reference solution's givens",
+   "The README's benchmarks were measured on the author's own machine and courses, and the MIT and Yale sample courses are CC BY-NC-SA"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11383,
+  "output": 1617
+ },
+ "generated": "2026-10-29"
+}

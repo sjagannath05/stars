@@ -1,0 +1,101 @@
+{
+ "id": "alishansnsn/mysa",
+ "repo": "alishansnsn/mysa",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "mysa - A macOS menu bar app for quick breathing breaks, with a frosted screen overlay and handwritten quotes. [![Open-Source Software][OSS Icon]](https://github.com/alishansnsn/mysa) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "mysa - A macOS menu bar app for quick breathing breaks, with a frosted screen overlay and handwritten quotes."
+  }
+ ],
+ "summary": {
+  "one_liner": "A small macOS menu bar app that puts the screen into a frosted, dimmed overlay with a breathing orb and handwritten developer jokes for guided breathing breaks.",
+  "category": "macos menu bar app",
+  "keywords": [
+   "macos",
+   "menu bar app",
+   "breathing exercise",
+   "breathing break",
+   "guided breathing",
+   "relaxation",
+   "mindfulness",
+   "break reminder",
+   "pause app",
+   "frosted overlay",
+   "blur overlay",
+   "screen dim",
+   "handwriting animation",
+   "bezier strokes",
+   "swift",
+   "swiftui",
+   "coreanimation",
+   "global hotkey",
+   "keyboard shortcut",
+   "carbon hotkey",
+   "keyboardshortcuts",
+   "4-7-8 breathing",
+   "box breathing",
+   "coherent breathing",
+   "diaphragmatic breathing",
+   "pursed lip breathing",
+   "login item",
+   "stress break",
+   "take a break at work",
+   "wellness tool for developers",
+   "swiftpm"
+  ],
+  "what_it_does": "Mysa is a macOS menu bar app that runs a short breathing break when you press a hotkey (default Control-Option-Command-B) or click the menu bar icon. The screen is covered with a frosted, dimmed overlay while a small orb expands and contracts to pace your breath. Handwritten developer jokes are drawn on screen as Bézier strokes that appear during inhale and disappear during exhale. It ships seven built-in breathing patterns (4-7-8, box, coherent, triangle, extended exhale, diaphragmatic, pursed lip) and lets you define custom patterns as a list of phases and durations. A settings control in the notch adjusts tint, blur, grain, ambient mode, gradient, and pattern live. Escape, the close button, or the hotkey exits, and input to other apps is blocked while the overlay is up.",
+  "use_cases": [
+   "take a short breathing break at the computer",
+   "reduce stress during a work day",
+   "guided breathing with a visual pacer",
+   "pause screen and refocus before going back to work",
+   "try different breathing rhythms like box or 4-7-8 breathing",
+   "menu bar tool for quick relaxation"
+  ],
+  "how_to_run": [
+   "git clone the repository (URL left blank in the README) and cd into mysa",
+   "./package.sh (builds a release binary, wraps it in Mysa.app, ad-hoc signs it, and copies it to /Applications)",
+   "Or download the latest build from the releases page, unzip it, and move Mysa.app to /Applications",
+   "For development: swift build && swift run"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI (trimmedPath for stroke reveal)",
+   "CoreAnimation",
+   "NSVisualEffectView",
+   "SwiftPM",
+   "KeyboardShortcuts (sindresorhus)",
+   "kumailnanji/letters (handwriting glyphs and kerning, ported)"
+  ],
+  "notable": [
+   "Overlay is built from plain CoreAnimation layers rather than Metal, with no per-frame rendering, so it is cheap to leave on screen",
+   "Handwritten text is drawn as real Bézier strokes revealed with trimmedPath, synced to the breath via shared state across two windows",
+   "Global hotkey uses KeyboardShortcuts (Carbon hotkey underneath), so no accessibility permission prompt is required",
+   "Breathing patterns are simply lists of (phase, seconds) that loop, so custom rhythms work the same way as built-ins",
+   "Built with SwiftPM only, no Xcode project, one dependency"
+  ],
+  "caveats": [
+   "Requires macOS 14 or newer and Swift 6",
+   "Not notarized; macOS blocks the first launch and needs a right-click Open or xattr quarantine removal",
+   "Blocks mouse and keyboard input to other apps while the overlay is active, by design",
+   "Author states it is a relaxation toy, not a medical device"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2840,
+  "output": 1434
+ },
+ "generated": "2026-10-29"
+}

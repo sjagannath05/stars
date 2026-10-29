@@ -1,0 +1,96 @@
+{
+ "id": "harness/harness",
+ "repo": "harness/harness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "Harness Open Source | Code hosting, CI/CD pipelines and artifact registry (formerly Drone CI and Gitness)"
+  }
+ ],
+ "summary": {
+  "one_liner": "Harness Open Source is a self-hostable development platform combining code hosting, CI/CD pipelines, Gitspaces developer environments, and artifact registries, developed as the successor to Drone.",
+  "what_it_does": "Harness is an open source DevOps platform that bundles source code hosting, automated pipelines, hosted development environments called Gitspaces, and artifact registries. It ships as a Docker image that runs a server on port 3000 with a web UI and a swagger-documented REST API. Pipelines run inside Docker containers, and the README says the app negotiates the Docker API version with the local daemon. The project was built from the Drone CI codebase, which is kept as a separate feature branch, and development continues on main. Access is via a web UI, REST API with personal access tokens, and a basic CLI named gitness.",
+  "use_cases": [
+   "self-host git code hosting",
+   "run CI/CD pipelines in Docker",
+   "host a private artifact registry",
+   "provision cloud developer environments (Gitspaces)",
+   "migrate from Drone CI to a broader platform",
+   "test container registry conformance"
+  ],
+  "how_to_run": [
+   "docker run -d -p 3000:3000 -p 3022:3022 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/harness:/data --name harness --restart always harness/harness",
+   "Open the web UI in a browser on port 3000 once the container is up",
+   "Build from source: install Node and Go 1.20+, then run make dep and make tools",
+   "Build the UI: cd web && yarn install && yarn build, then run make build",
+   "Start locally: ./gitness server .local.env (serves localhost:3000)"
+  ],
+  "stack": [
+   "Go",
+   "TypeScript",
+   "Node.js / Yarn",
+   "Protocol Buffers (protoc, protoc-gen-go, protoc-gen-go-grpc)",
+   "Docker",
+   "Swagger / OpenAPI"
+  ],
+  "notable": [
+   "Successor to Drone CI, with Drone preserved as a feature branch while Harness reaches pipeline parity",
+   "Combines code hosting, pipelines, Gitspaces and artifact registries in one platform",
+   "Auto-negotiates Docker API version and documents socket setup for Docker Desktop, Rancher Desktop, and Colima",
+   "Generates a personal access token from the CLI for REST API use",
+   "Includes registry conformance test targets"
+  ],
+  "caveats": [
+   "Pipeline parity with Drone is a stated long-term goal, not yet reached",
+   "Data persists only if a bind mount or named volume is used; the README warns of data loss otherwise",
+   "The CLI is described as very basic",
+   "Some registry swagger endpoints are on a separate location and are planned to move"
+  ],
+  "license": "Apache License 2.0",
+  "category": "self-hosted devops platform",
+  "keywords": [
+   "harness",
+   "drone ci",
+   "gitness",
+   "self-hosted git",
+   "code hosting",
+   "ci/cd pipelines",
+   "continuous integration",
+   "artifact registry",
+   "gitspaces",
+   "developer environments",
+   "devops platform",
+   "docker pipelines",
+   "git server",
+   "private container registry",
+   "rest api",
+   "swagger",
+   "go",
+   "golang",
+   "self-host ci",
+   "github alternative",
+   "gitlab alternative",
+   "jenkins alternative",
+   "drone alternative",
+   "host my own git",
+   "run builds in docker",
+   "store build artifacts",
+   "cloud dev environments",
+   "personal access token",
+   "apache 2.0 devops",
+   "docker compose alternative",
+   "open source devops tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3918,
+  "output": 1298
+ },
+ "generated": "2026-10-29"
+}

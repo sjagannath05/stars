@@ -1,0 +1,97 @@
+{
+ "id": "inequitas/performancemonitor",
+ "repo": "inequitas/performancemonitor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Performance Monitor - Lightweight menu bar system monitor: CPU, memory, network, disk, GPU, per-sensor temperatures, SSD wear, and battery health. No telemetry."
+  }
+ ],
+ "summary": {
+  "one_liner": "A lightweight macOS menu bar app showing real-time CPU, memory, network, disk, GPU, battery, Bluetooth and thermal/fan readings in a popover, for Apple Silicon Macs.",
+  "what_it_does": "Shows live CPU usage with a per-process Top CPU list, where an app and its helper processes are grouped into one row and a glossary of 231 known processes explains what each one is. Memory view breaks down used, wired, compressed and free memory with a pressure indicator. Network view shows live throughput, a butterfly upload/download chart, VPN and connection indicators, local and public IPs, Wi-Fi SSID and signal strength, and read-only listening ports and open connections. Disk, GPU, battery and Bluetooth views cover I/O speeds, utilization, display info, battery health and cycle counts, and device battery levels. Thermal view reads CPU, GPU and battery temperatures and fan speeds from the SMC, with a menu bar readout and tiered history graphs kept for one hour, 48 hours and 90 days. It can also write a JSON snapshot for status bar tools and offers a small always-on-top floating panel.",
+  "use_cases": [
+   "monitor CPU and memory usage from the macOS menu bar",
+   "check which app is using the CPU or network",
+   "watch Mac temperature and fan speed",
+   "see battery health and cycle count on a MacBook",
+   "check Bluetooth device battery levels such as AirPods",
+   "feed system metrics into SwiftBar, xbar or SketchyBar",
+   "keep an always-visible temperature readout over full-screen apps"
+  ],
+  "how_to_run": [
+   "brew install --cask inequitas/tap/performance-monitor",
+   "Alternatively, download Performance Monitor.app from the GitHub Releases page and drag it to /Applications",
+   "Right-click the app and choose Open on first launch (ad-hoc signed)",
+   "Building from source: git clone the repository, cd performancemonitor, then run: bash build_app.sh",
+   "open \".build/bundle/Performance Monitor.app\""
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "IOKit",
+   "CoreWLAN",
+   "IOBluetooth",
+   "CoreBluetooth",
+   "Swift Package Manager"
+  ],
+  "notable": [
+   "No telemetry or analytics; the app makes only three network requests (update check, optional public-IP lookup, latency probe to a host you choose)",
+   "Thermal and fan readings come from the SMC via IOKit across M1 to M4 chips",
+   "Tiered history storage at one-second, one-minute and one-hour resolutions with sleep, wake and throttling events marked on graphs",
+   "Floating panel stays visible over full-screen apps and holds nothing while hidden",
+   "Process glossary with 231 entries in seven languages"
+  ],
+  "caveats": [
+   "Requires Apple Silicon (M1 or later); the build is arm64-only and will not run on Intel Macs",
+   "Requires macOS 14 (Sonoma) or later",
+   "Ad-hoc signed without an Apple Developer ID, so first launch needs right-click Open to bypass Gatekeeper"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar monitor",
+  "keywords": [
+   "macos system monitor",
+   "menu bar monitor",
+   "menubar system stats",
+   "cpu usage monitor",
+   "memory usage mac",
+   "network speed menu bar",
+   "disk io monitor",
+   "gpu utilization mac",
+   "battery health mac",
+   "cycle count",
+   "smc temperature",
+   "fan speed mac",
+   "apple silicon monitor",
+   "bluetooth battery airpods",
+   "activity monitor alternative",
+   "istat menus alternative",
+   "swiftbar plugin data",
+   "xbar json",
+   "sketchybar data",
+   "process glossary",
+   "wifi signal strength dbm",
+   "listening ports mac",
+   "floating overlay monitor",
+   "swiftui app",
+   "open source mac utility",
+   "free system monitor",
+   "no telemetry monitor",
+   "watch temperature during game",
+   "thermal pressure",
+   "view open network connections",
+   "homebrew cask monitor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4855,
+  "output": 1482
+ },
+ "generated": "2026-10-29"
+}

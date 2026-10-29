@@ -1,0 +1,107 @@
+{
+ "id": "tryskilly/skilly",
+ "repo": "tryskilly/skilly",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "Skilly - Voice-first AI tutor that watches your screen and points at on-screen UI elements to teach creative software like Blender, Figma, and Premiere."
+  }
+ ],
+ "summary": {
+  "one_liner": "Skilly is an AI teaching companion that watches your screen (macOS app) or page DOM (web widget), talks with you by voice, and points at UI elements to teach creative software.",
+  "what_it_does": "It ships as a macOS menu bar app, an embeddable @skilly/web widget that site owners add to any web page, and a Studio dashboard for managing keys, origin allowlists, skill content, usage, and billing. The macOS app uses push-to-talk or an always-on Live Tutor mode to stream screen and microphone to the OpenAI Realtime API and animates a blue cursor to the UI element the AI mentions. The web widget reads a DOM digest instead of screenshots, speaks over WebRTC, and points to page elements with a bezier-arc cursor. Teaching is driven by SKILL.md files that define curriculum stages, completion signals, and UI vocabulary, and the repo bundles five skills: Blender, After Effects, Premiere Pro, DaVinci Resolve, and Figma. A Cloudflare Worker proxy holds API keys and handles auth and billing, and a shared Rust core provides policy and prompt logic. Users can bring their own OpenAI key or use a hosted $19/month tier after a 15-minute trial.",
+  "use_cases": [
+   "learn Blender or Premiere Pro with a voice tutor",
+   "get on-screen guidance while using Figma",
+   "add an AI tutor overlay to a website",
+   "screen-aware help for creative software",
+   "build custom teaching skills for desktop apps",
+   "voice-driven onboarding for web products"
+  ],
+  "how_to_run": [
+   "cd worker && npm install",
+   "npx wrangler secret put OPENAI_API_KEY (plus WORKOS_API_KEY, SESSION_TOKEN_SECRET, POLAR_ACCESS_TOKEN, POLAR_WEBHOOK_SECRET)",
+   "npx wrangler deploy",
+   "open leanring-buddy.xcodeproj, select the leanring-buddy scheme, set signing team, then Cmd + R",
+   "Optional Studio dashboard: cd apps/web-backend && bun install && cp .env.example .env.local && bun run dev"
+  ],
+  "stack": [
+   "Swift",
+   "Rust",
+   "TypeScript",
+   "Cloudflare Workers",
+   "OpenAI Realtime API",
+   "Next.js",
+   "Tailwind CSS v4",
+   "Postgres",
+   "WorkOS AuthKit",
+   "Polar",
+   "WebRTC",
+   "WebAssembly",
+   "ScreenCaptureKit",
+   "Kotlin",
+   "UniFFI",
+   "Bun"
+  ],
+  "notable": [
+   "Pointing cursor animates along a bezier arc to on-screen UI elements, across all connected monitors on macOS",
+   "Teaching skills are plain SKILL.md files with curriculum stages and completion signals, auto-activated when the target app is frontmost",
+   "Bring-your-own OpenAI key option removes trial gating and bills directly through OpenAI",
+   "Web widget uses DOM digests rather than screenshots and is about 24KB in a Shadow DOM",
+   "Shared Rust core compiled as a C ABI dylib for Swift and as WASM for the browser"
+  ],
+  "caveats": [
+   "macOS app requires macOS 14.2+ and Xcode 15+, and needs microphone, accessibility, and screen recording permissions",
+   "Full setup needs a Cloudflare account and OpenAI and WorkOS keys, plus Polar for billing; not a one-click install",
+   "Hosted tier costs $19/month after a 15-minute free trial; BYO key shifts costs to OpenAI at roughly $0.06-0.10 per minute of voice",
+   "README says not to run xcodebuild from the terminal because it invalidates TCC permissions"
+  ],
+  "license": "Apache License, Version 2.0",
+  "category": "ai voice tutor",
+  "keywords": [
+   "ai tutor",
+   "voice tutor",
+   "screen-aware assistant",
+   "teaching companion",
+   "realtime voice ai",
+   "openai realtime",
+   "gpt-realtime",
+   "macos menu bar app",
+   "swift app",
+   "blender tutorial",
+   "figma help",
+   "premiere pro help",
+   "davinci resolve tutorial",
+   "after effects tutorial",
+   "learn creative software",
+   "on-screen pointer",
+   "cursor overlay",
+   "embeddable web widget",
+   "website ai assistant",
+   "shadow dom widget",
+   "skill files",
+   "skill.md",
+   "live tutor",
+   "push-to-talk",
+   "bring your own api key",
+   "cloudflare worker proxy",
+   "rust core",
+   "webrtc voice",
+   "guided onboarding",
+   "clicky alternative",
+   "teach me software",
+   "walk me through app ui"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5460,
+  "output": 1695
+ },
+ "generated": "2026-10-29"
+}

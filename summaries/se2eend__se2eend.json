@@ -1,0 +1,103 @@
+{
+ "id": "se2eend/se2eend",
+ "repo": "sE2EEnd/sE2EEnd",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "sE2EEnd - End-to-end encrypted file sharing with password protection, download limits, and auto-expiration, integrated with Keycloak for authentication. AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Self-hosted, end-to-end encrypted file and text sharing where encryption happens in the browser and the server only stores ciphertext.",
+  "what_it_does": "Lets users send files (single or multiple, auto-zipped) and secret notes or text snippets through a web app. Encryption and decryption run in the browser with the Web Crypto API using AES-256-GCM, and the key sits in the URL fragment so it is never sent to the server. Senders can set password protection, per-transfer download limits, and expiration dates, and can revoke transfers from the dashboard. Authentication is handled through Keycloak (OAuth2/OIDC, SSO, LDAP/Active Directory, MFA), and an admin dashboard shows transfers, storage usage, and deletion audit logs. Storage can be the local filesystem or any S3-compatible object store, and the stack is deployed with Docker Compose using images published to GHCR.",
+  "use_cases": [
+   "share confidential files with a team",
+   "send a one-time secret or password as a note",
+   "temporary file transfer with download limits",
+   "self-hosted alternative to hosted file sending services",
+   "share files to a phone via QR code",
+   "file sharing with SSO and LDAP login"
+  ],
+  "how_to_run": [
+   "git clone --depth=1 --filter=blob:none --sparse <repo-url> && cd sE2EEnd",
+   "git sparse-checkout set --no-cone /docker-compose.yml /.env.example /init-databases.sql keycloak/",
+   "cp .env.example .env",
+   "Edit .env to set POSTGRES_PASSWORD, KEYCLOAK_ADMIN_PASSWORD, KEYCLOAK_EXTERNAL_URL and FRONTEND_URL for production",
+   "docker compose up -d",
+   "Wait about 30 seconds for Keycloak to import the realm, then open the frontend URL"
+  ],
+  "stack": [
+   "React 19",
+   "TypeScript",
+   "Vite",
+   "ShadcnUI",
+   "nginx",
+   "Spring Boot 4",
+   "Java 25",
+   "Keycloak 26",
+   "PostgreSQL 18",
+   "Web Crypto API",
+   "Docker",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Zero-knowledge design: the decryption key lives in the URL fragment and never reaches the server",
+   "Custom branding (colour, logo, app name) set through environment variables without a rebuild",
+   "Multi-language UI with English and French, plus dark mode",
+   "Supports S3-compatible storage or local filesystem",
+   "Instance policies such as requiring auth for download or enforcing transfer passwords"
+  ],
+  "caveats": [
+   "Setup depends on several services (Keycloak, PostgreSQL, backend, frontend), and the README says production needs several environment variables set",
+   "Keycloak needs about 30 seconds on first boot to import the realm",
+   "The README gives no platform limits or maintenance status"
+  ],
+  "license": "AGPL-3.0",
+  "category": "encrypted file sharing",
+  "keywords": [
+   "end-to-end encryption",
+   "e2ee file sharing",
+   "zero-knowledge",
+   "self-hosted file sharing",
+   "secure file transfer",
+   "encrypted file transfer",
+   "send files securely",
+   "one-time secret sharing",
+   "secret notes",
+   "aes-256-gcm",
+   "web crypto api",
+   "keycloak",
+   "oidc",
+   "sso",
+   "ldap",
+   "active directory",
+   "mfa",
+   "spring boot",
+   "react",
+   "postgresql",
+   "docker compose",
+   "s3 storage",
+   "minio",
+   "download limit",
+   "link expiration",
+   "password protected links",
+   "qr code sharing",
+   "share files with my team",
+   "private file sending alternative",
+   "temporary file links",
+   "encrypted sends",
+   "self-hosted docker app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3849,
+  "output": 1383
+ },
+ "generated": "2026-10-29"
+}

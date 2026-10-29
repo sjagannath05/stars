@@ -1,0 +1,96 @@
+{
+ "id": "typeerror/secure",
+ "repo": "TypeError/secure",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web Security",
+   "entry": "secure - HTTP security headers for Python web applications with ASGI and WSGI middleware."
+  }
+ ],
+ "summary": {
+  "one_liner": "A dependency-free Python library for defining HTTP security headers once and applying them through ASGI middleware, WSGI middleware, or framework response hooks.",
+  "what_it_does": "Provides a Secure policy object that holds HTTP security header settings and applies them to responses. It ships presets (BALANCED, BASIC, STRICT) and a default header set covering Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy, Content-Security-Policy, Strict-Transport-Security, Permissions-Policy, Referrer-Policy, X-Content-Type-Options, and X-Frame-Options. It includes builder classes for Content Security Policy and Permissions Policy. Middleware is available for ASGI and WSGI apps, and the same object can set headers on a response directly (sync or async). An optional pipeline adds header allowlisting, deduplication, normalization, and validation. The README shows integration examples for FastAPI, Flask, Django, and Shiny for Python.",
+  "use_cases": [
+   "add security headers to a FastAPI app",
+   "apply consistent CSP and HSTS across a Flask site",
+   "centralize security header policy for a Django project",
+   "configure Content Security Policy with a builder",
+   "set headers in WSGI or ASGI middleware"
+  ],
+  "how_to_run": [
+   "uv add secure",
+   "pip install secure",
+   "from secure import Secure; secure_headers = Secure.with_default_headers()",
+   "from secure.middleware import SecureASGIMiddleware; app.add_middleware(SecureASGIMiddleware, secure=secure_headers)",
+   "secure_headers.set_headers(response)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "ASGI",
+   "WSGI"
+  ],
+  "notable": [
+   "One policy object reused across ASGI middleware, WSGI middleware, and response hooks",
+   "Presets BALANCED, BASIC (Helmet-style), and STRICT",
+   "Builders for Content Security Policy and Permissions Policy",
+   "Optional pipeline for allowlisting, deduplication, and validation of headers",
+   "No external dependencies"
+  ],
+  "caveats": [
+   "Default CSP is conservative and likely needs changes for interactive apps, dashboards, CDNs, or third-party scripts",
+   "Middleware only modifies HTTP responses in ASGI apps",
+   "README says defaults are a starting point and need application-specific review"
+  ],
+  "license": "MIT",
+  "category": "python web security headers",
+  "keywords": [
+   "security headers",
+   "http security headers",
+   "python security headers",
+   "content security policy",
+   "csp builder",
+   "permissions policy",
+   "hsts",
+   "x-frame-options",
+   "asgi middleware",
+   "wsgi middleware",
+   "fastapi security headers",
+   "flask after_request headers",
+   "django middleware headers",
+   "starlette middleware",
+   "helmet alternative python",
+   "secure headers library",
+   "response header policy",
+   "cross-origin-opener-policy",
+   "referrer-policy",
+   "x-content-type-options",
+   "nosniff",
+   "clickjacking protection",
+   "mime sniffing prevention",
+   "web app hardening",
+   "owasp secure headers",
+   "mdn headers",
+   "shiny for python security",
+   "header allowlist",
+   "header deduplication",
+   "header validation",
+   "set headers on response",
+   "harden web application",
+   "add security headers python",
+   "https enforcement header",
+   "centralize header policy",
+   "web security python library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3793,
+  "output": 1193
+ },
+ "generated": "2026-10-29"
+}

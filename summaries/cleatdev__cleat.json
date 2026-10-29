@@ -1,0 +1,94 @@
+{
+ "id": "cleatdev/cleat",
+ "repo": "cleatdev/cleat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Cleat by cleatdev - Give the agent a cage, not your keys. One-command Docker sandbox for AI coding agents: full autonomous permissions, per-project isolation, your host stays untouched."
+  }
+ ],
+ "summary": {
+  "one_liner": "Cleat is a bash CLI that runs Claude Code with full autonomous permissions inside a per-project Docker container so the host system and other projects stay untouched.",
+  "what_it_does": "Cleat wraps a single bash script and a Docker image so that `cleat` in a project directory pulls or builds an image, starts an isolated container with the project mounted at /workspace, and launches Claude Code with permission prompts disabled. Each project gets its own container, and multiple named \"boxes\" can run side by side over the same repo with separate capabilities and writable layers. Host capabilities such as git identity, SSH keys, env vars, GitHub CLI auth, host Docker daemon, hooks and an unsafe-rm guard are all off by default and enabled per box with `cleat config`. Extra features the README describes include a clipboard bridge, a browser-open bridge, forked copy-on-write workspaces via `--fork`, per-box kits of CLAUDE.md and subagent setups, named Claude account switching, and a session list with trash-based deletion. Trust prompts gate project `.cleat` config, and an update checker runs at most every 10 minutes.",
+  "use_cases": [
+   "Run Claude Code unattended overnight without risking the host machine",
+   "Sandbox AI coding agents per project in Docker",
+   "Run several agents in parallel on the same repo using forked workspaces",
+   "Keep SSH keys, cloud tokens and credentials away from an autonomous agent unless opted in",
+   "Switch between multiple Claude logins without a browser re-login",
+   "Test dockerized apps from inside an agent sandbox via the host Docker daemon"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash",
+   "cd ~/your-project && cleat",
+   "brew install cleatdev/tap/cleat",
+   "git clone <repo> && cd cleat && ./install.sh --local",
+   "cleat update"
+  ],
+  "stack": [
+   "bash",
+   "Docker",
+   "Node.js",
+   "Claude Code",
+   "Python",
+   "Git",
+   "GitHub CLI",
+   "jq",
+   "socat",
+   "GHCR"
+  ],
+  "notable": [
+   "Per-project and per-box isolation: each box has its own container, capabilities and Claude session, with forked copy-on-write workspaces for parallel agents",
+   "Capabilities (ssh, git, env, gh, docker, unsafe-rm, hooks) are all disabled until explicitly enabled",
+   "Named Claude account switching that pins a box to one login and hands over live sessions",
+   "Prebuilt image pulled from GHCR with automatic local-build fallback",
+   "Engine-aware Docker capability that works with Docker Desktop, OrbStack, Colima, Rancher Desktop, Lima and native Linux"
+  ],
+  "caveats": [
+   "Requires a local Docker daemon; remote tcp:// or ssh:// daemons are not supported",
+   "Platform support is macOS or Linux, with Windows only via WSL2",
+   "Host capabilities like ssh, git, env and docker weaken isolation when enabled; the README says the box shares the Claude login across boxes by default"
+  ],
+  "license": "unknown",
+  "category": "ai agent sandboxing",
+  "keywords": [
+   "docker sandbox",
+   "ai coding agent sandbox",
+   "claude code sandbox",
+   "run claude code safely",
+   "dangerously-skip-permissions alternative",
+   "containerized agent",
+   "isolated dev environment",
+   "per-project container",
+   "autonomous coding agent",
+   "bash cli",
+   "claude code docker",
+   "agent isolation",
+   "sandbox ai agent overnight",
+   "run ai agent without touching my machine",
+   "keep ssh keys away from agent",
+   "parallel agents same repo",
+   "git worktree alternative",
+   "fork project copy",
+   "devcontainer alternative",
+   "claude account switch",
+   "clipboard bridge container",
+   "homebrew cli tool",
+   "docker desktop orbstack colima",
+   "cleat",
+   "sandboxed shell for llm agent",
+   "contain ai agent rm -rf"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15645,
+  "output": 1449
+ },
+ "generated": "2026-10-29"
+}

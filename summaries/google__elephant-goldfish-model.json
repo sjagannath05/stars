@@ -1,0 +1,118 @@
+{
+ "id": "google/elephant-goldfish-model",
+ "repo": "google/elephant-goldfish-model",
+ "kind": "star",
+ "description": "Open-source skills for designing and reviewing software with AI agents",
+ "topics": [
+  "agent-skills",
+  "ai-agents",
+  "antigravity",
+  "claude-code",
+  "claude-code-plugin",
+  "claude-skills",
+  "codex",
+  "codex-plugin",
+  "coding-agents",
+  "context-engineering",
+  "developer-tools",
+  "gemini",
+  "llm",
+  "multi-agent",
+  "prompt-engineering",
+  "spec-driven-development"
+ ],
+ "language": "Python",
+ "stars": 5010,
+ "license": "Apache-2.0",
+ "homepage": "https://egm.dev",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "programming"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "An Apache-2.0 plugin of agent skills for designing and reviewing software specs: a deep-context agent drafts the design, and fresh zero-context reviewer subagents stress-test it before any code is written.",
+  "what_it_does": "EGM (Elephant-Goldfish Model) is a set of skills installed as a plugin into coding agents such as Antigravity, Claude Code, and Codex. The \"elephant\" agent holds project context, brainstorms with the user, and drafts a specification (concepts_brief.md, then design_draft.md) section by section with feedback in chat. \"Goldfish\" reviewers are fresh subagents that read only the document and its referenced source material, not the earlier conversation, to surface unstated assumptions and blind spots. Review runs across five stages and produces findings the user chooses to address. Other skills cover resolving review findings, bootstrapping docs for an existing codebase, running a configured group of reviewers (review loop), and comparing checked-in documents with current source code (drift report). The README says approved specs can be saved under docs/designs/ before implementation.",
+  "use_cases": [
+   "Drafting a feature spec before implementation",
+   "Stress-testing a design document with fresh reviewer agents",
+   "Brainstorming requirements and trade-offs with an AI agent",
+   "Generating docs for an existing codebase",
+   "Detecting drift between design docs and source code",
+   "Running a multi-reviewer review loop on a document"
+  ],
+  "how_to_run": [
+   "Antigravity: agy plugin install",
+   "Claude Code: claude plugin marketplace add google/elephant-goldfish-model",
+   "Claude Code: claude plugin install egm@egm",
+   "Codex: codex plugin marketplace add google/elephant-goldfish-model",
+   "Codex: codex plugin add egm@egm",
+   "Start a new session, then run /egm-brainstorm, /egm-draft, and /egm-review design_draft.md (prefix /egm: in Antigravity and Claude Code)"
+  ],
+  "stack": [
+   "Python",
+   "Markdown skill and prompt files",
+   "Antigravity agent plugin",
+   "Claude Code plugin",
+   "Codex plugin"
+  ],
+  "notable": [
+   "Two-role design: a context-rich agent drafts, zero-context subagents review the document alone",
+   "Modular skills that can be used individually rather than as a fixed sequence",
+   "Works across Antigravity, Claude Code, and Codex plugin systems",
+   "Review stage stops and reports if the agent cannot create fresh subagent contexts",
+   "Per-section drafting with user approval in chat before the spec is finalized"
+  ],
+  "caveats": [
+   "Goldfish reviews require an agent that can create fresh subagent contexts; otherwise EGM stops the review",
+   "Not a substitute for tests or human judgment, per the README",
+   "Intended for features needing design decisions; small clear bug fixes should use a normal workflow",
+   "README states it is not an officially supported Google product"
+  ],
+  "license": "Apache-2.0",
+  "category": "agent skills for design",
+  "keywords": [
+   "spec-driven development",
+   "design review",
+   "ai agents",
+   "coding agents",
+   "claude code plugin",
+   "codex plugin",
+   "antigravity plugin",
+   "agent skills",
+   "claude skills",
+   "context engineering",
+   "prompt engineering",
+   "multi-agent review",
+   "subagent review",
+   "design document",
+   "software design",
+   "specification drafting",
+   "brainstorm feature ideas",
+   "review a spec before coding",
+   "stress test a design",
+   "design doc generator",
+   "documentation for existing codebase",
+   "drift detection docs vs code",
+   "reviewer agents",
+   "llm plugin",
+   "gemini agent tools",
+   "developer tools",
+   "write spec with ai",
+   "second opinion on design",
+   "find blind spots in plan",
+   "ai pair programming planning"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3001,
+  "output": 1327
+ },
+ "generated": "2026-10-29"
+}

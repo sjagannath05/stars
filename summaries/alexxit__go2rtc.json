@@ -1,0 +1,99 @@
+{
+ "id": "alexxit/go2rtc",
+ "repo": "AlexxIT/go2rtc",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Home Automation",
+   "entry": "go2rtc | Camera streaming application supporting RTSP, WebRTC and HomeKit"
+  }
+ ],
+ "summary": {
+  "one_liner": "go2rtc is a zero-dependency camera streaming application that ingests and re-serves video/audio streams over RTSP, WebRTC, HomeKit, HLS, MJPEG and other protocols.",
+  "what_it_does": "It reads streams from many camera and device protocols (RTSP, RTMP, ONVIF, WebRTC, HomeKit, plus vendor-specific ones like Tapo, Tuya, Wyze, Ring and Dahua-style NVRs) and re-publishes them as RTSP, WebRTC, MSE/MP4, HLS, MJPEG, FLV, MPEG-TS and HomeKit outputs. It auto-matches codecs to what the client supports and uses FFmpeg only when transcoding is needed. It supports two-way audio to cameras that have speakers, can mix audio tracks from several sources, and can publish streams to services such as YouTube and Telegram via RTMP/RTMPS. A WebUI and HTTP/WebSocket API show active connection stats and let you edit the go2rtc.yaml config. Releases are provided as binaries for Windows, macOS, Linux and FreeBSD, plus Docker images and a Home Assistant add-on.",
+  "use_cases": [
+   "restream RTSP camera feeds to a browser with low latency",
+   "view home security cameras through WebRTC or MSE",
+   "add two-way audio or play sound files through supported cameras",
+   "feed camera streams to Home Assistant or Frigate for recording",
+   "publish a camera stream to YouTube or Telegram",
+   "expose a HomeKit or MJPEG view of a camera that lacks native support"
+  ],
+  "how_to_run": [
+   "Download the binary for your OS from the latest release (or use the Docker image alexxit/go2rtc)",
+   "On Linux or macOS run: chmod +x go2rtc_xxx_xxx",
+   "Create a go2rtc.yaml with a streams section, e.g. hall-camera: rtsp://user:password@192.168.1.123/...",
+   "Run go2rtc from the directory containing go2rtc.yaml",
+   "Open the web interface on port 1984",
+   "Optionally restrict api, rtsp and webrtc listen addresses in the config for security"
+  ],
+  "stack": [
+   "Go",
+   "FFmpeg (optional, for transcoding)",
+   "Python (included in Docker image)",
+   "WebRTC",
+   "RTSP",
+   "HLS",
+   "MSE/MP4",
+   "HomeKit"
+  ],
+  "notable": [
+   "Zero-dependency single binary for Windows, macOS, Linux, FreeBSD and many ARM/MIPS devices",
+   "Multi-source two-way codec negotiation across several inputs for one stream",
+   "Built-in PCMA/PCMU/PCM repackaging to FLAC for MSE/MP4/HLS and resampling for WebRTC",
+   "Codec filters in stream URLs (e.g. ?video=h264&audio=aac) to select tracks",
+   "Can be imported as a library into other Go projects"
+  ],
+  "caveats": [
+   "The HTTP API can reach insecure sources such as exec and echo; the README warns that an exposed API gives full server access and recommends restricting modules and paths",
+   "Web interface has no built-in auth outside the Home Assistant add-on; a reverse proxy is needed for protection",
+   "Some vendor integrations (e.g. Nest) rely on user-unfriendly or paid APIs, and Wyze legacy access uses docker-wyze-bridge",
+   "Master branch builds may be unstable"
+  ],
+  "license": "unknown",
+  "category": "camera streaming server",
+  "keywords": [
+   "go2rtc",
+   "camera streaming",
+   "rtsp server",
+   "rtsp to webrtc",
+   "webrtc camera",
+   "homekit camera",
+   "restream rtsp",
+   "ip camera viewer",
+   "low latency video",
+   "two-way audio camera",
+   "onvif",
+   "mjpeg server",
+   "hls stream",
+   "mse mp4 streaming",
+   "ffmpeg transcoding",
+   "home assistant camera",
+   "frigate source",
+   "nvr stream",
+   "rtmp publish youtube",
+   "video restreaming",
+   "stream camera to browser",
+   "share camera feed",
+   "watch security cameras remotely",
+   "send audio to camera speaker",
+   "go streaming app",
+   "self-hosted camera server",
+   "single binary camera tool",
+   "tapo camera",
+   "wyze camera",
+   "dahua camera",
+   "docker camera streaming"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10395,
+  "output": 1598
+ },
+ "generated": "2026-10-29"
+}

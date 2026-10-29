@@ -1,0 +1,96 @@
+{
+ "id": "dutradotdev/quokka",
+ "repo": "dutradotdev/quokka",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📱 iOS / macOS (46)",
+   "entry": "quokka - Inspect and clean a USB-connected iPhone from the macOS terminal: storage, apps, media, syslog. No jailbreak."
+  }
+ ],
+ "summary": {
+  "one_liner": "quokka is a Mac command-line tool (also installed as the short alias qk) that inspects and cleans a USB-connected iPhone or Android phone from the terminal, without jailbreak or root.",
+  "what_it_does": "It shows device status, identity, and battery, and lists installed user apps by size with uninstall support. It surveys and analyzes media files (camera roll and downloads), can flag likely duplicates, and can delete files through an interactive picker. It streams the device system log (syslog or logcat) in a TUI viewer with level and process filters, search, pause, and save, or as plain text. It can also reboot or power off the device, and renders a 1080x1080 PNG device snapshot card. Every query command supports --json output, and --redact masks serial, UDID, IMEI, and MAC.",
+  "use_cases": [
+   "Free up storage on a test iPhone or Android phone",
+   "Find the largest apps and uninstall them from the terminal",
+   "Tail a device's system log while debugging",
+   "Find duplicate photos and videos on a connected phone",
+   "Pull device info for scripts or CI with JSON output",
+   "Make a shareable device info screenshot with masked identifiers"
+  ],
+  "how_to_run": [
+   "brew install dutradotdev/tap/quokka-cli",
+   "qk",
+   "qk status",
+   "qk logs --no-tui --min-level warning"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo workspace (quokka-core, quokka-cli)",
+   "usbmuxd",
+   "adb",
+   "JetBrains Mono (bundled font)",
+   "Twemoji (bundled SVGs)"
+  ],
+  "notable": [
+   "Works on iPhones over usbmuxd and lockdown services without jailbreak or core_device_proxy tunnel",
+   "Supports both iOS 17+ and Android 8+ over adb, with no root on either",
+   "Plain-text and NDJSON streaming modes for piping into jq or CI",
+   "Redaction applied before JSON serialization for safe sharing",
+   "Separate presentation-free core crate intended for a GUI to build on"
+  ],
+  "caveats": [
+   "Requires a USB cable, a trusted device, and Xcode command line tools for iPhone; adb and USB debugging for Android",
+   "On Android without root, app names show as package ids, battery health and cycles are unavailable, and qk capture is iOS-only",
+   "Some features (interactive pickers, deletion) need a TTY"
+  ],
+  "license": "MIT",
+  "category": "mobile device cli",
+  "keywords": [
+   "iphone cli",
+   "iphone storage",
+   "ios device management",
+   "android adb tool",
+   "usbmuxd",
+   "adb",
+   "macos terminal",
+   "mac cli",
+   "iphone syslog",
+   "logcat viewer",
+   "device log tail",
+   "free up iphone space",
+   "uninstall apps from terminal",
+   "find duplicate photos",
+   "large media finder",
+   "device info tool",
+   "neofetch for phone",
+   "json device info",
+   "no jailbreak",
+   "no root",
+   "lockdown services",
+   "idevice tool",
+   "ios log viewer",
+   "tui log viewer",
+   "reboot iphone from mac",
+   "phone storage cleaner",
+   "list installed apps by size",
+   "android storage cleaner",
+   "rust cli",
+   "homebrew cli",
+   "device snapshot png",
+   "quokka",
+   "qk command"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4937,
+  "output": 1212
+ },
+ "generated": "2026-10-29"
+}

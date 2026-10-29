@@ -1,0 +1,99 @@
+{
+ "id": "onecli/onecli",
+ "repo": "onecli/onecli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "OneCLI | Credential vault for AI agents — Rust HTTP gateway injects API keys transparently so agents never handle raw secrets"
+  }
+ ],
+ "summary": {
+  "one_liner": "OneCLI is an open-source platform for running sandboxed AI agents for teams, with a Rust gateway that injects credentials so agents never handle raw API keys.",
+  "what_it_does": "The README describes OneCLI v2 as a platform where you create one sandboxed agent per employee and grant each agent specific access. Outbound agent traffic goes through a Rust gateway that intercepts HTTPS via MITM, injects credentials, and enforces team policy. Secrets are stored encrypted with AES-256-GCM and matched by host and path pattern. The stack includes a Next.js dashboard, an API control plane with a database and work queue, a runner that starts and reaps sandboxes, an SSH terminator using short-lived certificates, and a Slack channel adapter with one app per agent. Human-in-the-loop approvals and shared team-level connections are also described. Self-hosting uses pnpm, with a Helm chart for Kubernetes.",
+  "use_cases": [
+   "give employees sandboxed AI agents",
+   "keep API keys away from autonomous agents",
+   "self-host a credential vault for AI agents",
+   "run agents in Slack with per-agent identity",
+   "approve risky agent actions before they run",
+   "manage shared LLM keys across a team"
+  ],
+  "how_to_run": [
+   "git clone && cd onecli",
+   "pnpm install",
+   "pnpm run setup",
+   "helm install onecli oci://ghcr.io/onecli/charts/onecli  (Kubernetes)",
+   "Local dev: mise install && pnpm install && pnpm dev"
+  ],
+  "stack": [
+   "Rust",
+   "Next.js",
+   "TypeScript",
+   "pnpm",
+   "PostgreSQL",
+   "Helm",
+   "Slack",
+   "AES-256-GCM"
+  ],
+  "notable": [
+   "Gateway injects credentials into outbound HTTPS requests so agents never see raw secrets",
+   "Integrates with Bitwarden or 1Password for on-demand credential injection with nothing stored on the server",
+   "Runner is outbound-only with no inbound ports, so it works behind NAT",
+   "Deterministic human-in-the-loop approvals in chat for sensitive actions",
+   "Enterprise features live in ee/ directories under a separate license"
+  ],
+  "caveats": [
+   "Enterprise paths under ee/ require a subscription for production use",
+   "Contributions require accepting a Contributor License Agreement",
+   "Multi-component setup (dashboard, API server, gateway, runner, PostgreSQL) for self-hosting"
+  ],
+  "license": "Apache-2.0 (except ee/ directories under the OneCLI Enterprise License)",
+  "category": "ai agent credential vault",
+  "keywords": [
+   "credential vault",
+   "ai agents",
+   "api key injection",
+   "secrets management",
+   "rust gateway",
+   "http proxy",
+   "mitm proxy",
+   "sandboxed agents",
+   "agent sandbox",
+   "team ai assistant",
+   "self-hosted ai agents",
+   "slack bot",
+   "helm chart",
+   "kubernetes",
+   "nextjs dashboard",
+   "postgresql",
+   "aes-256-gcm",
+   "secret store",
+   "ssh terminator",
+   "human in the loop approval",
+   "hide api keys from agents",
+   "run agents for my team",
+   "bitwarden integration",
+   "1password integration",
+   "llm key sharing",
+   "openclaw",
+   "hermes agent",
+   "nanoclaw",
+   "outbound proxy credentials",
+   "agent policy enforcement",
+   "onecli",
+   "employee ai agent",
+   "credential gateway"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3339,
+  "output": 1279
+ },
+ "generated": "2026-10-29"
+}

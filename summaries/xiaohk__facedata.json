@@ -1,0 +1,90 @@
+{
+ "id": "xiaohk/facedata",
+ "repo": "xiaohk/FaceData",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎬 Video (27)",
+   "entry": "Face Data - macOS application used to auto-annotate landmarks from a video."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS app that auto-annotates face landmarks from an .mp4 video, producing frame images and landmark overlays for use as GAN training data.",
+  "what_it_does": "Face Data takes a video file (currently .mp4 only) and extracts a set number of frames from a chosen start-to-end second range. For each frame it detects faces and draws facial landmarks, saving the original frame and a landmark image into an output folder. Output is split into an \"origin\" subfolder with frames named img001.png and a \"landmark\" subfolder with matching img001lm.png files. If no face is found in a frame, the landmark file is named no_face_img001lm.png. The README says the app uses Apple's Vision library for landmark detection and AV Foundation for video handling. A Python script named crop.py is referenced for resizing the output images to a GAN model's size requirements. Processing can be started and cancelled from the app's interface.",
+  "use_cases": [
+   "Generating face landmark training data for GANs",
+   "Extracting frames from a video for a dataset",
+   "Auto-annotating facial landmarks in video clips",
+   "Creating paired face and landmark images",
+   "Preparing images for a GAN model by cropping"
+  ],
+  "how_to_run": [
+   "Download the binary from the releases page, or",
+   "Clone the repository and build the source code in Xcode",
+   "Open the app and select a .mp4 video with Select File",
+   "Choose an output folder with Select Folder",
+   "Set Start Second, End Second and # of Frames (default 100)",
+   "Click Start; use Cancel to stop"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "Apple Vision framework",
+   "AV Foundation",
+   "CGImage",
+   "Python (crop.py script)"
+  ],
+  "notable": [
+   "Auto-annotates facial landmarks frame by frame from a video",
+   "Outputs paired original frames and landmark overlay images",
+   "Marks frames with no detected face with a distinct filename prefix",
+   "Start and end second range lets you choose which part of the video to sample",
+   "Built on Apple Vision, so landmark detection uses Apple's built-in model"
+  ],
+  "caveats": [
+   "Only .mp4 video files are supported",
+   "macOS only; source build requires Xcode",
+   "Image resizing for GAN models is handled by a separate Python script, not the app"
+  ],
+  "license": "unknown",
+  "category": "video landmark annotation",
+  "keywords": [
+   "face landmarks",
+   "facial landmark detection",
+   "auto annotation",
+   "video frame extraction",
+   "gan training data",
+   "dataset generation",
+   "face dataset",
+   "macos app",
+   "apple vision",
+   "avfoundation",
+   "landmark overlay",
+   "extract frames from video",
+   "mp4 to png",
+   "generate face images",
+   "annotate faces in video",
+   "build training images",
+   "swift app",
+   "xcode project",
+   "crop images for gan",
+   "face alignment data",
+   "image dataset tool",
+   "computer vision dataset",
+   "face landmark annotator",
+   "video to image sequence",
+   "make training data from video",
+   "frame sampler"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2033,
+  "output": 1112
+ },
+ "generated": "2026-10-29"
+}

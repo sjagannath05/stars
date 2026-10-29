@@ -1,0 +1,105 @@
+{
+ "id": "umutcetinkaya/live-translator",
+ "repo": "umutcetinkaya/live-translator",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Translation Tools",
+   "entry": "Live Translator - Real-time on-screen translation of any system audio (YouTube, podcasts, meetings) using OpenAI or Gemini. [![Open-Source Software][OSS Icon]](https://github.com/umutcetinkaya/live-translator) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Live Translator - Real-time on-screen translation of any system audio (YouTube, podcasts, meetings) using OpenAI or Google Gemini."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that captures whatever audio the Mac is playing, transcribes it, and shows a live translation in a floating on-screen panel.",
+  "what_it_does": "Live Translator captures system audio through ScreenCaptureKit, with no audio drivers needed, and transcribes it with SFSpeechRecognizer. Every few seconds it sends a sliding window of the transcript to a chosen AI provider (OpenAI, Google Gemini, or Anthropic Claude), which appends or refines a running translation. The translation appears in a dark, draggable, always-on-top WebKit overlay, with new text highlighted. It supports 11 source languages and 12 target languages, and text-to-speech can read translations aloud using Piper offline or OpenAI/Gemini voices. Speech recognition runs on-device by default; an optional realtime mode streams audio to OpenAI's Realtime Translation model for lower latency.",
+  "use_cases": [
+   "Translate a foreign-language YouTube video live",
+   "Follow a non-native podcast in real time",
+   "Understand a meeting conducted in another language",
+   "Read live translations of movies or streams",
+   "Hear translated speech read aloud with TTS"
+  ],
+  "how_to_run": [
+   "brew tap umutcetinkaya/tap",
+   "brew install --cask live-translator",
+   "git clone <repo URL> && cd live-translator",
+   "make install  # create venv and install dependencies",
+   "make models  # download TTS voice models (~580MB)",
+   "make run  # launch the app"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "PyObjC",
+   "ScreenCaptureKit",
+   "SFSpeechRecognizer",
+   "WebKit",
+   "Piper TTS",
+   "OpenAI API",
+   "Google Gemini API",
+   "Anthropic Claude API",
+   "Swift (setup wizard)",
+   "C (launcher)"
+  ],
+  "notable": [
+   "Live document model: the AI sees the sliding window and preserves prior translation instead of translating word by word",
+   "On-device speech recognition by default, so audio never leaves the Mac; only text goes to the provider",
+   "No audio drivers needed; uses ScreenCaptureKit system audio capture",
+   "Automatic filtering of the app's own TTS output from capture to avoid feedback loops",
+   "Watchdog auto-recovers stuck speech recognition within 10 seconds"
+  ],
+  "caveats": [
+   "Requires macOS 13 (Ventura) or later and an API key from OpenAI, Gemini, or Anthropic",
+   "Realtime mode sends audio to the provider, and only OpenAI supports it; Claude is text-translation only",
+   "OpenAI and Gemini TTS voices cost money; Piper is free but has a robotic voice",
+   "Installing from source requires downloading about 580MB of TTS models"
+  ],
+  "license": "MIT",
+  "category": "macos live translation",
+  "keywords": [
+   "live translation",
+   "real-time translation",
+   "system audio translation",
+   "macos translator",
+   "menu bar app",
+   "menubar translator",
+   "translate youtube videos",
+   "translate podcasts",
+   "translate meetings",
+   "live subtitles",
+   "on-screen translation",
+   "speech recognition",
+   "speech to text",
+   "screencapturekit",
+   "sfspeechrecognizer",
+   "openai translation",
+   "gemini translation",
+   "claude translation",
+   "text to speech",
+   "piper tts",
+   "offline tts",
+   "floating overlay",
+   "live captions",
+   "foreign language audio",
+   "understand foreign audio",
+   "python macos app",
+   "pyobjc",
+   "realtime translation api",
+   "on-device speech recognition",
+   "translate audio on mac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5847,
+  "output": 1315
+ },
+ "generated": "2026-10-29"
+}

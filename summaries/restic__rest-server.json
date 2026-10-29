@@ -1,0 +1,95 @@
+{
+ "id": "restic/rest-server",
+ "repo": "restic/rest-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Backup",
+   "entry": "restic REST Server | High-performance HTTP server backend for restic backups"
+  }
+ ],
+ "summary": {
+  "one_liner": "rest-server is a standalone HTTP server that implements restic's REST backend API, letting restic clients back up to a remote server over HTTP or HTTPS.",
+  "category": "self-hosted backup server",
+  "keywords": [
+   "restic",
+   "rest backend",
+   "rest server",
+   "http backup server",
+   "restic rest api",
+   "remote backup",
+   "self-hosted backup",
+   "backup server",
+   "append-only backups",
+   "htpasswd authentication",
+   "basic auth backup",
+   "tls backup server",
+   "docker backup server",
+   "prometheus metrics",
+   "grafana dashboard",
+   "reverse proxy",
+   "proxy authentication",
+   "private repos",
+   "multi-user backup",
+   "group accessible repositories",
+   "systemd service",
+   "go backup server",
+   "sftp alternative",
+   "ransomware protection backups",
+   "backup to my own server",
+   "share backup storage",
+   "lightweight backup server",
+   "low-power device backup",
+   "rest:https url",
+   "openssl self-signed certificate"
+  ],
+  "what_it_does": "Rest Server is a Go HTTP server that implements the REST backend API used by the restic backup client, so restic can use it via a rest: URL. It stores repository data in a directory on the server using the same layout as restic's local backend, so the data can also be accessed locally. It supports HTTP or TLS (with a configurable minimum TLS version), Basic Authentication via a .htpasswd file, or disabling authentication. Additional options include append-only mode, private per-user repositories, a maximum repository size, group-accessible file permissions, and an optional Prometheus metrics endpoint. It can also trust proxy headers for client addresses and delegate authentication to a reverse proxy via a username header. The README also describes a systemd service and socket example and a Docker image with user-management commands.",
+  "use_cases": [
+   "host a remote restic backup repository on my own server",
+   "run append-only backups that ransomware or attackers cannot wipe",
+   "serve restic backups to multiple users with separate repositories",
+   "back up over HTTPS through a firewall that only allows web traffic",
+   "run a backup target in a Docker container",
+   "run a backup server as a systemd service"
+  ],
+  "how_to_run": [
+   "CGO_ENABLED=0 go build -o rest-server ./cmd/rest-server",
+   "rest-server --path /user/home/backup --no-auth",
+   "htpasswd -B -c .htpasswd username",
+   "docker pull restic/rest-server:latest",
+   "docker run -p 8000:8000 -v /my/data:/data --name rest_server restic/rest-server"
+  ],
+  "stack": [
+   "Go (1.26 or higher)",
+   "restic REST backend API",
+   "Docker",
+   "systemd",
+   "Prometheus",
+   "Grafana"
+  ],
+  "notable": [
+   "Append-only mode prevents deletion or modification of existing backups from the client side",
+   "Uses the same directory structure as restic's local backend, so data is accessible both locally and over HTTP",
+   "Optional private repositories so users cannot access each other's repos",
+   "Docker image supports running as an arbitrary user with a read-only root filesystem",
+   "Prometheus metrics endpoint with an example Grafana dashboard in examples/compose-with-grafana/"
+  ],
+  "caveats": [
+   "Default storage path is the OS temp directory; backups are lost if the default path is used, so --path must be set",
+   "Requires restic v0.7.1 or higher and Go 1.26 or higher to build; the official Go compiler is the only tested one",
+   "Basic authentication sends credentials in clear text without TLS, and self-signed certificates must be distributed to every client",
+   "Proxy authentication trusts the username header, so the proxy must be trusted to prevent forgery"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5203,
+  "output": 1341
+ },
+ "generated": "2026-10-29"
+}

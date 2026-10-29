@@ -1,0 +1,103 @@
+{
+ "id": "wemake-services/django-modern-rest",
+ "repo": "wemake-services/django-modern-rest",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web APIs",
+   "entry": "django-modern-rest - Modern REST with speed, types, async, msgspec, pydantic and other goodies."
+  }
+ ],
+ "summary": {
+  "one_liner": "A typed, async-capable REST framework for Django that validates requests and responses through pluggable serializers such as pydantic, msgspec, attrs, dataclasses, and TypedDict.",
+  "category": "django rest framework",
+  "keywords": [
+   "django rest api",
+   "django",
+   "rest framework",
+   "python rest api",
+   "typed api",
+   "type hints",
+   "async django",
+   "async rest",
+   "pydantic",
+   "msgspec",
+   "attrs",
+   "dataclasses",
+   "typeddict",
+   "request validation",
+   "response validation",
+   "openapi 3.1",
+   "openapi schema generation",
+   "openapi 3.2",
+   "content negotiation",
+   "json api",
+   "msgpack",
+   "server-sent events",
+   "json lines",
+   "schemathesis",
+   "polyfactory",
+   "pytest plugin",
+   "mypy",
+   "pyright",
+   "free-threading",
+   "jwt auth",
+   "api framework",
+   "build rest api in django",
+   "validate json body in django",
+   "generate api docs from code"
+  ],
+  "what_it_does": "Provides controller classes (Controller[Serializer]) with per-method handlers such as post, which receive validated body and headers objects as typed attributes. Routing is handled through a Router that produces Django urlpatterns. Request and response data are validated strictly, including validation errors, and the serializer is pluggable so models can be written with pydantic, msgspec, attrs, dataclasses, or TypedDict. Content negotiation includes default handling for json, msgpack, SSE, and Json Lines. OpenAPI 3.1 and 3.2 schemas are generated from the code, with optional yaml view and schema validation via the openapi extra. The project also bundles a pytest plugin and testing helpers, and claims support for async Django without sync_to_async wrappers.",
+  "use_cases": [
+   "build a typed JSON API on top of Django",
+   "add async endpoints to an existing Django project",
+   "validate request bodies and headers with pydantic or msgspec",
+   "generate OpenAPI docs for a Django API automatically",
+   "stream server-sent events or JSON Lines from Django",
+   "write property-based or schema-based API tests"
+  ],
+  "how_to_run": [
+   "pip install django-modern-rest",
+   "pip install 'django-modern-rest[msgspec]'",
+   "Define a Controller subclass with async handler methods (e.g. post) and parameter models",
+   "Create a Router('api/', [path('user/', UserController.as_view(), name='users')])",
+   "Add router.to_urlpatterns(namespace='api') to urlpatterns in urls.py"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "PyPy 3.11+",
+   "Django 5.0-6.1",
+   "pydantic",
+   "msgspec",
+   "attrs",
+   "pyjwt",
+   "polyfactory",
+   "schemathesis",
+   "mypy",
+   "pyright"
+  ],
+  "notable": [
+   "Pluggable serializers: pydantic, msgspec, attrs, dataclasses, and TypedDict are all supported without being bound to any one of them",
+   "Async Django support without sync_to_async or async_to_sync wrappers inside the framework",
+   "Generates OpenAPI 3.1/3.2 schemas from controller code, with an optional schema validation extra",
+   "Bundled pytest plugin and testing tools including schemathesis and polyfactory integration",
+   "Type-checked in strict mode with mypy, pyright, ty, and pyrefly according to the README"
+  ],
+  "caveats": [
+   "The README's shortest example is a doctest-style snippet with the return annotation commented out, so it is illustrative rather than a complete runnable file",
+   "Requires choosing and installing a serializer extra; msgspec is recommended for the fastest JSON parsing but is not the default",
+   "Supported Django and Python versions are listed explicitly; older versions are not covered"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3103,
+  "output": 1374
+ },
+ "generated": "2026-10-29"
+}

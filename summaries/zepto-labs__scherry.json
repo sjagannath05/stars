@@ -1,0 +1,115 @@
+{
+ "id": "zepto-labs/scherry",
+ "repo": "zepto-labs/scherry",
+ "kind": "star",
+ "description": "Split it. Ship it. Track it - Because every big job deserves a little scherry on top :cherries:",
+ "topics": [
+  "distributed-systems",
+  "go",
+  "golang",
+  "job-queue",
+  "job-scheduler",
+  "kafka",
+  "postgres"
+ ],
+ "language": "Go",
+ "stars": 106,
+ "license": "NOASSERTION",
+ "homepage": "",
+ "pushed_at": "2026-09-08",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "awesome",
+  "programming"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "scherry is a Go library for distributed job orchestration that splits a large job into parallel tasks, fans them out over Kafka, and persists job and task state in PostgreSQL with a built-in history web console.",
+  "what_it_does": "It provides a two-level job-to-task model: a JobExecutor splits work into a list of TaskData items, each persisted as a task and published as a Kafka message, and a TaskExecutor processes each one. Cron-based job triggering uses Asynq with Redis, while Kafka topics handle task fan-out, a retry topic with configurable delay, and a dead-letter topic for exhausted tasks. Jobs and tasks move through an explicit state machine, and a job is finalized automatically once all its tasks reach a terminal state, checked on a configurable cron. Jobs can be scheduled or fired manually via Trigger, and RetryJob re-queues failed tasks. An embedded web console on its own port shows progress, timings, retry lineage, and upcoming scheduled runs, backed by Postgres. Execution hooks (OnTasksPublished, OnTaskStarted, OnTaskFinished, OnJobFinished) allow custom instrumentation such as Prometheus metrics.",
+  "use_cases": [
+   "split a large batch job into parallel tasks",
+   "scheduled payroll or bulk payout runs",
+   "track progress and failures of batch jobs",
+   "retry failed batch tasks via Kafka",
+   "on-demand job triggered from an HTTP handler",
+   "monitor job history in a web console"
+  ],
+  "how_to_run": [
+   "go get github.com/zepto-labs/scherry",
+   "Apply migrations from migrations/ to PostgreSQL (partitioned scherry_jobs and scherry_tasks tables)",
+   "Run Redis for Asynq scheduler/worker and Kafka for task fan-out",
+   "Create a service with scherry.New(scherry.Config{...}) and call Register or RegisterManual with JobConfig",
+   "Call svc.Start(ctx, mux) and run an asynq.NewServer(...).Run(mux) worker",
+   "Optionally start the history console with svc.StartConsole(\":3002\")"
+  ],
+  "stack": [
+   "Go",
+   "Asynq",
+   "Redis",
+   "Apache Kafka",
+   "kafka-go",
+   "PostgreSQL",
+   "pgx",
+   "gorm",
+   "cron"
+  ],
+  "notable": [
+   "Two-level job-to-task model with automatic job finalization once all tasks settle",
+   "Kafka fan-out for tasks with retry topic and dead-letter topic",
+   "Durable PostgreSQL history with execution timing and retry lineage",
+   "RegisterShared lets multiple jobs share one Kafka consumer and TaskExecutor to bound downstream load",
+   "Embedded history console with overview, history, jobs, and upcoming tabs"
+  ],
+  "caveats": [
+   "The history console has no built-in authentication and must be protected in production",
+   "Duplicate-run suppression via refID is best-effort; concurrent triggers can still create multiple runs",
+   "Requires three external services to run: PostgreSQL, Redis, and Kafka",
+   "Shared consumers share failure domain and throughput; a long retry delay on one job can hold up others"
+  ],
+  "license": "NOASSERTION",
+  "category": "distributed job orchestration",
+  "keywords": [
+   "go job scheduler",
+   "golang job queue",
+   "distributed task queue",
+   "batch job splitting",
+   "parallel task execution",
+   "kafka job queue",
+   "kafka task fan-out",
+   "postgres job history",
+   "asynq wrapper",
+   "cron job scheduler",
+   "job lifecycle tracking",
+   "dead letter queue",
+   "retry topic",
+   "job progress tracking",
+   "batch processing library",
+   "payroll batch processing",
+   "job history web ui",
+   "manual job trigger",
+   "distributed workers",
+   "task distribution key",
+   "scheduled jobs golang",
+   "job orchestration library",
+   "redis cron jobs",
+   "run batch jobs in parallel",
+   "track background jobs",
+   "alternative to asynq",
+   "alternative to river",
+   "alternative to machinery",
+   "alternative to go-quartz",
+   "monitor batch job failures",
+   "retry failed tasks kafka"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 17502,
+  "output": 1506
+ },
+ "generated": "2026-10-29"
+}

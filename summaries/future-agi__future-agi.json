@@ -1,0 +1,107 @@
+{
+ "id": "future-agi/future-agi",
+ "repo": "future-agi/future-agi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "Future AGI - Open-source self-hostable end-to-end LLMOps platform unifying tracing, evals, simulations, datasets, gateway, and guardrails."
+  }
+ ],
+ "summary": {
+  "one_liner": "Future AGI is an open-source, self-hostable LLMOps platform for building, testing, monitoring, guarding, and optimizing AI agents in one feedback loop.",
+  "what_it_does": "The platform covers simulation of multi-turn and voice conversations against personas and edge cases, and evaluation with 50+ metrics under one evaluate() call (LLM-as-judge, heuristic, and ML). It provides guardrails with 18 built-in scanners plus 15 vendor adapters, usable inline in the gateway or as a standalone SDK. Monitoring is OpenTelemetry-native tracing across 50+ frameworks with span graphs, latency, and token cost. The Agent Command Center is an OpenAI-compatible gateway with 100+ providers, 15 routing strategies, semantic caching, virtual keys, MCP, and A2A. Optimization offers six prompt-optimization algorithms, with production traces fed back as training data. It runs locally via Docker Compose (Standalone or Distributed) or on Kubernetes via Helm, and Cloud is also offered.",
+  "use_cases": [
+   "Evaluate LLM and RAG answers for groundedness and hallucination",
+   "Trace and monitor production AI agents with OpenTelemetry",
+   "Simulate multi-turn and voice agent conversations before launch",
+   "Add PII, jailbreak, and prompt-injection guardrails to LLM apps",
+   "Route requests across many LLM providers through one gateway",
+   "Optimize prompts using production trace data"
+  ],
+  "how_to_run": [
+   "git clone <repository URL shown in README> && cd future-agi",
+   "./bin/install (Windows: .\\bin\\install.ps1)",
+   "Open the local app, copy API and secret keys from the Keys page",
+   "pip install fi-instrumentation-otel, then set FI_API_KEY, FI_SECRET_KEY, FI_BASE_URL",
+   "Run register() and instrument your framework, e.g. pip install traceai-openai and OpenAIInstrumentor().instrument()"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "Django 5.1",
+   "Go 1.25+ (gateway)",
+   "Go 1.24+ (trace collector)",
+   "React 18",
+   "Vite",
+   "Node 22.18+",
+   "PostgreSQL",
+   "ClickHouse",
+   "Redis",
+   "Temporal",
+   "Docker Compose",
+   "Kubernetes Helm chart",
+   "OpenTelemetry"
+  ],
+  "notable": [
+   "Single platform spanning simulate, evaluate, protect, monitor, and optimize, with data flowing back into the loop",
+   "Apache 2.0 core with inspectable evaluators and prompts rather than black-box scoring",
+   "Gateway with published benchmark claims (~29k req/s on t3.xlarge, P99 ≤ 21 ms with guardrails on) and a committed benchmark harness",
+   "Standalone and Distributed install modes, plus production Compose overlay and Helm chart",
+   "Voice agent simulation and evaluation with LiveKit, VAPI, Retell, and Pipecat"
+  ],
+  "caveats": [
+   "Standalone install data cannot be migrated to Distributed or Helm later, per the README",
+   "Distributed mode needs 4+ vCPUs and 12–16 GB; Standalone needs 2 vCPUs and 4 GB for Docker",
+   "Self-hosted installs send deployment telemetry by default (email addresses and domains of admin accounts) unless opted out",
+   "AWS Marketplace listing is marked coming soon; air-gapped support requires contacting sales"
+  ],
+  "license": "Apache License 2.0",
+  "category": "LLM observability and evaluation",
+  "keywords": [
+   "llmops",
+   "llm observability",
+   "agent observability",
+   "ai agent evaluation",
+   "llm evaluation",
+   "hallucination detection",
+   "groundedness",
+   "opentelemetry tracing",
+   "llm tracing",
+   "guardrails",
+   "prompt injection protection",
+   "pii detection",
+   "llm gateway",
+   "openai-compatible proxy",
+   "llm routing",
+   "semantic caching",
+   "prompt optimization",
+   "gepa",
+   "agent simulation",
+   "voice agent testing",
+   "red teaming",
+   "self-hosted ai platform",
+   "docker compose",
+   "kubernetes helm",
+   "langfuse alternative",
+   "braintrust alternative",
+   "helicone alternative",
+   "phoenix alternative",
+   "monitor my ai agent",
+   "test chatbot before launch",
+   "check llm answers for errors",
+   "open source ai observability",
+   "track llm token cost",
+   "apache 2.0 llm platform"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8102,
+  "output": 1590
+ },
+ "generated": "2026-10-29"
+}

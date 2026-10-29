@@ -1,0 +1,102 @@
+{
+ "id": "nicobailon/visual-explainer",
+ "repo": "nicobailon/visual-explainer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "visual-explainer by nicobailon - Agent skill and plugin that turns complex terminal output into styled HTML pages or slide decks for diagrams, diff reviews, plan audits, data tables, and project recaps. Generates self-contained browser-readable artifacts with Mermaid diagrams, responsive layouts, themes, and sharing commands."
+  }
+ ],
+ "summary": {
+  "one_liner": "An agent skill that turns complex terminal output (diagrams, diff reviews, plans, tables, recaps) into self-contained, styled HTML pages or slide decks that open in a browser.",
+  "category": "agent skill visual output",
+  "keywords": [
+   "html output",
+   "visual explainer",
+   "agent skill",
+   "claude code plugin",
+   "diagram generation",
+   "mermaid diagrams",
+   "diff review",
+   "plan review",
+   "project recap",
+   "slide deck",
+   "slides generator",
+   "html slides",
+   "pptx export",
+   "mp4 video explainer",
+   "terminal tables to html",
+   "ascii art alternative",
+   "architecture diagram",
+   "svg diagrams",
+   "dark light theme",
+   "color palette picker",
+   "mcp server",
+   "stdio mcp",
+   "pi package",
+   "codex skill",
+   "cursor skill",
+   "opencode skill",
+   "fact check docs",
+   "compare options",
+   "share visual output",
+   "turn output into a web page",
+   "explain a system visually",
+   "review a code diff visually",
+   "make a presentation from code"
+  ],
+  "what_it_does": "The skill tells a coding agent to render complex explanations as a single self-contained HTML file, written to ~/.agent/diagrams/ by default and opened in a browser, instead of ASCII art or wide terminal tables. Built-in commands cover web diagrams, visual implementation plans, slide decks, narrated MP4 videos, visual diff reviews, plan checks against the codebase, project recaps, side-by-side option comparisons, and document fact-checking against code. Pages are figure-first and use hand-drawn inline SVG diagrams, with Mermaid available on request. Optional features include an 11-palette theme and font picker, a --slides flag on commands, and a best-effort static PPTX exporter. The README also describes a local stdio MCP server and a Pi native tool that prepare and render pages. Installation paths are documented for many agent harnesses, including Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, and Pi.",
+  "use_cases": [
+   "draw a diagram of a system or auth flow without ASCII art",
+   "review a git diff visually with architecture comparison",
+   "check an implementation plan against the codebase",
+   "turn a large comparison table into a readable page",
+   "generate a slide deck from a technical topic",
+   "get a mental model recap of a project after time away",
+   "build a narrated MP4 explainer video"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add nicobailon/visual-explainer",
+   "/plugin install visual-explainer@visual-explainer-marketplace",
+   "pi install git:github.com/nicobailon/visual-explainer",
+   "git clone --depth 1 /tmp/visual-explainer && mkdir -p ~/.codex/skills && cp -R /tmp/visual-explainer/plugins/visual-explainer ~/.codex/skills/visual-explainer",
+   "mkdir -p ~/.cursor/skills && cp -R <clone>/plugins/visual-explainer ~/.cursor/skills/visual-explainer"
+  ],
+  "stack": [
+   "Markdown skill files (SKILL.md, references)",
+   "HTML, CSS, inline SVG",
+   "JavaScript",
+   "Node.js (optional MCP server, PPTX exporter)",
+   "TypeScript (Pi extension)",
+   "Mermaid (vendored Pele renderer, on request)",
+   "Chart.js",
+   "three.js",
+   "ffmpeg, Chrome, playwright-core (optional video export)"
+  ],
+  "notable": [
+   "Output is a self-contained HTML file with no build step, viewable in any browser",
+   "Diagrams are hand-drawn inline SVG that match the page theme and can step through a process",
+   "Theme and font picker with 11 palettes such as Dracula, Nord, and Gruvbox",
+   "Local stdio MCP server that writes only to a configured output directory and does not start an HTTP listener",
+   "Installs across many harnesses: Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, Pi, and others"
+  ],
+  "caveats": [
+   "PPTX export is best-effort and static; animations, navigation, and live Mermaid/Chart.js rendering are not preserved, so the HTML deck is the source of truth",
+   "Video export needs ffmpeg, Chrome, and playwright-core installed separately",
+   "Auto-opening the page depends on the harness, browser access, and sandbox rules",
+   "The README states results vary by model capability"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13265,
+  "output": 1611
+ },
+ "generated": "2026-10-29"
+}

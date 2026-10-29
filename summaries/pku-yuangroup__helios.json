@@ -1,0 +1,130 @@
+{
+ "id": "pku-yuangroup/helios",
+ "repo": "PKU-YuanGroup/Helios",
+ "kind": "star",
+ "description": "Helios: Real Real-Time Long Video Generation Model",
+ "topics": [
+  "acceleration",
+  "diffusion",
+  "diffusion-model",
+  "diffusion-models",
+  "efficient-tuning",
+  "high-quality",
+  "image-to-video",
+  "image2video",
+  "interactive",
+  "long-context",
+  "long-video-generation",
+  "real-time",
+  "text-to-video",
+  "text2video",
+  "video-generation",
+  "video-generator",
+  "video-to-video",
+  "video2video",
+  "world-model",
+  "world-models"
+ ],
+ "language": "Python",
+ "stars": 2232,
+ "license": "Apache-2.0",
+ "homepage": "https://pku-yuangroup.github.io/Helios-Page",
+ "pushed_at": "2026-08-24",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "media tools",
+  "my company",
+  "my stack"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Helios is an official open-source 14B video generation model from PKU-YuanGroup that produces minute-scale videos in real time for text-to-video, image-to-video, and video-to-video.",
+  "what_it_does": "The repository provides the training and inference code and weights for three Helios variants (Base, Mid, and Distilled), which share one architecture. It autoregressively generates video in chunks of 33 frames, and the README reports about 19.5 FPS end-to-end on a single H100 GPU. Inference scripts cover text-to-video, image-to-video, and video-to-video, with an experimental interactive mode. The README documents several ways to run it: the native scripts, Diffusers pipelines (standard and modular), vLLM-Omni, and SGLang-Diffusion. It also describes group offloading (around 6GB VRAM) and context parallelism across multiple GPUs. A three-stage training pipeline and a HeliosBench benchmark are included.",
+  "use_cases": [
+   "generate minute-long videos from text prompts",
+   "animate a still image into a video",
+   "restyle or transform an existing video with a text prompt",
+   "real-time or interactive video generation experiments",
+   "run video generation on limited-VRAM GPUs",
+   "research and fine-tuning of long-video diffusion models"
+  ],
+  "how_to_run": [
+   "git clone --depth=1 <repo-url> && cd Helios",
+   "conda create -n helios python=3.11.2 && conda activate helios",
+   "pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url <CUDA-specific PyTorch index>",
+   "bash install.sh",
+   "pip install \"huggingface_hub[cli]\" && huggingface-cli download BestWishYSH/Helios-Distilled --local-dir BestWishYSH/Helios-Distilled",
+   "cd scripts/inference && bash helios-distilled_t2v.sh"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Diffusers",
+   "HuggingFace Hub",
+   "ModelScope",
+   "DeepSpeed",
+   "torchrun",
+   "vLLM-Omni",
+   "SGLang-Diffusion",
+   "Cache-DiT",
+   "Ascend NPU"
+  ],
+  "notable": [
+   "Claims minute-scale video at about 19.5 FPS on one H100 without common anti-drifting or standard acceleration techniques",
+   "Three released checkpoints: Base (best quality), Mid (intermediate), and Distilled (best efficiency)",
+   "Supports Group Offloading and several context-parallelism backends (Ulysses, Ring, Unified)",
+   "Day-0 support listed for Diffusers, SGLang-Diffusion, vLLM-Omni, and Ascend NPU",
+   "Includes training code with DDP or DeepSpeed and a three-stage training pipeline"
+  ],
+  "caveats": [
+   "Real-time speed depends on hardware; the README reports about 10 FPS on a single Ascend NPU and notes that CPU, memory, and driver versions also matter",
+   "Image-to-video and video-to-video may be somewhat weaker than text-to-video because training was based on text-to-video",
+   "The interactive feature is still under development and results may not meet expectations",
+   "Full inference expects a 14B model and a CUDA-capable GPU; the 6GB figure applies only with group offloading"
+  ],
+  "license": "Apache-2.0",
+  "category": "video generation models",
+  "keywords": [
+   "long video generation",
+   "text-to-video",
+   "image-to-video",
+   "video-to-video",
+   "real-time video generation",
+   "diffusion model",
+   "video diffusion",
+   "autoregressive video",
+   "minute-long video",
+   "world model",
+   "text to video ai",
+   "animate a photo",
+   "turn image into video",
+   "generate video from prompt",
+   "diffusers pipeline",
+   "group offloading low vram",
+   "context parallelism",
+   "ulysses attention",
+   "ring attention",
+   "helios distilled",
+   "pyramid denoising",
+   "video synthesis",
+   "ai video generator open source",
+   "h100 inference",
+   "ascend npu",
+   "video training code",
+   "sglang diffusion",
+   "vllm-omni",
+   "apache 2.0 video model"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13360,
+  "output": 1506
+ },
+ "generated": "2026-10-29"
+}

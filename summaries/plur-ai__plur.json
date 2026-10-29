@@ -1,0 +1,106 @@
+{
+ "id": "plur-ai/plur",
+ "repo": "plur-ai/plur",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "PLUR by plur-ai - Open, local-first engram memory for Claude Code. Engrams are plain-text YAML you can read, correct, and delete. The same memory is shared across MCP tools and multiple providers."
+  }
+ ],
+ "summary": {
+  "one_liner": "PLUR is a local-first persistent memory layer for AI coding agents, storing learned corrections and conventions as plain-text YAML engrams that are shared across MCP-compatible tools such as Claude Code, Cursor, Codex, and OpenCode.",
+  "what_it_does": "PLUR stores corrections, preferences, conventions, and decisions that an agent learns as \"engrams\" in plain YAML files under ~/.plur/, which can be read, edited, diffed, and deleted. It runs hybrid search (BM25 plus local BGE embeddings fused with Reciprocal Rank Fusion), falling back to keyword search when the embedder is unavailable. Relevant engrams are injected into agent context via hooks for supported harnesses, within a token budget. Engrams carry scope (global, project, group), polarity, feedback signals, and ACT-R activation decay so stale items fade. It also records episodes (timestamped event logs) and can sync the store across machines via git, with separate personal and shared remote modes. A local memory viewer (plur dashboard) and a memory receipt command show what was retrieved. The README also publishes LongMemEval-S recall benchmarks and points to a separate harness repository for reproduction.",
+  "use_cases": [
+   "give Claude Code persistent memory of coding conventions",
+   "share agent memory across Cursor, Codex, and Claude Code",
+   "remember project-specific corrections between sessions",
+   "keep agent memory as editable plain-text files",
+   "sync agent memory across machines with a private git remote",
+   "inject relevant learned rules into a Python LangChain or script workflow",
+   "review what an agent has learned and delete outdated entries"
+  ],
+  "how_to_run": [
+   "npm install -g @plur-ai/cli@latest @plur-ai/mcp@latest",
+   "plur init",
+   "plur doctor",
+   "plur init --cursor  (run from project root, for Cursor)",
+   "plur init --codex  (for Codex)",
+   "plur dashboard  (optional local memory viewer)"
+  ],
+  "stack": [
+   "Node.js",
+   "TypeScript",
+   "Zod",
+   "Vitest",
+   "MCP (Model Context Protocol)",
+   "BM25",
+   "BGE-small-en-v1.5 embeddings (ONNX)",
+   "BGE-reranker-v2-m3 (optional)",
+   "SQLite (better-sqlite3) optional index",
+   "PGlite / Postgres with pgvector (optional index tiers)",
+   "Python SDK (plur-ai)",
+   "git (sync)",
+   "pnpm"
+  ],
+  "notable": [
+   "Engrams are plain YAML validated against a published JSON Schema, so the format is open and portable beyond PLUR",
+   "One memory store is shared across several harnesses (Claude Code, Codex, Cursor, OpenCode, OpenClaw, Hermes, Antigravity, DeepSeek Harness) via per-tool adapters",
+   "Sync is git-based with a personal mode that mirrors everything and a shared mode that pushes only shared-scope, non-private engrams",
+   "Failed team-scope writes are queued locally in an outbox and retried later rather than dropped",
+   "Publishes benchmark figures on LongMemEval-S with a separate reproducible harness repository"
+  ],
+  "caveats": [
+   "Requires Node.js 22+ per the Requirements section, while the Install section says Node 20 or newer; the README is inconsistent on this",
+   "Needs about 2GB RAM; on lower-RAM servers embeddings are skipped and search falls back to BM25",
+   "Codex needs a manual step to trust PLUR hooks via /hooks, otherwise memory silently never loads",
+   "Some harnesses (Windsurf, Gemini CLI, other MCP clients) get tools only, with no automatic injection",
+   "The Python SDK is not yet on PyPI and must be installed from git"
+  ],
+  "license": "Apache-2.0",
+  "category": "agent memory persistence",
+  "keywords": [
+   "agent memory",
+   "persistent memory",
+   "claude code memory",
+   "mcp server",
+   "model context protocol",
+   "local-first",
+   "plain text yaml",
+   "engrams",
+   "bm25 search",
+   "hybrid search",
+   "embeddings",
+   "reciprocal rank fusion",
+   "cursor memory",
+   "codex memory",
+   "opencode plugin",
+   "langchain memory",
+   "git sync",
+   "share memory across tools",
+   "remember corrections between sessions",
+   "coding conventions memory",
+   "llm context injection",
+   "token budget context",
+   "memory decay",
+   "activation decay",
+   "longmemeval benchmark",
+   "self-hosted memory",
+   "offline search",
+   "agent knowledge base",
+   "episodic timeline",
+   "memory viewer dashboard",
+   "typescript monorepo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14352,
+  "output": 1675
+ },
+ "generated": "2026-10-29"
+}

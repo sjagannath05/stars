@@ -1,0 +1,95 @@
+{
+ "id": "colanode/colanode",
+ "repo": "colanode/colanode",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Groupware",
+   "entry": "Colanode - Collaboration suite with real-time messaging, rich text pages, file management, and dynamic databases - built for offline work (alternative to Slack, Notion). (Source Code) Apache-2.0 K8S/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Colanode is an open-source, local-first collaboration workspace combining real-time chat, rich text pages, customizable databases, and file management, which can be self-hosted.",
+  "what_it_does": "Provides instant messaging for teams and individuals, a Notion-like rich text editor for documents, wikis and notes, and databases with custom fields and table, kanban, and calendar views. It stores and shares files within workspaces. Changes are saved to a local SQLite database first and synced to the server by a background process, so work continues offline. Pages and database records use Yjs-based CRDTs for concurrent editing, while messages and file operations use simpler database tables. Clients are a web app or desktop app, and one client can connect to multiple servers, each holding several workspaces.",
+  "use_cases": [
+   "self-hosted team chat",
+   "shared wiki and notes",
+   "project tracking with kanban boards",
+   "offline-capable team collaboration",
+   "shared file storage within workspaces",
+   "structured databases with custom fields"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/colanode/colanode && cd colanode",
+   "npm install",
+   "cd apps/server && cp .env.example .env && npm run dev",
+   "docker compose -f hosting/docker/docker-compose.yaml up -d",
+   "cd apps/web && npm run dev",
+   "cd apps/desktop && npm run dev"
+  ],
+  "stack": [
+   "Node.js",
+   "TypeScript",
+   "Postgres with pgvector",
+   "Redis or Valkey",
+   "SQLite",
+   "Yjs",
+   "Docker Compose",
+   "Helm/Kubernetes"
+  ],
+  "notable": [
+   "Local-first design: edits save to local SQLite and sync later, so offline use works",
+   "Real-time concurrent editing on pages and database records via CRDTs (Yjs)",
+   "Pluggable file storage: local filesystem, S3-compatible, Google Cloud Storage, or Azure Blob Storage",
+   "Configuration via a config.json with env:// and file:// references for secrets",
+   "Official Docker Compose and Helm chart deployment options"
+  ],
+  "caveats": [
+   "Self-hosting requires Postgres with pgvector and Redis, plus a storage backend, so setup involves several services",
+   "The web app is in early preview and may have bugs or browser compatibility issues",
+   "Cloud servers are free beta; pricing is yet to be announced"
+  ],
+  "license": "Apache-2.0",
+  "category": "team collaboration workspace",
+  "keywords": [
+   "self-hosted collaboration",
+   "team workspace",
+   "slack alternative",
+   "notion alternative",
+   "local-first",
+   "offline collaboration",
+   "real-time chat",
+   "rich text editor",
+   "wiki software",
+   "kanban board",
+   "database views",
+   "file sharing",
+   "crdt",
+   "yjs",
+   "sqlite sync",
+   "postgres pgvector",
+   "redis",
+   "docker compose",
+   "kubernetes helm",
+   "s3 storage",
+   "azure blob storage",
+   "google cloud storage",
+   "knowledge base",
+   "project management",
+   "private team chat",
+   "share files with my team",
+   "open source groupware",
+   "data privacy collaboration"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3654,
+  "output": 1150
+ },
+ "generated": "2026-10-29"
+}

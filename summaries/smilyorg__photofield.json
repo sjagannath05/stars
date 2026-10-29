@@ -1,0 +1,100 @@
+{
+ "id": "smilyorg/photofield",
+ "repo": "SmilyOrg/photofield",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Photo Galleries",
+   "entry": "Photofield - Experimental fast photo viewer. MIT Docker/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "Photofield is a self-hosted, non-invasive single-binary photo gallery focused on showing many photos at once with fast zoomable, progressively loaded layouts.",
+  "what_it_does": "Photofield serves photo folders from the file system as browsable collections through a web interface. Each folder can be shown as an album, and collections can be auto-created from subdirectories. It offers several layouts, including a timeline view, and every view can be zoomed. Layouts load progressively from low-resolution previews up to full-quality photos. The README also describes optional semantic search and tagging (alpha), face detection (alpha) via photofield-ai, and reverse geolocation of places. Thumbnails are cached in SQLite, and indexing and metadata extraction run as separate steps. The original files are never modified, and the file system is treated as the source of truth.",
+  "use_cases": [
+   "self-hosted photo gallery",
+   "browse large photo collections quickly",
+   "timeline view of photos like Google Photos",
+   "view photos from a Synology Moments or Photo Station library",
+   "semantic search of photo contents",
+   "read-only photo browsing from mounted folders"
+  ],
+  "how_to_run": [
+   "mkdir data (empty) in the working directory and put photos in a photos directory",
+   "docker run -p 8080:8080 -v \"$PWD/data:/app/data\" -v \"$PWD/photos:/app/photos:ro\" ghcr.io/smilyorg/photofield",
+   "Optionally create configuration.yaml in the data dir to define collections",
+   "Binaries: download and unpack a release, then run ./photofield (or photofield.exe)",
+   "Optional: install exiftool and djpeg (libjpeg-turbo) for better metadata and JPEG speed"
+  ],
+  "stack": [
+   "Go",
+   "Vue 3",
+   "BalmUI",
+   "OpenLayers",
+   "SQLite 3",
+   "Node.js",
+   "Docker",
+   "FFmpeg",
+   "exiftool",
+   "libjpeg-turbo (djpeg)",
+   "godirwalk",
+   "tinygpkg"
+  ],
+  "notable": [
+   "Single static binary with optional dependencies, plus Docker images",
+   "Read-only, file-system-based collections that never touch original photos",
+   "Progressive multi-resolution loading from low-res previews to full quality",
+   "Local embedded reverse geolocation of roughly 50 thousand places",
+   "Thumbnails stored in SQLite, reusing Synology Moments / Photo Station thumbnails"
+  ],
+  "caveats": [
+   "Not optimized for many simultaneous clients; state is kept on the server, so CPU and memory can become a problem",
+   "No user accounts, authentication or authorization",
+   "Initial layout of a page can be slow with a slow CPU or cold HDD cache; no permalinks that survive database removal or file moves"
+  ],
+  "license": "MIT",
+  "category": "self-hosted photo gallery",
+  "keywords": [
+   "photo gallery",
+   "self-hosted photos",
+   "photo viewer",
+   "photo browser",
+   "image gallery",
+   "go photo server",
+   "single binary",
+   "docker photo gallery",
+   "timeline photos",
+   "google photos alternative",
+   "synology moments",
+   "photo station",
+   "zoomable photo grid",
+   "progressive image loading",
+   "sqlite thumbnail cache",
+   "semantic photo search",
+   "face detection photos",
+   "photo tagging",
+   "reverse geolocation photos",
+   "read-only photo library",
+   "share photos on my server",
+   "browse family photos locally",
+   "ffmpeg thumbnails",
+   "libjpeg-turbo",
+   "vue photo app",
+   "openlayers photo tiles",
+   "photo indexing",
+   "exif photo viewer",
+   "photo collections from folders",
+   "self-hosted album viewer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4765,
+  "output": 1347
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,110 @@
+{
+ "id": "bluesky-social/pds",
+ "repo": "bluesky-social/pds",
+ "kind": "star",
+ "description": "Bluesky PDS (Personal Data Server) container image, compose file, and documentation",
+ "topics": [
+  "atproto",
+  "bluesky",
+  "self-hosted"
+ ],
+ "language": "Shell",
+ "stars": 2640,
+ "license": "NOASSERTION",
+ "homepage": "",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Official documentation and container setup for self-hosting a Bluesky PDS (Personal Data Server), the AT Protocol account and data server, on a VPS.",
+  "what_it_does": "The repo provides container images, a Docker compose setup, and documentation for running a Bluesky PDS on a Linux VPS. The README describes an interactive install script that sets up the PDS with Caddy handling TLS on ports 80 and 443, plus a wildcard DNS requirement for user handles. It covers creating accounts and invite codes with the bundled goat CLI, connecting the Bluesky app to a custom PDS, and configuring SMTP for email verification. It also documents logging, OpenTelemetry metrics with an optional Prometheus and Grafana stack in a monitoring/ directory, watchtower-based updates via pdsadmin, a long table of environment variables, and branding options for the sign-in screens. A section explains how to fix a Relay desync by editing the sequencer database cursor.",
+  "use_cases": [
+   "Self-host a Bluesky PDS on a VPS",
+   "Run my own AT Protocol account server",
+   "Create accounts and invite codes on a personal PDS",
+   "Set up SMTP email for a self-hosted PDS",
+   "Monitor a PDS with Prometheus and Grafana",
+   "Rebrand the sign-in pages of a self-hosted PDS",
+   "Fix a Relay desync after migrating a PDS"
+  ],
+  "how_to_run": [
+   "curl > installer.sh",
+   "sudo bash installer.sh",
+   "docker exec pds goat pds admin account create --admin-password PDS_ADMIN_PASSWORD --handle newuser.pds.net --email new-user@email.com --password new-password",
+   "docker exec pds goat pds admin --admin-password PDS_ADMIN_PASSWORD create-invites",
+   "sudo pdsadmin update"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Caddy",
+   "Watchtower",
+   "goat CLI",
+   "SQLite",
+   "OpenTelemetry",
+   "Prometheus",
+   "Grafana",
+   "node_exporter",
+   "TypeScript",
+   "Go",
+   "Shell"
+  ],
+  "notable": [
+   "Interactive installer script that sets up the PDS on a fresh Ubuntu or Debian VPS",
+   "Caddy in the bundled compose file handles TLS certificates automatically",
+   "Optional self-contained Prometheus, Grafana, and node_exporter monitoring stack bound to localhost",
+   "Extensive branding variables for sign-in and authorization screens, including colors and background images",
+   "Includes a goat CLI for admin tasks such as account creation and relay status"
+  ],
+  "caveats": [
+   "The README says the install script assumes a fresh VPS and should not be used alongside an existing web server on ports 80 and 443",
+   "The maintainers do not provide tech support for reverse proxy setups other than the bundled Caddy configuration",
+   "Requires a public IPv4 address, a public DNS name, and a wildcard DNS record for user handles"
+  ],
+  "license": "NOASSERTION",
+  "category": "self-hosted social server",
+  "keywords": [
+   "bluesky pds",
+   "personal data server",
+   "atproto",
+   "at protocol",
+   "self-hosted bluesky",
+   "self hosting",
+   "run my own bluesky server",
+   "bluesky vps install",
+   "docker compose",
+   "caddy tls",
+   "goat cli",
+   "pdsadmin",
+   "watchtower auto update",
+   "smtp email setup",
+   "opentelemetry metrics",
+   "grafana dashboard",
+   "prometheus monitoring",
+   "relay desync",
+   "invite codes",
+   "account creation",
+   "federated social network",
+   "decentralized social media",
+   "bluesky alternative server",
+   "sqlite sequencer",
+   "vps deployment",
+   "ubuntu debian install",
+   "branding sign-in page",
+   "wildcard dns",
+   "websocket firehose",
+   "custom bluesky host"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8400,
+  "output": 1454
+ },
+ "generated": "2026-10-29"
+}

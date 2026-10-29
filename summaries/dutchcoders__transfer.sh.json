@@ -1,0 +1,97 @@
+{
+ "id": "dutchcoders/transfer.sh",
+ "repo": "dutchcoders/transfer.sh",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "transfer.sh - Easy file sharing from the command line. MIT Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "transfer.sh is a self-hostable Go server for easy command-line file sharing, letting users upload a file with curl and get back a download link.",
+  "what_it_does": "The repository contains the transfer.sh server, which you run on your own machine or host to accept uploads via simple HTTP PUT requests (for example with curl --upload-file). Files are stored through a configurable provider: Amazon S3, Google Drive, Storj, or the local file system. The server supports optional features such as per-upload download limits (Max-Downloads), expiry in days (Max-Days), server-side AES256 encryption with a password, a delete URL returned in the X-Url-Delete response header, VirusTotal submission, and ClamAV prescanning. Access can be restricted with IP whitelists/blacklists, HTTP basic auth, and rate limiting, and TLS is supported via Let's Encrypt or your own certificates. The README also includes bash/zsh shell functions for uploading files and zipping directories.",
+  "use_cases": [
+   "share a file from the command line with curl",
+   "run a private file-sharing server for your team",
+   "upload files to S3 or Google Drive via a simple HTTP endpoint",
+   "send temporary download links that expire or have a download limit",
+   "encrypt files before or during upload with gpg or server-side AES256",
+   "self-host a transfer.sh-style service with TLS and auth"
+  ],
+  "how_to_run": [
+   "go run main.go --provider=local --listener :8080 --temp-path=/tmp/ --basedir=/tmp/",
+   "git clone git@github.com:dutchcoders/transfer.sh.git",
+   "cd transfer.sh",
+   "go build -o transfersh main.go",
+   "docker run --publish 8080:8080 dutchcoders/transfer.sh:latest --provider local --basedir /tmp/",
+   "curl --upload-file ./hello.txt"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Amazon S3",
+   "Google Drive",
+   "Storj",
+   "VirusTotal API",
+   "ClamAV",
+   "Let's Encrypt"
+  ],
+  "notable": [
+   "Pluggable storage backends: local disk, Amazon S3 (including custom S3-compatible endpoints), Google Drive, and Storj",
+   "Per-upload options via HTTP headers: Max-Downloads, Max-Days, and server-side AES256 encryption",
+   "Official Docker images including a recommended non-root variant (-noroot tags)",
+   "Optional ClamAV prescan and VirusTotal submission of uploads"
+  ],
+  "caveats": [
+   "The README opens with a security warning: IP filter and HTTP auth can be bypassed via unauthenticated X-Forwarded-For header spoofing.",
+   "The README advises against using the 'latest' Docker tag with auto-update tools because it may reference unreleased builds.",
+   "Server-side encryption is flagged as something to use only on a self-hosted server; the README discourages trusting third-party services with it."
+  ],
+  "license": "MIT",
+  "category": "command-line file sharing",
+  "keywords": [
+   "file sharing",
+   "command line file transfer",
+   "curl upload",
+   "self-hosted file sharing",
+   "transfer.sh",
+   "go file server",
+   "temporary file links",
+   "share files with my team",
+   "upload file from terminal",
+   "s3 upload server",
+   "google drive upload",
+   "storj storage",
+   "local file storage server",
+   "docker file sharing",
+   "encrypted file upload",
+   "gpg upload",
+   "download limit links",
+   "file expiry",
+   "clamav scanning",
+   "virustotal upload",
+   "let's encrypt tls server",
+   "basic auth upload",
+   "ip whitelist server",
+   "shell upload function",
+   "zip directory upload",
+   "rate limiting server",
+   "minio s3 endpoint",
+   "wetransfer alternative",
+   "pastebin like sharing",
+   "send large file cli",
+   "file hosting server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8654,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

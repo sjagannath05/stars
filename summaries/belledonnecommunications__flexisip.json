@@ -1,0 +1,105 @@
+{
+ "id": "belledonnecommunications/flexisip",
+ "repo": "BelledonneCommunications/flexisip",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - SIP",
+   "entry": "Flexisip - Complete, modular and scalable SIP server, includes a push gateway, to deliver SIP incoming calls or text messages on mobile device platforms where push notifications are required to receive information when the app is not active in the foreground. (Source Code) AGPL-3.0 C/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Flexisip is a modular, scalable SIP server suite written in C++20, including a push notification gateway for delivering SIP calls and messages to mobile devices.",
+  "what_it_does": "Flexisip provides a SIP proxy server that routes SIP messages, plus a push notification service that delivers in-call and message notifications to mobile devices when the app is not running in the foreground. It also includes a presence server for online status and call availability, a Back-to-Back User Agent (B2BUA) server for caller identity translation, media transcoding and SIP trunking, and a RegEvent server that notifies domains of user registrations. The README says the Conference Server moved to a separate repository from version 2.6. Configuration is generated with a dump-all-default flag, and the README describes Docker, RPM/DEB packaging, and Nix build options. Several features such as Redis, SNMP, presence, B2BUA, and OpenID Connect are optional CMake switches.",
+  "use_cases": [
+   "run a self-hosted SIP VoIP service",
+   "push notifications for incoming calls on mobile apps",
+   "push notifications for SIP messages when app is backgrounded",
+   "SIP presence and availability status",
+   "SIP trunking and caller identity translation",
+   "embedded SIP server on small hardware"
+  ],
+  "how_to_run": [
+   "mkdir ./build",
+   "cmake -S . -B ./build",
+   "make -C ./build -j",
+   "./flexisip --dump-all-default > flexisip.conf",
+   "docker build -t flexisip --build-arg='njobs= ' -f docker/flex-from-src ."
+  ],
+  "stack": [
+   "C++20",
+   "C",
+   "CMake",
+   "OpenSSL",
+   "LibNgHttp2",
+   "libsrtp2",
+   "SQLite3",
+   "libmysql-client",
+   "Hiredis",
+   "NetSNMP",
+   "XercesC",
+   "jsoncpp",
+   "cpp-jwt",
+   "libsystemd",
+   "Docker",
+   "Nix"
+  ],
+  "notable": [
+   "Push notification gateway for mobile devices where background push is required",
+   "Modular suite: proxy, presence, B2BUA, and RegEvent servers can be enabled or disabled at build time",
+   "Powers the free linphone.org SIP service since 2011, per the README",
+   "Dual licensed: AGPLv3 or proprietary license from Belledonne Communications",
+   "Supports embedded deployment on smaller hardware"
+  ],
+  "caveats": [
+   "Conference Server is no longer in this repository from Flexisip 2.6 and is packaged separately",
+   "GCC 13 or newer or Clang 19 or newer is required; Debian 12 supports only Clang",
+   "Several dependencies are optional and must be enabled with CMake flags"
+  ],
+  "license": "AGPL-3.0",
+  "category": "sip server, voip",
+  "keywords": [
+   "sip server",
+   "sip proxy",
+   "voip server",
+   "self-hosted voip",
+   "push notification gateway",
+   "mobile push notifications",
+   "incoming call notifications",
+   "push for sip messages",
+   "presence server",
+   "b2bua",
+   "sip trunking",
+   "regevent",
+   "registrar",
+   "linphone server",
+   "c++20 sip",
+   "sofia-sip",
+   "srtp",
+   "sip presence status",
+   "voip backend",
+   "background push for apps",
+   "cmake build",
+   "docker sip",
+   "nix build",
+   "rpm deb packaging",
+   "embedded sip",
+   "agpl sip server",
+   "redis registrar",
+   "make phone calls over internet",
+   "sip gateway",
+   "wake mobile app for calls",
+   "asterisk alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4307,
+  "output": 1290
+ },
+ "generated": "2026-10-29"
+}

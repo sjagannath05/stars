@@ -1,0 +1,88 @@
+{
+ "id": "pypa/pip-audit",
+ "repo": "pypa/pip-audit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Supply Chain Security",
+   "entry": "pip-audit - Audits Python environments and dependency trees for known vulnerabilities, using the Python Packaging Advisory Database or OSV."
+  }
+ ],
+ "summary": {
+  "one_liner": "pip-audit is a command-line tool that scans Python environments, requirements files, and local projects for packages with known vulnerabilities, using the PyPI or OSV vulnerability databases.",
+  "what_it_does": "Audits the current Python environment, requirements-style files (-r), or a local project's pyproject.toml and pylock.*.toml lock files (--locked) against known vulnerability feeds. It queries the PyPI JSON API (Python Packaging Advisory Database) by default, or OSV, selectable with --vulnerability-service. Output can be columns, JSON, Markdown, or CycloneDX SBOM (JSON or XML), optionally including aliases (CVE/GHSA) and descriptions. The --fix flag attempts to upgrade vulnerable dependencies, and --ignore-vuln suppresses specific IDs. It exits 0 when nothing is found and 1 when vulnerabilities are detected, and reuses local pip caches.",
+  "use_cases": [
+   "scan installed Python packages for known security vulnerabilities",
+   "audit requirements.txt before deployment",
+   "check a Python project's lock files for vulnerable dependencies",
+   "automatically upgrade vulnerable Python dependencies",
+   "generate a CycloneDX SBOM for Python dependencies",
+   "run a dependency vulnerability check in CI or pre-commit"
+  ],
+  "how_to_run": [
+   "python -m pip install pip-audit",
+   "pip-audit",
+   "pip-audit -r ./requirements.txt",
+   "pip-audit --fix",
+   "conda install -c conda-forge pip-audit"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "pip",
+   "PyPI JSON API",
+   "OSV API"
+  ],
+  "notable": [
+   "Supports multiple vulnerability services: PyPI and OSV (with an --osv-url override)",
+   "Automatic fixing of vulnerable dependencies via --fix, with --dry-run preview",
+   "Outputs CycloneDX SBOMs in JSON or XML as well as columns, JSON, and Markdown",
+   "Official GitHub Action and pre-commit hook",
+   "Ignore specific vulnerability IDs with --ignore-vuln, including by alias"
+  ],
+  "caveats": [
+   "Does not detect transitive vulnerabilities in non-Python shared libraries; it analyzes Python dependency trees, not code, and is not a static analyzer or a defense against malicious packages",
+   "Without pinned inputs it performs dependency resolution, which can take as long as pip install; authenticated private indexes have restrictions (no interactive login, limited keyring support)",
+   "Project-path auditing only supports pyproject.toml and pylock.*.toml files; Pipfile must be converted to requirements.txt first"
+  ],
+  "license": "Apache 2.0",
+  "category": "python dependency security",
+  "keywords": [
+   "pip-audit",
+   "python vulnerability scanner",
+   "dependency vulnerability audit",
+   "known vulnerabilities python packages",
+   "pypi advisory database",
+   "osv vulnerability database",
+   "requirements.txt security check",
+   "cve scanner python",
+   "sbom generator",
+   "cyclonedx sbom",
+   "software supply chain security",
+   "vulnerable dependency fixer",
+   "auto upgrade vulnerable packages",
+   "pre-commit security hook",
+   "github action dependency audit",
+   "pipenv audit alternative",
+   "safety alternative",
+   "check python packages for vulnerabilities",
+   "scan my requirements file for security issues",
+   "find outdated insecure python libraries",
+   "lock file vulnerability check",
+   "pyproject audit",
+   "ci security scan python",
+   "python environment audit",
+   "trail of bits python tool",
+   "ghsa cve aliases"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9395,
+  "output": 1352
+ },
+ "generated": "2026-10-29"
+}

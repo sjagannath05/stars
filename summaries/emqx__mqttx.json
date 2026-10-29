@@ -1,0 +1,100 @@
+{
+ "id": "emqx/mqttx",
+ "repo": "emqx/MQTTX",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔧 Other Development (8)",
+   "entry": "MQTTX - An elegant Cross-platform MQTT 5.0 desktop client."
+  }
+ ],
+ "summary": {
+  "one_liner": "MQTTX is an open-source, cross-platform MQTT 5.0 client toolbox from EMQ with a desktop app, a command-line client, and a browser-based web client for testing and troubleshooting MQTT and IoT applications.",
+  "what_it_does": "The desktop app (macOS, Windows, Linux) provides a chat-style interface for multiple MQTT connections and subscriptions, with TCP, TLS, and WebSocket support and MQTT 3.1, 3.1.1, and 5.0. It includes payload encoding and decoding (JSON, Base64, Hex, CBOR, MsgPack, Protobuf and Avro schemas, GZIP decompression), scripts, timed publishing, and inspection tools such as a Topic Tree, Dashboard, Traffic Monitor, and Payload Inspector. The CLI offers conn, pub, and sub commands, benchmarks via bench, IoT data simulation via simulate, and stdin and pipe support for scripts and CI. The Web client lets you debug MQTT over WebSocket in a browser, with optional Docker self-hosting. The README also describes an AI assistant (MQTTX Agent) in the desktop app and an installable MQTTX CLI skill for AI agents.",
+  "use_cases": [
+   "debug MQTT messages during IoT development",
+   "test and troubleshoot a broker connection",
+   "run MQTT benchmarks and load tests from the terminal",
+   "simulate IoT sensor data",
+   "debug MQTT over WebSocket in a browser",
+   "decode Protobuf, Avro, or binary MQTT payloads",
+   "automate MQTT checks in shell scripts or CI"
+  ],
+  "how_to_run": [
+   "brew install --cask mqttx",
+   "docker run -d --name mqttx-web -p 80:80 emqx/mqttx-web:latest",
+   "mqttx sub -h broker.emqx.io -t 'mqttx/quickstart'",
+   "mqttx pub -h broker.emqx.io -t 'mqttx/quickstart' -m '{\"temperature\":23.5}'",
+   "git clone git@github.com:emqx/MQTTX.git && cd MQTTX && nvm use && yarn install",
+   "yarn run electron:serve"
+  ],
+  "stack": [
+   "Electron",
+   "Vue",
+   "Element",
+   "TypeScript",
+   "TypeORM",
+   "SQLite",
+   "MQTT.js",
+   "Node.js v22",
+   "Docker"
+  ],
+  "notable": [
+   "Three clients in one project: desktop GUI, CLI, and browser-based Web client",
+   "Built-in MQTTX Agent for natural-language operation of the desktop app, with approval-based actions",
+   "Protobuf and Avro schema support plus CBOR, MsgPack, and GZIP decoding",
+   "Import and export of connections as JSON, CSV, Excel, XML, or YAML",
+   "Free public test broker at broker.emqx.io"
+  ],
+  "caveats": [
+   "The MQTTX Agent sends conversations and tool results to the configured model provider, so secrets should not be entered in chat",
+   "The Web client requires wss:// when the page is served over HTTPS",
+   "Desktop development requires Node.js v22 as specified in .nvmrc"
+  ],
+  "license": "Apache License 2.0",
+  "category": "mqtt client tooling",
+  "keywords": [
+   "mqtt client",
+   "mqtt desktop client",
+   "mqtt cli",
+   "mqtt over websocket",
+   "mqtt 5.0",
+   "iot testing",
+   "iot debugging",
+   "mqtt broker testing",
+   "mqtt benchmark",
+   "iot data simulation",
+   "mosquitto alternative",
+   "mqtt explorer alternative",
+   "cross-platform mqtt tool",
+   "electron app",
+   "topic tree viewer",
+   "payload decoder",
+   "protobuf decoder",
+   "avro schema",
+   "gzip decompress",
+   "mqtt command line",
+   "publish and subscribe from terminal",
+   "test mqtt messages",
+   "troubleshoot iot devices",
+   "send mqtt messages from script",
+   "mqtt ci automation",
+   "browser mqtt client",
+   "self-host mqtt web client",
+   "emqx",
+   "macos mqtt app",
+   "mqtt chat interface",
+   "ai agent mqtt"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4779,
+  "output": 1526
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "dagucloud/dagu",
+ "repo": "dagucloud/dagu",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Dagu - Powerful Cron alternative with a Web UI. It allows you to define dependencies between commands as a Directed Acyclic Graph (DAG) in a declarative YAML format. (Source Code) GPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Dagu is a self-hostable workflow engine shipped as a single binary with a built-in Web UI, defining DAG workflows (dependencies, retries, schedules) in declarative YAML as a cron alternative.",
+  "what_it_does": "Dagu runs workflows defined as directed acyclic graphs in YAML, with steps that can be shell commands, Docker containers, Kubernetes Jobs, SSH remote commands, and many built-in actions (SQL, HTTP, SFTP, S3, email, file operations, and more). It provides cron-style scheduling with timezones, overlap policies and catch-up windows, plus per-step retries, lifecycle handlers, and human approval or input tasks. Each run keeps per-step logs, run history, and artifacts, viewable in a Web UI. It can run as one process (dagu start-all) or scale out with distributed workers that poll a coordinator over gRPC and are routed by labels. The README also describes RBAC/auth modes, Prometheus metrics, an MCP server, and an optional paid Dagu Console monitoring service.",
+  "use_cases": [
+   "schedule and chain interdependent shell scripts",
+   "replace cron jobs with retries and run history",
+   "run ETL and data pipeline steps",
+   "automate remote server tasks over SSH",
+   "run Docker containers or Kubernetes Jobs as workflow steps",
+   "add approval or input gates to operational runbooks",
+   "parallel media conversion with ffmpeg"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash  (macOS/Linux installer)",
+   "brew install dagu",
+   "docker run --rm -v ~/.dagu:/var/lib/dagu -p 8080:8080 ghcr.io/dagucloud/dagu:latest dagu start-all",
+   "dagu start hello.yaml",
+   "dagu start-all --dags .",
+   "Open the Web UI on port 8080 and create the admin account"
+  ],
+  "stack": [
+   "Go",
+   "YAML",
+   "Docker",
+   "gRPC",
+   "Helm (Kubernetes chart)",
+   "npm package distribution"
+  ],
+  "notable": [
+   "Single binary with built-in Web UI; no external database or message broker required",
+   "Declarative YAML DAG definitions with dependencies, parameters, and sub-DAG fan-out",
+   "Built-in MCP server for inspecting and controlling workflows and runs",
+   "Reusable build workflows that skip steps when inputs are unchanged",
+   "Distributed workers that make outbound-only polling connections to a coordinator"
+  ],
+  "caveats": [
+   "Some features are gated: SSO, RBAC audit logging and Dagu Console monitoring require a self-host license or paid plan; Console monitoring is in beta",
+   "Build workflows currently run locally only",
+   "Docker socket mounting grants workflows control of the host Docker daemon, so it is a privileged setup"
+  ],
+  "license": "GPL-3.0",
+  "category": "workflow orchestration engine",
+  "keywords": [
+   "workflow engine",
+   "dag scheduler",
+   "cron alternative",
+   "job scheduler",
+   "task orchestration",
+   "yaml workflows",
+   "self-hosted automation",
+   "web ui scheduler",
+   "workflow scheduling",
+   "retries and dependencies",
+   "airflow alternative",
+   "cron job replacement",
+   "run shell scripts in order",
+   "dependency graph jobs",
+   "kubernetes jobs runner",
+   "docker task runner",
+   "ssh remote commands",
+   "distributed workers",
+   "job run history",
+   "automation runbooks",
+   "single binary orchestrator",
+   "scheduled jobs with logs",
+   "etl pipeline scheduler",
+   "gpl-3.0 software",
+   "golang workflow tool",
+   "mcp server workflows",
+   "human approval workflow",
+   "run scripts on a schedule",
+   "sub-workflow orchestration",
+   "automate server tasks",
+   "self-hosted cron with ui"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17415,
+  "output": 1410
+ },
+ "generated": "2026-10-29"
+}

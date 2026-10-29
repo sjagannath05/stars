@@ -1,0 +1,104 @@
+{
+ "id": "kirill89/reviewcerberus",
+ "repo": "Kirill89/reviewcerberus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "ReviewCerberus - 100% free, open-source AI code review tool for analyzing git branch differences with comprehensive security, performance, and quality analysis. #free"
+  }
+ ],
+ "summary": {
+  "one_liner": "ReviewCerberus is an AI-powered code review tool that analyzes git branch differences and produces structured markdown or JSON review reports, runnable locally via Docker or as a GitHub Action.",
+  "category": "ai code review",
+  "keywords": [
+   "code review",
+   "ai code review",
+   "pull request review",
+   "git diff review",
+   "branch diff analysis",
+   "github action",
+   "automated pr review",
+   "llm code review",
+   "security review",
+   "sast",
+   "opengrep",
+   "semgrep",
+   "static analysis",
+   "chain of verification",
+   "false positive reduction",
+   "anthropic",
+   "claude",
+   "aws bedrock",
+   "ollama",
+   "moonshot",
+   "kimi",
+   "docker",
+   "markdown report",
+   "json output",
+   "review pull requests",
+   "lint my branch",
+   "find bugs before merge",
+   "check my changes with ai",
+   "quality gate",
+   "poetry python cli"
+  ],
+  "what_it_does": "The tool detects the current git branch, compares it against a target branch (default main, configurable), and collects changed files, commit messages and diffs upfront. An AI agent then reviews the changes for logic, security (OWASP-style issues), performance, code quality, side effects, testing gaps and documentation, using tools to read file line ranges, search the codebase and list directories. Output is a markdown report (or JSON) with a summary, a severity-ranked issues table (critical, high, medium, low) and detailed issues with location and suggested fix. Optional experimental modes add a Chain-of-Verification pass that assigns confidence scores and an OpenGrep SAST pre-scan limited to findings new on the branch. A GitHub Action variant posts summary and inline review comments on pull requests.",
+  "use_cases": [
+   "review my git branch before opening a pull request",
+   "automated AI comments on pull requests in GitHub",
+   "security and performance check of code changes",
+   "quality gate that fails CI on high-severity issues",
+   "generate a markdown review report of local changes",
+   "run code review with a self-hosted Ollama model"
+  ],
+  "how_to_run": [
+   "docker run --rm -it -v $(pwd):/repo -e MODEL_PROVIDER=anthropic -e ANTHROPIC_API_KEY=sk-ant-your-api-key kirill89/reviewcerberus:latest --repo-path /repo --output /repo/review.md",
+   "git clone the repository, then run: poetry install",
+   "cp .env.example .env and set provider credentials",
+   "poetry run reviewcerberus [--target-branch develop] [--output review.md] [--json]",
+   "Or use the GitHub Action: uses: Kirill89/reviewcerberus/action@v1 with model_provider and API key inputs in a workflow file"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "Poetry",
+   "Git",
+   "Docker",
+   "TypeScript (GitHub Action)",
+   "AWS Bedrock",
+   "Anthropic API",
+   "Ollama",
+   "Moonshot API",
+   "OpenGrep (Semgrep fork)",
+   "pytest",
+   "mypy",
+   "black",
+   "isort",
+   "mdformat"
+  ],
+  "notable": [
+   "Supports four model providers: AWS Bedrock, Anthropic API, Ollama, and Moonshot",
+   "Chain-of-Verification mode (experimental) that generates falsification questions and scores issue confidence 1-10",
+   "OpenGrep SAST pre-scan (experimental) that only reports findings introduced by the current branch and lets the AI dismiss false positives",
+   "GitHub Action that posts inline review comments, resolves old threads, and can fail builds at a chosen severity",
+   "Customizable review prompts and custom guideline files via --instructions"
+  ],
+  "caveats": [
+   "Verification and SAST modes are marked experimental",
+   "Requires an account and API credentials with a paid model provider (Bedrock, Anthropic, or Moonshot) or a running Ollama instance; the README does not state per-use costs",
+   "Diffs are truncated at 10k characters per file",
+   "Requires Python 3.11+ and git for local use; GitHub Action needs fetch-depth 0 checkout and write permissions on contents and pull requests"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6239,
+  "output": 1491
+ },
+ "generated": "2026-10-29"
+}

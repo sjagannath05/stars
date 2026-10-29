@@ -1,0 +1,96 @@
+{
+ "id": "tumingke0/layoutkeeper",
+ "repo": "tumingke0/LayoutKeeper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "LayoutKeeper - Remembers window layouts per external monitor and restores position, size and Space (macOS 26+) on reconnect, with DDC brightness keys on Apple Silicon."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that remembers window positions, sizes and Spaces (desktops) for each external monitor and restores them when the monitor is reconnected.",
+  "what_it_does": "LayoutKeeper saves window layouts per external monitor, identifying each monitor by its EDID hardware data (maker, model, serial). It restores window position and size when the monitor is plugged back in, either on a prompt, automatically, or manually. On macOS 26 or later it also moves windows back to their original desktop (Mission Control Space) and can add missing desktops in shared-layout mode. It supports several named layouts per monitor, keeps the last 5 versions, previews moves before restoring, and offers one-click undo. It also includes display arrangement presets, DDC brightness and volume key handling on Apple Silicon, a Keep Awake menu with four modes, and global shortcuts.",
+  "use_cases": [
+   "restore windows after unplugging an external monitor",
+   "remember laptop and office/home monitor window layouts",
+   "move windows back to their original desktop Spaces",
+   "control external monitor brightness with keyboard keys",
+   "prevent Mac from sleeping while keeping screen on",
+   "switch display arrangement without opening System Settings"
+  ],
+  "how_to_run": [
+   "Download the .dmg for your Mac (AppleSilicon or Intel) from Releases",
+   "Drag LayoutKeeper into Applications",
+   "Right-click the app and choose Open the first time (app is self-signed, not notarized)",
+   "Grant Accessibility permission in the setup guide",
+   "Save a layout from the menu bar or with ⌃⌥⌘S",
+   "Build from source: git clone the repo, cd LayoutKeeper, ./scripts/build.sh"
+  ],
+  "stack": [
+   "Swift 6",
+   "Xcode 16 or later (build from source)",
+   "Sparkle (automatic updates)",
+   "Private macOS APIs for cross-desktop window moves",
+   "DDC over I2C for Apple Silicon monitors"
+  ],
+  "notable": [
+   "Restores windows to their original macOS desktop (Space), not just position and size, on macOS 26 or later",
+   "Per-monitor layouts identified by EDID hardware data, with a shared-layout option that stores positions relative to the screen",
+   "Hardware brightness via DDC on Apple Silicon, with software dimming fallback and a sync option for the built-in display",
+   "Verifies each window move and rolls back if it did not arrive",
+   "Keep Awake menu with four modes"
+  ],
+  "caveats": [
+   "Moving windows between desktops uses private macOS APIs that may break after a system update; the feature is disabled automatically if so",
+   "Hardware DDC brightness works only on Apple Silicon Macs, and not all monitors, docks or HDMI ports support it",
+   "Supports one external monitor at a time; Finder windows cannot be moved to another desktop; full-screen, Split View and minimized windows are skipped"
+  ],
+  "license": "GPL-3.0-only",
+  "category": "macos window management",
+  "keywords": [
+   "window layout restore",
+   "external monitor",
+   "multi-monitor",
+   "macos spaces",
+   "mission control desktops",
+   "window position memory",
+   "display arrangement",
+   "ddc brightness",
+   "brightness keys external display",
+   "volume keys macos",
+   "keep awake",
+   "menu bar app",
+   "menubar utility",
+   "edid",
+   "apple silicon",
+   "sparkle updates",
+   "swift",
+   "layout keeper",
+   "spaceport",
+   "undo window move",
+   "docking station laptop",
+   "restore windows after unplugging",
+   "remember window positions",
+   "desktop switching macos",
+   "prevent sleep macos",
+   "monitor brightness sync",
+   "swift macos app",
+   "gpl-3.0",
+   "alttab alternative",
+   "monitorcontrol alternative",
+   "betterdisplay alternative",
+   "lunar alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4716,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

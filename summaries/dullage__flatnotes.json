@@ -1,0 +1,87 @@
+{
+ "id": "dullage/flatnotes",
+ "repo": "dullage/flatnotes",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Note-taking & Editors",
+   "entry": "flatnotes - Database-less note-taking web app that utilises a flat folder of markdown files for storage. (Demo) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted, database-less note-taking web app that stores notes as a flat folder of markdown files.",
+  "what_it_does": "flatnotes is a web app for taking notes, with each note saved as a plain markdown file in a single folder rather than in a database. It offers raw and WYSIWYG markdown editing, full-text and advanced search (with \"/\" as a shortcut from anywhere in the app), and note tagging. Notes can link to each other with wikilink syntax such as [[My Other Note]]. The README says the search index is the only thing cached and is incrementally synced on each search and at startup, so files can be added, edited or deleted outside the app while it runs. It also lists a customisable home page, light and dark themes, a mobile-responsive interface, and a RESTful API. Authentication options are none, read-only, username/password, and 2FA.",
+  "use_cases": [
+   "self-hosted personal note-taking",
+   "markdown notes in a plain folder",
+   "searchable notes with tags",
+   "wiki-style linked notes",
+   "distraction-free writing app",
+   "note app with no database"
+  ],
+  "how_to_run": [
+   "docker run -d -e \"PUID=1000\" -e \"PGID=1000\" -e \"FLATNOTES_AUTH_TYPE=password\" -e \"FLATNOTES_USERNAME=user\" -e 'FLATNOTES_PASSWORD=changeMe!' -e \"FLATNOTES_SECRET_KEY=aLongRandomSeriesOfCharacters\" -v \"$(pwd)/data:/data\" -p \"8080:8080\" dullage/flatnotes:latest",
+   "Or use the Docker Compose example in the README (image dullage/flatnotes:latest, volume ./data:/data, port 8080:8080)",
+   "See the Environment Variables article in the wiki for the full list of configuration options"
+  ],
+  "stack": [
+   "Docker",
+   "Python",
+   "Whoosh",
+   "TOAST UI Editor"
+  ],
+  "notable": [
+   "Notes are plain markdown files in a flat folder with no database, so they can be moved to another app at any time",
+   "Search index is incrementally synced, so external edits to the folder are picked up",
+   "Wikilink support using [[Note Name]] syntax",
+   "Multiple authentication modes including 2FA and read-only",
+   "Hosted demo available on PikaPods"
+  ],
+  "caveats": [
+   "The README says the demo site resets every 15 minutes",
+   "The roadmap deliberately limits new features to keep the app simple",
+   "Self-hosting is recommended via Docker; no other install method is described in the README"
+  ],
+  "license": "MIT",
+  "category": "self-hosted note-taking",
+  "keywords": [
+   "flatnotes",
+   "note-taking app",
+   "self-hosted notes",
+   "markdown notes",
+   "markdown editor",
+   "database-less",
+   "flat file storage",
+   "plain text notes",
+   "wikilinks",
+   "full-text search",
+   "note tagging",
+   "docker notes app",
+   "personal wiki",
+   "2fa authentication",
+   "restful api",
+   "whoosh search",
+   "toast ui editor",
+   "wysiwyg markdown",
+   "notes in a folder",
+   "keep notes as files",
+   "obsidian-like notes",
+   "self-hosted wiki",
+   "dark mode notes",
+   "mobile note app",
+   "pikapods",
+   "store notes without database",
+   "searchable notes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2785,
+  "output": 1236
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "authelia/authelia",
+ "repo": "authelia/authelia",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "Authelia | Authentication and authorization server"
+  }
+ ],
+ "summary": {
+  "one_liner": "Authelia is an open-source authentication and authorization server that provides two-factor authentication and single sign-on for applications through a web portal, acting as a companion to reverse proxies.",
+  "what_it_does": "Authelia works with reverse proxies such as nginx, Traefik, Caddy, Skipper, Envoy, or HAProxy, allowing, denying, or redirecting requests based on access rules. It offers several second factors: FIDO2/WebAuthn security keys (such as YubiKey), time-based one-time passwords for authenticator apps, and mobile push notifications via Duo. It also supports passwordless WebAuthn/Passkeys, password reset through email confirmation, and locking out access after too many failed attempts. Access rules can match on subdomain, user, group, request URI, method, and network, with one-factor or two-factor policy per rule. The README also lists OpenID Connect 1.0 / OAuth 2.0 support and Kubernetes ingress controller compatibility, and says it can be run highly available with a remote database and Redis.",
+  "use_cases": [
+   "add two-factor login in front of self-hosted web apps",
+   "single sign-on for multiple services behind a reverse proxy",
+   "protect Traefik or Caddy routes with forward auth",
+   "enforce per-route access rules by user or group",
+   "passwordless login with passkeys or security keys",
+   "OpenID Connect identity provider for applications"
+  ],
+  "how_to_run": [
+   "See the Get Started Guide in the project documentation",
+   "Try the docker compose Local bundle (self-signed certificates, intended for hosts not exposed to the internet)",
+   "Try the docker compose Lite bundle (for internet-exposed servers, Let's Encrypt certificates, SQLite and file-based users)",
+   "Install as a standalone service from AUR, APT, or FreeBSD Ports, or use a static binary or .deb package",
+   "Deploy as a container on Docker or Kubernetes, or via the beta Helm Chart"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Kubernetes",
+   "Helm",
+   "Redis",
+   "SQLite",
+   "WebAuthn/FIDO2",
+   "OpenID Connect / OAuth 2.0"
+  ],
+  "notable": [
+   "OpenID Certified for Basic, Implicit, Hybrid, Form Post, and Config OP profiles, per the README",
+   "Post-quantum cryptography listed as a feature",
+   "Forward-auth integration with Traefik, Caddy, and SWAG from LinuxServer",
+   "Supports Kubernetes ingress controllers including ingress-nginx, Traefik, Istio, and Envoy Gateway"
+  ],
+  "caveats": [
+   "Still under active development, so breaking changes occur; the README recommends pinning a version tag rather than latest",
+   "The Lite compose setup does not scale well; high availability requires a remote database and Redis",
+   "Helm chart is beta",
+   "Docker compose bundles use self-signed certificates and need customization before real use",
+   "Sponsors are sought for a security audit; the README says no audit or bug bounty has been funded yet"
+  ],
+  "license": "Apache 2.0",
+  "category": "authentication server",
+  "keywords": [
+   "authelia",
+   "two-factor authentication",
+   "2fa",
+   "single sign-on",
+   "sso",
+   "authentication server",
+   "authorization server",
+   "reverse proxy auth",
+   "forward auth",
+   "traefik middleware",
+   "caddy forward_auth",
+   "nginx auth_request",
+   "openid connect",
+   "oauth 2.0",
+   "webauthn",
+   "passkeys",
+   "fido2",
+   "yubikey",
+   "totp",
+   "duo push",
+   "passwordless login",
+   "access control rules",
+   "kubernetes auth",
+   "helm chart",
+   "docker compose",
+   "self-hosted login portal",
+   "identity provider",
+   "envoy gateway",
+   "haproxy",
+   "redis high availability",
+   "lock out brute force",
+   "apache 2.0"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4231,
+  "output": 1416
+ },
+ "generated": "2026-10-29"
+}

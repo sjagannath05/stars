@@ -1,0 +1,98 @@
+{
+ "id": "l4rm4nd/vouchervault",
+ "repo": "l4rm4nd/VoucherVault",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "VoucherVault - Store and manage vouchers, coupons, loyalty and gift cards digitally. Supports expiry notifications, transaction histories, file uploads and OIDC SSO. GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "VoucherVault is a Django web application for storing and managing vouchers, coupons, loyalty cards and gift cards digitally, with a mobile-friendly PWA interface.",
+  "what_it_does": "It lets users record vouchers, coupons, gift cards and loyalty cards, and attach item-specific file uploads (images and PDFs) to each entry. Redeem codes can be displayed as QR codes or barcodes, and codes can be scanned client-side (1D/2D) via camera or file upload when creating an item. Gift cards have transaction history tracking. Items can be shared between users, and the app supports multiple users, multiple languages (English, German, French, Italian) and light/dark themes. Expiry notifications are sent through Apprise, checked daily at 9AM via Celery Beat, with configurable thresholds. A REST API endpoint provides stats for Home Assistant and other dashboards.",
+  "use_cases": [
+   "store gift cards and loyalty cards digitally",
+   "track gift card balance and transaction history",
+   "get reminders before vouchers or coupons expire",
+   "show redeem codes as barcodes or QR codes at checkout",
+   "share vouchers with other household members",
+   "feed voucher stats into a Home Assistant dashboard"
+  ],
+  "how_to_run": [
+   "mkdir -p ./volume-data/database",
+   "sudo chown -R 33:33 volume-data/*",
+   "docker compose -f docker/docker-compose-sqlite.yml up -d",
+   "docker compose -f docker/docker-compose-sqlite.yml logs -f (to obtain the auto-generated admin password)"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "Celery",
+   "Celery Beat",
+   "Redis",
+   "Apprise",
+   "Docker",
+   "SQLite3",
+   "PostgreSQL",
+   "OIDC"
+  ],
+  "notable": [
+   "Single Sign-On via OIDC with configurable provider endpoints",
+   "Client-side barcode/QR scanning with automatic code type detection during item creation",
+   "Expiry notifications via Apprise with configurable day thresholds",
+   "Manual offline mode with 48h caching and PWA support",
+   "Multi-currency support via the fixer.io API"
+  ],
+  "caveats": [
+   "Container runs as www-data (UID/GID 33), so the bind mount permissions must be adjusted manually",
+   "Transaction history tracking applies to gift cards only",
+   "Multi-currency support depends on the free fixer.io API"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted voucher management",
+  "keywords": [
+   "voucher manager",
+   "coupon tracker",
+   "gift card tracker",
+   "loyalty card wallet",
+   "loyalty card manager",
+   "store vouchers digitally",
+   "expiry reminder",
+   "expiration notifications",
+   "apprise notifications",
+   "barcode display",
+   "qr code display",
+   "barcode scanner",
+   "django app",
+   "celery beat",
+   "redis",
+   "docker compose",
+   "sqlite",
+   "postgresql",
+   "oidc sso",
+   "single sign-on",
+   "home assistant",
+   "pwa",
+   "offline mode",
+   "file uploads",
+   "gift card balance",
+   "multi-user",
+   "share items with family",
+   "self-hosted wallet",
+   "multi-currency",
+   "fixer.io",
+   "rest api"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4613,
+  "output": 1197
+ },
+ "generated": "2026-10-29"
+}

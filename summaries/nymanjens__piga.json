@@ -1,0 +1,95 @@
+{
+ "id": "nymanjens/piga",
+ "repo": "nymanjens/piga",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "Task Keeper - List editor for power users, backed by a self-hosted server. Apache-2.0 Scala"
+  }
+ ],
+ "summary": {
+  "one_liner": "Piga is a self-hosted list editor for power users, built around keyboard shortcuts for editing nested task lists and notes across multiple documents.",
+  "what_it_does": "Piga is a web-based list editor aimed at power users, with example uses such as TODO lists, meal and ingredient lists, meeting notes, and reminders. It offers many keyboard shortcuts for indentation, text formatting, undo/redo, task swapping, duplicating, deleting, and collapsing or expanding indented tasks. Tasks can carry tags and links, and text can be converted between uppercase, lowercase, CamelCase, snake_case, and dash-case. Copy, cut, and Markdown-copy of a task with its children are supported. Users can keep many documents and switch between them quickly. The README describes a server with user accounts, backed by a database (MariaDB/MySQL in the examples), and includes an optional delayed-task queue that relies on specially tagged tasks and a daily external API call.",
+  "use_cases": [
+   "Keep a TODO list with keyboard-driven editing",
+   "Maintain a meal plan and ingredient list",
+   "Take and organize meeting notes",
+   "Keep a personal list of things to remember",
+   "Manage nested, collapsible task outlines across several documents"
+  ],
+  "how_to_run": [
+   "Install Java 11 (JDK 11) on your server",
+   "Download 'Binaries (compiled files) with demo configuration' from the latest release and unpack the archive",
+   "Edit conf/application.conf to configure a database (e.g. MariaDB) and set play.http.secret.key and app.setup.defaultPassword",
+   "Run bin/server -DdropAndCreateNewDb to create database tables, then bin/server -DcreateAdminUser to create the admin user",
+   "Run bin/server and browse to port 9000 at /app/useradministration (admin / changeme)",
+   "Alternatively, use the Docker instructions: set APPLICATION_SECRET, run docker-compose run web bin/server with -DdropAndCreateNewDb and -DcreateAdminUser, then docker-compose up"
+  ],
+  "stack": [
+   "Scala",
+   "Java 11",
+   "MySQL/MariaDB (via JDBC)",
+   "Slick",
+   "Play Framework",
+   "Docker / docker-compose"
+  ],
+  "notable": [
+   "Extensive keyboard shortcuts for outline editing, formatting, and case conversion",
+   "Collapse and expand of indented tasks beneath a selected task",
+   "Tag support for tasks, including special tags for a delayed-task queue",
+   "Fast switching between many documents",
+   "Docker Compose option alongside a plain binary install"
+  ],
+  "caveats": [
+   "Requires a database setup (MariaDB/MySQL example given) and Java 11 on the server",
+   "The delayed-task feature needs a daily external API call and specific tags",
+   "Setup is manual: default admin password must be changed, and secrets must be chosen"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted list editor",
+  "keywords": [
+   "list editor",
+   "outliner",
+   "task list",
+   "todo list",
+   "self-hosted todo",
+   "note taking",
+   "keyboard shortcuts",
+   "nested tasks",
+   "collapsible outline",
+   "markdown copy",
+   "tags",
+   "multiple documents",
+   "scala",
+   "play framework",
+   "mariadb",
+   "mysql",
+   "docker compose",
+   "java server",
+   "notes app",
+   "meeting notes",
+   "shopping list",
+   "personal productivity",
+   "power user editor",
+   "text case conversion",
+   "task manager alternative",
+   "todo app",
+   "self-hosted notes",
+   "reminder list",
+   "outline editor",
+   "web app",
+   "apache license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3431,
+  "output": 1282
+ },
+ "generated": "2026-10-29"
+}

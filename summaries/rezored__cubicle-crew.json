@@ -1,0 +1,97 @@
+{
+ "id": "rezored/cubicle-crew",
+ "repo": "rezored/cubicle-crew",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability & Monitoring",
+   "entry": "Cubicle Crew by rezored - A pixel-art office for Claude Code agents, including a desktop widget and browser app, with tokens, a shop and a lounge. Friday is Hawaiian shirt day."
+  }
+ ],
+ "summary": {
+  "one_liner": "Cubicle Crew is a pixel-art office that shows your Claude Code (and Codex, Gemini CLI, OpenCode) agent sessions as coworkers at desks, with a desktop widget, browser app, idle-game coins and shop.",
+  "category": "agent monitoring dashboard",
+  "keywords": [
+   "claude code",
+   "claude code monitor",
+   "ai agent dashboard",
+   "sub-agent visualization",
+   "pixel art office",
+   "pixel office",
+   "agent observability",
+   "session monitor",
+   "codex",
+   "gemini cli",
+   "opencode",
+   "copilot cli",
+   "cursor hooks",
+   "desktop widget",
+   "electron app",
+   "always on top widget",
+   "tray app",
+   "websocket",
+   "node.js",
+   "jsonl transcript tail",
+   "permission prompt alert",
+   "allow deny buttons",
+   "token usage stats",
+   "api cost estimate",
+   "idle game",
+   "virtual office",
+   "share agents status",
+   "monitor my ai coding sessions",
+   "see what my agents are doing",
+   "get notified when claude needs me",
+   "local dashboard for ai agents",
+   "watch sub-agents work"
+  ],
+  "what_it_does": "Reads the session logs Claude Code writes to ~/.claude/projects and draws each session as a character at a desk in a live pixel-art office, with sub-agents linked to their parent team. Each character's shirt, monitor and name tag change colour with its state (idle, thinking, typing, reading, running, delegating, waiting). Codex, Gemini CLI and OpenCode sessions are supported too, and other tools can post events to a small local API. An agent waiting for permission or a question turns red, and the app can optionally show Allow/Deny buttons for permission prompts. It tracks work time, tool calls and token usage per day and project, with an estimated API-price cost and CSV/JSON export. It runs in a browser via npx or as a Windows, macOS or Linux desktop widget, and it earns coins that buy decor, pets and achievements.",
+  "use_cases": [
+   "monitor several Claude Code sessions and sub-agents at once",
+   "get alerted when an AI agent needs permission or an answer",
+   "show a live agent status scene on a second monitor or in OBS",
+   "track Claude Code token usage and estimated API cost",
+   "watch Codex, Gemini CLI or OpenCode sessions in one place",
+   "keep an always-on-top desktop status widget for coding agents"
+  ],
+  "how_to_run": [
+   "npx cubicle-crew",
+   "git clone <repository URL>",
+   "cd cubicle-crew",
+   "npm install",
+   "npm start",
+   "npm run desktop"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "ws (WebSocket library)",
+   "Electron (desktop build)",
+   "vanilla JavaScript ES modules",
+   "HTML canvas"
+  ],
+  "notable": [
+   "Reads local Claude Code transcripts with no API keys or hooks to install for basic monitoring",
+   "Optional Allow/Deny buttons for Claude Code permission prompts, adding one hook to ~/.claude/settings.json that is removed when turned off",
+   "Risky shell commands (rm -rf, force push, terraform apply, prod) are flagged in red",
+   "All sprites and furniture are drawn in code, with no image assets; custom PNG sprites can be dropped in",
+   "Weather and clock-driven day/night lighting; no internet requests until a city is chosen"
+  ],
+  "caveats": [
+   "Relies on Claude Code's JSONL transcript format, which the README says is not an official API",
+   "Desktop installers are not code-signed, so Windows and macOS warn on first launch; macOS needs an extra step to open the app",
+   "Jump-to-terminal and start-at-login are not supported on Linux; Codex and Gemini don't turn red on permission prompts",
+   "Transparent background is experimental and not available on Linux"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11131,
+  "output": 1401
+ },
+ "generated": "2026-10-29"
+}

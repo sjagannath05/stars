@@ -1,0 +1,92 @@
+{
+ "id": "asterisk/asterisk",
+ "repo": "asterisk/asterisk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - SIP",
+   "entry": "Asterisk - Easy to use but advanced IP PBX system, VoIP gateway and conference server. (Source Code) GPL-2.0 C/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "Asterisk is an open source PBX and telephony toolkit that acts as middleware between internet and telephony channels, supporting SIP/VoIP and traditional PSTN hardware.",
+  "what_it_does": "The README describes Asterisk as an Open Source PBX and telephony toolkit bridging Internet telephony and PSTN/TDM channels at the bottom with telephony applications at the top. It states that most users run VoIP/SIP, but it also supports analog and digital interfaces through supported hardware such as Sangoma interface cards, Xorcom Astribank channel banks, and any full-duplex sound card supported by PortAudio. The README gives a build workflow using ./configure, make menuselect, make, make install, and make samples, then launching with asterisk -vvvc for a CLI console. Configuration files use a common sectioned format with ';' comments. The README also covers operational needs: keeping system time synced via ntpd/ntpsec, chronyd, or systemd-timesyncd, and raising file descriptor limits for high call volumes. It names Linux as the primary platform and says Mac OS X and BSD variants have been ported with reported success.",
+  "use_cases": [
+   "run a self-hosted SIP/VoIP PBX",
+   "connect analog or digital telephony lines to IP telephony",
+   "host a conference server",
+   "build custom telephony applications",
+   "route calls between SIP phones and PSTN trunks"
+  ],
+  "how_to_run": [
+   "Read the documentation and the security considerations before configuring a server",
+   "./configure (run ./contrib/scripts/install_prereq install if dependencies are missing, then rerun ./configure)",
+   "make menuselect (optional: select modules and check dependencies)",
+   "make",
+   "make install, then make samples to install sample configs (overwrites existing configs)",
+   "asterisk -vvvc to start in foreground with a CLI console"
+  ],
+  "stack": [
+   "C",
+   "GCC or C99-compatible compiler",
+   "ncurses",
+   "OpenSSL",
+   "zlib",
+   "PortAudio"
+  ],
+  "notable": [
+   "Supports SIP, IAX2, and H.323 signaling alongside PSTN hardware interfaces",
+   "Modular build with make menuselect for choosing optional modules",
+   "Includes contrib/scripts/install_prereq to install build dependencies on common distributions",
+   "Command-line console (CLI) for runtime control and help via core show help"
+  ],
+  "caveats": [
+   "README tells users to read the security considerations document before running a server",
+   "Sensitive to large system clock jumps, which can break SIP registrations; requires a time sync service",
+   "Primarily developed and tested on GNU/Linux; other OSes are reported to work but are less certain"
+  ],
+  "license": "GPL-2.0",
+  "category": "voip pbx server",
+  "keywords": [
+   "asterisk",
+   "ip pbx",
+   "voip pbx",
+   "sip server",
+   "sip pbx",
+   "pbx",
+   "telephony toolkit",
+   "voip gateway",
+   "conference server",
+   "pstn gateway",
+   "iax2",
+   "h.323",
+   "sangoma",
+   "astribank",
+   "portaudio",
+   "analog telephony",
+   "self-hosted phone system",
+   "run my own phone system",
+   "connect sip phones",
+   "voice over ip server",
+   "call routing",
+   "c",
+   "gpl",
+   "linux telephony",
+   "ntpd time sync",
+   "file descriptor limits",
+   "install from source",
+   "asterisk cli",
+   "telephony middleware"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4042,
+  "output": 1258
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "i18n-actions/ai-i18n",
+ "repo": "i18n-actions/ai-i18n",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🤖 AI-Related Tools",
+   "entry": "ai-i18n - GitHub Action that automatically translates i18n files (XLIFF, JSON) using LLM providers (Anthropic, OpenAI, Ollama) with glossary support, change detection, and reviewed translation preservation."
+  }
+ ],
+ "summary": {
+  "one_liner": "A GitHub Action that automatically translates XLIFF and JSON i18n files using LLM providers (Anthropic, OpenAI, Ollama, AWS Bedrock) with change detection so only new or modified strings are sent to the API.",
+  "category": "github actions localization",
+  "keywords": [
+   "i18n",
+   "l10n",
+   "localization",
+   "github action",
+   "ci translation",
+   "xliff",
+   "xlf",
+   "xliff 1.2",
+   "xliff 2.0",
+   "json translation",
+   "flat json",
+   "nested json",
+   "llm translation",
+   "anthropic",
+   "claude",
+   "openai",
+   "ollama",
+   "aws bedrock",
+   "icu messageformat",
+   "plural rules",
+   "cldr",
+   "content hashing",
+   "change detection",
+   "glossary",
+   "translate files on push",
+   "automate app translations",
+   "translate locale files",
+   "self-hosted llm translation"
+  ],
+  "what_it_does": "Runs as a GitHub Action that finds translation files matching a glob, auto-detects or accepts a format (XLIFF 1.2, XLIFF 2.0, flat JSON, nested JSON), and translates source strings into the listed target languages via a chosen LLM provider. It keeps a .i18n-hashes.json file of content hashes so only new or changed source strings are sent to the API. XLIFF inline elements are replaced with placeholder tokens before the LLM call and rebuilt as XML afterward. For plural messages it uses CLDR-based ICU MessageFormat categories for many languages. It can batch strings per API call, retry on failure, rate-limit, write results back, optionally commit them, and produce a Markdown report and outputs. Settings can also be placed in a .i18n-translate.yml config file.",
+  "use_cases": [
+   "automatically translate app strings on every push",
+   "translate Angular, iOS or Android XLIFF files",
+   "translate JSON locale files in CI",
+   "keep translations in sync with source language changes",
+   "dry-run translation previews before committing",
+   "translate with a self-hosted Ollama model",
+   "reduce LLM translation costs by skipping unchanged strings"
+  ],
+  "how_to_run": [
+   "- uses: i18n-actions/ai-i18n@v0 with: provider: anthropic, api-key: ${{ secrets.ANTHROPIC_API_KEY }}, target-languages: de,fr,es,ja, files: 'src/locales/**/*.xliff'",
+   "Ollama: set provider: ollama, model: llama3.2, and ollama-url (no API key needed)",
+   "Bedrock: set provider: bedrock and aws-region, optionally configure AWS credentials via aws-actions/configure-aws-credentials",
+   "Dry run: set dry-run: true and commit: false to preview without writing files",
+   "Local development: npm install, npm test, npm run build (requires Node.js 20+)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 20+",
+   "ncc (build)",
+   "ESLint",
+   "Prettier",
+   "Anthropic API",
+   "OpenAI API",
+   "Ollama",
+   "AWS Bedrock Converse API",
+   "CLDR plural data"
+  ],
+  "notable": [
+   "Placeholder preservation: XLIFF inline tags are swapped for LLM-safe markers and rebuilt as XML in the output",
+   "Content hashing in .i18n-hashes.json so unchanged strings are not re-sent to the API",
+   "Model-agnostic AWS Bedrock support via the Converse API",
+   "CLDR-aware ICU plural category generation for 20+ languages",
+   "Loop prevention that skips runs triggered by its own commits, plus a [skip i18n] commit marker"
+  ],
+  "caveats": [
+   "Requires an API key for Anthropic and OpenAI; Ollama needs a reachable self-hosted server",
+   "Bedrock models must be enabled in the AWS account's Model access settings, and some need cross-region inference profile IDs",
+   "Requires Node.js 20+ for local development"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5277,
+  "output": 1443
+ },
+ "generated": "2026-10-29"
+}

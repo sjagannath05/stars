@@ -1,0 +1,97 @@
+{
+ "id": "benfred/implicit",
+ "repo": "benfred/implicit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Recommender Systems",
+   "entry": "implicit - A fast Python implementation of collaborative filtering for implicit datasets."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python library of fast, multi-threaded collaborative filtering algorithms for implicit feedback datasets, such as ALS, BPR, logistic matrix factorization and item-item nearest neighbours.",
+  "what_it_does": "Implicit provides Python implementations of several recommendation algorithms for implicit feedback data: Alternating Least Squares (ALS), Bayesian Personalized Ranking (BPR), Logistic Matrix Factorization, and item-item nearest neighbour models using Cosine, TFIDF or BM25 distance. Training routines are written in Cython and use OpenMP to fit models across all available CPU cores. The ALS and BPR models also have custom CUDA kernels for GPU fitting. Models expose fit, recommend and similar_items methods on sparse user-item matrices. The README says approximate nearest neighbour libraries (Annoy, NMSLIB, Faiss) can be used to speed up recommendations.",
+  "use_cases": [
+   "build a recommender from implicit clicks or purchases",
+   "find related or similar items from user interaction data",
+   "compute similar artists from listening history",
+   "generate per-user product recommendations",
+   "accelerate matrix factorization on a GPU",
+   "speed up recommendation lookups with approximate nearest neighbours"
+  ],
+  "how_to_run": [
+   "pip install implicit",
+   "conda install -c conda-forge implicit",
+   "conda install -c conda-forge implicit implicit-proc=*=gpu",
+   "model = implicit.als.AlternatingLeastSquares(factors=50)",
+   "model.fit(user_item_data)",
+   "recommendations = model.recommend(userid, user_item_data[userid])"
+  ],
+  "stack": [
+   "Python",
+   "Cython",
+   "OpenMP",
+   "CUDA",
+   "SciPy",
+   "RMM (GPU support)",
+   "Annoy",
+   "NMSLIB",
+   "Faiss"
+  ],
+  "notable": [
+   "Implements ALS, BPR, logistic matrix factorization and item-item nearest neighbours in one library",
+   "Custom CUDA kernels for ALS and BPR on compatible NVIDIA GPUs",
+   "Prebuilt wheels for x86_64 Linux, Windows and OSX, with GPU support on Linux",
+   "Can use Annoy, NMSLIB or Faiss for approximate nearest neighbour recommendations"
+  ],
+  "caveats": [
+   "GPU support requires CUDA Toolkit version 13 and installing RMM (pip install rmm-cu13)",
+   "Requires Python 3.9 or later and SciPy 0.16 or later",
+   "README recommends tuning BLAS thread settings (OPENBLAS_NUM_THREADS or MKL_NUM_THREADS set to 1) for best speed"
+  ],
+  "license": "MIT",
+  "category": "recommender systems library",
+  "keywords": [
+   "collaborative filtering",
+   "implicit feedback",
+   "implicit datasets",
+   "recommender system",
+   "recommendation engine",
+   "alternating least squares",
+   "als",
+   "bayesian personalized ranking",
+   "bpr",
+   "logistic matrix factorization",
+   "matrix factorization",
+   "item-item nearest neighbour",
+   "bm25",
+   "tfidf",
+   "cosine similarity",
+   "similar items",
+   "item similarity",
+   "approximate nearest neighbours",
+   "annoy",
+   "nmslib",
+   "faiss",
+   "gpu matrix factorization",
+   "cuda",
+   "cython",
+   "python recommendation library",
+   "suggest products to users",
+   "similar artists",
+   "music recommendations",
+   "user purchase recommendations",
+   "implicit ratings"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2704,
+  "output": 1318
+ },
+ "generated": "2026-10-29"
+}

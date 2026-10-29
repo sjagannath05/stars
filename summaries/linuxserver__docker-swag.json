@@ -1,0 +1,96 @@
+{
+ "id": "linuxserver/docker-swag",
+ "repo": "linuxserver/docker-swag",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Web Servers",
+   "entry": "SWAG (Secure Web Application Gateway) - Nginx webserver and reverse proxy with PHP support, built-in Certbot (Let's Encrypt) client and fail2ban integration. GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "SWAG is a Docker container that runs an Nginx web server and reverse proxy with PHP support, a built-in Certbot client for automated Let's Encrypt/ZeroSSL certificates, and fail2ban for intrusion prevention.",
+  "what_it_does": "Sets up an Nginx webserver and reverse proxy with PHP support, plus a built-in Certbot client that obtains and renews free SSL certificates from Let's Encrypt or ZeroSSL. Certificates are validated either over HTTP (port 80) or via DNS using a long list of supported DNS provider plugins, and wildcard certs are available through DNS validation. It ships fail2ban with five default jails (nginx-http-auth, nginx-badbots, nginx-botsearch, nginx-deny, nginx-unauthorized) that can be toggled in a config file. The container also supports preset reverse proxy configs for popular apps, htpasswd and LDAP-based password protection, QUIC (HTTP/3) when explicitly enabled, certificate exports (pfx and combined PEM) for other containers, and auto-reload of Nginx configs on change. Configuration is persisted in a mounted /config volume, and PUID/PGID user mapping is supported.",
+  "use_cases": [
+   "reverse proxy for self-hosted web apps",
+   "automatic Let's Encrypt SSL certificate renewal",
+   "wildcard certificates via DNS validation",
+   "password-protecting websites with htpasswd or LDAP",
+   "intrusion prevention for a web server with fail2ban",
+   "sharing certificates with other containers like Emby or ZNC"
+  ],
+  "how_to_run": [
+   "docker run -d --name=swag --cap-add=NET_ADMIN -e PUID=1000 -e PGID=1000 -e TZ=Etc/UTC -e URL=example.com -e VALIDATION=http -e SUBDOMAINS=www, -p 443:443 -p 80:80 -v /path/to/swag/config:/config --restart unless-stopped lscr.io/linuxserver/swag:latest",
+   "Or use the docker-compose example from the README with the lscr.io/linuxserver/swag:latest image",
+   "Set URL, VALIDATION (http or dns), and SUBDOMAINS, plus DNSPLUGIN and credentials under /config/dns-conf if using dns validation",
+   "Forward port 80 and 443 to the container host; NET_ADMIN capability is required for fail2ban"
+  ],
+  "stack": [
+   "Docker",
+   "Nginx",
+   "Certbot",
+   "fail2ban",
+   "PHP",
+   "Alpine Linux",
+   "s6 overlay"
+  ],
+  "notable": [
+   "Built-in Certbot with dozens of DNS validation plugins and Let's Encrypt or ZeroSSL support",
+   "Ships fail2ban with preset nginx jails",
+   "Optional QUIC (HTTP/3) support, enabled per proxy config",
+   "Exports pfx and combined PEM certs for use by other containers",
+   "Preset reverse proxy configs for popular apps and Authelia/Authentik/Tinyauth auth snippets"
+  ],
+  "caveats": [
+   "fail2ban requires the NET_ADMIN capability and is unavailable when running read-only; Portainer may not deploy it correctly",
+   "HTTP validation needs port 80 reachable from the internet; some DNS providers (e.g. Google Cloud DNS) are paid products",
+   "Config updates are not applied automatically and must be reviewed against the changelog"
+  ],
+  "license": "GPL-3.0",
+  "category": "reverse proxy docker image",
+  "keywords": [
+   "swag",
+   "nginx",
+   "reverse proxy",
+   "letsencrypt",
+   "let's encrypt",
+   "certbot",
+   "ssl certificate",
+   "tls certificate",
+   "automatic ssl renewal",
+   "zerossl",
+   "wildcard certificate",
+   "dns validation",
+   "http validation",
+   "fail2ban",
+   "intrusion prevention",
+   "htpasswd",
+   "ldap auth",
+   "docker container",
+   "docker compose",
+   "linuxserver",
+   "quic",
+   "http/3",
+   "php webserver",
+   "web server",
+   "secure my websites with https",
+   "free ssl certificates",
+   "proxy my self-hosted apps",
+   "block bad bots",
+   "password protect a website",
+   "alternative to nginx proxy manager",
+   "alternative to traefik",
+   "pfx certificate export"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13237,
+  "output": 1538
+ },
+ "generated": "2026-10-29"
+}

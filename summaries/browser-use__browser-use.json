@@ -1,0 +1,100 @@
+{
+ "id": "browser-use/browser-use",
+ "repo": "browser-use/browser-use",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web Scraping",
+   "entry": "browser-use - Make websites accessible for AI agents with easy browser automation."
+  }
+ ],
+ "summary": {
+  "one_liner": "Browser Use is an open-source Python (and TypeScript) browser agent that lets an LLM drive a web browser to complete tasks, with optional hosted cloud browsers and agent API.",
+  "what_it_does": "The Python library runs a Browser Use agent locally with a chosen LLM (for example ChatOpenAI or ChatBrowserUse) against a local or cloud browser. The Agent takes a natural-language task, opens a browser, and returns a result via history.final_result(). Custom tools can be registered with Tools and an @tools.action decorator. Authentication can reuse a local Chrome profile through Browser.from_system_chrome() or a cloud profile. Runs can be saved to JSON and replayed with new variable values, without a model call per step. The README also describes a Claude toolset integration that uses Browser Use as the browser driver, with a Bash tool included, and a CLI for giving existing coding agents browser access.",
+  "use_cases": [
+   "automate multi-step web tasks with an LLM agent",
+   "fill and submit web forms with replayable runs",
+   "look up information on websites automatically",
+   "run a browser agent in Docker, CI, or serverless via cloud browsers",
+   "give Claude or other coding agents browser control"
+  ],
+  "how_to_run": [
+   "uv init --python 3.12",
+   "uv add browser-use",
+   "Add OPENAI_API_KEY (or another provider key) to .env",
+   "Save the README's agent.py example and run: uv run agent.py",
+   "Optional: set BROWSER_USE_API_KEY and use Browser(use_cloud=True) for a cloud browser"
+  ],
+  "stack": [
+   "Python (>=3.11, examples use 3.12)",
+   "TypeScript",
+   "uv",
+   "OpenAI API",
+   "Anthropic SDK",
+   "Google (ChatGoogle)",
+   "Ollama (local models)",
+   "Chrome / CDP"
+  ],
+  "notable": [
+   "Runs with any supported LLM: OpenAI, Anthropic, Google, or local models via Ollama, plus the BU2 model via ChatBrowserUse",
+   "Same agent code switches between a local browser and Browser Use Cloud with one parameter",
+   "Save a successful run and replay its clicks and typing with new variables without per-step model calls",
+   "Custom actions registered as plain Python functions with Tools",
+   "Claude toolset integration exposing 31 browser actions"
+  ],
+  "caveats": [
+   "Cloud browsers, hosted agent, and the BU2 model are paid usage ($0.02 per browser-hour plus network traffic, per README), with API keys required",
+   "CAPTCHA handling is not guaranteed; the README says no configuration ensures every CAPTCHA can be avoided or solved",
+   "Profile sync transfers cookies only, not local storage, IndexedDB, or extensions; some sites may require sign-in again",
+   "The Claude Bash tool requires Linux or macOS; Windows users need WSL"
+  ],
+  "license": "MIT",
+  "category": "browser automation agents",
+  "keywords": [
+   "browser automation",
+   "ai browser agent",
+   "browser-use",
+   "llm web agent",
+   "web scraping",
+   "headless browser",
+   "playwright-like automation",
+   "chrome automation",
+   "cdp browser control",
+   "stealth browser",
+   "captcha solving",
+   "cloud browser",
+   "browser agent python",
+   "automate web tasks",
+   "fill out web forms",
+   "replay browser session",
+   "ollama browser agent",
+   "openai browser agent",
+   "anthropic browser tool",
+   "claude browser control",
+   "mcp browser tools",
+   "selenium alternative",
+   "agentic web browsing",
+   "website navigation ai",
+   "book appointment online automatically",
+   "scrape website with ai",
+   "browser harness",
+   "uv python project",
+   "agent controls chrome",
+   "web task automation",
+   "open source browser agent",
+   "rerun browser task",
+   "residential proxies",
+   "llm tool calling browser"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6013,
+  "output": 1366
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,88 @@
+{
+ "id": "ctoth/claudio",
+ "repo": "ctoth/claudio",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "Claudio by Christopher Toth - A no-frills little library that adds delightful OS-native sounds to Claude Code via simple hooks. It really sparks joy."
+  }
+ ],
+ "summary": {
+  "one_liner": "Claudio is a hook-driven audio layer that plays contextual OS-native sounds for coding agents such as Claude Code, Codex CLI, and Gemini CLI, without making the agent wait for playback.",
+  "what_it_does": "Listens to hook events from several coding agents (Claude Code, OpenAI Codex CLI, Gemini CLI, Qwen Code, GitHub Copilot CLI, Command Code, OpenCode) and maps each event to a sound. Different sounds cover tool starts, tool successes and failures, prompts, notifications, completions, compaction, session starts, and subagent events. Bash commands are parsed so that commands like git commit, npm test, and go build can each have their own sound. Users can install hooks automatically with `claudio install`, adjust volume and mute, and use custom soundpacks made from directories, JSON mappings, or git repositories. Sound usage is tracked in a local SQLite database, with reports to find missing sounds.",
+  "use_cases": [
+   "hear audio cues when Claude Code finishes a task or needs input",
+   "give git commit, test, and build commands distinct sounds",
+   "add sound feedback to Codex CLI or Gemini CLI sessions",
+   "create and share custom notification soundpacks",
+   "track which agent sounds are used or missing"
+  ],
+  "how_to_run": [
+   "Download the binary for your platform from GitHub Releases, rename it to claudio (claudio.exe on Windows), and put it on PATH",
+   "go install claudio.click/cmd/claudio@latest",
+   "claudio install",
+   "claudio status",
+   "claudio volume 0.4"
+  ],
+  "stack": [
+   "Go 1.25.13 or later",
+   "Oto audio library",
+   "SQLite"
+  ],
+  "notable": [
+   "Bash command parsing gives git commit, npm test, and go build their own sounds",
+   "Playback does not block the agent",
+   "Auto-detects installed agents and installs hooks for them",
+   "Supports directory, JSON, and git-backed soundpacks",
+   "Pre-built binaries include the native audio backend; no C compiler needed"
+  ],
+  "caveats": [
+   "Remote machines over SSH usually have no audio device; sound requires forwarding a PulseAudio socket (see docs/remote-audio-ssh.md)",
+   "Codex requires running /hooks and trusting the Claudio hook manually after install",
+   "Supported audio formats are WAV, MP3, and AIFF only"
+  ],
+  "license": "unknown",
+  "category": "agent sound notifications",
+  "keywords": [
+   "claude code sounds",
+   "coding agent audio",
+   "hook-driven sound",
+   "audio notifications",
+   "sound alerts for ai agent",
+   "codex cli sounds",
+   "gemini cli audio",
+   "opencode plugin",
+   "copilot cli sounds",
+   "soundpack",
+   "custom sound pack",
+   "wav mp3 aiff playback",
+   "oto audio",
+   "golang cli",
+   "go install",
+   "bash command sounds",
+   "git commit sound",
+   "npm test sound",
+   "play sound when task finishes",
+   "task completion chime",
+   "volume control cli",
+   "mute notifications",
+   "sqlite usage tracking",
+   "remote audio ssh pulseaudio",
+   "agent hooks",
+   "claude code hooks",
+   "os native sounds",
+   "notification sounds for terminal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3103,
+  "output": 1212
+ },
+ "generated": "2026-10-29"
+}

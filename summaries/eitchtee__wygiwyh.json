@@ -1,0 +1,106 @@
+{
+ "id": "eitchtee/wygiwyh",
+ "repo": "eitchtee/WYGIWYH",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "WYGIWYH - Simple and powerful finance tracker. (Demo) AGPL-3.0 Docker/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "WYGIWYH is a self-hostable, opinionated personal finance tracker built around a no-budget \"use what you earn this month\" philosophy, with multi-currency support and a dollar-cost averaging tracker.",
+  "what_it_does": "It records income and expenses as transactions across multiple accounts (banks, wallets, investments) and supports multiple currencies, including user-defined custom currencies for crypto or rewards points. Custom rules can automatically adjust transactions, for example to handle credit card billing cycles. A built-in DCA tracker follows recurring investments such as crypto and stocks. It exposes an API for automations, with user-bound API tokens created via a management command, and can use OpenID Connect (OIDC) login through django-allauth. The README also describes an OAuth authorization server setup for remote MCP servers. It is deployed with Docker Compose and requires a PostgreSQL database; configuration is done through environment variables.",
+  "use_cases": [
+   "track personal income and expenses in one place",
+   "manage multiple currencies in a finance tracker",
+   "track crypto or stock dollar-cost averaging",
+   "self-host a personal finance web app",
+   "automate transaction imports via API or n8n",
+   "log in to a finance app with OIDC single sign-on"
+  ],
+  "how_to_run": [
+   "Install Docker with docker-compose",
+   "Create docker-compose.yml from the project's example and fill in a .env file with your configuration",
+   "Run: docker compose up -d",
+   "Create the first admin: docker compose exec -it web python manage.py createsuperuser",
+   "For local runs, remove URL, set HTTPS_ENABLED=false, and keep the default DJANGO_ALLOWED_HOSTS",
+   "Unraid users can install the app from the Unraid Store instead (requires their own PostgreSQL 15+)"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "Django REST framework",
+   "PostgreSQL",
+   "HTMX",
+   "Alpine.js",
+   "Bootstrap",
+   "Tailwind",
+   "Webpack",
+   "Procrastinate",
+   "django-allauth",
+   "django-oauth-toolkit",
+   "Docker"
+  ],
+  "notable": [
+   "Opinionated 'no-budget' philosophy: savings are tracked but not spent in later months, rather than enforcing budgets",
+   "Built-in dollar-cost averaging (DCA) tracker for recurring investments",
+   "User-defined custom currencies for crypto, reward points, or other models",
+   "Custom transaction rules for quirks like credit card billing cycles",
+   "Optional soft delete of transactions to help avoid duplicates during imports"
+  ],
+  "caveats": [
+   "The author states they are not an accountant, so some terms and calculations may be wrong",
+   "Not a budgeting or double-entry accounting application",
+   "Most calculations run at request time, which can slow pages as data grows (author reports around 500ms per page with 3000+ transactions)",
+   "The public demo wipes data every 24 hours or less and disables API, rules, automatic exchange rates, and import/export"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted finance tracker",
+  "keywords": [
+   "personal finance tracker",
+   "self-hosted finance",
+   "expense tracker",
+   "income and expense tracking",
+   "multi-currency",
+   "multi currency accounts",
+   "custom currencies",
+   "crypto tracking",
+   "dollar cost averaging",
+   "dca tracker",
+   "dca investment tracking",
+   "no budget app",
+   "budgeting alternative",
+   "transaction rules",
+   "credit card billing cycle",
+   "finance api",
+   "n8n automation",
+   "api tokens",
+   "oidc login",
+   "openid connect",
+   "single sign-on",
+   "mcp server",
+   "docker compose",
+   "postgresql",
+   "django",
+   "unraid",
+   "self-host money tracker",
+   "track my spending",
+   "keep track of investments",
+   "wallet and bank account tracker",
+   "agpl finance software",
+   "open source money manager",
+   "python finance app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6838,
+  "output": 1431
+ },
+ "generated": "2026-10-29"
+}

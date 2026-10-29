@@ -1,0 +1,102 @@
+{
+ "id": "part-db/part-db-server",
+ "repo": "Part-DB/Part-DB-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Inventory Management",
+   "entry": "Part-DB - Inventory management system for your electronic components. (Demo, Source Code) AGPL-3.0 Docker/PHP/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Part-DB is an open-source, web-based inventory management system for electronic components, installed on a web server and accessed through a browser.",
+  "what_it_does": "Tracks electronic parts with categories, footprints, manufacturers, storage locations, prices, tags, and attached files such as datasheets and pictures. It provides user accounts with groups and fine-grained permissions, plus two-factor authentication (Google Authenticator and WebAuthn/U2F) and optional SAML single sign-on. Projects can hold a bill of materials (BOM) that shows how many units can be built and withdraws the needed parts from inventory, and an event log records changes with the ability to revert parts to older versions. It can generate barcodes and labels, look up part data from suppliers such as Octopart, Digikey, Farnell, LCSC or TME, and offers an API, a KiCad integration, and an MCP server for AI agents.",
+  "use_cases": [
+   "track a hobby electronics parts inventory",
+   "manage shared parts stock in a makerspace",
+   "build projects from stock using a bill of materials",
+   "generate barcode labels for storage locations",
+   "import part data from distributor websites",
+   "share a central parts database with KiCad"
+  ],
+  "how_to_run": [
+   "Copy or clone the repository onto your server and point your web server at the public/ folder",
+   "cp .env .env.local, then set APP_ENV=prod and configure DATABASE_URL if not using SQLite",
+   "composer install -o --no-dev",
+   "yarn install && yarn build",
+   "php bin/console doctrine:migrations:migrate (note the generated admin password)",
+   "Access Part-DB in a browser and log in as admin; a Docker image (jbtronics/part-db1) is also available"
+  ],
+  "stack": [
+   "PHP 8.2+",
+   "Symfony 7",
+   "MySQL/MariaDB",
+   "PostgreSQL",
+   "SQLite",
+   "Node.js 22+",
+   "Yarn",
+   "Bootstrap 5",
+   "Hotwire Stimulus",
+   "Hotwire Turbo",
+   "Docker"
+  ],
+  "notable": [
+   "Supplier integrations that pull part information, datasheets and prices from several distributors",
+   "AI-based data extraction from shop pages and uploaded PDF datasheets",
+   "KiCad integration that exposes Part-DB parts directly inside KiCad",
+   "MCP server so AI agents can answer questions about the inventory",
+   "Browser plugin for submitting parts from any shop website"
+  ],
+  "caveats": [
+   "Requires a web server, PHP 8.2+, and a database server (MySQL/MariaDB or PostgreSQL) unless using SQLite; shell access is recommended",
+   "Installation is a multi-step manual process with composer and yarn builds; the README points to a separate detailed guide",
+   "Changing the database backend later is not easy and the default currency cannot be changed after prices are created"
+  ],
+  "license": "AGPL-3.0",
+  "category": "inventory management system",
+  "keywords": [
+   "inventory management",
+   "electronic components inventory",
+   "parts inventory",
+   "electronics parts database",
+   "bill of materials",
+   "bom management",
+   "bom import kicad",
+   "kicad integration",
+   "barcode labels",
+   "barcode scanner",
+   "parametric search",
+   "component tracking",
+   "stock management",
+   "self-hosted inventory",
+   "web inventory app",
+   "symfony inventory",
+   "php inventory system",
+   "docker inventory",
+   "two-factor authentication",
+   "saml sso",
+   "parts datasheets",
+   "octopart alternative",
+   "digikey integration",
+   "makerspace inventory",
+   "hobbyist parts tracker",
+   "track my electronic parts",
+   "manage shared parts stock",
+   "api for inventory",
+   "mcp server ai inventory",
+   "event log revert",
+   "lcsc tme farnell",
+   "part-db"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4107,
+  "output": 1364
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "livebook-dev/pythonx",
+ "repo": "livebook-dev/pythonx",
+ "kind": "star",
+ "description": "Python interpreter embedded in Elixir",
+ "topics": [],
+ "language": "Elixir",
+ "stars": 317,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-24",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Pythonx embeds a CPython interpreter inside the BEAM process so Elixir code can evaluate Python and convert data between the two languages.",
+  "what_it_does": "Runs a Python interpreter in the same OS process as an Elixir application via Erlang NIFs. Pythonx.eval/2 evaluates Python code with Elixir-provided globals and returns results as Pythonx.Object values, which Pythonx.decode/1 converts into Elixir data. Pythonx.uv_init/1 sets the Python version and dependencies, using the uv package manager. A ~PY sigil works in IEx and Livebook, and an application config option sets up the interpreter at compile time and boot. A Python module named pythonx provides send_tagged_object/3 to send Python objects to an Elixir process as messages.",
+  "use_cases": [
+   "Call Python libraries such as numpy from Elixir code",
+   "Run Python snippets inside Livebook notebooks",
+   "Pass data between Elixir and Python without serialization over ports",
+   "Stream results from a long-running Python computation back to an Elixir process",
+   "Ship an Elixir release that includes a bundled Python environment"
+  ],
+  "how_to_run": [
+   "Add {:pythonx, \"~> 0.4.0\"} to your dependencies (or use Mix.install in a script)",
+   "Call Pythonx.uv_init/1 with a pyproject.toml string specifying requires-python and dependencies",
+   "Call Pythonx.eval/2 with Python code and a map of Elixir variables",
+   "Use Pythonx.decode/1 on the result to convert it back to Elixir",
+   "For applications, set config :pythonx, :uv_init, pyproject_toml: ... in config/config.exs instead"
+  ],
+  "stack": [
+   "Elixir",
+   "Erlang NIFs",
+   "CPython (embedded)",
+   "uv package manager",
+   "numpy (example dependency)"
+  ],
+  "notable": [
+   "Embeds CPython in the same OS process as the BEAM rather than spawning a separate python executable",
+   "Python version and dependencies declared in a pyproject.toml-style string, managed by uv",
+   "~PY sigil for evaluating Python interactively in IEx and Livebook",
+   "Send messages from Python to Elixir processes with pythonx.send_tagged_object",
+   "Priv-directory layout intended to be compatible with Elixir releases"
+  ],
+  "caveats": [
+   "The Python GIL means concurrent calls from multiple Elixir processes give little speedup; the README recommends a single process or System.cmd/Ports",
+   "The ~PY sigil does not work inside Mix project code by design",
+   "Downloads happen at compile time when configured as an application"
+  ],
+  "license": "Apache-2.0",
+  "category": "embedded python interop",
+  "keywords": [
+   "elixir python",
+   "python interpreter",
+   "embedded python",
+   "cpython embedding",
+   "erlang nif",
+   "beam python",
+   "livebook python",
+   "~py sigil",
+   "elixir numpy",
+   "call python from elixir",
+   "run python in elixir",
+   "pythonx",
+   "uv package manager",
+   "pyproject toml",
+   "python version management",
+   "python gil",
+   "elixir data conversion",
+   "decode python objects",
+   "interop elixir python",
+   "embed python in application",
+   "python in elixir release",
+   "iex python",
+   "python in notebook",
+   "python dependencies elixir",
+   "dashbit",
+   "elixir ports alternative",
+   "system.cmd python alternative",
+   "python bridge",
+   "send messages from python to elixir"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3732,
+  "output": 1276
+ },
+ "generated": "2026-10-29"
+}

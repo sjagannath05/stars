@@ -1,0 +1,90 @@
+{
+ "id": "sharkdp/fd",
+ "repo": "sharkdp/fd",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "ibraheemdev/modern-unix",
+   "section": "",
+   "entry": "fd"
+  }
+ ],
+ "summary": {
+  "one_liner": "fd is a fast, user-friendly command-line alternative to the Unix find command for searching filesystem entries by name, with regex or glob patterns.",
+  "what_it_does": "fd searches directories recursively for files and folders whose names match a pattern, treating the pattern as a regular expression by default or as a glob with -g. It uses parallelized directory traversal and smart case matching (case-insensitive unless the pattern has an uppercase character). By default it skips hidden entries and paths listed in .gitignore, with options to turn these off. It can filter by type, extension, size, modification time, owner and depth, and can run external commands per result (-x) or once with all results (-X), with placeholders such as {} and {.}. Output can be colorized, and it reads .fdignore and a global ignore file for exclusions.",
+  "use_cases": [
+   "find files by name across a directory tree",
+   "search for files by extension",
+   "batch-run a command on search results such as unzip or convert",
+   "feed file lists into fzf or rofi pickers",
+   "bulk delete files matching a pattern",
+   "list all files recursively in a directory"
+  ],
+  "how_to_run": [
+   "apt install fd-find (Debian/Ubuntu; binary is named fdfind)",
+   "brew install fd",
+   "cargo install fd-find (requires Rust 1.90.0 or later)",
+   "fd PATTERN [path]",
+   "fd -e md",
+   "fd -x COMMAND"
+  ],
+  "stack": [
+   "Rust",
+   "regex crate",
+   "ignore crate",
+   "cargo"
+  ],
+  "notable": [
+   "Smart case matching: case-insensitive unless the pattern contains an uppercase character",
+   "Parallel command execution with -x, plus -X to run a command once with all results",
+   "Respects .gitignore and hidden-file defaults, with .fdignore and a global ignore file for custom rules",
+   "Placeholder syntax ({}, {.}, {/}, {//}, {/.}) for building commands from results",
+   "Shell completions for bash, zsh, fish and PowerShell via --gen-completions"
+  ],
+  "caveats": [
+   "Ubuntu and Debian packages install the binary as fdfind because fd is taken by another package, so an alias or symlink is often needed",
+   "Aims to be a simpler alternative to find and does not support all of find's functionality",
+   "Shell aliases and shell functions cannot be used directly with -x or -X"
+  ],
+  "license": "MIT and Apache License 2.0 (dual-licensed)",
+  "category": "command-line file search",
+  "keywords": [
+   "fd",
+   "find alternative",
+   "file finder",
+   "filesystem search",
+   "find files",
+   "rust cli",
+   "regex file search",
+   "glob search",
+   "gitignore aware search",
+   "parallel directory traversal",
+   "smart case search",
+   "find files by extension",
+   "search filenames",
+   "find command replacement",
+   "fast find",
+   "exec on search results",
+   "xargs alternative",
+   "fzf file source",
+   "find files in project",
+   "locate files by name",
+   "fdfind",
+   "bulk delete files by pattern",
+   "list files recursively",
+   "terminal file search",
+   "colorized file listing",
+   "ripgrep companion",
+   "search for a file on disk"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10803,
+  "output": 1149
+ },
+ "generated": "2026-10-29"
+}

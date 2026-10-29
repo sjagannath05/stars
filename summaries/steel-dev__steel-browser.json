@@ -1,0 +1,97 @@
+{
+ "id": "steel-dev/steel-browser",
+ "repo": "steel-dev/steel-browser",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI-Powered Compilers and Code Assistants",
+   "entry": "Steel Browser - Open-source browser sandbox and automation infrastructure for AI agents and apps with session-backed workflows, screenshots, PDFs, proxies, and anti-bot tooling."
+  }
+ ],
+ "summary": {
+  "one_liner": "Steel Browser is an open-source browser API and automation server that lets AI agents and apps control Chrome sessions, scrape pages, and capture screenshots or PDFs.",
+  "what_it_does": "Runs a self-hostable Steel server (API plus UI) that manages browser sessions, pages, and Chrome processes. Clients can connect with Puppeteer, Playwright, or Selenium over CDP, and session state such as cookies and local storage is kept across requests. Quick-action endpoints (/scrape, /screenshot, /pdf) return page HTML, screenshots, or PDFs in a single call. An experimental Commands API (/sessions/{id}/commands) takes page snapshots and acts on elements by ref, intended for AI agents. The README also mentions proxy chains, custom Chrome extensions, stealth/fingerprint features, ad blocking, and a debugging UI, plus Node and Python SDKs.",
+  "use_cases": [
+   "Give an AI agent a controllable live browser",
+   "Scrape rendered web pages to clean HTML or markdown",
+   "Take full-page screenshots of websites",
+   "Generate PDFs from web pages",
+   "Run Puppeteer, Playwright, or Selenium tests against a managed Chrome",
+   "Rotate IP addresses through proxies during browsing"
+  ],
+  "how_to_run": [
+   "docker run -p 3000:3000 -p 9223:9223 ghcr.io/steel-dev/steel-browser",
+   "docker compose up",
+   "npm install",
+   "npm run dev",
+   "export CHROME_EXECUTABLE_PATH=/path/to/your/chrome (optional, if Chrome is not in a default path)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js",
+   "Puppeteer",
+   "Playwright",
+   "Selenium",
+   "Chrome DevTools Protocol",
+   "Docker",
+   "steel-sdk (Node and Python)"
+  ],
+  "notable": [
+   "Commands API for AI agents: snapshot a page, then click or act on elements by ref, in one batched request",
+   "Drop-in Selenium session mode that speaks the WebDriver protocol",
+   "Quick-action endpoints for scrape, screenshot, and PDF without managing sessions",
+   "Built-in debugging UI and request logging for sessions"
+  ],
+  "caveats": [
+   "README describes the project as in public beta and evolving.",
+   "The Commands API is experimental and off by default; it needs ENABLE_COMMANDS_API=true.",
+   "The Selenium integration does not support all features of the CDP-based sessions API.",
+   "Running without Docker requires Node.js and a locally installed Chrome in a known path or set via CHROME_EXECUTABLE_PATH."
+  ],
+  "license": "Apache 2.0",
+  "category": "browser automation infrastructure",
+  "keywords": [
+   "browser automation",
+   "headless browser",
+   "browser api",
+   "ai agent browser",
+   "web agent",
+   "puppeteer",
+   "playwright",
+   "selenium",
+   "chrome devtools protocol",
+   "cdp",
+   "web scraping",
+   "screenshot api",
+   "html to pdf",
+   "webpage to pdf",
+   "proxy rotation",
+   "session management",
+   "cookies local storage",
+   "chrome extensions",
+   "anti detection",
+   "stealth browser",
+   "self-hosted browser",
+   "docker browser",
+   "browser sandbox",
+   "markdown from webpage",
+   "readability extraction",
+   "rest api browser",
+   "sdk node python",
+   "scrape a website for ai",
+   "automate web tasks",
+   "run chrome in container",
+   "open source browserless alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5384,
+  "output": 1247
+ },
+ "generated": "2026-10-29"
+}

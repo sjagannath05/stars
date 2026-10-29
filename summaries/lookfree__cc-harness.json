@@ -1,0 +1,103 @@
+{
+ "id": "lookfree/cc-harness",
+ "repo": "lookfree/cc-harness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability & Monitoring",
+   "entry": "CC Harness by lookfree - Desktop workbench that reads Claude Code session files locally and renders the subagent and workflow topology as a live graph, with per-node latency, token cost, and nesting depth. Token spend is broken down by source (base session, skills, subagents, MCP) and can be traced from a cost bucket to the exact message that produced it."
+  }
+ ],
+ "summary": {
+  "one_liner": "CC Harness is an open-source Electron desktop workbench that reads your local Claude Code session and config files (~/.claude) to visualize subagent topology, token costs, hooks, skills, loops, and memory.",
+  "category": "claude code observability",
+  "keywords": [
+   "claude code",
+   "claude code monitor",
+   "subagent visualization",
+   "agent call tree",
+   "token cost breakdown",
+   "token usage tracker",
+   "session jsonl",
+   "hook sandbox",
+   "dry-run hooks",
+   "skill trigger analyzer",
+   "mcp dependency graph",
+   "memory diff",
+   "claude md memory",
+   "scheduled wakeup monitor",
+   "electron desktop app",
+   "react flow graph",
+   "see what claude code is doing",
+   "debug claude code hooks",
+   "estimate claude code spending",
+   "audit agent workflow",
+   "local-only dashboard",
+   "config layer viewer",
+   "skills commands agents hooks",
+   "opus to sonnet savings",
+   "workflow topology viewer",
+   "electron",
+   "react",
+   "typescript",
+   "express"
+  ],
+  "what_it_does": "CC Harness reads Claude Code session jsonl files and renders the subagent and workflow call tree as a live graph, showing per-node latency, token cost, and nesting depth. A per-session token cost panel splits spend across base session, skills, subagents, MCP, and plugins, and clicking a bucket lets you jump to the specific message that produced the cost. It includes a repricing optimizer that estimates savings from running current Opus tokens at Sonnet rates. A hook sandbox dry-runs hooks with simulated input and reports stdout, stderr, exit code, and transformed result in an isolated environment. Other panels aggregate ScheduleWakeup loops, analyze skill trigger keywords with a Mermaid diagram, map dependencies between skills, hooks, commands and MCP servers, and snapshot MEMORY.md diffs around dream passes. It also shows a config layer map of skills, commands, agents and hooks across user, project and plugin sources.",
+  "use_cases": [
+   "debug a stuck Claude Code subagent workflow",
+   "see where Claude Code token spend is going",
+   "dry-run a Claude Code hook before using it",
+   "find which skills or MCP servers cost the most",
+   "review Claude Code auto-memory changes",
+   "hand off a Claude Code project config to a teammate",
+   "monitor scheduled loops and background tasks"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> (not given in README)",
+   "cd cc-harness",
+   "npm install",
+   "npm run electron:dev  (desktop mode, full features)",
+   "npm run web:dev  (web mode, read-only)"
+  ],
+  "stack": [
+   "Electron",
+   "electron-builder",
+   "Express.js",
+   "React 18",
+   "TypeScript",
+   "Vite",
+   "shadcn/ui",
+   "Tailwind CSS",
+   "Radix UI",
+   "React Flow",
+   "Monaco Editor",
+   "Zustand",
+   "i18next",
+   "Node.js 18+"
+  ],
+  "notable": [
+   "Traces a token cost bucket back to the exact message in the session replay",
+   "Hook sandbox runs with only PATH, HOME and TMPDIR set, with no API tokens or credentials passed in",
+   "Repricing optimizer computes dollar savings from real session data for Opus-to-Sonnet swaps",
+   "Dependency graph assembles related nodes into numbered workflow chains",
+   "Read-only with respect to conversations; it does not act as a chat client or CLI replacement"
+  ],
+  "caveats": [
+   "Desktop builds are unsigned, so macOS needs xattr or right-click Open and Windows needs SmartScreen bypass on first launch",
+   "Web mode is read-only; live monitoring, hook sandbox execution, MCP tests and file watching require desktop mode",
+   "Requires Node.js 18+ and an installed Claude Code CLI with ~/.claude present",
+   "Phase 3 features (workflow templates, harness benchmark, onboarding tour) are listed as planned, not done"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3479,
+  "output": 1461
+ },
+ "generated": "2026-10-29"
+}

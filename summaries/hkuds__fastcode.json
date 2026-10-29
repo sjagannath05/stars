@@ -1,0 +1,109 @@
+{
+ "id": "hkuds/fastcode",
+ "repo": "HKUDS/FastCode",
+ "kind": "star",
+ "description": "\"FastCode: Accelerating and Streamlining Your Code Understanding\"",
+ "topics": [],
+ "language": "Python",
+ "stars": 2286,
+ "license": "",
+ "homepage": "https://arxiv.org/abs/2603.01012",
+ "pushed_at": "2026-07-06",
+ "archived": false,
+ "accounts": [
+  "sjagannath05",
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "awesome",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "FastCode is a Python framework for token-efficient question answering over large code repositories, offered as a web UI, CLI, REST API, and MCP server.",
+  "what_it_does": "It indexes a codebase by parsing files, classes, functions, and documentation with AST-based parsing across 8+ languages, then builds a hybrid index that combines semantic embeddings with BM25 keyword search. It also builds three graphs (call, dependency, and inheritance) to navigate code structurally, following connections up to two steps away. Queries run a two-stage search and load only the relevant code rather than whole files, with budget-aware logic that decides what context to gather. It supports single and multi-repository questions, multi-turn sessions, and a Docker-based Feishu (Lark) bot integration via Nanobot. The README's performance and cost comparisons against Cursor and Claude Code are the project's own claims and were not independently verified here.",
+  "use_cases": [
+   "ask natural-language questions about an unfamiliar codebase",
+   "find where a feature or logic is implemented",
+   "impact analysis before changing a data model",
+   "cross-repository dependency tracing",
+   "give an AI coding assistant repo-level context via MCP",
+   "query code from a chat bot in Feishu/Lark"
+  ],
+  "how_to_run": [
+   "git clone <repo-url> && cd FastCode",
+   "pip install -r requirements.txt",
+   "cp env.example .env   # then set OPENAI_API_KEY, MODEL, BASE_URL",
+   "python web_app.py --host 0.0.0.0 --port 5000",
+   "python main.py query --repo-path /path/to/repo --query \"Your question\""
+  ],
+  "stack": [
+   "Python 3.12+",
+   "FAISS (faiss-cpu)",
+   "BM25",
+   "OpenAI-compatible LLM APIs (OpenAI, OpenRouter, Ollama)",
+   "MCP (Model Context Protocol)",
+   "Docker / Docker Compose",
+   "Nanobot",
+   "Feishu (Lark) Open Platform"
+  ],
+  "notable": [
+   "Three-graph structural model (call, dependency, inheritance) for navigating code beyond text search",
+   "Hybrid retrieval combining embeddings and BM25 keyword search",
+   "MCP server usable from Cursor, Claude Code, and Windsurf, with stdio or SSE transport",
+   "Web UI, CLI, and REST API share the same features",
+   "Local model support via Ollama-style OpenAI-compatible endpoints"
+  ],
+  "caveats": [
+   "Requires an LLM API key or a locally served model; the README shows OpenAI, OpenRouter, and Ollama configurations",
+   "Requires Python 3.12 or higher",
+   "Speed and cost comparisons against Cursor and Claude Code are self-reported benchmarks",
+   "The Feishu/Nanobot integration needs Docker and a Feishu app with configured permissions and event subscriptions"
+  ],
+  "license": "MIT License",
+  "category": "code understanding tools",
+  "keywords": [
+   "code understanding",
+   "codebase question answering",
+   "code qa",
+   "repository analysis",
+   "code search",
+   "semantic code search",
+   "bm25",
+   "faiss",
+   "hybrid retrieval",
+   "call graph",
+   "dependency graph",
+   "inheritance graph",
+   "ast parsing",
+   "mcp server",
+   "model context protocol",
+   "cursor integration",
+   "claude code alternative",
+   "cursor alternative",
+   "rest api",
+   "web ui",
+   "multi-repo search",
+   "impact analysis",
+   "legacy code exploration",
+   "understand large codebase",
+   "ask questions about my code",
+   "token efficient llm",
+   "openai compatible",
+   "ollama local model",
+   "feishu bot",
+   "lark integration",
+   "docker compose",
+   "python code analysis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11545,
+  "output": 1357
+ },
+ "generated": "2026-10-29"
+}

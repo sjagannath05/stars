@@ -1,0 +1,96 @@
+{
+ "id": "chrisvel/tududi",
+ "repo": "chrisvel/tududi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "tududi - Task management tool with hierarchical structure, smart recurring tasks, and seamless Telegram integration. (Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "tududi is a self-hosted personal task and project manager with hierarchical areas, projects, tasks and notes, recurring tasks, and CalDAV and OIDC/SSO support.",
+  "what_it_does": "Lets users create tasks, projects, areas (groups of projects), notes, and tags, with each task optionally linked to a project and tasks and notes taggable. Tasks support subtasks with progress tracking, filters for Today, Upcoming and Someday, and sorting by name, due date, creation date or priority. Recurring tasks cover daily, weekly, monthly, monthly on weekdays and monthly last-day patterns, with custom intervals, completion-based repeats and optional end dates. The README also describes project sharing, roles and groups for households or teams, an installable PWA with offline caching, and a REST API with Swagger docs and personal API keys. CalDAV sync is described for clients such as tasks.org, Apple Reminders, Thunderbird and Evolution, plus external servers like Nextcloud and Baikal. Data is stored in SQLite by default, with optional PostgreSQL via DATABASE_URL.",
+  "use_cases": [
+   "Personal to-do list and task tracking",
+   "Organizing projects into areas with subtasks",
+   "Managing recurring household or work chores",
+   "Syncing tasks with CalDAV clients on phone or desktop",
+   "Sharing projects and assigning tasks within a family or small team",
+   "Single sign-on login for a self-hosted task app",
+   "Automating task creation through a REST API"
+  ],
+  "how_to_run": [
+   "docker pull chrisvel/tududi:latest",
+   "docker run -e TUDUDI_USER_EMAIL=admin@example.com -e TUDUDI_USER_PASSWORD=your-secure-password -e TUDUDI_SESSION_SECRET=$(openssl rand -hex 64) -v ~/tududi_db:/app/db -v ~/tududi_uploads:/app/uploads -v ~/tududi_backups:/app/backups -p 3002:3002 -d chrisvel/tududi:latest",
+   "Alternatively: cp .env.example .env, edit values, then docker-compose up -d"
+  ],
+  "stack": [
+   "Node.js",
+   "Express",
+   "Docker",
+   "SQLite",
+   "PostgreSQL",
+   "OpenID Connect (OIDC)",
+   "CalDAV"
+  ],
+  "notable": [
+   "Recurring tasks with parent-child linking so generated instances stay connected to their pattern",
+   "CalDAV bidirectional sync with RRULE support and encrypted stored passwords (AES-256-GCM)",
+   "OIDC/SSO with multiple providers, just-in-time provisioning and admin assignment by email domain",
+   "Families and teams mode with roles, groups, and members who have no email and sign in via a link",
+   "Upgrades back up the SQLite file automatically before running migrations"
+  ],
+  "caveats": [
+   "Reverse-proxy setups need TUDUDI_TRUST_PROXY set or express-rate-limit logs a validation error",
+   "Upgrading from v1.1.x requires changing the Docker volume path or new data is lost on container recreation",
+   "Setting DATABASE_URL or DB_DIALECT switches to PostgreSQL, and the container refuses to start over a populated SQLite database unless configured accordingly"
+  ],
+  "license": "MIT",
+  "category": "task management app",
+  "keywords": [
+   "task management",
+   "to-do list",
+   "self-hosted todo",
+   "project management",
+   "recurring tasks",
+   "subtasks",
+   "hierarchical tasks",
+   "notes and tags",
+   "caldav sync",
+   "caldav server tasks",
+   "oidc sso",
+   "single sign-on",
+   "keycloak authentik login",
+   "docker compose todo",
+   "sqlite",
+   "postgresql",
+   "rest api tasks",
+   "personal api keys",
+   "pwa offline",
+   "family task sharing",
+   "share tasks with my team",
+   "track household chores",
+   "organize projects into areas",
+   "gtd style productivity",
+   "todo app privacy",
+   "nextcloud tasks sync",
+   "tasks.org sync",
+   "telegram integration",
+   "self-hosted productivity",
+   "alternative to todoist",
+   "alternative to things",
+   "due date tracking"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7314,
+  "output": 1474
+ },
+ "generated": "2026-10-29"
+}

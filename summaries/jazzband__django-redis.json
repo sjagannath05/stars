@@ -1,0 +1,97 @@
+{
+ "id": "jazzband/django-redis",
+ "repo": "jazzband/django-redis",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Caching",
+   "entry": "django-redis - Full-featured Redis cache backend for Django."
+  }
+ ],
+ "summary": {
+  "one_liner": "django-redis is a BSD-licensed, full-featured Redis cache and session backend for Django.",
+  "what_it_does": "It plugs Redis into Django's cache framework using redis-py URL connection strings over TCP, SSL (rediss://), or Unix sockets. It can also be used as the session store through Django's cache session engine. Beyond the standard cache API, it adds TTL inspection (ttl, pttl), expire/persist/expire_at/pexpire methods, distributed locks via cache.lock(), and key scanning and deletion by glob pattern (keys, iter_keys, delete_pattern). It offers pluggable clients (default with primary/replica support, sharding, thundering-herd handling, Sentinel), pluggable serializers (pickle, JSON, MsgPack), optional compression (zlib, lzma, lz4, zstd, gzip), and connection pool customization. It can also be configured to ignore Redis connection errors, memcached-style.",
+  "use_cases": [
+   "Using Redis as Django's cache backend",
+   "Storing Django sessions in Redis",
+   "Distributed locking across Django processes",
+   "Setting per-key expirations and TTL checks in Django",
+   "Deleting groups of cache keys by pattern",
+   "Connecting Django to Redis Sentinel or replicas"
+  ],
+  "how_to_run": [
+   "python -m pip install django-redis",
+   "Set CACHES['default']['BACKEND'] = 'django_redis.cache.RedisCache' and LOCATION = 'redis://127.0.0.1:6379/1' in Django settings",
+   "Optionally set SESSION_ENGINE = 'django.contrib.sessions.backends.cache' to store sessions in Redis",
+   "Optionally pip install hiredis for a faster parser"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Django 5.2+",
+   "redis-py 4.0.2+",
+   "Redis server 2.8+",
+   "hiredis (optional)",
+   "msgpack (optional)",
+   "lz4, pyzstd (optional compressors)"
+  ],
+  "notable": [
+   "Accepts native redis-py URL connection strings, including unix:// socket paths and ACL username/password",
+   "Pluggable clients: default with replication, ShardClient, HerdClient, SentinelClient",
+   "Infinite timeouts (timeout=None) and Redis-backed ttl/pttl/persist/expire APIs",
+   "Memcached-style IGNORE_EXCEPTIONS mode with optional logging",
+   "Supports Sentinel connection factory with primary/replica pools"
+  ],
+  "caveats": [
+   "Replication setup is stated to be not heavily tested in production",
+   "Shard client is described as experimental",
+   "Not all pluggable clients support get_redis_connection raw access"
+  ],
+  "license": "BSD",
+  "category": "django caching backend",
+  "keywords": [
+   "django redis cache",
+   "redis cache backend",
+   "django cache backend",
+   "django session redis",
+   "redis session store",
+   "redis-py",
+   "django-redis",
+   "redis sentinel django",
+   "redis replication django",
+   "distributed lock django",
+   "redis lock",
+   "ttl redis",
+   "expire keys redis",
+   "delete keys by pattern",
+   "scan redis keys",
+   "iter_keys",
+   "redis compression cache",
+   "lz4 compression",
+   "zstd compression",
+   "msgpack serializer",
+   "json serializer cache",
+   "hiredis parser",
+   "unix socket redis",
+   "ssl redis connection",
+   "memcached-like behavior redis",
+   "ignore redis exceptions",
+   "connection pool redis",
+   "sharding redis cache",
+   "thundering herd cache",
+   "cache my django site",
+   "speed up django with redis",
+   "store django sessions in redis",
+   "jazzband"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13139,
+  "output": 1349
+ },
+ "generated": "2026-10-29"
+}

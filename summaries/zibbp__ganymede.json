@@ -1,0 +1,91 @@
+{
+ "id": "zibbp/ganymede",
+ "repo": "Zibbp/ganymede",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Archiving and Digital Preservation (DP)",
+   "entry": "Ganymede ⚠ - Twitch VOD and live stream archiving platform. Includes a rendered chat for each archive. GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Ganymede is a self-hosted Twitch VOD and live stream archiving platform that records streams with real-time chat playback and a rendered chat file for each archive.",
+  "what_it_does": "Ganymede archives past Twitch broadcasts (VODs) and live streams, saving them with a rendered chat for each archive that can be viewed outside Ganymede. Files are stored in a simple folder structure intended to remain usable without the app. The web UI offers real-time chat playback, playlists, playback progress saving, and light/dark mode. A \"watched channels\" feature automatically archives channels with advanced filtering options. It also supports a recoverable queue, custom FFmpeg parameters for post-download video, custom chat render parameters, webhook notifications, SSO/OAuth login, and an API documented in the docs folder. It runs as two Docker containers: the server and a Postgres database.",
+  "use_cases": [
+   "archive Twitch VODs and live streams",
+   "save Twitch chat alongside video",
+   "automatically record watched Twitch channels",
+   "keep long-term copies of past streams",
+   "replay stream chat offline",
+   "manage archived streams with playlists"
+  ],
+  "how_to_run": [
+   "Download a copy of the docker-compose.yml file.",
+   "Edit docker-compose.yml to set environment variables (Twitch client ID and secret, database settings, volume paths).",
+   "Run `docker compose up -d`.",
+   "Visit the frontend address and port, log in as admin with password ganymede, then change the admin password or create a new admin user and delete the default one."
+  ],
+  "stack": [
+   "Docker",
+   "Postgres",
+   "Go",
+   "TypeScript",
+   "FFmpeg",
+   "TwitchDownloader",
+   "yt-dlp"
+  ],
+  "notable": [
+   "Renders chat into a file saved with each archive, so it can be viewed without Ganymede",
+   "Simple file structure meant to outlast the application",
+   "Watched channels with filtering for automatic archiving of live and past broadcasts",
+   "Recoverable queue and temp files mounted to host for crash recovery",
+   "Successor to the Ceres project"
+  ],
+  "caveats": [
+   "Requires a Twitch application client ID and secret, and a Linux environment with Docker",
+   "Needs 50GB+ free storage, and chat downloads use about 1.9GB of memory per execution",
+   "Default admin credentials must be changed after first login"
+  ],
+  "license": "GPL-3.0",
+  "category": "twitch stream archiving",
+  "keywords": [
+   "twitch archiver",
+   "twitch vod downloader",
+   "twitch livestream recording",
+   "twitch chat archive",
+   "rendered chat",
+   "vod archiving",
+   "stream archiving",
+   "self-hosted",
+   "docker",
+   "postgres",
+   "ffmpeg",
+   "yt-dlp",
+   "twitchdownloader",
+   "ceres successor",
+   "watched channels",
+   "chat replay",
+   "playlists",
+   "webhook notifications",
+   "oauth sso",
+   "digital preservation",
+   "save streams before they disappear",
+   "record twitch streams",
+   "download twitch vods",
+   "archive twitch chat",
+   "long-term video archive",
+   "self-hosted video archive",
+   "gpl-3.0"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5268,
+  "output": 1168
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,109 @@
+{
+ "id": "hcavarsan/pipedash",
+ "repo": "hcavarsan/pipedash",
+ "kind": "star",
+ "description": "Manage CI/CD pipelines from multiple providers (self hosted, desktop app and ios app ) ",
+ "topics": [
+  "buildkite",
+  "cicd",
+  "devops",
+  "devtools",
+  "gitlab",
+  "jenkins",
+  "sre",
+  "tekton"
+ ],
+ "language": "Rust",
+ "stars": 1107,
+ "license": "GPL-3.0",
+ "homepage": "https://pipedash.app",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "cicd"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Pipedash is a dashboard that shows pipelines and runs from many CI/CD providers in one table, available as a desktop app, a self-hosted Docker web server, or an iOS app.",
+  "what_it_does": "It polls each configured CI/CD provider using a token or kubeconfig and caches the results. Pipelines are grouped by repository and workflow, can be pinned or hidden, and can be organized into nested custom views with rule-based membership. From the table you can open run history, read and download job logs, trigger workflows with inputs, rerun runs, and cancel one or several runs. On GitHub it can also approve deployment reviews and rerun only failed jobs. ArgoCD sync details, per-resource results, events and pod container logs are viewable, and notifications fire on pipeline failure, unusually long runs or provider outages. Provider tokens are stored in the system keyring or an AES-256-GCM encrypted database.",
+  "use_cases": [
+   "monitor CI/CD pipelines across multiple providers",
+   "find which build failed without switching dashboards",
+   "trigger or rerun a GitHub Actions or GitLab CI workflow",
+   "read and download job logs from CI runs",
+   "watch ArgoCD sync status and pod logs",
+   "get alerts when pipelines fail or run slowly"
+  ],
+  "how_to_run": [
+   "Download the desktop app from the project's releases page",
+   "Install the iOS app",
+   "Run the Docker image for the self-hosted web server",
+   "Follow the quick start guide to add your first provider"
+  ],
+  "stack": [
+   "Rust",
+   "SQLite",
+   "PostgreSQL",
+   "Docker",
+   "pipedash-core"
+  ],
+  "notable": [
+   "Single shared Rust core powering desktop, self-hosted web and iOS apps",
+   "Plugin crate per provider, covering 11 CI/CD systems including Tekton, ArgoCD, FluxCD and Komodo",
+   "Nested custom views with rule-based membership (provider, repo pattern, name, status)",
+   "ArgoCD SSO sign-in via bundled Dex or external OIDC with automatic session renewal",
+   "Tokens encrypted with AES-256-GCM or kept in the system keyring; no telemetry"
+  ],
+  "caveats": [
+   "ArgoCD pod logs require the logs, get permission in ArgoCD RBAC",
+   "In the self-hosted web app, ArgoCD SSO requires pasting the post-sign-in page address unless Pipedash runs on the same machine as the browser",
+   "Some features such as approving deployments and rerunning failed jobs are described only for GitHub"
+  ],
+  "license": "GPL-3.0",
+  "category": "cicd pipeline dashboard",
+  "keywords": [
+   "ci/cd dashboard",
+   "pipeline monitoring",
+   "devops dashboard",
+   "github actions",
+   "gitlab ci",
+   "jenkins",
+   "buildkite",
+   "tekton",
+   "argocd",
+   "fluxcd",
+   "bitbucket pipelines",
+   "azure devops pipelines",
+   "gitea actions",
+   "komodo",
+   "job logs",
+   "rerun workflow",
+   "trigger workflow",
+   "build status",
+   "self-hosted dashboard",
+   "docker web server",
+   "desktop app",
+   "ios app",
+   "rust",
+   "sqlite",
+   "postgresql",
+   "token encryption",
+   "argocd sso",
+   "pipeline notifications",
+   "multi-provider ci",
+   "see all builds in one place",
+   "watch failed builds",
+   "sre tooling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3070,
+  "output": 1265
+ },
+ "generated": "2026-10-29"
+}

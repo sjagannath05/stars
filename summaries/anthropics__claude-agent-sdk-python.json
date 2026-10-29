@@ -1,0 +1,87 @@
+{
+ "id": "anthropics/claude-agent-sdk-python",
+ "repo": "anthropics/claude-agent-sdk-python",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "claude-agent-sdk - Anthropic's Python SDK for building AI agents on Claude Code's harness — custom tools, in-process MCP servers, hooks."
+  }
+ ],
+ "summary": {
+  "one_liner": "Anthropic's official Python SDK for building AI agents on top of the Claude Code harness, with query(), a bidirectional client, in-process custom tools, and hooks.",
+  "what_it_does": "Provides a Python package (claude-agent-sdk) for running Claude Code programmatically. The query() async function sends a prompt and streams back response messages, while ClaudeSDKClient supports interactive, bidirectional conversations. Developers can define custom tools as Python functions with the @tool decorator and bundle them into in-process SDK MCP servers via create_sdk_mcp_server, alongside optional external MCP servers. Hooks are Python functions the application invokes at points in the agent loop, such as PreToolUse, to allow or deny actions. ClaudeAgentOptions controls the working directory, system prompt (with a snapshot setting), allowed and disallowed tools, and permission mode. The README also documents a typed error hierarchy and says the Claude Code CLI is bundled with the package by default.",
+  "use_cases": [
+   "Building AI agents that run Claude Code tasks from Python",
+   "Adding custom Python tools for Claude to call",
+   "Replacing external MCP subprocess servers with in-process tools",
+   "Blocking or approving tool calls with hook functions",
+   "Streaming Claude responses in an interactive chat session",
+   "Automating file edits and shell commands through Claude"
+  ],
+  "how_to_run": [
+   "pip install claude-agent-sdk",
+   "Requires Python 3.10+",
+   "Run the quick start: async for message in query(prompt=\"What is 2 + 2?\") inside an anyio.run() entry point"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "anyio",
+   "Claude Code CLI (bundled with the package)",
+   "MCP (Model Context Protocol)"
+  ],
+  "notable": [
+   "Custom tools run as in-process SDK MCP servers, with no subprocess or IPC overhead",
+   "Hooks let application code deterministically allow or deny actions such as Bash commands",
+   "Claude Code CLI is bundled in platform-specific wheels, so no separate install is required by default",
+   "System prompt snapshot setting controls whether prompt changes apply to resumed sessions",
+   "Typed error classes such as ResultError and CLINotFoundError for structured failure handling"
+  ],
+  "caveats": [
+   "Requires Python 3.10 or newer",
+   "Use of the SDK is governed by Anthropic's Commercial Terms of Service",
+   "Some system prompt behavior depends on Claude Code CLI 2.1.257 or later"
+  ],
+  "license": "unknown",
+  "category": "ai agent sdk",
+  "keywords": [
+   "claude agent sdk",
+   "claude code python",
+   "anthropic sdk",
+   "ai agents python",
+   "agent framework",
+   "claude api python",
+   "custom tools",
+   "in-process mcp server",
+   "sdk mcp server",
+   "model context protocol",
+   "mcp python",
+   "hooks",
+   "pretooluse hook",
+   "query streaming",
+   "claudesdkclient",
+   "bidirectional chat",
+   "tool use",
+   "allowed tools permission",
+   "permission mode",
+   "coding agent",
+   "build an agent with claude",
+   "automate claude code from python",
+   "block bash commands",
+   "agent loop hooks",
+   "anyio async",
+   "pip install claude agent",
+   "llm agent toolkit"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6021,
+  "output": 1229
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "rfsbraz/deleterr",
+ "repo": "rfsbraz/deleterr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Deleterr - Automated media cleanup tool that removes watched and stale content from Plex, Sonarr, and Radarr based on configurable rules. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Deleterr is a YAML-configured tool that uses Radarr, Sonarr, and Tautulli to find and delete Plex media based on watch history, age, and exclusion rules.",
+  "what_it_does": "Deleterr identifies and deletes media files from a Plex library using criteria such as watch history, content age, and streaming availability. It works through Radarr, Sonarr, and Tautulli, and supports multiple Radarr/Sonarr instances, including separate regular and 4K libraries. Exclusions can be set by genre, actor, collection, JustWatch streaming availability, and Trakt lists. A dry run mode, on by default, logs what would be deleted without removing anything. A \"Leaving Soon\" feature tags candidates in a Plex collection or label, notifies users by email, Discord, Slack, or Telegram, and deletes them on the next scheduled run. A built-in scheduler supports daily, weekly, or custom cron schedules, and a one-time run mode is available.",
+  "use_cases": [
+   "Delete unwatched movies and shows from Plex automatically",
+   "Free up disk space by removing stale media",
+   "Preview cleanup rules with a dry run before deleting",
+   "Warn Plex users before content is removed",
+   "Protect titles via Trakt lists or streaming availability",
+   "Manage separate 4K and regular Radarr/Sonarr libraries"
+  ],
+  "how_to_run": [
+   "Create config/settings.yaml from the provided settings.example.yaml and adjust settings",
+   "Add the ghcr.io/rfsbraz/deleterr:latest image to a docker-compose file with a ./config:/config volume",
+   "docker compose up -d",
+   "Or run once: docker run -v ./config:/config ghcr.io/rfsbraz/deleterr:latest --run-once"
+  ],
+  "stack": [
+   "Docker",
+   "Python-independent container image published to GHCR and Docker Hub",
+   "Plex",
+   "Radarr",
+   "Sonarr",
+   "Tautulli",
+   "YAML configuration"
+  ],
+  "notable": [
+   "Entire configuration in one YAML file that can be versioned in Git",
+   "dry_run is enabled by default so nothing is deleted until turned off",
+   "Leaving Soon grace period with Plex collections and notifications",
+   "Exclusions from Trakt lists, MDBList lists, and JustWatch availability",
+   "README includes a comparison with Maintainerr describing when to pick each"
+  ],
+  "caveats": [
+   "Works only with Plex; the README says Jellyfin and Emby are not supported",
+   "Requires Radarr, Sonarr, and Tautulli to be set up",
+   "The README warns not to use it with media you cannot afford to lose",
+   "Recycle bin recovery is not recommended for remote mounts"
+  ],
+  "category": "media library cleanup",
+  "keywords": [
+   "media cleanup",
+   "plex cleanup",
+   "delete unwatched movies",
+   "delete unwatched tv shows",
+   "radarr",
+   "sonarr",
+   "tautulli",
+   "plex",
+   "automated media deletion",
+   "watch history rules",
+   "stale media removal",
+   "disk space cleanup",
+   "dry run",
+   "leaving soon",
+   "plex collections",
+   "trakt exclusions",
+   "justwatch",
+   "mdblist",
+   "docker compose",
+   "yaml config",
+   "cron scheduler",
+   "4k library management",
+   "media library maintenance",
+   "free up storage",
+   "delete old movies",
+   "maintainerr alternative",
+   "remove watched episodes",
+   "self-hosted media manager"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3979,
+  "output": 1310
+ },
+ "generated": "2026-10-29"
+}

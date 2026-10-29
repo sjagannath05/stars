@@ -1,0 +1,104 @@
+{
+ "id": "sorkila/lockpaw",
+ "repo": "sorkila/lockpaw",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "Lockpaw by Erik Nielsen - A native-Swift macOS menu-bar app (10 MB, no Electron) that covers and input-locks your screen with one hotkey while your agents keep running, then makes the locked screen glow when Claude Code pauses for permission or finishes. Polished and well-engineered — CI with 50 tests, signed/notarized builds, an honest \"visual privacy tool, not a security boundary\" disclosure, no"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lockpaw is a native-Swift macOS menu-bar app that covers the screen and blocks input with one hotkey while processes keep running, and can glow the locked screen when AI coding agents need attention.",
+  "what_it_does": "Pressing ⌘⇧L (configurable) covers every connected display with an overlay at the highest system window level and blocks keyboard, scroll and trackpad-gesture input, while builds, downloads, SSH sessions and agents keep running. Unlock is by Touch ID (armed behind the overlay) or a password field on the lock screen checked against the login password, with a 30-second cooldown after 3 failed attempts. When Claude Code, Codex, Gemini, Cursor, Copilot or Aider pause for permission or finish, the locked screen glows and a notification names the agent and project. Optional features include a lid-closed mode via a root LaunchDaemon that sets pmset disablesleep, forwarding pings to ntfy, Pushover or a webhook, a lockpaw CLI with install-hook commands for each agent, and lockpaw:// URL scheme actions. The README describes it as a visual privacy tool rather than a security boundary.",
+  "use_cases": [
+   "hide my screen while agents or builds keep running",
+   "get notified when Claude Code or Codex needs permission",
+   "cover screen at work without sleeping the Mac",
+   "keep AI coding agents running with the laptop lid closed",
+   "send agent alerts to phone via ntfy or Pushover",
+   "lock screen from Shortcuts or a URL scheme"
+  ],
+  "how_to_run": [
+   "brew tap sorkila/lockpaw",
+   "brew install --cask lockpaw",
+   "brew install xcodegen",
+   "git clone <repo-url> && cd lockpaw && xcodegen generate",
+   "xcodebuild -scheme Lockpaw -configuration Release build"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "CGEventTap",
+   "LocalAuthentication (LAContext)",
+   "IOKit (IOPMAssertion)",
+   "SMAppService",
+   "XPC",
+   "Sparkle",
+   "XcodeGen",
+   "GitHub Actions",
+   "Polar (supporter key check)",
+   "ntfy",
+   "Pushover"
+  ],
+  "notable": [
+   "Lid-closed mode uses an opt-in root LaunchDaemon whose XPC interface is a single sleep on/off switch, with mutual code-signature checks",
+   "Agent alerts glow the locked screen amber when waiting and teal when done, with a CLI that wires hooks into each agent's config and keeps .bak backups",
+   "Input tap also intercepts Dock gesture events so three-finger Space swipes are blocked",
+   "Explicit security model listing what it does not protect against, such as pkill and synthetic events"
+  ],
+  "caveats": [
+   "Visual privacy tool, not a security boundary; pkill Lockpaw and synthetic events are not blocked",
+   "Requires Accessibility permission and macOS-specific APIs; macOS only",
+   "Lid-closed mode needs a one-time helper approval and changes pmset sleep behavior"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "screen lock",
+   "macos screen lock",
+   "input lock",
+   "cover screen",
+   "hotkey lock",
+   "menu bar app",
+   "swift",
+   "swiftui",
+   "macos",
+   "touch id unlock",
+   "keep processes running",
+   "prevent sleep",
+   "lid closed mode",
+   "claude code notifications",
+   "codex notifications",
+   "ai agent alerts",
+   "agent permission alert",
+   "ntfy",
+   "pushover",
+   "webhook notifications",
+   "cgeventtap",
+   "sparkle updates",
+   "homebrew cask",
+   "privacy overlay",
+   "lock screen while away",
+   "stay awake while locked",
+   "caffeinate alternative",
+   "amphetamine alternative",
+   "url scheme lock",
+   "shortcuts lock screen",
+   "kiosk mode",
+   "gemini cli alerts",
+   "aider notifications"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7126,
+  "output": 1463
+ },
+ "generated": "2026-10-29"
+}

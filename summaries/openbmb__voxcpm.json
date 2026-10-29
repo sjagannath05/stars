@@ -1,0 +1,119 @@
+{
+ "id": "openbmb/voxcpm",
+ "repo": "OpenBMB/VoxCPM",
+ "kind": "star",
+ "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+ "topics": [
+  "audio",
+  "deeplearning",
+  "minicpm",
+  "multilingual",
+  "python",
+  "pytorch",
+  "speech",
+  "speech-synthesis",
+  "text-to-speech",
+  "tts",
+  "tts-model",
+  "voice-cloning",
+  "voice-design",
+  "voxcpm"
+ ],
+ "language": "Python",
+ "stars": 40793,
+ "license": "Apache-2.0",
+ "homepage": "https://voxcpm.com",
+ "pushed_at": "2026-10-08",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "dev tools",
+  "my company",
+  "my stack"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "VoxCPM2 is an open-source, tokenizer-free text-to-speech model (2B parameters, Python/PyTorch) that supports 30 languages, voice design from text descriptions, voice cloning, and 48kHz output.",
+  "what_it_does": "VoxCPM generates continuous speech representations with an end-to-end diffusion autoregressive architecture rather than discrete audio tokens. VoxCPM2, the current release, is a 2B-parameter model built on a MiniCPM-4 backbone and trained on over 2 million hours of multilingual speech, per the README. It synthesizes text in 30 listed languages plus several Chinese dialects without a language tag. Voice Design creates a voice from a natural-language description with no reference audio. Controllable Cloning clones a voice from a short reference clip with optional style guidance, and Ultimate Cloning continues from a reference audio plus its transcript. The README also describes 16kHz reference input with 48kHz output via AudioVAE V2. The repo covers Python API, CLI, web demo, fine-tuning (SFT and LoRA) scripts, and benchmark tables, and it links to vLLM-Omni, llama.cpp-omni, and Nano-vLLM serving options.",
+  "use_cases": [
+   "generate multilingual speech from text",
+   "clone a voice from a short audio clip",
+   "design a new synthetic voice from a text description",
+   "serve TTS through an OpenAI-compatible API",
+   "fine-tune a TTS model on a specific speaker",
+   "run text-to-speech on-device with GGUF weights"
+  ],
+  "how_to_run": [
+   "pip install voxcpm",
+   "vllm serve openbmb/VoxCPM2 --omni --port 8000",
+   "python scripts/train_voxcpm_finetune.py --config_path conf/voxcpm_v2/voxcpm_finetune_lora.yaml",
+   "python lora_ft_webui.py"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "MiniCPM-4",
+   "vLLM-Omni",
+   "llama.cpp",
+   "Nano-vLLM",
+   "FastAPI"
+  ],
+  "notable": [
+   "Tokenizer-free diffusion autoregressive TTS producing continuous speech latents",
+   "Voice Design from natural-language descriptions with no reference audio",
+   "Ultimate cloning that continues from reference audio plus transcript",
+   "48kHz output from 16kHz reference audio via AudioVAE V2",
+   "Multiple serving paths: Python API, vLLM-Omni, llama.cpp-omni GGUF builds"
+  ],
+  "caveats": [
+   "Voice Design and controllable cloning results can vary between runs; the README suggests trying 1 to 3 times",
+   "Language coverage is limited to the 30 listed languages; others are untested unless fine-tuned",
+   "README reports ~8 GB VRAM for VoxCPM2 and RTF ~0.30 on RTX 4090 with standard PyTorch; faster paths need extra engines",
+   "Voice cloning carries misuse risk; the README forbids impersonation, fraud, or disinformation"
+  ],
+  "license": "Apache-2.0",
+  "category": "text-to-speech models",
+  "keywords": [
+   "text-to-speech",
+   "tts",
+   "speech synthesis",
+   "voice cloning",
+   "voice design",
+   "tokenizer-free tts",
+   "diffusion autoregressive",
+   "multilingual tts",
+   "speech generation",
+   "pytorch tts",
+   "python speech library",
+   "clone my voice",
+   "make text into speech",
+   "generate voiceover",
+   "48khz audio",
+   "lora fine-tuning speech",
+   "vllm serving",
+   "openai compatible tts api",
+   "gguf speech model",
+   "llama.cpp tts",
+   "on-device tts",
+   "chinese dialect tts",
+   "minicpm speech",
+   "voice synthesis model",
+   "audio generation",
+   "ai narrator",
+   "elevenlabs alternative",
+   "open source tts model",
+   "speech cloning",
+   "text to voice"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12833,
+  "output": 1452
+ },
+ "generated": "2026-10-29"
+}

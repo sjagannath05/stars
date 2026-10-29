@@ -1,0 +1,88 @@
+{
+ "id": "aio-libs/yarl",
+ "repo": "aio-libs/yarl",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "HTTP Clients",
+   "entry": "yarl - Yet another URL library."
+  }
+ ],
+ "summary": {
+  "one_liner": "yarl is a Python library providing an immutable URL class for parsing URLs and building modified copies of them, with automatic percent-encoding and decoding.",
+  "what_it_does": "The README shows a URL class constructed from a string, with read-only properties for scheme, user, password, host, port, path, query, query_string and fragment. Modifications such as joining path segments with the / operator or adding query parameters with % return a new URL object instead of changing the original. Strings passed to the constructor and modifiers are encoded automatically into a canonical form. Regular properties return percent-decoded values, while raw_ variants return the encoded form, and human_repr() gives a readable representation. The README also states it is Python 3 only and that it deliberately does not accept booleans in the query API, leaving that conversion to the user.",
+  "use_cases": [
+   "parse URL components in Python",
+   "build URLs by appending path segments and query parameters",
+   "percent-encode or decode URL paths and queries",
+   "pass URLs safely to other code without mutation",
+   "produce human-readable URL strings"
+  ],
+  "how_to_run": [
+   "pip install yarl",
+   "pip install yarl --config-settings=pure-python=false",
+   "from yarl import URL",
+   "url = URL('https://www.python.org/~guido?arg=1#frag')",
+   "url.host"
+  ],
+  "stack": [
+   "Python 3",
+   "multidict",
+   "propcache",
+   "C extensions (optional, with pure-Python fallback)"
+  ],
+  "notable": [
+   "Immutable URL objects: every change returns a new URL, unlike the mutable furl library the README criticizes",
+   "Automatic encoding and decoding, with raw_ properties exposing the encoded forms",
+   "Optional C extension compiled from source, with a pure-Python mode via YARL_NO_EXTENSIONS or a PEP 517 config setting",
+   "Operator-based path joining (url / 'foo' / 'bar')"
+  ],
+  "caveats": [
+   "Python 3 only",
+   "The pure-Python version is much slower than the compiled one; source builds need a C compiler and Python headers",
+   "Does not accept booleans in the query API by design"
+  ],
+  "license": "Apache 2",
+  "category": "url parsing library",
+  "keywords": [
+   "yarl",
+   "url library",
+   "url parser",
+   "python url",
+   "uri parsing",
+   "url manipulation",
+   "immutable url",
+   "percent encoding",
+   "url decoding",
+   "query string",
+   "query parameters",
+   "urlparse alternative",
+   "furl alternative",
+   "urlobject alternative",
+   "build urls",
+   "parse url host port path",
+   "change url query",
+   "join url paths",
+   "url builder",
+   "http client helper",
+   "percent-decode",
+   "raw path",
+   "human readable url",
+   "aio-libs",
+   "python 3 library",
+   "cython extension",
+   "pip install url tool",
+   "url encoding python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3034,
+  "output": 1042
+ },
+ "generated": "2026-10-29"
+}

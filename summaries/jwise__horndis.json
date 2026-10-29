@@ -1,0 +1,85 @@
+{
+ "id": "jwise/horndis",
+ "repo": "jwise/HoRNDIS",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⚙️ System (47)",
+   "entry": "HoRNDIS - Android USB tethering driver for macOS."
+  }
+ ],
+ "summary": {
+  "one_liner": "HoRNDIS is a macOS kernel driver that lets a Mac use an Android phone's native USB tethering mode for internet access.",
+  "what_it_does": "The README describes HoRNDIS as a Mac OS X driver that enables Android USB tethering so the Mac can reach the internet through the phone. It is installed either from a prebuilt installation package or via Homebrew cask followed by loading the kext with kextload. The README gives setup steps for enabling \"USB tethering\" in the phone's settings. It explains how to build the kext from source with xcodebuild, and how to package it with make. It also includes debugging notes on inspecting USB devices with lsusb, ioreg and System Report, and on reading the driver's IOLog output through Console or the log command.",
+  "use_cases": [
+   "Tether an Android phone's internet connection to a Mac over USB",
+   "Install a USB tethering driver on macOS",
+   "Debug Android USB tethering on a Mac",
+   "Build a macOS kernel extension from source",
+   "Inspect USB device descriptors and IO Registry on macOS"
+  ],
+  "how_to_run": [
+   "brew cask install horndis",
+   "sudo kextload /Library/Extensions/HoRNDIS.kext",
+   "git clone the repository",
+   "xcodebuild (in the checkout directory) to build the kext",
+   "make (to assemble the installation package in build/)"
+  ],
+  "stack": [
+   "Objective-C/C (macOS kernel extension, kext)",
+   "Xcode / xcodebuild",
+   "Homebrew cask",
+   "IOLog kernel logging"
+  ],
+  "notable": [
+   "Lets Android phones share internet over USB on macOS using the phone's native tethering mode, with no extra app on the phone",
+   "Name is a pun on RNDIS, the USB network protocol it implements (pronounced 'horrendous')",
+   "Includes a debugging section covering lsusb, ioreg and macOS kernel log viewing across OS versions"
+  ],
+  "caveats": [
+   "Installs a kernel extension, so it needs administrator rights and loading via kextload",
+   "Uninstalling requires manually deleting HoRNDIS.kext from system and library extension folders",
+   "README notes macOS logging is unreliable, especially on Sierra"
+  ],
+  "license": "unknown",
+  "category": "macos usb tethering driver",
+  "keywords": [
+   "usb tethering",
+   "android usb tethering",
+   "macos driver",
+   "kernel extension",
+   "kext",
+   "rndis",
+   "usb network driver",
+   "share phone internet with mac",
+   "android internet on mac",
+   "usb modem mac",
+   "kextload",
+   "homebrew cask",
+   "xcodebuild",
+   "ioreg",
+   "lsusb",
+   "usb debugging mac",
+   "os x driver",
+   "mac os x",
+   "phone tethering",
+   "usb ethernet",
+   "internet sharing usb",
+   "kernel logging macos",
+   "iolog",
+   "usb descriptors",
+   "horndis",
+   "mac usb network"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2712,
+  "output": 1097
+ },
+ "generated": "2026-10-29"
+}

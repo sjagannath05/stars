@@ -1,0 +1,104 @@
+{
+ "id": "alisa0808/vox-director",
+ "repo": "Alisa0808/vox-director",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Creative Media",
+   "entry": "Vox director skill by Alisa Qian - Vox Director is an open-source skill that turns a one-line topic into a finished Vox-style paper-collage explainer or ad video. It automates the full pipeline — script, collage keyframes, motion, voice-over, music, and captions — on the Atlas Cloud API plus local ffmpeg, with two human approval gates for the beat map and visual style."
+  }
+ ],
+ "summary": {
+  "one_liner": "An agent skill that turns a one-line topic into a finished Vox-style paper-collage explainer or ad video, automating script, collage keyframes, motion, voice-over, music and captions via the Atlas Cloud API and local ffmpeg.",
+  "category": "ai video generation",
+  "keywords": [
+   "vox explainer video",
+   "paper collage video",
+   "collage explainer",
+   "ai video generator",
+   "text to video",
+   "topic to video",
+   "agent skill",
+   "claude code skill",
+   "codex skill",
+   "atlas cloud",
+   "ffmpeg pipeline",
+   "voice-over generation",
+   "text to speech narration",
+   "ai background music",
+   "auto captions",
+   "beat map",
+   "keyframe generation",
+   "image to video",
+   "animate poster",
+   "talking head restyle",
+   "presenter video",
+   "explainer video maker",
+   "ad video generator",
+   "short form video",
+   "motion graphics automation",
+   "mp4 export",
+   "python pillow overlay",
+   "share a video idea",
+   "make an explainer from a topic",
+   "automate video production"
+  ],
+  "what_it_does": "The repository is a set of scripts, reference files and an agent workflow (SKILL.md, with Chinese and AGENTS.md entry points) for producing a short Vox-style explainer or ad video from a single topic. The pipeline builds a beat map (narrative arc in beats.json) that the user approves, runs a style comparison that the user picks from, generates one collage poster per beat as keyframes, animates each poster with an image-to-video model, and adds a narrator voice-over and background music. Final assembly uses ffmpeg to concatenate clips, duck music under the narration, and burn in captions and a watermark. It also describes two other input modes: re-styling an existing talking-head video, and building a collage around a single still photo. A presenter mode places a lip-synced digital presenter into selected beats. An optional local keyframe engine can cut the poster into parts for piece-by-piece motion. The README lists the specific Atlas Cloud models used for each job.",
+  "use_cases": [
+   "turn a topic into an explainer video",
+   "make a paper-collage style ad",
+   "generate narrated short videos with captions",
+   "restyle a talking-head video into collage look",
+   "create a video from a single product photo",
+   "draft a beat-by-beat video script for approval"
+  ],
+  "how_to_run": [
+   "git clone the repo into ~/.claude/skills/vox-director (or install vox-director.skill via your skills UI)",
+   "brew install ffmpeg (provides ffmpeg and ffprobe)",
+   "pip install pillow",
+   "export ATLASCLOUD_API_KEY=\"sk-...\"",
+   "Ask your coding agent, e.g. 'Make me a Vox-style collage video introducing Mexican street food, English, 16:9, 15 seconds.'",
+   "Approve the beat map and pick a style when the agent asks; final output is written to out/<project>/final.mp4"
+  ],
+  "stack": [
+   "Atlas Cloud API",
+   "ffmpeg",
+   "ffprobe",
+   "Python 3",
+   "Pillow",
+   "Claude Code",
+   "Codex",
+   "nano-banana-2",
+   "gemini-omni-flash",
+   "kling-video-o3-pro",
+   "seedance-2.0",
+   "xai/tts-v1",
+   "minimax/music-2.6",
+   "bytedance/seed-audio-1.0",
+   "youchuan/v8.1"
+  ],
+  "notable": [
+   "Two human approval gates: approve the beat map, then pick the visual style from a bake-off before generation continues",
+   "Covers B-roll (topic in), A-roll (restyle a talking-head video), C-roll (one still photo as a sticker in the collage) and a presenter mode",
+   "Optional local element-level keyframe engine that cuts posters into parts for frame-by-frame motion, without content filters",
+   "Ships reference files for 14 narrative arcs, 9 theme presets and a TTS voice roster",
+   "Works with any coding agent that reads AGENTS.md or SKILL.md"
+  ],
+  "caveats": [
+   "Requires a paid Atlas Cloud API key; model IDs drift, so the skill fetches the live model list before running",
+   "Needs ffmpeg and Python with Pillow installed locally",
+   "Real people or brands require a different animation model (kling-video-o3-pro), and voice cloning uses a separate model"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3994,
+  "output": 1554
+ },
+ "generated": "2026-10-29"
+}

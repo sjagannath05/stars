@@ -1,0 +1,113 @@
+{
+ "id": "ramonvermeulen/whosthere",
+ "repo": "ramonvermeulen/whosthere",
+ "kind": "star",
+ "description": "Local Area Network discovery tool with an interactive Terminal User Interface (TUI) written in Go.  Discover, explore, and understand your LAN in an intuitive way. Knock Knock.. who's there? 🚪",
+ "topics": [
+  "go",
+  "golang",
+  "lan",
+  "network",
+  "network-analysis",
+  "networking",
+  "scanner",
+  "tui",
+  "tview"
+ ],
+ "language": "Go",
+ "stars": 2465,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Go terminal UI tool that discovers and explores devices on your local network using unprivileged mDNS, SSDP, and ARP-cache scanning, with OUI manufacturer lookup.",
+  "what_it_does": "Whosthere runs unprivileged, concurrent discovery scans using mDNS and SSDP scanners. It also sweeps the local subnet by opening TCP/UDP connections to trigger ARP resolution, then reads the ARP cache to list devices. Discovered devices are enriched with OUI lookups to show manufacturers. The interactive TUI lets you navigate, regex-search, view device details, copy IP or MAC addresses, and run an optional port scan on a selected device. It also has a CLI mode that performs a single scan with optional JSON output, and a daemon mode that serves device data over a small HTTP API (/devices, /device/{ip}, /health). Devices can be given custom aliases, which can be bulk-imported or exported as YAML, and the look can be changed through themes and YAML configuration.",
+  "use_cases": [
+   "Find out which devices are connected to my home network",
+   "Scan a LAN from the command line and output JSON",
+   "Run a background daemon that exposes discovered devices over HTTP",
+   "Name devices on my network with aliases imported from a YAML file",
+   "Check which services are open on devices I own"
+  ],
+  "how_to_run": [
+   "brew install whosthere",
+   "go install github.com/ramonvermeulen/whosthere@latest",
+   "git clone <repo-url> && cd whosthere && make build",
+   "whosthere",
+   "whosthere scan -t 5 --json --pretty > devices.json",
+   "whosthere daemon --port=8080"
+  ],
+  "stack": [
+   "Go",
+   "tview (TUI, per GitHub topics)",
+   "bbolt (alias database)",
+   "mDNS",
+   "SSDP",
+   "OUI lookup",
+   "fork of go-clipboard"
+  ],
+  "notable": [
+   "Unprivileged discovery: populates the ARP cache via TCP/UDP connections, so no root or admin rights are needed",
+   "Combines mDNS, SSDP, and ARP-cache scanning with OUI manufacturer lookup",
+   "Interactive TUI with regex search, vim-style navigation, and runtime theme switching",
+   "Daemon mode with a simple HTTP API for integration with other tools",
+   "Alias import/export as YAML, with MAC address normalization across common formats"
+  ],
+  "caveats": [
+   "Clipboard copy needs an OS tool installed (pbcopy, clip.exe, xsel/xclip, or wl-copy), and it relies on a fork of go-clipboard",
+   "Unprivileged scanning may not be comprehensive; the README says it is not a professional-grade monitoring tool",
+   "Scanning large subnets (bigger than /16) sends a very large amount of traffic and requires enabling scan_large_subnets",
+   "Intended only for networks you have permission to scan"
+  ],
+  "license": "Apache-2.0",
+  "category": "network discovery tui",
+  "keywords": [
+   "lan scanner",
+   "local network discovery",
+   "who is on my network",
+   "network scanner",
+   "go network tool",
+   "golang tui",
+   "terminal ui",
+   "tview",
+   "mdns",
+   "ssdp",
+   "arp scan",
+   "arp cache",
+   "oui lookup",
+   "mac vendor lookup",
+   "device discovery",
+   "home network scanner",
+   "port scanner",
+   "network analysis",
+   "daemon http api",
+   "device aliases",
+   "terminal theme",
+   "json network scan",
+   "unprivileged scan",
+   "subnet sweep",
+   "list devices on wifi",
+   "name devices on my network",
+   "network inventory",
+   "ip address scanner",
+   "lan inventory terminal",
+   "bonjour discovery",
+   "upnp discovery"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6385,
+  "output": 1357
+ },
+ "generated": "2026-10-29"
+}

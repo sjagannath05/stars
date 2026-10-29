@@ -1,0 +1,103 @@
+{
+ "id": "dgtlmoon/changedetection.io",
+ "repo": "dgtlmoon/changedetection.io",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "changedetection.io - Stay up-to-date with web-site content changes. (Source Code) Apache-2.0 Python/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "changedetection.io | Website change detection and price monitoring"
+  }
+ ],
+ "summary": {
+  "one_liner": "changedetection.io is an open-source, self-hostable tool that monitors web pages for content, price, and restock changes and sends notifications when they occur.",
+  "what_it_does": "Watches URLs on a schedule and detects changes in page text, HTML, PDFs, and JSON API responses. Filters can target content with XPath, CSS selectors, JSONPath, jq, or regular expressions, and a Visual Selector helps pick elements (when Playwright is enabled). Users can switch between a fast non-JS HTTP fetcher and a Chrome-based fetcher, and run browser steps such as logging in or clicking buttons before checking. Notifications are sent through the apprise library to many services (e.g., Discord, email, Slack, Telegram, webhooks), with Jinja2 templating and optional screenshots. The README also describes optional AI features that use a user-supplied LLM (OpenAI, Gemini, Anthropic, Ollama, OpenAI-compatible servers) to filter changes and write summaries, plus a REST API, Excel/plain-text import, and per-watch proxies.",
+  "use_cases": [
+   "monitor product prices and restock alerts",
+   "get notified when a web page or government site updates",
+   "track changes to PDFs or legal documents",
+   "watch JSON API responses and turn changes into RSS or webhooks",
+   "monitor careers pages for new job postings",
+   "self-host website change alerts"
+  ],
+  "how_to_run": [
+   "docker compose up -d (from a clone of the repository)",
+   "docker run -d --restart always -p \"127.0.0.1:5000:5000\" -v datastore-volume:/datastore --name changedetection.io dgtlmoon/changedetection.io",
+   "pip3 install changedetection.io",
+   "changedetection.io -d /path/to/empty/data/dir -p 5000"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "apprise",
+   "LiteLLM",
+   "Playwright",
+   "WebDriver",
+   "lxml",
+   "jq",
+   "JSONPath",
+   "Chrome"
+  ],
+  "notable": [
+   "Filters include XPath 1.0, CSS, JSONPath, jq, and lxml regex, plus JSON embedded in HTML pages",
+   "Optional AI change-detection rules and summaries via any LLM, including local Ollama or OpenAI-compatible servers",
+   "Notification support across many services through the apprise library",
+   "Full REST API with OpenAPI spec and a Chrome extension for adding pages",
+   "Runs on Raspberry Pi and ARM devices per the README"
+  ],
+  "caveats": [
+   "Browser-based (JS) fetching and the Visual Selector require Playwright or WebDriver to be enabled",
+   "AI features send page content to third-party providers if enabled, and API costs are the user's responsibility",
+   "The README also promotes a paid hosted subscription ($8.99/month) that includes proxies and Chrome; this is separate from the open-source software"
+  ],
+  "license": "Apache-2.0",
+  "category": "web change monitoring",
+  "keywords": [
+   "website change detection",
+   "web page monitor",
+   "price change alert",
+   "restock notification",
+   "back in stock alert",
+   "self-hosted website monitoring",
+   "page diff",
+   "content change tracker",
+   "url monitor",
+   "apprise notifications",
+   "discord webhook alerts",
+   "xpath monitoring",
+   "css selector monitor",
+   "jsonpath",
+   "jq filter",
+   "json api monitoring",
+   "playwright",
+   "selenium webdriver",
+   "headless chrome",
+   "pdf change detection",
+   "llm change summary",
+   "ollama",
+   "rss from web page",
+   "job posting alert",
+   "docker monitoring tool",
+   "visypick selector",
+   "watch website for updates",
+   "get notified when a site changes",
+   "track prices online",
+   "alternative to visualping",
+   "alternative to distill web monitor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6740,
+  "output": 1375
+ },
+ "generated": "2026-10-29"
+}

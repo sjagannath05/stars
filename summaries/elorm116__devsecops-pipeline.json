@@ -1,0 +1,121 @@
+{
+ "id": "elorm116/devsecops-pipeline",
+ "repo": "elorm116/devsecops-pipeline",
+ "kind": "star",
+ "description": "",
+ "topics": [],
+ "language": "HCL",
+ "stars": 38,
+ "license": "",
+ "homepage": "",
+ "pushed_at": "2026-05-07",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A DevSecOps reference project that runs a multi-arch Flask API and the intentionally vulnerable OWASP Juice Shop through a GitHub Actions security pipeline, with image signing, Kyverno admission policies, and ArgoCD GitOps deployment to AWS and a Raspberry Pi k3s cluster.",
+  "what_it_does": "The repository holds a Flask API, a hardened Juice Shop Dockerfile, Terraform for AWS (VPC, ALB, EC2, ECR, IAM), and Kustomize/ArgoCD manifests for a Raspberry Pi 5 k3s cluster. The GitHub Actions pipeline runs Bandit SAST, Trivy secret and container scans, Syft/CycloneDX SBOM generation, Cosign image signing by digest, Checkov IaC scanning, and OWASP ZAP baseline and full scans. After a build, the pipeline commits @sha256 digests into overlay patch-image.yaml files, and ArgoCD syncs them to the cluster. Kyverno ClusterPolicies verify signatures and enforce non-root, no privileged containers, read-only root filesystems, and resource limits at admission. Public ingress to the Pi goes through an in-cluster cloudflared Deployment, so the Pi has no open inbound ports. The README also includes a troubleshooting ledger of fourteen issues and their fixes.",
+  "use_cases": [
+   "learn a DevSecOps CI/CD pipeline end to end",
+   "run Trivy, Bandit, ZAP and Checkov scans in GitHub Actions",
+   "sign container images with Cosign and enforce with Kyverno",
+   "GitOps deployment to a k3s cluster with ArgoCD",
+   "expose a homelab service through Cloudflare Tunnel without open ports",
+   "demonstrate admission control blocking a root container"
+  ],
+  "how_to_run": [
+   "git clone <repo> && cd devsecops-pipeline",
+   "pip install -r app/requirements.txt",
+   "python app/main.py",
+   "docker build -t devsecops-api . && docker run -p 5000:5000 devsecops-api",
+   "cd terraform/aws && terraform init && terraform apply -var=\"key_pair_name=devsecops-key\" -var=\"allowed_ssh_cidr=<your-ip>/32\"",
+   "kubectl apply -f gitops/bootstrap/pi-infra.yaml"
+  ],
+  "stack": [
+   "HCL (Terraform)",
+   "Python 3.12",
+   "Flask 3.0",
+   "Gunicorn",
+   "Node.js 20",
+   "Express",
+   "SQLite",
+   "GitHub Actions",
+   "Docker Buildx",
+   "Kubernetes k3s",
+   "ArgoCD",
+   "Kustomize",
+   "Kyverno",
+   "Cosign",
+   "Trivy",
+   "Bandit",
+   "Checkov",
+   "OWASP ZAP",
+   "Syft",
+   "Cloudflare Tunnel",
+   "AWS ECR/ALB/EC2",
+   "Terraform",
+   "Ansible"
+  ],
+  "notable": [
+   "Kyverno admission policies block the official root-running Juice Shop image and admit only the pipeline-hardened, signed build",
+   "Deploys are Git commits: the pipeline writes image digests to patch-image.yaml and ArgoCD syncs them, so rollback is git revert",
+   "Security gates are a mix of hard-fail (secret scan, Flask CRITICAL CVEs, unsigned images) and report-only (Juice Shop scans)",
+   "Troubleshooting ledger documents fourteen real build issues such as multi-arch exec format errors, Kyverno digest lookups, and Cloudflare ingress ordering",
+   "Includes a known-gaps table listing accepted risks such as missing NetworkPolicies and no runtime security"
+  ],
+  "caveats": [
+   "AWS cloud environment is described as on-demand and often destroyed to avoid cost",
+   "Requires many external accounts and secrets, including AWS OIDC role, Cosign keys, a GitHub App, and Slack webhook",
+   "Live Pi endpoints and ECR paths are specific to the author's setup and are not generic deployment targets"
+  ],
+  "license": "unknown",
+  "category": "devsecops cicd pipeline",
+  "keywords": [
+   "devsecops",
+   "ci/cd pipeline",
+   "github actions",
+   "gitops",
+   "argocd",
+   "kyverno",
+   "cosign",
+   "image signing",
+   "trivy",
+   "bandit",
+   "checkov",
+   "owasp zap",
+   "syft sbom",
+   "cyclonedx",
+   "kustomize",
+   "k3s",
+   "raspberry pi",
+   "kubernetes admission control",
+   "policy as code",
+   "terraform aws",
+   "ecr",
+   "cloudflare tunnel",
+   "juice shop",
+   "flask api",
+   "multi-arch docker",
+   "container security scanning",
+   "static application security testing",
+   "secret scanning",
+   "infrastructure as code scanning",
+   "homelab kubernetes",
+   "deploy via git commit",
+   "share files with my team"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 17500,
+  "output": 1790
+ },
+ "generated": "2026-10-29"
+}

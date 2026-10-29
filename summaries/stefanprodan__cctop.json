@@ -1,0 +1,93 @@
+{
+ "id": "stefanprodan/cctop",
+ "repo": "stefanprodan/cctop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "cctop by Stefan Prodan - A live top-style terminal TUI that lists every running Claude Code session with process stats, busy/idle state, context size, model, and git branch, plus a live sub-agent and sub-process tree with open and orphaned ports — reading only the local process table and ~/.claude session and transcript files. Zero-dependency Bun; can signal a runaway session or free orphaned dev-"
+  }
+ ],
+ "summary": {
+  "one_liner": "A top-style terminal TUI that monitors every running Claude Code session, showing process stats, busy/idle state, context size, model, git branch, and sub-process/port info.",
+  "what_it_does": "Shows a live table of all running Claude Code sessions with PID, memory, CPU, uptime, busy/idle state, context size, model, host app, project, git branch, and last prompt. A sub-agent and sub-process tree lists each session's live sub-agents and child processes, including open and orphaned TCP ports. The TUI supports keyboard navigation, a per-session detail view, filtering, and sorting, and it can print a single frame (--once or when piped) or a JSON snapshot (--json). An opt-in notifier rings the terminal bell and sends a desktop notification (OSC 9) when a busy session finishes and waits for input. Users can send SIGTERM to a runaway session (x) or free orphaned ports held by a session (f), each with confirmation. A history dashboard (h) shows past sessions, per-day token usage, and breakdowns by model, tool/MCP, and project. The README says it reads only ~/.claude and the process table and writes only its own preferences and usage cache under ~/.claude/cctop/.",
+  "use_cases": [
+   "monitor multiple Claude Code sessions at once",
+   "check which Claude session is waiting for input",
+   "find and stop a runaway Claude Code process",
+   "free dev server ports left behind by a session",
+   "review Claude Code token usage history",
+   "track context size and model per session"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh  (install script; the README's URL is missing from the text, so the exact URL is not shown)",
+   "brew install stefanprodan/tap/cctop",
+   "bun install -g github:stefanprodan/cctop#v0.9.1",
+   "cctop",
+   "cctop --once"
+  ],
+  "stack": [
+   "Bun runtime",
+   "TypeScript/JavaScript (single Bun program, no npm packages)",
+   "Homebrew (install option)"
+  ],
+  "notable": [
+   "Zero-dependency single Bun program; a standalone self-contained binary is also distributed",
+   "Notifications via terminal bell and OSC 9 desktop alerts, plus a 'Which session rang?' indicator that remembers the last session to ding",
+   "Read-only design: reads ~/.claude and the process table and spawns no processes",
+   "Built-in self-updater (cctop upgrade) that verifies checksums and swaps the binary atomically",
+   "Configurable columns via ~/.claude/cctop/settings.json"
+  ],
+  "caveats": [
+   "Usage-limit display is opt-in and requires adding a cctop --capture-usage line to the Claude Code status-line script",
+   "The binary's self-update (cctop upgrade) is the only command that fetches from the network and replaces itself",
+   "Desktop notifications depend on the terminal supporting OSC 9 (README lists iTerm2, Ghostty, kitty, WezTerm, Windows Terminal)"
+  ],
+  "license": "Apache 2.0",
+  "category": "terminal session monitor",
+  "keywords": [
+   "claude code monitor",
+   "claude code tui",
+   "terminal dashboard",
+   "top-style monitor",
+   "process monitor",
+   "ai agent session monitor",
+   "sub-agent tree",
+   "orphaned ports",
+   "kill runaway process",
+   "free dev server port",
+   "context window usage",
+   "token usage history",
+   "bell notification",
+   "osc 9 notification",
+   "desktop notification",
+   "session status",
+   "busy idle state",
+   "git branch display",
+   "cli tool",
+   "bun cli",
+   "bun runtime",
+   "zero dependency",
+   "standalone binary",
+   "homebrew tap",
+   "terminal ui",
+   "tmux bell",
+   "process table",
+   "watch sessions",
+   "see which session needs input",
+   "list running claude sessions",
+   "monitor claude code cpu memory",
+   "see what claude is doing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4848,
+  "output": 1393
+ },
+ "generated": "2026-10-29"
+}

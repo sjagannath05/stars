@@ -1,0 +1,99 @@
+{
+ "id": "temporalio/sdk-python",
+ "repo": "temporalio/sdk-python",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Job Schedulers",
+   "entry": "temporalio - Temporal SDK for durable, fault-tolerant workflows that survive crashes and retries."
+  }
+ ],
+ "summary": {
+  "one_liner": "The official Python SDK for Temporal, a durable workflow orchestration engine for writing long-running, fault-tolerant workflows and activities in Python.",
+  "what_it_does": "The SDK (package `temporalio`) lets you define workflows as decorated async Python classes and activities as decorated functions, then run them on a worker that connects to a Temporal server. Workflows are backed by a custom asyncio event loop so that sleeps, timers, cancellation, and child workflows survive crashes and retries. Clients start, signal, query, and update workflows, and get typed results via MyPy-compatible generics. Activities can be async, threaded, or multiprocess. The README also covers data conversion (including Pydantic and dataclasses), experimental external storage drivers for S3 and GCS, a workflow sandbox, testing with time skipping and activity mocks, interceptors, Nexus, plugins, and OpenTelemetry metrics and tracing. The README's Quick Start shows a minimal hello-world worker and client, and it is truncated partway through the workflow and exceptions sections.",
+  "use_cases": [
+   "write durable multi-step business processes in Python",
+   "run long-running workflows that survive crashes and retries",
+   "orchestrate activities with timers, signals, and queries",
+   "coordinate child workflows and cancellation",
+   "test workflows with time skipping and mocked activities",
+   "offload large payloads to S3 or GCS storage"
+  ],
+  "how_to_run": [
+   "python -m pip install -U pip",
+   "python -m pip install temporalio",
+   "Create activities.py, workflows.py, and run_worker.py as shown in the Quick Start",
+   "Start a Temporal server on localhost:7233",
+   "python run_worker.py",
+   "python run_workflow.py"
+  ],
+  "stack": [
+   "Python",
+   "asyncio",
+   "temporalio",
+   "MyPy",
+   "Protobuf",
+   "Pydantic (optional)",
+   "aioboto3 (optional S3 driver)",
+   "gcloud-aio-storage (optional GCS driver)",
+   "OpenTelemetry"
+  ],
+  "notable": [
+   "Custom asyncio event loop that makes async def functions into durable, fault-tolerant workflows",
+   "Workflow sandbox that restricts non-deterministic imports and calls by default",
+   "Activities can be async, threaded, or multiprocess",
+   "Experimental external storage that offloads large payloads to S3 or GCS drivers",
+   "Typed client and handle calls so MyPy catches argument mismatches"
+  ],
+  "caveats": [
+   "README notes external storage and the S3 and GCS drivers are experimental",
+   "Workflow code must be deterministic, with restrictions on threading, network IO, and set iteration",
+   "README is for the current branch and may differ from the PyPI release",
+   "Requires a running Temporal server; the README does not describe server setup in detail"
+  ],
+  "license": "unknown",
+  "category": "workflow orchestration sdk",
+  "keywords": [
+   "temporal",
+   "temporalio",
+   "temporal python sdk",
+   "durable execution",
+   "durable workflows",
+   "workflow orchestration",
+   "fault-tolerant workflows",
+   "long-running workflows",
+   "workflow engine",
+   "activities",
+   "asyncio workflows",
+   "async workflow framework",
+   "retries and crash recovery",
+   "saga style business processes",
+   "signals and queries",
+   "child workflows",
+   "task queue worker",
+   "workflow testing time skipping",
+   "mypy typed client",
+   "pydantic data converter",
+   "dataclass serialization",
+   "s3 external storage",
+   "gcs storage driver",
+   "opentelemetry tracing",
+   "job scheduling python",
+   "background job orchestration",
+   "run tasks that survive restarts",
+   "workflow sandbox",
+   "nexus rpc",
+   "temporal server client"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15739,
+  "output": 1352
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "seahyinghang8/blinky",
+ "repo": "seahyinghang8/blinky",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "Blinky is an open-source VSCode extension that runs an LLM-driven agent to help identify and fix backend code bugs, inspired by SWE-agent.",
+  "what_it_does": "Blinky runs as a chat-based agent inside VSCode, where the user describes a bug and optionally gives repro steps so the agent can run the program. It uses the VSCode API, the Language Server Protocol, and print-statement debugging to trace and address the bug. Its navigation tools include GoToDefinition, GetAllReferences, and GetFilesRelevantToEndpoint. A Verify tool runs the user's repro steps so the agent can iterate until the test passes. Edits use a \"match and replace\" approach where the agent reproduces the original text with line numbers before writing a replacement. Users can give feedback while the agent runs and then accept or reject the changes it made. The README says the OpenAI API key is requested on first run and stored locally.",
+  "use_cases": [
+   "Fixing backend bugs inside VSCode with an LLM agent",
+   "Reproducing a bug with user-supplied repro steps and iterating until it passes",
+   "Reviewing and accepting or rejecting AI-generated code edits",
+   "Debugging with LLM-added print statements and runtime feedback",
+   "Navigating a backend codebase via LSP definitions and references"
+  ],
+  "how_to_run": [
+   "Install the Blinky VSCode extension from the VSCode extension marketplace.",
+   "Open the chat interface by clicking the ghost icon in the side bar.",
+   "Describe the bug in the chatbox and optionally specify repro steps.",
+   "Ensure no other terminal processes conflict with your build and test port.",
+   "Start the agent and provide feedback as needed; accept or reject its changes when done.",
+   "For local development: run `npm run install:all`, then press F5 or run `Debug: Start Debugging`."
+  ],
+  "stack": [
+   "TypeScript",
+   "VSCode extension API",
+   "Language Server Protocol (LSP)",
+   "OpenAI API"
+  ],
+  "notable": [
+   "Ported core agent loop from SWE-agent and extended it with LSP-based navigation tools",
+   "Match-and-replace editing that requires the agent to echo original text with line numbers to catch hallucinated edits",
+   "Verify tool runs user-specified repro steps and feeds execution output back to the agent",
+   "Designed specifically for backend systems and runs entirely inside VSCode"
+  ],
+  "caveats": [
+   "Currently supports OpenAI models; LLaMA 3 and Claude support is only on the roadmap",
+   "Verify can be slow when build processes conflict with ports or take a long time to finish",
+   "Prompt customization requires editing src/config/default.yaml and rebuilding the extension",
+   "Automated repro creation is still a roadmap item; manual repro steps are optional but recommended"
+  ],
+  "license": "MIT",
+  "category": "ai debugging agent",
+  "keywords": [
+   "ai debugging agent",
+   "vscode extension",
+   "vs code",
+   "llm bug fixing",
+   "swe-agent",
+   "swe agent alternative",
+   "backend debugging",
+   "automated bug fixing",
+   "language server protocol",
+   "lsp",
+   "openai",
+   "gpt",
+   "agent loop",
+   "match and replace editing",
+   "code repair",
+   "fix bugs with ai",
+   "ai pair programmer",
+   "repro steps",
+   "print statement debugging",
+   "chat coding assistant",
+   "typescript",
+   "code review accept reject",
+   "backend code errors",
+   "llm agent in editor",
+   "ai coding in ide",
+   "automatic debugging",
+   "open source ai coding tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3499,
+  "output": 1264
+ },
+ "generated": "2026-10-29"
+}

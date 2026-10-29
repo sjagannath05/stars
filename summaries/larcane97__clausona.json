@@ -1,0 +1,97 @@
+{
+ "id": "larcane97/clausona",
+ "repo": "larcane97/clausona",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Configuration",
+   "entry": "clausona by larcane97 - A CLI and TUI for running several Claude Code accounts on one machine. Each account gets its own config directory through a shell hook, keeping its own sign-in and history, while plugins, settings, skills, commands and agents are symlinked to one primary directory."
+  }
+ ],
+ "summary": {
+  "one_liner": "clausona is a CLI and TUI that runs several Claude Code and OpenAI Codex CLI accounts on one machine, with separate sign-ins while plugins, settings, skills and hooks are shared.",
+  "what_it_does": "It creates a config directory per account (CLAUDE_CONFIG_DIR or CODEX_HOME) through a shell hook that wraps claude and codex, so `clausona use work` switches accounts without re-login. Plugins, settings, skills, hooks and Codex config.toml are symlinked to a primary directory so setup is shared across profiles. Conversation history stays per account unless merged with `clausona config --merge-sessions`. It reads each account's 5-hour and weekly plan quota from the tool's usage endpoint and can route runs to the account with quota left (`clausona run --route`). It also lists and manages skills, MCP servers and hooks loaded per project, and supports API profiles pointing at Anthropic-compatible endpoints (Claude Code only).",
+  "use_cases": [
+   "switch between personal and work Claude Code accounts",
+   "switch between multiple OpenAI Codex CLI accounts",
+   "share plugins and settings across accounts",
+   "check remaining plan quota across accounts",
+   "automatically route runs to the account with quota left",
+   "run two accounts side by side in separate terminals",
+   "resume conversations across accounts",
+   "manage skills, MCP servers and hooks per project"
+  ],
+  "how_to_run": [
+   "macOS/Linux: curl -fsSL <installer URL from README> | bash (requires Node.js >= 20)",
+   "Windows PowerShell: irm <installer URL from README> | iex",
+   "clausona init",
+   "clausona add claude:work",
+   "clausona use work",
+   "clausona list"
+  ],
+  "stack": [
+   "Node.js >= 20",
+   "shell hooks (zsh, bash, PowerShell 5.1+)",
+   "Claude Code CLI",
+   "OpenAI Codex CLI",
+   "symlinks and Windows junctions"
+  ],
+  "notable": [
+   "Separate sign-in and history per account, with shared plugins, settings and skills via symlinks to one primary directory",
+   "Plan quota readout for every account, read live from each tool's usage endpoint",
+   "Routing by plan quota, with waiting for reset in scripts and directory-based route rules",
+   "No daemon or proxy: claude and codex run unmodified after the shell hook sets the environment",
+   "Extensions screen and CLI to list, disable, or delete skills, MCP servers and hooks behind backups"
+  ],
+  "caveats": [
+   "Usage tracking and API profiles are Claude Code only; Codex API profiles are not supported yet",
+   "Windows shared files need Developer Mode for symlinks, otherwise some files are copied per account",
+   "MCP servers added with `claude mcp add` stay per account and are not shared",
+   "Codex session sharing behaves differently on Windows, and codex resume sharing applies on macOS and Linux only"
+  ],
+  "license": "MIT",
+  "category": "cli account switching",
+  "keywords": [
+   "claude code",
+   "codex cli",
+   "multiple accounts",
+   "account switcher",
+   "profile manager",
+   "clausona",
+   "csn",
+   "config directory",
+   "claude_config_dir",
+   "codex_home",
+   "symlinks",
+   "shell hook",
+   "tui dashboard",
+   "plan quota",
+   "usage limits",
+   "routing",
+   "claude resume",
+   "share sessions",
+   "api profile",
+   "openrouter",
+   "switch accounts without logging out",
+   "run two claude accounts",
+   "work and personal accounts",
+   "mcp servers",
+   "skills manager",
+   "hooks manager",
+   "claude alternative",
+   "claude-swap",
+   "codex-auth",
+   "claude-code-profiles"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10665,
+  "output": 1345
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "rouhim/this-week-in-past",
+ "repo": "RouHim/this-week-in-past",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Photo Galleries",
+   "entry": "This week in past - Aggregates images taken this week, from previous years and presents them on a web page with a simple slideshow. MIT Docker/Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted web slideshow that gathers photos taken in the current calendar week from previous years and displays them, with optional weather and place info.",
+  "what_it_does": "Reads photo metadata from configured folders at startup and caches it in memory. When the slideshow is opened, it shows images taken in the same calendar week in earlier years, falling back to random images if none match. Slides advance automatically at a configurable interval, and the page reloads on a refresh interval to build a new playlist. Clicking the left, middle, or right side of the screen goes to the previous image, pauses or resumes, or goes to the next image. Optional weather can be shown from OpenWeatherMap or Home Assistant, and city names are resolved offline from a GeoNames-derived dataset. Folders can be excluded by marker file or by name regex, and some settings can be overridden through URL parameters.",
+  "use_cases": [
+   "Automatic photo slideshow of past years' memories",
+   "Self-hosted replacement for Google Photos slideshow",
+   "Display photo archive on a kiosk or wall screen",
+   "Show weather alongside family photo slideshow",
+   "Browse photos from this week in previous years"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -v /path/to/pictures:/resources -e SLIDESHOW_INTERVAL=60 rouhim/this-week-in-past",
+   "Native: download the latest release binary from the releases page and make it executable",
+   "Native: mkdir data",
+   "Native: curl -fL -o geodata.txt (one-time download of the place dataset, or build it with bash .container/build-geodata.sh ./geodata.txt)",
+   "Native: RESOURCE_PATHS=/path/to/pictures DATA_FOLDER=data SLIDESHOW_INTERVAL=60 ./this-week-in-past"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "GeoNames place data",
+   "OpenWeatherMap API (optional)",
+   "Home Assistant (optional)"
+  ],
+  "notable": [
+   "Reproduces Google Photos-style 'this week in past' slideshow for locally hosted photo libraries",
+   "Metadata is indexed once at startup and cached in memory, with reported indexing of about 6 seconds for roughly 80k photos",
+   "Offline city lookup from GeoNames data, with no API key or network needed",
+   "Statically compiled Rust binary with no system library dependencies",
+   "Ignore folders via marker files or regex"
+  ],
+  "caveats": [
+   "HEIC images are not supported due to a limitation in the image crate",
+   "Native execution requires a one-time download of the geodata file, otherwise city resolution is disabled",
+   "BIGDATA_CLOUD_API_KEY is deprecated and ignored; CITIES500_PATH now makes the app refuse to start"
+  ],
+  "license": "MIT",
+  "category": "photo slideshow server",
+  "keywords": [
+   "photo slideshow",
+   "this week in past",
+   "on this day photos",
+   "memories slideshow",
+   "self-hosted photo gallery",
+   "google photos alternative",
+   "photoprism slideshow",
+   "rust photo app",
+   "docker photo slideshow",
+   "photo archive viewer",
+   "calendar week photos",
+   "old photos display",
+   "digital photo frame",
+   "kiosk slideshow",
+   "weather slideshow",
+   "geonames offline city lookup",
+   "exif photo date",
+   "home assistant weather",
+   "random photo display",
+   "photo memories web page",
+   "image aggregation",
+   "rust web server",
+   "static binary",
+   "photo library browser",
+   "show old photos",
+   "family photo display",
+   "docker compose photos",
+   "photo metadata cache",
+   "ignore folders photos",
+   "photo slideshow interval"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4249,
+  "output": 1297
+ },
+ "generated": "2026-10-29"
+}

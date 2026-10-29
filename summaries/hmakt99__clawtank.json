@@ -1,0 +1,99 @@
+{
+ "id": "hmakt99/clawtank",
+ "repo": "HMAKT99/ClawTank",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Remote Login Software",
+   "entry": "ClawTank - Open-source RDP server for connecting to a Mac from standard Remote Desktop clients like Windows App and mstsc. [![Open-Source Software][OSS Icon]](https://github.com/HMAKT99/ClawTank) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "ClawTank is an open-source, native RDP server for macOS that lets standard Remote Desktop clients (Windows App, mstsc, FreeRDP) connect to a Mac and control its desktop.",
+  "what_it_does": "ClawTank runs on macOS 14+ (Apple silicon) and serves the Mac's desktop over RDP, so Windows, iPad, iPhone, Android and Linux clients can connect with their built-in or Microsoft-provided tools. It encodes video as H.264 using the Mac's media engine and resizes the desktop to the client window, with Retina virtual displays so a headless Mac needs no dummy plug. It forwards keyboard, mouse, system audio, two-way clipboard (text, rich text, images) and file copy/paste. Security features include TLS with NLA, a separate ClawTank password, LAN-only access by default, lockout after failed logins and an audit log. The README also describes remote access through Tailscale and an Agent API with an MCP server that lets AI agents take screenshots and drive the Mac, with per-agent tokens and a Stop button.",
+  "use_cases": [
+   "Control a home Mac mini or Mac Studio from a Windows PC",
+   "Use a Mac desktop from an iPad or Android tablet",
+   "Connect to a Mac from Linux with FreeRDP or Remmina",
+   "Remote into a headless Mac without a dummy display",
+   "Access a Mac over Tailscale without port forwarding",
+   "Let AI agents take screenshots and control a Mac via MCP"
+  ],
+  "how_to_run": [
+   "Download the ClawTank DMG from Releases and optionally verify it with SHA256SUMS",
+   "Drag ClawTank to Applications and approve it once in System Settings → Privacy & Security (beta is not notarized)",
+   "Grant Screen Recording and Accessibility permissions and set a ClawTank password in the setup window",
+   "Connect from a client using the Mac's address, ClawTank username and password (e.g. mstsc or Windows App)",
+   "Building from source: run `make build`, `make dev-signing`, `make test`, `make release` (requires Xcode 16+, Rust, xcodegen, swiftlint)"
+  ],
+  "stack": [
+   "Rust",
+   "Swift",
+   "Xcode",
+   "IronRDP",
+   "RDP",
+   "H.264",
+   "TLS",
+   "Tailscale",
+   "MCP",
+   "XcodeGen",
+   "SwiftLint"
+  ],
+  "notable": [
+   "Speaks standard RDP, so Microsoft's free clients (Windows App, mstsc, Remote Desktop apps) work without installing a VNC client",
+   "Hardware H.264 encoding via the Mac's media engine, claimed about 60 fps under 10% CPU on Apple silicon",
+   "Desktop resizes live to the client window and works on headless Macs with virtual Retina displays",
+   "Agent API and MCP server with per-agent tokens, audit log and visible Stop button",
+   "No account, no telemetry, and the app makes no outbound network connections of its own"
+  ],
+  "caveats": [
+   "Beta (0.9): not yet notarized, so a one-time 'Open Anyway' step is needed; Apple silicon builds only (Intel is build-from-source, untested)",
+   "One RDP session at a time showing the logged-in user's desktop; one monitor per session; no AVC444 colour mode",
+   "Locked Mac shows only the wallpaper; no automatic updates yet"
+  ],
+  "license": "Apache-2.0",
+  "category": "remote desktop server",
+  "keywords": [
+   "rdp server",
+   "mac remote desktop",
+   "remote into mac",
+   "rdp for macos",
+   "windows app mac",
+   "mstsc connect to mac",
+   "freerdp macos",
+   "remmina mac",
+   "screen sharing alternative",
+   "vnc alternative",
+   "chrome remote desktop alternative",
+   "ipad remote desktop mac",
+   "access mac from windows",
+   "headless mac mini remote",
+   "tailscale mac remote access",
+   "h.264 hardware encoding",
+   "mcp server",
+   "ai agent mac control",
+   "agent api screenshots",
+   "apache-2.0 remote desktop",
+   "open source remote desktop",
+   "rust rdp",
+   "ironrdp",
+   "swift macos app",
+   "network level authentication",
+   "remote control mac from laptop",
+   "share my mac screen",
+   "dummy hdmi plug alternative",
+   "retina remote desktop",
+   "menu bar remote desktop app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6139,
+  "output": 1592
+ },
+ "generated": "2026-10-29"
+}

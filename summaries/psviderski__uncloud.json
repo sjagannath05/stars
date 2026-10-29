@@ -1,0 +1,117 @@
+{
+ "id": "psviderski/uncloud",
+ "repo": "psviderski/uncloud",
+ "kind": "star",
+ "description": "A lightweight tool for deploying and managing containerised applications across a network of Docker hosts. Bridging the gap between Docker and Kubernetes ✨",
+ "topics": [
+  "containers",
+  "deployment",
+  "devops",
+  "docker",
+  "docker-compose",
+  "golang",
+  "kubernetes",
+  "orchestration",
+  "self-hosted",
+  "uncloud"
+ ],
+ "language": "Go",
+ "stars": 5584,
+ "license": "Apache-2.0",
+ "homepage": "https://uncloud.run",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "awesome",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Uncloud is a lightweight, decentralised container orchestration tool that deploys and manages Docker apps across a WireGuard-meshed set of cloud VMs and bare-metal hosts without Kubernetes or Swarm.",
+  "what_it_does": "Uncloud creates a WireGuard mesh network between Docker hosts and lets you deploy and scale containerised apps across them using a Docker-like CLI (uc) and Docker Compose files. It provides service discovery through a built-in DNS server, load balancing, and ingress with automatic HTTPS via a Caddy reverse proxy that uses Let's Encrypt. Cluster state is shared peer-to-peer through a CRDT-based distributed SQLite database (Corrosion), so there is no central control plane or quorum. Images can be pushed directly to machines without an external registry, transferring only missing layers. Zero-downtime rolling updates and persistent Docker volumes across machines are also listed as features, and the README mentions an optional managed DNS service for public subdomains.",
+  "use_cases": [
+   "deploy web apps across several VPS providers",
+   "self-host containers on bare metal or a home server",
+   "zero-downtime rolling updates of Docker services",
+   "automatic HTTPS for self-hosted apps",
+   "run a highly available app across multiple regions",
+   "manage a small Docker cluster without Kubernetes"
+  ],
+  "how_to_run": [
+   "brew install psviderski/tap/uncloud",
+   "curl -fsS | sh  (install script, macOS/Linux)",
+   "uc machine init root@your-server-ip",
+   "uc run -p app.example.com:8000/https image/my-app",
+   "uc ls",
+   "uc rm my-app-name"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "WireGuard",
+   "Caddy",
+   "Corrosion (CRDT SQLite)",
+   "gRPC",
+   "systemd",
+   "SSH"
+  ],
+  "notable": [
+   "No central control plane: every machine holds a synchronised copy of cluster state",
+   "Zero-config WireGuard mesh with peer discovery and NAT traversal; containers get unique cross-machine IPs",
+   "Uses Docker Compose format instead of a new DSL",
+   "Built-in Unregistry feature pushes images straight to hosts without a registry",
+   "Imperative commands favoured over declarative state reconciliation"
+  ],
+  "caveats": [
+   "Pre-1.0 and under active development, so breaking changes are expected between releases",
+   "Automatic rollback on failure is not yet available (listed as coming soon)",
+   "Managed DNS relies on the Uncloud DNS service for public *.uncld.dev records"
+  ],
+  "license": "Apache-2.0",
+  "category": "container orchestration tool",
+  "keywords": [
+   "container orchestration",
+   "docker orchestration",
+   "docker deployment",
+   "multi-host docker",
+   "docker compose deployment",
+   "wireguard mesh",
+   "self-hosted paas",
+   "kubernetes alternative",
+   "docker swarm alternative",
+   "kamal alternative",
+   "decentralised clustering",
+   "no control plane",
+   "service discovery",
+   "load balancing",
+   "automatic https",
+   "caddy reverse proxy",
+   "lets encrypt",
+   "zero downtime deploy",
+   "rolling updates",
+   "persistent volumes",
+   "docker volumes",
+   "private network across servers",
+   "deploy to vps",
+   "bare metal deployment",
+   "self-hosted infrastructure",
+   "push docker image without registry",
+   "cluster management cli",
+   "go tool",
+   "lightweight clustering",
+   "deploy web app to my servers",
+   "run containers on several machines"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7308,
+  "output": 1308
+ },
+ "generated": "2026-10-29"
+}

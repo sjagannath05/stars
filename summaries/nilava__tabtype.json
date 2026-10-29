@@ -1,0 +1,96 @@
+{
+ "id": "nilava/tabtype",
+ "repo": "nilava/TabType",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Others",
+   "entry": "TabType - Free, open-source AI autocomplete for every Mac app — on-device ghost-text suggestions powered by a local LLM (MLX); nothing leaves your Mac. [![Open-Source Software][OSS Icon]](https://github.com/nilava/TabType) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "TabType is a free, open-source, alpha-stage macOS app that shows on-device ghost-text word and phrase predictions in almost any app, using a local Qwen3 base model run through llama.cpp.",
+  "what_it_does": "It shows dimmed inline suggestions as you type, which you accept with Tab word by word or with a separate shortcut for the full suggestion. Suggestions come from a local base language model (Qwen3-4B on 16 GB+ Macs, Qwen3-1.7B on 8 GB, as GGUF on Metal via llama.cpp) using a 9-wide beam search over whole phrases, and a confidence gate hides weak guesses. It reads context from the text above the field via on-device OCR with an accessibility-tree fallback, and can optionally learn from the user's writing through an AES-GCM encrypted local index. Per-app and per-website settings control enablement, ghost size and insertion workarounds, and a text mirror covers apps where inline ghost text cannot be placed. The README also describes inline /macros, :emoji entries, local autocorrect, battery-aware modes, iCloud Drive sync with end-to-end encryption, and in-app updates verified by checksum and signature.",
+  "use_cases": [
+   "autocomplete while writing email in any Mac app",
+   "private on-device text prediction",
+   "free alternative to Cotypist",
+   "getting suggestions in chat apps like Slack",
+   "word completion in terminal AI agent prompts",
+   "local LLM typing assistant for macOS"
+  ],
+  "how_to_run": [
+   "sudo xcode-select -s /Applications/Xcode.app/Contents/Developer",
+   "./Scripts/setup-signing.sh",
+   "CONFIG=Release ./Scripts/build.sh app && open dist/TabType.app",
+   "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer swift test",
+   "Alternatively, download TabType-x.y.z.dmg from GitHub Releases, drag to Applications, and approve it in Privacy & Security since the app is not notarized"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI/AppKit",
+   "llama.cpp (XCFramework, Metal)",
+   "Qwen3 GGUF models",
+   "Gemma 4 GGUF models (selectable)",
+   "MLX (per awesome-mac listing)",
+   "Xcode",
+   "Accessibility API",
+   "on-device OCR"
+  ],
+  "notable": [
+   "Ghost text drawn in the app's own font, size and colour, read via accessibility or measured from the screen",
+   "Listen-only keyboard tap; Tab is intercepted only while a suggestion is showing",
+   "Context read from the screen above the text field, with an accessibility-tree fallback",
+   "Optional learning from your writing via an encrypted local index",
+   "Per-app insertion workarounds and per-website settings"
+  ],
+  "caveats": [
+   "Early alpha with rough edges; the author asks for bug reports on specific apps",
+   "Requires Apple Silicon (M1 or later) and macOS 14+",
+   "Not notarized, so macOS Gatekeeper warns on first launch",
+   "First launch downloads a 1.1-2.5 GB model from Hugging Face",
+   "Building from source requires full Xcode"
+  ],
+  "license": "MIT",
+  "category": "macos ai autocomplete",
+  "keywords": [
+   "macos autocomplete",
+   "ghost text",
+   "on-device llm",
+   "local llm",
+   "llama.cpp",
+   "gguf",
+   "qwen3",
+   "mlx",
+   "cotypist alternative",
+   "open source autocomplete",
+   "text prediction mac",
+   "private typing assistant",
+   "word suggestions",
+   "phrase completion",
+   "token healing",
+   "beam search",
+   "accessibility api",
+   "swift macos app",
+   "ai writing assistant offline",
+   "predictive text mac",
+   "sombra alternative",
+   "keytype alternative",
+   "tab to accept suggestion",
+   "share typing suggestions privately",
+   "autocomplete in any app",
+   "no cloud ai typing",
+   "menu bar ai app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9948,
+  "output": 1463
+ },
+ "generated": "2026-10-29"
+}

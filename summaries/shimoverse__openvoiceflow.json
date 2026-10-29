@@ -1,0 +1,98 @@
+{
+ "id": "shimoverse/openvoiceflow",
+ "repo": "shimoverse/openvoiceflow",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "OpenVoiceFlow - On-device voice dictation for macOS with local transcription and optional text cleanup."
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenVoiceFlow is a free, open-source macOS dictation app that transcribes speech on-device with WhisperKit, so you hold a key, talk, and release to paste text into any app.",
+  "category": "macos voice dictation",
+  "keywords": [
+   "voice dictation",
+   "speech to text",
+   "macos dictation",
+   "on-device transcription",
+   "offline speech recognition",
+   "whisper",
+   "whisperkit",
+   "push to talk",
+   "hold key to talk",
+   "voice typing",
+   "dictate text into any app",
+   "local transcription",
+   "private voice input",
+   "ai text cleanup",
+   "grammar cleanup",
+   "ollama",
+   "openrouter",
+   "openai",
+   "anthropic",
+   "groq",
+   "swift",
+   "swiftui",
+   "sparkle updates",
+   "menu bar app",
+   "hotkey",
+   "fn key",
+   "personal dictionary",
+   "text snippets",
+   "agpl",
+   "open source alternative to paid dictation apps",
+   "speak instead of typing",
+   "clipboard paste",
+   "macos 14 sonoma"
+  ],
+  "what_it_does": "OpenVoiceFlow runs as a menu bar app on macOS. You hold a push-to-talk key (default fn), speak, and release, and the transcribed text is pasted at the cursor via a simulated Cmd+V with clipboard restore. Transcription uses WhisperKit running Whisper models locally, from tiny (39 MB) to large-v3-turbo, and live partial text appears in a floating HUD while you speak. An optional AI cleanup step, off by default, can polish grammar and filler words through OpenRouter, OpenAI, Anthropic, Groq, or a local Ollama model, with API keys stored in the macOS Keychain and only text (never audio) sent to those services. It also includes a personal dictionary, spoken snippets that expand to longer text, and per-app writing styles, plus a dashboard for history and stats. Updates are delivered via Sparkle.",
+  "use_cases": [
+   "dictate emails and documents by voice on a Mac",
+   "speak text into any app instead of typing",
+   "private offline transcription without cloud uploads",
+   "cleaning up dictated text grammar and filler words",
+   "teaching a dictation tool names and technical jargon",
+   "replacing a paid subscription voice typing app"
+  ],
+  "how_to_run": [
+   "Download the DMG from the project's download page, drag it to Applications, and open it (signed and notarized, universal build)",
+   "git clone the repository and cd into openvoiceflow",
+   "Install XcodeGen: brew install xcodegen (requires macOS 14+ and Xcode 16.4+)",
+   "Run: bash native/scripts/run-local.sh (generates the Xcode project, builds an ad-hoc-signed debug app, and launches it)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "WhisperKit",
+   "Sparkle",
+   "XcodeGen",
+   "Xcode",
+   "Python (legacy app and test suite)"
+  ],
+  "notable": [
+   "Audio is processed in memory on-device and nothing is recorded while the key is not held",
+   "Optional AI cleanup supports five backends including fully local Ollama",
+   "Ad-hoc signing for debug builds is explained because macOS ties Accessibility and Input Monitoring grants to code signatures",
+   "Anonymous aggregate usage sharing is on by default with a single switch to disable; dictation text is never included",
+   "Legacy Python app retained for macOS 12-13 fallback builds"
+  ],
+  "caveats": [
+   "Requires macOS 14 (Sonoma) or newer; macOS 12-13 only get a retained legacy build",
+   "Legacy Python app (voiceflow/, version 0.3.6 and below) is end-of-life with no security fixes",
+   "Anonymous aggregate usage sharing is enabled by default (can be switched off)",
+   "Building from source requires Xcode 16.4+ and XcodeGen"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3592,
+  "output": 1427
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "jaidedai/easyocr",
+ "repo": "JaidedAI/EasyOCR",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Computer Vision",
+   "entry": "easyocr - Ready-to-use OCR with 80+ languages supported."
+  }
+ ],
+ "summary": {
+  "one_liner": "EasyOCR is a Python library that reads text from images using pretrained models across 80+ languages and many writing scripts.",
+  "what_it_does": "The library detects and recognizes text in images through a `Reader` object that loads language models once and then runs on image file paths, OpenCV/numpy arrays, image bytes, or raw image URLs. Each result is a bounding box, the detected text, and a confidence score, or just the text when `detail=0` is set. Model weights for the chosen languages are downloaded automatically or can be placed manually in a local model folder. It can run on GPU or in CPU-only mode (`gpu=False`). A command-line entry point (`easyocr -l ... -f ...`) is also provided. The README says detection uses the CRAFT algorithm and recognition uses a CRNN model, and it describes training and custom-language guidelines, with a Dockerfile provided.",
+  "use_cases": [
+   "extract text from photos or scanned images",
+   "read Chinese, Arabic, or Cyrillic text from pictures",
+   "multilingual OCR in Python scripts",
+   "pull text and coordinates from screenshots",
+   "run OCR on a server without a GPU",
+   "add OCR to a Gradio or web app"
+  ],
+  "how_to_run": [
+   "pip install easyocr",
+   "import easyocr",
+   "reader = easyocr.Reader(['ch_sim','en'])",
+   "result = reader.readtext('chinese.jpg')",
+   "reader = easyocr.Reader(['ch_sim','en'], gpu=False)",
+   "easyocr -l ch_sim en -f chinese.jpg --detail=1 --gpu=True"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "torchvision",
+   "CRAFT (text detection)",
+   "CRNN (text recognition)",
+   "Gradio (demo on Hugging Face Spaces)",
+   "Docker (Dockerfile provided)"
+  ],
+  "notable": [
+   "Supports 80+ languages and many scripts, including Latin, Chinese, Arabic, Devanagari, and Cyrillic",
+   "Accepts file paths, numpy image arrays, image bytes, or image URLs",
+   "Command-line interface plus a Python API",
+   "Automatic model download, or manual placement in a model folder",
+   "Documented guidelines for contributing a new language via character and dictionary files"
+  ],
+  "caveats": [
+   "Not all languages can be combined in one Reader; the README says some languages are incompatible with each other",
+   "Handwritten text support is listed as upcoming, not currently available",
+   "The README says GPU use needs the correct CUDA build of torch, and Windows users must install torch and torchvision first"
+  ],
+  "license": "unknown",
+  "category": "ocr text recognition",
+  "keywords": [
+   "ocr",
+   "optical character recognition",
+   "text recognition",
+   "text extraction",
+   "image to text",
+   "read text from image",
+   "scan to text",
+   "pytorch ocr",
+   "python ocr library",
+   "craft text detection",
+   "crnn",
+   "multilingual ocr",
+   "chinese ocr",
+   "arabic ocr",
+   "cyrillic text recognition",
+   "devanagari",
+   "pytesseract alternative",
+   "tesseract alternative",
+   "extract text from photo",
+   "read text from screenshot",
+   "pdf image text extraction",
+   "ocr command line",
+   "gradio ocr demo",
+   "docker ocr",
+   "computer vision text",
+   "scene text recognition",
+   "bounding box text detection",
+   "gpu ocr",
+   "cpu-only ocr",
+   "ocr 80 languages",
+   "opencv text reader"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3959,
+  "output": 1286
+ },
+ "generated": "2026-10-29"
+}

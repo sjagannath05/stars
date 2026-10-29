@@ -1,0 +1,90 @@
+{
+ "id": "mczachurski/wallpapper",
+ "repo": "mczachurski/wallpapper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📺 Terminal (27)",
+   "entry": "wallpapper - wallpapper is a console application for creating dynamic wallpapers for Mojave."
+  }
+ ],
+ "summary": {
+  "one_liner": "wallpapper is a macOS console tool that builds dynamic HEIC wallpapers (the Mojave-era kind that change with time, sun position, or light/dark appearance) from a folder of images and a JSON description.",
+  "what_it_does": "The tool takes a folder of pictures plus a JSON file that lists each image and when it should appear, then generates a single .heic file that macOS can use as a dynamic desktop wallpaper. It supports three modes: solar (altitude and azimuth of the sun), time (switch at clock times), and appearance (one image for light theme, one for dark). Each entry can be marked as the primary image or as the light or dark variant. A second companion binary, wallpapper-exif, reads GPS and creation-time metadata from photos and outputs a JSON file with sun altitude and azimuth. The main binary can also extract metadata from an existing .heic file and save it as a plist. The README also says the sun calculations are based on a JavaScript library by Vladimir Agafonkin.",
+  "use_cases": [
+   "create a dynamic macOS wallpaper that changes through the day",
+   "build a light and dark mode wallpaper pair for macOS",
+   "generate sun altitude and azimuth values from geotagged photos",
+   "inspect metadata inside an existing heic wallpaper file",
+   "convert a set of photos into a time-based desktop wallpaper"
+  ],
+  "how_to_run": [
+   "brew tap mczachurski/wallpapper",
+   "brew install wallpapper",
+   "git clone <repo-url> && cd wallpapper && swift build --configuration release",
+   "sudo cp .build/release/wallpapper /usr/local/bin",
+   "wallpapper -i wallpapper.json",
+   "wallpapper -e Catalina.heic"
+  ],
+  "stack": [
+   "Swift 5",
+   "Xcode",
+   "Swift Package Manager",
+   "swiftc (via build.sh)",
+   "Homebrew (optional install)"
+  ],
+  "notable": [
+   "Generates macOS Mojave-style dynamic wallpapers as HEIC files from a JSON description",
+   "Separate wallpapper-exif tool computes sun altitude and azimuth from photo GPS and timestamp metadata",
+   "Three wallpaper modes: solar, time-of-day, and light/dark appearance",
+   "Can extract the embedded metadata plist from an existing HEIC wallpaper",
+   "Includes a build.sh alternative that uses swiftc instead of the Swift CLI"
+  ],
+  "caveats": [
+   "Requires macOS with Xcode (README names 10.2) and Swift 5; it is a macOS-only console tool",
+   "Targets dynamic wallpapers introduced in macOS Mojave; the README does not say whether newer macOS versions are supported",
+   "Solar mode needs altitude and azimuth values, which you must compute yourself or extract with wallpapper-exif"
+  ],
+  "license": "unknown",
+  "category": "macos wallpaper tooling",
+  "keywords": [
+   "dynamic wallpaper",
+   "macos wallpaper",
+   "heic wallpaper",
+   "mojave wallpaper",
+   "dark mode wallpaper",
+   "light mode wallpaper",
+   "time based wallpaper",
+   "solar wallpaper",
+   "sun position",
+   "sun altitude azimuth",
+   "solar calculator",
+   "exif gps metadata",
+   "photo metadata extractor",
+   "heic metadata",
+   "plist extractor",
+   "swift command line tool",
+   "swift cli",
+   "macos terminal app",
+   "homebrew formula",
+   "xcode build",
+   "appearance wallpaper",
+   "day night wallpaper",
+   "desktop background",
+   "make wallpaper from photos",
+   "wallpaper json generator",
+   "change wallpaper by time of day",
+   "earth view wallpaper"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3886,
+  "output": 1352
+ },
+ "generated": "2026-10-29"
+}

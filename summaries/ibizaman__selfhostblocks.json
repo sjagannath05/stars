@@ -1,0 +1,114 @@
+{
+ "id": "ibizaman/selfhostblocks",
+ "repo": "ibizaman/selfhostblocks",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Self-hosting Solutions",
+   "entry": "Self Host Blocks ⚠ - Modular server management based on NixOS modules and focused on best practices. AGPL-3.0 Nix"
+  }
+ ],
+ "summary": {
+  "one_liner": "SelfHostBlocks is an opinionated NixOS server management system and collection of NixOS modules for self-hosting services such as Nextcloud, Vaultwarden, and Jellyfin.",
+  "what_it_does": "It provides NixOS modules that standardize how self-hosted services are configured, so each service uses the same options for HTTPS, reverse proxying, LDAP and SSO integration, and backups. Building blocks cover generic backups with restic or borgbackup, automatic ZFS dataset creation per service, Grafana and Prometheus monitoring with Scrutiny integration, and VPN and proxy tunneling. The README says the test suite uses NixOS VM tests, including Playwright tests for login, SSO, and the full backup flow, to check that services build and work together. It also aims to introduce \"contracts\" for swapping components such as reverse proxies or databases, and to upstream these ideas into nixpkgs. The project follows nixpkgs unstable, and a GitHub action updates and tests it automatically.",
+  "use_cases": [
+   "Self-host Nextcloud, Vaultwarden, Immich, or Jellyfin on a NixOS server",
+   "Set up automated backups with restic or borgbackup for self-hosted services",
+   "Configure LDAP and single sign-on across self-hosted apps",
+   "Run Grafana and Prometheus monitoring for a home server",
+   "Replace cloud-hosted documents, photos, calendars and contacts with self-hosted alternatives",
+   "Build a NixOS server with ZFS datasets and automatic HTTPS certificates"
+  ],
+  "how_to_run": [
+   "Add selfhostblocks as a flake input: inputs.selfhostblocks.url = \"github:ibizaman/selfhostblocks\";",
+   "Use selfhostblocks.lib.${system}.patchedNixpkgs to build the system (required; the project's patched nixpkgs must be used).",
+   "Add selfhostblocks.nixosModules.default to the modules list of nixosSystem.",
+   "Configure services with shb.<service> options, for example shb.nextcloud.enable = true.",
+   "To pin a release: nix flake update --override-input selfhostblocks github:ibizaman/selfhostblocks/RELEASE selfhostblocks",
+   "For a fresh install, the README recommends the sibling project Skarabox; the manual covers deployment details."
+  ],
+  "stack": [
+   "Nix",
+   "NixOS",
+   "nixpkgs (patched)",
+   "NixOS VM tests",
+   "Playwright",
+   "ZFS",
+   "restic",
+   "borgbackup",
+   "Grafana",
+   "Prometheus",
+   "Loki",
+   "Scrutiny",
+   "Authelia",
+   "LDAP",
+   "PostgreSQL",
+   "nginx",
+   "sops-nix",
+   "Colmena",
+   "nixos-rebuild",
+   "deploy-rs",
+   "SOPS"
+  ],
+  "notable": [
+   "Declarative NixOS modules with a consistent configuration interface across services (shb.<service>)",
+   "Contracts pattern for swapping pieces like reverse proxies or databases, with an RFC to upstream it into nixpkgs",
+   "Automated NixOS VM test suite with Playwright browser tests covering login, SSO, and backup restore",
+   "Automatic updates: a GitHub action bumps nixpkgs, runs tests, and merges if they pass",
+   "Sibling project Skarabox provides installation from scratch with disko, nixos-anywhere, and ZFS encryption"
+  ],
+  "caveats": [
+   "The author states it is a one-person effort with likely undiscovered bugs",
+   "Requires using the project's patched nixpkgs; evaluation can break otherwise",
+   "Only some services and blocks are fully documented; others need the All Options section of the manual"
+  ],
+  "license": "AGPL-3.0",
+  "category": "nixos self-hosting modules",
+  "keywords": [
+   "nixos",
+   "nixos modules",
+   "self-hosting",
+   "self-hosted server",
+   "nix flake",
+   "selfhostblocks",
+   "server management",
+   "nixpkgs",
+   "nextcloud",
+   "vaultwarden",
+   "jellyfin",
+   "immich",
+   "ldap",
+   "single sign-on",
+   "sso",
+   "authelia",
+   "restic",
+   "borgbackup",
+   "backup automation",
+   "zfs",
+   "reverse proxy",
+   "https certificates",
+   "grafana",
+   "prometheus",
+   "monitoring",
+   "nixos vm tests",
+   "playwright",
+   "data sovereignty",
+   "escape the cloud",
+   "host my own files",
+   "replace google drive",
+   "self-hosted photos and documents",
+   "agpl",
+   "home server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6120,
+  "output": 1635
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "sergree/matchering",
+ "repo": "sergree/matchering",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Matchering - Automated music mastering (alternative to LANDR, eMastered and MajorDecibel). GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Matchering is an open-source Python library, web app, and ComfyUI node that masters a target audio track to match the RMS, frequency response, peak amplitude and stereo width of a reference track.",
+  "what_it_does": "You supply two audio files: a TARGET track to be mastered and a REFERENCE track whose sound you want to match. The algorithm analyzes both and outputs a mastered version of the target with the same RMS, frequency response, peak amplitude and stereo width as the reference. The README says it is available as a containerized web application (Docker image), a Python package on PyPI, a ComfyUI node, and as part of the UVR5 Desktop App. The Python library can save output as 16-bit or 24-bit PCM WAV files. Its limiter is the project's own Hyrax brickwall limiter. The README also links to a separate command-line wrapper, matchering-cli.",
+  "use_cases": [
+   "Master a home-recorded song to sound like a reference track",
+   "Make all tracks on an album sound consistent",
+   "Batch-master audio from a Python script or pipeline",
+   "Run an AI mastering service via a Docker container",
+   "Match the loudness and tonal balance of one song to another"
+  ],
+  "how_to_run": [
+   "Desktop: in UVR5 Desktop App, choose Process Method > Audio Tools & Choose Audio Tool > Matchering",
+   "Python library (Linux/macOS): python3 -m pip install -U matchering",
+   "Python library (Windows): python -m pip install -U matchering",
+   "Optional MP3 support: install FFmpeg (for example sudo apt -y install ffmpeg on Ubuntu)",
+   "Linux prerequisite: sudo apt update && sudo apt -y install libsndfile1",
+   "Usage: mg.process(target='my_song.wav', reference='some_popular_song.wav', results=[mg.pcm16('out.wav')])"
+  ],
+  "stack": [
+   "Python 3 (3.8.0 or higher)",
+   "SoundFile",
+   "libsndfile",
+   "FFmpeg (optional, for MP3 loading)",
+   "Hyrax brickwall limiter (project's own)",
+   "ComfyUI node",
+   "Docker image",
+   "UVR5 Desktop App integration"
+  ],
+  "notable": [
+   "Reference-based mastering: the target is shaped to match a reference track's RMS, frequency response, peak and stereo width",
+   "Multiple entry points: Python library, Docker web app, ComfyUI node, and UVR5 desktop app",
+   "Rewritten in Python 3 from the earlier MATLAB version, with an open-source Hyrax limiter",
+   "Can output 16-bit or 24-bit PCM WAV files"
+  ],
+  "caveats": [
+   "Python library needs at least 4 GB RAM and Python 3.8.0 or higher",
+   "Linux users must install libsndfile through their package manager; MP3 loading needs the optional FFmpeg install",
+   "Result quality depends on choosing a suitable reference track, according to the README's cited review"
+  ],
+  "license": "GPL-3.0",
+  "category": "audio mastering automation",
+  "keywords": [
+   "audio mastering",
+   "automated mastering",
+   "music mastering",
+   "reference track matching",
+   "audio matching",
+   "stereo width",
+   "rms loudness matching",
+   "frequency response matching",
+   "brickwall limiter",
+   "hyrax limiter",
+   "python library",
+   "pypi package",
+   "docker image",
+   "containerized web app",
+   "comfyui node",
+   "uvr5",
+   "matchering-cli",
+   "pcm16 wav output",
+   "pcm24 wav output",
+   "ai mastering alternative",
+   "landr alternative",
+   "emastered alternative",
+   "majordecibel alternative",
+   "master my song",
+   "make my track sound like a reference",
+   "album consistency",
+   "music production tool",
+   "audio engineering python",
+   "soundfile libsndfile",
+   "gpl-3.0 open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3601,
+  "output": 1351
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "svix/svix-webhooks",
+ "repo": "svix/svix-webhooks",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - API Management",
+   "entry": "Svix - Webhooks as a service that makes it super easy for API providers to send webhooks. (Source Code) MIT Docker/Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "Svix is an open-source webhook sending service: developers make one API call and the Svix server handles delivery, retries, and signing of outgoing webhooks.",
+  "what_it_does": "The repository contains the Svix server (written in Rust), which dispatches webhook messages to customer endpoints. It stores events in PostgreSQL and can use Redis or Valkey for its task queue and cache. Messages are signed before sending, using symmetric (pre-shared key) signatures by default or asymmetric ed25519 keys as an option. Access to the API is controlled by JWTs signed with a configurable secret and algorithm. The README also covers operational webhooks (notifications about server events), a Redis dead-letter queue with a redrive endpoint, OpenTelemetry export, and an SSRF guard that blocks internal IPs unless listed in whitelist_subnets. Client libraries for many languages and an npm-published CLI are referenced in the README.",
+  "use_cases": [
+   "Sending webhooks to customers from an API product",
+   "Self-hosting a webhook dispatch service",
+   "Signing outgoing webhook payloads with HMAC or ed25519",
+   "Retrying and monitoring failed webhook deliveries",
+   "Notifying external systems of server events via operational webhooks"
+  ],
+  "how_to_run": [
+   "cd server",
+   "docker compose up",
+   "docker run --name svix-server -p 8071:8071 --env-file development.env svix/svix-server",
+   "npx svix-cli --help"
+  ],
+  "stack": [
+   "Rust",
+   "PostgreSQL",
+   "Redis",
+   "Valkey",
+   "Docker",
+   "OpenTelemetry",
+   "Node.js (svix-cli on npm)"
+  ],
+  "notable": [
+   "Symmetric signatures by default, with asymmetric ed25519 keys available per endpoint",
+   "Operational webhooks that notify you about server events, using Svix itself",
+   "Redis-backed task queue with a managed dead-letter queue and redrive endpoint",
+   "Client libraries for Go, Python, JavaScript/TypeScript, Java, Kotlin, Ruby, C#, Rust, PHP, and Terraform",
+   "SSRF protection that blocks internal IP destinations by default"
+  ],
+  "caveats": [
+   "The README says only PostgreSQL is currently supported as a database",
+   "Some features of the hosted Svix service are not available in this open-source version",
+   "Redis is optional, but if used it needs persistence and a noeviction-style eviction policy"
+  ],
+  "license": "MIT",
+  "category": "webhook delivery service",
+  "keywords": [
+   "webhooks",
+   "webhook service",
+   "send webhooks",
+   "webhook delivery",
+   "webhook retries",
+   "outgoing webhooks",
+   "webhook signing",
+   "hmac signature",
+   "ed25519 signatures",
+   "rust server",
+   "self-hosted webhooks",
+   "postgresql",
+   "redis queue",
+   "valkey",
+   "dead letter queue",
+   "dlq",
+   "docker compose",
+   "opentelemetry",
+   "jwt authentication",
+   "ssrf protection",
+   "operational webhooks",
+   "svix cli",
+   "webhooks as a service",
+   "api provider notifications",
+   "event dispatch",
+   "alternative to hosted webhook services",
+   "notify customers of events",
+   "webhook sending api"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7639,
+  "output": 1202
+ },
+ "generated": "2026-10-29"
+}

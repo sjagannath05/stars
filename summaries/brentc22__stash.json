@@ -1,0 +1,95 @@
+{
+ "id": "brentc22/stash",
+ "repo": "brentc22/stash",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "Stash - Open-source menu bar icon hider for macOS 27 that collapses status items behind a single arrow. [![Open-Source Software][OSS Icon]](https://github.com/brentc22/stash) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Stash is a free, open-source macOS 27 menu bar hider that collapses status items behind a single arrow by using a private assessment-mode allowlist.",
+  "what_it_does": "Stash hides macOS menu bar icons behind one arrow so a crowded bar collapses to a single click, and clicking again brings them back. It targets macOS 27, where the system draws the menu bar as one window, which broke earlier hider apps that enumerated and moved per-item windows. Instead, Stash dlopens the private MenuBarClientCore framework, builds an allowlist of apps that may keep their status items, and activates an assessment-mode assertion with it; collapsing and expanding means swapping that assertion. Per-app hide states (Visible, Hide, Always hide) and a \"show while this app is in front\" option are configurable in a settings window. Optional features include a global hotkey, auto-collapse delay, hover-to-expand (needs Accessibility permission), a presentation mode that hides everything except the arrow, clock and Control Center, and daily update checks against GitHub Releases. The README says the repository also contains design and plan documents, written in Dutch.",
+  "use_cases": [
+   "hide cluttered menu bar icons on macOS 27",
+   "collapse menu bar apps behind one click",
+   "clean up the menu bar before a presentation or screen share",
+   "keep specific menu bar apps always hidden",
+   "open-source alternative to paid menu bar managers"
+  ],
+  "how_to_run": [
+   "brew install --cask brentc22/stash/stash",
+   "xattr -dr com.apple.quarantine /Applications/Stash.app",
+   "git clone <repository URL>",
+   "cd stash",
+   "make install",
+   "open /Applications/Stash.app"
+  ],
+  "stack": [
+   "Swift 6.4",
+   "Objective-C",
+   "SwiftPM",
+   "AppKit",
+   "SwiftUI",
+   "MenuBarClientCore (private framework via dlopen)",
+   "SMAppService",
+   "ScreenCaptureKit-free AX APIs (AXUIElementCopyAttributeValue)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Uses macOS assessment-mode allowlist (private API) instead of moving status item windows, which macOS 27 removed",
+   "Per-app Visible / Hide / Always hide settings with a show-while-in-front option",
+   "Automatic presentation mode during display mirroring, macOS Screen Sharing or Zoom meetings",
+   "Fails safe: if the private API is missing, the arrow shows a warning and nothing gets hidden",
+   "Test suite is a plain executable target (swift run StashTests) because XCTest needs Xcode"
+  ],
+  "caveats": [
+   "Relies on a private framework, so any macOS update may break it and it cannot ship on the Mac App Store",
+   "Only tested on one Mac with macOS 27.0 (26A428) according to the README",
+   "Hiding works per app, not per icon; no reordering and no separate panel for hidden icons",
+   "Must be installed in /Applications for its own arrow to appear; Accessibility permission must be re-granted after each make install or in-app update when the menu bar filter is on"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "menu bar hider",
+   "menu bar manager",
+   "icon hider",
+   "status item hider",
+   "macos 27",
+   "hide menu bar icons",
+   "collapse menu bar",
+   "menu bar clutter",
+   "open source menu bar tool",
+   "free bartender alternative",
+   "ice alternative",
+   "hidden bar alternative",
+   "bartender alternative",
+   "assessment mode allowlist",
+   "menubarclientcore",
+   "nsstatusitem",
+   "swift macos app",
+   "homebrew cask macos",
+   "presentation mode menu bar",
+   "hide icons during screen share",
+   "global hotkey menu bar",
+   "accessibility permission hover",
+   "allowlist menu bar apps",
+   "clean up menu bar",
+   "declutter mac menu bar",
+   "free menu bar app",
+   "self-made menu bar tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6611,
+  "output": 1449
+ },
+ "generated": "2026-10-29"
+}

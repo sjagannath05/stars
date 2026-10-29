@@ -1,0 +1,90 @@
+{
+ "id": "maptiler/tileserver-gl",
+ "repo": "maptiler/tileserver-gl",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Maps and Global Positioning System (GPS)",
+   "entry": "TileServer GL - Vector and raster maps with GL styles. Server side rendering by Mapbox GL Native. Map tile server for Mapbox GL JS, Android, iOS, Leaflet, OpenLayers, GIS via WMTS, etc. (Source Code) BSD-2-Clause Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "TileServer GL is a map tile server that serves vector and raster maps built from GL styles, with server-side raster rendering via MapLibre GL Native.",
+  "what_it_does": "Serves vector tiles (for example from MBTiles files) and renders them to raster images on the server using MapLibre GL Native. It is meant to feed web and mobile map clients such as MapLibre GL JS, Android, iOS, Leaflet and OpenLayers, and GIS software via WMTS. Setup can use a single mbtiles file or a config.json with style and data files. The README also describes a pure-JavaScript tileserver-gl-light variant with no native dependencies, which skips server-side rasterization. It is installable via npm or run as a Docker image, and includes a Host header poisoning mitigation using a --public_url flag or the TILESERVER_GL_ALLOWED_HOSTS environment variable.",
+  "use_cases": [
+   "serve vector map tiles to a web map",
+   "host offline mbtiles maps on a local server",
+   "provide WMTS map tiles to GIS software",
+   "render raster map images from GL styles on the server",
+   "feed tiles to Leaflet or OpenLayers apps",
+   "self-host map tiles for mobile apps"
+  ],
+  "how_to_run": [
+   "npm install -g tileserver-gl",
+   "tileserver-gl --file zurich_switzerland.mbtiles",
+   "docker run --rm -it -v $(pwd):/data -p 8080:8080 maptiler/tileserver-gl:latest --file zurich_switzerland.mbtiles",
+   "xvfb-run --server-args=\"-screen 0 1024x768x24\" node ."
+  ],
+  "stack": [
+   "Node.js (version 20 or above, Node 24 recommended)",
+   "Docker",
+   "MapLibre GL Native",
+   "MapLibre GL JS",
+   "MBTiles",
+   "xvfb (for headless Linux runs)"
+  ],
+  "notable": [
+   "Server-side raster rendering of GL styles through MapLibre GL Native",
+   "Two flavors: tileserver-gl with native rendering and tileserver-gl-light as pure JavaScript",
+   "Serves WMTS, TileJSON and style JSON endpoints for map clients",
+   "Documented Host header poisoning mitigation with --public_url and an allowed-hosts list"
+  ],
+  "caveats": [
+   "Running without Docker requires native dependencies to be installed first",
+   "Server-side rasterization is not available in the tileserver-gl-light variant",
+   "Without --public_url, the allowed-hosts default is '*', so all hosts are accepted unless configured"
+  ],
+  "license": "BSD-2-Clause",
+  "category": "map tile server",
+  "keywords": [
+   "tile server",
+   "vector tiles",
+   "raster tiles",
+   "mbtiles",
+   "maplibre gl native",
+   "maplibre gl js",
+   "mapbox gl",
+   "wmts",
+   "tilejson",
+   "leaflet",
+   "openlayers",
+   "gis map server",
+   "server-side rendering",
+   "gl styles",
+   "openmaptiles",
+   "node.js map server",
+   "docker map server",
+   "self-hosted maps",
+   "offline maps",
+   "serve map tiles",
+   "host my own map tiles",
+   "map tiles for mobile apps",
+   "map tiles for gis software",
+   "xvfb headless rendering",
+   "npm tileserver",
+   "tileserver-gl-light",
+   "host header poisoning",
+   "public_url"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3084,
+  "output": 1253
+ },
+ "generated": "2026-10-29"
+}

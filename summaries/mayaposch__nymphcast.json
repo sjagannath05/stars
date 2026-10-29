@@ -1,0 +1,98 @@
+{
+ "id": "mayaposch/nymphcast",
+ "repo": "MayaPosch/NymphCast",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Multimedia Streaming",
+   "entry": "NymphCast - Turn your choice of Linux-capable hardware into an audio and video source for a television or powered speakers (alternative to Chromecast). (Source Code) BSD-3-Clause C++"
+  }
+ ],
+ "summary": {
+  "one_liner": "NymphCast is an open-source C++ software suite that turns Linux-capable hardware into an audio and video receiver for TVs or powered speakers, serving as an alternative to Chromecast.",
+  "what_it_does": "NymphCast Server runs on a target device and receives audio/video streamed over the network from a client device or media server, or plays internet media (URL streaming) controlled by a client. The client side includes a CLI client, a Qt-based graphical NymphCast Player, and the LibNymphCast library/SDK. Playback uses FFmpeg for decoding and SDL2 for output, and the README says all codecs supported by FFmpeg are supported. Usage profiles exist for audio-only, audio/video, screensaver, and an experimental GUI \"smart TV\" mode. Multi-room synchronised playback is available through groups of receivers in the NymphCast Player. The server can also run AngelScript-based apps (preview status) and can show artist/title info on an LCDProc display.",
+  "use_cases": [
+   "Stream local video or audio files from a phone or PC to a TV",
+   "Play internet media URLs on a receiver connected to speakers",
+   "Build a cheap Raspberry Pi or SBC media receiver for a TV",
+   "Synchronised multi-room audio across several receivers",
+   "Stream from a NymphCast MediaServer to a TV",
+   "Turn a Linux box into a Chromecast-style receiver"
+  ],
+  "how_to_run": [
+   "Download a pre-built release from the GitHub Releases page, or install the server package from your distro (e.g. pkg install NymphCast on FreeBSD)",
+   "Or build the server and client from source following the Setup Guides linked in the README",
+   "Run the server from the bin folder: ./nymphcast_server -c nymphcast_audio_config.ini",
+   "Open UDP and TCP port 4004 (and 4005 for MediaServer) in the firewall",
+   "Find receivers with the CLI client: nymphcast_client -r",
+   "Stream a file: nymphcast_client -f <file> -i <receiver IP>"
+  ],
+  "stack": [
+   "C++17",
+   "LibPoco",
+   "FFmpeg",
+   "SDL2",
+   "Qt5 (NymphCast Player)",
+   "AngelScript (apps)",
+   "EmulationStation (GUI mode)",
+   "LCDProc (optional)"
+  ],
+  "notable": [
+   "Acts as a Chromecast-style receiver that runs on user-supplied Linux hardware such as Raspberry Pi",
+   "Supports all FFmpeg-supported codecs and embedded bitmap subtitles such as PGS",
+   "Synchronised multi-room playback via groups of receivers in the NymphCast Player",
+   "Extensible via AngelScript-based NymphCast apps (preview) and a client SDK (LibNymphCast)",
+   "Client player runs on Windows, Linux, Android, FreeBSD and Haiku"
+  ],
+  "caveats": [
+   "Hardware-accelerated video decoding is limited or absent on several SBCs; Raspberry Pi 4 has no HEVC support per the README",
+   "Several features are experimental or partial: multi-room playback, SmartTV GUI mode, apps, and local media playback",
+   "Requires a client device for all modes except the GUI (Smart TV) mode",
+   "Text and external subtitles are planned for v0.2 and are not yet supported"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "media streaming receiver",
+  "keywords": [
+   "chromecast alternative",
+   "self-hosted chromecast",
+   "media receiver",
+   "audio receiver",
+   "video receiver",
+   "stream to tv",
+   "stream to speakers",
+   "raspberry pi media player",
+   "multi-room audio",
+   "synchronised playback",
+   "ffmpeg",
+   "sdl2",
+   "c++",
+   "qt player",
+   "libnymphcast",
+   "nymphcast server",
+   "udp discovery",
+   "url streaming",
+   "mediaserver",
+   "subtitles pgs",
+   "smart tv gui",
+   "angelscript apps",
+   "lcdproc",
+   "linux receiver",
+   "cast video from phone",
+   "stream files to tv",
+   "home theater audio",
+   "bsd-3-clause",
+   "self-hosted media streaming",
+   "send audio to tv over network"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6290,
+  "output": 1522
+ },
+ "generated": "2026-10-29"
+}

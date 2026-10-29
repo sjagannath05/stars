@@ -1,0 +1,86 @@
+{
+ "id": "georgemandis/bubo-rss",
+ "repo": "georgemandis/bubo-rss",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Feed Readers",
+   "entry": "Bubo Reader - Irrationally minimal RSS feed reader. (Demo) MIT Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bubo Reader is a hyper-minimalist, static-page RSS, Atom, and JSON feed reader that builds a single HTML page of links from feeds grouped by category.",
+  "what_it_does": "Bubo Reader fetches the latest items from a set of feed URLs listed in conf/feeds.json, organized into categories and websites. It renders them through a Nunjucks HTML template into a static public/index.html page with a stylesheet. The build is run with npm scripts (npm run build:bubo), and the output can be served from any static host. The README describes the code as split into src/index.ts (fetch and build), src/renderer.ts (Nunjucks rendering), and src/utilities.ts (parsing and normalization). Request batching is configurable through MAX_CONNECTIONS and DELAY_MS, with the default set to no throttling. The README includes a Netlify deployment path using a netlify.toml file, and suggests external schedulers or a cron job to trigger rebuilds.",
+  "use_cases": [
+   "Self-host a simple page of links from RSS feeds",
+   "Read blogs and news feeds without a tracking-heavy reader",
+   "Deploy a static feed dashboard to Netlify",
+   "Group feeds by category on one webpage",
+   "Schedule periodic rebuilds of a feed page with cron"
+  ],
+  "how_to_run": [
+   "Clone or fork the repo",
+   "Run npm install",
+   "Edit feeds.json (conf/feeds.json) with your categories and feed URLs",
+   "Run npm run build:bubo",
+   "Serve the generated static page in the public folder, or deploy to Netlify using netlify.toml"
+  ],
+  "stack": [
+   "Node.js",
+   "TypeScript",
+   "Nunjucks"
+  ],
+  "notable": [
+   "Deliberately minimal: outputs a single static HTML page with no server-side reader app",
+   "Feeds are defined in a plain JSON file grouped by category",
+   "Template and renderer are swappable (Nunjucks template plus renderer.ts)",
+   "Configurable batching and throttling of feed requests via MAX_CONNECTIONS and DELAY_MS"
+  ],
+  "caveats": [
+   "Rebuilds are needed to pick up new content; the page does not update on its own, so you must set up a scheduled trigger (Netlify build hook with an external service, or cron)",
+   "README gives no detail on read state, accounts, or interactive features"
+  ],
+  "license": "MIT",
+  "category": "rss feed reader",
+  "keywords": [
+   "rss reader",
+   "atom feed reader",
+   "json feed",
+   "feed aggregator",
+   "minimal feed reader",
+   "static site generator",
+   "self-hosted rss",
+   "nodejs rss",
+   "typescript",
+   "nunjucks template",
+   "netlify deployment",
+   "netlify build hook",
+   "cron job feeds",
+   "static html feed page",
+   "feed links by category",
+   "read blogs in one page",
+   "aggregate blog posts",
+   "share feeds with team",
+   "personal news page",
+   "feed dashboard",
+   "awesome selfhosted feed reader",
+   "irrationally minimal rss",
+   "bubo",
+   "feed throttling",
+   "rss to html",
+   "subscribe to feeds",
+   "keep up with blogs",
+   "rss to webpage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2817,
+  "output": 1185
+ },
+ "generated": "2026-10-29"
+}

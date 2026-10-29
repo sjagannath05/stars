@@ -1,0 +1,96 @@
+{
+ "id": "sysadminsmedia/homebox",
+ "repo": "sysadminsmedia/homebox",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Inventory Management",
+   "entry": "HomeBox (SysAdminsMedia) - Inventory and organization system built for the home user. (Demo, Source Code) AGPL-3.0 Docker/Go"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Miscellaneous",
+   "entry": "Homebox | Inventory and organisation system for your home"
+  }
+ ],
+ "summary": {
+  "one_liner": "HomeBox is a self-hostable inventory and organization system for home users, written in Go with SQLite and an embedded web UI.",
+  "what_it_does": "HomeBox lets you catalog household items and organize them into categories, locations, and tags, with support for custom fields on each item. It includes a search feature for finding items, image upload for identifying them, and document and warranty tracking. It also tracks purchase dates, prices, and maintenance schedules. The web UI is described as responsive for desktops, tablets, and phones. The README says it uses SQLite and an embedded Web UI so it is easy to deploy and back up. It is distributed as a Docker image, with rootless and hardened variants.",
+  "use_cases": [
+   "home inventory tracking",
+   "cataloging household belongings",
+   "tracking warranties and receipts",
+   "organizing items by location and category",
+   "recording purchase prices and maintenance schedules"
+  ],
+  "how_to_run": [
+   "openssl rand -base64 48 > hbox.pepper",
+   "chmod 400 hbox.pepper",
+   "mkdir -p /path/to/data/folder && chown 65532:65532 -R /path/to/data/folder (for rootless or hardened image)",
+   "docker run -d --name homebox --restart unless-stopped --publish 3100:7745 --env TZ=Europe/Bucharest --env HBOX_AUTH_API_KEY_PEPPER=$(cat hbox.pepper) --volume /path/to/data/folder/:/data ghcr.io/sysadminsmedia/homebox:latest"
+  ],
+  "stack": [
+   "Go",
+   "SQLite",
+   "Docker"
+  ],
+  "notable": [
+   "Single-container deployment with SQLite and an embedded web UI",
+   "Idle memory usage stated as under 50MB for the whole container",
+   "Rootless and hardened Docker image variants",
+   "Custom fields, categories, locations, and tags for items",
+   "Translations managed through a Weblate instance"
+  ],
+  "caveats": [
+   "Rootless and hardened images require manual data folder permission setup (UID 65532)",
+   "Requires generating and supplying an API key pepper value before first run",
+   "README does not describe platforms beyond Docker in the quick start"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted inventory management",
+  "keywords": [
+   "home inventory",
+   "inventory management",
+   "home inventory system",
+   "self-hosted inventory",
+   "item tracking",
+   "household inventory",
+   "warranty tracking",
+   "document tracking",
+   "asset tracking",
+   "go",
+   "golang",
+   "sqlite",
+   "docker",
+   "docker compose",
+   "web ui",
+   "categories and tags",
+   "custom fields",
+   "image upload",
+   "maintenance tracking",
+   "purchase price tracking",
+   "organize my belongings",
+   "track what i own",
+   "keep track of warranties",
+   "catalog home items",
+   "rootless docker",
+   "hardened docker image",
+   "responsive web app",
+   "agpl license",
+   "homebox",
+   "sysadminsmedia",
+   "stuff organizer",
+   "home organization app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2603,
+  "output": 1121
+ },
+ "generated": "2026-10-29"
+}

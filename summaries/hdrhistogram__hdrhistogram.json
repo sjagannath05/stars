@@ -1,0 +1,89 @@
+{
+ "id": "hdrhistogram/hdrhistogram",
+ "repo": "HdrHistogram/HdrHistogram",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Measuring the tail",
+   "entry": "HdrHistogram - Keeps the whole distribution at fixed relative precision in constant time, so the far percentiles and max survive."
+  }
+ ],
+ "summary": {
+  "one_liner": "HdrHistogram is a Java library for recording integer value distributions at configurable precision over a wide range, with fixed memory and constant-time recording, so percentiles and max can be analyzed later.",
+  "what_it_does": "The repository contains the Java implementation of HdrHistogram, and the README says C, C#/.NET, Python, JavaScript, Rust, Erlang, and Go ports live in other repositories. You configure a histogram with a highest trackable value and a number of significant value digits, which sets its dynamic range and resolution. Recording a value computes its storage index directly, with no searching or iteration, and memory stays fixed regardless of sample count. After recording, you can iterate by percentiles, linear or logarithmic buckets, recorded values, or all values, and compute mean and standard deviation. The README also covers corrected recording via recordValueWithExpectedInterval for coordinated-omission-style latency measurement, plus variants for concurrent use (AtomicHistogram, SynchronizedHistogram, ConcurrentHistogram, and Recorder/SingleWriterRecorder).",
+  "use_cases": [
+   "recording response time distributions in latency-sensitive code",
+   "computing tail percentiles of measured values",
+   "comparing latency distributions after a benchmark run",
+   "aggregating per-thread histograms into a summary",
+   "tracking many small histograms with low memory use",
+   "correcting latency samples for requests that exceeded the expected interval"
+  ],
+  "how_to_run": [
+   "Java implementation is in this repository; the README does not give install or build commands",
+   "Create a Histogram with a highestTrackableValue and numberOfSignificantValueDigits",
+   "Record values with recordValue or recordValueWithExpectedInterval",
+   "Read percentiles via getHistogramData().percentiles(ticksPerHalfDistance)"
+  ],
+  "stack": [
+   "Java",
+   "HdrHistogram Histogram, IntHistogram, ShortHistogram, AtomicHistogram, SynchronizedHistogram, ConcurrentHistogram, Recorder, SingleWriterRecorder"
+  ],
+  "notable": [
+   "Fixed memory footprint and constant-time recording that does not depend on sample count",
+   "Configurable precision in significant digits, e.g. 3 digits over 1 usec to 1 hour uses about 185KB per the README",
+   "Corrected recording via recordValueWithExpectedInterval for response time measurement",
+   "Multiple iteration modes: percentiles, linear, logarithmic, recorded, and all values",
+   "Wait-free Recorder variants for continuous recording while sampling"
+  ],
+  "caveats": [
+   "The README says only the Java implementation is in this repository; other language ports are in separate repositories",
+   "Plain Histogram and IntHistogram/ShortHistogram are not thread-safe and need external synchronization or the concurrent variants",
+   "The README excerpt is a JavaDoc copy, and it notes that iteration and synchronization details may vary by implementation"
+  ],
+  "license": "unknown",
+  "category": "latency histogram library",
+  "keywords": [
+   "hdrhistogram",
+   "high dynamic range histogram",
+   "java histogram",
+   "latency percentiles",
+   "tail latency",
+   "p99 percentile",
+   "response time distribution",
+   "histogram recording",
+   "fixed precision histogram",
+   "significant digits",
+   "coordinated omission",
+   "recordvaluewithexpectedinterval",
+   "percentile iteration",
+   "concurrent histogram",
+   "atomic histogram",
+   "wait-free recorder",
+   "histogram aggregation",
+   "per-thread histogram",
+   "measure request latency",
+   "summarize latency distribution",
+   "max latency",
+   "performance measurement java",
+   "benchmark latency analysis",
+   "memory footprint histogram",
+   "linear bucket histogram",
+   "logarithmic bucket histogram",
+   "mean and standard deviation",
+   "histogram percentiles java",
+   "track value counts",
+   "latency tracking library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6279,
+  "output": 1423
+ },
+ "generated": "2026-10-29"
+}

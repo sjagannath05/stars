@@ -1,0 +1,96 @@
+{
+ "id": "enterpilot/gomodel",
+ "repo": "ENTERPILOT/GoModel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Generative Artificial Intelligence (GenAI)",
+   "entry": "GoModel - AI gateway written in Go with a unified OpenAI-compatible API for multiple LLM providers, USD cost tracking, budgets, usage analytics, guardrails, caching, and an admin dashboard. (Source Code) MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "GoModel is a self-hostable AI gateway written in Go that exposes a unified OpenAI-compatible (and Anthropic-compatible) API in front of many LLM providers, with cost tracking, budgets, caching, guardrails and an admin dashboard.",
+  "what_it_does": "GoModel accepts requests in OpenAI-compatible format at /v1 and Anthropic-compatible format at /v1/messages, so official SDKs can work by changing their base URL. It routes requests to a long list of providers (including OpenAI, Anthropic, Gemini, Ollama, vLLM, Azure OpenAI, Bedrock and others) and can alias or load-balance them behind stable virtual model names. It estimates per-request USD cost, tracks usage, enforces spend budgets and rate limits per user, team, or key, and caches exact and semantic responses. It also offers failover with retries and circuit breakers, Prometheus and OpenTelemetry observability, an MCP gateway, guardrails, plugins, and a web dashboard with a playground. Configuration is via .env, config.yaml, or the dashboard.",
+  "use_cases": [
+   "Run one OpenAI-style endpoint for many LLM providers",
+   "Track and cap LLM spending per user, team, or API key",
+   "Cache repeated LLM prompts to reduce API costs",
+   "Failover between LLM providers when one is down",
+   "Front self-hosted models like Ollama or vLLM with the same API",
+   "Enforce guardrails and audit logs on AI requests"
+  ],
+  "how_to_run": [
+   "docker run --rm -p 8080:8080 -v gomodel_data:/app/data enterpilot/gomodel",
+   "curl -fsSL | sh  (macOS / Linux installer; the URL is missing from the README text)",
+   "gomodel",
+   "irm | iex  (Windows PowerShell installer; the URL is missing from the README text)",
+   "cp .env.template .env && docker compose up -d  (infrastructure only: Redis, PostgreSQL, MongoDB, Adminer)",
+   "docker compose --profile app up -d  (full stack including GoModel and Prometheus)"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "PostgreSQL",
+   "Redis",
+   "MongoDB",
+   "Prometheus",
+   "OpenTelemetry"
+  ],
+  "notable": [
+   "Unified OpenAI-compatible and Anthropic-compatible endpoints, so official SDKs work unchanged",
+   "Virtual models with round-robin or cost-based load balancing behind stable names",
+   "Per-request USD cost tracking with hard budgets per user, team, or key",
+   "Plugin contract for guardrails, stream filters, header edits, and routing strategies, including loading .so files at startup",
+   "Usage API lets clients check their own usage and remaining budget with their inference key"
+  ],
+  "caveats": [
+   "Some features (prompt compression, intelligent routing, OIDC single sign-on) are only in the commercial GoModel Pro build",
+   "Roadmap and feature completeness for the upcoming 0.2.0 release are not detailed in the README",
+   "Full setup of supporting services (Redis, PostgreSQL, MongoDB) is needed for the complete stack; the README does not describe the minimum requirements"
+  ],
+  "license": "MIT",
+  "category": "ai gateway proxy",
+  "keywords": [
+   "ai gateway",
+   "llm gateway",
+   "llm proxy",
+   "openai-compatible api",
+   "anthropic-compatible api",
+   "multi-provider llm",
+   "llm cost tracking",
+   "llm budgets",
+   "usage analytics",
+   "llm guardrails",
+   "response caching",
+   "semantic cache",
+   "failover",
+   "load balancing llm",
+   "virtual models",
+   "rate limits llm",
+   "mcp gateway",
+   "prometheus metrics",
+   "opentelemetry",
+   "admin dashboard",
+   "self-hosted llm gateway",
+   "golang",
+   "docker",
+   "litellm alternative",
+   "portkey alternative",
+   "route requests to many llm providers",
+   "track spending on openai api",
+   "cap ai api spending per team",
+   "run ollama behind one api",
+   "self-hosted ai proxy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3944,
+  "output": 1500
+ },
+ "generated": "2026-10-29"
+}

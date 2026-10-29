@@ -1,0 +1,95 @@
+{
+ "id": "sawyerhood/dev-browser",
+ "repo": "SawyerHood/dev-browser",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "Dev Browser by Sawyer Hood - A browser-automation plugin/skill that lets Claude Code drive a browser to test and verify its own work — full Playwright API plus pixel- and DOM-level computer-use toolsets, connecting to your running Chrome or a fresh Chromium. Notably secure and fast: scripts execute inside a QuickJS WASM sandbox with no host filesystem or network access, and a published benchmark s"
+  }
+ ],
+ "summary": {
+  "one_liner": "dev-browser is a CLI, daemon, and Claude Code plugin that lets coding agents drive Chrome with short JavaScript scripts using the Puppeteer Page API, keeping the browser open between calls.",
+  "category": "browser automation cli",
+  "keywords": [
+   "browser automation",
+   "claude code",
+   "coding agent browser",
+   "puppeteer",
+   "chrome control",
+   "headless chrome",
+   "persistent browser session",
+   "accessibility tree snapshot",
+   "page snapshot",
+   "element refs",
+   "cdp",
+   "chrome devtools protocol",
+   "attach to running chrome",
+   "connect existing browser",
+   "mcp server",
+   "browser testing for agents",
+   "verify web ui changes",
+   "named tabs",
+   "javascript scripts for browser",
+   "bun",
+   "node cli",
+   "headless browser cli",
+   "screenshot cli",
+   "agent browser tool",
+   "web app verification",
+   "remote browser endpoint",
+   "chromium automation",
+   "playwright alternative",
+   "run browser script from terminal"
+  ],
+  "what_it_does": "The tool runs short JavaScript scripts against Chrome through a warm background daemon, so the browser and named pages persist across calls. Scripts get a browser object for listing, creating, and closing named or anonymous pages, plus Puppeteer Page objects. Pages gain extras: an accessibility-tree snapshot with stable element refs (such as e12) usable in Puppeteer selectors, a JPEG screenshot helper, and a waitForLoad helper and fill helper. It can launch an isolated Chrome profile or connect to an already-running browser via port, HTTP URL, WebSocket URL, or CDP socket. It also exposes an MCP server with run, pages, browsers, stop, and help tools. The README also covers a saveFile/readFile helper limited to a tmp directory and a benchmark script.",
+  "use_cases": [
+   "let Claude Code verify its own web UI changes in a real browser",
+   "navigate a page once and inspect it across multiple agent steps",
+   "attach to a Chrome window I already have open",
+   "take screenshots of a running web app",
+   "run scripted browser checks from the terminal",
+   "give an AI agent a persistent browser through MCP"
+  ],
+  "how_to_run": [
+   "npm install -g dev-browser",
+   "dev-browser install",
+   "dev-browser --headless",
+   "claude mcp add dev-browser -- dev-browser mcp --headless",
+   "dev-browser chrome --profile work",
+   "dev-browser --connect -e 'await browser.listPages()'"
+  ],
+  "stack": [
+   "TypeScript",
+   "Bun",
+   "Puppeteer",
+   "Chrome/Chromium",
+   "Node.js (optional for installation)",
+   "node:vm"
+  ],
+  "notable": [
+   "Scripts run in a fresh node:vm context per command with a warm daemon, giving ~13 ms empty-script latency per the README benchmarks",
+   "Accessibility-tree snapshots with stable element refs that work directly in Puppeteer selector calls",
+   "Can attach to a user's running Chrome or a remote CDP endpoint without closing it on idle timeout",
+   "Ships as a single release binary that bundles Bun and Puppeteer",
+   "Upgrading to 1.0 replaces the earlier Playwright/QuickJS implementation, with a migration command from doobie state"
+  ],
+  "caveats": [
+   "Windows and musl Linux are not supported; macOS and glibc Linux only",
+   "node:vm is explicitly stated not to be a security sandbox, and the README recommends permission allowlisting only where scripts are trusted",
+   "Snap-packaged Chromium on Ubuntu cannot read the default data directory; workaround is dev-browser install or DEV_BROWSER_CHROME",
+   "Computer-use helpers under page.cua and page.domCua are not part of 1.0; scripts from 0.2 need API changes"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3901,
+  "output": 1406
+ },
+ "generated": "2026-10-29"
+}

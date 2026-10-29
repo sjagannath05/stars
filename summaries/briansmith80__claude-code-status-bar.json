@@ -1,0 +1,91 @@
+{
+ "id": "briansmith80/claude-code-status-bar",
+ "repo": "briansmith80/claude-code-status-bar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "claude-code-status-bar by briansmith80 - Configurable status bar for Claude Code: usage limits with pacing markers, context window, git state, live activity, session cost, and 8 colour themes. Pure bash, zero dependencies."
+  }
+ ],
+ "summary": {
+  "one_liner": "A configurable Claude Code status bar, written in pure bash, that shows usage limits with pacing markers, context window fill, git state, live tool activity, and session cost.",
+  "what_it_does": "The script reads the JSON Claude Code pipes to it and prints one to three lines under each response. Line one can show the directory, git branch and dirty/ahead/behind counts, model, context bar, 5-hour and weekly usage bars, duration, and session cost. The usage bars include a pacing marker showing where usage should be for even consumption, and a burn-rate forecast warning when a limit is likely to be hit before reset. Context bar marks the point where Claude Code auto-compacts and warns before it. An optional Node.js helper parses the transcript to show running tools, tool counts, subagents, and todo progress on a second line, and another optional helper restyles subagent panel rows. Usage data comes from stdin, with a background OAuth API fallback for older Claude Code versions. Eight colour themes and many per-segment toggles are configurable through statusline.conf, and the script includes self-update and uninstall commands.",
+  "use_cases": [
+   "monitor Claude Code rate limit usage while working",
+   "see context window fill before auto-compact happens",
+   "show git branch and changes in the Claude Code prompt area",
+   "track session cost and burn rate",
+   "watch live tool and subagent activity in Claude Code",
+   "customise a terminal status line colour theme"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash  (macOS / Linux / Git Bash; URL truncated in the README)",
+   "irm | iex  (Windows PowerShell)",
+   "/plugin marketplace add briansmith80/claude-code-status-bar",
+   "/plugin install claude-code-status-bar",
+   "/claude-code-status-bar:setup",
+   "bash ~/.claude/statusline-command.sh --demo"
+  ],
+  "stack": [
+   "bash",
+   "curl",
+   "Node.js (optional, for activity line and subagent renderer)",
+   "BATS (test suite)",
+   "ShellCheck (linting)",
+   "GitHub Actions (CI)"
+  ],
+  "notable": [
+   "Pacing marker on usage bars shows whether usage is ahead or behind an even burn rate",
+   "Context bar is aware of Claude Code's auto-compact threshold and warns before it",
+   "Pure bash with no jq and no compiled binaries; Node.js is optional",
+   "Background subshells and cached data so the bar never blocks on network calls",
+   "SHA256SUMS-verified installs and self-updates"
+  ],
+  "caveats": [
+   "Live activity line and subagent renderer need Node.js; without it those segments are off",
+   "On Windows the script runs through Git for Windows (Git Bash) and needs a refreshInterval of 2 or higher",
+   "OAuth usage fallback requires a token with the user:profile scope; tokens from claude setup-token do not work"
+  ],
+  "license": "MIT",
+  "category": "claude code tooling",
+  "keywords": [
+   "claude code",
+   "status line",
+   "statusline",
+   "status bar",
+   "terminal prompt",
+   "rate limit monitor",
+   "usage limits",
+   "quota tracking",
+   "pacing marker",
+   "context window",
+   "auto-compact",
+   "git status",
+   "session cost",
+   "burn rate",
+   "live activity",
+   "subagent status",
+   "colour themes",
+   "bash script",
+   "shell prompt",
+   "statusline settings.json",
+   "show claude usage",
+   "see how much claude quota is left",
+   "track claude code spending",
+   "git branch in terminal prompt",
+   "windows git bash",
+   "awesome claude code"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17108,
+  "output": 1295
+ },
+ "generated": "2026-10-29"
+}

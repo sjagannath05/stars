@@ -1,0 +1,89 @@
+{
+ "id": "bloomberg/memray",
+ "repo": "bloomberg/memray",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "memray - Tracks memory allocations in Python code, native extensions, and the interpreter itself."
+  }
+ ],
+ "summary": {
+  "one_liner": "Memray is a memory profiler for Python that tracks allocations in Python code, native C/C++ extensions, and the interpreter itself, with several report formats.",
+  "what_it_does": "Memray records memory allocations while a Python program runs, tracing every function call to build accurate call stacks rather than sampling. Its native mode also captures calls into C/C++ libraries so the full stack appears in results. The `memray run` command produces a binary results file, which reporter subcommands convert into outputs such as HTML flame graphs, HTML tables, terminal trees, summaries, and stats. A live mode shows allocations in a terminal interface while the script runs, with sorting by total, own, or allocation count, and per-thread views. It works with Python threads and native threads, and it can also be used as a library through a Tracker context manager or attached to an already-running process.",
+  "use_cases": [
+   "Find the cause of high memory usage in a Python application",
+   "Detect memory leaks",
+   "Locate code hotspots that cause many allocations",
+   "Profile memory use of C extensions such as numpy or pandas",
+   "Add memory limits to pytest tests",
+   "Monitor a long-running script's memory live in the terminal"
+  ],
+  "how_to_run": [
+   "python3 -m pip install memray",
+   "python3 -m memray run my_script.py",
+   "python3 -m memray run --native my_script.py",
+   "python3 -m memray flamegraph memray-my_script.py.2369.bin",
+   "python3 -m memray run --live my_script.py"
+  ],
+  "stack": [
+   "Python 3.9+",
+   "C extension",
+   "lz4",
+   "libunwind (Linux, source build)",
+   "libdebuginfod (Linux, source build)",
+   "pytest-memray plugin"
+  ],
+  "notable": [
+   "Traces every function call for accurate call stacks, unlike sampling profilers",
+   "Native mode captures C/C++ frames alongside Python frames",
+   "Live terminal interface with sorting and per-thread views",
+   "Works with both Python threads and native threads",
+   "Can be used as a library via memray.Tracker or attached to a running process"
+  ],
+  "caveats": [
+   "Works only on Linux and macOS; cannot be installed on other platforms",
+   "Building from source requires system libraries such as libdebuginfod, libunwind and lz4"
+  ],
+  "license": "Apache-2.0",
+  "category": "python memory profiling",
+  "keywords": [
+   "memory profiler",
+   "python memory profiler",
+   "memory leak detection",
+   "find memory leaks",
+   "allocation tracking",
+   "heap profiling",
+   "flame graph",
+   "flamegraph report",
+   "native extension profiling",
+   "c extension memory",
+   "live memory monitor",
+   "terminal memory viewer",
+   "pytest memory limit",
+   "memory hotspots",
+   "high memory usage",
+   "track allocations",
+   "debugging tool",
+   "cli profiler",
+   "tracemalloc alternative",
+   "memory usage report",
+   "profile numpy memory",
+   "profile pandas memory",
+   "thread memory profiling",
+   "attach to running process",
+   "html memory report",
+   "memray"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6079,
+  "output": 1078
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,94 @@
+{
+ "id": "vintasoftware/django-ai-plugins",
+ "repo": "vintasoftware/django-ai-plugins",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "django-ai-plugins - Django backend agent skills for Django, DRF, Celery, and Django-specific code review."
+  }
+ ],
+ "summary": {
+  "one_liner": "A set of portable Django backend skills (Agent Skills format) for Claude Code, Codex, Cursor, OpenCode, and other tools that support the Agent Skills specification.",
+  "what_it_does": "The repository holds one canonical authoring tree of Agent Skills under skills/, with host manifests and package-local copies generated from plugins/catalog.json. It ships five capabilities: django-expert (Django backend, ORM, DRF, security, testing, performance), django-celery-expert (Celery task design, retries, scheduling, operations), cdrf-expert (DRF class selection, lifecycle tracing, MRO, safe overrides), django-safe-migration (PostgreSQL-aware, zero-downtime migration guidance), and django-reviewer (report-first Django and Python review of recent or selected changes). It includes generation, validation, and isolated smoke-test scripts for each target host. The README says the skills can complement the django-ai-boost MCP server but do not require it.",
+  "use_cases": [
+   "Give a coding agent Django and DRF expertise",
+   "Design reliable Celery tasks with retries and scheduling",
+   "Plan zero-downtime PostgreSQL Django migrations",
+   "Trace DRF view lifecycle and choose generic class-based views",
+   "Review recent Django or Python changes with a report",
+   "Install Django skills into Claude Code, Codex, or Cursor"
+  ],
+  "how_to_run": [
+   "python scripts/generate_adapters.py --check",
+   "python scripts/validate_plugins.py",
+   "python -m unittest discover -s tests -p 'test_*.py'",
+   "python scripts/smoke_plugins.py --target cursor"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "Django REST Framework",
+   "Celery",
+   "PostgreSQL",
+   "Agent Skills specification"
+  ],
+  "notable": [
+   "Single canonical skills tree generates host-specific marketplaces and plugin packages for Claude, Codex, Cursor, and OpenCode",
+   "Five distinct skills covering Django core, Celery, DRF internals, safe migrations, and code review",
+   "Smoke runner installs into a temporary location so host setups are not modified",
+   "Migration guidance is PostgreSQL-aware and focused on zero-downtime changes"
+  ],
+  "caveats": [
+   "Compatibility validation level differs per host adapter; the README points to a matrix for details",
+   "Package manifests and package-local skills are generated outputs and should not be edited by hand",
+   "Contributors are directed to AGENTS.md before changing catalog or skill content"
+  ],
+  "license": "MIT",
+  "category": "agent skills for django",
+  "keywords": [
+   "django",
+   "django skills",
+   "agent skills",
+   "claude code",
+   "codex",
+   "cursor",
+   "opencode",
+   "ai coding assistant",
+   "django rest framework",
+   "drf",
+   "celery",
+   "celery tasks",
+   "django migrations",
+   "postgresql migrations",
+   "zero-downtime migration",
+   "django orm",
+   "django security",
+   "django testing",
+   "django code review",
+   "python code review",
+   "mro",
+   "class-based views",
+   "plugin marketplace",
+   "generated adapters",
+   "smoke test",
+   "llm guidance",
+   "coding agent",
+   "share django expertise with my agent",
+   "review my django changes",
+   "safe database migrations",
+   "django-ai-boost",
+   "mcp server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2150,
+  "output": 1220
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,108 @@
+{
+ "id": "phare/sloggo",
+ "repo": "phare/sloggo",
+ "kind": "star",
+ "description": " Minimal RFC 5424 syslog collector and viewer based on DuckDB. Runs as a single, resource-friendly process. ",
+ "topics": [
+  "docker",
+  "log",
+  "logging",
+  "logging-server",
+  "logs",
+  "syslog"
+ ],
+ "language": "TypeScript",
+ "stars": 463,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "cicd",
+  "dev tools",
+  "dkr k8s cloud",
+  "my company"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Sloggo is a minimal syslog collector and web viewer that ingests RFC 5424 logs over TCP and UDP and stores them in DuckDB.",
+  "what_it_does": "Sloggo listens for syslog messages over TCP and UDP using the RFC 5424 protocol and stores them in DuckDB. It provides a web UI for searching, filtering, and tailing logs. Configuration is done through environment variables, and it runs as a single process. The README says it can parse RFC 3164 messages too, via the SLOGGO_LOG_FORMAT setting with its auto mode. Old logs are removed after a configurable retention period, which defaults to 30 days. The README also describes a health check endpoint and a backend test target run with make test.",
+  "use_cases": [
+   "collect syslog from small network devices or servers",
+   "view and search real-time logs in a browser",
+   "lightweight log aggregation for a home lab or small team",
+   "receive test logs for development",
+   "replace a heavy ELK stack for small log volumes"
+  ],
+  "how_to_run": [
+   "docker run --name sloggo -p 5514:5514/udp -p 6514:6514 -p 8080:8080 -e SLOGGO_LISTENERS=tcp,udp -e SLOGGO_UDP_PORT=5514 -e SLOGGO_TCP_PORT=6514 -e SLOGGO_API_PORT=8080 -v ./data:/app/.duckdb ghcr.io/phare/sloggo:latest",
+   "echo \" 1 2025-08-04T12:00:00Z myhost sloggo - - - Hello, Sloggo\" | nc localhost 6514",
+   "make test (runs backend tests)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Go",
+   "DuckDB",
+   "Docker",
+   "go-syslog",
+   "data-table-filters"
+  ],
+  "notable": [
+   "Single process with minimal resource usage and configuration through environment variables",
+   "Ingests RFC 5424 syslog over both TCP and UDP",
+   "Auto mode falls back from RFC 5424 to RFC 3164 parsing",
+   "Uses DuckDB for storage, with configurable log retention",
+   "Packaged as a container image under 10 MiB compressed"
+  ],
+  "caveats": [
+   "Alpha release; the README says not to use it for anything serious",
+   "No security layer by default; intended for private networks or behind a secure reverse proxy",
+   "Not a high availability solution and not meant for long-term storage or critical data"
+  ],
+  "license": "MIT",
+  "category": "syslog log collection",
+  "keywords": [
+   "syslog",
+   "syslog server",
+   "rfc 5424",
+   "rfc 3164",
+   "syslog collector",
+   "log collector",
+   "log viewer",
+   "log aggregation",
+   "duckdb",
+   "log search",
+   "tcp syslog",
+   "udp syslog",
+   "docker log server",
+   "self-hosted logs",
+   "lightweight logging",
+   "minimal log server",
+   "log tailing",
+   "log filtering",
+   "view logs in browser",
+   "collect logs from network devices",
+   "centralized logs small setup",
+   "alternative to elk",
+   "alternative to loki",
+   "logging server",
+   "log retention",
+   "go-syslog",
+   "typescript log viewer",
+   "podman",
+   "single binary logs",
+   "send logs over netcat",
+   "home lab logging"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2834,
+  "output": 1213
+ },
+ "generated": "2026-10-29"
+}

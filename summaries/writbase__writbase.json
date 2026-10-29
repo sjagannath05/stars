@@ -1,0 +1,96 @@
+{
+ "id": "writbase/writbase",
+ "repo": "Writbase/writbase",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🆕 Additional AI and Productivity Tools",
+   "entry": "WritBase - AI Agent Task Management"
+  }
+ ],
+ "summary": {
+  "one_liner": "WritBase is an MCP-native task management control plane for AI agent fleets, storing shared persistent tasks in Postgres (Supabase) with scoped permissions, delegation, and audit provenance.",
+  "what_it_does": "WritBase provides a persistent, shared task registry that AI agents and human supervisors can read and write through the Model Context Protocol. Agents authenticate with per-agent SHA-256 keys that carry scoped permissions (can_read, can_create, can_update, can_assign, can_comment, can_archive) granted per project and department pair. Worker agents can list tasks with filtering, pagination and full-text search, create tasks, and update them using version-based optimistic concurrency. Manager agents can additionally manage keys, permissions, projects and departments, query an append-only audit log, register webhooks, and discover agents by capability. The README also describes inter-agent delegation with depth limits and cycle detection, per-key rate limiting, and request logging. It is deployed as a Supabase Edge Function (Hono plus MCP SDK) with an optional Next.js dashboard.",
+  "use_cases": [
+   "share task state across multiple AI coding agents",
+   "let CI bots create tasks on build failure",
+   "give each agent scoped read or write access to a project",
+   "audit who changed a task and why",
+   "delegate tasks between AI agents",
+   "track agent work from Claude Code, Cursor, or VS Code"
+  ],
+  "how_to_run": [
+   "npx writbase init",
+   "npx writbase migrate",
+   "npx writbase key create",
+   "npx supabase functions deploy mcp-server --no-verify-jwt",
+   "claude mcp add writbase --transport http --url https://<project-ref>.supabase.co/functions/v1/mcp-server/mcp --header \"Authorization: Bearer wb_...\""
+  ],
+  "stack": [
+   "TypeScript",
+   "Supabase (Postgres, Edge Functions on Deno)",
+   "Hono",
+   "Model Context Protocol SDK",
+   "Next.js 16",
+   "Tailwind CSS"
+  ],
+  "notable": [
+   "Scoped per-agent keys with six permission types granted per project and department",
+   "Append-only provenance log recording who changed what, when and why",
+   "Dynamic MCP tool schema that adapts to each agent's role and permissions",
+   "Optimistic concurrency via version numbers to prevent silent overwrites",
+   "Works with Claude Code, Cursor, VS Code, Windsurf and Claude Desktop over Streamable HTTP"
+  ],
+  "caveats": [
+   "Requires a Supabase project and Supabase CLI; Node 18+ prerequisite",
+   "Self-hosted Supabase requires Docker Compose with 5 containers",
+   "Free tier limits stated as 500MB database and 50K MAUs on Supabase Cloud"
+  ],
+  "license": "Apache 2.0",
+  "category": "ai agent task management",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "ai agent task management",
+   "agent task registry",
+   "task tracker for ai agents",
+   "multi-agent coordination",
+   "agent fleet control plane",
+   "supabase",
+   "postgres task database",
+   "edge functions",
+   "claude code mcp",
+   "cursor mcp",
+   "vs code copilot mcp",
+   "windsurf mcp",
+   "agent permissions",
+   "scoped api keys",
+   "audit log",
+   "provenance tracking",
+   "inter-agent delegation",
+   "optimistic concurrency",
+   "webhooks task events",
+   "kanban alternative for agents",
+   "jira-like tasks for bots",
+   "share tasks between agents",
+   "keep ai agents on one task list",
+   "track what each agent did",
+   "ci bot creates tasks",
+   "self-hosted task management",
+   "apache 2.0 license",
+   "hono",
+   "nextjs dashboard",
+   "typescript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4335,
+  "output": 1374
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "microsoft/t-mac",
+ "repo": "microsoft/T-MAC",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Kernel paths and generated code",
+   "entry": "T-MAC - Table-lookup kernels for low-bit weights, with a baseline stated but no frequency, compiler or flags, pending those."
+  }
+ ],
+ "summary": {
+  "one_liner": "T-MAC is a kernel library that runs low-bit (int1/2/3/4) mixed-precision matrix multiplication on CPUs using table lookups instead of dequantization, aimed at faster LLM inference on edge devices.",
+  "what_it_does": "The library computes mixed-precision matmul (int1/2/3/4 weights times int8/fp16/fp32 activations) by precomputing partial sums into lookup tables, using tbl/pshuf instructions on CPUs. It is integrated into a llama.cpp fork for end-to-end inference and supports BitNet (W1.58A8), GPTQ/gguf 4-bit models, and EfficientQAT/BitDistiller 2-bit models. A pipeline script (tools/run_pipeline.py) handles kernel compilation, HF/GPTQ-to-GGUF conversion, and building llama.cpp. The README reports token generation and prefill speedups versus llama.cpp baselines on several devices (Surface Laptop 7, Apple M2-Ultra, Jetson AGX Orin, Raspberry Pi 5), along with power and energy comparisons against an NPU and a CUDA GPU. The README does not state the frequency, compiler, or flags used for the baseline measurements.",
+  "use_cases": [
+   "run low-bit quantized LLMs on a CPU",
+   "speed up BitNet b1.58 inference on edge devices",
+   "run GPTQ 2-bit or 4-bit models without a GPU",
+   "reduce CPU core count and power for local LLM inference",
+   "benchmark low-bit mpGEMM kernels against llama.cpp"
+  ],
+  "how_to_run": [
+   "pip install 3rdparty/llama.cpp/gguf-py",
+   "huggingface-cli download 1bitLLM/bitnet_b1_58-3B --local-dir ${model_dir}",
+   "python tools/run_pipeline.py -o ${model_dir} -q int_n",
+   "git clone --recursive <repo> && cd T-MAC && pip install -e . -v && source build/t-mac-envs.sh"
+  ],
+  "stack": [
+   "Python 3.8 (required for TVM)",
+   "C++",
+   "CMake >= 3.22",
+   "Apache TVM (built from source)",
+   "LLVM/clang 17",
+   "llama.cpp (integrated fork)",
+   "conda and Visual Studio on Windows"
+  ],
+  "notable": [
+   "Table-lookup mpGEMM replaces dequantize-then-multiply, with throughput scaling roughly linearly as bit-width drops",
+   "Supports int1/2/3/4 weights with fp16, fp32, or int8 activations",
+   "Integrated into llama.cpp for end-to-end inference, including prefill via GEMM kernels",
+   "Reports matching llama.cpp throughput with fewer CPU cores (e.g., 2 cores vs 8 on Surface Laptop 7)",
+   "Supports GPTQ-format models and a BitNet W1.58A8 path"
+  ],
+  "caveats": [
+   "The README warns that x86 platforms, especially older generations, may not see speedups, and recommends Surface Book 3 or ARM devices.",
+   "Building requires compiling TVM and LLVM from source, which the README says may take a while; Windows needs a multi-step Visual Studio and Clang setup.",
+   "Baseline frequency, compiler, and flags for the performance comparisons are not stated; the README notes llama.cpp results vary with the power mode."
+  ],
+  "license": "unknown",
+  "category": "cpu low-bit llm kernels",
+  "keywords": [
+   "table lookup kernels",
+   "lut mpgemm",
+   "low-bit quantization",
+   "int2 int4 matmul",
+   "bitnet inference",
+   "bitnet b1.58",
+   "gptq cpu inference",
+   "llama.cpp backend",
+   "llama.cpp speedup",
+   "edge llm inference",
+   "arm cpu llm",
+   "raspberry pi llm",
+   "quantized llm on cpu",
+   "run llm without gpu",
+   "tvm kernels",
+   "pshuf tbl instructions",
+   "dequantization alternative",
+   "efficientqat",
+   "bitdistiller",
+   "gguf models",
+   "fast cpu llm token generation",
+   "prefill speedup",
+   "energy efficient llm inference",
+   "low power llm on laptop",
+   "mixed precision gemm",
+   "run big model on laptop cpu",
+   "eurosys paper lut",
+   "w2a16 model"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9457,
+  "output": 1594
+ },
+ "generated": "2026-10-29"
+}

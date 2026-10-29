@@ -1,0 +1,98 @@
+{
+ "id": "reg2005/langswitcher",
+ "repo": "reg2005/langSwitcher",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Input Methods",
+   "entry": "LangSwitcher - Keyboard layout converter for mistyped text. [![Open-Source Software][OSS Icon]](https://github.com/reg2005/langSwitcher) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⌨️ Keyboard (15)",
+   "entry": "LangSwitcher - Open-source keyboard layout text converter for macOS."
+  }
+ ],
+ "summary": {
+  "one_liner": "LangSwitcher is an open-source macOS menu bar app that converts text typed in the wrong keyboard layout (e.g. \"ghbdtn\" to \"привет\") by remapping keys by physical position.",
+  "what_it_does": "Converts selected text between keyboard layouts on macOS, using a hotkey (double Shift or a custom shortcut). A Smart Conversion mode can work without manual selection: Greedy Line converts the whole wrong-layout phrase back to line start, Last Word converts only the last word, and Disabled requires explicit selection. It detects the source layout automatically from the system's installed input sources. Supported layouts are English (US/ABC), Russian, German, French and Spanish. Replacement works by simulating Cmd+C, transforming the text, and pasting with Cmd+V. An optional conversion log can be stored in a local SQLite database (off by default), where entries can be labeled correct/incorrect and exported as JSON.",
+  "use_cases": [
+   "fix text typed in the wrong keyboard layout",
+   "convert ghbdtn-style gibberish to Russian",
+   "switch mistyped English and Cyrillic text on Mac",
+   "replace Punto Switcher or Caramba Switcher on macOS",
+   "collect labeled layout-conversion data for ML training"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd langSwitcher",
+   "xcodebuild test -project LangSwitcher.xcodeproj -scheme LangSwitcher -destination 'platform=macOS' CODE_SIGN_IDENTITY=\"-\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO",
+   "xcodebuild -project LangSwitcher.xcodeproj -scheme LangSwitcher -configuration Release -derivedDataPath build -arch arm64 -arch x86_64 ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY=\"-\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build",
+   "Or download a DMG from the Releases page, drag LangSwitcher to Applications, and grant Accessibility permission"
+  ],
+  "stack": [
+   "Swift 5",
+   "SwiftUI",
+   "Carbon TISInputSource",
+   "NSEvent global monitor",
+   "CGEvent",
+   "SQLite3 C API",
+   "XCTest",
+   "GitHub Actions",
+   "Docus v4 / Nuxt (docs site)"
+  ],
+  "notable": [
+   "Maps characters by physical key position rather than Unicode translation tables",
+   "Greedy two-pass algorithm for converting mixed-layout lines",
+   "Optional local-only conversion log with labeling and JSON export for ML data",
+   "Zero external dependencies; MIT licensed",
+   "Clipboard-based replacement works in most text fields"
+  ],
+  "caveats": [
+   "Requires macOS 13 (Ventura) or later and Accessibility permission; the app cannot be sandboxed",
+   "Only five layouts are currently supported (English, Russian, German, French, Spanish); new layouts require code changes",
+   "README mentions a donation address list, which is not a feature of the app itself"
+  ],
+  "license": "MIT",
+  "category": "macos keyboard layout tool",
+  "keywords": [
+   "keyboard layout converter",
+   "wrong layout text fix",
+   "mistyped text converter",
+   "macos input source",
+   "punto switcher alternative",
+   "caramba switcher alternative",
+   "layout switcher",
+   "swift macos app",
+   "menu bar app",
+   "cyrillic transliteration",
+   "russian keyboard layout",
+   "qwerty to cyrillic",
+   "ghbdtn converter",
+   "double shift hotkey",
+   "text replacement hotkey",
+   "accessibility api",
+   "smart conversion",
+   "sqlite conversion log",
+   "json export",
+   "open source mac utility",
+   "fix text typed in wrong language",
+   "convert english to russian keys",
+   "input method mac",
+   "keyboard remapping",
+   "clipboard text replacement",
+   "xcode swiftui project",
+   "mac typing helper",
+   "layout conversion macos"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7990,
+  "output": 1508
+ },
+ "generated": "2026-10-29"
+}

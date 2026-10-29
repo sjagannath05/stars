@@ -1,0 +1,104 @@
+{
+ "id": "ulab-uiuc/llmrouter",
+ "repo": "ulab-uiuc/LLMRouter",
+ "kind": "star",
+ "description": "LLMRouter: An Open-Source Library for LLM Routing",
+ "topics": [],
+ "language": "Python",
+ "stars": 3040,
+ "license": "MIT",
+ "homepage": "https://ulab-uiuc.github.io/LLMRouter/",
+ "pushed_at": "2026-10-19",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "my company"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "LLMRouter is an open-source Python library and CLI for LLM routing that picks the most suitable model for each query to balance quality, cost, and latency.",
+  "what_it_does": "It provides over 16 router models grouped into single-round, multi-round, multimodal, personalized, and agentic categories, including KNN, SVM, MLP, matrix factorization, Elo rating, graph-based, and BERT-based methods. A unified `llmrouter` CLI supports training routers, running inference (single query, batch file, or route-only), and launching a Gradio chat interface. A data generation pipeline builds routing training data from 11 benchmark datasets by calling LLM APIs and evaluating responses. The README also describes a ComfyUI visual interface, a plugin system for custom routers and tasks, an xRouteBench benchmark pipeline, and an OpenAI-compatible OpenClaw Router server. Installation is via pip (llmrouter-lib) or editable install from source.",
+  "use_cases": [
+   "route queries to the cheapest adequate LLM",
+   "train a KNN, MLP, or SVM model router on benchmark data",
+   "benchmark LLM routing strategies on xRouteBench",
+   "chat with a routed set of LLMs through a Gradio UI",
+   "deploy an OpenAI-compatible routing API server",
+   "route time series or multimodal queries to the right model"
+  ],
+  "how_to_run": [
+   "pip install llmrouter-lib",
+   "git clone <repo> && cd LLMRouter && conda create -n llmrouter python=3.10 && pip install -e .",
+   "export API_KEYS='your-api-key'",
+   "llmrouter train --router knnrouter --config configs/model_config_train/knnrouter.yaml",
+   "llmrouter infer --router knnrouter --config config.yaml --query \"What is machine learning?\"",
+   "llmrouter chat --router knnrouter --config config.yaml"
+  ],
+  "stack": [
+   "Python 3.10",
+   "PyTorch",
+   "Gradio",
+   "vLLM (optional, Router-R1 extra)",
+   "Longformer / Qwen3-Embedding (embeddings)",
+   "ComfyUI (optional visual interface)"
+  ],
+  "notable": [
+   "Covers 16+ routing methods (KNN, SVM, MLP, MF, Elo, GraphRouter, RouterDC, AutoMix, Hybrid LLM, Router-R1) under one unified CLI and config format",
+   "Plugin system auto-discovers custom routers from ./custom_routers/ and ~/.llmrouter/plugins/",
+   "Data generation pipeline covers 11 benchmark datasets, including multimodal tasks on Geometry3K, MathVista, and Charades-Ego",
+   "OpenClaw Router exposes routing as an OpenAI-compatible API server for chat platforms",
+   "Supports local OpenAI-compatible servers such as Ollama and vLLM, and per-service API key dicts"
+  ],
+  "caveats": [
+   "Router-R1 installation requires a GPU and pins vllm==0.6.3 and torch==2.4.0",
+   "Inference, chat, and data generation require API keys for LLM providers unless using route-only mode",
+   "Some routers are marked training N/A (smallest_llm, largest_llm, llmmultiroundrouter), and router_r1 training is listed as LINK rather than a built-in training step"
+  ],
+  "license": "MIT",
+  "category": "llm routing library",
+  "keywords": [
+   "llm routing",
+   "llm router",
+   "model routing",
+   "query routing",
+   "llm inference optimization",
+   "cost-aware routing",
+   "knn router",
+   "svm router",
+   "mlp router",
+   "matrix factorization router",
+   "elo rating router",
+   "graph router",
+   "router-r1",
+   "routellm alternative",
+   "automix",
+   "hybrid llm",
+   "routerdc",
+   "multi-round routing",
+   "personalized llm routing",
+   "agentic router",
+   "gradio chat interface",
+   "llmrouter cli",
+   "pick cheapest model for each query",
+   "choose which llm to use",
+   "send prompts to different models",
+   "openai-compatible routing server",
+   "xroutebench benchmark",
+   "multimodal routing",
+   "time series llm routing",
+   "comfyui llm nodes",
+   "llmrouter-lib pip",
+   "python llm library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15812,
+  "output": 1537
+ },
+ "generated": "2026-10-29"
+}

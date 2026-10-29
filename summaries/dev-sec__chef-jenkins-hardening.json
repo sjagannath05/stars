@@ -1,0 +1,91 @@
+{
+ "id": "dev-sec/chef-jenkins-hardening",
+ "repo": "dev-sec/chef-jenkins-hardening",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hahwul/DevSecOps",
+   "section": "Security of CICD",
+   "entry": "3. DEPRECATED/chef-jenkins-hardening"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Chef cookbook, marked deprecated and no longer supported, meant to set up a default, hardened Jenkins server behind nginx with SSL and user login configuration.",
+  "what_it_does": "The cookbook describes itself as aiming to provide a secure default Jenkins setup. It says it installs Jenkins behind nginx, configures SSL for nginx, configures user logins, and runs Jenkins slaves on different servers. It installs a default plugin list (for example ant, git-client, github, matrix-auth, maven-plugin, rvm, swarm, and windows-slaves), which can be overridden through a node attribute. It has a Windows slaves section, but the README gives no details under it. The README says it is designed to be used with chef-os-hardening and chef-ssh-hardening, though it has no direct dependency on them. Testing uses Bundler, a rake lint task, and Test Kitchen.",
+  "use_cases": [
+   "hardening a Jenkins CI server with Chef",
+   "running Jenkins behind an nginx SSL proxy",
+   "configuring Jenkins user logins automatically",
+   "deploying Jenkins slaves on separate servers",
+   "managing Jenkins plugins through Chef attributes"
+  ],
+  "how_to_run": [
+   "gem install bundler",
+   "bundle install",
+   "bundle exec rake lint",
+   "bundle exec kitchen list",
+   "bundle exec kitchen test default-ubuntu-1204"
+  ],
+  "stack": [
+   "Chef",
+   "Ruby",
+   "Jenkins",
+   "nginx",
+   "Test Kitchen",
+   "Bundler"
+  ],
+  "notable": [
+   "Deprecated and no longer supported, according to the README",
+   "Installs Jenkins behind nginx with SSL configured",
+   "Default plugin list can be overridden via node attributes",
+   "Intended to pair with chef-os-hardening and chef-ssh-hardening",
+   "Part of the Deutsche Telekom dev-sec hardening project family"
+  ],
+  "caveats": [
+   "Deprecated and no longer supported; the README invites contacting the maintainers to discuss support",
+   "The README says it is a work in progress and not yet secure enough for production use",
+   "The Test section names only the ubuntu-1204 Kitchen platform, which is old"
+  ],
+  "license": "Apache License, Version 2.0",
+  "category": "chef jenkins hardening",
+  "keywords": [
+   "jenkins",
+   "jenkins hardening",
+   "chef cookbook",
+   "chef",
+   "ci server security",
+   "continuous integration security",
+   "devsecops",
+   "nginx ssl proxy",
+   "jenkins ssl",
+   "jenkins user login",
+   "jenkins slaves",
+   "jenkins swarm",
+   "jenkins plugins",
+   "windows slaves",
+   "test kitchen",
+   "chef-os-hardening",
+   "chef-ssh-hardening",
+   "deprecated cookbook",
+   "ci hardening",
+   "secure jenkins setup",
+   "automate jenkins with chef",
+   "jenkins behind reverse proxy",
+   "dev-sec",
+   "ruby cookbook",
+   "infrastructure as code security",
+   "secure my build server",
+   "harden build server",
+   "jenkins https setup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2088,
+  "output": 1161
+ },
+ "generated": "2026-10-29"
+}

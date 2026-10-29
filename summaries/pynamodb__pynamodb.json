@@ -1,0 +1,90 @@
+{
+ "id": "pynamodb/pynamodb",
+ "repo": "pynamodb/PynamoDB",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "ORM",
+   "entry": "pynamodb - A Pythonic interface for Amazon DynamoDB."
+  }
+ ],
+ "summary": {
+  "one_liner": "PynamoDB is a Pythonic ORM-style interface for Amazon DynamoDB that lets you define models and query tables with simpler code than the raw DynamoDB API.",
+  "what_it_does": "Lets you define a Python class that maps to a DynamoDB table, with attributes declared as hash keys, range keys, or regular fields. Models can create tables, save and retrieve items, and run query and scan operations with filter conditions such as startswith and equality. Global and local secondary indexes are declared as classes attached to a model and can be queried the same way. Query and scan results are returned as automatically paginated iterators, and bulk operations paginate automatically. The README also shows how to point a model at DynamoDB Local via a host setting and how to enable table streams with a stream_view_type.",
+  "use_cases": [
+   "Store and retrieve application records in DynamoDB from Python",
+   "Define DynamoDB table schemas as Python classes",
+   "Query DynamoDB tables with filter conditions",
+   "Use secondary indexes on DynamoDB tables",
+   "Develop and test against DynamoDB Local",
+   "Enable DynamoDB streams on a table"
+  ],
+  "how_to_run": [
+   "pip install pynamodb",
+   "git clone or install from GitHub: pip install git+https://github.com/pynamodb/PynamoDB.git",
+   "conda install -c conda-forge pynamodb",
+   "Define a Model subclass with a Meta class specifying table_name",
+   "UserModel.create_table(read_capacity_units=1, write_capacity_units=1)",
+   "user = UserModel(\"John\", \"Denver\"); user.save()"
+  ],
+  "stack": [
+   "Python >= 3.7",
+   "Amazon DynamoDB",
+   "DynamoDB Local (optional)"
+  ],
+  "notable": [
+   "Pythonic model classes with typed attributes (Unicode, Binary, JSON, Number, Set, UTC Datetime)",
+   "Query and scan with filter conditions written as Python expressions",
+   "Automatic pagination for queries, scans, and batch operations",
+   "Support for Global and Local Secondary Indexes declared inside the model",
+   "Stream view type configuration built into the model Meta"
+  ],
+  "caveats": [
+   "The README warns that UnicodeSetAttribute behavior changed incompatibly in versions 1.6.0 and 3.0.1, and points to upgrade docs",
+   "Tables must exist before use; create_table is the only table-creation path shown and the README says the table must exist before you can use it",
+   "Requires Python 3.7 or newer"
+  ],
+  "license": "unknown",
+  "category": "dynamodb orm library",
+  "keywords": [
+   "pynamodb",
+   "dynamodb",
+   "amazon dynamodb",
+   "python orm",
+   "python dynamodb client",
+   "dynamodb orm",
+   "nosql python",
+   "aws dynamodb python",
+   "query dynamodb",
+   "dynamodb models",
+   "secondary index dynamodb",
+   "global secondary index",
+   "local secondary index",
+   "dynamodb local",
+   "dynamodb streams",
+   "dynamodb scan",
+   "pagination dynamodb",
+   "batch operations dynamodb",
+   "object mapper aws",
+   "define table schema python",
+   "store records in dynamodb",
+   "nosql database python",
+   "boto alternative",
+   "aws nosql orm",
+   "dynamodb attributes unicode binary json",
+   "pythonic dynamodb interface",
+   "python aws database library",
+   "dynamodb table creation python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3293,
+  "output": 1261
+ },
+ "generated": "2026-10-29"
+}

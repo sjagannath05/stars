@@ -1,0 +1,115 @@
+{
+ "id": "trymirai/uzu",
+ "repo": "trymirai/uzu",
+ "kind": "star",
+ "description": "A high-performance inference engine for AI models",
+ "topics": [
+  "ai",
+  "high-performance",
+  "inference",
+  "llm",
+  "metal",
+  "rust",
+  "tts"
+ ],
+ "language": "Rust",
+ "stars": 3006,
+ "license": "MIT",
+ "homepage": "https://trymirai.com",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Rust inference engine for running AI models locally in apps, with bindings for Swift, Python and TypeScript, aimed mainly at Apple devices via Metal.",
+  "what_it_does": "uzu is a native Rust crate for running AI models on-device, with bindings exposed for Swift (uniffi-rs), Python (pyo3) and TypeScript (napi-rs). The README describes an Engine API that downloads a model, opens a chat session, and returns replies, with streaming replies also supported. It supports chat with a shared loaded model instance, structured output via a JSON schema grammar, and external tool calls. It also includes cloud model usage (an OpenAI API key example is shown). A CLI can browse, download and chat with models, run benchmarks, and serve an OpenAI-compatible HTTP endpoint (/v1/chat/completions and /v1/models). Backends listed are metal, webgpu and cpu. A model format conversion path via the separate lalamo tool is mentioned.",
+  "use_cases": [
+   "run an LLM locally inside a mobile or desktop app",
+   "private on-device chat without inference costs",
+   "structured JSON output from a local model",
+   "tool/function calling with a local model",
+   "serve a local OpenAI-compatible chat API",
+   "benchmark model inference speed",
+   "text-to-speech or model inference on Apple devices"
+  ],
+  "how_to_run": [
+   "Add the Rust crate: uzu = { git = \"...\", branch = \"main\", package = \"uzu\" } (or uv add uzu==0.6.13 for Python, pnpm add @trymirai/uzu@0.6.13 for TypeScript)",
+   "cargo tools setup",
+   "cargo run --release -p cli",
+   "cargo run --release -p cli -- --model trymirai/Qwen3.5-4B-M",
+   "cargo run --release -p cli -- server --model trymirai/Qwen3.5-4B-M"
+  ],
+  "stack": [
+   "Rust",
+   "Metal",
+   "uniffi-rs",
+   "pyo3",
+   "napi-rs",
+   "Swift",
+   "Python",
+   "TypeScript",
+   "uv",
+   "pnpm"
+  ],
+  "notable": [
+   "Single high-level Engine API shared across Rust, Swift, Python and TypeScript",
+   "OpenAI-compatible HTTP server mode from the CLI",
+   "Uses unified memory on Apple devices",
+   "Structured output via JSON schema grammar",
+   "Traceable computations for checking correctness against reference implementations"
+  ],
+  "caveats": [
+   "Several targets (Windows, Linux, WebAssembly) are marked as in progress in the README",
+   "Each model may use a significant amount of RAM; the README recommends keeping one session loaded at a time",
+   "iOS apps are advised to add the Increased Memory Capability entitlement"
+  ],
+  "license": "MIT",
+  "category": "local llm inference",
+  "keywords": [
+   "on-device inference",
+   "local llm",
+   "llm inference engine",
+   "rust inference",
+   "metal inference",
+   "apple silicon ai",
+   "run models offline",
+   "private ai chat",
+   "no api costs ai",
+   "swift llm sdk",
+   "python llm sdk",
+   "typescript llm sdk",
+   "napi-rs",
+   "pyo3",
+   "uniffi",
+   "openai compatible server",
+   "local openai api",
+   "structured output json schema",
+   "tool calling",
+   "function calling local model",
+   "unified memory",
+   "chat session",
+   "model download",
+   "webgpu inference",
+   "cpu inference",
+   "tts inference",
+   "run ai in my app",
+   "self-hosted llm server",
+   "ollama alternative",
+   "llama.cpp alternative",
+   "mlx alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 18035,
+  "output": 1317
+ },
+ "generated": "2026-10-29"
+}

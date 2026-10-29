@@ -1,0 +1,117 @@
+{
+ "id": "akin-ozer/cc-devops-skills",
+ "repo": "akin-ozer/cc-devops-skills",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Infrastructure & DevOps",
+   "entry": "cc-devops-skills by akin-ozer - Immensely detailed set of skills for DevOps Engineers (or anyone who has to deploy code, really). Works with validations, generators, shell scripts and CLI tools to create high quality IaC code for about any platform you've ever struggled painfully to work with. Worth downloading even just as a source of documentation."
+  }
+ ],
+ "summary": {
+  "one_liner": "A pack of 31 Claude Code and Codex skills for DevOps work, pairing generators that scaffold IaC, CI/CD, container, Kubernetes, observability and shell configs with validators that lint and security-check them.",
+  "category": "devops ai skills",
+  "keywords": [
+   "claude code skills",
+   "codex skills",
+   "devops skills",
+   "infrastructure as code",
+   "iac generator",
+   "iac validator",
+   "terraform",
+   "terragrunt",
+   "ansible",
+   "helm",
+   "kubernetes manifests",
+   "kubeconform",
+   "kubectl dry-run",
+   "k8s debugging",
+   "github actions",
+   "gitlab ci",
+   "azure pipelines",
+   "jenkinsfile",
+   "dockerfile",
+   "hadolint",
+   "fluent bit",
+   "loki",
+   "promql",
+   "logql",
+   "makefile",
+   "shellcheck",
+   "bash script generator",
+   "tflint",
+   "checkov",
+   "actionlint",
+   "scaffold config files",
+   "lint my pipeline yaml",
+   "security check infrastructure code",
+   "claude code plugin marketplace"
+  ],
+  "what_it_does": "The repository ships 31 skills: 16 generators that scaffold configs and 14 validators that lint, security-check and dry-run them, plus one debugger (k8s-debug) for cluster troubleshooting. Coverage includes Terraform, Terragrunt, Ansible, GitHub Actions, GitLab CI, Azure Pipelines, Jenkins, Dockerfiles, Helm, Kubernetes YAML, Fluent Bit, Loki, PromQL/LogQL, Bash and Makefiles. The README describes validator pipelines that call real tools such as terraform fmt/validate, tflint, Checkov, helm lint/template, kubeconform, actionlint and act. Many validators run local shell or Python scripts and define fallback behavior when a tool is missing. It also publishes a drop-in GitHub Action wrapper around anthropics/claude-code-action@v1 that injects these skills by default. Installation is via the Claude Code plugin marketplace or a manual Codex plugin link.",
+  "use_cases": [
+   "scaffold a Terraform or Terragrunt module with validation",
+   "lint and security-check GitHub Actions, GitLab CI or Jenkins pipelines",
+   "generate Kubernetes manifests or Helm charts and validate them",
+   "troubleshoot pods stuck in Pending in a cluster",
+   "review infrastructure-as-code changes in pull requests",
+   "write and lint Dockerfiles, Makefiles and shell scripts",
+   "build Prometheus alert rules or Loki and Fluent Bit configs"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add akin-ozer/cc-devops-skills",
+   "/plugin install devops-skills@akin-ozer",
+   "brew install terraform tflint terragrunt helm kubeconform kubectl hadolint",
+   "brew install actionlint act shellcheck prometheus yq fluent-bit",
+   "pipx install ansible ansible-lint checkov yamllint molecule",
+   "helm plugin install (plugin URL not given in README text)"
+  ],
+  "stack": [
+   "Claude Code plugins",
+   "Codex plugins",
+   "bash",
+   "python3",
+   "terraform",
+   "tflint",
+   "terragrunt",
+   "checkov",
+   "kubectl",
+   "kubeconform",
+   "helm",
+   "yamllint",
+   "hadolint",
+   "actionlint",
+   "act",
+   "shellcheck",
+   "promtool",
+   "ansible",
+   "ansible-lint",
+   "molecule",
+   "fluent-bit",
+   "GitHub Actions composite wrapper"
+  ],
+  "notable": [
+   "Generator and validator pairs for each domain, so output can be checked right after it is produced",
+   "Validators run real tool chains such as terraform fmt, tflint, validate, Checkov and optional plan",
+   "Kubernetes validation detects CRDs and looks up their schemas before kubeconform and dry-run checks",
+   "Drop-in wrapper for claude-code-action that injects DevOps skills by default and can be disabled",
+   "Packaged as both a Claude Code plugin and a Codex plugin from one skills directory"
+  ],
+  "caveats": [
+   "Many validators need external CLIs (terraform, kubectl, helm, actionlint, act, etc.) installed; skills degrade gracefully when they are missing",
+   "Some paths depend on cluster access (kubectl dry-run, k8s-debug) and optional tools like terraform plan",
+   "Python 3.8+ baseline, with 3.9+ recommended for some security tooling",
+   "README does not state a maintenance status or release cadence"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5443,
+  "output": 1658
+ },
+ "generated": "2026-10-29"
+}

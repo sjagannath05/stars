@@ -1,0 +1,95 @@
+{
+ "id": "m1ckc3s/claude-status-bar",
+ "repo": "m1ckc3s/claude-status-bar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "claude-status-bar by mick - A tiny, hook-driven macOS menu-bar indicator of Claude Code's live turn status — an animated icon while thinking or running a tool, a dot when awaiting permission, and an elapsed-turn timer — aggregated across concurrent CLI, Claude Desktop, and Cursor sessions. Stateless AppKit/Swift app that self-launches on session start and quits when idle."
+  }
+ ],
+ "summary": {
+  "one_liner": "A tiny macOS menu-bar app that shows Claude Code's live turn status (animated icon while working, yellow dot when awaiting permission, elapsed-turn timer) across CLI, Desktop Code tab, and Cursor sessions.",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude code",
+   "menu bar",
+   "macos",
+   "status indicator",
+   "system tray",
+   "appkit",
+   "swift",
+   "hooks",
+   "claude code hooks",
+   "session monitor",
+   "turn timer",
+   "elapsed time",
+   "permission indicator",
+   "awaiting permission",
+   "claude desktop",
+   "cursor",
+   "terminal",
+   "cli monitor",
+   "animated icon",
+   "spinner",
+   "menu bar icon",
+   "status bar",
+   "homebrew cask",
+   "dmg install",
+   "developer tool",
+   "ai coding assistant",
+   "watch claude working",
+   "see when claude is done",
+   "multiple sessions monitor",
+   "menu bar timer"
+  ],
+  "what_it_does": "Runs as a menu-bar-only macOS app with no window or dock icon. Claude Code hooks feed status updates, which the app polls and aggregates across all live sessions into one icon. It animates while Claude is thinking or running a tool, shows a short label for the current tool (such as Editing or Running command), and displays a paused yellow dot when a session awaits permission. An elapsed-time timer for the current turn can be toggled on or off. When several sessions run at once, the highest-priority one is shown, so a permission request is not hidden behind a thinking session, and the dropdown lists every live session. The menu also offers animation styles (Spark, Unicode, Clawd, Orbit), an Orange or System icon color, and update notices. The installer merges its hooks into ~/.claude/settings.json after backing it up.",
+  "use_cases": [
+   "watch whether Claude Code is still thinking while working in another window",
+   "get notified at a glance when Claude Code needs permission",
+   "track elapsed time of a long Claude Code turn",
+   "monitor several concurrent Claude Code sessions from the menu bar",
+   "see Claude status in Cursor or Claude Desktop Code tab",
+   "keep an icon-only status indicator in the macOS menu bar"
+  ],
+  "how_to_run": [
+   "brew install --cask claude-status-bar && open -a \"Claude Status Bar\"",
+   "Alternatively, download ClaudeStatusBar.dmg from Releases, drag the app to Applications, and launch it once",
+   "Start a new Claude Code session; the icon appears while Claude Code runs",
+   "Uninstall hooks: node \"/Applications/Claude Status Bar.app/Contents/Resources/uninstall.js\"",
+   "Full removal: brew uninstall --zap claude-status-bar"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "Claude Code hooks",
+   "Node.js (installer and uninstaller scripts)",
+   "Homebrew cask",
+   "GitHub and Homebrew public APIs (update check)"
+  ],
+  "notable": [
+   "Stateless design: hooks feed updates, the app polls and aggregates them, and it self-launches on session start and quits when idle",
+   "Permission-priority aggregation: an awaiting-permission session is never hidden behind a working one",
+   "Four animation styles, including a pixel-art Clawd crab",
+   "Tracks CLI, Claude Desktop Code tab, and Cursor (Claude Code extension)",
+   "Signed and notarized DMG plus Homebrew install path"
+  ],
+  "caveats": [
+   "macOS 12+ only, and requires Claude Code (CLI or Desktop app) and Node.js",
+   "Does not track the Claude Desktop Chat/Cowork tab",
+   "Per-tab focus is still in progress (issue #19)",
+   "Brew update prompts can lag a release by up to a day; sessions open during an install or update only register on their next prompt or tool call"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3676,
+  "output": 1421
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "backstabslash/goccc",
+ "repo": "backstabslash/goccc",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "goccc by backstabslash - Fast, zero-dependency cost calculator and customizable statusline for Claude Code. Breakdowns by model, day, project, and branch. Lightweight, single binary, no runtime needed."
+  }
+ ],
+ "summary": {
+  "one_liner": "A zero-dependency Go command-line tool that calculates Claude Code usage costs from local session logs, with breakdowns by model, day, project and branch, plus a customizable statusline and tool analytics.",
+  "what_it_does": "goccc reads Claude Code's local JSONL session files (under ~/.claude by default) and totals token cost using its own pricing table. It prints all-time or windowed summaries and breakdowns by day, month, project, and model, with filters for project name and last N days, and supports JSON output for scripting. A statusline mode renders a live dashboard showing session cost, today's total, context usage, rate-limit window remaining (subscription users), and current model, configurable through ~/.goccc.json with segments, separators, and optional powerline styling. A SessionEnd hook mode prints a cost summary when a session ends. A -tools mode reports how often each tool, agent type, and skill was invoked, and flags unused skills. Currency can be set to a local code with an exchange rate cached for 24 hours, or overridden with flags.",
+  "use_cases": [
+   "Track Claude Code spending by project or day",
+   "Show live cost and context usage in the terminal statusline",
+   "Get a cost summary when a Claude Code session ends",
+   "Analyze which tools, agents, and skills Claude Code uses",
+   "Export usage data as JSON for scripts or jq",
+   "Report costs in a local currency"
+  ],
+  "how_to_run": [
+   "brew install backstabslash/tap/goccc",
+   "go install github.com/backstabslash/goccc@latest",
+   "goccc -days 7 -all",
+   "Add {\"statusLine\": {\"type\": \"command\", \"command\": \"goccc -statusline\"}} to ~/.claude/settings.json",
+   "goccc -tools -days 30"
+  ],
+  "stack": [
+   "Go",
+   "Homebrew",
+   "Claude Code JSONL logs"
+  ],
+  "notable": [
+   "Zero dependencies and ships as a single binary with no runtime needed",
+   "Statusline is fully configurable via ~/.goccc.json, including powerline style and a kaomoji pet segment driven by Claude Code hooks",
+   "SessionEnd hook shows a per-session cost summary, designed to fail silently within Claude Code's 1.5-second hook timeout",
+   "Tool and skill analytics flag unused skills and filter by project or day"
+  ],
+  "caveats": [
+   "Rate-limit (5h/7d) statusline segments appear only for subscription users and are hidden for API billing",
+   "Claude Code deletes logs after 30 days by default; cleanupPeriodDays must be raised to keep longer history",
+   "Powerline style requires a Nerd Font and a truecolor terminal",
+   "Currency conversion fetches an exchange rate, and falls back to the last cached rate if the API is unreachable"
+  ],
+  "license": "unknown",
+  "category": "claude code cost tracking",
+  "keywords": [
+   "claude code cost",
+   "cost calculator",
+   "usage tracker",
+   "token cost",
+   "cli analytics",
+   "go binary",
+   "golang cli",
+   "statusline",
+   "claude statusline",
+   "terminal dashboard",
+   "session cost",
+   "daily usage report",
+   "project cost breakdown",
+   "model cost breakdown",
+   "tool usage analytics",
+   "skill usage",
+   "mcp usage",
+   "session exit hook",
+   "jsonl log parser",
+   "json output",
+   "jq scripting",
+   "currency conversion",
+   "homebrew tap",
+   "powerline statusline",
+   "usage limits",
+   "how much am i spending",
+   "track ai coding spend",
+   "monitor claude code spending",
+   "unused skills",
+   "ccusage alternative",
+   "single binary cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6786,
+  "output": 1325
+ },
+ "generated": "2026-10-29"
+}

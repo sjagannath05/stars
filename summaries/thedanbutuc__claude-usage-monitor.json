@@ -1,0 +1,102 @@
+{
+ "id": "thedanbutuc/claude-usage-monitor",
+ "repo": "theDanButuc/Claude-Usage-Monitor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Claude Usage Monitor - Track Claude usage with a live counter. [![Open-Source Software][OSS Icon]](https://github.com/theDanButuc/Claude-Usage-Monitor) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Claude Usage Monitor - Native macOS menu bar app that tracks Claude.ai usage with colour-coded icons and reset timers."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu-bar app that shows your Claude.ai usage (session, weekly, Sonnet, Claude Design, extra usage, and routine runs) in real time without an API key.",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude usage monitor",
+   "claude.ai usage",
+   "macos menu bar",
+   "menubar app",
+   "menu bar usage tracker",
+   "swift",
+   "swiftui",
+   "urlsession",
+   "claude rate limit tracker",
+   "usage progress bars",
+   "burn rate",
+   "reset countdown",
+   "usage notifications",
+   "claude code routines",
+   "claude design usage",
+   "sonnet usage",
+   "extra usage credits",
+   "session key",
+   "homebrew cask",
+   "dmg installer",
+   "xcodegen",
+   "menu bar icon colour coded",
+   "track ai quota",
+   "see how much claude i have left",
+   "monitor claude limits on mac",
+   "open source mac app",
+   "stale data indicator",
+   "auto refresh usage",
+   "ad-hoc signed app",
+   "macos 13 ventura app"
+  ],
+  "what_it_does": "It runs as a menu-bar-only macOS app with no Dock icon. Clicking the icon opens a popover with progress bars for the current 5-hour session, weekly limits across all models, Sonnet usage (Max plan), Claude Design usage, monthly extra-usage credit spend, and daily Claude Code Routine runs. The menu bar text shows estimated time left based on burn rate, or the session percentage when idle, alongside the weekly percentage. It sends native notifications at 75, 80, 90, 95 and 100 percent usage, on session reset, and when routine runs are low or exhausted. It reads data directly from Claude's internal REST API using the sessionKey cookie obtained through a one-time login window, and it checks GitHub Releases hourly for updates.",
+  "use_cases": [
+   "check how close I am to my Claude usage limit",
+   "keep an eye on Claude session and weekly quota from the menu bar",
+   "get warned before hitting Claude rate limits",
+   "track Claude Code routine run budget per day",
+   "monitor monthly extra usage spend on Claude",
+   "see when my Claude limit resets"
+  ],
+  "how_to_run": [
+   "Download ClaudeUsageMonitor.dmg from the Releases page and drag the app into Applications",
+   "Right-click ClaudeUsageMonitor.app, choose Open, then Open (or run: xattr -cr /Applications/ClaudeUsageMonitor.app)",
+   "Log in to Claude.ai in the browser window that opens on first launch",
+   "Alternatively via Homebrew: brew tap theDanButuc/tap && brew install --cask claude-usage-monitor",
+   "To build from source: xcode-select --install, then git clone the repo and run bash scripts/build.sh (add --universal for a universal binary)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI/AppKit (status bar, popover)",
+   "URLSession",
+   "WKWebView (login only)",
+   "XcodeGen",
+   "Xcode Command Line Tools",
+   "GitHub Releases",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Calls Claude's internal REST API directly, with no DOM scraping or JS injection at runtime",
+   "Burn-rate display estimates minutes of usage left in the menu bar",
+   "Tracks Claude Code Routine daily run budgets, with plan limits read from the API",
+   "Right-click menu offers configurable refresh intervals from 30 seconds to 10 minutes",
+   "In-app DMG download with progress bar for updates"
+  ],
+  "caveats": [
+   "Requires macOS 13 Ventura or later",
+   "App is ad-hoc signed and not notarized, so Gatekeeper must be bypassed on first launch",
+   "Relies on Claude's internal, undocumented API and a sessionKey cookie; the session may expire and require re-login",
+   "Some bars only appear on specific plans (Sonnet on Max, Routines on Pro/Max/Team/Enterprise)"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5553,
+  "output": 1466
+ },
+ "generated": "2026-10-29"
+}

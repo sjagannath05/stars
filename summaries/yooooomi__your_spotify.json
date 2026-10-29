@@ -1,0 +1,92 @@
+{
+ "id": "yooooomi/your_spotify",
+ "repo": "Yooooomi/your_spotify",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Your Spotify ⚠ - Allows you to record your Spotify listening activity and have statistics about them served through a Web application. MIT Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "YourSpotify is a self-hosted app that records your Spotify listening history and serves statistics about it through a web dashboard.",
+  "what_it_does": "It runs a server that polls the Spotify API periodically to record what you listen to, and a web application where you explore statistics about that listening activity. Users authenticate with their Spotify accounts through OAuth, and the app is deployed as separate server, client and MongoDB containers via docker-compose. It can import past listening history from Spotify privacy data exports, namely the \"Account data\" export (last year, up to 5 days to process) and the \"Full privacy data\" / extended streaming history export (whole account history, up to 30 days). Settings include a per-user timezone for statistics, an option to disable new registrations, and optional Prometheus basic auth. Imports can be retried from the Settings page if they fail.",
+  "use_cases": [
+   "track my Spotify listening history",
+   "self-hosted Spotify statistics dashboard",
+   "import old Spotify streaming history",
+   "see top songs and listening stats over time",
+   "run a private Spotify stats server for my family or friends",
+   "monitor Spotify plays with Prometheus"
+  ],
+  "how_to_run": [
+   "Create a Spotify application in the Spotify developer dashboard, set the redirect URI to /oauth/spotify/callback on your server, and enable Web API",
+   "Copy the public and secret keys into SPOTIFY_PUBLIC and SPOTIFY_SECRET",
+   "Follow the docker-compose-example.yml from the README, setting API_ENDPOINT, CLIENT_ENDPOINT, and SPOTIFY keys",
+   "Run docker-compose up with the yooooomi/your_spotify_server, yooooomi/your_spotify_client, and mongo:8 images",
+   "Register users in Spotify User Management (not needed for the app creator's account)"
+  ],
+  "stack": [
+   "Node.js",
+   "Docker",
+   "docker-compose",
+   "MongoDB",
+   "Spotify Web API"
+  ],
+  "notable": [
+   "Imports past listening history from Spotify privacy data exports, with duplicate detection",
+   "Per-user timezone setting for statistics while data is stored in UTC",
+   "Admin option to disable new user registrations",
+   "Optional Prometheus basic auth metrics",
+   "Configurable import cache size via MAX_IMPORT_CACHE_SIZE"
+  ],
+  "caveats": [
+   "By default only the last 24 hours of data are retrieved after registration; older history needs the import feature",
+   "Requires a Spotify developer application and each user must be registered manually in Spotify User Management unless extension is requested",
+   "Local installation is marked as not recommended; Docker is the primary path",
+   "The README says the author maintains it in spare time, with no formal support guarantee"
+  ],
+  "license": "MIT",
+  "category": "self-hosted music statistics",
+  "keywords": [
+   "spotify stats",
+   "spotify listening history",
+   "self-hosted spotify",
+   "spotify dashboard",
+   "listening statistics",
+   "music tracking",
+   "scrobbling alternative",
+   "spotify history import",
+   "streaming history import",
+   "spotify privacy data",
+   "nodejs spotify app",
+   "docker spotify",
+   "docker-compose",
+   "mongodb",
+   "mongo",
+   "oauth spotify",
+   "spotify web api",
+   "personal music analytics",
+   "top songs stats",
+   "listening activity",
+   "track what i listen to",
+   "my spotify statistics",
+   "spotify year in review alternative",
+   "prometheus metrics",
+   "music history web app",
+   "self hosted music dashboard",
+   "spotify timezone stats",
+   "family spotify stats server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4324,
+  "output": 1307
+ },
+ "generated": "2026-10-29"
+}

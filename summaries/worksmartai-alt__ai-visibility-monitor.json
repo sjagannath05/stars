@@ -1,0 +1,98 @@
+{
+ "id": "worksmartai-alt/ai-visibility-monitor",
+ "repo": "WorkSmartAI-alt/ai-visibility-monitor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "SEO related tools",
+   "entry": "AI Visibility Monitor - Open-source Python toolkit that tracks whether ChatGPT, Claude, and Perplexity cite your site. MIT license, runs locally on your credentials."
+  }
+ ],
+ "summary": {
+  "one_liner": "AI Visibility Monitor (AVM) is an open-source Python CLI that runs buyer queries against Claude, ChatGPT, and Perplexity and reports which sites those engines cite, using your own API keys.",
+  "category": "AI search visibility",
+  "keywords": [
+   "ai visibility",
+   "generative engine optimization",
+   "geo tracking",
+   "aeo",
+   "answer engine optimization",
+   "citation tracker",
+   "llm citation monitoring",
+   "brand visibility in chatgpt",
+   "perplexity citations",
+   "claude citations",
+   "chatgpt citations",
+   "ai search monitoring",
+   "python cli",
+   "open source seo tool",
+   "seo tools",
+   "citation check",
+   "query expansion",
+   "community thread finder",
+   "reddit threads llm",
+   "source surface categorization",
+   "citation trend",
+   "json output",
+   "self-hosted analytics",
+   "google search console",
+   "ga4 ai referrals",
+   "robots.txt llms.txt audit",
+   "track whether chatgpt recommends my site",
+   "see if claude cites my website",
+   "free alternative to paid ai visibility saas",
+   "monitor ai recommendations for my business",
+   "weekly citation tracking"
+  ],
+  "what_it_does": "Runs a set of buyer queries (default 5, each repeated 2 times) through Claude, ChatGPT, and Perplexity, and records every URL cited and whether the user's domain appeared, writing the results to timestamped JSON files in data/. The --expand option generates 15 adjacent queries, runs them too, and ranks them by a \"winnability\" score with rationale. Each cited URL is categorized by surface type (for example reddit, quora, press, blog, g2), and a per-query surface mix is shown, optionally compared to built-in vertical baselines. The avm threads command lists community threads that are cited across multiple queries, and avm trend shows citation rate over historical runs without new API calls. The README also describes Google Search Console and GA4 pulls and a robots.txt/llms.txt/sitemap crawlability sweep as separate scripts.",
+  "use_cases": [
+   "Check whether ChatGPT, Claude, or Perplexity cite your website for buyer queries",
+   "Find adjacent queries where your site could realistically get cited",
+   "Identify community threads and surfaces that drive AI citations in your category",
+   "Track citation rate trends week over week",
+   "Export AI citation data to a spreadsheet or dashboard",
+   "Audit robots.txt, llms.txt, and sitemap for AI bot access"
+  ],
+  "how_to_run": [
+   "pip install git+ (repository URL truncated in README)",
+   "avm",
+   "Manual alternative: git clone the repository, then cd ai-visibility-monitor",
+   "pip install -e .",
+   "cp queries.md.example queries.md and cp sites.json.example sites.json, then edit them",
+   "export ANTHROPIC_API_KEY=\"sk-ant-...\" and run avm --no-wizard"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Anthropic SDK",
+   "OpenAI API (optional)",
+   "Perplexity API (optional)",
+   "Google API client / Google Application Default Credentials (optional, for GSC and GA4)",
+   "rich (pretty-printed output)",
+   "JSON output files"
+  ],
+  "notable": [
+   "Runs queries across Claude, ChatGPT, and Perplexity in one command using the user's own API keys, with no third-party server",
+   "Adjacent query discovery (--expand) scores and ranks 15 generated queries by winnability",
+   "Source-surface categorization breaks cited URLs into 10+ community, press, blog, and official subcategories",
+   "avm threads surfaces community threads that recur across multiple queries and engines",
+   "avm trend computes citation trajectory from saved JSON history without new API calls"
+  ],
+  "caveats": [
+   "Vertical baselines for construction, legal, and wealth_management are estimated and described by the author as directional, not hard data; Claude baseline is estimated",
+   "Requires API keys and per-run cost (about $0.30 per run on default Haiku model, about $0.90 per --expand run, about $3 per run on Sonnet)",
+   "Clone URL and install URL are truncated in the README, so the exact install source must be confirmed",
+   "Google GSC/GA4 pulls require the Google Cloud SDK and ADC setup; Claude engine is needed for default behavior"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8477,
+  "output": 1572
+ },
+ "generated": "2026-10-29"
+}

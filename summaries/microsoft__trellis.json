@@ -1,0 +1,114 @@
+{
+ "id": "microsoft/trellis",
+ "repo": "microsoft/TRELLIS",
+ "kind": "star",
+ "description": "Official repo for paper \"Structured 3D Latents for Scalable and Versatile 3D Generation\" (CVPR'25 Spotlight).",
+ "topics": [
+  "3d",
+  "3d-aigc",
+  "3d-generation",
+  "image-to-3d",
+  "text-to-3d"
+ ],
+ "language": "Python",
+ "stars": 14135,
+ "license": "MIT",
+ "homepage": "https://trellis3d.github.io",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "dev tools",
+  "my company",
+  "my stack",
+  "webtools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "TRELLIS is Microsoft's official research code and pretrained models for generating 3D assets from text or image prompts, output as radiance fields, 3D Gaussians, or meshes.",
+  "what_it_does": "The repo provides the TRELLIS large 3D generation model, built on a unified Structured LATent (SLAT) representation that can be decoded into multiple output formats. It offers image-to-3D and text-to-3D pipelines, with pretrained models up to 2B parameters trained on the TRELLIS-500K dataset. Outputs can be rendered to videos, exported as GLB meshes, or saved as PLY Gaussians. The README also mentions multi-image conditioning for the image model, variant generation, and local 3D editing. It includes a Gradio web demo (app.py) and training code driven by train.py with JSON configs.",
+  "use_cases": [
+   "generate 3D models from a single image",
+   "create 3D assets from text prompts",
+   "export textured GLB meshes for games or graphics pipelines",
+   "produce 3D Gaussian splats or radiance fields",
+   "generate variants of an existing 3D asset",
+   "fine-tune or train large 3D generative models"
+  ],
+  "how_to_run": [
+   "git clone --recurse-submodules <repo-url> && cd TRELLIS",
+   ". ./setup.sh --new-env --basic --xformers --flash-attn --diffoctreerast --spconv --mipgaussian --kaolin --nvdiffrast",
+   "pipeline = TrellisImageTo3DPipeline.from_pretrained(\"microsoft/TRELLIS-image-large\"); pipeline.cuda()",
+   "outputs = pipeline.run(image, seed=1)",
+   ". ./setup.sh --demo",
+   "python app.py"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "CUDA",
+   "conda",
+   "flash-attn",
+   "xformers",
+   "spconv",
+   "nvdiffrast",
+   "kaolin",
+   "Gradio",
+   "Hugging Face models"
+  ],
+  "notable": [
+   "Unified Structured LATent (SLAT) representation decodes to Radiance Fields, 3D Gaussians, and meshes from one latent",
+   "Pretrained models from 342M to 2.0B parameters, hosted on Hugging Face",
+   "Released TRELLIS-500K dataset curated from Objaverse(XL), ABO, 3D-FUTURE, HSSD, and Toys4k",
+   "Supports local 3D editing and variant generation, per the README",
+   "Training configs and code provided for VAEs and flow transformers"
+  ],
+  "caveats": [
+   "Tested only on Linux; Windows setup is not fully tested according to the README",
+   "Requires an NVIDIA GPU with at least 16GB memory and a CUDA Toolkit for compiling submodules",
+   "The README recommends image-conditioned models over text-conditioned ones, which it describes as less creative and detailed"
+  ],
+  "license": "MIT",
+  "category": "3d generation models",
+  "keywords": [
+   "3d generation",
+   "image to 3d",
+   "text to 3d",
+   "3d asset generation",
+   "structured latents",
+   "slat",
+   "rectified flow transformer",
+   "gaussian splatting",
+   "radiance field",
+   "mesh generation",
+   "glb export",
+   "ply export",
+   "3d gaussians",
+   "generative 3d",
+   "pytorch 3d model",
+   "objaverse dataset",
+   "turn photo into 3d model",
+   "make 3d model from text",
+   "create 3d object from picture",
+   "3d editing",
+   "3d variants",
+   "huggingface 3d model",
+   "gradio demo 3d",
+   "cuda gpu 3d",
+   "cvpr 2025 3d",
+   "neural 3d asset",
+   "3d model training code",
+   "open source image to mesh"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7997,
+  "output": 1361
+ },
+ "generated": "2026-10-29"
+}

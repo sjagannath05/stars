@@ -1,0 +1,98 @@
+{
+ "id": "barnett-studios/cxpak",
+ "repo": "Barnett-Studios/cxpak",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "cxpak by Barnett Studios - A code-intelligence Claude Code plugin and MCP server (Rust, single binary, 43 languages) that builds a typed dependency graph and packs token-budgeted, annotated context bundles for any task. Exceptionally engineered and security-forward — 2,400+ tests, recorded ADRs, a sandboxed WASM plugin SDK, and cosign-signed, SBOM-attested release images."
+  }
+ ],
+ "summary": {
+  "one_liner": "cxpak is a Rust code-intelligence tool and MCP server that indexes a codebase with tree-sitter, builds a typed dependency graph, and packs token-budgeted context bundles for LLMs and Claude Code.",
+  "what_it_does": "cxpak parses source with tree-sitter across 44 languages and builds a typed dependency graph that includes schema, migration, and embedded-SQL links. It produces token-budgeted context bundles for a given task, with per-file annotations explaining why each file was included, and a Repo-DNA convention summary at the start of each response. It offers intelligence reports such as health score, risk ranking, architecture coupling, blast radius, dead code, call graph, security surface, and data flow. It exposes these through a CLI, an MCP server (five intent-parameterized tools), an HTTP server, and an LSP server. It also renders a self-contained offline HTML dashboard and graph views, with export to Mermaid, SVG, PNG, C4, JSON, Cypher, and GraphML.",
+  "use_cases": [
+   "give an LLM focused context for a coding task",
+   "trace a symbol through a codebase's dependencies",
+   "assess change impact before editing code",
+   "onboard onto an unfamiliar repository with a reading order",
+   "review changes against observed code conventions",
+   "generate architecture diagrams and dashboards"
+  ],
+  "how_to_run": [
+   "brew tap Barnett-Studios/tap && brew install cxpak",
+   "cargo install cxpak",
+   "cxpak overview .",
+   "cxpak visual --visual-type dashboard .",
+   "Add to .mcp.json: {\"mcpServers\": {\"cxpak\": {\"command\": \"cxpak\", \"args\": [\"serve\", \"--mcp\", \".\"]}}}"
+  ],
+  "stack": [
+   "Rust",
+   "tree-sitter",
+   "MCP (rmcp)",
+   "D3.js",
+   "candle (optional local embeddings)",
+   "WASM (plugin loader skeleton)",
+   "Docker",
+   "cosign"
+  ],
+  "notable": [
+   "Serves an MCP server with five intent-parameterized tools, with a shared background index server on macOS/Linux",
+   "Ranks context with six deterministic signals fused by Reciprocal Rank Fusion; embeddings are an optional opt-in seventh signal",
+   "Visual dashboard is a single self-contained HTML file with inlined D3 and no external assets",
+   "Architecture decisions are recorded as ADRs in docs/adrs/",
+   "Live Postgres/MySQL schema introspection is read-only and off by default behind a build feature"
+  ],
+  "caveats": [
+   "The WASM plugin system is a skeleton: no plugin code can run yet, and the plugins feature is excluded from default builds",
+   "Live database introspection requires the data-introspect build feature and is off by default",
+   "The README says the project is under development and the surface still moves",
+   "Shared index server is macOS/Linux only; Windows always indexes in-process"
+  ],
+  "license": "MIT or Apache-2.0 (dual-licensed, at your option)",
+  "category": "code intelligence tooling",
+  "keywords": [
+   "code intelligence",
+   "claude code plugin",
+   "mcp server",
+   "model context protocol",
+   "context packing",
+   "token budget",
+   "llm context",
+   "dependency graph",
+   "tree-sitter",
+   "rust cli",
+   "codebase indexing",
+   "code search for llm",
+   "repository context",
+   "blast radius analysis",
+   "architecture visualization",
+   "dead code detection",
+   "code review conventions",
+   "onboarding reading order",
+   "lsp server",
+   "cursor mcp",
+   "share code context with ai",
+   "give ai my whole repo",
+   "understand a codebase quickly",
+   "impact analysis before refactor",
+   "dependency graph export graphml",
+   "mermaid diagram generator",
+   "http api for code analysis",
+   "repo summary for llm",
+   "semantic code search",
+   "embeddings code retrieval",
+   "docker code analysis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10418,
+  "output": 1423
+ },
+ "generated": "2026-10-29"
+}

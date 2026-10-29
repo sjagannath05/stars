@@ -1,0 +1,95 @@
+{
+ "id": "fabioconcina/claumon",
+ "repo": "fabioconcina/claumon",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "Claumon by fabioconcina - Claude Code dashboard for Pro/Max users: live rate-limit gauges, calibrated usage forecasts, session costs, memory browser. Single binary, zero config."
+  }
+ ],
+ "summary": {
+  "one_liner": "Claumon is a local, single-binary web dashboard for Claude Code users that shows live rate-limit gauges, calibrated usage forecasts, session costs, and a browser for the memory files Claude Code keeps under ~/.claude.",
+  "what_it_does": "Runs a local HTTP server (default port 3131) that serves an embedded single-page dashboard. It pulls live session, weekly, and per-model utilization from the Claude OAuth usage API, using credentials from ~/.claude/.credentials.json or the OS credential store. It parses Claude Code session JSONL files for per-session token and cost breakdowns, and stores daily aggregates in SQLite for trends over a selectable 7 to 90 day window. It produces session forecasts (projected utilization at reset with an 80% credible interval and ETA to threshold) from a statistical model the README says is published as MODEL.pdf. It also includes a memory-file browser with health scores, a relationship graph, and recoverable deletion, plus running-process control. Updates are pushed to the browser over SSE.",
+  "use_cases": [
+   "monitor Claude Code rate limits in real time",
+   "forecast when Claude usage will hit its limit",
+   "track Claude Code costs per session over weeks",
+   "browse and clean up Claude Code memory files",
+   "run a local usage dashboard as a background service",
+   "view Claude Code usage from a VS Code status bar"
+  ],
+  "how_to_run": [
+   "brew install fabioconcina/claumon/claumon",
+   "claumon",
+   "go install github.com/fabioconcina/claumon@latest",
+   "claumon service install",
+   "claumon update"
+  ],
+  "stack": [
+   "Go",
+   "SQLite",
+   "Server-Sent Events",
+   "Embedded single-page web app",
+   "Claude OAuth usage API",
+   "VS Code extension (client only)"
+  ],
+  "notable": [
+   "Live rate-limit gauges measured from the Claude OAuth usage API rather than estimated from logs",
+   "Forecasts from an empirical-Bayes model with an 80% credible interval, documented in a published MODEL.pdf",
+   "Single binary with zero config; no Node, Python, or build step needed to run",
+   "Background service install for macOS LaunchAgent, Linux systemd user unit, and Windows Startup folder",
+   "Release binaries include SHA-256 checksums, SPDX SBOMs, and GitHub build-provenance attestations"
+  ],
+  "caveats": [
+   "Live API gauges need Claude credentials; without them only session tracking works",
+   "Listens on IPv4 loopback only; remote access requires an SSH tunnel or authenticated reverse proxy, and a proxy may need allowed_hosts configured",
+   "Windows binary may be blocked by Defender and needs manual unblocking"
+  ],
+  "license": "MIT",
+  "category": "claude code usage monitoring",
+  "keywords": [
+   "claude code",
+   "usage dashboard",
+   "rate limit monitor",
+   "rate limit gauges",
+   "usage forecast",
+   "cost tracker",
+   "token usage",
+   "session cost",
+   "memory file browser",
+   "claude max plan",
+   "claude pro plan",
+   "local dashboard",
+   "sqlite",
+   "go binary",
+   "single binary",
+   "server-sent events",
+   "sse",
+   "background service",
+   "launchagent",
+   "systemd user service",
+   "vs code extension",
+   "status bar",
+   "ccusage alternative",
+   "claude oauth usage api",
+   "usage trends",
+   "cost analytics",
+   "monitor claude limits",
+   "forecast claude usage",
+   "see how much claude i have left",
+   "track claude code spending",
+   "clean up claude memory files"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5038,
+  "output": 1302
+ },
+ "generated": "2026-10-29"
+}

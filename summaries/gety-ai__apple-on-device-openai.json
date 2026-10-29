@@ -1,0 +1,89 @@
+{
+ "id": "gety-ai/apple-on-device-openai",
+ "repo": "gety-ai/apple-on-device-openai",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Apple On-Device OpenAI - Runs Apple on-device models behind an OpenAI-compatible API. [![Open-Source Software][OSS Icon]](https://github.com/gety-ai/apple-on-device-openai) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A SwiftUI macOS app that runs Apple's on-device Foundation Models behind an OpenAI-compatible local API server.",
+  "what_it_does": "The app starts a local HTTP server (default 127.0.0.1:11535) that exposes OpenAI-style endpoints: GET /health, GET /status, GET /v1/models, and POST /v1/chat/completions. The chat completions endpoint supports both streaming and non-streaming responses. It checks Apple Intelligence availability on startup and reports model status through /status. Requests are served by Apple's on-device Foundation Models, so processing stays local. The README lists temperature, max_tokens, stream, model, and messages as the supported parameters. A Python test script (test_server.py) covers health checks, multi-turn chat, Chinese-language input, and streaming. Tool/function calling is listed as work in progress.",
+  "use_cases": [
+   "Use Apple on-device AI with OpenAI-compatible apps",
+   "Run local chat completions without a cloud API key",
+   "Test OpenAI SDK code against a local model",
+   "Stream local LLM responses to a client app",
+   "Check Apple Intelligence availability from a script"
+  ],
+  "how_to_run": [
+   "Download the latest .zip from the Releases page, extract it, and launch the app",
+   "Or clone the repository and run: open AppleOnDeviceOpenAI.xcodeproj",
+   "Build and run the project in Xcode",
+   "In the app, set the server address (default 127.0.0.1:11535) and click Start Server",
+   "Point an OpenAI client at the server with base_url set to the local address and model set to apple-on-device",
+   "Run python3 test_server.py while the server is running to verify it"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Apple Foundation Models",
+   "Xcode",
+   "Python (test script, OpenAI Python SDK)"
+  ],
+  "notable": [
+   "Wraps Apple's on-device Foundation Models in an OpenAI Chat Completions-compatible API",
+   "Built as a GUI app, not a CLI, to avoid the rate limit Apple applies to command-line tools (per the README's cited Apple DTS quote)",
+   "Supports streaming responses in OpenAI's streaming format",
+   "Ships a test script that exercises health, status, SDK compatibility, multi-turn, Chinese, and streaming"
+  ],
+  "caveats": [
+   "Requires macOS 26 beta 2 and Xcode 26 beta 2 for building, per the README",
+   "Requires Apple Intelligence to be enabled in system settings",
+   "Rate limits may still occur; the README says to restart the server if they do",
+   "Tool using/function calling is marked work in progress"
+  ],
+  "license": "MIT",
+  "category": "local llm server",
+  "keywords": [
+   "apple on-device ai",
+   "apple intelligence api",
+   "foundation models",
+   "openai compatible server",
+   "openai api alternative",
+   "local llm server",
+   "local chat completions",
+   "swiftui app",
+   "macos ai server",
+   "on-device inference",
+   "chat completions endpoint",
+   "streaming responses",
+   "offline ai api",
+   "run llm locally mac",
+   "self-hosted openai api",
+   "openai python client local",
+   "base_url localhost",
+   "apple silicon llm",
+   "no api key local ai",
+   "private on-device ai",
+   "swift llm server",
+   "function calling wip",
+   "ai model status endpoint",
+   "local ai for openai apps",
+   "mac local chatgpt replacement",
+   "test openai sdk locally"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3180,
+  "output": 1276
+ },
+ "generated": "2026-10-29"
+}

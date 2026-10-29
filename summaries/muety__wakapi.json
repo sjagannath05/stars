@@ -1,0 +1,99 @@
+{
+ "id": "muety/wakapi",
+ "repo": "muety/wakapi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Time Tracking",
+   "entry": "Wakapi - Tracking tool for coding statistics, compatible with WakaTime. (Source Code) GPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Wakapi is a minimalist, self-hosted, WakaTime-compatible backend that collects and displays coding statistics from WakaTime client tools.",
+  "what_it_does": "Wakapi receives heartbeat data from WakaTime client plugins and turns it into statistics for projects, languages, editors, hosts and operating systems. It offers a web UI, a REST API with Swagger docs, badges, weekly e-mail reports, and a public leaderboard. It can run with SQLite (default), MySQL/MariaDB, or Postgres via GORM. Authentication supports local accounts, OpenID Connect, API keys, and trusted reverse-proxy headers. It can export Prometheus metrics, forward heartbeats to WakaTime, import data from WakaTime or other Wakapi instances, and export raw heartbeats to CSV with a Python script.",
+  "use_cases": [
+   "self-host coding time tracking",
+   "replace WakaTime with a self-hosted backend",
+   "view coding statistics by project or language",
+   "export coding heartbeats to CSV",
+   "send coding stats to Prometheus and Grafana",
+   "embed coding stats badges or GitHub profile cards"
+  ],
+  "how_to_run": [
+   "docker volume create wakapi-data",
+   "SALT=\"$(cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1)\"",
+   "docker run -d --init -p 3000:3000 -e \"WAKAPI_PASSWORD_SALT=$SALT\" -v wakapi-data:/data --name wakapi --restart unless-stopped ghcr.io/muety/wakapi:latest",
+   "go install github.com/muety/wakapi@latest",
+   "curl -o wakapi.yml <config URL>  # then edit wakapi.yml",
+   "./wakapi -config wakapi.yml"
+  ],
+  "stack": [
+   "Go",
+   "GORM",
+   "SQLite",
+   "MySQL",
+   "MariaDB",
+   "Postgres",
+   "Docker",
+   "TailwindCSS",
+   "Swagger",
+   "Bruno (API tests)"
+  ],
+  "notable": [
+   "WakaTime-compatible: works with the official WakaTime client tools by changing api_url and api_key in ~/.wakatime.cfg",
+   "Can forward heartbeats to WakaTime in parallel or import historic WakaTime data",
+   "Prometheus metrics export and weekly e-mail reports",
+   "Supports OpenID Connect, trusted reverse-proxy header auth, and invite-only registration",
+   "Data retention, inactivity cleanup, and a configurable public leaderboard"
+  ],
+  "caveats": [
+   "The README states the maintainers temporarily do not accept pull requests",
+   "Partially compatible with WakaTime and a smaller feature set (no team support, goals, or richer API, per the FAQ)",
+   "Trusted header authentication is described as prone to misconfiguration"
+  ],
+  "license": "GPL-3.0",
+  "category": "time tracking",
+  "keywords": [
+   "wakapi",
+   "wakatime",
+   "wakatime compatible",
+   "coding statistics",
+   "coding time tracking",
+   "self-hosted time tracking",
+   "developer activity tracking",
+   "heartbeat tracking",
+   "wakatime-cli",
+   "wakatime alternative",
+   "self-hosted wakatime",
+   "go backend",
+   "prometheus exporter",
+   "grafana dashboard",
+   "coding stats badges",
+   "weekly e-mail reports",
+   "leaderboard",
+   "oidc login",
+   "sso authentication",
+   "sqlite",
+   "mysql",
+   "postgres",
+   "docker compose",
+   "helm chart",
+   "export heartbeats csv",
+   "track programming hours",
+   "see which languages i code in",
+   "share coding stats publicly",
+   "rest api",
+   "reverse proxy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14158,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

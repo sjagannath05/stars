@@ -1,0 +1,96 @@
+{
+ "id": "ennucore/clippy",
+ "repo": "ennucore/clippy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "Clippinator (formerly Clippy) is a GPT-4 based autonomous code assistant that plans, writes, debugs, and tests software projects with a human giving feedback.",
+  "what_it_does": "Runs a set of cooperating GPT-4 agents on a project directory, coordinated by a main agent called Taskmaster that asks the user some questions, has an Architect plan the project structure, and then delegates writing, debugging, and testing to subagents (Architect, Writer, Frontender, Editor, QA, Devops). The agents have tools for reading and writing files, running bash and Python, managing background processes, linting with pylint, browser automation with Selenium, and simple HTTP page fetching. Project structure is gathered with ctags and given to all agents along with linter output and a shared memory. The user can stop with ^C, which saves state so the run resumes later, and can give feedback to the main agent or edit the architecture manually. An optional SerpAPI key enables search.",
+  "use_cases": [
+   "autonomously generating a small software project from a high-level description",
+   "AI-assisted coding with human feedback loops",
+   "planning and scaffolding a project architecture",
+   "automated writing and testing of web services",
+   "experimenting with multi-agent GPT-4 coding workflows"
+  ],
+  "how_to_run": [
+   "Install Poetry.",
+   "Clone this repository.",
+   "Add OPENAI_API_KEY (and optionally SERPAPI_API_KEY) to a .env file.",
+   "Install ctags, and pylint plus pylint-venv for linting.",
+   "Run `poetry install`.",
+   "Run `poetry run clippinator PROJECT_PATH` (or `--help`)."
+  ],
+  "stack": [
+   "Python",
+   "Poetry",
+   "OpenAI GPT-4 API",
+   "Langchain (some tools)",
+   "Selenium",
+   "ctags",
+   "pylint",
+   "SerpAPI (optional)"
+  ],
+  "notable": [
+   "Multi-agent design with Taskmaster delegating to specialized minions like Architect, Writer, and QA",
+   "Architecture is plain text written by the Architect and shared with all agents",
+   "Stop with ^C and resume from the last saved state; ^C also injects feedback to the main agent",
+   "Linter output is fed back to agents after every file write",
+   "Shared memory tool lets agents persist notes across the run"
+  ],
+  "caveats": [
+   "Runs GPT-4 for long periods, so it is expensive in OpenAI API usage",
+   "Not perfect and makes mistakes; the README says it works best with human supervision on harder tasks",
+   "Requires several external tools to be installed (Poetry, ctags, pylint, pylint-venv)"
+  ],
+  "license": "unknown",
+  "category": "autonomous coding agent",
+  "keywords": [
+   "code assistant",
+   "autonomous coding agent",
+   "multi-agent llm",
+   "gpt-4 coding",
+   "openai api",
+   "ai pair programmer",
+   "clippy",
+   "clippinator",
+   "taskmaster agent",
+   "architect agent",
+   "llm software developer",
+   "ai writes code",
+   "code generation",
+   "project scaffolding",
+   "selenium testing",
+   "pylint",
+   "ctags",
+   "poetry python cli",
+   "background process management",
+   "langchain tools",
+   "generate project from description",
+   "let ai build my app",
+   "ai code debugging",
+   "automated testing agent",
+   "human in the loop coding",
+   "resume agent session",
+   "serpapi search",
+   "python cli tool",
+   "autonomous developer",
+   "ai software engineer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3019,
+  "output": 1262
+ },
+ "generated": "2026-10-29"
+}

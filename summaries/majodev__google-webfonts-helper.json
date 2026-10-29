@@ -1,0 +1,94 @@
+{
+ "id": "majodev/google-webfonts-helper",
+ "repo": "majodev/google-webfonts-helper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "google-webfonts-helper ⚠ - Hassle-Free Way to Self-Host Google Fonts. Get eot, ttf, svg, woff and woff2 files + CSS snippets. (Demo) MIT Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "A web service and JSON API that lets you self-host Google Fonts by generating font files (eot, ttf, svg, woff, woff2) and CSS snippets for a chosen font, style, and charset.",
+  "what_it_does": "The service lets you pick a Google font, its variants (styles/weights), and character subsets, then provides CSS @font-face snippets and downloadable font files in .eot, .woff, .woff2, .svg, and .ttf formats, optionally as a zip archive. Its JSON API lists all fonts sorted by popularity and returns per-font URLs to the font files on Google's servers, with optional subset, format, and variant filtering on zip downloads. It runs as an Express server, with prebuilt Docker images published via GitHub Packages. A Google Fonts API key is required via the GOOGLE_FONTS_API_KEY environment variable. The README says the API is public but rate limits may apply.",
+  "use_cases": [
+   "Self-host a Google font on your own web server",
+   "Download Google font files in woff, woff2, ttf, eot, or svg formats",
+   "Generate @font-face CSS snippets for a Google font",
+   "Fetch Google font metadata and file URLs via a JSON API",
+   "Bundle a filtered set of font variants and subsets into a zip"
+  ],
+  "how_to_run": [
+   "Get your own Google Fonts API key (link in README) and put it in a .env file: echo \"GOOGLE_FONTS_API_KEY=<key>\" > .env",
+   "docker run -e GOOGLE_FONTS_API_KEY=<key> -p 8080:8080 ghcr.io/majodev/google-webfonts-helper:<tag>",
+   "Development: ./docker-helper.sh --up, then inside the container: yarn --pure-lockfile and ./node_modules/.bin/bower install",
+   "Development server: grunt serve (port 9000)",
+   "Production build: grunt build, then NODE_ENV=production node dist/server/app.js (port 8080)",
+   "Or build locally: docker build . -t <name>, then docker run with GOOGLE_FONTS_API_KEY on port 8080"
+  ],
+  "stack": [
+   "Node.js",
+   "Express",
+   "Grunt",
+   "Bower",
+   "Yarn",
+   "Angular (client, legacy)",
+   "TypeScript (server)",
+   "Docker"
+  ],
+  "notable": [
+   "Exports multiple font formats (eot, ttf, svg, woff, woff2) plus CSS snippets in one step",
+   "Public JSON API for listing fonts and getting per-font file URLs",
+   "Zip download endpoint with filters for subsets, formats, and variants",
+   "Final Docker image runs rootless on a minimal base with no dev dependencies",
+   "Prebuilt Docker images published via GitHub Packages"
+  ],
+  "caveats": [
+   "Requires a Google Fonts API key from Google before it will run",
+   "README says the project is largely on life-support, with much of its code and dependencies deprecated",
+   "The JSON API may be rate-limited",
+   "Client code is described as very legacy Angular"
+  ],
+  "license": "MIT",
+  "category": "self-hosted font delivery",
+  "keywords": [
+   "google fonts",
+   "self-host fonts",
+   "webfonts",
+   "woff2",
+   "woff",
+   "ttf",
+   "eot",
+   "svg fonts",
+   "font-face css",
+   "font download",
+   "font subsets",
+   "google fonts api",
+   "font api",
+   "nodejs",
+   "express",
+   "docker",
+   "self-hosted",
+   "local fonts",
+   "gdpr fonts",
+   "font files zip",
+   "font variants",
+   "open source font tool",
+   "google-webfonts-helper",
+   "font hosting alternative",
+   "download google fonts",
+   "host fonts on my server",
+   "font privacy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3796,
+  "output": 1300
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,94 @@
+{
+ "id": "gameap/gameap",
+ "repo": "gameap/gameap",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Games - Administrative Utilities & Control Panels",
+   "entry": "GameAP - Game Administration Panel for managing game servers on Linux and Windows. (Demo, Source Code, Clients) MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "GameAP is a free, open-source web panel for managing and deploying game servers, with a Go single-binary panel and per-node daemon agents.",
+  "what_it_does": "The panel provides a browser UI, REST API and WebSocket endpoint for real-time task output, console streams and metrics, storing data in PostgreSQL, MySQL/MariaDB, SQLite, or an in-memory database for testing. Each node runs a GameAP Daemon agent that connects to the panel over a long-lived gRPC bidirectional stream secured with TLS or mTLS, and controls game server processes (start, stop, monitor, configure). The README describes TLS termination with three certificate sources, including built-in Let's Encrypt (ACME) with http-01 or dns-01 (Cloudflare) challenges. Configuration is entirely through environment variables, covering caching (memory, Redis, Postgres), file storage (local or S3), CAPTCHA on login, HTTP security headers, and a WebAssembly plugin system with fine-grained capability limits. Docker and Docker Compose are offered as a quick start, and gameapctl is mentioned as a helper CLI.",
+  "use_cases": [
+   "manage multiple game servers from a web panel",
+   "deploy and control game server processes on remote nodes",
+   "run a game hosting panel for customers",
+   "obtain automatic Let's Encrypt certificates for a control panel",
+   "add plugins to a game server admin panel",
+   "single sign-on from a billing system into a customer's panel"
+  ],
+  "how_to_run": [
+   "docker-compose up -d",
+   "docker pull gameap/gameap:latest",
+   "docker run -d -p 8025:8025 -e DATABASE_DRIVER=sqlite -e DATABASE_URL=file:/db.sqlite?_busy_timeout=5000&_journal_mode=WAL&cache=shared -e ENCRYPTION_KEY=your-secret-key -e AUTH_SECRET=your-auth-secret gameap/gameap:latest"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "gRPC",
+   "PASETO",
+   "WebAssembly (wazero plugins)",
+   "go-acme/lego",
+   "PostgreSQL",
+   "MySQL/MariaDB",
+   "SQLite",
+   "Redis",
+   "S3"
+  ],
+  "notable": [
+   "Single binary panel with no pre-installed dependencies required",
+   "Built-in Let's Encrypt client with hot-swapped certificates, no certbot or nginx needed",
+   "Node agent (daemon) over a single gRPC stream with TLS/mTLS",
+   "WebAssembly plugin system with per-plugin permission grants and rate limits",
+   "Multi-instance support with Redis pub/sub and shared S3 storage"
+  ],
+  "caveats": [
+   "In-memory database is for testing only and loses data on restart",
+   "Multi-instance http-01 ACME needs sticky sessions at the load balancer; dns-01 is recommended",
+   "Only Cloudflare is named as a built-in ACME DNS provider; other providers are said to be planned"
+  ],
+  "license": "MIT",
+  "category": "game server management",
+  "keywords": [
+   "game server panel",
+   "game server management",
+   "game server control panel",
+   "game hosting panel",
+   "web admin panel",
+   "gameap",
+   "game server deployment",
+   "daemon agent",
+   "remote node management",
+   "grpc agent",
+   "self-hosted game panel",
+   "game server administration",
+   "lets encrypt panel",
+   "acme certificate",
+   "docker game panel",
+   "sqlite panel",
+   "postgresql panel",
+   "mysql panel",
+   "wasm plugins",
+   "plugin system",
+   "single sign-on panel",
+   "manage game servers on linux",
+   "manage game servers on windows",
+   "host game servers for customers",
+   "alternative to pterodactyl",
+   "rest api panel",
+   "redis multi-instance"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 17649,
+  "output": 1396
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,88 @@
+{
+ "id": "redis/redis-py",
+ "repo": "redis/redis-py",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database Drivers",
+   "entry": "redis - The Python client for Redis."
+  }
+ ],
+ "summary": {
+  "one_liner": "redis-py is the official Python client library for the Redis key-value store, providing sync and async APIs for Redis commands, pipelines, pub/sub, and clustering.",
+  "what_it_does": "The library exposes built-in methods for Redis commands using their raw names (such as HSET and HGETALL), with the exception of reserved words like del. It provides connection pooling by default, and you can supply your own ConnectionPool. Pipelines batch commands into a single round trip and wrap them in MULTI/EXEC by default, which can be disabled with transaction=False. PubSub is a separate class for subscribing to channels and receiving messages. The README also covers RESP3 support, a client-side default dialect of 2 for search and query commands, a multi-database client for Active-Active failover, and HIMPORT commands for bulk hash ingestion. Async connections, Cluster, and Async Cluster clients are also mentioned.",
+  "use_cases": [
+   "connect a Python app to a Redis server",
+   "cache key-value data from Python",
+   "batch multiple Redis commands in one round trip",
+   "subscribe to Redis pub/sub channels",
+   "query and index data with Redis search",
+   "fail over across multiple Redis deployments"
+  ],
+  "how_to_run": [
+   "docker run -p 6379:6379 -it redis:latest",
+   "pip install redis",
+   "pip install \"redis[hiredis]\"",
+   "import redis; r = redis.Redis(host='localhost', port=6379, db=0)"
+  ],
+  "stack": [
+   "Python",
+   "Redis",
+   "hiredis (optional parser)"
+  ],
+  "notable": [
+   "Sync and async clients, plus Cluster and Async Cluster variants",
+   "Pipelines wrap commands in MULTI/EXEC by default",
+   "RESP3 on the wire by default since 8.0, with legacy_responses option",
+   "Multi-database client for Redis Active-Active failover",
+   "HIMPORT command family for bulk hash ingestion (Redis 8.10)"
+  ],
+  "caveats": [
+   "Python version support is dropped over time: 8.2.0 requires Python 3.11+, and 8.1.0 is the last to support Python 3.10",
+   "HIMPORT is not supported on the multi-database (Active-Active) client",
+   "Query dialect defaults to 2 client-side, which can change search results compared with the server default"
+  ],
+  "license": "unknown",
+  "category": "redis database client",
+  "keywords": [
+   "redis python client",
+   "redis-py",
+   "python redis driver",
+   "redis client library",
+   "key-value store python",
+   "redis connection pool",
+   "redis pipeline",
+   "redis pubsub",
+   "publish subscribe python",
+   "redis cluster client",
+   "async redis python",
+   "asyncio redis",
+   "hiredis parser",
+   "resp3 protocol",
+   "redis search query dialect",
+   "redis active-active failover",
+   "redis hash bulk import",
+   "cache from python",
+   "connect python to redis",
+   "store data in redis from python",
+   "redis transactions multi exec",
+   "redis sentinel client",
+   "redis commands python api",
+   "jedis alternative python",
+   "database driver python",
+   "redis orm alternative",
+   "redis-om alternative",
+   "redis caching library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5496,
+  "output": 1163
+ },
+ "generated": "2026-10-29"
+}

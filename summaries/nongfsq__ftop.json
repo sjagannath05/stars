@@ -1,0 +1,100 @@
+{
+ "id": "nongfsq/ftop",
+ "repo": "Nongfsq/ftop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "ftop - Floating system monitor for Apple Silicon that adapts its layout to any window size, showing per-core usage and frequency, GPU, memory pressure, and network. [![Open-Source Software][OSS Icon]](https://github.com/Nongfsq/ftop) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "ftop - Floating system monitor for Apple Silicon that adapts its layout to any window size, showing per-core usage and frequency, GPU, memory pressure, and network."
+  }
+ ],
+ "summary": {
+  "one_liner": "ftop is a floating, resizable system monitor for Apple Silicon Macs showing per-core CPU usage and frequency, GPU, memory, network, power, temperature, and top processes.",
+  "what_it_does": "It presents current system state in a single native floating panel whose layout adapts to any window size, with no history graphs or disk panels. Per-core usage and frequency are grouped by core type, with GPU shown in its own column alongside memory in use and watts. Memory panel shows used, total, compressed, swap, and system pressure level, while network shows current download and upload speed. A process list shows the busiest apps with icons, folding helper processes into their parent app, and a click opens a card with CPU, memory, and helper details. A menu bar item can show up to three readings (CPU, memory, GPU, download, upload, or power), and settings are available both in the UI and in ~/.config/ftop/config.json5. Hidden or fully covered, it stops reading most metrics to reduce cost.",
+  "use_cases": [
+   "monitor CPU and GPU load while a local model or build runs",
+   "see which app is using the most CPU or memory on a Mac",
+   "keep a small always-on-top system stats window on the desktop",
+   "check per-core usage and frequency on Apple Silicon",
+   "show CPU, memory, or network speed in the menu bar",
+   "diagnose which hardware readings are available on a Mac"
+  ],
+  "how_to_run": [
+   "mkdir -p ~/.local/bin && ln -sfn ~/Applications/Ftop.app/Contents/MacOS/ftop ~/.local/bin/ftop",
+   "cd ftop && scripts/bundle.sh && scripts/install.sh",
+   "ftop # open the panel",
+   "ftop toggle # hide or show it",
+   "sudo ftop grant # optional: allow viewing system processes",
+   "ftop doctor # check which readings are available"
+  ],
+  "stack": [
+   "Swift",
+   "macOS glass material",
+   "IOReport",
+   "HID sensor services",
+   "btop (origin fork, rewritten from scratch)"
+  ],
+  "notable": [
+   "Layout adapts to any window size, so nothing is clipped and no space is left empty",
+   "Process list resists jitter: rows move slowly and rank swaps are smoothed",
+   "Unavailable readings are shown as unavailable rather than zero",
+   "Optional setuid root helper (sudo ftop grant) enables system process visibility",
+   "Self-updating from release downloads, with options to notify or never check"
+  ],
+  "caveats": [
+   "Apple Silicon only and requires macOS 15 or later",
+   "Per-core frequency and temperature rely on private macOS interfaces that may break with macOS updates, so it cannot be distributed through the Mac App Store",
+   "Seeing system processes requires granting a setuid root helper with sudo"
+  ],
+  "license": "MIT",
+  "category": "macos system monitor",
+  "keywords": [
+   "system monitor",
+   "activity monitor alternative",
+   "apple silicon monitor",
+   "macos cpu monitor",
+   "per-core cpu usage",
+   "cpu frequency",
+   "gpu usage",
+   "memory pressure",
+   "network speed menu bar",
+   "menu bar system stats",
+   "floating panel",
+   "always on top window",
+   "process monitor",
+   "top alternative mac",
+   "htop style macos",
+   "btop fork",
+   "swift macos app",
+   "ioreport",
+   "power watts monitor",
+   "temperature sensor mac",
+   "resource monitor",
+   "see what is using my cpu",
+   "watch cpu while building",
+   "monitor mac while running local model",
+   "desktop performance widget",
+   "terminal monitor replacement",
+   "ftop",
+   "nongfsq",
+   "macos 15",
+   "mac system stats",
+   "open source mac tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4350,
+  "output": 1338
+ },
+ "generated": "2026-10-29"
+}

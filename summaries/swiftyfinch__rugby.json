@@ -1,0 +1,93 @@
+{
+ "id": "swiftyfinch/rugby",
+ "repo": "swiftyfinch/Rugby",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "Rugby - 🏈 Cache CocoaPods for faster rebuild and indexing Xcode project."
+  }
+ ],
+ "summary": {
+  "one_liner": "Rugby is a CLI tool that caches CocoaPods dependencies and removes their targets from the Pods Xcode project to speed up indexing and rebuilds.",
+  "what_it_does": "Rugby is a command-line tool for large Xcode projects that use CocoaPods. It caches all pod dependencies and removes their targets from the Pods project, so Xcode indexes and rebuilds less. It rebuilds only changed pods or downloads them. It can also delete unneeded targets and their sources to reduce project size. Per the README, it does not become a project dependency, does not change the Podfile or Podfile.lock, and can run a sequence of commands from a YAML file. It supports remote cache and uses the native Xcode build system. The main usage is running `rugby` after each `pod install`, and `rugby rollback` reverses the changes.",
+  "use_cases": [
+   "speed up Xcode indexing for CocoaPods projects",
+   "reduce Xcode rebuild time after pod install",
+   "cache CocoaPods dependencies as binaries",
+   "shrink a large iOS Xcode project",
+   "share a remote build cache across a team",
+   "roll back CocoaPods build caching"
+  ],
+  "how_to_run": [
+   "curl -Ls | bash",
+   "rugby update",
+   "rugby",
+   "rugby rollback"
+  ],
+  "stack": [
+   "Swift",
+   "CocoaPods",
+   "Xcode native build system",
+   "YAML",
+   "Ruby (alternative tools named only)"
+  ],
+  "notable": [
+   "Runs as an optional step and leaves Podfile and Podfile.lock unchanged",
+   "Can run a custom sequence of commands from a YAML file",
+   "Supports a remote cache",
+   "Single-command usage with `rugby` and reversible with `rugby rollback`",
+   "Can exclude problematic pods with `rugby -e`"
+  ],
+  "caveats": [
+   "Requires the project's source code to be finalized before running, since code generation steps can change hashes",
+   "Pods must be buildable standalone, or some may need to be excluded",
+   "Rugby 1.x must be removed before installing the 2.x line; self-update needs version 2.0.0b2 or later",
+   "Some tests can't be run via Xcode (issue #394)"
+  ],
+  "license": "unknown",
+  "category": "xcode build optimization",
+  "keywords": [
+   "cocoapods",
+   "cocoapods cache",
+   "xcode",
+   "xcode indexing",
+   "xcode slow",
+   "xcode rebuild",
+   "pods targets",
+   "pod install",
+   "ios build speed",
+   "swift",
+   "objective-c",
+   "binary cache",
+   "remote cache",
+   "cli tool",
+   "rugby",
+   "podfile",
+   "build caching",
+   "xcode project size",
+   "reduce project size",
+   "speed up xcode",
+   "yaml plan",
+   "rollback",
+   "pod build time",
+   "swiftgen",
+   "podbuilder alternative",
+   "cocoapods binary cache alternative",
+   "ios developer tools",
+   "macos command line",
+   "autocompletion slow xcode",
+   "cache pods"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2809,
+  "output": 1110
+ },
+ "generated": "2026-10-29"
+}

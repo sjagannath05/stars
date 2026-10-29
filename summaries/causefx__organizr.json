@@ -1,0 +1,92 @@
+{
+ "id": "causefx/organizr",
+ "repo": "causefx/Organizr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Dashboards",
+   "entry": "Organizr | Organise your HTPC and homelab services behind a single tabbed interface"
+  }
+ ],
+ "summary": {
+  "one_liner": "Organizr is a self-hosted PHP web app that puts your homelab and HTPC services into tabs on a single webpage, with user and guest access controls.",
+  "what_it_does": "Organizr lets you define custom tabs, each loading one of your services, all within a single web page so you don't have to remember IPs and ports. You can enable user support so others log in to see specific tabs, and enable guest access for selected tabs. It supports login through Plex, Emby, LDAP, or sFTP credentials, plus multiple login methods and user groups. Additional features listed include a login log viewer, fail2ban support, Nginx auth_request support, a registration password for new accounts, and a Docker image. Theming, custom icons, a customisable top bar, and per-tab iFrame toggling are also described.",
+  "use_cases": [
+   "Put all homelab services behind one dashboard page",
+   "Replace a bookmark list of server IPs and ports",
+   "Share selected services with family or friends via user accounts",
+   "Give guests read access to certain dashboard tabs",
+   "Run a tabbed HTPC control page",
+   "Add login protection in front of self-hosted apps with Nginx auth_request"
+  ],
+  "how_to_run": [
+   "docker create --name=organizr -v <path to data>:/config -e PGID=<gid> -e PUID=<uid> -p 80:80 -e fpm=\"false\" -e branch=\"v2-master\" organizr/organizr",
+   "Optional: set fpm and branch environment variables as shown in the Docker command",
+   "Shell access while running: docker exec -it organizr /bin/bash",
+   "Follow logs in realtime: docker logs -f organizr"
+  ],
+  "stack": [
+   "PHP 7.2+",
+   "Docker",
+   "Nginx (auth_request integration)",
+   "Fail2ban"
+  ],
+  "notable": [
+   "Tabbed interface that loads multiple self-hosted services in one webpage",
+   "Login via Plex, Emby, LDAP, or sFTP credentials",
+   "Per-tab user and guest access control",
+   "Nginx auth_request and fail2ban support documented in the wiki",
+   "Themeable with a customisable colour palette"
+  ],
+  "caveats": [
+   "README says the official site and wiki are 'will be refreshed/updated soon', so documentation may be incomplete",
+   "Forgot-password email feature requires a mail server setup",
+   "Some parameters (GID/UID details, optional settings) are deferred to the wiki or container readme"
+  ],
+  "license": "unknown",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "organizr",
+   "service dashboard",
+   "homelab dashboard",
+   "tabbed interface",
+   "single page dashboard",
+   "htpc dashboard",
+   "self-hosted dashboard",
+   "php dashboard",
+   "docker dashboard",
+   "bookmark replacement",
+   "avoid remembering ip and port",
+   "homepage for services",
+   "user accounts for tabs",
+   "guest access dashboard",
+   "plex login",
+   "emby login",
+   "ldap login",
+   "sftp login",
+   "nginx auth_request",
+   "fail2ban",
+   "login log viewer",
+   "user groups",
+   "registration password",
+   "theme customisation",
+   "custom tabs",
+   "iframe tabs",
+   "homelab portal",
+   "organise services in one page",
+   "share dashboard with family",
+   "docker compose homelab",
+   "php 7.2 app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2489,
+  "output": 1222
+ },
+ "generated": "2026-10-29"
+}

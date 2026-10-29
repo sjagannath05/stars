@@ -1,0 +1,99 @@
+{
+ "id": "li-evan/bloom",
+ "repo": "Li-Evan/Bloom",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "Bloom by Li-Evan - A self-contained Claude Code skill that turns Benjamin Bloom's \"2-sigma\" tutoring research into a personal AI tutor: it generates a structured syllabus, teaches one lesson at a time, and adapts each next lesson to the learner's annotations and feedback. The skill is dependency-free and makes no network calls beyond the configured LLM endpoint (an optional web app is also include"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bloom is an AI personal tutor that builds a syllabus for any topic and teaches one adaptive lesson at a time, using a Claude Code skill (CLI) or a React/FastAPI web app.",
+  "category": "ai tutoring, learning tools",
+  "keywords": [
+   "ai tutor",
+   "personal tutor",
+   "claude code skill",
+   "adaptive learning",
+   "bloom 2 sigma",
+   "one-on-one tutoring",
+   "syllabus generator",
+   "mastery learning",
+   "socratic tutoring",
+   "spaced retrieval",
+   "study assistant",
+   "self-paced learning",
+   "learn any topic",
+   "course generator",
+   "pdf study tool",
+   "highlight question answering",
+   "annotation feedback",
+   "knowledge graph learning path",
+   "feynman technique",
+   "openai compatible api",
+   "fastapi react app",
+   "docker compose learning",
+   "help me learn a topic",
+   "study from my own notes",
+   "learning calendar",
+   "markdown study notes",
+   "llm tutor"
+  ],
+  "what_it_does": "Bloom generates a structured syllabus for a topic, then delivers lessons one at a time. The reader annotates text and writes feedback, and the next lesson is adapted to those annotations and to answers to thought questions. The CLI mode is a dependency-free Claude Code skill (bloom-tutor) copied into a project's .claude/skills folder, with a separate set of learn-* skills (deep, crossover, occam, graph, prototype, feynman) for other learning angles. The web mode is a React + Vite frontend with a FastAPI + SQLite backend that works with any OpenAI-compatible LLM API. Web courses can start from a topic, an uploaded PDF/TXT/MD source, or a set of project files, and the app includes highlight Q&A, next-topic recommendations, and a learning calendar. The README says the CLI skill makes no network calls beyond the configured LLM endpoint.",
+  "use_cases": [
+   "learn a new subject with an AI tutor",
+   "turn a textbook chapter or paper into guided lessons",
+   "study from my own PDF or markdown notes",
+   "self-paced course with quizzes and feedback",
+   "track mastery across a multi-lesson course",
+   "run a private AI study tool in the browser or terminal"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/Li-Evan/Bloom && cd Bloom",
+   "mkdir -p .claude/skills && cp -R skills/bloom-tutor .claude/skills/ (CLI mode, then run claude)",
+   "cp .env.example .env and set LLM_API_KEY (web mode)",
+   "cd backend && uv sync && uv run uvicorn app.main:app --reload --port 8000",
+   "cd frontend && npm install && npm run dev",
+   "docker compose up -d (Docker option, after filling in .env)"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "uv",
+   "FastAPI",
+   "SQLAlchemy",
+   "SQLite",
+   "React",
+   "Vite",
+   "Tailwind CSS",
+   "Node.js 18+",
+   "Docker",
+   "docker-compose",
+   "Claude Code skills",
+   "OpenAI-compatible LLM API"
+  ],
+  "notable": [
+   "Two modes from the same flow: a Claude Code skill with no backend, and a full web app",
+   "Adaptive lessons that address gaps from the learner's annotations and feedback",
+   "Highlight-to-ask Q&A inside any lesson or source, with answers feeding the next lesson",
+   "Portable learn-* skills, each dependency-free, for different learning approaches",
+   "Works with any OpenAI-compatible LLM endpoint"
+  ],
+  "caveats": [
+   "The web mode needs an OpenAI-compatible API key and a Python plus Node.js setup, or Docker",
+   "The CLI mode requires Claude Code",
+   "The README does not say how output quality varies across LLM providers or topics"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4543,
+  "output": 1415
+ },
+ "generated": "2026-10-29"
+}

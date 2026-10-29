@@ -1,0 +1,102 @@
+{
+ "id": "saurabhav88/enviouswispr",
+ "repo": "saurabhav88/EnviousWispr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "EnviousWispr - Free on-device AI dictation for macOS with Whisper and Parakeet speech models on Apple Silicon."
+  }
+ ],
+ "summary": {
+  "one_liner": "EnviousWispr is a free, open-source macOS dictation app that transcribes speech on-device with Whisper or Parakeet models on Apple Silicon and pastes the result into the active app.",
+  "what_it_does": "Records your voice via a global keybind (push-to-talk, toggle, or hands-free), uses Silero VAD to end recording when you stop talking, and transcribes locally with Parakeet Ultra (Core ML, Neural Engine, 25 European languages) or Whisper Large v3 Turbo (transcribe.cpp on Metal, 99+ languages). An optional AI polish step cleans grammar, punctuation, and formatting using on-device EG-1, S1-mini, Apple Intelligence, Ollama, or bring-your-own-key OpenAI, Gemini, or Claude. The text is copied to the clipboard and can be auto-pasted into the active app. Extra features include snippets, transcribing audio or video files with optional speaker turns, custom vocabulary, a self-learning dictionary, live preview in the recording pill, escape recovery of cancelled dictations, and a searchable history.",
+  "use_cases": [
+   "dictate text into any Mac app offline",
+   "private speech-to-text without cloud uploads",
+   "transcribe audio or video files on a Mac",
+   "clean up dictated grammar and punctuation with a local LLM",
+   "voice typing with push-to-talk hotkey",
+   "expand saved snippets by voice"
+  ],
+  "how_to_run": [
+   "brew install --cask saurabhav88/tap/enviouswispr",
+   "Or download EnviousWispr.dmg from the latest release, drag to Applications, and launch",
+   "git clone the repo, then run: swift build (compiles Swift packages only)",
+   "./scripts/build-dev-app.sh for a local dev app build (via Tuist and Xcode)",
+   "./scripts/build-release-dmg.sh for a signed distributable DMG (requires full Xcode 26+, mise, Tuist)"
+  ],
+  "stack": [
+   "Swift 6",
+   "Tuist",
+   "Xcode",
+   "Swift Package Manager",
+   "Whisper via transcribe.cpp (Metal)",
+   "Parakeet Ultra (NVIDIA NeMo, Core ML)",
+   "Silero VAD",
+   "Sparkle",
+   "PostHog",
+   "Sentry",
+   "Ollama (optional)",
+   "Qwen3-4B-Instruct-2507 base for EG-1"
+  ],
+  "notable": [
+   "Fully on-device transcription on Apple Silicon with no account or subscription; audio never leaves the Mac",
+   "Choice of two ASR engines (Parakeet Ultra and Whisper) plus several optional polish engines, including local ones",
+   "Escape Recovery keeps cancelled dictation text for 24 hours (text only, never audio)",
+   "Architecture separates a critical record-transcribe-paste path from optional features that degrade gracefully",
+   "Snippets paste saved text word for word, with date, time, and clipboard fill-ins"
+  ],
+  "caveats": [
+   "Requires Apple Silicon (M1 or newer) and macOS 14 or later; Apple Intelligence polish needs macOS 26+",
+   "Building from source needs full Xcode 26+, mise and Tuist; first build takes several minutes as ML models compile",
+   "EG-1 model weights are not open source and fall under a separate community license; only the app code is GPLv3"
+  ],
+  "license": "GPLv3 (app code); EG-1 model weights under the EG-1 Community Model License",
+  "category": "macos dictation app",
+  "keywords": [
+   "speech to text",
+   "dictation",
+   "voice typing",
+   "on-device transcription",
+   "offline transcription",
+   "whisper",
+   "parakeet",
+   "whisper large v3 turbo",
+   "apple silicon",
+   "macos",
+   "mac dictation app",
+   "voice to text mac",
+   "private dictation",
+   "local speech recognition",
+   "push to talk",
+   "auto paste",
+   "clipboard paste",
+   "transcribe audio file",
+   "transcribe video file",
+   "speaker diarization",
+   "llm grammar cleanup",
+   "ollama",
+   "snippets",
+   "custom vocabulary",
+   "dictation alternative to cloud services",
+   "type with my voice",
+   "share text by voice on mac",
+   "swift",
+   "open source dictation",
+   "wispr flow alternative",
+   "superwhisper alternative",
+   "homebrew cask"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12331,
+  "output": 1571
+ },
+ "generated": "2026-10-29"
+}

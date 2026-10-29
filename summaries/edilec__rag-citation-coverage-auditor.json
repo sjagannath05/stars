@@ -1,0 +1,89 @@
+{
+ "id": "edilec/rag-citation-coverage-auditor",
+ "repo": "edilec/rag-citation-coverage-auditor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "RAG Citation Coverage Auditor - Offline CLI that checks declared RAG answer citations against approved retrieval sources and explicit claim support in local exports. #free #opensource #rag"
+  }
+ ],
+ "summary": {
+  "one_liner": "An offline, read-only Node.js CLI that audits a local JSON export of RAG answer claims and citation IDs against approved retrieval sources and explicit source-to-claim support.",
+  "what_it_does": "It reads a named local JSON export containing sources (with approval, permissions, observation date and supported-claim lists) and claims (with citation IDs). It checks whether each citation ID resolves to a declared source, whether that source is approved, permitted for a requested scope and fresh relative to an operator-supplied date, and whether at least one usable source explicitly lists the claim as supported. It reports three metrics (resolved citations, usable citations, covered claims) as numerator/denominator pairs, with null where evidence is unknown. Output is a JSON report on stdout with findings sorted by location and rule ID, and a short human summary on stderr when --json is absent. It does not fetch sources, judge claim truth, or extract citations from Markdown.",
+  "use_cases": [
+   "audit citations in a RAG answer export",
+   "check that cited sources are approved and in scope",
+   "detect fabricated or unresolved citation IDs",
+   "verify claims have explicitly supporting sources",
+   "flag stale retrieval sources before publishing answers",
+   "run citation coverage checks in CI"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd rag-citation-coverage-auditor",
+   "node bin/rag-citation-coverage-auditor.mjs --input examples/passing.json --scope public --as-of 2026-09-20",
+   "node bin/rag-citation-coverage-auditor.mjs --input examples/failing.json --scope public --as-of 2026-09-20 --json",
+   "npm run check"
+  ],
+  "stack": [
+   "Node.js 22+",
+   "JavaScript (ES modules)"
+  ],
+  "notable": [
+   "Treats a cited ID as not proof of support; requires an explicit source-to-claim support relation in the export",
+   "Reports unknown approval, permission, freshness or inventory as incomplete rather than passing them",
+   "Zero runtime and development dependencies; writes no files and contacts no network or provider",
+   "Configurable bounds on bytes, sources, claims, citations, depth and time, with deterministic byte-identical reports",
+   "Frozen rule table with fixed severities and exit codes (0 pass, 1 fail, 2 incomplete or invalid)"
+  ],
+  "caveats": [
+   "Audits only a local export; it does not verify that support relations are true or retrieve sources",
+   "Requires the operator to supply --as-of; the tool never reads the calendar date",
+   "Time limit checks are cooperative, so elapsed time can exceed the configured timeout slightly"
+  ],
+  "license": "MIT",
+  "category": "rag citation auditing",
+  "keywords": [
+   "rag citation auditor",
+   "citation coverage",
+   "retrieval augmented generation",
+   "citation validation",
+   "claim support checker",
+   "source attribution audit",
+   "offline cli",
+   "node.js cli",
+   "zero dependencies",
+   "json export audit",
+   "fabricated citation detection",
+   "unresolved citation",
+   "source approval check",
+   "permission scope check",
+   "source freshness check",
+   "stale source detection",
+   "claim coverage report",
+   "ci citation check",
+   "grounding verification",
+   "answer provenance",
+   "source-to-claim support",
+   "read-only reporter",
+   "local audit tool",
+   "compliance checks for ai answers",
+   "validate rag output",
+   "check cited sources",
+   "make sure answers cite approved sources",
+   "citation audit before publishing",
+   "mit licensed tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4051,
+  "output": 1287
+ },
+ "generated": "2026-10-29"
+}

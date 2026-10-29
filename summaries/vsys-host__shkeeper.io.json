@@ -1,0 +1,91 @@
+{
+ "id": "vsys-host/shkeeper.io",
+ "repo": "vsys-host/shkeeper.io",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "SHKeeper - Cryptocurrency payment processor with the unique combination of gateway and merchant allowing you to accept payments in multiple cryptocurrencies without fees and intermediaries. (Demo, Source Code) GPL-3.0 Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "SHKeeper is a self-hosted cryptocurrency payment processor that acts as both gateway and merchant, letting a store accept many cryptocurrencies with no transaction fees and no intermediaries.",
+  "what_it_does": "Runs an invoice-based crypto checkout: each invoice gets a unique address per coin, linked to the merchant's external order ID, and the server sends HMAC-signed callbacks as payments arrive (statuses UNPAID, PARTIAL, PAID, OVERPAID). It exposes a REST API for listing enabled coins, creating invoices and quotes, looking up addresses, transactions and invoices, and reading balances and Prometheus-style metrics. It also supports payouts, including multipayout batches, with asynchronous task status polling, and an optional wallet encryption key entered via API. The README lists official plugins for WHMCS, WooCommerce/WordPress, OpenCart 3 and PrestaShop 8, and documents a Kubernetes (k3s + Helm) installation with automatic SSL via cert-manager.",
+  "use_cases": [
+   "accept cryptocurrency payments on an online store",
+   "self-hosted crypto checkout with invoices and callbacks",
+   "pay out crypto to customers or suppliers via API",
+   "batch crypto payouts to multiple recipients",
+   "WooCommerce or WHMCS bitcoin and crypto payment gateway",
+   "generate per-customer static deposit addresses"
+  ],
+  "how_to_run": [
+   "Install k3s and helm on a fresh server (README tested on Ubuntu 22)",
+   "Create a values.yaml enabling the coins you need (e.g. btc, ltc, doge, monero)",
+   "helm repo add vsys-host and mittwald, then helm repo update",
+   "helm install kubernetes-secret-generator mittwald/kubernetes-secret-generator",
+   "helm install -f values.yaml shkeeper vsys-host/shkeeper",
+   "Optionally install cert-manager and apply the provided Certificate/ClusterIssuer/IngressRoute manifests for auto SSL"
+  ],
+  "stack": [
+   "Python",
+   "Kubernetes (k3s)",
+   "Helm",
+   "cert-manager",
+   "Traefik",
+   "Let's Encrypt"
+  ],
+  "notable": [
+   "Acts as both gateway and merchant, with no fees or third-party intermediaries (non-custodial per README)",
+   "Unique address per invoice, so each customer or order can be identified on-chain",
+   "Wide coin support including BTC (on-chain and Lightning), monero, XRP, Solana, and stablecoins across several networks",
+   "HMAC-SHA256 signed webhooks, with verification guide in webhook_verification.md",
+   "Official ready-made modules for WHMCS, WooCommerce, OpenCart 3 and PrestaShop 8"
+  ],
+  "caveats": [
+   "Installation described in the README relies on Kubernetes (k3s) and Helm; the README gives no standalone install path",
+   "Lightning and some advanced setups require extra SSL/port 9000 configuration and are marked for advanced users only",
+   "Multipayout is not supported for XMR, BTC, LTC and DOGE, which must use single payouts; the README also notes that the demo runs on testnet"
+  ],
+  "license": "GPL-3.0",
+  "category": "crypto payment processing",
+  "keywords": [
+   "cryptocurrency payment processor",
+   "crypto payment gateway",
+   "self-hosted crypto checkout",
+   "accept bitcoin payments",
+   "accept crypto on website",
+   "bitcoin payment gateway",
+   "monero payments",
+   "stablecoin payments",
+   "usdt payments",
+   "crypto invoices api",
+   "crypto payout api",
+   "multipayout",
+   "webhook callback hmac",
+   "woocommerce crypto plugin",
+   "whmcs crypto gateway",
+   "prestashop crypto module",
+   "opencart crypto module",
+   "k3s helm crypto payments",
+   "kubernetes payment server",
+   "non-custodial payments",
+   "no kyc payments",
+   "lightning network payments",
+   "crypto merchant software",
+   "pay with crypto without intermediaries",
+   "coinbase commerce alternative",
+   "btcpay server alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 18510,
+  "output": 1473
+ },
+ "generated": "2026-10-29"
+}

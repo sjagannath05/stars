@@ -1,0 +1,98 @@
+{
+ "id": "eventschedule/eventschedule",
+ "repo": "eventschedule/eventschedule",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Polls and Events",
+   "entry": "EventSchedule - Share events, sell tickets, and bring communities together. (Source Code) AAL PHP/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Event Schedule is an open-source, self-hostable PHP/Laravel platform for publishing event calendars, selling tickets, taking registrations and running community event pages.",
+  "what_it_does": "It lets a venue, performer or community publish schedules and events, including recurring events with per-date exceptions, public, draft, internal and unlisted visibility, and public event request queues. Ticketing covers paid tickets through Stripe, PayPal, Payfast, Razorpay, Invoice Ninja, payment links or cash, plus promo codes, waitlists, QR tickets, a door scanner and a drag-and-drop seating plan builder. It also provides appointment booking, two-way sync with Google Calendar, Outlook and CalDAV, and .ics/webcal import. Optional AI features (Gemini or OpenAI keys) can create events from text or flyers, and newsletters, subscribers, analytics, a REST API and HMAC-signed webhooks are included. Optional integrations activate only after the matching credentials are added to .env, and a fresh install makes only a daily GitHub update check and a monthly DB-IP GeoIP download.",
+  "use_cases": [
+   "publish a community event calendar",
+   "sell tickets for a venue or show",
+   "take free RSVPs with capacity limits",
+   "book appointments with weekly hours",
+   "sync events with Google or Outlook calendars",
+   "run a newsletter to event followers",
+   "check in ticket holders at the door with QR codes"
+  ],
+  "how_to_run": [
+   "git clone the repository, then cd into the dockerfiles directory",
+   "Set DB_PASSWORD and APP_URL in .env",
+   "docker compose up --build -d",
+   "Manual: create an empty MySQL database, extract eventschedule.zip, point the web root at public",
+   "Run cp .env.example .env, leave APP_URL blank, open the site and follow the setup wizard",
+   "Add the cron entry: * * * * * php /path/to/eventschedule/artisan schedule:run"
+  ],
+  "stack": [
+   "PHP 8.2+",
+   "Laravel 11",
+   "Vue.js 3",
+   "Tailwind CSS",
+   "MySQL or MariaDB",
+   "Vite",
+   "Docker"
+  ],
+  "notable": [
+   "All paid-plan features of the hosted version are included in selfhosted installs, with no license keys or platform fees on ticket sales",
+   "No telemetry; JS, CSS and fonts are vendored instead of loaded from a CDN",
+   "Browser setup wizard tests the database, runs migrations and writes config; updates are one click from the admin panel",
+   "Supports 12 interface languages including right-to-left Hebrew and Arabic",
+   "Curator schedule type automatically pulls in events from the venues and performers it lists"
+  ],
+  "caveats": [
+   "Requires PHP 8.2+, MySQL 5.7+ or MariaDB 10.3+, a web server, HTTPS and a cron entry",
+   "Guest pages on a selfhosted install keep a small Event Schedule credit linking to the project",
+   "Selfhosted installs are single-user by default; registration must be enabled with ALLOW_REGISTRATION=true"
+  ],
+  "license": "Attribution Assurance License (AAL)",
+  "category": "event management platform",
+  "keywords": [
+   "event scheduling",
+   "event calendar",
+   "ticket sales",
+   "sell tickets online",
+   "event ticketing",
+   "self-hosted events",
+   "php laravel app",
+   "docker event platform",
+   "rsvp management",
+   "event registration",
+   "community calendar",
+   "venue calendar",
+   "appointment booking",
+   "calendly alternative",
+   "eventbrite alternative",
+   "google calendar sync",
+   "caldav sync",
+   "ics feed",
+   "ical feed",
+   "qr code tickets",
+   "door check-in",
+   "seating plan",
+   "newsletter for events",
+   "stripe tickets",
+   "paypal tickets",
+   "recurring events",
+   "event newsletter",
+   "share events with my community",
+   "host my own event calendar",
+   "vue tailwind app",
+   "aal license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5926,
+  "output": 1441
+ },
+ "generated": "2026-10-29"
+}

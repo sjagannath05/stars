@@ -1,0 +1,94 @@
+{
+ "id": "pgadmin-org/pgadmin4",
+ "repo": "pgadmin-org/pgadmin4",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "pgAdmin | Administration and development platform for PostgreSQL"
+  }
+ ],
+ "summary": {
+  "one_liner": "pgAdmin 4 is a web-based administration and development platform for PostgreSQL, built with a Flask/Python server and a ReactJS client, runnable in a browser or as a standalone Electron desktop app.",
+  "what_it_does": "The README describes pgAdmin 4 as a rewrite of the pgAdmin3 PostgreSQL management tool. The server side is written in Python with Flask, and the client UI uses ReactJS, HTML5 and CSS. It can be deployed on a web server and accessed through a browser, or run standalone on a workstation via an Electron-based runtime in the runtime/ subdirectory, which forks a Python server process and displays the UI. The build process compiles JavaScript, CSS and image assets into a bundle using yarn. It also includes a setup flow for a configuration database (SQLite by default, per the config examples) that runs in server or desktop mode, and it can build docs with Sphinx, source tarballs, and pip wheels. The README covers Python setup, local configuration overrides, and SQLite schema migrations via Flask-Migrate-style commands.",
+  "use_cases": [
+   "manage PostgreSQL databases through a web browser",
+   "run a desktop PostgreSQL admin tool",
+   "develop or modify the pgAdmin web application",
+   "build pgAdmin packages or docs from source",
+   "run regression tests for pgAdmin"
+  ],
+  "how_to_run": [
+   "corepack enable",
+   "cd $PGADMIN4_SRC && make install-node",
+   "make bundle",
+   "python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip",
+   "pip install -r $PGADMIN4_SRC/requirements.txt",
+   "python3 $PGADMIN4_SRC/web/pgAdmin4.py"
+  ],
+  "stack": [
+   "Python 3.9+",
+   "Flask",
+   "ReactJS",
+   "Node.js 20+",
+   "yarn",
+   "Electron",
+   "PostgreSQL",
+   "psycopg3",
+   "Sphinx",
+   "SQLite"
+  ],
+  "notable": [
+   "Runs either as a multi-user web server app or as a standalone desktop app via an Electron runtime",
+   "Development setup uses a config_local.py file to override settings like data directory, server port and mode",
+   "Builds a source tarball, pip wheel, and documentation with Make targets",
+   "Schema changes to the internal SQLite config DB use Flask migration revisions"
+  ],
+  "caveats": [
+   "Windows setup is more complicated and requires following a separate pkg/win32/README.md",
+   "macOS and Windows packaging are described in separate README files rather than in this one",
+   "Server mode setup is interactive and cannot be automated through the runtime"
+  ],
+  "license": "unknown",
+  "category": "database administration tools",
+  "keywords": [
+   "pgadmin",
+   "pgadmin4",
+   "postgresql",
+   "postgres admin",
+   "postgresql gui",
+   "postgres web interface",
+   "database management",
+   "database administration",
+   "flask",
+   "reactjs",
+   "electron desktop app",
+   "pgadmin3 alternative",
+   "psql alternative",
+   "sql client",
+   "browser-based database tool",
+   "self-hosted database admin",
+   "python web app",
+   "yarn bundle",
+   "sphinx docs",
+   "psycopg3",
+   "sqlite config database",
+   "manage postgres in browser",
+   "desktop postgres client",
+   "query postgresql databases",
+   "develop pgadmin source",
+   "build pgadmin from source",
+   "run pgadmin in docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4548,
+  "output": 1268
+ },
+ "generated": "2026-10-29"
+}

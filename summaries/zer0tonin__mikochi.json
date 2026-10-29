@@ -1,0 +1,97 @@
+{
+ "id": "zer0tonin/mikochi",
+ "repo": "zer0tonin/Mikochi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Web-based File Managers",
+   "entry": "mikochi - Browse remote folders, upload files, delete, rename, download and stream files to VLC/mpv. MIT Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mikochi is a minimalist, self-hosted web file browser for remote folders on a server or NAS, with upload, rename, delete, download, and streaming links for VLC or mpv.",
+  "what_it_does": "Mikochi lets you browse folders on a remote server or NAS through a web interface. You can upload files, create folders, rename and delete items, and download files or directories (directories as .tar.gz). It includes fuzzy search and can generate streaming links that open in VLC or mpv. The frontend is a Preact web app and the backend is a Go server using the Gin framework. Access is protected by a single username and password set through environment variables, and the README describes optional TLS via certificate paths.",
+  "use_cases": [
+   "browse files on a home server or NAS from a browser",
+   "upload files to a remote folder",
+   "stream videos from a server to VLC or mpv",
+   "download folders as tar.gz archives",
+   "run a simple file manager in Docker or Kubernetes"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -v $(PWD)/data:/data -e DATA_DIR=\"/data\" -e USERNAME=zer0tonin -e PASSWORD=horsebatterysomething zer0tonin/mikochi:latest",
+   "helm repo add zer0tonin",
+   "helm install mikochi zer0tonin/mikochi --version 1.12.2 --set mikochi.username=zer0tonin --set mikochi.password=my_super_password --set persistence.enabled=true",
+   "Debian/Ubuntu: install the .deb from the latest release, create /data, then run PASSWORD=horsebatterysomething mikochi",
+   "Fedora/RHEL/CentOS: install the .rpm from the latest release, create /data, then run PASSWORD=horsebatterysomething mikochi",
+   "Binary: extract the release tarball, move the mikochi binary and static folder into place, then run PASSWORD=horsebatterysomething mikochi"
+  ],
+  "stack": [
+   "Go",
+   "Gin",
+   "Preact",
+   "Docker",
+   "Kubernetes / Helm",
+   "Traefik (development setup)",
+   "Delve (backend debugging)"
+  ],
+  "notable": [
+   "Streaming links that open directly in VLC or mpv",
+   "Configured entirely through environment variables such as DATA_DIR, USERNAME, PASSWORD, NO_AUTH, and GZIP",
+   "Ships as Docker image, Helm chart, .deb, .rpm, and plain binary",
+   "Deliberately minimal: a single username and password combo, with the README suggesting forks for more complex auth",
+   "Related companion project Mikochi-Player, a web video player"
+  ],
+  "caveats": [
+   "Authentication supports only one username and password pair; more advanced setups require forking",
+   "Setting DATA_DIR to / or enabling NO_AUTH on an internet-facing host is flagged as a serious risk in the README",
+   "Default credentials (root/pass) must be changed before use"
+  ],
+  "license": "MIT",
+  "category": "self-hosted file browser",
+  "keywords": [
+   "remote file browser",
+   "web file manager",
+   "self-hosted file manager",
+   "nas file browser",
+   "file upload web",
+   "browse server files",
+   "stream to vlc",
+   "stream to mpv",
+   "video streaming link",
+   "go gin server",
+   "preact frontend",
+   "docker file browser",
+   "kubernetes helm chart",
+   "helm file manager",
+   "tar.gz download folder",
+   "fuzzy search files",
+   "rename delete files web",
+   "share files with my team",
+   "access home server files remotely",
+   "minimalist file explorer",
+   "lightweight file manager",
+   "file transfer web ui",
+   "tls https file server",
+   "jwt login file browser",
+   "awesome-selfhosted file transfer",
+   "debian deb package file browser",
+   "rpm package file browser",
+   "mikochi",
+   "zer0tonin",
+   "web based file manager nas",
+   "stream media from server",
+   "dropbox alternative self hosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3604,
+  "output": 1425
+ },
+ "generated": "2026-10-29"
+}

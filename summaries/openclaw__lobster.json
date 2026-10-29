@@ -1,0 +1,110 @@
+{
+ "id": "openclaw/lobster",
+ "repo": "openclaw/lobster",
+ "kind": "star",
+ "description": "Lobster is a Openclaw-native workflow shell: a typed, local-first “macro engine” that turns skills/tools into composable pipelines and safe automations—and lets Openclaw call those workflows in one step.",
+ "topics": [],
+ "language": "TypeScript",
+ "stars": 1277,
+ "license": "MIT",
+ "homepage": "https://docs.openclaw.ai/tools/lobster",
+ "pushed_at": "2026-10-22",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Ecosystem & Extensions",
+   "entry": "openclaw/lobster — Workflow shell / macro engine"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lobster is an OpenClaw-native, typed, local-first workflow shell that chains shell commands, data-shaping stages, LLM calls and approval gates into reusable pipelines and YAML workflow files.",
+  "what_it_does": "Lobster runs pipelines of typed (JSON-first) stages such as exec, where, pick, head, json and table, passing objects and arrays between them rather than text. Workflow files (.lobster, YAML or JSON) define steps using run/command for shell, pipeline for native stages, and approval for human gates, with stdin data passing between steps via $step.stdout or $step.json. A graph command renders workflow structure as Mermaid, DOT or ASCII. Built-in stages include llm.invoke (OpenClaw, pi or HTTP providers), openclaw.agent, and openclaw.invoke/clawd.invoke shims for calling OpenClaw tools. It also provides retry, timeout and on_error policies per step, cost tracking with cost limits for LLM usage, resumable approvals and input requests, and an SDK with AbortSignal cancellation. Example recipes include a GitHub PR monitor that notifies only when a pull request changes.",
+  "use_cases": [
+   "chain shell commands into typed data pipelines",
+   "add human approval gates to automated workflows",
+   "call OpenClaw tools or agents from a single workflow step",
+   "monitor a GitHub pull request for changes",
+   "run LLM steps with cost limits inside scripted workflows",
+   "visualize workflow structure as a diagram before running it"
+  ],
+  "how_to_run": [
+   "pnpm install --frozen-lockfile",
+   "pnpm build",
+   "pnpm test",
+   "node ./bin/lobster.js --help",
+   "node ./bin/lobster.js doctor",
+   "node ./bin/lobster.js run path/to/workflow.lobster"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 22+",
+   "pnpm",
+   "Node test runner",
+   "tsc",
+   "GitHub CLI (gh)",
+   "OpenClaw gateway"
+  ],
+  "notable": [
+   "Typed JSON-first pipelines instead of text pipes",
+   "Approval and input gates that pause a workflow and resume with the user's decision",
+   "Workflow graph visualization in Mermaid, DOT and ASCII",
+   "Cost tracking and cost_limit for LLM calls, with replay-aware billing",
+   "Output and HTTP response byte limits via environment variables"
+  ],
+  "caveats": [
+   "Requires Node.js 22 or newer and the pinned pnpm version; the README says to build after changing source because bin/lobster.js runs compiled dist output.",
+   "Retries are suppressed after an OpenClaw dispatch is attempted, so failed remote calls must be checked manually before rerunning.",
+   "The OpenClaw llm-task adapter does not return token usage, so token-based cost limits cannot be enforced for those calls."
+  ],
+  "license": "MIT",
+  "category": "workflow automation shell",
+  "keywords": [
+   "workflow engine",
+   "pipeline shell",
+   "macro engine",
+   "workflow automation",
+   "typed pipelines",
+   "json pipeline",
+   "approval gate",
+   "human in the loop",
+   "openclaw",
+   "openclaw workflows",
+   "clawd.invoke",
+   "llm workflow",
+   "llm.invoke",
+   "agent automation",
+   "yaml workflow",
+   "lobster workflow file",
+   "shell command pipeline",
+   "composable macros",
+   "local-first automation",
+   "github pr monitor",
+   "gh cli automation",
+   "workflow visualization",
+   "mermaid flowchart",
+   "graphviz dot",
+   "cost limit llm",
+   "retry and timeout steps",
+   "chain commands together",
+   "automate multi-step tasks",
+   "run scripts with approval",
+   "save tokens agent calls",
+   "typescript cli",
+   "node workflow runner"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9000,
+  "output": 1382
+ },
+ "generated": "2026-10-29"
+}

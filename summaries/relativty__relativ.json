@@ -1,0 +1,98 @@
+{
+ "id": "relativty/relativ",
+ "repo": "relativty/Relativ",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C++: _Build your own VR headset for $200_"
+  }
+ ],
+ "summary": {
+  "one_liner": "Relativty is an open-source, build-it-yourself VR headset (hardware, firmware and SteamVR driver) that the README presents as a build guide rather than a consumer product.",
+  "what_it_does": "The repository documents how to build a 3-DoF VR headset from an ATmega32U4 board (such as an Arduino Pro Micro) with an IMU read through the FastIMU library, paired with a small high-refresh PC display. The Arduino firmware sends IMU readings over USB to a SteamVR driver, which is copied into the SteamVR drivers directory and configured through a default.vrsettings JSON file. That file holds the USB VID/PID, the display origin and resolution, distortion and IPD values. The README also describes a legacy build using a custom Relativty PCB or an Arduino Due with an MPU-6050 or MPU-9250, plus an experimental webcam-based body-tracking option that needs an NVIDIA GPU and CUDA. Mechanical parts are 3D-printable STL files, with lens and strap specs (40mm diameter, 50mm focal length lenses) and suggested sourcing.",
+  "use_cases": [
+   "Build a low-cost DIY VR headset",
+   "Use an Arduino as a VR head tracker for SteamVR",
+   "Configure a SteamVR driver for a custom HMD display",
+   "Learn VR hardware and firmware from a build guide",
+   "Experiment with webcam-based body tracking for VR"
+  ],
+  "how_to_run": [
+   "Wire the IMU to the MCU (VCC, GND, SDA, SCL) and connect the MCU to the PC over USB",
+   "Install the Arduino IDE and the FastIMU library, then upload the Examples/Fastimu/Calibrated_relativty sketch",
+   "Optionally run the FastIMU calibration from the Arduino Serial Monitor",
+   "Download the repository and copy Relativty_Driver\\Relativty into the SteamVR drivers directory",
+   "Edit drivers\\Relativty\\resources\\settings\\default.vrsettings with your MCU's PID/VID and display window and resolution settings",
+   "Start SteamVR"
+  ],
+  "stack": [
+   "C++",
+   "Arduino IDE",
+   "Arduino firmware",
+   "FastIMU Arduino library",
+   "SteamVR driver",
+   "PyTorch (optional body tracking)",
+   "CUDA (optional body tracking)",
+   "Python 3.8.4 (optional body tracking)",
+   "Eagle (PCB files)"
+  ],
+  "notable": [
+   "Open-source hardware, firmware and SteamVR driver, with a build guide instead of a finished product",
+   "Targets 2K dual-screen output at 120 FPS, per the README",
+   "Recommended build uses an Arduino Pro Micro and a FastIMU-supported IMU",
+   "Includes a display-coordinate guide for multi-monitor setups on Windows",
+   "Experimental webcam-based 3D body tracking via a neural network"
+  ],
+  "caveats": [
+   "3-DoF only, with no built-in controller support; the README points to HadesVR for 6-DoF and controllers",
+   "Display origin and resolution must be set correctly or the driver crashes and SteamVR shows nothing",
+   "Body tracking requires an NVIDIA GPU with CUDA and older PyTorch/CUDA versions, and is described as very experimental"
+  ],
+  "license": "unknown",
+  "category": "diy vr headset",
+  "keywords": [
+   "vr headset",
+   "diy vr",
+   "open source vr",
+   "steamvr driver",
+   "steamvr",
+   "arduino vr",
+   "imu head tracking",
+   "fastimu",
+   "arduino pro micro",
+   "atmega32u4",
+   "mpu-6050",
+   "mpu-9250",
+   "build your own vr headset",
+   "homemade virtual reality headset",
+   "low cost vr",
+   "virtual reality hardware",
+   "3-dof tracking",
+   "head tracking arduino",
+   "hmd firmware",
+   "usb hid device",
+   "vr display driver",
+   "2k 120fps headset",
+   "webcam body tracking",
+   "pose estimation",
+   "cuda body tracking",
+   "3d printed vr headset",
+   "open source hardware",
+   "pcb gerber files",
+   "vr on a budget",
+   "hadesvr alternative",
+   "virtual reality diy guide"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8988,
+  "output": 1537
+ },
+ "generated": "2026-10-29"
+}

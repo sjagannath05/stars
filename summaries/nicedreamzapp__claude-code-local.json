@@ -1,0 +1,97 @@
+{
+ "id": "nicedreamzapp/claude-code-local",
+ "repo": "nicedreamzapp/claude-code-local",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "Claude Code Local by Matt Macosko - Runs Claude Code fully on-device on Apple Silicon: a native MLX server speaks the Anthropic Messages API, so the unmodified claude CLI works against local Qwen, Gemma and Llama models with no cloud calls. Includes RAM-based model selection, a tool-call parser for local models' output formats, and a verified-offline mode."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local MLX server for Apple Silicon Macs that lets the unmodified Claude Code CLI run against open models (Qwen, Gemma, Llama, Hermes) on-device, with no cloud calls or API key, and a portable llama.cpp path for Linux and Windows.",
+  "what_it_does": "The core is proxy/server.py, a Python MLX server that speaks Anthropic's Messages API with streaming, so Claude Code talks to it directly without a translation layer. It converts each model's tool-call output format (Gemma 4, Qwen, Llama JSON) into Claude Code tool calls, attempts to repair malformed tool JSON, and reuses the prompt cache between turns. Setup scripts check the Mac's memory and pick a model that fits, download it, install the server, and create a Desktop launcher. The README also describes a \"keep going\" feature that resumes an existing Claude Code conversation on a free OpenRouter cloud model or a local model when Claude usage runs out. A Native Engine terminal agent (agent/agent.py) and a portable llama.cpp installer for Linux and Windows are also described. Tests for the tool-call parser are included.",
+  "use_cases": [
+   "Run Claude Code offline on an Apple Silicon Mac",
+   "Keep coding when Claude usage limits are reached",
+   "Use local open-weight models as a Claude Code backend",
+   "Resume a Claude Code conversation on a different model",
+   "Run local coding models on Linux or Windows with llama.cpp",
+   "Keep code private by avoiding cloud model calls"
+  ],
+  "how_to_run": [
+   "python3.12 -m venv ~/.local/mlx-server",
+   "~/.local/mlx-server/bin/pip install mlx-lm",
+   "bash scripts/download-and-import.sh gemma",
+   "MLX_MODEL=divinetribe/gemma-4-31b-it-abliterated-4bit-mlx MLX_SERVER=\"$PWD/proxy/server.py\" bash scripts/start-mlx-server.sh",
+   "ANTHROPIC_BASE_URL=<local server URL> ANTHROPIC_API_KEY=sk-local claude --model claude-sonnet-4-6"
+  ],
+  "stack": [
+   "Python 3.12",
+   "MLX",
+   "mlx-lm",
+   "Claude Code CLI",
+   "Anthropic Messages API",
+   "llama.cpp (Linux/Windows path)",
+   "Bash",
+   "PowerShell"
+  ],
+  "notable": [
+   "Speaks the Anthropic Messages API directly, with no OpenAI-to-Anthropic translation layer in between",
+   "Parses each local model's own tool-call format into Claude Code tool calls and repairs garbled tool JSON",
+   "Picks a model by available unified memory, from Gemma 4 E4B on 8 GB up to Qwen 3.8 27B at 96 GB and up",
+   "Resumes an existing Claude Code conversation on a free cloud or local model when usage limits are hit",
+   "Portable llama.cpp path for Linux and Windows with pinned builds and SHA-256 checks"
+  ],
+  "caveats": [
+   "The main engine requires Apple Silicon (M1 or newer) and Python 3.12; Linux and Windows use a separate llama.cpp path",
+   "Free cloud models in keep-going send the conversation to OpenRouter and can be busy at times",
+   "The 8 GB tier model claimed to run a file it never wrote in the author's test, so tool use is unreliable there",
+   "Some modes need extra pieces that setup.sh does not install (browser agent, a speak command for voice)"
+  ],
+  "license": "MIT",
+  "category": "local llm inference",
+  "keywords": [
+   "claude code local",
+   "run claude code offline",
+   "apple silicon llm",
+   "mlx server",
+   "mlx-lm",
+   "anthropic messages api proxy",
+   "local model backend for claude code",
+   "claude code alternative to cloud",
+   "ollama alternative for claude code",
+   "llama.cpp",
+   "qwen local",
+   "gemma local",
+   "tool call parser",
+   "local coding agent",
+   "no api key ai coding",
+   "private ai coding on mac",
+   "keep coding when claude limit reached",
+   "usage limit workaround",
+   "openrouter free models",
+   "run llm on mac",
+   "on-device llm",
+   "claude code on linux",
+   "claude code on windows",
+   "gguf",
+   "self-hosted coding assistant",
+   "local ai pair programmer",
+   "claude-code-router alternative",
+   "prompt cache reuse",
+   "offline ai coding",
+   "m1 m2 m3 m4 llm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9126,
+  "output": 1637
+ },
+ "generated": "2026-10-29"
+}

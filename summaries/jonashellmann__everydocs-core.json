@@ -1,0 +1,91 @@
+{
+ "id": "jonashellmann/everydocs-core",
+ "repo": "jonashellmann/everydocs-core",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Document Management",
+   "entry": "EveryDocs - Simple Document Management System for private use with basic functionality to organize your documents digitally. GPL-3.0 Docker/Ruby"
+  }
+ ],
+ "summary": {
+  "one_liner": "EveryDocs Core is the server-side component of EveryDocs, a simple self-hosted document management system for private use that organizes uploaded PDFs.",
+  "what_it_does": "EveryDocs Core is a Ruby on Rails backend that includes a web interface for managing personal documents. Users upload PDFs with a title, description, and creation date, then organize them into folders and subfolders. Documents can be tagged with people and processing states. The app extracts text from PDFs to support full-text search across titles, descriptions, and content. PDF files can be stored encrypted on disk, though content extraction and full-text search are disabled for encrypted documents. A REST API covers CRUD operations for documents, folders, persons, and processing states, with JsonWebToken authentication.",
+  "use_cases": [
+   "organize scanned personal documents",
+   "full-text search over PDF contents",
+   "store private PDFs encrypted on disk",
+   "track people and processing states on documents",
+   "self-hosted document archive with a REST API",
+   "access document archive from a mobile browser"
+  ],
+  "how_to_run": [
+   "SECRET_KEY_BASE=\"$(openssl rand -hex 64)\" docker-compose up --build (from the source folder; uses docker-compose.yaml with database, core, and web containers)",
+   "docker run -p 127.0.0.1:8080:5678/tcp -e SECRET_KEY_BASE=\"$(openssl rand -hex 64)\" -v /data/everydocs:/var/everydocs-files jonashellmann/everydocs",
+   "Manual: install Ruby and Rails, download a release, and configure EVERYDOCS_DB_* environment variables",
+   "bundle install",
+   "rake db:migrate RAILS_ENV=production",
+   "./start-app.sh (stop with ./stop-app.sh)"
+  ],
+  "stack": [
+   "Ruby",
+   "Ruby on Rails",
+   "Docker",
+   "Docker Compose",
+   "MySQL/MariaDB (mysql2 adapter by default)",
+   "JsonWebToken"
+  ],
+  "notable": [
+   "Encrypted PDF storage, enabled per user via a secret_key and a database flag; automatically on for new users after 1.5.0",
+   "Full-text search via PDF content extraction",
+   "Folder and subfolder organization with people and processing-state tagging",
+   "Companion web UI project, EveryDocs Web, referenced in the README"
+  ],
+  "caveats": [
+   "Anyone who knows the URL can create new accounts, per the README",
+   "Encrypted documents get no content extraction and no full-text search",
+   "Manual installation is marked as not recommended"
+  ],
+  "license": "GPL-3.0",
+  "category": "document management system",
+  "keywords": [
+   "document management",
+   "dms",
+   "pdf organizer",
+   "self-hosted documents",
+   "pdf archive",
+   "full-text search",
+   "pdf full text search",
+   "document folders",
+   "rails document app",
+   "ruby on rails",
+   "docker compose",
+   "rest api",
+   "jsonwebtoken",
+   "encrypted pdf storage",
+   "mysql",
+   "mariadb",
+   "private document storage",
+   "organize scanned documents",
+   "digital filing system",
+   "paperless alternative",
+   "store personal papers",
+   "share files with my team",
+   "document tagging",
+   "processing states",
+   "mobile web ui",
+   "gpl license",
+   "everydocs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3343,
+  "output": 1213
+ },
+ "generated": "2026-10-29"
+}

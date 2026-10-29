@@ -1,0 +1,100 @@
+{
+ "id": "educlopez/ccvitals",
+ "repo": "educlopez/ccvitals",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "ccvitals by educlopez - The prettiest statusline for Claude Code — pure bash, never blocks your prompt. Usage quota, context window, git status &amp; more."
+  }
+ ],
+ "summary": {
+  "one_liner": "ccvitals is a pure-bash, zero-Node statusline for Claude Code that shows session vitals such as usage quota, context window, cost, and git status in the terminal without blocking the prompt.",
+  "category": "claude code statusline",
+  "keywords": [
+   "claude code statusline",
+   "statusline",
+   "status bar",
+   "terminal prompt status",
+   "bash statusline",
+   "claude code plugin",
+   "usage quota",
+   "rate limit display",
+   "5h quota",
+   "7d quota",
+   "context window meter",
+   "context percentage",
+   "session cost",
+   "git status",
+   "git branch display",
+   "token usage",
+   "prompt-cache countdown",
+   "powerline",
+   "nerd font",
+   "theme",
+   "tokyo-night",
+   "catppuccin",
+   "dracula",
+   "nord",
+   "jq",
+   "shell script",
+   "ccusage alternative",
+   "node statusline alternative",
+   "monitor claude code usage",
+   "see how much context is left",
+   "track claude code spending",
+   "modular statusline",
+   "hooks",
+   "subagent rows"
+  ],
+  "what_it_does": "ccvitals renders a configurable one-line or two-line status display for Claude Code. Modules include directory, model, context-window bar, 5-hour and 7-day quota bars with reset timers, git branch and change counts, session cost and duration, token throughput, vim mode, active agents, pending tools, todo progress, and daily or 30-day spend. Modules are enabled through a JSON config file, and per-project .ccvitals.json files can override global settings. Quota data is read from Claude Code's stdin first and falls back to an OAuth API call, cached for 60 seconds with background refresh. Six built-in color themes and a custom hex palette are available, along with a powerline segment mode that requires a Nerd Font. An optional hook script records session titles and turn counts. Installation is via Claude Code plugin marketplace, Homebrew, or a git clone with a symlinked install script.",
+  "use_cases": [
+   "see remaining 5-hour and weekly Claude quota in the terminal",
+   "show context window fill level while coding with Claude Code",
+   "track session and daily Claude Code spending",
+   "display git branch and changed files next to the Claude prompt",
+   "customize a status line layout and colors for Claude Code",
+   "monitor running tools, sub-agents, and todo progress during a session"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add educlopez/ccvitals",
+   "/plugin install ccvitals@ccvitals",
+   "/ccvitals:setup",
+   "brew install educlopez/tap/ccvitals",
+   "git clone <repo-url> && cd ccvitals && ./install.sh",
+   "./install.sh --all"
+  ],
+  "stack": [
+   "bash (3.2+)",
+   "jq",
+   "git",
+   "curl (runtime quota fallback)",
+   "Claude Code plugin system",
+   "Homebrew (optional)"
+  ],
+  "notable": [
+   "Never blocks the prompt: stale-while-revalidate cache with background refresh",
+   "Detects the 1M context tier so context percentage stays accurate past 200k",
+   "Pure bash plus jq with no Node runtime",
+   "Two-line layout and per-project config overrides",
+   "Opt-in modules such as spend history, tool and sub-agent tracking, and session titles via hooks"
+  ],
+  "caveats": [
+   "Powerline mode needs a Nerd Font, and responsive layout is skipped when powerline is on",
+   "Quota fallback reads OAuth credentials from the macOS Keychain or ~/.claude/.credentials.json",
+   "Many modules are opt-in and the session module requires running the hooks installer",
+   "The historical spend module only accumulates data from the time the daily module was first enabled"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10821,
+  "output": 1338
+ },
+ "generated": "2026-10-29"
+}

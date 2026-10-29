@@ -1,0 +1,116 @@
+{
+ "id": "vertti/preflight",
+ "repo": "vertti/preflight",
+ "kind": "star",
+ "description": "Validation toolkit for containers and CI. Single binary, zero dependencies.",
+ "topics": [
+  "ci-cd",
+  "cli",
+  "containers",
+  "devops",
+  "distroless",
+  "docker",
+  "dockerfile",
+  "golang",
+  "health-check",
+  "preflight-checks",
+  "static-binary",
+  "validation"
+ ],
+ "language": "Go",
+ "stars": 57,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud",
+  "my stack"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Preflight is a single static Go binary that runs validation checks for containers and CI, such as verifying commands, environment variables, files, HTTP endpoints, and checksums.",
+  "what_it_does": "Provides subcommands that each bundle several checks into one call: `cmd` verifies a binary is on PATH, runs, reports its version, and meets a constraint; `env` checks that a variable exists and is non-empty, with optional pattern or allowed-value matching and value hiding; `file` checks existence, content, directory writability, and executable bit; `http` performs endpoint health checks with custom status codes and retries; `hash` verifies SHA256 checksums directly or from a checksum file. A `.preflight` file can list many checks and be run with `preflight run`. Version constraints use semver (`--min`, `--range`), and resource detection reads cgroup memory and CPU limits.",
+  "use_cases": [
+   "Health checks in Dockerfiles without curl or a shell",
+   "Verifying required binaries and minimum versions in CI",
+   "Checking required environment variables before a container starts",
+   "Confirming files, directories, or scripts exist and have correct permissions",
+   "Verifying downloaded artifacts against SHA256 checksums",
+   "Waiting for a TCP service or HTTP endpoint to become reachable"
+  ],
+  "how_to_run": [
+   "COPY --from=ghcr.io/vertti/preflight:latest /preflight /usr/local/bin/preflight",
+   "curl -fsSL | sh",
+   "preflight cmd node --min 18.0",
+   "preflight env DATABASE_URL --hide-value",
+   "preflight file /app/config.yaml",
+   "preflight run"
+  ],
+  "stack": [
+   "Go",
+   "cobra",
+   "pflag",
+   "semver",
+   "golang.org/x/sys",
+   "golang.org/x/term",
+   "UPX"
+  ],
+  "notable": [
+   "Runs in distroless and scratch images with no shell required",
+   "Container-aware: reads cgroup memory limits and CPU quotas",
+   "Semver constraints such as --min 1.0 and --range '^1.0'",
+   "Multi-stage build pattern keeps the checker out of the final image",
+   "Security scanning with gosec and govulncheck on every commit, and Renovate for dependency updates"
+  ],
+  "caveats": [
+   "Install script and full usage guide are linked externally; the README gives only summary examples",
+   "Binary is Linux-focused in the README (UPX-compressed 2.5MB Linux build); other platforms are not described",
+   "Several README sections (install alternatives, detailed options, .preflight format) are collapsed or linked elsewhere"
+  ],
+  "license": "Apache-2.0",
+  "category": "container validation toolkit",
+  "keywords": [
+   "preflight checks",
+   "container validation",
+   "docker healthcheck",
+   "dockerfile healthcheck",
+   "distroless healthcheck",
+   "scratch image checks",
+   "ci validation",
+   "ci-cd checks",
+   "static go binary",
+   "single binary cli",
+   "semver constraint",
+   "version check",
+   "cgroup memory limit",
+   "env var validation",
+   "file existence check",
+   "sha256 verify",
+   "checksum verification",
+   "tcp reachability",
+   "http health check",
+   "wait for service",
+   "cobra cli",
+   "golang cli tool",
+   "zero dependency tool",
+   "validate environment variables before start",
+   "check binary version in ci",
+   "verify downloaded file checksum",
+   "alternative to curl healthcheck",
+   "shell script replacement",
+   "multi-stage docker build"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3227,
+  "output": 1269
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "rmyndharis/openwa",
+ "repo": "rmyndharis/OpenWA",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "OpenWA ⚠ - WhatsApp API gateway exposing messaging as REST endpoints, with a web dashboard, multi-account sessions, and webhook events (alternative to WhatsApp Business API providers). (Source Code, Clients) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenWA is a self-hosted, MIT-licensed WhatsApp API gateway that exposes messaging as REST endpoints, with a bundled web dashboard, multi-session support, and webhooks.",
+  "what_it_does": "It connects to WhatsApp through reverse-engineered clients (whatsapp-web.js by default, or @whiskeysockets/baileys selected via ENGINE_TYPE), not Meta's official Cloud API. It runs multiple WhatsApp sessions on one instance and exposes send, media, group, contact, label, channel and profile operations over HTTP, with Swagger docs. A React dashboard manages sessions, webhooks and API keys, and webhooks deliver events with HMAC signatures and optional filters. API keys have admin, operator and viewer roles that can be scoped to specific sessions or chats. An opt-in MCP endpoint lets AI agents call a curated set of tools. Storage can be SQLite or PostgreSQL, and local disk or S3/MinIO for media, with Redis optional for queues and rate limits.",
+  "use_cases": [
+   "send WhatsApp messages from an application via REST API",
+   "run multiple WhatsApp accounts from one server",
+   "receive WhatsApp events via webhooks for automation",
+   "connect WhatsApp to n8n or other workflow tools",
+   "give an AI agent scoped access to WhatsApp chats",
+   "send OTPs, order updates or support replies from a backend"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/rmyndharis/OpenWA.git",
+   "cd OpenWA",
+   "docker compose -f docker-compose.dev.yml up -d",
+   "docker exec openwa-api cat /app/data/.api-key",
+   "Alternative local dev: npm ci && npm run dev"
+  ],
+  "stack": [
+   "Node.js 22",
+   "NestJS",
+   "TypeScript",
+   "React",
+   "TypeORM",
+   "whatsapp-web.js",
+   "baileys",
+   "SQLite",
+   "PostgreSQL",
+   "Redis",
+   "S3/MinIO",
+   "Docker"
+  ],
+  "notable": [
+   "Pluggable adapters for database (SQLite/PostgreSQL) and storage (Local/S3) set through config",
+   "Session-scoped and chat-scoped API keys, including an allowlist of specific groups and contacts for shared accounts",
+   "Built-in MCP server with 26 read-only tools by default, or 52 with write tools",
+   "Webhook smart pre-dispatch filters on fields such as sender, chatId, body and type",
+   "Docker socket proxy sidecar and non-root container execution in the production setup"
+  ],
+  "caveats": [
+   "Unofficial, reverse-engineered WhatsApp clients carry a real risk of account restriction or ban; the README recommends dedicated numbers and not for regulated or compliance-sensitive use, where it advises Meta's official Cloud API.",
+   "whatsapp-web.js needs roughly 300-500 MB RAM per session; baileys needs about 30-80 MB but is described as easier for WhatsApp to fingerprint.",
+   "Some accounts cannot link a new device because of a WhatsApp passkey step, and the README says no OpenWA setting fixes this. Some features, such as call.received, are not reliable on whatsapp-web.js."
+  ],
+  "license": "MIT",
+  "category": "whatsapp api gateway",
+  "keywords": [
+   "whatsapp api",
+   "whatsapp gateway",
+   "whatsapp rest api",
+   "whatsapp bot",
+   "self-hosted whatsapp",
+   "whatsapp-web.js",
+   "baileys",
+   "multi-session whatsapp",
+   "whatsapp webhook",
+   "whatsapp business api alternative",
+   "unofficial whatsapp api",
+   "send whatsapp messages programmatically",
+   "whatsapp automation server",
+   "nestjs whatsapp",
+   "node whatsapp api",
+   "docker whatsapp",
+   "n8n whatsapp",
+   "mcp whatsapp",
+   "ai agent whatsapp",
+   "whatsapp dashboard",
+   "run multiple whatsapp accounts",
+   "api key scoping",
+   "webhook hmac",
+   "whatsapp messaging infrastructure",
+   "sqlite postgres whatsapp",
+   "s3 media storage whatsapp",
+   "whatsapp otp sending",
+   "chatbot backend whatsapp",
+   "open source whatsapp",
+   "whatsapp channels newsletter api"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12650,
+  "output": 1593
+ },
+ "generated": "2026-10-29"
+}

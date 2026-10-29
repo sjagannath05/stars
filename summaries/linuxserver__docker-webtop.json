@@ -1,0 +1,115 @@
+{
+ "id": "linuxserver/docker-webtop",
+ "repo": "linuxserver/docker-webtop",
+ "kind": "star",
+ "description": "Ubuntu, Alpine, Arch, Debian, and Fedora based Webtop images, Linux in a web browser supporting popular desktop environments.",
+ "topics": [
+  "alpine",
+  "arch",
+  "docker",
+  "fedora",
+  "rdp",
+  "ubuntu",
+  "webtop"
+ ],
+ "language": "Shell",
+ "stars": 4464,
+ "license": "GPL-3.0",
+ "homepage": "",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Webtop is a LinuxServer.io Docker image that runs full Linux desktop environments (XFCE, MATE, KDE, i3, LXQt) in a web browser, built on Alpine, Ubuntu, Debian, Fedora, or Arch.",
+  "what_it_does": "Provides prebuilt container images that start a complete Linux desktop session streamed to any modern web browser via the Selkies platform. Many tagged variants combine a base distro (Alpine, Ubuntu, Debian, Fedora, Arch) with a desktop (XFCE, MATE, KDE, i3, LXQt), with some flavors supporting Wayland. Ports 3000 (HTTP, meant to sit behind a reverse proxy) and 3001 (HTTPS) serve the web desktop. Configuration uses PUID/PGID for file ownership, TZ for timezone, a /config volume for the user home, and optional GPU passthrough for Intel/AMD and Nvidia drivers. The README also covers HTTP basic auth via CUSTOM_USER and PASSWORD, language selection via LC_ALL, Docker secrets via FILE__ variables, and a umask override. Additional features such as file transfer, clipboard sync, and proot-apps are documented on the external Selkies docs site.",
+  "use_cases": [
+   "run a Linux desktop in a web browser",
+   "access a remote Linux desktop from any device",
+   "test desktop environments without installing them",
+   "host a self-hosted browser-based workstation",
+   "run GUI Linux applications in a container",
+   "isolated desktop sandbox with Docker"
+  ],
+  "how_to_run": [
+   "docker run --rm -it --shm-size=1gb -p 3001:3001 lscr.io/linuxserver/webtop:latest bash",
+   "docker run -d --name=webtop -e PUID=1000 -e PGID=1000 -e TZ=Etc/UTC -p 3000:3000 -p 3001:3001 -v /path/to/data:/config --shm-size=\"1gb\" --restart unless-stopped lscr.io/linuxserver/webtop:latest",
+   "Open https://<host>:3001 in a browser and accept the self-signed certificate",
+   "Optional GPU: add --device /dev/dri (Intel/AMD) or --runtime nvidia --gpus all --device /dev/nvidia-modeset (Nvidia)"
+  ],
+  "stack": [
+   "Docker",
+   "Shell",
+   "s6 overlay",
+   "Selkies",
+   "KasmVNC base image (older releases)",
+   "Alpine Linux",
+   "Ubuntu",
+   "Debian",
+   "Fedora",
+   "Arch Linux",
+   "XFCE",
+   "MATE",
+   "KDE",
+   "i3",
+   "LXQt",
+   "Chromium"
+  ],
+  "notable": [
+   "Multiple distro and desktop combinations selectable by image tag, including Wayland support on several flavors",
+   "Minimal-start approach: run a bare command first, then add options one at a time",
+   "Automatic GPU detection when a GPU is mounted, with AUTO_GPU=false to disable",
+   "Standard LinuxServer.io conventions: PUID/PGID mapping, Docker Mods, and FILE__ secret handling",
+   "Documentation for the wider Selkies platform (file transfer, clipboard, gamepads, multi-user orchestration) lives on an external docs site"
+  ],
+  "caveats": [
+   "No authentication by default; the web terminal has passwordless sudo, so it must be protected before internet exposure",
+   "Described as a privileged container with access to the host; not for direct Internet exposure without a reverse proxy",
+   "Nvidia GPU support is not available on Alpine images and needs host driver 580 or newer",
+   "Requires --shm-size (1gb recommended) and HTTPS for video and audio features"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted remote desktop",
+  "keywords": [
+   "webtop",
+   "linux desktop in browser",
+   "browser based desktop",
+   "docker desktop container",
+   "remote desktop",
+   "rdp",
+   "linuxserver",
+   "selkies",
+   "kasmvnc",
+   "xfce",
+   "kde",
+   "mate",
+   "i3",
+   "lxqt",
+   "alpine",
+   "ubuntu",
+   "debian",
+   "fedora",
+   "arch linux",
+   "wayland",
+   "gpu passthrough",
+   "dri device",
+   "nvidia container",
+   "self-signed https",
+   "reverse proxy",
+   "docker compose",
+   "access linux from browser",
+   "run gui apps in container",
+   "remote workstation in docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7503,
+  "output": 1626
+ },
+ "generated": "2026-10-29"
+}

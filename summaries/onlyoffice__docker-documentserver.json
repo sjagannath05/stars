@@ -1,0 +1,101 @@
+{
+ "id": "onlyoffice/docker-documentserver",
+ "repo": "ONLYOFFICE/Docker-DocumentServer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Productivity",
+   "entry": "OnlyOffice | Office suite that enables you to manage documents, projects, team, and customer relations in one place"
+  }
+ ],
+ "summary": {
+  "one_liner": "ONLYOFFICE Docs (Document Server) packaged as a Docker image, providing the free Community edition of an open-source office suite for editing documents, spreadsheets, presentations, PDFs and forms with real-time collaboration.",
+  "category": "self-hosted office suite",
+  "keywords": [
+   "onlyoffice",
+   "onlyoffice docs",
+   "document server",
+   "docker image",
+   "office suite",
+   "docx editor",
+   "xlsx editor",
+   "pptx editor",
+   "pdf editor",
+   "collaborative editing",
+   "real-time co-editing",
+   "online document editor",
+   "self-hosted office",
+   "nextcloud integration",
+   "owncloud integration",
+   "seafile integration",
+   "moodle integration",
+   "odoo integration",
+   "docker compose",
+   "ssl certificate setup",
+   "lets encrypt",
+   "jwt secret",
+   "wopi",
+   "edit word files in browser",
+   "share documents with my team",
+   "self-hosted google docs alternative",
+   "microsoft office alternative",
+   "ms office alternative",
+   "pdf form creator",
+   "spreadsheet editor",
+   "ipv6 docker"
+  ],
+  "what_it_does": "Packages ONLYOFFICE Docs (Document Server), the Community edition of an open-source office suite, as a Docker image. The bundled editors cover documents, spreadsheets, presentations, PDFs, PDF forms and diagram viewing, supporting formats such as DOCX, ODT, XLSX, ODS, CSV, PPTX and ODP. Collaborative features include review and track changes, comments, chat, spell-checking and plugin support. The README describes running it standalone via docker run, or with docker-compose using Community, Enterprise or Developer compose files. Configuration is done through environment variables covering HTTPS/SSL (including Let's Encrypt and self-signed certificates), JWT validation, WOPI, IP filtering, nginx tuning, StatsD metrics and, in the Enterprise/Developer editions, external PostgreSQL, MariaDB, MySQL, MSSQL, Oracle, Redis and RabbitMQ/ActiveMQ. It is meant to be connected to third-party sync-and-share platforms or to ONLYOFFICE DocSpace/Workspace for in-browser co-editing.",
+  "use_cases": [
+   "self-host an online office suite for my team",
+   "edit Word, Excel and PowerPoint files in the browser",
+   "add collaborative document editing to Nextcloud or Seafile",
+   "run a private document editing server behind HTTPS",
+   "create and fill PDF forms in a self-hosted setup",
+   "deploy ONLYOFFICE with docker compose"
+  ],
+  "how_to_run": [
+   "Update docker-engine to a recent version (README cites 20.10.21 as of writing), since the image is based on ubuntu:24.04",
+   "sudo docker run -i -t -d -p 80:80 onlyoffice/documentserver",
+   "Add volume mounts (-v) for /var/log/onlyoffice, /var/www/onlyoffice/Data and /var/lib/onlyoffice to keep data outside the container",
+   "For HTTPS, place tls.key, tls.crt and dhparam.pem in the data certs folder and map port 443, or set LETS_ENCRYPT_DOMAIN and LETS_ENCRYPT_MAIL",
+   "git clone the Docker-DocumentServer repository and run docker-compose up -d (Community) or docker compose -f docker-compose.enterprise.yml up -d / docker-compose.developer.yml for other editions",
+   "Before stopping the server, run sudo docker exec documentserver-prepare4shutdown to disconnect users and let edits save"
+  ],
+  "stack": [
+   "Docker",
+   "Ubuntu 24.04 base image",
+   "nginx",
+   "Node.js",
+   "PostgreSQL",
+   "Redis",
+   "RabbitMQ",
+   "OpenSSL",
+   "Let's Encrypt"
+  ],
+  "notable": [
+   "Free Community edition, with Enterprise and Developer editions available as separate images with bundled or external databases",
+   "Real-time collaborative editing with track changes, comments and chat",
+   "Built to plug into third-party sync-and-share tools such as Nextcloud, ownCloud, Seafile, Moodle and Odoo",
+   "Extensive environment-variable configuration for SSL, JWT, WOPI, IP filtering and metrics",
+   "Documents are saved only after all editors close them; a shutdown helper command is provided"
+  ],
+  "caveats": [
+   "Recommended at least 4 GB RAM, dual-core CPU, 2 GB swap and 2 GB free disk",
+   "Docker-engine must be updated to a recent version because of compatibility issues with the Ubuntu 24.04 base image",
+   "IPv6 support is marked experimental and works only on Linux hosts",
+   "Some Docker-on-RPM distributions (Fedora, RHEL/CentOS) may need SELinux disabled for processes to start, which the README does not recommend",
+   "Enterprise and Developer editions and their external database options are separate from the free Community image"
+  ],
+  "license": "GNU AGPL v3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9033,
+  "output": 1823
+ },
+ "generated": "2026-10-29"
+}

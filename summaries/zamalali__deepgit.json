@@ -1,0 +1,113 @@
+{
+ "id": "zamalali/deepgit",
+ "repo": "zamalali/DeepGit",
+ "kind": "star",
+ "description": "Deep research agent to help you find the best GitHub repositories 🕵️!",
+ "topics": [
+  "agent",
+  "deep-research",
+  "github-search",
+  "langchain",
+  "langgraph",
+  "llm",
+  "nlp",
+  "open-source",
+  "python",
+  "seq2seq",
+  "transformers"
+ ],
+ "language": "Python",
+ "stars": 922,
+ "license": "MIT",
+ "homepage": "https://deepgit.vercel.app",
+ "pushed_at": "2026-08-30",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "coding",
+  "dev tools",
+  "my company"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "DeepGit is an agentic research engine that finds GitHub repositories matching a natural-language request, judging candidates on evidence rather than raw keyword matches or star counts.",
+  "what_it_does": "It turns a free-form request into a search plan with angles, topics, must-have requirements, nice-to-haves and anti-patterns. It gathers candidates through batched GitHub GraphQL keyword queries and star-sorted topic sweeps. It keeps a local LanceDB + fastembed vector index of repos it has seen, so semantic recall improves over time (optional extra). A prefilter uses free signals like activity, license, tests/CI and relevance, then one LLM call ranks a shortlist. When the top picks are uncertain, it reads their source, tests and manifests, re-judges, and runs a reflection critic. Results are available as a Markdown report, a structured result object, a CLI command, or MCP tools.",
+  "use_cases": [
+   "find the best GitHub repo for a specific library need",
+   "compare candidate open-source libraries before adopting one",
+   "search GitHub by language or hardware constraints",
+   "discover small well-matched repos beyond star-ranked results",
+   "let an AI assistant research repositories via MCP",
+   "benchmark repository search quality"
+  ],
+  "how_to_run": [
+   "git clone <repo-url> && cd DeepGit",
+   "python -m venv venv && source venv/bin/activate",
+   "pip install -e \".[semantic]\"",
+   "export GITHUB_API_KEY=ghp_xxx",
+   "deepgit search \"a fast, embeddable key-value store in Go\"",
+   "deepgit-mcp  # or: docker run --rm -p 8080:8080 -e GITHUB_API_KEY=ghp_xxx deepgit"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "GitHub GraphQL API",
+   "LanceDB",
+   "fastembed",
+   "MCP (Model Context Protocol) server",
+   "LLM providers: groq, openai, anthropic, vertex_ai",
+   "Docker"
+  ],
+  "notable": [
+   "Adaptive agent: a confidence gate usually needs only about 2 LLM calls and escalates to real code-reading only for contested picks",
+   "Semantic recall via a local vector index that accumulates across searches",
+   "Enforces language and hardware constraints as hard requirements",
+   "First-class MCP server with tools for Claude Desktop, Cursor, VS Code and similar clients",
+   "Ships a reproducible benchmark suite under bench/ with held-out results"
+  ],
+  "caveats": [
+   "Requires a GitHub personal access token and an LLM provider API key or Vertex AI credentials",
+   "Semantic recall needs the optional [semantic] extra (LanceDB + fastembed); without it only keyword and topic search run",
+   "Benchmark numbers come from a 12-query held-out set, so they are a small sample"
+  ],
+  "license": "MIT",
+  "category": "github repository search",
+  "keywords": [
+   "github search",
+   "repository discovery",
+   "deep research agent",
+   "find github repos",
+   "langgraph",
+   "langchain",
+   "llm agent",
+   "mcp server",
+   "model context protocol",
+   "claude desktop tool",
+   "cursor mcp",
+   "semantic search",
+   "vector index",
+   "lancedb",
+   "fastembed",
+   "graphql",
+   "github topics",
+   "open source discovery",
+   "library finder",
+   "hidden gems repos",
+   "repo recommendation",
+   "agentic search",
+   "confidence gate",
+   "code reading agent",
+   "docker mcp server",
+   "find best library",
+   "search github by language"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4948,
+  "output": 1294
+ },
+ "generated": "2026-10-29"
+}

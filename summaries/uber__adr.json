@@ -1,0 +1,116 @@
+{
+ "id": "uber/adr",
+ "repo": "uber/ADR",
+ "kind": "star",
+ "description": "ADR secures enterprise AI agents through observability, security benchmarking, and threat detection. Deployed at Uber.",
+ "topics": [
+  "agent-security",
+  "ai-agents",
+  "ai-security",
+  "benchmark",
+  "claude",
+  "claude-code",
+  "codex",
+  "cursor",
+  "llm-security",
+  "mcp",
+  "model-context-protocol",
+  "prompt-injection",
+  "threat-detection"
+ ],
+ "language": "Python",
+ "stars": 2085,
+ "license": "Apache-2.0",
+ "homepage": "https://arxiv.org/abs/2605.17380",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "ADR is an open-source enterprise security system for AI agents (Cursor, Claude Code, Codex and others) covering endpoint discovery, telemetry sensing, a security benchmark, and threat detection, and is stated to be deployed in production at Uber.",
+  "what_it_does": "The repository contains four open-source components: ADR Discovery, which inventories AI apps, CLI agents, IDE extensions, local model runtimes and MCP servers on an endpoint and flags unknown surfaces; ADR Sensor, which collects and normalizes agent telemetry from tools such as Claude Code, Cursor, Codex, GitHub Copilot CLI, DeepSeek Harness, opencode and Claude Desktop, including Gemini CLI session journals; ADR-Bench (in Detection/), with 304 benchmark tasks and 134 MCP servers; and ADR Detector, a dual-agent detector with a high-recall triage tier and a deeper reasoning tier. The README says the prevention component and the offline ADR Explorer red-teaming engine are not included in this release. Detection/ includes synthetic fixtures (fake credentials, emulated environments, prompt-injection scenarios) intended for defensive research only.",
+  "use_cases": [
+   "inventory unsanctioned AI tools on employee laptops",
+   "monitor what coding agents do on endpoints",
+   "benchmark AI agent security against prompt injection",
+   "detect risky behavior in agent sessions",
+   "reproduce paper benchmark and detection results",
+   "secure customer-facing AI support agents"
+  ],
+  "how_to_run": [
+   "git clone the repository (URL left blank in README)",
+   "cd ADR/Detection",
+   "uv sync",
+   "export ANTHROPIC_API_KEY=... OPENAI_API_KEY=...",
+   "For keyless smoke tests use --detector llamafirewall (see Detection/README.md)",
+   "Follow docs/REPRODUCIBILITY.md to inflate the packed benchmark, run detectors, and plot figures"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "Anthropic API",
+   "OpenAI API",
+   "LlamaFirewall",
+   "agentdojo (vendored, MIT)",
+   "MCP (Model Context Protocol)"
+  ],
+  "notable": [
+   "Deployed in production at Uber, per the README, and accepted to MLSys 2026",
+   "Covers Discovery, Observability, Benchmark, and Detection as separate components with a documented layout",
+   "ADR-Bench includes 304 tasks, 134 MCP servers, and 17 agent attack techniques",
+   "Two-tier detector pairing high-recall triage with deeper agentic reasoning",
+   "Cross-platform telemetry claims for macOS, Linux and Windows"
+  ],
+  "caveats": [
+   "Prevention component and offline ADR Explorer red-teaming engine are not in the open-source release",
+   "Quick start requires Anthropic and OpenAI API keys for the default detector; a keyless option exists only for smoke tests",
+   "Clone URL is blank in the README, so the exact repository address must be taken from GitHub"
+  ],
+  "license": "Apache-2.0",
+  "category": "AI agent security",
+  "keywords": [
+   "ai agent security",
+   "agentic ai detection",
+   "threat detection",
+   "prompt injection",
+   "prompt injection benchmark",
+   "mcp security",
+   "model context protocol",
+   "mcp servers",
+   "claude code",
+   "cursor",
+   "codex",
+   "github copilot cli",
+   "shadow ai discovery",
+   "unsanctioned ai tools",
+   "endpoint inventory",
+   "agent telemetry",
+   "agent observability",
+   "llm security",
+   "ai security benchmark",
+   "red teaming",
+   "agentdojo",
+   "llamafirewall",
+   "dual-agent detector",
+   "enterprise ai governance",
+   "find ai tools on laptops",
+   "monitor coding agents",
+   "detect risky agent behavior",
+   "secure employee ai tools",
+   "test agent defenses",
+   "uber adr"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3193,
+  "output": 1445
+ },
+ "generated": "2026-10-29"
+}

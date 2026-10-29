@@ -1,0 +1,101 @@
+{
+ "id": "itzcrazykns/vane",
+ "repo": "ItzCrazyKns/Vane",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Generative Artificial Intelligence (GenAI)",
+   "entry": "Vane - AI-powered search engine (alternative to Perplexity AI). MIT Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "AI & LLMs",
+   "entry": "Vane (formerly Perplexica) | AI-powered answer engine, an open-source alternative to Perplexity"
+  }
+ ],
+ "summary": {
+  "one_liner": "Vane is a self-hostable, privacy-focused AI answering engine (formerly Perplexica) that searches the web via SearxNG and returns answers with cited sources, using local or cloud LLMs.",
+  "category": "self-hosted ai search",
+  "keywords": [
+   "ai search engine",
+   "answer engine",
+   "perplexity alternative",
+   "open source perplexity",
+   "perplexica",
+   "searxng",
+   "searxng search",
+   "self-hosted search",
+   "private search",
+   "ollama",
+   "local llm",
+   "openai",
+   "anthropic claude",
+   "groq",
+   "google gemini",
+   "cited sources",
+   "rag",
+   "docker",
+   "docker compose",
+   "next.js",
+   "meta search",
+   "academic search",
+   "file upload chat",
+   "pdf question answering",
+   "search history",
+   "lemonade",
+   "llm answers",
+   "privacy search engine",
+   "run ai search locally",
+   "ask questions about my documents",
+   "browser search engine shortcut"
+  ],
+  "what_it_does": "Vane is a web application that answers user questions by searching the internet and summarizing results with cited sources. It uses SearxNG as its bundled metasearch backend, and lets users pick web, discussion, or academic sources, plus image and video search. Users can connect local LLMs through Ollama or Lemonade, or cloud providers such as OpenAI, Anthropic Claude, Google Gemini and Groq, and choose between speed, balanced, and quality modes. It also supports uploading files (PDFs, text, images) to ask questions about them, restricting searches to specific domains, widgets for quick lookups, and locally saved search history. The README also describes a search suggestions feature, a Discover page, and an API for developers.",
+  "use_cases": [
+   "self-hosted alternative to Perplexity for private answers",
+   "running AI-powered web search with a local LLM via Ollama",
+   "asking questions about uploaded PDFs or documents",
+   "academic or technical research with cited sources",
+   "adding a custom AI search shortcut to a browser",
+   "integrating AI search into apps through its API"
+  ],
+  "how_to_run": [
+   "docker run -d -p 3000:3000 -v vane-data:/home/vane/data --name vane itzcrazykns1337/vane:latest",
+   "docker run -d -p 3000:3000 -e SEARXNG_API_URL= -v vane-data:/home/vane/data --name vane itzcrazykns1337/vane:slim-latest (use an existing SearxNG with JSON format and Wolfram Alpha enabled)",
+   "git clone the repository and run: docker build -t vane . && docker run -d -p 3000:3000 -v vane-data:/home/vane/data --name vane vane",
+   "Non-Docker: install SearxNG (JSON format and Wolfram Alpha enabled), then git clone, npm i, npm run build, npm run start",
+   "Open the browser to the Vane URL and configure API keys, models and SearxNG URL in the setup screen"
+  ],
+  "stack": [
+   "TypeScript",
+   "Next.js",
+   "Node.js (npm)",
+   "Docker",
+   "SearxNG",
+   "Ollama",
+   "Lemonade"
+  ],
+  "notable": [
+   "Bundled SearxNG in the default Docker image, so no separate search backend is needed",
+   "Slim image variant for users who already run their own SearxNG instance",
+   "Works with local OpenAI-API-compatible servers as well as Ollama and cloud providers",
+   "Answers include cited sources, with speed, balanced, and quality search modes",
+   "Formerly named Perplexica, listed in awesome-selfhosted as an alternative to Perplexity AI"
+  ],
+  "caveats": [
+   "Requires a configured AI provider; local models need Ollama, Lemonade, or an OpenAI-compatible server reachable from the container, which often needs extra network setup",
+   "Authentication is listed as an upcoming feature, so there is no built-in login yet",
+   "Some features are described as coming soon, including Tavily and Exa search support and more integrations"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4976,
+  "output": 1435
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "cooklang/cookcli",
+ "repo": "cooklang/CookCLI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Recipe Management",
+   "entry": "CookCLI - Command-line tool for automating meal planning and shopping with Cooklang recipes, scriptable for UNIX workflows, includes web server. (Source Code) MIT Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "CookCLI is a command-line tool for working with Cooklang recipe files, covering shopping lists, meal plans, reports, search, pantry tracking and an optional web server for browsing recipes.",
+  "what_it_does": "CookCLI provides a set of \"cook\" subcommands for parsing and displaying Cooklang recipes, scaling quantities, and exporting recipes as JSON or Markdown. It generates shopping lists from one or more recipes, combining ingredients and grouping them by store aisle according to an aisle.conf file. Menu files let you plan meals by day and meal and produce a combined shopping list for the plan. The cook server command runs a web UI for browsing recipes from any device, and cook build web generates a static website from a recipe folder. Other commands cover recipe search, validation via cook doctor, pantry inventory with low-stock and expiry tracking (pantry items are excluded from shopping lists), custom templated reports, and importing recipes from websites (which requires an OPENAI_API_KEY). Optional sign-in for the server and cloud sync via cook login are also described.",
+  "use_cases": [
+   "automate shopping lists from recipes",
+   "plan weekly meals with menu files",
+   "browse a personal recipe collection in a web browser",
+   "validate and maintain a Cooklang recipe folder",
+   "track pantry stock and expiring ingredients",
+   "generate static recipe websites",
+   "scale recipe quantities from the command line"
+  ],
+  "how_to_run": [
+   "brew install cookcli",
+   "cargo install cookcli --locked",
+   "mkdir my-recipes && cd my-recipes",
+   "cook seed ./",
+   "cook server --open"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo",
+   "Node.js (frontend build: Tailwind CSS, esbuild)",
+   "axum",
+   "tower",
+   "Cooklang recipe format"
+  ],
+  "notable": [
+   "Follows the UNIX philosophy: commands are scriptable and pipe-friendly, e.g. cook search chicken | xargs cook shopping-list",
+   "Menu files (.menu) combine recipes and inline ingredients into a day-by-day plan with a merged shopping list",
+   "Optional Cargo features (server, import, lsp, sync, self-update) shrink the binary from about 23 MB to about 9 MB",
+   "Pre-built binaries for Linux, macOS, Windows, FreeBSD, plus RPM and .deb packages",
+   "Pantry tracking via pantry.conf excludes items already at home from shopping lists"
+  ],
+  "caveats": [
+   "Building from source needs Node.js for CSS/JS assets, or a release source tarball that bundles them; building with cargo needs a few GB of RAM and disk",
+   "Some features need external services or accounts: cook import needs OPENAI_API_KEY or cook.md (Cook Basic), and sync needs Cook Cloud (Cook Basic)",
+   "Without users configured, anyone who can reach cook server can change recipes; sign-in must be set up explicitly"
+  ],
+  "license": "MIT",
+  "category": "recipe management cli",
+  "keywords": [
+   "cooklang",
+   "cook cli",
+   "recipe manager",
+   "meal planning",
+   "shopping list generator",
+   "command line recipes",
+   "rust cli",
+   "recipe web server",
+   "self-hosted recipes",
+   "static recipe site",
+   "menu planner",
+   "pantry tracker",
+   "recipe search",
+   "recipe scaling",
+   "markdown recipe export",
+   "unix scripting recipes",
+   "homebrew cookcli",
+   "cargo install recipes",
+   "recipe import from website",
+   "recipe validation",
+   "aisle grouping grocery",
+   "expiry tracking",
+   "meal plan shopping",
+   "plain text recipes",
+   "recipe browser on phone",
+   "share recipes on my network",
+   "grocery list from recipes",
+   "cookbook server",
+   "recipe template reports",
+   "alternative to paprika",
+   "self hosted cookbook"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9947,
+  "output": 1415
+ },
+ "generated": "2026-10-29"
+}

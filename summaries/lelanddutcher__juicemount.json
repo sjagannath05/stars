@@ -1,0 +1,101 @@
+{
+ "id": "lelanddutcher/juicemount",
+ "repo": "lelanddutcher/juicemount",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📤 Sharing Files (14)",
+   "entry": "JuiceMount - Mounts a NAS as a real Finder volume and streams video in blocks through a local SSD cache, with offline pinning."
+  }
+ ],
+ "summary": {
+  "one_liner": "JuiceMount is a beta, self-hosted macOS app that mounts a NAS (running JuiceFS over MinIO and Redis) as a real Finder volume, streaming only the video blocks you touch into a local SSD cache with offline pinning.",
+  "category": "macos nas video editing",
+  "keywords": [
+   "nas",
+   "network attached storage",
+   "finder volume",
+   "macos",
+   "video editing",
+   "premiere",
+   "davinci resolve",
+   "final cut",
+   "juicefs",
+   "juicefs mount",
+   "minio",
+   "redis",
+   "nfs loopback",
+   "local ssd cache",
+   "block streaming",
+   "offline pinning",
+   "offline editing",
+   "write spool",
+   "self-hosted",
+   "lucidlink alternative",
+   "suite alternative",
+   "shade alternative",
+   "iconik alternative",
+   "truenas",
+   "synology",
+   "docker compose",
+   "edit video off nas",
+   "share storage with editors",
+   "mount nas on mac",
+   "cache footage locally",
+   "work offline on plane"
+  ],
+  "what_it_does": "JuiceMount mounts storage on a self-hosted server as a macOS Finder volume at a consistent path, so NLEs like Premiere, Resolve, and Final Cut see a local drive. Files are stored as 4 MB JuiceFS blocks, and only the blocks being read are fetched and cached on the local SSD. Folders can be pinned for offline use with a prefetcher and per-folder progress, and an offline mode fails un-pinned reads quickly instead of hanging Finder. An optional write spool acknowledges writes on local SSD and uploads them in the background with SHA-256 verification. A local SQLite metadata mirror and a Finder-tuned NFS server on 127.0.0.1 handle directory listings, and a menu-bar app shows health and upload status and includes a filename search window.",
+  "use_cases": [
+   "edit video directly off a NAS on a Mac",
+   "share one media library across several editors",
+   "pin a project to work offline while travelling",
+   "replace per-seat cloud editing storage with self-hosted storage",
+   "browse and search a large NAS volume from Finder",
+   "let a teammate open a project without relinking media"
+  ],
+  "how_to_run": [
+   "Server: cd juicemount/server, edit docker-compose.yml for disk paths and MINIO_ROOT_PASSWORD, then docker compose up -d",
+   "Mac: brew install juicefs",
+   "Mac: brew install --cask macfuse",
+   "Download the notarized JuiceMount.app from Releases and drag it to /Applications, or build from source with ./scripts/build-app.sh and ./scripts/install.sh",
+   "On first launch, use the Setup Assistant to enter the Redis URL and optional S3 endpoint override, then click Start",
+   "Enter the admin password once at the mount prompt; /Volumes/<name> appears in Finder"
+  ],
+  "stack": [
+   "Go",
+   "Swift",
+   "JuiceFS",
+   "Redis",
+   "MinIO (S3-compatible object storage)",
+   "SQLite",
+   "macFUSE",
+   "NFS (fork of willscott/go-nfs)",
+   "Docker / Docker Compose",
+   "Tailscale (optional, for remote access)"
+  ],
+  "notable": [
+   "Only the 4 MB blocks touched are transferred, so scrubbing a large file pulls a small fraction of it over the network",
+   "Finder mounts via a loopback NFS server with a local SQLite metadata mirror, instead of raw FUSE, for faster directory opens",
+   "The on-disk format is the standard open JuiceFS format, so the stock juicefs client can read the volume without JuiceMount",
+   "Write spool acknowledges writes on local SSD and drains them to the NAS in the background, with crash recovery",
+   "Explicitly no telemetry, no update check and no File Provider extension"
+  ],
+  "caveats": [
+   "Beta and pre-1.0; macOS 14 or later only, tested on Apple Silicon, Intel untested",
+   "Requires self-hosting a server stack (Redis, MinIO, Docker or TrueNAS) and macFUSE plus the separately installed juicefs binary",
+   "Heavy simultaneous multi-editor use has not been soak-tested; cooperative locking is on the roadmap",
+   "Needs an admin password prompt once per session to mount; the write spool is off by default and un-spooled writes fail when the server is unreachable"
+  ],
+  "license": "Apache License 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10464,
+  "output": 1583
+ },
+ "generated": "2026-10-29"
+}

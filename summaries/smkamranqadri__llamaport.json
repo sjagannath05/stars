@@ -1,0 +1,97 @@
+{
+ "id": "smkamranqadri/llamaport",
+ "repo": "smkamranqadri/llamaport",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Llamaport - Run local GGUF models with llama-server. Reads model headers directly for real quantisation and context length, shows the full launch command before starting, reports live token rates and memory pressure, and downloads models from Hugging Face with resume that survives a kill."
+  }
+ ],
+ "summary": {
+  "one_liner": "Llamaport is an unsigned macOS beta app that runs and downloads local GGUF models through llama-server, showing the launch command, live costs, and resumable Hugging Face downloads.",
+  "what_it_does": "It lists GGUF models in a models folder by reading file headers for quantisation, context length and mixture-of-experts structure, and launches one model at a time with the full llama-server command shown beforehand. Test model runs checks against the running server (process, port, health, model list, alias, a real chat completion) and reports the first-token time. Downloads of .gguf files from Hugging Face use four ranged connections, re-resolve CDN redirects on resume, verify sha256, and refuse servers that do not support ranges. Discover browses Hugging Face GGUF repositories and picks the largest quantisation that fits the GPU's working set, and Activity Monitor lists running llama-server processes with memory and CPU. The README says it never forecasts speed and only reports measured rates.",
+  "use_cases": [
+   "run local GGUF models with llama-server",
+   "download large models from Hugging Face with resume",
+   "pick a quantisation that fits my Mac's GPU memory",
+   "monitor llama-server memory and token speed",
+   "test whether a local llama.cpp server is working",
+   "browse trending GGUF models on Hugging Face"
+  ],
+  "how_to_run": [
+   "brew install llama.cpp",
+   "Download a .dmg from Releases and drag Llamaport to Applications",
+   "xattr -dr com.apple.quarantine /Applications/Llamaport.app (only if macOS blocks the unsigned build)",
+   "bun install",
+   "CI=true bun run tauri build",
+   "bun run tauri dev"
+  ],
+  "stack": [
+   "Rust",
+   "Tauri",
+   "TypeScript",
+   "bun",
+   "llama.cpp (llama-server)",
+   "Hugging Face"
+  ],
+  "notable": [
+   "Reads GGUF headers directly so quant and context length are real values, not filename guesses",
+   "Resumable downloads that re-resolve CDN redirects and verify sha256, surviving kills and reboots",
+   "Discover picks the quantisation per model and prints the choice and size on each row",
+   "Refuses to pass --host or --port through to llama-server, binding to 127.0.0.1"
+  ],
+  "caveats": [
+   "Unsigned beta: macOS blocks first launch and needs manual approval or xattr; v0.6.0 and earlier need the xattr command",
+   "Universal build has never been run on an Intel Mac; Intel support is untested",
+   "macOS only; no Windows or Linux",
+   "Public Hugging Face repos only; no token support for gated repos"
+  ],
+  "license": "MIT",
+  "category": "local llm runner",
+  "keywords": [
+   "gguf",
+   "llama.cpp",
+   "llama-server",
+   "local llm",
+   "macos app",
+   "apple silicon",
+   "hugging face",
+   "model downloader",
+   "resumable download",
+   "ranged downloads",
+   "sha256 verification",
+   "quantisation picker",
+   "k-quant",
+   "mixture of experts",
+   "model library",
+   "launch command",
+   "tauri",
+   "rust",
+   "typescript",
+   "bun",
+   "run models offline",
+   "run ai model on mac",
+   "download huggingface model",
+   "resume interrupted download",
+   "model memory usage",
+   "token rate monitor",
+   "gpu offload",
+   "ngl",
+   "local inference server",
+   "lm studio alternative",
+   "ollama alternative",
+   "chat ui web ui"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4376,
+  "output": 1249
+ },
+ "generated": "2026-10-29"
+}

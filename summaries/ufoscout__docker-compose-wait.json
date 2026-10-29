@@ -1,0 +1,103 @@
+{
+ "id": "ufoscout/docker-compose-wait",
+ "repo": "ufoscout/docker-compose-wait",
+ "kind": "star",
+ "description": "A simple script to wait for other docker images to be started while using docker-compose (or Kubernetes or docker stack or whatever)",
+ "topics": [
+  "containers",
+  "docker",
+  "docker-images",
+  "dockerfile",
+  "kubernetes",
+  "sleep",
+  "synchronization",
+  "wait"
+ ],
+ "language": "Rust",
+ "stars": 1707,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-04-10",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "A small Rust command-line utility that makes a container wait for TCP ports, local paths, or a fixed time before starting its main command, commonly used with docker-compose.",
+  "category": "container startup ordering",
+  "keywords": [
+   "docker-compose wait",
+   "wait for port",
+   "wait for service",
+   "tcp port check",
+   "container startup order",
+   "depends_on alternative",
+   "healthcheck wait",
+   "wait-for-it",
+   "startup synchronization",
+   "docker entrypoint wait",
+   "kubernetes init wait",
+   "rust cli",
+   "musl static binary",
+   "distroless wait",
+   "scratch image",
+   "wait for file",
+   "wait for directory",
+   "sleep before start",
+   "retry until available",
+   "wait_hosts",
+   "wait for database",
+   "wait for mysql postgres mongo",
+   "docker stack",
+   "aarch64 arm7 binary",
+   "cross compile",
+   "shell-free container",
+   "sleep utility",
+   "wait then run command"
+  ],
+  "what_it_does": "The utility waits until a list of host:port pairs accept TCP connections, until listed local files or directories exist, or for a fixed number of seconds, and then runs a configured command. Configuration is through environment variables such as WAIT_HOSTS, WAIT_PATHS, WAIT_COMMAND, WAIT_TIMEOUT, and WAIT_SLEEP_INTERVAL. It can sleep before checking and after everything is ready. Logging verbosity is set with WAIT_LOGGER_LEVEL. When used with WAIT_COMMAND and an exec-form ENTRYPOINT, it replaces its own process with the target command, so it works in images without a shell. The README says it has no dependencies on Docker and can be used anywhere.",
+  "use_cases": [
+   "make an app container wait for its database before starting",
+   "delay startup until a dependent service port is open in docker-compose",
+   "wait for a file or directory to appear before launching a process",
+   "start a scratch or distroless container after a dependency is ready",
+   "add startup ordering to Kubernetes or docker stack deployments",
+   "cross-compile a small wait binary for arm devices"
+  ],
+  "how_to_run": [
+   "COPY --from=ghcr.io/ufoscout/docker-compose-wait:latest /wait /wait",
+   "CMD /wait && /MySuperApp.sh",
+   "Set WAIT_HOSTS: postgres:5432, mysql:3306 in the service environment in docker-compose.yml",
+   "cargo build --release",
+   "cargo install cross",
+   "cross build --target=armv7-unknown-linux-musleabihf --release"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "MUSL static builds",
+   "cross (for cross-compilation)"
+  ],
+  "notable": [
+   "Waits on TCP ports, file/directory existence, or fixed sleep time, configurable via environment variables",
+   "Can exec into the target command so it works in scratch or distroless images with no shell",
+   "Prebuilt executables for x86_64, aarch64 and arm7 Linux, built with MUSL",
+   "No external runtime dependencies; a plain cargo build produces the binary"
+  ],
+  "caveats": [
+   "Building for other targets requires Rust toolchain and, for cross-compilation, the Cross tool and a working Docker setup",
+   "Prebuilt binaries are described as Linux only; other platforms need a source build",
+   "Checks are only TCP reachability and file existence; it does not check application health beyond that"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3666,
+  "output": 1275
+ },
+ "generated": "2026-10-29"
+}

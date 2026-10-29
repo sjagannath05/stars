@@ -1,0 +1,97 @@
+{
+ "id": "educlopez/ui-craft",
+ "repo": "educlopez/ui-craft",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "UI Craft by Eduardo Calvo - A deep design-engineering skill that makes agents \"design like they have taste\" by default, layered so you can just install it, drive it with 22 single-lens commands, or wire its deterministic MCP gates and CLI into CI. Its signature is a *scoreable, defensible* critique — Nielsen's heuristics × classic design laws × persona walkthroughs, every finding tagged by busines"
+  }
+ ],
+ "summary": {
+  "one_liner": "UI Craft is a design-engineering skill, CLI, and MCP/CI toolkit that makes AI coding agents produce polished, non-generic UI and gives deterministic and judged design-quality scores.",
+  "what_it_does": "Installs as an agent skill (via a Go CLI, Claude Code plugin, Cursor plugin, or npx skills add) that pushes AI coding agents toward opinionated design craft: hierarchy, tokens, motion rules, and an anti-slop list. It provides 25 slash commands grouped into four \"rungs\" (ask, direct passes like /craft and /polish, persistent brief and tokens, and enforcement via /finalize), plus two read-only review agents (design-reviewer, a11y-auditor). A zero-dependency detector (ui-craft-detect) scans code or live URLs for 43 anti-pattern rules, supports diff-scoped scanning, agent edit-time hooks, and a GitHub Action for PR feedback. The README also describes MCP quality gates (check_anti_slop, tokens_lint, acceptance_bar, score_ui) and a deterministic UICraftScore (0-100) plus a judged UsabilityScore built from a Nielsen/design-law heuristic scorecard.",
+  "use_cases": [
+   "Having an AI coding agent build dashboards, landing pages, or auth screens that look production-ready",
+   "Running a scored UX and design critique of an existing interface",
+   "Enforcing anti-AI-slop and accessibility checks in CI or pre-commit hooks",
+   "Scanning a deployed URL for common UI and accessibility anti-patterns",
+   "Keeping design tokens and a durable design brief consistent across agent sessions",
+   "Adding per-edit design feedback to Claude Code or Cursor agents"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash  (macOS/Linux installer; URL omitted in README text)",
+   "ui-craft install",
+   "/plugin marketplace add educlopez/ui-craft",
+   "/plugin install ui-craft",
+   "npx skills add educlopez/ui-craft",
+   "npx ui-craft-detect ./src"
+  ],
+  "stack": [
+   "Go (ui-craft CLI, single static binary)",
+   "Node.js / npm (ui-craft-detect, ui-craft-mcp)",
+   "Claude Code plugin system",
+   "Cursor plugin and hooks",
+   "MCP (Model Context Protocol) servers",
+   "GitHub Actions and gh CLI",
+   "Optional: puppeteer for live URL scanning"
+  ],
+  "notable": [
+   "Scoreable, defensible critique: Nielsen's 10 heuristics, 6 design laws, and 5 persona walkthroughs, with findings tagged by business impact",
+   "Ladder structure from zero-effort use up to CI-enforced gates, so users only adopt what they need",
+   "Deterministic 0-100 UICraftScore computed from anti-slop, token, and a11y findings",
+   "Diff-scoped detector (--scope changed) and `ci install` that posts sticky PR comments and inline review comments",
+   "Edit-time hooks that feed anti-slop findings back to Claude Code and Cursor agents while they work"
+  ],
+  "caveats": [
+   "The README states macOS Intel and Linux arm64 and Windows arm64 binaries are built but not tested; Intel macOS is called the largest remaining gap",
+   "Agent Skills install (npx skills add) gives only the skill and commands, with no review agents, MCP gates, or hooks; global installs for Claude Code need a symlink workaround",
+   "Live URL scanning with full JS rendering requires optional puppeteer install; the fetch fallback sees only server-delivered HTML"
+  ],
+  "license": "unknown",
+  "category": "ai agent design skill",
+  "keywords": [
+   "ai coding agent",
+   "design skill",
+   "ui design",
+   "ux critique",
+   "nielsen heuristics",
+   "design laws",
+   "anti-slop",
+   "ai generated ui",
+   "claude code plugin",
+   "cursor plugin",
+   "mcp server",
+   "design tokens",
+   "accessibility audit",
+   "a11y linter",
+   "ui linter",
+   "css linter",
+   "ci gate",
+   "github action",
+   "pre-commit hook",
+   "usability score",
+   "design review",
+   "make ui look good",
+   "stop ai looking generic",
+   "review my ui",
+   "audit my interface",
+   "dashboard design",
+   "landing page design",
+   "agent skills",
+   "npx ui-craft-detect",
+   "design system tokens",
+   "motion design guidelines"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17318,
+  "output": 1568
+ },
+ "generated": "2026-10-29"
+}

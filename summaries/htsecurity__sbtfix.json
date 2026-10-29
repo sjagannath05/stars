@@ -1,0 +1,92 @@
+{
+ "id": "htsecurity/sbtfix",
+ "repo": "htsecurity/sbtfix",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "sbtfix - Menu bar app to control Sony headphones: noise cancelling, ambient sound, Speak-to-Chat and battery."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu-bar app that controls Sony headphones and earbuds over Bluetooth, letting you switch noise cancelling, ambient sound and off modes, adjust ambient level, toggle Focus on Voice and Speak-to-Chat, and check battery.",
+  "what_it_does": "sbtfix sits in the macOS menu bar and talks to Sony headphones directly over Bluetooth RFCOMM, using a framed binary protocol rather than Sony's phone app, which has no Mac version. It switches between Noise Cancelling, Ambient Sound and Off, with Wind Noise Reduction on models that support it. It offers an ambient level slider (1–20), Focus on Voice, and Speak-to-Chat on/off. It shows battery level with a charging indicator, including left, right and case for earbuds. It detects the model and protocol generation automatically and only shows the features that model supports, and it stays in sync when the buttons on the headphones are used. The README says it reconnects automatically when the headphones connect.",
+  "use_cases": [
+   "control Sony headphone noise cancelling from a Mac",
+   "switch to ambient sound without using the phone",
+   "check Sony earbud battery levels on macOS",
+   "adjust ambient sound level on Sony headphones",
+   "toggle Speak-to-Chat on Sony headphones",
+   "replace Sony Headphones Connect app on Mac"
+  ],
+  "how_to_run": [
+   "Download sbtfix.zip from the latest release and unzip it",
+   "Move sbtfix.app to /Applications",
+   "Right-click the app, choose Open, then click Open again (or run: xattr -dr com.apple.quarantine /Applications/sbtfix.app)",
+   "Click Allow when macOS asks for Bluetooth access",
+   "Build from source: git clone the repo, cd sbtfix, then ./build.sh (use ./build.sh --install to also copy to /Applications)",
+   "Pair and connect headphones in macOS Bluetooth settings, then click the menu bar headphones icon"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI (MenuBarExtra)",
+   "IOBluetooth",
+   "Bluetooth RFCOMM",
+   "Swift Package Manager (swift test)",
+   "Xcode 15 or Swift 5.9+ command-line tools"
+  ],
+  "notable": [
+   "Talks to headphones directly over Bluetooth, reproducing the phone app's protocol without a vendor Mac app",
+   "Automatically detects model and protocol generation and shows only supported controls",
+   "Menu-bar icon reflects current noise cancelling/ambient mode",
+   "No Dock icon, no background daemons, no network access, no dependencies",
+   "Protocol framing and commands documented in docs/PROTOCOL.md; protocol support credited to Gadgetbridge research"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later",
+   "Only WH-1000XM5 is marked as tested; most other models are listed as expected to work but unconfirmed on a Mac",
+   "The app is not notarized, so macOS blocks it on first launch and needs a manual workaround",
+   "Unofficial project, not affiliated with Sony; provided as-is with no warranty"
+  ],
+  "license": "unknown",
+  "category": "macos menu bar app",
+  "keywords": [
+   "sony headphones",
+   "sony earbuds",
+   "macos menu bar",
+   "noise cancelling control",
+   "anc toggle",
+   "ambient sound",
+   "focus on voice",
+   "speak-to-chat",
+   "battery indicator",
+   "bluetooth rfcomm",
+   "iobluetooth",
+   "swift",
+   "swiftui",
+   "menubarextra",
+   "headphones connect alternative",
+   "sound connect mac",
+   "sony wh-1000xm5",
+   "sony wf-1000xm5",
+   "linkbuds s",
+   "wind noise reduction",
+   "bluetooth headphone controller",
+   "mac headphone app",
+   "gadgetbridge protocol",
+   "unofficial sony app",
+   "control headphones from mac",
+   "check earbud battery mac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4032,
+  "output": 1466
+ },
+ "generated": "2026-10-29"
+}

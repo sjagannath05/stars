@@ -1,0 +1,96 @@
+{
+ "id": "i18next/i18next-cli",
+ "repo": "i18next/i18next-cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "i18next-localization by i18next - Agent Skill that takes an app from hardcoded strings to a localized one with i18next: stack detection, config, AST-based wrapping of strings in t(), key extraction, sync to Locize and AI translation. It regenerates the step-by-step prompt from the installed i18next-cli, so it cannot drift from the CLI."
+  }
+ ],
+ "summary": {
+  "one_liner": "A CLI toolchain for i18next that extracts translation keys via SWC-based static analysis, lints for hardcoded strings, syncs locale files, generates TypeScript types, and includes a localize command and Locize integration.",
+  "what_it_does": "Extracts i18next translation keys from JavaScript and TypeScript source files (.js, .jsx, .ts, .tsx) using an AST-based analyzer built on SWC, and updates JSON locale files. The lint command detects hardcoded user-facing strings, interpolation parameter mismatches, placeholder mismatches across locales, and string concatenation problems. The status command reports translation completeness per locale and namespace and can report unused keys. Other commands cover generating TypeScript definitions (types), keeping secondary locales in sync with the primary language (sync), and instrumenting hardcoded strings with t() calls (instrument). The localize command runs a guided flow from detection through extraction to optional Locize sync and AI auto-translation, and can print a version-matched prompt for AI coding agents. Non-JS/TS file formats such as .vue or .svelte require plugins.",
+  "use_cases": [
+   "extract i18next translation keys from source code",
+   "find hardcoded strings in a React app",
+   "check translation completeness across locales",
+   "generate TypeScript types for translation keys",
+   "keep locale JSON files in sync with the primary language",
+   "localize an AI-generated app with i18next",
+   "wrap hardcoded strings in t() calls"
+  ],
+  "how_to_run": [
+   "npm install --save-dev i18next-cli",
+   "npx i18next-cli init",
+   "npx i18next-cli extract",
+   "npx i18next-cli status",
+   "npx i18next-cli lint",
+   "npx i18next-cli localize --print-agent-prompt"
+  ],
+  "stack": [
+   "TypeScript",
+   "JavaScript",
+   "SWC",
+   "i18next",
+   "Node.js",
+   "Locize"
+  ],
+  "notable": [
+   "Zero-config status and lint commands that run without a config file",
+   "Lint baseline support to fail CI only on new issues",
+   "Stateful scope-aware analysis of useTranslation with keyPrefix, getFixedT and aliased t functions",
+   "ICU and MF2 message parsing and validation when configured",
+   "localize --print-agent-prompt generates agent instructions matching the installed CLI version"
+  ],
+  "caveats": [
+   "By default only JS/TS files are extracted; other file types such as .vue or .svelte need a plugin",
+   "The instrument command is heuristic-based and expects false positives and negatives, so output needs manual review",
+   "Locize integration is optional but several workflows (sync, auto-translate, CDN delivery) depend on a Locize account"
+  ],
+  "license": "unknown",
+  "category": "i18n tooling cli",
+  "keywords": [
+   "i18next",
+   "i18n",
+   "internationalization",
+   "localization",
+   "translation keys",
+   "key extraction",
+   "hardcoded strings",
+   "lint",
+   "locale sync",
+   "typescript types",
+   "swc",
+   "ast",
+   "locize",
+   "ai translation",
+   "translation status",
+   "missing translations",
+   "unused keys",
+   "react i18n",
+   "agent skill",
+   "claude code",
+   "localize app",
+   "wrap strings in t",
+   "translation files json",
+   "ci check translations",
+   "plugin system",
+   "i18next-parser alternative",
+   "i18n linter",
+   "translation completeness",
+   "share translations with translators",
+   "add i18n to project"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16221,
+  "output": 1245
+ },
+ "generated": "2026-10-29"
+}

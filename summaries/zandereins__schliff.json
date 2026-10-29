@@ -1,0 +1,95 @@
+{
+ "id": "zandereins/schliff",
+ "repo": "Zandereins/schliff",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Linting",
+   "entry": "Schliff by Zandereins - Deterministic quality scorer for AI agent instruction files — 8-dimension scoring with security, multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), anti-gaming detection, zero dependencies"
+  }
+ ],
+ "summary": {
+  "one_liner": "Schliff is a deterministic, rule-based quality scorer (0–100 with letter grades) for AI agent instruction files such as AGENTS.md, SKILL.md, CLAUDE.md, .cursorrules, and system prompts, with no LLM judge in the scoring path.",
+  "what_it_does": "Scores instruction files against a versioned rubric using a set of readable scorers (structure, triggers, quality, edges, efficiency, composability, clarity, security), combined into a weighted composite. The AGENTS.md headline uses structure, operational_coverage, and efficiency, while other formats use the 7-dimension composite, which needs an eval suite for some dimensions. Unmeasured dimensions count as zero, so coverage gaps lower the score ceiling. It offers CLI commands for scoring, CI gating with a minimum score, checking that referenced commands exist, badge generation, diffing and comparing scores across commits, ranking fixes, and generating reports. An optional improvement loop (evolve) applies rule-based patches and re-scores, keeping changes only if the score improves. Core scoring is stdlib-only and makes no network calls.",
+  "use_cases": [
+   "grade the quality of an AGENTS.md file",
+   "gate pull requests on instruction-file quality in CI",
+   "lint SKILL.md or CLAUDE.md files before committing",
+   "compare instruction file scores across git commits",
+   "find token-budget bloat in agent instruction files",
+   "generate a score badge for a repository's agent config"
+  ],
+  "how_to_run": [
+   "pip install schliff",
+   "schliff score AGENTS.md",
+   "schliff verify AGENTS.md --min-score 75",
+   "uvx schliff demo",
+   "/plugin marketplace add Zandereins/schliff (inside Claude Code)",
+   "/plugin install schliff@schliff (inside Claude Code)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "stdlib-only core",
+   "optional anthropic and pydantic (judge extra)",
+   "optional litellm (evolve extra)",
+   "uv/uvx",
+   "GitHub Actions",
+   "pre-commit"
+  ],
+  "notable": [
+   "Deterministic scoring: same input gives the same score, with no LLM judge and no randomness",
+   "Full-denominator composite: unmeasured dimensions count as zero, so the score ceiling reflects measurement coverage",
+   "Multi-format support for AGENTS.md, SKILL.md, CLAUDE.md, .cursorrules, and system prompts",
+   "Anti-gaming checks that discount padding, repeated lines, keyword stuffing, and junk commands",
+   "Claude Code plugin exposing /schliff: commands alongside the CLI"
+  ],
+  "caveats": [
+   "Optional LLM extras (evolve, judge) send requests to a provider using the user's own API key; core scoring makes no network calls",
+   "The README says the rubric measures measurable properties, not whether the file's content is actually correct; a plausible but false file can still score well",
+   "Some dimensions require an eval suite (generated with /schliff:init) before the full composite can be scored"
+  ],
+  "license": "MIT",
+  "category": "ai instruction linting",
+  "keywords": [
+   "agents.md",
+   "claude.md",
+   "skill.md",
+   "cursorrules",
+   "ai instruction file",
+   "prompt quality",
+   "linter",
+   "ruff alternative",
+   "deterministic scoring",
+   "rule-based linter",
+   "ci quality gate",
+   "pre-commit hook",
+   "github action",
+   "token budget",
+   "agent instructions",
+   "system prompt linting",
+   "claude code plugin",
+   "cursor rules",
+   "codex agents file",
+   "copilot instructions",
+   "score instruction files",
+   "grade prompt files",
+   "reproducible scores",
+   "lint my agents file",
+   "check skill file quality",
+   "compare scores across commits",
+   "badge generator",
+   "pip install linter",
+   "python cli scorer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7146,
+  "output": 1407
+ },
+ "generated": "2026-10-29"
+}

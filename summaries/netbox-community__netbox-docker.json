@@ -1,0 +1,93 @@
+{
+ "id": "netbox-community/netbox-docker",
+ "repo": "netbox-community/netbox-docker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Networking",
+   "entry": "NetBox | Network source of truth for IPAM and data-centre infrastructure"
+  }
+ ],
+ "summary": {
+  "one_liner": "netbox-docker is the community project that builds and packages NetBox (a network source of truth for IPAM and data-centre infrastructure) as Docker container images, run with Docker Compose.",
+  "what_it_does": "The repository contains the components needed to build NetBox as a container, and images are rebuilt regularly and pushed to Docker Hub, Quay.io and GitHub Container Registry. The Quickstart clones the release branch, copies an example docker-compose.override.yml, and runs docker compose pull and up to start the application. An admin user can be created with the Django manage.py createsuperuser command inside the netbox container, or via SUPERUSER_* environment variables. Images are tagged by NetBox version and netbox-docker version (for example vX.Y.Z-a.b.c), with latest and snapshot variants that track NetBox main. The README also provides a build.sh script for rebuilding the image and a test.sh script that runs NetBox's unit tests and checks that NetBox starts. Further guides (secrets, TLS, Kubernetes, monitoring, LDAP) are in the external wiki.",
+  "use_cases": [
+   "run NetBox in Docker containers",
+   "deploy NetBox with Docker Compose",
+   "track IP addresses and IPAM data in a container",
+   "document data-centre infrastructure with NetBox",
+   "build a custom NetBox container image",
+   "test a NetBox container image"
+  ],
+  "how_to_run": [
+   "git clone -b release <repository URL>",
+   "cd netbox-docker",
+   "cp docker-compose.override.yml.example docker-compose.override.yml",
+   "docker compose pull",
+   "docker compose up",
+   "docker compose exec netbox /opt/netbox/netbox/manage.py createsuperuser"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "NetBox",
+   "containerd"
+  ],
+  "notable": [
+   "Prebuilt images published to Docker Hub, Quay.io and GitHub Container Registry, rebuilt about every 24 hours",
+   "Image tags pair a NetBox version with a netbox-docker version for compatibility",
+   "Separate snapshot tags built from NetBox's main branch for prerelease testing",
+   "Admin user can be created automatically through SUPERUSER_* environment variables"
+  ],
+  "caveats": [
+   "The README says the project is currently maintained by the community, with no dedicated maintainer team named",
+   "Requires Docker 20.10.10 or newer, containerd 1.5.6 or newer, and docker-compose 1.28.0 or newer",
+   "The NetBox container image version must stay in sync with the version of the Git repository when updating"
+  ],
+  "license": "unknown",
+  "category": "self-hosted network tooling",
+  "keywords": [
+   "netbox",
+   "netbox docker",
+   "netbox container",
+   "ipam",
+   "ip address management",
+   "data centre infrastructure",
+   "network source of truth",
+   "docker compose",
+   "docker image",
+   "container image",
+   "docker hub",
+   "quay.io",
+   "github container registry",
+   "self-hosted ipam",
+   "network inventory",
+   "dcim",
+   "track ip addresses",
+   "docker deployment",
+   "containerized netbox",
+   "build netbox image",
+   "django",
+   "postgresql",
+   "redis",
+   "network documentation tool",
+   "manage network devices",
+   "nbx",
+   "netbox api",
+   "run netbox in docker",
+   "docker-compose netbox setup",
+   "infrastructure inventory",
+   "netbox kubernetes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3577,
+  "output": 1250
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "aranticlabs/bugpin",
+ "repo": "aranticlabs/bugpin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Ticketing",
+   "entry": "BugPin - Visual bug reporting and ticketing tool for web applications. (Source Code) AGPL-3.0/MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "BugPin is a self-hosted, open-source visual bug reporting tool that captures annotated screenshots and tracks bugs from web applications.",
+  "what_it_does": "Provides an embeddable widget that lets end users capture screenshots of any page, annotate them with pen, shapes, arrows, text, and privacy blur, and submit reports. Reports are cached locally when offline and synced when the connection returns. Automatically collects failed network requests (4xx, 5xx), console errors, and OS/browser/device info. An admin console lets you create projects (each with its own API key), triage reports, and use light or dark mode. Reports can be exported as Markdown, plain text, an AI prompt, or JSON, and forwarded to GitHub Issues. Security options include domain whitelists, configurable rate limiting, HSTS, and secure headers.",
+  "use_cases": [
+   "collect visual bug reports from website users",
+   "annotate screenshots of web app issues",
+   "track and triage bugs for multiple projects",
+   "forward bug reports to GitHub Issues",
+   "self-host a bug reporting tool with data on own servers",
+   "export bug diagnostics for AI-assisted debugging"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with image registry.arantic.cloud/bugpin/bugpin:latest, port 7300:7300, and volume ./data:/data",
+   "Run: docker compose up -d",
+   "Or run: docker run -d --name bugpin -p 7300:7300 -v bugpin-data:/data registry.arantic.cloud/bugpin/bugpin:latest",
+   "Log in to the admin console with the default credentials and change the password immediately",
+   "Create a project in the Projects section and copy its API key",
+   "Add the widget via a script tag with the API key, or install @arantic/bugpin-widget via npm and call BugPin.init with apiKey and serverUrl"
+  ],
+  "stack": [
+   "Bun",
+   "Hono",
+   "SQLite",
+   "React",
+   "TanStack Query",
+   "Tailwind CSS",
+   "Preact",
+   "Fabric.js",
+   "Shadow DOM",
+   "Docker"
+  ],
+  "notable": [
+   "Widget embeds via a single script tag and works with React, Vue, Angular, Svelte, or vanilla JS",
+   "Shadow DOM isolation keeps widget styles from leaking into the host site",
+   "Widget translated into 8 languages with automatic detection",
+   "Multi-license: AGPL-3.0 for server and admin console, MIT for widget",
+   "Export diagnostics with section toggles and redactions"
+  ],
+  "caveats": [
+   "Enterprise Edition features are proprietary and covered by a separate BugPin Business License",
+   "Default admin credentials must be changed after first login",
+   "Full documentation is hosted externally at docs.bugpin.io"
+  ],
+  "license": "AGPL-3.0 (server and admin console); MIT (widget)",
+  "category": "visual bug reporting",
+  "keywords": [
+   "bug reporting",
+   "visual bug reporting",
+   "bug tracker",
+   "issue tracker",
+   "ticketing",
+   "screenshot annotation",
+   "screenshot bug report",
+   "feedback widget",
+   "embeddable widget",
+   "self-hosted",
+   "self-hosted bug tracker",
+   "open source bug tracking",
+   "bugzilla alternative",
+   "report bugs from website",
+   "capture screenshots",
+   "annotate screenshots",
+   "offline bug reports",
+   "github issues integration",
+   "shadow dom widget",
+   "docker bug tracker",
+   "bun hono sqlite",
+   "react admin console",
+   "user feedback tool",
+   "console error capture",
+   "network error reporting",
+   "triage bug reports",
+   "multi-project bug tracking",
+   "export bug report markdown",
+   "share bug reports with developers",
+   "report website problems",
+   "dark mode admin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3164,
+  "output": 1335
+ },
+ "generated": "2026-10-29"
+}

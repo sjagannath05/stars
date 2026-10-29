@@ -1,0 +1,85 @@
+{
+ "id": "cloudpipe/cloudpickle",
+ "repo": "cloudpipe/cloudpickle",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Serialization",
+   "entry": "cloudpickle - Extends pickle to functions, lambdas, and interactively defined classes, for shipping code to remote workers."
+  }
+ ],
+ "summary": {
+  "one_liner": "cloudpickle extends Python's pickle so that lambdas, interactively defined functions and classes, and other constructs the standard module cannot handle can be serialized and shipped to remote workers.",
+  "what_it_does": "Serializes Python objects that the standard pickle module rejects, including lambda functions and functions or classes defined interactively in __main__ (scripts, shells, Jupyter notebooks). It pickles these by value, while standard pickle pickles functions and classes by reference to their module. It provides register_pickle_by_value and unregister_pickle_by_value so that modules importable on the client but not on workers can be serialized by value (marked experimental). The README says it is intended for cluster computing, where code is sent over the network to remote hosts. Loading is done with the normal pickle.loads.",
+  "use_cases": [
+   "ship lambda functions to remote workers",
+   "send interactively defined functions to a cluster",
+   "serialize closures for distributed computing",
+   "pickle functions defined in a Jupyter notebook",
+   "send code to workers that lack the source module",
+   "serialize classes defined in __main__"
+  ],
+  "how_to_run": [
+   "pip install cloudpickle"
+  ],
+  "stack": [
+   "Python",
+   "pickle"
+  ],
+  "notable": [
+   "Pickles lambdas and __main__-defined functions and classes by value, which standard pickle cannot do",
+   "register_pickle_by_value API (since 2.0.0) to force by-value serialization for a module, experimental",
+   "Used in PySpark, originally developed by picloud.com",
+   "Client and worker must run the exact same Python version"
+  ],
+  "caveats": [
+   "Only works between the exact same Python version on both ends",
+   "Not supported or recommended for long-term object storage",
+   "Unpickling untrusted data can execute arbitrary code; only load pickle data from trusted sources",
+   "register_pickle_by_value is experimental and can fail if by-value functions contain import statements or mix with by-reference functions"
+  ],
+  "license": "unknown",
+  "category": "python serialization",
+  "keywords": [
+   "cloudpickle",
+   "pickle",
+   "serialization",
+   "serialize",
+   "deserialize",
+   "lambda pickling",
+   "pickle lambda",
+   "pickle functions",
+   "pickle classes",
+   "__main__ pickling",
+   "interactive functions",
+   "jupyter pickle",
+   "distributed computing",
+   "cluster computing",
+   "remote workers",
+   "ship code over network",
+   "send code to workers",
+   "python object serialization",
+   "dumps and loads",
+   "pickle by value",
+   "pickle by reference",
+   "register_pickle_by_value",
+   "closures serialization",
+   "python multiprocessing serialization",
+   "pyspark serialization",
+   "python to remote hosts",
+   "send python functions",
+   "standard library pickle alternative",
+   "pickle extension"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3159,
+  "output": 1033
+ },
+ "generated": "2026-10-29"
+}

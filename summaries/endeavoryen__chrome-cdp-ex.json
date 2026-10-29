@@ -1,0 +1,97 @@
+{
+ "id": "endeavoryen/chrome-cdp-ex",
+ "repo": "EndeavorYen/chrome-cdp-ex",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "chrome-cdp-ex by Endeavor Yen - A zero-dependency Claude Code skill (68 commands) that connects to your *real* Chrome — logged-in tabs, cookies, live page state — to give the agent a perception layer: layout, visible styles, per-action \"what changed\" evidence, CSS-cascade-to-source tracing, and session replay/Playwright export. Notably rigorous about its own claims, with a dogfood benchmark gate t"
+  }
+ ],
+ "summary": {
+  "one_liner": "A zero-dependency CLI and Claude Code skill that attaches to your already-running, logged-in Chrome over CDP so an agent can perceive, act on, and debug the live page.",
+  "what_it_does": "The tool attaches to an existing Chrome or Edge session through the DevTools Protocol, keeping the user's logins, cookies, and open tabs. `perceive` prints an accessibility tree with @ref handles and layout hints, and `perceive --since-action` shows only what the last action changed. `click`, `fill`, `press`, `drag`, `select`, and `scroll` send real CDP input events, and each action returns a one-line receipt naming the node addressed, the next command, and any dialog or download involved. `console` and `status` print source-mapped stack frames, `netlog --id N` shows one request's details, and `status --vitals` reports LCP, CLS, INP and long tasks. Screenshot commands (`shot`, `elshot`, `scanshot`, `responsive-audit`) capture pixels. The tool is usable as a Claude Code skill, a plain CLI, or a stdio MCP server. The README also describes redaction of secrets in output and opt-in guardrails such as allowed origins and denied actions.",
+  "use_cases": [
+   "let an agent operate a tab where I am already logged in",
+   "inspect live page layout and visible styles for debugging",
+   "check what changed after a click or form fill",
+   "capture screenshots of a running web app or Electron window",
+   "read page content and network requests from a live session",
+   "run cron-style browser tasks against a persistent Chrome profile"
+  ],
+  "how_to_run": [
+   "./bin/chrome-cdp doctor",
+   "./bin/chrome-cdp list",
+   "./bin/chrome-cdp perceive -C -d 8",
+   "./bin/chrome-cdp click @ref",
+   "./bin/chrome-cdp fill @ref \"you@example.com\"",
+   "./bin/chrome-cdp stop"
+  ],
+  "stack": [
+   "Node.js 22 (built-in WebSocket)",
+   "Chrome DevTools Protocol",
+   "MCP (stdio server)",
+   "Claude Code skill"
+  ],
+  "notable": [
+   "Attaches to the user's real logged-in Chrome session via the inspect toggle rather than launching a clean test browser",
+   "Action receipts report the addressed node, the element at the click point, dialogs answered, and downloads saved",
+   "Redacts tokens, auth headers, cookies, JWTs and secret-named field values in output by default",
+   "Exposes the same commands as a CLI, a Claude Code skill, and a stdio MCP server",
+   "Built on pasky/chrome-cdp-skill by Petr Baudis"
+  ],
+  "caveats": [
+   "Requires Node.js 22 or newer; doctor prints a Node 22 path if the system version is older",
+   "Hidden or minimized tabs may fail screenshots with Kind: hidden-tab, and other commands on hidden tabs can drop input",
+   "Redaction and guardrails are described as defense-in-depth for agents, not a security boundary",
+   "From Chrome 136, the --remote-debugging-port flag does not attach to the default profile; the inspect toggle is needed instead"
+  ],
+  "license": "MIT",
+  "category": "browser automation cli",
+  "keywords": [
+   "chrome devtools protocol",
+   "cdp",
+   "browser automation",
+   "claude code skill",
+   "mcp server",
+   "stdio mcp",
+   "agent browser control",
+   "logged-in browser",
+   "real chrome session",
+   "accessibility tree",
+   "playwright alternative",
+   "puppeteer alternative",
+   "selenium alternative",
+   "live page inspection",
+   "screenshot tool",
+   "electron debugging",
+   "network request log",
+   "web vitals",
+   "console source maps",
+   "page layout inspection",
+   "form fill automation",
+   "click automation",
+   "node.js cli",
+   "remote debugging",
+   "chrome inspect",
+   "redact secrets output",
+   "browser session for agent",
+   "control my browser with ai",
+   "debug running web app",
+   "capture page screenshot",
+   "automate my open tabs",
+   "cron browser task",
+   "pasky chrome-cdp-skill fork"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4310,
+  "output": 1484
+ },
+ "generated": "2026-10-29"
+}

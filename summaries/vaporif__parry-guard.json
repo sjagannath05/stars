@@ -1,0 +1,94 @@
+{
+ "id": "vaporif/parry-guard",
+ "repo": "vaporif/parry-guard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Parry-guard by vaporif - Prompt injection scanner for AI coding tool hooks, written in Rust. Catches injection attacks, leaked secrets, and data exfiltration in tool inputs and outputs by running DeBERTa v3 and optionally Meta Llama Prompt Guard 2 locally via Candle. Built for Claude Code hooks; the models are gated on HuggingFace, so installation requires accepting their licences first. Self-desc"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Rust prompt-injection scanner that runs as a hook for Claude Code (and Codex or other command-hook tools), checking tool inputs and outputs for injection attacks, leaked secrets, and data exfiltration using locally run ML models.",
+  "category": "ai agent security",
+  "keywords": [
+   "prompt injection",
+   "prompt injection scanner",
+   "claude code hooks",
+   "ai coding tool security",
+   "codex hooks",
+   "secret detection",
+   "leaked credentials scanner",
+   "data exfiltration detection",
+   "deberta",
+   "llama prompt guard",
+   "candle",
+   "onnx",
+   "rust",
+   "huggingface",
+   "local ml inference",
+   "tree-sitter",
+   "aho-corasick",
+   "bash command analysis",
+   "destructive command blocking",
+   "pretooluse hook",
+   "posttooluse hook",
+   "userpromptsubmit hook",
+   "jailbreak detection",
+   "llm guardrails",
+   "protect agent from malicious tool output",
+   "scan claude.md for injection",
+   "block dangerous shell commands from ai agent"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Protecting Claude Code sessions from prompt injection in files, web pages, and tool output",
+   "Blocking data exfiltration attempts in agent Bash commands",
+   "Detecting leaked secrets in tool inputs and outputs",
+   "Auditing .claude/ directory permissions and hook scripts",
+   "Batch scanning diffs with the full ML model set"
+  ],
+  "how_to_run": [
+   "Accept the DeBERTa v3 licence (and Llama Prompt Guard 2 for full mode) on HuggingFace and create an access token",
+   "export HF_TOKEN=\"hf_...\"",
+   "cargo install --path bin",
+   "Or with uvx: add a PreToolUse/PostToolUse/UserPromptSubmit hook running \"uvx parry-guard hook\" to ~/.claude/settings.json",
+   "parry-guard monitor [path]",
+   "parry-guard status [path]"
+  ],
+  "stack": [
+   "Rust",
+   "DeBERTa v3 (ProtectAI/deberta-v3-small-prompt-injection-v2)",
+   "Meta Llama Prompt Guard 2 86M (optional, full mode)",
+   "Candle",
+   "ONNX Runtime",
+   "HuggingFace",
+   "tree-sitter",
+   "Aho-Corasick",
+   "redb"
+  ],
+  "notable": [
+   "Runs ML classifiers locally via ONNX or Candle, with a detached daemon and a 30-day scan result cache",
+   "Layered detection: Unicode checks, substring matching, 40+ secret regexes, ML classification, and tree-sitter Bash exfiltration analysis",
+   "Fails closed: content it cannot classify is treated as unsafe",
+   "Scan modes fast, full, and custom, with user-defined models and patterns files",
+   "Works with Claude Code, Codex, and any runner that sends the same JSON hook payloads"
+  ],
+  "caveats": [
+   "Described by the author as early development; expect bugs and false positives; tested only on Linux and macOS",
+   "ML models are gated on HuggingFace and require accepting licences and a token before use",
+   "Full mode needs the candle backend and is about 20x slower per chunk; Llama Prompt Guard 2 has its own Llama 4 Community License"
+  ],
+  "license": "MIT (Llama Prompt Guard 2 used in full mode has the separate Llama 4 Community License)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7530,
+  "output": 1277
+ },
+ "generated": "2026-10-29"
+}

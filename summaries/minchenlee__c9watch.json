@@ -1,0 +1,97 @@
+{
+ "id": "minchenlee/c9watch",
+ "repo": "minchenlee/c9watch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "c9watch by minchenlee - A macOS menu-bar app (and companion JSON CLI, built from one Rust/Tauri binary) that auto-discovers running Claude Code sessions by scanning OS processes and shows live working / needs-attention / idle status, plus session-history search, cost tracking, and PM-style worker orchestration. Rust + Tauri 2 + Svelte 5, with a token-gated mobile web client."
+  }
+ ],
+ "summary": {
+  "one_liner": "A desktop dashboard and JSON CLI that auto-discovers running Claude Code, Codex, Cursor Agent and Pi sessions on your machine and shows their live status.",
+  "what_it_does": "c9watch scans OS processes to find running agent sessions without requiring them to be launched from within the app. It classifies each session as Working, Needs Attention (permission requests or user questions), or Idle by parsing the tail of its JSONL transcript, and pushes updates to a Svelte UI through Tauri events. The app includes a Monitor tab, a tray popover, and an attention inbox. It also offers session history with metadata filters and deep content search, a conversation viewer, a memory file viewer, and cost tracking with daily, per-project, and per-model breakdowns. The same binary works as a CLI that outputs JSON for commands such as list, view, search, cost, watch, and wait. A mobile/web client connects over WebSocket with a token. PM worker orchestration exists but is disabled by default and must be enabled at build time.",
+  "use_cases": [
+   "monitor multiple Claude Code sessions at once",
+   "see which agent is waiting for permission",
+   "search past Claude Code conversations",
+   "track Claude Code spending by project or model",
+   "let one agent query the status of other agents via CLI",
+   "watch session status from a phone or browser"
+  ],
+  "how_to_run": [
+   "brew install --cask minchenlee/tap/c9watch",
+   "curl -fsSL <install script URL> | bash  (installs app and CLI; URL not shown in README)",
+   "git clone <repo URL> && cd c9watch",
+   "npm install",
+   "npm run tauri dev",
+   "cd src-tauri && cargo build --release --no-default-features --features cli"
+  ],
+  "stack": [
+   "Rust",
+   "Tauri 2",
+   "SvelteKit",
+   "Svelte 5",
+   "sysinfo"
+  ],
+  "notable": [
+   "Discovers sessions by scanning processes, so it works with any terminal or IDE and needs no plugins",
+   "Same binary serves as a desktop GUI and a JSON CLI designed for piping into jq or other agents",
+   "Optional Claude Code hook bridge reports permission prompts directly instead of inferring them from transcripts",
+   "Built on Tauri rather than Electron",
+   "Mobile/web client connects via WebSocket with a QR code for remote monitoring"
+  ],
+  "caveats": [
+   "Desktop app and install script are macOS-focused; the CLI is listed for macOS and Linux",
+   "PM orchestration (spawn, send, workers, inbox, adopt) is disabled by default and needs a special Cargo feature and a flag in the frontend",
+   "Cursor Agent is monitor-only, Pi is read-only, and OpenCode is a preview that needs a manual server connection"
+  ],
+  "license": "MIT",
+  "category": "claude code monitoring",
+  "keywords": [
+   "claude code monitor",
+   "ai agent dashboard",
+   "session monitor",
+   "menu bar app",
+   "macos menu bar",
+   "tauri app",
+   "rust svelte",
+   "process scanning",
+   "codex monitor",
+   "cursor agent",
+   "agent status",
+   "needs attention",
+   "permission request alert",
+   "session history search",
+   "conversation viewer",
+   "cost tracker",
+   "token usage tracking",
+   "json cli",
+   "agent cli",
+   "tray popover",
+   "websocket mobile client",
+   "claude hooks",
+   "sysinfo",
+   "awesome claude code",
+   "see running agents",
+   "track claude spending",
+   "search old claude chats",
+   "watch multiple agents at once",
+   "let agents monitor each other",
+   "monitor coding agents from phone",
+   "claude code session manager",
+   "tui alternative",
+   "electron alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7571,
+  "output": 1333
+ },
+ "generated": "2026-10-29"
+}

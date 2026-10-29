@@ -1,0 +1,91 @@
+{
+ "id": "whiteminds/window-cycle",
+ "repo": "WhiteMinds/window-cycle",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⌨️ Keyboard (15)",
+   "entry": "WindowCycle - A focused macOS current-app window switcher with a visible panel."
+  }
+ ],
+ "summary": {
+  "one_liner": "WindowCycle is a prototype macOS switcher that cycles through the windows of the frontmost app using Cmd+` (and Cmd+Shift+` backward) and shows them in a visible panel.",
+  "what_it_does": "WindowCycle registers a Carbon global hotkey so Cmd+` starts a switching session for the current frontmost app and cycles forward through its windows, with Cmd+Shift+` cycling backward. A floating AppKit NSPanel with SwiftUI content displays the window list while the session is active. Releasing Command activates the selected window via AXRaise when the event tap is available, and Escape hides the switcher. Window enumeration uses Accessibility APIs, reading app names, titles, frames, and minimized state. A menu bar status item offers Show, Hide, and Quit actions. The README describes it as a prototype using public APIs only.",
+  "use_cases": [
+   "switch between windows of the same app on macOS",
+   "replace Cmd+` window cycling with a visible panel",
+   "keyboard-driven window switching",
+   "menu bar app for raising app windows"
+  ],
+  "how_to_run": [
+   "open Package.swift  (run the WindowCycle executable target in Xcode)",
+   "swift run WindowCycle",
+   "Scripts/build-app.sh",
+   "open .build/WindowCycle.app",
+   "Scripts/install-local.sh"
+  ],
+  "stack": [
+   "Swift",
+   "Swift Package Manager",
+   "AppKit (NSPanel)",
+   "SwiftUI",
+   "Carbon RegisterEventHotKey",
+   "Accessibility (AX) API",
+   "CGEvent.tapCreate",
+   "NSEvent monitors"
+  ],
+  "notable": [
+   "Cmd+` and Cmd+Shift+` cycle windows of the current frontmost app only",
+   "Uses public macOS APIs first (Carbon hotkeys, AX, CGEvent tap) rather than private CGS/SLS APIs",
+   "Runs as a menu bar agent (LSUIElement) with no Dock icon",
+   "Build scripts for local .app bundle, install to /Applications, and release DMG"
+  ],
+  "caveats": [
+   "Prototype; README says it is not a finished product and has no settings UI",
+   "Requires Accessibility permission, and Input Monitoring may be needed for arrow/Escape handling",
+   "Cross-Space and full-screen windows are not handled; window order is AX order, not z-order",
+   "Current DMG is self-signed and not notarized, so macOS Gatekeeper may block the first launch"
+  ],
+  "license": "MIT License",
+  "category": "macos window switcher",
+  "keywords": [
+   "macos window switcher",
+   "cmd tab alternative",
+   "cycle windows same app",
+   "command backtick switcher",
+   "window cycling",
+   "app window switcher",
+   "keyboard window switching",
+   "swift macos app",
+   "swiftui panel",
+   "nspanel",
+   "accessibility api",
+   "axraise",
+   "carbon hotkey",
+   "cgevent tap",
+   "menu bar app",
+   "lsuielement agent app",
+   "window list panel",
+   "switch between app windows",
+   "focus window with keyboard",
+   "alt tab for mac windows",
+   "macos keyboard shortcut",
+   "swift package manager",
+   "dmg release",
+   "self-signed app",
+   "accessibility permission",
+   "input monitoring",
+   "mac window manager"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3164,
+  "output": 1214
+ },
+ "generated": "2026-10-29"
+}

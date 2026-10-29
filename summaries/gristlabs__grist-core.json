@@ -1,0 +1,98 @@
+{
+ "id": "gristlabs/grist-core",
+ "repo": "gristlabs/grist-core",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Office Suites",
+   "entry": "Grist - Next-generation spreadsheet with relational structure, formula-based access control, and a portable, self-contained format (alternative to Airtable). (Demo, Source Code) Apache-2.0 Nodejs/Python/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Backend & Low-Code",
+   "entry": "Grist | Relational spreadsheet combining the flexibility of a spreadsheet with a database"
+  }
+ ],
+ "summary": {
+  "one_liner": "Grist-core is the Apache-2.0 community edition of Grist, a self-hostable relational spreadsheet that mixes spreadsheet-style formulas with database-style typed columns.",
+  "what_it_does": "Grist-core is the open-source server for Grist, a spreadsheet where columns are typed and named like database columns, and formulas (written in Python, with many Excel functions) update automatically when referenced cells change. Documents are stored in a portable SQLite-based format that other tools can read. The README describes features including reference and choice columns, widgets for charts, calendars and summary tables with widget linking, native forms, CSV/Excel/Airtable import and export, a REST API, webhooks, Zapier support, comments, and access control down to rows, columns and cell values. It is run via Docker or built from source with Node.js and Python. Some features (such as Azure storage, audit log streaming, and the built-in MCP server) are listed as only present in the separate full edition.",
+  "use_cases": [
+   "self-hosted team spreadsheet with relational tables",
+   "replacing Airtable with a self-hosted database-like sheet",
+   "tracking inventory, invoices or payroll in a shared sheet",
+   "importing bank CSVs incrementally",
+   "building dashboards and linked charts from spreadsheet data",
+   "collecting form submissions into a spreadsheet"
+  ],
+  "how_to_run": [
+   "docker pull gristlabs/grist",
+   "docker run -p 8484:8484 -it gristlabs/grist",
+   "docker run -p 8484:8484 -v $PWD/persist:/persist -it gristlabs/grist",
+   "yarn install && yarn install:python && yarn build && yarn start (building from source)"
+  ],
+  "stack": [
+   "Node.js",
+   "Python",
+   "Docker",
+   "SQLite",
+   "Redis (optional)",
+   "gVisor (optional sandbox)",
+   "Deno and Pyodide (optional Wasm sandbox)"
+  ],
+  "notable": [
+   "Python formulas with full standard library support plus an AI formula assistant that can use OpenRouter or OpenAI-compatible endpoints",
+   "Documents stored as a self-contained SQLite file that any SQLite tool can read",
+   "Multiple sandboxing options for formulas: gVisor, macOS sandbox-exec, and Pyodide for any OS",
+   "Native forms that feed records into a table, with URL pre-population",
+   "Two-way references that stay synchronized between tables"
+  ],
+  "caveats": [
+   "Several features (GristConnect, Azure storage, audit log streaming, advanced admin controls, built-in MCP server, SSO via OIDC/SAML) are only in the proprietary full edition, though the README says the Docker image includes extensions that are inactive in Community mode",
+   "The README notes gVisor sandboxing may not work in all Docker environments",
+   "Logins are needed for full revision history and access control; without them Grist runs in a limited anonymous mode"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted spreadsheet database",
+  "keywords": [
+   "spreadsheet",
+   "relational spreadsheet",
+   "self-hosted spreadsheet",
+   "airtable alternative",
+   "airtable self-hosted",
+   "low-code database",
+   "no-code database",
+   "spreadsheet database hybrid",
+   "python formulas",
+   "sqlite spreadsheet",
+   "docker spreadsheet",
+   "team spreadsheet",
+   "share spreadsheet with team",
+   "linked tables",
+   "dashboard builder",
+   "csv import",
+   "excel import export",
+   "rest api spreadsheet",
+   "webhooks",
+   "zapier integration",
+   "native forms",
+   "access control rows",
+   "cell comments",
+   "gvisor sandbox",
+   "pyodide",
+   "openrouter formula assistant",
+   "data portability",
+   "intranet spreadsheet",
+   "grist-core"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16605,
+  "output": 1385
+ },
+ "generated": "2026-10-29"
+}

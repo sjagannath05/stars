@@ -1,0 +1,102 @@
+{
+ "id": "mic92/strace-macos",
+ "repo": "Mic92/strace-macos",
+ "kind": "star",
+ "description": "A clone of the strace command for macOS",
+ "topics": [
+  "build-with-buildbot"
+ ],
+ "language": "Python",
+ "stars": 413,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-05-22",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop",
+  "dev tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Python-based system call tracer for macOS, modeled on Linux strace, that uses the LLDB debugger API and works with System Integrity Protection enabled.",
+  "what_it_does": "It runs a command or attaches to a running process (-p PID) and records its system calls, using LLDB's Python bindings to set breakpoints at syscall entry and exit, read registers for arguments, and decode them. Arguments are decoded symbolically, including flags, errno codes, and structs such as stat, sockaddr, and msghdr. Output can be strace-style text (to stdout or a file) or JSON Lines. Filtering works by syscall name or by category such as file, network, process, or memory, and -c prints summary statistics with time, call, and error counts. Color output is enabled when writing to a TTY. The README lists negation, regex, path, and fd filtering, follow-forks, and timestamp options as planned, not yet implemented.",
+  "use_cases": [
+   "trace system calls made by a macOS program",
+   "debug file access of a command-line tool",
+   "see network syscalls made by curl or similar tools",
+   "profile syscall counts and errors with summary stats",
+   "trace a process without disabling SIP",
+   "capture strace-style logs as JSON for analysis"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/Mic92/strace-macos (repository URL not fully shown in README)",
+   "cd strace-macos",
+   "/usr/bin/python3 -m strace_macos /usr/local/bin/git status",
+   "strace -e trace=file /usr/local/bin/git status",
+   "strace --json /usr/local/bin/git status > trace.jsonl",
+   "nix run github:Mic92/strace-macos -- ls"
+  ],
+  "stack": [
+   "Python",
+   "LLDB Python API",
+   "debugserver",
+   "Nix flakes (optional install path)"
+  ],
+  "notable": [
+   "Works with System Integrity Protection enabled, unlike dtruss",
+   "Pure Python with no kernel extensions or compiled components",
+   "Category-based syscall filtering (file, network, process, and more)",
+   "JSON Lines output alongside strace-compatible text output"
+  ],
+  "caveats": [
+   "Beta status; multi-threading, follow-forks, and several filters and timestamp options are planned but not implemented",
+   "Requires macOS 12+ and must run under the macOS system Python (/usr/bin/python3) because LLDB bindings do not work with Homebrew, pyenv, or Nix Python",
+   "Apple Silicon is the primary platform; Intel support is work in progress"
+  ],
+  "category": "macos syscall tracing",
+  "license": "MIT",
+  "keywords": [
+   "strace",
+   "macos",
+   "system call tracer",
+   "syscall tracing",
+   "lldb",
+   "python",
+   "dtruss alternative",
+   "sip enabled",
+   "trace system calls mac",
+   "debug syscalls macos",
+   "json lines output",
+   "syscall filtering",
+   "summary statistics",
+   "attach to process",
+   "strace-compatible",
+   "file operations trace",
+   "network syscalls",
+   "apple silicon",
+   "process tracing",
+   "linux strace clone",
+   "see what files a program opens",
+   "monitor program system calls",
+   "nix flake",
+   "debugserver",
+   "syscall category filter",
+   "trace command macos",
+   "reverse engineering tool",
+   "debugging tool macos",
+   "errno decoding",
+   "struct decoding",
+   "no kernel extension tracer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4514,
+  "output": 1191
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "zlopixatel/bzz",
+ "repo": "zlopixatel/bzz",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "Bzz - Automatic keyboard layout switcher (RU↔EN). Detects mistyped words like \"ghbdtn\" and replaces with \"привет\" on the fly. Open-source replacement for the abandoned Punto Switcher."
+  }
+ ],
+ "summary": {
+  "one_liner": "Bzz is a macOS menu-bar tool that automatically converts words typed on the wrong keyboard layout (e.g. \"ghbdtn\" to \"привет\") between Russian and English.",
+  "what_it_does": "Bzz runs in the macOS menu bar and uses a CGEventTap to watch keystrokes in real time. When you press Space, Enter, or punctuation, it checks whether the typed word is a Russian word once converted from the QWERTY keymap, using an embedded 98K-word frequency dictionary with Snowball stemming. For words of 6+ characters it also tries fuzzy matches within one Levenshtein edit. Matching words are replaced by sending backspace and character events. Cmd+Z reverts a correction within 5 seconds, and a tray icon toggles pause/resume. Settings such as excluded apps, primary language, and minimum word length live in a YAML config file, and the app can launch at login via a LaunchAgent. According to the README, the core is MIT-licensed and processes keystrokes locally with no HTTP client in the binary.",
+  "use_cases": [
+   "fix Russian text typed on English layout automatically",
+   "stop retyping words after wrong keyboard layout",
+   "switch Cyrillic and Latin layouts on macOS",
+   "replace Punto Switcher on a Mac",
+   "keep keystroke-based layout correction offline"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd bzz",
+   "make app",
+   "make install",
+   "go build -ldflags=\"-s -w\" -o Bzz . && ./Bzz"
+  ],
+  "stack": [
+   "Go (1.26+)",
+   "CGEventTap (macOS)",
+   "Snowball stemmer",
+   "YAML config",
+   "make"
+  ],
+  "notable": [
+   "Embedded 98K-word Russian frequency dictionary with Snowball stemming, no network calls",
+   "Cmd+Z undo window of 5 seconds after an auto-correction",
+   "Per-app exclusions via config.yaml, changes apply without restart",
+   "Tray icon shows active (⚡) or paused (💤) state",
+   "Ships an optional Pro tier planned for Q3 2026 (one-time purchase) while the core stays MIT"
+  ],
+  "caveats": [
+   "Requires macOS 10.15+ and Accessibility permission to intercept keystrokes",
+   "Release binary is not signed; Gatekeeper workaround needed (xattr or Open Anyway)",
+   "Windows support is only mentioned as planned in the features list, though the README also describes a cross-compile target",
+   "Planned Pro features (custom dictionary, extra layouts, per-app UI) are not yet released"
+  ],
+  "license": "MIT",
+  "category": "macOS keyboard layout utility",
+  "keywords": [
+   "keyboard layout switcher",
+   "automatic layout correction",
+   "wrong keyboard layout",
+   "russian english layout",
+   "cyrillic latin switch",
+   "ghbdtn",
+   "punto switcher alternative",
+   "caramba switcher alternative",
+   "macos menu bar utility",
+   "typo fixer russian",
+   "qwerty to russian keymap",
+   "cgeventtap",
+   "go keyboard hook",
+   "snowball stemmer",
+   "levenshtein fuzzy match",
+   "accessibility permission macos",
+   "undo auto correction",
+   "fix mistyped text",
+   "text input correction",
+   "open source mac app",
+   "mit license productivity",
+   "offline keystroke processing",
+   "launchagent autostart",
+   "yaml config excluded apps",
+   "russian dictionary spell check",
+   "type in russian by accident",
+   "switch keyboard language automatically"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6528,
+  "output": 1346
+ },
+ "generated": "2026-10-29"
+}

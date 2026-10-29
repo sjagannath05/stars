@@ -1,0 +1,109 @@
+{
+ "id": "syngit-org/syngit",
+ "repo": "syngit-org/syngit",
+ "kind": "star",
+ "description": "Syngit - Kubernetes operator to push resources on a git repository and manage their lifecycle.",
+ "topics": [
+  "controller",
+  "git",
+  "gitops",
+  "golang",
+  "kubernetes",
+  "microservices",
+  "operator",
+  "synchronizer"
+ ],
+ "language": "Go",
+ "stars": 122,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Syngit is a Kubernetes operator that intercepts resource changes made through kubectl or UIs and pushes them to a git repository while managing their lifecycle.",
+  "what_it_does": "Syngit acts as a proxy between a client tool (kubectl, oc, or any UI) and the cluster, pushing intercepted scoped resources to a git repository. A RemoteUser object connects to a git server using a personal access token stored in a secret, and a RemoteSyncer object defines which resources to catch, the target branch and path, and whether to commit only or commit and apply. The commit author is the user who applied the resource, and users cannot impersonate each other. The README also describes providers for GitLab, GitHub, Flux, Helm, and SOPS, including converting helm install into Flux HelmRelease or raw Helm values, and sopsifying resources on commit. Other options include a resource finder in the repo, blocking or passing requests through to Kubernetes, and removing unwanted fields on commit.",
+  "use_cases": [
+   "push cluster changes to git automatically",
+   "merge ClickOps and GitOps workflows",
+   "keep an audit history of Kubernetes objects in git",
+   "enforce per-user RBAC on git commits",
+   "encrypt resources with SOPS on commit",
+   "convert helm installs into Flux HelmRelease objects"
+  ],
+  "how_to_run": [
+   "helm repo add syngit",
+   "helm install syngit syngit/syngit -n syngit --create-namespace",
+   "Create a Secret of type kubernetes.io/basic-auth holding a git Personal Access Token",
+   "Apply a RemoteUser object referencing the secret and git base domain",
+   "Apply a RemoteSyncer object listing scoped resources, branch, and strategy (CommitApply or CommitOnly)",
+   "Apply resources as usual; they are pushed to git and applied to the cluster"
+  ],
+  "stack": [
+   "Go",
+   "Kubernetes operator",
+   "kubebuilder",
+   "Helm",
+   "cert-manager",
+   "Flux",
+   "SOPS"
+  ],
+  "notable": [
+   "Acts as an admission proxy so changes made with kubectl or a UI land in git first; by default the resource is applied only if the push succeeds",
+   "Separates RBAC per user: the git commit author is the Kubernetes user who applied the resource",
+   "CommitApply and CommitOnly strategies control whether resources are applied to the cluster after pushing",
+   "Built-in GitLab and GitHub API integration plus Flux, Helm, and SOPS providers",
+   "Positions itself as a complement to ArgoCD and Flux, reversing the pull model to a push model"
+  ],
+  "caveats": [
+   "cert-manager must be installed on the cluster",
+   "Configuration details are referred to the external wiki, not fully covered in the README",
+   "Roadmap and contribution guidance are on the wiki rather than in the repository"
+  ],
+  "license": "Apache-2.0",
+  "category": "kubernetes gitops operator",
+  "keywords": [
+   "kubernetes operator",
+   "gitops",
+   "push to git",
+   "git sync",
+   "kubectl",
+   "remote git repository",
+   "clickops",
+   "resource lifecycle",
+   "gitlab",
+   "github",
+   "flux",
+   "helm",
+   "sops",
+   "argocd alternative",
+   "reverse gitops",
+   "commit on apply",
+   "audit history",
+   "configmap sync",
+   "rbac commit author",
+   "kubebuilder",
+   "golang controller",
+   "git proxy",
+   "cluster to git",
+   "version control kubernetes resources",
+   "personal access token",
+   "helm install to flux",
+   "keep yaml in git",
+   "sync cluster state to repo",
+   "gitops push model",
+   "kubernetes change tracking"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3456,
+  "output": 1331
+ },
+ "generated": "2026-10-29"
+}

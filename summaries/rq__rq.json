@@ -1,0 +1,95 @@
+{
+ "id": "rq/rq",
+ "repo": "rq/rq",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Task Queues",
+   "entry": "rq - Simple job queues for Python."
+  }
+ ],
+ "summary": {
+  "one_liner": "RQ (Redis Queue) is a Python library for putting jobs on queues and processing them in the background with workers, backed by Redis or Valkey.",
+  "what_it_does": "RQ lets you enqueue ordinary Python functions and run them later in background worker processes. Jobs can be placed at the front of a queue, spread across multiple named queues with priority ordering, scheduled for a specific time or after a delay, and repeated with configurable intervals. It also supports unique jobs that block duplicate enqueues, concurrency-based rate limits keyed by a shared name, retries with configurable intervals, and HTTP webhooks on job finish or failure. Interval-based and cron-syntax scheduling is run through an `rq cron` command, and `rq worker` or `rq worker-pool` start the workers. The default serializer is pickle, and a JSON serializer is available as an alternative.",
+  "use_cases": [
+   "run slow or blocking tasks in the background of a web app",
+   "send emails or generate reports asynchronously",
+   "prioritize some background jobs over others with multiple queues",
+   "schedule jobs to run at a set time or after a delay",
+   "retry failed background jobs automatically",
+   "run periodic maintenance tasks on a cron schedule",
+   "limit how many jobs with a shared key run at once"
+  ],
+  "how_to_run": [
+   "$ redis-server",
+   "$ pip install rq",
+   "Define a function, then create queue = Queue(connection=Redis()) and call queue.enqueue(my_function, ...)",
+   "$ rq worker --with-scheduler",
+   "$ rq worker-pool -n 4",
+   "$ rq cron cron_config.py"
+  ],
+  "stack": [
+   "Python",
+   "Redis or Valkey (Redis >= 5 or Valkey >= 7.2)",
+   "pickle (default serializer)",
+   "JSON serializer (optional)"
+  ],
+  "notable": [
+   "Supports both Redis and Valkey as the backing store",
+   "Built-in cron-syntax and interval scheduling via `rq cron`",
+   "Default Worker and SpawnWorker run each job in a separate process, isolating crashes and enforcing time-outs",
+   "Webhooks notify an HTTP endpoint on job completion or failure without writing callbacks",
+   "Worker-pool command runs multiple worker processes from one command"
+  ],
+  "caveats": [
+   "Default pickle serializer is insecure; only use with trusted Redis instances, or switch to JSON, which supports primitive types only",
+   "SimpleWorker is faster but runs jobs in-process, so the README advises against it in production except for very short, fully trusted jobs",
+   "Requires a running Redis or Valkey server; the README notes minimum versions Redis >= 5 or Valkey >= 7.2"
+  ],
+  "license": "unknown",
+  "category": "python task queues",
+  "keywords": [
+   "python job queue",
+   "background jobs",
+   "task queue",
+   "redis queue",
+   "valkey",
+   "worker processes",
+   "rq",
+   "redis-queue",
+   "celery alternative",
+   "resque alternative",
+   "lightweight task queue",
+   "async job processing",
+   "delayed jobs",
+   "scheduled tasks",
+   "cron jobs python",
+   "periodic tasks",
+   "retry failed jobs",
+   "job priority queues",
+   "rate limiting jobs",
+   "webhooks on job completion",
+   "unique jobs deduplication",
+   "worker pool",
+   "background processing for web apps",
+   "run functions in background",
+   "share work across processes",
+   "enqueue function calls",
+   "job scheduling python",
+   "pickle serializer",
+   "json serializer jobs",
+   "django background tasks",
+   "job monitoring dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4767,
+  "output": 1308
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "google/highway",
+ "repo": "google/highway",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "SIMD libraries and measured kernels",
+   "entry": "Highway - Defines sizeless vector types with run-time dispatch, so one source serves SVE and every fixed-width ISA."
+  }
+ ],
+ "summary": {
+  "one_liner": "Highway is a C++ library of portable SIMD/vector intrinsics that lets one codebase target many CPU instruction sets, selecting the best available one at compile time or run time.",
+  "what_it_does": "Provides a set of SIMD/vector operations (load, store, arithmetic, masks, comparisons, gather/scatter, and more) that map to CPU instructions. Application code is written once and can be built for static dispatch to a single instruction set or dynamic dispatch that picks the best supported target at runtime, switched by changing HWY_STATIC_DISPATCH to HWY_DYNAMIC_DISPATCH. It supports scalable vectors (size unknown at compile time) as well as fixed-width ISAs, using tags such as ScalableTag and FixedTag. The README describes strip-mining strategies for handling loop remainders, plus a built-in profiler and examples in hwy/examples. Build uses CMake, with Bazel also supported.",
+  "use_cases": [
+   "portable SIMD code across x86, Arm, RISC-V, POWER and WebAssembly",
+   "image processing and codec kernels",
+   "runtime CPU feature dispatch in a C++ application",
+   "vectorized sorting, compression and linear algebra",
+   "replacing hand-written intrinsics with a portable API",
+   "benchmarking SIMD loops against scalar code"
+  ],
+  "how_to_run": [
+   "sudo apt install cmake",
+   "mkdir -p build && cd build",
+   "cmake ..",
+   "make -j && make test",
+   "vcpkg install highway"
+  ],
+  "stack": [
+   "C++17",
+   "CMake",
+   "Bazel",
+   "googletest (for tests)",
+   "vcpkg"
+  ],
+  "notable": [
+   "Supports 27 targets across x86 (SSE2 through AVX10_2), Arm NEON/SVE/SVE2, RISC-V RVV, POWER, IBM Z, LoongArch and WebAssembly",
+   "Same application code works with static or dynamic dispatch, with a one-line switch between them",
+   "Scalable-vector support (SVE, RVV) alongside fixed-width ISAs",
+   "Ships design docs: quick_reference.md, instruction_matrix.md, faq.md",
+   "Dual-licensed Apache 2 / BSD-3 per the README"
+  ],
+  "caveats": [
+   "Ops must be called inside HWY namespace or with aliases, and functions need HWY_ATTR or the namespace macros, which adds some boilerplate",
+   "Armv7 builds need the -DHWY_CMAKE_ARM7 CMake flag, and 32-bit x86 is not officially supported",
+   "Compiler flags must match baseline targets for static dispatch, and optimizations (-O2) are needed for good performance"
+  ],
+  "license": "Apache 2 / BSD-3 (dual-licensed, per README)",
+  "category": "simd vector intrinsics library",
+  "keywords": [
+   "simd",
+   "vector intrinsics",
+   "c++ simd library",
+   "portable simd",
+   "performance portability",
+   "runtime dispatch",
+   "dynamic dispatch",
+   "static dispatch",
+   "sve",
+   "sve2",
+   "rvv",
+   "risc-v vector",
+   "neon",
+   "avx2",
+   "avx-512",
+   "sse",
+   "wasm simd",
+   "vectorization",
+   "autovectorization alternative",
+   "data-parallel",
+   "gather scatter",
+   "strip-mining",
+   "image processing simd",
+   "cpu performance",
+   "highway",
+   "google simd",
+   "cmake c++ library",
+   "vcpkg",
+   "x86 arm portable code",
+   "scalable vectors",
+   "simd intrinsics wrapper",
+   "vectorize loops c++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10150,
+  "output": 1329
+ },
+ "generated": "2026-10-29"
+}

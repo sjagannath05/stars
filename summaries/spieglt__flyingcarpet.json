@@ -1,0 +1,97 @@
+{
+ "id": "spieglt/flyingcarpet",
+ "repo": "spieglt/flyingcarpet",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "Flying Carpet - cross-platform file transfer over ad-hoc wifi, like AirDrop but for Mac/Windows/Linux."
+  }
+ ],
+ "summary": {
+  "one_liner": "Flying Carpet is a cross-platform app for sending files directly between Android, iOS, Linux, macOS, and Windows over ad hoc WiFi hotspot or a shared local network, without internet.",
+  "what_it_does": "It transfers files between two devices either by having one device host an ad hoc WiFi hotspot that the other joins, or by having both devices join the same existing WiFi or wired network. In hotspot mode, Bluetooth can exchange the hotspot credentials automatically after a pairing code is confirmed; otherwise the host displays a password and QR code. In shared network mode, the receiver shows a one-time password with a QR code, and the sender types or scans it to find the peer and start the transfer. Each transfer is encrypted with a Noise NNpsk0 handshake keyed from the transfer password via PBKDF2-HMAC-SHA256 at 600,000 iterations, with fresh keys per transfer. The desktop app is built with Tauri and Rust; the Android and Apple apps are separate native builds in the same repository.",
+  "use_cases": [
+   "send large files between phone and computer without internet",
+   "transfer files between Mac and Windows or Linux machines",
+   "move files without a flash drive or network share",
+   "share files over a shared WiFi or wired network",
+   "AirDrop alternative for non-Apple devices",
+   "transfer files from iPhone to Windows PC"
+  ],
+  "how_to_run": [
+   "Install Rust, then run `cargo install tauri-cli`",
+   "On Ubuntu 22.04+, install dependencies: `sudo apt install build-essential curl wget file pkg-config libwebkit2gtk-4.1-dev libdbus-1-dev librsvg2-dev`",
+   "Run `cargo tauri dev` for a development build or `cargo tauri build` for release artifacts",
+   "Android: from `Android/FlyingCarpet/`, run `./gradlew assembleDebug`",
+   "iOS/macOS: open `Apple/iOS/FlyingCarpet.xcodeproj` or `Apple/macOS/FlyingCarpet.xcodeproj` in Xcode (requires a Mac and your own signing team)"
+  ],
+  "stack": [
+   "Rust",
+   "Tauri",
+   "tokio",
+   "windows-rs",
+   "Kotlin",
+   "Swift",
+   "Noise protocol (NNpsk0, X25519, ChaCha20-Poly1305, SHA-256)",
+   "PBKDF2-HMAC-SHA256"
+  ],
+  "notable": [
+   "Shared Network mode uses an existing WiFi or wired network, with a one-time password and QR code for discovery; no Bluetooth needed in this mode",
+   "Hotspot mode can exchange WiFi credentials over Bluetooth after a pairing code is confirmed",
+   "Noise-based encryption with per-transfer keys for forward secrecy",
+   "Published as Android APK, iOS app, Linux AppImage/deb/rpm, macOS zip (also Homebrew), and Windows MSI/exe (also winget)",
+   "Version 10 is not compatible with version 9 or earlier"
+  ],
+  "caveats": [
+   "Apple devices cannot start hotspots programmatically, so Apple-to-Apple transfers need a shared network",
+   "Hotspot mode disables the wireless internet connection on the device; VPN should be disabled on both devices",
+   "Android needs version 10 (API 29) or later and does not work on some Xiaomi, MIUI, or HarmonyOS devices; Linux AppImage/deb/rpm need Ubuntu 22.04+ or glibc 2.35+"
+  ],
+  "license": "unknown",
+  "category": "cross-platform file transfer",
+  "keywords": [
+   "file transfer",
+   "ad hoc wifi",
+   "wifi hotspot file sharing",
+   "shared network file transfer",
+   "airdrop alternative",
+   "cross-platform file sharing",
+   "peer to peer file transfer",
+   "offline file transfer",
+   "send files without internet",
+   "transfer files android to windows",
+   "iphone to pc file transfer",
+   "mac to windows file transfer",
+   "linux file transfer app",
+   "tauri app",
+   "rust file transfer",
+   "noise protocol encryption",
+   "pbkdf2 password encryption",
+   "qr code pairing",
+   "bluetooth wifi credential exchange",
+   "large file transfer",
+   "move files without flash drive",
+   "file sharing without network share",
+   "ad hoc network",
+   "wifi direct alternative",
+   "kotlin android app",
+   "swift ios macos app",
+   "send files between devices",
+   "local network transfer",
+   "encrypted file transfer",
+   "homebrew cask",
+   "winget install"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4868,
+  "output": 1646
+ },
+ "generated": "2026-10-29"
+}

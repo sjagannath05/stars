@@ -1,0 +1,110 @@
+{
+ "id": "agalwood/motrix",
+ "repo": "agalwood/Motrix",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⬇️ Downloader (11)",
+   "entry": "Motrix - A full-featured download manager."
+  }
+ ],
+ "summary": {
+  "one_liner": "Motrix is a desktop download manager (Electron app) for HTTP, FTP, BitTorrent and magnet links, with a headless Docker server option and a browser extension.",
+  "what_it_does": "Motrix is a desktop download manager for HTTP, FTP, BitTorrent, and magnet links, built on a Motrix-maintained fork of the aria2 download engine. The README describes the v2 \"Motrix Turbo\" rewrite in Electron, React, and TypeScript, with a download core separate from the UI. It supports per-file BitTorrent selection, tracker list management, UPnP/NAT-PMP port mapping, upload and download limits with speed profiles, and SQLite-backed sessions that restore downloads after restart. A headless server mode runs on Node.js or Docker with a web UI, and the official @motrix/cli command-line client and browser extensions (Chrome, Edge, Firefox) hand downloads to the app over the MDXP JSON-RPC protocol. Plugins run in a QuickJS sandbox with declared permissions and an in-app marketplace.",
+  "use_cases": [
+   "manage HTTP, FTP and BitTorrent downloads on a desktop",
+   "download torrents and magnet links with per-file selection",
+   "run a download server on a NAS or home server with Docker",
+   "send browser downloads to a desktop download manager",
+   "control downloads from the command line or scripts",
+   "limit download and upload speed with profiles",
+   "extend downloads with sandboxed plugins"
+  ],
+  "how_to_run": [
+   "npm install -g @motrix/cli",
+   "mkdir -p motrix-data downloads && sudo chown 1000:1000 motrix-data downloads",
+   "export MOTRIX_IMAGE='docker.io/motrixapp/motrix-server:2.1.0'",
+   "docker compose pull server",
+   "docker compose up -d --wait",
+   "git clone <repository URL> && cd Motrix && pnpm install && pnpm start"
+  ],
+  "stack": [
+   "Electron",
+   "React 19",
+   "TypeScript",
+   "Vite 8",
+   "Tailwind CSS 4",
+   "shadcn/ui",
+   "Zod 4",
+   "aria2",
+   "better-sqlite3",
+   "quickjs-emscripten",
+   "Node.js",
+   "Fastify",
+   "WebSocket",
+   "i18next",
+   "Biome",
+   "Vitest",
+   "Playwright",
+   "Docker"
+  ],
+  "notable": [
+   "MDXP (Motrix Download eXchange Protocol), a JSON-RPC 2.0 protocol used by the browser extension and CLI",
+   "Headless Docker server with device-code pairing for remote CLI and agent clients",
+   "Plugins run in a QuickJS sandbox with user-approved permissions and an in-app marketplace",
+   "Desktop app runs on macOS, Windows and Linux, including Snap, Flatpak, AppImage, deb, rpm and pacman packages",
+   "Motrix Extension for Chrome, Edge and Firefox hands browser downloads to Motrix"
+  ],
+  "caveats": [
+   "Windows x64 and arm64 packages are unsigned and may trigger SmartScreen warnings",
+   "The README says all 32-bit packages remain unavailable",
+   "Motrix 2.1.0 migration from v1 imports tasks as paused and recommends backing up the existing profile first; Windows in-place BitTorrent activation needs a supported NTFS volume and explicit authorization",
+   "Internet access to the headless server requires a TLS reverse proxy and firewall rules; insecure HTTP operator mode is intended only for trusted LANs"
+  ],
+  "license": "MIT",
+  "category": "desktop download manager",
+  "keywords": [
+   "download manager",
+   "bittorrent client",
+   "torrent downloader",
+   "magnet link",
+   "aria2 gui",
+   "aria2",
+   "http downloader",
+   "ftp downloader",
+   "electron app",
+   "desktop app",
+   "headless download server",
+   "docker download server",
+   "nas downloader",
+   "home server downloads",
+   "browser download extension",
+   "command line downloader",
+   "motrix cli",
+   "speed limit downloads",
+   "upnp port mapping",
+   "tracker list manager",
+   "download plugins",
+   "sandboxed plugins",
+   "torrent file selection",
+   "resume downloads after restart",
+   "download to my nas",
+   "send browser downloads to app",
+   "free open source download manager",
+   "download torrents on mac windows linux",
+   "jdownloader alternative",
+   "qbittorrent alternative",
+   "uget alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6916,
+  "output": 1592
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "amir20/dozzle",
+ "repo": "amir20/dozzle",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Dozzle | Realtime log viewer for docker containers"
+  }
+ ],
+ "summary": {
+  "one_liner": "Dozzle is a lightweight, web-based real-time viewer for Docker container logs that stores no log files.",
+  "what_it_does": "Dozzle runs as a small container that mounts the Docker socket and serves a web UI for watching container logs live. It offers fuzzy search over container names, regex search of logs, and SQL-style queries over logs. Users can split the screen to view several logs at once and see live memory and CPU stats per container. It supports multi-user authentication, including forward proxy authorization, plus Swarm mode and an agent mode for monitoring multiple Docker hosts. The README says it does not store log files and does not support offline search.",
+  "use_cases": [
+   "view live docker container logs in a browser",
+   "monitor container CPU and memory usage",
+   "search container logs with regex",
+   "watch logs from several containers side by side",
+   "monitor logs across multiple docker hosts",
+   "monitor docker swarm services"
+  ],
+  "how_to_run": [
+   "docker pull amir20/dozzle:latest",
+   "docker run --name dozzle -d --volume=/var/run/docker.sock:/var/run/docker.sock -v dozzle_data:/data -p 8080:8080 amir20/dozzle:latest",
+   "Or use Docker Compose with the amir20/dozzle:latest image, mounting /var/run/docker.sock and a dozzle_data volume, port 8080:8080",
+   "Swarm: docker service create with DOZZLE_MODE=swarm in global mode",
+   "Agent mode: docker run with the socket mounted, port 7007:7007, and the 'agent' argument"
+  ],
+  "stack": [
+   "Go",
+   "Vue",
+   "Bun",
+   "Node.js",
+   "Protobuf",
+   "Docker"
+  ],
+  "notable": [
+   "Default image is built FROM scratch, about 7 MB compressed, with no shell",
+   "Works with Docker, Colima, and Podman via a remote socket",
+   "Agent mode lets one UI monitor several Docker hosts",
+   "Optional alpine image variants and version tags for pinning releases"
+  ],
+  "caveats": [
+   "Requires Docker Engine 19.03 or newer (API 1.40+)",
+   "No offline or historical log search; the README points to Loggly, Papertrail, or Kibana for that",
+   "Analytics via Google Analytics is on by default; disable with --no-analytics"
+  ],
+  "license": "MIT",
+  "category": "docker log monitoring",
+  "keywords": [
+   "docker logs",
+   "container log viewer",
+   "realtime logs",
+   "live log viewer",
+   "docker log monitoring",
+   "web log viewer",
+   "log tail",
+   "dozzle",
+   "docker socket",
+   "swarm monitoring",
+   "docker agent mode",
+   "multi host docker",
+   "regex log search",
+   "sql log query",
+   "fuzzy container search",
+   "split screen logs",
+   "container cpu memory stats",
+   "forward proxy authentication",
+   "authelia",
+   "podman logs",
+   "colima",
+   "self-hosted log viewer",
+   "watch container output",
+   "docker dashboard",
+   "view logs in browser",
+   "lightweight log monitor",
+   "go vue app",
+   "dark mode ui"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4535,
+  "output": 1147
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,105 @@
+{
+ "id": "kubestellar/console",
+ "repo": "kubestellar/console",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "KubeStellar Console - Open-source multi-cluster Kubernetes dashboard with an MCP server (kc-agent) that enables AI coding agents to query and manage clusters via natural language. Integrates with 20+ CNCF projects for AI-assisted operations across edge and cloud."
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "KubeStellar Console | Multi-cluster Kubernetes dashboard with real-time observability"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hostable, AI-assisted multi-cluster Kubernetes dashboard with guided install missions for 250+ CNCF projects, bridged to clusters by a local kc-agent daemon.",
+  "what_it_does": "KubeStellar Console is a web dashboard for viewing and operating Kubernetes clusters, with real-time WebSocket event streaming from connected clusters. It offers guided \"missions\" that walk through installing CNCF projects with pre-flight checks, validation, troubleshooting, and rollback. A companion local daemon, kc-agent, forwards browser requests to kubeconfig contexts and to AI providers, and exposes an MCP bridge (kubestellar-ops and kubestellar-deploy) for querying cluster state. AI features are optional: with no supported provider configured, the console falls back to rule-based behavior. The README also describes Stellar, an alpha persistent-mission runtime with memory, event triggers, and audit trails. A hosted demo at console.kubestellar.io uses canned data and cannot reach a local kc-agent, so connecting to real clusters requires self-hosting.",
+  "use_cases": [
+   "Monitor multiple Kubernetes clusters from one dashboard",
+   "Install CNCF projects with guided, step-by-step missions",
+   "Let AI coding agents query pods, deployments, and events via MCP",
+   "Evaluate the Kubernetes console UI with demo data",
+   "Run a Kubernetes dashboard in air-gapped or local-LLM environments",
+   "Track GitHub Actions pipelines and community activity alongside clusters"
+  ],
+  "how_to_run": [
+   "curl -sSL | bash  (start.sh: downloads pre-built console and kc-agent, starts both, opens the UI)",
+   "brew tap kubestellar/tap && brew install kc-agent  (macOS)",
+   "mkdir -p bin && go build -o bin/kc-agent ./cmd/kc-agent && ./bin/kc-agent  (from source, Go 1.26.4+)",
+   "./start-dev.sh  (minimal local development, demo user)",
+   "./startup-oauth.sh  (with GitHub OAuth configured in .env)",
+   "./deploy.sh  (run the console inside a cluster; see docs/deploy.md)"
+  ],
+  "stack": [
+   "Go",
+   "TypeScript",
+   "React (Vite build)",
+   "SQLite",
+   "WebSocket",
+   "MCP (Model Context Protocol)",
+   "Helm-style deploy script",
+   "Playwright",
+   "Storybook",
+   "Ollama (optional)",
+   "GitHub OAuth (optional)"
+  ],
+  "notable": [
+   "Guided install missions for 250+ CNCF projects, with pre-flight checks and rollback",
+   "kc-agent local bridge exposing an MCP server for AI coding agents to act on clusters",
+   "Works with local/self-hosted LLMs such as Ollama and Open WebUI for air-gapped use",
+   "Community marketplace for dashboards, card presets, and themes",
+   "Experimental Stellar runtime for persistent, event-driven operational missions (alpha)"
+  ],
+  "caveats": [
+   "The hosted demo at console.kubestellar.io cannot reach a local kc-agent; connecting to your own clusters requires self-hosting",
+   "Stellar is alpha/experimental and its architecture and APIs may change",
+   "Upstream API keys (Anthropic, OpenAI, Gemini) do not enable kc-agent tool-executing missions in the current build; CLI-based or local providers are needed"
+  ],
+  "license": "Apache License 2.0",
+  "category": "kubernetes multi-cluster dashboard",
+  "keywords": [
+   "kubernetes dashboard",
+   "multi-cluster kubernetes",
+   "k8s dashboard",
+   "kubestellar",
+   "kc-agent",
+   "mcp server",
+   "model context protocol",
+   "ai coding agents kubernetes",
+   "natural language kubernetes",
+   "cncf projects installer",
+   "guided installs",
+   "kubeconfig",
+   "cluster management ui",
+   "self-hosted dashboard",
+   "kubectl alternative ui",
+   "real-time cluster observability",
+   "ollama kubernetes",
+   "local llm kubernetes",
+   "air-gapped kubernetes",
+   "helm alternative install",
+   "argocd dashboard",
+   "gpu monitoring kubernetes",
+   "kubernetes monitoring",
+   "edge kubernetes management",
+   "manage clusters with ai",
+   "ai operations kubernetes",
+   "websocket cluster events",
+   "go and react dashboard",
+   "view pods and deployments",
+   "install cncf tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13211,
+  "output": 1588
+ },
+ "generated": "2026-10-29"
+}

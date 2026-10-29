@@ -1,0 +1,93 @@
+{
+ "id": "osm-search/nominatim",
+ "repo": "osm-search/Nominatim",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Maps and Global Positioning System (GPS)",
+   "entry": "Nominatim - Server application for geocoding (address -> coordinates) and reverse geocoding (coordinates -> address) on OpenStreetMap data. (Source Code) GPL-2.0 C"
+  }
+ ],
+ "summary": {
+  "one_liner": "Nominatim is a server application that geocodes addresses and place names to coordinates and reverse-geocodes coordinates to addresses, using OpenStreetMap data.",
+  "what_it_does": "Nominatim searches OpenStreetMap data by name and address (forward geocoding) and generates synthetic addresses for OSM points (reverse geocoding). The README describes it as a tool that powers one of the sources for the search box on the OpenStreetMap home page. Installation is done by cloning the repository, installing the bundled nominatim-api and nominatim-db Python packages into a virtualenv, creating a project directory, importing an OSM extract with the nominatim import command, and serving results through a webserver started with nominatim serve. Documentation for the development version lives in the docs/ subdirectory, with stable-release docs and a troubleshooting/FAQ hosted separately. The Lua configuration files for osm2pgsql are included in the repository.",
+  "use_cases": [
+   "self-host geocoding for OpenStreetMap data",
+   "convert addresses into coordinates",
+   "reverse geocode GPS coordinates to addresses",
+   "run a private place-name search service",
+   "provide search box backend for a map"
+  ],
+  "how_to_run": [
+   "git clone the Nominatim repository",
+   "wget the country_osm_grid.sql.gz file into Nominatim/data/",
+   "python3 -m venv nominatim-venv",
+   "./nominatim-venv/bin/pip install packaging/nominatim-{api,db}",
+   "mkdir nominatim-project && cd nominatim-project && ../nominatim-venv/bin/nominatim import --osm-file <file>",
+   "./nominatim-venv/bin/pip install uvicorn falcon && ../nominatim-venv/bin/nominatim serve"
+  ],
+  "stack": [
+   "Python",
+   "C",
+   "Lua",
+   "PostgreSQL",
+   "osm2pgsql",
+   "uvicorn",
+   "falcon"
+  ],
+  "notable": [
+   "Provides both forward geocoding and reverse geocoding on OpenStreetMap data",
+   "Used as a source for the search box on the OpenStreetMap home page",
+   "Installed as separate nominatim-api and nominatim-db Python packages",
+   "Includes Lua configuration files for osm2pgsql under Apache 2.0",
+   "Has a built-in nominatim serve command for running a webserver"
+  ],
+  "caveats": [
+   "Requires importing OSM data into a project directory before it can answer queries",
+   "Requires downloading a separate country grid data file during setup",
+   "Webserver setup needs extra packages (uvicorn, falcon) installed separately",
+   "Stack-level platform requirements are not detailed in the README beyond the steps above"
+  ],
+  "license": "GPL-2.0",
+  "category": "geocoding server",
+  "keywords": [
+   "geocoding",
+   "reverse geocoding",
+   "openstreetmap",
+   "osm",
+   "address lookup",
+   "address to coordinates",
+   "coordinates to address",
+   "place name search",
+   "self-hosted geocoder",
+   "nominatim",
+   "postgresql",
+   "osm2pgsql",
+   "python",
+   "lua",
+   "uvicorn",
+   "falcon",
+   "gps coordinates to address",
+   "private map search",
+   "location search api",
+   "forward geocoding",
+   "geolocation service",
+   "map search backend",
+   "address search engine",
+   "osm data import",
+   "self-host maps",
+   "geocode addresses",
+   "offline geocoder"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2223,
+  "output": 1246
+ },
+ "generated": "2026-10-29"
+}

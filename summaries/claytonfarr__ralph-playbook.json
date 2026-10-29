@@ -1,0 +1,92 @@
+{
+ "id": "claytonfarr/ralph-playbook",
+ "repo": "ClaytonFarr/ralph-playbook",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Ralph Wiggum",
+   "entry": "The Ralph Playbook by Clayton Farr - A remarkably detailed and comprehensive guide to the Ralph Wiggum technique, featuring well-written theoretical commentary paired with practical guidelines and advice."
+  }
+ ],
+ "summary": {
+  "one_liner": "A detailed, opinionated guide and set of prompt/script templates for running the \"Ralph\" technique: an autonomous AI coding agent driven by a simple bash loop that repeatedly feeds it a prompt, with planning and building modes.",
+  "what_it_does": "The playbook walks through a three-phase workflow (requirements conversation, planning loop, building loop) that turns project ideas into specs under specs/, an IMPLEMENTATION_PLAN.md task list, and iterative commits. It documents the core loop mechanism: a bash script restarts a fresh Claude session per task, with the plan file on disk as shared state between iterations. It includes template PROMPT_plan.md and PROMPT_build.md files, an AGENTS.md guide for build/test commands that provide backpressure, and an enhanced loop.sh with plan/build mode selection and max-iteration limits. It also covers context-window management via subagents, sandboxing advice for running with permissions skipped, and several proposed enhancements (interview-driven planning, acceptance-driven tests, LLM-as-judge backpressure, and scoped work-branch planning). A streamed-output variant of the loop script is also included.",
+  "use_cases": [
+   "Run an autonomous coding agent in a loop to implement a spec-driven project",
+   "Structure requirements into specs and a prioritized implementation plan for AI agents",
+   "Set up backpressure with tests and build commands for unattended AI coding",
+   "Write a bash loop script that restarts Claude Code per task",
+   "Plan scoped AI-driven work on separate git branches",
+   "Sandbox an autonomous agent that runs with permissions skipped"
+  ],
+  "how_to_run": [
+   "chmod +x loop.sh",
+   "./loop.sh plan 5  # planning mode, max 5 iterations",
+   "./loop.sh  # build mode, unlimited (stop with Ctrl+C)",
+   "./loop.sh 20  # build mode, max 20 tasks"
+  ],
+  "stack": [
+   "Bash",
+   "Claude CLI (claude -p, Opus/Sonnet models)",
+   "Markdown prompt files",
+   "Node.js (parse_stream.js in streamed variant)",
+   "Git"
+  ],
+  "notable": [
+   "Two-prompt design (PLANNING vs BUILDING) run through the same bash loop, with the plan file as persistent state between fresh sessions",
+   "Emphasis on backpressure: AGENTS.md wires project-specific test/typecheck/lint commands into each iteration",
+   "Explicit sandboxing guidance for running with --dangerously-skip-permissions",
+   "Includes a full enhanced loop.sh and a streamed-output variant contributed by community members",
+   "Proposed enhancements such as acceptance-driven tests and LLM-as-judge review for subjective criteria, which the author labels as still being evaluated"
+  ],
+  "caveats": [
+   "Relies on the Claude CLI with --dangerously-skip-permissions; the README says a sandbox is the only security boundary",
+   "Several enhancements are explicitly marked as still being determined in value and viability",
+   "Templates assume Claude subagent naming; other CLIs (amp, codex, opencode) are mentioned only as drop-in alternatives for the basic loop"
+  ],
+  "license": "MIT License",
+  "category": "ai agent workflow",
+  "keywords": [
+   "ralph wiggum technique",
+   "ralph loop",
+   "autonomous coding agent",
+   "bash loop claude",
+   "claude code automation",
+   "implementation plan generator",
+   "specs and plan workflow",
+   "backpressure tests",
+   "agents.md",
+   "prompt templates",
+   "loop.sh",
+   "headless claude cli",
+   "unattended ai coding",
+   "spec-driven development",
+   "llm-as-judge tests",
+   "git branch planning",
+   "sandboxed agent execution",
+   "context window management",
+   "subagents",
+   "jtbd job to be done",
+   "run ai coding overnight",
+   "automate coding with ai in a loop",
+   "keep ai agent on track",
+   "agent prompt engineering",
+   "claude code playbook",
+   "ai pair programming loop",
+   "stream json output",
+   "markdown task list for ai",
+   "iterative ai development"
+  ],
+  "caveats_placeholder": "none"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17318,
+  "output": 1523
+ },
+ "generated": "2026-10-29"
+}

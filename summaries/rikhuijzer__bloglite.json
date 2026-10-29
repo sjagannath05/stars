@@ -1,0 +1,93 @@
+{
+ "id": "rikhuijzer/bloglite",
+ "repo": "rikhuijzer/bloglite",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Blogging Platforms",
+   "entry": "bloglite - Micro-blog tool offering built-in syntax highlighting, mobile publishing and more (alternative to Twitter, Bluesky). MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "bloglite is a self-hosted micro-blogging service, similar to Twitter/Bluesky, where you write Markdown posts in a web interface.",
+  "what_it_does": "The README describes a Twitter/Bluesky-style micro-blogging server that you run yourself, with posts written in Markdown. It includes built-in syntax highlighting and display of LaTeX math expressions. You can publish and edit from desktop or mobile, and upload files and images to embed in posts. Posts can be found later with the built-in search. The site can automatically back up to plain text files, using a provided shell script run from a scheduled GitHub Actions workflow or Forgejo, triggered by environment variables. Installation is documented as a Docker Compose service with a SQLite database stored in a mounted volume.",
+  "use_cases": [
+   "self-hosted personal micro-blog",
+   "publish quick notes and links from phone or desktop",
+   "save and later search bookmarked snippets or recipes",
+   "share canned answers with students via a link",
+   "back up a blog to plain text files in git"
+  ],
+  "how_to_run": [
+   "Create a BLOGLITE_PASSWORD.env file containing BLOGLITE_PASSWORD",
+   "Create a docker-compose.yml using image zot.huijzer.xyz/bloglite:3 with BLOGLITE_USERNAME and BLOGLITE_DOMAIN set",
+   "Map port 3000:3000 and mount ./data:/data for the SQLite database",
+   "Run docker compose up -d",
+   "Optionally set BLOGLITE_TRIGGER_* variables to trigger backups on change",
+   "See bloglite/src/lib.rs for the full list of BLOGLITE_ environment variables"
+  ],
+  "stack": [
+   "Rust",
+   "SQLite",
+   "Docker",
+   "Docker Compose",
+   "Markdown",
+   "LaTeX (math rendering)",
+   "GitHub Actions (backup workflow)",
+   "Forgejo (optional backup trigger)"
+  ],
+  "notable": [
+   "Micro-blog layout with Markdown posts, built-in syntax highlighting and LaTeX math",
+   "Uses a small memory footprint (README says only a few MB of memory)",
+   "Automatic plain-text backup via shell script and scheduled GitHub Actions or Forgejo workflow",
+   "Posts get descriptive slug URLs for sharing"
+  ],
+  "caveats": [
+   "Health check is not acted on by Docker Compose; restarts need a custom script or autoheal",
+   "Backup triggering on each change requires a GitHub token or Forgejo token setup",
+   "Full environment variable list lives in source code rather than the README"
+  ],
+  "license": "MIT",
+  "category": "self-hosted micro-blogging",
+  "keywords": [
+   "micro-blog",
+   "microblogging",
+   "self-hosted blog",
+   "twitter alternative",
+   "bluesky alternative",
+   "markdown blog",
+   "syntax highlighting",
+   "latex math blog",
+   "sqlite blog",
+   "docker compose blog",
+   "rust web app",
+   "plain text backup",
+   "github actions backup",
+   "forgejo backup",
+   "publish from mobile",
+   "share notes with students",
+   "personal notebook online",
+   "upload images to posts",
+   "post slug urls",
+   "posse syndication",
+   "write posts in browser",
+   "quick notes publishing",
+   "self-host social posting",
+   "blog without static site generator",
+   "backup blog to git",
+   "small memory footprint blog",
+   "bookmark and search snippets"
+  ],
+  "category_note": "unused"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4315,
+  "output": 1289
+ },
+ "generated": "2026-10-29"
+}

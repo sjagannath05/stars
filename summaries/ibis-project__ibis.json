@@ -1,0 +1,90 @@
+{
+ "id": "ibis-project/ibis",
+ "repo": "ibis-project/ibis",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Analysis",
+   "entry": "ibis-framework - A portable Python dataframe library with a single API for 20+ backends."
+  }
+ ],
+ "summary": {
+  "one_liner": "Ibis is a portable Python dataframe library that offers one API for local and remote data work across more than 20 backends, compiling expressions to each engine's native language.",
+  "what_it_does": "Provides a lazy dataframe API in Python that defaults to DuckDB for fast local execution. For SQL-generating backends it compiles dataframe expressions into SQL, shown in the README with ibis.to_sql(). It lets you mix Python expressions with raw SQL via a table's .sql() method. An interactive mode supports iterative data exploration. You switch backends by creating a connection (for example ibis.duckdb.connect(), ibis.polars.connect(), ibis.datafusion.connect()) or by calling ibis.set_backend(), and you can read CSV and Parquet files through a connection.",
+  "use_cases": [
+   "Prototype analysis locally and run the same code on a remote warehouse",
+   "Write dataframe-style transformations that compile to SQL",
+   "Query BigQuery, Snowflake, or Postgres with a Python API",
+   "Explore datasets interactively in a notebook",
+   "Combine hand-written SQL with Python dataframe operations",
+   "Read CSV or Parquet files and aggregate them with DuckDB or Polars"
+  ],
+  "how_to_run": [
+   "pip install 'ibis-framework[duckdb,examples]'",
+   "import ibis",
+   "ibis.options.interactive = True",
+   "t = ibis.examples.penguins.fetch()",
+   "g = t.group_by('species', 'island').agg(count=t.count()).order_by('count')",
+   "con = ibis.duckdb.connect()"
+  ],
+  "stack": [
+   "Python",
+   "DuckDB (default local engine)",
+   "SQL compilation"
+  ],
+  "notable": [
+   "Same dataframe API across more than 20 backends, including DuckDB, Polars, DataFusion, BigQuery, Snowflake, and Trino",
+   "Compiles dataframe expressions to native SQL for SQL-generating backends, viewable with ibis.to_sql()",
+   "Mixes Python dataframe code and SQL in one pipeline via .sql()",
+   "Lazy expressions with an interactive mode for exploration"
+  ],
+  "caveats": [
+   "Backend support varies; the README lists backends but does not detail feature parity between them",
+   "Installing a specific backend requires extras such as [duckdb] in the pip command; the README does not describe other platform constraints"
+  ],
+  "license": "Apache License",
+  "category": "python dataframe library",
+  "keywords": [
+   "ibis",
+   "python dataframe",
+   "dataframe api",
+   "portable dataframe",
+   "multi-backend",
+   "sql compiler",
+   "duckdb",
+   "polars",
+   "datafusion",
+   "bigquery",
+   "snowflake",
+   "trino",
+   "postgresql",
+   "pyspark",
+   "pandas alternative",
+   "lazy evaluation",
+   "interactive data exploration",
+   "query engine",
+   "python sql",
+   "embed sql in python",
+   "run same code locally and in cloud",
+   "analyze csv in python",
+   "read parquet python",
+   "data analysis python",
+   "dataframe library",
+   "sql generation",
+   "tabular data processing",
+   "database python api",
+   "dplyr-like python",
+   "query warehouse from python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4577,
+  "output": 1180
+ },
+ "generated": "2026-10-29"
+}

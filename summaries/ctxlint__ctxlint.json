@@ -1,0 +1,101 @@
+{
+ "id": "ctxlint/ctxlint",
+ "repo": "ctxlint/Ctxlint",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Linting",
+   "entry": "Ctxlint by ctxlint - A CLI linter for AI agent context files that catches stale references, dead commands, and hardcoded secrets, with a modular tested rule set."
+  }
+ ],
+ "summary": {
+  "one_liner": "ctxlint is a CLI linter that checks AI agent context files (AGENTS.md, CLAUDE.md, .cursorrules and similar) and MCP configs for stale references, dead commands, hardcoded secrets, and token bloat.",
+  "what_it_does": "The check command runs a set of rules against context files in a project, flagging references to files that no longer exist, build commands that don't match package.json, Makefile, Cargo.toml, go.mod or pyproject.toml, embedded directory trees, and content duplicating the README. A token-budget rule estimates token cost and signal-to-noise ratio. The mcp command validates .mcp.json and similar MCP configs for hardcoded secrets, localhost URLs, deprecated SSE transport, and wrong env var syntax. The init command generates a minimal context file from project metadata, and slim removes error-severity content in place. The diff command compares the context file against git history to find references that went stale since it was last updated. Output can be terminal, JSON, or SARIF, and a .ctxlintrc file configures rules and thresholds.",
+  "use_cases": [
+   "lint AGENTS.md or CLAUDE.md for stale file references",
+   "catch dead npm or make commands in agent instructions",
+   "check .mcp.json for hardcoded API keys",
+   "trim bloated context files to reduce agent token cost",
+   "generate a starter AGENTS.md from project metadata",
+   "add context file linting to CI with SARIF upload"
+  ],
+  "how_to_run": [
+   "npx @ctxlint/ctxlint check",
+   "npm install -g @ctxlint/ctxlint",
+   "ctxlint check --format sarif > results.sarif",
+   "ctxlint mcp",
+   "ctxlint init --dry-run"
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "commander"
+  ],
+  "notable": [
+   "Includes an auto-fix command (slim) that removes flagged error-severity content from a context file",
+   "Covers MCP config validation for .mcp.json, .cursor/mcp.json, .vscode/mcp.json and .amazonq/mcp.json",
+   "Supports Node.js, Rust, Go and Python projects for command validation",
+   "Rules are cited to research papers on context file impact on agent performance",
+   "Git-based drift detection via the diff command"
+  ],
+  "caveats": [
+   "Checks whether referenced files exist but not whether their descriptions are still accurate (semantic staleness)",
+   "README reports roughly 91% precision on 5 real-world repos, with some false positives in unusual layouts",
+   "Some features such as the token-budget team-size options are listed as contribution ideas rather than described as implemented"
+  ],
+  "license": "MIT",
+  "category": "ai agent tooling",
+  "keywords": [
+   "ctxlint",
+   "linter",
+   "context file linter",
+   "agents.md",
+   "claude.md",
+   "cursorrules",
+   "windsurfrules",
+   "clinerules",
+   "aiderules",
+   "gemini.md",
+   "mcp config",
+   "mcp.json validation",
+   "stale file reference",
+   "dead build command",
+   "hardcoded secret detection",
+   "token budget",
+   "context bloat",
+   "prompt file linter",
+   "ai coding agent",
+   "claude code",
+   "cli linter",
+   "sarif output",
+   "github code scanning",
+   "pre-commit hook",
+   "ci lint",
+   "auto fix",
+   "slim context file",
+   "generate agents.md",
+   "init context file",
+   "drift detection",
+   "git history diff",
+   "npm cli",
+   "commander",
+   "nodejs",
+   "check my agents file",
+   "find outdated instructions",
+   "reduce llm token cost",
+   "validate mcp servers",
+   "lint instructions for ai",
+   "monorepo context files"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6719,
+  "output": 1264
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "ur-whitelab/chemcrow-public",
+ "repo": "ur-whitelab/chemcrow-public",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "ChemCrow is an open-source Python package that wraps LLM agents (built on LangChain) around chemistry tools such as RDKit, paper-qa, PubChem and chem-space for answering reasoning-intensive chemistry questions.",
+  "what_it_does": "The package provides a ChemCrow agent class that is created with an OpenAI model name, temperature and streaming flag, then queried with natural-language chemistry questions. The README says it uses a collection of chemical tools, naming RDKit, paper-qa, and databases including PubChem and chem-space. Retrosynthetic planning and reaction product prediction go through the RXN4Chem API by default. Those two tools can instead be self-hosted through two pre-built Docker images (a reaction prediction server and a retrosynthesis server) and enabled with a local_rxn option. An optional SerpAPI key is supported. The README says the release omits some tools from the original paper because of API usage restrictions, so results will differ from the paper.",
+  "use_cases": [
+   "answer chemistry questions with an LLM agent",
+   "look up molecular properties such as molecular weight",
+   "predict reaction products",
+   "plan retrosynthesis routes",
+   "query PubChem and chem-space compound data",
+   "run RDKit-based cheminformatics tasks through natural language"
+  ],
+  "how_to_run": [
+   "pip install chemcrow",
+   "export OPENAI_API_KEY=your-openai-api-key",
+   "(optional) export SERP_API_KEY=your-serpapi-api-key",
+   "from chemcrow.agents import ChemCrow; chem_model = ChemCrow(model=\"gpt-4-0613\", temp=0.1, streaming=False)",
+   "chem_model.run(\"What is the molecular weight of tylenol?\")",
+   "(optional self-hosting) docker run --gpus all -d -p 8051:5000 doncamilom/rxnpred:latest and docker run --gpus all -d -p 8052:5000 doncamilom/retrosynthesis:latest, then pass local_rxn=True"
+  ],
+  "stack": [
+   "Python",
+   "LangChain",
+   "RDKit",
+   "paper-qa",
+   "OpenAI API",
+   "SerpAPI",
+   "RXN4Chem API",
+   "Docker"
+  ],
+  "notable": [
+   "Agent built on LangChain that combines chemistry tools with an LLM",
+   "Optional self-hosted Docker images for reaction prediction and retrosynthesis, removing the need for the RXN4Chem API",
+   "Includes a HuggingFace demo link",
+   "Experiment runs from the ChemCrow paper are released"
+  ],
+  "caveats": [
+   "Does not include all tools from the ChemCrow paper due to API usage restrictions, so results will not match the paper",
+   "Default retrosynthesis and reaction prediction depend on an RXN4Chem API key and can be slow",
+   "Self-hosted tools need Docker and GPU support (--gpus all flag)",
+   "Requires an OpenAI API key"
+  ],
+  "license": "unknown",
+  "category": "llm chemistry agent",
+  "keywords": [
+   "chemcrow",
+   "llm agent",
+   "chemistry agent",
+   "langchain",
+   "rdkit",
+   "paper-qa",
+   "pubchem",
+   "chem-space",
+   "retrosynthesis",
+   "reaction product prediction",
+   "retrosynthetic planning",
+   "molecular weight lookup",
+   "cheminformatics",
+   "chemistry tools",
+   "large language model tools",
+   "gpt-4 chemistry",
+   "openai chemistry",
+   "serpapi search",
+   "rxn4chem",
+   "docker self-hosting",
+   "reasoning chemistry tasks",
+   "chemistry question answering",
+   "compound lookup",
+   "scientific llm agent",
+   "ask chemistry questions with ai",
+   "predict chemical reaction outcome",
+   "plan synthesis route with ai",
+   "open source chemistry assistant",
+   "augmented llm with tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2271,
+  "output": 1412
+ },
+ "generated": "2026-10-29"
+}

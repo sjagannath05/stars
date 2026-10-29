@@ -1,0 +1,87 @@
+{
+ "id": "skorokithakis/shortuuid",
+ "repo": "skorokithakis/shortuuid",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Text Processing",
+   "entry": "shortuuid - A generator library for concise, unambiguous and URL-safe UUIDs."
+  }
+ ],
+ "summary": {
+  "one_liner": "A small Python library that generates short, URL-safe, unambiguous UUID-like strings by encoding Python's built-in uuid values with a reduced alphabet.",
+  "what_it_does": "shortuuid generates UUIDs with Python's uuid module and re-encodes them into a shorter string using letters and digits, dropping look-alike characters such as l, 1, I, O and 0. It can produce random IDs by default, or version 5 UUIDs when given a name (using DNS or URL namespaces). It also offers a cryptographically secure random string via os.urandom(). Existing UUIDs can be converted to and from short strings with encode() and decode(). The alphabet can be customized with set_alphabet(), which sorts and deduplicates characters unless dont_sort_alphabet is passed. A ShortUUID class allows per-instance alphabets, a command-line entry point prints a new ID, and a Django model field is included.",
+  "use_cases": [
+   "generate short non-sequential IDs for user-facing URLs",
+   "encode and decode existing UUIDs into shorter strings",
+   "create API keys or random tokens with a custom alphabet",
+   "make deterministic version 5 UUIDs from a name",
+   "use short UUIDs as Django model primary keys"
+  ],
+  "how_to_run": [
+   "pip install shortuuid",
+   "python -c \"import shortuuid; print(shortuuid.uuid())\"",
+   "shortuuid  (command-line usage in a terminal)"
+  ],
+  "stack": [
+   "Python 3.6+",
+   "Python uuid module",
+   "os.urandom",
+   "Django (optional ShortUUIDField)"
+  ],
+  "notable": [
+   "Default 22-character IDs use an alphabet that avoids look-alike characters like l, 1, I, O, 0",
+   "Supports custom alphabets with automatic sorting and deduplication, or optional preservation of order",
+   "encode()/decode() convert existing UUIDs to short strings and back",
+   "Includes a Django model field with length, prefix and alphabet options"
+  ],
+  "caveats": [
+   "Truncated IDs lose universal uniqueness; collision probability rises as they get shorter",
+   "Versions before 1.0.0 stored UUIDs with reversed byte order, requiring legacy=True when decoding; that option is slated for removal",
+   "Django field requires Django; the README does not describe other integrations"
+  ],
+  "license": "BSD",
+  "category": "python id generation",
+  "keywords": [
+   "shortuuid",
+   "short uuid",
+   "python uuid",
+   "url-safe id",
+   "concise id",
+   "unambiguous id",
+   "uuid encoder",
+   "base57 encoding",
+   "uuid shortener",
+   "short unique identifier",
+   "random id generator",
+   "url slug id",
+   "non-sequential id",
+   "uuid5 namespace",
+   "custom alphabet id",
+   "secure random string python",
+   "os.urandom token",
+   "django shortuuid field",
+   "django primary key uuid",
+   "command line uuid generator",
+   "shorten uuid for urls",
+   "encode uuid to string",
+   "decode short id to uuid",
+   "api key generator python",
+   "human friendly ids",
+   "readable random ids",
+   "generate tokens python library",
+   "uuid4 shorter string",
+   "id without look-alike characters"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3556,
+  "output": 1173
+ },
+ "generated": "2026-10-29"
+}

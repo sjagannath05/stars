@@ -1,0 +1,89 @@
+{
+ "id": "hashicorp/vault",
+ "repo": "hashicorp/vault",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "Vault | Secrets management"
+  }
+ ],
+ "summary": {
+  "one_liner": "HashiCorp Vault is a tool for securely accessing and controlling access to secrets such as API keys, passwords, and certificates, with audit logging.",
+  "what_it_does": "The README describes Vault as a secrets management tool that stores arbitrary key/value pairs and encrypts them before writing to persistent storage (disk, Consul, and others). It can generate dynamic secrets on demand for systems such as AWS or SQL databases and revoke them when their lease expires. It supports lease renewal through built-in APIs, revocation of single secrets or trees of secrets, and encryption/decryption of data without storing it. The README is mostly a project overview with developer notes: building from source with make targets, running unit tests (which require Docker), running acceptance tests against real backends, and Docker-based cluster test helpers in Go. It also links the documentation, tutorials, and the vault-examples repo.",
+  "use_cases": [
+   "centralize storage of API keys and passwords",
+   "generate short-lived database or AWS credentials on demand",
+   "rotate and revoke secrets after an intrusion",
+   "encrypt data from applications without writing custom crypto",
+   "audit who accessed which secrets",
+   "build and test Vault from source"
+  ],
+  "how_to_run": [
+   "Install Go and set GOPATH/GOBIN (per README)",
+   "Clone the repository outside GOPATH",
+   "make bootstrap",
+   "make dev  (builds the Vault binary into bin/)",
+   "make test  (requires Docker)",
+   "make testacc TEST=./builtin/logical/consul  (acceptance tests; use at your own risk, they touch real resources)"
+  ],
+  "stack": [
+   "Go",
+   "Go Modules",
+   "Docker (for tests)",
+   "Consul (optional storage backend mentioned)"
+  ],
+  "notable": [
+   "Dynamic secrets that are auto-revoked after their lease ends",
+   "Encryption-as-a-service: encrypt and decrypt data without storing it",
+   "Revocation of a whole tree of secrets, e.g. everything read by one user",
+   "Docker-based test cluster helpers in the sdk for multi-node and replication tests"
+  ],
+  "caveats": [
+   "Acceptance tests create and modify real resources and may incur costs",
+   "Importing the main repo as a Go dependency is not a supported use",
+   "Enterprise features are referenced but not documented in this README"
+  ],
+  "license": "unknown",
+  "category": "secrets management",
+  "keywords": [
+   "vault",
+   "secrets management",
+   "secret storage",
+   "api key storage",
+   "password manager for servers",
+   "dynamic secrets",
+   "credential rotation",
+   "secret leasing",
+   "secret revocation",
+   "encryption as a service",
+   "audit log",
+   "access control",
+   "hashicorp",
+   "go",
+   "golang",
+   "consul storage",
+   "aws credentials generation",
+   "database credentials",
+   "certificate management",
+   "key rolling",
+   "self-hosted secrets",
+   "store passwords securely",
+   "give apps temporary credentials",
+   "lease renewal",
+   "security automation",
+   "docker tests",
+   "build vault from source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5187,
+  "output": 1122
+ },
+ "generated": "2026-10-29"
+}

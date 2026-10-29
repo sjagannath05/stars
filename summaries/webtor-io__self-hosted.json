@@ -1,0 +1,94 @@
+{
+ "id": "webtor-io/self-hosted",
+ "repo": "webtor-io/self-hosted",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Peer-to-peer Filesharing",
+   "entry": "Webtor - Web-based torrent client with instant audio/video streaming. (Demo) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Webtor Self-Hosted is an all-in-one Docker image that runs the Webtor web-based torrent client, letting you stream or download files from torrents through a browser.",
+  "what_it_does": "Runs a self-hosted version of webtor.io as a single Docker container with an embedded PostgreSQL database and an embedded S3-compatible store. You can download individual files from a torrent directly, or stream video and audio files from a torrent immediately without downloading them fully first. Entire torrents can be downloaded as a ZIP archive built on the fly, preserving directory structure. A personal library organizes torrents, with movies and series detected automatically, and a Vault option saves torrent content permanently into the built-in store. The README also describes OpenSubtitles lookups, AI subtitle translation, AI-assisted enrichment and recommendations, a Stremio addon, and an embeddable player SDK for websites.",
+  "use_cases": [
+   "stream a torrent video in the browser without waiting for download",
+   "download a single file from a torrent via direct link",
+   "download a whole torrent as a ZIP archive",
+   "watch torrent media on a TV via Stremio",
+   "embed a torrent video player on my own website",
+   "keep a personal library of movies and series from torrents"
+  ],
+  "how_to_run": [
+   "Install Docker.",
+   "docker run -d -p 8080:8080 -v data:/data -v pgdata:/pgdata -v storage:/storage --name webtor --restart=always ghcr.io/webtor-io/self-hosted:latest",
+   "Open the web UI on the mapped port (8080 by default).",
+   "Optionally set ADMIN_PASSWORD to require login.",
+   "Optionally set DOMAIN to the address you use, or use an https reverse proxy for embedding on other sites."
+  ],
+  "stack": [
+   "Docker",
+   "PostgreSQL (embedded)",
+   "versitygw S3-compatible store (embedded)",
+   "Redis",
+   "nginx",
+   "Stremio addon"
+  ],
+  "notable": [
+   "Instant audio and video streaming from torrents without full download",
+   "Vault saves torrent content permanently into the built-in S3 store",
+   "Optional AI subtitle translation and AI-assisted title recognition, each needing its own API key and switch",
+   "Publishes linux/amd64 and linux/arm64 images",
+   "Embed-domain allow list controls which third-party sites can show the player"
+  ],
+  "caveats": [
+   "32-bit ARM (armv7) is not supported",
+   "/storage must be a named Docker volume, not a bind mount, on macOS, Windows and some network filesystems",
+   "Embedding on other sites requires an https instance, and an https DOMAIN behind a reverse proxy",
+   "Several features (OpenSubtitles, metadata enrichment, AI features, SMTP email) need external API keys or servers and are off by default"
+  ],
+  "license": "MIT",
+  "category": "torrent streaming server",
+  "keywords": [
+   "torrent client",
+   "web torrent client",
+   "torrent streaming",
+   "stream torrent video",
+   "watch torrent online",
+   "self-hosted torrent",
+   "webtor",
+   "docker torrent",
+   "ddl torrent download",
+   "direct download link",
+   "torrent to zip",
+   "download torrent as zip",
+   "personal media library",
+   "stremio addon",
+   "opensubtitles",
+   "subtitle translation",
+   "vault storage",
+   "embeddable video player",
+   "torrent sdk",
+   "p2p file sharing",
+   "bittorrent web interface",
+   "media streaming server",
+   "self-hosted netflix alternative",
+   "webdav",
+   "postgresql embedded",
+   "s3 compatible storage",
+   "gluetun vpn",
+   "share files with my team",
+   "watch movies from torrent in browser"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9021,
+  "output": 1340
+ },
+ "generated": "2026-10-29"
+}

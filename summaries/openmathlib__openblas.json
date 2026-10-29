@@ -1,0 +1,95 @@
+{
+ "id": "openmathlib/openblas",
+ "repo": "OpenMathLib/OpenBLAS",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "GEMM and BLAS",
+   "entry": "OpenBLAS - Sets run-time dispatch for a BLAS, one kernel table per microarchitecture chosen as a DYNAMIC_ARCH build loads."
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenBLAS is an optimized BLAS (Basic Linear Algebra Subprograms) and LAPACK library, derived from GotoBLAS2 1.13, with hand-tuned kernels for many CPU architectures.",
+  "what_it_does": "OpenBLAS provides optimized implementations of BLAS routines, and it includes LAPACK, which can be compiled with a Fortran compiler or from an older machine-translated C version. Builds are configured through Makefile.rule or make/cmake command-line options, and the build auto-detects the host CPU unless TARGET is set to a specific model listed in TargetList.txt. With DYNAMIC_ARCH=1 a single library contains kernels for multiple x86_64, ARM64, POWER, zarch, RISC-V and LoongArch64 targets and selects one at runtime. Developers can set thread counts through OPENBLAS_NUM_THREADS, GOTO_NUM_THREADS or OMP_NUM_THREADS, and by calling openblas_set_num_threads at runtime. Binary packages are offered for Windows x86/x86_64 and Windows arm64. The README also covers cross-compiling, a debug build, and optional IBM MASS support on POWER.",
+  "use_cases": [
+   "speed up matrix multiplication in numerical code",
+   "build a BLAS/LAPACK library for a specific CPU",
+   "ship one binary that runs on many x86-64 or ARM CPUs",
+   "cross-compile linear algebra libraries for embedded or RISC-V boards",
+   "control thread count for BLAS-backed scientific software",
+   "use LAPACK routines for linear algebra in Fortran or C"
+  ],
+  "how_to_run": [
+   "git clone the OpenBLAS source (default branch is develop)",
+   "make (or gmake on BSD) to build with automatic CPU detection",
+   "make TARGET=NEHALEM to build for a specific CPU model",
+   "make DYNAMIC_ARCH=1 TARGET=<oldest model> for a multi-target runtime-dispatch library",
+   "make install PREFIX=your_installation_directory (repeat build options)",
+   "Alternatively use cmake with a separate build directory"
+  ],
+  "stack": [
+   "C",
+   "Assembly",
+   "Fortran (optional, for LAPACK)",
+   "GNU Make or CMake",
+   "GCC, Clang, or LLVM flang"
+  ],
+  "notable": [
+   "Runtime CPU detection via DYNAMIC_ARCH, selecting kernels for the host chip from one library",
+   "Broad hardware coverage: x86, ARM64 (including SVE/SME kernels), POWER, zarch, RISC-V vector, LoongArch, WASM",
+   "Includes LAPACK and can compile a C translation of it without a Fortran compiler",
+   "Cross-compilation support with explicit TARGET selection",
+   "Descends from GotoBLAS2 1.13 BSD"
+  ],
+  "caveats": [
+   "Non-default targets need specific compilers: DYNAMIC_ARCH on riscv64 requires an RVV 1.0-capable compiler, and some POWER features need GCC 11+",
+   "Max 256 CPUs/cores by default; larger counts need the experimental BIGNUMA=1 build on Linux x86_64",
+   "Some platforms are community-supported and not actively tested (OpenBSD, NetBSD, DragonFly, Haiku, SunOS, AIX testing is increasingly difficult)",
+   "Setting TARGET is advised with DYNAMIC_ARCH to avoid illegal-instruction crashes on weaker hardware"
+  ],
+  "license": "unknown",
+  "category": "numerical linear algebra",
+  "keywords": [
+   "blas",
+   "lapack",
+   "openblas",
+   "gotoblas",
+   "linear algebra library",
+   "matrix multiplication",
+   "gemm",
+   "dgemm",
+   "sgemm",
+   "dynamic_arch",
+   "runtime cpu dispatch",
+   "cpu-specific kernels",
+   "simd optimization",
+   "avx2",
+   "avx512",
+   "arm64 sve",
+   "risc-v vector",
+   "numerical computing",
+   "scientific computing library",
+   "fortran linear algebra",
+   "build blas from source",
+   "cross compile blas",
+   "multithreaded blas",
+   "openmp blas",
+   "set number of threads",
+   "matrix library for python numpy backend",
+   "speed up matrix math",
+   "compile optimized blas for my cpu",
+   "ship one library for many cpus",
+   "blas alternative to reference netlib"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9718,
+  "output": 1617
+ },
+ "generated": "2026-10-29"
+}

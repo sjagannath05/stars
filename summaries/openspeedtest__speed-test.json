@@ -1,0 +1,94 @@
+{
+ "id": "openspeedtest/speed-test",
+ "repo": "openspeedtest/Speed-Test",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "Speed Test by OpenSpeedTest™ - HTML5 Network Performance Estimation Tool. (Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A free, open-source, browser-based network speed test written in vanilla JavaScript that runs on any static web server and can be self-hosted, including via Docker.",
+  "what_it_does": "SpeedTest by OpenSpeedTest is an HTML5 network performance estimation tool that measures download, upload and ping from a web browser using only built-in web APIs (XMLHttpRequest, HTML, CSS, JS, SVG), with no third-party libraries and no client-side software. It consists of static files served by a web server such as NGINX, Apache, IIS or Express, so you can host your own speed test server on a LAN, WAN or cloud machine. It can be run from a Docker image (nginxinc/nginx-unprivileged based), with optional Let's Encrypt SSL or your own certificate. URL parameters control behavior such as stress tests of set duration, automatic test start, parallel connection count, ping sample count, ping timeout, overhead compensation, and choosing a server; the index.html file can be edited to list multiple servers (lowest latency chosen automatically) and to save results to a database endpoint.",
+  "use_cases": [
+   "Test internet speed against a server I host",
+   "Check local network throughput between devices",
+   "Troubleshoot slow connections or VLAN/switch problems",
+   "Compare ISP connections against my own home or office server",
+   "Run a continuous stress test of bandwidth",
+   "Self-host a speed test on a NAS or home lab with Docker"
+  ],
+  "how_to_run": [
+   "sudo docker run --restart=unless-stopped --name openspeedtest -d -p 3000:3000 -p 3001:3001 openspeedtest/latest",
+   "Or use docker-compose.yml with image openspeedtest/latest and ports 3000:3000 and 3001:3001",
+   "Open the browser to the server's HTTP (port 3000) or HTTPS (port 3001) address",
+   "For custom deployments, copy the static source files to a web server such as NGINX and follow the provided Nginx config",
+   "Optional: enable Let's Encrypt with -e ENABLE_LETSENCRYPT=True -e DOMAIN_NAME=... -e USER_EMAIL=... and ports 80:3000 and 443:3001"
+  ],
+  "stack": [
+   "Vanilla JavaScript",
+   "HTML5",
+   "CSS",
+   "SVG",
+   "XMLHttpRequest",
+   "NGINX",
+   "Docker (nginxinc/nginx-unprivileged:stable-alpine)"
+  ],
+  "notable": [
+   "No third-party JavaScript frameworks or libraries; script under 8kB gzip",
+   "Runs as purely static files, so there are no server-side application security updates to manage",
+   "Stress test mode with presets from 5 minutes to a year, or a custom number of seconds",
+   "URL parameters for auto-start, parallel connections, ping samples, timeouts and server selection",
+   "Works in any browser IE10 or newer"
+  ],
+  "caveats": [
+   "Browser-based test, so results include unknown overheads; the README says a default 4% overhead compensation is within margin of error",
+   "README notes that Docker on macOS or Windows may perform poorly and is intended for development there; Linux is recommended for production",
+   "Windows NGINX uses only one worker process, limiting performance",
+   "Server must meet requirements such as a 35 MB client_max_body_size and timeouts over 60 seconds"
+  ],
+  "license": "MIT",
+  "category": "network speed testing",
+  "keywords": [
+   "speed test",
+   "bandwidth test",
+   "network performance",
+   "html5 speed test",
+   "self-hosted speed test",
+   "internet speed test",
+   "download upload ping",
+   "packet loss",
+   "vanilla javascript",
+   "static web server",
+   "nginx",
+   "docker",
+   "docker compose",
+   "lan speed test",
+   "wan speed test",
+   "home lab network test",
+   "isp speed comparison",
+   "wifi repeater testing",
+   "troubleshoot network",
+   "stress test bandwidth",
+   "lets encrypt ssl",
+   "xhr parallel connections",
+   "speedtest.net alternative",
+   "browser speed test",
+   "openspeedtest",
+   "latency measurement",
+   "on-premise speed test",
+   "nas speed test"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6988,
+  "output": 1500
+ },
+ "generated": "2026-10-29"
+}

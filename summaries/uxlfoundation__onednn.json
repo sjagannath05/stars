@@ -1,0 +1,101 @@
+{
+ "id": "uxlfoundation/onednn",
+ "repo": "uxlfoundation/oneDNN",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Runtimes",
+   "entry": "oneDNN - Generates VNNI and AMX kernels at run time under PyTorch, TensorFlow and OpenVINO, and calls Compute Library on Arm."
+  }
+ ],
+ "summary": {
+  "one_liner": "oneDNN is an open-source, cross-platform C/C++ library of optimized deep learning primitives (matmul, convolution, attention, normalization) for CPUs and Intel GPUs, and the acceleration layer behind PyTorch, TensorFlow, and OpenVINO.",
+  "what_it_does": "The library provides optimized implementations of matrix multiplication, convolution, attention, normalization and other deep learning operations. On Intel 64/AMD64, AArch64, and RISC-V CPUs it detects the ISA at runtime and JIT-generates kernels specialized for that instruction set. It supports f32, bf16, f16, f8, f4, u8/s8 and u4/s4 data types with various quantization schemes, including OCP microscaling formats. Post-ops fuse activations, residual connections and quantization into matmul and convolution, and the Graph API fuses larger patterns such as scaled dot-product attention and grouped-query attention. CPU threading can use OpenMP, TBB, or custom threadpools; GPU execution uses SYCL or OpenCL, with experimental NVIDIA and AMD GPU backends. The README's Quick Start builds a matmul performance example against a conda-forge install.",
+  "use_cases": [
+   "accelerate deep learning inference on Intel or AMD CPUs",
+   "low-precision (int8, bf16, f16) model inference",
+   "fuse attention and convolution post-ops for faster models",
+   "benchmark matrix multiplication throughput",
+   "backend for PyTorch, TensorFlow, or OpenVINO kernels",
+   "run deep learning ops on Arm AArch64 servers"
+  ],
+  "how_to_run": [
+   "conda install -c conda-forge onednn",
+   "g++ matmul_perf.cpp -I$CONDA_PREFIX/include -L$CONDA_PREFIX/lib -ldnnl -o matmul_perf",
+   "LD_LIBRARY_PATH=$CONDA_PREFIX/lib ./matmul_perf cpu"
+  ],
+  "stack": [
+   "C++11",
+   "CMake 3.13+",
+   "OpenMP",
+   "Threading Building Blocks (TBB)",
+   "SYCL / Intel oneAPI DPC++ Compiler",
+   "OpenCL",
+   "oneAPI Level Zero",
+   "Xbyak",
+   "Arm Compute Library (ACL)",
+   "Doxygen",
+   "Sphinx"
+  ],
+  "notable": [
+   "Runtime ISA detection with JIT-generated kernels specialized to the CPU",
+   "Graph API fuses patterns such as SDPA and GQA",
+   "Supports OCP microscaling and many low-precision data types",
+   "Optional Arm Compute Library integration on AArch64",
+   "Used as the acceleration layer in PyTorch, TensorFlow, OpenVINO, ONNX Runtime and llama.cpp"
+  ],
+  "caveats": [
+   "Power ISA (PPC64) and IBMz (s390x) support is experimental with limited validation",
+   "NVIDIA and AMD GPU support is experimental",
+   "Arm Compute Library must be downloaded and built separately (minimum version 53.1.0)",
+   "Linux and Windows reset GPUs when kernel runtime exceeds several seconds unless hangcheck or TdrDelay is adjusted",
+   "README says deep learning practitioners should use frameworks rather than oneDNN directly"
+  ],
+  "category": "deep learning runtimes",
+  "license": "Apache License Version 2.0",
+  "keywords": [
+   "onednn",
+   "oneapi deep neural network library",
+   "deep learning primitives",
+   "cpu inference acceleration",
+   "jit kernels",
+   "matmul",
+   "convolution",
+   "int8 quantization",
+   "bf16",
+   "f16",
+   "microscaling",
+   "graph api",
+   "sdpa",
+   "attention fusion",
+   "post-ops",
+   "intel cpu optimization",
+   "amd64",
+   "aarch64",
+   "arm compute library",
+   "sycl",
+   "opencl",
+   "intel gpu",
+   "openmp",
+   "tbb",
+   "pytorch backend",
+   "tensorflow backend",
+   "openvino",
+   "onnx runtime",
+   "llama.cpp",
+   "uxl foundation",
+   "speed up neural network on cpu",
+   "matmul benchmark"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9115,
+  "output": 1536
+ },
+ "generated": "2026-10-29"
+}

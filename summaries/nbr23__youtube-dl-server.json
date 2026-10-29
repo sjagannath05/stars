@@ -1,0 +1,95 @@
+{
+ "id": "nbr23/youtube-dl-server",
+ "repo": "nbr23/youtube-dl-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "YoutubeDL-Server - Web and REST interface to Youtube-DL for downloading videos onto a server. MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted web and REST service that queues yt-dlp or youtube-dl downloads and saves the resulting videos or audio onto a server.",
+  "what_it_does": "The server is built on starlette and runs a job queue with configurable parallel download workers. It offers a web UI and a REST API to submit single URLs or multi-URL jobs, pick formats and named profiles, and view job logs. Jobs can be stopped, retried, deleted, or filtered by status. The API can also fetch metadata without downloading, list and delete downloaded files, and report server info, formats, and supported extractors. Profiles and reusable option groups (aliases) let you override any yt-dlp/youtube-dl option, such as audio extraction, thumbnails, or subtitles. Upcoming live events and premieres can be parked in a Scheduled status until they start.",
+  "use_cases": [
+   "Download YouTube videos to a home server",
+   "Archive online video or audio to a NAS",
+   "Save podcasts as MP3 files automatically",
+   "Queue video downloads through a REST API",
+   "Schedule downloads of upcoming premieres or live streams",
+   "Fetch video metadata without downloading"
+  ],
+  "how_to_run": [
+   "docker run -d --name youtube-dl -p 8080:8080 -v $HOME/youtube-dl:/youtube-dl nbr23/youtube-dl-server:latest",
+   "pip install -r requirements.txt",
+   "cd front && npm install && npm run build",
+   "python3 -u ./youtube-dl-server.py"
+  ],
+  "stack": [
+   "Python 3.8+",
+   "starlette",
+   "uvicorn",
+   "yt-dlp",
+   "youtube-dl",
+   "SQLite",
+   "Docker",
+   "npm (frontend build)"
+  ],
+  "notable": [
+   "Profiles and option groups (aliases) with a merge order for reusable download presets",
+   "Scheduled status for upcoming live events and premieres, with configurable retry interval and max attempts",
+   "Choice of yt-dlp or youtube-dl via the YOUTUBE_DL environment variable or Docker tag",
+   "Bookmarklets for sending the current page URL to the server"
+  ],
+  "caveats": [
+   "The README notes the latest youtube-dl release is quite outdated; yt-dlp is the default Docker image",
+   "Audio extraction and format conversion require ffmpeg",
+   "The server refuses to start if the output path resolves to the filesystem root"
+  ],
+  "license": "MIT",
+  "category": "video download server",
+  "keywords": [
+   "youtube-dl",
+   "yt-dlp",
+   "youtube downloader",
+   "video downloader",
+   "self-hosted video downloader",
+   "web interface",
+   "rest api",
+   "starlette",
+   "python",
+   "docker",
+   "media archive",
+   "download queue",
+   "save youtube videos to server",
+   "download youtube playlist",
+   "audio extraction mp3",
+   "podcast downloader",
+   "bookmarklet",
+   "ffmpeg",
+   "sqlite job database",
+   "scheduled downloads",
+   "live stream recording",
+   "yt-dlp docker",
+   "download videos over http api",
+   "remote video download",
+   "homelab media download",
+   "batch url download",
+   "youtube-dl alternative",
+   "profiles presets",
+   "subtitle download",
+   "thumbnail embed",
+   "self-hosted media management"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5923,
+  "output": 1147
+ },
+ "generated": "2026-10-29"
+}

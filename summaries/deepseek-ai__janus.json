@@ -1,0 +1,95 @@
+{
+ "id": "deepseek-ai/janus",
+ "repo": "deepseek-ai/Janus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "DeepSeek",
+   "entry": "Janus / Janus-Pro"
+  }
+ ],
+ "summary": {
+  "one_liner": "Janus, Janus-Pro and JanusFlow are DeepSeek's unified multimodal models that handle both image understanding (visual Q&A, formula-to-LaTeX) and text-to-image generation, with code for inference and local demos.",
+  "what_it_does": "The repository publishes the code and model references for the Janus model family: Janus-1.3B, JanusFlow-1.3B, Janus-Pro-1B and Janus-Pro-7B, hosted on Hugging Face. Janus-Pro is described as an improved version of Janus with a revised training strategy, more training data and larger model size. The Janus models use an autoregressive transformer with decoupled visual encoding paths for understanding and generation. JanusFlow combines an autoregressive LLM with rectified flow for image generation, and its example uses the stabilityai/sdxl-vae decoder. The README gives Python snippets for multimodal understanding (image plus question to text) and text-to-image generation that saves samples to disk. It also describes Gradio demos and, for Janus, a FastAPI server with a test client.",
+  "use_cases": [
+   "Image question answering with a vision-language model",
+   "Converting formula images to LaTeX code",
+   "Generating images from text prompts",
+   "Running a local Gradio web demo of image generation",
+   "Hosting a FastAPI endpoint for multimodal inference",
+   "Research on unified understanding and generation models"
+  ],
+  "how_to_run": [
+   "pip install -e .",
+   "pip install -e .[gradio]  # optional local Gradio demo for Janus-Pro",
+   "python demo/app_januspro.py  # Janus-Pro Gradio demo",
+   "python demo/app.py  # Janus Gradio demo",
+   "python demo/fastapi_app.py  # Janus FastAPI server",
+   "pip install diffusers[torch]  # needed for JanusFlow"
+  ],
+  "stack": [
+   "Python >= 3.8",
+   "PyTorch",
+   "Hugging Face transformers",
+   "diffusers",
+   "Gradio",
+   "FastAPI",
+   "stabilityai/sdxl-vae"
+  ],
+  "notable": [
+   "Decoupled visual encoding for understanding and generation within one transformer (Janus)",
+   "Rectified flow integrated into an LLM without major architecture changes (JanusFlow)",
+   "Janus-Pro scales data and model size, with 1B and 7B variants",
+   "Multiple model sizes released on Hugging Face with online demos"
+  ],
+  "caveats": [
+   "Model use is governed by the DeepSeek Model License, separate from the MIT license on the code",
+   "Examples assume a CUDA GPU (.cuda() calls) and bfloat16 precision",
+   "JanusFlow generation also needs the separate SDXL VAE and the diffusers package"
+  ],
+  "license": "MIT (code); Janus models are subject to the DeepSeek Model License",
+  "category": "multimodal vision-language models",
+  "keywords": [
+   "janus",
+   "janus-pro",
+   "janusflow",
+   "unified multimodal model",
+   "vision language model",
+   "vlm",
+   "multimodal understanding",
+   "image generation",
+   "text to image",
+   "text-to-image model",
+   "rectified flow",
+   "autoregressive image generation",
+   "visual question answering",
+   "image captioning",
+   "formula to latex",
+   "ocr alternative",
+   "image to text",
+   "deepseek",
+   "huggingface models",
+   "pytorch",
+   "transformers",
+   "gradio demo",
+   "fastapi server",
+   "local image generator",
+   "generate pictures from text",
+   "ask questions about an image",
+   "sdxl vae",
+   "diffusion alternative",
+   "multimodal ai research",
+   "self-hosted vision model"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11209,
+  "output": 1322
+ },
+ "generated": "2026-10-29"
+}

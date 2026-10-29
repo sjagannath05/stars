@@ -1,0 +1,98 @@
+{
+ "id": "glanceapp/glance",
+ "repo": "glanceapp/glance",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Glance - Highly customizable dashboard that puts all your feeds in one place. AGPL-3.0 Docker/Go"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Dashboards",
+   "entry": "Glance | Lightweight dashboard that puts your feeds and services in one place"
+  }
+ ],
+ "summary": {
+  "one_liner": "Glance is a lightweight, highly customizable self-hosted dashboard that displays RSS feeds, social/news sources, weather, markets, and service status on one YAML-configured page.",
+  "what_it_does": "Glance renders a configurable start page of widgets that pull in feeds and data, including RSS, subreddit posts, Hacker News, Lobsters, weather forecasts, YouTube channel uploads, Twitch channels, market prices, Docker container status, server stats, and GitHub releases. Layout and widgets are defined in YAML files, with multiple pages supported and columns sized small or full. Custom widgets can be built from iframe, html, extension (fetch HTML from a URL), and custom-api (fetch JSON and render with custom HTML) types. Data is fetched when a page loads and cached per widget, with no background polling, so a page refresh is needed to see new information. The README says it has low memory usage, few dependencies, and minimal vanilla JS.",
+  "use_cases": [
+   "Personal news and feed reader start page",
+   "Monitoring Docker container status on a home server",
+   "Tracking stock and crypto prices on a dashboard",
+   "Watching YouTube and Twitch channels in one place",
+   "Showing weather and calendar on a home screen",
+   "Tracking GitHub release versions of selfhosted projects"
+  ],
+  "how_to_run": [
+   "mkdir glance && cd glance && curl -sL | tar -xzf - --strip-components 2",
+   "Edit docker-compose.yml, config/home.yml, and config/glance.yml as desired",
+   "docker compose up -d",
+   "docker compose logs (to check for issues)",
+   "Alternatively, with Go >= v1.23: go build -o build/glance . then run the binary (or use go run .)"
+  ],
+  "stack": [
+   "Go (>= v1.23 to build)",
+   "Docker",
+   "YAML configuration",
+   "Vanilla JavaScript",
+   "CSS"
+  ],
+  "notable": [
+   "Single-binary deployment with precompiled builds for Linux, Windows, and macOS on x86, x86_64, ARM, and ARM64",
+   "Custom widget types: iframe, html, extension, and custom-api",
+   "Data fetched on page load and cached per widget rather than polled in the background",
+   "Community widgets, preconfigured pages, and themes mentioned in the README"
+  ],
+  "caveats": [
+   "Pages do not update automatically; a browser refresh is required to see new data",
+   "Ad-blocking DNS services such as Pi-Hole or AdGuard Home can cause request timeouts unless their rate limits are raised",
+   "Browser extension Dark Reader can break layout of some widgets"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "dashboard",
+   "self-hosted dashboard",
+   "homepage",
+   "start page",
+   "startpage",
+   "rss reader",
+   "feed aggregator",
+   "news aggregator",
+   "rss feeds in one place",
+   "personal dashboard",
+   "home server dashboard",
+   "docker dashboard",
+   "docker container status",
+   "server stats",
+   "hacker news widget",
+   "reddit feed",
+   "youtube subscriptions",
+   "twitch channels",
+   "stock market prices",
+   "weather widget",
+   "yaml configuration",
+   "go",
+   "golang",
+   "docker compose",
+   "self hosted",
+   "lightweight dashboard",
+   "customizable homepage",
+   "monitor services",
+   "github releases tracker",
+   "agpl",
+   "glance dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5097,
+  "output": 1268
+ },
+ "generated": "2026-10-29"
+}

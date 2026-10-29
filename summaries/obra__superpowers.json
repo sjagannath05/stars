@@ -1,0 +1,100 @@
+{
+ "id": "obra/superpowers",
+ "repo": "obra/superpowers",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "superpowers — Tooling for giving AI systems richer capabilities and more flexible action patterns in practical workflows."
+  },
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Skills",
+   "entry": "Superpowers by Jesse Vincent - A strong bundle of core competencies for software engineering, with good coverage of a large portion of the SDLC - from planning, reviewing, testing, debugging... Well written, well organized, and adaptable. The author refers to them as \"superpowers\", but many of them are just consolidating engineering best practices - which sometimes does feel like a superpower when"
+  }
+ ],
+ "summary": {
+  "one_liner": "Superpowers is a software development methodology and skills library for coding agents that enforces a structured workflow of brainstorming, planning, test-driven development, subagent execution, and code review.",
+  "category": "ai coding agent skills",
+  "keywords": [
+   "coding agent skills",
+   "agent workflow",
+   "claude code plugin",
+   "codex plugin",
+   "cursor plugin",
+   "gemini cli extension",
+   "test-driven development",
+   "red green refactor",
+   "tdd for ai agents",
+   "implementation planning",
+   "brainstorming before coding",
+   "subagent-driven development",
+   "parallel subagents",
+   "code review workflow",
+   "git worktrees",
+   "systematic debugging",
+   "root cause analysis",
+   "yagni dry",
+   "software development methodology",
+   "agent guardrails",
+   "plan then build",
+   "development branch finishing",
+   "merge or pull request workflow",
+   "skill authoring",
+   "session diagnostics",
+   "opencode plugin",
+   "copilot cli plugin",
+   "help ai agent write better code",
+   "structured coding process",
+   "obra superpowers"
+  ],
+  "what_it_does": "Superpowers is a set of composable skills plus bootstrap instructions that make a coding agent follow a defined development process. When the agent detects a building task, it asks clarifying questions, presents a design in short chunks for approval, and then writes an implementation plan with small tasks, exact file paths, and verification steps. Execution can run through subagent-driven development with a review after each task, or inline via executing-plans with one final review. The library includes skills for test-driven development, systematic debugging, verification before completion, requesting and receiving code review, git worktrees, finishing a branch, dispatching parallel agents, and writing new skills. A diagnosing-superpowers skill reviews session transcripts to explain misbehavior. The README says skills trigger automatically and that it can work autonomously for a couple of hours on an approved plan.",
+  "use_cases": [
+   "enforce test-first development with a coding agent",
+   "plan a feature before an AI agent writes code",
+   "run a multi-task implementation with reviewed subagents",
+   "debug a bug systematically with an agent",
+   "isolate feature work on a separate git branch",
+   "review agent-written code against a plan",
+   "investigate why an agent session went wrong"
+  ],
+  "how_to_run": [
+   "In Claude Code, run: /plugin install superpowers@claude-plugins-official",
+   "Or add the marketplace: /plugin marketplace add obra/superpowers-marketplace, then /plugin install superpowers@superpowers-marketplace",
+   "Codex CLI: open /plugins, search for superpowers, select Install Plugin",
+   "Gemini CLI: gemini extensions install <repo URL from README>",
+   "Pi: pi install git:github.com/obra/superpowers",
+   "Install separately for each coding agent harness you use; start a new session after installing"
+  ],
+  "stack": [
+   "Markdown skill files (SKILL.md)",
+   "Plugin or extension packages for Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI, OpenCode, Pi, Qwen Code, Hermes Agent, Muse, Antigravity, Devin CLI, Factory Droid, Kimi Code, Grok Build CLI",
+   "Drill eval harness (superpowers-evals) for skill-behavior tests",
+   "npm test and run-*.sh scripts for plugin infrastructure tests"
+  ],
+  "notable": [
+   "Skills trigger automatically, so the user does not need to invoke them manually",
+   "Two review modes: subagent-driven development with per-task review, or executing-plans with one final review",
+   "Plans are written for a reader with no project context, emphasizing RED-GREEN-REFACTOR, YAGNI, and DRY",
+   "diagnosing-superpowers skill reads session transcripts and can export a scrubbed bundle for a bug report",
+   "Broad harness support, with a separate install step for each agent"
+  ],
+  "caveats": [
+   "The README says new skill contributions are generally not accepted, and updates must work across all supported agents",
+   "Install is per harness; a user with several agents must install separately for each",
+   "Optional visual companion sends a logo request to the author's website with the version number; it can be disabled with SUPERPOWERS_DISABLE_TELEMETRY",
+   "Hermes loses the bootstrap after compaction in very long sessions, per the README"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6433,
+  "output": 1569
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "devinosolutions/anotifier-for-claude-codex-cursor",
+ "repo": "DevinoSolutions/anotifier-for-claude-codex-cursor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "anotifier by Amin Dhouib (Devino Solutions) - A zero-dependency, cross-platform notifier that fires a desktop toast and a free phone push (via ntfy) the moment Claude Code (or Codex/Cursor/Gemini) finishes a task or needs input, wired up by a one-command setup. The standout among notifiers is its testing rigor — CI drives the *real* agent CLIs end to end and asserts real ntfy round-trips and real "
+  }
+ ],
+ "summary": {
+  "one_liner": "A zero-dependency Node.js tool that sends desktop toast, phone push (via ntfy), webhook and terminal-bell alerts when AI coding agents such as Claude Code, Codex CLI, Cursor, Gemini CLI or Antigravity CLI finish a task or need input.",
+  "what_it_does": "Hooks into each supported agent's native hook system, configured by a setup wizard (npx anotifier@latest setup) that detects installed tools and patches their configs. On finish or permission/input requests it fires a desktop toast (BurntToast on Windows, Notification Center on macOS, libnotify on Linux, with WSL routed to Windows), a free ntfy phone push, a webhook (Slack, Discord, Telegram or generic HTTP), and a terminal bell. For Claude Code it can include the assistant's last message or question in the notification and reports turn length. It also offers quiet hours, snooze, per-project overrides, custom sound files, usage-limit and context-size warnings for Claude Code, and an opt-in anonymous usage stats setting. Config lives in ~/.anotifier/config.json, shared across tools.",
+  "use_cases": [
+   "get notified when Claude Code finishes a long task",
+   "get a phone push when an AI coding agent needs permission",
+   "send AI agent alerts to Slack or Discord",
+   "warn before Claude Code hits a usage limit or auto-compacts",
+   "silence agent notifications during nightly quiet hours",
+   "hear a terminal bell when an agent over SSH or tmux finishes"
+  ],
+  "how_to_run": [
+   "npx anotifier@latest setup",
+   "npm i -g anotifier",
+   "anotifier setup",
+   "anotifier test both",
+   "anotifier doctor --deep",
+   "/plugin marketplace add DevinoSolutions/anotifier-for-claude-codex-cursor"
+  ],
+  "stack": [
+   "Node.js (built-in modules only, no npm production dependencies)",
+   "ntfy",
+   "BurntToast (Windows)",
+   "libnotify / notify-send (Linux)",
+   "PostHog (optional, opt-in usage stats)",
+   "Sentry envelope client (optional)"
+  ],
+  "notable": [
+   "Zero dependencies: pure Node.js built-ins, with a one-command setup wizard that wires hooks for each agent",
+   "Rich notification content for Claude Code: shows Claude's actual question or last message, read from the transcript",
+   "Claude Code usage-limit (5-hour and weekly) and auto-compact context warnings via a statusline wrapper",
+   "Per-project overrides in the user's own config, plus quiet hours, snooze and minimum turn duration filter",
+   "Codex approval alerts fire when Codex asks permission, not only at turn end"
+  ],
+  "caveats": [
+   "Antigravity CLI support is not exercised by a live CI lane and has not been tested against a real run; it has no needs-input alert and every Stop says Task complete",
+   "Desktop toast behaviour differs per OS: click-to-focus is Windows only, and Linux sound is only played for custom sound files; Cursor turns are untimed",
+   "Rich content and usage/context warnings are Claude Code only; ntfy rich content is off by default for privacy on the public ntfy.sh server"
+  ],
+  "license": "unknown",
+  "category": "ai agent notifications",
+  "keywords": [
+   "claude code notifications",
+   "ai coding agent alerts",
+   "codex cli notifier",
+   "cursor notifications",
+   "gemini cli notifications",
+   "antigravity cli hooks",
+   "desktop toast notifications",
+   "windows toast",
+   "macos notification center",
+   "linux notify-send",
+   "ntfy push notifications",
+   "phone push alerts",
+   "webhook slack discord telegram",
+   "terminal bell notification",
+   "claude code hooks",
+   "agent task complete alert",
+   "permission request notification",
+   "usage limit warning",
+   "context compaction warning",
+   "quiet hours",
+   "snooze notifications",
+   "zero dependency node tool",
+   "npx setup wizard",
+   "wsl toast",
+   "tmux bell",
+   "share alerts to my phone",
+   "know when ai finishes a task",
+   "notify me when claude needs input"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16861,
+  "output": 1497
+ },
+ "generated": "2026-10-29"
+}

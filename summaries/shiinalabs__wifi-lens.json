@@ -1,0 +1,97 @@
+{
+ "id": "shiinalabs/wifi-lens",
+ "repo": "ShiinaLabs/wifi-lens",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "WiFi Lens - Native Wi-Fi analyzer and network diagnostics app with real-time spectrum scanning and BLE device tracking."
+  }
+ ],
+ "summary": {
+  "one_liner": "WiFi Lens is an open-source native macOS Wi-Fi analyzer that scans nearby networks, shows channel congestion, runs network diagnostics, and tracks BLE devices, with a commercial Pro edition adding monitoring and history.",
+  "what_it_does": "The open-source edition scans nearby Wi-Fi networks across 2.4, 5, and 6 GHz bands and shows spectrum occupancy charts and congestion scores with regional channel recommendations. It displays network details such as PHY generation, channel width, 802.11k/r/v, WPA3, and connection info (IP, gateway, DNS, MAC, Tx rate). It includes a roaming test for AP handoffs, a per-band channel heatmap, and AP Radar, which tracks a selected AP using RSSI guidance with optional audio. A BLE scanner covers Bluetooth LE discovery, RSSI analysis, and tracking. An embedded MCP HTTP server bound to 127.0.0.1 lets local AI tools read Wi-Fi data, and charts can be exported as PNG or CSV. A Network Self-Check (Preview) runs path, DNS, HTTPS, and proxy reachability checks.",
+  "use_cases": [
+   "Diagnose Wi-Fi congestion and pick a less crowded channel",
+   "Inspect nearby networks' security and PHY capabilities",
+   "Check roaming handoffs between access points",
+   "Find a better spot for a router using RSSI tracking",
+   "Connect an AI assistant to local Wi-Fi data",
+   "Scan and track nearby Bluetooth LE devices"
+  ],
+  "how_to_run": [
+   "Download the latest release from GitHub Releases",
+   "brew tap ShiinaLabs/apps && brew install --cask ShiinaLabs/apps/wifi-lens",
+   "git clone the repository",
+   "git submodule update --init ChartLens",
+   "cd WiFiLens",
+   "xcodebuild -project WiFiLens.xcodeproj -scheme \"WiFi Lens\" -configuration Debug -destination 'platform=macOS' build"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode / xcodebuild",
+   "ChartLens (git submodule)",
+   "Sparkle (auto-updates, GitHub edition)",
+   "Embedded HTTP MCP server"
+  ],
+  "notable": [
+   "Embedded MCP server lets AI assistants like Claude Desktop or Codex query live local Wi-Fi data",
+   "BLE scanner included in the open-source edition",
+   "Local-first with no telemetry; MCP binds only to 127.0.0.1",
+   "Forked from tiny-wifi-analyzer with MAC vendor data from IEEE",
+   "Localized into English, German, Spanish, Japanese, and Chinese"
+  ],
+  "caveats": [
+   "Requires macOS 14.6 or later and Location Services enabled to read SSID names",
+   "6 GHz scanning needs Wi-Fi 6E/7 hardware",
+   "Continuous monitoring, event history, statistics, insights, spectrum recording, and menu bar monitoring are only in the paid Pro edition (Mac App Store)",
+   "Network Self-Check is marked Preview"
+  ],
+  "license": "Apache License 2.0",
+  "category": "macos wi-fi analysis",
+  "keywords": [
+   "wifi analyzer",
+   "wi-fi analyzer mac",
+   "wifi scanner",
+   "wireless analyzer",
+   "macos wifi tool",
+   "channel congestion",
+   "channel recommendation",
+   "spectrum analyzer",
+   "2.4 ghz 5 ghz 6 ghz",
+   "wifi 6e",
+   "rssi",
+   "roaming test",
+   "ap handoff",
+   "channel heatmap",
+   "wpa3",
+   "802.11k",
+   "network diagnostics",
+   "dns check",
+   "https reachability",
+   "proxy check",
+   "bluetooth le scanner",
+   "ble tracking",
+   "mcp server",
+   "ai assistant wifi data",
+   "claude desktop",
+   "swift macos app",
+   "sparkle updates",
+   "homebrew cask",
+   "find less crowded wifi channel",
+   "why is my wifi slow",
+   "check nearby wifi networks",
+   "tiny-wifi-analyzer fork"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5409,
+  "output": 1530
+ },
+ "generated": "2026-10-29"
+}

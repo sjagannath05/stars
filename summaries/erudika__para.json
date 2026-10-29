@@ -1,0 +1,118 @@
+{
+ "id": "erudika/para",
+ "repo": "erudika/para",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - API Management",
+   "entry": "Para - Flexible and modular backend framework/server for object persistence, API development and authentication. (Source Code) Apache-2.0 Java/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Para is a scalable, multitenant Java backend server and framework for object persistence, search, caching, and authentication, usable embedded in a JVM app or deployed as a standalone API server.",
+  "category": "backend api server",
+  "keywords": [
+   "backend framework",
+   "backend server",
+   "baas",
+   "backend as a service",
+   "rest api",
+   "json api",
+   "multitenant",
+   "multi-tenant api server",
+   "object persistence",
+   "data persistence",
+   "object storage",
+   "full-text search",
+   "lucene",
+   "elasticsearch",
+   "opensearch",
+   "distributed cache",
+   "hazelcast",
+   "caffeine",
+   "jwt authentication",
+   "stateless authentication",
+   "signature v4",
+   "webhooks",
+   "spring security",
+   "ldap",
+   "saml",
+   "social login",
+   "dynamodb",
+   "mongodb",
+   "cassandra",
+   "postgresql",
+   "h2 database",
+   "java",
+   "docker",
+   "kubernetes helm",
+   "para-cli",
+   "amazon s3",
+   "amazon ses",
+   "firebase alternative",
+   "parse server alternative",
+   "mcp server",
+   "ai agent backend",
+   "dropwizard metrics",
+   "guice plugins"
+  ],
+  "what_it_does": "Para provides a RESTful JSON API for storing and retrieving objects, secured with Amazon's Signature V4 signing and stateless JWT tokens. It is database-agnostic, with DAO plugins named for DynamoDB, Cassandra, MongoDB, and SQL databases, with H2 as the default. Full-text search can use Lucene or Elasticsearch/OpenSearch, and objects can be cached locally with Caffeine or distributed with Hazelcast. Each app gets its own table, index, and cache, and features include webhooks with signed payloads, resource permissions, JSR-303 validation, and Dropwizard metrics. The README also mentions an MCP server for AI agents and a Para Web Console admin interface.",
+  "use_cases": [
+   "Backend for a mobile or web application",
+   "Multitenant API server shared by several apps",
+   "Object storage with full-text search",
+   "Adding user authentication and access tokens to an app",
+   "Embedding a persistence layer in a JVM application",
+   "Letting AI agents interact with a backend via MCP"
+  ],
+  "how_to_run": [
+   "Download the latest executable JAR",
+   "Create an application.conf file in the same directory as the JAR",
+   "Start Para with: java -jar -Dconfig.file=./application.conf para-*.jar",
+   "Install the CLI with: npm install -g para-cli",
+   "Run: para-cli setup, then para-cli new-app \"myapp\" --name \"My App\"",
+   "Or run the Docker image: docker run -ti -p 8080:8080 --rm -v $(pwd)/data:/para/data -v $(pwd)/application.conf:/para/application.conf -e JAVA_OPTS=\"-Dconfig.file=/para/application.conf\" erudikaltd/para:latest_stable"
+  ],
+  "stack": [
+   "Java (JDK 8+)",
+   "Maven",
+   "Spring Security",
+   "Google Guice",
+   "Jackson",
+   "Hibernate Validator (JSR-303)",
+   "Jetty",
+   "Dropwizard metrics",
+   "Lucene",
+   "Elasticsearch / OpenSearch",
+   "Hazelcast",
+   "Caffeine",
+   "H2 (default DAO)",
+   "Docker",
+   "Helm"
+  ],
+  "notable": [
+   "Database-agnostic design with pluggable DAO, search, cache, queue, file store, and emailer implementations",
+   "Client-side admin console: the secret key stays in the browser and a JWT is generated locally for each request",
+   "Per-app multitenancy, with each app getting its own table, index, and cache",
+   "Can run embedded in a JVM application or as a standalone multitenant API server",
+   "Optional native image build via Maven profile"
+  ],
+  "caveats": [
+   "The README describes the Elasticsearch v5 integration as deprecated.",
+   "Native images are platform-dependent and must be built per architecture.",
+   "Hosted managed service and premium support are offered by Erudika at paraio.com, and the README lists paid tiers there.",
+   "The README says the :latest Docker tag can be broken or unstable, so release tags are recommended."
+  ],
+  "license": "Apache 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6220,
+  "output": 1521
+ },
+ "generated": "2026-10-29"
+}

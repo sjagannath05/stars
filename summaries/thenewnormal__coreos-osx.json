@@ -1,0 +1,98 @@
+{
+ "id": "thenewnormal/coreos-osx",
+ "repo": "TheNewNormal/coreos-osx",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🌍 Web Development (15)",
+   "entry": "CoreOS VM - CoreOS VM is macOS status bar app which allows in an easy way to control CoreOS VM on your Mac."
+  }
+ ],
+ "summary": {
+  "one_liner": "CoreOS VM is a macOS status bar app for starting, stopping and managing a CoreOS virtual machine using the corectl command line tool and macOS's native Hypervisor framework.",
+  "what_it_does": "The app sits in the macOS status bar and lets you Up and Halt a CoreOS VM, open an SSH shell to it, and open an OS shell with DOCKER_HOST preset. It relies on the corectl tool (with its companion Corectl App acting as the corectld daemon) so no VirtualBox or other virtualisation software is needed. The install downloads the latest CoreOS ISO, sets up a docker macOS client, and adds helper scripts for rkt, etcdctl, docker2aci and a docker-exec shortcut to ~/coreos-osx/bin. A persistent QCow2 data.img disk is mounted to /data with bind mounts for Docker, rkt, etcd2 and /opt/bin, and the Mac home folder is mounted into the VM via NFS. A corevm CLI offers start, stop, status, ip, shell and ssh commands for scripting. The README also mentions a Docker registry on 192.168.64.1:5000 and a UI for Docker run as unit files.",
+  "use_cases": [
+   "build and test Docker images locally on a Mac",
+   "run a CoreOS VM without VirtualBox",
+   "test rkt containers on macOS",
+   "convert Docker images to rkt ACI images",
+   "script CoreOS VM start and stop tasks",
+   "share Docker images with local Kubernetes apps on macOS"
+  ],
+  "how_to_run": [
+   "Install the Corectl App (latest dmg from the Releases page) into /Applications",
+   "Download CoreOS latest.dmg from the Releases page and drag the CoreOS app to your Desktop",
+   "Start the CoreOS app and complete the Initial setup",
+   "Use the status bar icon to Up the VM and open an OS Shell",
+   "Optionally copy the corevm CLI from ~/coreos-osx/bin to your PATH"
+  ],
+  "stack": [
+   "macOS",
+   "corectl",
+   "xhyve",
+   "CoreOS",
+   "Docker",
+   "rkt",
+   "etcd",
+   "docker2aci",
+   "iTerm2",
+   "QCow2",
+   "NFS"
+  ],
+  "notable": [
+   "Uses macOS native Hypervisor framework via corectl, avoiding VirtualBox",
+   "Status bar app with Up/Halt, SSH and OS Shell menu items",
+   "Persistent sparse QCow2 data disk keeps Docker, rkt and etcd data across reboots",
+   "corevm CLI for automation",
+   "Home folder mounted into the VM via NFS"
+  ],
+  "caveats": [
+   "Requires macOS 10.10.3 Yosemite or later and a Mac from 2010 or later",
+   "Needs the separate Corectl App installed as the corectld server daemon",
+   "Installs iTerm2 if it is not already present"
+  ],
+  "license": "Apache License, Version 2.0",
+  "category": "macos virtualization tools",
+  "keywords": [
+   "coreos",
+   "coreos vm",
+   "macos",
+   "status bar app",
+   "menu bar app",
+   "corectl",
+   "xhyve",
+   "hypervisor framework",
+   "docker",
+   "docker client macos",
+   "rkt",
+   "etcdctl",
+   "docker2aci",
+   "virtual machine mac",
+   "run linux vm on mac",
+   "vagrant alternative",
+   "virtualbox alternative",
+   "local docker registry",
+   "test docker images locally",
+   "container development mac",
+   "coreos iso",
+   "docker-exec",
+   "corevm cli",
+   "kubernetes local mac",
+   "nfs home mount",
+   "persistent data disk",
+   "qcow2",
+   "build containers on mac",
+   "docker desktop alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3661,
+  "output": 1360
+ },
+ "generated": "2026-10-29"
+}

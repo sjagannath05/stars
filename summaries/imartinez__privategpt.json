@@ -1,0 +1,96 @@
+{
+ "id": "imartinez/privategpt",
+ "repo": "imartinez/privateGPT",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "PrivateGPT is an open-source API layer that builds private AI applications (messages, ingestion, retrieval, tools, MCP) on top of any OpenAI-compatible local inference server such as Ollama.",
+  "what_it_does": "PrivateGPT does not run models itself; it connects to an OpenAI-compatible inference server via OPENAI_API_BASE and expects endpoints like /v1/chat/completions and /v1/models. On top of that it exposes an Anthropic/Claude-style API with a messages endpoint supporting streaming, async processing, and token counting. It handles file and document ingestion (including PDFs) with retrieval, citations, and embeddings. It offers built-in tools (web search, web fetch, code execution), custom tools, MCP and remote MCP server connectors, and built-in database and CSV/tabular querying. A built-in workbench UI at /ui is provided for testing and demos, and the README describes the API as the main product.",
+  "use_cases": [
+   "Build a private AI app without cloud APIs",
+   "Chat with and cite local documents and PDFs",
+   "Use local models as backend for Claude Code or Claude Desktop",
+   "Query databases and CSV files with a local LLM",
+   "Add custom tools and MCP connectors to a local model",
+   "Serve a local OpenAI-compatible model to tools like n8n or VS Code"
+  ],
+  "how_to_run": [
+   "brew tap zylon-ai/tap && brew install private-gpt (macOS)",
+   "uv tool install --python 3.11 --find-links <url> \"private-gpt[core]\" (Linux/Windows; install scripts are linked in the README)",
+   "ollama pull qwen3.5:35b && ollama pull mxbai-embed-large && ollama serve",
+   "OPENAI_API_BASE=<your LLM server>/v1 OPENAI_EMBEDDING_API_BASE=<your server>/v1 private-gpt serve",
+   "Open the UI at the /ui path of the running server"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "Ollama (example inference server)",
+   "OpenAI-compatible inference servers (llama.cpp, vLLM, etc.)",
+   "MCP"
+  ],
+  "notable": [
+   "Acts as an API layer that sits on top of existing local inference servers rather than running models itself",
+   "Mirrors the Claude API surface, including messages, tool use, streaming, and citations",
+   "Built-in database querying and CSV/tabular analysis",
+   "Ships a workbench UI at /ui intended for demos and testing, with an API debugger",
+   "Maintained by Zylon, which offers a commercial enterprise platform built on top"
+  ],
+  "caveats": [
+   "Requires a separately running OpenAI-compatible LLM server; PrivateGPT does not run models itself",
+   "Some Claude API features are missing or partial: prompt caching is not supported, OAuth/organizations are not supported, and Skills are basic",
+   "Enterprise features such as LDAP, SIEM audit logs, Kubernetes deployment, and air-gapped operation belong to the paid Zylon platform, not the open-source project",
+   "Example model qwen3.5:35b needs roughly 24 GB of download"
+  ],
+  "license": "unknown",
+  "category": "local llm api layer",
+  "keywords": [
+   "privategpt",
+   "local llm",
+   "private ai",
+   "openai-compatible api",
+   "ollama backend",
+   "llama.cpp",
+   "vllm",
+   "self-hosted ai",
+   "rag",
+   "retrieval augmented generation",
+   "document chat",
+   "chat with pdfs",
+   "citations",
+   "embeddings",
+   "mcp server",
+   "mcp connectors",
+   "claude api compatible",
+   "anthropic api spec",
+   "tool use",
+   "custom tools",
+   "web search tool",
+   "csv analysis",
+   "database querying",
+   "claude code local backend",
+   "n8n integration",
+   "air-gapped ai",
+   "offline ai assistant",
+   "on-premise ai",
+   "alternative to open webui",
+   "alternative to lm studio",
+   "run ai without cloud",
+   "share documents with an llm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4939,
+  "output": 1461
+ },
+ "generated": "2026-10-29"
+}

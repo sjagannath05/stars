@@ -1,0 +1,98 @@
+{
+ "id": "prassanna-ravishankar/repowire",
+ "repo": "prassanna-ravishankar/repowire",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "Repowire by Prassanna Ravishankar - A live mesh network that connects Claude Code and other providers so they can talk to each other in real time. Built for emergent coordination. Agents discover each other and share context across project boundaries. Uses tmux sessions as the coordination layer with logical \"circles\" for peer isolation. Includes a web dashboard and Telegram bot."
+  }
+ ],
+ "summary": {
+  "one_liner": "Repowire is a local mesh that lets already-running coding agents (Claude Code, Codex, OpenCode, Pi) discover each other by name and exchange messages without copy-paste, with a browser dashboard, Telegram and Slack control surfaces.",
+  "what_it_does": "Repowire runs a local Go daemon that keeps a registry of agent sessions (\"peers\") and routes non-blocking asks and notifications between them. Agents reach it through MCP tools such as ask, and replies come back as explicit ack notifications. It provides a browser dashboard at localhost:8377/dashboard, Telegram and Slack bridges that route human messages in as service peers, and a durable human inbox. It also supports durable jobs with run/retry/cancel, scheduled wake-ups and check-ins, and an optional orchestrator peer that dispatches and reviews work. Commits made through Repowire can carry Repowire-Thread trailers that the `repowire why` command replays. An optional hosted relay provides remote dashboard and remote MCP access over outbound connections.",
+  "use_cases": [
+   "let Claude Code and Codex sessions in different repos ask each other questions",
+   "monitor and nudge running coding agents from a phone or browser",
+   "run a coordinator agent that dispatches tasks to project peers",
+   "schedule reminders or delayed check-ins for an agent session",
+   "schedule recurring background jobs for agent workers",
+   "replay the agent conversations behind a git commit"
+  ],
+  "how_to_run": [
+   "brew install prassanna-ravishankar/repowire/repowire",
+   "repowire setup",
+   "repowire peer list",
+   "repowire peer new ~/projects/project-a",
+   "repowire setup --relay  (optional, for remote access)"
+  ],
+  "stack": [
+   "Go (daemon, MCP server)",
+   "TypeScript (OpenCode plugin, web dashboard)",
+   "tmux",
+   "SQLite (~/.repowire/state.db)",
+   "WebSocket",
+   "MCP",
+   "Telegram bot",
+   "Slack"
+  ],
+  "notable": [
+   "Peers from different runtimes (Claude Code, Codex, OpenCode, Pi) message each other through one daemon",
+   "Asks are non-blocking with explicit ack replies and reminders until the thread closes",
+   "Git trailers link agent commits to the conversations that produced them",
+   "Human inbox: the user is a peer and receives notifies and asks with Telegram receipts",
+   "Routing defaults to static named-peer delivery; other strategies are opt-in"
+  ],
+  "caveats": [
+   "Claude Code 2.1.224+ is required for the Claude Code workflow",
+   "Tmux is required for the default Claude Code workflow and Repowire-managed spawning; macOS or Linux only",
+   "Agents on different machines do not message each other; the relay is for remote access only",
+   "Experimental channel/ACP transport is opt-in"
+  ],
+  "license": "MIT",
+  "category": "multi-agent coordination",
+  "keywords": [
+   "multi-agent coordination",
+   "coding agents",
+   "agent-to-agent messaging",
+   "claude code",
+   "codex",
+   "opencode",
+   "pi agent",
+   "mesh network",
+   "tmux",
+   "mcp server",
+   "local daemon",
+   "agent orchestration",
+   "orchestrator agent",
+   "telegram bot",
+   "slack bot",
+   "web dashboard",
+   "scheduled jobs",
+   "cron agent tasks",
+   "message another repo",
+   "let agents talk to each other",
+   "share context across projects",
+   "control coding agents from phone",
+   "remote mcp access",
+   "oauth relay",
+   "git commit trace",
+   "peer discovery",
+   "agent inbox",
+   "golang daemon",
+   "sqlite state",
+   "claude squad alternative",
+   "multi-repo coordination"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7229,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

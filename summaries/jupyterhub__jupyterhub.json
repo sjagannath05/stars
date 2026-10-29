@@ -1,0 +1,96 @@
+{
+ "id": "jupyterhub/jupyterhub",
+ "repo": "jupyterhub/jupyterhub",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "JupyterHub | Multi-user server for Jupyter notebooks"
+  }
+ ],
+ "summary": {
+  "one_liner": "JupyterHub is a multi-user Hub that spawns, manages, and proxies multiple single-user Jupyter notebook servers for groups such as classes, data science teams, or research projects.",
+  "what_it_does": "JupyterHub runs three main parts: a tornado-based Hub process, a configurable HTTP proxy (node-http-proxy, installed as configurable-http-proxy), and multiple single-user Jupyter notebook servers. The Hub handles login and spawns single-user servers on demand, and configures the proxy to forward URL prefixes to each server. It provides a REST API for administering the Hub and its users. Authentication defaults to the system's PAM users, and other authenticators (OAuth, LDAP, Kerberos) are listed. Spawner options listed in the README include local processes, Docker containers, Kubernetes, systemd, batch schedulers, and Hadoop YARN. A starter Docker image (quay.io/jupyterhub/jupyterhub) provides the Hub alone without configuration.",
+  "use_cases": [
+   "host notebooks for a class of students",
+   "run shared Jupyter notebook servers for a data science team",
+   "provide per-user Jupyter environments on a research or HPC cluster",
+   "spawn notebook servers in Docker containers or Kubernetes",
+   "add login-based access to Jupyter notebooks on a Linux server"
+  ],
+  "how_to_run": [
+   "conda install -c conda-forge jupyterhub",
+   "npm install -g configurable-http-proxy",
+   "python3 -m pip install jupyterhub",
+   "jupyterhub",
+   "jupyterhub --generate-config",
+   "docker run -p 8000:8000 -d --name jupyterhub quay.io/jupyterhub/jupyterhub jupyterhub"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "tornado",
+   "Node.js / npm",
+   "configurable-http-proxy (node-http-proxy)",
+   "Jupyter / JupyterLab / Jupyter Notebook",
+   "Docker"
+  ],
+  "notable": [
+   "Multi-user Hub that spawns separate Jupyter notebook servers per user on demand",
+   "Pluggable Authenticator and Spawner architecture with several listed options (PAM, OAuth, LDAP, Kerberos; local, Docker, Kubernetes, systemd, batch, YARN)",
+   "REST API for administering the Hub and its users",
+   "Official Docker starter image containing only the Hub, requiring a derived image for configuration"
+  ],
+  "caveats": [
+   "Officially supports Linux/Unix only; Windows is not supported and bugs there are not accepted (Docker or a Linux VM is recommended instead)",
+   "Letting multiple users sign in requires running jupyterhub as a privileged user such as root; running as a less privileged user needs extra system configuration",
+   "The Docker image has no configuration and needs a derived image with at least a jupyterhub_config.py, and the README says SSL must be added for public IPs"
+  ],
+  "category": "multi-user notebook server",
+  "license": "revised BSD license",
+  "keywords": [
+   "jupyterhub",
+   "jupyter notebook",
+   "multi-user jupyter",
+   "multi-user notebook server",
+   "jupyter notebook server",
+   "jupyterlab",
+   "single-user notebook",
+   "notebook hub",
+   "tornado",
+   "configurable-http-proxy",
+   "node-http-proxy",
+   "pam authenticator",
+   "oauth authenticator",
+   "ldap authenticator",
+   "kerberos authenticator",
+   "dockerspawner",
+   "kubespawner",
+   "systemdspawner",
+   "batchspawner",
+   "yarnspawner",
+   "sudospawner",
+   "rest api",
+   "docker image",
+   "quay.io jupyterhub",
+   "host notebooks for students",
+   "shared notebooks for data science team",
+   "run jupyter for a class",
+   "jupyter on a shared server",
+   "hpc jupyter notebooks",
+   "self-hosted jupyter",
+   "login to jupyter notebooks",
+   "per-user notebook environments",
+   "bsd licensed jupyter"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4186,
+  "output": 1460
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "qwenlm/qwen3-coder",
+ "repo": "QwenLM/Qwen3-Coder",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Qwen",
+   "entry": "Qwen3-Coder – Coding-focused family"
+  }
+ ],
+ "summary": {
+  "one_liner": "Qwen3-Coder is Alibaba Qwen's family of open-weight coding language models (including Qwen3-Coder-Next, 480B-A35B and 30B-A3B instruct variants) aimed at agentic coding and local development.",
+  "what_it_does": "The README describes instruct and base checkpoints in several sizes, including Qwen3-Coder-480B-A35B-Instruct, Qwen3-Coder-30B-A3B-Instruct, and Qwen3-Coder-Next (built on Qwen3-Next-80B-A3B-Base with hybrid attention and MoE), plus FP8, GGUF, and base variants. It supports a 256K-token context, extendable to 1M with Yarn, and is said to cover 358 coding languages. The README includes a transformers quick-start for chatting via the chat template and a fill-in-the-middle (code insertion) example using a prefix/suffix prompt format. It states the models support only non-thinking mode, and that function calling relies on a new tool parser in SGLang and vLLM, with an updated tokenizer required. Use-case examples show prompts run through tools such as Qwen Code, Claude Code, Cline, and Qwen Chat Web Dev, for tasks like building a website, a browser game, and a canvas drawing tool.",
+  "use_cases": [
+   "local coding assistant",
+   "agentic coding with coding agents",
+   "code completion and fill-in-the-middle",
+   "repository-scale code understanding with long context",
+   "generating web pages and browser games from prompts",
+   "running open-weight code models via transformers, SGLang or vLLM"
+  ],
+  "how_to_run": [
+   "pip install transformers (then load Qwen/Qwen3-Coder-Next with AutoModelForCausalLM.from_pretrained)",
+   "Build the prompt with tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)",
+   "Generate with model.generate(**model_inputs, max_new_tokens=65536) and decode with tokenizer.batch_decode",
+   "For fill-in-the-middle, format the prompt as prefix_code + suffix_code using the FIM tokens described in the README and call generate with the listed eos_token_ids",
+   "Download checkpoints from Hugging Face or ModelScope by searching for names starting with Qwen3-Coder-"
+  ],
+  "stack": [
+   "Python",
+   "transformers",
+   "PyTorch",
+   "Hugging Face",
+   "ModelScope",
+   "SGLang",
+   "vLLM",
+   "GGUF"
+  ],
+  "notable": [
+   "Mixture-of-experts instruct models (480B-A35B and 30B-A3B) plus Qwen3-Coder-Next built on a hybrid attention and MoE base",
+   "Native 256K context, extendable to 1M tokens with Yarn",
+   "Fill-in-the-middle code insertion supported in every version",
+   "Quantized FP8 and GGUF variants listed alongside full-precision checkpoints",
+   "Function-call format uses a dedicated tool parser in SGLang and vLLM"
+  ],
+  "caveats": [
+   "Supports only non-thinking mode; the README says it does not generate thinking blocks",
+   "Function calling needs the new tool parser in SGLang or vLLM and the updated tokenizer",
+   "Large variants such as the 480B model are implied to need substantial hardware; the README does not give hardware requirements"
+  ],
+  "license": "unknown",
+  "category": "open-weight coding llm",
+  "keywords": [
+   "qwen3-coder",
+   "qwen coder",
+   "coding llm",
+   "open-weight code model",
+   "code generation model",
+   "agentic coding",
+   "coding agent model",
+   "fill in the middle",
+   "code completion",
+   "code infilling",
+   "mixture of experts",
+   "moe model",
+   "long context code model",
+   "256k context",
+   "gguf",
+   "fp8 quantized",
+   "transformers",
+   "vllm",
+   "sglang",
+   "hugging face model",
+   "modelscope",
+   "claude code alternative",
+   "cline",
+   "qwen code",
+   "local coding assistant",
+   "write code with ai locally",
+   "generate web page from prompt",
+   "build browser game with ai",
+   "code in 358 languages",
+   "self-hosted code assistant"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9361,
+  "output": 1505
+ },
+ "generated": "2026-10-29"
+}

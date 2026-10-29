@@ -1,0 +1,87 @@
+{
+ "id": "magicstack/asyncpg",
+ "repo": "MagicStack/asyncpg",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database Drivers",
+   "entry": "asyncpg - A fast PostgreSQL database client library for Python/asyncio."
+  }
+ ],
+ "summary": {
+  "one_liner": "asyncpg is a fast PostgreSQL client library for Python's asyncio, implementing the PostgreSQL server binary protocol natively.",
+  "what_it_does": "It provides an asyncio-based interface to PostgreSQL rather than a DB-API wrapper, and exposes PostgreSQL features directly. The README lists support for prepared statements, scrollable cursors, partial iteration over query results, and automatic encoding and decoding of composite types, arrays, and combinations of those. It also supports straightforward custom data types. Connections are made with asyncpg.connect, and queries run with methods such as conn.fetch using $1-style parameters. Installation is via pip, with no dependencies unless GSSAPI/SSPI authentication is needed. The README says it requires Python 3.9 or later and supports PostgreSQL 9.5 to 19. It reports being about 5x faster than psycopg3 in the authors' June 2023 benchmarks.",
+  "use_cases": [
+   "connect Python asyncio app to PostgreSQL",
+   "run async queries against a PostgreSQL database",
+   "high-throughput database access in async services",
+   "use prepared statements and cursors with PostgreSQL",
+   "map PostgreSQL arrays and composite types to Python",
+   "fetch query results incrementally with scrollable cursors"
+  ],
+  "how_to_run": [
+   "pip install asyncpg",
+   "pip install 'asyncpg[gssauth]'  # only if GSSAPI/SSPI authentication is needed",
+   "import asyncpg; conn = await asyncpg.connect(user='user', password='password', database='database', host='127.0.0.1')",
+   "values = await conn.fetch('SELECT * FROM mytable WHERE id = $1', 10)",
+   "await conn.close()"
+  ],
+  "stack": [
+   "Python",
+   "asyncio",
+   "PostgreSQL binary protocol"
+  ],
+  "notable": [
+   "Implements the PostgreSQL server binary protocol natively rather than through DB-API",
+   "Automatic encoding and decoding of composite types and arrays",
+   "Prepared statements, scrollable cursors, and partial result iteration",
+   "Reported about 5x faster than psycopg3 in the authors' benchmarks"
+  ],
+  "caveats": [
+   "Only PostgreSQL 9.5 to 19 is actively tested; other PostgreSQL versions or PostgreSQL-protocol databases may work but are untested",
+   "Requires Python 3.9 or later",
+   "Asyncio-only; the README does not describe a synchronous API"
+  ],
+  "license": "Apache 2.0",
+  "category": "postgresql database driver",
+  "keywords": [
+   "asyncpg",
+   "postgresql",
+   "postgres",
+   "python driver",
+   "asyncio",
+   "async database client",
+   "binary protocol",
+   "prepared statements",
+   "scrollable cursors",
+   "composite types",
+   "arrays",
+   "custom data types",
+   "psycopg3 alternative",
+   "psycopg alternative",
+   "database connection pool",
+   "async sql queries",
+   "fast database client",
+   "gssapi authentication",
+   "sspi authentication",
+   "pip install postgres driver",
+   "connect python to postgresql",
+   "async postgres library",
+   "database interface library",
+   "partial result iteration",
+   "high performance database access",
+   "python database library",
+   "pg client"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2227,
+  "output": 1204
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "dbader/schedule",
+ "repo": "dbader/schedule",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Job Schedulers",
+   "entry": "schedule - Python job scheduling for humans."
+  }
+ ],
+ "summary": {
+  "one_liner": "schedule is a lightweight in-process Python library for running Python functions or other callables periodically using a human-friendly, chained syntax.",
+  "what_it_does": "The library lets you register jobs with a readable API such as schedule.every(10).minutes.do(job), or schedule.every().day.at(\"10:30\"). It supports intervals in seconds, minutes, hours and days, weekday-specific jobs, ranges like every(5).to(10).minutes, and time-of-day or minute-offset targeting. Jobs can take arguments via do(job, name=\"Peter\"). You drive it by calling schedule.run_pending() in a loop, with time.sleep between checks. The README says it runs in-process with no extra processes and no external dependencies. Documentation is hosted on readthedocs.",
+  "use_cases": [
+   "run a Python function every few minutes",
+   "schedule daily tasks at a set time",
+   "replace cron jobs inside a Python script",
+   "periodic background polling in a long-running process",
+   "run weekly jobs on a specific weekday"
+  ],
+  "how_to_run": [
+   "pip install schedule",
+   "import schedule and time",
+   "define a job function, e.g. def job(): print(\"I'm working...\")",
+   "register it, e.g. schedule.every(10).minutes.do(job)",
+   "loop: while True: schedule.run_pending(); time.sleep(1)"
+  ],
+  "stack": [
+   "Python"
+  ],
+  "notable": [
+   "Chained, English-like API for expressing intervals and times",
+   "In-process scheduler with no separate worker processes",
+   "No external dependencies",
+   "Supports time zones in at() calls, e.g. at(\"12:42\", \"Europe/Amsterdam\")",
+   "Inspired by Adam Wiggins' Rethinking Cron article and the Ruby clockwork module"
+  ],
+  "caveats": [
+   "The README does not describe persistence; jobs live only while the process runs.",
+   "Scheduling relies on the caller looping and invoking run_pending() themselves."
+  ],
+  "license": "MIT",
+  "category": "python job scheduling",
+  "keywords": [
+   "python scheduler",
+   "job scheduling",
+   "periodic tasks",
+   "recurring jobs",
+   "cron alternative",
+   "in-process scheduler",
+   "run function every n minutes",
+   "daily task at a time",
+   "weekday scheduling",
+   "run_pending",
+   "schedule.every",
+   "interval scheduling",
+   "background jobs python",
+   "lightweight scheduler",
+   "task scheduler library",
+   "timed function execution",
+   "cron in python",
+   "schedule python script",
+   "time zone scheduling",
+   "repeat task periodically",
+   "no dependencies scheduler",
+   "python automation timer",
+   "every 10 minutes python",
+   "run job at 10:30",
+   "scheduled callable",
+   "recurring function calls",
+   "python cron replacement",
+   "job runner loop",
+   "human-friendly scheduling",
+   "periodic polling python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2026,
+  "output": 1037
+ },
+ "generated": "2026-10-29"
+}

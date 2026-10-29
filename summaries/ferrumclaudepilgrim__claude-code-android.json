@@ -1,0 +1,104 @@
+{
+ "id": "ferrumclaudepilgrim/claude-code-android",
+ "repo": "ferrumclaudepilgrim/claude-code-android",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "claude-code-android by ferrumclaudepilgrim - A thorough, device-tested guide and toolkit for running Claude Code natively on Android via three paths (Termux, proot-Ubuntu, and the Android Virtualization Framework), with a verification harness and per-device results. Unusually security-aware for a setup guide — it ships a threat model, an SSRF-guard WebFetch hook, a biometric approval gate, and a p"
+  }
+ ],
+ "summary": {
+  "one_liner": "A device-tested guide and toolkit for running Claude Code natively on Android through three install paths (Termux, proot-Ubuntu, and the Android Virtualization Framework), with a verification harness, per-device results, and security guidance.",
+  "category": "android developer tooling",
+  "keywords": [
+   "claude code",
+   "android",
+   "termux",
+   "proot-distro",
+   "ubuntu on android",
+   "android virtualization framework",
+   "avf",
+   "linux development environment",
+   "on-device ai coding",
+   "command-line claude",
+   "run claude code on phone",
+   "install claude code on android",
+   "no root android install",
+   "pixel 6",
+   "pixel 10 pro",
+   "galaxy s26 ultra",
+   "moto g7 power",
+   "galaxy s7",
+   "termux:api",
+   "adb",
+   "wireless debugging",
+   "ssrf guard",
+   "webfetch hook",
+   "threat model",
+   "prompt injection",
+   "biometric approval",
+   "auto-update launcher",
+   "rollback",
+   "dns resolver",
+   "patched binary",
+   "anthropic cli",
+   "mobile coding agent",
+   "device compatibility"
+  ],
+  "what_it_does": "The repository provides installation scripts and documentation for running the Claude Code CLI on an Android phone without root or a cloud VM. Path A (Native Termux) uses an install script that sets up a Termux compatibility layer and a launcher that checks for new Claude Code versions daily, keeps a backup version, and can roll back after a detected startup crash. Path B runs Ubuntu inside Termux via proot-distro and installs Claude Code with Anthropic's own installer, at a cost of roughly 2 GB of storage. Path C targets phones with Android's Linux development environment option and runs a Debian VM through AVF. The README also covers a pinned fallback install for Android 8 to 10 devices, device compatibility results from specific phones, troubleshooting and recovery steps, and a security model describing prompt injection, storage and ADB risks, and the DNS resolver change. It also documents example uses such as geofence alerts, voice chat through a Termux skill, and notification triage. The README mentions an SSRF-guard WebFetch hook, a biometric approval gate, and a verification harness in its description, but the README body itself does not detail them.",
+  "use_cases": [
+   "Run Claude Code on an Android phone without root",
+   "Set up a Linux environment with Claude Code inside Termux",
+   "Choose between Termux, proot Ubuntu, and AVF install paths",
+   "Check whether a specific Android phone can run Claude Code",
+   "Recover or roll back a broken Claude Code install on Android",
+   "Review security risks before giving an AI agent access to phone files and ADB"
+  ],
+  "how_to_run": [
+   "Install Termux from F-Droid or GitHub (not Google Play) on a 64-bit phone",
+   "Open Termux and download install.sh with curl -fsSL -o install.sh <url> (the URL is not given in the README)",
+   "bash install.sh",
+   "Open a new Termux session and run: claude",
+   "On Android 8, 9, or 10, use install-pinned.sh instead of install.sh, or use Path B",
+   "Path B and Path C are separate guides linked from the README"
+  ],
+  "stack": [
+   "Termux",
+   "Bash",
+   "Claude Code CLI (Anthropic)",
+   "proot-distro",
+   "Ubuntu",
+   "Debian (Path C VM)",
+   "Android Virtualization Framework (AVF)",
+   "glibc-packages",
+   "Termux:API",
+   "ADB"
+  ],
+  "notable": [
+   "Three distinct install paths, from a lightweight Termux setup to a full Linux VM via AVF",
+   "Auto-update launcher that keeps a previous version as backup and tries saved versions after a startup crash",
+   "Per-device test results and a call for community device reports",
+   "Security-focused documentation with a threat model and a list of start-safe practices",
+   "Author describes running voice mode on Android by building a microphone module for Termux, with two pull requests to Termux upstream"
+  ],
+  "caveats": [
+   "Path A is not an official Anthropic Android build; it runs Anthropic's Linux version through a Termux compatibility layer",
+   "Path A's launcher cannot recover without a usable saved version and cannot catch every failure during use",
+   "Path A sets the DNS resolver to Google's 8.8.8.8 and 8.8.4.4 by default, bypassing a local DNS server such as Pi-hole",
+   "Path C is labeled experimental and is tested on only a few devices",
+   "Android 8 to 10 phones can only use the pinned older Claude Code 2.1.112 fallback; the maintainer states the project is maintained alone"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5245,
+  "output": 1655
+ },
+ "generated": "2026-10-29"
+}

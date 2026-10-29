@@ -1,0 +1,95 @@
+{
+ "id": "bluewave-labs/checkmate",
+ "repo": "bluewave-labs/Checkmate",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Checkmate | Uptime and infrastructure monitoring with real-time alerts"
+  }
+ ],
+ "summary": {
+  "one_liner": "Checkmate is a self-hosted uptime and infrastructure monitoring app that checks websites and servers and sends alerts, with an optional Go-based agent (Capture) for hardware stats.",
+  "what_it_does": "Checkmate regularly checks whether servers and websites are reachable and responsive, recording availability, downtime and response times, and raising incidents and real-time alerts when state changes. It supports HTTP (with SSL certificate expiry), ping, port, DNS, Docker, gRPC, WebSocket, game server and JSON query monitors, plus page speed checks. Its optional Capture agent, written in Go and runnable on Linux, Windows, Mac or Raspberry Pi, reports CPU, RAM, disk and temperature data. Docker monitors can connect to a local socket, a remote daemon over mutual TLS, or a Capture agent. Status pages and notifications go to channels such as email, Slack, Discord, PagerDuty, Telegram and Twilio SMS. The reference deployment is a Docker Compose setup that runs the all-in-one Checkmate image alongside MongoDB.",
+  "use_cases": [
+   "self-hosted uptime monitoring for websites",
+   "server and infrastructure health monitoring",
+   "SSL certificate expiry alerts",
+   "Docker container health monitoring",
+   "status pages for services",
+   "incident alerts sent to Slack, Discord or email"
+  ],
+  "how_to_run": [
+   "curl -O <compose file URL from README>",
+   "JWT_SECRET=\"$(openssl rand -hex 32)\" docker compose up -d",
+   "Open the app in a browser and set CLIENT_HOST if accessed from another origin",
+   "Optionally build locally: docker build -f docker/Dockerfile -t checkmate ."
+  ],
+  "stack": [
+   "Node.js",
+   "MongoDB",
+   "ReactJs",
+   "MUI",
+   "Recharts",
+   "Docker",
+   "Go (Capture agent)"
+  ],
+  "notable": [
+   "Scales horizontally with dedicated worker nodes sharing check load through MongoDB; README claims production use monitoring 1,600+ servers on one deployment",
+   "Optional Capture agent adds CPU, RAM, disk and temperature monitoring",
+   "Docker monitors support local socket, mutual-TLS remote daemon, or Capture agent, with optional container log collection",
+   "Broad notification support including PagerDuty, Matrix, Rocket.Chat, Microsoft Teams, ntfy and Twilio SMS",
+   "Available in many languages with five status page themes"
+  ],
+  "caveats": [
+   "MongoDB is required and is not embedded in the application image",
+   "Infrastructure metrics (CPU, memory, disk, network) need the separate Capture agent",
+   "The Helm chart still deploys legacy images pinned at v3.8.1 and has not been migrated to the all-in-one image",
+   "Remote Docker TLS monitoring requires an ENCRYPTION_KEY to be set on the server"
+  ],
+  "license": "unknown",
+  "category": "self-hosted uptime monitoring",
+  "keywords": [
+   "uptime monitoring",
+   "uptime monitor",
+   "self-hosted monitoring",
+   "server monitoring",
+   "infrastructure monitoring",
+   "website monitoring",
+   "status page",
+   "incident management",
+   "ping monitoring",
+   "port monitoring",
+   "http monitoring",
+   "ssl certificate expiry",
+   "docker monitoring",
+   "container monitoring",
+   "capture agent",
+   "mongodb",
+   "node.js",
+   "react",
+   "docker compose",
+   "alerts",
+   "notifications",
+   "slack alerts",
+   "discord alerts",
+   "pagerduty",
+   "uptime kuma alternative",
+   "check if my website is down",
+   "monitor servers from home lab",
+   "raspberry pi monitoring",
+   "response time tracking",
+   "downtime alerts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8439,
+  "output": 1388
+ },
+ "generated": "2026-10-29"
+}

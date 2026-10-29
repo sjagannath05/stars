@@ -1,0 +1,94 @@
+{
+ "id": "sipcapture/homer",
+ "repo": "sipcapture/homer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - SIP",
+   "entry": "SIPCAPTURE Homer - Troubleshooting and monitoring VoIP calls. (Source Code) AGPL-3.0 Nodejs/Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Homer is an open-source VoIP/SIP capture and observability server that ingests HEP packets and stores them in a DuckLake (Parquet + catalog) data lake with a built-in UI and CLI.",
+  "category": "voip monitoring",
+  "keywords": [
+   "homer",
+   "sip capture",
+   "voip monitoring",
+   "voip troubleshooting",
+   "hep",
+   "homer capture",
+   "heplify",
+   "hep v3",
+   "sip call tracing",
+   "call-id search",
+   "telecom observability",
+   "sip qos",
+   "vqrtcp",
+   "siprec",
+   "rtcp-xr",
+   "duckdb",
+   "duckdb parquet",
+   "apache arrow",
+   "flightsql",
+   "ducklake",
+   "parquet data lake",
+   "pcap export",
+   "sip pcap",
+   "call flow diagram",
+   "grafana sip data",
+   "mcp server",
+   "golang",
+   "self-hosted sip tracing",
+   "sip troubleshooting tool"
+  ],
+  "what_it_does": "Homer receives HEP packets over UDP, TCP, TLS, HTTP or HTTPS, and can also run optional SIP listeners for VQRTCP QoS reports and SIPREC session recording metadata. Captured data is written to a DuckLake catalog with Parquet files on local or object storage. A node component serves queries over gRPC/HTTP and optional Arrow FlightSQL, and a coordinator provides a REST API used by the built-in UI. The homer binary also includes a search subcommand (table, CSV, JSON, chart, call flow, or SIP-only PCAP output), an interactive DuckLake SQL shell, system maintenance commands such as compaction, catalog backup and restore, a config wizard, and an MCP stdio server. Components can be enabled individually or run together as an all-in-one process.",
+  "use_cases": [
+   "troubleshoot failing VoIP calls by Call-ID",
+   "trace SIP INVITE and BYE message flows",
+   "export SIP messages to a pcap file",
+   "monitor SIP call quality with RTCP-XR reports",
+   "store and query telecom signaling captures",
+   "query captured SIP data from the command line or an LLM agent"
+  ],
+  "how_to_run": [
+   "make",
+   "./homer --config-path /etc/homer/homer.json",
+   "homer wizard --profile all-in-one --output homer.json",
+   "homer search --host 10.0.0.1:8081 --user admin --pass secret"
+  ],
+  "stack": [
+   "Go",
+   "DuckDB 1.5",
+   "Apache Arrow",
+   "Parquet",
+   "DuckLake",
+   "SQLite (catalog)",
+   "Arrow FlightSQL",
+   "MkDocs"
+  ],
+  "notable": [
+   "All-in-one binary with writer, reader, coordinator, compactor and API modules that can be split by deployment profile",
+   "Backwards compatible with HEPv3 agents over UDP, TCP, TLS, HTTP and HTTPS",
+   "Optional VQRTCP SIP QoS collector and SIPREC signaling session recorder",
+   "Data lake design on DuckLake with Parquet files and local or object storage",
+   "Built-in MCP stdio server for LLM and agent access"
+  ],
+  "caveats": [
+   "VQRTCP and SIPREC are disabled by default and require the writer module (DuckLake)",
+   "Release packages and docker builds are offered, but the README does not describe platform support beyond Linux and MacOS on X64/ARM64",
+   "Publishing docs to GitHub Pages requires a manual Pages setting after the first workflow run"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6085,
+  "output": 1308
+ },
+ "generated": "2026-10-29"
+}

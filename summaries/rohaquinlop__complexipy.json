@@ -1,0 +1,92 @@
+{
+ "id": "rohaquinlop/complexipy",
+ "repo": "rohaquinlop/complexipy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Code Analysis",
+   "entry": "complexipy - Cognitive complexity analysis for Python code, written in Rust."
+  }
+ ],
+ "summary": {
+  "one_liner": "complexipy is a fast cognitive complexity analyzer for Python code, written in Rust, that scores how hard functions and files are for humans to read.",
+  "what_it_does": "It computes cognitive complexity scores for Python files and functions, penalizing nesting depth and control-flow breaks rather than just counting branches. The command-line tool can analyze a directory, set a complexity threshold that fails the run, and list failing functions with refactor suggestions. It can write results to JSON, exclude paths with glob patterns, and compare against a git reference using --diff, --diff-only, or --staged (these need Git 2.30+). A Python API exposes file_complexity(), which returns a file score and per-function scores. The README also describes a language server started with `complexipy lsp` that feeds editor inlay hints, hover, and warnings, plus integrations for GitHub Actions and pre-commit.",
+  "use_cases": [
+   "measure readability of Python code",
+   "fail CI when functions exceed a complexity threshold",
+   "find hard-to-maintain functions before code review",
+   "block complexity regressions against a git branch",
+   "get refactor suggestions for complex functions",
+   "show complexity inline in VS Code, Neovim, or Zed"
+  ],
+  "how_to_run": [
+   "pip install complexipy",
+   "complexipy .",
+   "complexipy . --max-complexity-allowed 10",
+   "complexipy . --failed --suggest-refactors",
+   "complexipy . --diff main"
+  ],
+  "stack": [
+   "Rust",
+   "Python",
+   "Git (for diff options)",
+   "GitHub Actions (integration)",
+   "pre-commit (integration)",
+   "VS Code extension (integration)"
+  ],
+  "notable": [
+   "Cognitive complexity metric that accounts for nesting and flow breaks, unlike cyclomatic complexity",
+   "Built-in language server (complexipy lsp) for editor inlay hints and warnings",
+   "Git-aware diff modes to block only new complexity regressions",
+   "Refactor suggestions tied to a documented rule set",
+   "Installable via pip, uv, or uv tool"
+  ],
+  "caveats": [
+   "--diff, --diff-only, and --staged require Git 2.30 or newer on PATH; other analysis does not need Git",
+   "The VS Code extension requires the complexipy CLI to be installed separately",
+   "Scoring is cognitive complexity only; the README points to Ruff's PLR0912 as a separate cyclomatic check"
+  ],
+  "license": "unknown",
+  "category": "python code analysis",
+  "keywords": [
+   "cognitive complexity",
+   "python complexity analyzer",
+   "code complexity metrics",
+   "complexipy",
+   "rust python tool",
+   "cyclomatic complexity alternative",
+   "ruff plr0912 comparison",
+   "static analysis python",
+   "code readability checker",
+   "complexity threshold ci",
+   "github actions complexity check",
+   "pre-commit complexity hook",
+   "language server python",
+   "lsp inlay hints",
+   "vs code extension python",
+   "neovim python linter",
+   "zed editor python",
+   "git diff complexity regression",
+   "refactor suggestions",
+   "json complexity report",
+   "find hard to read functions",
+   "fail build on complex code",
+   "measure how hard code is to understand",
+   "python code quality tool",
+   "uv tool install",
+   "exclude paths glob python",
+   "sonarsource cognitive complexity",
+   "fast python linter rust"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2865,
+  "output": 1227
+ },
+ "generated": "2026-10-29"
+}

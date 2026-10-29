@@ -1,0 +1,117 @@
+{
+ "id": "stephnangue/warden",
+ "repo": "stephnangue/warden",
+ "kind": "star",
+ "description": "The secure gateway connecting AI agents to enterprise systems.",
+ "topics": [
+  "ai-agents",
+  "ai-auditing",
+  "ai-compliance",
+  "ai-governance",
+  "credential-management",
+  "egress-gateway",
+  "go",
+  "mcp-security",
+  "openbao",
+  "security",
+  "spiffe",
+  "workload-access-management",
+  "zero-trust"
+ ],
+ "language": "Go",
+ "stars": 180,
+ "license": "MPL-2.0",
+ "homepage": "https://wardengateway.com",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Warden is a Go gateway that sits between AI agents and enterprise systems, authenticating the agent, enforcing policy per request, injecting the real upstream credential, and auditing every call.",
+  "what_it_does": "Warden sits in the request path between an agent and upstream systems such as MCP servers, LLM APIs, cloud accounts, code hosts, observability tools, ITSM, Kubernetes, secrets backends, and databases. The agent presents only its own identity (JWT, TLS client certificate, SPIFFE SVID, or Kubernetes ServiceAccount token), and Warden verifies it, evaluates the request against policy, injects the upstream credential, and proxies the response back unchanged. Policy can reach inside MCP tool calls to control which tools and arguments are allowed, and can factor in caller IP, time of day, and the on-behalf-of person. Warden can also act on behalf of a verified human and can avoid holding a standing secret by using identity-based token minting or per-request vault fetches. Agents can query Warden for the roles and systems available to them and read per-system recipes at runtime. Every call is recorded in an audit log tied to the identity, role, policy decision, and upstream.",
+  "use_cases": [
+   "brokering credentials so AI agents never hold API keys",
+   "enforcing per-request policy on agent tool calls",
+   "governing MCP server access with tool and argument rules",
+   "auditing which agent called which upstream system",
+   "letting agents act on behalf of a specific user",
+   "replacing long-lived service credentials with short-lived or keyless access",
+   "running a single access gateway for many cloud and SaaS systems"
+  ],
+  "how_to_run": [
+   "docker run --rm --name warden-playground -p 127.0.0.1:8400:8400 ghcr.io/stephnangue/warden:latest -dev-playground -dev-root-token=root",
+   "Open the Getting started guide in the README to pick an agent client and follow the playground tour",
+   "docker pull ghcr.io/stephnangue/warden:latest",
+   "curl -sL | bash (macOS and Linux install script; URL is truncated in the README)"
+  ],
+  "stack": [
+   "Go",
+   "Docker container image",
+   "OpenBao / HashiCorp Vault (secrets backend and Transit auto-unseal)",
+   "PostgreSQL (for Kubernetes deployments)",
+   "Helm chart for Kubernetes 1.27+",
+   "SPIFFE / SPIRE",
+   "JWT, X.509 TLS client certificates, Kubernetes TokenReview API"
+  ],
+  "notable": [
+   "Keyless modes: the upstream mints credentials from Warden's proven identity, so the gateway may hold no standing secret",
+   "Per-tool-call MCP policy that checks both which tools and which arguments an agent may use",
+   "Per-user delegation so upstreams authorize the real human behind an agent",
+   "Playground mode with a bundled identity provider and sample bank, runnable in one Docker command",
+   "Single static binary serving as both CLI client and server"
+  ],
+  "caveats": [
+   "Kubernetes deployment expects bring-your-own Postgres, TLS certificate, and either a Vault Transit endpoint or a static seal key for development",
+   "The playground command uses a dev root token and dev mode, which is for trying the product rather than production use",
+   "Upstream support is listed per provider; the full list lives in docs/provider-backends/README.md"
+  ],
+  "license": "MPL-2.0",
+  "category": "AI agent security gateway",
+  "keywords": [
+   "ai agent gateway",
+   "mcp security",
+   "mcp gateway",
+   "model context protocol proxy",
+   "credential brokering",
+   "secret injection proxy",
+   "zero trust access",
+   "workload identity",
+   "spiffe svid",
+   "spire",
+   "openbao",
+   "hashicorp vault alternative",
+   "egress gateway",
+   "policy enforcement",
+   "tool call authorization",
+   "audit logging ai agents",
+   "per-user delegation",
+   "short-lived credentials",
+   "keyless access",
+   "kubernetes serviceaccount auth",
+   "mtls client certificate auth",
+   "jwt authentication proxy",
+   "access control for llm agents",
+   "govern ai agent access to cloud",
+   "let my agent use github safely",
+   "stop agents holding api keys",
+   "golang security tool",
+   "api gateway for enterprise systems",
+   "claude code secure access",
+   "workload access management"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5637,
+  "output": 1564
+ },
+ "generated": "2026-10-29"
+}

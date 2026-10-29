@@ -1,0 +1,96 @@
+{
+ "id": "theolundqvist/pr-cockpit",
+ "repo": "theolundqvist/pr-cockpit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "PR Cockpit - An extremely fast GitHub for reviewing pull requests: PRs open in about 20 ms. Keyboard-first, with a CLI for coding agents."
+  }
+ ],
+ "summary": {
+  "one_liner": "PR Cockpit is a keyboard-first desktop app for macOS and Linux that mirrors your GitHub pull requests locally so they open almost instantly for review.",
+  "what_it_does": "The app keeps a local SQLite mirror of selected repositories' pull requests, kept current by webhooks and a polling fallback, so the PR queue, diffs, check logs and review threads load from disk. The queue groups PRs into ready to merge, your move, and waiting, with failed merge attempts shown above pinned PRs. Review tools include file diffs, file history, full-file search, inline comments saved as pending GitHub reviews, and task-list checkbox edits in descriptions. A whiteboard tab, desktop notifications, and quick actions defined in a repository's .github/pr-cockpit.json are available behind settings. A pr-cockpit CLI reads the same cache for checks, diffs, logs and a listen command that waits for state changes, for use by humans and coding agents. Comments, reviews, edits and merges go back to GitHub through the user's GitHub CLI login.",
+  "use_cases": [
+   "review GitHub pull requests quickly",
+   "keyboard-driven PR triage and queue management",
+   "read PR diffs and failed CI logs offline from a local cache",
+   "wait for CI or review results from a terminal or coding agent",
+   "batch inline review comments into one GitHub review",
+   "track personal PR context on a whiteboard"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash (run as your normal user, not with sudo; the README-provided URL is incomplete in the source)",
+   "Connect GitHub in the app using the GitHub CLI (gh) login",
+   "Choose repositories to track in Settings",
+   "pr-cockpit owner/repo#123 (CLI, after the app is set up)",
+   "pr-cockpit listen owner/repo#123 (wait for cached state changes)",
+   "pr-cockpit update"
+  ],
+  "stack": [
+   "Bun",
+   "SQLite",
+   "GitHub CLI (gh)",
+   "Git 2.38+",
+   "systemd (Linux)",
+   "Sentry"
+  ],
+  "notable": [
+   "Local mirror makes PRs open in about 20 ms versus 1.4 s, per the README's own benchmark",
+   "Keyboard-first design with a ⌥⌘K/Super+Alt+K search from other apps",
+   "CLI reads the same local cache so coding agents can inspect PRs without spending GitHub API quota",
+   "Optional GitHub App installation for extra API rate-limit headroom",
+   "Repositories can define quick actions via .github/pr-cockpit.json"
+  ],
+  "caveats": [
+   "Windows is not supported; macOS and Linux only, with Git 2.38 or newer",
+   "Linux requires systemd and specific desktop libraries; Wayland uses XWayland and global shortcuts depend on compositor policy",
+   "Hosted relay is on by default and Sentry error reporting is enabled by default, so the app does make external connections beyond GitHub"
+  ],
+  "license": "MIT",
+  "category": "github pr review",
+  "keywords": [
+   "pull request review",
+   "github pr client",
+   "pr review desktop app",
+   "github pull requests",
+   "macos github client",
+   "linux github client",
+   "keyboard-first review",
+   "local cache github",
+   "sqlite mirror",
+   "webhooks github",
+   "pr queue",
+   "code review tool",
+   "review pull requests faster",
+   "pr cli",
+   "github cli wrapper",
+   "ci check logs",
+   "inline review comments",
+   "pending review drafts",
+   "stacked pull requests",
+   "coding agent cli",
+   "bun app",
+   "gh cli alternative",
+   "github desktop alternative",
+   "review diffs offline",
+   "wait for ci",
+   "pr triage",
+   "merge queue tool",
+   "github webhook mirror",
+   "file history viewer",
+   "whiteboard for prs",
+   "read github prs fast"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10251,
+  "output": 1394
+ },
+ "generated": "2026-10-29"
+}

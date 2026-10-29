@@ -1,0 +1,108 @@
+{
+ "id": "dockpeek/dockpeek",
+ "repo": "dockpeek/dockpeek",
+ "kind": "star",
+ "description": "Easily access your Docker container web interfaces and keep them up to date — across all your hosts.",
+ "topics": [
+  "container-management",
+  "dashboard",
+  "docker",
+  "docker-swarm",
+  "selfhosted",
+  "traefik",
+  "update-checker"
+ ],
+ "language": "JavaScript",
+ "stars": 2112,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-08-07",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Dockpeek is a lightweight, self-hosted Docker dashboard for opening container web interfaces, viewing logs and ports, and checking for or applying image updates across multiple Docker hosts.",
+  "category": "docker dashboard",
+  "keywords": [
+   "docker dashboard",
+   "container dashboard",
+   "self-hosted docker ui",
+   "docker web interface",
+   "container web access",
+   "docker port viewer",
+   "container log viewer",
+   "live docker logs",
+   "docker image update checker",
+   "check outdated containers",
+   "update docker images",
+   "multi-host docker",
+   "multiple docker daemons",
+   "docker socket proxy",
+   "docker swarm dashboard",
+   "swarm services",
+   "traefik labels",
+   "traefik service urls",
+   "docker port mapping",
+   "find free port",
+   "container tags",
+   "port range grouping",
+   "private registry links",
+   "gitea registry",
+   "harbor registry",
+   "docker socket",
+   "homelab container manager",
+   "see which containers have updates",
+   "access my container web apps"
+  ],
+  "what_it_does": "Dockpeek shows Docker containers in a single web dashboard and lets you open their web interfaces with one click. It automatically detects published ports and can extract service URLs from Traefik labels. It streams container logs in real time. It checks for image updates and can upgrade outdated containers, with an option to check floating tags such as latest, major, or minor versions. It can connect to several Docker daemons at once, including remote hosts exposed over TCP, and it detects Docker Swarm mode and lists services and tasks. Containers can be customized with dockpeek.* labels for extra ports, forced HTTPS, clickable names, tags, and port range grouping. The README also describes a search syntax for filtering by port and for finding free ports.",
+  "use_cases": [
+   "Open web UIs of all my Docker containers from one page",
+   "Check which Docker images have updates available",
+   "Monitor and manage containers across several Docker hosts",
+   "View live logs of containers without the command line",
+   "Find published ports and next free port on a Docker host",
+   "Monitor Docker Swarm services and tasks in a dashboard"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the dockpeek/dockpeek:latest image, set SECRET_KEY, USERNAME and PASSWORD, map port 3420:8000, and mount /var/run/docker.sock",
+   "Run docker compose up -d and open the dashboard on port 3420",
+   "For security, optionally place a socket proxy (e.g. linuxserver/socket-proxy or tecnativa/docker-socket-proxy) in front of the Docker API and set DOCKER_HOST=tcp://socket-proxy:2375",
+   "For multiple hosts, set DOCKER_HOST_N_URL (and optionally DOCKER_HOST_N_NAME and DOCKER_HOST_N_PUBLIC_HOSTNAME) for each host",
+   "For Swarm, deploy with docker stack deploy -c docker-compose-swarm-socket.yml dockpeek"
+  ],
+  "stack": [
+   "JavaScript",
+   "Python (inferred from the README's Docker-based deployment is not stated; only Docker images are named)",
+   "Docker and Docker Compose",
+   "Docker Engine API",
+   "Traefik labels (optional integration)",
+   "linuxserver socket-proxy or tecnativa docker-socket-proxy (optional)"
+  ],
+  "notable": [
+   "Zero-configuration start: auto-detects Traefik labels and published ports",
+   "Multi-host support for several Docker daemons from one dashboard, including remote hosts over TCP or Tailscale",
+   "Update checks with UPDATE_FLOATING_TAGS modes for pinned version tags",
+   "Docker Swarm support that detects Swarm mode and shows services and tasks",
+   "Search syntax such as :port and :free to find containers by port or the next free port"
+  ],
+  "caveats": [
+   "Mounting the Docker socket gives the container broad control over the host; the README recommends a socket proxy for enhanced security",
+   "The socket proxy must allow POST, start, stop, restart and networks for updates to work",
+   "If Docker is in Swarm mode, containers appear as services and may not show as standalone containers, as the FAQ explains",
+   "Remote hosts must expose the Docker API over TCP, for example through a socket proxy"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7955,
+  "output": 1559
+ },
+ "generated": "2026-10-29"
+}

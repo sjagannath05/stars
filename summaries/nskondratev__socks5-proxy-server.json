@@ -1,0 +1,82 @@
+{
+ "id": "nskondratev/socks5-proxy-server",
+ "repo": "nskondratev/socks5-proxy-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Proxy",
+   "entry": "socks5-proxy-server - SOCKS5 proxy server with built-in authentication and Telegram-bot for user management and user statistics on data spent (handy when you pay per GB of data). It is dockerised and simple to install. Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A dockerised SOCKS5 proxy server with username/password authentication, per-user data usage statistics, and a Telegram bot for managing users.",
+  "category": "self-hosted proxy server",
+  "keywords": [
+   "socks5",
+   "socks5 proxy",
+   "proxy server",
+   "self-hosted proxy",
+   "docker",
+   "docker compose",
+   "proxy authentication",
+   "username password proxy",
+   "telegram bot",
+   "telegram bot administration",
+   "user management",
+   "data usage statistics",
+   "bandwidth tracking",
+   "per gb billing",
+   "traffic accounting",
+   "anonymous proxy access control",
+   "node.js proxy",
+   "create proxy users",
+   "delete proxy users",
+   "share proxy with friends",
+   "limit proxy access",
+   "track data spent per user",
+   "botfather",
+   "webhook",
+   "polling",
+   "self-hosted vpn alternative"
+  ],
+  "what_it_does": "Runs a SOCKS5 proxy server on a configurable port (default 54321) that can require authentication so anonymous users are refused. Users are created, deleted, and listed through CLI scripts executed inside the Docker container (create-user.js, delete-user.js, users-stats.js). A Telegram bot provides the same administration from chat, including commands for user statistics, creating and deleting users, listing users, and generating random passwords. Admins are created and removed with separate scripts. The bot can use either webhooks (which require SSL certificates, per the README) or polling. Configuration is via a .env file copied from .env.example.</what_it_does>\n<parameter name=\"how_to_run\">[\"Install Docker\", \"cp .env.example .env\", \"Edit .env (APP_PORT, LOG_LEVEL, REQUIRE_AUTH; and PUBLIC_URL, TELEGRAM_API_TOKEN, TELEGRAM_WEBHOOK_URL, TELEGRAM_USE_WEBHOOKS for the bot)\", \"docker compose up -d\", \"docker exec -it <proxy-container> sh -c 'exec node scripts/create-user.js'\", \"docker exec -it <telegram-bot-container> sh -c 'exec node scripts/create-admin.js'\"]",
+  "use_cases": [
+   "Run a SOCKS5 proxy with login credentials on a personal server",
+   "Share a proxy with a small group of users and control who can connect",
+   "Track how much data each proxy user has consumed",
+   "Administer proxy users from a Telegram chat instead of the command line",
+   "Run a cheap proxy where the operator pays per GB of traffic and needs per-user accounting"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Node.js",
+   "Docker",
+   "Docker Compose",
+   "Telegram Bot API"
+  ],
+  "notable": [
+   "Built-in username/password authentication with an option to disallow anonymous access",
+   "Per-user data usage statistics, useful when paying per GB",
+   "Telegram bot for user management, statistics, and random password generation",
+   "Admin accounts can be created and removed via scripts",
+   "Docker-based setup with a .env configuration file"
+  ],
+  "caveats": [
+   "Webhook mode needs SSL certificates; polling is the alternative",
+   "Setup requires a BotFather token and a public URL for the Telegram bot features",
+   "Administration is by docker exec scripts or the Telegram bot; no web UI is mentioned in the README",
+   "License is taken from the awesome-selfhosted listing metadata, not confirmed in the README text"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2324,
+  "output": 1290
+ },
+ "generated": "2026-10-29"
+}

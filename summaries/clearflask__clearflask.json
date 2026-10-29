@@ -1,0 +1,104 @@
+{
+ "id": "clearflask/clearflask",
+ "repo": "clearflask/clearflask",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Polls and Events",
+   "entry": "ClearFlask - Community-feedback tool for managing incoming feedback and prioritizing a public roadmap (alternative to Canny, UserVoice, Upvoty). (Demo, Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ClearFlask is an open-source feedback management tool for collecting, managing and prioritizing user feedback, positioned as an alternative to Canny and UserVoice.",
+  "what_it_does": "The README describes a self-hostable feedback management platform with a customer-facing portal and an admin dashboard. It is built from a Java/Tomcat API server (clearflask-server) and a NodeJS component (Connect) that handles server-side rendering, static file serving and dynamic TLS certificate management. The React frontend provides the landing page, dashboard and portal. Data is stored in DynamoDB-compatible storage, with search handled by either Elasticsearch/OpenSearch or MySQL/MariaDB, and user-uploaded images are stored in S3-compatible storage. Deployment options include Docker Compose (with an optional profile that starts dependencies), Helm charts for Kubernetes, and manual AWS setup. The README also covers outgoing email via SMTP or AWS SES, Let's Encrypt or static certificates, and a documented procedure for migrating search between Elasticsearch and MySQL.",
+  "use_cases": [
+   "collect user feedback on a product",
+   "run a public feedback board and roadmap",
+   "prioritize feature requests",
+   "self-host a Canny or UserVoice alternative",
+   "manage incoming customer feedback with a super-admin dashboard",
+   "deploy feedback portal on Kubernetes"
+  ],
+  "how_to_run": [
+   "echo \"CLEARFLASK_CONNECT_TOKEN=$(openssl rand -hex 16)\" > .env",
+   "docker-compose --profile with-deps up",
+   "Point your browser at the instance and create an account using email admin@localhost",
+   "helm repo add clearflask <repo-url>; helm repo update",
+   "helm install clearflask-deps clearflask/clearflask-dependencies --set mysql.enabled=true --set localstack.enabled=true",
+   "helm install clearflask clearflask/clearflask --set global.domain=yourdomain.com ... (with generated secrets)"
+  ],
+  "stack": [
+   "Java 11",
+   "Maven",
+   "Apache Tomcat",
+   "NodeJS",
+   "React",
+   "TypeScript",
+   "OpenAPI",
+   "DynamoDB",
+   "Elasticsearch/OpenSearch",
+   "MySQL/MariaDB",
+   "S3-compatible storage",
+   "LocalStack",
+   "KillBill",
+   "Docker Compose",
+   "Kubernetes Helm charts"
+  ],
+  "notable": [
+   "Connect component handles SSR plus automatic Let's Encrypt certificate issuance and renewal per customer domain",
+   "Choice of Elasticsearch (large projects, fuzzy search) or MySQL (lightweight, exact-match search) with documented live migration steps",
+   "Environment-variable configuration for common settings, aimed at PaaS platforms without file editing",
+   "Auto-generated secrets on first run, plus a SECURITY warning for installs using default secrets",
+   "Helm charts with autoscaling, rolling updates and dependency charts for MySQL and LocalStack"
+  ],
+  "caveats": [
+   "Requires several services (DynamoDB-compatible store, S3-compatible storage, search engine, SMTP or SES) for full deployment, so setup is non-trivial",
+   "Email is configured for AWS SES pointing at LocalStack by default, which does not send real mail until SMTP or SES is configured",
+   "Production AWS use requires SES limit increase via AWS support if SES is chosen; a managed hosting option is also offered by the maintainers"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted feedback management",
+  "keywords": [
+   "feedback management",
+   "feedback tool",
+   "product feedback",
+   "public roadmap",
+   "feature requests",
+   "feature voting",
+   "user feedback portal",
+   "community feedback",
+   "canny alternative",
+   "uservoice alternative",
+   "self-hosted feedback",
+   "open source feedback board",
+   "docker compose",
+   "kubernetes helm",
+   "helm chart",
+   "tomcat",
+   "nodejs ssr",
+   "react frontend",
+   "dynamodb",
+   "elasticsearch",
+   "mysql search",
+   "lets encrypt",
+   "smtp email",
+   "agpl",
+   "collect feedback from customers",
+   "share feedback board with users",
+   "prioritize ideas",
+   "idea portal",
+   "feedback dashboard",
+   "self host roadmap tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12898,
+  "output": 1578
+ },
+ "generated": "2026-10-29"
+}

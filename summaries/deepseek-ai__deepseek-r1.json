@@ -1,0 +1,91 @@
+{
+ "id": "deepseek-ai/deepseek-r1",
+ "repo": "deepseek-ai/DeepSeek-R1",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "DeepSeek",
+   "entry": "DeepSeek-R1"
+  }
+ ],
+ "summary": {
+  "one_liner": "DeepSeek's official repository for the DeepSeek-R1 reasoning models (R1-Zero and R1), which were trained with large-scale reinforcement learning, plus six distilled dense models built on Qwen and Llama.",
+  "what_it_does": "The README introduces DeepSeek-R1-Zero, trained with RL directly on the base model without SFT, and DeepSeek-R1, which adds cold-start data and a multi-stage RL and SFT pipeline to address issues like endless repetition and language mixing. Both are listed as 671B total / 37B activated parameters with a 128K context length, trained from DeepSeek-V3-Base. It also publishes distilled checkpoints at 1.5B, 7B, 8B, 14B, 32B and 70B, fine-tuned on R1-generated samples from Qwen2.5 and Llama3 bases. The README includes a benchmark table comparing R1 with Claude-3.5-Sonnet, GPT-4o, DeepSeek V3 and OpenAI o1 variants, and gives usage recommendations such as temperature 0.6 and avoiding system prompts. Serving the distilled models with vLLM and SGLang is shown with example commands. Weights are hosted on Hugging Face, and the README points to a chat website and an OpenAI-compatible API platform.",
+  "use_cases": [
+   "run a reasoning LLM for math and coding problems",
+   "serve distilled reasoning models locally with vLLM or SGLang",
+   "distill reasoning patterns into smaller models",
+   "benchmark reasoning performance against o1 and GPT-4o",
+   "study reinforcement-learning-based reasoning training",
+   "use an OpenAI-compatible API for reasoning tasks"
+  ],
+  "how_to_run": [
+   "vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --tensor-parallel-size 2 --max-model-len 32768 --enforce-eager",
+   "python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --trust-remote-code --tp 2"
+  ],
+  "stack": [
+   "Python",
+   "vLLM",
+   "SGLang",
+   "Hugging Face",
+   "Qwen2.5",
+   "Llama3",
+   "DeepSeek-V3"
+  ],
+  "notable": [
+   "DeepSeek-R1-Zero is trained with RL without any supervised fine-tuning step, which the README says is the first open validation of this approach for LLM reasoning",
+   "Six distilled dense models from 1.5B to 70B based on Qwen2.5 and Llama3",
+   "MIT license covering weights and code, allowing commercial use and distillation",
+   "Usage recommendations include forcing responses to begin with a thinking token to avoid skipped reasoning"
+  ],
+  "caveats": [
+   "The full 671B R1 model is not directly supported by Hugging Face Transformers yet, per the README; users are referred to the DeepSeek-V3 repo for local running",
+   "Distilled models from Llama and Qwen bases carry their original licenses (Apache 2.0 for Qwen, Llama licenses for Llama variants)",
+   "Full-size model requires large hardware; the README gives no hardware requirements beyond tensor-parallel settings in examples"
+  ],
+  "license": "MIT",
+  "category": "reasoning language models",
+  "keywords": [
+   "deepseek-r1",
+   "deepseek r1 reasoning model",
+   "reasoning llm",
+   "chain-of-thought model",
+   "reinforcement learning llm training",
+   "distilled reasoning models",
+   "deepseek-r1-distill-qwen-32b",
+   "deepseek-r1-distill-llama-70b",
+   "qwen2.5 distilled models",
+   "llama3 distilled models",
+   "vllm serving",
+   "sglang serving",
+   "openai-compatible api",
+   "open-source o1 alternative",
+   "local llm for math",
+   "local llm for coding",
+   "model distillation",
+   "llm benchmark comparison",
+   "aime math benchmark",
+   "livecodebench",
+   "hugging face model weights",
+   "moe language model 671b",
+   "mit licensed llm",
+   "run reasoning model locally",
+   "self-hosted reasoning ai",
+   "deepseek reasoning api",
+   "small reasoning model",
+   "llm reinforcement learning without sft",
+   "deepseek-r1-zero",
+   "chain of thought open weights"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8323,
+  "output": 1535
+ },
+ "generated": "2026-10-29"
+}

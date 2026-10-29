@@ -1,0 +1,102 @@
+{
+ "id": "ag2ai/faststream",
+ "repo": "ag2ai/faststream",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Messaging",
+   "entry": "faststream - A framework for building async services over Kafka, RabbitMQ, NATS, MQTT, and Redis."
+  }
+ ],
+ "summary": {
+  "one_liner": "FastStream is an asynchronous Python framework for building event-driven services and producers/consumers over Kafka, RabbitMQ, NATS, Redis and MQTT, using FastAPI-style decorators.",
+  "what_it_does": "Provides @broker.subscriber and @broker.publisher decorators that consume and produce messages on Kafka, RabbitMQ, NATS, Redis and MQTT brokers, handling decoding and encoding automatically. Message bodies are validated and parsed through type annotations, using Pydantic by default or the built-in Msgspec serializer. It generates an AsyncAPI specification from the handlers. An in-memory TestBroker context manager lets tests run subscribers and publishers without a live broker. The faststream CLI runs apps with hot reload and multi-worker options, and a dependency injection system (Depends) supplies handler dependencies. Each broker client wraps its native library, so broker-specific features remain accessible.",
+  "use_cases": [
+   "build event-driven microservices",
+   "consume and republish Kafka topics",
+   "process RabbitMQ or NATS queue messages",
+   "validate incoming JSON messages with Pydantic",
+   "generate AsyncAPI docs for message channels",
+   "unit test message handlers without a broker",
+   "run message consumers alongside an aiohttp or FastAPI app"
+  ],
+  "how_to_run": [
+   "pip install 'faststream[kafka]'  (or [confluent], [rabbit], [nats], [redis], [mqtt])",
+   "pip install \"faststream[cli]\"",
+   "faststream run basic:app",
+   "faststream run basic:app --reload",
+   "faststream run basic:app --workers 3"
+  ],
+  "stack": [
+   "Python",
+   "asyncio",
+   "FastDepends",
+   "Pydantic",
+   "Msgspec",
+   "AsyncAPI",
+   "aiokafka",
+   "confluent-kafka",
+   "aio-pika",
+   "nats-py",
+   "redis-py",
+   "zmqtt"
+  ],
+  "notable": [
+   "Same decorator style as FastAPI, applied to message brokers",
+   "In-memory TestBroker for tests without containers",
+   "Automatic AsyncAPI documentation generated from handlers",
+   "Thin wrappers over each broker's native client, with native features still reachable",
+   "Built-in Msgspec serializer alternative to Pydantic"
+  ],
+  "caveats": [
+   "The FastAPI plugin is deprecated and moving to the faststream_fastapi package, to be removed in 1.0.0",
+   "Version 1.0 is not yet released; pre-1.0 minor releases may include breaking changes",
+   "Each broker requires its own optional install extra"
+  ],
+  "license": "unknown",
+  "category": "async messaging framework",
+  "keywords": [
+   "python messaging framework",
+   "event-driven python",
+   "async message queue",
+   "kafka consumer python",
+   "rabbitmq python",
+   "nats python",
+   "redis streams python",
+   "mqtt python",
+   "message broker decorators",
+   "pydantic message validation",
+   "msgspec serialization",
+   "asyncapi generation",
+   "asyncapi documentation",
+   "in-memory test broker",
+   "fastapi for message queues",
+   "faststream cli",
+   "dependency injection messaging",
+   "streaming microservices",
+   "kafka topic processing",
+   "publish and subscribe python",
+   "message consumer producer",
+   "hot reload worker",
+   "aiokafka",
+   "aio-pika",
+   "nats-py",
+   "share messages between services",
+   "process events from a queue",
+   "test kafka consumers without a broker",
+   "republish messages to another topic",
+   "fastkafka alternative",
+   "propan successor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6880,
+  "output": 1296
+ },
+ "generated": "2026-10-29"
+}

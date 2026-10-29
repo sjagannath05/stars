@@ -1,0 +1,100 @@
+{
+ "id": "superhumancorp/r2drop",
+ "repo": "superhumancorp/r2drop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "R2Drop - Native macOS menu bar application for uploading files to Cloudflare R2 storage."
+  }
+ ],
+ "summary": {
+  "one_liner": "R2Drop is a native macOS app and companion CLI for uploading files and folders to Cloudflare R2 storage and getting back a shareable URL.",
+  "what_it_does": "R2Drop lets you upload to Cloudflare R2 from Finder (right-click \"Send to R2\"), by dragging files onto the menu bar or Dock icon, or through a file picker that accepts files and folders. A background queue tracks progress and supports retries and pause, resume, and cancel. It supports multiple accounts switchable from the menu bar, with per-account bucket and path-prefix routing. Uploads can auto-copy public URLs, including with a custom domain, and notifications report success, failure, and token expiry. A CLI (r2drop) provides login, upload, status, queue, accounts, history, and config commands, with JSON output for scripting. Deep links (r2drop://) are also supported for automation.",
+  "use_cases": [
+   "upload files to Cloudflare R2 from Mac",
+   "share a file via public R2 URL",
+   "drag and drop uploads to cloud storage",
+   "scripted R2 uploads from terminal",
+   "manage multiple Cloudflare accounts and buckets",
+   "review upload history and queue"
+  ],
+  "how_to_run": [
+   "Download the latest .dmg from GitHub Releases and launch R2Drop",
+   "Complete onboarding: paste a Cloudflare API token and select a bucket",
+   "Install the CLI from the app via Settings → Install CLI (installs to /usr/local/bin), or use the quick install script",
+   "cd app && xcodebuild build -scheme R2Drop -destination 'platform=macOS'",
+   "cd app/engine/r2-cli && cargo build --release",
+   "r2drop login && r2drop upload file.png --json"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Rust",
+   "Cargo",
+   "Xcode",
+   "Finder Sync extension",
+   "Swift packages (R2Core, R2Bridge)",
+   "PostHog (analytics)",
+   "GitHub Actions"
+  ],
+  "notable": [
+   "Native Finder Sync right-click integration, menu bar, and Dock drop targets",
+   "Companion Rust CLI with JSON output for automation",
+   "Per-account bucket and path-prefix routing with custom domain URLs",
+   "Optional anonymous telemetry that can be fully disabled",
+   "Signed, notarized DMG releases via CI"
+  ],
+  "caveats": [
+   "Homebrew tap install is marked 'coming soon'",
+   "Finder right-click items can disappear due to aggressive Finder extension caching; the README suggests toggling the extension and running killall Finder",
+   "Requires a Cloudflare API token and an R2 bucket",
+   "Copyright notice reserves all rights; no open-source license is stated"
+  ],
+  "license": "unknown",
+  "category": "macos cloud uploader",
+  "keywords": [
+   "cloudflare r2",
+   "r2 uploader",
+   "macos app",
+   "native mac uploader",
+   "finder extension",
+   "finder right-click upload",
+   "menu bar app",
+   "dock drop upload",
+   "drag and drop upload",
+   "cli uploader",
+   "rust cli",
+   "swiftui",
+   "upload to cloud storage",
+   "share file via url",
+   "public file links",
+   "custom domain urls",
+   "s3 compatible storage uploads",
+   "multi account uploader",
+   "upload queue",
+   "upload history",
+   "retry failed uploads",
+   "deep links automation",
+   "terminal upload tool",
+   "json cli output",
+   "homebrew tap",
+   "file sharing for mac",
+   "send files to bucket",
+   "object storage client",
+   "cloudflare api token",
+   "upload folders",
+   "mac menubar utility"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3146,
+  "output": 1325
+ },
+ "generated": "2026-10-29"
+}

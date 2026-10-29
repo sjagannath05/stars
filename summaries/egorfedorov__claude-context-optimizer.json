@@ -1,0 +1,96 @@
+{
+ "id": "egorfedorov/claude-context-optimizer",
+ "repo": "egorfedorov/claude-context-optimizer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "claude-context-optimizer by Egor Fedorov - Claude Code plugin that tracks token usage, identifies wasted context, and saves money on unnecessary API costs, by tracking which information is actually being reused later. Visuals include heatmaps, ROI reports, budget alerts, efficiency scores, git-aware suggestions - all local, zero config. The design is still somewhat exploratory, but it shows promis"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code and claude.ai plugin that measures token and context costs, adds Haiku subagents for cheap reading and test runs, and runs locally with no telemetry.",
+  "what_it_does": "The README describes a set of skills for claude.ai chat, desktop and Cowork (fresh-start handoffs, doc-digest summaries, project-context instructions, token-check sizing, sharpen-prompt rewrites). In Claude Code it adds two Haiku 5.5 subagents: scout for read-only project exploration and runner for tests, builds and linters, so only their short answers enter the main context. A /cco command provides a session board, transcript audit, budget and cache warnings, task state that survives /compact, file packing by line range, and git-aware context. Read dedup skips re-reads of unchanged files in the same context. Data is stored locally in ~/.claude-context-optimizer/, and exports can be Markdown or an offline HTML page.",
+  "use_cases": [
+   "reduce token spend in long Claude Code sessions",
+   "audit where Claude API costs went in past sessions",
+   "hand off a long chat to a new conversation",
+   "summarize a long document for ongoing work",
+   "run tests or builds through a cheaper model",
+   "track budget and prompt cache warnings in Claude Code",
+   "keep task state across /compact"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add egorfedorov/claude-context-optimizer",
+   "claude plugin install context-optimizer@cco",
+   "Restart Claude Code",
+   "git clone the repo and run: claude --plugin-dir ~/claude-context-optimizer (for development)",
+   "Requires Node.js 18 or later and a POSIX shell for hooks (Git Bash or WSL on Windows)",
+   "npm test runs the test suite"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "Claude Code plugin system",
+   "Claude Haiku 5.5 subagents",
+   "POSIX shell hooks",
+   "Git (run locally)"
+  ],
+  "notable": [
+   "Haiku subagents (scout, runner) keep bulk reading out of the expensive model's context",
+   "Read dedup skips unchanged re-reads and substitutes a file landmark map",
+   "Local-only: no telemetry, no network calls from plugin code, zero config by default",
+   "Covers claude.ai and Cowork skills as well as Claude Code hooks and commands",
+   "Audit of own transcripts with totals only, and an offline HTML export"
+  ],
+  "caveats": [
+   "Hooks need Node.js and a POSIX shell; Windows requires Git Bash or WSL",
+   "Skills-only use works on claude.ai and Cowork, but the full feature set is Claude Code only",
+   "README says the design is still somewhat exploratory (per listing description)"
+  ],
+  "license": "MIT",
+  "category": "claude code plugin",
+  "keywords": [
+   "claude code plugin",
+   "token usage tracker",
+   "context optimizer",
+   "reduce claude costs",
+   "api cost monitoring",
+   "token budget alerts",
+   "prompt cache warnings",
+   "haiku subagents",
+   "context compaction",
+   "session transcript audit",
+   "read deduplication",
+   "claudemd",
+   "cheaper model for reading",
+   "local analytics",
+   "offline html report",
+   "claude.ai skills",
+   "cowork plugin",
+   "fresh start handoff",
+   "summarize long document",
+   "token counter",
+   "cut token spend",
+   "save money on ai tokens",
+   "track my claude usage",
+   "long chat context limits",
+   "dedupe file reads",
+   "git-aware context",
+   "project file map",
+   "expensive ai bills",
+   "monitor llm spending",
+   "mit licensed claude tool",
+   "nodejs hooks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5790,
+  "output": 1333
+ },
+ "generated": "2026-10-29"
+}

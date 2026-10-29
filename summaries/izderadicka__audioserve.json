@@ -1,0 +1,92 @@
+{
+ "id": "izderadicka/audioserve",
+ "repo": "izderadicka/audioserve",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "Audioserve - Simple personal server to serve audio files from directories (audiobooks, music, podcasts...). Focused on simplicity and supports sync of play position between clients. MIT Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "Audioserve is a simple, minimalist Rust server for streaming personal audio collections (audiobooks, music, podcasts) from ordinary directories, with play position sync across clients.",
+  "what_it_does": "Serves audio files directly from folder structures on disk, using the directory layout for browsing and search (folder names only). It caches collection metadata in an embedded sled database so search and folder loading are fast, and watches directories for changes (inotify on Linux) so edits show up automatically. It supports single-file audiobooks such as .m4b by presenting chapters as virtual files, and can collapse CD subfolders into one folder. On-the-fly transcoding to Opus, MP3 or AAC through ffmpeg is offered in low, medium and high quality levels. Playback positions are shared between devices in the same group over WebSocket, with optional JSON backup. The README also describes a PWA web client, an older Android client, and a documented API.",
+  "use_cases": [
+   "stream audiobooks from a home server",
+   "serve a personal music or podcast library over the web",
+   "sync listening position between phone and desktop",
+   "transcode audio to low-bitrate Opus for slow connections",
+   "host an audiobook collection for a small trusted group",
+   "play chaptered .m4b files chapter by chapter"
+  ],
+  "how_to_run": [
+   "RUST_LOG=info docker run --rm -it --name audioserve -p 3000:3000 -v /path/to/your/audiobooks:/audiobooks izderadicka/audioserve --no-authentication /audiobooks",
+   "docker build --tag audioserve .",
+   "docker run -d --name audioserve -p 3000:3000 -v /path/to/your/audiobooks1:/collection1 -v /path/for/audioserve-data:/home/audioserve/.audioserve -e AUDIOSERVE_SHARED_SECRET=mypass izderadicka/audioserve"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "ffmpeg",
+   "sled",
+   "Svelte",
+   "TypeScript",
+   "YAML config",
+   "rustls"
+  ],
+  "notable": [
+   "Browses by real directory structure rather than audio tags, which the author argues are unreliable",
+   "Collections cache in embedded key-value database, with inotify-based change watching",
+   "Alternative transcoding profiles selected by User-Agent, e.g. AAC for Apple devices",
+   "Playback position sharing via WebSocket with JSON backup and restore",
+   "Optional HTTP/2, TLS, CORS, rate limiting and reverse-proxy support"
+  ],
+  "caveats": [
+   "Transcoding needs ffmpeg on PATH and is CPU-heavy; the README advises only a few parallel transcodes per core",
+   "Apple platforms need extra configuration for the default Opus/Ogg transcoding; AAC alternative is required",
+   "Android client is no longer maintained; the web client is recommended instead",
+   "Intended for moderate personal collections, not large multi-user deployments"
+  ],
+  "license": "MIT",
+  "category": "self-hosted audio streaming",
+  "keywords": [
+   "audio streaming server",
+   "audiobook server",
+   "self-hosted audiobooks",
+   "podcast server",
+   "music streaming self-hosted",
+   "rust audio server",
+   "audioserve",
+   "stream audio from directories",
+   "play position sync",
+   "resume audiobook on another device",
+   "opus transcoding",
+   "ffmpeg transcoding",
+   "m4b chapters",
+   "pwa audio player",
+   "websocket playback sync",
+   "docker audio server",
+   "媒体 server alternative to subsonic",
+   "navigate folders of audio files",
+   "share audiobooks with family",
+   "mp3 streaming over http",
+   "inotify directory watch",
+   "sled cache",
+   "reverse proxy audio",
+   "tls audio server",
+   "collection cache",
+   "m3u playlist support",
+   "rust web server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 14248,
+  "output": 1395
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "promtengineer/localgpt",
+ "repo": "PromtEngineer/localGPT",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "LocalGPT is a self-hosted, privacy-focused document Q&A platform that indexes PDFs, DOCX, HTML, Markdown and TXT files and answers questions about them using local Ollama models, LanceDB hybrid search and a cross-encoder reranker.",
+  "what_it_does": "The project parses documents with Docling (with an OCR fallback for PDFs lacking a text layer), chunks them, and optionally enriches chunks with LLM-generated context and per-document overviews. Retrieval combines dense vector search with LanceDB full-text search, fused by Reciprocal Rank Fusion and reranked by a cross-encoder (on by default). A router chooses between RAG and a direct LLM answer per query, and query decomposition splits complex questions into sub-questions. It exposes a backend gateway on port 8000 and a RAG API on port 8001 with SSE streaming, plus a Next.js web UI, a CLI, and session/index management with SQLite chat history. Optional features such as late chunking, answer verification and multi-vector retrieval are off by default, according to the README's measured evaluations.",
+  "use_cases": [
+   "chat with my private PDFs offline",
+   "summarise and query internal documents without cloud uploads",
+   "build a local document Q&A index for a team",
+   "keep sensitive files on my own machine while using an LLM",
+   "prototype a RAG backend via REST API",
+   "compare retrieval configurations with the included eval harness"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd localGPT",
+   "pip install -r requirements.txt && npm install",
+   "curl -fsSL (install Ollama) && ollama pull qwen3.5:9b && ollama pull qwen3.5:4b",
+   "ollama serve",
+   "python run_system.py",
+   "Alternatively: ./start-docker.sh (Docker deployment)"
+  ],
+  "stack": [
+   "Python 3.10+ (3.11 recommended)",
+   "Node.js 20+ / Next.js frontend",
+   "Ollama",
+   "LanceDB",
+   "SQLite",
+   "Docling",
+   "HuggingFace transformers and torch",
+   "rerankers library",
+   "Docker and docker compose (optional)"
+  ],
+  "notable": [
+   "Hybrid search fusing vector and LanceDB full-text results with Reciprocal Rank Fusion, with a calibrated cross-encoder reranker",
+   "Smart router that picks between RAG retrieval and a direct LLM answer per query",
+   "Query decomposition that pools sub-question retrieval results for one rerank and synthesis pass",
+   "Documented evaluation harness and decision records explaining why each default is set",
+   "Fully local operation: models run through Ollama and embeddings from HuggingFace"
+  ],
+  "caveats": [
+   "The RAG API is single-threaded, so only one chat or indexing run is served at a time",
+   "Requires substantial resources: 8GB+ RAM (16GB+ recommended), and the reranker model is about 7.5 GB",
+   "Changing the embedding model invalidates existing indexes, which must be rebuilt"
+  ],
+  "license": "MIT",
+  "category": "local document qa",
+  "keywords": [
+   "local rag",
+   "private document chat",
+   "offline document qa",
+   "self-hosted rag",
+   "ollama",
+   "lancedb",
+   "hybrid search",
+   "reciprocal rank fusion",
+   "cross-encoder reranker",
+   "docling",
+   "pdf question answering",
+   "chat with my documents",
+   "talk to my pdfs",
+   "query my files privately",
+   "on-premise document intelligence",
+   "document summarisation",
+   "retrieval augmented generation",
+   "vector search",
+   "full-text search",
+   "embeddings",
+   "sentence pruning",
+   "semantic cache",
+   "rest api for rag",
+   "sse streaming chat",
+   "nextjs chat interface",
+   "sqlite chat history",
+   "ocr for scanned pdf",
+   "private llm",
+   "no cloud data upload",
+   "knowledge base assistant",
+   "localgpt alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15645,
+  "output": 1373
+ },
+ "generated": "2026-10-29"
+}

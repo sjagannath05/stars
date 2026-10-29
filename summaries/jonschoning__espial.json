@@ -1,0 +1,96 @@
+{
+ "id": "jonschoning/espial",
+ "repo": "jonschoning/espial",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Bookmarks and Link Sharing",
+   "entry": "Espial - Web-based bookmarking server that supports multiple user accounts. AGPL-3.0 Haskell"
+  }
+ ],
+ "summary": {
+  "one_liner": "Espial is an open-source, self-hosted, web-based bookmarking server with multiple user accounts and SQLite storage.",
+  "what_it_does": "Espial stores bookmarks in a SQLite database and supports multiple user accounts, primarily for self-hosted use. Users can add bookmarks through a browser bookmarklet that pre-fills URL, title, and selected text, or via a JSON API (/api/add and /api/addBulk) authenticated with an API key. Bookmarks can be imported from Pinboard-style JSON, Firefox, and Netscape HTML files, and exported in JSON, Netscape HTML, or notes JSON formats through the CLI or web UI. Bookmarks can be marked private or shared, flagged \"to read\", and given tags and slugs. The web UI is available in 15 languages selectable per account, and optional archive backends (Internet Archive Wayback Machine or a local ArchiveBox 0.7 instance) can save page snapshots.",
+  "use_cases": [
+   "self-hosted bookmark manager",
+   "share bookmarks with other users on a server",
+   "import browser or Pinboard bookmarks",
+   "save links from the browser with a bookmarklet",
+   "add bookmarks programmatically via API",
+   "archive bookmarked pages to Wayback Machine or ArchiveBox"
+  ],
+  "how_to_run": [
+   "MSYS_NO_PATHCONV=1 docker run --name espial -p 9090:3000 -v espial-data:/app/data -d jonschoning/espial:espial",
+   "docker exec espial ./migration createuser --userName myusername --userPassword myuserpassword",
+   "stack build",
+   "stack exec migration -- createdb",
+   "stack exec migration -- createuser --userName myusername --userPassword myuserpassword",
+   "stack exec espial"
+  ],
+  "stack": [
+   "Haskell",
+   "Stack",
+   "GHC",
+   "SQLite",
+   "Docker",
+   "ArchiveBox (optional)",
+   "Caddy (example reverse proxy)"
+  ],
+  "notable": [
+   "Bookmarklet for one-click saving of the current page with title and selected text",
+   "JSON API with API keys, single and bulk add endpoints",
+   "In-process TLS with certificate reload every 12 hours or on SIGHUP",
+   "Optional archiving to Internet Archive Wayback Machine or local ArchiveBox",
+   "Subpath hosting support via APPROOT and reverse proxy prefix stripping"
+  ],
+  "caveats": [
+   "ArchiveBox backend stores all archive data in one global index, so it suits single-user instances best",
+   "Reverse proxy is recommended for production; in-process TLS is described as suited to simple local or LAN setups",
+   "Setup from source requires Haskell tooling (Stack or GHCup)"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted bookmarking",
+  "keywords": [
+   "bookmark manager",
+   "self-hosted bookmarks",
+   "bookmarking server",
+   "link sharing",
+   "social bookmarking",
+   "pinboard alternative",
+   "delicious alternative",
+   "bookmarklet",
+   "browser bookmarks sync",
+   "save links",
+   "read later list",
+   "tagged bookmarks",
+   "bookmark import",
+   "netscape bookmarks html",
+   "firefox bookmarks import",
+   "bookmark api",
+   "api key",
+   "json api bookmarks",
+   "sqlite web app",
+   "multi-user web app",
+   "haskell web application",
+   "docker bookmarks",
+   "wayback machine archive",
+   "archivebox",
+   "link archiving",
+   "self-hosted link manager",
+   "share links with team",
+   "save web pages to read later",
+   "reverse proxy setup",
+   "tls certificate self-hosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9320,
+  "output": 1343
+ },
+ "generated": "2026-10-29"
+}

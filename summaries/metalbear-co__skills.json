@@ -1,0 +1,96 @@
+{
+ "id": "metalbear-co/skills",
+ "repo": "metalbear-co/skills",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Infrastructure & DevOps",
+   "entry": "mirrord by MetalBear - Agent skills and a Claude Code plugin marketplace for mirrord, which runs a local process inside a live Kubernetes cluster's network, environment and traffic. Lets Claude verify changes against real services, databases and queues instead of mocks, with skills for config, CI, database branching, Kafka queue splitting and preview environments."
+  }
+ ],
+ "summary": {
+  "one_liner": "A set of twelve Agent Skills and a Claude Code plugin marketplace that teach coding agents to run local processes against live Kubernetes clusters with mirrord.",
+  "what_it_does": "The repository packages twelve Agent Skills (SKILL.md folders) built by MetalBear for use with mirrord. Each skill covers a task: quickstart, mirrord.json config generation and validation, operator install and RBAC, CI integration, copy-on-write database branches, Kafka queue splitting, Temporal task queue splitting, preview environments, multi-service local sessions via mirrord-up.yaml, chaos testing with latency or connection errors, baggage header propagation across queues and HTTP/gRPC, and discovery of which identifier survives every hop to build an http_filter. The skills are instructions only and contain no code that runs on install; the agent runs mirrord, kubectl and helm against the cluster in the user's kubeconfig. Installation paths are given for Claude Code, Codex, OpenCode, Cursor/Gemini via npx, and rules files for GitHub Copilot and Cline.",
+  "use_cases": [
+   "Let an AI agent test code against real cluster services instead of mocks",
+   "Set up mirrord in CI so integration tests hit staging services",
+   "Give each developer a private slice of a Kafka topic or Temporal task queue",
+   "Create per-developer copy-on-write database branches off a staging database",
+   "Spin up per-PR preview environments with traffic filtering",
+   "Inject latency or errors into a session's outgoing traffic to test retries"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add metalbear-co/skills",
+   "/plugin install mirrord@mirrord-skills",
+   "codex plugin marketplace add metalbear-co/skills",
+   "curl -fsSL | sh  (OpenCode skill install script, per README)",
+   "npx skills add metalbear-co/skills"
+  ],
+  "stack": [
+   "mirrord",
+   "kubectl",
+   "helm",
+   "Agent Skills format (SKILL.md)",
+   "Claude Code plugin marketplace"
+  ],
+  "notable": [
+   "Twelve task-specific skills covering config, CI, database branching, Kafka and Temporal queue splitting, and preview environments",
+   "Header propagation skill follows the baggage session header across HTTP, gRPC and queues such as Kafka, RabbitMQ, SQS and Pub/Sub",
+   "Propagation-discovery skill uses mirrord dump to find a filterable identifier that survives every hop",
+   "Works across many agents: Claude Code, Codex, OpenCode, Cursor, Gemini, Copilot and Cline",
+   "Ports directory provides rules-file versions of core content for agents without skills support"
+  ],
+  "caveats": [
+   "Requires a Kubernetes cluster and a working mirrord setup; the skills drive the mirrord, kubectl and helm CLIs against it",
+   "The operator skill can start a seven-day trial by sending agent name, optional email and a cluster identifier to MetalBear (app.metalbear.com), only after user consent",
+   "mirrord CLI and Operator send usage telemetry to MetalBear; the README says how to disable it"
+  ],
+  "license": "unknown",
+  "category": "kubernetes agent skills",
+  "keywords": [
+   "mirrord",
+   "claude code plugin",
+   "agent skills",
+   "kubernetes",
+   "live cluster testing",
+   "local process in cluster network",
+   "skill marketplace",
+   "codex plugin",
+   "opencode skills",
+   "cursor skills",
+   "gemini skills",
+   "github copilot rules",
+   "cline rules",
+   "mirrord.json config",
+   "mirrord operator",
+   "ci integration tests",
+   "kafka queue splitting",
+   "temporal task queue",
+   "database branching",
+   "copy-on-write database",
+   "preview environments",
+   "per-pr environment",
+   "chaos testing",
+   "latency injection",
+   "baggage header propagation",
+   "http_filter",
+   "traffic filtering",
+   "multi-service local debugging",
+   "integration tests against staging",
+   "test against real services not mocks",
+   "ai coding agent feedback loop",
+   "share cluster with team",
+   "kubectl helm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3963,
+  "output": 1443
+ },
+ "generated": "2026-10-29"
+}

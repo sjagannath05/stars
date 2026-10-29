@@ -1,0 +1,91 @@
+{
+ "id": "noandrea/geo2tz",
+ "repo": "noandrea/geo2tz",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Maps and Global Positioning System (GPS)",
+   "entry": "Geo2tz - Get the timezone from geo coordinates (lat, lon). MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Geo2Tz is a self-hostable HTTP service (and MCP server) that returns the IANA timezone for a given latitude/longitude pair using an offline timezone boundary database.",
+  "what_it_does": "Exposes a GET endpoint at /tz/{lat}/{lon} that returns the coordinates and matching IANA timezone name as JSON, and returns a 4xx response on invalid input. A second endpoint reports the version of the timezone database in use. Lookups run locally against a bundled timezone GeoJSON database, so coordinates are not sent to third-party services. Configuration is via GEO2TZ_* environment variables or an optional YAML, TOML, or JSON config file, including an optional token-based authorization check. The same binary can run as an MCP server over stdio, offering get_timezone and get_tz_version tools. The database can be updated with the geo2tz update command to a current, latest, or specific version.",
+  "use_cases": [
+   "look up timezone from coordinates",
+   "self-hosted geolocation timezone API",
+   "keep location coordinates private",
+   "timezone lookup for an MCP-enabled AI assistant",
+   "determine local time zone for GPS points in an app",
+   "run a timezone microservice in Kubernetes or Docker"
+  ],
+  "how_to_run": [
+   "docker run --pull=always -p 2004:2004 ghcr.io/noandrea/geo2tz:latest",
+   "curl http://localhost:2004/tz/41.902782/12.496365",
+   "mkdir -p ~/.local/share/geo2tz",
+   "geo2tz update latest --db ~/.local/share/geo2tz/timezones.zip --version-file ~/.local/share/geo2tz/version.json",
+   "geo2tz mcp"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "timezone-boundary-builder GeoJSON data"
+  ],
+  "notable": [
+   "Offline lookups: coordinates never leave the host, aimed at privacy-sensitive location data",
+   "Ships as an MCP server (stdio) with get_timezone and get_tz_version tools for AI clients",
+   "Docker image built FROM scratch containing only the binary and timezone database",
+   "Optional token authorization via query parameter",
+   "Built-in update command to fetch specific or latest timezone database versions"
+  ],
+  "caveats": [
+   "Local binary does not bundle the timezone database; it must be fetched with geo2tz update first",
+   "Docker image has no shell or curl/wget, so Compose healthchecks based on those will not work",
+   "Timezone data is sourced from timezone-boundary-builder, so accuracy depends on that upstream dataset"
+  ],
+  "license": "MIT",
+  "category": "geolocation timezone api",
+  "keywords": [
+   "timezone lookup",
+   "coordinates to timezone",
+   "lat lon timezone",
+   "reverse geocoding timezone",
+   "self-hosted timezone api",
+   "privacy friendly geolocation",
+   "offline timezone database",
+   "iana timezone",
+   "timezone boundary",
+   "geojson timezone",
+   "golang service",
+   "docker image timezone",
+   "kubernetes timezone service",
+   "docker compose timezone",
+   "mcp server",
+   "model context protocol",
+   "ai assistant tool",
+   "claude desktop mcp",
+   "gps coordinates to time zone",
+   "find timezone from location",
+   "geo2tz alternative",
+   "timezone-boundary-builder",
+   "rest api timezone",
+   "http json timezone endpoint",
+   "token authorization api",
+   "self hosted maps service",
+   "lookup local time zone",
+   "tz database updater",
+   "geocoding privacy",
+   "zone from latitude longitude"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4729,
+  "output": 1313
+ },
+ "generated": "2026-10-29"
+}

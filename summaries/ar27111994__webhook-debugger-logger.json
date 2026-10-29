@@ -1,0 +1,96 @@
+{
+ "id": "ar27111994/webhook-debugger-logger",
+ "repo": "ar27111994/webhook-debugger-logger",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "Webhook Debugger, Logger & API Mocking Suite | Self-hosted webhook debugging and API mocking suite with live inspection, replay, forwarding, and signature verification"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted or Apify-hosted webhook debugger that generates temporary endpoints, captures and searches incoming requests, replays or forwards them, and mocks callback responses.",
+  "what_it_does": "Generates temporary webhook URLs (1-50 per run) with configurable retention and captures the full request envelope: method, headers, query, body, response status and headers, size, latency, and IP. Captured events are queryable through a DuckDB-backed /logs endpoint with pagination, and can be streamed live over Server-Sent Events at /log-stream. Stored events can be replayed to a different target URL, and all incoming traffic can be forwarded to another destination with retries and circuit breaking. The endpoint can mock downstream behavior by returning custom status codes, bodies, headers, and artificial latency. Security options include an authKey, an IP/CIDR allowlist, sensitive header masking, and provider signature verification for Stripe, Shopify, GitHub, Slack, or custom signatures. Optional JSON Schema validation and sandboxed inline JavaScript transforms run before storage, and Slack or Discord alerts can fire on error, 4xx, 5xx, timeout, or signature_invalid events.",
+  "use_cases": [
+   "Inspect webhook payloads from Stripe, GitHub, Shopify, Slack, or custom services",
+   "Debug webhook integrations without tunneling localhost",
+   "Replay failed callbacks against staging after a fix",
+   "Simulate slow or failing downstream responses for client testing",
+   "Forward test traffic to another service while keeping an audit log",
+   "Verify provider webhook signatures during development"
+  ],
+  "how_to_run": [
+   "npm install",
+   "npm start",
+   "docker build -t webhook-debugger-logger .",
+   "docker run --rm -p 8080:8080 -e ACTOR_WEB_SERVER_PORT=8080 -e APIFY_LOCAL_STORAGE_DIR=/app/storage webhook-debugger-logger"
+  ],
+  "stack": [
+   "Node.js",
+   "Apify Actor SDK",
+   "Apify Dataset and Key-Value Store",
+   "DuckDB",
+   "Express-style HTTP server",
+   "Server-Sent Events",
+   "Docker",
+   "Isolated vm worker threads for custom scripts"
+  ],
+  "notable": [
+   "Full request capture with a searchable /logs API and live SSE stream",
+   "Replay and forwarding with retries, timeouts, and circuit breaker",
+   "Built-in provider signature verification (Stripe, Shopify, GitHub, Slack, custom)",
+   "Sandboxed custom JavaScript transforms that run before events are stored",
+   "Runs on Apify or as a self-hosted Node.js/Docker service with hot-reloadable input"
+  ],
+  "caveats": [
+   "Generated webhook URLs are public unless authKey, allowedIps, or signature verification is enabled",
+   "Retention is limited to 1-168 hours and the actor is positioned for testing, not permanent ingress or long-term storage",
+   "Apify pay-per-event pricing listed at about $10 per 1,000 captured webhooks"
+  ],
+  "license": "unknown",
+  "category": "webhook debugging tools",
+  "keywords": [
+   "webhook debugger",
+   "webhook logger",
+   "api mocking",
+   "mock callback server",
+   "request bin alternative",
+   "webhook inspector",
+   "webhook replay",
+   "webhook forwarding",
+   "signature verification",
+   "stripe webhooks",
+   "github webhooks",
+   "shopify webhooks",
+   "slack webhooks",
+   "sse live logs",
+   "server-sent events",
+   "duckdb",
+   "apify actor",
+   "self-hosted webhook",
+   "docker webhook tool",
+   "node.js webhook server",
+   "capture http requests",
+   "inspect incoming requests",
+   "test callbacks without localhost tunnel",
+   "replay failed webhook",
+   "simulate slow api response",
+   "mock http response latency",
+   "hmac signature check",
+   "json schema validation webhook",
+   "slack discord alerts webhook",
+   "temporary webhook url",
+   "webhook test endpoint"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10611,
+  "output": 1419
+ },
+ "generated": "2026-10-29"
+}

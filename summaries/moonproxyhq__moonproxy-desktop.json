@@ -1,0 +1,100 @@
+{
+ "id": "moonproxyhq/moonproxy-desktop",
+ "repo": "MoonProxyHQ/moonproxy-desktop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Remote Login Software",
+   "entry": "MoonProxy - GUI desktop client for FRP that puts local services on the internet with one click. [![Open-Source Software][OSS Icon]](https://github.com/MoonProxyHQ/moonproxy-desktop) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "MoonProxy - Cross-platform GUI desktop client for FRP (frpc) intranet exposure. Turn your local services into public addresses with one click."
+  }
+ ],
+ "summary": {
+  "one_liner": "MoonProxy is an unofficial, cross-platform desktop GUI client for the frp reverse-proxy tool (frpc) that exposes local services to the internet without command-line configuration.",
+  "category": "frp desktop client",
+  "keywords": [
+   "frp",
+   "frpc",
+   "frps",
+   "intranet penetration",
+   "内网穿透",
+   "reverse proxy",
+   "nat traversal",
+   "tunneling",
+   "tauri",
+   "tauri v2",
+   "rust",
+   "vue 3",
+   "typescript",
+   "desktop gui",
+   "expose local server",
+   "localhost to internet",
+   "share local port publicly",
+   "webhook testing tunnel",
+   "remote access home nas",
+   "self-hosted tunnel",
+   "ngrok alternative",
+   "frp gui",
+   "system tray app",
+   "macos app",
+   "windows app",
+   "remote work access office machine",
+   "one click tunnel",
+   "traffic monitoring",
+   "alternative to command line frpc"
+  ],
+  "what_it_does": "MoonProxy is a GUI desktop client for frp (Fast Reverse Proxy), built with Tauri v2 for macOS and Windows. The user supplies their own frps server, and the app generates the frpc configuration, starts and stops the frpc child process, and shows connection state. It provides a panel for managing TCP, UDP, HTTP and HTTPS proxy rules, with live local-port reachability on the home screen. It displays real-time upload and download rates, connection counts and cumulative traffic, and it polls local endpoints with adaptive intervals to detect broken tunnels. It also supports a system tray that keeps frpc running when the window is closed, launch at login with silent start, and scheduled connections by weekday and time. The frpc binary is bundled, and the engine can be updated from the upstream frp GitHub Releases with SHA256 verification. The README notes that the app does not change frpc behavior.",
+  "use_cases": [
+   "Expose a local web service or webhook endpoint to the internet temporarily",
+   "Reach a home NAS, Home Assistant or personal blog from outside",
+   "Access an office machine over SSH or RDP without a VPN",
+   "Share a local dev server with teammates without a public IP",
+   "Host a Minecraft or other game server for friends temporarily",
+   "Manage frp tunnels without editing frpc.toml by hand"
+  ],
+  "how_to_run": [
+   "pnpm install",
+   "pnpm sync:frpc # download frpc binary",
+   "pnpm tauri dev # local development",
+   "pnpm tauri build # package for current platform"
+  ],
+  "stack": [
+   "Tauri v2",
+   "Rust",
+   "Vue 3",
+   "TypeScript",
+   "pnpm",
+   "Node.js",
+   "frp (frpc sidecar)",
+   "tauri-plugin-updater"
+  ],
+  "notable": [
+   "Bundles the frpc binary as a Tauri sidecar, so users do not install frp separately",
+   "Four-state start button (stopped, connecting, connected, error), with connected status backed by frpc's own evidence",
+   "Adaptive local-port health polling with 3 to 24 second exponential backoff",
+   "Engine self-update: fetches frpc from upstream frp Releases, verifies SHA256, then replaces atomically",
+   "Scheduled connections by weekday and start/end time"
+  ],
+  "caveats": [
+   "Requires the user to supply their own frps server; the app only manages the client side",
+   "macOS builds are ad-hoc signed and not notarized, so first launch needs right-click Open or an xattr command",
+   "Officially supports only macOS (Apple Silicon and Intel) and Windows x64; Linux is not listed",
+   "Unofficial client, independent of the fatedier/frp project"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7408,
+  "output": 1337
+ },
+ "generated": "2026-10-29"
+}

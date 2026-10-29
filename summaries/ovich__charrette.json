@@ -1,0 +1,95 @@
+{
+ "id": "ovich/charrette",
+ "repo": "Ovich/charrette",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "SDLC",
+   "entry": "Charrette by Stefan Teofanovic - A Claude Code plugin with agent skills for designing software before code is written: brainstorm boards, plans cut into slices and run by subagents, working HTML mockups, development workbenches and layered pull request reviews. Every document renders live in a bundled local viewer with Mermaid diagrams, outside the repository."
+  }
+ ],
+ "summary": {
+  "one_liner": "Swarmstorm (formerly Charrette) is a set of MIT-licensed agent skills and plugins for Claude Code, Codex and Cursor that run parallel coding agents coordinated on a shared board, with prototypes, plans, QA verifiers and a local viewer.",
+  "what_it_does": "The README describes a plugin for Claude Code, Codex and Cursor that orchestrates several coding agents working in parallel, each in its own worktree, which negotiate shared file locks on a board before merging into one branch. It provides a local viewer (aiview at localhost:4321) that renders plans, boards, clickable HTML prototypes, workbenches, diagrams and reports, with Mermaid diagrams, stored outside the repository in a data home folder. Skills cover planning (write-plan, interview, cold-read), execution (execute-plan, orchestrate-plan), build-verify loops where verifier agents test the running app, brainstorm and debate protocols run by role-playing seats, and layered pull request review (pr-review). It also includes a dependency-graph skill for JavaScript/TypeScript projects using dependency-cruiser, and complexity-rework guidance with cyclomatic and cognitive measures. The README says the plugin ships no hooks and installs no packages at runtime.",
+  "use_cases": [
+   "run several coding agents in parallel on one feature",
+   "plan and prototype a UI before coding it",
+   "brainstorm or debate a design decision with agent seats",
+   "QA-test a running web app with verifier agents",
+   "layered review of a pull request",
+   "visualize a JavaScript project's dependency graph",
+   "turn repeated dev tasks into reusable tooling"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add Ovich/swarmstorm",
+   "/plugin install swarmstorm@swarmstorm",
+   "codex plugin marketplace add Ovich/swarmstorm",
+   "codex plugin add swarmstorm@swarmstorm",
+   "git clone ~/.cursor/plugins/local/swarmstorm (then Developer: Reload Window in Cursor)"
+  ],
+  "stack": [
+   "Node.js 22.5 or later",
+   "Claude Code plugin",
+   "Codex plugin",
+   "Cursor plugin",
+   "Mermaid",
+   "dependency-cruiser"
+  ],
+  "notable": [
+   "Peer-to-peer file lock negotiation between agents on a shared board, before merge",
+   "Build-verify loop where verifier agents test the running product and findings feed the next build",
+   "Per-project workbenches: project skills plus live pages on real data",
+   "Works across Claude Code, Codex and Cursor with the same skills, using each harness's manifest"
+  ],
+  "caveats": [
+   "Requires Node 22.5 or later; Cursor allows only one level of agent nesting, so workers cannot launch sub-workers there",
+   "Workers need an allow rule added to settings.json for shell commands, and the rule must be rewritten after each update",
+   "Codex needs agents.max_depth set to 2 or more; on Cursor Enterprise an admin must enable local plugin imports",
+   "Cost can be high: the README notes its own editorial run used fourteen Opus seats"
+  ],
+  "license": "MIT",
+  "category": "agent orchestration plugin",
+  "keywords": [
+   "multi-agent orchestration",
+   "claude code plugin",
+   "codex plugin",
+   "cursor plugin",
+   "parallel coding agents",
+   "agent swarm",
+   "agent skills",
+   "merge conflicts between agents",
+   "file lock negotiation",
+   "pull request review",
+   "prototype before coding",
+   "mermaid diagrams",
+   "local viewer",
+   "qa agent",
+   "verifier agent",
+   "brainstorm agents",
+   "debate protocol",
+   "dependency graph",
+   "typescript dependency analysis",
+   "agents.md",
+   "run agents in parallel",
+   "avoid merge conflicts",
+   "plan before coding",
+   "design review tool",
+   "workbench",
+   "charrette",
+   "swarmstorm",
+   "ai coding assistant workflow",
+   "git worktree agents",
+   "developer tooling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10655,
+  "output": 1412
+ },
+ "generated": "2026-10-29"
+}

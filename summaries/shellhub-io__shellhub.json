@@ -1,0 +1,95 @@
+{
+ "id": "shellhub-io/shellhub",
+ "repo": "shellhub-io/shellhub",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Remote Access",
+   "entry": "ShellHub - Modern SSH server for remotely accessing linux devices via command line (using any SSH client) or web-based user interface (alternative to sshd). (Source Code) Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ShellHub is a self-hostable SSH gateway that lets you reach Linux devices behind NAT or firewalls through a server, using any SSH client or a browser-based terminal.",
+  "what_it_does": "The README describes a small agent on each device that dials out to the ShellHub server, so the device needs no public IP or inbound port. Users connect through the server with ssh, scp, sftp, or the web console. Each SSH login is tied to a named team member rather than a copied key in authorized_keys, and removing a person ends their access to all devices. Access Policies are described as default-deny rules controlling which users reach which devices and as which Linux user, and a policy can require a fresh sign-in before each session. ShellHub logs every connection with user, source IP, and device, and devices can be grouped with tags. Self-hosting is done with Docker Compose via make start; the README also mentions a provisioning key for enrolling many devices.",
+  "use_cases": [
+   "remote SSH access to servers behind NAT or firewalls",
+   "managing fleets of embedded Linux devices in the field",
+   "replacing shared authorized_keys with per-person SSH access",
+   "auditing who logged into which server",
+   "browser-based shell access to devices",
+   "centralized SSH access control for a team"
+  ],
+  "how_to_run": [
+   "git clone -b v0.27.0 <repository URL>",
+   "cd shellhub",
+   "make start",
+   "Open http://<host>/setup to create the admin account and namespace",
+   "On each device: curl -sSf http://<host>/install.sh | sh",
+   "Enter the pairing code shown by the agent in the console, then connect with ssh <user>@<device>.<namespace>.<host>"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Make"
+  ],
+  "notable": [
+   "Agent dials out, so devices behind NAT need no public IP or inbound port",
+   "Works with standard SSH clients (OpenSSH, PuTTY) plus scp, sftp, and port forwarding",
+   "Per-person SSH identities with central revocation",
+   "Default-deny access policies with optional per-session re-authentication",
+   "Packages for Yocto, Buildroot, FreeBSD, and Snap"
+  ],
+  "caveats": [
+   "Self-hosting requires Docker with Compose and ports 80 and 22 free on the host",
+   "MFA, server-side session recording, web endpoints, and multiple namespaces are listed as Cloud or Enterprise editions, not Community",
+   "Setup guide for HTTPS and production settings is referenced externally rather than included in the README"
+  ],
+  "license": "Apache-2.0",
+  "category": "ssh remote access gateway",
+  "keywords": [
+   "ssh gateway",
+   "remote ssh",
+   "ssh server",
+   "centralized ssh",
+   "reverse tunnel ssh",
+   "behind nat access",
+   "firewall bypass ssh",
+   "web terminal",
+   "browser ssh",
+   "scp",
+   "sftp",
+   "port forwarding",
+   "openssh",
+   "putty",
+   "linux device management",
+   "iot device remote access",
+   "embedded linux",
+   "fleet management",
+   "ssh access control",
+   "ssh audit logs",
+   "session logging",
+   "access policies",
+   "sshd alternative",
+   "remote shell",
+   "docker compose",
+   "self-hosted ssh",
+   "ssh identities",
+   "share server access with team",
+   "access linux server from anywhere",
+   "manage devices without public ip",
+   "yocto",
+   "buildroot",
+   "freebsd"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2493,
+  "output": 1250
+ },
+ "generated": "2026-10-29"
+}

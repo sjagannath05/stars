@@ -1,0 +1,98 @@
+{
+ "id": "owasp-modsecurity/modsecurity",
+ "repo": "owasp-modsecurity/ModSecurity",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "ModSecurity | Open-source web application firewall"
+  }
+ ],
+ "summary": {
+  "one_liner": "libmodsecurity is the core C/C++ library of ModSecurity v3, a web application firewall engine that loads SecRules-format rules and applies them to HTTP traffic passed in by connectors.",
+  "what_it_does": "The library parses rules written in the ModSecurity SecRules language using Flex and Bison and applies them to HTTP transaction data supplied by the application or by a connector. It exposes both C++ and C APIs for creating a ModSecurity instance, loading rule files, and processing connections, URIs, request and response headers and bodies, reporting whether an intervention occurred. Web server integration is handled by separate connector projects (such as the Nginx connector), not this repository. The README also describes regex handling via PCRE2 with optional libcurl (SecRemoteRules), libinjection (@detectSQLi, @detectXSS), LMDB, Lua, XML, and MaxMind DB support, plus a benchmark tool and a regression/unit test suite run with make check.",
+  "use_cases": [
+   "embed a web application firewall engine in a custom application",
+   "run SecRules-format WAF rules against HTTP requests",
+   "connect ModSecurity to Nginx or other web servers via connectors",
+   "benchmark WAF rule performance",
+   "build a ModSecurity v3 library from source"
+  ],
+  "how_to_run": [
+   "git submodule update --init --recursive",
+   "./build.sh",
+   "./configure",
+   "make",
+   "sudo make install",
+   "make check"
+  ],
+  "stack": [
+   "C++17",
+   "C",
+   "Flex",
+   "Bison",
+   "YAJL",
+   "libXML2",
+   "PCRE2",
+   "autotools",
+   "libinjection",
+   "mbedTLS",
+   "libcurl",
+   "libmaxminddb"
+  ],
+  "notable": [
+   "Library-only rewrite with no Apache dependency, separated from web server connectors that have their own repositories",
+   "Provides both C++ and C APIs for loading rules and processing transactions",
+   "Supports rules in the SecRules language with PCRE2 regex by default",
+   "Includes a benchmark tool and a regression test suite using shared test cases",
+   "Recommends MaxMind DB (libmaxminddb) over the deprecated legacy GeoIP library"
+  ],
+  "caveats": [
+   "Requires git submodules (libinjection, mbedTLS, test cases) to be initialized before building, or the build will fail",
+   "Not a standalone web server module; needs a separate connector project to hook into Nginx, IIS, or others",
+   "Legacy GeoIP library is deprecated and unmaintained upstream; libmaxminddb is recommended instead",
+   "README notes Trustwave sponsorship of development ends July 1, 2024"
+  ],
+  "license": "unknown",
+  "category": "web application firewall",
+  "keywords": [
+   "modsecurity",
+   "libmodsecurity",
+   "web application firewall",
+   "waf",
+   "owasp",
+   "secrules",
+   "sec rules language",
+   "http filtering",
+   "request inspection",
+   "intrusion prevention",
+   "c++ library",
+   "c api",
+   "autotools",
+   "pcre2",
+   "regex rules",
+   "libinjection",
+   "sql injection detection",
+   "xss detection",
+   "nginx connector",
+   "modsecurity v3",
+   "rule engine",
+   "benchmark waf",
+   "block malicious http traffic",
+   "protect web app from attacks",
+   "embed firewall in application",
+   "owasp core rule set",
+   "maxmind geoip"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7672,
+  "output": 1235
+ },
+ "generated": "2026-10-29"
+}

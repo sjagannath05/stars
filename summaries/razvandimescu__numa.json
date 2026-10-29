@@ -1,0 +1,100 @@
+{
+ "id": "razvandimescu/numa",
+ "repo": "razvandimescu/numa",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "DNS",
+   "entry": "Numa - Ad-blocking DNS resolver with DNSSEC-validating recursive resolution, DoH/DoT/Oblivious DoH, ephemeral overrides, and local service domains, in a single Rust binary (alternative to Pi-hole, AdGuard Home, NextDNS). (Source Code) MIT Rust/Docker/Nix"
+  }
+ ],
+ "summary": {
+  "one_liner": "Numa is a single-binary, Rust-built DNS resolver that blocks ads, names local services, and supports recursive DNSSEC validation plus DoT, DoH and ODoH.",
+  "category": "dns resolver",
+  "keywords": [
+   "dns resolver",
+   "ad blocking dns",
+   "dns sinkhole",
+   "pi-hole alternative",
+   "adguard home alternative",
+   "nextdns alternative",
+   "unbound alternative",
+   "recursive resolver",
+   "dnssec validation",
+   "dns over tls",
+   "dot server",
+   "dns over https",
+   "doh server",
+   "oblivious dns",
+   "odoh",
+   "rfc 9230",
+   "local service domains",
+   "dns overrides",
+   "rust dns",
+   "single binary dns",
+   "self-hosted dns",
+   "block ads on network",
+   "name local dev services",
+   "local ca https",
+   "mdns lan discovery",
+   "network-wide ad blocker",
+   "hagezi blocklist",
+   "dns cache serve stale",
+   "conditional forwarding",
+   "dns request hedging",
+   "docker dns server"
+  ],
+  "what_it_does": "Numa runs as a DNS server on your machine or network and answers queries from a cache, from upstream resolvers, or by resolving from the root servers itself. It blocks ads and trackers using the Hagezi Pro list, refreshed daily, and supports custom lists. It can validate DNSSEC in recursive mode and accepts encrypted client queries over DoT (port 853) and DoH. In \"odoh\" mode it seals each outbound query with HPKE and sends it through a relay, and it can run as a public ODoH relay via \"numa relay\". Users can name local services such as frontend.numa, proxy them with a local CA-signed HTTPS certificate, and add DNS overrides with auto-revert through a REST API and a web dashboard. Configuration lives in one TOML file, and LAN instances can discover each other through mDNS.",
+  "use_cases": [
+   "block ads and trackers across a home network",
+   "resolve local dev services by name with HTTPS",
+   "run a validating recursive DNS resolver",
+   "encrypt DNS queries to upstream or from phone and devices",
+   "temporarily override a hostname for testing",
+   "share LAN services between machines by name"
+  ],
+  "how_to_run": [
+   "docker run -d --name numa -p 127.0.0.1:5553:53/udp -p 127.0.0.1:5553:53/tcp -p 127.0.0.1:5380:5380 ghcr.io/razvandimescu/numa",
+   "brew install razvandimescu/tap/numa",
+   "cargo install numa",
+   "nix profile install github:razvandimescu/numa",
+   "sudo numa",
+   "sudo numa install"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "Nix",
+   "Homebrew",
+   "systemd",
+   "launchd",
+   "TOML config",
+   "HPKE (ODoH)",
+   "mDNS"
+  ],
+  "notable": [
+   "DNS wire-protocol parser written by hand with no DNS libraries",
+   "Recursive resolution with DNSSEC validation and ODoH (RFC 9230) support",
+   "Local service proxy with auto-trusted local CA and WebSocket passthrough",
+   "Ephemeral DNS overrides with auto-revert via REST API",
+   "Can act as a public ODoH relay (numa relay)"
+  ],
+  "caveats": [
+   "README labels the project 'New' in its comparison table, so maturity is lower than Pi-hole, AdGuard Home or Unbound",
+   "No DHCP, no clustering and no config sync between instances; most settings are in the config file rather than the dashboard",
+   "Windows listens on 127.0.0.2:53 because the DNS Client service owns 127.0.0.1:53; port 53 needs root or admin and conflicts with dnsmasq or systemd-resolved unless stopped",
+   "Recursive mode queries are not encrypted, so the network and ISP can still read them"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6439,
+  "output": 1419
+ },
+ "generated": "2026-10-29"
+}

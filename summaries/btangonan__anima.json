@@ -1,0 +1,99 @@
+{
+ "id": "btangonan/anima",
+ "repo": "btangonan/anima",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Anima - Native macOS companion for Claude Code with per-project ASCII familiars, nim token economy, and cross-session watcher. Built with Tauri v2."
+  }
+ ],
+ "summary": {
+  "one_liner": "Anima is a native macOS client for Claude Code, built with Tauri v2, that runs multiple sessions in one window and adds per-project ASCII companions, a cross-session pattern watcher, and an @nim@ token-reward system.",
+  "what_it_does": "Anima spawns Claude Code as a subprocess, pipes its stream-json output, and renders messages in its own UI, with a dashboard showing which sessions are working, done, or waiting. A Rust daemon (daemon.rs) polls session activity and tracks tool sequences across all active sessions to flag retry loops and read-heavy spirals. Each project folder gets a generated ASCII familiar with species, rarity, and stats, and it animates while Claude works. Every 1,000 tokens earns 1 @nim@, which can be spent on re-rolls. Companion commentary is produced by a `claude -p` subprocess and shown in a selectable speech bubble that can be pasted back into a session. The app also includes a session history browser (JSONL-backed), optional voice input via a WebSocket bridge, and per-session model and effort overrides.",
+  "use_cases": [
+   "monitor multiple Claude Code sessions at once",
+   "detect retry loops in AI coding agent sessions",
+   "replay past Claude Code conversations",
+   "use a native macOS GUI for Claude Code",
+   "voice input for Claude Code via push-to-talk",
+   "track token usage with a reward system"
+  ],
+  "how_to_run": [
+   "npm install -g @anthropic-ai/claude-code",
+   "claude login",
+   "git clone <repo> && cd anima",
+   "git lfs install && git lfs pull",
+   "nvm use && npm install",
+   "npm run tauri dev"
+  ],
+  "stack": [
+   "Tauri v2",
+   "Rust",
+   "Tokio",
+   "vanilla JavaScript",
+   "Node.js 20",
+   "vitest",
+   "Claude Code CLI",
+   "WebSocket"
+  ],
+  "notable": [
+   "Cross-session Rust daemon that detects retry loops and read-heavy spirals across all active Claude Code sessions",
+   "Per-project ASCII companion with deterministic species, rarity, and stats; same project yields the same buddy",
+   "@nim@ token economy: 1 nim per 1,000 tokens, spent on companion re-rolls",
+   "Companion commentary uses the full Claude model via claude -p, with selectable text for pasting back into sessions",
+   "Vanilla JS frontend with no framework or bundler"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later on Apple Silicon and an authenticated Claude Code CLI",
+   "No signed .dmg published; must build from source, and the build is unsigned so Gatekeeper warns on first launch",
+   "Voice is optional and the bundled STT sidecar is disabled by default; live voice needs an external WebSocket STT bridge",
+   "Alpha software from a solo developer; breaking changes happen"
+  ],
+  "license": "MIT",
+  "category": "macos claude code client",
+  "keywords": [
+   "claude code gui",
+   "claude code client",
+   "macos app",
+   "native mac app",
+   "tauri v2",
+   "tauri desktop app",
+   "rust daemon",
+   "tokio watcher",
+   "multi-session dashboard",
+   "manage multiple ai coding sessions",
+   "retry loop detection",
+   "ai agent monitoring",
+   "ascii companion",
+   "ascii pet",
+   "per-project mascot",
+   "token rewards",
+   "nim currency",
+   "session history replay",
+   "jsonl session browser",
+   "voice input push to talk",
+   "websocket speech bridge",
+   "claude -p subprocess",
+   "coding assistant companion",
+   "vanilla javascript desktop app",
+   "apple silicon app",
+   "mit license tool",
+   "alpha developer tool",
+   "watch ai coding sessions",
+   "paste ai commentary",
+   "claude login setup",
+   "companion oracle commentary"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3847,
+  "output": 1334
+ },
+ "generated": "2026-10-29"
+}

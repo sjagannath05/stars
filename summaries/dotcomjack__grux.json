@@ -1,0 +1,99 @@
+{
+ "id": "dotcomjack/grux",
+ "repo": "dotcomjack/grux",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Grux - AI agent that runs terminal sessions it can undo and reaches your mail, calendar, meetings, and files, using your own API key or a local model."
+  }
+ ],
+ "summary": {
+  "one_liner": "Grux is an open source, local-first AI agent for macOS that connects to your mail, calendar, meetings, files and a shell it can undo, using your own API key or a local model via Ollama.",
+  "what_it_does": "Grux is a native macOS app (Apple silicon, macOS 14+) with a Command Panel that opens feature panes such as Chat, Mailbox, Calendar, Notes, Documents, Contacts, Meetings, Projects and Schedules. Its chat agent can call about 116 tools, including opening persistent terminal sessions where every command is snapshotted into a shadow git repository first so it can be undone. Meetings are recorded from microphone and system audio and transcribed on device with WhisperKit. Chat runs against Anthropic with your own key, or against a local model through Ollama with no key. The README also describes a command line (grux setup, status, doctor) that drives the same features, and an MCP bridge that is read only. A separate iOS companion, GruxPhone, pairs over the local network and is opt in.",
+  "use_cases": [
+   "run a local AI assistant on a Mac without sending data to a hosted model",
+   "undo changes an AI agent made in a terminal",
+   "AI meeting transcription that keeps audio on device",
+   "read and triage mail and calendar with an AI agent",
+   "drive Grux from the command line or a coding agent",
+   "build and run iOS apps in the simulator with an agent"
+  ],
+  "how_to_run": [
+   "brew install --cask dotcomjack/tap/grux",
+   "npx @dotcomjack/grux",
+   "git clone https://github.com/dotcomjack/grux (repository URL as given in README is truncated; use the GitHub repo)",
+   "cd grux/Grux-Mac",
+   "./build.sh",
+   "ollama pull gruxai.com/grux/grux-local:4b"
+  ],
+  "stack": [
+   "Swift",
+   "Swift Package Manager",
+   "WhisperKit",
+   "swift-argument-parser",
+   "Ollama",
+   "Anthropic API",
+   "MCP",
+   "Node.js (npx launcher)",
+   "grux-guardrails"
+  ],
+  "notable": [
+   "Shell commands are snapshotted into a shadow git repository before they run, so the agent's actions can be undone",
+   "Local model option: Grux Local, a fine-tuned Qwen 3.5 model with tags for 2B, 4B and 9B sizes, run through Ollama",
+   "Meeting audio is transcribed on device with WhisperKit and the raw audio is not uploaded",
+   "No account, no Grux server, no telemetry SDK; credentials are stored in the macOS Keychain",
+   "Feature tests and guards, such as a frozen setup contract and a permission table checked against the app's registry"
+  ],
+  "caveats": [
+   "Apple silicon only, macOS 14 or later; the README says nothing runs on Intel Macs",
+   "Building from source needs Xcode 16 or later (Swift 6.0+), and the app is not sandboxed",
+   "12 of 37 features are labelled Labs/BETA and the README says they are unfinished; the MCP server is read only"
+  ],
+  "license": "MIT",
+  "category": "macos ai agent",
+  "keywords": [
+   "local ai agent",
+   "macos ai assistant",
+   "mac ai agent",
+   "ollama",
+   "ollama mac app",
+   "local llm",
+   "run llm locally on mac",
+   "anthropic api client",
+   "swift",
+   "swiftui",
+   "whisperkit",
+   "on-device transcription",
+   "meeting transcription",
+   "meeting notes",
+   "terminal agent",
+   "undoable shell",
+   "shadow git snapshot",
+   "mcp server",
+   "mcp bridge",
+   "mail and calendar assistant",
+   "personal assistant mac",
+   "private ai assistant",
+   "no subscription ai app",
+   "open source chatgpt alternative mac",
+   "claude desktop alternative",
+   "homebrew cask",
+   "command line ai setup",
+   "local model mac",
+   "grux local model",
+   "ai that runs commands on my mac",
+   "share files with my team"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13726,
+  "output": 1427
+ },
+ "generated": "2026-10-29"
+}

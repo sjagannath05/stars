@@ -1,0 +1,100 @@
+{
+ "id": "mrrobotogit/tiramisu",
+ "repo": "MrRobotoGit/tiramisu",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "Tiramisu - BitTorrent engine with a FUSE virtual filesystem that streams torrents live to Plex/Jellyfin without downloading (alternative to Real-Debrid). GPL-2.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tiramisu is a Go BitTorrent engine with a FUSE virtual filesystem that presents torrent-backed .mkv, music and audiobook files as ordinary files so Plex or Jellyfin can stream them without downloading.",
+  "what_it_does": "The FUSE layer exposes each media file as a seekable file of the correct size, serving bytes live from a BitTorrent swarm through an in-memory pipe inside the same process. It includes a built-in sync engine that queries TMDB, searches Prowlarr (with Torrentio fallback), and files the best release, replacing it when a better one appears. Plex and Jellyfin webhooks switch a stream to priority mode on playback, and a Control Panel (:9080/control) and Health Monitor dashboard (:9080/dashboard) expose settings and live stats. A Library API and an MCP server at /mcp let HTTP clients or AI agents add and remove titles. Optional features include an SSD warmup cache, NAT-PMP port forwarding for WireGuard, and an IP blocklist. The README describes it as a single tiramisu binary.",
+  "use_cases": [
+   "stream torrents to Plex without downloading",
+   "watch movies from a torrent swarm on Jellyfin",
+   "automatically build a movie and TV library from TMDB",
+   "run a streaming media server on a Raspberry Pi",
+   "file and play FLAC albums or audiobooks from torrents via Plexamp or Jellyfin",
+   "replace a Real-Debrid style debrid service"
+  ],
+  "how_to_run": [
+   "Run the install script from the README (Quick Install section; exact command not captured in the truncated README)",
+   "Open the Control Panel at :9080/control to set paths, TMDB key, Plex/Prowlarr credentials",
+   "Add a Plex or Jellyfin webhook pointing at http://<host>:9080/plex/webhook",
+   "Add a Samba or CIFS share of the FUSE mount as a library in Plex/Jellyfin",
+   "Trigger a sync run from the Control Panel or POST /api/scheduler/{type}/run",
+   "Build from source with: GOARCH=arm64 CGO_ENABLED=1 go build -pgo=auto -o tiramisu . (per README Step 10)"
+  ],
+  "stack": [
+   "Go",
+   "FUSE",
+   "anacrolix/torrent",
+   "TorrServer Matrix",
+   "SQLite",
+   "Docker",
+   "Samba",
+   "Prowlarr",
+   "Torrentio",
+   "TMDB",
+   "MusicBrainz",
+   "WireGuard NAT-PMP"
+  ],
+  "notable": [
+   "FUSE filesystem and BitTorrent engine run in one process connected by an in-memory io.Pipe, with no HTTP proxy in the hot path",
+   "Adaptive Shield switches to strict verification only when corrupt pieces appear, and bans bad peers for 30 days",
+   "Built-in Go sync engine with quality ladder (4K DV down to 1080p) and automatic upgrades",
+   "Native Plex and Jellyfin webhook handling with IMDB id extraction and Priority Mode",
+   "Music and audiobook projections keyed by MusicBrainz or ASIN ids, served read-only"
+  ],
+  "caveats": [
+   "Initial library scan by Plex/Jellyfin opens hundreds of files and makes playback very slow until it completes, per the README's caution note",
+   "Playback depends on torrent peer availability; cold starts take 2-4 seconds per the README's measurements",
+   "Optional features (SSD warmup cache, NAT-PMP, blocklist) need extra configuration; the blocklist is off by default"
+  ],
+  "license": "GPL-2.0",
+  "category": "torrent streaming filesystem",
+  "keywords": [
+   "torrent streaming",
+   "bittorrent fuse",
+   "fuse virtual filesystem",
+   "stream torrents plex",
+   "stream torrents jellyfin",
+   "debrid alternative",
+   "real-debrid alternative",
+   "plex torrent library",
+   "jellyfin torrent",
+   "go bittorrent engine",
+   "anacrolix torrent",
+   "torrserver",
+   "prowlarr",
+   "torrentio",
+   "tmdb sync",
+   "mkv virtual files",
+   "seekable torrent stream",
+   "no download streaming",
+   "self-hosted media server",
+   "raspberry pi media server",
+   "plexamp flac",
+   "audiobook streaming torrent",
+   "mcp server media",
+   "webhook plex playback",
+   "samba fuse mount",
+   "share files with my team",
+   "watch movies without downloading",
+   "stream 4k without storage",
+   "infuse apple tv library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17764,
+  "output": 1591
+ },
+ "generated": "2026-10-29"
+}

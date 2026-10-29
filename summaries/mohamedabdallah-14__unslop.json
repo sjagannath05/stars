@@ -1,0 +1,100 @@
+{
+ "id": "mohamedabdallah-14/unslop",
+ "repo": "MohamedAbdallah-14/unslop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🤖 AI-Related Tools",
+   "entry": "unslop - CLI that strips AI writing patterns (sycophantic openers, filler phrases, em-dash overuse) from text files and stdin. Pass through code blocks and URLs unchanged. npm install -g unslop."
+  }
+ ],
+ "summary": {
+  "one_liner": "unslop is a CLI, editor-rule, and Claude Code plugin that strips common AI writing patterns (sycophantic openers, stock vocabulary, filler phrases, em-dash pileups) from text while leaving code, URLs, and structure intact.",
+  "what_it_does": "It rewrites AI-generated prose to sound less like a language model, using a deterministic regex pass (no network) or an optional LLM pass. Deterministic mode protects fenced and inline code, URLs, headings, YAML frontmatter, tables, and blockquotes, and fails the run if the validator detects changes to them. It offers five modes (subtle, balanced, full, voice-match, anti-detector) and can be activated inside Claude Code, Cursor, Windsurf, Cline, Gemini CLI, and OpenAI Codex through rule files or hooks. Optional features include a voice-match profile made of numeric style metrics, a reasoning-trace stripper for agent output, a surprisal-variance reading using a local distilgpt2 model, and a detector feedback loop that reports scores from an external detector model. The README says its detector-score reduction is small (0.0–0.2 percentage points on its own fixtures), so it is positioned as a polish tool rather than a detector bypass.",
+  "use_cases": [
+   "clean up AI-drafted cover letters or resumes before sending",
+   "remove sycophantic openers and filler from chatbot replies",
+   "polish blog posts or LinkedIn posts written with an LLM",
+   "strip reasoning wrappers from agent output before shipping",
+   "rewrite markdown files while keeping code and links unchanged",
+   "apply a personal writing style profile to AI drafts"
+  ],
+  "how_to_run": [
+   "npm install -g unslop",
+   "pipx install unslop",
+   "unslop --deterministic path/to/file.md",
+   "pipx install 'unslop[llm]'  # optional LLM mode SDK",
+   "/plugin marketplace add MohamedAbdallah-14/unslop  # in Claude Code",
+   "/plugin install unslop"
+  ],
+  "stack": [
+   "Python",
+   "JavaScript (Claude Code hooks)",
+   "Markdown rule files",
+   "Bash and PowerShell installers",
+   "HuggingFace models (optional detector and surprisal)",
+   "Anthropic API (optional LLM mode)",
+   "pytest"
+  ],
+  "notable": [
+   "Deterministic mode is pure regex with no network calls and byte-preserves code, URLs, and headings, failing the run on drift",
+   "Voice-match stores only numeric style metrics (no prose) in a 0600-mode JSON file",
+   "One source of truth for skills, mirrored to Cursor, Windsurf, Cline, Gemini, and Codex via CI sync",
+   "Reports a blind LLM-judge preference result (21/21) and openly says it does not defeat AI detectors",
+   "Opt-in reasoning-trace sanitizer writes stripped content to a sidecar file"
+  ],
+  "caveats": [
+   "README states detector-score resistance is minimal; it is not a GPTZero or Turnitin bypass",
+   "LLM mode cannot byte-enforce preservation; deterministic mode is needed for a hard guarantee",
+   "Surprisal and detector features need large model downloads (about 330 MB for distilgpt2) and optional extras",
+   "README says not to use it for legal, medical, or runbook text where precision matters"
+  ],
+  "license": "unknown",
+  "category": "AI writing cleanup",
+  "keywords": [
+   "ai writing cleanup",
+   "remove ai tone",
+   "humanize ai text",
+   "de-slop text",
+   "llm output cleanup",
+   "sycophancy filter",
+   "em-dash removal",
+   "filler phrase remover",
+   "stock vocabulary removal",
+   "claude code plugin",
+   "cursor rules",
+   "windsurf rules",
+   "cline rules",
+   "gemini cli extension",
+   "codex plugin",
+   "markdown rewriter",
+   "preserve code blocks",
+   "deterministic regex rewriter",
+   "voice match writing style",
+   "resume rewrite polish",
+   "cover letter editing",
+   "make ai text sound human",
+   "npm cli tool",
+   "pipx python cli",
+   "ai detector feedback",
+   "reasoning trace stripper",
+   "surprisal variance",
+   "burstiness sentence length",
+   "alternative to undetectable.ai",
+   "alternative to stealthgpt",
+   "share polished text with my team",
+   "make chatbot replies less wordy",
+   "clean up chatgpt drafts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17521,
+  "output": 1600
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "vestaterm/vesta",
+ "repo": "vestaterm/Vesta",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Terminal Apps",
+   "entry": "Vesta - Native macOS terminal built on libghostty for running coding agents in parallel. [![Open-Source Software][OSS Icon]](https://github.com/vestaterm/Vesta) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Vesta is a native macOS terminal app built on libghostty for running AI coding agents in parallel, with a workspace sidebar, tmux-style sessions, and a scriptable `vesta` CLI.",
+  "what_it_does": "Vesta is a Swift/AppKit terminal that links GhosttyKit (libghostty) and renders with Ghostty's Metal engine, reading the existing ~/.config/ghostty/config. It adds a flat workspace sidebar where each row is a terminal session rooted at a directory with native splits, plus optional visual groups. Shells run under a small daemon (vestad) so they survive quitting Vesta and reattach on relaunch, with prefix-key (ctrl+b) mode for tmux-style control. Workspace cards show output tails and success/failure heat driven by OSC 133 marks, and the vesta CLI drives and reads the live UI over a Unix socket so agents can orchestrate panes. It also includes a command palette, in-app and macOS notifications, drag-and-drop of file paths, and a self-updater.",
+  "use_cases": [
+   "run multiple AI coding agents side by side in one window",
+   "keep terminal sessions alive after quitting the app",
+   "script a terminal from another agent or shell via a CLI",
+   "organize project shells into a sidebar with groups and colors",
+   "tmux-style split panes on macOS without tmux",
+   "get notified when a background command or agent needs attention"
+  ],
+  "how_to_run": [
+   "brew install --cask vestaterm/tap/vesta-terminal",
+   "swift build",
+   "./install.sh",
+   "./make-app.sh",
+   "open Vesta.app"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "libghostty / GhosttyKit",
+   "Metal",
+   "zsh"
+  ],
+  "notable": [
+   "Uses real libghostty (GhosttyKit.xcframework) rather than a fork, and reads existing ghostty config and themes",
+   "Persistent sessions via a daemon (vestad) that holds PTYs and replays recent output on reattach",
+   "Scriptable `vesta` CLI over a Unix socket for agent orchestration, including broadcast send-keys",
+   "Workspace cards show output tails and OSC 133-based success/failure heat, Claude Code-aware",
+   "Cold restore rebuilds workspace layout and cwd after a reboot, with optional on-disk scrollback"
+  ],
+  "caveats": [
+   "Requires macOS and an Apple Silicon-style build path (arm64 build directory shown in examples)",
+   "Persistent scrollback is written to disk and may contain secrets; it can be disabled with vesta-persist-scrollback = false",
+   "Shells survive only window-close or quit; closing panes or workspaces kills their shells"
+  ],
+  "license": "unknown",
+  "category": "macos terminal app",
+  "keywords": [
+   "macos terminal",
+   "native terminal emulator",
+   "libghostty",
+   "ghostty",
+   "ghosttykit",
+   "ai coding agents",
+   "run agents in parallel",
+   "coding agent terminal",
+   "tmux alternative",
+   "tmux-style splits",
+   "persistent sessions",
+   "session daemon",
+   "terminal multiplexer",
+   "scriptable terminal",
+   "cli control",
+   "vesta cli",
+   "workspace sidebar",
+   "terminal groups",
+   "split panes",
+   "command palette",
+   "osc 133",
+   "shell integration",
+   "terminal notifications",
+   "iterm alternative",
+   "terminal.app alternative",
+   "keep shells running after quit",
+   "run multiple claude code sessions",
+   "swift appkit terminal",
+   "metal terminal renderer",
+   "homebrew cask terminal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9719,
+  "output": 1323
+ },
+ "generated": "2026-10-29"
+}

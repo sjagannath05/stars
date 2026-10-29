@@ -1,0 +1,108 @@
+{
+ "id": "robbyant/lingbot-map",
+ "repo": "Robbyant/lingbot-map",
+ "kind": "star",
+ "description": "[ECCV 2026 Best Paper Award Candidate] LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction",
+ "topics": [],
+ "language": "Python",
+ "stars": 18428,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-14",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "3d mapping"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "LingBot-Map is a feed-forward Geometric Context Transformer model for streaming 3D reconstruction from video or image sequences, with an interactive viser viewer and an offline point-cloud flythrough renderer.",
+  "what_it_does": "The repository provides the LingBot-Map model code and checkpoints for streaming 3D reconstruction, which estimates camera poses and dense geometry frame by frame. The README describes a Geometric Context Transformer using anchor context, a pose-reference window, and trajectory memory, with a paged KV cache attention design. demo.py runs inference on an image folder or video and opens an interactive browser-based viser viewer, with options for sky masking, keyframe intervals, windowed inference for long sequences, and visualization settings. demo_render/batch_demo.py is an offline pipeline that runs inference and renders a headless point-cloud flythrough MP4, configurable through YAML camera presets. The README also lists an evaluation benchmark for KITTI and Oxford Spires, with preprocessing for Oxford Spires, and says it covers several other datasets in its TODO list.",
+  "use_cases": [
+   "streaming 3D reconstruction from video",
+   "camera pose estimation from image sequences",
+   "long indoor walkthrough reconstruction",
+   "outdoor drive scene point cloud rendering",
+   "benchmarking reconstruction on KITTI or Oxford Spires",
+   "offline point-cloud flythrough video generation"
+  ],
+  "how_to_run": [
+   "conda create -n lingbot-map python=3.10 -y && conda activate lingbot-map",
+   "pip install torch==2.8.0 torchvision==0.23.0 --index-url <PyTorch CUDA 12.8 index>",
+   "pip install -e .",
+   "pip install flashinfer-python (recommended; otherwise use --use_sdpa)",
+   "python demo.py --model_path /path/to/lingbot-map.pt --image_folder example/courthouse --mask_sky",
+   "python demo_render/batch_demo.py --video_path <video> --output_folder <dir> --model_path /path/to/lingbot-map.pt --config demo_render/config/indoor.yaml --mode windowed --window_size 128"
+  ],
+  "stack": [
+   "Python 3.10",
+   "PyTorch 2.8.0",
+   "CUDA 12.8",
+   "FlashInfer",
+   "ONNX Runtime (sky masking)",
+   "viser",
+   "Open3D",
+   "NVIDIA Kaolin",
+   "ffmpeg",
+   "VGGT",
+   "DINOv2"
+  ],
+  "notable": [
+   "Streaming feed-forward design with paged KV cache, reported at about 20 FPS on 518x378 over sequences over 10,000 frames",
+   "Windowed inference and keyframe-interval options for very long sequences",
+   "Offline batch renderer that produces point-cloud flythrough MP4s driven by YAML camera paths",
+   "Sky masking via an ONNX sky segmentation model, auto-downloaded on first use",
+   "Evaluation scripts for KITTI and Oxford Spires"
+  ],
+  "caveats": [
+   "Performance degrades beyond about 320 views in the KV cache, so long sequences need keyframe or windowed modes; the README notes a maximum inference range bounded by training distances without state resetting",
+   "Batch rendering requires NVIDIA Kaolin, which has prebuilt wheels only for specific PyTorch versions (2.8.0 recommended), and CUDA extensions must be built before first run",
+   "Some demo datasets and checkpoints are hosted on Hugging Face and ModelScope, and a stronger long-sequence model is marked as coming soon"
+  ],
+  "license": "Apache-2.0",
+  "category": "streaming 3d reconstruction",
+  "keywords": [
+   "3d reconstruction",
+   "streaming reconstruction",
+   "geometric context transformer",
+   "camera pose estimation",
+   "structure from motion alternative",
+   "feed-forward reconstruction",
+   "point cloud",
+   "depth and pose from video",
+   "kv cache",
+   "flashinfer",
+   "paged attention",
+   "pytorch",
+   "viser viewer",
+   "interactive 3d viewer",
+   "sky masking",
+   "onnx segmentation",
+   "long video reconstruction",
+   "windowed inference",
+   "keyframe selection",
+   "offline rendering",
+   "flythrough video",
+   "point cloud rendering",
+   "kitti benchmark",
+   "oxford spires",
+   "slam alternative",
+   "visual odometry",
+   "vggt",
+   "dinov2",
+   "indoor walkthrough",
+   "drive scene reconstruction",
+   "3d mapping from video",
+   "reconstruct 3d from phone video"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11187,
+  "output": 1657
+ },
+ "generated": "2026-10-29"
+}

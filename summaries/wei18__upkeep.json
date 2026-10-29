@@ -1,0 +1,96 @@
+{
+ "id": "wei18/upkeep",
+ "repo": "wei18/Upkeep",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Linting",
+   "entry": "Upkeep by wei18 - Upkeep — an AI audit crew for your repo. Catches docs/spec/asset drift with evidence; output-only. Claude Code plugin/skill + reusable CI workflow."
+  }
+ ],
+ "summary": {
+  "one_liner": "Upkeep is an AI audit tool that runs parallel AI reviewers over a whole repository to find semantic drift (stale docs, specs out of sync with code, orphaned assets, convention violations) and reports findings with evidence without editing files.",
+  "what_it_does": "Upkeep scans a repository and dispatches several focused AI reviewers in parallel, each covering one area such as docs staleness, spec/flow mismatches, duplicate or orphaned files, and repo conventions. It reports divergence with evidence and severity rather than assuming one artifact is the source of truth. It is output-only and never edits or deletes files. Results come as a self-contained HTML report and a terminal or chat summary. In CI it can maintain a single upserted GitHub tracking issue and upload the report as a workflow artifact. The engine runs on the user's machine using a logged-in claude CLI (Claude Pro/Max), with no separate API key.",
+  "use_cases": [
+   "audit a repo for stale documentation",
+   "find specs that no longer match the code",
+   "detect orphaned or duplicate assets",
+   "scheduled repo-wide drift checks in CI",
+   "check translated READMEs for out-of-sync content",
+   "review repo conventions against CLAUDE.md"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add wei18/upkeep",
+   "/plugin install upkeep@upkeep",
+   "npx skills add wei18/upkeep --skill upkeep-audit",
+   "git clone --depth 1 <upkeep repo> ~/.cache/upkeep && cd ~/.cache/upkeep && npm ci",
+   "./scripts/local-audit.sh /path/to/repo --out ~/upkeep-report.html",
+   "Add .github/workflows/audit.yml that uses wei18/upkeep/.github/workflows/audit.yml@v2 with the CLAUDE_CODE_OAUTH_TOKEN secret"
+  ],
+  "stack": [
+   "Node.js 20+",
+   "git",
+   "Claude Code CLI (claude)",
+   "Claude Pro/Max subscription",
+   "GitHub Actions reusable workflow",
+   "npm"
+  ],
+  "notable": [
+   "Output-only design: reports drift with evidence and severity but never edits or deletes files",
+   "Runs on an existing Claude Pro/Max subscription instead of a per-token Anthropic API key",
+   "Parallel focused reviewers (docs, code hygiene, specs, visual/icons, duplicates/orphans, conventions, optional i18n)",
+   "CI mode upserts one GitHub tracking issue instead of creating duplicates",
+   "Configurable per repo via .claude/audit.yml; works as a Claude Code plugin, a skills.sh skill, a reusable workflow, a Marketplace action, or a plain script"
+  ],
+  "caveats": [
+   "Requires a logged-in claude CLI with a Pro/Max plan; CI needs a CLAUDE_CODE_OAUTH_TOKEN secret generated via claude setup-token",
+   "The engine runs on the user's machine in every install mode, so it needs Node 20+ and git locally",
+   "The Marketplace action runs reviewers sequentially rather than in parallel; the README recommends the reusable workflow instead",
+   "The @v1 reusable workflow tag is frozen; users must move to @v2"
+  ],
+  "license": "unknown",
+  "category": "ai repo auditing",
+  "keywords": [
+   "ai code review",
+   "repo audit",
+   "documentation drift",
+   "stale docs detection",
+   "spec drift",
+   "orphaned assets",
+   "dead file finder",
+   "claude code plugin",
+   "claude code skill",
+   "claude skill",
+   "github actions reusable workflow",
+   "scheduled ci audit",
+   "github tracking issue",
+   "html report",
+   "semantic linting",
+   "docs out of sync",
+   "translated docs check",
+   "i18n consistency",
+   "convention checker",
+   "claude pro subscription",
+   "no api key ai tool",
+   "readme vs code mismatch",
+   "whole repo review",
+   "read-only code audit",
+   "multi-agent review",
+   "parallel reviewers",
+   "linter alternative",
+   "danger alternative",
+   "copilot review alternative",
+   "check my repo for outdated docs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4555,
+  "output": 1507
+ },
+ "generated": "2026-10-29"
+}

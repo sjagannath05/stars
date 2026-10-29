@@ -1,0 +1,98 @@
+{
+ "id": "snapotter-hq/snapotter",
+ "repo": "snapotter-hq/SnapOtter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Document Management",
+   "entry": "SnapOtter - Suite of 200+ web tools for converting and editing images, videos, audio and PDFs, including a layer-based image editor, OCR, transcription, background removal and batch processing pipelines (alternative to SmallPDF, iLovePDF, CloudConvert). (Demo, Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "SnapOtter is a self-hosted, Docker-deployed suite of 200+ web tools for converting, compressing, editing, OCR-ing and transcribing images, video, audio, PDFs and documents, with a UI, REST API and pipelines.",
+  "what_it_does": "Provides roughly 200 file-processing tools grouped into image (112), video (57), audio (27), PDF (35) and files (23) categories, covering conversion, compression, resizing, trimming, merging, watermarking and similar edits. Includes a browser-based layer image editor with brushes, shapes, adjustments and filters. Local AI features cover background removal, upscaling, photo restoration, object erasing, face blurring, OCR for images and PDFs, audio transcription and auto-generated video subtitles, all run on the user's own hardware. Tools can be chained into reusable pipelines (JSON import/export) and batch-processed, and every tool is exposed through a REST API with API-key auth and interactive docs at /api/docs. The README says files are not sent to external services, though basic analytics are on by default and can be disabled.",
+  "use_cases": [
+   "convert image or video formats on a home server",
+   "compress and resize photos in batches",
+   "OCR scanned PDFs and images",
+   "transcribe audio recordings locally",
+   "merge, split, or redact PDFs without uploading to a third party",
+   "strip metadata from files",
+   "automate file processing through a REST API"
+  ],
+  "how_to_run": [
+   "docker run -d --name SnapOtter -p 1349:1349 -v SnapOtter-data:/data snapotter/snapotter:latest",
+   "Open http://localhost:1349 and log in with admin / admin (password change required on first login)",
+   "For production: save the README's compose.yaml (app + Postgres 17 + Redis 8) and run docker compose up -d",
+   "For NVIDIA GPU acceleration, use the GPU Compose file described in Docker Tags"
+  ],
+  "stack": [
+   "Docker",
+   "PostgreSQL 17",
+   "Redis 8",
+   "Node/TypeScript (inferred from REST API and build references is not stated; omitted)"
+  ],
+  "notable": [
+   "Single 'docker run' quick start with embedded Postgres and Redis, or a 3-container Compose stack for production",
+   "Covers five file modalities (image, video, audio, PDF, documents) in one stack, with local AI features",
+   "Pipelines chain tools into reusable workflows; batch size unlimited in the published image",
+   "OIDC/SSO login with Google, GitHub, Okta or any OpenID Connect provider",
+   "Multi-arch images for AMD64 and ARM64; 21 UI languages"
+  ],
+  "caveats": [
+   "Default admin/admin credentials; the Postgres example password must be changed for non-local deployments",
+   "Intel/AMD iGPU acceleration is not supported for AI inference; those systems run AI on CPU",
+   "Dual-licensed: AGPLv3 for free use, with a paid commercial license for proprietary or SaaS use"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted file processing",
+  "keywords": [
+   "self-hosted file processing",
+   "image converter",
+   "video converter",
+   "audio converter",
+   "pdf tools",
+   "ocr",
+   "transcription",
+   "background removal",
+   "image compression",
+   "batch processing",
+   "pipelines",
+   "rest api",
+   "docker",
+   "postgres",
+   "redis",
+   "oidc",
+   "sso",
+   "image editor",
+   "remove metadata",
+   "exif strip",
+   "upscaling",
+   "photo restoration",
+   "subtitles",
+   "smallpdf alternative",
+   "ilovepdf alternative",
+   "cloudconvert alternative",
+   "tinypng alternative",
+   "tinywow alternative",
+   "otter.ai alternative",
+   "stirling-pdf alternative",
+   "convertx alternative",
+   "convert files on my own server",
+   "share files privately",
+   "shrink photos in bulk",
+   "pdf redaction",
+   "multi-arch arm64 raspberry pi"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4455,
+  "output": 1439
+ },
+ "generated": "2026-10-29"
+}

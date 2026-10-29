@@ -1,0 +1,102 @@
+{
+ "id": "momenbasel/puremac",
+ "repo": "momenbasel/PureMac",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Cleanup and Uninstall",
+   "entry": "PureMac - Free, open-source macOS cleaner with no telemetry. Cleans system and user caches, Xcode junk, Homebrew cache, mail attachments, and finds large or old files. Supports scheduled auto-cleaning. [![Open-Source Software][OSS Icon]](https://github.com/momenbasel/PureMac) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⚙️ System (47)",
+   "entry": "PureMac - Free macOS cleaner with zero telemetry. Cleans system caches, Xcode junk, Homebrew cache, mail attachments, and finds large or old files. Supports scheduled auto-cleaning."
+  }
+ ],
+ "summary": {
+  "one_liner": "PureMac is a free, open-source (MIT) native macOS cleaner and Mac care app covering cache and junk cleanup, app uninstalling, storage review, duplicate and similar-photo finding, and basic system checks, with no telemetry.",
+  "what_it_does": "It scans and cleans system caches, logs, user caches, Xcode junk (DerivedData, Archives, simulator caches), Homebrew download caches, Node and Docker caches, mail attachments, and Trash bins, with a Large and Old Files category. Its App Uninstaller uses a heuristic matching engine to find an app's related files across the Library, and the Orphan Finder surfaces leftovers from apps no longer installed. Storage tools include Space Explorer for folder sizes, Duplicate Finder (SHA-256 hashing, keeps one protected copy), and Similar Photos (perceptual hashing, review only). A Protection tab audits Gatekeeper, FileVault, firewall, SIP and XProtect status, and a Performance tab shows CPU and memory usage, startup items and local snapshots. App updates cover Homebrew-managed cask apps, and an optional scheduler runs auto-cleaning at set intervals. A command-line companion, puremac, offers dry runs and JSON output.",
+  "use_cases": [
+   "free Mac cleaner alternative to paid cleanup apps",
+   "clear Xcode DerivedData and simulator junk",
+   "empty Homebrew and npm caches on macOS",
+   "uninstall a Mac app along with its leftover preferences and caches",
+   "find duplicate files and large or old files to free disk space",
+   "schedule automatic background cache cleaning"
+  ],
+  "how_to_run": [
+   "brew install --cask puremac",
+   "brew install xcodegen",
+   "git clone <repository-url> && cd PureMac && xcodegen generate",
+   "xcodebuild -project PureMac.xcodeproj -scheme PureMac -configuration Release -derivedDataPath build build",
+   "brew install momenbasel/tap/puremac-cli",
+   "puremac clean dev --dry-run"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Xcode",
+   "xcodegen",
+   "Homebrew",
+   "AppleScript (NSAppleScript)",
+   "npm/yarn/pnpm/Docker (cleanup targets)"
+  ],
+  "notable": [
+   "Signed and notarized, distributed via Homebrew cask or DMG; MIT licensed with no telemetry or network calls to the author",
+   "Deletion is explicit: uninstalls, orphans and duplicates go to the Trash, while some categories delete permanently after confirmation",
+   "Symlink-resistant CleaningEngine with an allow-list of safe roots and gated admin escalation",
+   "Command-line tool puremac with dry-run and JSON output for scripts",
+   "Honest handling of APFS purgeable space: shown for transparency but not offered as junk to delete"
+  ],
+  "caveats": [
+   "Requires Full Disk Access for complete results; some cleanup categories and app-container scans are incomplete without it",
+   "App uninstaller matching is heuristic, so related-file results need manual review before removal",
+   "Some cleanup categories and scheduled auto-clean delete permanently, and scheduled runs stay unattended once enabled"
+  ],
+  "license": "MIT",
+  "category": "macos cleaner utility",
+  "keywords": [
+   "macos cleaner",
+   "mac cleaner",
+   "free mac cleanup",
+   "open source mac cleaner",
+   "xcode cleaner",
+   "derived data cleanup",
+   "xcode junk",
+   "homebrew cache cleanup",
+   "brew cleanup",
+   "npm cache clean",
+   "docker cache",
+   "app uninstaller",
+   "uninstall mac apps",
+   "orphan files",
+   "leftover app files",
+   "duplicate file finder",
+   "similar photos finder",
+   "disk space analyzer",
+   "storage explorer",
+   "large files finder",
+   "free up disk space mac",
+   "scheduled cleaning",
+   "swiftui app",
+   "cleanmymac alternative",
+   "onyx alternative",
+   "pearcleaner alternative",
+   "mole alternative",
+   "no telemetry",
+   "time machine snapshots",
+   "command line cleaner cli",
+   "puremac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8275,
+  "output": 1487
+ },
+ "generated": "2026-10-29"
+}

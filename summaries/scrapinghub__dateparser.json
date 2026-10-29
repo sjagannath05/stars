@@ -1,0 +1,91 @@
+{
+ "id": "scrapinghub/dateparser",
+ "repo": "scrapinghub/dateparser",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Date and Time",
+   "entry": "dateparser - A Python parser for human-readable dates in over 200 language locales."
+  }
+ ],
+ "summary": {
+  "one_liner": "dateparser is a Python library that parses human-readable date strings in more than 200 language locales, including relative expressions like \"two weeks ago\" and timestamps.",
+  "what_it_does": "The library's main entry point is dateparser.parse(), which turns free-form date text into Python datetime objects. It handles absolute dates, relative dates (\"in two months\", \"next Wednesday\"), Unix timestamps, and timezone abbreviations or UTC offsets. Language is autodetected by default, or can be fixed with the languages argument, and date order (DMY/MDY/YMD) can be set explicitly. Settings control behaviour such as preferred past or future dates, default timezone, and handling of incomplete dates like \"December 2015\". It also has search_dates() for pulling dates out of longer text and time span detection for phrases like \"past month\". Optional extras add non-Gregorian calendars (Persian Jalali, Hijri, French Republican, Minguo).",
+  "use_cases": [
+   "parsing dates scraped from web pages in multiple languages",
+   "converting relative phrases like '3 days ago' into real dates",
+   "normalizing mixed-format dates from CSV, PDF or log files",
+   "letting users search by natural date expressions",
+   "extracting dates from free text",
+   "handling dates in non-Gregorian calendars"
+  ],
+  "how_to_run": [
+   "pip install dateparser",
+   "import dateparser",
+   "dateparser.parse('Fri, 12 Dec 2014 10:55:50')",
+   "dateparser.parse('Le 11 Décembre 2014 à 09:00')",
+   "pip install dateparser[calendars]  # optional, for non-Gregorian calendars"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "python-dateutil",
+   "convertdate",
+   "hijridate",
+   "tzlocal",
+   "ruamel.yaml (optional)"
+  ],
+  "notable": [
+   "Parses dates in more than 200 language locales, with automatic language detection",
+   "Handles relative dates, timestamps, and timezone abbreviations or UTC offsets in one call",
+   "Search of dates within longer text via search_dates(), with time span detection such as 'past month'",
+   "Customizable through a settings dictionary (date order, preferred past or future, timezone, strict parsing)",
+   "Supports Persian Jalali, Hijri, French Republican and Minguo calendars via an optional extra"
+  ],
+  "caveats": [
+   "Date search in longer text is described in the README as limited and needing improvement",
+   "Ambiguous dates are not resolved by locale; date order must be set explicitly (e.g. DATE_ORDER) for UK/Australian-style DMY input",
+   "Non-Gregorian calendar support requires installing the optional calendars extra"
+  ],
+  "license": "BSD3-Clause",
+  "category": "date string parsing",
+  "keywords": [
+   "dateparser",
+   "python date parser",
+   "natural language dates",
+   "human readable dates",
+   "parse date strings",
+   "fuzzy date parsing",
+   "relative dates",
+   "multilingual date parsing",
+   "localized date parsing",
+   "timestamp parsing",
+   "timezone parsing",
+   "utc offset parsing",
+   "date extraction from text",
+   "search dates in text",
+   "strptime alternative",
+   "datetime parsing",
+   "date normalization",
+   "scraping dates",
+   "parse dates in many languages",
+   "turn '3 days ago' into a date",
+   "jalali calendar",
+   "hijri calendar",
+   "parse messy dates",
+   "date order dmy mdy",
+   "python 3 date library",
+   "parse dates from csv",
+   "natural language date input"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7808,
+  "output": 1291
+ },
+ "generated": "2026-10-29"
+}

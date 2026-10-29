@@ -1,0 +1,95 @@
+{
+ "id": "lovasoa/whitebophir",
+ "repo": "lovasoa/whitebophir",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "WBO - Web Whiteboard to collaborate in real-time on schemas, drawings, and notes. (Demo) AGPL-3.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "WBO is a self-hosted online collaborative whiteboard where many users draw together in real time on a large virtual board, with boards saved as SVG files.",
+  "what_it_does": "Multiple connected users see each other's edits live on a shared board. The server stores each board as an SVG file in a configurable history directory. Boards can be opened by URL, and a standalone SVG preview can be downloaded from a /preview/ path. Optional JWT authentication (AUTH_SECRET_KEY) restricts access with global or board-scoped roles (reader, editor, moderator), and read-only boards can be set via an attribute in the SVG file. Moderators can warn, ban, and revoke bans, and rate limits per IP are configurable. The app is available in multiple languages, and can be served under a subfolder behind a reverse proxy.",
+  "use_cases": [
+   "collaborative whiteboarding with a team",
+   "online drawing and diagramming",
+   "teaching math or lessons on a shared board",
+   "collaborative design and schema sketching",
+   "self-hosted alternative for shared note-taking on a canvas",
+   "embedding a board under a subfolder behind a reverse proxy"
+  ],
+  "how_to_run": [
+   "mkdir wbo-boards",
+   "chown -R 1000:1000 wbo-boards",
+   "docker run -it --publish 5001:80 --volume \"$(pwd)/wbo-boards:/opt/app/server-data\" lovasoa/wbo:latest",
+   "git clone <repository URL> && cd whitebophir",
+   "npm ci --omit=dev",
+   "PORT=5001 npm start"
+  ],
+  "stack": [
+   "Node.js (version 26 named in README)",
+   "Docker image lovasoa/wbo",
+   "JSON Web Tokens (JWT) for optional authentication",
+   "OpenTelemetry (OTLP export)",
+   "SVG board storage"
+  ],
+  "notable": [
+   "Boards are saved as SVG files, with a standalone SVG preview endpoint",
+   "Board-scoped and global roles (reader, editor, moderator) via signed JWT tokens",
+   "Configurable per-IP rate limits for drawing, constructive, and destructive actions",
+   "Read-only boards toggled by a data attribute in the board SVG",
+   "Reverse proxy subfolder support via WBO_BASE_PATH and trusted IP header options"
+  ],
+  "caveats": [
+   "Accepted edits are saved asynchronously, so a crash can lose recent changes; only one server process per history directory is supported",
+   "Without AUTH_SECRET_KEY, anyone with a board URL can edit writable boards",
+   "Subfolder hosting requires setting up a reverse proxy"
+  ],
+  "license": "AGPL-3.0",
+  "category": "collaborative whiteboard",
+  "keywords": [
+   "collaborative whiteboard",
+   "online whiteboard",
+   "real-time drawing",
+   "shared canvas",
+   "multiplayer drawing",
+   "self-hosted whiteboard",
+   "whitebophir",
+   "wbo",
+   "svg board",
+   "docker whiteboard",
+   "node.js whiteboard",
+   "collaborative diagram",
+   "online diagramming",
+   "draw together online",
+   "share a drawing board with my team",
+   "virtual whiteboard for teaching",
+   "brainstorming board",
+   "sketch with others in browser",
+   "jwt board authentication",
+   "board permissions roles",
+   "read-only board",
+   "reverse proxy subfolder",
+   "rate limiting websocket",
+   "svg export preview",
+   "self-hosted communication tool",
+   "awesome-selfhosted",
+   "agpl whiteboard",
+   "collaborative notes",
+   "live editing canvas",
+   "moderation tools",
+   "whiteboard alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4043,
+  "output": 1334
+ },
+ "generated": "2026-10-29"
+}

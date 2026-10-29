@@ -1,0 +1,98 @@
+{
+ "id": "flohoss/gocron",
+ "repo": "flohoss/gocron",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "gocron - Task scheduler that allows users to specify recurring jobs via a simple YAML configuration file. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "GoCron is a self-hosted task scheduler that defines recurring shell-command jobs in a YAML file and manages runs, logs, and history through a web UI backed by SQLite.",
+  "category": "self-hosted task scheduler",
+  "keywords": [
+   "cron",
+   "task scheduler",
+   "job scheduler",
+   "recurring jobs",
+   "yaml configuration",
+   "go",
+   "golang",
+   "vue.js",
+   "sqlite",
+   "web ui",
+   "docker",
+   "cron expressions",
+   "scheduled commands",
+   "backup scheduling",
+   "restic",
+   "rclone",
+   "borgbackup",
+   "run jobs on a schedule",
+   "schedule shell commands",
+   "replace crontab",
+   "crontab alternative",
+   "cronjob web interface",
+   "job run history",
+   "healthcheck callbacks",
+   "gatus heartbeat",
+   "oidc login",
+   "single sign-on",
+   "pocket-id",
+   "self-hosted automation",
+   "server-sent events",
+   "nixos module"
+  ],
+  "what_it_does": "GoCron reads jobs from a YAML config file, each with a name, optional cron expression, commands, timeout, retries, and per-job environment variables, and runs them on schedule. Jobs inherit defaults such as cron, timeout, retries, env vars, and pre/post commands from a job_defaults block. A web UI lists jobs, triggers manual runs, streams logs over Server-Sent Events, and provides a terminal gated by an allow-list. Run history and logs are stored in SQLite, with optional automatic pruning after N days. The config file is watched and most changes apply without a restart. Optional features include HTTP healthcheck callbacks at job start, end, and failure, OIDC single sign-on, per-IP rate limiting, CORS settings, and installing tools such as restic or rclone at startup on Debian.",
+  "use_cases": [
+   "schedule nightly backups with restic or rclone",
+   "run cron-style shell commands from a web UI",
+   "replace crontab with a YAML-defined scheduler",
+   "get alerted when scheduled jobs fail or do not run",
+   "trigger ad-hoc job runs and read their logs",
+   "protect a scheduler web UI with OIDC login"
+  ],
+  "how_to_run": [
+   "docker run -it --rm --name gocron -p 8156:8156 -v ./config/:/app/config/ ghcr.io/flohoss/gocron:latest",
+   "Or with Docker Compose: image ghcr.io/flohoss/gocron:latest, port 8156:8156, volume ./config/:/app/config/",
+   "Edit ./config/config.yaml to add jobs; changes are picked up automatically",
+   "Tagged GitHub releases include Linux binaries; run ./gocron_<version>_linux_<arch> --version to check the version",
+   "NixOS: services.gocron.enable = true, with settings in the nixpkgs module"
+  ],
+  "stack": [
+   "Go",
+   "Vue.js",
+   "SQLite",
+   "YAML",
+   "Docker",
+   "OpenID Connect (optional)",
+   "Echo (CORS defaults)"
+  ],
+  "notable": [
+   "Single-flight scheduling: overlapping scheduled runs are skipped rather than queued",
+   "Config hot reload: most YAML changes apply without restart, with a single reload log line",
+   "Healthcheck HTTP callbacks at start, end, and failure, designed for Gatus heartbeat monitoring",
+   "Optional OIDC login using PKCE with DB-backed sessions; tested against Pocket-ID",
+   "Debian-only software installer for backup tools such as restic, borgbackup, rclone, and kopia"
+  ],
+  "caveats": [
+   "Software auto-install works only on Debian; it is skipped on other systems",
+   "Commands run as root by default in the published image, so least-privilege users must be configured for sensitive jobs",
+   "Without auth.oidc.enabled, the UI and API are open to anyone who can reach the port",
+   "Missed schedules are not caught up after the container is down; no @reboot support",
+   "Some settings (server address/port, rate limit, trusted proxies, database location, software) need a restart"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8722,
+  "output": 1481
+ },
+ "generated": "2026-10-29"
+}

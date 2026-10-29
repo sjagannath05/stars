@@ -1,0 +1,91 @@
+{
+ "id": "intelligent-internet/ii-commons-skills",
+ "repo": "Intelligent-Internet/II-Commons-Skills",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "II-Commons Skills — Open-source agent skill and npm CLI for daily-updated arXiv, PubMed/PMC, and US policy retrieval with deterministic freshness cutoffs. Apache-2.0."
+  }
+ ],
+ "summary": {
+  "one_liner": "An open-source agent skill and npm CLI (@intelligentinternet/ii-commons) for deterministic, daily-updated lexical retrieval across arXiv, PubMed/PMC, and supported US policy corpora.",
+  "what_it_does": "The repository provides a skill folder (skills/ii-commons/) and a Node.js CLI that agents can call to search arXiv, PubMed/PMC, and supported US policy corpora. The `cutoff` command reports the latest corpus coverage date for each corpus, which agents are told to run first for freshness-sensitive requests. `search` takes a corpus, a quoted topic, and filters such as max results, start date, and jurisdictions. `meta` and `markdown` fetch details or full text for identifiers like arXiv IDs or PMCIDs. The CLI writes JSON to stdout and machine-readable JSON errors to stderr. The README names psql_bm25s, a PostgreSQL BM25S extension, as the retrieval engine.",
+  "use_cases": [
+   "search recent arXiv papers on a topic",
+   "find PubMed or PMC articles for a clinical or biomedical question",
+   "look up US state policy or regulation text",
+   "check how current the indexed literature is before answering",
+   "fetch metadata or markdown for a paper by ID"
+  ],
+  "how_to_run": [
+   "npx @intelligentinternet/ii-commons cutoff",
+   "npm install -g @intelligentinternet/ii-commons",
+   "ii-commons search arxiv \"large language model inference\" --max-results 10",
+   "ii-commons search pubmed \"type 2 diabetes review\" --start 20240000 --max-results 10",
+   "ii-commons meta \"arXiv:2402.03578\"",
+   "node scripts/ii_commons.js --help"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "npm package @intelligentinternet/ii-commons",
+   "PostgreSQL",
+   "psql_bm25s (BM25S extension)"
+  ],
+  "notable": [
+   "Deterministic, daily-updated lexical retrieval with a `cutoff` command that reports corpus coverage dates",
+   "Installable as an agent skill folder or used directly via npx or global npm install",
+   "Covers arXiv, PubMed/PMC, and supported US policy corpora with jurisdiction filters",
+   "Machine-readable JSON output and errors suitable for agent pipelines"
+  ],
+  "caveats": [
+   "Higher usage limits require an API token from the project's web app",
+   "Policy search covers only supported US corpora, and the README does not list which jurisdictions are included",
+   "README is sparse on details such as the license file and the source repository link (both left blank)"
+  ],
+  "license": "Apache-2.0",
+  "category": "agent retrieval tooling",
+  "keywords": [
+   "agent skill",
+   "npm cli",
+   "arxiv search",
+   "pubmed search",
+   "pmc full text",
+   "us policy search",
+   "legislation retrieval",
+   "bm25",
+   "bm25s",
+   "postgresql full text search",
+   "lexical retrieval",
+   "deterministic search",
+   "freshness cutoff",
+   "daily updated index",
+   "literature search",
+   "academic paper search",
+   "biomedical literature",
+   "research paper lookup",
+   "llm agent tools",
+   "claude skill",
+   "search papers for my agent",
+   "find state regulations",
+   "retrieve scientific papers",
+   "npx command line",
+   "json cli",
+   "arxiv id metadata",
+   "pmcid markdown",
+   "research assistant tool",
+   "open source search api",
+   "apache license retrieval"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2265,
+  "output": 1283
+ },
+ "generated": "2026-10-29"
+}

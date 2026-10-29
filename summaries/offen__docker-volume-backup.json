@@ -1,0 +1,96 @@
+{
+ "id": "offen/docker-volume-backup",
+ "repo": "offen/docker-volume-backup",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Backup",
+   "entry": "docker-volume-backup | Back up Docker volumes to local or cloud storage on a schedule"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Docker image that runs as a companion container to back up Docker volumes on a schedule or one-off to local storage or remote services such as S3, WebDAV, Azure Blob Storage, Dropbox, Google Drive, or SSH-compatible storage.",
+  "what_it_does": "The offen/docker-volume-backup image mounts existing Docker volumes and backs them up either on a recurring schedule or as a one-time run. Backups can go to a local directory, to any S3, WebDAV, Azure Blob Storage, Dropbox, Google Drive, or SSH-compatible storage, or to several of these at once. The README says it can rotate away old backups when configured. It also supports GPG encryption of backups and sending notifications for backup runs, including failed ones. The README describes the image as lightweight, below 25MB. A compose label can stop the consuming container during backup to keep data consistent, and the Docker socket is mounted to allow this.",
+  "use_cases": [
+   "Scheduled backups of Docker volumes in a compose setup",
+   "One-off volume backup with docker run",
+   "Copying volume backups to S3 or other cloud storage",
+   "Keeping local archives of container data",
+   "Encrypting volume backups with GPG",
+   "Getting notified when a backup run fails"
+  ],
+  "how_to_run": [
+   "Add a backup service using image offen/docker-volume-backup:latest to your compose file and mount the volumes to back up under /backup/",
+   "Provide storage and schedule settings through an env_file (see the configuration reference in the docs)",
+   "Optionally mount /var/run/docker.sock to allow stopping containers during backup",
+   "Optionally mount a local directory to /archive to keep local copies",
+   "For a one-off backup, run: docker run --rm -v data:/backup/data --env-file <file> --entrypoint backup offen/docker-volume-backup:v2"
+  ],
+  "stack": [
+   "Docker",
+   "Go",
+   "GPG",
+   "S3",
+   "WebDAV",
+   "Azure Blob Storage",
+   "Dropbox",
+   "Google Drive",
+   "SSH"
+  ],
+  "notable": [
+   "Can back up to several storage targets at once, such as local disk plus a cloud bucket",
+   "Optional stop-during-backup label pauses the app container so the backup is consistent",
+   "Image is advertised as below 25MB, meant as a companion container",
+   "Supports GPG encryption and notifications for backup runs",
+   "Works with one-off docker run invocations as well as compose services"
+  ],
+  "caveats": [
+   "Full configuration details, how-tos, and recipes are in external documentation; the README only links to them",
+   "Stopping containers during backup requires mounting the Docker socket, which grants elevated host access",
+   "Production use is advised to pin a release tag rather than latest"
+  ],
+  "license": "MPL-2.0",
+  "category": "docker volume backup",
+  "keywords": [
+   "docker volume backup",
+   "docker backup container",
+   "scheduled backup",
+   "docker-volume-backup",
+   "offen",
+   "s3 backup",
+   "webdav backup",
+   "azure blob backup",
+   "dropbox backup",
+   "google drive backup",
+   "sftp backup",
+   "ssh backup",
+   "gpg encrypted backup",
+   "backup rotation",
+   "backup notifications",
+   "companion container",
+   "compose backup service",
+   "one-off backup",
+   "local backup directory",
+   "back up my docker data",
+   "backup volumes to the cloud",
+   "copy docker volumes to s3",
+   "encrypt docker backups",
+   "stop container during backup",
+   "lightweight backup image",
+   "cron backup docker",
+   "backup to google drive",
+   "self-hosted backup",
+   "docker volume archive"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2504,
+  "output": 1310
+ },
+ "generated": "2026-10-29"
+}

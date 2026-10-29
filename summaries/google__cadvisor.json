@@ -1,0 +1,89 @@
+{
+ "id": "google/cadvisor",
+ "repo": "google/cadvisor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "cAdvisor | Resource usage and performance analysis of running containers"
+  }
+ ],
+ "summary": {
+  "one_liner": "cAdvisor is a running daemon from Google that collects, aggregates and exports resource usage and performance data for running containers.",
+  "what_it_does": "cAdvisor (Container Advisor) runs as a daemon and tracks resource isolation parameters, historical resource usage, histograms of historical usage, and network statistics for each container. It exports this data per container and machine-wide. It has native support for Docker containers and is described as supporting most other container types. The README describes a web UI served on its port, a versioned remote REST API with an official Go client in the client directory, and support for exporting stats to storage plugins. The README also lists a roadmap of planned performance advice, auto-tuning, and usage prediction for schedulers.",
+  "use_cases": [
+   "monitor docker container cpu and memory usage",
+   "view per-container resource usage in a web dashboard",
+   "export container metrics to storage backends",
+   "run container monitoring on kubernetes as a daemonset",
+   "query container stats through a REST API",
+   "analyze historical container performance"
+  ],
+  "how_to_run": [
+   "VERSION=0.55.1 # use the latest release version",
+   "sudo docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:ro --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=8080:8080 --detach=true --name=cadvisor --privileged --device=/dev/kmsg ghcr.io/google/cadvisor:$VERSION",
+   "Open the web UI at port 8080 on the host",
+   "For Kubernetes, run cAdvisor as a daemonset (see the README's linked instructions)",
+   "For versions prior to v0.53.0, use gcr.io/cadvisor/cadvisor instead of ghcr.io/google/cadvisor"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Kubernetes (daemonset deployment)"
+  ],
+  "notable": [
+   "Native Docker container support, with a claim of support for most other container types",
+   "Built-in web UI plus a versioned remote REST API",
+   "Official Go client in the client directory",
+   "Per-container and machine-wide stats, including historical usage histograms",
+   "Container abstraction based on lmctfy, so containers nest hierarchically"
+  ],
+  "caveats": [
+   "Quick-start Docker run requires --privileged and several host volume mounts (/, /var/run, /sys, /var/lib/docker, /dev/disk)",
+   "README notes special running instructions for CentOS, Fedora, RHEL, and LXC",
+   "Advisory and auto-tuning features are roadmap items, not current functionality"
+  ],
+  "license": "unknown",
+  "category": "container resource monitoring",
+  "keywords": [
+   "cadvisor",
+   "container monitoring",
+   "container advisor",
+   "docker monitoring",
+   "docker resource usage",
+   "container performance analysis",
+   "container metrics",
+   "resource usage dashboard",
+   "container stats",
+   "per-container cpu memory",
+   "network statistics containers",
+   "historical resource usage",
+   "kubernetes daemonset monitoring",
+   "remote rest api container stats",
+   "web ui container monitoring",
+   "stats export plugins",
+   "lmctfy",
+   "go client library",
+   "docker container observability",
+   "machine-wide resource metrics",
+   "monitor running containers",
+   "see what my containers are using",
+   "container resource isolation",
+   "self-hosted container monitoring",
+   "docker stats alternative",
+   "daemon collecting container metrics",
+   "google container monitoring",
+   "container usage histograms"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2736,
+  "output": 1306
+ },
+ "generated": "2026-10-29"
+}

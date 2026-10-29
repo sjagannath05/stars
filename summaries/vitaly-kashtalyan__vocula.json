@@ -1,0 +1,100 @@
+{
+ "id": "vitaly-kashtalyan/vocula",
+ "repo": "vitaly-kashtalyan/vocula",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Vocula - Hold-to-talk dictation that transcribes on-device with Whisper or Parakeet and pastes the text at the cursor."
+  }
+ ],
+ "summary": {
+  "one_liner": "Vocula is a macOS hold-to-talk dictation app that transcribes speech on-device with Whisper or Parakeet and pastes the text at the cursor.",
+  "what_it_does": "Hold the fn key, speak, and release; the transcribed text is pasted where the caret is in the current application. Recordings shorter than 300 ms are discarded, Esc cancels an open recording, and Ctrl+Shift+L cycles through selected languages. Audio is captured from a chosen input device, voice-activity detection runs on the CPU, and transcription uses whisper.cpp on the Metal GPU or Parakeet via FluidAudio on the Neural Engine. The README says dictation history is stored locally with AES-GCM encryption and the key kept in the login keychain, and that the only network access is a one-time model download and a daily update check against GitHub releases. The app refuses to paste into password fields and reduces output to a single line before insertion.",
+  "use_cases": [
+   "dictate text into any mac application",
+   "offline speech-to-text on a mac",
+   "hold-to-talk voice typing",
+   "private dictation without cloud services",
+   "transcribe speech with whisper or parakeet on apple silicon",
+   "multilingual voice input in up to 100 languages"
+  ],
+  "how_to_run": [
+   "brew install xcodegen",
+   "(cd App && xcodegen generate)",
+   "xcodebuild -project App/Vocula.xcodeproj -scheme Vocula -configuration Debug build",
+   "git config core.hooksPath .githooks",
+   "./scripts/install-local.sh"
+  ],
+  "stack": [
+   "Swift 6.2",
+   "Xcode 26",
+   "macOS 26 SDK",
+   "whisper.cpp",
+   "FluidAudio",
+   "Parakeet",
+   "Sparkle",
+   "Silero VAD",
+   "XcodeGen",
+   "AUHAL"
+  ],
+  "notable": [
+   "Runs entirely on the Mac: no account, no telemetry, and network access limited to model download and a daily update check",
+   "Two recognition engines: whisper.cpp on Metal GPU and Parakeet on the Neural Engine",
+   "Pastes via the clipboard and restores the previous clipboard contents about a second later",
+   "Offline Ed25519 licence check; source builds are free but limited to 10 dictations a day after a 30-day trial unless licensed",
+   "Open source (GPL-3.0) but does not accept pull requests"
+  ],
+  "caveats": [
+   "Apple Silicon only, requires macOS 26.0 or later; Intel Macs are not supported",
+   "Requires about 1.6 GB (Whisper Large v3 Turbo) or about 470 MB (Parakeet v3) of model downloads on first run",
+   "Pull requests are not accepted; only bug reports and issues are wanted",
+   "Source builds use ad-hoc signing by default, so macOS re-asks for permissions on every rebuild"
+  ],
+  "license": "GPL-3.0",
+  "category": "macos dictation app",
+  "keywords": [
+   "speech to text",
+   "voice typing",
+   "dictation",
+   "on-device transcription",
+   "offline transcription",
+   "whisper",
+   "whisper.cpp",
+   "parakeet",
+   "fluidaudio",
+   "macos",
+   "apple silicon",
+   "hold to talk",
+   "push to talk",
+   "paste at cursor",
+   "voice input",
+   "private dictation",
+   "speech recognition",
+   "neural engine",
+   "metal gpu",
+   "multilingual transcription",
+   "voice activity detection",
+   "silero vad",
+   "swift",
+   "menubar app",
+   "dictate into any app",
+   "type with my voice",
+   "transcribe speech locally",
+   "alternative to cloud dictation",
+   "gpl-3.0 dictation",
+   "sparkle updates",
+   "keyboard dictation mac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5698,
+  "output": 1352
+ },
+ "generated": "2026-10-29"
+}

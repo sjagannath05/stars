@@ -1,0 +1,100 @@
+{
+ "id": "brentc22/glint",
+ "repo": "brentc22/glint",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Screenshot Tools",
+   "entry": "Glint - Open-source screenshot tool that finds and pixelates emails, IBANs, card numbers, and API keys on-device before you share. [![Open-Source Software][OSS Icon]](https://github.com/brentc22/glint) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Glint is a free, open-source macOS screenshot and screen-recording app that finds and pixelates emails, IBANs, card numbers and API keys on-device before you share.",
+  "what_it_does": "Glint captures areas, windows, full screens and previous areas, with a frozen-screen selector, loupe, and fixed-size or aspect-ratio presets. It offers scrolling capture that stitches frames together, and screen recording to MP4 with system and microphone audio, pause, click rings, keystroke display, webcam bubble, trim and GIF export. Its OCR (Apple Vision) reads text and QR codes from any region and copies them to the clipboard. The redaction feature reads a screenshot, validates IBANs and card numbers with checksums, and pixelates matches as editable annotations. The annotation editor covers arrows, shapes, numbered steps, blur, pixelate, crop and background frames, and a Capture History is searchable by text inside screenshots. Optional share links upload to the user's own Cloudflare R2, S3, B2 or MinIO bucket.",
+  "use_cases": [
+   "redact secrets before sharing a screenshot",
+   "capture a long scrolling web page or log",
+   "record a macOS screen demo with audio and GIF export",
+   "copy text or QR code from the screen",
+   "annotate screenshots with arrows and numbered steps",
+   "upload screenshots to my own S3 or R2 bucket and share a link"
+  ],
+  "how_to_run": [
+   "brew install --cask brentc22/tap/glint",
+   "Or download Glint.zip from the latest release, unzip, and move Glint.app to /Applications",
+   "xattr -dr com.apple.quarantine /Applications/Glint.app (if macOS blocks the first launch)",
+   "git clone the repository, cd glint",
+   "scripts/make-signing-cert.sh (optional, once, for a stable local signing identity)",
+   "make run (build from source; requires Xcode Command Line Tools)"
+  ],
+  "stack": [
+   "Swift",
+   "ScreenCaptureKit",
+   "Vision (OCR)",
+   "AVFoundation (AVAssetWriter, AVAssetReaderAudioMixOutput)",
+   "Core Graphics",
+   "Core Image",
+   "ImageIO",
+   "CryptoKit",
+   "Carbon RegisterEventHotKey",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Redaction validates IBANs (mod-97) and card numbers (Luhn) so order numbers and timestamps are not blurred",
+   "Blur and pixelate are computed from block averages so they cannot be reversed into readable text",
+   "Scrolling capture detects sticky headers and footers and confirms alignment with exact row matches",
+   "No account, no analytics; OCR and redaction run on-device",
+   "Share links use AWS Signature V4 implemented without an SDK and keep the secret in the Keychain"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later",
+   "Not notarized yet, so macOS blocks the first launch and Screen Recording permission must be re-granted after ad-hoc-signed updates",
+   "Makes one daily update check against GitHub Releases unless turned off in settings"
+  ],
+  "license": "MIT",
+  "category": "macOS screenshot tools",
+  "keywords": [
+   "screenshot",
+   "macos screenshot tool",
+   "screen capture",
+   "screen recording",
+   "redact screenshot",
+   "blur sensitive data",
+   "pixelate emails",
+   "hide api keys in screenshot",
+   "iban redaction",
+   "card number redaction",
+   "ocr",
+   "copy text from screen",
+   "qr code reader",
+   "scrolling screenshot",
+   "gif export",
+   "annotate screenshot",
+   "mac screen recorder",
+   "cleanshot alternative",
+   "free cleanshot x alternative",
+   "open source screenshot app",
+   "share files with my team",
+   "blur secrets before sending",
+   "pin screenshot to screen",
+   "screenshot history search",
+   "self-hosted share links",
+   "s3 bucket screenshot upload",
+   "cloudflare r2 upload",
+   "homebrew cask",
+   "swift macos app",
+   "screencapturekit",
+   "privacy screenshot"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6339,
+  "output": 1492
+ },
+ "generated": "2026-10-29"
+}

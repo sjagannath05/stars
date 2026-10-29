@@ -1,0 +1,89 @@
+{
+ "id": "eclipse-paho/paho.mqtt.python",
+ "repo": "eclipse-paho/paho.mqtt.python",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Messaging",
+   "entry": "paho-mqtt - The Eclipse Paho MQTT client for Python."
+  }
+ ],
+ "summary": {
+  "one_liner": "The Eclipse Paho MQTT client library for Python, providing a full MQTT client plus simple publish/subscribe helper functions.",
+  "what_it_does": "Implements MQTT protocol versions 5.0, 3.1.1 and 3.1 for Python 3.9+. The Client class connects to an MQTT broker, subscribes to topics, receives and publishes messages, and exposes callbacks for connect, disconnect, message, publish, subscribe and log events. Network processing can be driven by a threaded loop (loop_start/loop_stop), a blocking loop_forever(), a manual loop(), or an external event loop using loop_read/loop_write/loop_misc and socket callbacks (examples mention asyncio and select). The paho.mqtt.publish and paho.mqtt.subscribe modules offer one-shot helpers (single, multiple, simple, callback). A topic_matches_sub() helper checks whether a topic matches a subscription pattern. Callback API is versioned via CallbackAPIVersion, with VERSION2 recommended.",
+  "use_cases": [
+   "publish sensor readings to an MQTT broker",
+   "subscribe to IoT device topics in Python",
+   "send one-off MQTT messages from a script",
+   "integrate MQTT with asyncio or select-based applications",
+   "check whether an MQTT topic matches a wildcard subscription",
+   "troubleshoot MQTT connections with logging callbacks"
+  ],
+  "how_to_run": [
+   "pip install paho-mqtt",
+   "git clone the repository and run: pip install -e . (from the paho.mqtt.python folder)",
+   "import paho.mqtt.client as mqtt; from paho.mqtt.enums import CallbackAPIVersion",
+   "mqttc = mqtt.Client(CallbackAPIVersion.VERSION2); mqttc.connect(host, port, 60)",
+   "mqttc.loop_forever() or mqttc.loop_start()"
+  ],
+  "stack": [
+   "Python 3.9+",
+   "MQTT 5.0, 3.1.1, 3.1 protocols"
+  ],
+  "notable": [
+   "Versioned callback API (CallbackAPIVersion.VERSION2 recommended) with reason codes and properties for MQTT 5.x",
+   "Multiple network loop options: threaded loop_start, blocking loop_forever, manual loop, or external event loop support",
+   "Built-in one-shot publish and subscribe helper modules",
+   "Part of the Eclipse Foundation Paho project"
+  ],
+  "caveats": [
+   "Known limitation: with clean_session=False the session is only kept in memory, so QoS 1/2 state is lost on process restart and messages may be lost",
+   "With clean_session=True, QoS>0 messages are republished on reconnect, which the README admits is not standard-compliant and can allow duplicate QoS 2 delivery",
+   "Release 2.0 contains breaking changes; see migration notes. CallbackAPIVersion.VERSION1 is deprecated and slated for removal in 3.0"
+  ],
+  "license": "unknown",
+  "category": "mqtt client library",
+  "keywords": [
+   "mqtt",
+   "mqtt client",
+   "mqtt python",
+   "paho",
+   "eclipse paho",
+   "paho-mqtt",
+   "iot messaging",
+   "publish subscribe",
+   "pub/sub",
+   "message broker client",
+   "mosquitto",
+   "mqtt v5",
+   "mqtt 3.1.1",
+   "qos 1",
+   "qos 2",
+   "clean session",
+   "wildcard topic matching",
+   "asyncio mqtt",
+   "external event loop",
+   "loop_forever",
+   "publish sensor data",
+   "subscribe to iot topics",
+   "send messages to broker",
+   "machine to machine messaging",
+   "lightweight messaging protocol",
+   "python iot library",
+   "mqtt logging",
+   "one-shot publish",
+   "paho python client",
+   "message queue client"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9151,
+  "output": 1404
+ },
+ "generated": "2026-10-29"
+}

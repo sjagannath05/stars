@@ -1,0 +1,99 @@
+{
+ "id": "simpleyyt/ai-manus",
+ "repo": "Simpleyyt/ai-manus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "General-Purpose Agent Frameworks",
+   "entry": "ai-manus — Self-hostable Manus-style agent with sandboxed Docker environments, Terminal/Browser/File/Search tools, MCP integration, and optional OpenClaw (Claw) integration for one-click deployment."
+  }
+ ],
+ "summary": {
+  "one_liner": "AI Manus is a self-hostable general-purpose AI agent system that runs terminal, browser, file and search tools inside per-task Docker sandboxes, with a web UI.",
+  "what_it_does": "Runs a plan-and-execute agent loop where the planner and executor submit structured results via native tool calls (such as create_plan and complete_step). Each task gets its own sandbox, an Ubuntu Docker container that the server creates through the Docker socket. Agents can call Shell, Browser, File, Search and MCP tools inside that sandbox. Users can watch the browser live over VNC/NoVNC and take over. The web UI supports stopping or interrupting runs, file upload and download, multi-session history, background tasks, and a Library of attachments and artifacts. The README also describes a Skills system (reusable skill packages loaded into the sandbox) and a Chinese/English interface. Sessions are stored in MongoDB and Redis, and login/authentication is included.",
+  "use_cases": [
+   "self-host a general-purpose AI agent",
+   "run AI-driven code execution in isolated containers",
+   "automate browser tasks with an AI agent and watch it live",
+   "let an LLM use shell, file and web search tools safely",
+   "connect custom MCP tools to an agent",
+   "build a Manus-style agent on my own infrastructure"
+  ],
+  "how_to_run": [
+   "Save the provided docker-compose.yml (frontend, backend, sandbox, mongodb, redis services)",
+   "Copy .env.example to .env and set API_KEY (and optionally API_BASE and MODEL_NAME)",
+   "Run: docker compose up -d",
+   "Ignore the 'sandbox-1 exited with code 0' message; it is expected",
+   "Open the browser at the frontend port (5173 in the example compose file)",
+   "For development: cp .env.example .env, then ./dev.sh up"
+  ],
+  "stack": [
+   "Python (backend)",
+   "TypeScript/JavaScript frontend",
+   "Docker and Docker Compose",
+   "Docker 20.10+",
+   "MongoDB 7.0",
+   "Redis 7.0",
+   "LangChain chat model providers (default openai)",
+   "Chrome headless, xvfb, x11vnc, websockify, NoVNC",
+   "MCP (Model Context Protocol) servers",
+   "Celery backend (mentioned in roadmap)"
+  ],
+  "notable": [
+   "Per-task Docker sandbox with Terminal, Browser, File, Search tools and live browser viewing with takeover",
+   "Structured output via native tool calling instead of JSON-in-prompt",
+   "Minimal deployment needs only an LLM service and Docker",
+   "Skills system with official catalog, uploads and GitHub import",
+   "Library aggregating attachments and artifacts across sessions"
+  ],
+  "caveats": [
+   "Requires Docker, and the backend needs access to /var/run/docker.sock",
+   "Needs an LLM with reliable native tool calling; README recommends DeepSeek and GPT models",
+   "Roadmap items (Deploy & Expose, mobile/Windows sandboxes, K8s/Docker Swarm) are not yet supported"
+  ],
+  "license": "unknown",
+  "category": "self-hosted ai agent",
+  "keywords": [
+   "ai agent",
+   "manus alternative",
+   "self-hosted agent",
+   "general-purpose agent",
+   "docker sandbox",
+   "sandboxed code execution",
+   "browser automation",
+   "novnc",
+   "vnc browser viewer",
+   "mcp tools",
+   "model context protocol",
+   "plan and execute agent",
+   "function calling",
+   "langchain",
+   "openai agent",
+   "web ui agent",
+   "terminal tool",
+   "shell tool",
+   "file upload agent",
+   "web search agent",
+   "mongodb redis",
+   "docker compose deployment",
+   "agent skills",
+   "chinese english agent",
+   "run code with ai",
+   "let ai use a browser",
+   "private ai assistant",
+   "docker.sock",
+   "agent takeover browser",
+   "background agent tasks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4194,
+  "output": 1428
+ },
+ "generated": "2026-10-29"
+}

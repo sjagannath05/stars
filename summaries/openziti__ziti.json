@@ -1,0 +1,92 @@
+{
+ "id": "openziti/ziti",
+ "repo": "openziti/ziti",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "OpenZiti - Fully-featured, zero trust, full mesh overlay network. Includes a 2FA support out of the box, clients for all major desktop/mobile OS'es. (Source Code) Apache-2.0 Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenZiti is an open-source zero-trust overlay networking platform that makes network services dark (no listening ports) and reachable only by cryptographically authenticated, policy-authorized identities.",
+  "what_it_does": "The README describes a controller (identity issuance with x509 certificates, policy enforcement, REST API and web admin console) and a mesh of edge routers that carry end-to-end encrypted traffic between endpoints. Endpoints are either SDKs (Go, C, Python, Node.js, Java, Swift, C#) embedded in applications, or tunnelers (Linux, Windows, macOS, iOS, Android) that route unmodified software through the overlay. Services make outbound connections to routers and register themselves, so they expose no inbound ports. Access is checked per service, and revoking a policy terminates active connections. Quick starts cover a Docker compose stack and the ziti CLI with `ziti edge quickstart`, plus installing the Ziti Admin Console.",
+  "use_cases": [
+   "replace VPN access to internal services",
+   "hide APIs and services from the internet",
+   "secure workload-to-workload communication across clouds",
+   "connect Kubernetes clusters or VMs without VPN tunnels",
+   "access self-hosted home lab services like Nextcloud or Home Assistant remotely",
+   "give IoT devices and machines unique cryptographic identities",
+   "secure agent and MCP server communication"
+  ],
+  "how_to_run": [
+   "wget <compose file URL from README>",
+   "docker compose up",
+   "Download the ziti binary from GitHub Releases",
+   "ziti edge quickstart"
+  ],
+  "stack": [
+   "Go",
+   "libsodium",
+   "mTLS",
+   "x509 certificates",
+   "C, Python, Node.js, Java, Swift, C# SDKs",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Dark services with zero listening ports; services make outbound connections only",
+   "Three deployment models: network access, host access via tunnelers, and in-process SDK access",
+   "Per-service policy authorization with real-time revocation of active connections",
+   "Tunnelers for Linux, Windows, macOS, iOS, and Android that need no code changes",
+   "Managed offering available from NetFoundry, the project's sponsor"
+  ],
+  "caveats": [
+   "README points to separate product documentation for production deployments; quick starts are aimed at development, testing, and learning",
+   "Application-level (SDK) access requires code changes; tunnelers cover existing software but encrypt only tunneler-to-tunneler or tunneler-to-SDK paths",
+   "Some README links are missing their URLs, so setup details must be taken from the external docs"
+  ],
+  "license": "Apache-2.0",
+  "category": "zero trust networking",
+  "keywords": [
+   "zero trust network",
+   "overlay network",
+   "dark services",
+   "mesh vpn alternative",
+   "vpn replacement",
+   "zero trust access",
+   "openziti",
+   "ziti",
+   "tunneler",
+   "edge router",
+   "sdk",
+   "mtls",
+   "end-to-end encryption",
+   "libsodium",
+   "x509 identity",
+   "network segmentation",
+   "share services without open ports",
+   "access home server from anywhere",
+   "remote access to self-hosted apps",
+   "no open router ports",
+   "secure access to internal apps",
+   "kubernetes cross-cluster networking",
+   "iot device identity",
+   "workload identity",
+   "admin console",
+   "policy based access control",
+   "golang",
+   "docker compose self-hosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6714,
+  "output": 1254
+ },
+ "generated": "2026-10-29"
+}

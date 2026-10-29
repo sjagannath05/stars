@@ -1,0 +1,98 @@
+{
+ "id": "antonbabenko/terraform-skill",
+ "repo": "antonbabenko/terraform-skill",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Infrastructure & DevOps",
+   "entry": "terraform-skill by Anton Babenko - A best-practices skill that teaches the agent to write safer Terraform and OpenTofu through a diagnose-first workflow, failure-mode routing, LLM-mistake checklists, and a feature-version guard table mapping features to their version floor and common errors — covering testing, modules, remote state, CI/CD, and security scanning across AWS/Azure/GCP. From an AWS He"
+  }
+ ],
+ "summary": {
+  "one_liner": "An agent skill that teaches AI coding assistants best practices for writing, testing, structuring, and securing Terraform and OpenTofu code across AWS, Azure, and GCP.",
+  "what_it_does": "The repository provides a skill (SKILL.md under skills/terraform-skill) that AI agents such as Claude Code, Cursor, Copilot, Gemini CLI, OpenCode, Codex, and Kiro load when working on Terraform or OpenTofu code. It covers testing with a decision matrix between native `terraform test` (1.6+) and Terratest, module structure, naming, and versioning, plus remote state backends (S3, Azure, GCS, Terraform Cloud) with locking and encryption. It also includes CI/CD guidance for GitHub Actions and GitLab CI, cost estimation, and security scanning with Trivy and Checkov. The README mentions optional integration with terraform-ls and the HashiCorp terraform-mcp-server. Versions are noted in the README: use_lockfile needs Terraform 1.10+ and write_only needs 1.11+.",
+  "use_cases": [
+   "write a Terraform module with native tests",
+   "configure S3 remote state with native locking",
+   "set up a GitHub Actions workflow for Terraform",
+   "review Terraform code against best practices",
+   "choose between native tests and Terratest",
+   "organize state files for multiple teams",
+   "add Trivy or Checkov security scanning to IaC"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add antonbabenko/agent-plugins",
+   "/plugin install terraform-skill@antonbabenko",
+   "npx skills add",
+   "git clone into ~/.agents/skills/terraform-skill (for Codex, OpenCode, Cursor, Kiro, and similar hosts)"
+  ],
+  "stack": [
+   "Terraform",
+   "OpenTofu",
+   "Markdown skill files",
+   "terraform-ls (optional)",
+   "terraform-mcp-server (optional)",
+   "Trivy",
+   "Checkov",
+   "TFLint",
+   "Terratest (Go)"
+  ],
+  "notable": [
+   "Works across AI coding agent hosts that support the Agent Skills format, with per-host install steps",
+   "Covers both native Terraform test framework and Terratest with a decision matrix",
+   "Version-specific guidance, including use_lockfile (1.10+) and write_only (1.11+)",
+   "Optional companion code-intelligence plugin and terraform-ls language server support",
+   "AWS, Azure, and GCP examples with cross-cloud mapping"
+  ],
+  "caveats": [
+   "Requires Terraform 1.0+ or OpenTofu 1.6+; newer features need 1.10+ or 1.11+",
+   "Optional language server features need a local terraform or tofu binary and terraform init in the workspace",
+   "Some install hosts require care to avoid marketplace name clashes with antonbabenko/terraform-skill"
+  ],
+  "license": "Apache 2.0",
+  "category": "terraform agent skill",
+  "keywords": [
+   "terraform",
+   "opentofu",
+   "infrastructure as code",
+   "iac",
+   "ai agent skill",
+   "claude code skill",
+   "cursor skill",
+   "copilot skill",
+   "gemini cli extension",
+   "codex skill",
+   "terraform best practices",
+   "terraform modules",
+   "native terraform test",
+   "terratest",
+   "remote state",
+   "s3 backend",
+   "state locking",
+   "github actions terraform",
+   "gitlab ci terraform",
+   "trivy",
+   "checkov",
+   "tflint",
+   "terraform security scanning",
+   "aws terraform",
+   "azure terraform",
+   "gcp terraform",
+   "terraform code review",
+   "write terraform with ai",
+   "infrastructure devops automation",
+   "terraform-ls",
+   "kiro power"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6378,
+  "output": 1359
+ },
+ "generated": "2026-10-29"
+}

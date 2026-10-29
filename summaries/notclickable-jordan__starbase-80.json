@@ -1,0 +1,92 @@
+{
+ "id": "notclickable-jordan/starbase-80",
+ "repo": "notclickable-jordan/starbase-80",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Starbase 80 - A simple homepage with an iPad-style application grid, for mobile and desktop. One JSON configuration file. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Starbase 80 is a self-hosted homepage that shows Docker containers, services, and links as an iPad-style app grid, configured through one JSON file.",
+  "what_it_does": "It renders a static dashboard of services and links grouped into categories, each with a name, URI, description, and icon. Icons can come from local image files, Dashboard icons, Material Design icons (mdi-), or selfh.st icons (selfhst-). The README states there is no integration with Docker itself; the dashboard is driven entirely by config.json. Theming is controlled by environment variables such as THEME (auto, light, or dark), BGCOLOR, BGCOLORDARK, and HEADER options, and dark mode follows the OS by default. Individual services can be hidden, given light/dark-specific icons, or set to open in a new window. Changes to config.json require restarting the container and refreshing the page.",
+  "use_cases": [
+   "self-hosted homepage for Docker services",
+   "service dashboard with app-style icon grid",
+   "personal links page for home network devices",
+   "quick-launch page for home lab services",
+   "dashboard for a home router, NAS, or home automation hub"
+  ],
+  "how_to_run": [
+   "Create a config.json file with categories and services (see the sample in the README).",
+   "Create a docker-compose file that uses image jordanroher/starbase-80, maps port 80 to 4173, and bind-mounts ./config.json to /app/src/config/config.json.",
+   "Optionally bind-mount ./public/icons, favicon.ico, and logo.png to set custom icons and branding.",
+   "Set TITLE and LOGO environment variables as desired.",
+   "Run docker compose up -d and open the host in a browser.",
+   "After editing config.json, restart the container and refresh the page."
+  ],
+  "stack": [
+   "Docker",
+   "Node.js (emits static HTML)",
+   "Tailwind CSS (color syntax in config)",
+   "swc/jest (testing)"
+  ],
+  "notable": [
+   "Single JSON configuration file defines all categories, services, and links",
+   "Icon sources include local files, Dashboard icons, Material Design icons, and selfh.st icons, with separate light and dark icon overrides",
+   "Generates static HTML with no JavaScript in the built page, per the change history, so it loads fast",
+   "Dark mode follows the OS setting and can be forced with THEME"
+  ],
+  "caveats": [
+   "No actual integration with Docker; services must be added manually to config.json",
+   "Config changes require restarting the container",
+   "Listed under the Docker deployment method; the README describes no other install path"
+  ],
+  "license": "MIT",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "homepage",
+   "startpage",
+   "service dashboard",
+   "app grid",
+   "ipad style launcher",
+   "docker homepage",
+   "self-hosted dashboard",
+   "link dashboard",
+   "home lab dashboard",
+   "homepage alternative",
+   "homer",
+   "homepage dashboard",
+   "umbrel",
+   "service launcher",
+   "docker compose",
+   "json configuration",
+   "dark mode",
+   "dashboard icons",
+   "selfh.st icons",
+   "material design icons",
+   "bookmark page",
+   "personal start page",
+   "home server portal",
+   "tile launcher",
+   "docker container links",
+   "homelab landing page",
+   "show my services in one page",
+   "dashboard for my home server",
+   "lightweight homepage",
+   "category grouped links",
+   "nodejs static site"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5333,
+  "output": 1234
+ },
+ "generated": "2026-10-29"
+}

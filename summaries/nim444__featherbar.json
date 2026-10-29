@@ -1,0 +1,98 @@
+{
+ "id": "nim444/featherbar",
+ "repo": "nim444/featherbar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Featherbar - Featherweight menu bar system monitor showing CPU, RAM, power, and temperature in two color-coded lines."
+  }
+ ],
+ "summary": {
+  "one_liner": "Featherbar is a tiny Rust macOS menu-bar app that shows live CPU, RAM, battery power, and CPU temperature on two color-coded lines, refreshed every 2 seconds.",
+  "category": "macos menu bar monitor",
+  "keywords": [
+   "macos menu bar",
+   "menubar system monitor",
+   "menu bar stats",
+   "cpu monitor",
+   "ram usage",
+   "battery power draw",
+   "cpu temperature",
+   "rust",
+   "tao event loop",
+   "tray icon",
+   "nsstatusitem",
+   "sysinfo",
+   "starship-battery",
+   "lightweight system monitor",
+   "low memory monitor",
+   "status bar app",
+   "apple silicon monitor",
+   "m1 monitor",
+   "launch at login",
+   "smappservice",
+   "show cpu in menu bar",
+   "watch ram in menu bar",
+   "system stats in menu bar",
+   "activity monitor alternative",
+   "stats app alternative",
+   "featherweight monitor",
+   "zero background threads",
+   "menu bar temperature display",
+   "open source macos utility",
+   "rust menu bar app",
+   "monitor battery watts"
+  ],
+  "what_it_does": "Featherbar places a two-line text readout in the macOS menu bar. The top line shows CPU percent and battery watts; the bottom line shows RAM percent and CPU temperature. Each value is colored green, orange, or red based on its own thresholds (CPU 40/70%, RAM 60/80%, power 10/20W, temperature 60/80°C), while labels stay neutral. Values use fixed-width fields in SF Mono so the layout does not shift as numbers change. The app runs on a single main-thread event loop that wakes on a 2-second timer, samples metrics, redraws, and sleeps. A right-click menu offers a Launch at login check item (via SMAppService, only when run as an .app bundle) and Quit. The README says adding a new metric requires an enum variant, a match arm, and a line-placement constant in src/main.rs.",
+  "use_cases": [
+   "monitor CPU and RAM from the menu bar",
+   "see battery discharge watts at a glance",
+   "check CPU temperature without opening a dashboard",
+   "run a minimal system monitor with low memory use",
+   "auto-start a menu bar monitor at login",
+   "extend a Rust menu bar app with a new metric"
+  ],
+  "how_to_run": [
+   "git clone <repo> && cd featherbar",
+   "./scripts/bundle.sh",
+   "cp -R target/Featherbar.app /Applications/",
+   "open /Applications/Featherbar.app",
+   "cargo install featherbar",
+   "cargo run --release"
+  ],
+  "stack": [
+   "Rust",
+   "tray-icon 0.21",
+   "tao 0.34",
+   "sysinfo 0.33",
+   "starship-battery 0.10",
+   "SMAppService",
+   "NSStatusItem"
+  ],
+  "notable": [
+   "Zero background threads: a single main-thread tao event loop with WaitUntil timer wakes, and sysinfo's rayon pool is compiled out",
+   "Memory measured at about 11 MB at launch, settling near 20 MB steady state, with a profiled soak showing no featherbar leaks",
+   "Renders both lines into an NSImage so two rows fit in the status item, which a single-line title cannot do",
+   "Release binary around 800 KB via opt-level z, LTO, and strip",
+   "Explicitly out of scope: fans and total SoC power, to avoid undocumented IOKit/SMC keys"
+  ],
+  "caveats": [
+   "Requires macOS on Apple Silicon (M-series) and Rust 1.89+",
+   "Power figure is battery charge/discharge rate, so it reads 0W on AC or at full charge and is not total system power",
+   "Launch-at-login toggle only works from the .app bundle; a bare cargo run binary shows it disabled",
+   "Fans and total package power are not supported; the roadmap mentions a possible SMC-based reader"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4845,
+  "output": 1425
+ },
+ "generated": "2026-10-29"
+}

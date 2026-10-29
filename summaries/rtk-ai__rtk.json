@@ -1,0 +1,120 @@
+{
+ "id": "rtk-ai/rtk",
+ "repo": "rtk-ai/rtk",
+ "kind": "star",
+ "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+ "topics": [
+  "agentic-coding",
+  "ai-coding",
+  "anthropic",
+  "claude-code",
+  "cli",
+  "command-line-tool",
+  "cost-reduction",
+  "developer-tools",
+  "llm",
+  "open-source",
+  "productivity",
+  "rust",
+  "token-optimization"
+ ],
+ "language": "Rust",
+ "stars": 84907,
+ "license": "Apache-2.0",
+ "homepage": "https://www.rtk-ai.app",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "RTK is a Rust CLI proxy that filters and compresses shell command output before it reaches an AI coding agent's context window, cutting token use on common dev commands.",
+  "what_it_does": "It installs as a single Rust binary that wraps common developer commands such as git, cargo, npm, pytest, docker, kubectl and terraform, and returns filtered, compact output. It applies four strategies per command type: smart filtering (removing noise like comments and boilerplate), grouping (aggregating files by directory or errors by type), truncation (keeping relevant context), and deduplication (collapsing repeated log lines with counts). The README says it covers 100+ commands. Its `rtk init` command sets up hooks for many AI coding tools (Claude Code, Copilot, Cursor, Gemini CLI, Codex, Windsurf, Cline and others) so Bash calls are rewritten to rtk automatically. A `rtk gain` command reports token savings, and `rtk discover` finds missed opportunities. An optional RTK Proxy daemon, under a separate BUSL-1.1 license, extends compression to provider-API traffic.",
+  "use_cases": [
+   "reduce LLM token costs for Claude Code sessions",
+   "compress git, test and build output for an AI coding agent",
+   "filter docker or kubectl output before sending to an LLM",
+   "measure token savings from command output filtering",
+   "set up command-output compression across multiple AI coding tools"
+  ],
+  "how_to_run": [
+   "brew install rtk # macOS / Linux",
+   "winget install rtk-ai.rtk # Windows",
+   "curl -fsSL <install script URL in README> | sh",
+   "rtk --version",
+   "rtk init -g # set up hooks for Claude Code / Copilot (default)",
+   "rtk gain # view savings dashboard"
+  ],
+  "stack": [
+   "Rust",
+   "Shell installer",
+   "TypeScript (agent plugins)",
+   "Python (Hermes plugin)",
+   "Homebrew",
+   "winget",
+   "Mermaid (README diagram)"
+  ],
+  "notable": [
+   "Works through agent hooks so the agent gets compact output without calling rtk explicitly; supports about 18 AI coding tools per the README",
+   "Three download editions: full rtk (Apache-2.0 plus BUSL-1.1 engine), rtk-oss (Apache-2.0 only), and rtk-proxy (BUSL-1.1 daemon)",
+   "Configurable pipeline via pipeline.toml, with an engine crate (rtk-engine) that is source-available",
+   "rtk bypass runs one command unfiltered while still tracking it; telemetry is off by default and opt-in",
+   "Optional rtk-proxy daemon compresses provider-API traffic and can route calls to cheaper models"
+  ],
+  "caveats": [
+   "The hook only fires on Bash tool calls; built-in tools like Read, Grep and Glob are not intercepted and need rtk read/grep/find or shell equivalents",
+   "Another unrelated project named rtk exists on crates.io, so users must verify they installed the right package with rtk gain",
+   "The full rtk edition includes BUSL-1.1 code; offering it commercially to third parties requires contacting the vendor, and rtk and rtk-oss cannot be installed together"
+  ],
+  "license": "Apache-2.0",
+  "category": "llm token optimization",
+  "keywords": [
+   "token optimization",
+   "llm cost reduction",
+   "cli proxy",
+   "output compression",
+   "rust cli",
+   "claude code",
+   "ai coding agent",
+   "command output filter",
+   "context window savings",
+   "token usage reduction",
+   "coding agent hooks",
+   "rtk gain",
+   "reduce claude code costs",
+   "shorten command output for llm",
+   "git output compression",
+   "cargo output filter",
+   "pytest output filter",
+   "docker output filter",
+   "kubectl output filter",
+   "terraform output filter",
+   "agentic coding tools",
+   "cursor integration",
+   "gemini cli hook",
+   "codex hooks",
+   "prompt cache",
+   "llm api proxy",
+   "api traffic compression",
+   "shrink terminal output for ai",
+   "rtk alternative",
+   "homebrew rtk install",
+   "single binary cli",
+   "developer productivity tools",
+   "anthropic api cost",
+   "token savings dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7073,
+  "output": 1480
+ },
+ "generated": "2026-10-29"
+}

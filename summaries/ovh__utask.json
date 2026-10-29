@@ -1,0 +1,95 @@
+{
+ "id": "ovh/utask",
+ "repo": "ovh/utask",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "µTask - Automation engine that models and executes business processes declared in yaml. BSD-3-Clause Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "µTask is a lightweight automation engine that runs business processes declared as YAML task templates, with only a Postgres database required.",
+  "what_it_does": "Lets you describe a process as a YAML task template: a set of inputs plus a graph of steps with dependencies, conditions, loops and retries. The engine executes each step asynchronously, retries transient errors, and keeps an encrypted, auditable trace of intermediate states until the task completes. Built-in action types include http, ssh, email, notify, subtask/batch, script, tag, cache and an OVH API call. Custom action plugins and init plugins are written in Go and compiled as .so files. Task state changes can be sent to Slack, Opsgenie, or generic webhooks. Multiple instances coordinate through a single Postgres database, and a dashboard and HTTP API are provided.",
+  "use_cases": [
+   "Automate multi-step provisioning workflows such as creating accounts or certificates",
+   "Run asynchronous back-office processes that need human approval or input forms",
+   "Orchestrate HTTP API calls with retries and conditional branching",
+   "Schedule and track long-running jobs with an auditable history",
+   "Use as a task backend for other services via tags and the API",
+   "Chain scripts, SSH commands and notifications into one tracked workflow"
+  ],
+  "how_to_run": [
+   "mkdir utask && cd utask",
+   "Download the install script (URL missing from the README text), then run: sh install-utask.sh",
+   "docker-compose up",
+   "Alternatively, clone the repository and run: make all"
+  ],
+  "stack": [
+   "Go",
+   "PostgreSQL",
+   "Docker",
+   "docker-compose",
+   "Go text templating with Sprig",
+   "otto (JavaScript evaluation)"
+  ],
+  "notable": [
+   "Workflows are declared in YAML with step dependencies, conditional skip/check logic, and custom states",
+   "Loops via foreach with parallel or sequential strategies",
+   "Built-in resource limits (semaphores) to throttle concurrency per target",
+   "Encryption of stored data with a documented key-rotation procedure",
+   "Extensible through Go action plugins and reusable function templates"
+  ],
+  "caveats": [
+   "Authentication is not built in: it expects a reverse proxy to supply an x-remote-user header; basic-auth is for development only",
+   "Requires writing Go and compiling .so plugins for custom actions, and Docker-based packaging for deployment",
+   "Only Postgres 9.5 or newer is supported as the database"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "workflow automation engine",
+  "keywords": [
+   "workflow automation",
+   "business process automation",
+   "task orchestration",
+   "yaml workflows",
+   "declarative workflows",
+   "automation engine",
+   "go automation",
+   "postgres workflow engine",
+   "docker-compose automation",
+   "step dependencies",
+   "retry transient errors",
+   "human approval form",
+   "self-hosted automation",
+   "process orchestration",
+   "job scheduler",
+   "task runner",
+   "webhook notifications",
+   "slack notifications",
+   "opsgenie alerts",
+   "ssh automation",
+   "http workflow",
+   "run scripts in sequence",
+   "automate onboarding tasks",
+   "provisioning workflow",
+   "microservice task backend",
+   "zapier alternative",
+   "airflow alternative",
+   "n8n alternative",
+   "audit trail for jobs",
+   "encrypted task data",
+   "run multi-step jobs",
+   "orchestrate api calls"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15275,
+  "output": 1249
+ },
+ "generated": "2026-10-29"
+}

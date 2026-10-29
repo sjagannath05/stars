@@ -1,0 +1,94 @@
+{
+ "id": "daya0576/beaverhabits",
+ "repo": "daya0576/beaverhabits",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Time Tracking",
+   "entry": "Beaver Habit Tracker - Habit tracking app to save your precious moments in your fleeting life. (Demo) BSD-3-Clause Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Beaver Habit Tracker is a self-hosted habit tracking app that avoids \"Goals,\" with a Docker image and a hosted cloud option.",
+  "what_it_does": "The README describes a self-hosted habit tracker, with a cloud (SaaS) version also offered. It can be run with Docker or Docker Compose, with habit data stored either in a single SQLite database (habits.db) or in a local JSON file via the USER_DISK option. Configuration is done through environment variables, including skipping authentication for a trusted local email, customizing how many date columns the index page shows, and enabling an iOS standalone mode. It can also be deployed on Unraid (via Community Apps) and Easypanel (via a one-click template). The README lists several derivatives: a Stream Deck integration (HabitDeck), an Apple Shortcut, a Home Assistant switch, a CalDAV bridge that exposes habits as tasks, and an offline-first iOS native app. Full feature details are said to be on the project wiki, and the app is inspired by the Android app Loop Habit Tracker.",
+  "use_cases": [
+   "self-hosted habit tracking",
+   "track daily habits privately",
+   "run a habit tracker in Docker",
+   "sync habits to tasks via CalDAV",
+   "mark habits done from Stream Deck or Home Assistant",
+   "iPhone habit tracking via shortcut"
+  ],
+  "how_to_run": [
+   "docker run -d --name beaverhabits -u $(id -u):$(id -g) -e HABITS_STORAGE=USER_DISK -v ./beaver/:/app/.user/ -p 8080:8080 daya0576/beaverhabits:latest",
+   "Or use Docker Compose with the image daya0576/beaverhabits:latest, port 8080:8080, and a volume mapped to /app/.user/",
+   "Unraid: search for 'Beaver Habit Tracker' in Community Apps",
+   "Easypanel: deploy using the official one-click template",
+   "Development: uv venv && uv sync",
+   "Development: ./start.sh dev"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "NiceGUI",
+   "Docker",
+   "SQLite"
+  ],
+  "notable": [
+   "Habit tracking without a 'Goals' concept",
+   "Storage choice between SQLite database and local JSON files",
+   "Multiple integrations: Stream Deck, Home Assistant, CalDAV, Apple Shortcut",
+   "Runs as non-root user, OpenShift compatible",
+   "Inspired by Loop Habit Tracker"
+  ],
+  "caveats": [
+   "File permissions: host folder UID must match the container user UID to avoid issues",
+   "Several derivatives (e.g. iOS native app, CalDAV bridge) are separate projects, not confirmed as bundled features",
+   "Cloud service has paid pricing plans"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "habit tracking app",
+  "keywords": [
+   "habit tracker",
+   "habit tracking",
+   "self-hosted",
+   "self hosted habit app",
+   "docker",
+   "docker compose",
+   "sqlite",
+   "python",
+   "nicegui",
+   "uv",
+   "loop habit tracker alternative",
+   "daily habits",
+   "track routines",
+   "habit streak",
+   "caldav",
+   "home assistant",
+   "stream deck",
+   "ios shortcut",
+   "unraid",
+   "easypanel",
+   "privacy habit tracker",
+   "personal productivity",
+   "json file storage",
+   "no goals habit app",
+   "daily check-in",
+   "openshift",
+   "bsd-3-clause",
+   "habit journal",
+   "self hosting",
+   "web app habits"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2427,
+  "output": 1277
+ },
+ "generated": "2026-10-29"
+}

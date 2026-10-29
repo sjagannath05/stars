@@ -1,0 +1,100 @@
+{
+ "id": "hyeonsangjeon/youtube-dl-nas",
+ "repo": "hyeonsangjeon/youtube-dl-nas",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "youtube-dl-nas ⚠ - Authenticated yt-dlp download queue for video, audio and subtitles, with history, mobile sharing and NAS file management (fork of youtube-dl-server). (Source Code) MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A NAS-friendly, login-protected download queue built on yt-dlp for saving videos, audio, and subtitles to a mounted folder, with a web dashboard, phone sharing, and a REST API.",
+  "what_it_does": "Provides a browser dashboard where you paste a URL and choose video, audio, or subtitle mode to queue a yt-dlp download, with live progress, transfer speed, ETA, and an ordered queue. Download history and files in the mounted /downfolder are shown in list or thumbnail views with search, filters, paging, preview, file download, retry, and delete actions. Playlist and channel URLs require an explicit scope (current video, first 10, or all items), and duplicate URLs are detected. Queue state and history persist as JSON in a metadata volume so the queue survives container restarts. It also offers a REST API, a Subtitle QA feature that compares SRT/VTT/ASS/SSA files against a reference transcript, optional webhook notifications, and an AI Connect MCP endpoint for approved collection downloads. The README says yt-dlp is kept updated at startup and hourly by default.",
+  "use_cases": [
+   "Queue YouTube videos or audio to a home NAS",
+   "Share links from an Android or iPhone to a NAS",
+   "Archive playlists with bounded item counts",
+   "Download subtitles and check their accuracy against a transcript",
+   "Automate downloads via a REST API",
+   "Get notified in Discord, Slack, ntfy, or Telegram when downloads finish"
+  ],
+  "how_to_run": [
+   "cp .env.example .env",
+   "docker compose up -d",
+   "Edit .env first and set at least MY_ID and MY_PW",
+   "Alternative: docker run -d --name youtube-dl-nas -e MY_ID=nas-user -e MY_PW=change-this-password -v /volume2/youtube-dl:/downfolder -v /volume2/docker/youtube-dl-nas:/usr/src/app/metadata -p 8080:8080 modenaf360/youtube-dl-nas"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "yt-dlp",
+   "Bottle",
+   "bottle-websocket",
+   "gevent",
+   "nginx",
+   "Deno",
+   "yt-dlp-ejs",
+   "nlptutti",
+   "Python MCP SDK"
+  ],
+  "notable": [
+   "Smart Preflight: a three-second undo window that inspects metadata and checks existing NAS files before transfer starts",
+   "Mobile sharing without a relay: Android PWA, HTTP Shortcuts template, or signed iOS Shortcut sends URLs directly to the NAS",
+   "Desktop bookmarklet that stores no credentials and only queues after submission in the dashboard",
+   "AI Connect MCP endpoint on the same address; the README says it exposes no file-deletion tool",
+   "Restart-safe JSON queue with partial-download continuation and duplicate guards"
+  ],
+  "caveats": [
+   "Single-worker, file-backed queue by design; the README states it does not require a database",
+   "Remote access to the MCP endpoint is advised only over HTTPS or a VPN",
+   "Cookies for restricted sources can grant account access, and the README warns to export them only for accounts you are authorized to use",
+   "Fork of youtube-dl-server; the README says it is intended for personal and legitimate use"
+  ],
+  "license": "MIT",
+  "category": "self-hosted media downloader",
+  "keywords": [
+   "yt-dlp",
+   "youtube-dl",
+   "youtube downloader",
+   "nas downloader",
+   "synology container",
+   "docker download queue",
+   "self-hosted video downloader",
+   "audio extraction",
+   "subtitle download",
+   "srt vtt",
+   "download queue web ui",
+   "rest api downloads",
+   "save videos to nas",
+   "share links from phone",
+   "android share sheet",
+   "ios shortcut download",
+   "playlist downloader",
+   "channel backup",
+   "webhook notifications",
+   "discord notifications",
+   "ntfy notifications",
+   "telegram notifications",
+   "mcp server",
+   "subtitle quality",
+   "word error rate",
+   "download history",
+   "media library browser",
+   "youtube-dl-server fork",
+   "home server media",
+   "personal video archive",
+   "queue youtube links"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14079,
+  "output": 1452
+ },
+ "generated": "2026-10-29"
+}

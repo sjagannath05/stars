@@ -1,0 +1,94 @@
+{
+ "id": "midzai/aman_check",
+ "repo": "MidZai/aman_check",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "Aman Check - Dated, honest condition report for a used Mac: locks, battery, SSD and guided hardware tests. [![Open-Source Software][OSS Icon]](https://github.com/MidZai/aman_check) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Aman Check is a free, open-source native macOS app that produces a dated, plain-language condition report for a used Mac, covering locks, battery, SSD health, sensors and guided hardware tests.",
+  "what_it_does": "It runs on the Mac being sold and reads locks and blockers (Activation Lock, Apple Account count, MDM, firmware password, SIP, FileVault, security chip), battery cycles and capacity, internal SSD S.M.A.R.T. data, configuration, and fan and temperature sensors without changing anything on the machine. It then walks the person through guided tests of the display, keyboard, trackpad, speakers, microphone, camera, Touch ID, ports, lid sensor, ambient light sensor and keyboard backlight. Results are exported as a PDF and JSON report, with a share button and an offline QR code summary. Missing or skipped values are shown as \"Not available\" or \"Not tested\" rather than green or failed. The interface is offered in 18 languages.",
+  "use_cases": [
+   "check a used Mac before buying it",
+   "document a Mac's condition before selling it",
+   "detect Activation Lock or MDM blockers on a second-hand Mac",
+   "check battery cycles and SSD health",
+   "test screen, keyboard, trackpad and ports of a used laptop",
+   "send a condition report PDF to a buyer"
+  ],
+  "how_to_run": [
+   "Download the DMG from the latest release",
+   "Drag Aman Check into the Applications folder",
+   "Open the app and follow the macOS Gatekeeper steps (Open Anyway, or xattr -dr com.apple.quarantine on the app)",
+   "Build from source: ./build_app.sh (or UNIVERSAL=1 ./build_app.sh for a universal binary)",
+   "Run unit tests: ./scripts/test.sh"
+  ],
+  "stack": [
+   "Swift",
+   "Swift Package Manager",
+   "Swift Testing",
+   "macOS native app",
+   "Cloudflare Workers, Hono, D1 (planned online publishing server in server/)",
+   "Ed25519 signing (planned level 2)"
+  ],
+  "notable": [
+   "Entirely local at level 1: no network connection, no telemetry, no update check",
+   "Reads only; asks for no administrator password and changes nothing on the checked Mac",
+   "Serial number never shown in full (last 4 characters only)",
+   "Report wording is deliberately cautious: no grade, no score, no 'certified' claims",
+   "Adapts tests to the model: Touch Bar, Touch ID, headphone jack and similar tests appear only when the Mac has them"
+  ],
+  "caveats": [
+   "Not signed with a paid Apple Developer ID, so macOS blocks the first launch and requires a manual workaround",
+   "Developed and verified only on an Intel MacBook Pro with a T2 chip; some Apple Silicon and desktop sensor readings are not yet verified",
+   "Online verifiable publishing (level 2) is not deployed and is hidden in the app"
+  ],
+  "license": "MIT",
+  "category": "mac hardware diagnostics",
+  "keywords": [
+   "used mac inspection",
+   "buy used mac checklist",
+   "sell used macbook report",
+   "mac condition report",
+   "activation lock check",
+   "icloud lock checker",
+   "mdm detection mac",
+   "battery cycle count",
+   "ssd smart health mac",
+   "hardware test macos",
+   "dead pixel test",
+   "keyboard tester mac",
+   "trackpad test",
+   "lid sensor test",
+   "pdf condition report",
+   "qr code report",
+   "swift macos app",
+   "swiftpm",
+   "smc fan temperature",
+   "filevault status",
+   "system integrity protection check",
+   "touch id test",
+   "webcam test mac",
+   "open source mac utility",
+   "macos diagnostics",
+   "verify used laptop before purchase",
+   "share report with buyer",
+   "aman disk",
+   "hardware checkup for second-hand computer",
+   "mac hardware health"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5667,
+  "output": 1406
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,101 @@
+{
+ "id": "netalertx/netalertx",
+ "repo": "netalertx/NetAlertX",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "NetAlertX - Network intruder and presence detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. (Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "NetAlertX is a self-hosted network visibility and asset intelligence platform that discovers connected devices, flags unknown or unauthorized hardware, and sends alerts.",
+  "what_it_does": "It continuously scans local networks to build an inventory of connected devices and tracks connection state changes and IP address management (IPAM) drift. The README names discovery methods including arp-scan, Pi-hole database and DHCP lease imports, generic DHCP lease import, UniFi controller import, and SNMP-enabled router import, with more available as plugins. Notifications can go to more than 80 services via Apprise, or through native Pushsafer, Pushover, or NTFY publishers. A workflows module can auto-assign new devices, group devices by vendor, unarchive devices that come back online, or delete devices. Sync Nodes let distributed collectors send inventory to a central hub for multi-site or MSP monitoring, and the README also mentions Prometheus metrics export, webhooks, a GraphQL/API layer, and Home Assistant integration.",
+  "use_cases": [
+   "detect unknown devices on my home network",
+   "monitor multiple client sites from one dashboard",
+   "track shadow IT and unauthorized hardware",
+   "get alerts when new devices join the network",
+   "track IP address changes and IPAM drift",
+   "feed device presence data into Home Assistant"
+  ],
+  "how_to_run": [
+   "docker run -d --network=host --restart unless-stopped --cap-add=NET_RAW --cap-add=NET_ADMIN --cap-add=NET_BIND_SERVICE -v /local_data_dir:/data -v /etc/localtime:/etc/localtime:ro --tmpfs /tmp:uid=20211,gid=20211,mode=1700 -e PORT=20211 -e APP_CONF_OVERRIDE='{\"GRAPHQL_PORT\":\"20214\"}' ghcr.io/netalertx/netalertx:latest",
+   "git clone <repository URL>",
+   "cd NetAlertX",
+   "docker compose up --force-recreate --build"
+  ],
+  "stack": [
+   "Docker",
+   "Python",
+   "arp-scan",
+   "SNMP",
+   "Apprise",
+   "NTFY",
+   "Pushover",
+   "Pushsafer",
+   "Home Assistant",
+   "Weblate"
+  ],
+  "notable": [
+   "Sync Nodes for distributed collection from VLANs, branch offices, and remote sites into a central hub",
+   "Workflows module for automated device categorization and cleanup policies",
+   "Plugin system for building custom scanners",
+   "Data stays local by default; no external data transmission unless notifications or integrations are configured",
+   "Prometheus metrics export and NOC-style wallboard dashboards"
+  ],
+  "caveats": [
+   "Some scanners such as ARP may not detect devices on different subnets, per the troubleshooting section",
+   "Wi-Fi-only networks may need alternate scanners for accurate detection",
+   "Requires elevated network capabilities (NET_RAW, NET_ADMIN) and host networking in the documented Docker setup",
+   "Supported browsers are listed as Chrome and Firefox only"
+  ],
+  "license": "GPL-3.0",
+  "category": "network device discovery",
+  "keywords": [
+   "network scanner",
+   "device discovery",
+   "presence detection",
+   "intruder detection",
+   "asset inventory",
+   "ipam",
+   "ip address management",
+   "shadow it detection",
+   "arp-scan",
+   "arp scan",
+   "network monitoring",
+   "unknown device alert",
+   "new device notification",
+   "homelab network",
+   "self-hosted",
+   "docker",
+   "pi-hole",
+   "unifi",
+   "snmp",
+   "home assistant integration",
+   "prometheus metrics",
+   "webhooks",
+   "apprise",
+   "ntfy",
+   "pushover",
+   "msp monitoring",
+   "multi-site network visibility",
+   "vlan monitoring",
+   "fing alternative",
+   "netbox alternative",
+   "who is on my network",
+   "find devices connected to wifi",
+   "gpl license network tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5082,
+  "output": 1432
+ },
+ "generated": "2026-10-29"
+}

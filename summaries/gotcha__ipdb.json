@@ -1,0 +1,88 @@
+{
+ "id": "gotcha/ipdb",
+ "repo": "gotcha/ipdb",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "ipdb - IPython-enabled pdb."
+  }
+ ],
+ "summary": {
+  "one_liner": "ipdb is a drop-in replacement for Python's pdb debugger that uses the IPython debugger, adding tab completion, syntax highlighting and better tracebacks.",
+  "what_it_does": "Exports functions (set_trace, pm, run, runcall, runeval) that mirror the standard pdb module but drop into the IPython debugger. The set_trace function takes a context argument for how many lines of source to show and a cond argument to break only when a condition is true. Context size can also be set via the IPDB_CONTEXT_SIZE env var or a .ipdb, setup.cfg, or pyproject.toml file, with the env var taking priority. It provides a bin/ipdb script (and ipdb3) to run a script under the debugger, and a context manager (launch_ipdb_on_exception) and decorator (iex) that open the debugger when an exception is raised. The README also shows how to use it with pytest via --pdbcls.",
+  "use_cases": [
+   "interactively debug a Python script",
+   "drop into a debugger at a breakpoint",
+   "post-mortem debugging after an exception",
+   "debug a failing pytest test",
+   "inspect code with tab completion while debugging",
+   "launch debugger only on exceptions"
+  ],
+  "how_to_run": [
+   "pip install ipdb",
+   "import ipdb; ipdb.set_trace()",
+   "ipdb mymodule.py",
+   "pytest --pdb --pdbcls=IPython.terminal.debugger:TerminalPdb -v ./test_example.py"
+  ],
+  "stack": [
+   "Python",
+   "IPython",
+   "pdb"
+  ],
+  "notable": [
+   "Drop-in replacement for pdb with the same interface, backed by the IPython debugger",
+   "Configurable context lines via env var, home config file, setup.cfg, or pyproject.toml",
+   "Command-line runner (ipdb script) for debugging whole scripts",
+   "Exception-triggered debugging via a with-statement context manager or @iex decorator",
+   "Documented pytest integration with --pdbcls"
+  ],
+  "caveats": [
+   "README documents Python 2 compatibility notes and version pins (ipdb==0.6, ipdb<=0.8) for old Python versions, so it is aimed at a mix of Python versions",
+   "Output of nose and other stdout-altering tools needs explicit sset_trace/spm variants, which the README calls brittle in earlier releases"
+  ],
+  "license": "unknown",
+  "category": "python debugging tools",
+  "keywords": [
+   "ipdb",
+   "pdb",
+   "python debugger",
+   "ipython debugger",
+   "set_trace",
+   "breakpoint",
+   "post-mortem debugging",
+   "pm",
+   "debug python script",
+   "interactive debugger",
+   "tab completion debugger",
+   "syntax highlighting debugger",
+   "better tracebacks",
+   "pytest debugger",
+   "pdbcls",
+   "terminalpdb",
+   "exception debugging",
+   "launch_ipdb_on_exception",
+   "iex decorator",
+   "debug on exception",
+   "step through code",
+   "python breakpoint",
+   "pdb alternative",
+   "ipython alternative pdb",
+   "debug failing test",
+   "context lines debugger",
+   "pyproject debugger config",
+   "trace python code",
+   "debugging tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3278,
+  "output": 1180
+ },
+ "generated": "2026-10-29"
+}

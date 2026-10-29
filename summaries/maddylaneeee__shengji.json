@@ -1,0 +1,101 @@
+{
+ "id": "maddylaneeee/shengji",
+ "repo": "maddylaneeee/ShengJi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Voice-to-Text",
+   "entry": "LocalScribe - Open-source local transcription and subtitle editor for microphones, media files, and Mac audio. [![Open-Source Software][OSS Icon]](https://github.com/maddylaneeee/ShengJi) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "LocalScribe is a free, open-source native macOS app for Apple silicon that transcribes microphone input, media files, and Mac audio into editable text and subtitles entirely on the device.",
+  "what_it_does": "LocalScribe records or imports speech from a microphone, media files, or Mac system audio and converts it to text using local engines (Apple Speech, whisper.cpp with Metal, SenseVoice, or NVIDIA Parakeet). It offers floating live captions on macOS 26, an editable transcript view with search, replace, and trimming, and import of SRT, WebVTT, TXT, Markdown, and JSON. Transcripts can be translated with Apple Translation by default or optional local NLLB, then exported as TXT, Markdown, JSON, PDF, SRT, or WebVTT. An optional on-device Gemma 4 model can proofread or summarize transcripts, and custom AI services (LM Studio, OpenAI, DeepSeek) can be configured as an alternative, with cloud options marked as preview. It also includes long-task recovery journals, pause/resume, and a command-line interface.",
+  "use_cases": [
+   "transcribe meeting or lecture recordings locally",
+   "generate SRT or WebVTT subtitles for video files",
+   "create live captions from Mac audio",
+   "edit and clean up speech-to-text output",
+   "translate a transcript offline",
+   "proofread or summarize a transcript with on-device AI"
+  ],
+  "how_to_run": [
+   "Download the latest DMG from the GitHub Releases page and drag LocalScribe to Applications",
+   "If macOS blocks the app, allow it under System Settings → Privacy & Security → Security (Open Anyway)",
+   "Build from source: ruby generate_project.rb",
+   "xcodebuild -project LocalScribe.xcodeproj -scheme LocalScribe -destination 'platform=macOS,arch=arm64' build",
+   "Run tests: xcodebuild -project LocalScribe.xcodeproj -scheme LocalScribe -destination 'platform=macOS,arch=arm64' test",
+   "CLI example: LocalScribe.app/Contents/MacOS/LocalScribe --cli transcribe input.mp4 --engine whisper --language en_US --format srt --output output.srt"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Apple SpeechAnalyzer / SpeechTranscriber",
+   "whisper.cpp (GGML, Metal)",
+   "sherpa-onnx (SenseVoice, Parakeet)",
+   "Silero VAD",
+   "llama.cpp (Gemma 4, Metal)",
+   "CTranslate2 (NLLB)",
+   "Apple Translation framework",
+   "Ruby (project generation)"
+  ],
+  "notable": [
+   "Runs recognition and on-device Gemma 4 enhancement locally with no account required",
+   "Choice of multiple offline engines: Apple Speech, Whisper, SenseVoice, Parakeet",
+   "Append-only session journals and recovery for long recordings",
+   "Optional saving of original microphone audio as M4A with playback and export",
+   "Command-line interface for models, transcription, export, and translation"
+  ],
+  "caveats": [
+   "Requires Apple silicon and macOS 15.5 or later; Apple SpeechAnalyzer and live captions need macOS 26, and SenseVoice and Parakeet are file-only",
+   "Current build is ad-hoc signed and not notarized by Apple, so Gematekeeper warnings must be overridden manually",
+   "Optional NLLB model is licensed CC-BY-NC-4.0; OpenAI and DeepSeek connectors are preview features pending production-key validation"
+  ],
+  "license": "MIT License",
+  "category": "local speech transcription",
+  "keywords": [
+   "speech to text",
+   "transcription app",
+   "subtitle editor",
+   "srt generator",
+   "webvtt",
+   "whisper.cpp",
+   "offline transcription",
+   "local speech recognition",
+   "macos transcription",
+   "apple silicon",
+   "live captions",
+   "mac audio capture",
+   "microphone transcription",
+   "meeting transcription",
+   "lecture transcription",
+   "video subtitles",
+   "transcript editor",
+   "translate transcript offline",
+   "gemma 4",
+   "llama.cpp",
+   "on-device ai",
+   "sensevoice",
+   "parakeet",
+   "sherpa-onnx",
+   "swiftui app",
+   "dictation app",
+   "voice to text",
+   "transcribe audio files",
+   "share files with my team",
+   "private transcription no cloud",
+   "alternative to cloud transcription",
+   "command line transcription"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7092,
+  "output": 1635
+ },
+ "generated": "2026-10-29"
+}

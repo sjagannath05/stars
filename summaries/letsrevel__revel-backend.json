@@ -1,0 +1,101 @@
+{
+ "id": "letsrevel/revel-backend",
+ "repo": "letsrevel/revel-backend",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Polls and Events",
+   "entry": "Revel ⚠ - Community-focused event management and ticketing platform. (Demo, Source Code, Clients) MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Revel is an open-source, MIT-licensed event management, ticketing and membership platform for communities, clubs, venues and independent artists, with a hosted version and a self-hostable Docker stack.",
+  "what_it_does": "This repository is the Django/Django Ninja API behind Revel; the web app lives in revel-frontend and deployment in infra. Ticketing covers Stripe checkout, guest checkout, multiple tier types (fixed, pay-what-you-can, free, offline), discount codes, waitlists, refunds, QR tickets and Apple/Google Wallet passes. Memberships support recurring Stripe plans, series passes, and membership cards. Screening includes questionnaires, invitations, private guest lists, blacklists, and OpenID Connect login. The README also describes EU VAT handling (VIES checks, reverse charge, invoices), seat map designers, notifications via in-app, email and Telegram, Eventbrite sync, and XLSX/PDF exports. The README states that the platform's fee structure applies to the hosted service, and that self-hosting carries no fee to Revel.",
+  "use_cases": [
+   "sell tickets for a club, gig or community event",
+   "manage recurring memberships for a studio or venue",
+   "run invitation-only or vetted events",
+   "self-host an event ticketing platform",
+   "issue wallet passes and check in attendees by QR scan",
+   "export attendee lists and VAT reports"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd infra && ./setup.sh (self-hosting wizard, in the infra repo)",
+   "Local development: make setup (first time only)",
+   "make run (every time after setup)",
+   "make bootstrap (reseed the dev database)"
+  ],
+  "stack": [
+   "Python",
+   "Django 5.2 LTS",
+   "Django Ninja",
+   "PostgreSQL with PostGIS",
+   "Celery",
+   "Redis",
+   "Docker Compose",
+   "Stripe Connect",
+   "GeoDjango (GDAL, GEOS)",
+   "ClamAV"
+  ],
+  "notable": [
+   "No service fee added on top of ticket price for buyers; ticket money goes straight to the organizer's Stripe account",
+   "Questionnaire-based screening and invitation-only events built in as core features",
+   "Built-in seat maps in the free edition, with a box office view",
+   "EU VAT support including VIES validation and reverse charge",
+   "Apple Wallet and Google Wallet passes built in"
+  ],
+  "caveats": [
+   "Self-hosting needs a Linux x86-64 server with two DNS hostnames; the slim tier needs 2 vCPU and 4 GB RAM and the full tier 8 vCPU and 32 GB RAM",
+   "Without SMTP configured, nobody receives verification or ticket emails",
+   "Local development dev database runs on tmpfs and is empty after a container restart; needs native GDAL, GEOS, Pango, gettext and libmagic libraries"
+  ],
+  "license": "MIT",
+  "category": "event ticketing platform",
+  "keywords": [
+   "event management",
+   "ticketing",
+   "event ticketing",
+   "self-hosted ticketing",
+   "membership management",
+   "recurring memberships",
+   "community events",
+   "club management",
+   "venue management",
+   "seat map",
+   "box office",
+   "invitation-only events",
+   "guest list",
+   "stripe connect",
+   "apple wallet tickets",
+   "google wallet",
+   "qr ticket check-in",
+   "waitlist",
+   "discount codes",
+   "eu vat invoicing",
+   "vies vat validation",
+   "django",
+   "django ninja",
+   "postgis",
+   "celery",
+   "docker compose",
+   "self-host events",
+   "sell tickets without service fee",
+   "alternative to eventbrite",
+   "alternative to pretix",
+   "alternative to hi.events",
+   "share events with my community",
+   "event series season pass",
+   "attendee export"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6614,
+  "output": 1373
+ },
+ "generated": "2026-10-29"
+}

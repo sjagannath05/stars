@@ -1,0 +1,94 @@
+{
+ "id": "revfactory/harness",
+ "repo": "revfactory/harness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Harness by revfactory - A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use. Resources are in Korean but can produce high-quality English-language output."
+  }
+ ],
+ "summary": {
+  "one_liner": "Harness is a Claude Code plugin/meta-skill that turns a domain description into a team of specialized agents plus the skills and orchestrator they use.",
+  "what_it_does": "Given a domain description, the harness skill audits any existing harness, analyzes the domain and its control-flow shape, and selects an execution mode and team architecture. It then generates agent definitions under .claude/agents/, skills under .claude/skills/ (including one orchestrator skill that sets the order of work), and a minimal CLAUDE.md pointer. The README describes six architecture patterns (Pipeline, Fan-out/Fan-in, Expert Pool, Producer-Reviewer, Supervisor, Hierarchical Delegation) and three execution modes: Workflow scripts, persistent named agents with SendMessage, and one-shot sub-agent calls. It also covers verification (trigger evals, dry runs, with-skill vs. without-skill A/B tests) and a /harness:evolve skill that turns usage feedback into revisions of agents and skills. Version 2 is described as a rebuild that removes v1's experimental TeamCreate flag dependency and includes a v1 migration path.",
+  "use_cases": [
+   "generate an agent team for a software project",
+   "scaffold Claude Code subagents and skills for a domain",
+   "design multi-agent workflows with verification loops",
+   "migrate a Claude Code multi-agent setup from v1 to v2",
+   "evolve agent definitions based on usage feedback",
+   "A/B test whether a skill improves agent output"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add revfactory/harness",
+   "/plugin install harness@harness-marketplace",
+   "cp -r skills/harness ~/.claude/skills/harness",
+   "cp -r skills/evolve ~/.claude/skills/harness-evolve",
+   "Ask Claude Code: \"build a harness for this project\" or \"하네스 구성해줘\""
+  ],
+  "stack": [
+   "Claude Code",
+   "Claude Code plugin marketplace",
+   "Claude Code skills and sub-agents",
+   "Workflow scripts (pipeline, parallel, schemas, budgets)"
+  ],
+  "notable": [
+   "Chooses execution mode from the shape of the control flow rather than team size, and can mix modes per phase",
+   "Includes /harness:evolve, which captures the delta between initial and current harness and feeds feedback back into agents and skills",
+   "Built-in detection and mechanical migration for v1 artifacts such as TeamCreate and experimental flags",
+   "Per-agent model tier selection (fable / opus / sonnet) instead of blanket pins",
+   "Codified quality patterns such as adversarial verification, judge panels, and loop-until-dry"
+  ],
+  "caveats": [
+   "Prior performance numbers (49.5 to 79.3 mean quality) are author-run on 15 tasks and the README asks users to run their own pilot",
+   "Resources and primary interaction are in Korean; the README says English output is achievable but the trigger phrases are Korean-first",
+   "The README does not describe support for platforms beyond Claude Code"
+  ],
+  "license": "Apache 2.0",
+  "category": "agent orchestration tooling",
+  "keywords": [
+   "claude code",
+   "agent team",
+   "multi-agent",
+   "meta-skill",
+   "subagents",
+   "agent orchestration",
+   "skill generation",
+   "scaffold agents",
+   "agent definitions",
+   "claude code plugin",
+   "workflow orchestration",
+   "sub-agent delegation",
+   "persistent agents",
+   "sendmessage",
+   "pipeline pattern",
+   "fan-out fan-in",
+   "producer reviewer",
+   "supervisor pattern",
+   "orchestrator skill",
+   "claude.md",
+   "evolve harness",
+   "agent evaluation",
+   "a/b testing skills",
+   "verification loop",
+   "v1 migration",
+   "progressive disclosure",
+   "generate agent team",
+   "set up ai agents for my project",
+   "design multi-agent workflow",
+   "make claude agents for my codebase",
+   "korean language plugin",
+   "apache licensed claude tooling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3481,
+  "output": 1464
+ },
+ "generated": "2026-10-29"
+}

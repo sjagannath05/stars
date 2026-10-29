@@ -1,0 +1,96 @@
+{
+ "id": "scaccogatto/nastro",
+ "repo": "scaccogatto/nastro",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "nastro - Terminal call recorder for macOS that captures system audio and mic (no bot joins the call) and transcribes on-device with speaker diarization, via TUI or headless CLI."
+  }
+ ],
+ "summary": {
+  "one_liner": "nastro is a terminal call recorder for macOS that captures system audio and microphone input without joining the call as a bot, and transcribes recordings locally with optional speaker diarization.",
+  "what_it_does": "Records system audio via the macOS CoreAudio process tap plus the microphone, writing audio incrementally to a local AAC (.m4a) file. It offers a TUI (browse, record, filter, transcribe, delete to Trash) and a headless CLI with subcommands such as record, records --plain (tab-separated list), transcribe, and version. Transcription runs on-device using whisper.cpp (default) or WhisperX, and WhisperX adds speaker labels like [SPEAKER_00] grouped by speaking turn, with SRT timestamps. Each recording is stored as a directory containing audio.m4a, metadata.json, and transcript.txt/.srt, with no database. Recording directories are created owner-only (0700) and files as 0600.",
+  "use_cases": [
+   "record a video call without a bot joining the meeting",
+   "transcribe meetings locally without sending audio to the cloud",
+   "get speaker-labeled transcripts of calls",
+   "scriptable list of recordings from the command line",
+   "keep local archives of audio calls on a Mac"
+  ],
+  "how_to_run": [
+   "brew install scaccogatto/tap/nastro",
+   "nastro",
+   "git clone <repository URL> && cd nastro && make build",
+   "./bin/nastro"
+  ],
+  "stack": [
+   "Go",
+   "Bubble Tea",
+   "Swift",
+   "CoreAudio process tap",
+   "whisper.cpp (whisper-cli)",
+   "WhisperX",
+   "pyannote (via HuggingFace token)",
+   "TOML config"
+  ],
+  "notable": [
+   "No bot joins the call; capture happens at the OS level",
+   "Audio and transcripts stay on the local machine; transcription is run on demand",
+   "Audio file stays valid after a crash or kill -9 because it is written incrementally",
+   "Transcripts are written atomically so an interrupted run does not destroy an existing one",
+   "Two-binary design: Go TUI/CLI plus Swift capture helper with a menu bar recording indicator"
+  ],
+  "caveats": [
+   "Requires macOS 14.4+ (CoreAudio process tap API)",
+   "Speaker diarization needs a HuggingFace token with pyannote model terms accepted, a manual step",
+   "Building from source requires Go and Swift toolchains"
+  ],
+  "license": "MIT",
+  "category": "macos call recording",
+  "keywords": [
+   "call recorder",
+   "meeting recorder",
+   "terminal recorder",
+   "macos audio capture",
+   "system audio recording",
+   "microphone recording",
+   "local transcription",
+   "on-device transcription",
+   "speaker diarization",
+   "speaker labels",
+   "whisper.cpp",
+   "whisper-cli",
+   "whisperx",
+   "pyannote",
+   "coreaudio",
+   "process tap",
+   "tui",
+   "bubble tea",
+   "command line recorder",
+   "record zoom calls without bot",
+   "record meetings privately",
+   "offline meeting transcripts",
+   "no cloud transcription",
+   "transcribe recordings mac",
+   "srt subtitles from audio",
+   "meeting notes local",
+   "audio to text terminal",
+   "headless recording cli",
+   "m4a recording",
+   "record teams call mac",
+   "private call recording",
+   "speaker separation transcript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3107,
+  "output": 1177
+ },
+ "generated": "2026-10-29"
+}

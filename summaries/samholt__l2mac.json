@@ -1,0 +1,90 @@
+{
+ "id": "samholt/l2mac",
+ "repo": "samholt/l2mac",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "L2MAC is a Python framework that uses LLM agents as a stored-program computer with a file store, so one prompt can produce output (such as a full codebase or book) larger than the model's context window.",
+  "what_it_does": "L2MAC takes a single natural-language prompt and generates a self-bootstrapped \"prompt-program,\" a sequence of instruction steps. Each step runs in a fresh LLM agent whose context is managed by a control unit. The agents read and write a persistent file store that holds intermediate and final outputs, so the total output is not limited by the context window. For coding tasks, it can also check generated code for syntax errors and run unit tests, feeding errors back for correction. It is usable as a CLI (`l2mac \"...\"`) or as a Python library (`generate_codebase`), and writes results to a ./workspace folder. The README reports benchmark results on large codebase generation and HumanEval (90.2% Pass@1) and includes examples such as a snake game, a URL shortener web app, a blackjack CLI, and a pasta recipe book.",
+  "use_cases": [
+   "generate a complete codebase from one prompt",
+   "automatically write a long book or recipe book",
+   "build a small pygame game from a description",
+   "produce large multi-file software projects with an LLM",
+   "research long-form LLM output generation beyond context limits",
+   "run LLM agents with persistent file-based memory"
+  ],
+  "how_to_run": [
+   "conda create -n l2mac python=3.9 && conda activate l2mac",
+   "pip install --upgrade l2mac",
+   "l2mac --init-config \"\" (creates ~/.l2mac/config.yaml)",
+   "Edit ~/.l2mac/config.yaml with llm api_type, model, base_url and api_key",
+   "l2mac \"Create a beautiful, playable and simple snake game with pygame.\""
+  ],
+  "stack": [
+   "Python 3.7+",
+   "OpenAI-compatible LLM APIs (configurable api_type, default gpt-4o in example config)",
+   "YAML configuration"
+  ],
+  "notable": [
+   "Stored-program design: each instruction step runs in a new LLM agent with tools to read and write a persistent file store",
+   "Self-generated prompt-program bootstrapped from a one-line prompt, or user-supplied",
+   "Generates unit tests alongside code and uses failing tests and syntax errors to drive self-correction",
+   "Usable as both a CLI and a Python library (generate_codebase)",
+   "Accompanies an ICLR 2024 paper"
+  ],
+  "caveats": [
+   "Requires access to an LLM API key and its costs; the example config uses gpt-4o",
+   "Setup details are referenced in external docs and the README does not fully describe the QuickStart section",
+   "Benchmark claims come from the paper's own evaluations (averaged over 10 seeds)"
+  ],
+  "license": "unknown",
+  "category": "llm multi-agent framework",
+  "keywords": [
+   "llm agents",
+   "multi-agent system",
+   "codebase generation",
+   "code generation",
+   "long output generation",
+   "unbounded context",
+   "context window workaround",
+   "stored-program computer",
+   "von neumann architecture llm",
+   "prompt program",
+   "autonomous coding agent",
+   "ai software engineer",
+   "autogpt alternative",
+   "generate entire app from prompt",
+   "one prompt to full project",
+   "write a book with ai",
+   "pygame snake game generator",
+   "humaneval coding benchmark",
+   "unit test generation",
+   "self-correcting code agent",
+   "persistent file memory for agents",
+   "file store agent memory",
+   "python llm library",
+   "openai api agent cli",
+   "l2mac cli",
+   "generate_codebase",
+   "iclr 2024 paper",
+   "build a website with ai",
+   "automatic code writing tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6029,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

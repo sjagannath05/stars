@@ -1,0 +1,125 @@
+{
+ "id": "vidispine/hull",
+ "repo": "vidispine/hull",
+ "kind": "star",
+ "description": "The incredible HULL - Helm Uniform Layer Library - is a Helm library chart to improve Helm chart based workflows. ",
+ "topics": [
+  "ai",
+  "dry",
+  "helm",
+  "helm-chart",
+  "helm-charts",
+  "helm-deployment",
+  "helm-interface",
+  "helm-plugin",
+  "helm-plugins",
+  "helm-wrapper",
+  "helm3",
+  "json-schema",
+  "k8s",
+  "k8s-deployment",
+  "kubernetes",
+  "mcp",
+  "mcp-server",
+  "mcp-tools",
+  "skill",
+  "skills"
+ ],
+ "language": "Python",
+ "stars": 295,
+ "license": "Apache-2.0",
+ "homepage": "https://hull.readthedocs.io/en/latest/",
+ "pushed_at": "2026-10-25",
+ "archived": false,
+ "accounts": [
+  "sjagannath05",
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "HULL is a Helm library chart that lets you define Kubernetes objects entirely in values.yaml instead of writing per-application YAML templates.",
+  "what_it_does": "HULL is a Helm library chart that is added as a dependency to a parent chart and renders Kubernetes objects from specifications in values.yaml, so the parent chart needs no custom YAML templates beyond a single static hull.yaml file. Object properties map directly to Kubernetes API fields, and JSON schema validation (values.schema.json) is provided for IDE guidance. It automatically adds standard labels and supports hierarchical labels and annotations, default values for object types, and inline or file-based ConfigMaps and Secrets with automatic Base64 encoding and optional hashing for pod restarts. Values can embed Go templating expressions through transformations. The README also describes AI agent support, including a migration/import script, a validation script, and a Claude Code plugin and MCP server. The README says a demo chart (hull-demo) is available from releases.",
+  "use_cases": [
+   "write Helm charts without YAML templates",
+   "define Kubernetes deployments and services in values.yaml",
+   "package off-the-shelf applications for Kubernetes",
+   "convert an existing Helm chart to HULL values",
+   "add ConfigMaps or Secrets to a Helm chart",
+   "validate Helm values against a JSON schema",
+   "let AI agents generate Helm chart configuration"
+  ],
+  "how_to_run": [
+   "Add the HULL library chart as a dependency of your parent Helm chart (see the 'adding the HULL library chart' documentation).",
+   "Copy the static hull.yaml file unmodified from the embedded HULL chart into the parent chart's /templates folder.",
+   "Define objects under the 'hull' key in values.yaml.",
+   "helm template <release> <chart> -f values.yaml --debug to render and inspect the output.",
+   "helm upgrade --install <release> <chart> -f values.yaml --namespace <ns> to install or upgrade."
+  ],
+  "stack": [
+   "Helm 3",
+   "Helm 4",
+   "Kubernetes API JSON schema",
+   "Go templating",
+   "Python (hull_import.py, hull_validate.py)",
+   "MCP server",
+   "Claude Code plugin"
+  ],
+  "notable": [
+   "Object definitions live only in values.yaml; no per-app templates needed beyond one static hull.yaml file",
+   "Unit tests validate rendered output against the Kubernetes API JSON schema",
+   "Hierarchical label and annotation inheritance across all objects, object types, or single instances",
+   "Values can contain Go templating expressions that reference other values",
+   "Built-in AI agent support: hull_import.py converts existing charts and checks they render the same, hull_validate.py reports schema problems"
+  ],
+  "caveats": [
+   "Requires copying hull.yaml into the parent chart's templates folder; the README states it must not be modified",
+   "Helm CLI 3.0.x is not compatible; Helm 4 is supported only from HULL 1.34.2, 1.33.3 and 1.32.6 onward",
+   "Release lines are tied to Kubernetes versions; the README lists 1.35, 1.36 and 1.37 as currently maintained",
+   "Version 1.37.0 changed default RBAC objects to opt-in, a breaking change on upgrade unless createDefaultRbacTriplet is set to true"
+  ],
+  "license": "Apache-2.0",
+  "category": "helm library chart",
+  "keywords": [
+   "helm",
+   "helm library chart",
+   "kubernetes",
+   "k8s",
+   "helm chart",
+   "helm3",
+   "helm 4",
+   "values.yaml",
+   "yaml templates alternative",
+   "declarative kubernetes objects",
+   "json schema",
+   "values.schema.json",
+   "helm wrapper",
+   "helm plugin",
+   "kubernetes deployment",
+   "configmap",
+   "secrets",
+   "helm dry",
+   "chart boilerplate reduction",
+   "mcp server",
+   "ai agent helm",
+   "claude code plugin",
+   "helm chart migration",
+   "helm template rendering",
+   "kubernetes api schema",
+   "helm chart without templates",
+   "package application for kubernetes",
+   "reduce helm chart maintenance",
+   "kubernetes rbac defaults",
+   "label and annotation inheritance"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15768,
+  "output": 1526
+ },
+ "generated": "2026-10-29"
+}

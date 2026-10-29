@@ -1,0 +1,98 @@
+{
+ "id": "mishanefedov/agentwatch",
+ "repo": "mishanefedov/agentwatch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "AgentWatch by mishanefedov - Local-only observability for AI agents on your machine. One timeline across coding and non-coding agents."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local-only terminal and web timeline that watches coding and non-coding AI agents (Claude Code, Codex, Gemini CLI, Cursor, Hermes, OpenClaw) on one machine, tracking their activity, token cost and anomalies.",
+  "what_it_does": "Reads session and config files that agents write to disk (read-only) and merges them into one live timeline with per-agent filters. It computes per-turn token usage and USD cost with cache accounting, and shows a context-compaction visualizer for Claude Code and Codex. Budget caps (per session and per day) raise alerts, and anomaly detection flags cost/duration outliers (MAD z-score) and repeating action loops. The TUI (Ink/React) is the live tail, and a web UI at a local port offers projects, sessions, token charts, call graphs, diff attribution, prompt replay and search. It also runs as an MCP stdio server so agents can query their own session history, and can export OTLP/HTTP spans using gen_ai.* conventions when an endpoint is set.",
+  "use_cases": [
+   "monitor several AI coding agents on one laptop",
+   "track spending per session or per day across agents",
+   "detect stuck agent loops or unexpected file writes",
+   "audit what an agent ran (shell commands, edits, permissions)",
+   "export agent telemetry to Jaeger, Tempo or Grafana via OTel",
+   "let an agent query its own past sessions through MCP"
+  ],
+  "how_to_run": [
+   "npm i -g @misha_misha/agentwatch",
+   "agentwatch doctor",
+   "agentwatch",
+   "agentwatch serve",
+   "agentwatch mcp"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js >= 20",
+   "Ink / React (TUI)",
+   "chokidar",
+   "tsup",
+   "vitest",
+   "gpt-tokenizer",
+   "cli-highlight",
+   "d3-hierarchy",
+   "OpenTelemetry (loaded dynamically)",
+   "SQLite (reads Hermes state.db)"
+  ],
+  "notable": [
+   "Single timeline across six agent adapters, including non-coding agents like OpenClaw and Hermes",
+   "Local-only with no telemetry and no network calls unless an OTLP endpoint is set",
+   "Statistical anomaly detection (MAD z-score plus stuck-loop detection) rather than only rule-based alerts",
+   "Built-in MCP server exposing five history-query tools",
+   "OpenTelemetry exporter using GenAI semantic conventions"
+  ],
+  "caveats": [
+   "Only captures events while the TUI is running; it is a viewer, not a background daemon",
+   "Cursor support is config-level only; its AI activity database is not parsed yet",
+   "Requires macOS or Linux; Windows is out of scope for v0.x",
+   "Backfill reads only the last ~4 MB of each active session file, so very long sessions may lose earliest events"
+  ],
+  "license": "MIT",
+  "category": "ai agent observability",
+  "keywords": [
+   "ai agent observability",
+   "coding agent monitoring",
+   "claude code monitor",
+   "codex cli logs",
+   "gemini cli usage",
+   "cursor agent activity",
+   "llm token cost tracker",
+   "agent spend budget alert",
+   "terminal tui dashboard",
+   "local timeline",
+   "otel gen_ai exporter",
+   "opentelemetry agent traces",
+   "mcp server session history",
+   "anomaly detection agent loops",
+   "stuck loop detection",
+   "session transcript viewer",
+   "context compaction visualizer",
+   "prompt replay",
+   "multi-agent dashboard",
+   "openclaw hermes agent",
+   "jaeger tempo grafana",
+   "npm global cli",
+   "agent audit log",
+   "track what my ai agent ran",
+   "see how much my coding agents cost",
+   "no cloud local-only monitoring",
+   "claude-devtools alternative",
+   "langfuse alternative for local agents"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13096,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

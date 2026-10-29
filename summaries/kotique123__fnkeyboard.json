@@ -1,0 +1,94 @@
+{
+ "id": "kotique123/fnkeyboard",
+ "repo": "kotique123/FnKeyboard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Productivity",
+   "entry": "FnKeyboard - Quick access to function keys from the menu bar. [![Open-Source Software][OSS Icon]](https://github.com/kotique123/FnKeyboard) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A lightweight macOS menu-bar app that shows clickable on-screen keycaps for the F1–F12 function keys and triggers their system actions such as brightness, media, and volume.",
+  "what_it_does": "Lives in the macOS status bar with a keyboard icon and opens a popover that lays out all twelve function keys in a grouped layout resembling a Mac keyboard. Each keycap shows an SF Symbols icon and label, with hover highlight and spring-press animations, and adapts to Dark or Light mode. Clicking a keycap simulates the key through HID or CGEvent so the real system function fires. The app also uses a CGEvent tap to detect which F-keys are physically held down, which requires Accessibility/Input Monitoring permission. Taps are debounced at 200 ms and simulated presses are rate-limited to 150 ms per key.",
+  "use_cases": [
+   "Adjust screen brightness from the menu bar",
+   "Control media playback without the keyboard",
+   "Change system volume with a mouse click",
+   "Trigger function keys on a Mac without using the physical F-row",
+   "Access F-key actions on a laptop or external keyboard setup"
+  ],
+  "how_to_run": [
+   "Download FnKeyboard.app.zip or the DMG from the latest GitHub release, unzip, and move FnKeyboard.app to /Applications",
+   "Open the app and grant Input Monitoring when prompted",
+   "Build from source: git clone the repo, cd FnKeyboard, chmod +x build.sh, ./build.sh",
+   "Open build/arm64/FnKeyboard.app (or build/x86_64/ on Intel)",
+   "Create release DMGs with ./build.sh --release or a single-architecture DMG with ./build.sh --dmg"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Swift Package Manager",
+   "NSStatusItem / NSPopover",
+   "CGEvent tap",
+   "HID / CGEvent key simulation",
+   "SF Symbols",
+   "Bash build script"
+  ],
+  "notable": [
+   "Menu-bar-only app (LSUIElement) with no Dock icon",
+   "Clicking a keycap fires the real system function rather than a simulated label",
+   "Hardened Runtime with zero entitlement exceptions and no App Sandbox",
+   "Build script supports arm64 and x86_64 builds plus DMG creation and Developer ID signing",
+   "Only F1–F12 key codes are filtered; the README states no keystrokes are logged or transmitted"
+  ],
+  "caveats": [
+   "Requires macOS 13.0 Ventura or later",
+   "Needs Input Monitoring / Accessibility permission, which grants read access to all keyboard events system-wide",
+   "Runs unsandboxed because the CGEvent tap and HID APIs are unavailable inside the App Sandbox",
+   "Ad-hoc-signed builds are warned against for distribution; a Developer ID is needed for signed release builds"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "macos function keys",
+   "f1 f12 keys",
+   "function key toolbar",
+   "menu bar keyboard",
+   "status bar utility",
+   "on-screen keyboard",
+   "virtual function keys",
+   "brightness control mac",
+   "volume control mac",
+   "media keys mac",
+   "swiftui popover",
+   "nsstatusitem app",
+   "cgevent tap",
+   "hid key simulation",
+   "input monitoring permission",
+   "accessibility permission mac",
+   "hardened runtime",
+   "code signing mac app",
+   "dmg builder",
+   "apple silicon universal build",
+   "intel mac build",
+   "swift package manager app",
+   "click keycap",
+   "fn key alternative",
+   "touch bar alternative",
+   "mac productivity tool",
+   "keyboard shortcut helper",
+   "open source menu bar app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3899,
+  "output": 1384
+ },
+ "generated": "2026-10-29"
+}

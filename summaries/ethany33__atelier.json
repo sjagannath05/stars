@@ -1,0 +1,100 @@
+{
+ "id": "ethany33/atelier",
+ "repo": "EthanY33/atelier",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "atelier by Ethan Yucetepe - Claude Code plugin with eight design-automation skills driven by one schema-validated brand.json: design tokens for CSS, Tailwind, TypeScript and Figma, social cards, favicon and app-icon sets, responsive AVIF and WebP images, HTML-to-video recording, a WCAG 2.1 AA audit, and a runtime UX audit covering bfcache, INP, dialogs and mobile viewports."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin that generates design assets (tokens, social cards, icons, responsive images, HTML-to-video) from one schema-validated brand.json and runs WCAG and runtime UX audits on a page.",
+  "what_it_does": "atelier keeps a single .atelier/brand.json file as the source for design outputs. Its design-token skill writes tokens.css, tailwind.config.js, tokens.d.ts and Figma variables. The og-card-generator makes 1200x630 PNG social cards per page, and brand-asset-pipeline produces favicons, app icons, social covers and Steam capsules. The responsive-image-pipeline outputs AVIF and WebP at 480 to 1920px with LQIP placeholders, and html-to-video records pages to MP4 or WebM. Two audits check the shipped page: accessibility-design-audit runs a WCAG 2.1 AA check, and runtime-ux-audit runs 65 rules across transitions, INP, panels and mobile, with an optional Chromium dynamic pass. Each skill is also a Node module and CLI, and the repo can run as a GitHub Action.",
+  "use_cases": [
+   "generate design tokens for CSS, Tailwind and TypeScript",
+   "create social share cards for blog posts",
+   "make favicons and app icons from one logo",
+   "convert site images to responsive AVIF and WebP",
+   "record a web page as a short MP4 or WebM clip",
+   "check a page against WCAG AA accessibility",
+   "audit a site for mobile and interaction problems in CI"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add EthanY33/atelier",
+   "/plugin install atelier@atelier",
+   "/atelier-doctor checks Node, dependencies, Chromium, ffmpeg and your brand file",
+   "/brand-init a few questions, then writes .atelier/brand.json",
+   "npx playwright@ install chromium (needed for browser skills; /atelier-doctor prints the exact command)",
+   "npm install && npm run setup:browsers && npm test (for development)"
+  ],
+  "stack": [
+   "Node.js 22 or newer",
+   "Claude Code plugin",
+   "Playwright Chromium",
+   "ffmpeg",
+   "axe (accessibility engine)",
+   "Tailwind CSS",
+   "AVIF",
+   "WebP",
+   "JSON Schema"
+  ],
+  "notable": [
+   "One brand.json file drives token, card, icon, image and video outputs",
+   "runtime-ux-audit with 65 static and optional dynamic rules, including bfcache, INP and mobile viewport checks",
+   "Exit codes 0, 1, 2 for clean, critical/serious findings, or could not run, usable as CI gate",
+   "Ships as a GitHub Action (EthanY33/atelier@v1) that appends reports to the job summary",
+   "Every skill is also a plain Node module and CLI"
+  ],
+  "caveats": [
+   "Browser-based skills need a one-time Playwright Chromium install, and html-to-video needs ffmpeg on PATH",
+   "Requires Node.js 22 or newer and Claude Code with plugin support",
+   "Dynamic UX audit is opt-in (--dynamic) and loads pages in Chromium with throttling, so it is slower"
+  ],
+  "license": "MIT",
+  "category": "design automation tooling",
+  "keywords": [
+   "claude code plugin",
+   "design tokens",
+   "brand.json",
+   "design tokens css tailwind typescript",
+   "figma variables",
+   "social cards",
+   "og image generator",
+   "favicon generator",
+   "app icon generator",
+   "responsive images",
+   "avif",
+   "webp",
+   "lqip",
+   "html to video",
+   "record webpage mp4",
+   "wcag 2.1 aa audit",
+   "accessibility audit",
+   "axe accessibility",
+   "ux audit",
+   "runtime ux audit",
+   "bfcache",
+   "inp interaction to next paint",
+   "core web vitals",
+   "mobile viewport audit",
+   "playwright chromium",
+   "ffmpeg",
+   "github action accessibility ci",
+   "brand guidelines generator",
+   "make social share images",
+   "check site accessibility",
+   "generate icons from logo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4739,
+  "output": 1476
+ },
+ "generated": "2026-10-29"
+}

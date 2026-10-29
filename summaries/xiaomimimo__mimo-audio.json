@@ -1,0 +1,104 @@
+{
+ "id": "xiaomimimo/mimo-audio",
+ "repo": "XiaomiMiMo/MiMo-Audio",
+ "kind": "star",
+ "description": "MiMo-Audio: Audio Language Models are Few-Shot Learners",
+ "topics": [],
+ "language": "Python",
+ "stars": 1088,
+ "license": "Apache-2.0",
+ "homepage": "https://xiaomimimo.github.io/MiMo-Audio-Demo/",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "MiMo-Audio is Xiaomi's open audio language model project (7B base and instruct variants plus a 1.2B audio tokenizer) that aims to do few-shot audio tasks via in-context learning.",
+  "what_it_does": "The repository releases three Hugging Face models: MiMo-Audio-Tokenizer, MiMo-Audio-7B-Base, and MiMo-Audio-7B-Instruct. The tokenizer is a 1.2B-parameter Transformer at 25 Hz with an eight-layer RVQ stack, and the model couples a patch encoder, an LLM, and a patch decoder to bridge speech and text sequence lengths. The README describes the base model's few-shot and in-context learning on audio tasks, including voice conversion, style transfer, speech editing, and speech continuation, and the instruct model's audio understanding, spoken dialogue, and instruct-TTS abilities. It includes a local Gradio demo launched by run_mimo_audio.py and two inference example scripts, one for the base model and one for the instruct model. A separate MiMo-Audio-Eval toolkit is referenced for evaluation.",
+  "use_cases": [
+   "run few-shot audio tasks with an audio language model",
+   "interactive speech and audio understanding demo",
+   "speech continuation and generation",
+   "instruction-following spoken dialogue",
+   "instruct text-to-speech experiments",
+   "benchmarking open audio LLMs"
+  ],
+  "how_to_run": [
+   "pip install huggingface-hub",
+   "hf download XiaomiMiMo/MiMo-Audio-Tokenizer --local-dir ./models/MiMo-Audio-Tokenizer",
+   "hf download XiaomiMiMo/MiMo-Audio-7B-Instruct --local-dir ./models/MiMo-Audio-7B-Instruct",
+   "git clone <repo URL> && cd MiMo-Audio && pip install -r requirements.txt && pip install flash-attn==2.7.4.post1",
+   "python run_mimo_audio.py",
+   "Run inference_example_pretrain.py (base) or inference_example_sft.py (instruct)"
+  ],
+  "stack": [
+   "Python 3.12",
+   "CUDA >= 12.0",
+   "PyTorch (implied by CUDA/flash-attn setup)",
+   "flash-attn 2.7.4.post1",
+   "Gradio",
+   "Hugging Face Hub"
+  ],
+  "notable": [
+   "Few-shot and in-context learning on audio tasks, including tasks absent from training such as voice conversion and speech editing",
+   "Patch encoder downsamples 25 Hz RVQ tokens to 6.25 Hz for the LLM, with a delayed-generation patch decoder restoring full resolution",
+   "Base and instruct model variants, with instruct adding thinking mechanisms for audio understanding and generation",
+   "Built-in Gradio demo for local interactive use"
+  ],
+  "caveats": [
+   "Requires Linux, Python 3.12, and CUDA >= 12.0 per the README",
+   "flash-attn compilation can be slow; a precompiled wheel is suggested as a workaround",
+   "Large pretraining scale (over one hundred million hours) and 7B models imply substantial hardware needs; the README does not state minimum GPU memory",
+   "Use restrictions prohibit military use, malicious cyber activity, and unauthorized personal data processing"
+  ],
+  "license": "Apache-2.0",
+  "category": "audio language models",
+  "keywords": [
+   "audio language model",
+   "speech language model",
+   "few-shot learning",
+   "in-context learning",
+   "audio understanding",
+   "speech intelligence",
+   "speech continuation",
+   "voice conversion",
+   "speech editing",
+   "style transfer",
+   "instruct text-to-speech",
+   "spoken dialogue",
+   "audio tokenizer",
+   "rvq tokenizer",
+   "residual vector quantization",
+   "patch encoder",
+   "gradio demo",
+   "local speech ai demo",
+   "open source speech model",
+   "xiaomi audio model",
+   "mimo-audio",
+   "7b audio model",
+   "flash attention",
+   "pytorch speech model",
+   "huggingface audio model download",
+   "audio benchmark evaluation",
+   "talk show generation",
+   "voice cloning research",
+   "speech generation",
+   "audio llm alternative",
+   "try speech ai locally",
+   "audio question answering",
+   "text to speech model"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4265,
+  "output": 1566
+ },
+ "generated": "2026-10-29"
+}

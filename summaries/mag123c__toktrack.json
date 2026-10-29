@@ -1,0 +1,95 @@
+{
+ "id": "mag123c/toktrack",
+ "repo": "mag123c/toktrack",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "toktrack by mag123c - Ultra-fast token &amp; cost tracker for LLM Token Usage (e.g. Claude Code)"
+  }
+ ],
+ "summary": {
+  "one_liner": "toktrack is a Rust-based token and cost tracker that aggregates usage across multiple AI coding CLIs (Claude Code, Codex CLI, Gemini CLI and others) and keeps a persistent cache so history survives when the CLIs delete their own session files.",
+  "what_it_does": "It reads session logs from nine AI coding CLIs (Claude Code, GitHub Copilot CLI, Codex CLI, Gemini CLI, Qwen Code, OpenCode, PI Agent, Antigravity, Grok CLI) and shows daily, weekly, monthly and stats views in a 5-tab TUI dashboard (Overview, Stats, Models, Projects, Audit) or as JSON via CLI commands. It keeps a persistent cache of past daily summaries, so only the current day is recomputed on each run. It can produce shareable text and SVG usage reports, and an audit command shows per-source, per-day whether data is still on disk or only in the cache. Costs are estimated from LiteLLM list prices for sources that do not record their own price, marked with a \"~\"; a bundled offline price snapshot is included. It can also sync Codex session logs from SSH remotes via ssh/rsync into a local snapshot.",
+  "use_cases": [
+   "track Claude Code spending over time",
+   "compare token usage across multiple AI coding CLIs",
+   "keep cost history after CLI auto-deletes session files",
+   "generate shareable usage receipts",
+   "monitor AI coding spend from the shell prompt or scripts",
+   "audit which usage days are still preserved on disk"
+  ],
+  "how_to_run": [
+   "npx toktrack",
+   "bunx toktrack",
+   "brew tap mag123c/toktrack && brew install toktrack",
+   "toktrack daily --json",
+   "toktrack report --svg",
+   "toktrack audit"
+  ],
+  "stack": [
+   "Rust",
+   "simd-json",
+   "rayon",
+   "LiteLLM pricing data",
+   "TOML configuration"
+  ],
+  "notable": [
+   "Persistent cache keeps past daily cost summaries after CLIs delete raw session files (e.g. Claude Code's 30-day default)",
+   "Parses Claude Code, Codex, Gemini, Copilot and other CLI logs into one dashboard",
+   "Cached queries run in about 0.04s; cold scan of 3.4 GB reported around 1.0s on Apple Silicon",
+   "Per-project breakdown and drill-down by day and model",
+   "Remote Codex log sync over existing ssh/rsync setup"
+  ],
+  "caveats": [
+   "Costs for many sources are estimates from LiteLLM list prices, not actual billing; GitHub Copilot values are API-equivalent, not subscription spend",
+   "Models without a price show '?' rather than a cost, and some Grok turns without their own cost contribute $0",
+   "Codex Fast pricing only applies to sessions that recorded a service tier",
+   "Performance figures are the author's measurements on Apple Silicon"
+  ],
+  "license": "MIT",
+  "category": "ai cost tracking",
+  "keywords": [
+   "token usage tracker",
+   "llm cost tracker",
+   "claude code cost",
+   "claude code usage",
+   "ai coding cost monitor",
+   "token cost dashboard",
+   "codex cli usage",
+   "gemini cli usage",
+   "copilot cli cost",
+   "opencode usage",
+   "rust cli",
+   "tui dashboard",
+   "usage report",
+   "cost history",
+   "persistent cache",
+   "session log parser",
+   "simd-json",
+   "rayon",
+   "litellm pricing",
+   "track ai spending",
+   "how much did i spend on claude",
+   "share usage receipt",
+   "shell prompt cost",
+   "cli usage stats",
+   "json usage output",
+   "ccusage alternative",
+   "ssh remote logs",
+   "monthly token summary",
+   "per project cost",
+   "offline pricing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6935,
+  "output": 1347
+ },
+ "generated": "2026-10-29"
+}

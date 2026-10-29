@@ -1,0 +1,95 @@
+{
+ "id": "heyitsjakub/kyttomcp",
+ "repo": "heyitsjakub/KyttoMCP",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "KyttoMCP - Manage MCP servers across Claude Desktop, Claude Code, Cursor, VS Code and Codex in one matrix, with health checks, a tool safety scan and local config backups."
+  }
+ ],
+ "summary": {
+  "one_liner": "KyttoMCP is a free, open-source desktop app (macOS and Windows) that gives one matrix view and editor for MCP server configurations across Claude Desktop, Claude Code, Cursor, VS Code and Codex.",
+  "what_it_does": "Kytto reads the local MCP config files of five built-in clients and shows every server against every client in one matrix, where servers can be toggled, edited, or removed per client, each written in that client's own format. MCP Doctor runs an on-demand MCP handshake and reports tools, prompts, resources and stderr, flagging issues such as missing environment values, relative paths and unpinned package versions. A Tool Safety Scanner checks tool names, descriptions and schemas for hidden characters, instruction-like wording and duplicate tool names, and Contract Guard tracks tool definitions between health checks to report added, removed or changed tools. It also estimates tool-schema footprint, warns near VS Code's 128-tool limit, saves and applies profiles, masks and rotates secrets, and backs up every write so earlier configurations can be restored. An optional Gateway mode routes supported stdio servers through a local route with metadata-only activity logs.",
+  "use_cases": [
+   "manage MCP servers across multiple AI clients",
+   "toggle MCP servers on or off per client",
+   "diagnose why an MCP server fails to start",
+   "scan MCP tool descriptions for prompt injection",
+   "compare MCP tool-schema context footprint",
+   "switch between saved MCP server setups",
+   "back up and restore MCP client config files",
+   "rotate secrets in MCP configuration"
+  ],
+  "how_to_run": [
+   "Download Beta 1.0.9 from kytto.jakubhecht.sk or GitHub Releases (v1.0.9 for macOS, v1.0.9-windows for Windows)",
+   "macOS: open the DMG and drag KyttoMCP into Applications; Control-click and choose Open to bypass the unidentified developer warning",
+   "Windows: run the setup file; choose More info then Run anyway if SmartScreen appears",
+   "Build from source on macOS: cd KyttoMCP/macos && scripts/make-dmg.sh (Xcode 16+)",
+   "Run source tests: cd KyttoMCP/macos/KyttoCore && swift test, or cd KyttoMCP/windows && dotnet test"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "AppKit",
+   "WKWebView",
+   ".NET 10",
+   "WPF",
+   "WebView2",
+   "vanilla HTML/CSS/JS"
+  ],
+  "notable": [
+   "Single matrix view of every MCP server against Claude Desktop, Claude Code, Cursor, VS Code and Codex",
+   "Tool Safety Scanner and Contract Guard flag prompt-injection-style wording, hidden characters and changed tool definitions",
+   "Every config write checks for outside changes, makes a timestamped backup and writes atomically",
+   "Custom read-only JSON, JSONC and TOML sources can be attached without being rewritten",
+   "Metadata-only Gateway mode with live activity log; payload capture is off"
+  ],
+  "caveats": [
+   "Installers are unsigned (no paid Apple or Windows certificate), so Gatekeeper and SmartScreen show warnings",
+   "Beta software; the README asks for honest criticism rather than praise",
+   "Safety scan is advisory only; a clean scan does not mean a server is trustworthy",
+   "Supports only the five listed clients for writes; custom sources are read-only"
+  ],
+  "license": "MIT",
+  "category": "mcp server management",
+  "keywords": [
+   "mcp servers",
+   "model context protocol",
+   "mcp config manager",
+   "claude desktop config",
+   "claude code mcp",
+   "cursor mcp.json",
+   "vs code mcp",
+   "codex config.toml",
+   "mcp doctor",
+   "tool safety scanner",
+   "prompt injection scan",
+   "mcp health check",
+   "mcp handshake",
+   "config backup restore",
+   "profile switching",
+   "secret masking keychain",
+   "gateway mode",
+   "macos app",
+   "windows app",
+   "open source desktop app",
+   "toggle servers per client",
+   "manage ai client configs",
+   "one place for mcp settings",
+   "tool schema footprint",
+   "alternative to manual json editing",
+   "local config control panel"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5598,
+  "output": 1537
+ },
+ "generated": "2026-10-29"
+}

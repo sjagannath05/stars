@@ -1,0 +1,101 @@
+{
+ "id": "gravitational/teleport",
+ "repo": "gravitational/teleport",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "Teleport - Certificate authority and access plane for SSH, Kubernetes, web applications, and databases. (Source Code) Apache-2.0 Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Teleport is an identity-aware access platform and short-lived-certificate CA that secures SSH, Kubernetes, databases, Windows desktops, web apps, cloud consoles and MCP servers.",
+  "what_it_does": "Teleport provides an identity-aware access proxy, a certificate authority that issues short-lived certificates, unified RBAC/ABAC access controls, and a tunneling system for reaching resources behind firewalls. The README says it is a single Go binary that integrates with SSH nodes, Kubernetes clusters, PostgreSQL, MongoDB, CockroachDB and MySQL databases, Windows hosts, internal web apps, Git repositories, cloud consoles and Model Context Protocol servers. It claims to record and audit SSH, Kubernetes, database, RDP and web sessions, and supports SSO via GitHub, OpenID Connect or SAML, plus MFA and Just-in-Time access requests. The README states it is fully compatible with OpenSSH sshd servers and ssh clients. The repository contains the Go daemon and a TypeScript web UI, built via make targets or a Docker-based build.",
+  "use_cases": [
+   "single sign-on for servers and cloud consoles",
+   "replacing VPNs or bastion hosts",
+   "auditing SSH and Kubernetes sessions",
+   "short-lived certificate access to databases",
+   "just-in-time privileged access requests",
+   "securing access for AI agents via MCP"
+  ],
+  "how_to_run": [
+   "make -C build.assets build-binaries",
+   "make full",
+   "sudo mkdir -p -m0700 /var/lib/teleport",
+   "sudo chown $USER /var/lib/teleport",
+   "make teleport-hot-reload",
+   "DEBUG=1 ./build/teleport start -d"
+  ],
+  "stack": [
+   "Go",
+   "Rust",
+   "Node.js",
+   "TypeScript",
+   "libfido2",
+   "pkg-config",
+   "Docker",
+   "Kubernetes",
+   "Go modules"
+  ],
+  "notable": [
+   "Single Go binary covering SSH, Kubernetes, databases, Windows desktops, web apps and MCP servers",
+   "Issues short-lived, auto-expiring mTLS and SSH certificates instead of long-lived keys or passwords",
+   "Claims full compatibility with OpenSSH sshd and ssh clients",
+   "Split licensing: API module under Apache 2.0, main code under AGPL"
+  ],
+  "caveats": [
+   "Building from source needs at least 1GB of virtual memory; a 512MB instance without swap will not work",
+   "The default master branch is development code; production should use a released tag",
+   "Teleport Enterprise and Enterprise Cloud are paid or managed options; the README mentions a free trial only for Cloud"
+  ],
+  "license": "Apache-2.0",
+  "category": "access control infrastructure",
+  "keywords": [
+   "teleport",
+   "access proxy",
+   "certificate authority",
+   "short-lived certificates",
+   "ssh access",
+   "kubernetes access",
+   "database access",
+   "bastion host alternative",
+   "vpn alternative",
+   "zero trust access",
+   "single sign-on",
+   "sso",
+   "mfa",
+   "rbac",
+   "abac",
+   "just-in-time access",
+   "session recording",
+   "audit ssh sessions",
+   "kubectl auditing",
+   "windows desktop access",
+   "rdp recording",
+   "mcp server security",
+   "ai agent access control",
+   "spiffe",
+   "openssh compatible",
+   "sshd",
+   "saml idp",
+   "okta integration",
+   "privileged access management",
+   "tunnel behind firewall",
+   "go binary",
+   "secure remote access",
+   "control access to servers",
+   "identity-aware proxy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6958,
+  "output": 1321
+ },
+ "generated": "2026-10-29"
+}

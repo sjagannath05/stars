@@ -1,0 +1,98 @@
+{
+ "id": "leomoon-studios/wiki-go",
+ "repo": "leomoon-studios/wiki-go",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Wikis",
+   "entry": "Wiki-Go - A modern, feature-rich, databaseless flat-file wiki platform. (Demo, Source Code) GPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "LeoMoon Wiki-Go is a self-hosted, databaseless flat-file wiki written in Go that stores all content as Markdown files.",
+  "what_it_does": "Wiki-Go provides a web wiki where documents are plain Markdown files in a directory tree, with no external database required. It supports Markdown editing with emoji shortcodes, Mermaid diagrams, and LaTeX math, plus full-text search with quoted phrases and term inclusion/exclusion. Pages can be organized in nested directories with version history and restore, and file attachments can be uploaded alongside documents. It includes comments with moderation, user roles (admin, editor, viewer), path-based access rules with user groups, and a private wiki mode. Link collections with automatic metadata fetching and interactive Kanban boards inside documents are also described, along with a RESTful API.",
+  "use_cases": [
+   "internal team documentation",
+   "personal knowledge base",
+   "project management with Kanban boards",
+   "collaborative wiki with comments",
+   "migrating notes from Notion",
+   "self-hosted documentation site with access control"
+  ],
+  "how_to_run": [
+   "docker pull leomoonstudios/wiki-go",
+   "docker run -d --name wiki-go -p 8080:8080 -v \"$(pwd)/data:/wiki/data\" leomoonstudios/wiki-go",
+   "docker-compose -f docker-compose-http.yml up -d",
+   "git clone <repository> && cd wiki-go && go build -o wiki-go && ./wiki-go",
+   "./wiki-go -configfile /etc/wiki-go/config.yaml"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "YAML configuration",
+   "CodeMirror5",
+   "Prism.js",
+   "Mermaid.js",
+   "MathJax",
+   "goldmark",
+   "mte-kernel",
+   "gosimple/slug"
+  ],
+  "notable": [
+   "Databaseless: all content, versions, comments and config live as Markdown and YAML files on disk",
+   "Interactive Kanban boards created from any document, with drag-and-drop tasks",
+   "Path-based access rules with public, private and group-restricted visibility",
+   "Document order controlled by numeric slug prefixes such as 1-overview",
+   "Built-in native TLS option as well as a reverse-proxy mode"
+  ],
+  "caveats": [
+   "Non-HTTPS setups need allow_insecure_cookies set to true, which reduces security and is recommended only for trusted networks",
+   "Requires Go 1.21 or later to build from source",
+   "Demo resets every hour, so it is not a persistent hosted option"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted wiki platform",
+  "keywords": [
+   "wiki",
+   "flat-file wiki",
+   "databaseless wiki",
+   "markdown wiki",
+   "self-hosted wiki",
+   "go wiki",
+   "golang wiki",
+   "knowledge base",
+   "team wiki",
+   "documentation site",
+   "internal documentation",
+   "kanban board",
+   "markdown editor",
+   "mermaid diagrams",
+   "latex math",
+   "full-text search",
+   "version history",
+   "docker wiki",
+   "reverse proxy",
+   "notion alternative",
+   "share notes with my team",
+   "host my own documentation",
+   "personal notes without database",
+   "markdown files on disk",
+   "project management board",
+   "access control wiki",
+   "private wiki",
+   "file attachments",
+   "comments moderation",
+   "gpl wiki"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9452,
+  "output": 1242
+ },
+ "generated": "2026-10-29"
+}

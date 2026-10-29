@@ -1,0 +1,93 @@
+{
+ "id": "rfsbraz/telegram-downloader",
+ "repo": "rfsbraz/telegram-downloader",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "Telegram Media Downloader | Self-hosted daemon that automatically downloads media from Telegram channels, groups, and forum topics. Docker-native with multi-arch support."
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted Docker daemon that automatically downloads media from Telegram channels, groups, and forum topics based on configurable filters.",
+  "category": "telegram media downloader",
+  "keywords": [
+   "telegram downloader",
+   "telegram media downloader",
+   "telegram channel downloader",
+   "telegram group downloader",
+   "telegram forum topic downloader",
+   "self-hosted downloader",
+   "docker telegram bot alternative",
+   "telegram-download-daemon alternative",
+   "pyrogram",
+   "mtproto",
+   "auto download telegram files",
+   "download files from telegram channels",
+   "archive telegram channel media",
+   "backup saved messages telegram",
+   "daemon downloader",
+   "docker compose downloader",
+   "multi-arch docker image",
+   "arm64 docker",
+   "raspberry pi downloader",
+   "file filter by extension",
+   "download size limit filter",
+   "post-download hook",
+   "discord webhook notifications",
+   "bandwidth limit downloads",
+   "scheduled download hours",
+   "duplicate file detection",
+   "persistent download tracking",
+   "ebook downloader",
+   "pydantic",
+   "python"
+  ],
+  "what_it_does": "Monitors configured Telegram sources (public and private channels, groups, supergroups, forum topics, and private chats) and downloads new media as it is posted. Downloads can be filtered by file extension, size, date range, and filename pattern, and are organized into per-source folders or a flat directory. Duplicate detection and persistent download tracking mean files are not re-fetched after being moved or renamed. A daemon mode runs checks at a configurable interval, with optional active-hour windows and an aggregate download speed cap. Users can run a post-download command (without a shell) for each file, and send Discord webhook or generic HTTP POST notifications when downloads complete. Configuration is entirely through environment variables with the TDL_ prefix.</whatitdoes>\n<parameter name=\"how_to_run\">[\"mkdir telegram-downloader && cd telegram-downloader\", \"Create docker-compose.yml with image rfsbraz/telegram-downloader:latest and TDL_API_ID, TDL_API_HASH, TDL_PHONE_NUMBER, TDL_DAEMON_ENABLED=true, TDL_SOURCES_0_URL set\", \"docker compose run --rm telegram-downloader (enter the Telegram verification code when prompted)\", \"docker compose up -d (daemon mode after authentication)\"]",
+  "use_cases": [
+   "Automatically download new files posted in Telegram channels",
+   "Archive ebooks from a Telegram forum topic",
+   "Mirror or back up media from Telegram groups to a home server",
+   "Backup your Telegram saved messages",
+   "Run a Telegram downloader on a Raspberry Pi or ARM server",
+   "Trigger extraction or library scans after each download"
+  ],
+  "how_to_run": [
+   "mkdir telegram-downloader && cd telegram-downloader",
+   "Create docker-compose.yml with image rfsbraz/telegram-downloader:latest and TDL_API_ID, TDL_API_HASH, TDL_PHONE_NUMBER, TDL_DAEMON_ENABLED=true, TDL_SOURCES_0_URL set",
+   "docker compose run --rm telegram-downloader (enter the Telegram verification code when prompted)",
+   "docker compose up -d (daemon mode after authentication)"
+  ],
+  "stack": [
+   "Python",
+   "Pyrogram",
+   "Pydantic",
+   "Docker",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Persistent download tracking so files are not re-downloaded after being moved or renamed",
+   "Post-download hook with placeholders like {file}, {dir}, {source}, run without a shell",
+   "Active-hours scheduling and aggregate bandwidth cap via MAX_DOWNLOAD_SPEED",
+   "Multi-arch Docker images (amd64/arm64) with health checks and non-root user",
+   "Migration guide from telegram-download-daemon with settings map"
+  ],
+  "caveats": [
+   "Requires Telegram API credentials from my.telegram.org and an account with access to the target chats",
+   "Initial setup needs interactive login with a verification code sent to your phone",
+   "Telegram rate limits (FloodWait) can slow downloads; the daemon waits automatically",
+   "Expired or revoked sessions require deleting the session file and re-authenticating"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4382,
+  "output": 1588
+ },
+ "generated": "2026-10-29"
+}

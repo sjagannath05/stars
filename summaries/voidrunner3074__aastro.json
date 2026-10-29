@@ -1,0 +1,102 @@
+{
+ "id": "voidrunner3074/aastro",
+ "repo": "voidrunner3074/aastro",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - API Management",
+   "entry": "Aastro - Extensible API Gateway written in Go. (Source Code) Apache-2.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Aastro is a YAML-configured API gateway written in Go that fans out one HTTP request to several upstream services in parallel and returns a merged, namespaced, or arrayed response.",
+  "category": "api gateway",
+  "keywords": [
+   "api gateway",
+   "go api gateway",
+   "microservices gateway",
+   "api aggregation",
+   "response aggregation",
+   "fan-out",
+   "parallel upstream requests",
+   "backend for frontend",
+   "reverse proxy",
+   "yaml configuration",
+   "declarative routing",
+   "circuit breaker",
+   "retries",
+   "load balancing",
+   "round robin",
+   "least connections",
+   "rate limiting",
+   "mutual tls",
+   "mtls",
+   "tls certificate rotation",
+   "jwt auth",
+   "prometheus metrics",
+   "opentelemetry tracing",
+   "openapi export",
+   "openapi import",
+   "go plugins",
+   "so plugins",
+   "partial content",
+   "best effort",
+   "sse streaming",
+   "docker image",
+   "self-hosted gateway",
+   "kong alternative",
+   "api management",
+   "aggregate microservice responses",
+   "combine multiple api calls into one"
+  ],
+  "what_it_does": "Aastro receives an HTTP request on a configured route and calls several upstream services in parallel, then returns one response that is merged, namespaced, or placed in an array, according to an aggregation strategy. Each upstream can have its own timeout, retry policy, and circuit breaker, and hosts can be balanced with round_robin or least_conns. With best_effort enabled, it returns 206 Partial Content and an X-Partial-Errors header when some upstreams fail. The README also describes streaming flows for SSE and chunked responses, per-IP sliding-window rate limiting, and TLS/mTLS on the inbound port and per upstream, with certificate hot-reload. Builtin middlewares include auth (JWT), cors, compressor, logger, and recoverer, and custom request/response plugins are loaded as Go .so files. The aastroctl companion tool exports the gateway config to OpenAPI 3.x and imports OpenAPI documents into a starter config. Metrics are exposed via Prometheus or OTLP, and health and readiness endpoints run on a separate admin port.",
+  "use_cases": [
+   "combine several microservice calls into one client response",
+   "put a gateway in front of internal microservices",
+   "return partial data when one backend is down",
+   "generate an OpenAPI spec from gateway config",
+   "scaffold gateway config from an existing OpenAPI file",
+   "add JWT auth or rate limiting in front of services",
+   "run mutual TLS between gateway and backends"
+  ],
+  "how_to_run": [
+   "docker run -p 7805:7805 -v \"$(pwd)/aastro.yaml:/etc/aastro/config.yaml:ro\" voidrunner3074/aastro:latest",
+   "git clone <repository URL>; cd aastro",
+   "make all GOOS=<os> GOARCH=<arch>  (requires CGO_ENABLED=1 and a C toolchain)",
+   "./.bin/aastro -c aastro.yaml",
+   "aastro -t -c aastro.yaml  (validate config before deploying)"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "YAML",
+   "chainguard/wolfi-base image",
+   "Prometheus",
+   "OpenTelemetry OTLP",
+   "Go plugins (-buildmode=plugin)"
+  ],
+  "notable": [
+   "Declarative aggregation: fan out to multiple upstreams and merge, namespace, or array the results from YAML alone, with no code required for a route",
+   "Best-effort mode returns 206 Partial Content with X-Partial-Errors when some upstreams fail",
+   "Zero-downtime TLS certificate rotation that watches certificate directories and keeps the previous material if a new cert fails to parse",
+   "aastroctl converts gateway config to OpenAPI 3.1/3.0 and back, with deterministic output suitable for git and CI",
+   "Config validation with aastro -t / -T before deployment"
+  ],
+  "caveats": [
+   "Version 0.x: the configuration schema may change in minor versions, so the README advises pinning an exact image tag",
+   "Building from source requires CGO_ENABLED=1 and a C toolchain because plugins are Go shared objects",
+   "Plugins must be compiled with the exact Go version and dependency set used for the gateway binary"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4970,
+  "output": 1571
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "midzai/aman_disk",
+ "repo": "MidZai/aman_disk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Aman Disk - S.M.A.R.T. health, temperature history and performance test for your Mac's internal drives."
+  }
+ ],
+ "summary": {
+  "one_liner": "Aman Disk is a free, open-source, offline native macOS app that reads S.M.A.R.T. health, temperature history and performance benchmarks for a Mac's internal and external drives.",
+  "what_it_does": "Reads S.M.A.R.T. data from internal NVMe, Apple PCIe AHCI and SATA drives, and from external Thunderbolt/USB4 NVMe and USB SATA enclosures (the latter via the separate open-source SAT SMART Driver kernel extension). It assigns a status of Healthy, Needs attention, Likely failing or Health unknown, and shows remaining life when reported. For USB drives without S.M.A.R.T. access, it shows bridge chip vendor, link speed, transport protocol and volumes. It logs temperature every 30 seconds (full resolution for 24 hours, then 5-minute averages for 30 days). It also runs sequential and random read/write benchmarks and exports reports as PDF, text or JSON. The app runs entirely offline, with no telemetry or update checks, and the interface is available in 18 languages.",
+  "use_cases": [
+   "check whether a Mac's SSD is failing",
+   "monitor drive temperature over time",
+   "diagnose an external USB or Thunderbolt drive",
+   "benchmark internal or external disk speed",
+   "export drive health reports for a used Mac sale",
+   "get alerts when a drive overheats or wears out"
+  ],
+  "how_to_run": [
+   "Download the DMG (Aman-Disk-.dmg) from the latest release.",
+   "Open the DMG and drag Aman Disk into the Applications folder.",
+   "Open Aman Disk; on first launch, follow the macOS 'Open Anyway' steps (System Settings › Privacy & Security) or run: xattr -dr com.apple.quarantine \"/Applications/Aman Disk.app\"",
+   "Allow access to removable volumes when macOS asks, so external drives are visible.",
+   "To build from source: scripts/bundle.sh --release, then scripts/make-dmg.sh, and scripts/test.sh for tests."
+  ],
+  "stack": [
+   "Swift (implied by native macOS app and Xcode-based test suite)",
+   "SAT SMART Driver (optional, open-source kernel extension for USB SATA S.M.A.R.T.)",
+   "macOS 14 or later",
+   "Universal binary (Apple Silicon and Intel)"
+  ],
+  "notable": [
+   "Works fully offline: no network connection, telemetry or update checks; history stays in a local Application Support folder",
+   "Reads S.M.A.R.T. from Thunderbolt/USB4 NVMe enclosures natively and USB SATA drives through an optional third-party driver",
+   "Performance test writes a temporary file that is removed afterwards, even if the app is force-quit",
+   "Serial numbers are masked by default in anonymized hardware compatibility reports",
+   "Temperature alone never changes health status; alerts are off by default"
+  ],
+  "caveats": [
+   "Not signed with an Apple Developer ID, so macOS blocks the first launch and requires manual workarounds (Open Anyway or xattr command)",
+   "USB SATA S.M.A.R.T. needs the third-party SAT SMART Driver kernel extension; without it, only hardware details and benchmarks are available",
+   "Requires macOS 14 or later; the README lists DriverKit-based S.M.A.R.T. across USB enclosures as future roadmap, not current functionality"
+  ],
+  "license": "MIT",
+  "category": "macos disk health monitoring",
+  "keywords": [
+   "smart monitoring",
+   "disk health",
+   "ssd health",
+   "drive temperature",
+   "macos",
+   "mac disk utility",
+   "nvme",
+   "thunderbolt drive",
+   "usb enclosure",
+   "sat smart driver",
+   "smartctl alternative",
+   "drive benchmark",
+   "disk speed test",
+   "hard drive failure",
+   "menu bar app",
+   "dock icon health ring",
+   "drive health alerts",
+   "temperature history",
+   "hardware report",
+   "used mac check",
+   "offline app",
+   "private disk monitor",
+   "remaining drive life",
+   "sata ssd",
+   "apple silicon",
+   "intel mac",
+   "external drive diagnostics",
+   "check my mac hard drive",
+   "is my ssd dying",
+   "pdf drive report"
+  ],
+  "---": "\n"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4374,
+  "output": 1563
+ },
+ "generated": "2026-10-29"
+}

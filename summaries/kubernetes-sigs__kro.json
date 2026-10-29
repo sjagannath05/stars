@@ -1,0 +1,90 @@
+{
+ "id": "kubernetes-sigs/kro",
+ "repo": "kubernetes-sigs/kro",
+ "kind": "star",
+ "description": "kro | Kube Resource Orchestrator",
+ "topics": [
+  "k8s-sig-cloud-provider"
+ ],
+ "language": "Go",
+ "stars": 3081,
+ "license": "Apache-2.0",
+ "homepage": "https://kro.run/",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "kro (Kube Resource Orchestrator) is a Kubernetes SIG Cloud Provider subproject that lets you group multiple Kubernetes resources into reusable custom resources defined by a ResourceGraphDefinition.",
+  "what_it_does": "kro provides a fundamental custom resource called ResourceGraphDefinition (RGD) that bundles one or more Kubernetes resources, native or custom, and specifies the dependencies between them. When an RGD is applied to a cluster running the kro controller, kro validates it, dynamically creates a new CRD and registers it with the API server, and deploys a dedicated controller to manage instances of that CRD. The controller works out dependency order to create and configure the underlying resources, then manages their lifecycle. The README's example is a WebApp RGD composed of a Deployment and a Service, which can be combined with a database resource into a larger WebAppWithDB group. The README describes the project's API as v1alpha1, with breaking changes possible.",
+  "use_cases": [
+   "Define reusable custom resources composed of several Kubernetes objects",
+   "Package a web app's Deployment and Service as a single custom resource",
+   "Combine app resources with cloud-managed infrastructure such as a database",
+   "Manage resource creation order and dependencies automatically",
+   "Provide default configurations for complex Kubernetes resource groups"
+  ],
+  "how_to_run": [
+   "Install kro in your cluster (see the Installation docs linked in the README)",
+   "Apply a ResourceGraphDefinition to the cluster where the kro controller is running",
+   "Create an instance of the CRD that the ResourceGraphDefinition generates"
+  ],
+  "stack": [
+   "Go",
+   "Kubernetes",
+   "Kubernetes CRDs and controllers"
+  ],
+  "notable": [
+   "Uses a ResourceGraphDefinition CRD to define groups of resources and their dependencies",
+   "Dynamically generates a new CRD and a dedicated microcontroller per definition",
+   "Kubernetes-native and vendor agnostic, per the README",
+   "Resolves dependency ordering between resources automatically"
+  ],
+  "caveats": [
+   "API is at v1alpha1, so breaking changes may occur",
+   "README gives no detailed installation or run commands; it points to external docs"
+  ],
+  "license": "Apache-2.0",
+  "category": "kubernetes resource orchestration",
+  "keywords": [
+   "kro",
+   "kube resource orchestrator",
+   "resourcegraphdefinition",
+   "kubernetes operator",
+   "custom resource definition",
+   "crd generator",
+   "kubernetes controller",
+   "resource grouping",
+   "composite resources",
+   "multi-resource custom resource",
+   "dependency ordering kubernetes",
+   "sig cloud provider",
+   "go kubernetes operator",
+   "reusable kubernetes templates",
+   "bundle deployment and service",
+   "group kubernetes resources",
+   "simplify kubernetes yaml",
+   "manage complex kubernetes resources",
+   "kubernetes abstraction layer",
+   "platform engineering kubernetes",
+   "self-service kubernetes resources",
+   "vendor agnostic kubernetes",
+   "kubernetes native orchestration",
+   "combine app and database resources",
+   "kubernetes microcontroller per instance",
+   "apache 2.0 kubernetes operator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3477,
+  "output": 1208
+ },
+ "generated": "2026-10-29"
+}

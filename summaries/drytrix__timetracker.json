@@ -1,0 +1,99 @@
+{
+ "id": "drytrix/timetracker",
+ "repo": "drytrix/TimeTracker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Time Tracking",
+   "entry": "TimeTracker - Track time across projects and clients, with timers, kanban tasks, CRM, expense tracking, multi-currency invoicing (PDF, Peppol/ZugFerd e-invoicing), reports, OIDC/SSO, and a REST API. (Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted, web-based time tracker for freelancers and teams that adds invoicing, expenses, CRM, and Peppol/ZUGFeRD e-invoicing, distributed as a Docker deployment.",
+  "what_it_does": "TimeTracker provides server-side timers that keep running after the browser closes, along with manual time entry, bulk entry, templates, a calendar view, and time rounding. Projects, tasks, and clients are managed through a Kanban board, issue tracking, and comments. Invoices can be generated from tracked time, with PDF export, tax calculation, multi-currency support, and e-invoicing via Peppol and Factur-X/ZUGFeRD XML embedded in PDFs. The app also covers expenses, mileage, payments, budgets, a CRM with a sales pipeline and lead scoring, and reports with CSV and PDF export. Access control includes role-based permissions, username-only login or OIDC/SSO, and API tokens for a REST API. An optional AI helper can run through a bundled Ollama service or an OpenAI-compatible provider, and the README also mentions Flutter and Electron apps and a Prometheus/Grafana monitoring stack.",
+  "use_cases": [
+   "track billable hours across client projects",
+   "generate and send invoices from logged time",
+   "self-host time tracking on a NAS or Raspberry Pi",
+   "send Peppol or ZUGFeRD e-invoices",
+   "manage a small team's projects and tasks",
+   "track expenses and mileage alongside time"
+  ],
+  "how_to_run": [
+   "curl -fsSLO <compose file URL from README>",
+   "echo \"SECRET_KEY=$(openssl rand -hex 32)\" > .env",
+   "docker compose -f docker-compose.nas.yml up -d",
+   "Open http://<host>:8080 and create the admin account on first login"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Flask",
+   "SQLAlchemy",
+   "PostgreSQL",
+   "SQLite",
+   "Tailwind CSS",
+   "Flutter",
+   "Electron",
+   "Ollama (optional)"
+  ],
+  "notable": [
+   "Peppol and EN 16931 e-invoicing via a bundled Peppol Bridge, with Factur-X/ZUGFeRD XML embedded in PDFs",
+   "Timers run server-side and persist across browser sessions",
+   "No per-user pricing; GPL-3.0 with features not gated behind a paywall",
+   "Optional AI helper that is off by default and can use a bundled Ollama or a hosted OpenAI-compatible API",
+   "Encryption at rest for stored secrets via a Fernet key"
+  ],
+  "caveats": [
+   "SQLite is documented only for testing and is not recommended for production",
+   "Recommended resources are 2GB+ RAM for Docker, and 4GB+ for production with 5+ users",
+   "The bundled Ollama option downloads a roughly 4.7 GB model by default and is opt-in",
+   "Some features (Peppol native sending, PDF/A-3 with veraPDF) are described in setup guides the README links to but not detailed here"
+  ],
+  "license": "GPL-3.0",
+  "category": "time tracking invoicing",
+  "keywords": [
+   "time tracking",
+   "self-hosted time tracker",
+   "timesheet",
+   "invoicing",
+   "invoice generator",
+   "e-invoicing",
+   "peppol",
+   "zugferd",
+   "factur-x",
+   "en 16931",
+   "crm",
+   "kanban",
+   "expense tracking",
+   "mileage tracking",
+   "budget tracking",
+   "oidc",
+   "sso",
+   "rest api",
+   "docker compose",
+   "flask",
+   "postgresql",
+   "toggl alternative",
+   "harvest alternative",
+   "freelancer billing",
+   "track hours for clients",
+   "bill clients from logged hours",
+   "self host invoices",
+   "team project tracking",
+   "homelab time tracker",
+   "nas docker app",
+   "gpl-3.0 invoicing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15120,
+  "output": 1424
+ },
+ "generated": "2026-10-29"
+}

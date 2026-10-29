@@ -1,0 +1,89 @@
+{
+ "id": "ktbyers/netmiko",
+ "repo": "ktbyers/netmiko",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Network Virtualization",
+   "entry": "netmiko - Multi-vendor library to simplify CLI connections to network devices."
+  }
+ ],
+ "summary": {
+  "one_liner": "Netmiko is a multi-vendor Python library that simplifies SSH/CLI connections to network devices for running show commands and pushing configuration changes.",
+  "what_it_does": "Netmiko connects to network devices over CLI (SSH) and runs show commands with send_command, or applies configuration with send_config_set, which enters config mode automatically. Devices are described with a Python dictionary that includes a device_type key, and ConnectHandler dispatches to the matching platform driver. It supports optional enable secrets and non-default SSH ports. The README says it aims to abstract away low-level prompt state handling and regex matching where practical. It also documents SSH autodetection, a dispatcher, and a redispatch helper, plus tutorials on secure copy, SSH proxying, and TextFSM parsing. The README lists supported platforms in a section that is only a placeholder in this text, so the exact device list is not shown here.",
+  "use_cases": [
+   "automate show commands across network switches and routers",
+   "push configuration changes to multi-vendor network devices",
+   "script CLI sessions to Cisco IOS devices",
+   "collect device output for network inventory or auditing",
+   "parse CLI output with TextFSM",
+   "copy files to network devices via secure copy"
+  ],
+  "how_to_run": [
+   "pip install netmiko",
+   "pip install \"netmiko[par4]\"  # Paramiko 4 compatibility",
+   "pip install \"netmiko[bulk-encrypt]\"  # bulk-encryption CLI and optional dependency",
+   "Define a device dict with device_type, host, username, password (optional port, secret)",
+   "with ConnectHandler(**device) as net_connect: output = net_connect.send_command(\"show ip int brief\")",
+   "net_connect.send_config_set(config_commands)"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "Paramiko (optional extra par4)",
+   "TextFSM (tutorial)"
+  ],
+  "notable": [
+   "Multi-vendor device_type drivers selected through ConnectHandler and a CLASS_MAPPER dispatcher",
+   "Context-manager (with block) sessions that always disconnect cleanly",
+   "send_config_set handles entering and leaving config mode automatically",
+   "Optional bulk-encryption CLI extra"
+  ],
+  "caveats": [
+   "Requires Python 3.11 or newer; Python 3.10 and earlier are no longer supported",
+   "Supported platforms list is not rendered in the README text provided",
+   "Only useful for devices reachable via CLI/SSH; contributions for new platforms require test data"
+  ],
+  "license": "unknown",
+  "category": "network device automation",
+  "keywords": [
+   "netmiko",
+   "python network automation",
+   "ssh library python",
+   "cli automation",
+   "network device scripting",
+   "multi-vendor network devices",
+   "send_command",
+   "send_config_set",
+   "connecthandler",
+   "cisco ios automation",
+   "network configuration push",
+   "screen scraping network devices",
+   "show command automation",
+   "textfsm parsing",
+   "paramiko ssh",
+   "secure copy network devices",
+   "ssh proxy",
+   "network engineer python library",
+   "device_type driver",
+   "automate router configuration",
+   "automate switch configuration",
+   "network device cli session",
+   "python ssh device automation",
+   "config mode automation",
+   "network inventory collection",
+   "ssh autodetect device type",
+   "cli scraping library",
+   "network ops tooling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3217,
+  "output": 1239
+ },
+ "generated": "2026-10-29"
+}

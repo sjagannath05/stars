@@ -1,0 +1,110 @@
+{
+ "id": "usamahz/cpu-performance-engineering",
+ "repo": "usamahz/cpu-performance-engineering",
+ "kind": "star",
+ "description": "A reading path for CPU performance engineering, from one instruction to production inference. Primary sources only, with a runnable benchmark for every section.",
+ "topics": [
+  "arm",
+  "awesome-list",
+  "benchmarks",
+  "computer-architecture",
+  "cpu",
+  "edge-ai",
+  "inference",
+  "low-latency",
+  "optimization",
+  "performance",
+  "performance-engineering",
+  "simd",
+  "systems-programming",
+  "x86"
+ ],
+ "language": "Python",
+ "stars": 1184,
+ "license": "MIT",
+ "homepage": "http://cpuperf.com",
+ "pushed_at": "2026-10-08",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "programming"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A curated, primary-source reading list on CPU performance engineering, from single-instruction pipeline behavior through to serving ML inference on CPU, with a benchmark for many sections.",
+  "what_it_does": "The repository is an annotated awesome-style reading path organized into 16 numbered sections, covering core pipeline and microarchitecture, the memory hierarchy, measurement and profiling, performance models (roofline, top-down, scaling laws, queueing), single-thread and SIMD optimization, compilers and codegen, concurrency, NUMA, OS and I/O, tail latency, CPU inference, hardware generations, benchmark suites, and a watchlist. Each entry links a primary source (paper, spec, vendor manual, or repository) with a one-line note on what it establishes. Section 1 gives a ten-item starter path. The README states that about fourteen sections end in a C benchmark under misc/benchmarks/, with build line, machine, raw numbers and analysis committed. It also describes an MCP server in misc/mcp/ that exposes the list and a local index of linked sources to AI clients; the README gives install commands for Claude Code and Codex. The README's stated rule is that any number quoted must carry seven provenance fields, and candidates that fail that rule are rejected.",
+  "use_cases": [
+   "learning how CPU pipelines and caches affect program speed",
+   "finding primary sources on out-of-order execution and memory ordering",
+   "choosing measurement tools and counters for x86 or Arm profiling",
+   "reviewing roofline and top-down models for a kernel",
+   "studying SIMD, auto-vectorization and compiler flags",
+   "preparing CPU-only ML inference performance work"
+  ],
+  "how_to_run": [
+   "claude mcp add --scope user cpu-perf -- uvx cpu-perf",
+   "codex mcp add cpu-perf -- uvx cpu-perf"
+  ],
+  "stack": [
+   "Python",
+   "C (benchmark sources)",
+   "uv (for the MCP server launch)",
+   "MCP (Model Context Protocol) server in misc/mcp/"
+  ],
+  "notable": [
+   "Every quoted number must carry seven provenance fields, or it is not cited, with rejected candidates recorded alongside the rule they failed",
+   "Roughly fourteen sections end in a committed C benchmark under misc/benchmarks/ meant to be re-run",
+   "Section 1 is a sequenced reading path where each entry assumes the ones before it",
+   "Bundled MCP server builds a local index of the linked sources so AI clients can answer and cite them",
+   "Covers both x86 and Arm server parts, with a watchlist of ISA extensions and parts lacking public measurements"
+  ],
+  "caveats": [
+   "Scope is limited to x86 and Arm server parts; the README excludes language runtimes, database internals and anything above the socket",
+   "Several reference chapters and the first section's books are paid, and the README notes exercises are in a separate paid resource (Performance Ninja)",
+   "Hardware performance counters are often unavailable in cloud VMs and macOS lacks Linux perf, so some benchmarks and counter-based entries need a suitable Linux machine"
+  ],
+  "license": "MIT",
+  "category": "cpu performance reading list",
+  "keywords": [
+   "cpu performance",
+   "performance engineering",
+   "awesome list",
+   "reading list",
+   "computer architecture",
+   "microarchitecture",
+   "out-of-order execution",
+   "branch prediction",
+   "cache hierarchy",
+   "memory hierarchy",
+   "perf counters",
+   "profiling",
+   "top-down analysis",
+   "roofline model",
+   "simd",
+   "avx2",
+   "neon",
+   "sve",
+   "auto-vectorization",
+   "compiler optimization flags",
+   "false sharing",
+   "numa",
+   "lock-free",
+   "tail latency",
+   "cpu inference",
+   "quantization",
+   "benchmarking methodology",
+   "x86 and arm",
+   "mcp server",
+   "low latency"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16030,
+  "output": 1419
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "oldcircle/geo-sleuth",
+ "repo": "Oldcircle/geo-sleuth",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Research & Scientific Inquiry",
+   "entry": "geo-sleuth by Oldcircle - An agent skill that geolocates a photo with no readable text. Single-purpose Python scripts search and rank candidates using OpenStreetMap geometry, elevation skylines, satellite imagery and street view. The answer comes with a camera position, heading, error radius and an evidence image. NOTE: Scripts involve contact with Baidu and Yandex."
+  }
+ ],
+ "summary": {
+  "one_liner": "geo-sleuth is an agent skill (SKILL.md plus Python scripts) that tries to find where a photo with no readable text was taken, returning camera position, heading, error radius and an evidence image.",
+  "category": "photo geolocation agent skill",
+  "keywords": [
+   "photo geolocation",
+   "geolocate photo",
+   "where was this photo taken",
+   "image geolocation",
+   "agent skill",
+   "claude code skill",
+   "codex skill",
+   "cursor skill",
+   "gemini cli skill",
+   "opencode skill",
+   "github copilot skill",
+   "openstreetmap",
+   "overpass query",
+   "elevation skyline",
+   "terrain ridge matching",
+   "satellite imagery search",
+   "street view matching",
+   "dinov2",
+   "sift feature matching",
+   "clip zero-shot",
+   "reverse image search",
+   "baidu panorama",
+   "yandex image search",
+   "exif gps",
+   "ocr on photos",
+   "camera pose estimation",
+   "sun shadow bearing",
+   "street tree data",
+   "osint photo analysis",
+   "find location of picture",
+   "locate a photo without gps"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "locate a photo that has no GPS data",
+   "find the street or block in a street-level photo",
+   "estimate camera position and heading from a skyline",
+   "verify where an image was taken for OSINT work",
+   "match a landscape photo against terrain and power or rail lines"
+  ],
+  "how_to_run": [
+   "npx skills add Oldcircle/geo-sleuth",
+   "uv run skills/geo-sleuth/scripts/doctor.py",
+   "uv run skills/geo-sleuth/scripts/doctor.py --network",
+   "uv run skills/geo-sleuth/scripts/intake.py photo.jpg --out-dir intake --no-rev"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "uv",
+   "curl",
+   "Playwright / Chromium",
+   "OpenStreetMap Overpass",
+   "AWS Terrain Tiles (Terrarium elevation)",
+   "DINOv2",
+   "CLIP",
+   "SIFT",
+   "RapidOCR",
+   "Apple Vision (macOS)"
+  ],
+  "notable": [
+   "Scripts rank candidates and the model only judges among the top few; every conclusion must cite a command run and its output file",
+   "Skyline fitting that also solves camera roll (capped at 1 degree) to handle tilted phone photos",
+   "Uses OpenStreetMap railway, power line and street tree data as search constraints",
+   "Three worked cases with reproduction conditions and blind re-run results reported by the author",
+   "Works across Claude Code, Codex, Cursor, Gemini CLI, OpenCode and GitHub Copilot via a standard SKILL.md folder"
+  ],
+  "caveats": [
+   "Scripts contact Baidu and Yandex for reverse image search, and Google Street View and Baidu panoramas, so photos and queries leave the machine; the author warns against using it to find people who have not agreed to be found",
+   "Requires Google Chrome or Playwright Chromium for reverse image search; first run of ML scripts downloads about 2.4 GB of model weights",
+   "Results depend on the model and decisions made during the run; the author notes the benchmarks are regression checks, not accuracy on unseen photos",
+   "Blind-test accuracy on unseen photos is listed as an unchecked roadmap item"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12269,
+  "output": 1245
+ },
+ "generated": "2026-10-29"
+}

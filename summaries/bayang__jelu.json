@@ -1,0 +1,98 @@
+{
+ "id": "bayang/jelu",
+ "repo": "bayang/jelu",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "Jelu - Read and to-read list book tracker. (Source Code) MIT Java/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Jelu is a self-hosted personal book tracker (a \"personal Goodreads\") for logging books you have read, are reading, or want to read.",
+  "what_it_does": "Jelu tracks read, currently-reading, finished, dropped, and to-read books, with history viewable by year and month. Books can be tagged, and tags can be used to build custom shelves and tag pages. It imports Goodreads CSV exports or ISBN lists and exports data to CSV, and it can search online by title, author, or ISBN to add books automatically. The README also describes author pages with Wikipedia details, review writing and sharing, embeddable tracking snippets, reading stats, multi-user support (LDAP, proxy auth), and an API. Data is kept in a single-file SQLite database.",
+  "use_cases": [
+   "track books I have read and want to read",
+   "replace Goodreads with a self-hosted alternative",
+   "import my Goodreads history",
+   "organize books into tag-based shelves",
+   "script or integrate reading data through an API",
+   "share book reviews with other users on my instance"
+  ],
+  "how_to_run": [
+   "Download the Jelu jar from the releases section into a dedicated folder",
+   "Run: java -jar jelu-0.13.0.jar",
+   "Optionally create application.yml next to the jar to change settings such as the database path",
+   "Open the web UI at localhost:11111",
+   "Docker: use the image wabayang/jelu with a compose file mapping /config, /database, /files/images, /files/imports and port 11111"
+  ],
+  "stack": [
+   "Java",
+   "Spring Boot (fat jar)",
+   "SQLite",
+   "Docker",
+   "calibre fetch-ebook-metadata"
+  ],
+  "notable": [
+   "Single-file SQLite database that can be saved anywhere",
+   "Optional WAL journal mode for concurrent use on local disks",
+   "Automatic metadata search via calibre's fetch-ebook-metadata",
+   "Multi-user support with LDAP or proxy authentication",
+   "Camera-based ISBN scanning on mobile"
+  ],
+  "caveats": [
+   "Automatic online metadata search depends on the external calibre fetch-ebook-metadata tool when run as a Java jar",
+   "WAL journal mode should not be used on network shares such as NFS or SMB",
+   "Backups must include all jelu.db* files when WAL mode is on, or Jelu must be stopped first"
+  ],
+  "license": "MIT",
+  "category": "self-hosted book tracking",
+  "keywords": [
+   "book tracker",
+   "reading list",
+   "personal goodreads",
+   "self-hosted goodreads alternative",
+   "book log",
+   "to-read list",
+   "reading history",
+   "goodreads import",
+   "goodreads csv",
+   "isbn import",
+   "isbn scanner",
+   "book shelves",
+   "book tags",
+   "reading stats",
+   "book reviews",
+   "author pages",
+   "calibre metadata",
+   "fetch-ebook-metadata",
+   "sqlite book database",
+   "java spring book app",
+   "docker book tracker",
+   "reading progress",
+   "track what i'm reading",
+   "share my reading list",
+   "library catalog self hosted",
+   "ldap book tracker",
+   "multi user reading app",
+   "book api",
+   "embed book tracker",
+   "wikipedia author import",
+   "epub metadata import",
+   "csv export books",
+   "home server reading log",
+   "jelu",
+   "bayang jelu"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3381,
+  "output": 1151
+ },
+ "generated": "2026-10-29"
+}

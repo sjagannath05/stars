@@ -1,0 +1,99 @@
+{
+ "id": "p8952/bocker",
+ "repo": "p8952/bocker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Docker",
+   "entry": "Shell: _Docker implemented in around 100 lines of bash_"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bocker is a minimal Docker-like container tool written in roughly 100 lines of bash.",
+  "what_it_does": "Bocker implements a subset of Docker's commands in bash: pulling images, listing images and containers, running commands in containers, viewing logs, committing containers to new images, and removing containers and images. It stores images and containers on a btrfs filesystem mounted at /var/bocker. It sets up networking through a bridge called bridge0 with iptables routing, and applies CPU share and memory limits through cgroups, configurable via BOCKER_CPU_SHARE and BOCKER_MEM_LIMIT. A limited \"bocker init\" command provides a basic version of docker build. Data volumes, volume containers, and port forwarding are not implemented.",
+  "use_cases": [
+   "learning how containers work under the hood",
+   "running isolated commands in a bash-based container",
+   "experimenting with btrfs snapshots for container images",
+   "setting up container networking with a bridge and iptables",
+   "applying cgroup CPU and memory limits to test processes"
+  ],
+  "how_to_run": [
+   "Install prerequisites: btrfs-progs, curl, iproute2, iptables, libcgroup-tools, util-linux >= 2.25.2, coreutils >= 7.5",
+   "Mount a btrfs filesystem under /var/bocker",
+   "Create network bridge bridge0 with IP 10.0.0.1/24",
+   "Enable IP forwarding via /proc/sys/net/ipv4/ip_forward and route bridge0 traffic to a physical interface",
+   "Optionally use the included Vagrantfile to build the environment",
+   "Run commands such as: bocker pull centos 7, bocker images, bocker run img_ID cat /etc/centos-release"
+  ],
+  "stack": [
+   "bash",
+   "btrfs",
+   "iptables",
+   "cgroups (libcgroup-tools)",
+   "util-linux",
+   "coreutils",
+   "curl",
+   "iproute2",
+   "Vagrant (optional)"
+  ],
+  "notable": [
+   "Docker-style CLI implemented in about 100 lines of bash",
+   "Uses btrfs for image and container storage",
+   "Network bridge and iptables routing for container traffic",
+   "CPU share and memory limits via cgroups, set with environment variables",
+   "Includes a Vagrantfile to build a suitable test environment"
+  ],
+  "caveats": [
+   "README warns it runs as root and changes network interfaces, routing and firewall rules; the author makes no guarantee it won't break your system, so run it in a VM",
+   "Requires a specific system setup (btrfs mount, bridge0, IP forwarding, firewall rules) and a newer util-linux than most distributions ship",
+   "Port forwarding, data volumes, and volume containers are not implemented",
+   "bocker build is only a very limited version via bocker init"
+  ],
+  "license": "GNU GPL v3 or later (copyright 2015 Peter Wilmott)",
+  "category": "container tooling, bash",
+  "keywords": [
+   "docker",
+   "docker clone",
+   "container runtime",
+   "bash container",
+   "shell container tool",
+   "minimal docker",
+   "bocker",
+   "btrfs",
+   "btrfs snapshots",
+   "cgroups",
+   "cgroup cpu limit",
+   "memory limit containers",
+   "iptables",
+   "network bridge",
+   "linux namespaces",
+   "learn containers",
+   "build docker from scratch",
+   "how docker works",
+   "container from scratch",
+   "pull container image",
+   "commit container image",
+   "run commands in container",
+   "container logs",
+   "docker alternative bash",
+   "isolate processes linux",
+   "lightweight containers",
+   "educational container project",
+   "run container in vm",
+   "docker build minimal",
+   "container networking bridge0",
+   "container image storage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3027,
+  "output": 1338
+ },
+ "generated": "2026-10-29"
+}

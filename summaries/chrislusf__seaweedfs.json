@@ -1,0 +1,95 @@
+{
+ "id": "chrislusf/seaweedfs",
+ "repo": "chrislusf/seaweedfs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "File Sharing",
+   "entry": "SeaweedFS | Distributed file system to store and serve billions of files fast"
+  }
+ ],
+ "summary": {
+  "one_liner": "SeaweedFS is a distributed file system and blob store, written in Go, designed to store billions of files and serve them quickly, with optional filer, S3, WebDAV and FUSE mount layers.",
+  "what_it_does": "The README describes a master server that manages volumes, volume servers that hold blob data and per-file metadata, and an optional stateless Filer that adds directories and POSIX-style attributes on top of pluggable metadata stores (MySQL, Postgres, Redis, Cassandra, LevelDB, RocksDB, SQLite, etcd and others). Files can be read and written over HTTP, through an S3-compatible API, via WebDAV, or mounted as a local directory with FUSE. It supports replication with rack and data center awareness, automatic master failover, TTL expiration, compaction, and erasure coding for warm data. It can also tier older volumes to cloud object storage and asynchronously replicate between clusters. A \"weed mini\" command starts master, volume, filer, S3, WebDAV and admin UI in one process for single-node use, while \"weed server\" is the production-oriented setup.",
+  "use_cases": [
+   "store billions of small files",
+   "self-hosted S3-compatible object storage",
+   "shared network drive via FUSE or WebDAV",
+   "tiered storage with cloud backup",
+   "Hadoop or Spark file storage",
+   "cross-cluster file replication"
+  ],
+  "how_to_run": [
+   "Docker: docker run -p 8333:8333 chrislusf/seaweedfs server -s3",
+   "Download the weed binary, then run: ./weed mini -dir=/data",
+   "Or: go install github.com/seaweedfs/seaweedfs/weed@latest",
+   "Production-style: weed server -dir=/some/data/dir -s3",
+   "Add capacity: weed volume -dir=/some/data/dir2 -master=:9333 -port=8081"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "FUSE",
+   "S3-compatible API",
+   "WebDAV",
+   "LevelDB",
+   "RocksDB"
+  ],
+  "notable": [
+   "Filer metadata can live in many existing databases such as MySQL, Postgres, Redis, Cassandra and etcd",
+   "O(1) disk read for file access, with about 16 bytes of in-memory metadata per blob",
+   "Tiered storage that offloads warm volumes to cloud object storage",
+   "weed mini auto-configures a complete single-host setup with one command",
+   "Rack- and data center-aware replication settings"
+  ],
+  "caveats": [
+   "Some features, such as custom EC ratios and a self-healing storage format, are only in the Enterprise Edition, which the README points to seaweedfs.com for",
+   "The README's own benchmarks are described as unscientific single-machine results",
+   "The Installation Guide notes that building from source requires Go and a configured GOPATH"
+  ],
+  "license": "Apache License 2.0",
+  "category": "distributed file storage",
+  "keywords": [
+   "distributed file system",
+   "blob store",
+   "object storage",
+   "s3 compatible storage",
+   "self-hosted s3",
+   "file sharing",
+   "share files across machines",
+   "small file storage",
+   "haystack",
+   "erasure coding",
+   "filer",
+   "fuse mount",
+   "webdav server",
+   "cloud tiering",
+   "replication across data centers",
+   "minio alternative",
+   "ceph alternative",
+   "glusterfs alternative",
+   "hdfs alternative",
+   "moosefs alternative",
+   "go",
+   "golang file server",
+   "docker object store",
+   "billions of files",
+   "network drive",
+   "hadoop compatible filesystem",
+   "kubernetes csi driver",
+   "cross cluster replication",
+   "backup to cloud storage",
+   "store files in docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11410,
+  "output": 1335
+ },
+ "generated": "2026-10-29"
+}

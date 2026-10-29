@@ -1,0 +1,90 @@
+{
+ "id": "yacy/yacy_search_server",
+ "repo": "yacy/yacy_search_server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Search Engines",
+   "entry": "Yacy - Peer based, decentralized search engine server. (Source Code) GPL-2.0 Java/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "YaCy is a self-hostable, peer-to-peer search engine server with a built-in web crawler, web interface, and an optional decentralized search network.",
+  "what_it_does": "YaCy bundles a search index server, a web front-end for searching and creating indexes, and a web crawler with a scheduler that keeps the index fresh. Search portals can be placed on an intranet, and a network scanner can discover HTTP, FTP and SMB servers. Each installation can exchange index data with other YaCy peers over a built-in peer-to-peer protocol, or it can be set to local-only operation so searches use only the local index. Its interfaces are HTTP/XML and HTTP/JSON, with shell scripts in the /bin subdirectory that call the web interface. The README says privacy was a primary motivation for the project.",
+  "use_cases": [
+   "run a private personal search engine",
+   "enterprise or intranet search portal",
+   "crawl and index websites on a schedule",
+   "discover HTTP, FTP and SMB servers on a network",
+   "search without sending queries to a public index",
+   "embed search results in a custom web application"
+  ],
+  "how_to_run": [
+   "sudo apt-get install openjdk-17-jdk-headless ant",
+   "git clone --depth 1 <repository URL>",
+   "cd yacy_search_server",
+   "ant clean all",
+   "./startYACY.sh",
+   "docker run -d --name yacy_search_server -p 8090:8090 -p 8443:8443 -v yacy_search_server_data:/opt/yacy_search_server/DATA --restart unless-stopped --log-opt max-size=200m --log-opt max-file=2 yacy/yacy_search_server:latest"
+  ],
+  "stack": [
+   "Java 17 or later",
+   "Apache Ant",
+   "Docker",
+   "NSIS (Windows installer)",
+   "Apache IvyDE (Eclipse development)"
+  ],
+  "notable": [
+   "Peer-to-peer search network where instances share indexes, with an opt-out to local-only search",
+   "Built-in web crawler with a scheduler for keeping indexes fresh",
+   "Network scanner for discovering HTTP, FTP and SMB servers",
+   "Machine-readable XML and JSON interfaces behind the web UI, plus shell API scripts"
+  ],
+  "caveats": [
+   "The README recommends compiling from git sources; pre-compiled packages are not built regularly",
+   "Default admin account is admin/yacy and must be changed after installation",
+   "Windows installer requires building with NSIS and Ant",
+   "Docker instructions mention intel-based environments"
+  ],
+  "license": "GPL-2.0 or later (some elements under LGPL, per individual files)",
+  "category": "self-hosted search engine",
+  "keywords": [
+   "search engine server",
+   "peer-to-peer search",
+   "decentralized search",
+   "self-hosted search engine",
+   "private search engine",
+   "intranet search",
+   "enterprise search",
+   "web crawler",
+   "web crawling scheduler",
+   "search index",
+   "java search server",
+   "docker search engine",
+   "yacy",
+   "gpl-2.0",
+   "network scanner",
+   "smb ftp http discovery",
+   "searxng alternative",
+   "elasticsearch alternative",
+   "search my own websites",
+   "share search index with peers",
+   "privacy search tool",
+   "local search index",
+   "search portal",
+   "opensource search software",
+   "ant build java",
+   "search api json xml"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3290,
+  "output": 1177
+ },
+ "generated": "2026-10-29"
+}

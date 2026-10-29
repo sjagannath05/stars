@@ -1,0 +1,93 @@
+{
+ "id": "s3onghyun/otelcol-doctor",
+ "repo": "s3onghyun/otelcol-doctor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Infrastructure & DevOps",
+   "entry": "otelcol-doctor by s3onghyun - A focused, vendor-neutral skill that writes, fixes, and *validates* OpenTelemetry Collector configs — encoding the Collector's real footguns (memory_limiter/batch ordering, core-vs-contrib components, pull-vs-push exporters, deprecated exporters, pipelines that validate but were never wired) as an authoring workflow and diagnosis checklist. Its standout is honesty plu"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code/Codex/Cursor skill that writes, fixes, and validates OpenTelemetry Collector configs, encoding common Collector pitfalls as a checklist.",
+  "what_it_does": "It is a single SKILL.md agent skill (plus reference docs, examples, and a validation script) that guides an AI agent in producing OpenTelemetry Collector YAML. It turns plain-English requirements into a commented config, or diagnoses a pasted broken config with a what's-wrong, why, and fix breakdown. The skill checks for specific failure modes such as processor ordering (memory_limiter before batch), core vs contrib component availability, pull vs push metric exporters, removed or deprecated exporters, and receivers defined but never wired into a pipeline. The references/components.md file catalogs receivers, processors, exporters, and connectors with their gotchas, and references/advanced.md covers OTTL, spanmetrics, tail_sampling, and exporter reliability. The README says the agent finishes by running otelcol validate, and scripts/validate.sh wraps that command, auto-detecting contrib and falling back to Docker. Example configs include a broken-to-fixed pair and an advanced spanmetrics config.",
+  "use_cases": [
+   "write an OpenTelemetry Collector config from a plain-English description",
+   "diagnose why no telemetry reaches a backend",
+   "fix a broken otelcol YAML config",
+   "validate a Collector config before deploying",
+   "choose between prometheus and prometheusremotewrite exporters",
+   "check processor ordering in a Collector pipeline"
+  ],
+  "how_to_run": [
+   "git clone the otelcol-doctor repository",
+   "mkdir -p ~/.claude/skills/otel-collector-config",
+   "cp otelcol-doctor/SKILL.md ~/.claude/skills/otel-collector-config/",
+   "cp -r otelcol-doctor/references otelcol-doctor/examples otelcol-doctor/scripts ~/.claude/skills/otel-collector-config/",
+   "scripts/validate.sh config.yaml"
+  ],
+  "stack": [
+   "OpenTelemetry Collector (otelcol / otelcol-contrib)",
+   "Markdown agent skill with frontmatter",
+   "Shell script (scripts/validate.sh)",
+   "Docker (optional fallback for validation)"
+  ],
+  "notable": [
+   "Encodes concrete Collector footguns (processor order, contrib-only components, pull vs push exporters) as an agent checklist",
+   "Validation loop: the agent runs otelcol validate before declaring a config done",
+   "Includes a broken-to-fixed example config pair walking through five bugs",
+   "Vendor-neutral scope covering OTLP, Prometheus, Loki, Tempo, and Mimir export",
+   "Works with Claude Code, Codex, and Cursor via a plain SKILL.md file"
+  ],
+  "caveats": [
+   "Focused only on Collector config; does not cover instrumentation SDKs or dashboards",
+   "Some configs require the contrib image, so the core build will not run them",
+   "The README says a capable model already knows much of this; the value is consistency and the validation loop"
+  ],
+  "license": "Apache-2.0",
+  "category": "observability agent skill",
+  "keywords": [
+   "opentelemetry collector",
+   "otelcol",
+   "otel collector config",
+   "collector yaml",
+   "otelcol-contrib",
+   "claude code skill",
+   "agent skill",
+   "codex skill",
+   "cursor rules",
+   "memory_limiter",
+   "batch processor",
+   "processor ordering",
+   "prometheusremotewrite",
+   "prometheus exporter",
+   "pull vs push metrics",
+   "spanmetrics",
+   "tail sampling",
+   "otlp receiver",
+   "otlp exporter",
+   "tempo",
+   "mimir",
+   "config validation",
+   "otelcol validate",
+   "yaml linter for collector",
+   "diagnose broken telemetry pipeline",
+   "observability config generator",
+   "opentelemetry footguns",
+   "ottl",
+   "infrastructure devops ai assistant",
+   "write collector config from description",
+   "fix collector config"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3391,
+  "output": 1425
+ },
+ "generated": "2026-10-29"
+}

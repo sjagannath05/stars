@@ -1,0 +1,97 @@
+{
+ "id": "yagcioglutoprak/dusty",
+ "repo": "yagcioglutoprak/dusty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Dusty - Menu bar disk cleaner that only deletes from a fixed allowlist and shows every path and size before removing anything."
+  }
+ ],
+ "summary": {
+  "one_liner": "Dusty is a free, MIT-licensed macOS menu bar disk and memory cleaner that deletes only from a fixed allowlist of caches and leftovers, and shows every path and size before removing anything.",
+  "what_it_does": "Dusty scans the Mac for cleanup targets and sorts them into three levels: Safe (user caches, logs, Trash, browser and app caches), Developer (Xcode DerivedData, package manager caches like npm, pip, Cargo, Homebrew, optional docker prune), and Deep (old installers in Downloads, Xcode archives, local Time Machine snapshots, opt-in AI model caches, stale project artifacts). Scanning never deletes; a confirmation lists every path and the free space before and after a clean. Cleaned items go to the Trash with an Undo window of a few seconds, and every deletion is written to a log file. It also flags forgotten project artifacts such as node_modules or Cargo target folders that have not been touched in a month, subject to strict manifest checks. A Memory section shows which apps use RAM (grouping helper processes), suggests idle apps, and quits them the way Cmd+Q does after confirmation, with a Reopen button; it does not force quit or run purge. A dusty CLI ships in the app with scan, clean, targets, and memory commands, plus Shortcuts actions. Background scanning and optional scheduled or low-space auto clean are available.",
+  "use_cases": [
+   "free up disk space on a Mac",
+   "clean developer caches like Xcode DerivedData and npm",
+   "find and remove old node_modules in forgotten projects",
+   "see which apps are using memory and quit idle ones",
+   "automate Mac cleanup from the command line or Shortcuts",
+   "safe alternative to a paid Mac cleaner"
+  ],
+  "how_to_run": [
+   "brew install --cask yagcioglutoprak/tap/dusty",
+   "Or download Dusty.dmg from the latest release, drag it to Applications, and open it",
+   "cd CleanerEngine && swift test",
+   "cd dusty/Dusty",
+   "open Dusty.xcodeproj",
+   "xcodebuild -scheme Dusty -configuration Release build"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "MenuBarExtra",
+   "Sparkle",
+   "Xcode 16",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Deletion is restricted to a readable allowlist in CleanupTargetRegistry, enforced by a single SafetyValidator component",
+   "Undo for cleans via Trash with a few-second window, plus a JSONL deletion log",
+   "Memory freeing quits apps the way Cmd+Q does after confirmation; no purge, no force quit, no root",
+   "Engine is a separate Swift package with no UI and unit tests, plus a scriptable dusty CLI",
+   "Dry run mode reports what would be deleted without deleting anything"
+  ],
+  "caveats": [
+   "Requires macOS 13 Ventura or later and Xcode 16 to build from source",
+   "Not sandboxed, so it is not distributed through the Mac App Store; a few Deep-level system diagnostic paths need Full Disk Access",
+   "Some Deep-level paths under /Library/Logs are outside the home folder"
+  ],
+  "license": "MIT",
+  "category": "macos disk cleanup",
+  "keywords": [
+   "mac disk cleaner",
+   "free up disk space",
+   "macos cleaner",
+   "menu bar app",
+   "menubar utility",
+   "cleanmymac alternative",
+   "open source cleaner",
+   "free mac cleaner",
+   "xcode deriveddata cleanup",
+   "developer cache cleaner",
+   "npm cache clean",
+   "node_modules cleanup",
+   "cargo target cleanup",
+   "pip cache",
+   "homebrew cache",
+   "browser cache cleaner",
+   "memory cleaner mac",
+   "free up ram",
+   "quit idle apps",
+   "activity monitor alternative",
+   "swift app",
+   "sparkle auto update",
+   "cli disk cleanup",
+   "dusty cli",
+   "shortcuts automation mac",
+   "undo file deletion",
+   "deletion log",
+   "dry run",
+   "allowlist deletion safety",
+   "time machine snapshots cleanup",
+   "docker prune",
+   "ai model cache cleanup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7486,
+  "output": 1528
+ },
+ "generated": "2026-10-29"
+}

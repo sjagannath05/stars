@@ -1,0 +1,100 @@
+{
+ "id": "garrytan/gstack",
+ "repo": "garrytan/gstack",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "gstack by Garry Tan - Garry Tan's (Y Combinator) Claude Code setup and \"open source software factory\" for managing the development lifecycle end-to-end. Includes a set of agents and in-depth skills/tools along with workflows for advancing a product from ideation to production."
+  }
+ ],
+ "summary": {
+  "one_liner": "gstack is a set of Markdown slash-command skills that turn Claude Code (and other coding agents) into a simulated engineering team covering planning, review, QA, security, shipping, and docs.",
+  "what_it_does": "Provides roughly 50 slash-command skills for Claude Code, each acting as a role such as CEO reviewer, eng manager, designer, staff engineer, QA lead, security officer, and release engineer. Skills are organized as a sprint (Think, Plan, Build, Review, Test, Ship, Reflect), with each skill writing artifacts that downstream skills read, such as /office-hours writing a design doc used by /plan-ceo-review. /review finds production bugs and auto-fixes obvious ones, /qa drives a real browser (or tests CLIs, APIs, jobs, and webhooks), and /ship runs tests and opens a PR. The README also covers a bundled browser with fallback to the Aside browser on macOS, team-mode auto-updates for shared repos, install support for multiple agent harnesses (Codex, Cursor, OpenCode, Copilot CLI and others, with varying tiers), and optional GBrain persistent memory integration.",
+  "use_cases": [
+   "plan and review a product idea before coding",
+   "automated code review of a branch before merge",
+   "browser-based QA testing of a staging site",
+   "security audit of a codebase",
+   "ship a pull request with tests and review",
+   "design system and UI mockup generation",
+   "post-deploy monitoring and performance benchmarking"
+  ],
+  "how_to_run": [
+   "git clone --single-branch --depth 1 ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup",
+   "Restart Claude Code and run /office-hours to describe what you are building",
+   "Run /review on any branch with changes",
+   "Run /qa on a staging URL or local service",
+   "Run /ship to run tests, review, and open a PR"
+  ],
+  "stack": [
+   "Claude Code",
+   "Bun (v1.4.2+ tested, 1.3.3 minimum)",
+   "Node.js (required on Windows; fallback for browse server)",
+   "Git",
+   "Playwright",
+   "Chromium (bundled browser)",
+   "Markdown skills",
+   "ffmpeg (for /design-motion)",
+   "Docker (optional, for /cso runtime comprehensive mode)"
+  ],
+  "notable": [
+   "Role-based skill suite that chains artifacts between stages (design doc feeds plan reviews, test plan feeds QA)",
+   "Multi-agent install support: one setup script registers skills for Claude Code and several other agent harnesses, with tiered certification",
+   "Team mode bootstraps a repo so teammates auto-receive gstack updates on a stable release channel",
+   "QA works without a browser on CLIs, APIs, jobs, and webhooks",
+   "Optional /cso security audit with OWASP and STRIDE coverage and separate runtime/scanner execution via Docker"
+  ],
+  "caveats": [
+   "Windows requires Git Bash or WSL plus Node.js; Windows Smart App Control can block the unsigned compiled binaries, and /cso needs Visual Studio 2022 Build Tools",
+   "Aside browser is macOS-only; Linux and Windows use the bundled Chromium, and some Linux hosts need GSTACK_CHROMIUM_NO_SANDBOX=1",
+   "Many skills depend on optional external pieces such as Codex CLI, ffmpeg, Docker, or GBrain, and non-Claude hosts are mostly experimental or instruction-only"
+  ],
+  "license": "MIT",
+  "category": "ai coding agent skills",
+  "keywords": [
+   "claude code",
+   "slash commands",
+   "coding agent",
+   "ai engineering team",
+   "code review",
+   "qa testing",
+   "browser automation",
+   "headless browser",
+   "playwright",
+   "pull request automation",
+   "release automation",
+   "design review",
+   "security audit",
+   "owasp",
+   "stride",
+   "design doc",
+   "product planning",
+   "sprint workflow",
+   "agent skills",
+   "markdown skills",
+   "codex cli",
+   "cursor",
+   "bun",
+   "chromium",
+   "gbrain",
+   "devex review",
+   "review my code before merge",
+   "test my staging site",
+   "plan a product before coding",
+   "ai pair programmer",
+   "copilot alternative",
+   "software development lifecycle"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14627,
+  "output": 1547
+ },
+ "generated": "2026-10-29"
+}

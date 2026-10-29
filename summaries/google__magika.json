@@ -1,0 +1,93 @@
+{
+ "id": "google/magika",
+ "repo": "google/magika",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "magika - Detects file content types with a deep-learning model."
+  }
+ ],
+ "summary": {
+  "one_liner": "Magika is a deep-learning file type detector that identifies the content type of files from their bytes, with a CLI in Rust and Python, JavaScript, and Rust bindings.",
+  "what_it_does": "Magika uses a small custom neural network (a few MB) to predict the content type of a file, covering 200+ binary and textual types. It reads only a limited subset of each file's content, so inference time stays roughly constant regardless of file size. It can identify files from paths, raw bytes, or streams, and the CLI can scan many files at once or recurse through directories with -r. Output can be a description, MIME type, simple label, score, JSON/JSONL, or a custom format. A per-content-type threshold system falls back to generic labels such as \"Generic text document\" when the model is not confident, and prediction modes (high-confidence, medium-confidence, best-guess) control how tolerant detection is to errors.",
+  "use_cases": [
+   "identify unknown file types from content rather than extension",
+   "route files to security or content scanners",
+   "detect file type of uploaded files in a web service",
+   "batch-classify directories of mixed files",
+   "pipe file contents through a command line type check",
+   "detect file types inside a Python script"
+  ],
+  "how_to_run": [
+   "pipx install magika",
+   "pip install magika",
+   "brew install magika",
+   "cargo install --locked magika-cli",
+   "npm install magika",
+   "magika -r <directory>"
+  ],
+  "stack": [
+   "Rust",
+   "Python",
+   "JavaScript/TypeScript",
+   "Go (WIP)",
+   "deep learning model"
+  ],
+  "notable": [
+   "Small model (a few MB) that classifies files in milliseconds on a single CPU",
+   "Trained on ~100M samples across 200+ content types, about 99% average precision and recall per the README",
+   "Per-content-type thresholds fall back to generic labels when unsure",
+   "Used at scale by Google to route Gmail, Drive, and Safe Browsing files, per the README",
+   "Web demo runs locally in the browser"
+  ],
+  "caveats": [
+   "Go bindings are described as work in progress",
+   "JavaScript npm package is described as experimental",
+   "Not an official Google product and not supported by Google, per the disclaimer"
+  ],
+  "license": "Apache 2.0",
+  "category": "file type detection",
+  "keywords": [
+   "file type detection",
+   "content type detection",
+   "file identification",
+   "magic bytes",
+   "mime type detection",
+   "deep learning",
+   "machine learning",
+   "neural network file classifier",
+   "file sniffing",
+   "identify file format",
+   "detect file type without extension",
+   "libmagic alternative",
+   "file command alternative",
+   "python file type",
+   "rust cli",
+   "javascript file type",
+   "batch file identification",
+   "recursive directory scan",
+   "malware scanning routing",
+   "security file triage",
+   "detect uploaded file type",
+   "file type from bytes",
+   "mime sniffing",
+   "content sniffing",
+   "file classification cli",
+   "identify file type python",
+   "what type of file is this",
+   "figure out file format",
+   "gmail drive safe browsing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4136,
+  "output": 1100
+ },
+ "generated": "2026-10-29"
+}

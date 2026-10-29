@@ -1,0 +1,92 @@
+{
+ "id": "openclaw/nix-openclaw",
+ "repo": "openclaw/nix-openclaw",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Deployment & Infrastructure",
+   "entry": "openclaw/nix-openclaw — Nix packaging"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Nix flake and Home Manager module that packages and deploys the OpenClaw AI assistant gateway declaratively on macOS and headless Linux.",
+  "what_it_does": "Packages the OpenClaw gateway (.#openclaw, .#openclaw-gateway) and a macOS app (.#openclaw-app) as Nix outputs, pinned to upstream stable releases. Home Manager options configure the gateway as a launchd service on macOS or a systemd user service on Linux, with OpenClaw config rendered from Nix under programs.openclaw.config. Runtime plugins such as Discord, Slack, WhatsApp or Copilot are installed by listing plugin ids in programs.openclaw.runtimePlugins, or by pinning npm/ClawHub specs with hashes in runtimePluginSources. Nix-packaged tool plugins (bundledPlugins, customPlugins) add CLI tools and agent skills to the gateway PATH. Workspace bootstrap files (AGENTS.md, SOUL.md, etc.) are managed declaratively. The README also documents a dual-instance (prod/dev) setup, secret handling via env or file paths, and a template flake (agent-first) for new users.",
+  "use_cases": [
+   "Deploy OpenClaw gateway on macOS or Linux with Nix",
+   "Run an AI assistant reachable from Telegram or Discord",
+   "Pin and reproduce an OpenClaw installation across machines",
+   "Manage OpenClaw runtime plugins declaratively",
+   "Run prod and dev OpenClaw instances side by side",
+   "Install nix-packaged CLI tools and skills for an AI agent"
+  ],
+  "how_to_run": [
+   "mkdir -p ~/code/openclaw-local && cd ~/code/openclaw-local",
+   "nix flake init -t github:openclaw/nix-openclaw#agent-first",
+   "Edit flake.nix placeholders (system, home.username, homeDirectory, bootstrap files, secrets)",
+   "home-manager switch --flake .#<name>",
+   "Linux verify: systemctl --user status openclaw-gateway",
+   "macOS verify: launchctl print gui/$UID/com.steipete.openclaw.gateway | grep state"
+  ],
+  "stack": [
+   "Nix (flakes)",
+   "Home Manager",
+   "launchd (macOS)",
+   "systemd user services (Linux)",
+   "npm (OpenClaw gateway packages)"
+  ],
+  "notable": [
+   "Runtime plugins installed by Nix: OpenClaw CLI plugin install/update/uninstall are disabled in Nix mode (OPENCLAW_NIX_MODE=1), so config changes go through rebuilds",
+   "Pinned gateway tracks newest upstream stable OpenClaw release that passes Linux and macOS package checks, with mirrored v-tags",
+   "Tool plugins declare CLI packages and skills via an openclawPlugin flake output",
+   "Dual-instance support for prod and dev gateways with separate ports and configs",
+   "Secrets are meant to be materialized outside the Nix store and passed as env or file paths"
+  ],
+  "caveats": [
+   "Windows is out of scope; supports macOS (Apple Silicon) and Linux (x86_64, headless)",
+   "Not accepting pull requests; GitHub Issues not actively monitored; support is via Discord",
+   "Requires Nix with flakes enabled and familiarity with Home Manager; the README warns that Nix generation rollback does not reverse OpenClaw state migrations"
+  ],
+  "license": "unknown",
+  "category": "nix packaging deployment",
+  "keywords": [
+   "nix",
+   "nix flake",
+   "home manager",
+   "nixos",
+   "declarative deployment",
+   "openclaw",
+   "ai assistant gateway",
+   "launchd",
+   "systemd user service",
+   "macos service",
+   "linux headless",
+   "telegram bot",
+   "discord bot",
+   "reproducible builds",
+   "pinned packages",
+   "nix package",
+   "dotfiles management",
+   "self-hosted assistant",
+   "runtime plugins",
+   "mcp",
+   "skills for ai agent",
+   "nix-darwin alternative",
+   "docker alternative for services",
+   "install with nix",
+   "run ai bot on my machine",
+   "reproducible ai setup",
+   "multi instance gateway",
+   "prod and dev instances"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17836,
+  "output": 1553
+ },
+ "generated": "2026-10-29"
+}

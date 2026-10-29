@@ -1,0 +1,97 @@
+{
+ "id": "lukaszraczylo/claude-mnemonic",
+ "repo": "lukaszraczylo/claude-mnemonic",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "Claude Mnemonic by lukaszraczylo - Memory management and retrieval for Claude Code"
+  }
+ ],
+ "summary": {
+  "one_liner": "Claude Mnemonic is a local memory plugin for Claude Code that captures observations from coding sessions and injects relevant past knowledge into future sessions.",
+  "what_it_does": "It hooks into Claude Code sessions to capture what Claude learns, such as bug fixes, architecture decisions, and patterns that work, and stores them in SQLite with full-text search. Semantic search uses local sqlite-vec embeddings (all-MiniLM-L6-v2), with optional cross-encoder reranking (BGE reranker) for two-stage retrieval. Observations are scoped per project by default, with tags like best-practice or security promoting them to global scope. It exposes MCP tools for search, timeline, observation management, and admin/analytics actions such as stats, patterns, and maintenance. A web dashboard at localhost:37777 lets you browse and manage memories, and a live statusline shows metrics. The README also describes a knowledge graph, conflict detection, importance scoring with time decay, and automatic updates.",
+  "use_cases": [
+   "Remember codebase context across Claude Code sessions",
+   "Recall past bug fixes and architecture decisions",
+   "Share best practices across multiple projects",
+   "Semantic search over past coding observations",
+   "Browse and manage stored memories in a web dashboard",
+   "Keep project knowledge separate from global knowledge"
+  ],
+  "how_to_run": [
+   "curl -sSL | bash",
+   "irm | iex (Windows PowerShell)",
+   "git clone <repo> && cd claude-mnemonic",
+   "make build && make install",
+   "make test",
+   "make dev"
+  ],
+  "stack": [
+   "Go",
+   "Node.js",
+   "SQLite",
+   "FTS5",
+   "sqlite-vec",
+   "ONNX Runtime",
+   "all-MiniLM-L6-v2",
+   "BGE reranker",
+   "jq",
+   "cosign"
+  ],
+  "notable": [
+   "Runs entirely locally with local embeddings and reranking; no API keys, uses existing Claude Code subscription",
+   "Two-stage retrieval: bi-encoder embeddings plus cross-encoder reranking, configurable via settings",
+   "Project vs global scope determined by observation tags",
+   "Exposes MCP tools (search, timeline, observation, memory_admin) with action-based subcommands",
+   "Web dashboard at localhost:37777 with memory browsing and a knowledge graph view"
+  ],
+  "caveats": [
+   "Building from source requires Go 1.24+, Node.js 18+, and a CGO-compatible compiler",
+   "Platform support listed as macOS (Intel and Apple Silicon), Linux amd64/arm64, and Windows amd64",
+   "Auto-updates download in the background (up to 250MB) and apply on restart"
+  ],
+  "license": "MIT",
+  "category": "ai coding memory",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "memory",
+   "persistent memory",
+   "long-term memory",
+   "context persistence",
+   "session memory",
+   "semantic search",
+   "vector search",
+   "sqlite-vec",
+   "sqlite",
+   "full-text search",
+   "fts5",
+   "embeddings",
+   "local embeddings",
+   "onnx runtime",
+   "reranking",
+   "cross-encoder",
+   "mcp tools",
+   "mcp server",
+   "knowledge graph",
+   "web dashboard",
+   "coding assistant memory",
+   "remember past sessions",
+   "re-explaining codebase",
+   "share best practices across projects",
+   "go binary",
+   "all-minilm-l6-v2"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4804,
+  "output": 1265
+ },
+ "generated": "2026-10-29"
+}

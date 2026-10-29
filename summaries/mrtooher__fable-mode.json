@@ -1,0 +1,95 @@
+{
+ "id": "mrtooher/fable-mode",
+ "repo": "mrtooher/fable-mode",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Skills",
+   "entry": "fable-mode by mrtooher - A Claude skill that activates Fable-style agentic behavior: explicit multi-stage planning, sub-agent delegation, and self-verification."
+  }
+ ],
+ "summary": {
+  "one_liner": "fable-mode is a set of Claude skills and agent definitions that impose a staged plan, delegation to named sub-agents, failable verification checks, self-critique, and a cold double-check before delivery on large tasks.",
+  "what_it_does": "The repo provides a default fable-mode skill plus model-specific runners (fable-fable, fable-opus, fable-sonnet, fable-haiku) that tune the same core loop to each Claude model tier. The core loop asks Claude to write a numbered stage map with one verifiable artifact per stage, delegate reasoning stages to Sonnet workers and mechanical stages to Haiku workers, and check each stage with a test or diff rather than a subjective review. It adds a skeptical self-critique step and a double-check gate in which fresh checker agents return PASS, FAIL, or UNVERIFIABLE verdicts before anything is delivered. Two always-on companion skills, execution-guardrails and double-check, apply regardless of whether the loop runs. The agents/ directory holds separate agent definitions (orchestrator, workers, verifier) that the README says must be installed as agents, not skills. The author reports three benchmark rounds, with the skill showing no measured delta on Fable 5.1 and some benefit on open-ended research with Opus.",
+  "use_cases": [
+   "structuring a large multi-step coding or data task with checkpoints",
+   "delegating sub-tasks to sub-agents in Claude Code",
+   "adding verification gates before delivering AI-generated work",
+   "auditing AI output with a cold second-review pass",
+   "running open-ended research tasks that need real sources",
+   "keeping a worklog of AI decisions for reproducibility"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/mrtooher/fable-mode",
+   "cd fable-mode",
+   "./install.sh",
+   "For Cowork / claude.ai: add each SKILL.md via Settings → Capabilities → Skills (agents are not loadable there)"
+  ],
+  "stack": [
+   "Claude Code skills and agent definitions (SKILL.md, frontmatter with tools and model fields)",
+   "Claude models: Haiku, Sonnet, Opus, Fable 5.1",
+   "bash install script (install.sh)",
+   "benchmark harness in bench/ with deterministic graders"
+  ],
+  "notable": [
+   "Model-tiered ladder (Haiku → Sonnet → Opus → Fable 5.1 → user) with a separate runner skill per tier",
+   "Verification checks must be able to fail; 'looks right' is explicitly disallowed",
+   "Double-check gate uses ternary PASS / FAIL / UNVERIFIABLE verdicts from fresh checker agents",
+   "Benchmarked with unstated traps and deterministic graders, with results reported including null effects",
+   "Warns that agent definitions must not be installed as skills"
+  ],
+  "caveats": [
+   "Benchmark result shows 0 delta on Fable 5.1 closed tasks; the author says it is a checklist, not a capability boost",
+   "Agents are not loadable on Cowork / claude.ai; the skills fall back to inline mode there",
+   "Installing agents/ files as skills causes stalls or false delegation narratives; they must be placed in agents/",
+   "Adds roughly 1.1x tokens and about 2x wall time on Fable 5.1 per the README; poor fit for trivial tasks"
+  ],
+  "license": "unknown",
+  "category": "claude code skills",
+  "keywords": [
+   "claude skill",
+   "claude code",
+   "agentic workflow",
+   "multi-stage planning",
+   "sub-agent delegation",
+   "self-verification",
+   "double-check",
+   "verification gate",
+   "execution discipline",
+   "stage map",
+   "agent definitions",
+   "claude opus",
+   "claude sonnet",
+   "claude haiku",
+   "fable 5.1",
+   "skill installer",
+   "install.sh",
+   "cowork skills",
+   "claude.ai skills",
+   "benchmark harness",
+   "llm checklist",
+   "code review gate",
+   "delegate tasks to agents",
+   "plan before coding",
+   "check ai output before delivery",
+   "verify ai work",
+   "audit trail for ai",
+   "worklog for ai decisions",
+   "reproducible ai checks",
+   "large task planning",
+   "second opinion on ai output",
+   "fact check ai research",
+   "open-ended research with ai"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4218,
+  "output": 1491
+ },
+ "generated": "2026-10-29"
+}

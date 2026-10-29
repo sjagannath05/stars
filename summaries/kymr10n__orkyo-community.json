@@ -1,0 +1,102 @@
+{
+ "id": "kymr10n/orkyo-community",
+ "repo": "Kymr10n/orkyo-community",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Manufacturing",
+   "entry": "Orkyo Community - Production scheduling for manufacturing teams — one plan for the machines, people, and tools that run your jobs. (Demo, Source Code) AGPL-3.0 C#/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Orkyo Community is a self-hosted, single-tenant production scheduling app that plans machines, people, tools and jobs on a shared visual board, with conflict detection and utilisation tracking.",
+  "what_it_does": "Provides a shared visual plan for scheduling jobs and requests onto machines, workstations, people, and tools, with drag-and-drop layout editing and real-time allocation status. It flags double-bookings, overloads, capability mismatches and availability clashes before commit, and tracks utilisation to show where capacity is used or wasted. Teams can submit requests that the app matches to available resources, subscribe to schedules via iCal feeds, and manage layouts across multiple sites. QR codes can be placed on resources so a phone scan shows status, and the web app can be added to a phone home screen. An optional AI assistant uses the user's own Anthropic API key and applies suggested changes only after confirmation. It is deployed with Docker Compose via a generator script that creates the secrets and environment file.",
+  "use_cases": [
+   "production scheduling for job shops",
+   "plan machine and workstation capacity",
+   "detect scheduling conflicts and double-bookings",
+   "track equipment and staff utilisation",
+   "self-hosted resource booking",
+   "share a visual production schedule with a team"
+  ],
+  "how_to_run": [
+   "curl -fsSL <release bundle URL> | tar xz  (download and extract the latest release bundle)",
+   "cd orkyo-community-v*/",
+   "./generate-env.sh  (asks for APP_BASE_URL and generates secrets)",
+   "docker compose up -d",
+   "Open the app on port 80 (or the port set with --frontend-port); default login admin@example.com / ChangeMe-Admin-1, password change forced at first login",
+   "Upgrade with: docker compose pull && docker compose up -d"
+  ],
+  "stack": [
+   "C#",
+   "ASP.NET Core 10",
+   "React 19",
+   "Vite",
+   "Node.js 22",
+   "PostgreSQL",
+   "Valkey",
+   "Keycloak",
+   "Docker Compose",
+   "Caddy",
+   "MailHog"
+  ],
+  "notable": [
+   "Single-tenant Community edition with full data control and no subscription, alongside a managed Orkyo Cloud offering",
+   "QR codes on physical resources that open status on a phone (requires HTTPS for camera)",
+   "Optional starter datasets for manufacturing or office workspaces",
+   "Bring-your-own-key AI assistant where suggested changes need user confirmation",
+   "Shared core logic lives in the separate orkyo-foundation repository"
+  ],
+  "caveats": [
+   "Pre-1.0 and under active development; notifications and reminders are on the roadmap",
+   "Community support is best-effort with no SLA or installation support",
+   "Explicitly not an ERP, MES or CMMS; it is meant to complement those systems",
+   "Depends on the separate orkyo-foundation repository for development builds"
+  ],
+  "license": "AGPL-3.0",
+  "category": "production scheduling software",
+  "keywords": [
+   "production scheduling",
+   "manufacturing scheduling",
+   "shop floor planning",
+   "job shop scheduling",
+   "resource scheduling",
+   "capacity planning",
+   "machine scheduling",
+   "workstation booking",
+   "conflict detection",
+   "double booking",
+   "utilisation tracking",
+   "self-hosted scheduler",
+   "docker compose",
+   "asp.net core",
+   "react",
+   "postgresql",
+   "keycloak",
+   "ical feed",
+   "qr code assets",
+   "multi-site planning",
+   "schedule machines and people",
+   "replace spreadsheet scheduling",
+   "alternative to spreadsheets for planning",
+   "open source mes-adjacent scheduling",
+   "gantt style planning board",
+   "agpl self-hosted app",
+   "resource booking app",
+   "request workflow matching",
+   "absence handling",
+   "workshop planning tool",
+   "calendar scheduling for teams"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4146,
+  "output": 1339
+ },
+ "generated": "2026-10-29"
+}

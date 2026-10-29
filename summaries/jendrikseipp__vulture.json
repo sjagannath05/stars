@@ -1,0 +1,88 @@
+{
+ "id": "jendrikseipp/vulture",
+ "repo": "jendrikseipp/vulture",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Code Analysis",
+   "entry": "vulture - A tool for finding and analyzing dead Python code."
+  }
+ ],
+ "summary": {
+  "one_liner": "Vulture is a static analysis tool that finds unused (dead) code in Python programs by parsing their ASTs.",
+  "what_it_does": "Vulture scans Python files and directories and reports unused functions, classes, methods, attributes, variables, imports, and unreachable code. It uses the ast module to record defined and used names and reports objects that are defined but never referenced, ignoring scopes. Each finding gets a confidence value from 60% to 100%, and --min-confidence filters results. It can sort findings by size with --sort-by-size. False positives can be suppressed with whitelist modules (--make-whitelist), --exclude, --ignore-names, --ignore-decorators, underscore-prefixed names, or noqa comments for F401 and F841. Settings can be stored in pyproject.toml under [tool.vulture]. It also exposes a Python API (vulture.Vulture().scavenge() and get_unused_code()).",
+  "use_cases": [
+   "find unused functions and classes in a Python project",
+   "detect unused imports and variables",
+   "locate untested code by running on library and test suite",
+   "clean up dead code before a release",
+   "run dead-code checks in a pre-commit hook",
+   "reduce false positives with whitelist files"
+  ],
+  "how_to_run": [
+   "pip install vulture",
+   "vulture myscript.py",
+   "vulture myscript.py mypackage/",
+   "vulture myscript.py --min-confidence 100",
+   "vulture mydir --make-whitelist > whitelist.py"
+  ],
+  "stack": [
+   "Python",
+   "ast module"
+  ],
+  "notable": [
+   "Confidence scores per finding type (100% for unused arguments and unreachable code, 90% for imports, 60% for functions, classes, attributes and variables)",
+   "Whitelist approach: a Python module that simulates usage, which can be auto-generated with --make-whitelist",
+   "Configurable through pyproject.toml, with command-line options taking precedence",
+   "Detects unreachable code after return, break, continue, raise and unsatisfiable if/while conditions",
+   "Pre-commit hook and programmatic API support"
+  ],
+  "caveats": [
+   "Static analysis misses dynamically called code, so some reported code is a false positive; values below 100% are rough estimates",
+   "Ignores scopes and only matches object names",
+   "Requires whitelists or ignore options to handle framework-invoked code such as decorated routes"
+  ],
+  "license": "unknown",
+  "category": "python static analysis",
+  "keywords": [
+   "vulture",
+   "dead code finder",
+   "dead code detection",
+   "unused code",
+   "unused functions",
+   "unused imports",
+   "unused variables",
+   "python linter",
+   "static code analysis",
+   "ast analysis",
+   "find unreachable code",
+   "whitelist file",
+   "false positives",
+   "min-confidence",
+   "pyproject.toml config",
+   "pre-commit hook",
+   "pyflakes alternative",
+   "coverage alternative",
+   "uncalled alternative",
+   "clean up codebase",
+   "code quality tool",
+   "find untested code",
+   "remove unused code",
+   "flake8 noqa",
+   "sort by size",
+   "python code cleanup",
+   "find unused python functions",
+   "check for dead code in my project"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4984,
+  "output": 1151
+ },
+ "generated": "2026-10-29"
+}

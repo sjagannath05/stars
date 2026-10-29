@@ -1,0 +1,97 @@
+{
+ "id": "leandromoreira/cdn-up-and-running",
+ "repo": "leandromoreira/cdn-up-and-running",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Lua: _Building a CDN from Scratch to Learn about CDN_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A tutorial repo that builds a small CDN from scratch using nginx, Lua, Docker Compose, Prometheus, Grafana, and wrk, documented section by section.",
+  "what_it_does": "The README walks through building a JSON origin service in nginx with Lua, then adds an edge node that proxies to it with nginx proxy_cache, an X-Cache-Status header, and cache-control via max_age. It adds VTS metrics, Prometheus scraping and Grafana dashboards, simulated percentile-based latency, and wrk load tests. It then compares cache TTL settings, timeouts, cache lock/stale behavior, and long-tail request patterns. The final sections cover routing across multiple edges with round-robin and consistent hashing in nginx, and discuss DNS, API, and anycast routing options. Results are shown as measured output from the author's runs, and the repo is organized as git tags per stage (for example 1.0.0, 2.1.0, 4.0.1).",
+  "use_cases": [
+   "learning how CDNs work internally",
+   "configuring nginx as a caching reverse proxy",
+   "load testing a caching setup with wrk",
+   "monitoring cache hit ratio with Prometheus and Grafana",
+   "experimenting with cache TTL and timeout tuning",
+   "comparing load balancing policies for edge caches"
+  ],
+  "how_to_run": [
+   "git checkout 2.1.0",
+   "docker-compose up",
+   "http <edge url> # first request should miss the cache",
+   "http <edge url> # second request should be served from the cache",
+   "./load_test.sh",
+   "wrk -c10 -t2 -d600s -s ./src/load_tests.lua --latency"
+  ],
+  "stack": [
+   "nginx",
+   "Lua (LuaJIT)",
+   "Docker",
+   "Docker Compose",
+   "Prometheus",
+   "Grafana",
+   "wrk",
+   "nginx VTS module (vhost_traffic_status)"
+  ],
+  "notable": [
+   "Incremental git tags map to each stage of the build, so you can check out the state at any step",
+   "Covers cache lock, stale-serving, and timeout tuning with before-and-after load test numbers",
+   "Compares round-robin and consistent hashing (hash $request_uri consistent) for cache-aware balancing",
+   "Includes a long-tail request distribution model to better simulate real traffic",
+   "Simulates backend latency with random percentile profiles written in Lua"
+  ],
+  "caveats": [
+   "The load test numbers are from the author's local runs and are not a production benchmark",
+   "The README lists many CDN concerns (security, purging, tokens, geoblocking, tenant isolation) as discussed only briefly or not implemented",
+   "Routing across multiple edges is described in prose with config snippets rather than a complete working multi-edge setup"
+  ],
+  "license": "unknown",
+  "category": "cdn tutorial",
+  "keywords": [
+   "cdn",
+   "build a cdn",
+   "content delivery network",
+   "nginx",
+   "nginx caching",
+   "proxy_cache",
+   "lua",
+   "openresty lua",
+   "docker compose",
+   "prometheus",
+   "grafana",
+   "wrk",
+   "load testing",
+   "cache hit ratio",
+   "cache ttl",
+   "cache-control max-age",
+   "consistent hashing",
+   "round-robin load balancing",
+   "reverse proxy",
+   "edge server",
+   "origin server",
+   "anycast",
+   "dns routing",
+   "proxy cache lock",
+   "long tail traffic",
+   "vts metrics",
+   "learn cdn internals",
+   "tutorial for caching",
+   "how do cdns work",
+   "test nginx performance"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11715,
+  "output": 1290
+ },
+ "generated": "2026-10-29"
+}

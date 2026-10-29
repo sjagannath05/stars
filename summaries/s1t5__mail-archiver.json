@@ -1,0 +1,94 @@
+{
+ "id": "s1t5/mail-archiver",
+ "repo": "s1t5/mail-archiver",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Archiving and Digital Preservation (DP)",
+   "entry": "mail-archiver - Web application for archiving, searching, and exporting emails from multiple accounts (IMAP, M365 or Import). Featuring folder sync, attachment support, mailbox migration and a dashboard. GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mail-Archiver is a self-hostable web application that archives, searches, and exports email from multiple IMAP, Microsoft 365, and import-only accounts, run via Docker with PostgreSQL.",
+  "what_it_does": "The app runs scheduled syncs that archive mail from multiple accounts into a PostgreSQL-backed store, with a web UI for browsing and searching them. Search supports filters, and emails can be previewed with attachments. Accounts or selected emails can be exported as mbox or zipped EML. It supports IMAP accounts, Microsoft 365 mailboxes via Microsoft Graph, Microsoft personal accounts via OAuth2 device code flow, and import-only accounts, plus MBox and EML (ZIP) import with folder structure. It also offers a read-only REST API with per-user API keys, an optional MCP endpoint for AI agents, multi-user permissions, a dashboard, retention policies, a deletion lock, and an access log.",
+  "use_cases": [
+   "archive emails from multiple mailboxes",
+   "search and preview archived email",
+   "export mail as mbox or EML",
+   "migrate mail between mailboxes",
+   "bulk-import a Microsoft 365 tenant's mailboxes",
+   "apply retention rules to mail on the server"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the mailarchive-app service (image s1t5/mailarchiver:latest) and a postgres:17-alpine service",
+   "Set POSTGRES_PASSWORD and the matching ConnectionStrings__DefaultConnection password to a secure value",
+   "Set Authentication__Username and Authentication__Password for the admin user",
+   "Set TimeZone__DisplayTimeZoneId (default Etc/UCT)",
+   "Put a reverse proxy with HTTPS in front of the app on port 5000",
+   "Run docker compose up -d, then docker compose restart"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "PostgreSQL 17",
+   ".NET (ConnectionStrings and appsettings-style configuration)",
+   "Microsoft Graph API",
+   "OpenID Connect"
+  ],
+  "notable": [
+   "Read-only REST API and optional MCP Streamable HTTP endpoint for AI agents, using scoped per-user API keys",
+   "Microsoft 365 tenant bulk import from a single form, plus Microsoft personal account support without an Azure app registration",
+   "Mailbox migration that copies emails between mailboxes while keeping folder structure",
+   "Deletion lock via DeletionPolicy__DeletionAllowed=false for compliance use",
+   "UI available in 14 languages with dark mode"
+  ],
+  "caveats": [
+   "The app does not provide HTTPS itself; a reverse proxy is required",
+   "Documentation is described as still fresh and being expanded",
+   "Code changes from third parties require prior coordination with the maintainer by email"
+  ],
+  "license": "GPL-3.0",
+  "category": "email archiving web app",
+  "keywords": [
+   "email archiving",
+   "mail archiver",
+   "self-hosted email archive",
+   "archive imap email",
+   "microsoft 365 email backup",
+   "m365 mailbox archive",
+   "export email mbox",
+   "export eml zip",
+   "email search",
+   "mbox import",
+   "eml import",
+   "mailbox migration",
+   "retention policy email",
+   "docker email archive",
+   "postgresql email storage",
+   "openid connect login",
+   "rest api email archive",
+   "mcp server ai agents",
+   "multi-user email archive",
+   "compliance email deletion lock",
+   "access log email",
+   "outlook.com archive",
+   "gmail archive imap",
+   "attachment search",
+   "dashboard email statistics",
+   "reverse proxy https docker",
+   "email retention compliance",
+   "archive office 365 mail",
+   "backup imap mailbox"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4179,
+  "output": 1375
+ },
+ "generated": "2026-10-29"
+}

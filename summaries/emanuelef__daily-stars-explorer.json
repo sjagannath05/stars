@@ -1,0 +1,94 @@
+{
+ "id": "emanuelef/daily-stars-explorer",
+ "repo": "emanuelef/daily-stars-explorer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Analytics",
+   "entry": "Daily Stars Explorer ⚠ - Track GitHub repo trends with daily star insights to see growth and community interest over time. (Demo, Source Code) MIT Go/Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A web tool that charts the full daily star history of any GitHub repository, alongside commits, PRs, issues, forks, contributors, and feed mentions.",
+  "what_it_does": "Daily Stars Explorer takes any GitHub repo and builds a daily star-count chart from GitHub's star history endpoint, which returns aggregated weekly buckets with daily breakdowns. It also shows activity timelines for commits, PRs, issues, forks, and contributors, which use the GraphQL API and require a personal access token. Feed mentions from HN, Reddit, YouTube, and GitHub can be overlaid on the star chart to show what was said when a spike happened. Users can compare two repos side by side, pin favorites, export data as CSV or JSON, and use dark mode. Fetched data is cached for 7 days, and later visits only pull new stars. The README also references an aggregate.md document describing moving averages, LOESS smoothing, and derivatives.",
+  "use_cases": [
+   "Check whether a GitHub repo's star growth is steady or driven by a single spike",
+   "Compare the popularity trajectories of two libraries side by side",
+   "Find out which HN, Reddit, or YouTube posts coincided with a star spike",
+   "Export repo star and activity data to CSV or JSON for analysis",
+   "Review a project's commit, PR, and issue activity over time",
+   "Self-host a personal GitHub star-history dashboard via Docker"
+  ],
+  "how_to_run": [
+   "echo \"PAT=your_github_token\" > .env",
+   "docker run --rm --env-file .env -p 8080:8080 ghcr.io/emanuelef/daily-stars-explorer:latest",
+   "Open localhost:8080 in a browser",
+   "Local development: cp .env.example .env && go run main.go (backend)",
+   "cd website && npm install && npm start (frontend, separate terminal)"
+  ],
+  "stack": [
+   "Go",
+   "Node.js",
+   "Docker",
+   "GitHub REST API (star history endpoint)",
+   "GitHub GraphQL API"
+  ],
+  "notable": [
+   "Star history rebuilt from GitHub's 2026 aggregate endpoint, so a full history takes roughly 1 to 33 requests and about a second or two",
+   "Star charts work without a PAT, though commits, PRs, issues, forks, and contributors still need one",
+   "Overlays feed mentions from HN, Reddit, YouTube, and GitHub on the star curve to explain spikes",
+   "Hourly star resolution has been retired because GitHub no longer exposes per-stargazer timestamps"
+  ],
+  "caveats": [
+   "Hourly star charts are no longer available because GitHub removed per-stargazer timestamps",
+   "Commits, PRs, issues, forks, and contributor timelines still need a GitHub PAT and the GraphQL API",
+   "Star totals can differ from stargazers_count by a star or two due to deleted or suspended accounts",
+   "The README says error handling is limited and the UI and code quality could be improved"
+  ],
+  "license": "MIT",
+  "category": "github star analytics",
+  "keywords": [
+   "github stars",
+   "star history",
+   "repo analytics",
+   "github repository trends",
+   "daily star count",
+   "star growth chart",
+   "github popularity",
+   "repo comparison",
+   "compare github repos",
+   "commit activity",
+   "pull request timeline",
+   "issue timeline",
+   "contributors over time",
+   "hacker news mentions",
+   "reddit mentions",
+   "youtube mentions",
+   "csv export",
+   "json export",
+   "docker self-hosted",
+   "go backend",
+   "nodejs frontend",
+   "github api tool",
+   "moving average",
+   "loess smoothing",
+   "track github project growth",
+   "see when a repo went viral",
+   "open source trends",
+   "github graphql",
+   "personal access token",
+   "analytics dashboard",
+   "repo stats"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4460,
+  "output": 1319
+ },
+ "generated": "2026-10-29"
+}

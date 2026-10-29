@@ -1,0 +1,112 @@
+{
+ "id": "minishlab/vicinity",
+ "repo": "MinishLab/vicinity",
+ "kind": "star",
+ "description": "Lightweight Nearest Neighbors with Flexible Backends",
+ "topics": [
+  "ai",
+  "annoy",
+  "embeddings",
+  "faiss",
+  "hnsw",
+  "hnswlib",
+  "python",
+  "vector-database"
+ ],
+ "language": "Python",
+ "stars": 352,
+ "license": "MIT",
+ "homepage": "https://minish.ai/packages/vicinity/introduction",
+ "pushed_at": "2026-10-05",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "db"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Vicinity is a lightweight Python vector store that offers one unified interface for nearest neighbor search across many ANN backends, with built-in evaluation of queries per second and recall.",
+  "what_it_does": "Vicinity builds a vector store from NumPy vectors and arbitrary serializable items, using a single API regardless of the underlying library. It supports top-k queries, threshold queries, and batches of query vectors. Backends include an exact flat index (BASIC), HNSW via hnswlib, USEARCH, ANNOY, PyNNDescent, FAISS (with nine index types), and Voyager. Vector stores can be saved and loaded locally or pushed to and loaded from the Hugging Face Hub. The evaluate method reports queries per second and recall for a chosen backend against the full vector set.",
+  "use_cases": [
+   "compare approximate nearest neighbor libraries on the same data",
+   "semantic search over sentence or document embeddings",
+   "k-nearest-neighbor lookup with cosine or euclidean distance",
+   "benchmark recall and speed of vector indexes",
+   "persist a vector index to disk or share it on the Hugging Face Hub",
+   "threshold-based similarity search over embeddings"
+  ],
+  "how_to_run": [
+   "pip install vicinity",
+   "pip install vicinity[all]",
+   "vicinity = Vicinity.from_vectors_and_items(vectors=vectors, items=items, backend_type=Backend.BASIC, metric=Metric.COSINE)",
+   "results = vicinity.query(query_vector, k=3)",
+   "vicinity.save('my_vector_store'); vicinity = Vicinity.load('my_vector_store')"
+  ],
+  "stack": [
+   "Python",
+   "NumPy",
+   "hnswlib",
+   "USEARCH",
+   "ANNOY",
+   "PyNNDescent",
+   "FAISS",
+   "Voyager",
+   "Hugging Face Hub"
+  ],
+  "notable": [
+   "Unified interface over many ANN libraries, so backends can be swapped without relearning APIs",
+   "Built-in evaluate method reporting queries per second and recall",
+   "BASIC backend supports both insertion and deletion",
+   "All nine FAISS index types exposed through one backend option",
+   "Optional Hugging Face Hub push and load, with model name stored in metadata"
+  ],
+  "caveats": [
+   "ANN backends (all except BASIC) do not support dynamic deletion; the index must be rebuilt to remove items",
+   "Insertion is only supported for FAISS, HNSW, and USEARCH",
+   "Installing specific backends requires separate optional extras"
+  ],
+  "license": "MIT",
+  "category": "nearest neighbor search",
+  "keywords": [
+   "nearest neighbor search",
+   "vector store",
+   "vector database",
+   "ann search",
+   "approximate nearest neighbors",
+   "embeddings",
+   "faiss",
+   "hnsw",
+   "hnswlib",
+   "annoy",
+   "usearch",
+   "pynndescent",
+   "voyager",
+   "knn",
+   "similarity search",
+   "cosine similarity",
+   "euclidean distance",
+   "vector index",
+   "python vector search",
+   "semantic search",
+   "lightweight vector store",
+   "benchmark ann libraries",
+   "compare vector indexes",
+   "recall and queries per second",
+   "save vector index to disk",
+   "hugging face hub vector store",
+   "pluggable backends",
+   "alternative to faiss wrapper",
+   "find similar embeddings",
+   "threshold similarity query"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4562,
+  "output": 1248
+ },
+ "generated": "2026-10-29"
+}

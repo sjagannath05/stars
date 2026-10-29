@@ -1,0 +1,92 @@
+{
+ "id": "kruszoneq/macusb",
+ "repo": "Kruszoneq/macUSB",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "macUSB - A bootable macOS / OS X installer creator for Apple Silicon Macs. [![Open-Source Software][OSS Icon]](https://github.com/Kruszoneq/macUSB) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "macUSB is a free macOS app that creates bootable USB media for macOS, OS X, Linux, and Windows from local files or a built-in macOS installer downloader.",
+  "category": "macos bootable usb creator",
+  "keywords": [
+   "bootable usb",
+   "usb installer",
+   "macos installer usb",
+   "create bootable usb mac",
+   "bootable usb creator",
+   "mac usb boot drive",
+   "os x installer",
+   "apple silicon usb installer",
+   "intel mac usb",
+   "linux usb creator",
+   "windows usb creator",
+   "iso to usb",
+   "dmg to usb",
+   "raw image writer",
+   "disk image writer",
+   "macos downloader",
+   "download macos installer",
+   "sha-256 checksum",
+   "autounattend.xml",
+   "wimlib",
+   "fat32 usb",
+   "etcher alternative",
+   "create-dmg",
+   "install macos from usb",
+   "sd card bootable",
+   "homebrew cask",
+   "macos sonoma app"
+  ],
+  "what_it_does": "macUSB is a guided macOS app for making bootable USB drives or SD cards on Apple silicon and Intel Macs. It can use local .dmg, .cdr, .iso, and .app sources for macOS, or fetch macOS installers directly from Apple through a built-in downloader that can also show Public Beta releases and save installers as .app or read-only .dmg. It supports Linux and Windows .iso images, with optional Windows setup automation via Autounattend.xml for Windows 10 and 11. It also includes a raw .iso/.img writer that verifies written data with SHA-256, and a checksum tool for supported images. The README lists support for macOS families from Golden Gate 27 back to Tiger 10.4, with per-version limits noted.",
+  "use_cases": [
+   "make a bootable macOS installer USB on a Mac",
+   "download a macOS installer from Apple and prepare it for USB",
+   "create a Windows install USB from an ISO on a Mac",
+   "create a Linux live USB from an ISO on a Mac",
+   "write a raw ISO or IMG to a USB drive",
+   "verify an installer image with SHA-256"
+  ],
+  "how_to_run": [
+   "brew install --cask macusb",
+   "Or download the latest release from GitHub Releases",
+   "Grant Full Disk Access and Background App Activity to macUSB in System Settings",
+   "Open macUSB, choose a local source or use the built-in Downloader",
+   "Select the target USB drive or SD card and start the process",
+   "For Windows split installs, optionally run: brew install wimlib"
+  ],
+  "stack": [
+   "Swift (inferred from macOS app; not named in README)",
+   "SMAppService helper",
+   "wimlib (optional, user-installed)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Built-in downloader fetches macOS and older OS X installers directly from Apple servers and detects installers already in /Applications",
+   "Supports Linux and Windows ISOs as well as macOS, with automatic distro and architecture detection for 19 tested Linux distributions",
+   "Splits Windows install.wim files over FAT32's 4 GB limit into .swm parts using wimlib",
+   "Hold Option while selecting a target to reuse existing HFS+ volumes on GPT drives without repartitioning",
+   "Available in 15 interface languages, following the system language by default"
+  ],
+  "caveats": [
+   "Requires macOS Sonoma 14.6 or later on the host Mac",
+   "Needs Full Disk Access and Background App Activity permissions to work",
+   "Writing a raw image does not guarantee the result is bootable",
+   "Some old systems have limits, such as only Sierra 10.12.6 and Tiger multi-DVD needing manual detection; Windows XP and Server 2003 are recognized but cannot be used for media creation",
+   "Creating bootable media erases all data on the selected drive"
+  ],
+  "license": "MIT License"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6218,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

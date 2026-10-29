@@ -1,0 +1,121 @@
+{
+ "id": "cayu-dev/cayu",
+ "repo": "cayu-dev/cayu",
+ "kind": "star",
+ "description": "Cayu is an open-source Python framework for building and running domain-specific long-horizon agents, with a durable runtime built in.",
+ "topics": [
+  "agent",
+  "autonomous-agents",
+  "harness",
+  "long-horizon-agents",
+  "long-running-agents",
+  "runtime"
+ ],
+ "language": "Python",
+ "stars": 961,
+ "license": "Apache-2.0",
+ "homepage": "https://cayu.dev/",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Cayu is an open-source Python framework and runtime for building long-running, domain-specific agents with durable sessions, approvals, spend caps and multi-agent collaboration.",
+  "what_it_does": "Provides Python APIs for assembling agents from model providers, tools, context and memory, policies, and domain logic, with a runtime that persists sessions, transcripts and checkpoints in SQLite or PostgreSQL so runs survive restarts and redeploys. Tools can be gated by a ToolPolicy that requires human approval before side effects, and budgets (BudgetLimit, BudgetPolicy) are checked before each model call. It includes task workers and scheduling for background or follow-up work, subagents and durable participant requests for multi-agent work, and runners and environments for workspaces and command execution. It also offers a `cayu` CLI with scaffolding (`cayu new`), inspection, checks, evals, guides, and an optional FastAPI server with a packaged Developer dashboard. Claude Code and Codex can be run as Cayu sessions through extras.",
+  "use_cases": [
+   "build a long-running agent that survives restarts",
+   "require human approval before an agent acts",
+   "cap per-session model spending",
+   "schedule background follow-up tasks for an agent",
+   "run Claude Code or Codex as a step in an application",
+   "coordinate multiple collaborating agents",
+   "scaffold a new Python agent project",
+   "run agent-written code in an isolated environment"
+  ],
+  "how_to_run": [
+   "pip install cayu pytest",
+   "cayu new myagent",
+   "cd myagent",
+   "cayu check --fail-on warning --json",
+   "pytest",
+   "python run.py --message \"Review this change.\""
+  ],
+  "stack": [
+   "Python 3.11+",
+   "FastAPI",
+   "SQLite",
+   "PostgreSQL",
+   "OpenAI API",
+   "Anthropic",
+   "Amazon Bedrock",
+   "Google Vertex AI",
+   "OpenRouter",
+   "MCP",
+   "Docker",
+   "E2B",
+   "Microsandbox",
+   "OpenTelemetry",
+   "React/TypeScript (dashboard)"
+  ],
+  "notable": [
+   "Durable sessions with ResumeRequest and recovery, configured by ExecutionProfilePolicy on new builds",
+   "Approval gating via ToolPolicyDecision.REQUIRE_APPROVAL resolved through cayu.approvals",
+   "Spend caps enforced before each model call (BudgetLimit, BudgetPolicy)",
+   "Dashboard can be used packaged, ejected as source for customization, or replaced with a custom UI over the control-plane API",
+   "Python-only and not a graph DSL: agents, tools and workflows are ordinary Python"
+  ],
+  "caveats": [
+   "Native Python tools run in the trusted application process; ToolPolicy controls invocation but does not sandbox them, and LocalRunner/DockerRunner are not hostile-code sandboxes",
+   "SQLite suits local or single-writer use; sustained multi-process concurrency needs PostgreSQL or another shared store",
+   "Cayu Cloud is currently invite-only and optional; the experimental OpenAI subscription provider is for local development only"
+  ],
+  "license": "Apache-2.0",
+  "category": "agent runtime framework",
+  "keywords": [
+   "agent framework",
+   "python agent runtime",
+   "long-running agents",
+   "durable agent sessions",
+   "autonomous agents",
+   "agent harness",
+   "human approval for agent actions",
+   "approval gating",
+   "spend cap",
+   "budget limit for llm",
+   "resume agent after restart",
+   "crash recovery",
+   "task scheduling",
+   "background agent tasks",
+   "multi-agent collaboration",
+   "subagents",
+   "claude code adapter",
+   "codex adapter",
+   "external agent runs",
+   "mcp tools",
+   "llm provider adapters",
+   "openai anthropic bedrock vertex",
+   "sqlite session store",
+   "postgresql session store",
+   "fastapi agent server",
+   "developer dashboard",
+   "agent evals",
+   "sandboxed code execution",
+   "build an ai agent in python",
+   "keep agent running across deploys",
+   "llm agent orchestration",
+   "tool policy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15312,
+  "output": 1483
+ },
+ "generated": "2026-10-29"
+}

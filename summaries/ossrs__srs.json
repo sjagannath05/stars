@@ -1,0 +1,85 @@
+{
+ "id": "ossrs/srs",
+ "repo": "ossrs/srs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "SRS - A simple, high efficiency and real-time video server, supports RTMP, WebRTC, HLS, HTTP-FLV and SRT. (Source Code) MIT Docker/C++"
+  }
+ ],
+ "summary": {
+  "one_liner": "SRS (Simple Realtime Server) is an open-source, MIT-licensed live media server that handles RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181 streams.",
+  "what_it_does": "The README describes SRS as a high-performance real-time media server that accepts and delivers RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181 media. It names support for Linux and macOS across several CPU architectures (x86_64, ARMv7, AArch64, Apple M1, RISC-V, LoongArch, MIPS) and a native Windows x64 build. Codecs listed include H.264, H.265, AV1, VP9, AAC, Opus and G.711. The README points to separate documents for features, architecture, performance, ports, HTTP APIs, DVR and transcoding, and it covers a protocol-conversion path between RTMP and WebRTC. Usage is shown with a Docker image, and streaming is demonstrated with FFmpeg or OBS to an rtmp:// URL, with playback in VLC or an HTML5 player.",
+  "use_cases": [
+   "live stream broadcasting from OBS or FFmpeg",
+   "low-latency WebRTC streaming",
+   "converting RTMP to WebRTC or HLS",
+   "serving HTTP-FLV or HLS to web players",
+   "SRT contribution feeds",
+   "self-hosted live video server"
+  ],
+  "how_to_run": [
+   "docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp ossrs/srs:6",
+   "ffmpeg -re -i ./doc/source.flv -c copy -f flv -y rtmp://localhost/live/livestream"
+  ],
+  "stack": [
+   "C++",
+   "Docker",
+   "State Threads (ST)",
+   "FFmpeg"
+  ],
+  "notable": [
+   "Supports many protocols in one server: RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181",
+   "Runs on Linux, macOS and native Windows x64 across many CPU architectures",
+   "Official Docker image for quick start",
+   "Documents an HTTP API, DVR, clustering and transcoding",
+   "Describes itself as AI-driven and offers an AI Agent guide for maintenance"
+  ],
+  "caveats": [
+   "The README names some features (clustering, transcoding, DVR, WebRTC conversion) only as topics documented elsewhere, so their details are not in this file",
+   "The README does not state platform-specific limits beyond the listed architectures"
+  ],
+  "license": "MIT",
+  "category": "live video streaming server",
+  "keywords": [
+   "srs",
+   "simple realtime server",
+   "rtmp server",
+   "webrtc server",
+   "hls server",
+   "http-flv",
+   "srt server",
+   "mpeg-dash",
+   "gb28181",
+   "live streaming server",
+   "video streaming server",
+   "self-hosted live streaming",
+   "stream from obs",
+   "ffmpeg rtmp streaming",
+   "low latency streaming",
+   "media server",
+   "real-time video server",
+   "rtmp to webrtc",
+   "webrtc to rtmp",
+   "docker streaming server",
+   "c++ media server",
+   "h.264 h.265 streaming",
+   "wowza alternative",
+   "nginx-rtmp alternative",
+   "live broadcast server",
+   "stream video to web browser",
+   "ossrs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5873,
+  "output": 1294
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "ajhous44/cody",
+ "repo": "ajhous44/cody",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "Cody is a Python assistant that watches your project files and lets you ask natural-language questions about your codebase, answering with OpenAI models over a vector-embedding knowledge base.",
+  "what_it_does": "Cody monitors a project directory and its subdirectories with watchdog and rebuilds its knowledge base when files are saved. It collects the contents of text and JSON files, chunks them, and stores embeddings in a FAISS vector index using OpenAI Embeddings. Users ask questions in a terminal chat or by speech, and Cody answers using OpenAI language models with the retrieved code context. An ignore_list (set via the IGNORE_THESE variable) supports simple wildcard patterns to skip files and directories. The README says it prints token usage for each call.",
+  "use_cases": [
+   "Ask natural-language questions about an unfamiliar codebase",
+   "Keep a live searchable index of project code that updates on save",
+   "Query code by voice through speech input and text-to-speech output",
+   "Exclude virtual environments, caches, and dependency folders from indexing"
+  ],
+  "how_to_run": [
+   "Clone the repo",
+   "Optionally create a virtual environment and run: pip install -r requirements.txt",
+   "Rename the .local.env file to .env and replace YOUR_API_KEY_HERE with your OpenAI API key",
+   "Edit the IGNORE_THESE global variable at the top of the script to exclude large or irrelevant paths",
+   "Run: python cody.py and choose text chat or conversational (speech) mode when prompted"
+  ],
+  "stack": [
+   "Python",
+   "OpenAI API",
+   "LangChain (langchain-community, langchain_openai)",
+   "LiteLLM",
+   "FAISS",
+   "watchdog",
+   "speech_recognition",
+   "gTTS",
+   "pygame",
+   "python-dotenv"
+  ],
+  "notable": [
+   "Re-indexes files automatically on every save, so answers reflect current code",
+   "Local FAISS vector store with OpenAI embeddings for retrieval",
+   "Supports both terminal text chat and spoken question-and-answer",
+   "Wildcard-based ignore list for skipping folders, extensions, and sensitive files"
+  ],
+  "caveats": [
+   "Requires an OpenAI API key and incurs OpenAI usage costs; the README recommends setting a monthly spend limit",
+   "FAISS needs sufficient memory when many files are monitored",
+   "Only text and JSON files are collected into the knowledge base"
+  ],
+  "license": "unknown",
+  "category": "ai coding assistant",
+  "keywords": [
+   "codebase question answering",
+   "chat with my code",
+   "natural language code search",
+   "ai code assistant",
+   "rag over source code",
+   "vector embeddings",
+   "openai embeddings",
+   "faiss",
+   "langchain",
+   "litellm",
+   "watchdog file monitoring",
+   "speech recognition",
+   "text to speech",
+   "voice assistant for code",
+   "semantic code search",
+   "query my project files",
+   "ignore list wildcard",
+   "python cli assistant",
+   "code navigation tool",
+   "repository q&a",
+   "developer productivity",
+   "gtts",
+   "pygame",
+   "chunking documents",
+   "auto reindex on save",
+   "local knowledge base",
+   "understand unfamiliar codebase"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3440,
+  "output": 1132
+ },
+ "generated": "2026-10-29"
+}

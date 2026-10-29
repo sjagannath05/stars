@@ -1,0 +1,98 @@
+{
+ "id": "costajohnt/oss-autopilot",
+ "repo": "costajohnt/oss-autopilot",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Open Source Contribution & Maintenance",
+   "entry": "OSS Autopilot by John Costa - End-to-end open source contribution manager. Discovers contributable issues across GitHub, tracks PRs across multiple repos, diagnoses CI failures, and drafts maintainer responses. Great collection of skills and agents for GitHub contributors, plus a sleek dashboard, standalone CLI and MCP server."
+  }
+ ],
+ "summary": {
+  "one_liner": "OSS Autopilot is a Claude Code plugin, MCP server, and standalone CLI that tracks your open GitHub pull requests, flags those needing your attention, and helps draft replies and fixes for your approval.",
+  "what_it_does": "It fetches every open PR you authored on GitHub and classifies each as needing action (failing CI, changes requested, unanswered maintainer comment, merge conflict, incomplete checklist) or waiting on a maintainer. Agents can draft maintainer replies, diagnose CI failures, and prepare rebases, but each push or comment requires your explicit approval. It also searches for contributable issues matched to your languages and labels, vets candidates (claimed status, linked PRs, maintainer responsiveness), and scores repos by your history and health. An unattended overnight mode prepares fix branches in local git worktrees and writes a morning report. A local loopback-only dashboard and a --json CLI output are included.",
+  "use_cases": [
+   "track stale open pull requests across many projects",
+   "draft replies to maintainer review feedback",
+   "diagnose failing CI on my contribution branches",
+   "find good first issues matching my languages",
+   "prepare overnight fix branches for pending PRs",
+   "check my PR status from a script or MCP client"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add costajohnt/oss-autopilot",
+   "/plugin install oss-autopilot@oss-autopilot",
+   "/setup-oss (after restarting Claude Code)",
+   "npx @oss-autopilot/core@latest init",
+   "npx @oss-autopilot/core@latest daily",
+   "npx @oss-autopilot/core@latest dashboard serve"
+  ],
+  "stack": [
+   "Node.js 22+",
+   "TypeScript",
+   "GitHub CLI (gh) or GITHUB_TOKEN",
+   "Claude Code plugin",
+   "MCP server",
+   "npm / pnpm"
+  ],
+  "notable": [
+   "Approval gate: nothing is pushed or posted until you approve that specific action",
+   "Overnight mode runs unattended with a tool allowlist and deny list blocking git push and gh writes",
+   "Classification logic is in tested TypeScript; the model handles only language tasks",
+   "One core shared by plugin, MCP server (30 tools), CLI, and dashboard",
+   "Text from GitHub is fenced and labeled as untrusted before agents see it"
+  ],
+  "caveats": [
+   "GitHub only; no GitLab, Bitbucket, or other forges",
+   "Overnight deny list is not a sandbox; test suites run with your credentials",
+   "Overnight scheduling is macOS only out of the box; Windows is untested",
+   "Search returns at most 1,000 results per query",
+   "Single user only; no team views or shared state"
+  ],
+  "license": "MIT",
+  "category": "open source contribution management",
+  "keywords": [
+   "pull request tracker",
+   "open source contribution",
+   "github pr monitor",
+   "stale pull requests",
+   "ci failure diagnosis",
+   "claude code plugin",
+   "mcp server",
+   "model context protocol",
+   "cli tool",
+   "issue discovery",
+   "good first issue finder",
+   "maintainer feedback drafts",
+   "pr review replies",
+   "overnight automation",
+   "git worktree",
+   "rebase helper",
+   "local dashboard",
+   "github cli",
+   "typescript",
+   "node.js",
+   "find issues to contribute to",
+   "keep track of my prs",
+   "share status with my team",
+   "daily digest of my pull requests",
+   "automate contribution workflow",
+   "cursor mcp server",
+   "claude desktop integration",
+   "pr health check",
+   "contribution statistics",
+   "launchd schedule macos",
+   "open source maintainer tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6911,
+  "output": 1271
+ },
+ "generated": "2026-10-29"
+}

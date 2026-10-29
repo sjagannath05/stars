@@ -1,0 +1,93 @@
+{
+ "id": "seatsurfing/seatsurfing",
+ "repo": "seatsurfing/seatsurfing",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Booking and Scheduling",
+   "entry": "Seatsurfing - Webbased app to book seats, desks and rooms for offices. (Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Seatsurfing is a self-hostable web application that lets organization employees book seats, desks and rooms in an office.",
+  "what_it_does": "The repository contains the backend for Seatsurfing, including a REST API server written in Go. It also includes a User Self-Service Booking Web Interface, built as a Progressive Web Application that can be installed on mobile devices, and a separate Admin Web Interface. Both web frontends are TypeScript/React and share common TypeScript files. The Docker setup runs the server alongside a PostgreSQL database, with the Booking UI at /ui/search/ and the Admin UI at /ui/admin/. The README also mentions a Kubernetes deployment guide and an optional Plus Plugin for additional functionality, and lists Microsoft Teams and Atlassian Confluence (cloud-only) as integrations.",
+  "use_cases": [
+   "book desks in an office",
+   "reserve meeting rooms for employees",
+   "seat booking for hybrid work",
+   "self-hosted office space management",
+   "let staff find and reserve workspace"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the server (image ghcr.io/seatsurfing/backend) and a postgres:18 database service, as shown in the README",
+   "Set POSTGRES_URL, CRYPT_KEY, PUBLIC_SCHEME and PUBLIC_PORT environment variables on the server service",
+   "Run docker compose up",
+   "Open :8080/ui/admin/ and log in with the default admin account admin@seatsurfing.local, or set INIT_ORG_USER and INIT_ORG_PASS first",
+   "Refer to the Kubernetes documentation for cluster deployments",
+   "Set LISTEN_ADDR to :: for IPv6-only Docker/Podman environments if needed"
+  ],
+  "stack": [
+   "Go",
+   "TypeScript",
+   "React",
+   "Next.js",
+   "PostgreSQL",
+   "Docker"
+  ],
+  "notable": [
+   "Booking UI is a installable Progressive Web Application for mobile devices",
+   "Separate admin web interface alongside the user booking interface",
+   "Docker images published for amd64 and arm64",
+   "Optional Plus Plugin for extra self-hosted functionality",
+   "Hosted SaaS version also offered by the maintainers"
+  ],
+  "caveats": [
+   "The default admin credentials are published in the README, so they should be changed via INIT_ORG_USER and INIT_ORG_PASS",
+   "Confluence integration is cloud-only",
+   "Some functionality is reserved for the paid Plus Plugin or Professional plan"
+  ],
+  "license": "GPL 3.0",
+  "category": "booking and scheduling",
+  "keywords": [
+   "seat booking",
+   "desk booking",
+   "room booking",
+   "meeting room reservation",
+   "office space management",
+   "hot desking",
+   "workspace booking",
+   "coworking booking",
+   "self-hosted booking",
+   "reservation system",
+   "booking app",
+   "go backend",
+   "react admin ui",
+   "progressive web app",
+   "pwa",
+   "postgresql",
+   "docker compose",
+   "kubernetes",
+   "docker",
+   "gpl-3.0",
+   "open source alternative to room booking software",
+   "share office desks with my team",
+   "book a desk for hybrid work",
+   "reserve conference rooms",
+   "employee seat planning",
+   "microsoft teams integration",
+   "confluence integration",
+   "rest api",
+   "self hosted office booking"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2700,
+  "output": 1244
+ },
+ "generated": "2026-10-29"
+}

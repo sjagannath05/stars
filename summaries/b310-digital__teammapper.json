@@ -1,0 +1,95 @@
+{
+ "id": "b310-digital/teammapper",
+ "repo": "b310-digital/teammapper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Knowledge Management Tools",
+   "entry": "TeamMapper - Host and create your own mindmaps. Share your mindmap sessions with your team and collaborate live on mindmaps. (Demo) MIT Docker/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "TeamMapper is a self-hostable mindmapping web app with live, websocket-based shared sessions so teams can edit the same mindmap together.",
+  "what_it_does": "The README describes a Node.js/Angular-style app with a PostgreSQL backend that lets users create and customize mindmaps with images, colors, font properties and links on nodes. Mindmaps can be shared by QR code or URL, with either view-only or modification invites, and collaborated on live over websockets. Import and export is listed for JSON, Mermaid, SVG, PDF and PNG. Maps are deleted after 30 days by default for GDPR reasons, and redo/undo and keyboard shortcuts are included. Optional feature flags add pictograms (via ARASAAC proxy routes), AI mindmap generation, and arrows between nodes. It is deployed with Docker Compose, and a prepared image is published at ghcr.io/b310-digital/teammapper.",
+  "use_cases": [
+   "self-hosted mindmapping for a team",
+   "live collaborative brainstorming sessions",
+   "workshop idea collection and structuring",
+   "sharing mindmaps via link or QR code",
+   "exporting mindmaps to SVG, PDF, PNG or Mermaid",
+   "replacing the discontinued Mindmapp"
+  ],
+  "how_to_run": [
+   "docker pull ghcr.io/b310-digital/teammapper:latest",
+   "Create docker-compose.yml with app_prod and postgres_prod services, set POSTGRES_PASSWORD, then run: docker compose up -d",
+   "Visit localhost:80",
+   "Production: cp .env.default .env.prod, adjust settings, then docker compose --file docker-compose-prod.yml --env-file .env.prod up -d --build --force-recreate"
+  ],
+  "stack": [
+   "Node.js 24.11.1 or later",
+   "pnpm",
+   "TypeScript",
+   "Angular",
+   "NestJS",
+   "PostgreSQL 12",
+   "TypeORM",
+   "Docker Compose",
+   "D3",
+   "DOMPurify"
+  ],
+  "notable": [
+   "Shared mindmap sessions over websockets, unlike the discontinued Mindmapp it is based on",
+   "Invites can be view-only or allow modification",
+   "Maps auto-delete after 30 days by default for GDPR compliance",
+   "Optional AI mindmap generation and ARASAAC pictogram integration behind feature flags",
+   "Migration tooling to move inline base64 node images into dedicated image tables"
+  ],
+  "caveats": [
+   "Pictogram feature must be enabled in the JSON config before build time",
+   "Database variables in .env.prod have no effect once the Docker volume is initialized; the database must then be set up manually",
+   "Pictograms are licensed CC BY-NC-SA from ARASAAC, which the README notes"
+  ],
+  "license": "MIT",
+  "category": "collaborative mindmapping",
+  "keywords": [
+   "mindmap",
+   "mind map",
+   "mindmapping",
+   "collaborative mindmap",
+   "realtime collaboration",
+   "websockets",
+   "self-hosted mindmap",
+   "brainstorming tool",
+   "team brainstorming",
+   "idea mapping",
+   "mindmapp alternative",
+   "mmp alternative",
+   "share mindmap with team",
+   "live collaborative whiteboard",
+   "docker mindmap",
+   "nodejs mindmap",
+   "angular",
+   "nestjs",
+   "postgresql",
+   "export mindmap to pdf",
+   "export mindmap svg",
+   "mermaid export",
+   "qr code share",
+   "gdpr mindmap deletion",
+   "pictograms",
+   "ai mindmap generation",
+   "workshop tool",
+   "knowledge management"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6236,
+  "output": 1329
+ },
+ "generated": "2026-10-29"
+}

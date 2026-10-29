@@ -1,0 +1,93 @@
+{
+ "id": "masakaai/codex-multiple-env",
+ "repo": "masakaai/codex-multiple-env",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Masaka for Codex - Local macOS and Linux CLI that keeps each ChatGPT account and workspace in an isolated CODEX_HOME, shows Codex usage windows, and switches future native Codex sessions without copying tokens. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "A local macOS/Linux CLI manager that keeps multiple ChatGPT account and workspace profiles isolated, each with its own CODEX_HOME, and switches which one the native Codex CLI uses.",
+  "what_it_does": "Masaka provides an interactive manager (`masaka`) and terminal subcommands to add, renew, delete, and select profiles, where each profile is one (ChatGPT account, workspace) pair with its own isolated CODEX_HOME. Codex itself handles the official browser login, token refresh, and credential file. The `/status` and `/usage` commands show per-profile login state, token activity, 5-hour and weekly quota windows, reset times, and available reset-card counts. A shell integration (`eval \"$(masaka shell-init)\"`) makes ordinary `codex` commands launch the selected profile. An optional Proxy mode (Apple Silicon macOS, via `/onboarding`) runs a local launchd daemon so `/use` and automatic switching can route the next request of a running client to another account without interrupting in-flight responses. Automatic switching, priority ordering, and proxy on/off are also available.",
+  "use_cases": [
+   "Keep personal and business ChatGPT workspaces signed in at once",
+   "Switch between multiple Codex accounts without logging out",
+   "Check quota windows and reset times across several ChatGPT accounts",
+   "Route Codex requests to whichever account has spare capacity",
+   "Renew one Codex login without affecting other profiles"
+  ],
+  "how_to_run": [
+   "npm install -g @masakaai/codex-multiple-env",
+   "masaka doctor",
+   "masaka",
+   "echo 'eval \"$(masaka shell-init)\"' >> ~/.zshrc",
+   "eval \"$(masaka shell-init)\""
+  ],
+  "stack": [
+   "Node.js 22+",
+   "Python 3",
+   "Official Codex CLI",
+   "npm",
+   "launchd (optional Proxy daemon on macOS)",
+   "CodexMulti proxy/ runtime v0.2.15 (MIT, optional)"
+  ],
+  "notable": [
+   "Each profile gets its own isolated CODEX_HOME; the global ~/.codex/auth.json is never copied or replaced",
+   "Proxy mode lets /use switch the account for the next request without interrupting in-flight responses",
+   "Automatic switching with a 5% five-hour-window threshold and Pro-first priority ordering",
+   "Shell integration wraps the real codex binary and blocks codex login/logout overrides",
+   "Profile credentials stored with 0700/0600 permissions; deletion moves to a recoverable trash"
+  ],
+  "caveats": [
+   "Proxy hot switching is only available on Apple Silicon macOS per the README; direct mode is the general path and changes only future Codex processes",
+   "Direct mode allows one managed session per profile; Proxy clients must be restarted once after setup and when turning proxy off",
+   "Credentials are stored as plain auth.json files by design (no extra encryption layer), so they must be protected like passwords",
+   "Not an official OpenAI product; requires an existing official Codex CLI install"
+  ],
+  "license": "Apache-2.0",
+  "category": "codex account management",
+  "keywords": [
+   "codex cli",
+   "chatgpt accounts",
+   "multiple accounts",
+   "account switcher",
+   "profile manager",
+   "codex_home",
+   "workspace switching",
+   "rate limit monitoring",
+   "quota windows",
+   "usage tracking",
+   "local proxy",
+   "launchd daemon",
+   "shell integration",
+   "zsh bash wrapper",
+   "oauth token refresh",
+   "credential isolation",
+   "npm cli",
+   "node.js cli",
+   "macos cli",
+   "linux cli",
+   "alternative to manual codex logout login",
+   "switch chatgpt workspace",
+   "manage several codex logins",
+   "see codex usage limits",
+   "use another account when quota runs out",
+   "open source codex tool",
+   "apache-2.0 tool",
+   "terminal account manager",
+   "codex profile switching"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5479,
+  "output": 1434
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,110 @@
+{
+ "id": "emberstack/kubernetes-reflector",
+ "repo": "emberstack/kubernetes-reflector",
+ "kind": "star",
+ "description": "Custom Kubernetes controller that can be used to replicate secrets, configmaps and certificates.",
+ "topics": [
+  "cert-manager",
+  "certificate",
+  "configmap",
+  "controller",
+  "k8s",
+  "kubectl",
+  "kubernetes",
+  "kubernetes-cluster",
+  "kubernetes-controller",
+  "secrets"
+ ],
+ "language": "C#",
+ "stars": 1690,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Reflector is a Kubernetes controller that mirrors Secrets and ConfigMaps (including cert-manager certificate secrets) from a source object into other namespaces and keeps the copies in sync.",
+  "what_it_does": "Reflector watches Secrets and ConfigMaps for changes and copies their data into mirror objects in the same or other namespaces. A source object opts in with annotations that control which namespaces may reflect from it, by namespace name patterns or label selectors. A mirror points to its source with a \"namespace/name\" annotation. Reflector can also create mirrors automatically in matching namespaces, using the same name, and it deletes automatic mirrors when the source is removed or the namespace no longer matches. For Secrets it copies `data`; for ConfigMaps it copies `data` and `binaryData`. The README also shows how to annotate cert-manager Certificate and Ingress resources so the secrets they generate get mirrored. It is deployed with a Helm chart or a manual reflector.yaml manifest, and the README includes a Helm values table covering logging, watcher timeout, excluded namespaces, and TLS verification.",
+  "use_cases": [
+   "Copy a wildcard TLS certificate secret into every namespace",
+   "Share a configmap across multiple Kubernetes namespaces",
+   "Mirror cert-manager certificate secrets to other namespaces",
+   "Automatically create secret copies in new namespaces",
+   "Restrict which namespaces may read a given secret by label selector"
+  ],
+  "how_to_run": [
+   "helm upgrade --install reflector oci://ghcr.io/emberstack/helm-charts/reflector",
+   "helm repo add emberstack",
+   "helm repo update",
+   "helm upgrade --install reflector emberstack/reflector",
+   "kubectl -n kube-system apply -f reflector.yaml (manual deployment file from the GitHub Releases page)"
+  ],
+  "stack": [
+   "C#",
+   ".NET",
+   "Kubernetes",
+   "Helm",
+   "OpenSSL"
+  ],
+  "notable": [
+   "Namespace allow-lists support glob-like patterns and label selectors, and a namespace matches if either condition is met",
+   "Automatic mirror creation with namespace filtering; automatic mirrors are removed when the source or permission is removed",
+   "Integrates with cert-manager via secretTemplate on Certificate and the cert-manager.io/secret-template annotation on Ingress",
+   "Multi-architecture images for amd64, arm and arm64",
+   "Documents a fix for FIPS-enabled nodes using OPENSSL_FORCE_FIPS_MODE=0"
+  ],
+  "caveats": [
+   "Requires Kubernetes 1.22+ and Helm 3.8+ if deployed with Helm",
+   "On FIPS-mode nodes the image crashes unless OPENSSL_FORCE_FIPS_MODE=0 is set, and that setting is not FIPS-validated",
+   "Conflicting resources with the same name in a target namespace are skipped for auto-mirroring and logged as warnings"
+  ],
+  "license": "MIT",
+  "category": "kubernetes secret replication",
+  "keywords": [
+   "kubernetes",
+   "kubernetes controller",
+   "secret replication",
+   "configmap replication",
+   "mirror secrets",
+   "copy secrets across namespaces",
+   "share secrets between namespaces",
+   "reflect secrets",
+   "k8s addon",
+   "cert-manager",
+   "certificate mirroring",
+   "tls certificate copy",
+   "wildcard certificate sharing",
+   "kubectl",
+   "helm chart",
+   "helm",
+   "namespace selector",
+   "label selector",
+   "auto mirror",
+   "configmap sync",
+   "secret sync",
+   "kubernetes-reflector",
+   "emberstack",
+   "csharp controller",
+   "dotnet",
+   "ingress certificate secret",
+   "fips openssl",
+   "multi-arch arm64",
+   "kube-system addon",
+   "share config across namespaces"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5193,
+  "output": 1416
+ },
+ "generated": "2026-10-29"
+}

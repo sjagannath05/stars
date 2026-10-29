@@ -1,0 +1,95 @@
+{
+ "id": "psi-4ward/psitransfer",
+ "repo": "psi-4ward/psitransfer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "PsiTransfer - Simple file sharing solution with robust up-/download-resume and password protection. BSD-2-Clause Nodejs"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "File Sharing",
+   "entry": "PsiTransfer | Simple file sharing with resumable uploads and expiry"
+  }
+ ],
+ "summary": {
+  "one_liner": "PsiTransfer is a self-hosted, open source file sharing web app with resumable uploads and downloads, optional password protection, and expiring upload buckets.",
+  "what_it_does": "The README describes PsiTransfer as a simple self-hosted alternative to paid file-sharing services like Dropbox and WeTransfer. It needs no accounts or logins and offers a responsive interface with a Vue-based frontend. Uploads and downloads are resumable via tus.io, and it supports very large files through streams. Users can set an expiry time on an upload bucket, enable one-time downloads, and download all files as a zip or tar.gz archive. An /admin page lists bucket information once an admin password is set. Buckets can be given explicit named IDs through a query parameter.",
+  "use_cases": [
+   "self-hosted file sharing",
+   "sending large files to others",
+   "replacing WeTransfer or Dropbox links",
+   "temporary file drop with expiry",
+   "one-time file downloads",
+   "resumable large uploads"
+  ],
+  "how_to_run": [
+   "docker run -p 0.0.0.0:3000:3000 -e PSITRANSFER_ADMIN_PASS=secret -v $PWD/data:/data psitrax/psitransfer",
+   "sudo chown -R 1000 $PWD/data",
+   "NODE_ENV=production npm install",
+   "npm start"
+  ],
+  "stack": [
+   "Node.js (>=12 per README)",
+   "Vue",
+   "pug",
+   "tus.io",
+   "AES"
+  ],
+  "notable": [
+   "No accounts or logins; simple self-hosted deployment via Docker or Node",
+   "Resumable up- and downloads using the tus.io protocol",
+   "Password-protected download lists using AES",
+   "One-time downloads and bucket expiry times",
+   "Download all files as zip or tar.gz"
+  ],
+  "caveats": [
+   "No end-to-end payload encryption, per the README's side notes",
+   "Download-all-as-ZIP does not support resuming",
+   "Admin page is disabled until adminPass is configured"
+  ],
+  "license": "BSD-2-Clause",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "self-hosted file sharing",
+   "file transfer",
+   "send large files",
+   "resumable upload",
+   "resumable download",
+   "tus",
+   "tus.io",
+   "wetransfer alternative",
+   "dropbox alternative",
+   "password protected downloads",
+   "file expiry",
+   "one-time download",
+   "nodejs file server",
+   "vue frontend",
+   "docker file sharing",
+   "share files with my team",
+   "temporary file upload",
+   "zip download all files",
+   "aes encryption",
+   "drag and drop upload",
+   "psitransfer",
+   "psitrax",
+   "large file transfer",
+   "file drop",
+   "upload bucket",
+   "admin dashboard",
+   "bsd license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2552,
+  "output": 1045
+ },
+ "generated": "2026-10-29"
+}

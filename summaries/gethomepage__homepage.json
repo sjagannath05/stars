@@ -1,0 +1,100 @@
+{
+ "id": "gethomepage/homepage",
+ "repo": "gethomepage/homepage",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Homepage by gethomepage - Highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations. GPL-3.0 Docker/Nodejs"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Dashboards",
+   "entry": "Homepage | Highly customisable homepage with service integrations and Docker auto-discovery"
+  }
+ ],
+ "summary": {
+  "one_liner": "Homepage is a self-hosted application dashboard and startpage with YAML configuration, Docker label-based service discovery, and integrations for over 100 services.",
+  "what_it_does": "Provides a customizable web dashboard that lists your services, bookmarks, and information widgets such as weather, time, date, search, and glances. Services are configured through YAML files or discovered automatically from Docker container labels, and Docker container status and stats can be shown. Service widgets pull data from integrations with many self-hosted apps, including the *arr apps, Plex, Jellyfin, Transmission, and qBittorrent. The README says API requests to backend services are proxied so API keys stay hidden. It supports custom themes, CSS and JS, layouts, and translations into over 40 languages. Images are built for AMD64 and ARM64, and it can also be run from source with pnpm.",
+  "use_cases": [
+   "self-hosted application dashboard",
+   "startpage with service links and bookmarks",
+   "monitoring Docker container status",
+   "showing *arr and media server stats on one page",
+   "home page with weather and system info widgets",
+   "auto-listing services from Docker labels"
+  ],
+  "how_to_run": [
+   "docker compose: use image ghcr.io/gethomepage/homepage:latest with HOMEPAGE_ALLOWED_HOSTS set, port 3000:3000, and a config volume mounted at /app/config",
+   "docker run --name homepage -e HOMEPAGE_ALLOWED_HOSTS=gethomepage.dev -p 3000:3000 -v /path/to/config:/app/config ghcr.io/gethomepage/homepage:latest",
+   "git clone the repository",
+   "pnpm install",
+   "pnpm build",
+   "HOMEPAGE_ALLOWED_HOSTS=gethomepage.dev:1234 pnpm start"
+  ],
+  "stack": [
+   "Node.js",
+   "Next.js",
+   "pnpm",
+   "Docker",
+   "Zensical (documentation)",
+   "uv"
+  ],
+  "notable": [
+   "Automatic service discovery from Docker container labels",
+   "API requests to backend services are proxied so keys stay hidden",
+   "Over 100 service integrations, including *arr apps and media servers",
+   "Optional built-in OIDC login or simple password login (opt-in)",
+   "Translations into over 40 languages"
+  ],
+  "caveats": [
+   "README says that if exposed to untrusted networks it must sit behind a reverse proxy and/or VPN that enforces authentication, TLS, and Host header validation",
+   "Docker integration needs the Docker socket mounted, which the README marks as optional",
+   "Configuration details are on the external documentation site rather than in the README"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "application dashboard",
+   "startpage",
+   "homepage",
+   "self-hosted dashboard",
+   "service dashboard",
+   "docker dashboard",
+   "docker label discovery",
+   "docker auto-discovery",
+   "service integrations",
+   "service widgets",
+   "homelab dashboard",
+   "homelab start page",
+   "bookmarks page",
+   "link dashboard",
+   "weather widget",
+   "arr dashboard",
+   "sonarr radarr dashboard",
+   "plex jellyfin widgets",
+   "container status monitor",
+   "yaml configured dashboard",
+   "reverse proxy dashboard",
+   "nextjs dashboard",
+   "nodejs dashboard",
+   "pnpm",
+   "i18n dashboard",
+   "multi-language dashboard",
+   "custom css dashboard",
+   "glances widget",
+   "show my services on one page",
+   "alternative to dashboard apps"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3522,
+  "output": 1310
+ },
+ "generated": "2026-10-29"
+}

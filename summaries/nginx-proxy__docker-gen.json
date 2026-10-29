@@ -1,0 +1,97 @@
+{
+ "id": "nginx-proxy/docker-gen",
+ "repo": "nginx-proxy/docker-gen",
+ "kind": "star",
+ "description": "Generate files from docker container meta-data",
+ "topics": [
+  "docker",
+  "go"
+ ],
+ "language": "Go",
+ "stars": 4634,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "docker-gen is a command-line file generator that renders Go text/templates using Docker container metadata, commonly used to build reverse proxy configs, logging configs, and service discovery files.",
+  "category": "docker config generation",
+  "keywords": [
+   "docker-gen",
+   "template renderer",
+   "container metadata",
+   "go text/template",
+   "sprig functions",
+   "reverse proxy config generator",
+   "nginx config from docker",
+   "haproxy config",
+   "fluentd config",
+   "logrotate",
+   "service discovery",
+   "etcd registration",
+   "docker events watch",
+   "docker socket",
+   "auto reload nginx",
+   "notify container signal",
+   "generate files from containers",
+   "dynamic config generation",
+   "docker label templates",
+   "render config on container start",
+   "go",
+   "golang",
+   "docker api",
+   "nginx-proxy companion",
+   "file generator",
+   "template engine",
+   "docker tooling"
+  ],
+  "what_it_does": "\"Renders templates using metadata from running Docker containers, such as IDs, names, networks, addresses, ports, labels, environment variables, volumes, and health state. It can run once and write to a file or stdout, or use -watch to regenerate output when container start, stop, die, or health_status events occur. After regenerating, it can run a shell command (-notify) or send a signal such as HUP to containers (-notify-sighup, -notify-container, -notify-filter). Containers can be filtered with -container-filter, -only-exposed, -only-published, or -include-stopped. The README documents a large set of template helpers, including grouping, filtering, sorting, YAML and JSON conversion, and nginx-specific quoting and HSTS validation. Configuration can also be supplied through an INI-style config file with multiple templates.\"",
+  "use_cases": [
+   "generate nginx reverse proxy config from running containers",
+   "regenerate config and reload nginx when containers change",
+   "produce fluentd or logstash config from container logs",
+   "generate logrotate config for container JSON logs",
+   "register containers in etcd via generated script",
+   "run docker-gen in a separate container alongside nginx"
+  ],
+  "how_to_run": [
+   "Download a docker-gen release binary, extract it, and place it on your PATH",
+   "docker-gen [options] template [dest]",
+   "docker-gen -only-published -watch -notify \"/etc/init.d/nginx reload\" templates/nginx.tmpl /etc/nginx/sites-enabled/default",
+   "docker run -d --name nginx-gen --volumes-from nginx -v /var/run/docker.sock:/tmp/docker.sock:rw -v /tmp/templates:/etc/docker-gen/templates -t nginxproxy/docker-gen -notify-sighup nginx -watch -only-exposed /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf",
+   "make get-deps",
+   "make"
+  ],
+  "stack": [
+   "Go (1.26 or newer, Go Modules)",
+   "Go text/template",
+   "Sprig v3",
+   "Docker API"
+  ],
+  "notable": [
+   "Runs as a host binary, bundled inside another container, or as a standalone companion container sharing volumes with the target service",
+   "Template helpers for grouping, filtering, and sorting containers by labels or nested fields (groupBy, whereLabelExists, sortObjectsByKeysAsc)",
+   "Deterministic ordering of Addresses and Networks so output stays stable across regenerations",
+   "Config file mode supports multiple templates executed in order and per-template notify container settings",
+   "Maintained by ZeroSSL according to the README"
+  ],
+  "caveats": [
+   "Requires access to the Docker socket or API endpoint, which is a privilege concern if exposed to other containers",
+   "Development build requires Go 1.26 or newer",
+   "Template authoring requires knowledge of Go text/template syntax and the emitted struct layout"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10156,
+  "output": 1403
+ },
+ "generated": "2026-10-29"
+}

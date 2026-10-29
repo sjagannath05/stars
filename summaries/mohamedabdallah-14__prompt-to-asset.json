@@ -1,0 +1,100 @@
+{
+ "id": "mohamedabdallah-14/prompt-to-asset",
+ "repo": "MohamedAbdallah-14/prompt-to-asset",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Image Generation Tools",
+   "entry": "prompt-to-asset - MCP server that routes image generation prompts across 30+ models (Flux, DALL-E, Stable Diffusion, etc). Zero API key required for first run via free tiers. npm install -g prompt-to-asset."
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server and CLI (p2a) that turns a single brief into developer image assets such as app icons, favicons, OG images, logos, and splash screens, routing generation across free and paid image-model providers.",
+  "what_it_does": "Takes a one-line brief and classifies it, then routes it to one of three modes: inline SVG authored by the host LLM, a paste-into-web-UI prompt that is later ingested, or a direct API call to a routed provider. Provider choice favors free routes first (Cloudflare Workers AI, NVIDIA NIM, HF Inference, Stable Horde, Pollinations) and lists optional paid providers as fallbacks. Outputs go through matting, vectorizing, and validation steps such as dimension, alpha, and palette checks. An offline command fans a 1024px master PNG out into iOS AppIconSet, Android adaptive icons, PWA icons, favicon bundles, visionOS parallax scaffolding, and Flutter launcher config. The README also describes sprite-sheet packing and 9-slice config generation for game engines, plus brand.json scaffolding. It exposes 25 MCP tools for assistants such as Claude Code, Cursor, and VS Code, and a matching p2a CLI.",
+  "use_cases": [
+   "generate app icons and favicons for a web or mobile project",
+   "create a logo or transparent mark from a text brief",
+   "fan a master image out to iOS, Android, and PWA icon sizes",
+   "produce OG social images at 1200x630",
+   "make splash screens and launch images",
+   "pack game sprites into atlases and make 9-slice configs"
+  ],
+  "how_to_run": [
+   "npm i -g prompt-to-asset",
+   "p2a doctor",
+   "p2a pick",
+   "claude mcp add prompt-to-asset -- p2a",
+   "npx prompt-to-asset export logo.png --platforms ios,android,pwa,favicon"
+  ],
+  "stack": [
+   "Node.js >= 20.11",
+   "TypeScript",
+   "MCP (Model Context Protocol) stdio server",
+   "Satori",
+   "@resvg/resvg-js",
+   "vtracer",
+   "potrace",
+   "SVGO",
+   "vitest"
+  ],
+  "notable": [
+   "Free-first routing across Cloudflare Workers AI, NVIDIA NIM, HF Inference, Stable Horde, and Pollinations, with a 'Never' column that rules out model/task mismatches",
+   "Three execution modes (inline_svg, external_prompt_only, api) that the README says can all finish at $0",
+   "Offline platform fan-out to iOS, Android, PWA, visionOS, Flutter, and favicon outputs with no network calls",
+   "Tier-0 validation (alpha presence, checkerboard detection, palette drift, WCAG contrast, OCR on wordmarks) before output ships",
+   "Security section describes env-only API keys, path allow-listing, SVG XSS sanitization, and a per-run spend cap"
+  ],
+  "caveats": [
+   "Free tiers have quotas and caps, such as 10k neurons/day on Cloudflare and 1k requests/month on NVIDIA NIM; Stable Horde can have minutes of queue time",
+   "Several routes are paste-only (Midjourney, Firefly, Krea, Google AI Studio UI) and need manual download and ingest",
+   "Native dependencies for some features need doctor --fix, and the README notes WSL2 for that on Windows"
+  ],
+  "license": "MIT",
+  "category": "ai image generation",
+  "keywords": [
+   "image generation",
+   "mcp server",
+   "model context protocol",
+   "app icon generator",
+   "favicon generator",
+   "og image generator",
+   "logo generator",
+   "ios appiconset",
+   "android adaptive icon",
+   "pwa icons",
+   "flux",
+   "stable diffusion",
+   "dall-e",
+   "pollinations",
+   "cloudflare workers ai",
+   "nvidia nim",
+   "hugging face inference",
+   "stable horde",
+   "free image generation",
+   "zero api key",
+   "svg generation",
+   "vectorize png to svg",
+   "background removal",
+   "sprite sheet",
+   "nine slice",
+   "brand.json",
+   "claude code tool",
+   "cursor mcp",
+   "npm cli image tool",
+   "generate app icons from prompt",
+   "make a logo for my app",
+   "resize icon for all platforms",
+   "typescript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13331,
+  "output": 1488
+ },
+ "generated": "2026-10-29"
+}

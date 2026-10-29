@@ -1,0 +1,117 @@
+{
+ "id": "probelabs/probe",
+ "repo": "probelabs/probe",
+ "kind": "star",
+ "description": "AI-friendly semantic code search engine for large codebases. Combines ripgrep speed with tree-sitter AST parsing. Powers AI coding assistants with precise, context-aware code understanding.",
+ "topics": [
+  "ai",
+  "ai-coder",
+  "ast",
+  "cli",
+  "code-search",
+  "mcp",
+  "nodejs-sdk",
+  "ripgrep",
+  "rust",
+  "search-engine",
+  "semantic-search",
+  "tree-sitter"
+ ],
+ "language": "Rust",
+ "stars": 734,
+ "license": "Apache-2.0",
+ "homepage": "https://probelabs.com/probe",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Probe is a local, AST-aware code search and context engine (Rust, with an npm CLI and Node.js SDK) that pairs ripgrep-style speed with tree-sitter parsing and includes a built-in code-reasoning agent.",
+  "what_it_does": "Probe searches codebases using Elasticsearch-style boolean queries (AND, OR, NOT, phrases, ext:/lang:/file:/dir: filters) and returns complete functions, classes, or structs rather than line fragments. It supports AST pattern matching via a query command with metavariables like $NAME, symbol listing per file, and extraction of code blocks by line number or symbol name. Results can be ranked with BM25, TF-IDF, or hybrid rerankers and trimmed with a token budget and session dedup. It runs without indexing or embedding models, and the README says search is fully local. It can be used as an MCP server (agent mode or raw search/query/extract/symbols tools), as a direct CLI, or from Node.js via an agent class and functions, with a Vercel AI SDK tool wrapper. A built-in agent supports multiple LLM providers and an optional LLM Script DSL for multi-step plans.",
+  "use_cases": [
+   "give an AI coding assistant precise context from a large codebase",
+   "find all implementations of a function or pattern by AST structure",
+   "answer questions about how a feature works in an unfamiliar repo",
+   "extract a complete function or class at a given line or symbol name",
+   "list symbols and their line numbers in source files",
+   "code review and onboarding with a codebase-aware agent"
+  ],
+  "how_to_run": [
+   "npm install -g @probelabs/probe",
+   "npx -y @probelabs/probe search \"authentication AND login\" ./src",
+   "npx -y @probelabs/probe extract src/main.rs:42",
+   "npx -y @probelabs/probe query \"fn $NAME($$$) -> Result\" --language rust",
+   "npx -y @probelabs/probe@latest agent \"How is authentication implemented?\"",
+   "Add to MCP config: {\"mcpServers\": {\"probe\": {\"command\": \"npx\", \"args\": [\"-y\", \"@probelabs/probe@latest\", \"mcp\"]}}}"
+  ],
+  "stack": [
+   "Rust",
+   "Node.js",
+   "tree-sitter",
+   "ripgrep",
+   "MCP (Model Context Protocol)",
+   "Vercel AI SDK",
+   "Anthropic, OpenAI, Google, Bedrock LLM providers",
+   "BERT reranking (optional)"
+  ],
+  "notable": [
+   "Tree-sitter AST parsing returns complete semantic blocks instead of chunks that split mid-function",
+   "No indexing or embedding service required; search runs locally and deterministically",
+   "Elasticsearch-style query syntax with file, extension, and language filters",
+   "Works as an MCP server with raw tools or a full built-in agent, and reuses Claude Code or Codex auth per the README",
+   "LLM Script: a sandboxed JavaScript DSL for multi-step search, extract, and LLM pipelines"
+  ],
+  "caveats": [
+   "Agent features need an LLM provider: either Claude Code or Codex auth, or your own API key such as GOOGLE_API_KEY or ANTHROPIC_API_KEY",
+   "Optional LSP and indexing features are documented separately and are not described in detail in the README",
+   "Language support is listed explicitly; other languages are not covered in the README table"
+  ],
+  "license": "Apache-2.0",
+  "category": "semantic code search",
+  "keywords": [
+   "code search",
+   "semantic search",
+   "ast search",
+   "tree-sitter",
+   "ripgrep",
+   "rust",
+   "mcp server",
+   "model context protocol",
+   "ai coding assistant",
+   "ai coder",
+   "code context engine",
+   "codebase question answering",
+   "structural code search",
+   "ast pattern matching",
+   "bm25 ranking",
+   "tf-idf",
+   "code extraction",
+   "symbol listing",
+   "node.js sdk",
+   "vercel ai sdk",
+   "cli code search",
+   "search large codebase",
+   "find function by pattern",
+   "help ai read my code",
+   "local code search no embeddings",
+   "grep alternative for code",
+   "boolean code query",
+   "llm agent for codebase",
+   "code review assistant",
+   "onboarding to a repo",
+   "offline code search"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7771,
+  "output": 1543
+ },
+ "generated": "2026-10-29"
+}

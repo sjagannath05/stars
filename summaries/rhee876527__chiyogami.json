@@ -1,0 +1,96 @@
+{
+ "id": "rhee876527/chiyogami",
+ "repo": "rhee876527/chiyogami",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "Chiyogami - Pastebin with API, client-side encryption, user accounts, syntax highlighting, markdown rendering, and more. (Demo) BSD-3-Clause Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Chiyogami is a self-hostable pastebin with a web UI and API, offering client-side encryption, expiring and private pastes, user accounts, and SQLite storage.",
+  "what_it_does": "Chiyogami lets users create text pastes through a web interface or a JSON/file upload API accessible from curl. Pastes can be public (listed and searchable), private or unlisted (reachable only by an unguessable link), and given custom expiry times such as 48h or \"Never\". Web-created pastes can be encrypted in the browser using the WebCrypto API, so the server does not store the password. The frontend renders syntax highlighting via HighlightJS and Markdown via Marked, and supports QR code sharing. Users can register accounts to manage their own pastes, and the server includes configurable rate limiting, soft-delete retention, and an endpoint reporting instance configuration. Data is kept in SQLite.",
+  "use_cases": [
+   "self-hosted pastebin for sharing code snippets",
+   "share text or files via a quick curl upload",
+   "temporary paste that expires automatically",
+   "private encrypted note sharing in a browser",
+   "pastebin with an API for developers",
+   "run a multi-user paste service with accounts"
+  ],
+  "how_to_run": [
+   "docker run -d -v \"$(pwd)/pastes:/pastes\" -p 127.0.0.1:8000:8000 --restart unless-stopped ghcr.io/rhee876527/chiyogami:latest",
+   "Alternatively, build the Docker image or use the docker-compose file in the repository",
+   "Portable Go binaries are provided in Releases: chiyogami-* (frontend and API) and chiyogami-standalone-* (API only)",
+   "Set SECRET_KEY (e.g. output of openssl rand -base64 32) for sessions"
+  ],
+  "stack": [
+   "Go",
+   "SQLite",
+   "TailwindCSS",
+   "DaisyUI",
+   "HighlightJS",
+   "Marked",
+   "Docker",
+   "WebCrypto API"
+  ],
+  "notable": [
+   "Client-side encryption in the web UI via WebCrypto, with no password stored on the server",
+   "Simple curl-based API for creating, fetching and deleting pastes, with configurable default expiry",
+   "Standalone binary variant that serves only the API unless a public frontend folder is present",
+   "Built-in rate limiting and optional complex password enforcement",
+   "Multi-arch builds listed for AMD64 and ARM64 on Windows (AMD64 only), Linux and macOS"
+  ],
+  "caveats": [
+   "Windows builds are AMD64 only",
+   "The /health endpoint can be abused if exposed publicly and should be protected, per the README",
+   "Web UI encryption is needed for full privacy; private links alone are described as less private"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "self-hosted pastebin",
+  "keywords": [
+   "pastebin",
+   "self-hosted pastebin",
+   "paste sharing",
+   "code snippet sharing",
+   "share code snippets",
+   "text sharing",
+   "client-side encryption",
+   "encrypted paste",
+   "webcrypto",
+   "paste expiry",
+   "expiring paste",
+   "private paste",
+   "unlisted paste",
+   "pastebin api",
+   "curl upload",
+   "rest api",
+   "go",
+   "golang",
+   "sqlite",
+   "docker",
+   "self-host",
+   "syntax highlighting",
+   "highlightjs",
+   "markdown rendering",
+   "user accounts",
+   "rate limiting",
+   "qr code sharing",
+   "share text with my team",
+   "temporary notes online",
+   "hastebin alternative",
+   "pastebin alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4020,
+  "output": 1298
+ },
+ "generated": "2026-10-29"
+}

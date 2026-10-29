@@ -1,0 +1,100 @@
+{
+ "id": "catoth/antragsgruen",
+ "repo": "CatoTH/antragsgruen",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Conference Management",
+   "entry": "motion.tools (Antragsgrün) - Manage motions and amendments for (political) conventions. (Demo, Source Code) AGPL-3.0 PHP/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Antragsgrün (motion.tools) is a self-hostable PHP web tool for NGOs and political parties to draft, submit, amend, and vote on motions and resolutions.",
+  "what_it_does": "Antragsgrün lets organisations collect motions, proposals and discussion papers online, run a structured amendment process, and draft resolutions collaboratively. It also supports online votings, speaking lists, and a \"currently debated\" widget for meetings. Motions and amendments can hold content in several languages, and readers get a language picker with fallback notices. Export options include PDF generation via TCPDF by default, with optional Weasyprint rendering. The README also covers a REST API with OpenAPI docs, Redis caching, OpenTelemetry, optional background jobs, 2FA and CAPTCHA for accounts, and a plugin system for themes and language variants.",
+  "use_cases": [
+   "Collect and discuss motions for a party convention",
+   "Run an amendment process for resolutions",
+   "Organize online votings during a meeting",
+   "Manage speaking lists at a conference",
+   "Draft party platforms collaboratively",
+   "Host multi-language motion consultations",
+   "Export motions and amendments to PDF"
+  ],
+  "how_to_run": [
+   "Option A (pre-bundled): install PHP 8.2+ (8.4 recommended), MySQL/MariaDB, and Apache or nginx; extract the downloaded package into the web folder and use the web-based installer.",
+   "Option B (Docker): cp .env.example .env",
+   "echo \"\\n# Application Secret\\nRANDOM_SEED=$(openssl rand -base64 32)\" >> .env",
+   "docker compose start",
+   "docker exec antragsgruen-web-1 /root/enable-installer.sh",
+   "Then open the site to run the web installer; the bundled docker-compose.yml pre-configures MariaDB."
+  ],
+  "stack": [
+   "PHP 8.2+ (8.4 recommended)",
+   "Yii2 framework",
+   "MySQL / MariaDB",
+   "Vue.js",
+   "SASS/SCSS",
+   "Vite",
+   "pnpm",
+   "Composer",
+   "TCPDF",
+   "Weasyprint (optional PDF rendering)",
+   "ImageMagick (optional)",
+   "Redis (optional caching)",
+   "RabbitMQ and Live Server (optional live updates)",
+   "Docker"
+  ],
+  "notable": [
+   "Multi-language content: motion and amendment text can be held in several languages at once, with fallback display for missing translations",
+   "Built-in accessibility goal of WCAG 2.0 AA and BITV2.0, with keyboard operation and Pa11y testing",
+   "Plugin architecture for custom themes, language variants, and automatic translation (a Claude API example is included)",
+   "Web-based installer and updater, plus per-user 2FA (TOTP) and configurable CAPTCHA for brute-force protection",
+   "Multisite mode and site manager for running many sites from one codebase"
+  ],
+  "caveats": [
+   "Requires a MySQL/MariaDB database and a PHP web server setup; the Docker path is the simplest route",
+   "Several features are optional and need separate setup: Weasyprint, ImageMagick, Redis, the RabbitMQ-based Live Server, and JWT keys",
+   "The README says the REST API does not yet cover all functionality and is still under development"
+  ],
+  "license": "AGPL-3.0",
+  "category": "conference motion management",
+  "keywords": [
+   "motion management",
+   "amendment tracking",
+   "political party tool",
+   "convention management",
+   "resolution drafting",
+   "online voting",
+   "speaking list",
+   "motions and amendments",
+   "antragsgrun",
+   "motion.tools",
+   "self-hosted voting tool",
+   "php web application",
+   "yii2",
+   "docker compose",
+   "mariadb",
+   "submit proposals online",
+   "collaborative drafting",
+   "multi-language motions",
+   "pdf export",
+   "wcag accessible",
+   "rest api",
+   "2fa login",
+   "ngo decision making",
+   "run a party convention online",
+   "amendment process for members",
+   "agm voting software"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13824,
+  "output": 1452
+ },
+ "generated": "2026-10-29"
+}

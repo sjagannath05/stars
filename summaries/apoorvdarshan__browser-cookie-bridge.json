@@ -1,0 +1,99 @@
+{
+ "id": "apoorvdarshan/browser-cookie-bridge",
+ "repo": "apoorvdarshan/browser-cookie-bridge",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🌐 Browser (18)",
+   "entry": "Browser Cookie Bridge - Transfer signed-in sessions between local Chromium browsers and ChatGPT Codex on macOS."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS app (SwiftUI, menu-bar helper) that copies signed-in browser cookie sessions between local Chromium browsers, into ChatGPT Codex or Cursor's built-in browser, into an encrypted Grok Bot transfer file, or optionally to a Browserless Cloud authenticated profile.",
+  "what_it_does": "Reads cookies from a selected local Chromium-based browser (Brave, Chrome, Edge, Arc, Vivaldi, Opera, or Perplexity Comet) and writes them to another supported endpoint. Browser-to-browser transfers use small unpacked extensions and a short-lived loopback broker. For ChatGPT Codex and experimental Cursor, it merges cookies into the app's embedded browser database after making a backup and validating the result. For Grok Bot, it writes an AES-256-GCM encrypted .bcbx bundle that embeds its decryption key. Optional features include history URLs and full site data for Codex, scheduled or login-time sync, a Browserless cloud upload with size preflight and post-upload verification, and built-in GitHub release updates. Cookie values are stated to never be logged.",
+  "use_cases": [
+   "Move logged-in sessions from Chrome or Brave into ChatGPT Codex on a Mac",
+   "Sign into the Cursor browser using cookies from another browser",
+   "Create an encrypted cookie transfer file for a Grok Bot cloud browser",
+   "Upload authenticated browser profile state to Browserless Cloud",
+   "Avoid re-logging into the same websites across several Chromium browsers",
+   "Automate daily or login-time cookie syncing between local browser profiles"
+  ],
+  "how_to_run": [
+   "brew install --cask apoorvdarshan/tap/browser-cookie-bridge",
+   "npx browser-cookie-bridge install-app",
+   "git clone <repo URL>",
+   "cd browser-cookie-bridge",
+   "npm test",
+   "npm run build:app"
+  ],
+  "stack": [
+   "Swift / SwiftUI (native macOS app)",
+   "Node.js 24+ (npm package and CLI)",
+   "SQLite",
+   "Chromium unpacked extensions",
+   "AES-256-GCM with scrypt key derivation",
+   "Browserless CLI (official, bundled)",
+   "GitHub Releases (update checks)"
+  ],
+  "notable": [
+   "Grok Bot .bcbx export: encrypted bundle with embedded decryption key and a bundled importer, so no passphrase is needed on import",
+   "Backs up the destination app's browser database, modifies a copy, integrity-checks it, and restores on failure",
+   "Browserless uploads are manual, token stored in macOS Keychain, and the app reports omitted origins when the 2 MB artifact limit is hit",
+   "Local-first: no account, analytics, or remote relay for local transfers",
+   "Cursor import writes only to its dedicated partition and refuses unknown schemas"
+  ],
+  "caveats": [
+   "macOS only (macOS 13.5+); a Windows app is only being explored, with a waitlist",
+   "Cursor import is experimental and cookies-only; Cursor is destination-only",
+   "Direct imports store cookie values in plaintext SQLite columns, readable by software running as the same macOS user",
+   "Grok Bot .bcbx files contain the decryption key, so they must be treated as credentials",
+   "Browserless currently caps the serialized profile at 2 MB, so large site data may be dropped"
+  ],
+  "license": "MIT",
+  "category": "browser session transfer",
+  "keywords": [
+   "browser cookie transfer",
+   "cookie sync",
+   "session transfer",
+   "chromium cookies",
+   "macos cookie import",
+   "chatgpt codex",
+   "codex browser login",
+   "cursor browser cookies",
+   "grok bot cookies",
+   "browserless authenticated profile",
+   "browserless cloud",
+   "brave cookies",
+   "chrome cookies",
+   "edge cookies",
+   "arc browser",
+   "vivaldi",
+   "opera",
+   "perplexity comet",
+   "menu bar app",
+   "swiftui",
+   "sqlite cookie database",
+   "aes-256-gcm export",
+   "encrypted transfer file",
+   "share logged-in sessions",
+   "avoid logging in again",
+   "move cookies between browsers",
+   "sync browser sessions mac",
+   "homebrew cask",
+   "npm cli cookie",
+   "backup and rollback",
+   "headless browser session"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9417,
+  "output": 1571
+ },
+ "generated": "2026-10-29"
+}

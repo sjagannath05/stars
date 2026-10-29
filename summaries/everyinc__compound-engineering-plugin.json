@@ -1,0 +1,95 @@
+{
+ "id": "everyinc/compound-engineering-plugin",
+ "repo": "EveryInc/compound-engineering-plugin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Compound Engineering Plugin by EveryInc - A very pragmatic set of well-designed agents, skills, and commands, built around a discipline of turning past mistakes and errors into lessons and opportunities for future growth and improvement. Good documentation."
+  }
+ ],
+ "summary": {
+  "one_liner": "A plugin of 36 AI coding-agent skills that structures engineering work as a brainstorm, plan, work, simplify, review, and compound-learning loop, with lessons written to docs/solutions/ for future runs.",
+  "category": "ai coding agent plugin",
+  "keywords": [
+   "claude code plugin",
+   "coding agent skills",
+   "agent skills",
+   "slash commands",
+   "compound engineering",
+   "brainstorm plan work review loop",
+   "code review agent",
+   "implementation planning",
+   "knowledge capture",
+   "docs/solutions",
+   "lessons learned",
+   "cursor plugin",
+   "codex plugin",
+   "codex cli",
+   "copilot cli plugin",
+   "opencode plugin",
+   "pi package",
+   "agentic development workflow",
+   "autonomous pr pipeline",
+   "lfg",
+   "ce-plan",
+   "ce-code-review",
+   "ce-compound",
+   "pull request automation",
+   "ci repair loop",
+   "multi-agent review",
+   "team engineering conventions",
+   "share agent knowledge across repos",
+   "ai pair programming setup"
+  ],
+  "what_it_does": "Provides 36 skills for AI coding agents, grouped into core loop skills (brainstorm, plan, work, simplify, code review, compound), on-demand skills (ideate, debug, explain, prototype, optimize, and others), git workflow skills (commit, push and open PR, babysit PR, resolve PR feedback, worktrees), testing and polish skills, and an autonomous pipeline called lfg. The brainstorm and plan skills write requirements and implementation plans that the work step executes. Code review is report-only by default, with local fixes applied only on explicit request. The compound skill writes learnings into docs/solutions/ so later brainstorms and plans can read them. The lfg pipeline can push, open a PR and watch CI with a bounded repair loop when a git remote exists, and otherwise stops at local commits. The README says it runs on 14 agent hosts and lists per-host install steps.",
+  "use_cases": [
+   "Turning a rough feature idea into a reviewed implementation plan",
+   "Running a hands-off brainstorm-to-PR pipeline for a feature",
+   "Multi-agent code review of changes before merging",
+   "Capturing lessons from bugs and fixes for future work",
+   "Debugging a bug report through a structured workflow",
+   "Shepherding pull requests and resolving review feedback"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add EveryInc/compound-engineering-plugin",
+   "/plugin install compound-engineering",
+   "/ce-setup (run in a project after install)",
+   "/ce-brainstorm make background job retries safer",
+   "/ce-plan",
+   "/ce-work"
+  ],
+  "stack": [
+   "Claude Code plugin format",
+   "Markdown skill definitions (SKILL.md)",
+   "Bun (repo development and converter maintenance only)",
+   "Git and optional git remote for PR workflows",
+   "Node/OpenCode and Pi package loaders (install paths)"
+  ],
+  "notable": [
+   "Compound step writes learnings to docs/solutions/ that future brainstorm and plan runs read as grounding",
+   "Ships native install paths for 14 agent hosts including Claude Code, Cursor, Codex, Copilot CLI, and OpenCode",
+   "lfg runs the whole loop hands-off, including PR creation and a bounded CI repair loop, without merging unless granted",
+   "Supports a docs_root setting to relocate CE artifact folders and Compound Packs of shared rule files (experimental)",
+   "Code review is report-only by default; local apply is explicit"
+  ],
+  "caveats": [
+   "Bun is needed only for repo development and converter maintenance, not normal install",
+   "Some skills use Claude-style allowed-tools names that Devin CLI does not map, so some actions ask for permission",
+   "lfg can finish with leftover issues if its repair budget is hit, and it does not merge unless you grant that",
+   "Compound Packs are marked experimental",
+   "Maintainers state the project is opinionated and may not accept every contribution"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8885,
+  "output": 1468
+ },
+ "generated": "2026-10-29"
+}

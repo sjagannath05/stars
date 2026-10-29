@@ -1,0 +1,101 @@
+{
+ "id": "madeofpendletonwool/pinepods",
+ "repo": "madeofpendletonwool/PinePods",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "Pinepods - Podcast management system with multi-user support. Pinepods utilizes a central database so aspects like listen time and themes follow from device to device. (Demo, Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "PinePods is a self-hosted, multi-user podcast management system written in Rust that keeps subscriptions, listening history, queue, and settings in one central database so they sync across devices.",
+  "what_it_does": "The README describes a single server that a household connects to through a web client, native desktop and mobile apps, and a terminal CLI called Firewood. Data is stored in PostgreSQL or MySQL/MariaDB, with Valkey or Redis required as a cache. It supports audio and video podcasts with variable speed, chapters, transcripts, downloads, a persistent queue, serial auto-play, and per-podcast auto-download. Organization features include smart and manual playlists, saved episodes, favorites, full history, and local file-system podcasts. Discovery searches Podcast Index, iTunes, and YouTube, plus episode search within your own library and podcast-host following via PodPeople DB. It also includes a built-in gpodder-compatible sync server for apps like AntennaPod, OIDC/SSO, MFA/TOTP, OPML import/export, and push notifications through ntfy or webhooks.",
+  "use_cases": [
+   "self-host a podcast player for a family",
+   "sync podcast listening progress across devices",
+   "run a multi-user podcast server",
+   "keep using AntennaPod with a self-hosted backend",
+   "manage podcast subscriptions and downloads on a home server",
+   "listen to podcasts from the terminal"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with db (postgres:18), valkey (valkey/valkey:8-alpine), and pinepods services as shown in the README Quick Start",
+   "Set database and Valkey/Redis connection variables on the pinepods service",
+   "Run: sudo docker compose up -d",
+   "Open the server URL on port 8040 and create the first admin account",
+   "For an external Valkey/Redis server, set VALKEY_HOST and VALKEY_PORT and remove the local valkey service"
+  ],
+  "stack": [
+   "Rust",
+   "PostgreSQL",
+   "MySQL/MariaDB",
+   "Valkey",
+   "Redis",
+   "Docker Compose",
+   "Nginx",
+   "Helm",
+   "Flutter-style native apps (not named in README; omit)"
+  ],
+  "notable": [
+   "Central database keeps listening history, queue, and themes consistent across web, desktop, mobile, and CLI clients",
+   "Built-in gpodder-compatible sync server works alongside AntennaPod and similar apps",
+   "Multi-user with separate libraries, stats, and settings per user",
+   "Discovery across Podcast Index, iTunes, and YouTube, plus PodPeople DB host-following",
+   "Translated into 36 languages and ships multiple themes plus a custom theme creator"
+  ],
+  "caveats": [
+   "The API will not start if Valkey/Redis is unavailable, and Nginx then returns 502 for API requests",
+   "Upgrading an existing PostgreSQL 17 data directory to 18 requires a manual one-way upgrade with backup first",
+   "The public demo at try.pinepods.online is for evaluation only and is wiped periodically"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted podcast player",
+  "keywords": [
+   "podcast server",
+   "self-hosted podcast player",
+   "podcast manager",
+   "podcast sync",
+   "multi-user podcasts",
+   "gpodder server",
+   "gpodder compatible",
+   "antennapod sync",
+   "rust podcast app",
+   "docker compose podcasts",
+   "postgresql podcast",
+   "mysql mariadb podcast",
+   "valkey",
+   "redis cache",
+   "podcast index",
+   "itunes search",
+   "youtube podcasts",
+   "podcast chapters transcripts",
+   "podcast playlists",
+   "opml import export",
+   "oidc sso podcasts",
+   "totp mfa",
+   "carplay podcasts",
+   "android auto podcasts",
+   "podcast firewood cli",
+   "terminal podcast client",
+   "family podcast library",
+   "share podcast library with household",
+   "sync listening history between devices",
+   "podcast downloads on home server",
+   "alternative to pocket casts",
+   "self-hosted pocketcasts alternative",
+   "podcast auto download",
+   "kubernetes helm podcast"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5154,
+  "output": 1505
+ },
+ "generated": "2026-10-29"
+}

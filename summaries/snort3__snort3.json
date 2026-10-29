@@ -1,0 +1,103 @@
+{
+ "id": "snort3/snort3",
+ "repo": "snort3/snort3",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "Snort | Network intrusion detection system"
+  }
+ ],
+ "summary": {
+  "one_liner": "Snort 3 (Snort++), the next-generation Snort network intrusion detection and prevention system, built from source with CMake.",
+  "what_it_does": "Snort++ is the Snort 3.0.0 IPS/IDS engine, which the README says includes Snort 2.X features and bug fixes. It processes packets from pcap files or live traffic and can run in IDS mode with rules, using a Lua-based configuration file (snort.lua). It supports multiple packet processing threads, pluggable components, and sticky buffers in rules. The tool can dump and examine pcaps, verify configs with or without rules, and suppress specific rules by gid/sid from the command line. The README also covers libFuzzer fuzz targets built with Clang, with AddressSanitizer or coverage instrumentation, and documentation generated from the code.",
+  "use_cases": [
+   "Network intrusion detection on captured traffic",
+   "Inline intrusion prevention",
+   "Analyzing or dumping pcap files",
+   "Testing and validating Snort rules and configs",
+   "Fuzz testing packet inspection components",
+   "Migrating Snort 2 configs and rules"
+  ],
+  "how_to_run": [
+   "cd snort3/",
+   "export my_path=/path/to/snorty",
+   "./configure_cmake.sh --prefix=$my_path",
+   "cd build",
+   "make -j $(nproc) install",
+   "$my_path/bin/snort -c $my_path/etc/snort/snort.lua -R $my_path/etc/snort/sample.rules -r a.pcap -A alert_test -n 100000"
+  ],
+  "stack": [
+   "C++17",
+   "CMake",
+   "Lua (LuaJIT)",
+   "DAQ",
+   "dnet",
+   "flex",
+   "hwloc",
+   "OpenSSL",
+   "libpcap",
+   "PCRE2",
+   "zlib",
+   "pkgconfig",
+   "Clang (fuzzing)"
+  ],
+  "notable": [
+   "Lua-based configuration (snort.lua) with scriptable settings",
+   "Multi-threaded packet processing (--max-packet-threads)",
+   "snort2lua tool to convert Snort 2.X configs and rules",
+   "Libfuzzer fuzz targets with ASan or coverage builds",
+   "Autodetects services for portless configuration"
+  ],
+  "caveats": [
+   "README lists Windows support and proxy mode as roadmap items, not current features",
+   "Requires a C++17 compiler (g++ 7 or newer) and many dependencies",
+   "Fuzzing requires Clang",
+   "The README describes the release as 3.0.0 (Build 250) and points to a tarball named a3, so it may be a pre-release snapshot"
+  ],
+  "license": "unknown",
+  "category": "network intrusion detection",
+  "keywords": [
+   "snort",
+   "snort3",
+   "snort++",
+   "intrusion detection system",
+   "ids",
+   "intrusion prevention system",
+   "ips",
+   "network intrusion detection",
+   "packet inspection",
+   "pcap analysis",
+   "packet capture",
+   "tcpdump",
+   "suercatatata",
+   "rules engine",
+   "signature detection",
+   "snort rules",
+   "suricata alternative",
+   "lua configuration",
+   "cmake build",
+   "c++ build from source",
+   "multi-threaded packet processing",
+   "fuzz testing",
+   "libfuzzer",
+   "address sanitizer",
+   "snort2lua",
+   "traffic monitoring",
+   "detect network attacks",
+   "scan network traffic for threats",
+   "analyze pcap files",
+   "block malicious traffic"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4773,
+  "output": 1260
+ },
+ "generated": "2026-10-29"
+}

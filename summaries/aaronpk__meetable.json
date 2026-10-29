@@ -1,0 +1,98 @@
+{
+ "id": "aaronpk/meetable",
+ "repo": "aaronpk/Meetable",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Polls and Events",
+   "entry": "Meetable - Minimal events aggregator. (Source Code) MIT PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Meetable is a minimal PHP/Laravel events aggregator website with tags, iCal feeds, RSVPs, and several login options.",
+  "what_it_does": "Meetable lists upcoming events on the home page and keeps an archive of past events. Events can carry one or more tags, and commonly used tags appear on the home page and a discover page. Every event list (home page, tag pages, etc.) has an iCal feed, and each event has an \"Add to Calendar\" link that exports an iCal file or links to Google Calendar. Event pages hold a cover photo, details, external and ticket links, a markdown/basic HTML description, RSVPs for logged-in users, and photos, blog posts and notes, with webmention support. An optional \"Proposed Events\" mode lets people vote on several candidate dates before an editor picks one.",
+  "use_cases": [
+   "Run a community events calendar website",
+   "Publish a tag-organized list of meetups",
+   "Let people subscribe to event lists in their calendar app",
+   "Collect RSVPs and photos for events",
+   "Vote on possible dates for a group event",
+   "Post event reminders and listings to a Discord server"
+  ],
+  "how_to_run": [
+   "curl -O (download docker-compose configuration files, per README)",
+   "Set APP_KEY, APP_URL, DB_PASSWORD and DB_ROOT_PASSWORD in .env",
+   "docker compose up -d",
+   "Manual: composer install, configure .env, php artisan migrate, php artisan key:generate",
+   "Set up a queue worker (php artisan queue:listen or cron with queue:work --stop-when-empty) and the scheduler cron entry (schedule:run every minute)"
+  ],
+  "stack": [
+   "PHP 8.2+",
+   "Laravel",
+   "Composer",
+   "MySQL/MariaDB",
+   "Redis (optional)",
+   "imagick",
+   "simplexml",
+   "mbstring",
+   "Docker Compose",
+   "nginx (example config)"
+  ],
+  "notable": [
+   "Multiple login methods: passkeys, GitHub OAuth, OpenID Connect, Vouch Proxy, and Heroku",
+   "Proposed Events mode where users vote on dates before one is chosen",
+   "iCal feeds for every event list and per-event add-to-calendar export",
+   "Discord bot integration for channel posts and the server event list",
+   "Webmention support so others can add photos and notes to event pages"
+  ],
+  "caveats": [
+   "Manual install requires PHP 8.2+, MySQL/MariaDB, and a queue worker plus scheduler cron job",
+   "Docker setup binds the port only to localhost, so a TLS reverse proxy is needed for public access",
+   "Heroku login is described as meant for a single user and hard to configure later"
+  ],
+  "license": "MIT",
+  "category": "event calendar website",
+  "keywords": [
+   "events aggregator",
+   "event calendar",
+   "meetup listing",
+   "community events website",
+   "ical feed",
+   "calendar subscription",
+   "ics export",
+   "google calendar export",
+   "rsvp",
+   "event voting",
+   "proposed dates poll",
+   "tags",
+   "webmention",
+   "passkey login",
+   "github oauth",
+   "openid connect",
+   "oidc",
+   "vouch proxy",
+   "discord bot",
+   "laravel",
+   "php",
+   "mysql",
+   "mariadb",
+   "docker compose",
+   "self-hosted events",
+   "self-hosted calendar",
+   "event listing",
+   "share events with my community",
+   "host a meetup site",
+   "alternative to meetup pages"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7023,
+  "output": 1253
+ },
+ "generated": "2026-10-29"
+}

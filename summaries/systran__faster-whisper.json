@@ -1,0 +1,91 @@
+{
+ "id": "systran/faster-whisper",
+ "repo": "SYSTRAN/faster-whisper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "faster-whisper - A Whisper reimplementation on CTranslate2, up to 4 times faster than openai-whisper with less memory."
+  }
+ ],
+ "summary": {
+  "one_liner": "faster-whisper is a reimplementation of OpenAI's Whisper speech-recognition model on the CTranslate2 inference engine, claimed to be up to 4x faster with less memory.",
+  "category": "speech-to-text transcription",
+  "keywords": [
+   "faster-whisper",
+   "whisper",
+   "speech to text",
+   "audio transcription",
+   "ctranslate2",
+   "asr",
+   "automatic speech recognition",
+   "openai whisper alternative",
+   "transcribe audio",
+   "subtitles from audio",
+   "word-level timestamps",
+   "voice activity detection",
+   "silero vad",
+   "int8 quantization",
+   "cuda gpu transcription",
+   "cpu transcription",
+   "distil-whisper",
+   "batched transcription",
+   "speech recognition python",
+   "transcribe mp3 to text",
+   "whisper.cpp comparison",
+   "speaker diarization tools",
+   "whisper server",
+   "pyav",
+   "huggingface whisper models",
+   "meeting transcription"
+  ],
+  "what_it_does": "The library loads Whisper-family speech recognition models (by size name such as large-v3 or turbo, or from a local or Hub-hosted CTranslate2 conversion) and transcribes audio files. It exposes a WhisperModel class whose transcribe method returns a generator of segments with start and end times, plus language detection info. A BatchedInferencePipeline offers a drop-in batched variant for higher throughput on GPU. Options include word-level timestamps, Silero VAD filtering to drop non-speech audio, and int8/float16 compute types for CPU and GPU. The README also documents a ct2-transformers-converter script for converting Transformers-format Whisper models, and benchmark tables comparing speed and memory against openai/whisper, whisper.cpp and transformers.",
+  "use_cases": [
+   "transcribe audio or video recordings to text",
+   "generate subtitles with timestamps",
+   "run Whisper on a GPU with lower VRAM",
+   "run speech-to-text on a CPU with int8 quantization",
+   "build a transcription server or real-time pipeline",
+   "add word-level timestamps to transcripts"
+  ],
+  "how_to_run": [
+   "pip install faster-whisper",
+   "from faster_whisper import WhisperModel; model = WhisperModel(\"large-v3\", device=\"cuda\", compute_type=\"float16\")",
+   "segments, info = model.transcribe(\"audio.mp3\", beam_size=5)",
+   "for segment in segments: print(segment.start, segment.end, segment.text)"
+  ],
+  "stack": [
+   "Python",
+   "CTranslate2",
+   "PyAV (bundles FFmpeg libraries)",
+   "Silero VAD",
+   "Hugging Face Hub",
+   "NVIDIA cuBLAS and cuDNN (for GPU)",
+   "Transformers (for model conversion script)"
+  ],
+  "notable": [
+   "Up to 4x faster than openai/whisper for the same accuracy, with lower memory use, per the README benchmarks",
+   "Does not require FFmpeg to be installed system-wide, since audio decoding uses PyAV",
+   "BatchedInferencePipeline is a drop-in replacement for transcribe that trades VRAM for speed",
+   "Supports 8-bit quantization on both CPU and GPU",
+   "Distil-Whisper checkpoints are compatible, including distil-large-v3"
+  ],
+  "caveats": [
+   "GPU use requires separately installed NVIDIA cuBLAS and cuDNN 9 for CUDA 12; CUDA 11 or cuDNN 8 need pinned older ctranslate2 versions",
+   "Requires Python 3.9 or greater",
+   "Transcription is lazy: the segments generator only runs when iterated",
+   "Benchmark numbers are the project's own and depend on hardware and settings"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6343,
+  "output": 1385
+ },
+ "generated": "2026-10-29"
+}

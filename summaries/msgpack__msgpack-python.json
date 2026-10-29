@@ -1,0 +1,88 @@
+{
+ "id": "msgpack/msgpack-python",
+ "repo": "msgpack/msgpack-python",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Serialization",
+   "entry": "msgpack - MessagePack serializer implementation for Python."
+  }
+ ],
+ "summary": {
+  "one_liner": "A CPython MessagePack serializer for Python, providing fast binary packing and unpacking of Python objects with a pure-Python fallback for PyPy.",
+  "what_it_does": "Packs Python objects into the MessagePack binary format with packb/pack/dump and unpacks them with unpackb/unpack/load, with dumps/loads aliases. Provides a streaming Unpacker that reads multiple objects from a file-like stream or from bytes fed via feed(). Supports custom types through default and object_hook callbacks, and the MessagePack ext type via ExtType with ext_hook. Unpacking offers skip, read_array_header and read_map_header for finer control. Security options include max_buffer_size and strict_map_key, and use_list=False yields tuples for speed.",
+  "use_cases": [
+   "serialize Python objects to a compact binary format",
+   "exchange data with other languages like JSON but smaller and faster",
+   "stream-unpack many messages from a file or socket",
+   "encode custom types such as datetime or arrays",
+   "safely parse untrusted MessagePack input"
+  ],
+  "how_to_run": [
+   "pip install msgpack"
+  ],
+  "stack": [
+   "Python",
+   "CPython C extension (msgpack._cmsgpack)",
+   "pure Python fallback (msgpack.fallback)"
+  ],
+  "notable": [
+   "Pure Python fallback module for PyPy, since the C extension does not support PyPy",
+   "Streaming Unpacker that handles multiple concatenated objects from one stream",
+   "Ext type support with default and ext_hook callbacks for custom types",
+   "strict_map_key defaults to True and max_buffer_size defaults to 100 MiB to reduce DoS risk",
+   "Backward-compatible raw/bin options for the old MessagePack string and binary spec"
+  ],
+  "caveats": [
+   "The C extension does not support PyPy; PyPy must use the slower pure Python fallback",
+   "On Windows without a binary wheel, building requires Visual Studio or the Windows SDK, and the pure Python fallback runs slowly on CPython",
+   "After an Unpacker raises an exception other than OutOfData, it cannot be reused"
+  ],
+  "license": "unknown",
+  "category": "binary serialization library",
+  "keywords": [
+   "messagepack",
+   "msgpack",
+   "binary serialization",
+   "python serializer",
+   "cpython extension",
+   "pypy fallback",
+   "msgpack.fallback",
+   "packb",
+   "unpackb",
+   "streaming unpacker",
+   "ext type",
+   "exttype",
+   "custom type encoding",
+   "datetime serialization",
+   "object_hook",
+   "ext_hook",
+   "default encoder",
+   "use_bin_type",
+   "strict_map_key",
+   "max_buffer_size",
+   "json alternative",
+   "pickle alternative",
+   "compact data format",
+   "binary json",
+   "serialize python objects",
+   "encode data for other languages",
+   "parse untrusted data safely",
+   "faster than json",
+   "smaller serialized data",
+   "read multiple objects from stream",
+   "pack to file",
+   "dumps loads"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4152,
+  "output": 1114
+ },
+ "generated": "2026-10-29"
+}

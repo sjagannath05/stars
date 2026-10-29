@@ -1,0 +1,96 @@
+{
+ "id": "davidullo/magicwall",
+ "repo": "davidullo/magicwall",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "General Tools",
+   "entry": "MagicWall - Set local videos as desktop wallpapers. [![Open-Source Software][OSS Icon]](https://github.com/davidullo/magicwall)"
+  }
+ ],
+ "summary": {
+  "one_liner": "MagicWall is a native macOS app that plays local video files as animated desktop wallpapers, with a library, per-display assignments, and an optional macOS 26+ lock screen extension.",
+  "what_it_does": "The app imports MP4/MOV files and folders into a local library, generating posters, categories, favorites, search and rename. Each display can have its own video, and assignments persist across restarts. Playback uses a desktop-level window per screen with gapless looping via AVFoundation. A power policy can pause playback for Low Power Mode, thermal pressure, screen lock, occluded desktop, or battery, and the menu bar offers pause, shuffle, favorites and stop. Favorites can rotate automatically every 1–60 minutes. On macOS 26+, an ExtensionKit wallpaper extension lets the system play the library on the lock screen. The README states that the app has no accounts or telemetry, with only a daily update check and an optional starter-wallpaper download as network requests.",
+  "use_cases": [
+   "set a local video as a desktop wallpaper on mac",
+   "play different videos on each monitor",
+   "animated wallpaper from my own clips",
+   "rotate favorite wallpapers automatically",
+   "pause wallpaper video to save battery",
+   "animated lock screen background on macOS 26"
+  ],
+  "how_to_run": [
+   "Download MagicWall-<version>.dmg from the releases page and drag MagicWall into Applications",
+   "Build: export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer",
+   "xcodegen generate",
+   "xcodebuild -project MagicWall.xcodeproj -scheme MagicWall -configuration Debug -derivedDataPath /tmp/mw-dd build",
+   "open /tmp/mw-dd/Build/Products/Debug/MagicWall.app",
+   "Core tests: cd Packages/MagicWallCore && swift test"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AVFoundation (AVQueuePlayer, AVPlayerLooper)",
+   "GRDB (SQLite)",
+   "Sparkle 2 (auto-updates)",
+   "XcodeGen",
+   "dmgbuild",
+   "ExtensionKit",
+   "XCUITest"
+  ],
+  "notable": [
+   "Lock screen wallpaper via a com.apple.wallpaper provider extension on macOS 26+, using hard links so videos are not duplicated on disk",
+   "Per-display video assignments restored on launch",
+   "Power policy with battery, Low Power Mode, thermal, screen lock and occlusion rules",
+   "Developer ID signed and notarized, with EdDSA-signed Sparkle updates",
+   "Fully local: no accounts or telemetry"
+  ],
+  "caveats": [
+   "Requires macOS 15 or later; lock screen support needs macOS 26 or later",
+   "Lock screen extension uses private APIs (WallpaperExtensionKit), so it is not Mac App Store material",
+   "HEVC transcode is listed as todo in project status"
+  ],
+  "license": "MIT",
+  "category": "macOS wallpaper app",
+  "keywords": [
+   "macos",
+   "video wallpaper",
+   "live wallpaper",
+   "animated wallpaper",
+   "desktop wallpaper",
+   "lock screen wallpaper",
+   "mp4 wallpaper",
+   "mov wallpaper",
+   "multi-monitor",
+   "multiple displays",
+   "per-screen wallpaper",
+   "menu bar app",
+   "wallpaper rotation",
+   "favorites rotation",
+   "power policy",
+   "low power mode pause",
+   "swiftui",
+   "avfoundation",
+   "avplayerlooper",
+   "sparkle updates",
+   "notarized app",
+   "local video library",
+   "set video as wallpaper",
+   "play video on desktop background",
+   "mac animated background",
+   "wallpaper engine alternative",
+   "macos 26 lock screen",
+   "offline media library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6977,
+  "output": 1404
+ },
+ "generated": "2026-10-29"
+}

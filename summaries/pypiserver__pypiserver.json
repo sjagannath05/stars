@@ -1,0 +1,89 @@
+{
+ "id": "pypiserver/pypiserver",
+ "repo": "pypiserver/pypiserver",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Package Repositories",
+   "entry": "pypiserver - A minimal PyPI server for uploading and installing packages with pip."
+  }
+ ],
+ "summary": {
+  "one_liner": "pypiserver is a minimal, PyPI-compatible package index server that serves packages from plain directories so pip and other tools can install and upload to it.",
+  "what_it_does": "It serves Python wheels, bdists, eggs and their PGP signatures from one or more local directories, scanning them recursively and skipping dot-prefixed files and folders. Packages can be uploaded with pip, setuptools, twine, pypi-uploader, or simply copied with scp. It implements the PyPI interfaces needed for pip and easy_install to install and search packages, and redirects requests for packages it lacks to pypi.org by default (configurable or disable-able). Authentication is optional and can use an Apache htpasswd file (via passlib) or a custom Python callable through the API. The \"update\" subcommand checks served packages against pypi.org and prints or executes pip commands to update them. It is built on bottle and can run under several WSGI servers, selected with --server, or be embedded via pypiserver.app().",
+  "use_cases": [
+   "host a private internal Python package index",
+   "upload and install private wheels with pip",
+   "mirror and update selected public packages locally",
+   "run a PyPI-compatible index behind nginx or Apache",
+   "serve packages to MicroPython upip devices",
+   "run a small package server in Docker"
+  ],
+  "how_to_run": [
+   "pip install pypiserver # Or: pypiserver[passlib,cache]",
+   "mkdir ~/packages # Copy packages into this directory.",
+   "pypi-server run -p 8080 ~/packages &"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "PyPy3",
+   "bottle (bundled)",
+   "passlib (optional, htpasswd)",
+   "watchdog (optional, cache extra)",
+   "Docker"
+  ],
+  "notable": [
+   "Minimal PyPI-compatible server that works with pip, easy_install, twine and setuptools uploads",
+   "Plain directory storage; packages can simply be copied in with scp",
+   "Built-in update command that reports or runs pip commands to upgrade served packages",
+   "Directory caching via optional watchdog dependency for thousands of packages",
+   "Custom health endpoint and URL prefix support for reverse-proxy deployments"
+  ],
+  "caveats": [
+   "Does not implement the full PyPI API; only enough for easy_install, pip install and search; documentation uploads are accepted but not saved",
+   "Legacy Python versions are untested; pypiserver 1.x is the legacy line without bugfixes",
+   "Upload protection depends on configuration; uploads are unauthenticated unless -P and -a are set"
+  ],
+  "license": "zlib/libpng + MIT",
+  "category": "python package index",
+  "keywords": [
+   "pypi server",
+   "python package index",
+   "private pypi",
+   "pip index",
+   "pip extra-index-url",
+   "self-hosted pypi",
+   "devpi alternative",
+   "pypiserver",
+   "bottle",
+   "htpasswd",
+   "twine upload",
+   "pip install from local server",
+   "host python packages internally",
+   "share python wheels with my team",
+   "private wheel repository",
+   "easy_install",
+   "setuptools upload",
+   "package mirror",
+   "gunicorn",
+   "nginx reverse proxy pypi",
+   "docker pypi",
+   "micropython upip",
+   "pypi-uploader",
+   "update pip packages locally",
+   "pypi health endpoint",
+   "simple index server",
+   "python package hosting"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 16228,
+  "output": 1231
+ },
+ "generated": "2026-10-29"
+}

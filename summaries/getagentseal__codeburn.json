@@ -1,0 +1,106 @@
+{
+ "id": "getagentseal/codeburn",
+ "repo": "getagentseal/codeburn",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "CodeBurn - Menu bar app that shows what your AI coding tools cost, by project, model and task, across Claude Code, Codex, Cursor and 38 more."
+  },
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "Codeburn by iamtoruk - Breakdown of local spend down by project, model, git branch and task. Tracks plan quotas, and identifies token waste, including unused MCP servers, verbose CLAUDE.md, repeated file reads, and more."
+  }
+ ],
+ "summary": {
+  "one_liner": "CodeBurn is a local CLI, desktop app, menu bar/tray widget and MCP server that breaks down your AI coding tool spend by project, model, git branch and task by reading the session files already on your disk.",
+  "what_it_does": "It reads session files written by AI coding tools (Claude Code, Codex, Cursor and others, 42 integrations in total) and prices every token to show what was spent, broken into tables by tool, model, project, git branch and task category. The `codeburn optimize` command flags wasted tokens such as repeated file reads, unused MCP servers and an overly long CLAUDE.md, and can apply config fixes with backups and undo. Plan and quota tracking lets you compare spend against a subscription and read live five-hour and weekly limits, and `codeburn guard` can warn or stop Claude Code sessions at set dollar caps. It also offers a desktop app, a macOS menu bar and Windows tray view, a browser dashboard, and a local MCP server so an agent can query its own usage.",
+  "use_cases": [
+   "track how much Claude Code or Codex spending goes to each project",
+   "find wasted tokens in AI coding sessions",
+   "see AI tool cost per git branch or pull request",
+   "compare models on cost and first-try success rate",
+   "monitor Claude Max or Pro subscription usage against limits",
+   "set spending caps for Claude Code sessions"
+  ],
+  "how_to_run": [
+   "npx codeburn",
+   "npm install -g codeburn",
+   "brew install codeburn",
+   "codeburn optimize",
+   "codeburn plan set claude-max",
+   "claude mcp add codeburn -- npx -y codeburn mcp"
+  ],
+  "stack": [
+   "Node.js 22.13+",
+   "TypeScript",
+   "LiteLLM pricing data",
+   "Frankfurter exchange rates",
+   "MCP (Model Context Protocol) stdio server",
+   "macOS menu bar app",
+   "Windows tray app",
+   "GNOME Shell extension",
+   "VS Code extension"
+  ],
+  "notable": [
+   "Reads local session files only; no account, and the CLI sends no telemetry",
+   "Covers 42 AI coding tools, auto-detected with no configuration",
+   "optimize --apply backs up files before changing them, and act undo reverts them",
+   "Guard installs Claude Code hooks that warn at $5 and stop at $15 by default",
+   "Dollar figures are API-equivalent estimates from measured token counts, not invoices"
+  ],
+  "caveats": [
+   "Requires Node.js 22.13+ for the CLI; the desktop app runs on macOS and Windows, with Linux limited to a GNOME Shell extension",
+   "Dollar costs are API-rate equivalents, not what a flat-fee subscription actually bills",
+   "Some tools record no token counts, so their figures are estimated from content length",
+   "Per-session detail disappears when the tool deletes its transcripts (e.g. Claude Code after 30 days), though daily totals are kept"
+  ],
+  "license": "MIT",
+  "category": "AI coding cost tracking",
+  "keywords": [
+   "ai spend tracker",
+   "claude code cost",
+   "codex usage",
+   "cursor cost",
+   "token usage breakdown",
+   "llm cost monitor",
+   "api cost tracking",
+   "token waste",
+   "claude max quota",
+   "subscription usage tracker",
+   "menu bar app",
+   "windows tray app",
+   "mcp server",
+   "cli dashboard",
+   "per project cost",
+   "git branch cost",
+   "model comparison",
+   "cost per pull request",
+   "spending cap",
+   "budget guard",
+   "context window analysis",
+   "claude.md optimization",
+   "unused mcp servers",
+   "local session logs",
+   "node cli",
+   "npx codeburn",
+   "how much did my ai coding cost",
+   "see where my claude spending goes",
+   "track ai tool costs across projects",
+   "gemini cli usage",
+   "opencode cost",
+   "awesome claude code usage tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10810,
+  "output": 1396
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "learningcircuit/local-deep-research",
+ "repo": "LearningCircuit/local-deep-research",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Generative Artificial Intelligence (GenAI)",
+   "entry": "Local Deep Research - AI-powered deep research tool with multi-source search (arXiv, PubMed, web), PDF text extraction, and encrypted local storage. MIT Docker/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "Local Deep Research is an open-source, AI-powered research assistant that runs multi-step searches across LLMs and search engines and produces answers with citations.",
+  "what_it_does": "It runs automated deep research: the user asks a question, and the tool searches web, academic (arXiv, PubMed, Semantic Scholar), and local document sources, then synthesizes a report with citations. It offers quick summary, detailed research, and report generation modes, plus a LangGraph agent strategy where the LLM chooses which engines to query. Sources can be downloaded into an encrypted local library that is indexed and searchable alongside live web results. Each user gets a SQLCipher-encrypted database, and per-run egress scopes (Adaptive, Public only, Private only, Strict, Unprotected) limit where traffic may go on a best-effort basis. It exposes a Python API, an authenticated HTTP API, a CLI benchmark tool, and an MCP server for Claude Desktop and Claude Code. Models can be local (Ollama, LM Studio, llama.cpp) or cloud (OpenAI, Anthropic, Gemini, OpenRouter, Requesty).",
+  "use_cases": [
+   "Private deep research on local LLMs",
+   "Automated literature search with citations",
+   "Searching arXiv and PubMed for papers",
+   "Building a searchable personal research library",
+   "Generating sourced research reports",
+   "Connecting an agent like Claude to web research via MCP"
+  ],
+  "how_to_run": [
+   "docker run -d -p 11434:11434 --name ollama ollama/ollama",
+   "docker exec ollama ollama pull gpt-oss:20b",
+   "docker run -d -p 8080:8080 --name searxng searxng/searxng",
+   "docker run -d --network host --name local-deep-research --volume \"deep-research:/data\" -e LDR_DATA_DIR=/data -e LDR_SEARCH_ENGINE_WEB_SEARXNG_DEFAULT_PARAMS_INSTANCE_URL= localdeepresearch/local-deep-research",
+   "pip install local-deep-research",
+   "python -m local_deep_research.web.app"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "Ollama",
+   "SearXNG",
+   "SQLCipher",
+   "LangChain",
+   "LangGraph",
+   "FAISS",
+   "MCP"
+  ],
+  "notable": [
+   "Encrypted per-user SQLCipher databases; login works by decrypting the database, and passwords are not stored",
+   "Egress scopes that restrict which engines and LLMs a run may use, including a Private only mode that forces local inference",
+   "LangGraph agent strategy that adaptively picks specialized engines such as arXiv, PubMed, and Semantic Scholar",
+   "Reports ~95% SimpleQA with a local Qwen3.6-27B model on a single RTX 3090 (self-reported, small samples)",
+   "Docker images signed with Cosign and shipped with SLSA provenance and SPDX SBOMs"
+  ],
+  "caveats": [
+   "Requires an AVX-capable x86-64 CPU; older CPUs crash on import",
+   "Docker --network host only works on native Linux; Mac, Windows, and WSL2 need Option 2 or a special recipe",
+   "Needs a separate LLM endpoint (Ollama or OpenAI-compatible) and SearXNG to work well; a local SearXNG is blocked by default unless the operator opts in",
+   "Egress controls are a best-effort guard rail, not an air gap; SearXNG still forwards queries to the internet"
+  ],
+  "license": "MIT",
+  "category": "local ai research assistant",
+  "keywords": [
+   "deep research",
+   "ai research assistant",
+   "local llm",
+   "ollama",
+   "searxng",
+   "self-hosted research",
+   "privacy research tool",
+   "arxiv search",
+   "pubmed search",
+   "semantic scholar",
+   "citations",
+   "report generation",
+   "sqlcipher",
+   "encrypted database",
+   "langgraph",
+   "langchain",
+   "mcp server",
+   "claude desktop",
+   "rag",
+   "document search",
+   "knowledge base",
+   "llm agent",
+   "openai compatible",
+   "lm studio",
+   "llama.cpp",
+   "docker compose",
+   "research summary",
+   "search my documents with ai",
+   "private alternative to cloud deep research",
+   "find academic papers",
+   "write a sourced report"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14640,
+  "output": 1558
+ },
+ "generated": "2026-10-29"
+}

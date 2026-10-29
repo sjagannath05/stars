@@ -1,0 +1,91 @@
+{
+ "id": "fastapi/sqlmodel",
+ "repo": "fastapi/sqlmodel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "ORM",
+   "entry": "sqlmodel - SQLModel is based on Python type annotations, and powered by Pydantic and SQLAlchemy."
+  }
+ ],
+ "summary": {
+  "one_liner": "SQLModel is a Python library for working with SQL databases using classes defined by type annotations, built on Pydantic and SQLAlchemy.",
+  "what_it_does": "Lets you define a database table as a Python class whose attributes become table columns, and create rows as instances of that class. The README shows creating an SQLite engine, creating tables from model metadata, adding and committing rows in a session, and selecting with a where-clause query. Each model is both a SQLAlchemy model and a Pydantic model, so it can be combined with SQLAlchemy code or reused for validation and data schemas. The README positions it as a thin layer for use with FastAPI applications and says it aims for editor autocompletion and inline type errors. Installation is shown with uv (uv add sqlmodel), with pip mentioned as an alternative.",
+  "use_cases": [
+   "map Python classes to SQL database tables",
+   "write SQLite-backed data models in Python",
+   "reuse one model for database and API schemas",
+   "build FastAPI apps that talk to a SQL database",
+   "query and insert rows using Python objects",
+   "migrate SQLAlchemy code to a simpler typed model"
+  ],
+  "how_to_run": [
+   "uv add sqlmodel",
+   "Define a class inheriting from SQLModel with table=True",
+   "engine = create_engine(\"sqlite:///database.db\")",
+   "SQLModel.metadata.create_all(engine)",
+   "with Session(engine) as session: session.add(...); session.commit()",
+   "session.exec(select(Hero).where(...)).first()"
+  ],
+  "stack": [
+   "Python",
+   "Pydantic",
+   "SQLAlchemy",
+   "SQLite (in example)"
+  ],
+  "notable": [
+   "One class serves as both a SQLAlchemy table model and a Pydantic data model",
+   "Designed to pair with FastAPI, created by the same author",
+   "Uses Python type annotations to define columns",
+   "Select queries keep editor autocompletion and type hints"
+  ],
+  "caveats": [
+   "README requires a recent, currently supported Python version",
+   "Documentation and source links are empty in the README text provided",
+   "Relies on Pydantic and SQLAlchemy, which are installed as dependencies"
+  ],
+  "license": "MIT",
+  "category": "python orm library",
+  "keywords": [
+   "sqlmodel",
+   "orm",
+   "python orm",
+   "sqlalchemy",
+   "pydantic",
+   "type annotations",
+   "sql database",
+   "fastapi",
+   "sqlite",
+   "data models",
+   "database models",
+   "table classes",
+   "type hints",
+   "autocompletion",
+   "create_engine",
+   "session",
+   "select query",
+   "metadata create_all",
+   "uv",
+   "pip install",
+   "object relational mapping",
+   "python database library",
+   "save python objects to database",
+   "store python objects in sql",
+   "use sql database with fastapi",
+   "typed database access",
+   "pydantic models for database",
+   "sqlalchemy alternative",
+   "mit license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3591,
+  "output": 1070
+ },
+ "generated": "2026-10-29"
+}

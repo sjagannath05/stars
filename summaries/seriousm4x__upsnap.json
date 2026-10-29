@@ -1,0 +1,94 @@
+{
+ "id": "seriousm4x/upsnap",
+ "repo": "seriousm4x/UpSnap",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "Upsnap - A simple Wake on LAN (WOL) dashboard app. Wake up devices on your network and see current status. MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "UpSnap is a self-hostable web dashboard for waking devices on your network with Wake-on-LAN and checking whether they are online.",
+  "what_it_does": "UpSnap is a Wake-on-LAN web app built with SvelteKit, Go and PocketBase. It provides a dashboard where you can wake devices with one click and see their current status. Devices can be pinged on a chosen port, and cron-based timed events can automate actions. Network scanning and periodic ARP scans for IP tracking use nmap, which the README says is required for those features. Devices can also be shut down with a custom command, and users get per-device permissions (show/hide, edit, delete, power on/off). The README also lists a superuser logs page, i18n support for 23 languages, and 35 themes.",
+  "use_cases": [
+   "wake up a home server or PC remotely with wake-on-LAN",
+   "dashboard showing which devices on the LAN are online",
+   "schedule automatic wake or shutdown of machines via cron",
+   "discover devices on a home network with nmap scanning",
+   "share limited device-control access with other household users",
+   "self-host a simple power-control panel for a homelab"
+  ],
+  "how_to_run": [
+   "Download the latest binary from the release page",
+   "sudo ./upsnap serve --http=0.0.0.0:8090",
+   "docker run --network=host seriousm4x/upsnap:latest",
+   "Or use the docker-compose example in the repository",
+   "Optional: set UPSNAP_HTTP_LISTEN=0.0.0.0:5000 to change the port in Docker",
+   "Development: cd backend && go mod tidy && go run main.go serve; then cd frontend && pnpm i && pnpm run dev"
+  ],
+  "stack": [
+   "Go",
+   "SvelteKit",
+   "PocketBase",
+   "nmap (optional, for network scanning and ARP IP tracking)",
+   "Docker",
+   "pnpm"
+  ],
+  "notable": [
+   "Per-user, per-device permissions so admins can grant specific rights to other users",
+   "Can shut down devices by running a custom command",
+   "Ships as a single binary, Docker images for amd64, arm64, arm/v7 and arm/v6, and an AUR package",
+   "Ping any port to check device availability",
+   "Reverse proxy examples for Caddy and nginx, including sub-path hosting"
+  ],
+  "caveats": [
+   "The README advises against exposing UpSnap to the open web because the shutdown command runs as a shell command, possibly as root; use a VPN for remote access",
+   "Network scanning and IP tracking require nmap",
+   "Running with --network=host is shown in the Docker example, and the binary example uses sudo; the README mentions a wiki page for running as non-root on Linux only"
+  ],
+  "license": "MIT",
+  "category": "wake on lan dashboard",
+  "keywords": [
+   "wake on lan",
+   "wol",
+   "wake-on-lan dashboard",
+   "power on remote computer",
+   "wake up devices",
+   "device status monitor",
+   "self-hosted",
+   "homelab",
+   "sveltekit",
+   "golang",
+   "pocketbase",
+   "nmap",
+   "arp scan",
+   "network scanner",
+   "cron scheduler",
+   "remote shutdown",
+   "port ping",
+   "docker image",
+   "reverse proxy",
+   "caddy",
+   "nginx",
+   "multi-user access control",
+   "i18n",
+   "themes",
+   "home network",
+   "turn on pc from anywhere",
+   "share device controls with family",
+   "raspberry pi",
+   "arm docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3744,
+  "output": 1254
+ },
+ "generated": "2026-10-29"
+}

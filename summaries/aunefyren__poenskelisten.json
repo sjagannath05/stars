@@ -1,0 +1,96 @@
+{
+ "id": "aunefyren/poenskelisten",
+ "repo": "aunefyren/poenskelisten",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "Pønskelisten - Sharing wishlists and collaborating on gifts and presents. GPL-3.0 Docker/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "Pønskelisten is a self-hosted web app for creating, sharing and collaborating on wishlists, with claimed wishes hidden from the list owner so gifts aren't duplicated.",
+  "what_it_does": "Lets users create wishlists and add wishes, organise them into categories, and sort or group them on a list. Friends and family can collaborate on shared wishlists, and groups can share a list with several people. Wishes can be claimed anonymously so others see they are taken while the owner does not. Lists can be shared publicly with people who have no account. Sign-in supports a password, optional TOTP MFA, or OpenID Connect single sign-on, and an optional read-only MCP server lets an AI assistant read wishlists. It runs as a PWA and stores data in SQLite, PostgreSQL or MySQL.",
+  "use_cases": [
+   "share a wishlist with family for birthdays or Christmas",
+   "avoid buying duplicate gifts within a group",
+   "let guests without accounts view a public wishlist",
+   "self-host a gift registry with SSO login",
+   "let an AI assistant read my wishlists via MCP"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml using the image ghcr.io/aunefyren/poenskelisten:latest with externalurl, dbtype: sqlite, and volumes for ./files/ and ./images/",
+   "Run docker compose up -d",
+   "Open the app on the external URL and register the first user, who becomes admin",
+   "Remove generateinvite after the first run",
+   "Alternatively, build from source with Go: go build, then ./poenskelisten"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "SQLite",
+   "PostgreSQL",
+   "MySQL",
+   "OpenID Connect",
+   "MCP (Model Context Protocol)",
+   "OAuth 2.1",
+   "SMTP"
+  ],
+  "notable": [
+   "Anonymous wish claiming: others see a wish is taken, the owner does not",
+   "Built-in OAuth 2.1 authorization server and read-only MCP endpoint for AI assistants",
+   "OIDC-only mode that disables password login, registration and reset",
+   "Server-side account recovery via resetpassword and resetmfa startup flags",
+   "Configurable via environment variables, startup flags or config.json"
+  ],
+  "caveats": [
+   "UI is not yet fully optimized for small screens",
+   "No public demo is available",
+   "config.json holds secrets and signing keys that must be protected and kept on persistent storage"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted wishlist app",
+  "keywords": [
+   "wishlist",
+   "gift registry",
+   "gift list",
+   "wishlist app",
+   "gift coordination",
+   "avoid duplicate gifts",
+   "shared wishlist",
+   "collaborative wishlist",
+   "self-hosted wishlist",
+   "birthday wishlist",
+   "christmas gift list",
+   "share gift ideas",
+   "claim gifts anonymously",
+   "pønskelisten",
+   "ønskeliste",
+   "docker",
+   "docker compose",
+   "golang",
+   "sqlite",
+   "postgres",
+   "mysql",
+   "openid connect",
+   "oidc single sign-on",
+   "sso login",
+   "mfa totp",
+   "mcp server",
+   "ai assistant wishlist",
+   "pwa",
+   "family gift planning",
+   "public wishlist link"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7469,
+  "output": 1214
+ },
+ "generated": "2026-10-29"
+}

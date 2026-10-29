@@ -1,0 +1,98 @@
+{
+ "id": "avifenesh/agentsys",
+ "repo": "avifenesh/agentsys",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "AgentSys by avifenesh - Workflow automation system for Claude with a group of useful plugins, agents, and skills. Automates task-to-production workflows, PR management, code cleanup, performance investigation, drift detection, and multi-agent code review. Includes agnix for linting agent configurations. Built on thousands of lines of code with thousands of tests. Uses deterministic detection (rege"
+  }
+ ],
+ "summary": {
+  "one_liner": "AgentSys is a modular orchestration runtime for AI coding agents that bundles plugins, agents, and skills for task-to-production workflows such as issue handling, PR landing, code cleanup, and agent-config linting.",
+  "what_it_does": "The README describes 11 plugins, 5 agents, and 14 skills that compose into structured development pipelines with phase gates and state that persists across sessions. The main commands are /foreman (works a GitHub issue queue using worktree subagents, from claim through review to squash merge), /deslop (regex, multi-pass, and optional CLI-tool detection of AI slop such as debug statements, TODOs, and stub functions, with HIGH/MEDIUM/LOW certainty levels), /agnix (lints agent configuration files such as SKILL.md, CLAUDE.md, AGENTS.md, hooks, and MCP configs, with SARIF output for GitHub Code Scanning), /learn (researches a topic and writes a learning guide with an index), /banthis (persists banned agent behaviors into CLAUDE.md or AGENTS.md), and /skillers (reads Claude Code transcripts to suggest automations). Separate skill-only plugins cover glide-mq message-queue development and migrations from BullMQ and Bee-Queue, plus Mojo and Ada/SPARK. Installation is through a Claude Code marketplace or an npm installer that supports Claude Code, OpenCode, Codex CLI, Cursor, and Kiro.",
+  "use_cases": [
+   "Work a GitHub issue queue from pick to merge with agents",
+   "Clean AI-generated debug statements and placeholder code",
+   "Lint SKILL.md, CLAUDE.md, AGENTS.md, and hook configs for errors",
+   "Persist 'stop doing this' corrections into agent instruction files",
+   "Research a topic and generate a learning guide for agents",
+   "Migrate a Node.js job queue from BullMQ or Bee-Queue to glide-mq"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add agent-sh/agentsys",
+   "/plugin install foreman@agentsys",
+   "npm install -g agentsys && agentsys",
+   "agentsys --tool cursor",
+   "npm install -g agnix  # required CLI for /agnix",
+   "/agnix --fix"
+  ],
+  "stack": [
+   "Node.js (18+; 22+ for /foreman)",
+   "Git",
+   "GitHub CLI (gh)",
+   "GitLab CLI (glab) for GitLab workflows",
+   "agnix CLI (npm, cargo, or Homebrew)",
+   "Jest test suite",
+   "glide-mq (Valkey/Redis-based Node.js queue, skill plugin)"
+  ],
+  "notable": [
+   "/foreman has no daemon or state store; GitHub labels, assignees, and comments hold the queue state so several sessions can share it",
+   "Detection is split deliberately: regex and AST/static analysis for deterministic findings, LLM calls only for judgment, with certainty levels HIGH/MEDIUM/LOW",
+   "Each plugin lives in its own standalone repo under the agent-sh org; agentsys acts as marketplace and installer",
+   "Supports multiple agent tools (Claude Code, OpenCode, Codex CLI, Cursor, Kiro) from one install",
+   "agnix linter lists 457 rules across many agent platforms and can output SARIF for CI"
+  ],
+  "caveats": [
+   "Several commands need external tools: gh authenticated for GitHub workflows, glab for GitLab, waitfor on PATH and Node 22+ for /foreman",
+   "/foreman's run-long feature requires systemd user units, so it is Linux-only",
+   "/agnix requires a separately installed agnix CLI",
+   "The README is marketing-heavy and includes a third-party sponsor note; the README's own platform-support statements are the main source for compatibility"
+  ],
+  "license": "MIT",
+  "category": "agent orchestration tooling",
+  "keywords": [
+   "ai agent orchestration",
+   "claude code plugins",
+   "claude code marketplace",
+   "agent workflow automation",
+   "github issue queue",
+   "pull request automation",
+   "code cleanup",
+   "ai slop removal",
+   "debug statement removal",
+   "agent config linter",
+   "skill.md linter",
+   "claude.md validation",
+   "agnix",
+   "sarif code scanning",
+   "multi-agent code review",
+   "worktree subagents",
+   "opencode",
+   "codex cli",
+   "cursor rules",
+   "kiro steering",
+   "glide-mq",
+   "bullmq migration",
+   "bee-queue migration",
+   "llm agent instructions",
+   "persistent agent memory",
+   "npm installer agents",
+   "agent skills",
+   "land pull request",
+   "learning guide generator",
+   "transcript pattern analysis",
+   "agentsys"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11205,
+  "output": 1674
+ },
+ "generated": "2026-10-29"
+}

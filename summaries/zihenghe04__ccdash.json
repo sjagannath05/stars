@@ -1,0 +1,95 @@
+{
+ "id": "zihenghe04/ccdash",
+ "repo": "zihenghe04/CCDash",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "CCDash by zihenghe04 - Open-source unified usage dashboard for Claude — track tokens, quota, costs across Claude Code, claude.ai &amp; API in one panel. 开源 Claude 全平台用量监控面板，聚合 Claude Code / claude.ai / API 数据，适用于 Pro/Max 订阅用户与开发者。https://dyp23yngrtumg.ok.kimi.link"
+  }
+ ],
+ "summary": {
+  "one_liner": "CCDash is a self-hosted, real-time analytics dashboard that reads local Claude Code JSONL session files to track tokens, costs, sessions and subscription quota, using only Python stdlib.",
+  "what_it_does": "The dashboard scans ~/.claude/projects JSONL files to show per-call token usage, cost estimated at official API pricing, and per-model and per-project breakdowns. It shows session status (Working, Idle, Done), a session detail timeline with tool calls and file operations, and a session chain for each project. Analytics cover RPM/TPM and burn rate, TTFT and duration, cache efficiency grading, MCP server usage, coding rhythm, and an activity heatmap. Optional config adds 5h and 7d quota tracking via a claude.ai session key, budgets with threshold warnings, and Slack/Discord/HTTP webhook alerts. A lightweight agent.py lets one dashboard aggregate data from remote machines, and ccdash-cli.py offers terminal status views. The README also covers CSV/JSON export, a Git-linked AI cost per commit view, and a Chinese-language version of the docs.",
+  "use_cases": [
+   "monitor Claude Code token usage and cost",
+   "check Claude subscription 5h and 7d quota",
+   "estimate API-equivalent cost of a Claude subscription",
+   "review past Claude Code sessions and their timelines",
+   "aggregate Claude Code usage across multiple servers",
+   "get alerts when Claude quota or daily budget is exceeded"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd CCDash",
+   "python3 server.py",
+   "Optional: cp config.example.json config.json and edit remotes, budget, webhooks, or session key",
+   "Optional: python3 agent.py --port 8421 --token my_secret on a remote host",
+   "Optional (macOS): ./launchd/install.sh server"
+  ],
+  "stack": [
+   "Python 3.8+ (stdlib only)",
+   "Vanilla JavaScript",
+   "ApexCharts",
+   "Phosphor icons",
+   "Swift (macOS quota fetcher, fetch-usage.swift)",
+   "autossh (optional, macOS tunnel)"
+  ],
+  "notable": [
+   "Reads local Claude Code JSONL files, so no API key is needed and it works with subscription accounts",
+   "Zero build step and zero pip/npm dependencies; runs with python3 server.py",
+   "Multi-server aggregation via a read-only agent.py with token auth and SSH tunnel support",
+   "Session status badges (Working/Idle/Done) that work for local and remote sessions",
+   "Bilingual English and Chinese documentation and UI"
+  ],
+  "caveats": [
+   "Quota tracking needs a claude.ai sessionKey and org ID from browser cookies, and the key expires, so the README says it must be refreshed",
+   "macOS-specific parts (launchd auto-start, Swift quota fetcher, autossh tunnel) do not apply to other platforms; Windows fixes are mentioned only as a compatibility change",
+   "The README says it is a community project not affiliated with Anthropic"
+  ],
+  "license": "MIT",
+  "category": "claude code usage dashboard",
+  "keywords": [
+   "claude code",
+   "token usage",
+   "cost tracking",
+   "usage dashboard",
+   "analytics dashboard",
+   "self-hosted",
+   "python stdlib",
+   "zero dependencies",
+   "quota tracking",
+   "rate limit predictor",
+   "budget alerts",
+   "webhook alerts",
+   "slack notifications",
+   "discord notifications",
+   "session analytics",
+   "jsonl parsing",
+   "cache efficiency",
+   "multi-server monitoring",
+   "remote agent",
+   "ssh tunnel",
+   "launchd",
+   "macos auto start",
+   "cli dashboard",
+   "ccusage alternative",
+   "track claude spending",
+   "see how much claude costs",
+   "monitor my claude subscription usage",
+   "ai coding cost per commit",
+   "bilingual dashboard",
+   "chinese dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12008,
+  "output": 1448
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "ysharma3501/luxtts",
+ "repo": "ysharma3501/LuxTTS",
+ "kind": "star",
+ "description": "A high-quality rapid TTS voice cloning model that reaches speeds of 150x realtime.",
+ "topics": [],
+ "language": "Python",
+ "stars": 5504,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-06-05",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "LuxTTS is a lightweight, ZipVoice-based text-to-speech model for voice cloning from a short reference clip, generating 48kHz speech at reported speeds above 150x realtime.",
+  "what_it_does": "The repository provides Python code to load the LuxTTS model (from the YatharthS/LuxTTS Hugging Face repo) on CUDA, CPU, or MPS devices. Users encode a reference audio file (WAV or MP3) into a voice prompt with encode_prompt, then call generate_speech on text to produce cloned speech. Sampling parameters include num_steps, t_shift, speed, rms loudness, return_smooth, and reference duration. Output is a 48kHz waveform that can be saved with soundfile. The README says it is distilled to 4 sampling steps and uses a custom 48kHz Vocos-based vocoder instead of ZipVoice's default 24kHz one. It also lists community projects such as a Gradio app, a ComfyUI node set, and an ONNX version.",
+  "use_cases": [
+   "clone a voice from a short audio sample",
+   "generate speech from text in a cloned voice",
+   "fast local text-to-speech on a consumer GPU",
+   "CPU-based text-to-speech generation",
+   "batch narration or voiceover generation at 48kHz",
+   "integrate voice cloning into ComfyUI workflows"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> (the README leaves the URL blank)",
+   "cd LuxTTS",
+   "pip install -r requirements.txt",
+   "from zipvoice.luxvoice import LuxTTS; lux_tts = LuxTTS('YatharthS/LuxTTS', device='cuda')",
+   "encoded_prompt = lux_tts.encode_prompt('audio_file.wav', rms=0.01)",
+   "final_wav = lux_tts.generate_speech(text, encoded_prompt, num_steps=4)"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "librosa",
+   "soundfile",
+   "ZipVoice",
+   "Vocos vocoder"
+  ],
+  "notable": [
+   "Outputs 48kHz speech, whereas many TTS models are limited to 24kHz",
+   "Distilled to 4 sampling steps from ZipVoice, with a modified sampling technique",
+   "Runs in about 1GB VRAM on local GPUs",
+   "Supports CUDA, CPU (with thread count), and Apple MPS devices",
+   "Community ports for Gradio, ComfyUI, and ONNX"
+  ],
+  "caveats": [
+   "Reference audio should be at least 3 seconds long for voice cloning",
+   "Currently runs in float32; float16 inference code is listed as a roadmap item, not yet released",
+   "Speed claims (150x realtime) are stated by the author for a single GPU, with CPU described as faster than realtime"
+  ],
+  "category": "text-to-speech voice cloning",
+  "license": "Apache-2.0",
+  "keywords": [
+   "text-to-speech",
+   "voice cloning",
+   "tts model",
+   "zipvoice",
+   "48khz speech synthesis",
+   "voice cloning from audio sample",
+   "realtime speech generation",
+   "local tts",
+   "lightweight tts",
+   "low vram speech model",
+   "cpu text to speech",
+   "mps apple silicon tts",
+   "vocos vocoder",
+   "speech synthesis python",
+   "clone my voice",
+   "make audio from text in someone's voice",
+   "fast voice synthesis",
+   "comfyui tts nodes",
+   "gradio tts app",
+   "onnx speech model",
+   "text to speech on gpu",
+   "generate narration audio",
+   "voice imitation ai",
+   "pytorch tts",
+   "apache license tts",
+   "audio generation from text",
+   "speaker cloning",
+   "luxtts",
+   "tts alternative to elevenlabs-style cloning"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3193,
+  "output": 1339
+ },
+ "generated": "2026-10-29"
+}

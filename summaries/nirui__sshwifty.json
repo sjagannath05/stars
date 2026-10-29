@@ -1,0 +1,94 @@
+{
+ "id": "nirui/sshwifty",
+ "repo": "nirui/sshwifty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Remote Access",
+   "entry": "Sshwifty - Sshwifty is a SSH and Telnet connector made for the Web. (Demo) AGPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Sshwifty is a web-based SSH and Telnet client that lets you reach SSH and Telnet servers directly from a browser.",
+  "what_it_does": "Sshwifty serves a web interface from a Go backend that connects to remote SSH and Telnet hosts on the user's behalf, so the terminal runs in the browser. It can be installed from prebuilt executables, a Docker image (niruix/sshwifty), or built from source with npm and Go. Configuration is via a JSON file or environment variables, covering listen address and port, TLS certificate files, a shared access password, timeouts, and an optional SOCKS5 proxy for outbound connections. Operators can define \"Presets\" with host, type, and form fields so users don't have to type connection details, and can restrict connections to presets only. Server-side Hooks can run external commands before a connection is made, and it can show a server message on the home page. The README notes that a reverse proxy is the usual place to terminate TLS and that HTTPS is needed for the browser crypto features it relies on.",
+  "use_cases": [
+   "access SSH servers from a web browser",
+   "browser-based Telnet access to legacy devices",
+   "shared web terminal for a team",
+   "jump-host style access behind a reverse proxy",
+   "preset connection bookmarks for common servers",
+   "self-hosted web SSH gateway"
+  ],
+  "how_to_run": [
+   "docker run --detach --restart unless-stopped --publish 8182:8182 --name sshwifty niruix/sshwifty:latest",
+   "git clone <repository-url> && cd sshwifty",
+   "npm install",
+   "npm run build",
+   "SSHWIFTY_CONFIG=./sshwifty.conf.json ./sshwifty"
+  ],
+  "stack": [
+   "Go",
+   "Node.js",
+   "npm",
+   "Docker",
+   "JavaScript web frontend",
+   "WebCrypto API"
+  ],
+  "notable": [
+   "Web-based SSH and Telnet client with no client-side install",
+   "Server-side Hooks that run external processes before connecting, with a timeout",
+   "Presets define connection targets and fields, with optional locked metadata sourced from files or environment variables",
+   "Optional SOCKS5 proxy for outbound connections",
+   "Configurable via JSON file or environment variables, with multiple HTTP listeners in file mode"
+  ],
+  "caveats": [
+   "Maintenance-only project: the author states new features are not accepted and pull requests are not wanted",
+   "Prebuilt executables are not tested by the authors; the Homebrew formula is third-party and unsupported",
+   "Requires accurate clocks on client and server and a secure context (HTTPS) for the wire protocol; subpath hosting is unsupported"
+  ],
+  "license": "AGPL-3.0",
+  "category": "web ssh client",
+  "keywords": [
+   "ssh client in browser",
+   "web ssh",
+   "web telnet",
+   "browser terminal",
+   "web-based terminal",
+   "ssh over http",
+   "telnet client",
+   "remote shell in browser",
+   "self-hosted ssh gateway",
+   "web console",
+   "go",
+   "golang",
+   "docker",
+   "docker image",
+   "reverse proxy",
+   "tls certificate",
+   "socks5 proxy",
+   "presets",
+   "connection bookmarks",
+   "access servers from browser",
+   "remote access",
+   "shell access from anywhere",
+   "xterm",
+   "wire protocol encryption",
+   "server hooks",
+   "agpl",
+   "self-hosted",
+   "webssh",
+   "ssh terminal web",
+   "share terminal access with team"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8956,
+  "output": 1263
+ },
+ "generated": "2026-10-29"
+}

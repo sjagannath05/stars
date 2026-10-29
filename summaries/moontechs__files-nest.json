@@ -1,0 +1,93 @@
+{
+ "id": "moontechs/files-nest",
+ "repo": "moontechs/files-nest",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "💾 Backup (8)",
+   "entry": "FilesNest - One-way, resumable sync of macOS Photos libraries to self-hosted or local storage."
+  }
+ ],
+ "summary": {
+  "one_liner": "FilesNest mirrors a Mac's Photos library one-way to a self-hosted server, a local folder, or a mounted drive, using resumable uploads.",
+  "what_it_does": "The macOS menu bar app continuously syncs photos and videos from the Photos library to either a self-hosted FilesNest server or a local folder or mounted drive. Uploads use the TUS resumable upload protocol, so interrupted transfers can continue. Assets are streamed directly without temp files or whole-file buffering. The app keeps no local database; the server decides what needs syncing. Sync progress, counts, and failed items are shown, and syncing can be paused, resumed, or triggered manually. The server is a single Go binary, typically run via Docker Compose with Caddy for automatic HTTPS. The README states that deletions on the Mac are mirrored to the server, so it is not an archival backup.",
+  "use_cases": [
+   "back up Mac Photos library to own server",
+   "sync Photos library to external drive or NAS",
+   "self-hosted photo backup",
+   "resumable photo uploads from Mac",
+   "mirror iCloud-independent photo copies to local folder"
+  ],
+  "how_to_run": [
+   "brew tap moontechs/files-nest",
+   "brew trust moontechs/files-nest",
+   "brew install --cask filesnest",
+   "Download docker-compose.yml and Caddyfile to a server folder",
+   "DOMAIN=backup.example.com BACKUP_USER=admin BACKUP_PASS=changeme docker compose up -d"
+  ],
+  "stack": [
+   "Swift (macOS app, implied by macOS menu bar app)",
+   "Go (server, single static binary)",
+   "Docker Compose",
+   "Caddy (automatic HTTPS, Let's Encrypt)",
+   "TUS resumable upload protocol",
+   "macOS Keychain"
+  ],
+  "notable": [
+   "One-way mirror that deletes server copies when photos are deleted on the Mac",
+   "Resumable TUS uploads for large files and flaky connections",
+   "Can sync to a local folder or mounted drive without any server",
+   "Prebuilt server image for NAS platforms like Umbrel, TrueNAS, and Unraid",
+   "Credentials stored in the macOS Keychain"
+  ],
+  "caveats": [
+   "Not an archival backup: deleting a photo on the Mac removes its server copy",
+   "Requires macOS 14+",
+   "Self-hosting needs a domain and Docker setup for HTTPS (or a platform reverse proxy); full config is in server/README.md"
+  ],
+  "license": "AGPL-3.0",
+  "category": "macos photo backup",
+  "keywords": [
+   "photos library sync",
+   "mac photos backup",
+   "self-hosted photo backup",
+   "one-way sync",
+   "mirror photos",
+   "tus resumable upload",
+   "resumable uploads",
+   "go server",
+   "docker compose photo backup",
+   "caddy https",
+   "nas photo backup",
+   "sync to external drive",
+   "sync photos to nas",
+   "menu bar sync app",
+   "macos menu bar",
+   "photo mirror",
+   "homebrew cask",
+   "keychain credentials",
+   "icloud photos alternative",
+   "backup photos to my own server",
+   "photo sync to local folder",
+   "umbrel photos",
+   "truenas backup",
+   "unraid backup",
+   "agpl photo sync",
+   "self hosted sync",
+   "video backup mac",
+   "mac photo copy",
+   "photo archive self hosted",
+   "offsite photo mirror"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2598,
+  "output": 1222
+ },
+ "generated": "2026-10-29"
+}

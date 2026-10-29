@@ -1,0 +1,96 @@
+{
+ "id": "offsend/offsend",
+ "repo": "Offsend/Offsend",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Offsend - Local-first menu bar app that prepares projects, files, and clipboard text for AI tools by detecting and masking sensitive data."
+  }
+ ],
+ "summary": {
+  "one_liner": "Offsend is a local-first tool that detects secrets in files, repos, and AI-tool context, and replaces them with reversible {{TYPE:v1...}} tokens so AI agents keep working without seeing plaintext.",
+  "what_it_does": "The CLI installs user-level Cursor and Claude hooks that seal secret-bearing file reads and MCP responses into tokens, and it can restore them with offsend unseal. Per-repo policy lives in a committed .offsend.yml, written by offsend init and applied by offsend sync, covering ignore rules, sealing, policy checks, and git pre-commit and post-merge hooks. offsend check scans files, staged changes, stdin, or editor hook JSON for secrets, and offsend history audit/scrub looks for secrets already in local Cursor and Claude transcripts. A GitHub Action (Offsend/ai-hygiene) can fail pull requests that would expose secrets or ignore drift. The README says scanning runs locally and that no scanned contents, prompts, or findings are uploaded; Check only analyzes a public GitHub repo the user chooses to scan online. A macOS app (Safe Paste, drag-and-drop prep, watched folders) and a browser extension for chat apps are also described.",
+  "use_cases": [
+   "keep AI coding agents from seeing database passwords and API keys",
+   "mask secrets before pasting text or files into AI chat tools",
+   "add a committed AI-context policy to a team git repository",
+   "block pull requests that would leak secrets in CI",
+   "find and scrub secrets already stored in local agent transcripts",
+   "scan a public GitHub repository for leaked secrets"
+  ],
+  "how_to_run": [
+   "curl -fsSL <install script URL in README> | bash  (also runs offsend setup)",
+   "offsend doctor",
+   "offsend init --template node  (in a repo you own)",
+   "git add .offsend.yml && git commit -m \"Add AI context policy\"",
+   "offsend history audit",
+   "brew install --cask offsend/tap/offsend  (macOS app)"
+  ],
+  "stack": [
+   "Rust (CLI and core, cargo workspace)",
+   "Swift / Xcode (macOS app)",
+   "Rust crates: offsend-detect, offsend-policy, offsend-seal, offsend-ffi",
+   "server/ scan API",
+   "shell scripts"
+  ],
+  "notable": [
+   "Seals secrets into reversible {{TYPE:v1...}} tokens so the agent keeps working instead of being blocked",
+   "Fails closed: without a seal key, secret-bearing MCP output is withheld rather than passed through",
+   "Layered model: machine hooks, per-repo .offsend.yml policy, and a GitHub Action for CI",
+   "Runs locally with no account required; README says it does not upload scanned content",
+   "Merges into existing Cursor/Claude hook configs and leaves foreign hooks such as ggshield in place"
+  ],
+  "caveats": [
+   "Defense-in-depth only per the README: cloud sessions and editors without these hooks are not covered",
+   "Windsurf and Codex are covered only through a repo policy (offsend sync), not through setup",
+   "CLI runs on macOS and Linux only; no Windows or Copilot runtime per the README comparison table",
+   "MacOS app has Free and Pro tiers (details in docs/macos-app.md, not reproduced in README)"
+  ],
+  "license": "Apache 2.0",
+  "category": "secret detection for AI",
+  "keywords": [
+   "secret detection",
+   "secret masking",
+   "secrets scanner",
+   "sensitive data redaction",
+   "ai coding agent",
+   "cursor hooks",
+   "claude code hooks",
+   "mcp response filtering",
+   "tokenize secrets",
+   "reversible tokens",
+   "git pre-commit hook",
+   "post-merge hook",
+   "github action",
+   "ci secret scanning",
+   "local-first",
+   "menu bar app",
+   "macos app",
+   "rust cli",
+   "gitguardian alternative",
+   "ggshield alternative",
+   "prevent leaking api keys to ai",
+   "hide passwords from chatgpt",
+   "mask secrets before pasting",
+   "scan repo for leaked credentials",
+   "agent transcript cleanup",
+   "ai context policy",
+   "ignore file sync",
+   "env file protection",
+   "pull request secret check",
+   "seal and unseal secrets",
+   "privacy for ai tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4614,
+  "output": 1556
+ },
+ "generated": "2026-10-29"
+}

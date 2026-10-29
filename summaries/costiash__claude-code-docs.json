@@ -1,0 +1,95 @@
+{
+ "id": "costiash/claude-code-docs",
+ "repo": "costiash/claude-code-docs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "claude-code-docs by Constantin Shafranski - A mirror of the Anthropic&amp;copy; PBC documentation site for Claude/Code, but with bonus features like full-text search and query-time updates - up-to-the-minute, fully-indexed information so that Claude Code can read about itself."
+  }
+ ],
+ "summary": {
+  "one_liner": "A metadata-only index and bash client that lets Claude Code fetch live Anthropic Claude and Claude Code documentation pages on demand, with full-text search, interactive HTML courses, and changelog reports.",
+  "what_it_does": "The repository commits only a page manifest and a prose-free search index (about 3 MB), not the documentation text itself. A bash, curl, and jq client searches that index and downloads the matching .md pages directly from Anthropic's servers into a local cache. A SessionStart hook syncs metadata and re-fetches changed pages each session. The /docs skill supports direct lookups, natural-language queries, and auto-discovery, where Claude reads relevant docs before answering. The skill can also generate a self-contained animated HTML course on a topic and produce an HTML changelog report of added, changed, and removed doc pages over a chosen time window. The README says it covers platform.claude.com and code.claude.com, with CI regenerating the index every 3 hours.",
+  "use_cases": [
+   "Grounding Claude Code answers in current official docs",
+   "Looking up Claude API, Agent SDK, or hooks documentation from the terminal",
+   "Generating an interactive HTML course on a Claude topic",
+   "Tracking what changed in Anthropic's docs over the last day, week, or month",
+   "Sharing a consistent docs setup with a team via project settings"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add costiash/claude-code-docs",
+   "/plugin install claude-docs@claude-code-docs",
+   "/docs hooks",
+   "/docs --course hooks",
+   "/docs --report 24h",
+   "/docs sync"
+  ],
+  "stack": [
+   "bash",
+   "curl",
+   "jq",
+   "Python (CI pipeline only, per README)",
+   "GitHub Actions",
+   "Claude Code plugin system"
+  ],
+  "notable": [
+   "Commits zero documentation prose; fetches each page from Anthropic on demand instead of mirroring",
+   "Requires only bash, curl, and jq with no MCP server or API keys",
+   "Auto-discovery reads relevant docs without a command prefix",
+   "Generates self-contained interactive HTML courses saved locally",
+   "Fail-closed CI safeguards and domain-allowlisted, HTTPS-only fetching"
+  ],
+  "caveats": [
+   "Requires jq, which is not preinstalled everywhere (brew or apt install)",
+   "Script install path is a legacy option; the README recommends the plugin instead",
+   "Documentation content belongs to Anthropic; only the tool code is open source under MIT"
+  ],
+  "license": "MIT",
+  "category": "documentation search tooling",
+  "keywords": [
+   "claude code docs",
+   "claude documentation",
+   "anthropic docs",
+   "docs search",
+   "full-text search",
+   "live documentation",
+   "on-demand fetch",
+   "metadata index",
+   "claude code plugin",
+   "bash client",
+   "curl jq",
+   "mirror alternative",
+   "mcp alternative",
+   "docs cache",
+   "auto discovery",
+   "interactive course generator",
+   "html course",
+   "changelog report",
+   "doc change tracking",
+   "agent sdk docs",
+   "claude api reference",
+   "prompt engineering docs",
+   "learn claude code",
+   "ask claude about itself",
+   "docs for ai coding assistant",
+   "team docs setup",
+   "sessionstart hook",
+   "grounded answers",
+   "search claude docs",
+   "offline-friendly docs",
+   "terminal docs lookup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5809,
+  "output": 1246
+ },
+ "generated": "2026-10-29"
+}

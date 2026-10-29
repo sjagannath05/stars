@@ -1,0 +1,98 @@
+{
+ "id": "richardr1126/openreader",
+ "repo": "richardr1126/openreader",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "OpenReader - EPUB, PDF, DOCX, MD, and TXT file text to speech document reader. Read documents in realtime with high-quality TTS; or extract audiobooks. (Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenReader is a self-hostable, Next.js-based text-to-speech document reader that plays EPUB, PDF, TXT, MD, and DOCX files with synchronized read-along highlighting and audiobook export.",
+  "what_it_does": "The README describes a web app that reads documents aloud with multilingual, synchronized read-along playback for EPUB, PDF, TXT, MD, and DOCX files. It offers multiple TTS backends: local Kokoro with no API key, self-hosted OpenAI-compatible servers (Kokoro-FastAPI, KittenTTS-FastAPI, Orpheus-FastAPI, Supertonic), and cloud APIs (OpenAI, Replicate, Google AI Studio, Fish Audio, OpenRouter). PDF parsing is layout-aware using PP-DocLayoutV3 (ONNX), and word-by-word highlighting is available. Users can export audiobooks as M4B or MP3, and can record or import a voice sample for narration with supported providers. Storage can be embedded SeaweedFS or S3-compatible, with SQLite or Postgres for the database. A separate desktop app for macOS, Windows, and Linux is also offered, and the project ships Docker images for amd64 and arm64.",
+  "use_cases": [
+   "listen to PDFs or ebooks read aloud",
+   "generate audiobooks from documents",
+   "self-host a text-to-speech reader for a team or family",
+   "read EPUB files with synchronized word highlighting",
+   "narrate documents with a cloned personal voice",
+   "run offline TTS reading with local Kokoro voices"
+  ],
+  "how_to_run": [
+   "Download the desktop app from the project's releases page (macOS, Windows, Linux)",
+   "Run with Docker Compose (see the Docker Compose docs linked in the README)",
+   "Deploy on Vercel (see Vercel Deployment docs)",
+   "Develop locally (see Local Development docs)"
+  ],
+  "stack": [
+   "Next.js",
+   "TypeScript",
+   "Docker",
+   "ONNX (PP-DocLayoutV3, Whisper alignment)",
+   "Kokoro TTS",
+   "NATS JetStream",
+   "SeaweedFS",
+   "SQLite",
+   "Postgres"
+  ],
+  "notable": [
+   "Progressive background generation: playback starts after the first segment while the worker generates ahead, with cached audio reused across seeks and exports",
+   "Word-by-word highlighting using Kokoro phoneme durations or ONNX Whisper alignment",
+   "Multi-provider TTS covering local Kokoro, self-hosted OpenAI-compatible servers, and several cloud APIs",
+   "Audiobook export to M4B or MP3 assembled by the compute worker"
+  ],
+  "caveats": [
+   "Full self-hosted setup involves a compute worker with NATS JetStream and optional object storage, which adds infrastructure",
+   "Available languages and voices depend on the configured TTS provider",
+   "Cloud TTS providers and voice cloning features require third-party API access"
+  ],
+  "license": "MIT",
+  "category": "text-to-speech document reader",
+  "keywords": [
+   "text to speech",
+   "tts reader",
+   "document reader",
+   "read aloud",
+   "audiobook maker",
+   "epub reader",
+   "pdf reader",
+   "docx",
+   "markdown reader",
+   "txt reader",
+   "read along highlighting",
+   "kokoro tts",
+   "self-hosted",
+   "docker",
+   "nextjs",
+   "audiobook export",
+   "m4b",
+   "mp3 export",
+   "openai compatible tts",
+   "fish audio",
+   "voice cloning",
+   "elevenlabs alternative",
+   "speechify alternative",
+   "natural reader alternative",
+   "listen to pdf",
+   "offline tts",
+   "onnx",
+   "whisper alignment",
+   "nats jetstream",
+   "seaweedfs",
+   "s3 storage",
+   "desktop app",
+   "listen to ebooks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2932,
+  "output": 1408
+ },
+ "generated": "2026-10-29"
+}

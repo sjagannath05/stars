@@ -1,0 +1,94 @@
+{
+ "id": "celery/celery",
+ "repo": "celery/celery",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Task Queues",
+   "entry": "celery - An asynchronous task queue/job queue based on distributed message passing."
+  }
+ ],
+ "summary": {
+  "one_liner": "Celery is a Python distributed task queue that runs work asynchronously on worker processes, passing messages through a broker such as RabbitMQ or Redis.",
+  "what_it_does": "Lets a client enqueue units of work (tasks) that dedicated worker processes pick up and run, communicating via messages through a broker. Supports multiple workers and brokers for high availability and horizontal scaling. Message transports named include RabbitMQ, Redis, Amazon SQS, and Google Pub/Sub, with experimental support for others including SQLite for local development. Concurrency options are prefork, eventlet, gevent, and a single-threaded solo mode. Result stores include AMQP, Redis, memcached, SQLAlchemy, Django ORM, Cassandra, Elasticsearch, and Google Cloud Storage, and serialization supports pickle, json, yaml, and msgpack with optional message signing. The README also lists client implementations in other languages (node-celery, a PHP client, gocelery, gopher-celery, rusty-celery) and notes integration with web frameworks such as Django, Flask, and FastAPI.",
+  "use_cases": [
+   "run background jobs in a Python web app",
+   "schedule and distribute long-running tasks across machines",
+   "process message queues with multiple workers",
+   "offload slow work from request handlers",
+   "coordinate asynchronous tasks with retries and high availability"
+  ],
+  "how_to_run": [
+   "pip install -U Celery",
+   "pip install \"celery[redis]\"",
+   "from celery import Celery; app = Celery('hello', broker='amqp://guest@localhost//')"
+  ],
+  "stack": [
+   "Python",
+   "RabbitMQ",
+   "Redis",
+   "Amazon SQS",
+   "Google Pub/Sub",
+   "kombu",
+   "amqp",
+   "billiard",
+   "vine"
+  ],
+  "notable": [
+   "Pluggable brokers, result backends, serializers, and pool implementations",
+   "Installable feature bundles via pip extras such as celery[redis] or celery[sqs]",
+   "Workers and clients retry automatically on connection loss",
+   "Client libraries exist for Node.js, PHP, Go, and Rust per the README"
+  ],
+  "caveats": [
+   "Windows is not officially supported; the README says it may work but asks users not to file platform issues",
+   "Requires Python 3.9+ for v5.6.x; v5.7.x needs Python 3.10 or newer; older Python needs older Celery versions",
+   "Some transports and result backends are only experimental"
+  ],
+  "license": "New BSD License",
+  "category": "python task queue",
+  "keywords": [
+   "task queue",
+   "job queue",
+   "distributed task queue",
+   "asynchronous tasks",
+   "background jobs",
+   "message broker",
+   "rabbitmq",
+   "redis",
+   "amqp",
+   "worker processes",
+   "distributed workers",
+   "python async jobs",
+   "run jobs in background",
+   "distribute work across machines",
+   "scheduled tasks",
+   "task scheduler",
+   "offload work from web requests",
+   "kombu",
+   "message passing",
+   "celery alternative",
+   "job runner",
+   "work queue",
+   "horizontal scaling workers",
+   "sqs task queue",
+   "pub/sub tasks",
+   "result backend",
+   "msgpack serializer",
+   "gevent pool",
+   "eventlet pool",
+   "python worker processes",
+   "async python jobs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6963,
+  "output": 1164
+ },
+ "generated": "2026-10-29"
+}

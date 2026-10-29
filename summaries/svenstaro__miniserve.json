@@ -1,0 +1,91 @@
+{
+ "id": "svenstaro/miniserve",
+ "repo": "svenstaro/miniserve",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Web-based File Managers",
+   "entry": "miniserve - CLI tool to serve files and dirs over HTTP. MIT Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "miniserve is a small, self-contained Rust CLI tool that serves files and directories over HTTP from the command line with a single command.",
+  "what_it_does": "Serves a single file or a directory from the command line, with a directory listing or a custom index file. Optional features include username/password auth (plain, SHA-256/SHA-512 hashed, or from a file), TLS with custom certificate and key, and custom response headers. Users can enable file uploading, directory creation, file and directory deletion, and a pastebin, each behind its own flag. Folders can be downloaded as tar, tar.gz, or zip archives when enabled. It also offers search/filter by name, SPA and pretty-URL modes, read-only WebDAV (PROPFIND), QR code display, and multiple color themes.",
+  "use_cases": [
+   "quickly share files over HTTP from a terminal",
+   "serve a directory to a colleague on the local network",
+   "password-protect a temporary file share",
+   "receive file or photo uploads from a phone or browser",
+   "host a single-page application build locally",
+   "run a simple HTTPS file server with a custom certificate"
+  ],
+  "how_to_run": [
+   "cargo install --locked miniserve",
+   "miniserve /path/to/dir",
+   "miniserve --auth joe:123 unreleased-linux-distros/",
+   "docker run -v /tmp:/tmp -p 8080:8080 --rm -it docker.io/svenstaro/miniserve /tmp"
+  ],
+  "stack": [
+   "Rust",
+   "Actix",
+   "Docker",
+   "Cargo"
+  ],
+  "notable": [
+   "Single binary with no extra runtime dependencies, available for Linux, macOS, Windows, and Termux",
+   "Random 6-hex-digit URL route option for obscuring a share",
+   "Separate --file-external-url option to pair an authenticated browsing instance with a non-indexed download instance",
+   "Hardened systemd unit template for running one instance per served path",
+   "Built-in shell completions and man page generation"
+  ],
+  "caveats": [
+   "Zip archive generation happens in memory, so large directories can cause out-of-memory errors (per the README)",
+   "TLS is listed as supported only on supported architectures",
+   "WebDAV support is read-only (PROPFIND requests only)"
+  ],
+  "license": "MIT",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "http file server",
+   "static file server",
+   "serve files over http",
+   "cli file server",
+   "rust web server",
+   "miniserve",
+   "file sharing",
+   "share files with my team",
+   "quick http server",
+   "directory listing",
+   "basic auth file server",
+   "password protected file share",
+   "tls file server",
+   "https server",
+   "webdav server",
+   "file upload server",
+   "upload files from phone",
+   "tar gz download",
+   "zip download folder",
+   "spa server",
+   "single page application server",
+   "darkhttpd alternative",
+   "python http.server alternative",
+   "netcat alternative",
+   "actix",
+   "qr code file share",
+   "pastebin",
+   "self-hosted file transfer",
+   "lan file sharing",
+   "mime type server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8820,
+  "output": 1112
+ },
+ "generated": "2026-10-29"
+}

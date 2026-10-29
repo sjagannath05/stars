@@ -1,0 +1,101 @@
+{
+ "id": "run-llama/llama_index",
+ "repo": "run-llama/llama_index",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "llama-index - A toolkit for building RAG pipelines and agents over your data."
+  },
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "LlamaIndex - LlamaIndex is a data framework for your LLM applications"
+  }
+ ],
+ "summary": {
+  "one_liner": "LlamaIndex is an open-source Python framework (the llama-index / llama-index-core packages) for building RAG and agent applications over your own data, maintained by the LlamaIndex company, which now focuses mainly on its LlamaParse document platform.",
+  "what_it_does": "The README describes a modular Python framework split into a core package (llama-index-core) and a large set of separate integration packages for LLMs, embedding models, and vector stores (over 300 are mentioned). It offers data connectors for sources such as APIs, PDFs, docs, and SQL, and provides index structures (indices and graphs) to organize data for LLM use. It includes a query interface that retrieves context and feeds it to an LLM, with high-level APIs for quick starts and lower-level APIs for customizing modules like retrievers, query engines, and rerankers. Indexes are stored in memory by default and can be persisted to disk and reloaded. The README also notes the company's shift in focus toward LlamaParse, a separate commercial document parsing and extraction platform that can be used with or without the framework.",
+  "use_cases": [
+   "build a retrieval-augmented generation (RAG) app over private documents",
+   "ingest PDFs, docs, and SQL data for question answering with an LLM",
+   "create a vector store index and query it in a few lines of Python",
+   "swap between OpenAI, Ollama, and Hugging Face models and embeddings",
+   "build LLM agents that use custom tools and data",
+   "parse and extract structured data from documents via LlamaParse"
+  ],
+  "how_to_run": [
+   "pip install llama-index-core",
+   "pip install llama-index-llms-openai",
+   "pip install llama-index-llms-ollama",
+   "pip install llama-index-embeddings-huggingface",
+   "Build an index: documents = SimpleDirectoryReader(\"YOUR_DATA_DIRECTORY\").load_data(); index = VectorStoreIndex.from_documents(documents)",
+   "Query: index.as_query_engine().query(\"YOUR_QUESTION\")"
+  ],
+  "stack": [
+   "Python",
+   "llama-index-core",
+   "LlamaIndex integration packages (LLMs, embeddings, vector stores)",
+   "OpenAI",
+   "Ollama",
+   "Hugging Face (transformers, BAAI/bge embeddings)",
+   "nltk and tiktoken (bundled static caches)"
+  ],
+  "notable": [
+   "Namespaced package layout: imports with 'core' come from the core package, others from integration packages",
+   "Starter package (llama-index) or a customized install of core plus chosen integrations",
+   "Default in-memory storage with persist and reload to ./storage",
+   "Build assets in the core package can be verified with GitHub attestation (gh attestation verify)",
+   "Ships a bundled _static folder with nltk and tiktoken caches for restricted environments"
+  ],
+  "caveats": [
+   "The README says the company's primary focus has shifted to LlamaParse, and the OSS framework is presented as available but no longer the main focus",
+   "The README states it is not updated as frequently as the documentation",
+   "Many features (LlamaParse, LlamaAgents, Extract, Index) are part of a separate enterprise platform with signup and product links"
+  ],
+  "license": "unknown",
+  "category": "llm application framework",
+  "keywords": [
+   "llamaindex",
+   "llama-index",
+   "rag",
+   "retrieval augmented generation",
+   "llm framework",
+   "vector store index",
+   "vector index",
+   "query engine",
+   "data connectors",
+   "document ingestion",
+   "llm agents",
+   "agentic applications",
+   "chat with my documents",
+   "question answering over pdfs",
+   "private data with llm",
+   "augment llm with my data",
+   "langchain alternative",
+   "ollama integration",
+   "openai integration",
+   "hugging face embeddings",
+   "llamaparse",
+   "document parsing",
+   "agentic ocr",
+   "document extraction",
+   "retriever",
+   "reranker",
+   "python data framework",
+   "knowledge graph index",
+   "persist index to disk",
+   "llm ops"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4650,
+  "output": 1430
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,94 @@
+{
+ "id": "blackcandy-org/blackcandy",
+ "repo": "blackcandy-org/blackcandy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "Black Candy - Music streaming server. MIT Docker/Ruby"
+  }
+ ],
+ "summary": {
+  "one_liner": "Black Candy is a self-hosted music streaming server, run as a Docker image, that serves your own music library through a web interface and mobile apps.",
+  "what_it_does": "Black Candy runs as a personal music streaming server that you host yourself. The README describes a Docker image that serves on port 80 and is configured through environment variables such as MEDIA_PATH for the music directory. It uses SQLite by default and can switch to PostgreSQL via DB_ADAPTER and related URL variables. Data such as sessions and databases persists in /rails/storage, and a SECRET_KEY_BASE value can be set for stable sessions. Optional Discogs API tokens can be added in the settings page to fetch artist and album images. The README also mentions mobile apps in app stores and an Android APK on GitHub Releases.",
+  "use_cases": [
+   "stream my own music library from a home server",
+   "host a personal music center in a browser",
+   "run a self-hosted Spotify-like music server",
+   "serve a media folder over the web to my devices",
+   "fetch artist and album art for a local music collection"
+  ],
+  "how_to_run": [
+   "docker run -p 80:80 ghcr.io/blackcandy-org/blackcandy:latest",
+   "docker run -p 3000:80 ghcr.io/blackcandy-org/blackcandy:latest",
+   "docker run -v /media_data:/media_data -e MEDIA_PATH=/media_data ghcr.io/blackcandy-org/blackcandy:latest",
+   "docker run -v ./storage_data:/rails/storage ghcr.io/blackcandy-org/blackcandy:latest",
+   "openssl rand -hex 64"
+  ],
+  "stack": [
+   "Ruby",
+   "Ruby on Rails",
+   "Node.js",
+   "Docker",
+   "SQLite",
+   "PostgreSQL",
+   "libvips",
+   "FFmpeg"
+  ],
+  "notable": [
+   "Ships as a Docker image with a docker-compose example and SQLite as the default database",
+   "Supports PostgreSQL as an alternative database through environment variables",
+   "Media library is set by mounting a host folder and setting MEDIA_PATH, or in the settings page",
+   "Optional Discogs integration for artist and album images",
+   "Includes a demo mode (DEMO_MODE) that restricts admin privileges and profile changes"
+  ],
+  "caveats": [
+   "The README warns that upgrades may include breaking changes and points to a separate upgrade guide",
+   "The edge version tracks the master branch and the README advises ordinary users against it because of possible data loss",
+   "Without SECRET_KEY_BASE set, sessions are invalidated on every container restart"
+  ],
+  "license": "MIT",
+  "category": "self-hosted music streaming",
+  "keywords": [
+   "music streaming server",
+   "self-hosted music",
+   "personal music server",
+   "music streaming",
+   "audio streaming",
+   "self-hosted audio",
+   "docker music server",
+   "ruby on rails",
+   "rails app",
+   "sqlite",
+   "postgresql",
+   "media server",
+   "stream my music library",
+   "listen to my music from home",
+   "host my own music collection",
+   "music library web player",
+   "discogs album art",
+   "artist images",
+   "mobile music app",
+   "android apk",
+   "docker compose music",
+   "media path",
+   "mp3 streaming",
+   "home music center",
+   "personal music center",
+   "subsonic alternative",
+   "spotify alternative self-hosted",
+   "navidrome alternative",
+   "music library on my server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4188,
+  "output": 1240
+ },
+ "generated": "2026-10-29"
+}

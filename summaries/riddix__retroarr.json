@@ -1,0 +1,102 @@
+{
+ "id": "riddix/retroarr",
+ "repo": "RiDDiX/RetroArr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Games - Administrative Utilities & Control Panels",
+   "entry": "RetroArr ⚠ - Game library manager for PC and retro consoles, with metadata scraping, indexer search, download automation and browser-based emulation (alternative to RomM). (Source Code) MIT Docker/.NET"
+  }
+ ],
+ "summary": {
+  "one_liner": "RetroArr is a self-hosted game library manager for PC and retro consoles that scans files, fetches metadata, searches indexers, automates downloads, and offers browser-based emulation, described as \"Radarr/Sonarr, but for video games.\"",
+  "what_it_does": "It scans a game library and identifies files across 170 platforms, pulling metadata from IGDB (primary), ScreenScraper, Steam, and GOG. It searches indexers (Prowlarr, Jackett, Hydra Launcher, raw Newznab/Torznab) and sends releases to download clients (qBittorrent, Transmission, Deluge, SABnzbd, NZBGet), then renames and places files by platform. Games or whole platforms can be monitored so a background sweep searches indexers on a schedule and can auto-grab the best-scoring release. It also provides browser-based emulation via EmulatorJS with 23 cores, save states, and BIOS folder handling, plus launch integration for Steam, GOG, and Linux/macOS setups. Storage can be SQLite, PostgreSQL, or MariaDB, and credentials are encrypted with ASP.NET Data Protection.",
+  "use_cases": [
+   "organize a retro game collection",
+   "fetch game metadata and cover art automatically",
+   "automate game downloads via indexers",
+   "play retro console games in the browser",
+   "warm LanCache for Steam, Battle.net, or Epic downloads",
+   "transfer Switch games over USB",
+   "monitor games and auto-grab new releases"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the ghcr.io/riddix/retroarr:latest image, ports 2727 (HTTP) and optionally 2728 (HTTPS), and volumes for config, media, and savestates",
+   "Run: docker compose up -d",
+   "Open the web UI on port 2727",
+   "Go to Settings → Metadata and enter IGDB credentials (Twitch dev account)"
+  ],
+  "stack": [
+   ".NET 8",
+   "Node.js",
+   "React",
+   "Docker",
+   "SQLite",
+   "PostgreSQL",
+   "MariaDB",
+   "Redis",
+   "SignalR",
+   "EmulatorJS",
+   "Photino",
+   "ASP.NET Data Protection"
+  ],
+  "notable": [
+   "Covers PC, retro consoles, handhelds, and arcade platforms in one UI with 170 platform definitions",
+   "Monitoring works like Sonarr/Radarr, with scheduled indexer sweeps and optional auto-grab of the best-scoring release",
+   "Browser-based emulation through EmulatorJS with 23 cores and 8 save-state slots per game",
+   "Security model: API key gate with loopback detection, and short-lived signed links for ROMs and downloads",
+   "Desktop builds for Windows, macOS, and Linux alongside the Docker image"
+  ],
+  "caveats": [
+   "IGDB credentials are required for metadata; the README describes them as free but needs a Twitch developer account",
+   "Reverse proxy setups must forward WebSocket upgrades for SignalR, and proxies on the same host must send X-Forwarded-For or their clients are treated as local",
+   "Some threaded emulator cores need HTTPS when accessed from a LAN IP",
+   "The list entry marks the project with a warning symbol; the README does not explain the reason"
+  ],
+  "license": "MIT",
+  "category": "game library management",
+  "keywords": [
+   "game library manager",
+   "retro game manager",
+   "self-hosted game library",
+   "radarr for games",
+   "sonarr alternative games",
+   "romm alternative",
+   "emulatorjs",
+   "browser emulation",
+   "retro emulation web",
+   "prowlarr",
+   "jackett",
+   "newznab",
+   "torznab",
+   "qbittorrent",
+   "transmission",
+   "sabnzbd",
+   "nzbget",
+   "deluge",
+   "igdb metadata",
+   "screenscraper",
+   "lancache",
+   "save states",
+   "rom organizer",
+   "game metadata scraper",
+   "docker game manager",
+   "auto download games",
+   "organize retro roms",
+   "play retro games in browser",
+   "monitor games for downloads",
+   "switch usb transfer",
+   "dotnet game manager"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7628,
+  "output": 1487
+ },
+ "generated": "2026-10-29"
+}

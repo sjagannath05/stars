@@ -1,0 +1,98 @@
+{
+ "id": "alichtman/deadbolt",
+ "repo": "alichtman/deadbolt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Encryption",
+   "entry": "Deadbolt - Open-source file encryption tool. [![Open-Source Software][OSS Icon]](https://github.com/alichtman/deadbolt) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Deadbolt is an open-source desktop GUI and CLI tool for encrypting and decrypting files and folders with a password, built on Electron.",
+  "what_it_does": "Encrypts and decrypts files or folders using a password, through a desktop GUI or a command-line interface (installed via npm as deadbolt-cli). Encrypted files can be shared across macOS, Windows, and Linux. Encryption uses AES-256-GCM, with argon2id for password-based key derivation and the AES-GCM authentication tag for integrity checks. The file format has a version header: V002 (current) uses argon2id, while legacy V001 files (PBKDF2-SHA512) can still be decrypted. The CLI accepts a --password flag, or prompts for the password if none is given.",
+  "use_cases": [
+   "Encrypting sensitive files before storing or sharing them",
+   "Password-protecting a folder on a laptop or desktop",
+   "Sharing encrypted files across macOS, Windows, and Linux",
+   "Decrypting .deadbolt files from the command line",
+   "Scripting file encryption with the CLI"
+  ],
+  "how_to_run": [
+   "npm install -g deadbolt-cli",
+   "deadbolt encrypt secret.pdf",
+   "deadbolt decrypt secret.pdf.deadbolt",
+   "brew install deadbolt --cask (macOS, via Homebrew)",
+   "Download AppImage, flatpak, .dmg, or .exe from the GitHub releases tab",
+   "npm install && npm run package:linux-flatpak (build flatpak from source)"
+  ],
+  "stack": [
+   "Electron",
+   "Node.js crypto",
+   "@node-rs/argon2",
+   "AES-256-GCM",
+   "argon2id",
+   "npm",
+   "flatpak",
+   "AppImage"
+  ],
+  "notable": [
+   "Cross-platform: encrypted files work across macOS, Windows, and Linux",
+   "Versioned file format (DEADBOLT_V002 header) with backward-compatible decryption of V001 files",
+   "Uses argon2id with RFC 9106 first-recommendation parameters (2 GiB memory, 1 iteration, 4 lanes)",
+   "Both a GUI app and a CLI (deadbolt-cli on npm)"
+  ],
+  "caveats": [
+   "CLI --password flag may leave the password in shell history",
+   "Auto-updates are not supported on Linux currently",
+   "Arch Linux AUR package (deadbolt-bin) is not maintained by the author",
+   "Version 2.0.0-beta shown in README build example; the argon2id change applies from v2.1.0-alpha onward"
+  ],
+  "license": "unknown",
+  "category": "file encryption tool",
+  "keywords": [
+   "file encryption",
+   "encrypt files",
+   "decrypt files",
+   "password encryption",
+   "file encryption tool",
+   "desktop app",
+   "electron app",
+   "cli",
+   "command line encryption",
+   "npm cli",
+   "aes-256-gcm",
+   "argon2id",
+   "argon2",
+   "pbkdf2",
+   "encrypt folder",
+   "password protect files",
+   "protect files with password",
+   "share encrypted files",
+   "cross-platform encryption",
+   "macos encryption",
+   "windows encryption",
+   "linux encryption",
+   "flatpak",
+   "appimage",
+   "homebrew cask",
+   "open source encryption",
+   "encrypt files before uploading",
+   "secure file storage",
+   "private files on laptop",
+   "gpg alternative",
+   "veracrypt alternative",
+   "7zip encryption alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4084,
+  "output": 1263
+ },
+ "generated": "2026-10-29"
+}

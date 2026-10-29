@@ -1,0 +1,97 @@
+{
+ "id": "minedojo/voyager",
+ "repo": "MineDojo/Voyager",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "Voyager is an LLM-powered embodied agent that plays Minecraft, continuously exploring, learning reusable code skills, and setting its own curriculum using GPT-4.",
+  "what_it_does": "The repository provides the Voyager code for a Minecraft agent that uses GPT-4 via black-box API queries, without fine-tuning model parameters. It has an automatic curriculum to drive exploration, a growing skill library of executable code that is stored and retrieved for later use, and an iterative prompting loop that uses environment feedback, execution errors, and self-verification to improve programs. The Python package is installed with pip, and it uses Node.js packages under voyager/env/mineflayer to control the game. Users can run continuous lifelong learning, resume from a checkpoint directory, or load a saved skill library and run decomposed sub-goals for a specific task. The README says the skills are temporally extended, interpretable, and compositional.",
+  "use_cases": [
+   "Research on lifelong learning embodied agents",
+   "Running an LLM agent autonomously in Minecraft",
+   "Building a reusable library of code skills for game agents",
+   "Decomposing a high-level Minecraft goal into sub-goals",
+   "Resuming an interrupted agent learning run from checkpoints",
+   "Testing LLM-driven code generation with environment feedback"
+  ],
+  "how_to_run": [
+   "git clone the Voyager repository and run `pip install -e .` (Python >= 3.9)",
+   "Install Node.js >= 16.13.0, then in voyager/env/mineflayer run `npm install -g npx` and `npm install`",
+   "In voyager/env/mineflayer/mineflayer-collectblock run `npx tsc`, then in voyager/env/mineflayer run `npm install` again",
+   "Set up a Minecraft instance and install the Fabric mods described in the README",
+   "Provide azure_login settings and an OpenAI API key, then call `voyager.learn()`",
+   "To run a learned skill library, pass skill_library_dir to Voyager, call decompose_task, then call inference(sub_goals=...)"
+  ],
+  "stack": [
+   "Python",
+   "Node.js",
+   "Mineflayer",
+   "GPT-4 (OpenAI API)",
+   "Minecraft Fabric mods",
+   "Azure login"
+  ],
+  "notable": [
+   "Skill library of executable code that stores and retrieves complex behaviors",
+   "Automatic curriculum designed to maximize exploration",
+   "Iterative prompting that uses environment feedback, execution errors, and self-verification",
+   "Checkpoint resume and reuse of a learned skill library in new worlds",
+   "Black-box GPT-4 queries with no model fine-tuning"
+  ],
+  "caveats": [
+   "Requires a paid OpenAI API key for GPT-4",
+   "Requires a Minecraft installation with specific Fabric mods; tested version is fabric-loader-0.14.18-1.19",
+   "Setup is multi-step across Python and Node.js, and the game world must be opened to LAN manually when using Azure login",
+   "The README states the project is for research purposes and is not an official NVIDIA product",
+   "Task decomposition can sometimes produce illogical sub-goals that need to be rerun"
+  ],
+  "license": "MIT License",
+  "category": "embodied ai agents",
+  "keywords": [
+   "voyager",
+   "minecraft agent",
+   "minecraft bot",
+   "embodied agent",
+   "lifelong learning",
+   "open-ended agent",
+   "llm agent",
+   "gpt-4 agent",
+   "skill library",
+   "automatic curriculum",
+   "mineflayer",
+   "fabric mods",
+   "task decomposition",
+   "iterative prompting",
+   "self-verification",
+   "code generation agent",
+   "game ai",
+   "autonomous exploration",
+   "in-context learning",
+   "catastrophic forgetting",
+   "azure login minecraft",
+   "resume checkpoint agent",
+   "research agent framework",
+   "ai plays video game",
+   "minecraft automation",
+   "llm game agent",
+   "agent that learns skills",
+   "reusable code skills",
+   "mc bot python",
+   "nvidia research agent"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3625,
+  "output": 1459
+ },
+ "generated": "2026-10-29"
+}

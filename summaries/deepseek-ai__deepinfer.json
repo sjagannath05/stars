@@ -1,0 +1,104 @@
+{
+ "id": "deepseek-ai/deepinfer",
+ "repo": "deepseek-ai/DeepInfer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "deepinfer - DeepSeek's production inference engine for DeepSeek models, with MoE expert parallelism."
+  }
+ ],
+ "summary": {
+  "one_liner": "DeepInfer is DeepSeek's open-source offline inference framework for DeepSeek models, with MoE expert parallelism and speculative-decoding features, targeting NVIDIA SM100 and Huawei Ascend 950 hardware.",
+  "what_it_does": "The README describes an inference engine that runs offline inference on DeepSeek-V4.1-Flash, downloaded from Hugging Face or loaded from a local directory. It lists parallelism support (attention data parallel, balanced context parallel, MoE expert parallel with EPLB), a draft-token decoding mode (DSpark) with confidence-scheduled verification, and bounded suffix replay for decoder prefill. It also covers asynchronous batch scheduling, batch-invariant and deterministic sampling, and structured outputs constrained by regex, JSON schema, or EBNF grammar. Kernels named include FlashMLA, DeepGEMM, DeepEP, TileKernels, DeepSelect, and custom TileLang kernels. The README states that a KV cache system and prefill/decode disaggregation are not included in this release.",
+  "use_cases": [
+   "offline batch inference with DeepSeek models",
+   "running DeepSeek-V4.1-Flash on NVIDIA SM100 GPUs",
+   "running DeepSeek models on Huawei Ascend NPUs",
+   "deterministic or reproducible LLM output",
+   "constraining model output to JSON schema or grammar",
+   "benchmarking MoE inference performance"
+  ],
+  "how_to_run": [
+   "Create and activate an empty Python 3.12 environment",
+   "export DEEPINFER_ACCELERATOR=nvidia  (use 'ascend' on Ascend)",
+   "./build.sh",
+   "python examples/offline_inference.py",
+   "Optionally set DEEPINFER_HF_MODEL_DIR=/path/to/DeepSeek-V4.1-Flash-1017 to use a local checkpoint"
+  ],
+  "stack": [
+   "Python 3.12",
+   "C++/CUDA (GCC >= 13)",
+   "CUDA 13",
+   "CANN 9.2 (Ascend)",
+   "FlashMLA",
+   "DeepGEMM",
+   "DeepEP",
+   "TileKernels",
+   "DeepSelect",
+   "TileLang",
+   "vLLM (originally built on)"
+  ],
+  "notable": [
+   "Supports only DeepSeek-V4.1-Flash as a listed model",
+   "Speculative-style DSpark decoding with configurable max draft length via environment variables",
+   "Batch-invariant and deterministic sampling modes (NVIDIA only)",
+   "Bounded SWA suffix replay to reduce decoder prefill work",
+   "Asynchronous zero-overhead batch scheduler enabled by default"
+  ],
+  "caveats": [
+   "The open-source release is offline inference only; KV cache, prefill/decode disaggregation, and cross-replica load balancing are not included",
+   "Requires Linux, GCC >= 13, Python 3.12, and CUDA 13 or CANN 9.2 with specific hardware (SM100 GPUs or Ascend 950 NPUs)",
+   "Batch-invariant and deterministic sampling are NVIDIA only"
+  ],
+  "license": "Apache License 2.0",
+  "category": "llm inference engine",
+  "keywords": [
+   "deepinfer",
+   "deepseek",
+   "llm inference",
+   "inference framework",
+   "offline inference",
+   "mixture of experts",
+   "moe",
+   "expert parallelism",
+   "eplb",
+   "context parallel",
+   "data parallel",
+   "speculative decoding",
+   "draft tokens",
+   "mtp",
+   "structured outputs",
+   "json schema generation",
+   "constrained decoding",
+   "ebnf grammar",
+   "deterministic sampling",
+   "batch invariant",
+   "flashmla",
+   "deepgemm",
+   "deepep",
+   "tilelang",
+   "cuda kernels",
+   "sm100 gpu",
+   "nvidia blackwell",
+   "ascend npu",
+   "huawei ascend",
+   "serve llm at scale",
+   "run deepseek locally",
+   "high-throughput llm serving",
+   "vllm alternative",
+   "python llm engine",
+   "reproducible model outputs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3006,
+  "output": 1496
+ },
+ "generated": "2026-10-29"
+}

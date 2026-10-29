@@ -1,0 +1,100 @@
+{
+ "id": "huggingface/trl",
+ "repo": "huggingface/trl",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "trl - A library for post-training transformer language models with SFT, DPO, GRPO, and other trainers."
+  }
+ ],
+ "summary": {
+  "one_liner": "TRL (Transformers Reinforcement Learning) is a Hugging Face library for post-training foundation language models with SFT, GRPO, DPO, KTO, and reward-model training.",
+  "what_it_does": "TRL provides dedicated trainer classes, including SFTTrainer, GRPOTrainer, DPOTrainer, KTOTrainer, and RewardTrainer, each described as a light wrapper around the 🤗 Transformers trainer. The README says it scales from a single GPU to multi-node clusters via 🤗 Accelerate using DDP, DeepSpeed ZeRO, and FSDP. It integrates with 🤗 PEFT for quantization and LoRA/QLoRA on modest hardware, and with 🦥 Unsloth for optimized kernels. A command-line interface (`trl sft`, `trl dpo`, `trl kto`) allows fine-tuning without writing code. An experimental area under `trl.experimental` holds unstable features that may change without notice.",
+  "use_cases": [
+   "supervised fine-tuning of language models",
+   "aligning models with human preference data",
+   "training with GRPO reinforcement learning and math reward functions",
+   "fine-tuning models from binary desirable/undesirable feedback",
+   "training reward models for RLHF",
+   "running LoRA or QLoRA fine-tuning on large models with limited hardware",
+   "scaling training across multi-GPU or multi-node clusters"
+  ],
+  "how_to_run": [
+   "pip install trl",
+   "pip install trl[math_verify]",
+   "pip install -e .[dev]",
+   "trl sft --model_name_or_path Qwen/Qwen2.5-0.5B --dataset_name trl-lib/Capybara --output_dir Qwen2.5-0.5B-SFT"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Transformers",
+   "Accelerate",
+   "PEFT",
+   "DeepSpeed",
+   "Datasets",
+   "Unsloth",
+   "math-verify"
+  ],
+  "notable": [
+   "Covers SFT, GRPO, DPO, KTO, and reward-model training in one library with a consistent trainer API",
+   "Command-line interface for SFT, DPO, and KTO without code",
+   "Runs on AMD Instinct GPUs via ROCm and on AWS Trainium via TorchNeuron, per the README's What's New section",
+   "Experimental namespace for fast-moving features, clearly separated from stable API"
+  ],
+  "caveats": [
+   "Experimental features under trl.experimental may change or be removed in any release without notice",
+   "accuracy_reward requires the optional math-verify extra installed separately",
+   "Installing from source is needed for unreleased features"
+  ],
+  "license": "Apache-2.0",
+  "category": "llm post-training library",
+  "keywords": [
+   "trl",
+   "transformers reinforcement learning",
+   "post-training",
+   "fine-tuning llm",
+   "sft",
+   "supervised fine-tuning",
+   "grpo",
+   "group relative policy optimization",
+   "dpo",
+   "direct preference optimization",
+   "kto",
+   "kahneman-tversky optimization",
+   "reward model training",
+   "rlhf",
+   "reinforcement learning from human feedback",
+   "lora",
+   "qlora",
+   "peft",
+   "deepspeed",
+   "accelerate",
+   "fsdp",
+   "ddp",
+   "unsloth",
+   "hugging face",
+   "transformers",
+   "pytorch",
+   "command line fine-tuning",
+   "align language model with preferences",
+   "train llm on binary feedback",
+   "fine-tune qwen model",
+   "math reward function",
+   "multi-gpu llm training",
+   "amd gpu training",
+   "aws trainium training"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4051,
+  "output": 1315
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "maintainerr/maintainerr",
+ "repo": "Maintainerr/Maintainerr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "Maintainerr | Rule-based cleanup of unwatched media in Plex and Jellyfin"
+  }
+ ],
+ "summary": {
+  "one_liner": "Maintainerr is a self-hosted, rule-based tool that finds unwatched or unrequested media in Plex, Jellyfin or Emby and cleans it up through a grace-period collection and configurable deletion actions.",
+  "what_it_does": "Users write rules (combined with AND/OR logic) using properties from Plex, Jellyfin, Emby, Radarr, Sonarr, Sportarr, Seerr, Ombi, Tautulli, Streamystats and Tracearr. Matching items are gathered into a collection and held for a configurable grace period before action. Actions include deleting files from disk, unmonitoring or deleting in Radarr/Sonarr/Sportarr, changing quality profile, clearing requests in Seerr or Ombi, and deleting from the download client. It can also render overlays onto posters, send notifications through several services, and import or export rules as YAML. Runs can be scheduled with cron, and the README lists an OpenAPI/Swagger API and health endpoints.",
+  "use_cases": [
+   "automatically delete unwatched movies and TV shows",
+   "free up disk space on a Plex or Jellyfin server",
+   "clean up media that was requested but never watched",
+   "set a grace period before removing old media",
+   "manage a 'leaving soon' collection on Plex"
+  ],
+  "how_to_run": [
+   "docker run -d --name maintainerr -e TZ=Europe/Brussels -v ./data:/opt/data -u 1000:1000 -p 6246:6246 --restart unless-stopped ghcr.io/maintainerr/maintainerr:latest",
+   "Alternatively, use the Docker Compose, Podman Quadlet or Kubernetes examples in the README",
+   "Ensure the /opt/data volume is readable and writable by UID:GID 1000:1000 (or the configured user)"
+  ],
+  "stack": [
+   "Docker",
+   "Podman",
+   "Kubernetes",
+   "sharp (image processing, requires x86-64-v2 on x86 CPUs)",
+   "TMDB",
+   "TVDB (optional key)"
+  ],
+  "notable": [
+   "Rules span many sources (media servers, *arr apps, request managers, Tautulli, Streamystats, Tracearr) with AND/OR logic",
+   "Collections can be kept inside Maintainerr without creating one on the media server",
+   "Grace-period collection before any deletion action, optionally shown as a 'Leaving soon' Plex shelf",
+   "Community rule library and YAML import/export with cross-server migration",
+   "Weekly anonymous telemetry, which can be disabled with TELEMETRY=off"
+  ],
+  "caveats": [
+   "Image overlays and collection posters need an x86-64-v2 CPU on x86 (disabled otherwise; not required on arm64)",
+   "Deletion actions are destructive, so rules and grace periods need careful configuration",
+   "Some integrations are limited to specific servers (Tautulli is Plex-only, Streamystats is Jellyfin-only)"
+  ],
+  "license": "unknown",
+  "category": "media server cleanup",
+  "keywords": [
+   "media cleanup",
+   "plex cleanup",
+   "jellyfin cleanup",
+   "emby cleanup",
+   "unwatched media deletion",
+   "rule-based media deletion",
+   "disk space cleanup",
+   "radarr",
+   "sonarr",
+   "seerr",
+   "ombi",
+   "tautulli",
+   "self-hosted media manager",
+   "docker media server tool",
+   "plex collections",
+   "leaving soon collection",
+   "automatic media deletion",
+   "free up nas storage",
+   "delete old movies",
+   "remove unwatched tv shows",
+   "grace period deletion",
+   "yaml rules import",
+   "cron scheduled cleanup",
+   "swagger api",
+   "janitor for media server",
+   "media library maintenance",
+   "podman quadlet",
+   "kubernetes deployment",
+   "tmdb tvdb matching"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6277,
+  "output": 1395
+ },
+ "generated": "2026-10-29"
+}

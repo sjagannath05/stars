@@ -1,0 +1,88 @@
+{
+ "id": "haraka/haraka",
+ "repo": "haraka/Haraka",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Email - Mail Transfer Agents",
+   "entry": "Haraka - Fast, highly extensible, and event driven SMTP server. (Source Code) MIT Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Haraka is a fast, event-driven, plugin-extensible SMTP mail server written in Node.js.",
+  "what_it_does": "Haraka is an SMTP server built on Node.js that handles many concurrent connections and is designed for high message throughput. Every SMTP transaction runs through hooks (connect, helo, mail, rcpt, data, data_post, queue and others) that plugins can extend with small JavaScript functions. Plugins are asynchronous by default, so slow lookups against DNS, Redis or HTTP APIs do not block the server. Mail marked as relaying (for example by an auth plugin) is queued for outbound delivery by a built-in delivery engine. The README says Haraka is not a mail store, LDA or IMAP server and is meant to run alongside those systems. A plugin registry in Plugins.md covers spam protection, DKIM, auth, DNSBLs and other integrations.",
+  "use_cases": [
+   "Filtering inbound email as an MTA",
+   "Running a submission server (MSA) on port 465 or 587 with authentication",
+   "Adding DKIM signing to outgoing mail",
+   "Spam filtering with DNSBL, SpamAssassin or rspamd plugins",
+   "Rewriting or routing recipient addresses before forwarding to a backend",
+   "High-volume outbound mail delivery"
+  ],
+  "how_to_run": [
+   "npm install -g Haraka",
+   "haraka -i /path/to/haraka_test",
+   "Edit config/host_list to add the domains that should accept mail",
+   "haraka -c /path/to/haraka_test",
+   "git clone the repository, cd Haraka, npm install, then node haraka.js to run from source"
+  ],
+  "stack": [
+   "Node.js",
+   "JavaScript",
+   "npm"
+  ],
+  "notable": [
+   "Plugin architecture with hooks for every SMTP stage, with plugins written in a few lines of JavaScript",
+   "Asynchronous plugins so slow DNS, Redis or HTTP lookups do not block the server",
+   "Built-in outbound delivery engine for relaying mail",
+   "Default config forwards mail for configured domains via the smtp-forward plugin",
+   "Per-plugin docs available through the haraka -h command"
+  ],
+  "caveats": [
+   "Does not store mail, act as an LDA, or provide IMAP; it must be paired with other systems",
+   "Spam and auth features depend on installing and configuring plugins listed in Plugins.md"
+  ],
+  "license": "MIT",
+  "category": "smtp mail server",
+  "keywords": [
+   "smtp server",
+   "mail server",
+   "mail transfer agent",
+   "mta",
+   "submission server",
+   "msa",
+   "nodejs smtp",
+   "node.js mail server",
+   "event driven smtp",
+   "plugin based mail server",
+   "dkim signing",
+   "spam filtering email",
+   "dnsbl",
+   "spamassassin",
+   "rspamd",
+   "clamav",
+   "outbound mail queue",
+   "smtp relay",
+   "self-hosted email server",
+   "run my own email server",
+   "postfix alternative",
+   "qpsmtpd",
+   "exim alternative",
+   "send email from my app",
+   "filter incoming spam",
+   "high throughput mail",
+   "smtp forward",
+   "email routing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3220,
+  "output": 1176
+ },
+ "generated": "2026-10-29"
+}

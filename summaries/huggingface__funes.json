@@ -1,0 +1,97 @@
+{
+ "id": "huggingface/funes",
+ "repo": "huggingface/funes",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "funes by David Corvoysier - Durable cross-agent memory for Claude Code, Codex, pi, and Hermes. Your memory is a Hugging Face dataset you own: recall it from any machine or share it with your team. Single binary, local index, pinned local embedding models."
+  }
+ ],
+ "summary": {
+  "one_liner": "funes is a Rust CLI that indexes past sessions from Claude Code, Codex, pi, and Hermes into a local, searchable memory that can be published to and recalled from a Hugging Face dataset.",
+  "category": "agent memory tooling",
+  "keywords": [
+   "agent memory",
+   "coding agent memory",
+   "session recall",
+   "long-term memory",
+   "claude code",
+   "codex",
+   "pi agent",
+   "hermes agent",
+   "hugging face dataset",
+   "hugging face hub",
+   "share memory with team",
+   "vector search",
+   "bm25",
+   "hybrid search",
+   "reranking",
+   "local embeddings",
+   "lance dataset",
+   "rust cli",
+   "mcp tools",
+   "transcript indexing",
+   "semantic search over transcripts",
+   "recall past decisions",
+   "grounded answers",
+   "persistent context",
+   "cross-agent memory",
+   "memory sync",
+   "private dataset",
+   "prebuilt binary",
+   "claude code memory",
+   "remember past sessions"
+  ],
+  "what_it_does": "funes indexes transcripts from Claude Code, Codex, pi, and Hermes into one local memory, with each hit labeled by its source agent. Recall fuses vector and BM25 search and reranks candidates using pinned local embedding and reranking models; it does not include a generative model of its own. The `funes get` command reassembles a cited turn in full, and `funes sessions`, `sketch`, and `scan` browse sessions. A memory can be published to a Hugging Face dataset repo (private by default) with `funes push`, and read from with `--memory`, including other people's public memories. A `funes ask` command hands a question to an installed agent to produce a grounded answer that names its sources. Secrets are redacted at index time and a push gate refuses chunks that still contain secrets.",
+  "use_cases": [
+   "give a coding agent recall of earlier decisions and rationale",
+   "search past Claude Code or Codex sessions",
+   "share a project's agent memory with teammates via the Hugging Face Hub",
+   "move context between agents and machines",
+   "query someone else's published memory on a topic",
+   "get a grounded answer about past work with citations to sessions"
+  ],
+  "how_to_run": [
+   "curl -fsSL \" | sh  (installer; the URL in the README is truncated)",
+   "funes add claude  (or codex, pi, hermes)",
+   "funes recall \"why is funes append-only\" --memory huggingface/funes-memory",
+   "funes ask claude \"why is funes append-only\" --memory huggingface/funes-memory",
+   "funes push /funes-memory  (publish local memory to the Hub)",
+   "cargo build --release  (from source; requires Rust toolchain and protoc)"
+  ],
+  "stack": [
+   "Rust",
+   "Lance dataset",
+   "Hugging Face Hub",
+   "protobuf compiler (build-time)",
+   "ONNX Runtime (optional backend)",
+   "Apple Accelerate / Metal (macOS)",
+   "local embedding and reranking models"
+  ],
+  "notable": [
+   "Memory is a Hugging Face dataset you own; publish it and recall from any machine or teammate with one flag",
+   "One memory spans Claude Code, Codex, pi, and Hermes, and each hit shows its source agent",
+   "Pinned local embedding and reranking models; no generative model bundled, so the reasoning model can change freely",
+   "Dataset repos created by funes are private by default, with a secrets-redaction and always-on push gate",
+   "Single prebuilt binary for Linux x86_64, Linux aarch64, and macOS Apple Silicon, with checksum verification"
+  ],
+  "caveats": [
+   "Prebuilt binaries cover only Linux x86_64, Linux aarch64, and macOS Apple Silicon; other platforms need building from source",
+   "Building from source requires a Rust toolchain and protoc; the integration test downloads model weights on first run",
+   "Each memory holds one embedding model's vectors; changing the model means rebuilding the memory from transcripts",
+   "The checksum does not authenticate the release bucket itself, per the README"
+  ],
+  "license": "Apache License 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5210,
+  "output": 1458
+ },
+ "generated": "2026-10-29"
+}

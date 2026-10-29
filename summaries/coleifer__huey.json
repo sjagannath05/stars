@@ -1,0 +1,96 @@
+{
+ "id": "coleifer/huey",
+ "repo": "coleifer/huey",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Task Queues",
+   "entry": "huey - A little task queue with multi-process, multi-thread, or greenlet workers."
+  }
+ ],
+ "summary": {
+  "one_liner": "huey is a lightweight Python task queue with multi-process, multi-thread, and greenlet workers, plus scheduling, retries, and periodic tasks.",
+  "what_it_does": "Huey lets you decorate Python functions with @task so calls are enqueued and run by a separate consumer process, returning a result handle to fetch the output later. It supports delayed and scheduled execution, crontab-style recurring tasks, automatic retries with delay, and task priorities, expiration, locking, rate limits, and timeouts. Workers can run as processes, threads, or greenlets, selected with the huey_consumer command's -k option. Task pipelines, chains, groups (fan-out), and chords (map/reduce) are also supported. Storage backends include Redis (and Valkey/Redict), Postgres, SQLite, file-system, and in-memory, and it has Django integration with optional admin pages.",
+  "use_cases": [
+   "run background jobs in a Python web app",
+   "schedule tasks to run after a delay or at a set time",
+   "replace cron-style recurring jobs with in-app periodic tasks",
+   "retry flaky network or API calls automatically",
+   "fan-out work across workers with groups or map/reduce chords",
+   "queue tasks in Django with admin visibility"
+  ],
+  "how_to_run": [
+   "pip install huey",
+   "from huey import RedisHuey; huey = RedisHuey('my-app', host='redis.myapp.com')",
+   "Decorate functions with @huey.task() and call them to enqueue",
+   "huey_consumer my_app.huey -k process -w 4",
+   "huey_consumer my_app.huey -k greenlet -w 32"
+  ],
+  "stack": [
+   "Python",
+   "redis-py (for Redis-like brokers)",
+   "psycopg (for Postgres)",
+   "Django (optional integration)",
+   "flask-peewee (optional admin)"
+  ],
+  "notable": [
+   "Zero dependencies beyond the driver for the chosen storage backend",
+   "Multiple storage backends: Redis, Postgres, SQLite, file-system, in-memory",
+   "Process, thread, and greenlet worker models selectable on the consumer",
+   "Native Django integration and django.tasks support with admin",
+   "Supports groups, chords, pipelines, and chains"
+  ],
+  "caveats": [
+   "Redis-like brokers need the redis-py package; Postgres needs psycopg",
+   "Full feature guide and examples live in external documentation rather than the README",
+   "Django admin integration is optional and requires Django"
+  ],
+  "license": "unknown",
+  "category": "python task queue",
+  "keywords": [
+   "task queue",
+   "background jobs",
+   "background tasks",
+   "job queue",
+   "python task queue",
+   "async workers",
+   "distributed tasks",
+   "celery alternative",
+   "rq alternative",
+   "redis queue",
+   "redis task queue",
+   "postgres task queue",
+   "sqlite task queue",
+   "in-memory queue",
+   "file-system queue",
+   "periodic tasks",
+   "crontab scheduler",
+   "scheduled tasks",
+   "delayed tasks",
+   "task retries",
+   "task priority",
+   "task pipelines",
+   "task chains",
+   "map reduce tasks",
+   "fan-out workers",
+   "greenlet workers",
+   "thread workers",
+   "process workers",
+   "huey_consumer",
+   "django tasks",
+   "django admin task queue",
+   "run jobs later",
+   "schedule python function to run later"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2802,
+  "output": 1214
+ },
+ "generated": "2026-10-29"
+}

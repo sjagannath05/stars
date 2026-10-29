@@ -1,0 +1,102 @@
+{
+ "id": "peergos/peergos",
+ "repo": "Peergos/Peergos",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer & Synchronization",
+   "entry": "Peergos - Secure and private space online where you can store, share and view your photos, videos, music and documents. Also includes a calendar, news feed, task lists, chat and email client. (Source Code) AGPL-3.0 Java"
+  }
+ ],
+ "summary": {
+  "one_liner": "Peergos is a peer-to-peer, end-to-end encrypted personal storage and social platform with file sharing, a messenger, and an email client, which can be self-hosted.",
+  "what_it_does": "Peergos provides an encrypted global filesystem built on IPFS, where each file is encrypted on the user's machine in 5MiB chunks before storage. Users can share files with other users or via secret links whose key material stays in the browser and is not sent to the server. The README also describes a secure messenger, an encrypted email client and bridge, a social network built on a friend-request model, and a calendar and other web apps. Users can run a Peergos daemon on their own machine or home server, sign up with a token, and sync folders with a bi-directional sync client. Other access routes include a FUSE mount, a WebDAV bridge, a CLI shell, and S3 or Postgres storage backends for self-hosted servers.",
+  "use_cases": [
+   "self-hosted private file storage",
+   "share files with friends without exposing metadata",
+   "encrypted photo and document backup",
+   "sync a local folder with a private cloud",
+   "end-to-end encrypted email and chat",
+   "mount cloud storage as a local drive or WebDAV share"
+  ],
+  "how_to_run": [
+   "Install Java 25 or newer (or use the native packages)",
+   "java -jar Peergos.jar daemon -generate-token true",
+   "Open the localhost signup link printed by the daemon and create an account with the token",
+   "For LAN access: java -jar Peergos.jar daemon -generate-token true -listen-host 0.0.0.0",
+   "Docker: docker pull ghcr.io/peergos/web-ui:master",
+   "Build from source: ant dist (requires jdk17 and ant, per the Development section)"
+  ],
+  "stack": [
+   "Java",
+   "JavaScript (GWT cross-compiled Java)",
+   "Vue.js",
+   "IPFS",
+   "TweetNaCl",
+   "scrypt",
+   "SQLite or Postgres",
+   "S3-compatible storage",
+   "Ant",
+   "Docker"
+  ],
+  "notable": [
+   "Client-side encryption with separate keys per file or directory; explicitly not convergent encryption",
+   "Login derives keys from username and password via scrypt so keys never leave the client",
+   "Friend requests are cryptographically blinded so the server cannot see who follows whom",
+   "Can be self-hosted, mirrored, or migrated to another server while keeping the same identity",
+   "Cryptree-based access control adapted from Wuala, extended to hide file names, sizes and structure"
+  ],
+  "caveats": [
+   "Requires Java 25 or newer to run the jar; builds need jdk17 and ant",
+   "Peergos does not provide anonymity yet, according to the README; Tor is suggested as a workaround",
+   "Browsers only allow apps and large downloads on https or localhost, so a domain with TLS is needed for remote web access",
+   "Files shared between users are described as vulnerable to a sufficiently large quantum computer until a post-quantum asymmetric scheme is adopted",
+   "Minio has issues with the S3 settings, so the README recommends turning off some options for it"
+  ],
+  "license": "AGPL-3.0",
+  "category": "encrypted personal cloud",
+  "keywords": [
+   "peergos",
+   "peer-to-peer storage",
+   "p2p file storage",
+   "encrypted file sharing",
+   "end-to-end encryption",
+   "private cloud storage",
+   "self-hosted cloud",
+   "self-hosted file sharing",
+   "ipfs",
+   "ipfs filesystem",
+   "dropbox alternative",
+   "google drive alternative",
+   "nextcloud alternative",
+   "private social network",
+   "encrypted email client",
+   "encrypted messenger",
+   "secure chat",
+   "file sync client",
+   "webdav bridge",
+   "fuse mount",
+   "java file storage",
+   "tweetnacl",
+   "cryptree",
+   "secret link sharing",
+   "share files with my team",
+   "back up photos privately",
+   "private home server",
+   "zero knowledge storage",
+   "decentralized storage",
+   "agpl open source"
+  ],
+  "__placeholder__": "x"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10126,
+  "output": 1463
+ },
+ "generated": "2026-10-29"
+}

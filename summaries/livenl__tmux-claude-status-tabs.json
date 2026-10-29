@@ -1,0 +1,88 @@
+{
+ "id": "livenl/tmux-claude-status-tabs",
+ "repo": "LiveNL/tmux-claude-status-tabs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Status Lines",
+   "entry": "tmux-claude-status-tabs by LiveNL - Shows each Claude Code session's state in the tmux tab bar, per window: an animated spinner while it works, amber when it waits on input, red on a permission request, green when done. Event-driven via hooks with no polling; catches unreported transitions (Esc, permission grants, stop-hook continuations) with transcript watchers. 260+ test assertions run in CI."
+  }
+ ],
+ "summary": {
+  "one_liner": "A tmux plugin that shows each Claude Code session's state (running, waiting for input, permission request, done) in its window's tab bar, driven by Claude Code hooks.",
+  "what_it_does": "Colors and animates each tmux window tab to reflect the state of the Claude Code session running in it. A spinner ticks while Claude works, amber \"?\" marks a question waiting for input, red \"!\" marks a permission request, and green \"✓\" marks a finished turn. Claude Code hooks repaint the tab within about half a second of each lifecycle event. A verifier periodically checks each tab against Claude Code's per-session status to catch transitions Claude does not report, such as Esc, granted permissions, or stop-hook continuations. The installer copies hook scripts into ~/.claude/hooks/ and merges their wiring into ~/.claude/settings.json, backing up the file first. On macOS it sends desktop notifications via osascript, and with alerter they become clickable to jump to the waiting window.",
+  "use_cases": [
+   "see which Claude Code session needs attention across many tmux windows",
+   "monitor multiple parallel Claude Code sessions",
+   "get notified when Claude is waiting for input or approval",
+   "customize tmux window status colors for AI agent sessions",
+   "jump to the tmux window where Claude is waiting"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd tmux-claude-status-tabs",
+   "bash install.sh",
+   "Add source-file /path/to/tmux-claude-status-tabs/tmux/claude-state.conf to ~/.tmux.conf and reload tmux (or prepend the fragment from tmux/claude-state-prefix.txt to your window-status-format)"
+  ],
+  "stack": [
+   "bash",
+   "tmux (>= 3.0)",
+   "jq",
+   "Claude Code CLI and hooks",
+   "osascript (macOS notifications)",
+   "alerter (optional)"
+  ],
+  "notable": [
+   "Event-driven hooks with no polling, plus transcript watchers that catch transitions Claude Code never reports",
+   "Per-window tab states: animated spinner, amber ?, red !, green ✓",
+   "Questions latch and finished turns keep their color until the next event",
+   "Desktop notifications on macOS with optional clickable alerter support that focuses the waiting window",
+   "Test suite of 300+ assertions run in CI, including contract tests against real Claude payloads and session files"
+  ],
+  "caveats": [
+   "Requires tmux 3.0 or newer, jq, and the Claude Code CLI",
+   "Desktop notifications are built for macOS only; other platforms skip them silently",
+   "Installer modifies ~/.claude/settings.json and ~/.tmux.conf must be edited by hand to load the plugin"
+  ],
+  "license": "unknown",
+  "category": "tmux claude code status",
+  "keywords": [
+   "tmux",
+   "tmux status bar",
+   "tmux window tabs",
+   "claude code",
+   "claude code hooks",
+   "ai agent monitoring",
+   "coding agent status",
+   "terminal multiplexer",
+   "tab bar indicator",
+   "spinner",
+   "window-status-format",
+   "desktop notifications",
+   "osascript",
+   "alerter",
+   "macos notifications",
+   "transcript watcher",
+   "permission request alert",
+   "claude code sessions",
+   "multiple claude sessions",
+   "see which tab needs me",
+   "know when claude is waiting",
+   "claude status line",
+   "shell scripts",
+   "bash hooks",
+   "jq",
+   "tmux theme customization"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2582,
+  "output": 1277
+ },
+ "generated": "2026-10-29"
+}

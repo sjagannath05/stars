@@ -1,0 +1,89 @@
+{
+ "id": "chardet/chardet",
+ "repo": "chardet/chardet",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Text Processing",
+   "entry": "chardet - Python character encoding detector."
+  }
+ ],
+ "summary": {
+  "one_liner": "chardet is a Python library and CLI that detects the character encoding of raw byte data, rewritten from the ground up as version 7 under the 0BSD license.",
+  "what_it_does": "Detects the character encoding of byte strings via detect(), detect_all() (ranked candidates with confidence), and UniversalDetector for incremental streaming input. Returns encoding, confidence, detected language, and MIME type for binary files (40+ formats via magic numbers, plus text/html, text/xml, text/x-python). Supports encoding era filtering and include/exclude encoding lists. Ships a chardetect CLI with options for minimal output, language, and encoding restriction, and reads from stdin. The README states 99 supported Python codecs with 86 detection targets, and 99.7% accuracy on a 3,138-file test set.",
+  "use_cases": [
+   "detect the encoding of an unknown text file",
+   "identify charset of web or network byte streams",
+   "batch-check legacy files for encoding before conversion",
+   "filter encoding guesses to a known set of code pages",
+   "identify file MIME type from magic bytes",
+   "command-line encoding checks in shell pipelines"
+  ],
+  "how_to_run": [
+   "pip install chardet",
+   "python -c \"import chardet; print(chardet.detect(b'some bytes'))\"",
+   "chardetect somefile.txt",
+   "cat somefile.txt | chardetect"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "PyPy compatible",
+   "mypyc (optional compiled build)",
+   "Cython scoring kernel (optional compiled build)"
+  ],
+  "notable": [
+   "Drop-in replacement API for chardet 5.x and 6.x, rewritten from scratch under 0BSD license",
+   "Language detection returned with every result, plus MIME type detection for binary files",
+   "Encoding era filtering (e.g. MODERN_WEB, MAINFRAME) to reduce false positives",
+   "Streaming detection via UniversalDetector and a thread-safe detect() call",
+   "Optional compiled builds claiming about 4.5x extra speedup on CPython"
+  ],
+  "caveats": [
+   "Optional compiled speedups apply to CPython builds; the 3,125 files/s figure is for the compiled version (771 pure)",
+   "Performance and accuracy figures are the author's benchmarks; the README does not describe the test corpus beyond the file count",
+   "Versions 5.x and 6.x are LGPL and use separate code, per the README history section"
+  ],
+  "license": "0BSD",
+  "category": "text encoding detection",
+  "keywords": [
+   "character encoding detection",
+   "charset detection",
+   "chardet",
+   "detect encoding python",
+   "text encoding guesser",
+   "bytes to text encoding",
+   "utf-8 detection",
+   "legacy encoding detection",
+   "codepage detection",
+   "chardetect cli",
+   "universal charset detector",
+   "streaming encoding detection",
+   "language detection bytes",
+   "mime type detection",
+   "magic number file type",
+   "windows-1252 detection",
+   "ebcdic detection",
+   "encoding filter include exclude",
+   "python text processing",
+   "unknown file encoding",
+   "garbled text fix",
+   "decode unknown bytes",
+   "charset-normalizer alternative",
+   "pypy encoding library",
+   "0bsd python library",
+   "encoding era filter",
+   "detect file charset command line",
+   "mojibake diagnosis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4348,
+  "output": 1186
+ },
+ "generated": "2026-10-29"
+}

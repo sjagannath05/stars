@@ -1,0 +1,93 @@
+{
+ "id": "ayoubben18/ab-method",
+ "repo": "ayoubben18/ab-method",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "AB Method by Ayoub Bensalah - A principled, spec-driven workflow that transforms large problems into focused, incremental missions using Claude Code's specialized sub agents. Includes slash-commands, sub agents, and specialized workflows designed for specific parts of the SDLC."
+  }
+ ],
+ "summary": {
+  "one_liner": "A spec-driven workflow system for Claude Code and Codex that grills a problem into a domain-grounded plan and then runs it as test-driven missions, or as an autonomous /goal loop.",
+  "what_it_does": "The installer (npx ab-method) detects .claude/ and/or .agents/ and installs slash commands and skills for Claude Code, Codex, or both, plus .ab-method/ workflow definitions, docs/ scaffolding, an AGENTS.md for Codex, and optional subagents. Every task and goal begins with a grill-with-docs step that checks terms against UBIQUITOUS_LANGUAGE.md and CONTEXT.md and records decisions as ADRs. Tasks are split into test-driven missions that the user reviews one at a time, or run autonomously with one subagent and one commit per mission. Goals are single objectives with a checkable stop condition, and roadmaps split a larger idea into a dependency-ordered graph of tasks. The README also describes critic steps (critique-plan, review-implementation, sync-architecture), a change-map that predicts touched modules, and a check-docs command that enforces word budgets on docs. It is also available as a plugin, which does not copy files into the project.",
+  "use_cases": [
+   "Break a large feature into test-driven missions reviewed one at a time",
+   "Run a multi-step coding task autonomously with a verifiable stop condition",
+   "Plan a bigger project as an ordered set of tasks",
+   "Add tests to existing code not written test-first",
+   "Document a codebase's domain, tech stack and architecture for AI agents",
+   "Keep architecture and domain docs small and current"
+  ],
+  "how_to_run": [
+   "npx ab-method",
+   "/plugin marketplace add ayoubben18/ab-method",
+   "/plugin install ab-method@ab-method",
+   "codex plugin marketplace add ayoubben18/ab-method",
+   "codex plugin add ab-method@ab-method"
+  ],
+  "stack": [
+   "Claude Code",
+   "Codex",
+   "npm / npx",
+   "Markdown and YAML workflow definitions"
+  ],
+  "notable": [
+   "Spec-driven flow: grill the problem first, then plan, then code, with ADRs recorded along the way",
+   "Choice of running a task interactively mission by mission, or as an autonomous /goal loop",
+   "Critic steps check the plan against the domain model before coding and the diff and docs after",
+   "Works with both Claude Code and Codex, installed via npx or as a plugin",
+   "Includes a /ab-cleanup migration path from 3.x to 4.0"
+  ],
+  "caveats": [
+   "Plugin install and npx install should not be combined in one project, or every workflow appears twice",
+   "Codex has no shared slash commands, so workflows are invoked as skills or by describing intent",
+   "Plugin ships no slash commands or subagents"
+  ],
+  "license": "unknown",
+  "category": "ai coding workflows",
+  "keywords": [
+   "claude code",
+   "codex",
+   "claude code workflow",
+   "spec-driven development",
+   "agent orchestration",
+   "subagents",
+   "slash commands",
+   "slash-commands",
+   "autonomous coding agent",
+   "goal loop",
+   "test-driven development",
+   "tdd",
+   "task planning",
+   "roadmap planning",
+   "grill requirements",
+   "architecture docs",
+   "adr decision records",
+   "ubiquitous language",
+   "domain glossary",
+   "code review automation",
+   "write tests for existing code",
+   "break down large problem",
+   "plan before code",
+   "ai pair programming",
+   "npx installer",
+   "claude code plugin",
+   "agents.md",
+   "documentation budget",
+   "change impact analysis",
+   "run tasks unattended",
+   "split feature into missions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3402,
+  "output": 1314
+ },
+ "generated": "2026-10-29"
+}

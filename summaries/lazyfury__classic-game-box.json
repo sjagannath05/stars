@@ -1,0 +1,99 @@
+{
+ "id": "lazyfury/classic-game-box",
+ "repo": "lazyfury/classic-game-box",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Gaming Software",
+   "entry": "Classic Game Box - Open-source retro-console emulator frontend built on libretro cores. [![Open-Source Software][OSS Icon] ![Freeware][Freeware Icon]](https://github.com/lazyfury/classic-game-box)"
+  }
+ ],
+ "summary": {
+  "one_liner": "Classic Game Box is an open-source retro-console emulator frontend that runs libretro cores through a native Rust UI (igui + wgpu), with a Swift shell on macOS and an experimental C++/Win32 shell on Windows.",
+  "category": "retro game emulator frontend",
+  "keywords": [
+   "retro game emulator",
+   "libretro frontend",
+   "emulator frontend",
+   "game library manager",
+   "rom launcher",
+   "retro console emulator",
+   "rust emulator frontend",
+   "igui",
+   "wgpu",
+   "macos emulator",
+   "windows emulator",
+   "nes emulator",
+   "snes emulator",
+   "game boy advance emulator",
+   "nintendo 64 emulator",
+   "playstation emulator",
+   "psp emulator",
+   "arcade emulator",
+   "mesen",
+   "mgba",
+   "snes9x",
+   "retroarch alternative",
+   "play roms on mac",
+   "organize my rom collection",
+   "save states",
+   "cheat codes",
+   "crt shader",
+   "gamepad support"
+  ],
+  "what_it_does": "The app provides a three-column game library UI for adding, scanning, filtering, tagging, and launching ROMs across many systems (NES, Game Boy/GBA, SNES, Mega Drive/SMS/GG/SG-1000, Neo Geo arcade via FinalBurn Neo, N64, PSP, PlayStation, and J2ME). It loads third-party libretro cores, either downloaded at runtime from the libretro buildbot or compiled locally from source via build scripts. While playing it supports quick save/load slots, manual save slots, rewind, screenshots, fullscreen, and cheat (.cht) files. Keyboard and gamepad input are mapped per system, with Apple GameController used on macOS. Display options include scanline, CRT, LCD grid, and sharpen shader filters. The library is self-contained in one folder.",
+  "use_cases": [
+   "play classic console games on a Mac",
+   "organize and launch a ROM collection",
+   "download emulator cores for retro systems",
+   "save and resume game progress with save states",
+   "apply CRT or scanline filters to retro games",
+   "play with a bluetooth gamepad on macOS"
+  ],
+  "how_to_run": [
+   "cargo build",
+   "macos/scripts/run.sh",
+   "./scripts/build-cores.sh --minimal",
+   "macos/scripts/package.sh"
+  ],
+  "stack": [
+   "Rust",
+   "igui",
+   "wgpu",
+   "libretro",
+   "Swift",
+   "C++",
+   "Win32",
+   "cpal",
+   "diesel",
+   "CMake",
+   "Java (for freej2me_plus)",
+   "MinGW"
+  ],
+  "notable": [
+   "Standard libretro core contract: loads third-party emulator cores rather than bundling a custom emulator, with the custom NES core kept only as a reference",
+   "Runtime core downloader from the libretro buildbot, with an offline built-in catalog snapshot and a CLI for searching and downloading cores",
+   "Single self-contained library folder holding database, screenshots, saves, and cheats, so backup is copying the folder",
+   "Per-game overrides for system and core, applied when extension conflicts occur (e.g. .bin, .iso)",
+   "Rewind (up to about 10 seconds), F5/F6 three-slot quick save rotation, and F1-F3 manual save slots"
+  ],
+  "caveats": [
+   "Windows support is experimental: window, library UI, and resize are tested in a VM, while keyboard, XInput gamepad, MSVC build, and hardware-GL cores are not yet verified on Windows",
+   "Hardware-rendered cores (N64, PSP, PS1) are only committed on macOS; Windows support is promised only for software cores",
+   "Releases do not bundle cores; the app must download them or they must be compiled locally, and several cores are non-commercial licensed and not redistributable",
+   "The macOS build is not notarized, so Gatekeeper may block first launch; the README notes it targets Apple Silicon",
+   "J2ME core has no instant save or rewind and bypasses the app's audio mixer; the repository contains no ROMs"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10500,
+  "output": 1471
+ },
+ "generated": "2026-10-29"
+}

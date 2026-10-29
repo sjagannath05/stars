@@ -1,0 +1,103 @@
+{
+ "id": "tiendil/feeds.fun",
+ "repo": "Tiendil/feeds.fun",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Feed Readers",
+   "entry": "Feeds Fun - News reader with tags, scoring, and AI. (Source Code) BSD-3-Clause Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "Feeds Fun is a self-hostable news reader that automatically tags feed entries (largely via LLMs) and lets you score, filter, and sort news by those tags.",
+  "category": "self-hosted feed reader",
+  "keywords": [
+   "feed reader",
+   "rss reader",
+   "news reader",
+   "self-hosted rss",
+   "news aggregator",
+   "automatic tagging",
+   "llm tagging",
+   "openai tags",
+   "gemini tags",
+   "news scoring",
+   "rule-based filtering",
+   "tag filter",
+   "multi-user feed reader",
+   "single-user feed reader",
+   "python backend",
+   "fastapi",
+   "postgresql",
+   "uvicorn",
+   "vite frontend",
+   "share news with team",
+   "read only important news",
+   "filter rss by keyword",
+   "reddit feeds",
+   "github feeds",
+   "youtube feeds",
+   "arxiv feeds",
+   "hacker news feeds",
+   "feed tags",
+   "docker compose",
+   "awesome-selfhosted",
+   "feedly alternative",
+   "news triage"
+  ],
+  "what_it_does": "Feeds Fun loads and parses RSS/Atom-style feeds and assigns tags to every news entry. Tags come from several processors, including simple ones (domain, native feed tags, uppercase titles) and an LLM processor that uses OpenAI or Google Gemini (or OpenAI-compatible/Gemini-compatible third-party models) to detect tags. Users write rules that score news by tags, and can exclude or require tags, then sort by score, date, and similar criteria. The app tracks which items have been read. It has improved handling for Reddit, GitHub, YouTube, ArXiv and Hacker News sources through integration plugins. The backend runs as an ASGI API server plus separate loader and librarian workers; the frontend is a static site built from the feeds-fun NPM package. The README also mentions a cleaner command for pruning old entries and single- and multi-user setups.",
+  "use_cases": [
+   "read only the most important news from many feeds",
+   "auto-tag RSS entries with an LLM",
+   "score and filter news by topic tags",
+   "self-host a personal news reader",
+   "run a multi-user feed reader for a group",
+   "track which news items have been read"
+  ],
+  "how_to_run": [
+   "pip install ffun",
+   "python -m spacy download en_core_web_lg",
+   "ffun migrate",
+   "uvicorn ffun.application.application:app --host 0.0.0.0 --port 8000 --workers 1",
+   "ffun workers --librarian --loader",
+   "npm install feeds-fun && npm install --prefix ./node_modules/feeds-fun && npm run build-only --prefix ./node_modules/feeds-fun (then copy dist to static host)"
+  ],
+  "stack": [
+   "Python",
+   "ffun package (PyPI)",
+   "PostgreSQL",
+   "SpaCy (en_core_web_lg)",
+   "uvicorn",
+   "OpenAI API",
+   "Google Gemini API",
+   "Node/NPM frontend (feeds-fun package)",
+   "Vite",
+   "Docker",
+   "yoyo (migrations)"
+  ],
+  "notable": [
+   "Tag-based scoring and filtering rules, rather than keyword-only filtering",
+   "LLM tag processors support OpenAI, Gemini, and third-party OpenAI-compatible endpoints",
+   "Pluggable integrations for specific sources such as Reddit, GitHub, YouTube, ArXiv, Hacker News",
+   "Tag normalizer chain that merges variants like 'a-book-review' and splits 'google-vs-microsoft'",
+   "Separate loader and librarian workers keep the API server lightweight"
+  ],
+  "caveats": [
+   "Full tagging power requires an OpenAI or Gemini API key (or a compatible third-party LLM endpoint)",
+   "Setup involves PostgreSQL, a SpaCy model download, separate workers, and cron for cleanup; not a one-click install",
+   "Upgrades must follow CHANGELOG migration order, keeping backend and frontend versions in sync",
+   "README describes many features as still in development and tag normalization as actively changing"
+  ],
+  "license": "BSD-3-Clause"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6230,
+  "output": 1476
+ },
+ "generated": "2026-10-29"
+}

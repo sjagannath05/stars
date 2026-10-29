@@ -1,0 +1,94 @@
+{
+ "id": "adrbn/haze",
+ "repo": "adrbn/haze",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🌙 Screensaver (12)",
+   "entry": "Haze - Live wallpapers, a matching screensaver and animated Metal gradients from the menu bar."
+  }
+ ],
+ "summary": {
+  "one_liner": "Haze is a free, open-source macOS app that sets videos, GIFs, images and animated Metal gradients as the live desktop wallpaper and as a matching idle screensaver.",
+  "what_it_does": "Plays looping video (H.264 and HEVC, hardware-decoded), animated GIFs, stills and gradients on the desktop behind windows. Includes an animated gradient engine with Classic (2D) and Fluid (3D) Metal gradients whose palette, speed, blur and grain can be tuned live, with 27 bundled presets. Ships a .saver screensaver plugin that uses the same renderers and can follow the live wallpaper. Pauses rendering when the desktop is covered, the display sleeps, the screen locks, or optionally on battery/Low Power Mode. Runs as a menu-bar item with no Dock icon, and can optionally set a still of the wallpaper as the system desktop picture.",
+  "use_cases": [
+   "Set a video or GIF as animated desktop wallpaper on macOS",
+   "Create animated gradient wallpapers",
+   "Show a live wallpaper as the idle screensaver",
+   "Reduce CPU and GPU use from wallpaper animations",
+   "Match the lock screen and login background to a live wallpaper"
+  ],
+  "how_to_run": [
+   "brew install xcodegen (plus Xcode 26 with the Metal Toolchain component)",
+   "xcodebuild -downloadComponent MetalToolchain (if the toolchain is missing)",
+   "make run (generates the project, builds, and launches)",
+   "make test (runs the HazeKit unit tests)",
+   "make install (Developer ID-signed Release build to /Applications, needs a Developer ID certificate)"
+  ],
+  "stack": [
+   "Swift",
+   "Metal",
+   "SwiftUI",
+   "XcodeGen",
+   "Sparkle (auto-updates)",
+   "HazeKit shared framework"
+  ],
+  "notable": [
+   "Live wallpaper, screensaver and lock-screen-adjacent still share one rendering core (HazeKit)",
+   "Fluid 3D gradients inspired by shadergradient.co, with 19 Fluid and 8 Classic presets in the app",
+   "Aggressive power management: pauses video decoding and MTKView rendering when not visible",
+   "Signed and notarized Developer ID builds with in-app Sparkle auto-updates",
+   "Liquid Glass UI on macOS 26 with material fallback on macOS 15"
+  ],
+  "caveats": [
+   "Requires macOS 15.0 or later; built and tested on macOS 26-27 on Apple Silicon",
+   "Incompatible with the Mac App Store because it is non-sandboxed (GPL-3.0 also conflicts)",
+   "Locally compiled builds are ad-hoc signed unless a Developer ID is supplied, and ad-hoc copies cannot auto-update; v0.1.3 and earlier must be reinstalled by hand"
+  ],
+  "license": "GPL-3.0",
+  "category": "macos live wallpaper",
+  "keywords": [
+   "live wallpaper",
+   "animated wallpaper",
+   "macos wallpaper",
+   "video wallpaper",
+   "gif wallpaper",
+   "screensaver",
+   "saver plugin",
+   "animated gradient",
+   "metal shader",
+   "fluid gradient",
+   "shadergradient",
+   "gradient wallpaper",
+   "menu bar app",
+   "desktop background",
+   "lock screen background",
+   "power saving wallpaper",
+   "low power mode",
+   "hevc video",
+   "h.264 playback",
+   "sparkle updates",
+   "swift app",
+   "swiftui",
+   "xcodegen",
+   "liquid glass",
+   "wallpaper engine alternative",
+   "animated desktop",
+   "idle screensaver",
+   "open source macos app",
+   "gpl-3.0",
+   "play video behind desktop icons",
+   "animate my desktop background"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5431,
+  "output": 1387
+ },
+ "generated": "2026-10-29"
+}

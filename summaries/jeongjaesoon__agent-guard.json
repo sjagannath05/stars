@@ -1,0 +1,98 @@
+{
+ "id": "jeongjaesoon/agent-guard",
+ "repo": "JeongJaeSoon/agent-guard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Agent Guard by JeongJaeSoon - Real-time secret-leak guardrails for AI coding agents (Claude Code, Codex), Git hooks, and CI."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local-first guardrail that blocks AI coding agents (Claude Code, Codex) from reading risky .env files, masks secret-like output, and scans changes with gitleaks before they reach Git.",
+  "what_it_does": "Agent Guard blocks common secret-exposure paths before a supported agent tool runs, such as reading .env files, and redacts secret-like values in supported tool output. Before an agent's git commit or git push runs, it scans the staged added lines with gitleaks and blocks the command on a finding, and it refuses --no-verify and --no-gpg-sign for agents. A native pre-commit hook scans staged changes for any local commit, and a GitHub Action scans checked-out files on push or pull request as a backstop. It also provides direct CLI commands (scan-working-tree, scan-staged, scan-path) and a metadata-only support log export. The README says it has no hosted account or telemetry and processes data locally and ephemerally, though an optional endpoint-backed PII provider is mentioned.",
+  "use_cases": [
+   "stop an AI coding agent from reading .env secrets",
+   "block secrets from being committed to Git",
+   "scan staged changes for API keys and tokens before commit",
+   "mask secrets in Claude Code or Codex tool output",
+   "add a gitleaks pre-commit hook to a repository",
+   "run a secret scan in GitHub Actions on push or pull request"
+  ],
+  "how_to_run": [
+   "agent-guard scan-working-tree",
+   "agent-guard scan-staged",
+   "agent-guard scan-path .",
+   "agent-guard logs export --output agent-guard-support.jsonl",
+   "/agent-guard:setup-agent-guard (Claude Code plugin guided setup)",
+   "$setup-agent-guard (Codex plugin guided setup)"
+  ],
+  "stack": [
+   "POSIX sh",
+   "awk",
+   "git",
+   "jq",
+   "gitleaks 8.30 or newer",
+   "setsid or Perl (for process-group probe)",
+   "GitHub Actions",
+   "Claude Code plugin",
+   "Codex plugin"
+  ],
+  "notable": [
+   "Covers agent git commit and git push paths, including the staged-file, tracked-change, and alias-expansion cases the README describes",
+   "Refuses --no-verify and --no-gpg-sign on agent commit and push commands",
+   "Native pre-commit hook, Claude Code and Codex plugins, and GitHub Action share one gitleaks-based scanning model",
+   "Infrastructure failure mode can be set to closed so scan failures block the command",
+   "Metadata-only support log export with mode-0600 file creation"
+  ],
+  "caveats": [
+   "Windows is not currently supported; macOS and Linux on x64 and arm64 only",
+   "Defense-in-depth only; the README says it is not a vault, DLP system, EDR, or credential rotator",
+   "In Claude Code and Codex plugins, the default infrastructure failure mode warns and lets the command continue when a scan cannot run"
+  ],
+  "license": "unknown",
+  "category": "secret leak prevention",
+  "keywords": [
+   "secret scanning",
+   "secret leak prevention",
+   "gitleaks",
+   "pre-commit hook",
+   "git hooks",
+   "claude code",
+   "codex",
+   "ai coding agent security",
+   "agent guardrails",
+   "block .env reads",
+   "redact secrets",
+   "mask secrets in output",
+   "api key leak",
+   "token leak",
+   "github actions secret scan",
+   "ci secret scanning",
+   "commit scanning",
+   "pre-push check",
+   "local-first security",
+   "no telemetry",
+   "defense in depth",
+   "dlp",
+   "credential protection",
+   "prevent committing secrets",
+   "scan staged changes",
+   "keep api keys out of git",
+   "protect env files from ai",
+   "shell command guard",
+   "support log export",
+   "posix shell tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3673,
+  "output": 1367
+ },
+ "generated": "2026-10-29"
+}

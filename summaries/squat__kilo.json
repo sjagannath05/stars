@@ -1,0 +1,110 @@
+{
+ "id": "squat/kilo",
+ "repo": "squat/kilo",
+ "kind": "star",
+ "description": "Kilo is a multi-cloud network overlay built on WireGuard and designed for Kubernetes (k8s + wg = kg)",
+ "topics": [
+  "cni",
+  "federation",
+  "kubernetes",
+  "multi-cloud",
+  "multi-cluster",
+  "networking",
+  "vpn",
+  "wireguard"
+ ],
+ "language": "Go",
+ "stars": 2300,
+ "license": "Apache-2.0",
+ "homepage": "https://kilo.squat.ai",
+ "pushed_at": "2026-09-13",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Kilo is a multi-cloud network overlay built on WireGuard that connects Kubernetes nodes and clusters into one encrypted layer 3 network.",
+  "what_it_does": "Kilo runs the `kg` agent on every node, which sets up WireGuard keys and routing rules so the pod network stays fully connected across data centers, public clouds, and NAT'd networks. Nodes are grouped into locations using the topology.kubernetes.io/region label or the kilo.squat.ai/location annotation, and one node per location needs a routable public endpoint. It can run as a standalone network provider or in add-on mode on top of Flannel, keeping Flannel for local networking. The README also describes a VPN feature that lets peers outside the cluster join the WireGuard mesh via a Kilo Peer resource and `wg setconf`, and multi-cluster services that link two clusters using the `kgctl` tool. Installation is by deploying a DaemonSet, with example manifests given for kubeadm, bootkube, Typhoon, and k3s.",
+  "use_cases": [
+   "connect Kubernetes nodes across multiple clouds",
+   "build a multi-cloud or multi-data-center cluster network",
+   "VPN into a Kubernetes cluster to reach services",
+   "share services between two Kubernetes clusters",
+   "add WireGuard overlay on top of Flannel",
+   "let external machines join a cluster network securely"
+  ],
+  "how_to_run": [
+   "Ensure the WireGuard kernel module is available on all nodes (in-tree from Linux 5.6, or use a userspace implementation)",
+   "Open UDP port 51820 (default) between nodes",
+   "Label or annotate nodes with kilo.squat.ai/location where the cluster does not set topology.kubernetes.io/region",
+   "Ensure at least one node per location has a routable public IP, or set kilo.squat.ai/force-endpoint",
+   "kubectl apply -f <kilo manifest for your distribution> (kubeadm, bootkube, Typhoon, or k3s), per the README",
+   "For add-on mode on Flannel, apply the add-on manifests from the manifests directory"
+  ],
+  "stack": [
+   "Go",
+   "WireGuard",
+   "Kubernetes",
+   "DaemonSet",
+   "kgctl CLI"
+  ],
+  "notable": [
+   "Fully connected pod network even when nodes are behind NAT or in different networks",
+   "Can run standalone or as an add-on on top of Flannel",
+   "Lets external VPN peers join the cluster mesh via WireGuard configs",
+   "Supports multi-cluster services spanning separate Kubernetes clusters",
+   "Topology is customizable by location labels or annotations"
+  ],
+  "caveats": [
+   "Requires WireGuard kernel module on nodes (or a userspace implementation) and an open UDP port",
+   "At least one node per location needs a publicly routable IP address",
+   "README's install commands are shown with placeholder manifest paths, so exact manifest URLs are not visible in the text"
+  ],
+  "license": "Apache-2.0",
+  "category": "kubernetes networking overlay",
+  "keywords": [
+   "kilo",
+   "wireguard",
+   "kubernetes networking",
+   "multi-cloud network",
+   "multi-cluster networking",
+   "network overlay",
+   "vpn",
+   "encrypted layer 3 network",
+   "cni",
+   "container network interface",
+   "flannel add-on",
+   "kgctl",
+   "kg agent",
+   "daemonset",
+   "k3s networking",
+   "kubeadm networking",
+   "typhoon kubernetes",
+   "bootkube",
+   "connect clusters across clouds",
+   "join nodes across data centers",
+   "vpn into kubernetes cluster",
+   "access cluster services from laptop",
+   "multi-cluster services",
+   "cross-cluster service access",
+   "mesh vpn for kubernetes",
+   "nat traversal wireguard",
+   "pod network across clouds",
+   "secure cluster networking",
+   "userspace wireguard",
+   "golang networking project",
+   "federation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3614,
+  "output": 1425
+ },
+ "generated": "2026-10-29"
+}

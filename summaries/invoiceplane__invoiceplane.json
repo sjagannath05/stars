@@ -1,0 +1,91 @@
+{
+ "id": "invoiceplane/invoiceplane",
+ "repo": "InvoicePlane/InvoicePlane",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "InvoicePlane - Manage quotes, invoices, payments and customers for your small business. (Source Code) MIT PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "InvoicePlane is a self-hosted PHP web application for managing invoices, quotes, clients, and payments for small businesses.",
+  "what_it_does": "The README describes a libre, self-hosted web app for creating, sending, and managing invoices and quotes. It keeps client records with contact details and transaction history, and maintains products and tasks/projects that can be added to invoices. Payment tracking includes monitoring payments, setting up reminders, and integrating with multiple payment gateways. It also offers template, theme, and settings customization plus financial reporting. Custom invoice and quote templates are registered through an allowlist in ipconfig.php, and the README notes that sessions can be stored at a configurable path.",
+  "use_cases": [
+   "Create and send professional invoices",
+   "Issue quotes to clients",
+   "Track client payments and send reminders",
+   "Maintain a product and task catalogue for billing",
+   "Generate financial reports for a small business",
+   "Run a self-hosted billing system instead of a SaaS invoicing service"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd InvoicePlane",
+   "docker compose up -d --build (development/testing only; uses a fixed ENCRYPTION_KEY and DB password)",
+   "Production: download the latest release, upload files to the web server",
+   "Copy ipconfig.php.example to ipconfig.php and set base URL and database credentials",
+   "Navigate to the app URL in a browser to run the installer",
+   "Container deployment: configure via environment variables (see Container (Docker) Deployment Instructions)"
+  ],
+  "stack": [
+   "PHP",
+   "Docker / Docker Compose",
+   "MySQL or other database (named in config, not specified in README)",
+   "Apache mod_rewrite / .htaccess (optional, for clean URLs)"
+  ],
+  "notable": [
+   "Custom templates are loaded from an explicit allowlist in ipconfig.php rather than scanning the filesystem",
+   "Pre-built container image configured entirely through environment variables, running migrations on startup",
+   "Optional SESS_SAVE_PATH setting to keep session files outside the web root",
+   "Removable index.php from URLs via mod_rewrite and a config flag",
+   "Formal security advisories and a CHANGELOG/UPGRADE guide for each release"
+  ],
+  "caveats": [
+   "Support is community-run on a best-effort basis (Discord, forums, issue tracker)",
+   "The docker compose setup is for local development only and ships a fixed encryption key and database password",
+   "Setting SESS_SAVE_PATH to an empty value breaks sessions and login; /tmp should be avoided on systemd distros"
+  ],
+  "license": "MIT",
+  "category": "self-hosted invoicing",
+  "keywords": [
+   "invoicing software",
+   "invoice management",
+   "quote management",
+   "self-hosted invoicing",
+   "billing software",
+   "php invoicing",
+   "client management",
+   "payment tracking",
+   "small business accounting",
+   "invoice generator",
+   "quotes and invoices",
+   "php web app",
+   "docker invoicing",
+   "invoiceplane",
+   "open source invoicing",
+   "send invoices to clients",
+   "track unpaid invoices",
+   "payment reminders",
+   "customer billing system",
+   "invoice templates",
+   "libre billing app",
+   "mit licensed invoicing",
+   "manage client payments",
+   "docker compose php app",
+   "alternative to hosted invoicing service",
+   "business financial reports",
+   "product and task billing",
+   "awesome selfhosted money management"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3708,
+  "output": 1260
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "muend/geoai-skills",
+ "repo": "muend/geoai-skills",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Research & Scientific Inquiry",
+   "entry": "geoai-skills by muend - Skills for geospatial analysis that require coordinate-system, spatial-validation and comparability checks before a result is reported, and narrow or refuse a claim the data cannot support. Ships a paired evaluation against a skills-disabled control arm."
+  }
+ ],
+ "summary": {
+  "one_liner": "A set of 18 vendor-neutral Agent Skills that make coding agents check coordinate systems, comparability, leakage, and uncertainty before reporting a geospatial result, and narrow or refuse claims the data cannot support.",
+  "what_it_does": "The repository provides 18 narrow Agent Skills covering geospatial work such as remote sensing, change detection, point-cloud/LiDAR, terrain hydrology, spatial statistics, geostatistics, MCDA suitability, network accessibility, PostGIS SQL, Google Earth Engine, cartography, and gated ArcGIS Pro automation. Each skill is meant to be routed by its domain and to enforce preconditions like CRS selection, unit verification, validity checks, spatial (blocked) validation, and provenance. When evidence is insufficient, the skills direct the agent to produce a narrower claim, a clarification request, a provisional plan, or a refusal. The README reports a routing benchmark (167 cases) and a paired behavior evaluation (92 clean pairs, skills enabled vs. disabled on one Claude Code/model pair), and states that the behavior run failed its own quality gate. It also describes a separately reported external transfer subset of 5 cases. The skills are packaged for Codex, Claude Code, GitHub Copilot, the Skills CLI, ChatGPT, and Claude.ai ZIP upload.",
+  "use_cases": [
+   "Checking whether two satellite scenes support a changed-area claim",
+   "Auditing spatial validation for geospatial machine learning models",
+   "Selecting projected CRS and verifying units for area or distance measurement",
+   "Reviewing PostGIS spatial SQL for correctness and index use",
+   "Validating AHP weights and suitability mapping workflows",
+   "Gating destructive local ArcGIS Pro edits"
+  ],
+  "how_to_run": [
+   "npx skills add muend/geoai-skills --skill '*' -a codex",
+   "npx skills add muend/geoai-skills --skill remote-sensing-analysis -a claude-code",
+   "claude plugin marketplace add muend/geoai-skills",
+   "claude plugin install geoai@geoai-skills",
+   "gh skill install muend/geoai-skills remote-sensing-analysis",
+   "python tools/build_skill_archives.py"
+  ],
+  "stack": [
+   "Agent Skills (SKILL.md format)",
+   "Python tooling (validators, builders, evaluation scripts)",
+   "PostGIS / SQL",
+   "Google Earth Engine",
+   "ArcGIS Pro (optional, Windows only, via arcgis-mcp-bridge)",
+   "Claude Code, OpenAI Codex, GitHub Copilot plugin/skill formats"
+  ],
+  "notable": [
+   "Emphasizes refusing or narrowing claims when data cannot support them, rather than producing invented certainty",
+   "Publishes a paired skills-enabled vs. control behavior evaluation and openly reports the failed quality gate",
+   "Separates routing benchmark, behavior measurement, and external transfer evidence instead of pooling them",
+   "Explicitly positions itself as a method/verification layer that complements GDAL, PostGIS, QGIS, ArcGIS, and similar tools",
+   "Vendor-neutral, with install paths for multiple agent surfaces"
+  ],
+  "caveats": [
+   "The README states the absolute quality level is not good enough: only 18/92 behavior cases met every criterion and the critical-failure rate was 4.3%, failing the repository's Phase 3 gate.",
+   "Behavior results are single model-judged, uncalibrated, not yet human-verified, and tied to one runtime/model pair; the README says they are not universal claims.",
+   "Real ArcGIS Pro execution requires Windows, licensed ArcGIS Pro, and a configured local arcgis-mcp-bridge."
+  ],
+  "license": "MIT",
+  "category": "geospatial agent skills",
+  "keywords": [
+   "geospatial skills",
+   "gis agent skills",
+   "agent skills",
+   "claude code skills",
+   "codex skills",
+   "coordinate reference system check",
+   "crs validation",
+   "spatial validation",
+   "spatial leakage",
+   "blocked cross-validation",
+   "remote sensing analysis",
+   "change detection",
+   "sentinel-2 change claim",
+   "satellite imagery comparability",
+   "postgis sql",
+   "spatial sql performance",
+   "google earth engine",
+   "arcgis pro automation",
+   "lidar point cloud",
+   "terrain hydrology",
+   "spatial statistics",
+   "geostatistics kriging",
+   "ahp suitability analysis",
+   "network accessibility",
+   "cartography geoviz",
+   "gis claim verification",
+   "geospatial ai evaluation",
+   "paired behavior evaluation",
+   "skills.sh install",
+   "claude plugin marketplace",
+   "uncertainty in gis results",
+   "gis analysis refusal",
+   "validate gis results",
+   "geospatial machine learning validation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8695,
+  "output": 1700
+ },
+ "generated": "2026-10-29"
+}

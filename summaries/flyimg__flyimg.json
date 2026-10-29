@@ -1,0 +1,93 @@
+{
+ "id": "flyimg/flyimg",
+ "repo": "flyimg/flyimg",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "Flyimg - Resize and crop images on the fly. Get optimised images with MozJPEG, WebP or PNG using ImageMagick, with an efficient caching system. (Demo, Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Flyimg is a Dockerized, self-hosted image service that resizes, crops, and compresses images on the fly from URL parameters, caching the results.",
+  "what_it_does": "Fetches a source image (from a URL or a path on the server), applies options passed in the URL such as width, height, crop and quality, and serves the converted result. Output formats include AVIF (default when the browser supports it), WebP, MozJPEG-compressed JPEG, PNG and GIF, with JPEG XL available via ImageMagick when enabled. The o_auto option negotiates the output format from the request's Accept header. Generated images are stored and served from cache on later requests. The project is run as a single Docker container with nginx and php-fpm.",
+  "use_cases": [
+   "resize images on the fly via URL",
+   "serve optimised images to websites",
+   "convert images to WebP or AVIF",
+   "self-hosted Cloudinary alternative",
+   "crop and compress product or thumbnail images",
+   "cache transformed images for faster delivery"
+  ],
+  "how_to_run": [
+   "docker pull flyimg/flyimg",
+   "docker run -itd -p 8080:80 flyimg/flyimg",
+   "docker run -itd -p 8080:80 -v $(pwd)/parameters.yml:/var/www/html/config/parameters.yml flyimg/flyimg"
+  ],
+  "stack": [
+   "Docker",
+   "PHP",
+   "ImageMagick",
+   "nginx",
+   "php-fpm",
+   "s6-overlay",
+   "Composer",
+   "MozJPEG",
+   "WebP"
+  ],
+  "notable": [
+   "Generates AVIF by default when the browser supports it, with WebP, MozJPEG, PNG and GIF output",
+   "Optional JPEG XL output with o_jxl and jxlef effort tuning",
+   "o_auto format negotiation based on the Accept header",
+   "Single Docker container acts as a Cloudinary-like image service",
+   "Configurable via a parameters.yml file mounted into the container"
+  ],
+  "caveats": [
+   "Development build requires running composer install inside the container and can take several minutes",
+   "A managed SaaS version is offered as a paid alternative to self-hosting",
+   "README notes the JPEG XL output requires enabling it in ImageMagick"
+  ],
+  "license": "AGPL-3.0",
+  "category": "image optimization service",
+  "keywords": [
+   "image resizing",
+   "on-the-fly image processing",
+   "image optimization",
+   "image compression",
+   "image cropping",
+   "avif",
+   "webp",
+   "mozjpeg",
+   "jpeg xl",
+   "jxl",
+   "imagemagick",
+   "docker image service",
+   "self-hosted image server",
+   "cloudinary alternative",
+   "image cdn",
+   "thumbnail generator",
+   "url image transformation",
+   "image caching",
+   "resize images in url",
+   "compress images for website",
+   "convert image format",
+   "serve optimized images",
+   "php image service",
+   "nginx php-fpm docker",
+   "image proxy",
+   "dynamic image resizing",
+   "shrink photos for web",
+   "agpl image tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3150,
+  "output": 1110
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "geiserx/vpn-bypass",
+ "repo": "GeiserX/VPN-Bypass",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Proxy and VPN Tools",
+   "entry": "VPN Bypass - Menu bar app to route specific domains and services around your VPN. [![Open-Source Software][OSS Icon]](https://github.com/GeiserX/VPN-Bypass) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "VPN Bypass - Route specific domains and services around your corporate VPN while keeping the rest of your traffic protected."
+  }
+ ],
+ "summary": {
+  "one_liner": "VPN Bypass is a macOS menu bar app that routes chosen domains, services and subnets around (or, in another mode, only through) a corporate VPN and reapplies those routes when the VPN or network changes.",
+  "what_it_does": "The app runs from the macOS menu bar and offers three routing modes: Bypass sends listed destinations around the VPN, VPN Only sends only those destinations through it, and Custom lets each rule pick a route with first match winning. It ships 37 built-in service packs (such as Telegram, YouTube, Netflix, Spotify, Zoom and GitHub) and accepts custom domains, wildcards and subnets. In Custom mode a rule can exit direct, through a specific VPN, through an HTTP or SOCKS5 proxy, or through a Tailscale peer. The README says it detects a list of VPN clients including GlobalProtect, Cisco AnyConnect, OpenVPN, WireGuard, FortiClient, Zscaler, Cloudflare WARP, Pulse Secure, Check Point and Tailscale. Routes are restored automatically on reconnect, and domains are re-resolved as their addresses change. A `vpnb` command-line tool controls the app over a socket restricted to the user's account, and an MCP server is documented separately.",
+  "use_cases": [
+   "bypass corporate VPN for streaming video",
+   "keep AirPlay or Chromecast working on VPN",
+   "route personal traffic around work VPN",
+   "split tunnel on macOS without client support",
+   "send only certain domains through VPN",
+   "manage VPN routes from the menu bar"
+  ],
+  "how_to_run": [
+   "brew tap geiserx/vpn-bypass",
+   "brew trust --cask geiserx/vpn-bypass/vpn-bypass",
+   "brew install --cask vpn-bypass",
+   "Open VPN Bypass from Applications and approve the one admin prompt that installs the root helper",
+   "Connect the VPN, then enable a service in Settings > Services or type a domain into the dropdown"
+  ],
+  "stack": [
+   "macOS",
+   "Homebrew cask",
+   "root helper",
+   "vpnb CLI",
+   "MCP server"
+  ],
+  "notable": [
+   "Three routing modes: Bypass, VPN Only and Custom with first-match rules",
+   "Custom rules can exit via a specific VPN, HTTP/SOCKS5 proxy, or Tailscale peer",
+   "No kernel or system extension; a small root helper handles routing",
+   "vpnb CLI and a separate MCP server let scripts or AI agents control the app",
+   "Optional /etc/hosts DNS bypass and config import/export"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later",
+   "Needs an admin approval to install the root helper",
+   "Installing via Homebrew requires the extra 'brew trust' step shown in the README"
+  ],
+  "license": "GPL-3.0-or-later",
+  "category": "macos vpn routing",
+  "keywords": [
+   "vpn bypass",
+   "split tunneling",
+   "split tunnel macos",
+   "route traffic around vpn",
+   "corporate vpn",
+   "menu bar app",
+   "macos menubar",
+   "homebrew cask",
+   "bypass vpn for streaming",
+   "netflix vpn bypass",
+   "airplay vpn",
+   "chromecast vpn",
+   "wireguard",
+   "openvpn",
+   "globalprotect",
+   "cisco anyconnect",
+   "tailscale",
+   "cloudflare warp",
+   "zscaler",
+   "forticlient",
+   "proxy routing",
+   "socks5 proxy",
+   "vpnb cli",
+   "mcp server",
+   "route domains outside vpn",
+   "keep personal traffic off work network",
+   "dns bypass hosts file"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2799,
+  "output": 1342
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "ahmetoner/whisper-asr-webservice",
+ "repo": "ahmetoner/whisper-asr-webservice",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "AI & LLMs",
+   "entry": "Whisper ASR Webservice | Speech-to-text API powered by OpenAI Whisper"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Dockerized REST web service that wraps OpenAI Whisper, Faster Whisper, and WhisperX for speech-to-text transcription with a Swagger UI.",
+  "what_it_does": "Whisper ASR Box runs speech recognition models behind an HTTP API. It supports three engines selectable via the ASR_ENGINE variable: openai_whisper, faster_whisper, and whisperx. Output can be returned as text, JSON, VTT, SRT, or TSV. It offers word-level timestamps, voice activity detection (VAD) filtering, and speaker diarization when using WhisperX. FFmpeg is used for a wide range of audio and video input formats. The service can unload models after an idle timeout, and it ships with Swagger documentation for trying endpoints in the browser. Docker images are provided for CPU and GPU (CUDA) use.",
+  "use_cases": [
+   "self-hosted speech-to-text API",
+   "transcribing audio or video files to SRT or VTT subtitles",
+   "generating word-level timestamps for recordings",
+   "speaker diarization of meetings with WhisperX",
+   "GPU-accelerated batch transcription",
+   "adding transcription to an app via REST calls"
+  ],
+  "how_to_run": [
+   "docker run -d -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerahmet/openai-whisper-asr-webservice:latest",
+   "docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu",
+   "docker run -d -p 9000:9000 -v $PWD/cache:/root/.cache/ onerahmet/openai-whisper-asr-webservice:latest",
+   "pip3 install poetry",
+   "poetry install --extras cpu  (or --extras cuda)",
+   "poetry run whisper-asr-webservice --host 0.0.0.0 --port 9000"
+  ],
+  "stack": [
+   "Python",
+   "Poetry",
+   "Docker",
+   "OpenAI Whisper",
+   "Faster Whisper",
+   "WhisperX",
+   "FFmpeg",
+   "Swagger UI"
+  ],
+  "notable": [
+   "Three interchangeable ASR engines behind one REST API",
+   "Speaker diarization available with WhisperX engine",
+   "Configurable model unloading after idle timeout (MODEL_IDLE_TIMEOUT)",
+   "Separate CPU and CUDA Docker images and Poetry extras"
+  ],
+  "caveats": [
+   "GPU use requires Docker with --gpus all and a CUDA-capable setup",
+   "Speaker diarization is only listed for the WhisperX engine",
+   "Full documentation is referenced by a link not included in the README text"
+  ],
+  "license": "unknown",
+  "category": "self-hosted speech-to-text",
+  "keywords": [
+   "speech to text",
+   "speech-to-text api",
+   "whisper",
+   "openai whisper",
+   "faster whisper",
+   "whisperx",
+   "asr",
+   "automatic speech recognition",
+   "transcription service",
+   "transcribe audio",
+   "transcribe video",
+   "subtitles srt",
+   "vtt captions",
+   "word timestamps",
+   "speaker diarization",
+   "voice activity detection",
+   "vad filter",
+   "ffmpeg",
+   "docker speech recognition",
+   "gpu transcription",
+   "cuda",
+   "rest api",
+   "swagger ui",
+   "self-hosted transcription",
+   "speech translation",
+   "language identification",
+   "docker compose whisper",
+   "transcribe meetings",
+   "audio to text api",
+   "model unloading",
+   "poetry python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2439,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

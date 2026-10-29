@@ -1,0 +1,101 @@
+{
+ "id": "ypollak2/llm-router",
+ "repo": "ypollak2/llm-router",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "llm-router by Yali Pollak - A local-first router that sits under Claude Code (and Codex/Gemini CLI) and sends each prompt to the cheapest capable model, with three-layer token compression and automatic provider fallback — protecting your premium quota and cutting cost with zero config on a Claude subscription. Credibly engineered: 1,900+ tests, an independent RouterArena benchmark placement, and a"
+  }
+ ],
+ "summary": {
+  "one_liner": "A local-first router that sits under Claude Code (and other coding agents) and drafts each prompt's answer on a free or local model before Claude takes the turn, to conserve subscription quota.",
+  "what_it_does": "llm-router hooks into the coding tool's lifecycle and reads each prompt before the host model does. A free regex heuristic classifies the prompt, and routable prompts get a draft from a free or local model first, walking up toward paid models only when needed. Drafts are passed to Claude as advisory hints by default; an opt-in zero-Claude mode and a tool-call enforcement setting (LLM_ROUTER_ENFORCE) control this. It reports verified and unverified savings separately via status and savings-report commands, plus a session-end summary with tier mix, per-provider cost and latency percentiles. It also includes a secret-detection path that keeps prompts containing API keys or private keys on loopback Ollama models, a grounding check that discards drafts citing absent files, and optional direct execution of file and command tools under a confined path. It can also be used in-process from Python via a Router class with a budget cap.",
+  "use_cases": [
+   "Stretch a Claude Pro or Max subscription by offloading simple questions",
+   "Route coding-agent prompts to free or local models first",
+   "Track estimated savings versus API list price",
+   "Keep secrets in prompts on local models only",
+   "Budget-capped LLM calls from Python code",
+   "Fall back automatically when a model provider fails or rate-limits"
+  ],
+  "how_to_run": [
+   "pip install llm-routing",
+   "llm-router install",
+   "llm-router doctor",
+   "llm-router status"
+  ],
+  "stack": [
+   "Python",
+   "MCP (Model Context Protocol) tools",
+   "Ollama",
+   "OpenRouter",
+   "Gemini",
+   "Groq",
+   "uv",
+   "ruff",
+   "pytest"
+  ],
+  "notable": [
+   "Works with no API keys on a Claude Pro/Max subscription by routing through MCP tools and local models",
+   "Supports many hosts: Claude Code, Codex CLI, Gemini CLI, Cursor, VS Code, Windsurf and others via a single install command",
+   "Separates verified from unverified savings, each with its own sample size",
+   "Secret-bearing prompts are sent only to loopback Ollama models or refused",
+   "Circuit breakers skip failing or rate-limited providers"
+  ],
+  "caveats": [
+   "Routed answers are advisory by default; Claude still takes the turn unless zero-Claude mode is enabled",
+   "Direct execution of write/run tools is a static tripwire, not an OS sandbox, and does not stop targeted deletes or force pushes per the README",
+   "RouterArena benchmark results are self-graded and not yet independently verified",
+   "Team policy, audit export and SSO are offered by a separate sibling product, Chuzom, not this repo",
+   "Pi and Kimi Code hosts are planned but not yet supported"
+  ],
+  "license": "MIT",
+  "category": "LLM cost routing",
+  "keywords": [
+   "llm router",
+   "claude code",
+   "claude code plugin",
+   "model routing",
+   "cost optimization llm",
+   "reduce claude usage",
+   "claude pro quota",
+   "claude max subscription",
+   "token compression",
+   "provider fallback",
+   "circuit breaker",
+   "ollama",
+   "local llm",
+   "openrouter",
+   "gemini cli",
+   "codex cli",
+   "cursor",
+   "vs code mcp",
+   "mcp tools",
+   "mcp server",
+   "prompt routing",
+   "cheapest capable model",
+   "llm cost tracking",
+   "savings report",
+   "budget cap llm",
+   "python llm router",
+   "local first ai",
+   "secret detection prompts",
+   "coding agent cost",
+   "route prompts to free models",
+   "avoid api costs",
+   "cut ai spending",
+   "self-hosted llm gateway"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5512,
+  "output": 1370
+ },
+ "generated": "2026-10-29"
+}

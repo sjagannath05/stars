@@ -1,0 +1,103 @@
+{
+ "id": "rich627/whatsapp-claude-plugin",
+ "repo": "Rich627/whatsapp-claude-plugin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "WhatsApp Channel Plugin by Richie Liu - Connects WhatsApp as a native Claude Code channel via Baileys linked-device (no bot token or API keys), with bidirectional messaging, full media, voice transcription, remote tool approval, access control, and per-group personalities. Runs entirely locally and was the first community plugin officially reviewed and published on Anthropic's plugin marketplace."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code channel plugin that connects a WhatsApp personal account (via Baileys linked-device) or the official WhatsApp Cloud API to a Claude Code session so you can message Claude from WhatsApp.",
+  "category": "whatsapp claude code plugin",
+  "keywords": [
+   "whatsapp",
+   "claude code",
+   "claude code plugin",
+   "mcp server",
+   "mcp channel",
+   "baileys",
+   "whatsapp web linked device",
+   "whatsapp cloud api",
+   "meta business api",
+   "remote control claude",
+   "message claude from phone",
+   "chat with claude on whatsapp",
+   "bun",
+   "stdio mcp",
+   "voice transcription",
+   "mlx-whisper",
+   "whisper transcription",
+   "voice notes to text",
+   "tool approval from phone",
+   "permission relay",
+   "access control allowlist",
+   "pairing code",
+   "per-group personality",
+   "cron tasks",
+   "context recovery",
+   "catch up unread messages",
+   "polls",
+   "media attachments",
+   "codex cli",
+   "gemini cli",
+   "cursor mcp",
+   "notifications",
+   "chatbot",
+   "run claude remotely"
+  ],
+  "what_it_does": "The plugin runs a single Bun process that acts as an MCP server for Claude Code. Its default provider pairs with a personal WhatsApp account as a linked device (like WhatsApp Web), and an optional provider uses the official WhatsApp Cloud API for business DMs over a public HTTPS webhook. Inbound messages pass an access gate (pairing codes, allowlists, per-group policies) before being forwarded to the session, and Claude replies with tools such as reply, react, and download_attachment. The README also lists media handling in both directions, polls, voice-note transcription, per-group config.md files with personalities and cron jobs, and permission relay where tool requests are approved or denied with emoji reactions. It also describes catch_up and unreplied tools for recovering context after a restart, a doctor command for diagnosis, and terminal scripts for access management. Other MCP clients such as Codex CLI, Gemini CLI and Cursor are supported but are poll-based rather than push-based.",
+  "use_cases": [
+   "Control a Claude Code session from WhatsApp on your phone",
+   "Receive and answer WhatsApp messages with Claude",
+   "Approve or deny Claude tool requests from a chat app",
+   "Transcribe WhatsApp voice notes locally before Claude reads them",
+   "Run a business WhatsApp number with Claude via the Cloud API",
+   "Set up per-group AI assistant personalities and scheduled tasks in WhatsApp groups"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add Rich627/whatsapp-claude-plugin",
+   "claude plugin install whatsapp-channel@whatsapp-claude-plugin",
+   "claude --dangerously-load-development-channels plugin:whatsapp-channel@whatsapp-claude-plugin",
+   "/whatsapp-channel:setup",
+   "/whatsapp-channel:configure provider",
+   "/whatsapp-channel:configure <country code + number> (then enter the pairing code in WhatsApp Linked Devices)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Bun",
+   "Baileys (WhatsApp linked-device protocol)",
+   "WhatsApp Cloud API (optional)",
+   "MCP (Model Context Protocol) stdio server",
+   "Claude Code plugin system",
+   "mlx-whisper (optional local transcription, Apple Silicon)",
+   "ffmpeg (optional)",
+   "Groq or OpenAI transcription APIs (optional)"
+  ],
+  "notable": [
+   "Connects a personal WhatsApp number via linked device, so no bot token or Meta API credentials are needed for the default provider",
+   "Inbound messages wake the session as a Claude Code channel when launched with the development channels flag",
+   "Access is terminal-only for approvals, so instructions arriving over WhatsApp cannot approve pairings",
+   "Permission relay lets you approve or deny Claude tool requests with a 👍 or 👎 reaction in WhatsApp",
+   "Per-group config.md files define personalities, memory and cron jobs"
+  ],
+  "caveats": [
+   "The default Baileys provider uses an unofficial linked-device protocol that may conflict with WhatsApp's terms and put the number at risk",
+   "Inbound push requires the development-channels flag; --channels does not accept this plugin yet, and the README notes a known Claude Code client bug affecting message delivery",
+   "Only one client can hold a state directory's lock; two connections on the same linked-device auth kick each other off",
+   "The Cloud API provider supports DMs only, and Meta fees and messaging policies apply; voice transcription locally requires Apple Silicon"
+  ],
+  "license": "Apache 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6300,
+  "output": 1706
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "peon-sh/peon",
+ "repo": "Peon-sh/Peon",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "Peon | Open-source self-hostable Docker PaaS. Deploy Git apps, Compose stacks, databases, and static sites"
+  }
+ ],
+ "summary": {
+  "one_liner": "Peon is an open-source, self-hostable deployment platform (a Docker PaaS) for deploying Git apps, Docker Compose stacks, databases, and static sites to servers you own.",
+  "what_it_does": "Peon deploys apps from Git or Docker images to Linux servers over SSH, and the README names Hetzner, DigitalOcean, or bare metal as target infrastructure. It offers one-click service templates for databases, Compose stacks, and similar services. Workspaces and projects provide multi-user tenancy with role-based access. A background worker consumes SQS jobs for deployments, backups, and async tasks, while a separate cron scheduler enqueues recurring jobs. A terminal WebSocket server is included. The stack needs Node.js with pnpm, PostgreSQL, and either AWS SQS or a local ElasticMQ instance, with SES and S3 optional for email and asset storage.",
+  "use_cases": [
+   "deploy git repositories to my own servers",
+   "self-host a Heroku-style PaaS",
+   "run docker compose stacks on a VPS",
+   "provision one-click databases on my own infrastructure",
+   "host static sites on my own servers",
+   "manage deployments for a small team with role-based access"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into Peon",
+   "pnpm install",
+   "cp .env.example .env and set DATABASE_URL, JWT_SECRET, ENCRYPTION_KEY, and SQS URLs",
+   "docker compose --profile db --profile sqs up -d (optional local Postgres and ElasticMQ)",
+   "pnpm db:migrate",
+   "pnpm dev, plus pnpm worker, pnpm schedule, and pnpm socket in separate processes"
+  ],
+  "stack": [
+   "TypeScript",
+   "Next.js (App Router)",
+   "Node.js 20+",
+   "pnpm",
+   "PostgreSQL",
+   "Prisma",
+   "AWS SQS",
+   "ElasticMQ",
+   "Docker and Docker Compose",
+   "SSH",
+   "SES and S3 (optional)",
+   "OpenAI API (release notes)"
+  ],
+  "notable": [
+   "Git push deploys with TLS, backups, logs, and team workspaces on your own infrastructure",
+   "Local ElasticMQ option means no AWS account is needed for the queue",
+   "Separate worker, scheduler, and terminal socket processes that scale independently",
+   "Includes a deploy.sh script to promote staging to main and a release script that generates AI release notes"
+  ],
+  "caveats": [
+   "Requires several moving parts: Node, PostgreSQL, a queue, and a Linux server reachable over SSH to exercise real deployments",
+   "The scheduler must run as exactly one instance",
+   "Email and object storage features need SES and S3 credentials"
+  ],
+  "license": "MIT",
+  "category": "self-hosted deployment platform",
+  "keywords": [
+   "self-hosted paas",
+   "docker paas",
+   "open source heroku alternative",
+   "open source vercel alternative",
+   "deploy git apps to my server",
+   "docker compose deployment",
+   "git push deploy",
+   "self-host deployment platform",
+   "deploy static sites",
+   "one-click databases",
+   "paas on hetzner",
+   "paas on digitalocean",
+   "nextjs dashboard",
+   "prisma postgres",
+   "sqs worker",
+   "elasticmq local sqs",
+   "ssh deployment tool",
+   "team workspaces deployment",
+   "role-based access dashboard",
+   "deploy docker images over ssh",
+   "tls certificates for apps",
+   "automated backups for deployments",
+   "self-hosted heroku",
+   "infrastructure you control",
+   "deployment dashboard typescript",
+   "web terminal websocket",
+   "cron job scheduler",
+   "pnpm monorepo deploy",
+   "my own servers paas",
+   "mit licensed paas"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3046,
+  "output": 1319
+ },
+ "generated": "2026-10-29"
+}

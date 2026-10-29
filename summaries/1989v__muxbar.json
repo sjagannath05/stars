@@ -1,0 +1,96 @@
+{
+ "id": "1989v/muxbar",
+ "repo": "1989v/muxbar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "muxbar - Menu bar app for tmux session management — list, attach, kill sessions, live preview, and a closed-lid mode for in-bag work. [![Open-Source Software][OSS Icon]](https://github.com/1989v/muxbar) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu bar app for managing tmux sessions, with a Keep Awake toggle and a \"closed-lid\" mode that keeps the Mac running with the lid shut.",
+  "what_it_does": "The app lives in the macOS menu bar and lists all tmux sessions, sorted attached-first and then by creation date. From the menu you can attach a session in Terminal.app, iTerm2, Warp, Alacritty or kitty, kill it, or open a live preview of its recent output rendered with SwiftTerm. A Keep Awake toggle runs caffeinate -dimsu as a tracked tmux session and also detects and stops external caffeinate processes. Closed-lid mode uses pmset disablesleep plus caffeinate -is so the CPU keeps running with the lid closed, with a timer of 30 minutes to 8 hours or no limit. It also shows Claude and Codex weekly usage limits and per-session token counts, read from local logs, and offers YAML session templates for launching long-running scripts.",
+  "use_cases": [
+   "manage tmux sessions from the menu bar",
+   "keep a Mac awake while a build or CI job runs",
+   "keep a laptop running with the lid closed in a bag",
+   "launch and detach long-running polling or backup scripts",
+   "monitor Claude and Codex weekly usage limits"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/1989v/muxbar",
+   "cd muxbar",
+   "./build.sh open",
+   "brew install --cask 1989v/tap/muxbar",
+   "swift build && swift run muxbar"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftPM",
+   "SwiftTerm",
+   "tmux",
+   "caffeinate",
+   "pmset",
+   "AppleScript",
+   "YAML"
+  ],
+  "notable": [
+   "Closed-lid mode keeps the CPU running with the lid shut, without needing an external display, and routes output to an external monitor if one is connected",
+   "Keep Awake detects caffeinate processes started outside muxbar and stops them with one click",
+   "Long-running script launcher: YAML templates turn tmux sessions into one-click toggles for polling and batch jobs",
+   "Shows Claude and Codex weekly limit left in the menu bar icon and per-session token shares, reading only local logs",
+   "Passwordless pmset option uses a narrow sudoers rule that only allows pmset"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later and tmux installed via Homebrew",
+   "Closed-lid mode needs an admin password (Touch ID) or a manual sudoers rule, and auto-off without that rule only kills the session and sends a notification",
+   "Builds are ad-hoc signed and not notarized, so the first launch needs right-click → Open",
+   "Open at Login and notifications only work when running as a bundled .app, not via swift run"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar tools",
+  "keywords": [
+   "tmux manager",
+   "tmux session menu bar",
+   "macos menu bar app",
+   "menu bar tmux",
+   "caffeinate",
+   "keep awake mac",
+   "prevent mac sleep",
+   "closed lid mode",
+   "clamshell mode without external display",
+   "headless clamshell",
+   "lid closed mac keep running",
+   "swiftterm",
+   "swift macos app",
+   "tmux session preview",
+   "attach tmux session",
+   "kill tmux session",
+   "long running script launcher",
+   "tmux templates yaml",
+   "background script on mac",
+   "claude weekly limit",
+   "codex usage tracker",
+   "ai token usage per session",
+   "pmset disablesleep",
+   "amphetamine alternative",
+   "caffeine app alternative",
+   "iterm2 tmux",
+   "share terminal sessions",
+   "keep mac awake overnight",
+   "run script in background mac",
+   "menu bar session list"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8227,
+  "output": 1374
+ },
+ "generated": "2026-10-29"
+}

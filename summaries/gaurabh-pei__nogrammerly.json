@@ -1,0 +1,102 @@
+{
+ "id": "gaurabh-pei/nogrammerly",
+ "repo": "gaurabh-pei/nogrammerly",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "✏️ Text (18)",
+   "entry": "Nogrammerly - On-device writing assistant that checks spelling, grammar and tone and rewrites text in any app, using Apple Intelligence."
+  }
+ ],
+ "summary": {
+  "one_liner": "Nogrammerly is a free, open-source, on-device writing assistant for Mac and Windows that checks spelling, grammar, clarity and tone and offers one-click rewrites across most apps.",
+  "what_it_does": "It underlines spelling, grammar and style issues in the focused text field of almost any app, using the macOS Accessibility API on Mac or UI Automation on Windows. Right-clicking an underline offers Replace, Copy suggestion, Rewrite sentence, Ignore or Add to dictionary. A floating button in the field rewrites the selection or whole text as Professional, Friendly, Confident or Concise. On Mac it also includes a built-in editor window with a writing score, tone picker and Rewrite button. AI proofreading and rewrites use the on-device model (Apple Foundation Models on Mac, Phi Silica on Windows Copilot+ PCs), and the README says text never leaves the device. Without AI hardware it still provides spelling, grammar and style checks using the system spell checker and built-in rules.",
+  "use_cases": [
+   "check spelling and grammar while typing in any app",
+   "rewrite an email or message in a more professional or friendly tone",
+   "private proofreading without sending text to a cloud service",
+   "free alternative to a Grammarly subscription on Mac or Windows",
+   "fix writing in Slack, Teams, Outlook or Mail",
+   "build or modify a macOS or Windows writing assistant from source"
+  ],
+  "how_to_run": [
+   "Mac: download Nogrammerly-Installer.dmg, drag Nogrammerly into Applications, and open it (approve it in System Settings › Privacy & Security if macOS blocks it)",
+   "Mac: grant Accessibility permission in the Setup window",
+   "Windows (beta): download the x64 or arm64 zip, extract it, and double-click Install.cmd",
+   "Build on Mac: ./script/create_signing_identity.sh (one-time), then ./script/build_and_run.sh",
+   "Build on Mac: ./script/create_dmg.sh to produce the installer; swift test runs WritingEngine tests",
+   "Windows source is C# on .NET 10 in the windows/ folder and must be built on Windows"
+  ],
+  "stack": [
+   "Swift 5.10+",
+   "macOS Accessibility API",
+   "NSSpellChecker",
+   "Apple Foundation Models",
+   "C#",
+   ".NET 10",
+   "Windows App SDK",
+   "Phi Silica",
+   "Windows Spell Checking API",
+   "UI Automation",
+   "GitHub Actions"
+  ],
+  "notable": [
+   "Runs the language model fully on-device; no account needed and works offline",
+   "Right-click underlines to replace, rewrite sentence or add to dictionary, with undo (⌘Z) preserved",
+   "Works without AI hardware, falling back to spelling and style rules",
+   "Separate Mac (Swift) and Windows (C#) apps following the same read, analyse, draw and replace pipeline",
+   "Password fields are skipped"
+  ],
+  "caveats": [
+   "Mac AI checks need macOS 26+ with Apple Intelligence; Mac requires macOS 14+ on Apple silicon",
+   "Windows AI requires a Copilot+ PC with Developer Mode on; the Windows version is marked beta",
+   "The Mac app is not notarized and the Windows app is not code-signed, so OS security warnings must be bypassed",
+   "Some apps do not report text positions, so underlines may not appear there"
+  ],
+  "license": "MIT",
+  "category": "on-device writing assistant",
+  "keywords": [
+   "grammar checker",
+   "spell checker",
+   "writing assistant",
+   "grammarly alternative",
+   "open source grammarly",
+   "on-device ai",
+   "offline grammar check",
+   "private writing tool",
+   "tone checker",
+   "rewrite text",
+   "proofreading",
+   "style checker",
+   "apple intelligence",
+   "phi silica",
+   "copilot+ pc",
+   "macos writing app",
+   "windows writing app",
+   "accessibility api",
+   "nsspellchecker",
+   "swift app",
+   "c# dotnet app",
+   "slack spell check",
+   "email rewrite",
+   "clarity checker",
+   "free proofreading tool",
+   "check my writing privately",
+   "fix grammar in any app",
+   "rewrite email professional tone",
+   "writing score",
+   "text correction tool",
+   "right-click spelling fix"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5504,
+  "output": 1505
+ },
+ "generated": "2026-10-29"
+}

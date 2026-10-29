@@ -1,0 +1,97 @@
+{
+ "id": "achiya-automation/safari-mcp",
+ "repo": "achiya-automation/safari-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🌐 Browser (18)",
+   "entry": "Safari MCP - Native Safari browser automation for AI agents on macOS, exposing 98 tools via AppleScript and JavaScript."
+  }
+ ],
+ "summary": {
+  "one_liner": "Safari MCP is an MCP server that lets AI coding agents drive the user's real, logged-in Safari browser on macOS through 98 tools, using AppleScript with an optional Safari extension.",
+  "what_it_does": "The server exposes 98 tools covering navigation, clicks, form filling, screenshots and PDF export, tab management, and accessibility snapshots with ref IDs for targeting elements. It includes cookie, localStorage, sessionStorage and IndexedDB tools, plus network capture, request mocking and throttling, and console capture. Data extraction tools return tables, meta tags, images and links as structured output, and device emulation covers iPhone, iPad and Pixel-style viewports. Native CGEvent input tools (click, hover, keyboard, typing) are available for cases where DOM-level actions are blocked. The README describes a dual-engine design: an optional bundled Safari extension is preferred when connected, with AppleScript plus a Swift helper as a fallback. Multi-agent use is supported through a shared HTTP daemon with per-session tab ownership.",
+  "use_cases": [
+   "let an AI coding agent use my logged-in Safari",
+   "automate web tasks in the background without stealing focus",
+   "scrape or extract tables and links from a page via an agent",
+   "fill and submit web forms with an AI agent",
+   "test responsive layouts with device emulation on macOS",
+   "export or restore browser storage and cookies for sessions",
+   "capture network requests and mock API responses while debugging"
+  ],
+  "how_to_run": [
+   "Enable Safari → Settings → Advanced → Show features for web developers",
+   "Enable Safari → Settings → Developer → Allow JavaScript from Apple Events",
+   "npx safari-mcp",
+   "claude mcp add safari -- npx safari-mcp (Claude Code example)",
+   "Optional: clone the repo, build the Xcode extension, and enable Safari MCP Bridge in Safari → Settings → Extensions",
+   "Grant macOS Automation → Safari and Accessibility permissions as described in the README"
+  ],
+  "stack": [
+   "Node.js 20+",
+   "AppleScript / osascript",
+   "Swift helper (safari-helper)",
+   "Safari web extension (Xcode build, optional)",
+   "MCP protocol (stdio and HTTP transports)"
+  ],
+  "notable": [
+   "Drives the user's existing Safari profile with cookies and logins, not an isolated browser",
+   "Tab ownership model refuses to act on tabs the session did not open, unless opted in",
+   "Shared HTTP daemon mode gives each agent session its own tab state",
+   "Native CGEvent tools post OS-level input that can bypass some bot-detection blocks",
+   "Background operation with no activate, per the README"
+  ],
+  "caveats": [
+   "macOS only, and requires Node.js 20+",
+   "Stable Safari only; Safari Technology Preview is not supported",
+   "Full functionality needs the optional Xcode-built extension; several tools (dialogs, native clicks, PDF) are AppleScript-only, and the extension must be re-enabled after each Safari restart when unsigned extensions are allowed",
+   "Native tools and screenshots require extra macOS Accessibility and Screen Recording grants"
+  ],
+  "license": "MIT",
+  "category": "browser automation for agents",
+  "keywords": [
+   "safari automation",
+   "mcp server",
+   "model context protocol",
+   "ai agent browser",
+   "macos browser automation",
+   "applescript",
+   "webkit automation",
+   "coding agent browser",
+   "claude code mcp",
+   "cursor mcp",
+   "vs code mcp",
+   "browser tools for llm",
+   "use my logged in browser",
+   "control safari with ai",
+   "headless alternative",
+   "playwright alternative",
+   "puppeteer alternative",
+   "chrome devtools mcp alternative",
+   "web scraping on mac",
+   "form filling automation",
+   "screenshot webpage",
+   "network mocking",
+   "cookie and storage management",
+   "device emulation",
+   "background browser automation",
+   "npx safari-mcp",
+   "browser agent macos",
+   "automate safari tabs",
+   "end to end testing safari",
+   "accessibility snapshot",
+   "pdf export webpage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17612,
+  "output": 1489
+ },
+ "generated": "2026-10-29"
+}

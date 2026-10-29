@@ -1,0 +1,98 @@
+{
+ "id": "rhizomatics/updates2mqtt",
+ "repo": "rhizomatics/updates2mqtt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "updates2mqtt | Monitors running Docker containers for image updates, publishes to MQTT and integrates with Home Assistant"
+  }
+ ],
+ "summary": {
+  "one_liner": "updates2mqtt is a Python service that checks running Docker containers for newer image versions, publishes the results to MQTT, and integrates with Home Assistant auto-discovery.",
+  "what_it_does": "It periodically checks registries for new versions of Docker images used by running containers, using either the v1 Docker APIs or the OCI v2 API. Version info is published to MQTT, with Home Assistant auto-discovery so updates appear alongside Home Assistant's own components. Updates can be triggered from the Home Assistant update dialog, or applied automatically per container via the UPD2MQTT_UPDATE setting (Auto, Passive or Silent). Local builds can be updated by pulling a git repo and running docker compose build, and Portainer and Docker Compose stacks are supported for restart. It can optionally remove old images after a container is recreated, and publishes an optional heartbeat payload. A command line tool can analyse a single container or fetch manifests, tags and blobs from remote registries.",
+  "use_cases": [
+   "get notified in Home Assistant when Docker images have updates",
+   "automatically update Docker containers on a schedule",
+   "trigger container updates from the Home Assistant update dialog",
+   "monitor Docker image versions via MQTT",
+   "rebuild local Docker Compose images from a git repo",
+   "inspect remote container registry tags and manifests"
+  ],
+  "how_to_run": [
+   "docker run -v /var/run/docker.sock:/var/run/docker.sock -e MQTT_USER=user1 -e MQTT_PASS=user1 -e MQTT_HOST=192.168.1.5 ghcr.io/rhizomatics/updates2mqtt:latest",
+   "export MQTT_HOST=192.168.1.1;export MQTT_USER=user1;export MQTT_PASS=user1;uv run --with updates2mqtt python -m updates2mqtt"
+  ],
+  "stack": [
+   "Python",
+   "docker-py",
+   "Eclipse Paho MQTT client",
+   "OmegaConf",
+   "structlog",
+   "rich",
+   "hishel",
+   "httpx",
+   "uv",
+   "ruff",
+   "pytest",
+   "usingversion"
+  ],
+  "notable": [
+   "Home Assistant MQTT auto-discovery, with release notes and icons shown in the HA update dialog",
+   "Per-container automated updates via UPD2MQTT_UPDATE labels or environment variables",
+   "Local build support: git pull followed by docker compose build and up",
+   "Adaptive registry handling for GitHub, GitLab, Codeberg, Quay, LinuxServer, Microsoft MCR and Docker Hub",
+   "Optional removal of superseded images that no other container uses"
+  ],
+  "caveats": [
+   "Only Docker containers are supported at present; apt and other ecosystems are planned but not available",
+   "Needs access to the Docker socket (/var/run/docker.sock) and an MQTT broker",
+   "Healthcheck script depends on the mosquitto-clients package and MQTT settings being present in the container"
+  ],
+  "license": "unknown",
+  "category": "docker update monitoring",
+  "keywords": [
+   "docker",
+   "container updates",
+   "image updates",
+   "mqtt",
+   "home assistant",
+   "home assistant update entity",
+   "mqtt auto discovery",
+   "docker image monitoring",
+   "container update notifier",
+   "automatic docker updates",
+   "docker compose updates",
+   "portainer stacks",
+   "oci registry",
+   "docker registry tags",
+   "image version check",
+   "heartbeat",
+   "healthcheck",
+   "local docker builds",
+   "git pull docker compose build",
+   "self-hosted monitoring",
+   "ghcr image updates",
+   "lscr",
+   "quay",
+   "codeberg",
+   "gitlab registry",
+   "release notes",
+   "notify me when a container has a new version",
+   "update docker containers from home automation",
+   "what's up docker alternative",
+   "python docker tool",
+   "remove old docker images"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4025,
+  "output": 1395
+ },
+ "generated": "2026-10-29"
+}

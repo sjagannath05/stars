@@ -1,0 +1,82 @@
+{
+ "id": "magicstack/uvloop",
+ "repo": "MagicStack/uvloop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Asynchronous Programming",
+   "entry": "uvloop - Ultra-fast asyncio event loop."
+  }
+ ],
+ "summary": {
+  "one_liner": "uvloop is a fast, drop-in replacement for the built-in asyncio event loop, implemented in Cython on top of libuv.",
+  "what_it_does": "uvloop replaces the default asyncio event loop with one built on libuv, aiming to make asyncio faster without changing application code. The README says it makes asyncio 2-4x faster, citing an echo-server benchmark that compares raw sockets, asyncio streams, and protocol-based servers. It provides a uvloop.run() helper that wraps asyncio.run() to use uvloop and passes through arguments such as debug. For Python 3.11 and earlier, it documents an asyncio.Runner with loop_factory=uvloop.new_event_loop, or uvloop.install() on older versions. The project is installable from PyPI and can be built from source with a dev install and a test target.",
+  "use_cases": [
+   "speed up asyncio-based network servers",
+   "drop-in faster event loop for asyncio apps",
+   "high-throughput echo or socket servers in Python",
+   "reduce latency of async Python I/O",
+   "run asyncio programs with uvloop.run()"
+  ],
+  "how_to_run": [
+   "pip install -U pip",
+   "pip install uvloop",
+   "import uvloop; uvloop.run(main())"
+  ],
+  "stack": [
+   "Python 3.9+",
+   "Cython",
+   "libuv"
+  ],
+  "notable": [
+   "Drop-in replacement for the asyncio event loop, so existing asyncio code can switch with minimal changes",
+   "Built on libuv, the same event-loop library underlying Node.js",
+   "uvloop.run() helper configures asyncio.run() to use uvloop",
+   "Documented benchmarks comparing sockets, streams, and protocol echo servers"
+  ],
+  "caveats": [
+   "Requires Python 3.9 or greater",
+   "Building from source needs a git clone with submodules, a virtualenv, and a make step"
+  ],
+  "license": "MIT and Apache 2.0 (dual-licensed)",
+  "category": "asynchronous python networking",
+  "keywords": [
+   "uvloop",
+   "asyncio",
+   "event loop",
+   "python event loop",
+   "libuv",
+   "cython",
+   "async io",
+   "asynchronous programming",
+   "drop-in replacement asyncio",
+   "faster asyncio",
+   "async networking",
+   "asyncio performance",
+   "non-blocking io",
+   "echo server benchmark",
+   "asyncio.run alternative",
+   "concurrent python servers",
+   "speed up async python",
+   "make python async faster",
+   "python async tcp server",
+   "event loop optimization",
+   "pypi async library",
+   "async sockets python",
+   "high performance python networking",
+   "asyncio streams",
+   "run asyncio faster",
+   "python coroutine runtime"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2366,
+  "output": 1014
+ },
+ "generated": "2026-10-29"
+}

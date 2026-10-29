@@ -1,0 +1,103 @@
+{
+ "id": "j-cowsert/classlayout.nvim",
+ "repo": "J-Cowsert/classlayout.nvim",
+ "kind": "star",
+ "description": "Neovim plugin to visualize C/C++ class/struct memory layouts using clang",
+ "topics": [
+  "c",
+  "clang",
+  "clangd",
+  "cpp",
+  "memory-layout",
+  "neovim",
+  "neovim-plugin"
+ ],
+ "language": "Lua",
+ "stars": 65,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-09-11",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "programming"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Neovim plugin that shows C/C++ struct and class memory layouts (field offsets, padding, alignment) in a floating window, using clang.",
+  "category": "neovim plugin",
+  "keywords": [
+   "neovim",
+   "neovim plugin",
+   "lua",
+   "c struct layout",
+   "c++ class layout",
+   "memory layout",
+   "struct offsets",
+   "field offsets",
+   "struct padding",
+   "alignment",
+   "sizeof",
+   "clang",
+   "clangd",
+   "compile_commands.json",
+   "compile_flags.txt",
+   "floating window",
+   "hover",
+   "type inspection",
+   "struct size",
+   "memory inspection",
+   "see struct padding",
+   "show struct byte offsets",
+   "inspect class layout in editor",
+   "visualize struct memory",
+   "cpp struct debugging",
+   "c memory layout tool",
+   "lsp type resolution"
+  ],
+  "what_it_does": "The plugin is triggered from the cursor position on a C or C++ type name or variable, via the ` cl` keymap or the :ClassLayout command. It resolves variables to their underlying type through clangd and then uses clang to compile the saved file and compute the type's layout. The result is shown in a floating window listing field offsets, padding and alignment. It handles structs, classes, unions and STL types, and reads compiler flags from compile_commands.json or compile_flags.txt when present. Results are cached, so repeat lookups are faster after the first compile. Press q to close the window.",
+  "use_cases": [
+   "see where padding is wasted in a struct",
+   "check field offsets while writing C or C++ code",
+   "inspect the memory layout of a class without a debugger",
+   "find alignment problems in a data structure",
+   "view the layout of a variable's underlying type",
+   "compare struct layouts while editing in Neovim"
+  ],
+  "how_to_run": [
+   "Install with lazy.nvim: { \"J-Cowsert/classlayout.nvim\", ft = { \"c\", \"cpp\" }, opts = {} }",
+   "Ensure clang is in PATH and clangd is available for variable type resolution",
+   "Optionally call require(\"classlayout\").setup({ keymap = \" cl\", compiler = \"clang\", args = {}, compile_commands = true })",
+   "Open a C or C++ file, save it, and place the cursor on a type name or variable",
+   "Press \" cl\" or run :ClassLayout",
+   "Press q to close the floating window"
+  ],
+  "stack": [
+   "Lua",
+   "Neovim >= 0.10",
+   "clang",
+   "clangd"
+  ],
+  "notable": [
+   "Resolves variables to their underlying type via clangd",
+   "Auto-detects flags from compile_commands.json or compile_flags.txt",
+   "Caches results so repeat lookups are instant",
+   "Works on structs, classes, unions and STL types"
+  ],
+  "caveats": [
+   "Requires clang in PATH and clangd for variable and qualified type resolution",
+   "Layout is based on the saved file on disk, so unsaved edits are not reflected; save before invoking",
+   "Requires Neovim 0.10 or newer"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1865,
+  "output": 1136
+ },
+ "generated": "2026-10-29"
+}

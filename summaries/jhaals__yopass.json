@@ -1,0 +1,94 @@
+{
+ "id": "jhaals/yopass",
+ "repo": "jhaals/yopass",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "Yopass - Secure sharing of secrets, passwords and files. (Demo) Apache-2.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Yopass is a self-hosted service for sharing passwords, files, and other secrets through links that encrypt in the browser before anything reaches the server.",
+  "what_it_does": "The browser generates a random key and encrypts the secret with OpenPGP before upload, and the decryption key stays in the URL fragment, which is never sent to the server. The server stores only the encrypted message with an expiration time. Links can be one-time (removed after first retrieval) or remain valid until expiry, with optional custom durations and optional password protection. The standard flow needs no user accounts. Storage can be Redis or Memcached for messages and disk or S3-compatible storage for files. The project also includes a command-line client, split read/write deployments with read-only mode, Prometheus metrics, and translations. A business license adds OpenID Connect, theming, audit logging, secret requests, read receipts, signed webhooks, and file uploads larger than 1 MB.",
+  "use_cases": [
+   "share passwords without email or chat",
+   "send one-time secret links",
+   "share encrypted files with a recipient",
+   "self-host a secret-sharing service",
+   "share credentials from the terminal via CLI",
+   "run read-only secret retrieval separate from creation"
+  ],
+  "how_to_run": [
+   "docker network create yopass",
+   "docker run -d --name yopass-memcached --network yopass memcached",
+   "docker run -d --name yopass --network yopass -p 127.0.0.1:1337:1337 jhaals/yopass --memcached=yopass-memcached:11211"
+  ],
+  "stack": [
+   "Go",
+   "React",
+   "Docker",
+   "Memcached",
+   "Redis",
+   "OpenPGP",
+   "S3-compatible storage",
+   "react-i18next",
+   "Prometheus"
+  ],
+  "notable": [
+   "Browser-side OpenPGP encryption; decryption key lives in the URL fragment and never reaches the server",
+   "No accounts or tracking for the standard flow",
+   "One-time links or expiring links",
+   "Disk and S3/MinIO file storage options",
+   "Kubernetes manifest and Docker Compose examples with Let's Encrypt"
+  ],
+  "caveats": [
+   "Production use requires HTTPS, so a TLS setup or reverse proxy must be configured",
+   "Several features (OIDC, audit logs, webhooks, read receipts, larger file uploads, theming) require a business license",
+   "The quick-start setup runs without TLS and is meant only for local testing or behind a TLS-terminating proxy"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted secret sharing",
+  "keywords": [
+   "secret sharing",
+   "share passwords securely",
+   "one-time secret",
+   "self-hosted pastebin",
+   "end-to-end encryption",
+   "encrypted file sharing",
+   "openpgp",
+   "client-side encryption",
+   "temporary links",
+   "expiring links",
+   "password sharing",
+   "send credentials securely",
+   "onetime secret alternative",
+   "memcached",
+   "redis",
+   "docker",
+   "kubernetes",
+   "go",
+   "react",
+   "s3 storage",
+   "minio",
+   "cli",
+   "read-only mode",
+   "prometheus metrics",
+   "reverse proxy",
+   "share files with my team",
+   "avoid sending passwords by email",
+   "self-hosted",
+   "apache-2.0"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3311,
+  "output": 1190
+ },
+ "generated": "2026-10-29"
+}

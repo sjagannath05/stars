@@ -1,0 +1,88 @@
+{
+ "id": "koekeishiya/skhd",
+ "repo": "koekeishiya/skhd",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Productivity",
+   "entry": "skhd - Simple hotkey daemon for macOS. [![Open-Source Software][OSS Icon] ![Freeware][Freeware Icon]](https://github.com/koekeishiya/skhd)"
+  }
+ ],
+ "summary": {
+  "one_liner": "skhd is a simple hotkey daemon for macOS that binds keyboard shortcuts to shell commands via a text-file DSL, with live config reloading.",
+  "what_it_does": "skhd runs in the background on macOS and listens for key events, executing shell commands when a defined hotkey is pressed. Hotkeys are declared in a plain text config file (default locations: $XDG_CONFIG_HOME/skhd/skhdrc, $HOME/.config/skhd/skhdrc, or $HOME/.skhdrc) using a simple DSL. The config hotloads, so edits apply while skhd is running, and skhd --reload triggers a manual reload. The README also describes modal hotkey systems, application-specific bindings, a blacklist of applications, use of media keys as hotkeys, and synthesizing key presses and text via command-line flags. It can be installed as a launchd service. Only one instance runs at a time, enforced by a pid-file in /tmp.",
+  "use_cases": [
+   "bind global keyboard shortcuts to shell commands on macOS",
+   "launch or switch applications with a keystroke",
+   "create modal keyboard shortcut layers",
+   "set different hotkeys for specific applications",
+   "remap or pass through keys in selected apps",
+   "automate key presses or typed text from the command line"
+  ],
+  "how_to_run": [
+   "brew install asmvik/formulae/skhd",
+   "skhd --start-service",
+   "git clone (Source install; repository URL not shown in README)",
+   "make install  # release version",
+   "make  # debug version",
+   "skhd --install-service"
+  ],
+  "stack": [
+   "C",
+   "macOS accessibility API",
+   "launchd",
+   "Homebrew"
+  ],
+  "notable": [
+   "Hotkeys defined in a plain text file with a simple DSL, hotloaded while running",
+   "Modal hotkey system and application-specific bindings",
+   "Blacklist applications via .blacklist and include partial config files via .load",
+   "Can use media keys as hotkeys and synthesize key presses or text (-k, -t flags)",
+   "Runs as a launchd service with --install-service / --start-service"
+  ],
+  "caveats": [
+   "Maintenance mode: only critical issues affecting core functionality will be addressed; the README points to a Zig port by Jackie Li for feature expansion",
+   "Requires granting accessibility API access and restarting the app; Secure Keyboard Entry must be disabled to receive key events",
+   "Source build requires xcode-8 command-line tools (per README)"
+  ],
+  "license": "unknown",
+  "category": "macos hotkey daemon",
+  "keywords": [
+   "hotkey daemon",
+   "macos keyboard shortcuts",
+   "global hotkeys mac",
+   "keybinding manager",
+   "hotkey manager macos",
+   "skhdrc",
+   "launchd service",
+   "hotload config",
+   "modal keybindings",
+   "application specific hotkeys",
+   "media keys as hotkeys",
+   "keypress synthesis",
+   "keyboard remapping mac",
+   "shell command shortcut",
+   "launch app with shortcut",
+   "automate keystrokes",
+   "accessibility api hotkeys",
+   "karabiner alternative",
+   "bind keys to scripts",
+   "terminal hotkeys",
+   "productivity mac tool",
+   "homebrew formula skhd",
+   "key event daemon",
+   "blacklist apps hotkeys",
+   "keyboard macros mac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3552,
+  "output": 1227
+ },
+ "generated": "2026-10-29"
+}

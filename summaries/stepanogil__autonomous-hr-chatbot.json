@@ -1,0 +1,98 @@
+{
+ "id": "stepanogil/autonomous-hr-chatbot",
+ "repo": "stepanogil/autonomous-hr-chatbot",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "A prototype autonomous HR assistant that answers employee and timekeeping-policy questions using a LangChain agent with ChatGPT, Pinecone, and a Streamlit front end.",
+  "what_it_does": "The agent chooses among three tools to answer HR queries: a timekeeping policy document embedded with OpenAI's text-embedding-ada-002 and stored in a Pinecone index, a dummy employee CSV loaded as a pandas DataFrame and queried through LangChain's PythonAstREPLTool, and LangChain's LLMMathChain calculator. The LLM is ChatGPT or gpt-3.5-turbo, and the chat UI uses Streamlit with the streamlit_chat component. A notebook is provided to create the Pinecone embeddings. The README also describes an Azure variant (hr_agent_backend_azure.py) and an Azure Data Lake, Data Factory, and SAP HCM data pipeline as the intended enterprise context. A 2026 note says a modernized v2/ version uses OpenAI's Responses API with no LangChain or Pinecone, and gpt-5.2 reasoning summaries; the original 2023 code is kept for reference.",
+  "use_cases": [
+   "Answering employee questions about timekeeping policies",
+   "Looking up dummy employee records such as supervisor and leave balances",
+   "Prototyping an internal HR chatbot with LangChain agents",
+   "Learning how to combine vector search with a pandas data tool in an agent",
+   "Demonstrating a Streamlit chat front end for an LLM agent"
+  ],
+  "how_to_run": [
+   "Install Python 3.10.",
+   "Clone the repository to a local directory.",
+   "Run `pip install -r requirements.txt`.",
+   "Add your own API keys in hr_agent_backend_local.py (or hr_agent_backend_azure.py for the Azure version, uncommenting it in frontend.py).",
+   "Create a Pinecone account and run the notebook store_embeddings_in_pinecone.ipynb with your Pinecone and OpenAI keys to store embeddings.",
+   "Run `streamlit run hr_agent_frontent.py`."
+  ],
+  "stack": [
+   "Python",
+   "LangChain",
+   "OpenAI ChatGPT / gpt-3.5-turbo",
+   "OpenAI text-embedding-ada-002",
+   "Pinecone",
+   "Streamlit",
+   "streamlit_chat",
+   "pandas",
+   "Azure OpenAI Service",
+   "Azure Data Lake",
+   "Azure Data Factory",
+   "SAP HCM"
+  ],
+  "notable": [
+   "Agent picks between a vector-searched policy document, a pandas-based employee data tool, and a calculator",
+   "Employee data is queried by letting the LLM run Python via LangChain's PythonAstREPLTool",
+   "Includes both an OpenAI-direct backend and an Azure OpenAI backend variant",
+   "A 2026 v2/ folder rewrites it with OpenAI's Responses API, dropping LangChain and Pinecone"
+  ],
+  "caveats": [
+   "Described as a prototype; the sample policy document and employee CSV are generated or dummy data",
+   "Requires API keys for OpenAI and Pinecone (free tier available) and a Python 3.10 environment",
+   "The original 2023 implementation is kept as reference; the modernized version is in v2/"
+  ],
+  "license": "unknown",
+  "category": "hr chatbot prototype",
+  "keywords": [
+   "hr chatbot",
+   "autonomous agent",
+   "langchain agents",
+   "langchain tools",
+   "pinecone vector database",
+   "vector search",
+   "embeddings",
+   "text-embedding-ada-002",
+   "chatgpt",
+   "gpt-3.5-turbo",
+   "streamlit",
+   "streamlit chat app",
+   "pandas dataframe agent",
+   "pythonasttreple tool",
+   "llm math calculator",
+   "timekeeping policy",
+   "employee data chatbot",
+   "employee leave lookup",
+   "azure openai",
+   "azure data factory",
+   "sap hcm",
+   "rag prototype",
+   "question answering over documents",
+   "ask hr questions",
+   "answer employee policy questions",
+   "internal helpdesk bot",
+   "python llm app",
+   "openai responses api",
+   "reference implementation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2442,
+  "output": 1522
+ },
+ "generated": "2026-10-29"
+}

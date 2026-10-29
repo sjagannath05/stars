@@ -1,0 +1,103 @@
+{
+ "id": "apache/guacamole-server",
+ "repo": "apache/guacamole-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Remote Access",
+   "entry": "Guacamole - Clientless remote desktop gateway supporting standard protocols like VNC and RDP. (Source Code) Apache-2.0 Java/C"
+  }
+ ],
+ "summary": {
+  "one_liner": "guacamole-server is the backend of Apache Guacamole, containing the guacd proxy daemon, libguac, and protocol support libraries that translate protocols such as VNC and RDP into the Guacamole text protocol for browser-based remote desktop access.",
+  "what_it_does": "The package contains guacd, a proxy daemon used by the Guacamole web application, plus libguac and several protocol support libraries. guacd translates between arbitrary remote desktop protocols and the Guacamole text-based protocol, which JavaScript can process easily. Protocol support is optional and enabled by installing dependencies, covering RDP (FreeRDP), SSH, Telnet, and VNC (libVNCserver), with optional SFTP file transfer for VNC or RDP, VNC audio via PulseAudio, WebP compression, and the guacenc video encoding utility (FFmpeg). Built with GNU Automake using a standard configure, make, make install flow. guacd listens on port 4822 by default and offers options for host, port, pidfile, log level, and foreground mode.",
+  "use_cases": [
+   "clientless remote desktop access through a browser",
+   "connecting to VNC servers from a web gateway",
+   "connecting to RDP hosts without a client install",
+   "SSH or Telnet access via a web browser",
+   "recording or encoding remote sessions to video with guacenc",
+   "transferring files over SFTP during remote sessions"
+  ],
+  "how_to_run": [
+   "$ ./configure",
+   "$ make",
+   "# make install",
+   "# /etc/init.d/guacd start",
+   "$ guacd"
+  ],
+  "stack": [
+   "C",
+   "Java",
+   "GNU Automake",
+   "Cairo",
+   "libjpeg-turbo",
+   "libpng",
+   "OSSP UUID",
+   "FreeRDP",
+   "libssh2",
+   "OpenSSL",
+   "Pango",
+   "libtelnet",
+   "libVNCserver",
+   "PulseAudio",
+   "libwebp",
+   "FFmpeg"
+  ],
+  "notable": [
+   "guacd translates binary remote desktop protocols into a text protocol usable from JavaScript",
+   "Protocol support is modular; install only the dependencies for the protocols you need",
+   "Includes an optional init script installed via configure --with-init-dir",
+   "Provides a guacd man page and command-line options for port, host, logging, and foreground mode"
+  ],
+  "caveats": [
+   "Requires compiling from source with several native dependencies installed first",
+   "The README is a build guide for technical users; it does not cover the web application or full setup",
+   "Useless on its own without at least one protocol's dependencies installed"
+  ],
+  "license": "Apache-2.0",
+  "category": "remote desktop gateway",
+  "keywords": [
+   "apache guacamole",
+   "guacd",
+   "guacamole server",
+   "libguac",
+   "clientless remote desktop",
+   "browser remote desktop",
+   "remote desktop gateway",
+   "vnc client in browser",
+   "rdp in browser",
+   "rdp gateway",
+   "vnc gateway",
+   "ssh in browser",
+   "telnet in browser",
+   "freerdp",
+   "libvncserver",
+   "libssh2",
+   "guacenc",
+   "video encoding remote session",
+   "sftp file transfer remote desktop",
+   "webp compression",
+   "apache remote access",
+   "self-hosted remote access",
+   "access remote desktop from web browser",
+   "connect to windows machine without client",
+   "remote access gateway",
+   "guacamole protocol",
+   "c daemon proxy",
+   "automake build",
+   "remote desktop over http",
+   "pulseaudio vnc audio"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3037,
+  "output": 1270
+ },
+ "generated": "2026-10-29"
+}

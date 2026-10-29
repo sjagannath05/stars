@@ -1,0 +1,98 @@
+{
+ "id": "atomicbot-ai/atomic-chat",
+ "repo": "AtomicBot-ai/Atomic-Chat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Atomic Chat - Open-source AI chat client for local and cloud models with MCP support. [![Open-Source Software][OSS Icon]](https://github.com/AtomicBot-ai/Atomic-Chat)"
+  }
+ ],
+ "summary": {
+  "one_liner": "Atomic Chat is an open-source desktop and mobile app for running open-weight LLMs locally, which also exposes an OpenAI-compatible local API and supports cloud providers and MCP servers.",
+  "what_it_does": "Runs open-weight LLMs locally (models from HuggingFace such as Llama, Gemma, Qwen, Mistral, Phi) through three inference engines: a llama.cpp fork with TurboQuant KV cache, upstream llama.cpp, and MLX-VLM for Apple Silicon. It serves an OpenAI-compatible API on port 1337, bound to 127.0.0.1 by default, so existing OpenAI SDK clients can point at it by changing base_url. It also connects to cloud providers (OpenAI, Anthropic, Mistral, Groq, MiniMax, Qwen, Moonshot) with bring-your-own keys, and can connect multiple MCP servers. Extra features include Artifacts previews for HTML/CSS/JS, custom assistants with system prompts, projects, and one-click launch of agents such as Claude Code, Codex CLI, Cline, OpenCode and Goose from an Integrations tab. The engines are managed by a separate repository, atomic-chat-core.",
+  "use_cases": [
+   "Chat with open-weight LLMs privately on your own computer",
+   "Use a local OpenAI-compatible endpoint for coding agents or IDE plugins",
+   "Compare or mix local models with cloud models in one chat app",
+   "Connect MCP tools such as file access or web search to a local model",
+   "Run speculative decoding to speed up local inference",
+   "Serve local models to other devices on a LAN"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/AtomicBot-ai/Atomic-Chat",
+   "cd Atomic-Chat",
+   "make dev",
+   "yarn install",
+   "yarn build:core",
+   "yarn dev"
+  ],
+  "stack": [
+   "TypeScript",
+   "Rust",
+   "Tauri",
+   "Node.js",
+   "Yarn",
+   "llama.cpp",
+   "MLX-VLM",
+   "OpenAI-compatible API"
+  ],
+  "notable": [
+   "OpenAI-compatible local server on port 1337 usable as a drop-in OpenAI SDK replacement",
+   "Three inference engines (llama.cpp fork with TurboQuant, upstream llama.cpp, MLX-VLM) behind one API",
+   "Speculative decoding options including MTP and DFlash, with platform limits",
+   "One-click launch of many coding agents from an Integrations tab",
+   "Linux packages via apt, dnf, and AUR, plus AppImage"
+  ],
+  "caveats": [
+   "Speculative decoding is platform-limited: MTP on macOS and Windows, DFlash on Apple Silicon only, and the two cannot be enabled together",
+   "Linux requires glibc 2.35 or newer on x86_64 (2.38+ on arm64) and only GGUF models run there",
+   "Building from source needs Node.js 20+, Yarn 4.5.3+, Make, Rust, and on Apple Silicon the MetalToolchain component"
+  ],
+  "license": "Apache 2.0",
+  "category": "local llm desktop app",
+  "keywords": [
+   "local llm",
+   "run llm locally",
+   "open-weight models",
+   "offline ai chat",
+   "ollama alternative",
+   "lm studio alternative",
+   "openai compatible server",
+   "openai api drop-in",
+   "local api server",
+   "llama.cpp",
+   "mlx",
+   "apple silicon inference",
+   "turboquant kv cache",
+   "speculative decoding",
+   "mcp client",
+   "mcp servers",
+   "model context protocol",
+   "ai chat client",
+   "local and cloud models",
+   "coding agent backend",
+   "claude code local model",
+   "opencode provider",
+   "tauri desktop app",
+   "private ai chat",
+   "run ai on my mac",
+   "chat with local models",
+   "gguf models",
+   "huggingface models",
+   "self-hosted ai chat",
+   "ai assistant app",
+   "linux ai app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6673,
+  "output": 1448
+ },
+ "generated": "2026-10-29"
+}

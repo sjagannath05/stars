@@ -1,0 +1,98 @@
+{
+ "id": "tobymarks/inlaut",
+ "repo": "tobymarks/inlaut",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "inlaut - Menu bar dictation for German and English that runs a Parakeet model fully on-device and types at the cursor."
+  }
+ ],
+ "summary": {
+  "one_liner": "inlaut is a free, open-source (GPL-3.0) macOS dictation app that transcribes German and English speech on-device with a Parakeet model and types the text at the cursor, with a beta Windows build.",
+  "what_it_does": "Hold a key combination, speak, and release; the recognised text appears in whichever text field has the cursor. Speech recognition runs locally via a Parakeet Ultra Core ML model on the Neural Engine (through FluidAudio), with Apple's on-device SpeechAnalyzer as a fallback. Users can define replacements (fixing recurring misrecognitions) and snippets (a spoken phrase expanding to stored longer text), with export and import. Optional cleanup removes filler words and accidental repeats, and a beta option resolves self-corrections using Apple's on-device language model. \"Transcribe File\" converts audio or video files into a transcript window with optional time stamps. Updates are delivered through Sparkle, and a Windows x64 beta with bundled models is also available.",
+  "use_cases": [
+   "dictate text into any macOS app offline",
+   "private German or English speech-to-text",
+   "transcribe audio or video files locally",
+   "replace a cloud dictation subscription",
+   "expand spoken phrases into stored snippets",
+   "transcribe web meeting recordings with time stamps"
+  ],
+  "how_to_run": [
+   "brew install --cask tobymarks/tap/inlaut",
+   "Alternatively, download the DMG from the project's website (macOS 26 or later, Apple Silicon)",
+   "Build from source: xcodegen generate",
+   "xcodebuild -project Inlaut.xcodeproj -scheme Inlaut -configuration Debug -derivedDataPath build build",
+   "open build/Build/Products/Debug/Inlaut.app"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode 26",
+   "XcodeGen",
+   "Core ML",
+   "FluidAudio",
+   "NVIDIA Parakeet TDT 0.6B v3 (Parakeet Ultra post-training)",
+   "Apple SpeechAnalyzer",
+   "Sparkle 2.10.0",
+   "Carbon hot keys",
+   "dmgbuild",
+   "Python (release scripts)"
+  ],
+  "notable": [
+   "Fully on-device speech recognition with no account, cloud service, or subscription",
+   "Mixed German and English dictation, including technical terms and anglicisms, with ß output",
+   "Model stays loaded at about 50 MB of app memory and loads in 0.2 s",
+   "Direct input leaves the clipboard untouched unless clipboard insertion is enabled",
+   "Windows x64 beta with bundled recognition models"
+  ],
+  "caveats": [
+   "macOS version requires Apple Silicon and macOS 26 or later; the first start downloads an approximately 630 MB model",
+   "The Windows build is an unsigned beta, may trigger SmartScreen warnings, and has manual updates; mixed-language dictation is Mac-only",
+   "Pasting into other apps requires Accessibility permission; without it, text stays on the clipboard for manual paste"
+  ],
+  "license": "GPL-3.0",
+  "category": "macos dictation app",
+  "keywords": [
+   "speech to text",
+   "dictation",
+   "on-device transcription",
+   "offline speech recognition",
+   "macos dictation",
+   "windows dictation beta",
+   "parakeet",
+   "core ml",
+   "neural engine",
+   "fluidaudio",
+   "apple speechanalyzer",
+   "whisper alternative",
+   "superwhisper alternative",
+   "macwhisper alternative",
+   "wispr flow alternative",
+   "german speech recognition",
+   "english dictation",
+   "transcribe audio file",
+   "transcribe video file",
+   "meeting transcription",
+   "text expansion snippets",
+   "find and replace dictation",
+   "type at cursor",
+   "voice typing",
+   "push to talk dictation",
+   "privacy speech recognition",
+   "gpl open source dictation",
+   "sparkle updates",
+   "menu bar app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6023,
+  "output": 1422
+ },
+ "generated": "2026-10-29"
+}

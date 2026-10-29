@@ -1,0 +1,94 @@
+{
+ "id": "b310-digital/mindwendel",
+ "repo": "b310-digital/mindwendel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Project Management",
+   "entry": "Mindwendel - Brainstorm and upvote ideas and thoughts within your team. (Demo, Source Code) AGPL-3.0 Docker/Elixir"
+  }
+ ],
+ "summary": {
+  "one_liner": "mindwendel is a self-hostable Phoenix/Elixir web app for brainstorming, where team members add and upvote ideas in real time without needing to register.",
+  "what_it_does": "It lets people create brainstorming sessions, invite participants anonymously (usernames optional), and add ideas that others can upvote, with live updates via Phoenix LiveView. Ideas can be clustered or filtered with custom labels, grouped into lanes and reordered by drag and drop, and commented on. Link previews are shown for shared URLs, and file attachments can be uploaded to S3-compatible storage with automatic encryption. An optional AI feature generates ideas through OpenAI or OpenAI-compatible APIs, with configurable token limits. Brainstormings can be exported to HTML or CSV, and the interface includes German, English and Italian translations. A job runner deletes old brainstormings after a configurable number of days (30 by default, per the README's GDPR note).",
+  "use_cases": [
+   "run a team brainstorming session",
+   "collect and upvote ideas in a workshop",
+   "anonymous idea collection for classrooms or groups",
+   "prioritize ideas by voting",
+   "export brainstorm results to CSV or HTML",
+   "generate additional ideas with an LLM"
+  ],
+  "how_to_run": [
+   "git clone the repository and run: docker compose up --build -d",
+   "docker compose exec app mix ecto.setup",
+   "docker compose exec app mix phx.server",
+   "For production: cp .env.prod.default .env.prod, adjust settings, generate a self-signed Postgres certificate as described in the README",
+   "docker compose --file docker-compose-prod.yml --env-file .env.prod up -d --build --force-recreate",
+   "Create the storage bucket via the app container's rpc command shown in the README"
+  ],
+  "stack": [
+   "Elixir",
+   "Phoenix Framework",
+   "Phoenix LiveView",
+   "PostgreSQL",
+   "Docker Compose",
+   "rustfs (S3-compatible storage)",
+   "OpenAI-compatible LLM APIs"
+  ],
+  "notable": [
+   "No registration needed for participants; usernames are optional",
+   "Attachments are automatically encrypted and stored in S3-compatible object storage",
+   "AI idea generation works with OpenAI and other OpenAI-compatible endpoints, with daily and hourly token limits",
+   "Automatic deletion of brainstormings after a configurable number of days for GDPR compliance",
+   "Used in German schools via the kits platform, per the testimonial section"
+  ],
+  "caveats": [
+   "Production setup is multi-step: self-signed Postgres SSL certificates, required secrets in .env.prod, and bucket creation by hand",
+   "Attachment storage needs an S3-compatible backend and a vault encryption key; file upload can be turned off with MW_FEATURE_IDEA_FILE_UPLOAD",
+   "The URL must match the URL_HOST environment variable, so it will not work with URL_HOST=0.0.0.0"
+  ],
+  "license": "AGPL-3.0",
+  "category": "team brainstorming tool",
+  "keywords": [
+   "brainstorming",
+   "idea board",
+   "upvote ideas",
+   "team ideation",
+   "idea voting",
+   "retrospective tool",
+   "workshop tool",
+   "phoenix liveview",
+   "elixir",
+   "postgresql",
+   "docker compose",
+   "self-hosted brainstorming",
+   "collaborative whiteboard alternative",
+   "anonymous feedback",
+   "real-time collaboration",
+   "s3 attachments",
+   "rustfs",
+   "openai compatible",
+   "llm idea generation",
+   "csv export",
+   "gdpr data deletion",
+   "kanban lanes",
+   "drag and drop ideas",
+   "sticky notes alternative",
+   "share ideas with my team",
+   "collect ideas from a group",
+   "vote on suggestions",
+   "agpl software"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5042,
+  "output": 1389
+ },
+ "generated": "2026-10-29"
+}

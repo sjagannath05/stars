@@ -1,0 +1,103 @@
+{
+ "id": "snapcast/snapcast",
+ "repo": "snapcast/snapcast",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "Snapcast - Synchronous multiroom audio server. GPL-3.0 C++/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "Snapcast is a multiroom client-server audio system that streams time-synchronized audio from a server to clients, turning an existing audio player into a Sonos-like multiroom setup.",
+  "what_it_does": "Snapserver reads PCM audio from sources such as named pipes, ALSA capture devices, TCP, file, process stdout, PipeWire, JACK, librespot, and AirPlay, then encodes it (PCM, FLAC by default, Vorbis, or Opus) and sends it over TCP to Snapclients. Each client continuously synchronizes its clock with the server and plays chunks at the matching time through a system audio API, correcting drift by slightly speeding or slowing playback. Several sources can feed the server in parallel, and clients can be grouped to play the same stream. Control is available via a JSON-RPC API over TCP, HTTP(S), or WebSockets, covering volume, mute, renaming, stream assignment, and groups. The server ships with the Snapweb web app. The README says it is not a standalone player and is typically used with MPD or Mopidy.",
+  "use_cases": [
+   "Multiroom music playback in several rooms",
+   "Synchronized audio across speakers",
+   "Extending MPD or Mopidy to multiple rooms",
+   "Routing line-in or ALSA audio to multiple speakers",
+   "Controlling per-client volume and groups",
+   "Playing one audio source on many Linux, macOS, Windows or Android devices"
+  ],
+  "how_to_run": [
+   "sudo apt install snapserver snapclient (Debian packages; other distros listed in README)",
+   "brew install snapcast (macOS and Linux via Homebrew)",
+   "Configure sources in /etc/snapserver.conf under [stream], e.g. source = pipe:///tmp/snapfifo?name=Radio&sampleformat=48000:16:2&codec=flac",
+   "Point an audio player (e.g. MPD) at /tmp/snapfifo",
+   "Start snapclient with --player alsa (or another backend listed in README)",
+   "Test with: cat /dev/urandom > /tmp/snapfifo"
+  ],
+  "stack": [
+   "C++",
+   "ALSA",
+   "PulseAudio",
+   "PipeWire",
+   "JACK",
+   "Core Audio",
+   "WASAPI",
+   "OpenSL ES",
+   "Oboe",
+   "SDL2",
+   "FLAC",
+   "Opus",
+   "Vorbis",
+   "JSON-RPC"
+  ],
+  "notable": [
+   "Time-synchronized playback with drift correction by sample insertion or removal, typically under 0.2 ms deviation per the README",
+   "Multiple stream sources can run in parallel, and clients can be grouped into zones",
+   "Built-in Snapweb web app served by the server on port 1780 (HTTP) or 1788 (HTTPS)",
+   "Client packages and source builds for Linux, FreeBSD, macOS, Android, Windows, OpenWrt, and Raspberry Pi",
+   "Works as a backend for other players rather than as a standalone player"
+  ],
+  "caveats": [
+   "Not a standalone audio player; it needs an existing player (MPD, Mopidy, etc.) to feed audio",
+   "Client audio backends vary by OS, and some need specific device configuration",
+   "Roadmap items for adding or removing streams at runtime and a protocol specification remain unchecked"
+  ],
+  "license": "GPL-3.0",
+  "category": "multiroom audio streaming",
+  "keywords": [
+   "multiroom audio",
+   "synchronized audio",
+   "snapcast",
+   "snapserver",
+   "snapclient",
+   "multi-room speakers",
+   "sonos alternative",
+   "self-hosted audio server",
+   "mpd multiroom",
+   "mopidy multiroom",
+   "music player daemon",
+   "fifo audio pipe",
+   "alsa streaming",
+   "pulseaudio client",
+   "pipewire capture",
+   "jack audio",
+   "flac streaming",
+   "opus streaming",
+   "vorbis streaming",
+   "json-rpc volume control",
+   "snapweb",
+   "play music in every room",
+   "sync speakers across house",
+   "whole-home audio",
+   "stream audio to multiple devices",
+   "airplay to multiple speakers",
+   "raspberry pi audio client",
+   "c++ audio server",
+   "gpl audio software",
+   "line-in multiroom"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5242,
+  "output": 1528
+ },
+ "generated": "2026-10-29"
+}

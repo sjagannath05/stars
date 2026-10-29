@@ -1,0 +1,97 @@
+{
+ "id": "airutorg/airut",
+ "repo": "airutorg/airut",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Airut by airutorg - Airut is a system for running Claude Code tasks from email and Slack. It handles workspace provisioning, container isolation, network sandboxing, session persistence, and cleanup — a secure foundation for autonomous agentic development."
+  }
+ ],
+ "summary": {
+  "one_liner": "Airut is a self-hosted system that runs Claude Code tasks from email or Slack messages, each in an isolated container with network sandboxing, and returns results in the same thread.",
+  "what_it_does": "Users send instructions by email or Slack and Airut provisions an isolated container, runs Claude Code, and cleans up afterward. Replies in the same thread continue the Claude Code session context. The sandbox combines container isolation, a proxy-based network allowlist, and credential masking. Repositories can be onboarded via a .airut/ directory containing a container Dockerfile, network allowlist, and CLAUDE.md. Scheduled tasks run Claude on a cron schedule with results delivered by email. A web dashboard shows running tasks, network logs, and server configuration. A companion airut-sandbox CLI and GitHub Action run CI commands inside the same sandbox.",
+  "use_cases": [
+   "Run Claude Code tasks by sending an email or Slack message",
+   "Have agents push pull requests for human review",
+   "Schedule daily or nightly Claude Code jobs such as code reviews or health checks",
+   "Run multiple isolated agent sessions in parallel",
+   "Sandbox CI commands that run agent-written code",
+   "Self-host an autonomous coding agent on a private VM"
+  ],
+  "how_to_run": [
+   "uv tool install airut",
+   "airut check",
+   "airut install-service",
+   "Open the local dashboard in a browser and use the Configure page to add repositories and channels",
+   "airut update"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "Podman (rootless)",
+   "Git",
+   "systemd",
+   "Claude Code",
+   "IMAP/SMTP",
+   "Slack"
+  ],
+  "notable": [
+   "Task dispatch through ordinary email threads or Slack conversations, with replies continuing the session",
+   "Defense-in-depth sandbox: container isolation, proxy-based network allowlist, and credential masking",
+   "Sender authentication via DMARC for email or workspace membership for Slack",
+   "Scheduled Claude tasks with results delivered by email and reply-to-continue",
+   "Project developed entirely through its own Airut workflow, with agents opening PRs"
+  ],
+  "caveats": [
+   "Linux only in the README; a dedicated VM is recommended and Debian 13 is the tested distribution",
+   "Requires self-hosting with uv, Git, and rootless Podman installed",
+   "Needs a dedicated email account or a Slack app with installation permissions configured per channel"
+  ],
+  "license": "MIT",
+  "category": "agent task orchestration",
+  "keywords": [
+   "claude code",
+   "ai coding agent",
+   "email agent",
+   "slack bot",
+   "sandbox",
+   "container isolation",
+   "podman",
+   "network allowlist",
+   "egress proxy",
+   "autonomous agents",
+   "self-hosted",
+   "task automation",
+   "run tasks from email",
+   "send instructions by email",
+   "chatops",
+   "pull request automation",
+   "scheduled tasks",
+   "cron jobs",
+   "dmarc",
+   "imap smtp",
+   "session persistence",
+   "workspace provisioning",
+   "agent sandbox ci",
+   "github action sandbox",
+   "headless coding assistant",
+   "python",
+   "systemd service",
+   "multi-agent parallel",
+   "credential masking",
+   "email-driven development",
+   "slack-driven development"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4413,
+  "output": 1203
+ },
+ "generated": "2026-10-29"
+}

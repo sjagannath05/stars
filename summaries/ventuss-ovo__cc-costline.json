@@ -1,0 +1,86 @@
+{
+ "id": "ventuss-ovo/cc-costline",
+ "repo": "Ventuss-OvO/cc-costline",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "cc-costline by Ventuss-OvO - Enhanced statusline for Claude Code — see your 7d/30d spend at a glance"
+  }
+ ],
+ "summary": {
+  "one_liner": "cc-costline is an npm-installed enhanced statusline for Claude Code that shows session tokens, cost, context usage, 5h/7d usage limits, rolling 7d/30d spend, and an optional ccclub leaderboard rank.",
+  "what_it_does": "It installs a custom statusline into Claude Code via a global npm package and an install command. The statusline displays session token count, session cost, context-window percentage, and the active model name. It also shows Claude 5-hour and 7-day utilization, colored like the context indicator, and switches to a countdown when a limit reaches 100%. A rolling period-cost segment shows 7d, 30d, or both, and an optional segment shows the ccclub leaderboard rank and cost when ccclub is installed. Cost is computed from a per-model price table (per million tokens) that separates input, output, cache write (5-minute and 1-hour TTL), and cache read rates, with a fast-mode multiplier for Opus 5 and 4.8. Unknown models fall back by family name, defaulting to Sonnet pricing.",
+  "use_cases": [
+   "see Claude Code session cost in the terminal",
+   "monitor 5-hour and 7-day Claude usage limits",
+   "track rolling 7-day or 30-day Claude spend",
+   "view context window usage while coding with Claude Code",
+   "compare spend on a leaderboard with friends via ccclub"
+  ],
+  "how_to_run": [
+   "npm i -g cc-costline && cc-costline install",
+   "npm i -g cc-costline@latest",
+   "cc-costline uninstall",
+   "npm uninstall -g cc-costline"
+  ],
+  "stack": [
+   "Node.js >= 22",
+   "npm",
+   "node:test (unit tests, zero dependencies)"
+  ],
+  "notable": [
+   "Cache writes priced by TTL: 5-minute at 1.25x input, 1-hour at 2x input, read from the transcript's cache_creation breakdown",
+   "Fast mode (usage.speed fast on Opus 5 / 4.8) billed at 2x the standard rate",
+   "Usage-limit segments auto-color like context and show a countdown at 100%",
+   "Optional ccclub leaderboard integration"
+  ],
+  "caveats": [
+   "Requires Node.js 22 or newer",
+   "npm does not auto-update the global package; updates must be run manually",
+   "Sonnet 5 cost reads slightly high until introductory pricing ends on 2026-08-31, since the table uses standard $3/$15 pricing"
+  ],
+  "license": "MIT",
+  "category": "claude code statusline",
+  "keywords": [
+   "claude code statusline",
+   "claude code cost tracker",
+   "statusline",
+   "terminal status bar",
+   "token usage monitor",
+   "api cost tracking",
+   "spend tracker",
+   "usage limits",
+   "5-hour limit",
+   "7-day usage",
+   "30-day spend",
+   "context window usage",
+   "cache pricing",
+   "ccclub",
+   "leaderboard",
+   "npm global package",
+   "node cli",
+   "cost dashboard",
+   "track claude spend",
+   "see how much claude code costs",
+   "monitor claude usage in terminal",
+   "show cost in prompt line",
+   "claude usage limits display",
+   "token counter",
+   "per-model pricing",
+   "opus sonnet haiku pricing",
+   "cc-costline",
+   "ventuss"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2582,
+  "output": 1210
+ },
+ "generated": "2026-10-29"
+}

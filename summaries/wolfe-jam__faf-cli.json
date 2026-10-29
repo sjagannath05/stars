@@ -1,0 +1,95 @@
+{
+ "id": "wolfe-jam/faf-cli",
+ "repo": "Wolfe-Jam/faf-cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "faf-cli by Wolfe-Jam - Authors and versions CLAUDE.md and AGENTS.md from a repository's actual detected stack, so Claude Code's project context stays in sync with the code instead of drifting. One typed source file (project.faf, an IANA-registered media type) is the single origin for every assistant's context file; a deterministic score reports how complete that context is. The file lives in the r"
+  }
+ ],
+ "summary": {
+  "one_liner": "faf-cli generates AI coding agent context files (AGENTS.md, CLAUDE.md, GEMINI.md, .cursorrules) from a single project.faf file, detected from the repo's actual stack, and scores how complete that context is.",
+  "what_it_does": "The CLI detects a repository's stack and fills the slots of a typed project.faf file (YAML, IANA-registered as application/vnd.faf+yaml). The `faf export` command then authors AGENTS.md, CLAUDE.md, GEMINI.md and .cursorrules from that one source. `faf score` reports AI-readiness as a 0–100% score against 33 slots, with tiers from Trophy (100%) down to Red. Other commands cover `faf git` for a shallow clone of any GitHub repo, `faf check` to validate a .faf file, `faf show` to render it as HTML, `faf diff`/`log` for context changes across git history, and `faf hooks --install` for a pre-commit guard. The README also describes a companion .fafm memory format and a .fafa agent identity format with card-generation commands.",
+  "use_cases": [
+   "keep CLAUDE.md and AGENTS.md in sync with the codebase",
+   "generate AI agent context files from a repo",
+   "score how complete a repo's AI context is",
+   "guard against context regression in pre-commit hooks",
+   "convert Claude memory into portable .fafm files",
+   "share project context with every clone via git"
+  ],
+  "how_to_run": [
+   "bunx faf auto",
+   "npx faf auto",
+   "brew install wolfe-jam/faf/faf-cli && faf auto",
+   "bunx faf-cli init",
+   "bunx faf-cli auto",
+   "faf export"
+  ],
+  "stack": [
+   "TypeScript/JavaScript (npm, Bun, pnpm)",
+   "Rust kernel compiled to WASM (faf-scoring-kernel)",
+   "Homebrew",
+   "PyPI and crates.io distribution"
+  ],
+  "notable": [
+   "One project.faf file is the single origin for multiple assistant context files",
+   "Deterministic score across 33 slots, with Trophy tier as the target",
+   "Stack detection fills slots from the repo's real files",
+   "Dogfoods itself: CLAUDE.md and GEMINI.md are authored from project.faf",
+   "Distributed across npm, PyPI and crates.io with an IANA-registered media type"
+  ],
+  "caveats": [
+   "The README says AGENTS.md in this repo is hand-kept, so `faf export --agents` is not the source for it here",
+   "Scoring targets 100% (Trophy) and the README says sub-Trophy states leave gaps; the score is only as good as the slots filled",
+   "Several features (cards, memory, skills types) are described as newer editions, so behavior may change between versions"
+  ],
+  "license": "MIT",
+  "category": "AI agent context tooling",
+  "keywords": [
+   "faf-cli",
+   "project.faf",
+   "agents.md",
+   "claude.md",
+   "gemini.md",
+   ".cursorrules",
+   "ai coding agent context",
+   "context file generator",
+   "claude code context",
+   "agent context drift",
+   "repo context scoring",
+   "stack detection",
+   "context persistence",
+   "memory persistence",
+   "fafm memory",
+   "pre-commit hook context",
+   "git-native context",
+   "agents.md generator",
+   "claude.md generator",
+   "project context file",
+   "ai readiness score",
+   "shallow clone github repo",
+   "yaml context format",
+   "iana media type",
+   "bunx faf",
+   "npx faf auto",
+   "keep ai instructions in sync",
+   "write instructions for ai assistants",
+   "onboard ai to my codebase",
+   "context regression guard",
+   "format-driven ai context",
+   "portable agent memory"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7137,
+  "output": 1310
+ },
+ "generated": "2026-10-29"
+}

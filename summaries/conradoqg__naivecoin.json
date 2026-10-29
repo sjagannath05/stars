@@ -1,0 +1,92 @@
+{
+ "id": "conradoqg/naivecoin",
+ "repo": "conradoqg/naivecoin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Blockchain / Cryptocurrency",
+   "entry": "JavaScript: _A cryptocurrency implementation in less than 1500 lines of code_"
+  }
+ ],
+ "summary": {
+  "one_liner": "Naivecoin is a deliberately minimal JavaScript cryptocurrency implementation (under 1500 lines) meant as a teaching example of wallets, addresses, proof-of-work, and signed transactions.",
+  "what_it_does": "Runs a node that exposes an HTTP API (with Swagger) for managing a blockchain, wallets, addresses, transactions, mining, and peers. The blockchain is a linked list of blocks with a transaction map, and a block is accepted only if its index, previous hash, own hash, and proof-of-work difficulty are valid. Proof-of-work difficulty rises by powering the initial difficulty by 5 every 5 blocks. Addresses are created deterministically with EdDSA, and transactions are signed with inputs and outputs. Nodes synchronize blocks and transactions and rebroadcast new data over REST rather than websockets, and they can report confirmation counts for a transaction. Data is persisted to a folder. The README includes a curl walkthrough covering wallet creation, mining rewards, transfers, balances, and unspent outputs.",
+  "use_cases": [
+   "Learning how cryptocurrencies work internally",
+   "Experimenting with a toy blockchain locally",
+   "Running a small multi-node test network",
+   "Studying proof-of-work and transaction signing",
+   "Demonstrating wallets, addresses and UTXO-style balances"
+  ],
+  "how_to_run": [
+   "git clone git@github.com:conradoqg/naivecoin.git",
+   "cd naivecoin",
+   "npm install",
+   "node bin/naivecoin.js",
+   "node bin/naivecoin.js -p 3001 --name 1",
+   "npm test"
+  ],
+  "stack": [
+   "JavaScript",
+   "Node.js",
+   "Docker",
+   "docker-compose",
+   "Swagger"
+  ],
+  "notable": [
+   "Entire implementation kept under 1500 lines, aimed at readability over completeness",
+   "Peer communication uses only REST; websockets from naivechain were dropped",
+   "Deterministic address generation with EdDSA",
+   "Source comments marked INFO: explain what would need improving for production",
+   "Includes a Swagger UI for exploring the API and viewing the chain"
+  ],
+  "caveats": [
+   "Explicitly not a secure or scalable cryptocurrency; it is an example for understanding",
+   "Several components do not meet full requirements for a production system, as stated in the README",
+   "Licensing is stated as Apache 2.0 in the contribution section, but no separate license declaration was given"
+  ],
+  "license": "Apache 2.0",
+  "category": "blockchain education",
+  "keywords": [
+   "naivecoin",
+   "cryptocurrency implementation",
+   "javascript blockchain",
+   "toy blockchain",
+   "build your own blockchain",
+   "proof-of-work",
+   "mining",
+   "wallet",
+   "addresses",
+   "eddsa",
+   "transaction signing",
+   "utxo",
+   "unspent transactions",
+   "blockchain tutorial",
+   "node.js blockchain",
+   "rest api blockchain",
+   "peer to peer nodes",
+   "swagger api",
+   "docker blockchain",
+   "docker-compose nodes",
+   "learn how bitcoin works",
+   "naivechain",
+   "blockchain education",
+   "create a wallet",
+   "mine coins locally",
+   "send coins between addresses",
+   "blockchain visualizer",
+   "minimal cryptocurrency",
+   "educational crypto project"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7158,
+  "output": 1231
+ },
+ "generated": "2026-10-29"
+}

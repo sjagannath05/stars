@@ -1,0 +1,94 @@
+{
+ "id": "gethrbr/context-tax",
+ "repo": "gethrbr/context-tax",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "context-tax by Harbor - A zero-dependency CLI (npx context-tax) that reads Claude Code session transcripts to measure what is sent on every turn before the first prompt: system prompt, MCP tool names, the skill listing and instruction files. It prices each item per use, counts skills sent without a description once the listing budget runs out, and context-tax fix points each finding at the setting"
+  }
+ ],
+ "summary": {
+  "one_liner": "A zero-dependency CLI (run with npx context-tax) that reads Claude Code session transcripts to show what gets sent to the model before your first prompt, what each item costs per use, and what to switch off.",
+  "category": "claude code cost analysis",
+  "keywords": [
+   "context tax",
+   "claude code",
+   "context window",
+   "token usage",
+   "token cost",
+   "mcp servers",
+   "mcp tool names",
+   "unused mcp tools",
+   "prune mcp",
+   "skill listing",
+   "skill descriptions",
+   "session transcripts",
+   "cli",
+   "npx",
+   "zero dependencies",
+   "system prompt size",
+   "claude md",
+   "instruction files",
+   "per turn cost",
+   "cost per use",
+   "settings.local.json",
+   "disabledmcpjsonservers",
+   "permissions.deny",
+   "context bloat",
+   "audit agent tools",
+   "shareable receipt",
+   "session compaction",
+   "measure context usage",
+   "reduce claude code tokens"
+  ],
+  "what_it_does": "The tool reads local Claude Code session transcripts, which record the usage on each API reply and what was sent in the prompt (skill listing, tool names, instruction files, the client's own tools). It reports the per-turn token total from billed usage and itemises the rows: MCP servers, skills, agents, memory files, hooks and Claude Code's built-in tools and system prompt. It also counts the same transcripts for which tools and servers were actually called, so each item can be shown as a cost per use. A \"fix\" subcommand shows a diff of proposed settings changes, asks for confirmation, writes with backups, and prints commands for items declared in ~/.claude.json, which it does not edit. Other subcommands print a receipt without names, render a per-session turn-by-turn chart (terminal or SVG), and list resolved config and measurements. The README says it starts configured MCP servers to measure their tool lists, caches results for a week, and sends no telemetry.",
+  "use_cases": [
+   "audit which MCP servers and tools are worth keeping",
+   "find skills that Claude Code sends without descriptions",
+   "measure fixed per-turn token overhead in Claude Code",
+   "trim unused built-in Claude Code tools via permissions.deny",
+   "share a context-cost receipt without exposing names or paths",
+   "review a long session's context growth and compactions"
+  ],
+  "how_to_run": [
+   "npx context-tax",
+   "npx context-tax fix --dry-run",
+   "npx context-tax fix",
+   "npx context-tax receipt",
+   "npx context-tax session --svg tax.svg"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js (npx)",
+   "MCP (Model Context Protocol) over stdio, streamable HTTP, and legacy SSE",
+   "Vitest",
+   "ESLint"
+  ],
+  "notable": [
+   "Measures cost per use by joining billed usage and transcript records with what was actually called, instead of estimating from config alone",
+   "Fix command shows the literal file diff before asking, backs up every replaced file, and never touches ~/.claude.json",
+   "Detects skills sent as bare names once the listing budget runs out and prices sending them all",
+   "Zero runtime dependencies, asserted by a test against the import graph",
+   "Receipt and session picture are designed to be shared with no server, skill, path or session names"
+  ],
+  "caveats": [
+   "Only works with Claude Code: config and transcript formats are specific to it; other clients would need a new reader",
+   "Measuring MCP servers requires starting them, and the README says a run can take about ten seconds per server timeout",
+   "Token counts are chars/4 estimates within about 4%, and no dollar figure is printed",
+   "Cannot tell which instructions inside CLAUDE.md or memory files were actually used",
+   "Items declared in ~/.claude.json or claude.ai connectors are handed back as commands or instructions rather than edited automatically"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15482,
+  "output": 1386
+ },
+ "generated": "2026-10-29"
+}

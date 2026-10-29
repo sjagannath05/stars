@@ -1,0 +1,91 @@
+{
+ "id": "anthropics/claude-code-security-review",
+ "repo": "anthropics/claude-code-security-review",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "From Anthropic",
+   "entry": "Claude Code Security Review by Anthropic - An official AI-powered security-review GitHub Action that uses Claude to analyze pull-request diffs for vulnerabilities."
+  }
+ ],
+ "summary": {
+  "one_liner": "An official GitHub Action from Anthropic that uses Claude to review pull-request diffs for security vulnerabilities and post findings as PR comments.",
+  "what_it_does": "The action runs Claude (via Claude Code) against the changed files in a pull request to look for security issues, going beyond pattern matching to reason about code semantics. Findings are generated with explanations, severity ratings, and remediation guidance, then filtered by a false-positive pass that drops categories such as denial of service, rate limiting, resource exhaustion, generic input validation, and open redirects. Results can be posted as review comments on specific lines and uploaded as artifacts, and the action exposes a findings-count and results-file output. Scanning can be scoped with excluded directories, a chosen Claude model, a timeout, and custom instruction files for scanning and false-positive filtering. The same analysis is also available as a /security-review command inside Claude Code, which can be customized by copying its markdown file into a project.",
+  "use_cases": [
+   "automated security review of pull requests",
+   "catching vulnerabilities before merge in CI",
+   "adding AI code review to GitHub workflows",
+   "reviewing pending changes in Claude Code with /security-review",
+   "scanning for hardcoded secrets and injection flaws in diffs",
+   "customizing security review rules for an organization"
+  ],
+  "how_to_run": [
+   "Add a workflow file at .github/workflows/security.yml with pull-requests: write and contents: read permissions",
+   "Trigger the workflow on pull_request and check out the PR head sha with fetch-depth: 2",
+   "Use anthropics/claude-code-security-review@main with comment-pr: true",
+   "Store your Anthropic API key in the repository secret CLAUDE_API_KEY and pass it as claude-api-key",
+   "For the Claude Code command, copy security-review.md into your project's .claude/commands/ folder",
+   "Run tests locally with pytest claudecode -v after cd into the repository"
+  ],
+  "stack": [
+   "Python",
+   "Claude API",
+   "Claude Code",
+   "GitHub Actions",
+   "pytest"
+  ],
+  "notable": [
+   "Diff-aware: on pull requests it only analyzes changed files",
+   "Two-stage pipeline with a separate false-positive filtering step",
+   "Customizable audit prompt and false-positive rules via instruction text files",
+   "Same analysis available as a Claude Code /security-review slash command",
+   "Evaluation framework for testing against arbitrary PRs"
+  ],
+  "caveats": [
+   "Not hardened against prompt injection; README advises using it only on trusted PRs and requiring approval for external contributors",
+   "API key must be enabled for both the Claude API and Claude Code usage",
+   "Run-every-commit mode may increase false positives on PRs with many commits"
+  ],
+  "license": "MIT",
+  "category": "ai security review action",
+  "keywords": [
+   "github action",
+   "security review",
+   "pull request security",
+   "code review automation",
+   "claude",
+   "claude code",
+   "anthropic",
+   "llm vulnerability scanning",
+   "ai sast",
+   "static analysis alternative",
+   "vulnerability detection",
+   "diff scanning",
+   "pr comments",
+   "sql injection detection",
+   "xss detection",
+   "hardcoded secrets detection",
+   "false positive filtering",
+   "ci security check",
+   "python",
+   "pytest",
+   "security-review command",
+   "scan my pull requests",
+   "find security bugs in code changes",
+   "automated code audit",
+   "review changes before merge",
+   "custom security rules",
+   "github workflow security"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4085,
+  "output": 1269
+ },
+ "generated": "2026-10-29"
+}

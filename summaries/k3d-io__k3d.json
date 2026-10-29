@@ -1,0 +1,101 @@
+{
+ "id": "k3d-io/k3d",
+ "repo": "k3d-io/k3d",
+ "kind": "star",
+ "description": "Little helper to run CNCF's k3s in Docker",
+ "topics": [
+  "cluster",
+  "docker",
+  "go",
+  "k3d",
+  "k3s",
+  "kubernetes",
+  "rancher"
+ ],
+ "language": "Go",
+ "stars": 6605,
+ "license": "MIT",
+ "homepage": "https://k3d.io/",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "k3d is a command-line tool that runs lightweight k3s Kubernetes clusters inside Docker containers, letting you spin up multi-node clusters on a single machine.",
+  "category": "kubernetes tooling",
+  "keywords": [
+   "k3d",
+   "k3s",
+   "kubernetes",
+   "k3s in docker",
+   "local kubernetes cluster",
+   "docker kubernetes",
+   "multi-node cluster",
+   "single machine cluster",
+   "kind alternative",
+   "minikube alternative",
+   "kubectl",
+   "lightweight kubernetes",
+   "rancher",
+   "cncf",
+   "go",
+   "cluster create",
+   "kubeconfig merge",
+   "containerized clusters",
+   "local dev cluster",
+   "test kubernetes locally",
+   "run kubernetes on my laptop",
+   "docker-based k8s",
+   "loadbalancer container",
+   "github action kubernetes",
+   "k3s-io",
+   "homebrew install",
+   "cli tool"
+  ],
+  "what_it_does": "k3d creates containerized k3s clusters, so a multi-node k3s cluster can run on one machine using Docker. Each cluster is created with a single command, such as `k3d cluster create CLUSTER_NAME`, which starts one k3s server container plus a loadbalancer container. The tool can merge the new cluster into your default kubeconfig and switch the current context to it. Clusters are removed with `k3d cluster delete`. The README also covers building from source with make, installing via install script, Homebrew, MacPorts, AUR, Chocolatey, Scoop, or go install, and points to k3d.io for full documentation.",
+  "use_cases": [
+   "spin up a local multi-node Kubernetes cluster for development",
+   "test Kubernetes manifests without a cloud account",
+   "run k3s clusters on a single laptop or workstation",
+   "create throwaway clusters for CI or integration tests",
+   "experiment with kubectl against a disposable cluster"
+  ],
+  "how_to_run": [
+   "wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash",
+   "brew install k3d",
+   "k3d cluster create CLUSTER_NAME",
+   "k3d kubeconfig merge CLUSTER_NAME --kubeconfig-switch-context",
+   "kubectl get pods --all-namespaces",
+   "k3d cluster delete CLUSTER_NAME"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "k3s",
+   "kubectl"
+  ],
+  "notable": [
+   "Runs multi-node k3s clusters on one machine by using Docker containers as cluster nodes",
+   "Creates a single-node cluster with a loadbalancer container in one command",
+   "Can merge the new cluster into your kubeconfig and switch context automatically",
+   "Community-driven project, originally derived from zeerorg's k3s-in-docker and later reimplemented in Go",
+   "Available through many package managers across macOS, Linux and Windows"
+  ],
+  "caveats": [
+   "Requires Docker; k3d v5.x.x needs at least Docker v20.10.5 (runc >= v1.0.0-rc93)",
+   "Installing via go install gives unreleased, bleeding-edge changes",
+   "Community-driven project and not an official Rancher (SUSE) product; relies on sponsorships for significant work"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4045,
+  "output": 1221
+ },
+ "generated": "2026-10-29"
+}

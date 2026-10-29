@@ -1,0 +1,95 @@
+{
+ "id": "kornia/kornia",
+ "repo": "kornia/kornia",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Computer Vision",
+   "entry": "kornia - Open-source differentiable computer vision library for PyTorch."
+  }
+ ],
+ "summary": {
+  "one_liner": "Kornia is an open-source differentiable computer vision library built on PyTorch, providing image processing, augmentation, geometry and pretrained feature/model operators that run on GPU tensors.",
+  "what_it_does": "Provides differentiable image processing operators (filters, geometric transforms, color conversions, enhancements, edge detection, morphology) that run on the input tensor's device. Offers batched augmentation pipelines (AugmentationSequential, PatchSequential, VideoSequential, AutoAugment/RandAugment/TrivialAugment) that can apply transforms to images, masks, boxes and keypoints together. Includes camera models, epipolar geometry, minimal solvers, RANSAC, PnP, depth-to-3D and Lie group (So3, Se3) utilities that keep gradients. Covers local feature detection, description and matching (SIFT, HardNet, DISK, ALIKED, DeDoDe, LoFTR, LightGlue) and pretrained models such as YuNet, SAM and MobileViT. Models can be run through ONNXSequential and exported to ONNX, and many operators support torch.compile.",
+  "use_cases": [
+   "GPU-accelerated image augmentation for deep learning training",
+   "differentiable image processing inside PyTorch models",
+   "feature detection and matching between image pairs",
+   "camera calibration and epipolar or stereo geometry",
+   "homography and pose estimation with RANSAC",
+   "chaining and exporting ONNX models"
+  ],
+  "how_to_run": [
+   "pip install kornia",
+   "pip install -e .  (editable install from source)",
+   "pixi install && pixi run -e default install  (development setup, per README)",
+   "pixi run test  (run tests)"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "kornia_rs",
+   "ONNX",
+   "pixi"
+  ],
+  "notable": [
+   "Batched per-sample parameters in a single call, e.g. per-image sigma, angle or warp matrices",
+   "Annotation-aware 2D augmentation that applies one sampled transform to images, masks, boxes and keypoints and can invert it",
+   "Batched minimal solvers and RANSAC that run on the device, with optional torch.compile path",
+   "Large operator set (README claims over 1,200 public operators) with published fp16/bf16 CPU test manifests",
+   "ONNXSequential chains ONNX models from Hugging Face or local files"
+  ],
+  "caveats": [
+   "The README states CUDA and MPS half-precision support is not covered by CI; CPU results do not establish support on those backends",
+   "Model zoo is frozen for expansion; new model integrations need a named maintainer sponsor",
+   "Some features (ONNX, Stable Diffusion dissolving) need extra packages beyond the base install",
+   "Some compile and CUDA paths require newer PyTorch versions (e.g. PyTorch 2.14 for compile=True RANSAC)"
+  ],
+  "license": "Apache 2.0",
+  "category": "computer vision library",
+  "keywords": [
+   "computer vision",
+   "pytorch",
+   "differentiable computer vision",
+   "image augmentation",
+   "data augmentation pipeline",
+   "gpu image processing",
+   "batch image transforms",
+   "feature matching",
+   "lightglue",
+   "loftr",
+   "sift descriptor",
+   "homography estimation",
+   "ransac",
+   "epipolar geometry",
+   "camera calibration",
+   "stereo vision",
+   "pose estimation",
+   "pnp solver",
+   "image filters",
+   "gaussian blur",
+   "edge detection",
+   "morphology operations",
+   "onnx export",
+   "torch.compile",
+   "opencv alternative",
+   "torchvision alternative",
+   "kornia",
+   "3d geometry",
+   "lie groups",
+   "image registration",
+   "augment images for training",
+   "run vision models on gpu"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10196,
+  "output": 1364
+ },
+ "generated": "2026-10-29"
+}

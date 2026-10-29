@@ -1,0 +1,92 @@
+{
+ "id": "karimz1/imgcompress",
+ "repo": "karimz1/imgcompress",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "ImgCompress - Image processing tool that runs entirely in Docker. Compress, convert, resize, batch-process images, and remove backgrounds using local AI without cloud dependencies. (Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ImgCompress is a self-hosted image processing server, packaged as a single Docker container, that converts 70+ image formats, compresses and resizes in bulk, crops per file, and removes backgrounds with a bundled local AI model.",
+  "what_it_does": "The tool runs as a single Docker container and provides a browser dashboard plus a CLI for scripting. It converts between 70+ formats, including HEIC, HEIF, PSD, AVIF, EPS, PDF, WebP, TIFF, BMP and GIF, and can turn image batches into a paginated PDF. Bulk compression uses multi-core parallel processing. Each uploaded file can be cropped individually with ratio presets (Free, 1:1, 16:9, 4:3) or custom pixel dimensions before conversion. Background removal runs on the CPU with a bundled model and needs no API key or upload. The README says the UI is available in 12 languages and that the container works offline once pulled.",
+  "use_cases": [
+   "convert HEIC photos to WebP or JPG",
+   "convert PSD files to images",
+   "combine screenshots into a PDF",
+   "bulk compress a photo library",
+   "remove image backgrounds privately",
+   "crop batches of images to set aspect ratios"
+  ],
+  "how_to_run": [
+   "docker run -d --name imgcompress -p 3001:5000 karimz1/imgcompress:latest",
+   "Open localhost:3001 in a browser",
+   "Optional: use docker/compose/advanced.docker-compose.yaml for LAN use",
+   "Optional: use docker/compose/proxied.docker-compose.yaml for HTTPS behind Traefik"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Hardened Images (DHI) base",
+   "pnpm (frontend)",
+   "Playwright (E2E tests)",
+   "Traefik (optional proxy config)"
+  ],
+  "notable": [
+   "Runs entirely in one container with no host dependencies and no telemetry",
+   "Per-file crop editor with saved crops that can differ within one batch",
+   "Bundled local AI background removal with no cloud calls",
+   "Hardened image: no shell, no curl/wget, non-root user, SBOM and provenance attestation",
+   "UI translated into 12 languages"
+  ],
+  "caveats": [
+   "Some formats such as PSD and EPS are rendered server-side before cropping",
+   "Background removal runs on CPU, and the README does not give performance figures",
+   "The README mentions a paid cloud server via xCloud, but the software itself is free"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted image processing",
+  "keywords": [
+   "image converter",
+   "image compression",
+   "self-hosted image tool",
+   "docker image processing",
+   "heic to jpg",
+   "heic to webp",
+   "psd converter",
+   "background removal",
+   "remove background offline",
+   "bulk image resize",
+   "batch image convert",
+   "images to pdf",
+   "image cropper",
+   "privacy image converter",
+   "local ai background remover",
+   "offline image editor",
+   "homelab image tool",
+   "avif converter",
+   "tiff to jpg",
+   "image batch processing",
+   "compress photos in bulk",
+   "shrink images",
+   "no cloud image processing",
+   "webui image converter",
+   "cli image pipeline",
+   "traefik image service",
+   "air-gapped image conversion",
+   "alternative to online image converters",
+   "docker compose image compressor",
+   "gpl image tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5008,
+  "output": 1234
+ },
+ "generated": "2026-10-29"
+}

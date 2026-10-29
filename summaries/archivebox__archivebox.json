@@ -1,0 +1,110 @@
+{
+ "id": "archivebox/archivebox",
+ "repo": "ArchiveBox/ArchiveBox",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Archiving and Digital Preservation (DP)",
+   "entry": "ArchiveBox - Create HTML & screenshot archives of sites from your bookmarks, browsing history, RSS feeds, or other sources (alternative to Wayback Machine). (Source Code) MIT Python/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Miscellaneous",
+   "entry": "ArchiveBox | Self-hosted internet archiving of websites, media and more"
+  }
+ ],
+ "summary": {
+  "one_liner": "ArchiveBox is a self-hosted web archiving app that saves snapshots of URLs from bookmarks, browser history, RSS feeds, and other sources in standard formats like HTML, PDF, PNG, and WARC.",
+  "what_it_does": "ArchiveBox takes URLs one at a time or from scheduled imports (bookmarks, history, RSS, Pocket/Pinboard, browser extension, and more) and saves multiple snapshot formats per page, including original HTML, SingleFile HTML, screenshot PNG, PDF, WARC, title, favicon, and article text. It detects embedded content and extracts it, such as YouTube/SoundCloud media via yt-dlp, git clones of GitHub/GitLab/Bitbucket repos, and social media post text and comments. Data is stored as ordinary files plus a SQLite index in a single collection folder. It can be used through a Docker-based web UI, a CLI, a Python API, a REST API (alpha), or direct filesystem and SQL access. It also supports optional archive.org submission for redundancy, and can be set to local-only mode. Access control options include public or private permissions, and support for archiving pages that need login or cookies.",
+  "use_cases": [
+   "self-hosted bookmark archiving",
+   "saving web pages before they disappear",
+   "preserving evidence for legal cases",
+   "backing up videos and audio from YouTube or SoundCloud",
+   "archiving RSS feed articles automatically",
+   "saving research papers and documents from the web",
+   "keeping a private alternative to the Wayback Machine"
+  ],
+  "how_to_run": [
+   "mkdir -p ~/archivebox/data && cd ~/archivebox",
+   "curl -fsSL 'https://docker-compose.yml' > docker-compose.yml  (URL truncated in README)",
+   "docker compose pull",
+   "docker compose up -d --wait",
+   "docker compose exec archivebox archivebox add '<url>'",
+   "pip/uv: uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0' then archivebox init && archivebox install"
+  ],
+  "stack": [
+   "Python >=3.13",
+   "Django",
+   "Django Ninja",
+   "SQLite",
+   "uvicorn",
+   "supervisord",
+   "Docker",
+   "Chromium/Chrome",
+   "wget",
+   "yt-dlp",
+   "readability",
+   "node/npm",
+   "git",
+   "SingleFile",
+   "abxpkg"
+  ],
+  "notable": [
+   "Saves many redundant formats per page (HTML, PDF, PNG, WARC, SingleFile, JSON) in standard, human-readable files",
+   "Scheduled and recursive imports from RSS, bookmarks, and browser history with an orchestrator built into archivebox server",
+   "Browser extension, macOS/iOS apps, and a chat bot as input routes",
+   "Data stored as plain files and a SQLite index, readable without ArchiveBox running",
+   "Docker Compose, uv, brew, apt, and several community distributions available"
+  ],
+  "caveats": [
+   "Disk use ranges from about 1 GB to 50 GB per 1000 snapshots, mostly driven by audio/video saving",
+   "Windows is not officially supported without Docker or WSL; community distributions may lag the official channels",
+   "Archived pages may contain private cookies or tokens and archived JavaScript is untrusted, so access controls must be configured carefully"
+  ],
+  "license": "MIT",
+  "category": "self-hosted web archiving",
+  "keywords": [
+   "web archiving",
+   "self-hosted archive",
+   "archive websites",
+   "save web pages",
+   "webpage snapshot",
+   "wayback machine alternative",
+   "bookmark archiver",
+   "browser history archiver",
+   "rss archiver",
+   "pocket alternative",
+   "pinboard alternative",
+   "wget warc",
+   "singlefile",
+   "screenshot of website",
+   "pdf of webpage",
+   "yt-dlp downloader",
+   "youtube archiver",
+   "save youtube videos",
+   "digital preservation",
+   "link rot prevention",
+   "python django archiving",
+   "docker compose archive",
+   "sqlite web archive",
+   "archive social media posts",
+   "save github repos",
+   "private web archive",
+   "share files with my team",
+   "back up web content",
+   "archive evidence for legal cases",
+   "headless chrome archive"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17371,
+  "output": 1634
+ },
+ "generated": "2026-10-29"
+}

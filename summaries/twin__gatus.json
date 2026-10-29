@@ -1,0 +1,94 @@
+{
+ "id": "twin/gatus",
+ "repo": "TwiN/gatus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Gatus | Health dashboard and uptime monitor configured in YAML"
+  }
+ ],
+ "summary": {
+  "one_liner": "Gatus is a self-hosted, YAML-configured health dashboard and uptime monitor that checks HTTP, ICMP, TCP and DNS endpoints against conditions and sends alerts.",
+  "what_it_does": "Gatus monitors services over HTTP, ICMP, TCP, DNS, SSH, and other protocols listed in its FAQ, running checks on a configurable interval. Each endpoint is evaluated against a list of conditions on values such as status code, response time, certificate expiration, body (with JSONPath), and IP address. Failed conditions mark an endpoint unhealthy, and alerts can be triggered after a failure threshold is reached. Alerts are sent through many providers, including Slack, Teams, PagerDuty, Discord, Twilio, and others listed in the README. The README also describes suites for chaining multi-step workflows, external endpoints that receive pushed status results, SSH tunneling, and a dashboard with badges, metrics, and an API. Configuration is loaded from YAML files, with optional SQLite or PostgreSQL storage and in-memory storage by default.",
+  "use_cases": [
+   "monitor web services and APIs for uptime",
+   "alert on-call via Slack, PagerDuty or Discord when a service fails",
+   "check TLS certificate expiration and domain expiry",
+   "run automated user acceptance or multi-step API tests",
+   "display a public or internal status dashboard for services",
+   "monitor services behind a private network via pushed status results"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 --name gatus ghcr.io/twin/gatus:stable",
+   "docker run -p 8080:8080 --name gatus twinproduction/gatus:stable"
+  ],
+  "stack": [
+   "Go",
+   "YAML configuration",
+   "Docker",
+   "Kubernetes (Helm chart, as mentioned by the author)",
+   "SQLite",
+   "PostgreSQL"
+  ],
+  "notable": [
+   "Conditions on response time, body, certificate expiry and IP address, not just status codes",
+   "Suites for chaining endpoints in a shared context, marked ALPHA",
+   "External endpoints let an agent in a private network push health results",
+   "Alerting to many providers including Slack, PagerDuty, Discord, Teams and Twilio",
+   "Config directory merging and environment variable substitution"
+  ],
+  "caveats": [
+   "Suites are marked ALPHA and suite-level alerts are not supported yet",
+   "Tunneling may add latency and skew response-time measurements",
+   "Default in-memory storage does not persist data across restarts"
+  ],
+  "license": "unknown",
+  "category": "uptime monitoring dashboard",
+  "keywords": [
+   "gatus",
+   "health dashboard",
+   "uptime monitor",
+   "service monitoring",
+   "health check",
+   "http monitoring",
+   "icmp ping monitoring",
+   "tcp port check",
+   "dns monitoring",
+   "ssl certificate expiry monitoring",
+   "domain expiration monitoring",
+   "status page",
+   "status dashboard",
+   "yaml configuration",
+   "alerting",
+   "slack alerts",
+   "pagerduty alerts",
+   "discord alerts",
+   "prometheus metrics",
+   "self-hosted monitoring",
+   "docker monitoring",
+   "kubernetes monitoring",
+   "helm chart",
+   "uptime checks",
+   "api monitoring",
+   "endpoint monitoring",
+   "synthetic monitoring",
+   "acceptance tests",
+   "golang",
+   "keep an eye on my websites",
+   "get notified when my server goes down",
+   "alternative to uptime kuma",
+   "alternative to prometheus alertmanager"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16636,
+  "output": 1303
+ },
+ "generated": "2026-10-29"
+}

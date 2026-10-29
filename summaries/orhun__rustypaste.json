@@ -1,0 +1,93 @@
+{
+ "id": "orhun/rustypaste",
+ "repo": "orhun/rustypaste",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "rustypaste - Minimal file upload/pastebin service. MIT Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "Rustypaste is a minimal, self-hosted file upload and pastebin service written in Rust that stores files on the filesystem with no database.",
+  "what_it_does": "Users upload files or text with curl (multipart form or stdin via a helper function) and receive a URL to fetch them back. It supports random or pet-style filenames, optional expiration times with flexible units, one-shot files and URLs that can only be viewed once, and password-protected files using Argon2id hashing. It can also shorten URLs and pull a file from a remote URL. Server features include optional basic auth tokens, a DELETE endpoint gated by delete tokens, an optional JSON file list endpoint, MIME type handling, and a customizable landing page. Configuration is done through a config.toml file with hot reloading support.",
+  "use_cases": [
+   "self-hosted pastebin for text snippets",
+   "share files with my team via a private server",
+   "temporary file hosting with auto-expiring links",
+   "one-time link sharing that deletes after first view",
+   "command-line upload of files and stdin with curl",
+   "password-protected file sharing"
+  ],
+  "how_to_run": [
+   "cargo install rustypaste",
+   "rustypaste",
+   "CONFIG=\"$HOME/.rustypaste.toml\" rustypaste",
+   "docker run --rm -d -v \"$(pwd)/upload/\":/app/upload -v \"$(pwd)/config.toml\":/app/config.toml --env-file \"$(pwd)/.env\" -p 8000:8000 --name rustypaste orhunp/rustypaste"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo",
+   "rustls (default) or OpenSSL",
+   "Argon2id",
+   "Docker"
+  ],
+  "notable": [
+   "No database: files are stored directly on the filesystem",
+   "One-shot files and URLs that can only be viewed once",
+   "Password-protected files with auto-generated passwords and Argon2id hashing",
+   "Single binary with hot-reloading configuration",
+   "Packaged for Arch Linux, Alpine, FreeBSD, and crates.io"
+  ],
+  "caveats": [
+   "Authentication is optional; without AUTH_TOKEN or token settings the server requires no auth",
+   "The DELETE endpoint is disabled unless delete_tokens are configured",
+   "Large uploads through a reverse proxy like nginx may need client_max_body_size raised"
+  ],
+  "license": "MIT",
+  "category": "self-hosted pastebin",
+  "keywords": [
+   "rustypaste",
+   "pastebin",
+   "self-hosted pastebin",
+   "file upload service",
+   "file sharing server",
+   "rust file host",
+   "minimal pastebin",
+   "curl upload",
+   "temporary file hosting",
+   "expiring links",
+   "one-time link",
+   "oneshot url",
+   "password protected file",
+   "argon2id",
+   "url shortener",
+   "upload from remote url",
+   "paste text from stdin",
+   "share files with my team",
+   "host my own pastebin",
+   "alternative to pastebin.com",
+   "alternative to ix.io",
+   "filesystem storage no database",
+   "basic http auth upload",
+   "docker pastebin",
+   "nginx reverse proxy upload",
+   "json file list endpoint",
+   "mime type handling",
+   "rust cli upload client",
+   "self-hosted file hosting",
+   "auto-delete expired files",
+   "landing page html form upload"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5356,
+  "output": 1211
+ },
+ "generated": "2026-10-29"
+}

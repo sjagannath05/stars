@@ -1,0 +1,90 @@
+{
+ "id": "psycopg/psycopg",
+ "repo": "psycopg/psycopg",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database Drivers",
+   "entry": "psycopg - A PostgreSQL adapter for Python, the successor to psycopg2."
+  }
+ ],
+ "summary": {
+  "one_liner": "Psycopg 3 is a modern PostgreSQL database adapter for Python, the successor to psycopg2.",
+  "what_it_does": "The README covers the Psycopg 3 project's installation and development setup rather than its API. The repository holds three packages: psycopg (pure Python implementation), psycopg_c (optional C/Cython optimization module), and psycopg_pool (connection pools, released separately). Installation is shown via pip with the binary and pool extras. Development requires the libpq PostgreSQL client library, installed through apt, brew, or EnterpriseDB installers on Windows. The README describes running tests with pytest against a PostgreSQL database set through PSYCOPG_TEST_DSN, with optional exclusion of proxy, subprocess, and timing tests. It also mentions pre-commit hooks and conventional commit messages. A short section notes that cross-platform zipapps built with shiv need libpq installed.",
+  "use_cases": [
+   "connect Python applications to PostgreSQL",
+   "upgrade from psycopg2 to a modern driver",
+   "use connection pooling with PostgreSQL",
+   "contribute to the psycopg codebase",
+   "build cross-platform Python zipapps that include psycopg"
+  ],
+  "how_to_run": [
+   "pip install \"psycopg[binary,pool]\"",
+   "python -m venv .venv",
+   "pip install --config-settings editable_mode=strict -e \"./psycopg[dev,test]\"",
+   "pip install --config-settings editable_mode=strict -e ./psycopg_pool",
+   "pip install ./psycopg_c",
+   "psql -c 'create database psycopg_test' && export PSYCOPG_TEST_DSN=\"dbname=psycopg_test\" && pytest"
+  ],
+  "stack": [
+   "Python",
+   "C",
+   "Cython",
+   "libpq",
+   "PostgreSQL",
+   "pytest",
+   "pre-commit"
+  ],
+  "notable": [
+   "Successor to psycopg2 with a modern implementation",
+   "Split into separate packages: psycopg, psycopg_c speedups, and psycopg_pool connection pools",
+   "Optional compiled C/Cython module for performance",
+   "Binary install extra avoids needing a local libpq build for end users"
+  ],
+  "caveats": [
+   "Requires the libpq PostgreSQL client library installed on the system",
+   "Building the C speedup module needs development tools",
+   "Some tests may fail locally and need exclusion flags"
+  ],
+  "license": "unknown",
+  "category": "postgresql database driver",
+  "keywords": [
+   "psycopg",
+   "psycopg3",
+   "psycopg2",
+   "postgresql",
+   "postgres",
+   "python postgresql adapter",
+   "database driver",
+   "python database driver",
+   "libpq",
+   "connection pool",
+   "psycopg_pool",
+   "psycopg_c",
+   "cython",
+   "sql database python",
+   "connect python to postgres",
+   "python postgres client",
+   "database adapter",
+   "pip install psycopg",
+   "pytest postgres tests",
+   "pre-commit hooks",
+   "conventional commits",
+   "shiv zipapp",
+   "async postgres python",
+   "postgresql library for python",
+   "replacement for psycopg2",
+   "python sql connector"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2498,
+  "output": 1169
+ },
+ "generated": "2026-10-29"
+}

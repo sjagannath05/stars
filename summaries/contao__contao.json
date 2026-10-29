@@ -1,0 +1,93 @@
+{
+ "id": "contao/contao",
+ "repo": "contao/contao",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Content Management Systems (CMS)",
+   "entry": "Contao - Powerful CMS that allows you to create professional websites and scalable web applications. (Demo, Source Code) LGPL-3.0 PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Contao is an open source PHP content management system for building professional websites and scalable web applications, and this repository is the monorepo used to develop its bundles.",
+  "what_it_does": "This repository is a development monorepo that holds the source for the Contao CMS bundles, including ApiBundle, CalendarBundle, CommentsBundle, CoreBundle, FaqBundle, ListingBundle, MakerBundle, ManagerBundle, McpBundle, NewsBundle, NewsletterBundle and OauthServerBundle. The README says these are split automatically into separate packages. It is meant for contributors who want to open pull requests or report issues, and it states that the monorepo itself should not be used in production. The README describes a workflow that installs the Contao Managed Edition with Composer, points its require section at the monorepo, and makes changes in vendor/contao/contao that can be committed from the application. It also documents running code quality tools (rector, ECS, PHPStan, unit, functional and end-to-end tests) through Composer scripts, and building frontend assets with Node.js.",
+  "use_cases": [
+   "contributing a pull request to Contao",
+   "reporting an issue in a Contao bundle",
+   "developing Contao bundles locally inside a Managed Edition install",
+   "running Contao's test suites and code quality checks",
+   "building a professional website with a PHP CMS"
+  ],
+  "how_to_run": [
+   "composer create-project --no-install contao/managed-edition <directory>",
+   "Adjust the require section of composer.json to use contao/contao with dev-main (or .x-dev for bug fixes)",
+   "composer update",
+   "vendor/bin/contao-setup",
+   "composer bin all install (inside vendor/contao/contao, for code quality tools)",
+   "npm ci && npm run build (Node.js 18.12 or newer)"
+  ],
+  "stack": [
+   "PHP 8.4",
+   "Composer",
+   "Contao Managed Edition",
+   "Node.js",
+   "MariaDB/MySQL",
+   "Playwright",
+   "PHPUnit",
+   "Docker (for default end-to-end database)"
+  ],
+  "notable": [
+   "Monorepo that is automatically split into separate Contao bundle packages",
+   "Clones the monorepo into vendor/contao/contao so changes can be submitted as pull requests from a running application",
+   "Composer scripts cover rector, ECS, PHPStan, unit, functional and end-to-end tests",
+   "End-to-end suite builds an isolated Managed Edition with Docker-supplied MariaDB and Playwright browser tests"
+  ],
+  "caveats": [
+   "The README says not to use contao/contao in production; use the split bundle packages instead",
+   "Development setup requires PHP 8.4, Composer, and Node.js; browser tests need Node.js 20 or newer",
+   "Functional tests need a manually created database and an edited phpunit.xml"
+  ],
+  "license": "LGPL-3.0",
+  "category": "PHP content management system",
+  "keywords": [
+   "contao",
+   "contao cms",
+   "php cms",
+   "content management system",
+   "website builder",
+   "web application framework",
+   "monorepo",
+   "bundle development",
+   "symfony bundles",
+   "composer",
+   "managed edition",
+   "pull request contributor",
+   "lgpl",
+   "open source cms",
+   "professional websites",
+   "scalable web applications",
+   "phpunit",
+   "phpstan",
+   "playwright",
+   "end-to-end tests",
+   "mariadb",
+   "node.js assets",
+   "self-hosted cms",
+   "build a company website",
+   "develop cms extensions",
+   "run cms tests",
+   "news and newsletter modules",
+   "calendar and faq modules"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2858,
+  "output": 1294
+ },
+ "generated": "2026-10-29"
+}

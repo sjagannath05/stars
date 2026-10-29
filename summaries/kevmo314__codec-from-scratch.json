@@ -1,0 +1,87 @@
+{
+ "id": "kevmo314/codec-from-scratch",
+ "repo": "kevmo314/codec-from-scratch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Go: _Video Encoding from Scratch_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A short, didactic Go project that builds a simple video encoder from scratch, going from raw RGB24 frames to YUV420P, then run-length encoding and DEFLATE compression.",
+  "what_it_does": "The repository walks through a basic video encoding pipeline in a single main.go file, which the README says is about 120 lines of code. You feed it a raw RGB24 video file through stdin (for example, cat video.rgb24 | go run main.go). The program converts the frames to YUV420P, which halves the size by subsampling chroma. It then applies run-length encoding (RLE) and DEFLATE compression, logging the size and percentage of the original after each stage. The README's sample run shows the output going from about 54 MB raw to about 5.5 MB with DEFLATE, roughly 10% of the original. The README describes this as a teaching exercise rather than a full codec and mentions that more modern codec features could be added if there is interest. It also includes a sample video credited to Ketut Subiyanto, and a \"Other languages\" section that lists a Rust link.",
+  "use_cases": [
+   "learning how video codecs work",
+   "teaching video compression basics",
+   "converting RGB24 frames to YUV420P",
+   "experimenting with run-length encoding on video data",
+   "comparing RLE and DEFLATE compression ratios on raw video"
+  ],
+  "how_to_run": [
+   "Open main.go to read the encoder code",
+   "cat video.rgb24 | go run main.go"
+  ],
+  "stack": [
+   "Go",
+   "DEFLATE (compress/flate)",
+   "RGB24 raw video input",
+   "YUV420P"
+  ],
+  "notable": [
+   "Implemented in about 120 lines of Go, meant to be read as a tutorial",
+   "Reports size after each stage: raw, YUV420P, RLE, and DEFLATE",
+   "Reads raw RGB24 video from stdin, with no container or file-format parsing described",
+   "Sample output shows DEFLATE reducing the raw data to about 10% of its original size"
+  ],
+  "caveats": [
+   "Explicitly a didactic exercise, not a comprehensive or production codec",
+   "Uses no inter-frame prediction or other modern codec features, according to the README",
+   "Requires a raw video.rgb24 input file, which the README does not provide"
+  ],
+  "license": "unknown",
+  "category": "video encoding tutorial",
+  "keywords": [
+   "video encoder",
+   "video codec",
+   "codec from scratch",
+   "go video encoding",
+   "yuv420p",
+   "rgb24",
+   "run-length encoding",
+   "rle",
+   "deflate",
+   "compress video",
+   "video compression",
+   "raw video",
+   "chroma subsampling",
+   "learn video codecs",
+   "how video encoding works",
+   "educational codec",
+   "tutorial video compression",
+   "golang compression",
+   "compress/flate",
+   "video compression ratio",
+   "reduce video file size",
+   "encode raw frames",
+   "codecrafters build your own",
+   "build your own x",
+   "video encoding from scratch",
+   "didactic codec example",
+   "lossless compression demo",
+   "pixel format conversion",
+   "stdin video pipe",
+   "compression basics"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1740,
+  "output": 1135
+ },
+ "generated": "2026-10-29"
+}

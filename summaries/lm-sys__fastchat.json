@@ -1,0 +1,92 @@
+{
+ "id": "lm-sys/fastchat",
+ "repo": "lm-sys/FastChat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Tool Resources & Directories",
+   "entry": "FastChat - An open-source chat framework that supports running and fine-tuning large language models, including LLaMA, Vicuna, and other popular options. FastChat can be deployed locally for private, controlled conversational AI applications."
+  }
+ ],
+ "summary": {
+  "one_liner": "FastChat is an open platform for training, serving, and evaluating large language model chatbots, including Vicuna and MT-Bench, with a web UI and OpenAI-compatible APIs.",
+  "what_it_does": "FastChat provides a distributed multi-model serving system with a Gradio web UI, a command-line chat interface, and OpenAI-compatible RESTful APIs. It supports running many open models (such as LLaMA 2, Vicuna, Alpaca, ChatGLM, Falcon, and others) from Hugging Face repos or local folders, on NVIDIA, AMD (via ROCm), Apple Silicon (MPS), Intel XPU, Ascend NPU, or CPU. It includes training and fine-tuning code (derived from Stanford Alpaca, with multi-turn support) and LoRA and FSDP instructions. It also includes MT-bench for LLM-as-a-judge evaluation and the code that powers the Chatbot Arena side-by-side battle UI, which can register API-based models from OpenAI, Anthropic, and Gemini. Quantization options include 8-bit loading, GPTQ, AWQ, and ExLlama V2.",
+  "use_cases": [
+   "chat locally with open LLMs like Vicuna",
+   "serve multiple LLMs behind an OpenAI-compatible API",
+   "run a side-by-side LLM comparison arena",
+   "benchmark chatbots with MT-bench",
+   "fine-tune Llama-based chat models on conversation data",
+   "run LLMs on limited GPU or CPU memory"
+  ],
+  "how_to_run": [
+   "pip3 install \"fschat[model_worker,webui]\"",
+   "python3 -m fastchat.serve.cli --model-path lmsys/vicuna-7b-v1.5",
+   "python3 -m fastchat.serve.controller",
+   "python3 -m fastchat.serve.model_worker --model-path lmsys/vicuna-7b-v1.5",
+   "python3 -m fastchat.serve.gradio_web_server"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Hugging Face transformers",
+   "Gradio",
+   "Llama 2 / Vicuna model weights",
+   "vLLM (optional integration)",
+   "bitsandbytes (optional, for CPU offloading on Linux)"
+  ],
+  "notable": [
+   "Powers the Chatbot Arena (lmarena.ai) and includes its side-by-side battle UI code",
+   "OpenAI-compatible REST API usable with openai-python and cURL, plus a LangChain integration",
+   "Hardware support beyond NVIDIA: Apple MPS, Intel XPU/Arc, Ascend NPU, and CPU with AMX/AVX512 tuning",
+   "Distributed architecture with separate controller, model workers, and web server",
+   "Includes MT-bench, an LLM-as-a-judge multi-turn evaluation set"
+  ],
+  "caveats": [
+   "Vicuna weights are based on Llama 2 and fall under Llama's model license",
+   "The ShareGPT training dataset is not released; the repo includes only dummy conversations for fine-tuning",
+   "Fine-tuning Vicuna-7B example assumes 4 x A100 (40GB) GPUs; memory needs are high (about 28GB GPU for Vicuna-13B without 8-bit)"
+  ],
+  "license": "unknown",
+  "category": "local llm chat serving",
+  "keywords": [
+   "fastchat",
+   "llm serving",
+   "chatbot framework",
+   "vicuna",
+   "llama 2",
+   "mt-bench",
+   "chatbot arena",
+   "openai-compatible api",
+   "openai api replacement",
+   "local llm",
+   "self-hosted chatbot",
+   "web ui for llm",
+   "gradio chat interface",
+   "fine-tune llm",
+   "lora fine-tuning",
+   "llm evaluation",
+   "llm-as-a-judge",
+   "model serving",
+   "multi-model serving",
+   "quantization 8-bit",
+   "gptq",
+   "awq",
+   "exllama",
+   "run llm on mac",
+   "run llm on cpu",
+   "private conversational ai",
+   "chat with my own model"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8463,
+  "output": 1441
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,105 @@
+{
+ "id": "jasonm4130/wattop",
+ "repo": "jasonm4130/wattop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "wattop by Jasonm4130 - Terminal monitor for Apple Silicon Macs that shows live Claude Code and Codex sessions, including subagent and workflow trees, with output tokens/s, context fill and estimated cost beside CPU/GPU power, temperatures and fans. Reads local transcripts."
+  }
+ ],
+ "summary": {
+  "one_liner": "wattop is a terminal monitor for Apple Silicon Macs that shows live Claude Code and Codex sessions alongside CPU, GPU, power, temperature and fan readings.",
+  "what_it_does": "It lists every running Claude Code and Codex session with its status, output tokens per second, context fill, estimated cost and $/hr, bound to the CPU, GPU and memory of its process. Claude Code subagent spawns, workflow runs and Codex child threads appear as a tree, each with its own rate and cost. Alongside, it reports Apple Silicon hardware metrics: CPU/GPU/ANE/DRAM power, E- and P-cluster load, temperatures, fans, thermal pressure, memory, swap, network and disk, with two-minute history graphs. It reads IOReport and SMC directly, so it needs no sudo and no runtime dependencies. The --json flag streams one snapshot per interval as NDJSON, and --once prints one snapshot and exits. Transcripts under ~/.claude and ~/.codex are read locally and never written to.",
+  "use_cases": [
+   "monitor live Claude Code sessions",
+   "watch Codex agent token rate and cost",
+   "track subagent and workflow progress",
+   "view Apple Silicon power and thermals in terminal",
+   "estimate AI coding API spend per hour",
+   "script hardware and agent snapshots as JSON"
+  ],
+  "how_to_run": [
+   "brew install --cask jasonm4130/wattop/wattop",
+   "wattop",
+   "wattop --demo",
+   "wattop doctor",
+   "wattop --json --once | jq",
+   "go install github.com/jasonm4130/wattop/cmd/wattop@latest"
+  ],
+  "stack": [
+   "Go",
+   "CGO",
+   "Apple IOReport",
+   "Apple SMC",
+   "Bubble Tea",
+   "Lip Gloss",
+   "Bubbles",
+   "ntcharts",
+   "BurntSushi/toml",
+   "golang.org/x/term",
+   "mactop (vendored collector)",
+   "LiteLLM pricing table"
+  ],
+  "notable": [
+   "Live Claude Code and Codex session monitoring bound to per-process CPU, GPU and memory",
+   "Subagent and workflow tree showing nested and background agent runs",
+   "Reads IOReport and SMC directly instead of wrapping powermetrics, so no sudo",
+   "Scriptable NDJSON output via --json and one-shot --once mode",
+   "Built-in --demo mode with synthetic data that reads nothing local"
+  ],
+  "caveats": [
+   "Apple Silicon only, macOS 14 or newer; no Linux or Intel build",
+   "Early-stage project; costs are API-price estimates, not subscription balances",
+   "Hardware support varies by chip and macOS version; links Apple's private IOReport framework via CGO"
+  ],
+  "license": "MIT",
+  "category": "terminal system monitoring",
+  "keywords": [
+   "terminal monitor",
+   "tui",
+   "apple silicon",
+   "macos",
+   "arm64",
+   "claude code",
+   "codex",
+   "coding agent monitor",
+   "ai agent cost tracker",
+   "token rate",
+   "tokens per second",
+   "context window usage",
+   "subagent tree",
+   "workflow monitor",
+   "power usage",
+   "cpu gpu power",
+   "apple silicon temperatures",
+   "fan speed",
+   "thermal pressure",
+   "ioreport",
+   "smc sensors",
+   "powermetrics alternative",
+   "htop for mac",
+   "asitop alternative",
+   "mactop alternative",
+   "ccusage alternative",
+   "no sudo hardware monitor",
+   "json streaming",
+   "ndjson output",
+   "homebrew cask",
+   "golang cli",
+   "estimate api spend",
+   "see what my ai agents cost",
+   "watch claude sessions live"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3722,
+  "output": 1348
+ },
+ "generated": "2026-10-29"
+}

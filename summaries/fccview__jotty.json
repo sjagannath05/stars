@@ -1,0 +1,95 @@
+{
+ "id": "fccview/jotty",
+ "repo": "fccview/jotty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Note-taking & Editors",
+   "entry": "Jotty - Lightweight but powerful alternative for managing your personal, file based, notes and checklists. (Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Jotty (jotty·page) is a self-hosted, lightweight app for personal checklists and notes that stores everything as plain files instead of a database.",
+  "what_it_does": "Provides checklists with drag-and-drop reordering, progress bars, categories, and task projects with Kanban boards and time tracking. Offers a WYSIWYG rich text notes editor built on TipTap with GitHub Flavored Markdown support and syntax highlighting. Notes and checklists are saved as .md files and users/sessions/sharing data as JSON in a single data directory, so no database is needed. Items can be shared with other users on the instance or through public shareable links. Notes can be encrypted with PGP, and a REST API provides programmatic access. It also includes an admin panel for user management, 14 built-in themes with custom theme support, OIDC single sign-on, MFA, and PWA installation with partial offline caching.",
+  "use_cases": [
+   "Self-hosting a personal checklist app",
+   "Keeping private notes on your own server",
+   "Managing task lists with Kanban boards",
+   "Sharing checklists with other users or via public links",
+   "Encrypting personal notes with PGP",
+   "Automating task creation through a REST API",
+   "Running a notes app with single sign-on"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml using image ghcr.io/fccview/jotty:latest, mapping port 1122:3000 and volumes ./data, ./config, and ./cache to /app/data, /app/config, and /app/.next/cache",
+   "mkdir -p config data/users data/checklists data/notes data/sharing data/encryption cache",
+   "sudo chown -R 1000:1000 data/ config/ cache/",
+   "docker compose up -d",
+   "Open the app in a browser and create the admin account at /auth/setup (first user becomes admin)"
+  ],
+  "stack": [
+   "Node.js 24+ (for non-Docker install)",
+   "Next.js",
+   "TipTap",
+   "Docker"
+  ],
+  "notable": [
+   "File-based storage: Markdown and JSON files, no database required",
+   "PGP encryption for notes and checklists",
+   "Kanban boards and time tracking inside task projects",
+   "Supports any OIDC provider for single sign-on",
+   "Versioning scheme of STABLE.FEATURE.FIX with automatic migrations"
+  ],
+  "caveats": [
+   "Running without Docker requires Node.js 24 or later",
+   "No offline create/update/delete support; the PWA only lets you revisit pages you already loaded online",
+   "Docs for many features (API, encryption, SSO, MFA) are in separate howto files not included in this README"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted note taking",
+  "keywords": [
+   "jotty",
+   "jotty page",
+   "self-hosted notes",
+   "self-hosted checklists",
+   "note taking app",
+   "checklist app",
+   "markdown notes",
+   "file-based notes",
+   "no database notes",
+   "flat file storage",
+   "pgp encryption notes",
+   "encrypt my notes",
+   "rich text editor",
+   "tiptap editor",
+   "kanban board",
+   "task management",
+   "todo list app",
+   "share checklists",
+   "rest api notes",
+   "oidc sso",
+   "single sign-on",
+   "mfa notes",
+   "pwa notes app",
+   "docker compose notes",
+   "nextjs app",
+   "personal notes server",
+   "shared notes",
+   "kanban tasks",
+   "lightweight notes alternative",
+   "notes and checklists",
+   "markdown checklist",
+   "self-hosted todo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4530,
+  "output": 1227
+ },
+ "generated": "2026-10-29"
+}

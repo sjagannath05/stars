@@ -1,0 +1,93 @@
+{
+ "id": "frigadehq/yap",
+ "repo": "FrigadeHQ/yap",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Yap - On-device voice dictation from the menu bar. Set a hotkey, talk, and the text is pasted into whatever field you were typing in. It runs offline in native Swift with no model to download."
+  }
+ ],
+ "summary": {
+  "one_liner": "Yap is a native Swift macOS menu bar app for on-device voice dictation that pastes transcribed speech into whatever text field you were typing in.",
+  "what_it_does": "Press a global shortcut (default ⌘⇧D, rebindable, or a single modifier key such as right shift), speak, and press it again to paste the text into the focused app. A small window near the bottom of the screen shows a live waveform and a running partial transcript while you talk. Transcription uses Apple's SpeechAnalyzer and SpeechTranscriber APIs from macOS 26, so no model is bundled or downloaded and no network calls are made. Every transcript is saved locally in SwiftData with search, copy, and delete. Insertion works by writing to the clipboard, sending ⌘V through System Events, and then restoring the previous clipboard contents after a delay. Pressing escape twice discards a dictation in progress.",
+  "use_cases": [
+   "dictate text into any app on a Mac",
+   "voice input for prompting coding agents",
+   "speak emails or Slack messages instead of typing",
+   "offline speech-to-text without a cloud API",
+   "private dictation with no audio uploaded",
+   "hands-free text entry via a hotkey"
+  ],
+  "how_to_run": [
+   "brew install --cask frigadehq/tap/yap",
+   "Or download the .dmg from the Releases page or frigade.com/yap and drag Yap into Applications",
+   "From source: git clone && cd yap && ./install.sh",
+   "Alternatively, install XcodeGen, run xcodegen generate, then open Yap.xcodeproj and run with ⌘R",
+   "Run tests: xcodebuild -project Yap.xcodeproj -scheme Yap -destination 'platform=macOS' test"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AVAudioEngine",
+   "Apple SpeechAnalyzer / SpeechTranscriber",
+   "SwiftData",
+   "XcodeGen",
+   "Xcode 26"
+  ],
+  "notable": [
+   "No bundled speech model: uses the on-device speech models macOS 26 ships and manages, and loads nothing before the first word",
+   "Makes zero network calls and has no telemetry or account; the README says Intel support was dropped to keep this promise",
+   "Live partial transcript and waveform while speaking, with escape-twice to cancel before insertion",
+   "Clipboard-based paste restores the previous clipboard after a delay, which the README says is needed for Chromium-based apps",
+   "Small footprint described in the README: about 3,000 lines of Swift, a 4 MB app, and roughly 60 MB idle memory"
+  ],
+  "caveats": [
+   "Requires macOS 26 (Tahoe) or later on an Apple Silicon Mac; Intel Macs are not supported",
+   "Accessibility permission must be enabled manually in System Settings, and ad-hoc local builds lose permissions on every rebuild",
+   "Insertion relies on simulated ⌘V through System Events, and the README says paste failures are often app-specific"
+  ],
+  "license": "MIT",
+  "category": "macos voice dictation",
+  "keywords": [
+   "voice dictation",
+   "speech to text",
+   "macos dictation",
+   "menu bar app",
+   "on-device transcription",
+   "offline speech recognition",
+   "private dictation",
+   "speechanalyzer",
+   "speechtranscriber",
+   "apple speech framework",
+   "swift app",
+   "global hotkey",
+   "push to talk",
+   "paste transcribed text",
+   "voice typing",
+   "dictate into any app",
+   "alternative to built-in macos dictation",
+   "alternative to whisper apps",
+   "no cloud speech api",
+   "transcript history",
+   "voice input for coding agents",
+   "speak instead of typing",
+   "dictate emails",
+   "menubar dictation",
+   "homebrew cask",
+   "apple silicon voice input",
+   "xcodegen",
+   "open source dictation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4707,
+  "output": 1398
+ },
+ "generated": "2026-10-29"
+}

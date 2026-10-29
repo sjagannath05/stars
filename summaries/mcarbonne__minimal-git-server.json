@@ -1,0 +1,89 @@
+{
+ "id": "mcarbonne/minimal-git-server",
+ "repo": "mcarbonne/minimal-git-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Project Management",
+   "entry": "minimal-git-server - Lightweight git server with a basic CLI to manage repositories, supporting multiple accounts and running in a container. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A containerized minimal git server that hosts repositories over SSH and is managed through a basic command-line interface driven by a single config.yml file.",
+  "what_it_does": "Runs a git server inside a container, configured by one YAML file that defines multiple accounts, each with its own SSH public keys and uid. Users log in over SSH to manage repositories with a basic CLI (the README names list, create, rename and remove, among others). The same commands can be run non-interactively from scripts by invoking ssh with a command, and the repo includes a test.sh with examples. Server SSH keys are generated and persisted in a volume. Pre-built images are published to GitHub Container Registry with main, dev, latest and semver tags.",
+  "use_cases": [
+   "self-host private git repositories",
+   "give several users git access with separate SSH keys",
+   "script creation of git repos from automation",
+   "run a small git remote in Docker or Podman",
+   "manage git repositories over SSH from the command line"
+  ],
+  "how_to_run": [
+   "docker run -v .../ssh:/srv/ssh -v .../git:/srv/git -v .../config.yml:/srv/config.yml:ro --name minimal-git-server -d -p 20222:22 ghcr.io/mcarbonne/minimal-git-server:2",
+   "Create config.yml with external_hostname, external_port and an accounts list (user, uid, keys)",
+   "ssh ACCOUNT@HOSTNAME -p PORT create project1/my_repo"
+  ],
+  "stack": [
+   "Docker",
+   "Podman",
+   "YAML configuration",
+   "SSH",
+   "git"
+  ],
+  "notable": [
+   "All accounts and allowed SSH public keys are defined in a single config.yml mounted into the container",
+   "Repository management is done by SSH-ing in and running commands, so it scripts easily",
+   "Tested on both Docker and Podman",
+   "Follows semantic versioning; the major-version image tag is recommended for automatic updates"
+  ],
+  "caveats": [
+   "The README is brief and has a truncated config example and an unfinished 'Basic Usage' section, so the full command list is not documented",
+   "Only the three volumes described are documented; other setup details are not covered"
+  ],
+  "license": "MIT",
+  "category": "self-hosted git server",
+  "keywords": [
+   "git server",
+   "self-hosted git",
+   "minimal git server",
+   "git hosting",
+   "ssh git server",
+   "git remote",
+   "bare repositories",
+   "docker git server",
+   "podman",
+   "container",
+   "ssh keys",
+   "multiple accounts",
+   "user accounts",
+   "config.yml",
+   "cli",
+   "command line",
+   "repository management",
+   "create repository",
+   "rename repository",
+   "remove repository",
+   "scripting",
+   "automation",
+   "private git repositories",
+   "host my own git repos",
+   "share code with my team",
+   "lightweight alternative to large git forge",
+   "github packages",
+   "ghcr image",
+   "semantic versioning",
+   "watchtower",
+   "podman-auto-update"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2243,
+  "output": 1079
+ },
+ "generated": "2026-10-29"
+}

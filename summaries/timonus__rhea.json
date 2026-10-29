@@ -1,0 +1,87 @@
+{
+ "id": "timonus/rhea",
+ "repo": "timonus/Rhea",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📤 Sharing Files (14)",
+   "entry": "Rhea - macOS status bar app for quickly sharing files and URLs."
+  }
+ ],
+ "summary": {
+  "one_liner": "Rhea is a macOS status bar utility for uploading files to Dropbox and shortening links via drag-and-drop or clipboard.",
+  "what_it_does": "Rhea is a Mac status bar app for quickly uploading files and shortening URLs. You can drag files onto the status bar icon, or upload a file path or file URL from the clipboard through the dropdown menu. Uploads go to Dropbox (via TJDropbox), and the Dropbox link is copied to the clipboard while the upload runs in the background. Links can be shortened the same way, by dragging them in or using a URL on the clipboard, through a custom URL shortening service. Uploaded filenames get a consistent 4-character base 62 suffix based on file contents, so re-uploading the same file with the same name does nothing new.",
+  "use_cases": [
+   "share files quickly from the Mac menu bar",
+   "upload a file to Dropbox and get a shareable link",
+   "shorten a long URL from the clipboard",
+   "drag-and-drop file sharing on macOS",
+   "replacement for CloudApp or Dropshare style sharing"
+  ],
+  "how_to_run": [
+   "git submodule update --init",
+   "Fill in _dropboxAppKey in the source with your Dropbox app key",
+   "Add a URL scheme in Info.plist CFBundleURLTypes in the format db-yourDropboxAppKey",
+   "Stub out use of TJURLShortener (a private repo) for the URL shortening service"
+  ],
+  "stack": [
+   "Objective-C/Swift macOS app",
+   "TJDropbox",
+   "Dropbox API",
+   "git submodules"
+  ],
+  "notable": [
+   "Status bar drag-and-drop for both files and links",
+   "Dropbox links copied to clipboard while uploads proceed in background",
+   "Deterministic 4-character base 62 suffix avoids filename conflicts and makes repeat uploads no-ops",
+   "Recommends Dropbox selective sync to keep the Rhea folder off the Mac"
+  ],
+  "caveats": [
+   "The Dropbox app key and URL shortening service are not in the open source repo, so it will not run as-is; developers must supply them",
+   "TJURLShortener is a private repo that must be stubbed out for development",
+   "Requires a Dropbox account for file storage"
+  ],
+  "license": "unknown",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "macos",
+   "mac status bar app",
+   "menu bar utility",
+   "file sharing",
+   "share files",
+   "upload files",
+   "dropbox",
+   "dropbox uploader",
+   "url shortener",
+   "link shortening",
+   "shorten links",
+   "drag and drop upload",
+   "clipboard upload",
+   "cloudapp alternative",
+   "dropshare alternative",
+   "tjdropbox",
+   "file sharing mac",
+   "share files with my team",
+   "quick file link",
+   "shareable link",
+   "dropbox share link",
+   "status bar utility",
+   "objective-c",
+   "swift",
+   "git submodules",
+   "selective sync",
+   "base 62 suffix",
+   "open source mac app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1972,
+  "output": 1112
+ },
+ "generated": "2026-10-29"
+}

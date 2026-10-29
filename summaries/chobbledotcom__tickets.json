@@ -1,0 +1,99 @@
+{
+ "id": "chobbledotcom/tickets",
+ "repo": "chobbledotcom/tickets",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Booking and Scheduling",
+   "entry": "Chobble Tickets - Event ticketing with QR check-in and encrypted attendee records. The complete product is AGPL-3.0 with no open core and no branding requirement, and it runs as an edge script without an always-on server (alternative to Eventbrite). (Demo, Source Code) AGPL-3.0 Deno/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Chobble Tickets is a self-hostable event and reservation system (Deno, libsql) that encrypts attendee PII at rest and takes payments via Stripe, Square, or SumUp.",
+  "what_it_does": "Provides listings with fixed or per-date capacity, multi-listing bookings, and a booking form with contact fields and terms agreement. Attendees receive per-ticket URLs with QR codes, and staff use a built-in camera scanner for check-in with ID verification on non-transferable listings. Payments support free and paid listings, deposits, pay-what-you-want pricing, and provider webhooks that create attendees automatically. Attendee PII is encrypted with a hybrid RSA-OAEP and AES-256-GCM scheme, and the admin area covers roles, bulk email, CSV export, activity logs, and wallet passes (Apple and Google). It also offers ICS/RSS feeds, a public and admin JSON API, outbound webhooks, and email notifications via several HTTP providers. The recommended deployment is Bunny Edge Scripting, with Docker and Deno as alternatives.",
+  "use_cases": [
+   "sell tickets for an event",
+   "run check-in at a door with QR codes",
+   "take reservations for workshops or classes",
+   "collect payments and deposits from attendees",
+   "manage attendee records with encryption",
+   "embed a booking form on an existing website"
+  ],
+  "how_to_run": [
+   "Docker: docker run -p 3000:3000 -v tickets-data:/data -e DB_URL=\"file:/data/tickets.db\" -e DB_ENCRYPTION_KEY=\"your-base64-key\" ghcr.io/chobbledotcom/tickets:latest",
+   "Local dev: DB_URL=:memory: DB_ENCRYPTION_KEY=\"$(openssl rand -base64 32)\" deno task start",
+   "Fork the repo, create a Bunny Database and Bunny Edge Script linked to it, and add DB_URL, DB_TOKEN, DB_ENCRYPTION_KEY, and SCHEDULED_TASK_KEY as script secrets.",
+   "Visit /setup/ on first launch to set admin credentials and currency."
+  ],
+  "stack": [
+   "Deno",
+   "TypeScript",
+   "libsql / SQLite / Turso",
+   "Bunny Edge Scripting",
+   "Docker (OCI image)",
+   "esbuild",
+   "Server-rendered JSX",
+   "Web Crypto API (AES-256-GCM, RSA-OAEP, PBKDF2)",
+   "Stripe",
+   "Square",
+   "SumUp",
+   "Liquid templates",
+   "ICU MessageFormat"
+  ],
+  "notable": [
+   "Runs as a Bunny Edge Script without an always-on server, with the Deno runtime also available via Docker or standalone",
+   "Encrypts attendee PII with a three-layer key hierarchy so a database dump alone cannot reveal personal data",
+   "Graded roles including a content-only editor, delivery agent, and door-only scanner",
+   "Multi-listing bookings combined into one URL, form, checkout, and webhook",
+   "Demo mode replaces user-entered text with generated sample data"
+  ],
+  "caveats": [
+   "Encryption is unrecoverable if every owner, manager, agent, and scanner password and every API key is lost",
+   "Recommended deployment targets Bunny Edge Scripting; Docker image runs on x86-64 hosts only per README",
+   "Hosted instances are offered by the author for a fee (£5/month or £50/year); self-hosting is free under AGPL-3.0-only"
+  ],
+  "license": "AGPL-3.0-only",
+  "category": "event ticketing",
+  "keywords": [
+   "event ticketing",
+   "ticket booking system",
+   "reservation system",
+   "qr check-in",
+   "qr code scanner",
+   "event check-in",
+   "attendee management",
+   "encrypted attendee records",
+   "pii encryption",
+   "eventbrite alternative",
+   "self-hosted ticketing",
+   "edge script",
+   "bunny edge scripting",
+   "deno",
+   "libsql",
+   "turso",
+   "stripe payments",
+   "square payments",
+   "sumup payments",
+   "apple wallet pass",
+   "google wallet pass",
+   "daily listings calendar",
+   "booking form embed",
+   "ics calendar feed",
+   "webhook registrations",
+   "sell tickets online",
+   "run check-in at the door",
+   "take workshop reservations",
+   "agpl ticketing software"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15255,
+  "output": 1583
+ },
+ "generated": "2026-10-29"
+}

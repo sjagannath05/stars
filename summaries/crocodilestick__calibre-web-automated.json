@@ -1,0 +1,98 @@
+{
+ "id": "crocodilestick/calibre-web-automated",
+ "repo": "crocodilestick/Calibre-Web-Automated",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Document Management - E-books",
+   "entry": "Calibre Web Automated - All-in-one solution, combining the modern lightweight web UI from Calibre-Web with the robust, versatile feature set of Calibre (fork of Calibre Web). GPL-3.0 Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Reading & RSS",
+   "entry": "Calibre-Web Automated | Calibre-Web with automatic ingest, conversion and metadata enforcement"
+  }
+ ],
+ "summary": {
+  "one_liner": "Calibre-Web Automated is a self-hosted, Docker-deployed ebook library server that wraps the Calibre-Web web UI with automatic ingest, conversion, metadata enforcement and other extras drawn from full Calibre.",
+  "what_it_does": "Watches an ingest folder and automatically imports new ebook files into a Calibre library, converting them to a target format (EPUB by default, also MOBI, AZW3, KEPUB, PDF) when configured. It writes cover and metadata edits made in the web UI back into the ebook files themselves, so devices like Kindle receive the same metadata. It adds duplicate detection, rules-based \"Magic Shelves\", optional metadata fetching during ingest, auto-send to eReader by email, an EPUB fixer for Send-to-Kindle compatibility, and a KOReader progress sync (KOSync). It also includes a backup service, library auto-detect for existing Calibre libraries, batch editing, analytics pages, and OAuth 2.0/OIDC login. The README states it keeps all stock Calibre-Web features such as OPDS, Kobo sync and in-browser reading.",
+  "use_cases": [
+   "Self-hosted ebook library management",
+   "Automatically importing and converting new ebooks",
+   "Sending books to Kindle or other eReaders",
+   "Syncing KOReader reading progress",
+   "Cleaning up and deduplicating a Calibre library",
+   "Running a lightweight Calibre-Web alternative to containerised Calibre"
+  ],
+  "how_to_run": [
+   "Download the Docker Compose template with curl (URL missing from README text)",
+   "Move the compose file into an empty folder such as ~/docker/calibre-web-automated/",
+   "Edit the compose file to set timezone and volume binds for /config, /cwa-book-ingest, /calibre-library",
+   "Run: docker compose up -d",
+   "Open the Web UI on port 8083 and log in with the default admin credentials, then change them"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Python",
+   "Calibre",
+   "Calibre-Web",
+   "SQLite",
+   "inotify-tools"
+  ],
+  "notable": [
+   "Automatic ingest of ebook files dropped into a folder, with optional conversion",
+   "Enforces cover and metadata edits into the actual ebook files",
+   "Built-in KOReader sync server (KOSync) with HTTP Basic Auth",
+   "Network-share mode (NETWORK_SHARE_MODE) that disables WAL and switches to polling watchers",
+   "Auto-detects and mounts the largest Calibre library found under a bind"
+  ],
+  "caveats": [
+   "Default admin credentials (admin/admin123) are published in the README and must be changed",
+   "Downloading directly into the ingest folder is not supported; files in the ingest folder are deleted after processing",
+   "Supports only one library per instance",
+   "Acsm conversion requires an extra Calibre plugin; plugin configuration is not possible through CWA"
+  ],
+  "license": "GPL-3.0",
+  "category": "ebook library management",
+  "keywords": [
+   "calibre-web",
+   "calibre web automated",
+   "ebook library",
+   "self-hosted ebook server",
+   "ebook ingest",
+   "automatic ebook import",
+   "ebook conversion",
+   "epub conversion",
+   "kindle send to email",
+   "send to ereader",
+   "koreader sync",
+   "kosync",
+   "calibre library docker",
+   "docker compose ebook",
+   "opds feed",
+   "kobo sync",
+   "metadata enforcement",
+   "duplicate book detection",
+   "ebook metadata editor",
+   "library manager",
+   "ereader library",
+   "oidc login ebook",
+   "replace calibre desktop",
+   "manage my ebooks at home",
+   "share ebooks with family",
+   "network share calibre",
+   "epub fixer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12315,
+  "output": 1325
+ },
+ "generated": "2026-10-29"
+}

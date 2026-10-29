@@ -1,0 +1,94 @@
+{
+ "id": "fatedier/frp",
+ "repo": "fatedier/frp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Networking",
+   "entry": "frp | Fast reverse proxy to expose local servers behind NAT to the internet"
+  }
+ ],
+ "summary": {
+  "one_liner": "frp is a fast reverse proxy that exposes local servers behind NAT or firewalls to the internet over TCP, UDP, HTTP and HTTPS.",
+  "what_it_does": "frp runs as a server (frps) on a machine with a public IP and a client (frpc) on the private network, and the client keeps a connection open to the server. It forwards TCP and UDP ports, and HTTP and HTTPS requests routed by custom domain or subdomain, to internal services. The README also describes STCP (preshared-key private access), XTCP (P2P data transfer via a frps-assisted connection), and an SSH tunnel gateway. Configuration is in TOML, YAML or JSON, with environment variable templating and an optional web dashboard and client admin UI. Additional features include TLS, KCP and QUIC transports, token or OIDC authentication, bandwidth limits, load balancing, health checks, and plugins such as static file serving and unix domain socket forwarding.",
+  "use_cases": [
+   "expose a home server or LAN service to the internet",
+   "SSH into a machine behind NAT",
+   "share a local web app on a custom domain",
+   "forward DNS queries through a tunnel",
+   "expose a unix domain socket over TCP",
+   "private access to an internal service with a preshared key"
+  ],
+  "how_to_run": [
+   "Download frps and frpc binaries for your OS from the Release page",
+   "Create frps.toml on the public server with bindPort = 7000",
+   "Run: ./frps -c ./frps.toml",
+   "Create frpc.toml on the LAN machine with serverAddr, serverPort and a [[proxies]] entry",
+   "Run: ./frpc -c ./frpc.toml"
+  ],
+  "stack": [
+   "Go",
+   "TOML",
+   "YAML",
+   "JSON",
+   "KCP",
+   "QUIC"
+  ],
+  "notable": [
+   "Supports TCP, UDP, HTTP, HTTPS, STCP, and XTCP P2P modes in one tool",
+   "Virtual hosting of multiple HTTP/HTTPS services on one port via custom domains and subdomains",
+   "Plugin system with built-in plugins such as static_file, socks5, and unix_domain_socket",
+   "Hot reload of frpc configuration with frpc reload and a Store API for runtime proxy management"
+  ],
+  "caveats": [
+   "Requires a server with a public IP to run frps",
+   "Some antivirus products flag frpc as malware and quarantine it, so you may need an exclusion",
+   "XTCP P2P may not work with all NAT types, and the README suggests falling back to STCP",
+   "The v2 rewrite is not compatible with v1 and is progressing slowly, per the README"
+  ],
+  "license": "unknown",
+  "category": "reverse proxy tunneling",
+  "keywords": [
+   "reverse proxy",
+   "nat traversal",
+   "expose local server",
+   "tunnel",
+   "ngrok alternative",
+   "self-hosted tunnel",
+   "frpc",
+   "frps",
+   "port forwarding",
+   "expose home server",
+   "localhost tunnel",
+   "tcp proxy",
+   "udp proxy",
+   "https reverse proxy",
+   "custom domain tunnel",
+   "subdomain routing",
+   "p2p tunnel",
+   "stcp",
+   "xtcp",
+   "kcp",
+   "quic transport",
+   "ssh behind nat",
+   "firewall bypass",
+   "webhook testing local",
+   "load balancing proxy",
+   "socks5 proxy",
+   "go networking tool",
+   "access home network remotely",
+   "share local website publicly",
+   "dns forwarding tunnel"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17649,
+  "output": 1239
+ },
+ "generated": "2026-10-29"
+}

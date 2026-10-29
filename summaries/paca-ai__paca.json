@@ -1,0 +1,107 @@
+{
+ "id": "paca-ai/paca",
+ "repo": "Paca-AI/paca",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Project Management",
+   "entry": "Paca - AI-native project management platform where AI agents and humans collaborate as Scrum teammates on the same board and sprints. Configurable via config files and WASM plugins (alternative to Jira, Trello, ClickUp and Monday). (Source Code) Apache-2.0 Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Paca is a self-hosted, Apache-2.0 project management platform (Scrumban boards, sprints, backlog) where AI agents and humans work as Scrum teammates.",
+  "what_it_does": "Paca provides a shared Scrumban board, sprints, backlog, epics, stories, tasks, and project documents, with humans and AI agents assigned to the same work. Agents can pick up tasks, write BDD (Gherkin) specs, and contribute System Design Documents, and there is in-app AI chat at the project level. An event-driven automation engine lets users build trigger, condition, and action flows, with run history. Behavior is configurable through project-level config files, and functionality can be extended with WASM backend plugins and frontend module plugins, installed from a Plugin Marketplace in the UI or from the filesystem. It also ships an MCP server (@paca-ai/paca-mcp on npm) and Claude Code/Gemini CLI/Cursor slash-command skills for managing the workspace. Deployment is via an install script with Docker Compose, or a Helm chart for Kubernetes.",
+  "use_cases": [
+   "run scrum sprints with AI agents on the team",
+   "self-hosted alternative to Jira or Trello",
+   "manage backlog, epics, and stories with an AI assistant",
+   "write BDD scenarios and design docs with agents",
+   "connect Claude or other MCP clients to a project board",
+   "build event-driven workflow automations"
+  ],
+  "how_to_run": [
+   "curl -fsSL <install script URL> | bash  (interactive install, Docker required, Linux server)",
+   "PACA_YES=1 bash <install script> for non-interactive install",
+   "helm install paca oci://ghcr.io/paca-ai/charts/paca --version <tag> -n paca -f my-values.yaml  (Kubernetes)",
+   "npx -y @paca-ai/paca-mcp  (MCP server, requires PACA_API_KEY and PACA_API_URL)"
+  ],
+  "stack": [
+   "Go",
+   "Gin",
+   "React",
+   "TanStack Start",
+   "shadcn/ui",
+   "Node.js",
+   "Socket.IO",
+   "PostgreSQL",
+   "Valkey",
+   "WebAssembly (WASM)",
+   "OpenHands SDK",
+   "Goose (ACP)",
+   "Playwright",
+   "Docker Compose",
+   "Kubernetes / Helm",
+   "MCP (Model Context Protocol)"
+  ],
+  "notable": [
+   "AI agents are first-class Scrum team members, assigned to sprints and board tasks alongside humans",
+   "Plugins compiled to WASM with capability-based permissions, plus frontend modules and a Plugin Marketplace",
+   "Each AI agent runs in its own isolated sandbox container",
+   "IAM-style role policies (allow/deny on resources) in v0.19.0",
+   "Supports ACP coding CLIs (Claude Code, Codex, Gemini CLI) via a local bridge"
+  ],
+  "caveats": [
+   "Installer and MCP setup require a running instance with API keys; the README describes a Linux-with-Docker install path and a Helm chart for Kubernetes",
+   "Helm chart requires secrets (jwtSecret, adminPassword, encryptionKey) with no defaults",
+   "Some AI features rely on external providers or bring-your-own keys (for example Jev AI with a user-supplied key)",
+   "The README's 'Thank-You' section mentions a partner signup perk; this is not part of the software and is not summarized here"
+  ],
+  "license": "Apache-2.0",
+  "category": "project management software",
+  "keywords": [
+   "project management",
+   "scrum",
+   "scrumban",
+   "agile board",
+   "sprint planning",
+   "backlog",
+   "jira alternative",
+   "trello alternative",
+   "clickup alternative",
+   "monday alternative",
+   "self-hosted",
+   "ai agents",
+   "ai teammates",
+   "mcp server",
+   "model context protocol",
+   "wasm plugins",
+   "webassembly plugins",
+   "bdd gherkin",
+   "design documents",
+   "workflow automation",
+   "docker compose",
+   "kubernetes helm",
+   "helm chart",
+   "go gin",
+   "react",
+   "socket.io",
+   "postgresql",
+   "apache 2.0",
+   "open source task tracker",
+   "share tasks with my team",
+   "manage sprints without cloud vendor",
+   "claude code skills",
+   "issue tracker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9842,
+  "output": 1540
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "sqlpage/sqlpage",
+ "repo": "sqlpage/SQLPage",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Low Code",
+   "entry": "SQLPage - SQL-only dynamic website builder. (Source Code) MIT Rust/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "SQLPage is an SQL-only web server that turns `.sql` files and database queries into data-driven websites with tables, forms, charts, and lists.",
+  "what_it_does": "SQLPage runs as a single executable web server that handles requests to `.sql` URLs by executing the matching SQL file against a connected database. Query result columns are mapped to parameters of pre-built UI components (list, chart, form, card, text, tab, and others) and streamed to the browser as HTML. Users write SELECT, INSERT, UPDATE, and DELETE queries, and form values arrive as SQL parameters such as $first_name. It supports SQLite, PostgreSQL, MySQL, Microsoft SQL Server, and any ODBC-compatible database. Custom components can be added as Handlebars templates, and HTTPS can be enabled with a domain setting.",
+  "use_cases": [
+   "build a data dashboard from a SQL database",
+   "create CRUD forms over existing tables",
+   "display database query results as charts and tables",
+   "prototype an internal tool without a frontend framework",
+   "build a simple web app with user login and file uploads",
+   "import CSV data into a database through a web form",
+   "deploy a small website on AWS Lambda or Docker"
+  ],
+  "how_to_run": [
+   "docker run -it --name sqlpage -p 8080:8080 --volume \"$(pwd):/var/www\" --rm lovasoa/sqlpage",
+   "Create a file called index.sql with the example contents from the README",
+   "Open http://localhost:8080 in your browser",
+   "Download the release binary for your OS, extract it with: tar -xzf sqlpage-*.tgz",
+   "Run it: ./sqlpage.bin (from the folder containing your .sql files)",
+   "On macOS: brew install sqlpage, then run sqlpage from your website folder"
+  ],
+  "stack": [
+   "Rust",
+   "actix web",
+   "handlebars",
+   "tabler",
+   "tabler icons",
+   "vanilla JavaScript",
+   "Docker",
+   "ODBC (unixODBC on Linux and macOS binaries)"
+  ],
+  "notable": [
+   "Pages are written entirely as SQL queries, with components selected by a 'component' column",
+   "Supports SQLite, PostgreSQL, MySQL, SQL Server, and ODBC databases such as DuckDB, Snowflake, and BigQuery",
+   "Built-in HTTP/2 and automatic HTTPS certificates via SQLPAGE_HTTPS_DOMAIN",
+   "Can be compiled to an AWS Lambda function, with SQL files optionally stored inside the database",
+   "Custom components via .handlebars templates in sqlpage/templates"
+  ],
+  "caveats": [
+   "Release binaries cover Linux and Windows on x86_64 and macOS on Apple silicon; Intel Macs are told to use Homebrew or build from source",
+   "Docker's raw image is stripped down, so the README advises building a custom image on a Debian base for extra dependencies",
+   "ODBC databases require installing the database-specific driver separately",
+   "The README mentions a managed hosting option (DataPage) and a paid VPS partner offer, which are not part of the open-source project"
+  ],
+  "license": "MIT",
+  "category": "low-code web app builder",
+  "keywords": [
+   "sql web framework",
+   "sql-only website builder",
+   "low code database app",
+   "data-driven web app",
+   "sqlpage",
+   "rust web server",
+   "sqlite web interface",
+   "postgresql web app",
+   "mysql dashboard",
+   "sql server web app",
+   "odbc web frontend",
+   "database admin ui",
+   "crud app generator",
+   "internal tool builder",
+   "retool alternative",
+   "airtable alternative",
+   "ms access alternative",
+   "build a web form from a table",
+   "turn database into website",
+   "chart from sql query",
+   "self-hosted data dashboard",
+   "docker sql app",
+   "handlebars components",
+   "tabler ui",
+   "aws lambda sql website",
+   "create forms over database tables",
+   "share data dashboard with team",
+   "simple web app without javascript",
+   "plots tables and forms from sql"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6794,
+  "output": 1451
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,101 @@
+{
+ "id": "github/github-mcp-server",
+ "repo": "github/github-mcp-server",
+ "kind": "star",
+ "description": "GitHub's official MCP Server",
+ "topics": [
+  "github",
+  "mcp",
+  "mcp-server"
+ ],
+ "language": "Go",
+ "stars": 34048,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "GitHub's official MCP server that connects AI assistants and agents to GitHub repositories, issues, pull requests, Actions, security alerts and more via the Model Context Protocol.",
+  "what_it_does": "The server exposes GitHub platform capabilities as MCP tools that AI hosts can call using natural language. It covers reading repositories, code files and commits, searching, and managing issues and pull requests. It also includes GitHub Actions workflow runs and job logs, code scanning and Dependabot alerts, discussions, gists, Git tree and ref operations, repository rulesets, and Copilot-related actions. Tools are grouped into toolsets (such as repos, issues, pull_requests, actions, code_security) that can be enabled via flags or environment variables, and individual tools can be selected by name. A read-only mode skips write tools. It can run as a remote hosted server over HTTP or locally via a Docker image or a Go binary using stdio. Local use supports OAuth login or a personal access token, and GitHub Enterprise Server and ghe.com hosts are configurable.",
+  "use_cases": [
+   "Connect an AI assistant to GitHub repositories and code",
+   "Triage issues and review or create pull requests with AI",
+   "Investigate failed GitHub Actions workflow runs and job logs",
+   "Review code scanning and Dependabot security alerts",
+   "Limit which GitHub tools an AI agent can access",
+   "Use GitHub from a chatbot on GitHub Enterprise Server or ghe.com"
+  ],
+  "how_to_run": [
+   "Remote: add the hosted server URL to your MCP host config (VS Code, Claude Desktop, Cursor, etc.) using OAuth or a GitHub PAT in an Authorization header",
+   "Local with Docker: docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server",
+   "Build from source: go build -o github-mcp-server ./cmd/github-mcp-server",
+   "Run the binary: GITHUB_PERSONAL_ACCESS_TOKEN=<token> ./github-mcp-server stdio",
+   "Limit tools: GITHUB_TOOLSETS=\"repos,issues,pull_requests\" ./github-mcp-server",
+   "Go library: import github.com/github/github-mcp-server/v2/pkg/github"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Model Context Protocol (MCP)",
+   "GitHub REST and GraphQL APIs"
+  ],
+  "notable": [
+   "Official GitHub-maintained MCP server with remote hosted and local versions",
+   "Toolset system with default, all, and per-tool allow-lists plus a read-only mode",
+   "Local OAuth browser login with tokens kept in memory, or PAT override",
+   "Supports GitHub Enterprise Server and ghe.com data residency hosts (HTTPS enforced)",
+   "Go module importable as a library under the v2 module path"
+  ],
+  "caveats": [
+   "The v2.0.0 tag cannot be used as a Go module; consumers need a pseudo-version or a later tag such as v2.0.1 once released",
+   "GitHub Enterprise Server does not support the remote hosted server and needs the local version with your own OAuth or GitHub App",
+   "Local OAuth on Docker requires publishing a fixed callback port (127.0.0.1:8085)",
+   "Some features are limited to newer MCP protocol versions or insiders/remote-only toolsets"
+  ],
+  "license": "MIT",
+  "category": "github api integration",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "github mcp",
+   "ai github integration",
+   "llm github tools",
+   "github api",
+   "claude github",
+   "cursor github",
+   "vs code copilot github",
+   "github actions logs",
+   "pull request automation",
+   "issue triage ai",
+   "dependabot alerts",
+   "code scanning alerts",
+   "github enterprise server mcp",
+   "ghe.com",
+   "read-only github tools",
+   "toolsets",
+   "docker image github",
+   "stdio server",
+   "go module github",
+   "oauth github login",
+   "personal access token",
+   "repository search ai",
+   "connect ai assistant to github",
+   "let chatbot manage github issues",
+   "github workflow automation",
+   "gist management",
+   "repository ruleset"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16649,
+  "output": 1545
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "un33k/python-slugify",
+ "repo": "un33k/python-slugify",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Text Processing",
+   "entry": "python-slugify - A Python slugify library that translates unicode to ASCII."
+  }
+ ],
+ "summary": {
+  "one_liner": "x",
+  "what_it_does": "Generates slugs from str or UTF-8 bytes, lowercasing by default and replacing separators with a configurable delimiter (default '-'). In default ASCII mode it normalizes with NFKD and transliterates non-ASCII characters through a selected backend (text-unidecode, Unidecode, or AnyASCII). With allow_unicode=True it keeps Unicode word characters after NFKC normalization instead. It supports HTML entity and numeric reference decoding, max_length truncation with optional word-boundary and save_order handling, stopword removal, custom regex filtering, ordered find-and-replace rules, and a slugify command-line tool. Version 9.0.0+ adds an algorithm parameter: 'legacy' (default, frozen) or 'modern'.",
+  "use_cases": [
+   "generate URL slugs from article titles",
+   "create ASCII-safe identifiers from non-English text",
+   "truncate slugs to a maximum length on word boundaries",
+   "remove stopwords from generated slugs",
+   "command-line slugifying of piped text"
+  ],
+  "how_to_run": [
+   "python -m pip install --upgrade python-slugify",
+   "python -m pip install 'python-slugify[unidecode]'  # optional Unidecode backend",
+   "python -m pip install 'python-slugify[anyascii]'  # optional AnyASCII backend",
+   "from slugify import slugify; slugify(\"C'est déjà l'été.\")  # 'c-est-deja-l-ete'",
+   "slugify \"Hello, world!\"  # hello-world"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "text-unidecode",
+   "Unidecode (optional extra)",
+   "AnyASCII (optional extra)"
+  ],
+  "notable": [
+   "Explicit backend selection that raises ModuleNotFoundError instead of silently falling back",
+   "Frozen legacy algorithm kept for backward compatibility alongside an opt-in modern algorithm",
+   "Configurable replacement stages (pre, post, or both) with literal old/new rules and predefined German, Greek, and Cyrillic substitution lists",
+   "Keyword-only options added to the original positional API"
+  ],
+  "caveats": [
+   "Different backends produce different slugs for the same input, so pinning both the package and backend is recommended for stable identifiers",
+   "Slugs are not guaranteed unique, filesystem-safe, or safe as a full URL; the README says not to treat it as a security sanitizer",
+   "The README states that pull requests are generally not reviewed; it is issues-first, and changes to legacy output are not accepted"
+  ],
+  "license": "MIT",
+  "category": "text transliteration library",
+  "keywords": [
+   "python slugify",
+   "slug generation",
+   "url slug",
+   "unicode to ascii",
+   "transliteration",
+   "text-unidecode",
+   "unidecode",
+   "anyascii",
+   "slugify command line",
+   "url-friendly string",
+   "ascii identifiers",
+   "non-english text to url",
+   "stopwords removal",
+   "max length slug",
+   "word boundary truncation",
+   "html entity decoding",
+   "replacements rules",
+   "allow unicode slugs",
+   "unicode normalization nfkd",
+   "legacy vs modern algorithm",
+   "python text processing",
+   "title to filename",
+   "clean url from title",
+   "strip accents python",
+   "awesome python text processing",
+   "slug separator",
+   "regex filter slug"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5341,
+  "output": 1311
+ },
+ "generated": "2026-10-29"
+}

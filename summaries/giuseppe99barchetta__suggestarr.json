@@ -1,0 +1,94 @@
+{
+ "id": "giuseppe99barchetta/suggestarr",
+ "repo": "giuseppe99barchetta/SuggestArr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "SuggestArr | Companion tool for Overseerr and Jellyfin that provides media recommendations."
+  }
+ ],
+ "summary": {
+  "one_liner": "SuggestArr is a self-hosted companion tool that turns users' recent watch history from Jellyfin, Plex or Emby into recommendations and sends the resulting download requests to Seer.",
+  "what_it_does": "It reads recently watched content from Jellyfin, Plex or Emby, with optional per-user Trakt and Simkl history and imported watch history (CSV or manual TMDb titles with ratings). It finds similar titles through TMDb or through any OpenAI-compatible LLM (such as OpenAI, Ollama, OpenRouter or LiteLLM), with a short reason for each pick. Suggestions are sent to Seer as requests, optionally after manual approval. It can also import public lists from MDBList or Trakt, run AI Search from plain-language descriptions, and clean up old unfavorited requests (dry-run by default). A web interface handles setup, scheduling, users, requests and live logs, and a public REST API with Swagger UI is available at /api/v1.",
+  "use_cases": [
+   "automatically request movies and shows similar to what family members watch",
+   "get media recommendations from Jellyfin, Plex or Emby watch history",
+   "send recommended titles to Seer for download",
+   "import a public MDBList or Trakt list into media requests",
+   "search for something to watch using plain-language descriptions",
+   "clean up old unwanted media requests"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the suggestarr service (image ciuse99/suggestarr:latest) and a ./config_files volume",
+   "Run: docker compose up -d",
+   "Open the web interface on the configured port (default 5000)",
+   "Follow the setup wizard to connect TMDb, your media server and Seer"
+  ],
+  "stack": [
+   "Docker",
+   "Python",
+   "TMDb API",
+   "SQLite",
+   "PostgreSQL",
+   "MySQL",
+   "OpenAI-compatible LLM API"
+  ],
+  "notable": [
+   "Works with Jellyfin, Plex and Emby as watch-history sources and sends requests to Seer",
+   "Optional AI recommendations via any OpenAI-compatible LLM, with a reason for each pick",
+   "Request control: approval step, pausing while requests are pending, auto-declining stale Seerr requests",
+   "Public versioned REST API at /api/v1 with Swagger UI and OpenAPI documents",
+   "Cleanup automation that is dry-run by default"
+  ],
+  "caveats": [
+   "Requires a TMDb API key and a running Jellyfin, Plex or Emby server plus Seer",
+   "Optional features such as Trakt, Simkl and LLM recommendations need separate app or API setup",
+   "README does not describe platform limits beyond Docker (recommended) or Python 3 installs"
+  ],
+  "license": "MIT",
+  "category": "media recommendation automation",
+  "keywords": [
+   "suggestarr",
+   "overseerr companion",
+   "seer requests",
+   "jellyfin recommendations",
+   "plex recommendations",
+   "emby recommendations",
+   "tmdb recommendations",
+   "media request automation",
+   "auto request movies",
+   "self-hosted media",
+   "docker media tool",
+   "llm recommendations",
+   "openai compatible",
+   "ollama recommendations",
+   "trakt import",
+   "simkl history",
+   "mdblist import",
+   "watch history recommendations",
+   "suggest movies to watch",
+   "request shows automatically",
+   "recommend shows from watch history",
+   "media server companion",
+   "rest api swagger",
+   "sqlite postgresql mysql",
+   "python docker",
+   "find something to watch",
+   "ai media search",
+   "download request automation",
+   "cleanup old requests",
+   "mit license media tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2608,
+  "output": 1310
+ },
+ "generated": "2026-10-29"
+}

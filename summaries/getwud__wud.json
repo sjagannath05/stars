@@ -1,0 +1,95 @@
+{
+ "id": "getwud/wud",
+ "repo": "getwud/wud",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "What's Up Docker | Get notified when new versions of your container images are released"
+  }
+ ],
+ "summary": {
+  "one_liner": "What's Up Docker (WUD) is a self-hosted tool that watches running containers across Docker, Swarm, Kubernetes, Compose and Nomad, detects newer image versions in registries, and sends notifications or triggers automatic updates.",
+  "what_it_does": "WUD scans container environments for running workloads and compares their current image tags and digests against what is available in container registries. It supports semantic version analysis and tag filtering via include/exclude rules, regular expressions, transforms, and version pinning. When an update is found, it can send alerts through many channels (e.g. Discord, Slack, Telegram, Ntfy, SMTP, Home Assistant, MQTT) or automatically pull new images and recreate containers for Docker, Docker Compose, or Nomad. It also offers a web dashboard, a REST API, a Prometheus /metrics endpoint, role-based access control with OIDC single sign-on, and a headless one-shot CLI mode for CI/CD pipelines and cron jobs that can fail a build when updates are available. Per-container configuration is done with Docker labels or Kubernetes annotations.",
+  "use_cases": [
+   "get notified when Docker container images have new versions",
+   "automatically update running Docker or Compose containers",
+   "monitor Kubernetes deployments for newer image tags",
+   "check for image updates in CI/CD pipelines before deploying",
+   "watch private registry images such as GHCR, ECR or Harbor",
+   "send container update alerts to chat or push notification apps"
+  ],
+  "how_to_run": [
+   "docker run -d --name wud -p 3000:3000 -e WUD_AUTH_ADMIN_USER=\"admin\" -e WUD_AUTH_ADMIN_PASSWORD=\"MySecurePassword123\" -v /var/run/docker.sock:/var/run/docker.sock getwud/wud:latest",
+   "Or use Docker Compose with the getwud/wud:latest image, ports 3000:3000, and the Docker socket mounted",
+   "Open the web UI on port 3000 and log in with the admin credentials",
+   "One-shot CLI: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e WUD_RUN_MODE=oneshot getwud/wud:latest watch"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Kubernetes",
+   "HashiCorp Nomad",
+   "Prometheus",
+   "Grafana",
+   "OpenID Connect (OIDC)"
+  ],
+  "notable": [
+   "Watches Docker, Swarm, Kubernetes, Compose and Nomad workloads from one tool",
+   "30+ notification and auto-update triggers, including MQTT with Home Assistant auto-discovery",
+   "One-shot headless CLI mode with NDJSON output and a --fail-on-update flag for CI gating",
+   "Registry webhooks trigger immediate checks, including GitLab Self-Managed",
+   "Role-based access control (admin, rw, ro) with personal API tokens and OIDC login"
+  ],
+  "caveats": [
+   "Automatic updates are only listed for Docker, Docker Compose and Nomad",
+   "Docker watching needs the Docker socket mounted or a remote TLS engine configured",
+   "Several registries and triggers need their own credentials or setup, described in the external documentation"
+  ],
+  "license": "MIT",
+  "category": "container update monitoring",
+  "keywords": [
+   "container update monitoring",
+   "docker image update notifier",
+   "wud",
+   "whats up docker",
+   "docker image version checker",
+   "container image update alerts",
+   "auto update docker containers",
+   "semver tag filtering",
+   "kubernetes image update",
+   "docker swarm updates",
+   "nomad job updates",
+   "docker compose auto update",
+   "registry webhook",
+   "ghcr update checker",
+   "ecr image monitoring",
+   "harbor registry watcher",
+   "prometheus docker metrics",
+   "grafana container dashboard",
+   "oidc docker dashboard",
+   "rbac container tool",
+   "self-hosted container updater",
+   "dependabot for docker images",
+   "watchtower alternative",
+   "ntfy docker notifications",
+   "discord container update alerts",
+   "home assistant docker updates",
+   "ci cd image check",
+   "docker image digest compare",
+   "keep containers up to date",
+   "notify new docker image release",
+   "monitor image tags"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5395,
+  "output": 1550
+ },
+ "generated": "2026-10-29"
+}

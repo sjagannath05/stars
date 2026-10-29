@@ -1,0 +1,96 @@
+{
+ "id": "donetick/donetick",
+ "repo": "donetick/donetick",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "Donetick - Task and chore management tool for personal and family use, with advanced scheduling, flexible assignment, and group sharing capabilities, detailed history, automation via API, simple and modern design. (Demo, Source Code) AGPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Donetick is an open-source, self-hostable task and chore management app for personal, family, and group use, with flexible recurring schedules, assignment rotation, and API/Home Assistant integrations.",
+  "what_it_does": "Lets users create tasks and chores, solo or shared within a group, with recurring schedules (daily, weekly, monthly, yearly, specific months/weekdays, or adaptive scheduling that learns from completion history). Recurrence can be based on the previous due date or the actual completion date, and assignments can rotate by fewest completions, randomly, or round-robin. Supports subtasks (nested, reset on recurrence), labels, five priority levels, photo attachments (local or S3-compatible storage), time tracking, and a points system with analytics. It also offers \"Things\" to track numeric, boolean, or text values that can auto-complete tasks, plus NFC tag triggers, TOTP MFA, OIDC sign-in, reminders via mobile app, Telegram, Discord, or Pushover, a REST API, and webhooks.",
+  "use_cases": [
+   "household chore scheduling",
+   "sharing to-do lists with family",
+   "recurring task reminders",
+   "wall-mounted family dashboard",
+   "home automation to-do lists",
+   "tracking time spent on tasks",
+   "rotating chore assignments"
+  ],
+  "how_to_run": [
+   "docker pull donetick/donetick",
+   "docker run -v /path/to/host/data:/donetick-data -v /path/to/host/config:/config -p 2021:2021 -e DT_ENV=selfhosted -e DT_SQLITE_PATH=/donetick-data/donetick.db -e TZ=Etc/UTC donetick/donetick",
+   "Or with Docker Compose: use the provided compose template (image donetick/donetick, port 2021, volumes ./data and ./config, DT_ENV=selfhosted)",
+   "Binary: download the latest release, extract, then run: DT_ENV=selfhosted ./donetick",
+   "Development: build the frontend (npm install; npm run build-selfhosted) and copy it into ./frontend, then run go run . or go build -o donetick ."
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Node.js/npm (frontend build)",
+   "SQLite",
+   "OIDC/OAuth2",
+   "AWS S3 / S3-compatible storage (optional)"
+  ],
+  "notable": [
+   "Adaptive scheduling that suggests due dates from historical completions",
+   "'Things' feature to track non-task values that can auto-complete tasks",
+   "Single-circle mode with OIDC group-based admin/manager roles",
+   "Dashboard layout for wall-mounted or shared tablets",
+   "NFC tag triggers to mark tasks done"
+  ],
+  "caveats": [
+   "iOS app is alpha on TestFlight; Android APK is distributed via releases",
+   "Local photo storage is marked work in progress (WIP)",
+   "Offline support is very limited, per the README"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted task management",
+  "keywords": [
+   "task management",
+   "chore app",
+   "to-do list",
+   "household chores",
+   "family task tracker",
+   "recurring tasks",
+   "shared to-do list",
+   "self-hosted todo",
+   "task scheduler",
+   "chore chart",
+   "adaptive scheduling",
+   "subtasks",
+   "task rotation",
+   "round-robin assignment",
+   "time tracking",
+   "gamification points",
+   "home assistant todo",
+   "oidc login",
+   "totp mfa",
+   "webhooks",
+   "rest api",
+   "docker compose",
+   "go app",
+   "telegram reminders",
+   "discord notifications",
+   "pushover alerts",
+   "nfc tags",
+   "wall display dashboard",
+   "share tasks with family",
+   "organize chores together",
+   "agpl open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5655,
+  "output": 1368
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "drduh/macos-security-and-privacy-guide",
+ "repo": "drduh/macOS-Security-and-Privacy-Guide",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Security",
+   "entry": "A practical guide to securing macOS"
+  }
+ ],
+ "summary": {
+  "one_liner": "A long, practical guide to hardening and improving the privacy of macOS on Apple silicon Macs, covering system settings, firewalls, DNS, browsers, Tor, VPNs, email, messaging, and monitoring.",
+  "what_it_does": "The guide walks through a threat-modeling approach and then a long series of hardening topics for macOS. It covers installation and first-boot choices (admin vs. standard accounts, computer naming), FileVault, Lockdown Mode, and firmware checks, each with terminal commands to confirm state. It explains the built-in application firewall, stealth mode, and a command-line pf packet-filter config with example rules and a method for blocking a whole autonomous system's address ranges. It also covers DNS options (encrypted DNS profiles, hosts-file blocking, DNSCrypt, Dnsmasq), a local Privoxy proxy, certificate authority review, browser hardening for Firefox, Chrome and Safari, Tor Browser verification with GPG, and logging/monitoring tools. The README is truncated, so later sections (VPN, PGP, email, messengers, SSH, backup, and others) are only partly visible in what was provided.",
+  "use_cases": [
+   "harden a new Mac for privacy and security",
+   "configure the macOS application firewall and pf packet filter",
+   "block ads, trackers and malware domains via hosts file or DNS",
+   "set up encrypted DNS with DNSCrypt or Dnsmasq",
+   "verify and use Tor Browser on macOS",
+   "review trusted certificate authorities in macOS keychain"
+  ],
+  "how_to_run": [
+   "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on",
+   "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on",
+   "fdesetup status",
+   "brew install dnscrypt-proxy",
+   "brew install privoxy",
+   "brew services start privoxy"
+  ],
+  "stack": [
+   "macOS",
+   "Bash / zsh",
+   "Homebrew",
+   "pf (packet filter)",
+   "dnscrypt-proxy",
+   "Dnsmasq",
+   "Privoxy",
+   "GPG",
+   "launchd"
+  ],
+  "notable": [
+   "Organized as a threat model followed by per-topic hardening sections, with commands to verify each setting",
+   "Covers pf packet-filter configuration, including blocking an autonomous system's networks via Merit RADb whois lookups",
+   "Explains Apple silicon-specific protections such as FileVault-backed firmware protection and Lockdown Mode",
+   "Includes browser comparisons (Firefox, Chrome, Safari) and Tor Browser GPG signature verification steps",
+   "Notes its own limits, such as firewalls being bypassable by malware with admin control"
+  ],
+  "caveats": [
+   "Provided 'as is' without warranties; the author states you are solely responsible for consequences of following it",
+   "Many steps require sudo and changes to firewall, DNS, or proxy settings that can break connectivity, VPNs, or software updates",
+   "Targets Apple silicon Macs; Intel and non-Apple hardware are discussed as weaker or legacy options",
+   "README was truncated in the provided text, so some sections were not visible"
+  ],
+  "license": "unknown",
+  "category": "macos security hardening",
+  "keywords": [
+   "macos security",
+   "macos privacy",
+   "mac hardening",
+   "apple silicon security",
+   "security guide",
+   "threat model",
+   "filevault",
+   "lockdown mode",
+   "application firewall",
+   "pf firewall",
+   "packet filter",
+   "socketfilterfw",
+   "stealth mode",
+   "dnscrypt",
+   "dnsmasq",
+   "encrypted dns",
+   "hosts file ad blocking",
+   "privoxy proxy",
+   "tor browser",
+   "gpg verify signature",
+   "browser fingerprinting",
+   "certificate authority trust",
+   "little snitch alternative",
+   "keep my mac private",
+   "secure my macbook",
+   "block trackers on mac",
+   "homebrew security",
+   "firewall for mac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15913,
+  "output": 1462
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "dshakes/compass",
+ "repo": "dshakes/compass",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "compass by dshakes - Developer-grade Claude Code + Codex configuration: cost-tiered subagents, workflow commands, guardrail hooks, MCP parity, and an installable plugin/marketplace."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local-first configuration layer for Claude Code, Codex and Gemini that adds guardrail hooks, a hard dollar budget cap, cost-tiered subagents, and an eval-gated autonomous PR review/fix loop.",
+  "what_it_does": "Installs a config layer into your AI coding agent's global setup (Claude Code via symlinks into ~/.claude, with Codex and Gemini files generated from one source). Hooks block catastrophic shell commands and secret writes before they run, and auto-format edited files with an append-only audit log. A COMPASS_MAX_USD setting halts the session before the next tool call once the cap is reached, and a localhost gate proxy extends the cap to agents without hooks. A cost-tier router sends simple tasks to cheaper models, with the README claiming about 62% savings versus all-Opus on its own evalset. The README also describes a red-team scanner, a plugin-security auditor (compass audit-plugin), SLSA provenance verification, and a PR loop (review, security, tests, cross-model audit, auto-fix) that stops for a human merge.",
+  "use_cases": [
+   "Cap spend on an autonomous coding agent session",
+   "Block dangerous shell commands and secret writes in Claude Code",
+   "Route simple coding tasks to cheaper models",
+   "Automate review and fix loops on pull requests",
+   "Vet third-party Claude Code plugins before installing",
+   "Share one agent config across Claude Code, Codex and Gemini"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/dshakes/compass ~/compass && cd ~/compass",
+   "./quickstart.sh",
+   "make dry-run",
+   "make install",
+   "make doctor",
+   "/plugin marketplace add dshakes/compass (inside Claude Code)"
+  ],
+  "stack": [
+   "Shell",
+   "Claude Code hooks and settings",
+   "Codex AGENTS.md and config.toml",
+   "Gemini CLI extensions",
+   "MCP servers",
+   "GitHub Actions CI"
+  ],
+  "notable": [
+   "Hard budget cap that halts the session before the next tool call (COMPASS_MAX_USD)",
+   "Eval-gated guardrail and red-team corpora scored in CI, reproducible with compass bench and compass redteam",
+   "Localhost gate proxy to enforce spend caps for Codex, Gemini or SDK agents",
+   "Plugin-security scanner (compass audit-plugin) for third-party plugins and marketplaces",
+   "Install replaces ~/.claude with symlinks, backs up originals first, and is reversible via make uninstall"
+  ],
+  "caveats": [
+   "Status is beta; the SDLC pipeline is newer and exercised via a smoke test on your own repo, and dynamic workflows are a research preview",
+   "Guardrails are described as reducing footguns, not as a security boundary; compass sandbox is the stated boundary for untrusted code",
+   "Live managed-guardrail cloud backend calls are unverified in CI and need your own credentials; the autonomous loop and fleet need model auth when opted in"
+  ],
+  "license": "MIT",
+  "category": "agent config guardrails",
+  "keywords": [
+   "claude code",
+   "codex",
+   "gemini cli",
+   "ai coding agent",
+   "agent guardrails",
+   "command blocking",
+   "budget cap",
+   "spend limit",
+   "cost routing",
+   "model router",
+   "subagents",
+   "slash commands",
+   "claude code hooks",
+   "agents.md",
+   "claude.md",
+   "mcp servers",
+   "pull request automation",
+   "auto fix pr",
+   "code review bot",
+   "red team prompt injection",
+   "plugin security scanner",
+   "audit plugin",
+   "slsa provenance",
+   "secret detection",
+   "audit log",
+   "dotfiles config",
+   "symlink install",
+   "cursor windsurf copilot",
+   "stop runaway ai agent cost",
+   "block rm -rf",
+   "safe ai coding",
+   "llm token budget"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8144,
+  "output": 1413
+ },
+ "generated": "2026-10-29"
+}

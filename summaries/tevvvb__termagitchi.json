@@ -1,0 +1,96 @@
+{
+ "id": "tevvvb/termagitchi",
+ "repo": "TevvvB/termagitchi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Status Lines",
+   "entry": "TermaGITchi by TevvvB - A Go CLI that gives each Claude Code session its own creature in the status line, derived by hashing the session id, with one den per git worktree. Where other status-line faces react to what the agent is doing, this one is a stable identity for telling parallel sessions apart, and its expression tracks repository hygiene: uncommitted files, unpushed commits, distance behin"
+  }
+ ],
+ "summary": {
+  "one_liner": "TermaGITchi is a Go CLI (`pets`) that gives each Claude Code agent session a creature in its status line, hashed from the session id, with its mood reflecting how tidy the git worktree is.",
+  "what_it_does": "It assigns each agent session a creature derived by hashing the session id, so nothing is picked or saved. Each git worktree is shown as a den named after a city, with a flight-code glyph such as \"@ DXB\". The creature's expression tracks repository hygiene, such as uncommitted files, unpushed commits, and distance behind upstream. `pets install` wires the status line and hooks into detected agents while backing up touched config, and `pets uninstall` reverses it. Users can add external signals: any executable printing key=value can feed penalties or bounds that affect the pet's mood. The README also describes tmux and shell-prompt rendering, plus a `pets render --format=json` output for building custom displays. Claude Code is the only agent the README says was verified end to end; Codex CLI support is described with a caveat about hook trust.",
+  "use_cases": [
+   "tell parallel Claude Code sessions apart in the status line",
+   "see git worktree hygiene at a glance",
+   "show a terminal pet in tmux or shell prompt",
+   "track uncommitted and unpushed changes per worktree",
+   "add custom health checks like clippy warnings or coverage to a status display",
+   "build a JSON-driven status display for an editor"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh",
+   "pets install",
+   "brew install TevvvB/tap/termagitchi",
+   "go install github.com/TevvvB/termagitchi/cmd/pets@latest",
+   "/plugin marketplace add TevvvB/termagitchi",
+   "/pets-setup"
+  ],
+  "stack": [
+   "Go",
+   "Claude Code status line and hooks",
+   "Codex CLI hooks",
+   "TOML configuration",
+   "tmux",
+   "Homebrew",
+   "Scoop"
+  ],
+  "notable": [
+   "Creature identity is a hash of the agent session id, so each parallel session has a stable, recognisable creature with 41 species, rarity bands, and shiny variants",
+   "Worktrees map to ddens named after 16 cities",
+   "Mood reflects git hygiene; custom external signals can be added with simple shell scripts that print key=value",
+   "Install backs up config it modifies and leaves other settings alone; uninstall reverses it",
+   "Network-free status line path; update checks run only for card, party, and den commands and can be disabled"
+  ],
+  "caveats": [
+   "Claude Code is the only agent verified end to end according to the README",
+   "Codex hooks do nothing until the user explicitly trusts them in Codex, and the binary is required even when using the plugin",
+   "Homebrew upgrades may require running `brew trust TevvvB/tap` first"
+  ],
+  "license": "MIT",
+  "category": "terminal status line tools",
+  "keywords": [
+   "claude code",
+   "status line",
+   "statusline",
+   "terminal pet",
+   "tamagotchi",
+   "virtual pet cli",
+   "git worktree",
+   "worktree status",
+   "multiple agent sessions",
+   "parallel sessions",
+   "session identity",
+   "repository hygiene",
+   "uncommitted changes",
+   "unpushed commits",
+   "tmux status",
+   "shell prompt",
+   "go cli",
+   "golang",
+   "homebrew tap",
+   "scoop install",
+   "codex cli",
+   "claude code plugin",
+   "custom signals",
+   "key=value probe",
+   "agent session visualization",
+   "tell sessions apart",
+   "see which agent is which",
+   "terminal creature collection",
+   "pets command",
+   "git status indicator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3779,
+  "output": 1305
+ },
+ "generated": "2026-10-29"
+}

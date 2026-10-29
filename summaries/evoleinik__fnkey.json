@@ -1,0 +1,92 @@
+{
+ "id": "evoleinik/fnkey",
+ "repo": "evoleinik/fnkey",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Voice-to-Text",
+   "entry": "FnKey - Push-to-talk voice input tool that pastes transcribed text instantly. [![Open-Source Software][OSS Icon]](https://github.com/evoleinik/fnkey) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "FnKey is a small Rust menu bar app for macOS that transcribes speech while you hold the Fn key and pastes the text at your cursor on release.",
+  "what_it_does": "Hold Fn, speak, and release; the transcribed text is pasted where the cursor is. The microphone runs only while Fn is held, and macOS shows its orange mic indicator. Transcription uses Deepgram Nova-3 in streaming mode (recommended) with Groq Whisper as a batch fallback when Deepgram errors or does not answer within 10s. Menu options include \"Press Return after paste\" and \"Paste while speaking,\" which pastes each finished phrase during dictation. Custom keywords go to the transcription backends as vocabulary hints, and the app restores the previous clipboard contents after pasting. Settings are plain text files in ~/.config/fnkey/, and the README describes choosing a closer Deepgram region to reduce latency.",
+  "use_cases": [
+   "Dictate text into any macOS app with the Fn key",
+   "Voice-to-text for chat messages",
+   "Push-to-talk speech input on a Mac",
+   "Speech transcription with custom vocabulary for names and technical terms",
+   "Low-latency dictation using a regional Deepgram server"
+  ],
+  "how_to_run": [
+   "Download FnKey-arm64.zip (Apple Silicon) or FnKey-x64.zip (Intel) from the latest release and unzip it",
+   "Move FnKey.app to /Applications/",
+   "Create ~/.config/fnkey/ and write a Deepgram key to deepgram_key and/or a Groq key to api_key",
+   "Launch with: open /Applications/FnKey.app",
+   "Grant Input Monitoring, Microphone, and Accessibility permissions in System Settings → Privacy & Security"
+  ],
+  "stack": [
+   "Rust",
+   "macOS menu bar app",
+   "Deepgram Nova-3 (WebSocket streaming API)",
+   "Groq Whisper (batch API)"
+  ],
+  "notable": [
+   "Streaming transcription over WebSocket while you speak, with Groq as a batch fallback",
+   "Restores the original clipboard (text, images, files, rich text) 0.5s after pasting",
+   "Configurable Deepgram region (US, EU, India, Australia) to reduce latency",
+   "Ignores taps and Fn key combinations, and pastes nothing when there is no speech",
+   "Marks pasted dictation as transient so clipboard managers do not record each phrase"
+  ],
+  "caveats": [
+   "Requires your own Deepgram and/or Groq API keys; the README links to both providers' consoles",
+   "The microphone starts on key press, so the first moment of speech can be missed",
+   "Release builds are not developer-signed, so macOS treats each new version as a new app and permissions must be rechecked after upgrading",
+   "Building from source needs local code signing with a fixed identity and does not work over SSH"
+  ],
+  "license": "GPL-3.0",
+  "category": "macos voice dictation",
+  "keywords": [
+   "voice to text",
+   "speech to text",
+   "dictation",
+   "push to talk",
+   "fn key",
+   "macos menu bar app",
+   "rust",
+   "deepgram",
+   "groq",
+   "whisper",
+   "nova-3",
+   "transcription",
+   "paste transcribed text",
+   "hold key to speak",
+   "voice input mac",
+   "speech recognition macos",
+   "clipboard restore",
+   "custom vocabulary",
+   "keyterm",
+   "streaming transcription",
+   "websocket speech",
+   "dictate into any app",
+   "type with my voice",
+   "voice typing on mac",
+   "alternative to macos dictation",
+   "speak instead of typing",
+   "chat message by voice",
+   "menu bar dictation tool",
+   "open source dictation",
+   "gpl voice input"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4185,
+  "output": 1353
+ },
+ "generated": "2026-10-29"
+}

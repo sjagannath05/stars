@@ -1,0 +1,93 @@
+{
+ "id": "uqfoundation/dill",
+ "repo": "uqfoundation/dill",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Serialization",
+   "entry": "dill - Extends pickle to serialize almost any object, including closures and interpreter sessions."
+  }
+ ],
+ "summary": {
+  "one_liner": "dill is a Python library that extends pickle to serialize almost any Python object, including lambdas, closures, classes, and whole interpreter sessions.",
+  "what_it_does": "Provides a pickle-compatible interface (dumps/loads, or \"import dill as pickle\") for converting Python objects to byte strings and back. It handles many standard types, exotic types such as nested functions, lambdas, code objects, cells, and method descriptors, plus classes, dataclasses, and metaclasses. It can save and restore an entire interpreter session in one command. It also offers source extraction via dill.source.getsource and a pickling trace tool in dill.detect for debugging serialization errors. Options such as byref, recurse, fmode, and protocol control how objects are serialized.",
+  "use_cases": [
+   "send Python objects across a network as bytes",
+   "serialize lambdas or closures for multiprocessing",
+   "save and restore an interpreter session",
+   "extract source code from functions and classes",
+   "debug pickling errors",
+   "pickle objects that standard pickle cannot handle"
+  ],
+  "how_to_run": [
+   "pip install dill",
+   "pip install dill[graph]  (optional objgraph diagnostics)",
+   "pip install dill[profile]  (optional gprof2dot diagnostics)",
+   "import dill as pickle",
+   "python -m dill.tests  (run test suite)"
+  ],
+  "stack": [
+   "Python (>=3.10, or PyPy)",
+   "setuptools (>=42)",
+   "objgraph (optional)",
+   "gprof2dot (optional)",
+   "pyreadline (optional, Windows)"
+  ],
+  "notable": [
+   "Drop-in replacement for the pickle module with the same interface",
+   "Saves and loads whole interpreter sessions",
+   "Serializes lambdas, nested functions, and closures that plain pickle rejects",
+   "Built-in pickle tracing (dill.detect.trace) for diagnosing failures",
+   "Part of the pathos heterogeneous computing framework"
+  ],
+  "caveats": [
+   "Not secure against maliciously constructed data; only unpickle trusted sources",
+   "Cannot yet pickle frames, generators, or tracebacks",
+   "Optional diagnostic tools and Windows session-history support need extra installs"
+  ],
+  "license": "3-clause BSD",
+  "category": "python serialization library",
+  "keywords": [
+   "serialization",
+   "pickle",
+   "python pickle alternative",
+   "dill",
+   "serialize lambda",
+   "serialize closures",
+   "save interpreter session",
+   "session persistence",
+   "object serialization",
+   "byte stream",
+   "dumps loads",
+   "pickle extension",
+   "serialize functions",
+   "serialize classes",
+   "pickling errors debug",
+   "pickle tracing",
+   "source code extraction",
+   "getsource",
+   "send objects over network",
+   "distributed python objects",
+   "multiprocessing serialization",
+   "pathos",
+   "save python state",
+   "restore python session",
+   "python object to bytes",
+   "pickle lambda functions",
+   "serialize dataclasses",
+   "cloudpickle alternative",
+   "python serialization library",
+   "store python objects to file"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4260,
+  "output": 1126
+ },
+ "generated": "2026-10-29"
+}

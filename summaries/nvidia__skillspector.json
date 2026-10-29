@@ -1,0 +1,98 @@
+{
+ "id": "nvidia/skillspector",
+ "repo": "NVIDIA/SkillSpector",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "SkillSpector by NVIDIA - Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks."
+  }
+ ],
+ "summary": {
+  "one_liner": "SkillSpector is a security scanner that checks AI agent skills (for tools like Claude Code, Codex CLI, and Gemini CLI) for vulnerabilities, malicious patterns, and risky behavior before they are installed.",
+  "what_it_does": "Scans agent skills from Git repos, URLs, zip files, directories, or single files, using 71 vulnerability patterns across 17 categories such as prompt injection, data exfiltration, supply chain, taint tracking, AST-based dangerous code checks, YARA signatures, and MCP tool poisoning. It runs a fast static analysis stage and an optional LLM semantic stage, with a configurable OpenAI-compatible or hosted/local provider. It looks up known CVEs live via OSV.dev with an offline fallback. It produces a 0-100 risk score with severity labels and an install recommendation, and outputs terminal, JSON, Markdown, or SARIF reports. It supports baselines to suppress accepted findings so re-scans show only new issues, and can run as an MCP server so agents can call it as a tool to gate installs.",
+  "use_cases": [
+   "check an agent skill for malicious code before installing it",
+   "gate Claude Code or other agent skill installs in CI",
+   "scan MCP server registry entries for security issues",
+   "audit third-party skills for prompt injection and data exfiltration",
+   "suppress known false positives and track only new findings",
+   "generate SARIF reports for code scanning pipelines"
+  ],
+  "how_to_run": [
+   "uv tool install git+<repository-url>",
+   "skillspector scan ./my-skill/ --no-llm",
+   "docker build -t skillspector .",
+   "docker run --rm -v \"$PWD:/scan\" skillspector scan ./my-skill/ --no-llm",
+   "skillspector baseline ./my-skill/ -o .skillspector-baseline.yaml",
+   "claude mcp add skillspector -- skillspector mcp"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "Docker",
+   "LangChain",
+   "FastMCP (optional mcp extra)",
+   "YARA",
+   "OSV.dev API",
+   "boto3"
+  ],
+  "notable": [
+   "Pattern catalog covers 71 checks across 17 categories, including AST, taint-flow, YARA, and MCP least-privilege and tool-poisoning rules",
+   "Two-stage analysis: static rules first, optional LLM semantic review",
+   "Baseline files with fingerprint or glob rules to suppress accepted findings and keep re-scans focused on new issues",
+   "Runs as an MCP server (stdio or loopback HTTP) so agents can call scan_skill before installing",
+   "Part of the NVIDIA Verified Skills pipeline that scans, evaluates, and signs skills"
+  ],
+  "caveats": [
+   "The HTTP MCP transport has no authentication and only binds to loopback addresses; remote access requires an external authenticating proxy",
+   "LLM analysis needs provider credentials or a local CLI setup; the README notes DeepSeek structured-output issues and that some providers and models have limits",
+   "Full install of the MCP server requires the optional mcp extra; the README notes an open issue with the stdio initialize hang"
+  ],
+  "license": "unknown",
+  "category": "agent skill security scanning",
+  "keywords": [
+   "security scanner",
+   "agent skills",
+   "ai agent security",
+   "claude code skills",
+   "prompt injection detection",
+   "malicious skill detection",
+   "vulnerability scanner",
+   "static analysis",
+   "sast",
+   "sarif report",
+   "mcp server",
+   "mcp tool poisoning",
+   "supply chain security",
+   "data exfiltration detection",
+   "taint tracking",
+   "yara rules",
+   "osv cve lookup",
+   "risk score",
+   "baseline suppression",
+   "false positive suppression",
+   "codex cli",
+   "gemini cli",
+   "check skill before install",
+   "scan before installing",
+   "audit third-party plugins",
+   "ci security gate",
+   "llm security review",
+   "python ast analysis",
+   "dependency vulnerability scan",
+   "nvidia",
+   "vet ai tools for safety"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 18300,
+  "output": 1466
+ },
+ "generated": "2026-10-29"
+}

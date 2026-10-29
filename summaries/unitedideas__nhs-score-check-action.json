@@ -1,0 +1,88 @@
+{
+ "id": "unitedideas/nhs-score-check-action",
+ "repo": "unitedideas/nhs-score-check-action",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "nhs-score-check-action — GitHub Action that fetches your site's agentic readiness score via Not Human Search and fails CI if the score drops. Protects against regressions in your agent-facing surface. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "A GitHub Action that fetches a site's agentic readiness score from Not Human Search and can fail a CI build if the score falls below a threshold.",
+  "what_it_does": "The action takes a domain and queries Not Human Search for that site's agentic readiness score on a 0–100 scale. It checks seven machine-readable signals: llms.txt (25 points), ai-plugin.json (20), OpenAPI spec (20), structured API (15), MCP server verified via live JSON-RPC (10), robots.txt AI rules (5), and Schema.org (5). It can optionally request a fresh crawl before scoring, which adds about 30 seconds. It fails the build if the score is below a configurable minimum (default 50). It outputs the numeric score, a JSON map of detected signals, and a link to the NHS report page, and writes a summary with a per-signal breakdown to the GitHub step summary.",
+  "use_cases": [
+   "Catch regressions in llms.txt or OpenAPI specs during deploys",
+   "Scheduled daily check of a site's agent-facing surface",
+   "Gate CI builds on a minimum agentic readiness score",
+   "Track per-signal AI readiness over time",
+   "Embed a live readiness score badge in a README"
+  ],
+  "how_to_run": [
+   "Add a workflow file under .github/workflows/ with a schedule and workflow_dispatch trigger",
+   "In the job, add a step: uses: unitedideas/nhs-score-check-action@v1",
+   "Set the 'domain' input to your host (for example example.com, without protocol or path)",
+   "Optionally set 'min-score' (default 50) so the build fails when the score is below it",
+   "Optionally set 'recrawl: true' to request a fresh crawl first (adds about 30 seconds)",
+   "Read outputs score, signals, and report-url in later steps if needed"
+  ],
+  "stack": [
+   "GitHub Actions",
+   "Not Human Search API"
+  ],
+  "notable": [
+   "Scores seven specific machine-readable signals with published point weights",
+   "Optional recrawl input to score fresh content before the check",
+   "Writes a per-signal breakdown to the GitHub step summary",
+   "Exposes score, signals, and report-url as step outputs for downstream use"
+  ],
+  "caveats": [
+   "Depends on the external Not Human Search service and on the domain being in NHS's index for the badge and scoring",
+   "Recrawl adds about 30 seconds of latency per run",
+   "The README does not state platform limits beyond GitHub Actions on ubuntu-latest in its example"
+  ],
+  "license": "MIT",
+  "category": "ci agentic readiness",
+  "keywords": [
+   "github action",
+   "ci check",
+   "continuous integration",
+   "agentic readiness",
+   "ai readiness score",
+   "llms.txt",
+   "ai-plugin.json",
+   "openapi spec",
+   "mcp server",
+   "robots.txt ai rules",
+   "schema.org",
+   "regression testing",
+   "fail build on score",
+   "min-score threshold",
+   "scheduled workflow",
+   "site monitoring",
+   "not human search",
+   "machine-readable surface",
+   "ai agent tools",
+   "check my site for ai agents",
+   "monitor website for ai readiness",
+   "block deploy if score drops",
+   "github actions workflow",
+   "score badge",
+   "step summary",
+   "website audit ci",
+   "llm discoverability",
+   "ai crawler readiness",
+   "api discovery check"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2394,
+  "output": 1229
+ },
+ "generated": "2026-10-29"
+}

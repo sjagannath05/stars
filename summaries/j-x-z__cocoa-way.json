@@ -1,0 +1,97 @@
+{
+ "id": "j-x-z/cocoa-way",
+ "repo": "J-x-Z/cocoa-way",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Virtualization",
+   "entry": "Cocoa-Way - Wayland compositor for running Linux GUI apps without a virtual machine. [![Open-Source Software][OSS Icon]](https://github.com/J-x-Z/cocoa-way) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS Wayland compositor that presents Linux GUI applications through a Metal renderer, without running a full virtual machine desktop.",
+  "what_it_does": "Cocoa-Way receives the Wayland protocol on macOS and shows Linux applications via a Metal renderer. It can connect to an existing Linux machine over SSH with Waypipe, or manage local GUI applications through Apple Container, Docker-compatible engines, and OrbStack. Applications are organized as saved profiles, running instances, and displays, with Desktop mode (one compositor window) and Rootless mode (each xdg-toplevel becomes its own macOS window). It forwards clipboard (text and PNG), CoreAudio audio, keyboard, pointer and gestures. A local control API is provided through the cocoa-wayctl CLI (with JSON output) and an optional MCP stdio adapter that is read-only by default. Version 2.1 adds an opt-in desktop background behind macOS app windows.",
+  "use_cases": [
+   "Run Linux GUI apps on a Mac without a virtual machine",
+   "Connect to a remote Linux host and show its apps over SSH",
+   "Launch GUI containers from Apple Container, Docker, or OrbStack on macOS",
+   "Use a nested Linux compositor such as niri or Hyprland on a Mac",
+   "Diagnose and script Linux app containers from the command line or an AI agent"
+  ],
+  "how_to_run": [
+   "brew tap J-x-Z/tap",
+   "brew trust --tap J-x-Z/tap",
+   "brew install cocoa-way waypipe-darwin",
+   "cargo build --release (after brew install libxkbcommon pkg-config and cloning the repo)",
+   "./run_waypipe.sh ssh user@linux-host firefox",
+   "cocoa-way"
+  ],
+  "stack": [
+   "Rust",
+   "Smithay (vendored)",
+   "Metal",
+   "AppKit / winit",
+   "Objective-C bindings",
+   "Waypipe",
+   "Apple Container CLI",
+   "Docker-compatible engines",
+   "OrbStack",
+   "CoreAudio",
+   "libxkbcommon",
+   "TOML config"
+  ],
+  "notable": [
+   "Apple Container Transport V2 multiplexes Waypipe streams over a published Unix socket, with a stdio relay fallback",
+   "Opt-in Desktop Background places a Linux desktop behind ordinary macOS app windows (experimental)",
+   "cocoa-wayctl --json gives scriptable status, diagnostics, logs and performance data over a local control socket",
+   "MCP adapter is read-only by default; --allow-control enables only app launch/stop and display create/close, never deletion or arbitrary commands",
+   "Bidirectional clipboard including PNG images up to 64 MiB"
+  ],
+  "caveats": [
+   "Requires macOS 26 on Apple silicon for the Apple Container runtime; Waypipe must be installed on both the Mac and the Linux side",
+   "No guest GPU passthrough under Apple Container, so Linux apps render with Mesa/CPU before upload to Metal; Vulkan is not in this release",
+   "Release apps are ad-hoc signed, not Apple-notarized; end-to-end input and display latency is still under investigation"
+  ],
+  "license": "GPL-3.0",
+  "category": "wayland compositor macos",
+  "keywords": [
+   "wayland compositor",
+   "macos wayland",
+   "run linux gui apps on mac",
+   "linux apps without virtual machine",
+   "waypipe",
+   "smithay",
+   "metal renderer",
+   "apple container",
+   "docker gui apps mac",
+   "orbstack",
+   "ssh x11 forwarding alternative",
+   "remote linux app over ssh",
+   "rootless xwayland",
+   "xdg-shell",
+   "niri compositor",
+   "hyprland",
+   "clipboard sharing linux mac",
+   "audio forwarding coreaudio",
+   "cocoa-wayctl",
+   "mcp diagnostics",
+   "desktop background macos",
+   "linux gui containers",
+   "wslg for mac",
+   "run firefox on mac from linux",
+   "cocoa way",
+   "rust wayland",
+   "gpl-3.0 mac tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7619,
+  "output": 1523
+ },
+ "generated": "2026-10-29"
+}

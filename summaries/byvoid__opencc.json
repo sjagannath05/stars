@@ -1,0 +1,98 @@
+{
+ "id": "byvoid/opencc",
+ "repo": "BYVoid/OpenCC",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Natural Language Processing",
+   "entry": "OpenCC - Traditional/Simplified Chinese conversion with regional variants and phrase-level rules."
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenCC is an open source, offline, dictionary-based library and CLI for converting Chinese text between Traditional and Simplified scripts and regional wordings (Mainland China, Taiwan, Hong Kong), plus limited Japanese Shinjitai/Kyujitai conversion.",
+  "what_it_does": "Converts text between Simplified Chinese, OpenCC-standard Traditional Chinese, Taiwan and Hong Kong Traditional variants, with phrase-level rules for regional wording (e.g. 鼠标 to 滑鼠) and character variants (e.g. 裏 to 裡). Conversion is deterministic and dictionary-based with no LLM, and runs offline. Conversion chains are defined in JSON config files such as s2t.json, s2twp.json and t2hk.json, and dictionaries are separate from the library so they can be customized, including inline dictionary entries in config. It provides Python, Node.js, C++ and C APIs plus a command-line tool, and diagnostic modes (--segmentation, --inspect, --ambiguities) that show segmentation and per-stage output. An experimental plugin system supports the opencc-jieba segmenter.",
+  "use_cases": [
+   "convert Simplified Chinese text to Traditional Chinese",
+   "localize text for Taiwan or Hong Kong wording",
+   "batch convert Chinese text files from the command line",
+   "embed Chinese script conversion in a C++ or C application",
+   "customize regional phrase mappings with inline dictionaries",
+   "diagnose why a Chinese conversion produced unexpected words"
+  ],
+  "how_to_run": [
+   "pip install opencc",
+   "opencc -c s2t.json -i input.txt -o output.txt",
+   "npm install -g opencc",
+   "brew install opencc",
+   "make",
+   "bazel build //:opencc"
+  ],
+  "stack": [
+   "C++",
+   "Python",
+   "Node.js",
+   "Bazel",
+   "CMake",
+   "darts-clone",
+   "marisa-trie",
+   "rapidjson",
+   "cppjieba (optional plugin)"
+  ],
+  "notable": [
+   "Deterministic dictionary-based conversion with no LLM, fully offline",
+   "Regional phrase and character-variant configs for Taiwan, Hong Kong and Mainland China",
+   "Dictionaries decoupled from the library and customizable via JSON inline dictionaries",
+   "Diagnostic CLI modes that output segmentation, per-stage conversion and one-to-many ambiguity records as JSON",
+   "Official bindings for Python, Node.js, C++ and C plus many community ports"
+  ],
+  "caveats": [
+   "Japanese conversion is limited, and some Japanese configs and the Small Seal Script configs are experimental or for research only",
+   "Plugin ABI is experimental and may change before the next formal release; the jieba plugin is optional",
+   "The Python and npm CLIs support only basic conversion; diagnostic modes need the native OpenCC CLI"
+  ],
+  "license": "Apache License 2.0",
+  "category": "chinese text conversion",
+  "keywords": [
+   "opencc",
+   "chinese converter",
+   "traditional to simplified chinese",
+   "simplified to traditional chinese",
+   "chinese text conversion",
+   "s2t",
+   "t2s",
+   "hanzi conversion",
+   "zh-hant zh-hans",
+   "taiwan traditional chinese",
+   "hong kong traditional chinese",
+   "regional wording chinese",
+   "character variant conversion",
+   "chinese word segmentation",
+   "jieba plugin",
+   "offline chinese converter",
+   "dictionary based conversion",
+   "japanese shinjitai kyujitai",
+   "python chinese converter",
+   "node.js chinese converter",
+   "c++ library chinese",
+   "cli chinese text file",
+   "chinese localization",
+   "convert chinese subtitles",
+   "translate simplified to traditional",
+   "convert text between mainland and taiwan wording",
+   "bazel chinese library",
+   "small seal script conversion",
+   "chinese input method dictionary",
+   "text normalization chinese"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11481,
+  "output": 1439
+ },
+ "generated": "2026-10-29"
+}

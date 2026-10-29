@@ -1,0 +1,91 @@
+{
+ "id": "antoniomika/sish",
+ "repo": "antoniomika/sish",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Proxy",
+   "entry": "sish - HTTP(S)/WS(S)/TCP tunnels to localhost using only SSH (serveo/ngrok alternative). MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "sish is an open-source SSH server that exposes local HTTP(S), WS(S), TCP, alias, and SNI-routed services to the internet using plain SSH tunneling, with no custom client needed.",
+  "what_it_does": "The README describes sish as an SSH server focused on forwarding and multiplexing. Users create tunnels with standard ssh -R commands, and sish routes HTTP(S), WS(S), and raw TCP traffic to them. It supports private TCP aliases reachable only through authenticated SSH (via ssh -J), and SNI-based routing of TLS traffic to multiple backends without terminating TLS. It also lists optional load balancing for HTTP/TCP/SNI aliases, a service console for inspecting forwarded requests, and key and password authentication with dynamic key reloading. A managed service at tuns.sh is mentioned as an alternative to self-hosting.",
+  "use_cases": [
+   "Share a local web app over HTTPS with a public URL",
+   "Expose a local TCP service such as SSH on a remote port",
+   "Create private TCP aliases reachable only through SSH",
+   "Route TLS traffic by SNI to multiple backends",
+   "Self-host a serveo or ngrok-style tunneling service"
+  ],
+  "how_to_run": [
+   "docker pull antoniomika/sish:latest",
+   "mkdir -p ~/sish/ssl ~/sish/keys ~/sish/pubkeys",
+   "cp ~/.ssh/id_ed25519.pub ~/sish/pubkeys",
+   "docker run -itd --name sish -v ~/sish/ssl:/ssl -v ~/sish/keys:/keys -v ~/sish/pubkeys:/pubkeys --net=host antoniomika/sish:latest --ssh-address=:2222 --http-address=:80 --https-address=:443 --https=true --https-certificate-directory=/ssl --authentication-keys-directory=/pubkeys --private-keys-directory=/keys --bind-random-ports=false --domain=example.com",
+   "ssh -p 2222 -R 80:localhost:8080 example.com",
+   "git clone git@github.com:antoniomika/sish.git && cd sish && make dev"
+  ],
+  "stack": [
+   "Go",
+   "Docker"
+  ],
+  "notable": [
+   "Uses plain SSH clients (ssh -R, ssh -J), so end users need no custom software",
+   "Private TCP aliases reachable only through authenticated SSH",
+   "SNI routing of TLS traffic without terminating TLS",
+   "Distributed as binary releases and Docker images",
+   "Sponsored by pico.sh; a managed service at tuns.sh is available"
+  ],
+  "caveats": [
+   "Self-hosting requires a domain, DNS setup, and TLS certificate directory configuration",
+   "The README's managed service (tuns.sh) is a separate hosted option, not the self-hosted software itself",
+   "Local development points testing.ssi.sh at localhost, which is specific to the project's dev setup"
+  ],
+  "license": "MIT",
+  "category": "ssh tunneling server",
+  "keywords": [
+   "ssh tunnel",
+   "ssh tunneling",
+   "ssh reverse tunnel",
+   "ssh -r",
+   "reverse proxy",
+   "serveo alternative",
+   "ngrok alternative",
+   "self-hosted tunnel",
+   "expose localhost",
+   "share local web app",
+   "public url for localhost",
+   "http tunnel",
+   "https tunnel",
+   "websocket tunnel",
+   "tcp forwarding",
+   "tcp alias",
+   "sni proxy",
+   "sni routing",
+   "tls passthrough",
+   "load balancing",
+   "multiplexing",
+   "ssh jump host",
+   "ssh -j",
+   "authentication keys",
+   "docker ssh server",
+   "go ssh server",
+   "tuns.sh",
+   "webhook testing",
+   "share files with my team",
+   "expose service without public ip",
+   "self-host tunneling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2782,
+  "output": 1414
+ },
+ "generated": "2026-10-29"
+}

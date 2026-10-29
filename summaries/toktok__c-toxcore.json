@@ -1,0 +1,94 @@
+{
+ "id": "toktok/c-toxcore",
+ "repo": "TokTok/c-toxcore",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Tox - Distributed, secure messenger with audio and video chat capabilities. (Source Code) GPL-3.0 C"
+  }
+ ],
+ "summary": {
+  "one_liner": "C reference implementation of Tox, a serverless peer-to-peer encrypted instant messenger library with optional audio/video support.",
+  "what_it_does": "Provides the toxcore C library for building Tox-based peer-to-peer messaging applications without a central server. It uses libsodium for encryption and authentication. The API is event-driven: applications register callbacks for events such as friend requests and incoming messages, then call tox_iterate in a loop to process network traffic. The README walks through a minimal echo bot that accepts friend requests and replies with each message it receives. The build is CMake-based and, when libvpx and opus are present, also builds an A/V library for audio and video chats. The README also lists static analysis, sanitizer, and fuzzing tools used in the project's testing.",
+  "use_cases": [
+   "build a peer-to-peer encrypted chat application",
+   "write a Tox echo or chat bot in C",
+   "embed serverless messaging in a C program",
+   "add audio and video calls via libvpx and opus",
+   "study the Tox protocol reference implementation"
+  ],
+  "how_to_run": [
+   "git clone --recurse-submodules https://github.com/TokTok/c-toxcore (or run git submodule update --init in the repo)",
+   "mkdir _build && cd _build",
+   "cmake ..",
+   "make",
+   "sudo make install"
+  ],
+  "stack": [
+   "C",
+   "CMake",
+   "libsodium",
+   "libvpx (optional, A/V)",
+   "opus (optional, A/V)",
+   "cmp (git submodule)"
+  ],
+  "notable": [
+   "Serverless peer-to-peer design with encryption via libsodium",
+   "Callback-based API driven by a tox_iterate main loop",
+   "Optional A/V library built when libvpx and opus are installed",
+   "Echo bot tutorial in the README walks through the API",
+   "Extensive SAST, sanitizer, and fuzzing tooling listed"
+  ],
+  "caveats": [
+   "README describes the library as experimental and not formally audited; use at your own risk",
+   "Security threat model not yet fully specified, per the README",
+   "Requires git submodules to be initialized before building",
+   "Bots built on it work on a LAN per the README; internet bootstrapping is glossed over in the tutorial"
+  ],
+  "license": "GPL-3.0",
+  "category": "p2p messaging library",
+  "keywords": [
+   "tox",
+   "toxcore",
+   "c library",
+   "peer to peer messaging",
+   "serverless chat",
+   "encrypted instant messenger",
+   "libsodium",
+   "end to end encryption",
+   "audio video chat",
+   "libvpx",
+   "opus codec",
+   "cmake build",
+   "echo bot",
+   "chat bot c",
+   "decentralized messaging",
+   "private messaging library",
+   "p2p chat",
+   "friend request api",
+   "tox_iterate event loop",
+   "callback api",
+   "gpl-3.0",
+   "self-hosted chat alternative",
+   "message encryption library",
+   "voip library c",
+   "static analysis c",
+   "fuzz testing",
+   "send messages without server",
+   "build my own messenger",
+   "signal alternative library",
+   "skype-like library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4590,
+  "output": 1117
+ },
+ "generated": "2026-10-29"
+}

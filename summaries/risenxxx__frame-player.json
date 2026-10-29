@@ -1,0 +1,108 @@
+{
+ "id": "risenxxx/frame-player",
+ "repo": "risenxxx/frame-player",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "▶️ Player (10)",
+   "entry": "Frame Player - Video player built on libmpv with seekbar previews, subtitle search matched to the release, torrent streaming, casting to Chromecast and DLNA televisions, and watching together in sync."
+  }
+ ],
+ "summary": {
+  "one_liner": "Frame Player is a desktop video player built on Tauri 2 and libmpv that plays local files, links and magnet torrents, with casting to TVs, subtitle search, and synced watch-together rooms.",
+  "what_it_does": "Plays local files, direct stream URLs, anything yt-dlp resolves, and magnet links streamed while they download, with the interface drawn as HTML over a native mpv view. The seekbar shows thumbnails of the exact frame under the cursor, plus chapter names and a skip button for intros and credits. Subtitles are searched on OpenSubtitles by file hash with a title fallback, and downloads are saved beside the video. Casting works over Google Cast and DLNA, and on macOS also AirPlay, with the window acting as a remote while the TV plays. A watch-together mode syncs position, pauses and speed between players through a Go relay, with the media itself fetched by each player separately. A built-in catalog can browse TMDB metadata and pick releases from a user-supplied Torznab server.",
+  "use_cases": [
+   "watch a torrent while it downloads",
+   "cast a local video to a Chromecast or DLNA TV",
+   "watch a film in sync with a friend remotely",
+   "find and download subtitles matched to a video file",
+   "play video files with HDR and Dolby Vision",
+   "mini always-on-top video window on macOS"
+  ],
+  "how_to_run": [
+   "bun install",
+   "bun run fetch-libs",
+   "bun run tauri dev",
+   "bun run tauri build",
+   "scripts/fetch-macos-libs.sh",
+   "bun run tauri:macos"
+  ],
+  "stack": [
+   "Tauri 2",
+   "Rust",
+   "Svelte",
+   "libmpv",
+   "FFmpeg",
+   "librqbit",
+   "Go",
+   "Lua",
+   "bun",
+   "Node.js"
+  ],
+  "notable": [
+   "Watch-together rooms sync a shared timeline with a six-character code; media never passes through the relay",
+   "Seekbar previews decode the exact frame under the cursor rather than the preceding keyframe",
+   "Casting picks per device and per file whether to send the original or remux, with video stream-copied",
+   "Remembered audio and subtitle tracks are matched by language, title, codec and forced flag rather than track number",
+   "Hotkeys bind to physical keys and can all be reassigned"
+  ],
+  "caveats": [
+   "Windows installer is not code-signed, so SmartScreen warns on first launch",
+   "AirPlay works only on macOS, and the macOS libmpv must be fetched or rebuilt with a patch for --wid embedding",
+   "Prebuilt packages target Windows x64/ARM64 and macOS on Apple Silicon only; no Intel macOS build is produced"
+  ],
+  "license": "GPL-3.0-or-later",
+  "category": "desktop video player",
+  "keywords": [
+   "video player",
+   "libmpv",
+   "mpv",
+   "tauri",
+   "tauri 2",
+   "svelte",
+   "torrent streaming",
+   "magnet link",
+   "stream torrent while downloading",
+   "chromecast",
+   "dlna",
+   "airplay",
+   "cast video to tv",
+   "watch together",
+   "synced playback",
+   "watch with friends remotely",
+   "subtitle search",
+   "opensubtitles",
+   "hash subtitle matching",
+   "seekbar thumbnails",
+   "frame preview",
+   "hdr playback",
+   "dolby vision",
+   "hardware decoding",
+   "d3d11va",
+   "videotoolbox",
+   "mini player",
+   "skip intro",
+   "chapters",
+   "playback queue",
+   "resume playback",
+   "yt-dlp links",
+   "jackett",
+   "prowlarr",
+   "vlc alternative",
+   "iina alternative",
+   "mac video player",
+   "windows video player",
+   "gpl video player"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11783,
+  "output": 1333
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "bastienwirtz/homer",
+ "repo": "bastienwirtz/homer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Homer - Dead simple static homepage to expose your server services, with an easy yaml configuration and connectivity check. (Demo) Apache-2.0 Docker/K8S/Nodejs"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Dashboards",
+   "entry": "Homer | A dead simple static homepage for your server"
+  }
+ ],
+ "summary": {
+  "one_liner": "Homer is a static, YAML-configured homepage that lists and links your self-hosted services in a searchable dashboard.",
+  "what_it_does": "Homer generates a static HTML/JS dashboard from a single YAML configuration file (assets/config.yml) that defines your services as links and cards. It supports multiple pages and item grouping, theme customization, and fuzzy search across entries. Keyboard shortcuts let you start searching with \"/\" and open the first match with Enter, optionally in a new tab with Alt/Option+Enter. It can be installed as a PWA and includes \"smart cards\" for service status. The dashboard is served by any HTTP server and is run either from a Docker image, a prebuilt release tarball, or a manual pnpm build.",
+  "use_cases": [
+   "Build a homepage linking to self-hosted services",
+   "Organize service links into multiple pages and groups",
+   "Run a lightweight start page on a home server",
+   "Search and launch bookmarked services quickly from the keyboard",
+   "Deploy a static dashboard in Docker or Kubernetes"
+  ],
+  "how_to_run": [
+   "docker run -d --name homer -p 8080:8080 --mount type=bind,source=\"/path/to/config/dir\",target=/www/assets --restart=unless-stopped b4bz/homer:latest",
+   "Or use docker-compose with image b4bz/homer, mounting /path/to/config/dir to /www/assets on port 8080",
+   "Or download homer.zip from the release page, unzip it, and run: cp assets/config.yml.dist assets/config.yml",
+   "Serve the extracted folder with a web server, e.g. pnpx http-server or python -m http.server 8010",
+   "Build manually: pnpm install && pnpm build, then serve the /dist directory"
+  ],
+  "stack": [
+   "JavaScript",
+   "YAML",
+   "Docker",
+   "pnpm",
+   "Node.js"
+  ],
+  "notable": [
+   "Entire dashboard is static HTML/JS driven by one YAML config file",
+   "Bind-mounted config directory makes the dashboard easy to edit in place",
+   "Installable as a PWA",
+   "Fuzzy search and keyboard shortcuts for quick navigation",
+   "Environment variables for subfolder hosting, port, and IPv6 toggle"
+  ],
+  "caveats": [
+   "Must be served over HTTP; opening index.html directly via file:// does not work",
+   "Container runs as uid/gid 1000 by default, so the assets directory permissions may need adjusting"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "homer",
+   "static homepage",
+   "service dashboard",
+   "homelab dashboard",
+   "startpage",
+   "yaml configuration",
+   "self-hosted dashboard",
+   "server landing page",
+   "service links",
+   "docker dashboard",
+   "kubernetes dashboard",
+   "pwa homepage",
+   "fuzzy search",
+   "keyboard shortcuts",
+   "bookmark dashboard",
+   "personal dashboard",
+   "static html dashboard",
+   "nodejs",
+   "pnpm",
+   "homelab start page",
+   "organize services",
+   "service launcher",
+   "b4bz/homer",
+   "dashboard for my server",
+   "alternative to heimdall",
+   "lightweight homepage",
+   "expose my services"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2697,
+  "output": 1207
+ },
+ "generated": "2026-10-29"
+}

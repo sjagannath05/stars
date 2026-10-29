@@ -1,0 +1,82 @@
+{
+ "id": "pallets/itsdangerous",
+ "repo": "pallets/itsdangerous",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Cryptography",
+   "entry": "itsdangerous - Safely pass trusted data to untrusted environments and back."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python library of helpers that cryptographically sign data so it can be passed to untrusted environments and verified when it comes back.",
+  "what_it_does": "Provides helpers to serialize data into signed tokens, so tampering can be detected when the token is returned. The README says data can have customized serialization, is compressed as needed, and can carry a timestamp that is checked automatically when a token is loaded. The example uses URLSafeSerializer with a secret key and a namespace string to dumps a dict into a token and loads it back. The README gives no further API detail beyond this example.",
+  "use_cases": [
+   "signing tokens passed through web requests",
+   "tamper-proof user id cookies",
+   "expiring signed links or tokens",
+   "passing trusted data through untrusted clients",
+   "signed serialized payloads in Python apps"
+  ],
+  "how_to_run": [
+   "pip install itsdangerous",
+   "from itsdangerous import URLSafeSerializer",
+   "auth_s = URLSafeSerializer(\"secret key\", \"auth\")",
+   "token = auth_s.dumps({\"id\": 5, \"name\": \"itsdangerous\"})",
+   "data = auth_s.loads(token)"
+  ],
+  "stack": [
+   "Python"
+  ],
+  "notable": [
+   "Signs data so tampering is detectable, without encrypting the payload per the README's framing of signing",
+   "Optional automatic timestamp added and verified on load",
+   "Customizable serialization and automatic compression as needed",
+   "Part of the Pallets project ecosystem"
+  ],
+  "caveats": [
+   "The README is brief and gives only one example; detailed API docs are not included in it",
+   "The README's donation and contributing links are empty, so no further project links are shown"
+  ],
+  "license": "unknown",
+  "category": "python cryptography library",
+  "keywords": [
+   "itsdangerous",
+   "python signing library",
+   "cryptographic signing",
+   "signed tokens",
+   "tamper detection",
+   "untrusted data",
+   "urlsafeserializer",
+   "serializer",
+   "timestamp signature",
+   "token verification",
+   "secret key signing",
+   "web request tokens",
+   "pallets",
+   "flask ecosystem",
+   "data serialization",
+   "compression",
+   "sign data python",
+   "pass data to client safely",
+   "verify token integrity",
+   "signed cookies",
+   "tamper-proof token",
+   "signed url tokens",
+   "expiring tokens",
+   "python cryptography",
+   "awesome python cryptography",
+   "secure payload transfer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1849,
+  "output": 925
+ },
+ "generated": "2026-10-29"
+}

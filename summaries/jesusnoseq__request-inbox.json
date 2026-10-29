@@ -1,0 +1,105 @@
+{
+ "id": "jesusnoseq/request-inbox",
+ "repo": "jesusnoseq/request-inbox",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Testing",
+   "entry": "Request Inbox - Collect and inspect HTTP requests for testing and debugging. Create and manage inboxes, capture detailed request data, configure custom responses. (Demo, Source Code) Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Request Inbox is a self-hostable web app for collecting and inspecting incoming HTTP requests, a free alternative to webhook.site and webhookinbox.com.",
+  "what_it_does": "It lets you create, list, and delete inboxes that capture incoming HTTP requests with headers, body, and metadata, and view them in a web UI with a JSON viewer and auto-refresh. Each inbox can be configured with custom response headers and body, optionally as a Go template when marked dynamic. Callbacks forward a captured request to another service with forwarded headers and a templated body, and a callback can be retried. Inboxes can be private, and access is handled through GitHub or Google OAuth or API keys. The backend is a Go API with an MCP server and an OpenAPI 3.1 spec, and the frontend is React with a browser WebMCP tool layer.",
+  "use_cases": [
+   "Inspect webhooks during development",
+   "Debug HTTP requests from third-party services",
+   "Test outgoing callbacks and their responses",
+   "Serve custom mock HTTP responses for testing",
+   "Give AI agents access to inboxes via MCP"
+  ],
+  "how_to_run": [
+   "docker-compose up -d",
+   "docker pull jesusnoseq/request-inbox:latest",
+   "docker run -d -p 80:80 -p 8080:8080 -v inbox-data:/app/data jesusnoseq/request-inbox:latest",
+   "docker-compose -f docker-compose-dev.yml up --build",
+   "cd api && make install && make run-api-hot",
+   "make install-front && make launch-front"
+  ],
+  "stack": [
+   "Go",
+   "Gin",
+   "React",
+   "TypeScript",
+   "Material-UI",
+   "pnpm",
+   "BadgerDB",
+   "DynamoDB",
+   "Terraform",
+   "AWS Lambda",
+   "API Gateway",
+   "S3",
+   "CloudFront",
+   "JWT",
+   "OAuth2",
+   "PostHog",
+   "Docker",
+   "nginx",
+   "OpenAPI 3.1"
+  ],
+  "notable": [
+   "Single Docker container bundling nginx and the Go API, with images on Docker Hub and GitHub Container Registry",
+   "Backend MCP server with tools for creating inboxes, listing and clearing captured requests, and managing callbacks",
+   "Browser WebMCP tools and forms that let agents act in the active session",
+   "Strict callback URL policy in production that blocks private, loopback, and link-local destinations and pins DNS-checked IPs",
+   "Can also run as an AWS Lambda behind API Gateway"
+  ],
+  "caveats": [
+   "Production callback destinations are restricted; the local development and Compose policy is permissive and must not be used as-is in production",
+   "Planned features such as alerts, import/export, request pass/fail testing, and limits are not yet implemented",
+   "Production deployment described targets AWS infrastructure via Terraform and GitHub Actions"
+  ],
+  "license": "Apache-2.0",
+  "category": "http request inspection",
+  "keywords": [
+   "webhook testing",
+   "webhook inspector",
+   "http request inspector",
+   "request bin",
+   "capture http requests",
+   "inspect webhooks",
+   "debug http requests",
+   "webhook.site alternative",
+   "webhookinbox alternative",
+   "self-hosted webhook tester",
+   "request inbox",
+   "mock http responses",
+   "custom http response",
+   "http callback forwarding",
+   "callback retry",
+   "api testing tool",
+   "mcp server",
+   "openapi api",
+   "golang gin backend",
+   "react frontend",
+   "docker compose webhook",
+   "dynamic response templates",
+   "capture incoming requests",
+   "debug callbacks",
+   "test third party webhooks",
+   "share inbox with team",
+   "private inboxes",
+   "api keys for inboxes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7389,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

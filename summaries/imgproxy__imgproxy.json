@@ -1,0 +1,88 @@
+{
+ "id": "imgproxy/imgproxy",
+ "repo": "imgproxy/imgproxy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Proxy",
+   "entry": "imgproxy - Fast and secure standalone server for resizing and converting remote images. (Source Code) MIT Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "imgproxy is a standalone HTTP server that resizes, processes, and converts remote images on the fly via specially crafted URLs.",
+  "what_it_does": "It fetches a source image from a URL, applies processing options encoded in the request URL (resizing, cropping, rotating, watermarking, filters), and serves the result. Output can be used directly in HTML, CSS, or JavaScript as an ordinary image URL. It supports format conversion (basic formats include JPEG, PNG, GIF, WebP, AVIF, and JPEG XL), color profile and metadata stripping, PNG quantization, and simple smart cropping. Security options include signed image URLs, checking image type and real dimensions before full decoding, HTTP header authorization, and restrictions on image sources, file size, and processing options. The README says it is built on libvips.",
+  "use_cases": [
+   "resize images on the fly for a web app",
+   "serve image thumbnails from remote URLs",
+   "convert images to WebP or AVIF",
+   "offload image processing from an application server",
+   "strip metadata and optimize images for delivery",
+   "generate signed image URLs to prevent abuse"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -it ghcr.io/imgproxy/imgproxy:latest"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "libvips",
+   "Kubernetes"
+  ],
+  "notable": [
+   "Drop-in replacement for in-app image processing code, processing images on demand",
+   "Built on libvips with a low memory footprint, per the README",
+   "Image bomb protection by checking real dimensions before decoding",
+   "Signed URLs and HTTP header authorization to restrict access",
+   "Paid imgproxy Pro edition adds video, PDF, and Photoshop previews, plus advanced features"
+  ],
+  "caveats": [
+   "Advanced features such as video/PDF/Photoshop previews, object detection, and SSIM-based auto-quality are only in the paid imgproxy Pro edition",
+   "HTTPS is not built in; the README expects it to be handled by a CDN, load balancer, or reverse proxy"
+  ],
+  "license": "Apache License 2.0",
+  "category": "image processing server",
+  "keywords": [
+   "imgproxy",
+   "image resizing server",
+   "on-the-fly image processing",
+   "image proxy",
+   "thumbnail service",
+   "dynamic image resizing",
+   "image conversion",
+   "webp converter",
+   "avif conversion",
+   "jpeg xl",
+   "libvips",
+   "go image server",
+   "docker image server",
+   "self-hosted image resizer",
+   "signed image urls",
+   "image bomb protection",
+   "image optimization",
+   "strip image metadata",
+   "smart cropping",
+   "watermarking",
+   "image cdn origin",
+   "resize images from url",
+   "resize remote images",
+   "serve resized images",
+   "image transformation api",
+   "kubernetes image processing",
+   "reduce image size for web",
+   "generate thumbnails on demand",
+   "alternative to in-app image libraries",
+   "image processing microservice",
+   "apache 2.0 image tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3597,
+  "output": 1122
+ },
+ "generated": "2026-10-29"
+}

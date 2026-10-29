@@ -1,0 +1,93 @@
+{
+ "id": "epaxpax/transmission-remote-gui",
+ "repo": "epaxpax/transmission-remote-gui",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📤 Sharing Files (14)",
+   "entry": "Transmission Remote GUI - Native SwiftUI remote for the Transmission daemon with torrent rules, RSS auto-download and tracker/folder filters; a modern transgui alternative."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native SwiftUI macOS remote GUI for the Transmission BitTorrent daemon, speaking its RPC protocol, intended as a modern alternative to transgui.",
+  "what_it_does": "It connects to one or more Transmission daemons and shows a sortable, customizable torrent list with sidebar filters by status, tracker, download folder and label. Torrents can be added by magnet link, .torrent file or drag and drop, with a per-torrent download folder. A details panel covers General, Files (folder tree), Peers (with country flags) and Trackers, and torrent rules set ratio, idle limits, speed limits or labels per tracker, label or name, with a dry run before applying. An RSS auto-downloader with title-match rules, session settings, turtle mode with a bandwidth scheduler, and a menu bar icon with speed graph are also included. The UI is available in English, Hungarian and Simplified Chinese.",
+  "use_cases": [
+   "Manage a remote Transmission daemon from a Mac",
+   "Add torrents to a server by magnet link or .torrent file",
+   "Automatically download torrents from RSS feeds",
+   "Set seed ratio or speed limits per tracker",
+   "Monitor transfer speeds from the menu bar",
+   "Batch-edit torrent properties and labels"
+  ],
+  "how_to_run": [
+   "brew install --cask epaxpax/tap/transmission-remote-gui-macos",
+   "./Scripts/build-app.sh # builds dist/Transmission Remote GUI.app (release build, ad-hoc signed)",
+   "swift run TransmissionRemoteGUI # run for development",
+   "brew install transmission-cli",
+   "transmission-daemon --foreground --port 9091 # test daemon, then add 127.0.0.1:9091 in Settings → Servers"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "macOS 14+",
+   "Transmission RPC protocol",
+   "Python (geoip table build script)",
+   "Docker (UI test daemon)"
+  ],
+  "notable": [
+   "Clean-room Swift reimplementation of the transgui features, with no code from other projects",
+   "Torrent rules engine: first match wins, each torrent classified once, dry run before changes, and ratio/idle limits enforced by the daemon while the app is closed",
+   "Peer country flags from a bundled offline DB-IP table, with no peer addresses sent anywhere",
+   "Optional mTLS client-certificate authentication per server",
+   "Opt-in anonymous usage statistics, off by default"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; Linux and Windows are not mentioned",
+   "Ad-hoc signed only; distributing to other Macs requires an Apple Developer ID and notarization",
+   "Roadmap items still open include queue reordering, tracker add/remove, watch folder and JSON-RPC 2.0 support"
+  ],
+  "license": "MIT",
+  "category": "torrent client remote",
+  "keywords": [
+   "transmission",
+   "transmission remote",
+   "torrent client gui",
+   "macos torrent app",
+   "swiftui",
+   "transmission-daemon",
+   "bittorrent remote control",
+   "transgui alternative",
+   "transgui",
+   "rpc client",
+   "torrent rss downloader",
+   "rss auto download torrents",
+   "torrent ratio rules",
+   "seed ratio limit",
+   "tracker filter",
+   "magnet link",
+   "torrent file drag and drop",
+   "menu bar torrent",
+   "peer country flags",
+   "mtls client certificate",
+   "keychain passwords",
+   "sequential download streaming",
+   "bandwidth scheduler",
+   "turtle mode",
+   "remote torrent management mac",
+   "control torrents on server from mac",
+   "swift torrent app",
+   "homebrew cask torrent",
+   "open source mac app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5597,
+  "output": 1366
+ },
+ "generated": "2026-10-29"
+}

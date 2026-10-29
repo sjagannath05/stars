@@ -1,0 +1,107 @@
+{
+ "id": "mcourtyard/m-courtyard",
+ "repo": "Mcourtyard/m-courtyard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "M-Courtyard - Desktop app for fine-tuning LLMs on Apple Silicon Macs with zero code. Import documents, generate training datasets with AI, LoRA fine-tune, test, and export to Ollama — entirely offline."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS desktop app that guides users through preparing documents into datasets, LoRA fine-tuning of local LLMs on Apple Silicon via MLX, testing, and exporting to Ollama or MLX formats, all without writing code.",
+  "category": "local llm fine-tuning",
+  "keywords": [
+   "llm fine-tuning",
+   "lora",
+   "mlx",
+   "mlx-lm",
+   "apple silicon",
+   "m1 m2 m3 m4",
+   "macos desktop app",
+   "tauri",
+   "no-code fine-tuning",
+   "zero code ai training",
+   "offline llm",
+   "privacy-first ai",
+   "local ai",
+   "ollama export",
+   "gguf quantization",
+   "lm studio",
+   "mlx-lm.server",
+   "dataset generation",
+   "instruction dataset",
+   "pdf to dataset",
+   "docx import",
+   "document to training data",
+   "train model on my documents",
+   "fine-tune on private data",
+   "run ai locally on mac",
+   "custom ai model without coding",
+   "quantize model q4 q8",
+   "huggingface models",
+   "modelscope",
+   "chat with fine-tuned adapter",
+   "ollama alternative to cloud fine-tuning"
+  ],
+  "what_it_does": "M-Courtyard is a desktop app for macOS (Apple Silicon) that walks users through a four-step pipeline: importing data, generating datasets, fine-tuning, and exporting. It imports .txt, .pdf, and .docx files by drag and drop, cleans and chunks them, and builds instruction-style datasets such as Knowledge Q&A, Style Imitation, or Instruction Training. Dataset generation can use local Ollama or LM Studio models, or a built-in rules mode that needs no external runtime. Training uses LoRA via mlx-lm, with presets (Quick, Standard, Thorough) and live loss charts and ETA. Users can chat with the resulting adapter in the app, then export it by merging and quantizing (Q4/Q8/F16) to Ollama, or as fused MLX models for mlx-lm.server or LM Studio. The README says the app's Python and mlx-lm environment is set up automatically via uv.",
+  "use_cases": [
+   "fine-tune an LLM on private company documents",
+   "turn PDFs and Word files into training datasets",
+   "train a personal writing-style model offline",
+   "export a custom model to Ollama without coding",
+   "run LoRA fine-tuning on a Mac without CUDA",
+   "generate instruction datasets from local documents"
+  ],
+  "how_to_run": [
+   "Download the latest .dmg from the Releases page and drag M-Courtyard.app to Applications",
+   "Run: sudo xattr -rd com.apple.quarantine /Applications/M-Courtyard.app",
+   "Build from source: git clone the repo and cd m-courtyard/app",
+   "pnpm install",
+   "pnpm tauri dev (development mode)",
+   "pnpm tauri build (production build)"
+  ],
+  "stack": [
+   "Apple MLX",
+   "mlx-lm",
+   "Tauri 2.x",
+   "Rust",
+   "React 19",
+   "TypeScript",
+   "TailwindCSS v4",
+   "Vite",
+   "Zustand",
+   "SQLite",
+   "uv",
+   "Python",
+   "Node.js",
+   "pnpm"
+  ],
+  "notable": [
+   "Zero-code pipeline from raw PDF/DOCX files to a fine-tuned model that can be exported",
+   "Fully local: the README says no data leaves the machine",
+   "Built-in rules mode generates datasets with no Ollama or LM Studio installed",
+   "Sets AGX_RELAX_CDM_CTXSTORE_TIMEOUT=1 for training subprocesses to work around a macOS Tahoe Metal watchdog issue",
+   "One-click export to Ollama (merge and quantize) and MLX export for LM Studio"
+  ],
+  "caveats": [
+   "Requires macOS 14+ and Apple Silicon (M1 through M4); not for Intel Macs or other platforms",
+   "16 GB+ RAM recommended for 7B/8B models; 8 GB only suits small models (1.5B/3B)",
+   "The app is not code-signed, so macOS needs a quarantine-removal command to launch it",
+   "Ollama and LM Studio are optional; Ollama is needed for Ollama dataset generation and Ollama export",
+   "Source build requires Node.js 18+, pnpm, the Rust toolchain, and Xcode Command Line Tools",
+   "Commercial use or different license terms require contacting the author"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4147,
+  "output": 1611
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "alibaba/zvec",
+ "repo": "alibaba/zvec",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database",
+   "entry": "zvec - A lightweight, in-process vector database that embeds directly into applications."
+  }
+ ],
+ "summary": {
+  "one_liner": "Zvec is an open-source, in-process vector database that embeds directly into applications, with low-latency similarity search and minimal setup.",
+  "what_it_does": "Zvec runs as a library inside your application process rather than as a separate server. You define a collection schema with vector fields, insert documents with vector values, and run similarity queries through the Python API shown in the README. The README describes support for dense and sparse vectors, multi-vector queries, several vector index types spanning memory and disk, full-text search over string fields, and hybrid queries that combine vector similarity, full-text search, and structured filters. Storage uses write-ahead logging for persistence. Multiple processes can read the same collection at once, but writes are single-process exclusive. Official SDKs are listed for Python, Node.js, Go, Rust, Java, and Dart/Flutter.",
+  "use_cases": [
+   "embedded similarity search in applications",
+   "semantic search over document embeddings",
+   "local vector search in notebooks or CLI tools",
+   "hybrid search combining vectors, keywords and filters",
+   "on-device vector search on mobile or edge",
+   "Chinese full-text search over string fields"
+  ],
+  "how_to_run": [
+   "pip install zvec",
+   "import zvec",
+   "schema = zvec.CollectionSchema(name=\"example\", vectors=zvec.VectorSchema(\"embedding\", zvec.DataType.VECTOR_FP32, 4))",
+   "collection = zvec.create_and_open(path=\"./zvec_example\", schema=schema)",
+   "collection.insert([zvec.Doc(id=\"doc_1\", vectors={\"embedding\": [0.1, 0.2, 0.3, 0.4]})])",
+   "results = collection.query(zvec.Query(field_name=\"embedding\", vector=[0.4, 0.3, 0.3, 0.1]), topk=10)"
+  ],
+  "stack": [
+   "C++",
+   "Python 3.10-3.14 (64-bit)",
+   "Node.js (@zvec/zvec)",
+   "Go",
+   "Rust (zvec-rust)",
+   "Java 8+ (org.zvec:zvec-java)",
+   "Dart / Flutter"
+  ],
+  "notable": [
+   "Runs in-process with no server or configuration, per the README",
+   "Write-ahead logging for durable storage across crashes and power loss",
+   "Multiple concurrent readers on one collection, with single-process writes",
+   "Built-in full-text search and hybrid queries that fuse vector, keyword and filter conditions",
+   "Embedded Jieba dictionary and HMM model for Chinese tokenization in v0.8.0"
+  ],
+  "caveats": [
+   "Writes are single-process exclusive, so concurrent writers are not supported",
+   "Python requires 64-bit Python 3.10-3.14; Java requires Java 8+",
+   "The README notes that uniform quantization can increase error and reduce recall",
+   "Stack is not fully specified in the README; the C++ core is inferred from the build-from-source reference and is not stated explicitly"
+  ],
+  "license": "unknown",
+  "category": "in-process vector database",
+  "keywords": [
+   "vector database",
+   "embedded vector database",
+   "in-process vector search",
+   "similarity search",
+   "approximate nearest neighbor",
+   "ann search",
+   "vector index",
+   "hnsw",
+   "diskann",
+   "ivf",
+   "rabitq",
+   "quantization",
+   "dense vectors",
+   "sparse vectors",
+   "full-text search",
+   "bm25",
+   "hybrid search",
+   "semantic search",
+   "embedding search",
+   "vector store",
+   "lightweight vector db",
+   "pip vector search",
+   "local vector database",
+   "no server vector search",
+   "chinese full-text search",
+   "wal durability",
+   "alternative to chromadb",
+   "alternative to faiss",
+   "search embeddings locally",
+   "store embeddings in my app",
+   "on-device vector search"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3544,
+  "output": 1382
+ },
+ "generated": "2026-10-29"
+}

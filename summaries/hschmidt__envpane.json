@@ -1,0 +1,85 @@
+{
+ "id": "hschmidt/envpane",
+ "repo": "hschmidt/EnvPane",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "EnvPane - OS X preference pane for environment variables. [![Open-Source Software][OSS Icon] ![Freeware][Freeware Icon]](https://github.com/hschmidt/EnvPane)"
+  }
+ ],
+ "summary": {
+  "one_liner": "EnvPane is a macOS System Settings-style preference pane for setting per-user environment variables that apply to both GUI and terminal apps, without logging out.",
+  "what_it_does": "Provides an \"Environment Variables\" preference pane where you add, edit and delete name/value pairs stored in ~/.MacOSX/environment.plist. A bundled launchd agent runs after login and whenever that file changes, and pushes the variables into the user's launchd instance, so newly launched applications pick them up within a few seconds. It restores the ~/.MacOSX/environment.plist mechanism that Apple dropped after Mountain Lion. Values can interpolate other variables (${NAME} syntax) and the output of shell commands written as $(command), with $$ used for a literal dollar sign. Running applications are not updated and must be relaunched. The README says it cannot set PATH or DYLD_ variables.",
+  "use_cases": [
+   "Set environment variables for all macOS GUI apps",
+   "Make shell-style variables available to apps launched from Finder",
+   "Edit ~/.MacOSX/environment.plist without logging out",
+   "Interpolate shell command output into environment variable values",
+   "Restore environment.plist support on newer macOS"
+  ],
+  "how_to_run": [
+   "(cd ~/Library/PreferencePanes && rm -rf EnvPane.prefPane && curl -sL | tar -xjf -)",
+   "xattr -dr com.apple.quarantine ~/Downloads/EnvPane-0.8.dmg",
+   "Double-click EnvPane-0.8.dmg, then double-click EnvPane.pref-pane",
+   "Choose 'Install for this user only'"
+  ],
+  "stack": [
+   "Objective-C (Xcode project)",
+   "Apple launchd APIs",
+   "Discount C Markdown library (build dependency)",
+   "launchd source tree (build dependency)"
+  ],
+  "notable": [
+   "Applies changes to new launches immediately, without reboot or logout",
+   "Restores ~/.MacOSX/environment.plist support removed by Apple after Mountain Lion",
+   "Supports variable and shell-command interpolation in values",
+   "Code-signed universal binary for Intel and Apple Silicon (0.8)",
+   "Installs a launchd agent that watches the plist for changes"
+  ],
+  "caveats": [
+   "Not notarized by Apple, so it is quarantined on download and needs the xattr workaround",
+   "Cannot set PATH or DYLD_ variables",
+   "Requires macOS 12 Monterey or higher for release 0.8; installs per user only"
+  ],
+  "license": "Apache License, Version 2.0",
+  "category": "macos system configuration",
+  "keywords": [
+   "environment variables",
+   "macos",
+   "preference pane",
+   "environment.plist",
+   "launchd",
+   "launchctl setenv",
+   "setenv gui apps",
+   "env vars mac",
+   "system settings environment",
+   "shell variables for finder apps",
+   "dotenv alternative",
+   "per-user environment",
+   "mac os x environment",
+   "terminal and gui environment",
+   "launch agent",
+   "variable interpolation",
+   "objective-c mac app",
+   "apple silicon universal",
+   "set env vars without logout",
+   "macos environment manager",
+   "os x preference pane",
+   "unsetenv",
+   "developer utility mac",
+   "restore environment.plist",
+   "shell command substitution in env"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7057,
+  "output": 1223
+ },
+ "generated": "2026-10-29"
+}

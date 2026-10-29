@@ -1,0 +1,97 @@
+{
+ "id": "serpro69/capy",
+ "repo": "serpro69/capy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "capy by serpro69 - 🦫 Privacy-first virtualization layer for LLM context with MCP protocol for tool access."
+  }
+ ],
+ "summary": {
+  "one_liner": "capy is a local, encrypted MCP server (distributed as a Go binary) that keeps large command, file, and web outputs out of a coding agent's context window, and also indexes project notes and archives Claude Code and Codex conversations.",
+  "what_it_does": "Runs commands, scripts, and file processing in subprocesses and returns only summaries or search hits to the agent, with bounded output and encrypted run capture for later recovery. It indexes project docs and notes as durable sources that can be searched later from the terminal or through MCP. It can fetch URLs and index their content for follow-up searches, with a 24-hour default cache. It archives Claude Code and Codex sessions into an encrypted session vault that supports search, browsing, restore, and resume. Setup registers the MCP server and hooks for Claude Code and Codex CLI, and the hooks route large-output work toward capy and enforce command and read-permission policies. The README lists eleven MCP tools, including capy_execute, capy_index, capy_search, and capy_vault_search.",
+  "use_cases": [
+   "reduce context usage from large logs or API responses",
+   "search project documentation from a coding agent",
+   "index notes and retrieve passages across sessions",
+   "archive and search past Claude Code or Codex conversations",
+   "restore or resume an archived agent session",
+   "fetch a web page and search its content without loading it whole",
+   "run batches of shell commands and search their output"
+  ],
+  "how_to_run": [
+   "brew install serpro69/tap/capy",
+   "export CAPY_DB_KEY=$(openssl rand -base64 48)",
+   "capy setup --platform claude-code",
+   "capy doctor",
+   "capy index docs --source project-docs --include '**/*.md'",
+   "capy search connection pooling"
+  ],
+  "stack": [
+   "Go",
+   "SQLite (FTS5 full-text search)",
+   "MCP (Model Context Protocol) over stdio",
+   "Claude Code hooks",
+   "Codex CLI hooks"
+  ],
+  "notable": [
+   "Mandatory at-rest encryption for knowledge, run storage, and the session vault",
+   "Session vault archives Claude Code and Codex transcripts so they can be restored after the original files are deleted",
+   "Hooks redirect large-output HTTP and routine test/build commands toward capture, with Codex-specific routing and evidence rules",
+   "Local-only storage with no telemetry or hosted service, per the README",
+   "Benchmarks report 98.7% top-five relevance and 49.8% context compression on a 156-case synthetic suite"
+  ],
+  "caveats": [
+   "Captured execution is documented as supported only on Linux and macOS 26 on Apple Silicon, and requires CGO; Codex integration was live-checked only with Codex CLI 0.162.1 on Linux",
+   "Not an OS sandbox for arbitrary code; file-input checks do not cover every read inside submitted code and secret redaction is pattern-based",
+   "Requires a passphrase for the knowledge database and a separate CAPY_VAULT_KEY for the vault; losing keys or running out-of-sync setups can block access"
+  ],
+  "license": "Elastic License 2.0 (source-available)",
+  "category": "LLM context management",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "claude code",
+   "codex cli",
+   "llm context window",
+   "context compression",
+   "context saving",
+   "large output",
+   "encrypted knowledge base",
+   "session vault",
+   "conversation archive",
+   "search past conversations",
+   "restore claude code session",
+   "full text search",
+   "sqlite fts5",
+   "go binary",
+   "local rag",
+   "index project docs",
+   "documentation search for agent",
+   "web page fetch and index",
+   "run shell commands capture output",
+   "batch shell commands",
+   "agent hooks",
+   "command output filtering",
+   "privacy first local tool",
+   "encrypted at rest",
+   "knowledge retrieval",
+   "stdio server",
+   "token usage reduction",
+   "share files with my team",
+   "search my notes",
+   "save agent chat history"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12844,
+  "output": 1419
+ },
+ "generated": "2026-10-29"
+}

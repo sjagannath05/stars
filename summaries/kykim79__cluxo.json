@@ -1,0 +1,98 @@
+{
+ "id": "kykim79/cluxo",
+ "repo": "kykim79/Cluxo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Cluxo - Menu bar app that highlights your mouse cursor for screencasts, presentations, and pair programming."
+  }
+ ],
+ "summary": {
+  "one_liner": "Cluxo is a macOS menu bar app that highlights the mouse cursor with rings, click and scroll effects, a magnifier, spotlight, keystroke display and on-screen drawing for screencasts, presentations and pair programming.",
+  "category": "macos presentation tools",
+  "keywords": [
+   "cursor highlight",
+   "mouse cursor highlighter",
+   "macos menu bar app",
+   "screencast tool",
+   "screen recording cursor",
+   "presentation helper",
+   "pair programming cursor",
+   "magnifier",
+   "zoom lens",
+   "spotlight effect",
+   "spotlight dim screen",
+   "keystroke display",
+   "show keystrokes on screen",
+   "screen annotation",
+   "draw on screen",
+   "annotation tool",
+   "radial menu",
+   "click effect",
+   "shake to find cursor",
+   "trackpad gesture feedback",
+   "swift",
+   "swiftui",
+   "screencapturekit",
+   "cgeventtap",
+   "xcodegen",
+   "homebrew cask",
+   "cursor ring",
+   "highlight mouse pointer for demos",
+   "find my mouse pointer",
+   "pointer highlighter like mousepose",
+   "screenshot mode for obs"
+  ],
+  "what_it_does": "Cluxo runs as a menu bar-only macOS app (no Dock icon) that draws a colored ring around the mouse cursor, with selectable shapes, sizes, glow and breathing animation. It adds click ripples, drag stretching, scroll direction arrows, and a cursor trail. A live magnifier (1.5x to 4x), a spotlight that dims everything except the area around the cursor, and a keystroke overlay at the bottom of the screen are also included. A draw mode (Ctrl+Option+D) provides seven annotation tools such as pen, arrow, rectangle and highlighter, and a radial menu (Ctrl+Option+comma) lets you adjust effects while presenting. Most features are controlled by global Ctrl+Option shortcuts, and settings cover colors, shapes, sizes and UI language (system, Korean, English). ",
+  "use_cases": [
+   "highlight the cursor during screen recordings",
+   "point at things during a live presentation",
+   "show the cursor clearly in pair programming sessions",
+   "annotate the screen while presenting or recording a demo",
+   "display keyboard shortcuts pressed on screen for tutorials",
+   "zoom into a part of the screen with a magnifier",
+   "find a lost mouse pointer with a shake gesture"
+  ],
+  "how_to_run": [
+   "brew install --cask kykim79/tap/cluxo",
+   "Or download Cluxo.zip from Releases, move Cluxo.app to /Applications, and open it (right-click > Open on first launch)",
+   "Grant Accessibility and Input Monitoring permissions in System Settings (Screen Recording optional for magnifier)",
+   "Development: brew install xcodegen && gh repo clone kykim79/Cluxo && cd Cluxo && xcodegen && open Cluxo.xcodeproj",
+   "CLI build: xcodebuild -project Cluxo.xcodeproj -scheme Cluxo -configuration Release build"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "ScreenCaptureKit",
+   "CGEventTap",
+   "XcodeGen",
+   "Homebrew cask",
+   "MultitouchSupport (private API, trackpad gestures)"
+  ],
+  "notable": [
+   "Screenshot mode toggle lets external tools like screencapture or OBS capture the overlay, while the magnifier normally excludes its own overlay from capture",
+   "Radial menu with two-level sub-values and the ability to open it via a left-mouse long press or trackpad long press",
+   "Draw mode with seven annotation tools that follow the current ring color",
+   "Trackpad gesture visual feedback (experimental) built on a private MultitouchSupport API and off by default",
+   "Event-driven cursor tracking with no polling timer; overlays per display"
+  ],
+  "caveats": [
+   "Requires macOS 13.0 or later; the current build is Apple Silicon only (Intel needs a Universal build)",
+   "Requires Accessibility and Input Monitoring permissions; the app is not notarized in the README, so the Gatekeeper workaround may be needed for manual install",
+   "Trackpad gesture feedback relies on a private API and is disabled by default"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7016,
+  "output": 1568
+ },
+ "generated": "2026-10-29"
+}

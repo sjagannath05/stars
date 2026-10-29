@@ -1,0 +1,121 @@
+{
+ "id": "overmind-core/overmind",
+ "repo": "overmind-core/overmind",
+ "kind": "star",
+ "description": "The platform for continuously improving AI agents.",
+ "topics": [
+  "ai-agents",
+  "evals",
+  "fine-tuning",
+  "llm",
+  "llm-evaluation",
+  "llmops",
+  "lora",
+  "mcp",
+  "observability",
+  "python"
+ ],
+ "language": "Python",
+ "stars": 721,
+ "license": "AGPL-3.0",
+ "homepage": "https://overmindlab.ai",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Overmind is a platform that turns production agent traces or uploaded datasets into fine-tuned models and prompt/code optimisations, with observability, evals, and a unified inference API, and it can be self-hosted.",
+  "what_it_does": "Overmind instruments an AI agent's codebase with OpenTelemetry-based tracing via a Python SDK (pip install \"overmind[tracing]\") and scores traces as they arrive, matching them to agent capabilities. It builds versioned eval and training datasets from production traces or uploaded files, and lets you define per-capability eval metrics measured on live traces and in batch. It runs fine-tuning on Modal workers, benchmarks the resulting models against production, and serves them through one OpenAI-compatible API alongside frontier models. Optimisers run prompt, tool, and control-flow experiments in the repo, with the winning change delivered as a git diff. It exposes a REST API and an MCP server for Cursor, Claude Code, OpenCode and Codex, and the platform can be run locally with docker compose.",
+  "use_cases": [
+   "Fine-tune a model on an agent's production traces",
+   "Add tracing and observability to an LLM agent",
+   "Evaluate agent outputs against custom metrics per capability",
+   "Run prompt or code optimisation experiments on an agent repo",
+   "Compare fine-tuned models against frontier models on real traffic",
+   "Self-host an agent training and monitoring platform",
+   "Manage agent datasets and evals from a coding assistant via MCP"
+  ],
+  "how_to_run": [
+   "pip install \"overmind[tracing]\"",
+   "export OVERMIND_API_KEY=ovr_… # project key from the Console",
+   "git clone && cd overmind",
+   "cp .env.example .env # set required keys (OpenRouter, Modal, inference, AWS, HF, sandbox)",
+   "docker compose up -d",
+   "docker compose exec api python manage.py seed_demo --owner <owner> # optional demo workspace"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "Celery",
+   "Postgres",
+   "Redis",
+   "Modal",
+   "vLLM",
+   "OpenTelemetry",
+   "OpenRouter",
+   "Tesseract OCR",
+   "Grafana",
+   "Docker Compose",
+   "MCP"
+  ],
+  "notable": [
+   "Closes the loop from production traces to fine-tuned, served models benchmarked against your own metrics",
+   "MCP server with per-tool cost and destructive-action declarations, for Cursor, Claude Code, OpenCode and Codex",
+   "Split licensing: SDK and CLI under MIT, platform under AGPL-3.0, with self-hosting supported",
+   "Model weights are downloadable and retrainable by the user",
+   "Optimiser results are returned as git diffs in your own repo"
+  ],
+  "caveats": [
+   "Fine-tuning and serving require Modal workers, an AWS bucket, and several API keys before the API will boot",
+   "Hosted usage is metered; paid plans and credit caps depend on Stripe, which is optional for self-hosting",
+   "Self-hosted login is email/password only; Clerk and Stripe secrets are left blank"
+  ],
+  "license": "AGPL-3.0",
+  "category": "llm agent training platform",
+  "keywords": [
+   "llm observability",
+   "agent tracing",
+   "opentelemetry traces",
+   "fine-tuning platform",
+   "fine-tune llm on production data",
+   "llm evaluation",
+   "llmops",
+   "lora",
+   "agent evals",
+   "prompt optimisation",
+   "prompt optimization",
+   "mcp server",
+   "model context protocol",
+   "openai-compatible api",
+   "self-hosted llm platform",
+   "self-host agent monitoring",
+   "modal serverless gpu",
+   "vllm serving",
+   "dataset versioning",
+   "eval datasets",
+   "langfuse alternative",
+   "langsmith alternative",
+   "braintrust alternative",
+   "trace scoring",
+   "coding agent integration",
+   "cursor claude code plugin",
+   "improve ai agent automatically",
+   "llm trace export",
+   "django celery app",
+   "agpl self-hosted",
+   "decision models"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5761,
+  "output": 1468
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "bastibe/python-soundfile",
+ "repo": "bastibe/python-soundfile",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Audio & Video Processing",
+   "entry": "soundfile - An audio library for reading and writing sound files, based on libsndfile, CFFI, and NumPy."
+  }
+ ],
+ "summary": {
+  "one_liner": "python-soundfile is a Python library for reading and writing audio files, wrapping libsndfile through CFFI and returning data as NumPy arrays.",
+  "what_it_does": "Reads and writes sound files through the libsndfile C library, accessed via CFFI. Audio data is represented as NumPy arrays. The main functions are read() and write() for whole files, and blocks() for reading short, optionally overlapping chunks, such as computing RMS level per block. The SoundFile class keeps a file open for step-by-step reading and writing, with seek, tell, truncate, and flush methods, and supports a context manager. It can also use virtual I/O and the buffer_read and buffer_write methods that bypass NumPy. The README says it opens all formats libsndfile supports, for example WAV, FLAC, OGG and MAT, with known issues writing OGG files.",
+  "use_cases": [
+   "reading WAV files into NumPy arrays",
+   "converting audio between formats such as WAV to FLAC",
+   "processing long audio files in blocks",
+   "computing signal level or features per audio block",
+   "reading and writing sound files from Python scripts"
+  ],
+  "how_to_run": [
+   "pip install soundfile",
+   "import soundfile as sf",
+   "data, samplerate = sf.read('existing_file.wav')",
+   "sf.write('new_file.flac', data, samplerate)"
+  ],
+  "stack": [
+   "Python",
+   "CFFI",
+   "NumPy",
+   "libsndfile"
+  ],
+  "notable": [
+   "Wraps libsndfile, so it reads and writes many formats including WAV, FLAC, OGG and MAT",
+   "pip wheels on Windows, macOS and Linux bundle libsndfile",
+   "blocks() reads audio in overlapping chunks for block processing",
+   "SoundFile objects support explicit file handling and seeking",
+   "Thread-safe for concurrent reads through separate handles, but not for shared writers"
+  ],
+  "caveats": [
+   "Writing OGG files can produce empty files with certain libsndfile versions (issue #130)",
+   "Source installs require installing libsndfile separately through the system package manager",
+   "Dropped support for Python 3.9 and earlier in version 0.14.0"
+  ],
+  "license": "BSD 3-Clause License",
+  "category": "audio file io",
+  "keywords": [
+   "soundfile",
+   "python audio library",
+   "libsndfile",
+   "cffi",
+   "numpy audio",
+   "read wav python",
+   "write flac python",
+   "audio file reader",
+   "audio file writer",
+   "sound file io",
+   "block processing audio",
+   "overlapping audio blocks",
+   "wav to flac conversion",
+   "ogg writer",
+   "mat file reader",
+   "audio samples as numpy arrays",
+   "read audio into numpy",
+   "sf.read",
+   "sf.write",
+   "audio file metadata",
+   "virtual file io audio",
+   "pathlib audio files",
+   "audio decoding python",
+   "python sound file library",
+   "audio file conversion",
+   "read sound files",
+   "save audio file python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6373,
+  "output": 1057
+ },
+ "generated": "2026-10-29"
+}

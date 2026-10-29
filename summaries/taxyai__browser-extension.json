@@ -1,0 +1,94 @@
+{
+ "id": "taxyai/browser-extension",
+ "repo": "TaxyAI/browser-extension",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "Taxy AI is an open-source Chrome extension that uses GPT-4 (or GPT-3.5) to control your browser and carry out repetitive ad-hoc instructions on web pages.",
+  "what_it_does": "Taxy reads the current web page's DOM through a content script, strips it down to interactive or semantically important elements, and assigns each one an id. It sends this simplified DOM and the user's instruction to a selected LLM, which can respond with click(id) or setValue(id, text) actions. Taxy executes those actions through the chrome.debugger API and loops, adding each action to the history, until the LLM says the task is done, the user stops it, or an error halts it. Tasks are capped at 50 actions. The README says it currently supports only ad-hoc instructions, with saved and scheduled workflows planned for the future.",
+  "use_cases": [
+   "automate repetitive actions in a web browser",
+   "schedule a calendar event with an AI agent",
+   "search and play a movie on a streaming site",
+   "fill in text fields on web pages using GPT-4",
+   "prototype LLM-driven browser automation"
+  ],
+  "how_to_run": [
+   "Ensure you have Node.js >= 16",
+   "Clone this repository",
+   "Run `yarn` to install the dependencies",
+   "Run `yarn start` to build the package",
+   "In Chrome, go to chrome://extensions/, toggle Developer mode, click Load unpacked extension, and select the build folder",
+   "Open the popup with cmd+shift+y (mac) or ctrl+shift+y (windows/linux), or use the devtools panel, then paste an OpenAI API key"
+  ],
+  "stack": [
+   "TypeScript",
+   "React 17",
+   "Webpack 5",
+   "Webpack Dev Server 4",
+   "React Hot Loader",
+   "Chrome Extension Manifest V3",
+   "chrome.debugger API",
+   "eslint-config-react-app",
+   "Prettier",
+   "OpenAI GPT-3.5 / GPT-4"
+  ],
+  "notable": [
+   "Sends page contents and instructions only to the chosen LLM; the README says nothing is sent to Taxy's own servers",
+   "Simplifies and templatizes the DOM to reduce token count before each LLM call",
+   "Action cycle loop: observe DOM, ask LLM, execute one action, repeat, with full action history in each prompt",
+   "Safety-first design that halts automatically on unexpected LLM responses",
+   "Available as a popup or a devtools panel"
+  ],
+  "caveats": [
+   "Research preview; the README says many workflows fail or confuse the agent",
+   "Not on the Chrome Web Store; must be built and loaded locally from source",
+   "Requires the user's own OpenAI API key"
+  ],
+  "license": "unknown",
+  "category": "browser automation extension",
+  "keywords": [
+   "browser automation",
+   "chrome extension",
+   "ai browser agent",
+   "gpt-4 browser control",
+   "llm web automation",
+   "openai browser agent",
+   "dom simplification",
+   "chrome.debugger",
+   "automate repetitive web tasks",
+   "control my browser with ai",
+   "ai assistant for web pages",
+   "click and type with ai",
+   "automate google calendar",
+   "netflix automation",
+   "open source browser agent",
+   "react chrome extension",
+   "manifest v3 extension",
+   "typescript webpack extension",
+   "taxy ai",
+   "research preview agent",
+   "automate web forms",
+   "natural language browser commands",
+   "llm action loop",
+   "gpt-3.5 browser",
+   "self-hosted browser agent",
+   "browser task automation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3079,
+  "output": 1275
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "inginious/inginious",
+ "repo": "INGInious/INGInious",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Learning and Courses",
+   "entry": "INGInious - Intelligent grader that allows secured and automated testing of code made by students. (Source Code, Clients) AGPL-3.0 Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "INGInious is a Python intelligent grader that runs students' code inside Docker containers for secured, automated testing and grading.",
+  "what_it_does": "INGInious provides a backend that manages interaction with Docker and grades submitted code, plus a frontend where students submit code through a web interface. The frontend also has an administration interface that lets teachers track student progress and edit exercises. The README says it can be used as an external grader for Moodle or edX. Installation is described via docker compose, with a superadmin account configured through environment variables, including password (argon2id-encoded), username, language and indentation. The frontend is exposed through the Caddy reverse proxy, using a sample config at deploy/Caddyfile. Courses are added by placing task folders in a tasks directory, and manual pip installation is also mentioned.",
+  "use_cases": [
+   "automatically grading student programming assignments",
+   "running untrusted student code in a sandbox",
+   "external grader for Moodle or edX",
+   "tracking student progress in a coding course",
+   "hosting programming exercises for a university course"
+  ],
+  "how_to_run": [
+   "docker compose up --build",
+   "Open the browser and log in with the default superadmin / superadmin credentials (set INGINIOUS_SUPERADMIN_PASSWORD in docker-compose.yml for production)",
+   "Optionally add 127.0.0.1 inginious.local to /etc/hosts and use that address",
+   "git clone the demo-tasks repository and move the tutorial folder into the tasks directory to add a course"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "Docker Compose",
+   "Caddy",
+   "argon2id"
+  ],
+  "notable": [
+   "Runs student code inside Docker containers to isolate it from the host",
+   "Includes a teacher administration interface for progress tracking and editing exercises",
+   "Can serve as an external grader for Moodle or edX",
+   "Superadmin account and settings configurable through environment variables; UI available in several languages",
+   "Course content is added by dropping task folders into a tasks directory"
+  ],
+  "caveats": [
+   "The README advises that untrusted code should not be run unless SELinux is enabled for the Docker containers",
+   "Production deployments must change the session secret key and API secret key in the sample configuration",
+   "Default superadmin credentials are insecure and must be changed",
+   "Possible permission errors on the tasks directory when it is created by docker compose"
+  ],
+  "license": "AGPL-3.0",
+  "category": "automated code grading",
+  "keywords": [
+   "automated grading",
+   "code autograder",
+   "intelligent grader",
+   "student code testing",
+   "programming assignment grading",
+   "docker sandbox",
+   "secure code execution",
+   "moodle grader",
+   "edx external grader",
+   "teaching programming",
+   "course administration",
+   "student progress tracking",
+   "grade student code",
+   "online coding exercises",
+   "self-hosted autograder",
+   "python grader",
+   "docker compose",
+   "caddy reverse proxy",
+   "argon2id",
+   "jupyter alternative",
+   "submit code for grading",
+   "test student programs automatically",
+   "learning management grader",
+   "coding course tool",
+   "agpl open source",
+   "exercise management",
+   "grading sandbox",
+   "automatic code correction",
+   "university programming course",
+   "homework checker",
+   "code submission platform"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3214,
+  "output": 1176
+ },
+ "generated": "2026-10-29"
+}

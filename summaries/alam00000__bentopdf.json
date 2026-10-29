@@ -1,0 +1,99 @@
+{
+ "id": "alam00000/bentopdf",
+ "repo": "alam00000/bentopdf",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Document Management",
+   "entry": "BentoPDF ⚠ - Powerful, privacy-first, client-side PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. (Demo, Source Code) AGPL-3.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "BentoPDF is a self-hostable, client-side PDF toolkit that lets you edit, merge, convert and process PDFs in the browser without uploading files to a server.",
+  "what_it_does": "BentoPDF provides a large set of PDF tools that run entirely in the user's browser, so files are not sent to a server. The README lists tools for organizing pages (merge, split, reorder, rotate, N-up, booklet printing, attachments), editing (annotation/PDF editor, text editing, fillable forms, watermarks, page numbers, bookmarks, redaction, flatten), and converting to PDF from many formats (images, Word/Excel/PowerPoint, OpenDocument, e-books, email, Visio) and from PDF to images, text, JSON, CSV, Excel and CBZ. It also covers securing and optimizing (compress, repair, encrypt/decrypt, permissions, signing, digital signatures with X.509 certificates, OCR, metadata removal, sanitize, linearize). It can be self-hosted as static files or via Docker images, with options for branding, disabling specific tools, and air-gapped deployment with WASM modules hosted internally. It is dual-licensed: AGPL-3.0 free, or a paid commercial license.",
+  "use_cases": [
+   "merge or split PDF files in the browser",
+   "edit and annotate PDFs without uploading them",
+   "convert Office documents and images to PDF privately",
+   "redact or sanitize sensitive PDFs",
+   "run a self-hosted team PDF tool",
+   "OCR scanned PDFs into searchable documents",
+   "sign PDFs or apply digital signatures"
+  ],
+  "how_to_run": [
+   "docker run -p 3000:8080 ghcr.io/alam00000/bentopdf-simple:latest",
+   "Open your browser at http://localhost:3000",
+   "npx http-server -c-1 (serve an extracted dist-{version}.zip from GitHub releases)",
+   "git clone the repo, then npm install && npm run build && npm run preview",
+   "docker-compose up -d (using the bentopdf-simple image in a compose file)"
+  ],
+  "stack": [
+   "Node.js (v18+)",
+   "npm / yarn / pnpm",
+   "Docker / Podman",
+   "nginx-unprivileged",
+   "WebAssembly (LibreOffice WASM, PyMuPDF, Ghostscript, CoherentPDF, Tesseract OCR)",
+   "OpenCV (deskew)",
+   "Cloudflare Workers (CORS proxy for digital signatures)"
+  ],
+  "notable": [
+   "Client-side processing: files stay in the browser, no server-side PDF processing required",
+   "Self-Hosted 'simple' build includes all PDF tools without marketing pages",
+   "Disable individual tools or PDF editor features via build args or a runtime config.json",
+   "Air-gapped deployment script and manual steps for offline WASM and OCR assets",
+   "Over 50 tools listed, including a visual workflow builder"
+  ],
+  "caveats": [
+   "Advanced features (PyMuPDF, Ghostscript, CoherentPDF) are AGPL-3.0 components loaded from jsDelivr CDN by default; offline use requires self-hosting those WASM files",
+   "Office conversion requires SharedArrayBuffer, so the app needs cross-origin isolation and a secure context (HTTPS for LAN IPs)",
+   "Digital Signature tool requires deploying a CORS proxy (Cloudflare Workers) for some certificates; the Commercial license costs $79 for closed-source use"
+  ],
+  "license": "AGPL-3.0",
+  "category": "pdf toolkit, browser-based",
+  "keywords": [
+   "pdf toolkit",
+   "client-side pdf",
+   "browser pdf editor",
+   "self-hosted pdf",
+   "merge pdf",
+   "split pdf",
+   "pdf converter",
+   "pdf to image",
+   "image to pdf",
+   "office to pdf",
+   "ocr pdf",
+   "sign pdf",
+   "redact pdf",
+   "compress pdf",
+   "privacy pdf tool",
+   "offline pdf tool",
+   "docker pdf",
+   "nodejs pdf",
+   "webassembly pdf",
+   "pdf forms",
+   "fillable pdf",
+   "digital signature pdf",
+   "air-gapped document tools",
+   "pdf annotation",
+   "edit pdf online",
+   "share files privately",
+   "pdf editing without upload",
+   "alternative to adobe acrobat online",
+   "alternative to smallpdf",
+   "document management",
+   "pdf to excel",
+   "pdf metadata remover",
+   "dockerized pdf tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 18485,
+  "output": 1596
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "dialmasterorg/youtarr",
+ "repo": "DialmasterOrg/Youtarr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Youtarr ⚠ - Download videos from YouTube channels on a schedule via yt-dlp, with a web UI to browse and selectively download videos. Integrates with Plex Media Server and generates NFO metadata for Jellyfin, Kodi, and Emby. ISC Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Youtarr is a self-hosted, Docker-only YouTube downloader that fetches videos from subscribed channels and playlists on a schedule using yt-dlp, with a web UI and metadata for media servers.",
+  "what_it_does": "Youtarr automatically downloads videos from subscribed YouTube channels and playlists, with cron-based scheduled runs. Users can pre-validate pasted URLs with a metadata preview, search YouTube from within the app, and browse or selectively download videos through a responsive web UI. It writes NFO files, poster images, and embedded MP4 metadata for media servers, and mirrors subscribed playlists into Plex, Jellyfin, and Emby as native playlists plus a universal .m3u file. It can pull per-video watch status from Plex, Jellyfin, and Emby (one-way, read-only) and includes SponsorBlock segment removal, per-channel quality settings, age/free-space/watched-based auto-cleanup, Apprise notifications, and a REST API with Swagger docs.",
+  "use_cases": [
+   "Automatically archive videos from favorite YouTube channels",
+   "Build offline Plex, Jellyfin, Kodi, or Emby libraries from YouTube",
+   "Download selected videos from a channel or playlist",
+   "Mirror YouTube playlists into media server playlists",
+   "Remove sponsor segments from downloaded videos",
+   "Set up auto-cleanup of old or watched videos to save disk space",
+   "Queue videos from the browser or phone for download"
+  ],
+  "how_to_run": [
+   "Install Docker, Docker Compose, Git, and a Bash shell (Git Bash on Windows)",
+   "Follow the Installation Guide in the documentation for install methods and initial setup",
+   "Run ./start.sh for a fresh install (uses Docker named-volume storage for MariaDB)",
+   "Alternatively use plain docker compose up -d (may use ./database bind mount)",
+   "Open the web UI and complete initial setup and authentication"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "yt-dlp",
+   "MariaDB",
+   "Node.js",
+   "Apprise"
+  ],
+  "notable": [
+   "Watch status sync from Plex, Jellyfin, and Emby covering all users on the server, with filtering by watched state",
+   "Channel grouping into subfolders to create separate media server libraries",
+   "In-app browser streaming of downloaded videos without a media server",
+   "Content ratings normalized to common media-server values like PG-13 and TV-*",
+   "Bookmarklet and Apple Shortcuts/Tasker support for queuing videos"
+  ],
+  "caveats": [
+   "Runs exclusively via Docker; direct npm start or Node deployments are unsupported",
+   "Database on virtualized filesystems (Docker Desktop, ARM, NAS) can cause MariaDB migration errors",
+   "Intended for personal use; users are responsible for YouTube Terms of Service and copyright compliance",
+   "Patreon support is requested for continued development"
+  ],
+  "license": "ISC",
+  "category": "self-hosted youtube downloader",
+  "keywords": [
+   "youtube downloader",
+   "self-hosted youtube",
+   "yt-dlp",
+   "yt-dlp web ui",
+   "download youtube channels",
+   "scheduled youtube downloads",
+   "plex youtube library",
+   "jellyfin youtube",
+   "emby youtube",
+   "kodi nfo",
+   "nfo metadata",
+   "youtube playlist sync",
+   "media server playlists",
+   "docker compose youtube",
+   "sponsorblock",
+   "archive youtube videos",
+   "offline youtube videos",
+   "youtube channel archiver",
+   "pinchflat alternative",
+   "tube archivist alternative",
+   "watch status sync",
+   "auto cleanup videos",
+   "apprise notifications",
+   "rest api youtube",
+   "download youtube videos to plex",
+   "save youtube videos offline",
+   "youtube playlist to plex",
+   "mirror youtube channel",
+   "unraid youtube",
+   "content ratings media server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4718,
+  "output": 1444
+ },
+ "generated": "2026-10-29"
+}

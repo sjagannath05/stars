@@ -1,0 +1,92 @@
+{
+ "id": "cafetechne/antigravity-link-extension",
+ "repo": "cafeTechne/antigravity-link-extension",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI-Powered Compilers and Code Assistants",
+   "entry": "Antigravity Link - VS Code extension that bridges mobile devices to Google's Antigravity IDE (a Claude-powered VS Code fork). Mirror active AI chat sessions on your phone, send messages, upload files, stop AI generation, and automate workflows via a local HTTP API or 9 MCP tools. Listed in the official MCP Registry."
+  }
+ ],
+ "summary": {
+  "one_liner": "A VS Code extension that mirrors an Antigravity IDE chat to a phone browser over the local network and exposes a local HTTP API and MCP server to drive the session.",
+  "what_it_does": "Antigravity Link runs a local HTTP or HTTPS bridge server from inside VS Code and discovers Antigravity windows through the Chrome DevTools Protocol on a remote debugging port. Scanning a QR code opens a mobile web UI that shows the active chat as it streams, lets you send messages, stop generation, upload files, and use voice-to-text. It supports switching between multiple Antigravity windows. For automation, it provides REST endpoints such as /snapshot, /send, /stop, /upload, and /click, all protected by a bearer token, plus an MCP server (mcp-server.mjs) with nine tools. The README says the server is LAN-only by default and the UI is available in 16 languages.",
+  "use_cases": [
+   "monitor an AI coding session from my phone",
+   "send follow-up messages to an IDE chat remotely",
+   "upload files into an Antigravity chat from mobile",
+   "stop AI generation from a phone",
+   "drive IDE chat sessions from scripts via HTTP API",
+   "let an AI assistant control Antigravity through MCP tools"
+  ],
+  "how_to_run": [
+   "Launch Antigravity with --remote-debugging-port=9000 (every window must be launched this way)",
+   "In VS Code, run the command 'Antigravity Link: Start Server'",
+   "Run 'Antigravity Link: Show QR Code' and scan the code with your phone",
+   "Accept the self-signed certificate warning in the phone browser",
+   "For MCP: add the node command with args pointing to mcp-server.mjs in the installed extension folder, with AG_BRIDGE_URL and AG_BRIDGE_TOKEN set"
+  ],
+  "stack": [
+   "TypeScript/JavaScript",
+   "Node.js",
+   "VS Code extension API",
+   "Chrome DevTools Protocol",
+   "MCP (Model Context Protocol)",
+   "OpenAPI (openapi.yaml)",
+   "HTTP/HTTPS server"
+  ],
+  "notable": [
+   "Mobile mirror of a live Antigravity chat, with a dedicated stop control and voice input",
+   "Nine MCP tools plus a documented REST API with bearer-token auth",
+   "Discovers sessions via Chrome DevTools Protocol, without modifying Antigravity files",
+   "Self-signed local HTTPS by default for microphone access",
+   "Interface localized into 16 languages with RTL support for Arabic"
+  ],
+  "caveats": [
+   "Requires Antigravity to be launched with a remote debugging flag; sessions started without it are not discovered",
+   "Server is LAN-only by default; remote access needs an external tunnel the README mentions only generally",
+   "Phone and computer must be on the same Wi-Fi network"
+  ],
+  "license": "MIT",
+  "category": "IDE remote control extension",
+  "keywords": [
+   "antigravity ide",
+   "vs code extension",
+   "mobile remote control",
+   "phone mirror ai chat",
+   "chrome devtools protocol",
+   "cdp",
+   "mcp server",
+   "model context protocol",
+   "mcp tools",
+   "local http api",
+   "rest api",
+   "bearer token auth",
+   "self-signed https",
+   "qr code connect",
+   "remote debugging port",
+   "send messages to ai from phone",
+   "upload files to ai chat",
+   "stop ai generation",
+   "voice to text input",
+   "control ide from phone",
+   "monitor ai coding session remotely",
+   "automate ai chat sessions",
+   "claude desktop mcp config",
+   "openapi",
+   "lan access",
+   "open vsx",
+   "typescript node bridge"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6015,
+  "output": 1343
+ },
+ "generated": "2026-10-29"
+}

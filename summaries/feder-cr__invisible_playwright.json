@@ -1,0 +1,94 @@
+{
+ "id": "feder-cr/invisible_playwright",
+ "repo": "feder-cr/invisible_playwright",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "invisible-playwright — Python wrapper for a stealth-patched Firefox 150 binary. Drop-in replacement for vanilla Playwright Firefox, returns a native Playwright Browser. Anti-fingerprinting at the C++ source level (Canvas, WebGL, AudioContext, Fonts, WebRTC, Timezone, DevTools detection). Useful when AI agents need anti-detect web access. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python wrapper around a stealth-patched Firefox build that exposes a native Playwright Browser object so existing Playwright code can run with anti-detect fingerprinting.",
+  "what_it_does": "The package launches a Firefox binary whose fingerprint (navigator, screen, GPU/WebGL, canvas, fonts, audio, WebRTC, timezone, network) is set inside the browser engine rather than injected into pages. It is offered as a drop-in replacement for Playwright's firefox.launch, in both sync and async forms, and returns a standard Playwright Browser. Each session gets a random fingerprint derived from a seed, which can be logged or fixed for reproducible runs. Proxies (socks5, socks4, http, https) are supported with DNS routed through the proxy, and timezone can be derived from the egress IP or set explicitly. Specific fingerprint fields can be pinned, and mouse movement follows Bezier-curve paths. A CLI (invisible-playwright fetch / version) downloads and verifies the engine. Some Playwright surfaces (tracing, HAR, CDP, API request context) are explicitly out of scope and raise errors.",
+  "use_cases": [
+   "Browsing sites protected by reCAPTCHA, hCaptcha or Cloudflare Turnstile from Python",
+   "Giving AI agents anti-detect web access through Playwright",
+   "Scraping with per-session randomized browser fingerprints",
+   "Routing browser traffic through SOCKS or HTTP proxies with matching timezone",
+   "Running reproducible browser sessions with a fixed seed"
+  ],
+  "how_to_run": [
+   "uv init --python \">=3.11\" my-project",
+   "cd my-project",
+   "uv add invisible-playwright",
+   "uv run invisible-playwright fetch",
+   "Save an example script as main.py and run: uv run main.py"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "Playwright (sync and async APIs)",
+   "Patched Firefox binary (Firefox 150)",
+   "uv (install tooling named in README)",
+   "invisible_core (seed/fingerprint library, named in README)"
+  ],
+  "notable": [
+   "Fingerprint patches applied at the Firefox C++ source level, not via JavaScript injection",
+   "Returns a native Playwright Browser, so existing Playwright calls work with a two-line change",
+   "Fingerprint derived from a seed; reproducible runs via seed=, and specific fields can be pinned",
+   "Mouse actions use Bezier-curve paths with human-like timing",
+   "Timezone auto-derived from proxy egress IP, resolved offline"
+  ],
+  "caveats": [
+   "Supported platforms are only Windows x86_64 and Linux x86_64/arm64; macOS is not listed",
+   "Requires a one-time download of about 240-262 MB (about 550 MB unpacked) via invisible-playwright fetch",
+   "Tracing, HAR, CDP and API request context are not supported and raise errors",
+   "The patched binary is MPL-2.0 licensed upstream; the README includes an educational-use disclaimer"
+  ],
+  "license": "MIT",
+  "category": "browser automation stealth",
+  "keywords": [
+   "playwright firefox",
+   "stealth browser",
+   "anti-detect browser",
+   "anti-bot bypass",
+   "fingerprint spoofing",
+   "canvas fingerprint",
+   "webgl fingerprint",
+   "audiocontext fingerprint",
+   "browser fingerprinting",
+   "recaptcha",
+   "hcaptcha",
+   "cloudflare turnstile",
+   "undetected browser",
+   "headless browser python",
+   "ai agent browser",
+   "web scraping python",
+   "proxy browser automation",
+   "socks5 proxy",
+   "webrtc leak",
+   "timezone spoofing",
+   "bezier mouse movement",
+   "human-like mouse",
+   "drop-in playwright replacement",
+   "camoufox alternative",
+   "patchright alternative",
+   "nodriver alternative",
+   "playwright-stealth alternative",
+   "reproducible fingerprint seed",
+   "browser automation for agents",
+   "bypass bot detection",
+   "anti-detect firefox"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6384,
+  "output": 1483
+ },
+ "generated": "2026-10-29"
+}

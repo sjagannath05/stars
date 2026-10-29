@@ -1,0 +1,97 @@
+{
+ "id": "tranphuong319/applocker",
+ "repo": "TranPhuong319/AppLocker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "AppLocker - Kernel-level application locking tool built with Apple Endpoint Security and Liquid Glass UI."
+  }
+ ],
+ "summary": {
+  "one_liner": "AppLocker is a macOS app that locks chosen applications behind Touch ID or password authentication, using Apple's Endpoint Security framework to intercept launches at the kernel level.",
+  "what_it_does": "It runs a root System Extension daemon (ESExtension) that receives Endpoint Security NOTIFY_EXEC events when a locked app launches. The daemon suspends the process with SIGSTOP before its UI appears and notifies the main AppLocker app over XPC. The user then authenticates via LocalAuthentication (Touch ID, Apple Watch, or system password); approval resumes the process with SIGCONT, while denial or timeout terminates it with SIGKILL. Multiple apps launched together are grouped into one batch authentication prompt. The README also describes anti-tampering: it denies external SIGKILL/SIGSTOP/SIGCONT signals aimed at suspended apps, the daemon, or AppLocker, and protects configuration files. XPC calls are protected by mutual ECDSA P-256 challenge-response and CDHash-based caller verification. The UI is SwiftUI with AppKit, with a menu bar item, Dark Mode, and English and Vietnamese localization.",
+  "use_cases": [
+   "lock personal apps on a shared Mac",
+   "require Touch ID to open specific applications",
+   "protect private apps when lending a Mac to others",
+   "batch approve or deny multiple app launches",
+   "prevent unauthorized termination of protected apps"
+  ],
+  "how_to_run": [
+   "Option 1: download the latest .dmg from Releases and drag AppLocker.app into /Applications",
+   "Launch the app and approve the System Extension when prompted",
+   "Option 2: git clone the repository and cd into AppLocker",
+   "open AppLocker.xcodeproj in Xcode",
+   "Select the AppLocker scheme and build and run with Cmd+R"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "Apple Endpoint Security framework",
+   "LocalAuthentication",
+   "CryptoKit",
+   "XPC",
+   "NSMetadataQuery",
+   "os.Logger",
+   "Xcode"
+  ],
+  "notable": [
+   "Freezes target processes with SIGSTOP before any window renders, then resumes or kills them based on the authentication result",
+   "Batch authentication groups multiple simultaneously launched locked apps into one prompt",
+   "Does not modify the target app's executable or break its code signature",
+   "Mutual ECDSA P-256 challenge-response between the main app and the daemon",
+   "Liquid Glass style SwiftUI interface with menu bar access"
+  ],
+  "caveats": [
+   "Requires a paid Apple Developer Program account and approval for the endpoint-security client entitlement",
+   "For local or open-source testing without that entitlement, System Integrity Protection must be disabled, which lowers system security",
+   "Supports macOS 14.0 (Sonoma) or later only"
+  ],
+  "license": "Apache License 2.0",
+  "category": "macos app locking",
+  "keywords": [
+   "macos app lock",
+   "lock applications mac",
+   "endpoint security",
+   "endpoint security framework",
+   "kernel-level app blocking",
+   "touch id app lock",
+   "biometric authentication mac",
+   "password protect apps macos",
+   "system extension daemon",
+   "sigstop sigcont",
+   "posix process freezing",
+   "batch authentication",
+   "swiftui macos",
+   "appkit",
+   "localauthentication",
+   "xpc daemon",
+   "code signature verification",
+   "cdhash",
+   "anti tampering macos",
+   "menu bar app",
+   "liquid glass ui",
+   "privacy on shared mac",
+   "restrict app launch",
+   "parental control mac apps",
+   "swift open source",
+   "apache 2.0 macos",
+   "private app protection",
+   "mac kids app restriction",
+   "block app from opening",
+   "app launch authentication"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4220,
+  "output": 1383
+ },
+ "generated": "2026-10-29"
+}

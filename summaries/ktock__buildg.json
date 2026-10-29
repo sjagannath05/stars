@@ -1,0 +1,99 @@
+{
+ "id": "ktock/buildg",
+ "repo": "ktock/buildg",
+ "kind": "star",
+ "description": "Interactive debugger for Dockerfile, with support for IDEs (VS Code, Emacs, Neovim, etc.)",
+ "topics": [],
+ "language": "Go",
+ "stars": 1502,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-07-30",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "cicd",
+  "coding",
+  "dev tools",
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "buildg is an interactive debugger for Dockerfile builds based on BuildKit, with breakpoints, step execution, a debug shell, and DAP support for editors like VS Code, Emacs, and Neovim.",
+  "what_it_does": "Runs a Dockerfile build under an interactive debug session via the `buildg debug` command, showing source lines with a current-line marker. Users can set line breakpoints or an on-fail breakpoint, step to the next line, continue to a breakpoint, and list or review build logs. A debug shell (`exec`) opens a shell on a build step's rootfs so users can run their own tools, optionally using a custom image. It also provides a Debug Adapter Protocol server (`buildg dap serve`) so editors can drive the debugger. Build options include secrets, SSH forwarding, build args, target stage, and cache import/reuse. The README describes rootless support and cache management commands (prune, du).",
+  "use_cases": [
+   "debug a failing Dockerfile step",
+   "step through Dockerfile build instructions",
+   "inspect filesystem state mid-build",
+   "debug Dockerfile from VS Code or Neovim",
+   "reproduce build failures interactively",
+   "inspect remotely cached build layers"
+  ],
+  "how_to_run": [
+   "Install runc (and optionally RootlessKit and slirp4netns); see the README Install section for release tarballs",
+   "git clone the repository, cd buildg, then run make",
+   "sudo make install",
+   "buildg debug /path/to/build/context",
+   "Or run in Docker: docker run --rm -it --privileged -v /path/to/ctx:/ctx:ro ghcr.io/ktock/buildg:0.4 debug /ctx"
+  ],
+  "stack": [
+   "Go 1.23+",
+   "BuildKit (with unmerged patches)",
+   "runc",
+   "RootlessKit",
+   "slirp4netns",
+   "Debug Adapter Protocol (DAP)"
+  ],
+  "notable": [
+   "Interactive debug shell on any build step, with optional custom debugger image via --image",
+   "Breakpoints on Dockerfile line numbers or on-fail, plus next/continue stepping",
+   "DAP server for editor integration (VS Code, Emacs, Neovim)",
+   "Built on BuildKit; also available as a nerdctl subcommand (nerdctl builder debug)",
+   "Supports rootless execution"
+  ],
+  "caveats": [
+   "Early stage software; built on BuildKit with unmerged patches",
+   "Native execution only on Linux; other platforms need a Linux VM",
+   "IDE integration over DAP requires rootless execution"
+  ],
+  "license": "Apache-2.0",
+  "category": "dockerfile debugging tools",
+  "keywords": [
+   "dockerfile debugger",
+   "buildkit debugger",
+   "interactive debugger",
+   "debug adapter protocol",
+   "dap server",
+   "vs code debugging",
+   "neovim debugger",
+   "emacs dap",
+   "step through dockerfile",
+   "breakpoints dockerfile",
+   "docker build debugging",
+   "debug docker build",
+   "rootless buildkit",
+   "buildctl alternative",
+   "nerdctl builder debug",
+   "container image build troubleshooting",
+   "inspect build layers",
+   "debug shell build step",
+   "go cli tool",
+   "runc",
+   "rootlesskit",
+   "build cache inspection",
+   "failing docker build",
+   "troubleshoot dockerfile",
+   "buildg",
+   "ktock"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6180,
+  "output": 1253
+ },
+ "generated": "2026-10-29"
+}

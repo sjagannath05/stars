@@ -1,0 +1,94 @@
+{
+ "id": "mannafee/zielzeit-scalable-capital",
+ "repo": "Mannafee/zielzeit-scalable-capital",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Zielzeit - Menu bar app projecting the year your Scalable Capital portfolio reaches a savings goal, read-only through the official broker CLI."
+  }
+ ],
+ "summary": {
+  "one_liner": "Zielzeit is a free, open-source macOS menu bar app that projects the year a Scalable Capital portfolio will reach a savings goal, reading data read-only through the official Scalable CLI.",
+  "what_it_does": "Reads the user's Scalable Capital account through the official sc command-line tool, limited to five read-only commands (overview, savings-plans, transactions, holdings, whoami). From balance, savings plan, deposits and trailing return it projects an arrival year for a user-set goal and shows the progress percentage and market direction in the menu bar. The popover offers three scenarios (cautious 3%, moderate 6%, measured pace), two what-if sliders for extra monthly savings or a target year, and goal restated in today's money. It also shows each holding's contribution to the goal in weeks gained or lost. The interface is localized in English, German, French, Spanish and Italian. The README says the app has no networking code of its own and provides a make audit target that checks its safety claims against the source.",
+  "use_cases": [
+   "Track when a Scalable Capital portfolio will reach a savings goal",
+   "See portfolio progress from the macOS menu bar",
+   "Project retirement or FIRE timelines from savings plans",
+   "Test how extra monthly savings changes the arrival year",
+   "Check which holdings moved a portfolio toward or away from a goal"
+  ],
+  "how_to_run": [
+   "brew install --cask mannafee/tap/zielzeit",
+   "git clone <repository URL> && cd zielzeit-scalable-capital",
+   "make run",
+   "make install (copies the app to /Applications; use sudo on a non-admin account)",
+   "make audit (optional: checks the safety claims against the source)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Swift Charts",
+   "Sparkle (updater)",
+   "Scalable Capital CLI (sc) 1.0+",
+   "Make"
+  ],
+  "notable": [
+   "Read-only by design: the README says the broker command set is limited to five enumerated commands with no write or login path",
+   "Includes make audit, a script that searches the source to verify the safety claims",
+   "Uses the simple Dietz method on measured deposits to estimate the realized return, with time-to-goal solved in closed form",
+   "Icons are drawn in code rather than shipped as image files",
+   "Stores only goal, language and an access flag in preferences, with no portfolio figures on disk"
+  ],
+  "caveats": [
+   "The app is ad-hoc signed but not notarized, so macOS shows a first-launch warning and requires a manual override in System Settings",
+   "Requires a Scalable Capital account, CLI access enabled on that account, and a one-time Terminal login with sc login --local-read-only",
+   "Requires macOS 15 or later; it is not sandboxed because it must launch the sc CLI",
+   "Projections assume constant returns and an uninterrupted savings plan, and are shown before tax"
+  ],
+  "license": "MIT",
+  "category": "macos portfolio tracker",
+  "keywords": [
+   "scalable capital",
+   "scalable-cli",
+   "sc cli",
+   "macos menu bar app",
+   "menu bar portfolio tracker",
+   "portfolio tracker",
+   "investment goal calculator",
+   "fire calculator",
+   "compound interest projection",
+   "savings plan projection",
+   "sparplan",
+   "depot",
+   "etf portfolio",
+   "dietz return",
+   "time to goal",
+   "swift",
+   "swiftui",
+   "swift charts",
+   "read-only broker cli",
+   "brokerage read-only access",
+   "retirement timeline",
+   "financial independence planner",
+   "track investments on mac",
+   "see when i reach my savings goal",
+   "homebrew cask",
+   "sparkle updater",
+   "open source finance app",
+   "what-if savings simulator",
+   "portfolio progress indicator",
+   "make audit security check"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7764,
+  "output": 1357
+ },
+ "generated": "2026-10-29"
+}

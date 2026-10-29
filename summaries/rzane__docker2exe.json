@@ -1,0 +1,94 @@
+{
+ "id": "rzane/docker2exe",
+ "repo": "rzane/docker2exe",
+ "kind": "star",
+ "description": "Convert a Docker image to an executable",
+ "topics": [],
+ "language": "Go",
+ "stars": 2292,
+ "license": "",
+ "homepage": "",
+ "pushed_at": "2025-05-06",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "docker2exe is a Go tool that packages a Docker image into a standalone executable so the image can be run on another machine with a single command.",
+  "category": "docker tooling",
+  "keywords": [
+   "docker",
+   "docker image",
+   "executable",
+   "binary",
+   "go",
+   "golang",
+   "container to binary",
+   "convert docker image",
+   "package docker image",
+   "standalone executable",
+   "portable container",
+   "docker2exe",
+   "docker save",
+   "docker load",
+   "docker pull",
+   "embed image",
+   "tarball",
+   "gzip",
+   "cross platform binary",
+   "darwin",
+   "windows",
+   "linux",
+   "distribute container",
+   "send to friends",
+   "run container without install",
+   "docker cli wrapper",
+   "share docker image"
+  ],
+  "what_it_does": "The tool takes a Docker image name (for example alpine:3.9) and generates executables for several platforms, written to a dist directory. Running a generated executable with arguments runs a command inside that image (for example, cat /etc/alpine-release). When the executable runs, it checks whether the required image exists locally and pulls it with docker pull if missing. An optional embed mode saves the image as a gzipped tarball and bakes it into the executable, so the executable can load it with docker load when the image is absent. The README says small images work well with embedding, and gives an example executable under 10MB. Building requires Docker, Go and gzip; running requires only Docker.",
+  "use_cases": [
+   "share a dockerized tool with someone who lacks it installed",
+   "distribute a command-line program packaged as a container",
+   "run a container image as a single binary",
+   "ship an offline-capable docker image inside an executable",
+   "cross-compile container wrappers for macOS, Linux and Windows"
+  ],
+  "how_to_run": [
+   "Download a binary from the releases page",
+   "mv docker2exe-darwin-amd64 docker2exe",
+   "chmod +x docker2exe",
+   "docker2exe --name alpine --image alpine:3.9",
+   "dist/alpine-darwin-amd64 cat /etc/alpine-release",
+   "docker2exe --name alpine --image alpine:3.9 --embed"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "gzip"
+  ],
+  "notable": [
+   "Produces executables for darwin, linux and windows from one command",
+   "Embed mode bakes a gzipped docker save tarball into the executable for offline loading",
+   "Generated binaries pull the image on first run if it is missing",
+   "Arguments passed to the generated executable are run inside the container"
+  ],
+  "caveats": [
+   "Both the building device and the executing device need Docker installed",
+   "Building requires Go and gzip in addition to Docker",
+   "Embedding is described as suited to small images; large images produce large executables",
+   "README does not state a license"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1958,
+  "output": 1020
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,102 @@
+{
+ "id": "cnazk/recall-mac",
+ "repo": "cnazk/recall-mac",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Recall - Local-first clipboard manager with on-device semantic search, two-factor codes, and credentials that delete themselves."
+  }
+ ],
+ "summary": {
+  "one_liner": "Recall is a free, open-source macOS menu-bar clipboard manager with on-device semantic search, built-in TOTP/HOTP two-factor codes, and automatic detection and deletion of secrets copied to the clipboard.",
+  "what_it_does": "Recall records everything copied to the clipboard and lets you search by meaning using an on-device embedding model plus a query expander, with operators like kind:, app:, since: and is:pinned. Clips that match one of 29 credential rules are marked secret, kept in memory only, hidden from AI features, and deleted 60 seconds later by default. Clips from 28 password managers and authenticators are dropped before they are read. The app generates TOTP and HOTP codes through a separate sandboxed XPC helper process that never returns seed values, with Touch ID gating by default. It also offers \"Paste as…\" transforms via an on-device model, snippets with shortcodes that expand via an event tap, a todo list, and OCR of screen regions and copied images. The README says no data leaves the Mac except optional link title and favicon fetching.",
+  "use_cases": [
+   "search clipboard history by meaning",
+   "store and filter copied snippets and links",
+   "generate two-factor authentication codes locally",
+   "keep passwords and API keys out of clipboard history",
+   "expand text shortcodes like signatures or addresses",
+   "extract text from screenshots with OCR"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd recall-mac",
+   "./Scripts/install.sh --build",
+   "make test",
+   "make app",
+   "make run"
+  ],
+  "stack": [
+   "Swift",
+   "macOS 26 or later",
+   "SQLite (encrypted, AES-GCM)",
+   "Vision (OCR)",
+   "screencapture",
+   "XPC helper process",
+   "on-device embedding and language models"
+  ],
+  "notable": [
+   "Secret detection with 29 capture-time rules, and it shows which rule fired; secrets are deleted 60 seconds after capture by default",
+   "Two-factor seeds live in a separate sandboxed XPC helper that exposes no call returning a secret",
+   "In-Memory Mode runs entirely in RAM with no database file",
+   "Operator-based search and Smart Collections saved as rules",
+   "Paste as… runs an on-device transform with a preview before pasting"
+  ],
+  "caveats": [
+   "No prebuilt download; builds are ad-hoc signed, so Gatekeeper refuses them and you must build from source with macOS 26 or later",
+   "Accessibility permission is lost on each update until Developer ID signing ships",
+   "Shortcodes cannot expand in password fields because macOS Secure Event Input blocks the event tap",
+   "No Persian OCR because macOS Vision has no Persian recogniser"
+  ],
+  "license": "GNU General Public License v3 or later (GPL-3.0+)",
+  "category": "macos clipboard manager",
+  "keywords": [
+   "clipboard manager",
+   "clipboard history",
+   "macos clipboard",
+   "menu bar app",
+   "semantic search",
+   "on-device embeddings",
+   "meaning search",
+   "query expansion",
+   "two-factor codes",
+   "totp",
+   "hotp",
+   "authenticator app",
+   "otpauth import",
+   "secret detection",
+   "credential protection",
+   "password manager exclusion",
+   "in-memory mode",
+   "encrypted sqlite",
+   "ocr screenshot text",
+   "vision ocr",
+   "snippets",
+   "text expansion",
+   "shortcodes",
+   "todo list",
+   "paste as transform",
+   "smart collections",
+   "pinned clips",
+   "link preview favicon",
+   "xpc helper",
+   "touch id",
+   "swift macos app",
+   "gpl open source",
+   "copy history",
+   "find copied text",
+   "keep api keys out of clipboard history"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7466,
+  "output": 1339
+ },
+ "generated": "2026-10-29"
+}

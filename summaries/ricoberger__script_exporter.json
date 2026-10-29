@@ -1,0 +1,111 @@
+{
+ "id": "ricoberger/script_exporter",
+ "repo": "ricoberger/script_exporter",
+ "kind": "star",
+ "description": "Prometheus exporter to execute scripts and collect metrics from the output or the exit status.",
+ "topics": [
+  "docker",
+  "go",
+  "kubernetes",
+  "prometheus",
+  "prometheus-exporter",
+  "script",
+  "scripts"
+ ],
+ "language": "Go",
+ "stars": 463,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-13",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "cicd",
+  "my company",
+  "my stack"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Prometheus exporter that runs configured scripts on each scrape and exposes metrics parsed from their output, plus their exit status and execution duration.",
+  "category": "prometheus exporter",
+  "keywords": [
+   "prometheus exporter",
+   "script exporter",
+   "run scripts",
+   "execute scripts",
+   "script metrics",
+   "exit status metrics",
+   "script output metrics",
+   "prometheus",
+   "go",
+   "golang",
+   "scrape scripts",
+   "probe",
+   "shell script monitoring",
+   "nagios plugin",
+   "nagios output",
+   "monitor with scripts",
+   "custom metrics from script",
+   "scripts as prometheus targets",
+   "http service discovery",
+   "http_sd",
+   "cache script results",
+   "script timeout",
+   "sudo scripts",
+   "docker exec monitoring",
+   "kubernetes monitoring",
+   "helm chart",
+   "ping check",
+   "custom exporter",
+   "metrics from command output",
+   "script duration metric",
+   "reload config sighup",
+   "basic auth tls exporter"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Monitor a host with a custom shell script and alert on its exit status",
+   "Turn a Nagios plugin's output into Prometheus metrics",
+   "Count files in a Docker container and expose the number as a metric",
+   "Ping a target address and record whether it succeeded",
+   "Cache expensive script results between Prometheus scrapes",
+   "Run privileged checks via sudo and export the results"
+  ],
+  "how_to_run": [
+   "git clone <repository-url>",
+   "cd script_exporter",
+   "make build",
+   "./bin/script_exporter",
+   "docker compose -f docker-compose.yaml up --build --force-recreate"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Prometheus",
+   "Helm",
+   "exporter-toolkit"
+  ],
+  "notable": [
+   "Scripts are defined in a YAML config file and selected per scrape via a 'script' query parameter on /probe",
+   "Parses script output as Prometheus metrics or Nagios plugin output",
+   "Built-in result caching with configurable duration and optional use of expired cache on error",
+   "Config reload at runtime via SIGHUP or HTTP POST to /-/reload",
+   "Prometheus HTTP service discovery support to generate scrape targets from scripts and their params"
+  ],
+  "caveats": [
+   "Cache is not persisted; it is cleared when the exporter restarts",
+   "Sudo use requires separately creating the matching sudoers entries",
+   "Timeouts can fail to be enforced for child processes unless wait_delay is set to a low value"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5426,
+  "output": 975
+ },
+ "generated": "2026-10-29"
+}

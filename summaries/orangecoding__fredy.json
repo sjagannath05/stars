@@ -1,0 +1,99 @@
+{
+ "id": "orangecoding/fredy",
+ "repo": "orangecoding/fredy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Fredy ⚠ - Searches for new apartments, houses, and flats in Germany on platforms like ImmoScout24, Immowelt, and others, and instantly delivers the results to you via Slack, Telegram, and more. (Demo, Source Code) Apache-2.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Fredy is a self-hosted real estate finder that watches 29 European property portals (mainly Germany, Austria, Switzerland, Spain, Italy, Portugal and France) and pushes new listings to chat and notification services.",
+  "what_it_does": "Fredy runs searches against real estate portals such as ImmoScout24, Immowelt, Kleinanzeigen, WG-Gesucht and willhaben, using search URLs pasted from each portal. It deduplicates listings that appear on several platforms, matching on living space, rooms and location. New listings are sent through configured channels including Slack, Telegram, Email, ntfy, Discord, Gotify, Mattermost, Pushover and Apprise. Searches, channels and settings are managed in a Web UI and stored in a database. The README also describes a financing calculator, travel time calculation from user addresses, a rental scam warning heuristic, price-per-m² benchmarking, document uploads per listing, and an MCP server for querying listings from LLM clients.",
+  "use_cases": [
+   "get alerted to new apartment listings in Germany",
+   "monitor rental flats across multiple portals",
+   "receive property alerts in Telegram or Slack",
+   "compare listing prices per square metre",
+   "estimate affordability of rent or purchase",
+   "check commute time from a listing to my address",
+   "query property listings from an LLM assistant"
+  ],
+  "how_to_run": [
+   "docker run -d --name fredy -v fredy_conf:/conf -v fredy_db:/db -p 9998:9998 ghcr.io/orangecoding/fredy:master",
+   "Open http://localhost:9998 and sign in with admin / admin",
+   "Node.js 22.22.0 or higher required for non-Docker setup",
+   "yarn",
+   "yarn run build:frontend",
+   "yarn run start:backend"
+  ],
+  "stack": [
+   "Node.js",
+   "JavaScript",
+   "SQLite",
+   "Docker",
+   "Web UI (frontend build via yarn)",
+   "OpenStreetMap",
+   "Transitous (MOTIS) for journey planning"
+  ],
+  "notable": [
+   "Cross-platform deduplication that matches listings on living space, rooms and location rather than headline text",
+   "Rental scam detection that warns when several fraud signals appear in a listing",
+   "Travel times from your own address by public transport, car, bike or foot",
+   "Built-in MCP server for querying listings from Claude, ChatGPT or a local LLM",
+   "Channel and job model that lets one notification channel be reused across many searches"
+  ],
+  "caveats": [
+   "License adds Commons Clause and attribution conditions, so it is source-available rather than OSI open source; commercial use is restricted",
+   "Relies on a reverse engineered ImmoScout Mobile API",
+   "Travel time data depends on the community-run Transitous service, which asks for considerate load",
+   "Default admin/admin credentials must be changed after first login"
+  ],
+  "license": "Apache-2.0 (with Commons Clause and attribution conditions)",
+  "category": "real estate alerts",
+  "keywords": [
+   "apartment finder",
+   "flat search",
+   "rental alerts",
+   "real estate monitor",
+   "property listing notifications",
+   "immoscout24",
+   "immowelt",
+   "kleinanzeigen",
+   "wg-gesucht",
+   "willhaben",
+   "flatfox",
+   "idealista",
+   "telegram bot notifications",
+   "slack notifications",
+   "ntfy",
+   "discord alerts",
+   "self-hosted",
+   "docker",
+   "nodejs",
+   "sqlite",
+   "web ui",
+   "deduplication",
+   "scam detection",
+   "travel time",
+   "financing calculator",
+   "mcp server",
+   "germany apartment search",
+   "find rental flat",
+   "get notified new listings",
+   "share alerts with family chat",
+   "rent or buy calculator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7620,
+  "output": 1358
+ },
+ "generated": "2026-10-29"
+}

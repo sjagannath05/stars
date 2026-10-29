@@ -1,0 +1,103 @@
+{
+ "id": "dreamofxm/diskwise",
+ "repo": "DreamOfXM/diskwise",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Cleanup and Uninstall",
+   "entry": "DiskWise - Open-source SwiftUI disk cleaner whose only deletion path is the Trash, with per-session undo and a knowledge base that explains each cache entry. [![Open-Source Software][OSS Icon]](https://github.com/DreamOfXM/diskwise) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⚙️ System (47)",
+   "entry": "DiskWise - Disk cleaner that moves everything it removes to the Trash and keeps it undoable, covering app caches, node_modules, Xcode DerivedData and Docker usage."
+  }
+ ],
+ "summary": {
+  "one_liner": "DiskWise is a free, open-source native SwiftUI disk cleaner for macOS that finds space used by node_modules, Xcode DerivedData, Docker, app caches and uninstall leftovers, and moves everything it removes to the Trash so it can be undone.",
+  "what_it_does": "The app scans the whole volume and shows a ring chart plus a ledger of folders, with each slice measured in that pass. Removals go through a single path (FileManager.trashItem) and are undoable for the session until the user empties the Trash in Finder. It includes Large Files, Long Untouched files, and Duplicates views (duplicates use size, partial hash, then full hash, and keep the newest copy locked). A curated cache knowledge base explains what each App Cache or Dev Cache entry is, what deleting it does, and how to get it back. The README also describes crash-dump detection for Crashpad folders, growth tracking between scans, and an optional content probe that is off by default. The direct-download build includes a diskwise CLI that doubles as an MCP server for AI agent clients, while the Mac App Store build does not. Docker usage is read-only and points to where to prune.",
+  "use_cases": [
+   "find out where my Mac's disk space went",
+   "clean up node_modules across projects",
+   "clear Xcode DerivedData and simulator data safely",
+   "reclaim space from app caches without permanent deletion",
+   "find duplicate files on my Mac",
+   "remove leftovers from uninstalled apps",
+   "let an AI agent scan and clean disk space through MCP",
+   "review Docker and container runtime disk usage"
+  ],
+  "how_to_run": [
+   "brew install --cask dreamofxm/diskwise/diskwise",
+   "Or download the DMG from the Releases page and drag DiskWise.app to Applications",
+   "Or install DiskWise: Storage Cleaner from the Mac App Store",
+   "git clone the repository, then: swift build",
+   "swift run DiskCleaner (after swift run SelfTest passes)",
+   "bash build_app/build.sh to produce a signed .app and DMG"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Xcode Command Line Tools",
+   "Model Context Protocol (MCP) server via diskwise CLI",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Deletion only goes to the Trash via FileManager.trashItem, with per-session undo",
+   "Per-entry knowledge base explaining what each cache is, what deleting costs, and how to restore it",
+   "Ships a CLI that works as an MCP server for AI agent clients, with the safety model documented",
+   "No network access, no telemetry, no updater, and no Electron or background daemon",
+   "Interface available in ten languages and six skins defined in a JSON file"
+  ],
+  "caveats": [
+   "The App Store build has no CLI and cannot empty the Trash directly; the user must press ⌘⇧⌫ in Finder",
+   "Large node_modules sweeps are slow and do not stream results yet",
+   "Leftover detection is conservative and will miss some orphaned files; system-area paths are counted but not cleanable",
+   "Pre-v1.7 builds were ad-hoc signed and need manual approval on first launch; macOS 13+ is required for the App Store build"
+  ],
+  "license": "Apache License 2.0",
+  "category": "macos disk cleaner",
+  "keywords": [
+   "disk cleaner",
+   "mac disk cleaner",
+   "macos storage cleaner",
+   "cleanmymac alternative",
+   "open source cleanmymac",
+   "swiftui app",
+   "swift",
+   "node_modules cleaner",
+   "xcode deriveddata",
+   "derived data cleanup",
+   "docker disk usage",
+   "app cache cleaner",
+   "uninstall leftovers",
+   "duplicate file finder",
+   "large file finder",
+   "move to trash undo",
+   "safe file deletion",
+   "free up disk space",
+   "reclaim storage mac",
+   "mac storage analyzer",
+   "disk usage visualizer",
+   "crash dump cleanup",
+   "mcp server",
+   "model context protocol",
+   "ai agent disk cleanup",
+   "homebrew cask",
+   "trash instead of rm",
+   "find what is taking up space",
+   "clear caches on mac",
+   "developer mac cleanup",
+   "orbstack podman colima cleanup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9483,
+  "output": 1526
+ },
+ "generated": "2026-10-29"
+}

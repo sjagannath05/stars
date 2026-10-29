@@ -1,0 +1,91 @@
+{
+ "id": "opensmtpd/opensmtpd",
+ "repo": "OpenSMTPD/OpenSMTPD",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Email - Mail Transfer Agents",
+   "entry": "OpenSMTPD - Secure SMTP server implementation from the OpenBSD project. (Source Code) ISC C/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenSMTPD is a free, server-side SMTP mail transfer agent from the OpenBSD project that implements RFC 5321 plus some standard extensions.",
+  "what_it_does": "OpenSMTPD implements the server side of the SMTP protocol (RFC 5321) with some additional standard extensions, letting a machine send and receive email with other SMTP systems. The README says it runs on Linux, FreeBSD, OpenBSD, NetBSD, DragonFlyBSD and macOS. It is installed either from distribution packages (apt, apk, yum, zypper, MacPorts) or built from source with configure and make. Its single control utility, smtpctl, can run in compatibility mode under historical names such as sendmail, newaliases, mailq and makemap, if the system links them to it. Configuration lives in /etc/smtpd.conf, and the daemon is started with smtpd, with a -dv flag for debug and verbose output. The README recommends running two dedicated users (_smtpd and _smtpq) for better security.",
+  "use_cases": [
+   "run a self-hosted mail server",
+   "receive and send email over SMTP",
+   "replace sendmail-compatible mail setup",
+   "relay mail on BSD or Linux servers",
+   "provide a sendmail-style interface for local mail submission"
+  ],
+  "how_to_run": [
+   "sudo apt install opensmtpd (Debian/Ubuntu; other distributions listed in README)",
+   "git clone the repository, or download a release tarball",
+   "./bootstrap (only when building from git sources)",
+   "./configure && make && sudo make install",
+   "Create the _smtpd and _smtpq users as described in the README, and configure /etc/smtpd.conf",
+   "smtpd (or smtpd -dv for debug and verbose mode)"
+  ],
+  "stack": [
+   "C",
+   "libevent",
+   "libressl or OpenSSL",
+   "pkgconf or pkg-config",
+   "autoconf, automake, bison or byacc, libtool (git builds only)"
+  ],
+  "notable": [
+   "Comes from the OpenBSD project and is available as a package on many Unix-like systems",
+   "Single smtpctl binary that can act as sendmail, newaliases, mailq and makemap through compatibility links",
+   "Privilege separation via two dedicated system users (_smtpd and _smtpq)",
+   "Packaged in many distributions, and the README notes some distributions backport security fixes"
+  ],
+  "caveats": [
+   "The README warns the repository may lag behind the OpenBSD smtpd source, so downstream maintainers should check backported security fixes",
+   "Some distributions ship old versions of OpenSMTPD",
+   "Building from source needs several dependencies, and macOS needs a newer bison and a libevent path passed to configure"
+  ],
+  "license": "ISC",
+  "category": "mail transfer agent",
+  "keywords": [
+   "opensmtpd",
+   "smtp server",
+   "mail transfer agent",
+   "mta",
+   "mail server",
+   "smtpd",
+   "smtpctl",
+   "sendmail alternative",
+   "sendmail replacement",
+   "postfix alternative",
+   "exim alternative",
+   "qmail alternative",
+   "rfc 5321",
+   "email server",
+   "self-hosted email",
+   "send and receive email",
+   "openbsd mail",
+   "libevent mail server",
+   "mail relay",
+   "smtp daemon",
+   "local mail submission",
+   "newaliases",
+   "mailq",
+   "makemap",
+   "email delivery",
+   "run my own mail server",
+   "mail server on linux",
+   "mail server on freebsd",
+   "isc license mail"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4158,
+  "output": 1236
+ },
+ "generated": "2026-10-29"
+}

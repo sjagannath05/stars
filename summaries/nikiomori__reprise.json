@@ -1,0 +1,100 @@
+{
+ "id": "nikiomori/reprise",
+ "repo": "nikiomori/reprise",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Reprise - Call recorder that notices calls in Zoom, Meet, Teams, FaceTime and more, and records both sides, and the screen if you want, to plain files."
+  }
+ ],
+ "summary": {
+  "one_liner": "Reprise is an open-source, MIT-licensed macOS app that automatically detects calls in apps like Zoom, Google Meet and Teams, and records both sides plus optionally the screen into plain files.",
+  "what_it_does": "Reprise watches Core Audio for apps that start or stop audio and which apps hold the microphone, then asks \"Record this call?\" or records automatically per app (Ask, Always Record or Ignore). It records the microphone and the Mac's system sound into one file, with an option to save each side separately as M4A or WAV, and can record the screen as HEVC. It removes the others' echo from your side after the call is saved, when headphones are not in use. Each call is saved as a folder with audio, optional screen video, markers, and optional transcripts. A library lets you play, search titles, people and transcripts, trim or share parts of calls, and hand each saved call to a Shortcut. Transcription is optional and sends audio to a chosen OpenAI-compatible service, or to a local one such as Refrain.",
+  "use_cases": [
+   "record a Zoom, Meet or Teams call automatically",
+   "keep a recording of an interview or podcast with each side in its own file",
+   "search past calls by spoken phrase",
+   "transcribe a call on your own Mac",
+   "record a call without sending audio to the cloud",
+   "mark moments in a call without taking notes"
+  ],
+  "how_to_run": [
+   "Download the ZIP from Releases",
+   "Open it and move Reprise.app to Applications",
+   "Start Reprise and grant Microphone and System Audio Recording permissions",
+   "Build from source: open Reprise.xcodeproj in Xcode 27 and run",
+   "Optional: run xcodegen generate after changing project.yml",
+   "Run tests with: xcodebuild -scheme Reprise test"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Core Audio",
+   "ScreenCaptureKit",
+   "AVFoundation",
+   "Accelerate",
+   "XcodeGen",
+   "Xcode 27"
+  ],
+  "notable": [
+   "Detects calls by itself and records from the first second if turned on, deleting that audio if Record is never pressed",
+   "Separates both sides into their own files, and removes the others' echo from the microphone track with an adaptive filter after the call",
+   "Screen recordings use fixed-quality HEVC at 0.5 to 6 Mbit/s, per the README",
+   "Plain files in ~/Movies/Reprise with no account, no cloud and no virtual audio driver",
+   "Optional transcription with per-speaker labels using any OpenAI-compatible endpoint"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later on Apple silicon",
+   "Cloud transcription services receive the call audio and bill per use, and per-side transcription bills the call twice",
+   "The README warns that many jurisdictions require consent from all persons before recording a call"
+  ],
+  "license": "MIT",
+  "category": "macos call recording",
+  "keywords": [
+   "call recorder",
+   "mac call recorder",
+   "macos",
+   "record zoom calls",
+   "record google meet",
+   "record microsoft teams",
+   "record facetime",
+   "screen recording",
+   "audio recording",
+   "podcast recording",
+   "interview recording",
+   "echo cancellation",
+   "adaptive filter",
+   "core audio",
+   "screencapturekit",
+   "hevc video",
+   "m4a",
+   "wav",
+   "transcription",
+   "whisper",
+   "openai compatible api",
+   "speaker diarization",
+   "local transcription",
+   "refrain",
+   "open source",
+   "swiftui",
+   "record both sides of call",
+   "find a phrase in old calls",
+   "automatic call detection",
+   "menu bar recorder",
+   "free call recording app",
+   "save calls as plain files",
+   "alternative to otter"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5328,
+  "output": 1337
+ },
+ "generated": "2026-10-29"
+}

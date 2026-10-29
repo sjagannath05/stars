@@ -1,0 +1,97 @@
+{
+ "id": "ssup2/kpexec",
+ "repo": "ssup2/kpexec",
+ "kind": "star",
+ "description": " kpexec is a kubernetes cli that runs commands in a container with high privileges.",
+ "topics": [],
+ "language": "Go",
+ "stars": 270,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2025-12-04",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "kpexec is a Kubernetes CLI that runs commands in a target container with elevated privileges, without SSH, by launching a privileged helper pod on the same node.",
+  "what_it_does": "kpexec looks up the target pod through the Kubernetes API and finds its node. It then creates a privileged \"cnsenter\" pod on that node, which joins the target container's IPC, UTS, PID, network and mount namespaces. The cnsenter pod gets the container's PID and root directory through the Container Runtime Interface (CRI) and runs the requested command there. A tools mode (-T) adds debugging tools into the target container when they are missing. A cnsenter garbage collector (--cnsenter-gc) removes leftover helper pods. kpexec uses kubectl internally, so kubectl and a kubeconfig must be set up first.",
+  "use_cases": [
+   "debug a pod with network or host-level privileges the container lacks",
+   "run commands in a container without SSH access",
+   "add debugging tools to a container that does not have them",
+   "exec into a pod's namespaces from the node",
+   "clean up leftover debug helper pods in a cluster"
+  ],
+  "how_to_run": [
+   "Install kubectl and configure a kubeconfig for your cluster",
+   "Download the kpexec binary for your OS and architecture, or install via Homebrew: brew install ssup2/tap/kpexec",
+   "Run a command in a pod: kpexec mypod -- date",
+   "Get an interactive shell: kpexec -it mypod -c bash-container -- bash",
+   "Enable tools mode: kpexec -it -T mypod -c bash-container -- bash",
+   "Remove leftover helper pods: kpexec --cnsenter-gc"
+  ],
+  "stack": [
+   "Go",
+   "Kubernetes API",
+   "kubectl",
+   "Container Runtime Interface (CRI)",
+   "containerd",
+   "CRI-O",
+   "Docker"
+  ],
+  "notable": [
+   "Runs commands with higher privileges than kubectl exec, which keeps the container's own privileges",
+   "Tools mode injects debugging utilities into containers that lack them",
+   "Works with containerd, CRI-O and Docker runtimes",
+   "Available as a kubectl plugin via Krew under the name pexec",
+   "Supports amd64 and arm64 CPU architectures"
+  ],
+  "caveats": [
+   "The cnsenter pod needs hostPID, privileged mode and hostPath, which some clusters may restrict",
+   "Requires a working kubectl installation and kubeconfig",
+   "Shell autocompletion does not work when installed via Krew"
+  ],
+  "license": "MIT",
+  "category": "kubernetes debugging cli",
+  "keywords": [
+   "kubernetes",
+   "k8s",
+   "kubectl plugin",
+   "kubectl exec alternative",
+   "privileged exec",
+   "debug pod",
+   "container debugging",
+   "namespace enter",
+   "nsenter",
+   "cri",
+   "container runtime interface",
+   "containerd",
+   "cri-o",
+   "docker",
+   "hostpid",
+   "privileged container",
+   "ssh alternative",
+   "run command in container",
+   "debug container without ssh",
+   "add debugging tools to container",
+   "node debugging",
+   "krew plugin",
+   "homebrew kubernetes",
+   "golang cli",
+   "cluster troubleshooting",
+   "pod network debugging",
+   "cnsenter",
+   "garbage collect debug pods"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3437,
+  "output": 1222
+ },
+ "generated": "2026-10-29"
+}

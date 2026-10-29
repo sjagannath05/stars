@@ -1,0 +1,96 @@
+{
+ "id": "sipyourdrink-ltd/bernstein",
+ "repo": "sipyourdrink-ltd/bernstein",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Multi-Agent / Orchestration Frameworks",
+   "entry": "Bernstein — Multi-agent orchestrator for CLI coding agents (Claude Code, Codex CLI, Gemini CLI, and 34 more). Deterministic Python scheduler, first-class MCP server, file-based state, quality gates, cost tracking. Apache-2.0."
+  }
+ ],
+ "summary": {
+  "one_liner": "Bernstein is an open-source, Apache-2.0 orchestrator that runs parallel CLI coding agents (Claude Code, Codex CLI, Gemini CLI and 50+ others) under a deterministic, non-LLM Python scheduler with quality gates, file-based state, and verifiable run receipts.",
+  "what_it_does": "Decomposes a goal into tasks with roles, owned files, and completion signals, then runs them in parallel as CLI coding agents. Each coding task gets its own git worktree, and verified work is merged to main while failed tasks are retried or rerouted to another model. Workflows are declared in YAML DAGs with phases, roles, dependencies, and conditions, and the scheduler executes them as plain Python with no model deciding the next step. Non-code deliverables such as reports, datasets, or evidence packs can be completed against an artifact contract using a signed lineage receipt. The README describes an optional HMAC-chained audit log, a replay journal, and an offline run-receipt verifier built on Ed25519 signatures. It also covers cost tracking, an MCP server mode, a terminal dashboard (`bernstein live`), and a browser dashboard (`bernstein gui serve`).",
+  "use_cases": [
+   "run several coding agents in parallel on one repository",
+   "orchestrate Claude Code, Codex or Gemini CLI on a task backlog",
+   "verify and replay what an AI agent run did",
+   "enforce approval and role policies on agent workflows",
+   "produce audit evidence packs from agent runs",
+   "mix cheap local models with cloud models in one run"
+  ],
+  "how_to_run": [
+   "uv tool install bernstein # or: pipx install bernstein",
+   "bernstein init",
+   "bernstein doctor # checks a CLI agent is installed and authenticated",
+   "bernstein -g \"fix the failing test in tests/test_foo.py\""
+  ],
+  "stack": [
+   "Python",
+   "git worktrees",
+   "Ed25519 signatures",
+   "HMAC audit chain",
+   "MCP server",
+   "YAML workflow manifests",
+   "uv / pipx / pip / brew / dnf / npm / Docker install paths"
+  ],
+  "notable": [
+   "Deterministic scheduler with no LLM in the coordination loop, so runs can be replayed and compared",
+   "Per-task git worktree isolation behind merge gates",
+   "Signed run receipts that can be verified offline with a single command",
+   "Adapters for more than 50 CLI agents plus a generic --prompt wrapper",
+   "Air-gap install profile and wheelhouse guide"
+  ],
+  "caveats": [
+   "Self-described as beta and solo-maintained; minor versions may change interfaces",
+   "Some features are experimental or not yet shipped, including cloud execution on Cloudflare Workers and the volunteer `autopilot` runner, which refuses to run until a TaskSource is implemented",
+   "Audit-chain verification only works when the run was started with BERNSTEIN_AUDIT=1, a compliance preset, or --audit"
+  ],
+  "license": "Apache-2.0",
+  "category": "multi-agent coding orchestration",
+  "keywords": [
+   "multi-agent orchestrator",
+   "coding agent orchestration",
+   "parallel coding agents",
+   "claude code orchestration",
+   "codex cli",
+   "gemini cli",
+   "aider",
+   "cursor agent",
+   "ai agent governance",
+   "policy as code",
+   "deterministic scheduler",
+   "git worktree isolation",
+   "mcp server",
+   "quality gates",
+   "cost tracking",
+   "run replay",
+   "audit log verification",
+   "signed receipts",
+   "ed25519 signature",
+   "workflow dag",
+   "yaml workflow",
+   "air-gapped install",
+   "agent task queue",
+   "run multiple ai coding agents",
+   "coordinate ai agents on one repo",
+   "automate code changes with agents",
+   "verify ai agent output",
+   "compare cli coding agents",
+   "audit evidence pack",
+   "terminal dashboard for agents",
+   "llm agent scheduling",
+   "self-hosted agent orchestration"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7763,
+  "output": 1451
+ },
+ "generated": "2026-10-29"
+}

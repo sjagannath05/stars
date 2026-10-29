@@ -1,0 +1,92 @@
+{
+ "id": "prefecthq/prefect",
+ "repo": "PrefectHQ/prefect",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Job Schedulers",
+   "entry": "prefect - A modern workflow orchestration framework that makes it easy to build, schedule and monitor robust data pipelines."
+  }
+ ],
+ "summary": {
+  "one_liner": "Prefect is a Python workflow orchestration framework for building, scheduling, and monitoring data pipelines by turning ordinary functions into flows and tasks.",
+  "what_it_does": "Users add @flow and @task decorators to plain Python code to define workflows with retries, dependencies, branching, caching, and event-based automations. Flows can be run manually from the UI or CLI, or turned into deployments with a cron schedule using a .serve() call that keeps a local process watching for scheduled runs. Workflow activity is tracked and viewable through a self-hosted Prefect server (started with `prefect server start`) or the managed Prefect Cloud dashboard. A lighter prefect-client package is offered for communicating with Cloud or a remote server from ephemeral environments. The README also points to an agent setup guide covering plugins, MCP, and the CLI.",
+  "use_cases": [
+   "Turn a Python script into a scheduled production data pipeline",
+   "Schedule recurring jobs with cron expressions",
+   "Add retries and error handling to data workflows",
+   "Monitor workflow runs through a dashboard or self-hosted server",
+   "Trigger workflow deployments in response to events",
+   "Orchestrate multi-step data processing with task dependencies"
+  ],
+  "how_to_run": [
+   "pip install -U prefect",
+   "uv add prefect",
+   "Create a Python file that uses @flow and @task decorators and run it with python",
+   "prefect server start",
+   "Change the script's main block to call flow.serve(name=..., cron=...) to create a scheduled deployment"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "httpx (used in the example)",
+   "Prefect server (self-hosted)",
+   "Prefect Cloud (managed)",
+   "uv (install option)"
+  ],
+  "notable": [
+   "Decorator-based API (@flow, @task) that turns existing Python scripts into orchestrated workflows with minimal changes",
+   "Deployments created with a .serve() call and cron schedules, plus event-triggered runs",
+   "Choice of self-hosted Prefect server or managed Prefect Cloud for monitoring",
+   "Lighter prefect-client package for remote access from ephemeral execution environments",
+   "Agent setup guides for plugins, MCP, and CLI usage"
+  ],
+  "caveats": [
+   "Requires Python 3.11 or newer",
+   "Full monitoring depends on running a Prefect server or using the paid-tier Prefect Cloud service (the README does not specify pricing)",
+   "Scheduled deployments run only while the serving process is running locally"
+  ],
+  "license": "unknown",
+  "category": "workflow orchestration framework",
+  "keywords": [
+   "workflow orchestration",
+   "python workflow engine",
+   "data pipelines",
+   "pipeline orchestration",
+   "job scheduler",
+   "task scheduling",
+   "cron scheduling",
+   "scheduled jobs",
+   "flow decorator",
+   "task decorator",
+   "retries",
+   "caching",
+   "event-driven automation",
+   "workflow monitoring",
+   "self-hosted server",
+   "prefect cloud",
+   "prefect-client",
+   "airflow alternative",
+   "dagster alternative",
+   "luigi alternative",
+   "automate data process",
+   "turn script into production workflow",
+   "schedule python script",
+   "run jobs every minute",
+   "monitor data pipeline runs",
+   "retry failed tasks",
+   "data engineering tool",
+   "mcp agent",
+   "dynamic workflows"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3033,
+  "output": 1192
+ },
+ "generated": "2026-10-29"
+}

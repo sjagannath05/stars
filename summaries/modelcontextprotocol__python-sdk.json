@@ -1,0 +1,89 @@
+{
+ "id": "modelcontextprotocol/python-sdk",
+ "repo": "modelcontextprotocol/python-sdk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "mcp - The official Python SDK for building Model Context Protocol servers and clients."
+  }
+ ],
+ "summary": {
+  "one_liner": "The official Python SDK for building Model Context Protocol (MCP) servers and clients, letting LLM applications access tools, resources, and prompts.",
+  "what_it_does": "The package provides an MCP server framework where plain type-hinted Python functions decorated with @mcp.tool() or @mcp.resource() become MCP tools and templated resources, with schemas derived from the type hints. It also includes an MCP client (the Client class) that connects to remote servers over Streamable HTTP, or launches a local server as a stdio subprocess, or uses a custom transport. An optional cli extra adds the mcp command with subcommands dev (MCP Inspector), run, and install. The README says it supports the stdio, Streamable HTTP, and SSE transports. Full documentation (Get started guide, What's new in v2, API reference, migration guide) is hosted externally.",
+  "use_cases": [
+   "build an MCP server exposing tools to an LLM app",
+   "expose data as MCP resources with URI templates",
+   "write a Python client that calls tools on an MCP server",
+   "test an MCP server in the MCP Inspector",
+   "run an MCP server over Streamable HTTP",
+   "connect to a local MCP server via stdio subprocess"
+  ],
+  "how_to_run": [
+   "uv add \"mcp[cli]\"  # or: pip install \"mcp[cli]\"",
+   "Create server.py with an MCPServer and @mcp.tool()/@mcp.resource() functions",
+   "uv run mcp dev server.py  # open in MCP Inspector",
+   "uv run mcp run server.py --transport streamable-http",
+   "Use `async with Client(url) as client:` and client.call_tool(...) to call the server"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "uv",
+   "pip",
+   "MCP Inspector (via mcp dev)"
+  ],
+  "notable": [
+   "Type hints and docstrings define tool schemas automatically, with no hand-written JSON Schema",
+   "Single package provides both server and client APIs",
+   "Supports stdio, Streamable HTTP, and SSE transports",
+   "Official SDK maintained under the modelcontextprotocol organization"
+  ],
+  "caveats": [
+   "Requires Python 3.11 or newer",
+   "Detailed documentation is external; the README itself is a brief overview",
+   "The CLI tooling requires the optional cli extra"
+  ],
+  "license": "MIT",
+  "category": "mcp server framework",
+  "keywords": [
+   "model context protocol",
+   "mcp",
+   "mcp python sdk",
+   "mcp server",
+   "mcp client",
+   "llm tools",
+   "llm integration",
+   "ai agents",
+   "tool calling",
+   "function calling",
+   "resources and prompts",
+   "fastmcp",
+   "streamable http",
+   "stdio transport",
+   "sse transport",
+   "mcp inspector",
+   "json schema from type hints",
+   "python decorators tools",
+   "uv",
+   "pip install mcp",
+   "build ai tool server",
+   "let llm call my python functions",
+   "connect llm app to data source",
+   "agent tool server",
+   "api for llm applications",
+   "pydantic validation",
+   "async client python",
+   "mit license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2636,
+  "output": 1141
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,108 @@
+{
+ "id": "slimtoolkit/slim",
+ "repo": "slimtoolkit/slim",
+ "kind": "star",
+ "description": "Slim(toolkit): Don't change anything in your container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source)",
+ "topics": [
+  "apparmor",
+  "containers",
+  "docker",
+  "go",
+  "golang",
+  "hacktoberfest",
+  "minify",
+  "minify-images",
+  "seccomp",
+  "seccomp-profile",
+  "security",
+  "slim"
+ ],
+ "language": "Go",
+ "stars": 23488,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-09-19",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "SlimToolkit (Slim, formerly DockerSlim) is an open source Go CLI that analyzes, minifies, and hardens container images without requiring changes to the image or its Dockerfile.",
+  "what_it_does": "Slim runs dynamic analysis on a target container image by starting a temporary container, probing the application (including optional HTTP probing and crawling), and keeping only the files the app needs to produce a smaller image. The build command also generates seccomp and AppArmor security profiles automatically. Other commands cover static inspection of image layers and reverse-engineered Dockerfiles (xray), Dockerfile linting (lint), debugging of running containers (debug), registry operations (pull, push, copy, server), image merging (merge), image listing (images), vulnerability/EPSS lookups (vulnerability), and application BOM output (appbom). Users can customize the output with flags such as --include-path, --include-shell, --exclude-pattern, and --exec for scripted interaction with the temporary container. The README lists minification examples for Node.js, Python, Ruby, Go, Rust, Java, PHP, Haskell, and Elixir images, with reported reductions up to about 448x for a Go image.",
+  "use_cases": [
+   "shrink a Docker image without changing the Dockerfile",
+   "generate seccomp and AppArmor profiles for containers",
+   "inspect what is inside a container image layer by layer",
+   "debug minimal or distroless containers",
+   "lint Dockerfiles for best practices",
+   "merge two container images",
+   "list application dependencies in an image (appbom)"
+  ],
+  "how_to_run": [
+   "curl -sL <install script URL from README> | sudo -E bash -",
+   "brew install docker-slim",
+   "docker pull dslim/slim",
+   "slim build my/sample-app",
+   "slim xray <image>",
+   "slim update"
+  ],
+  "stack": [
+   "Go",
+   "Docker Engine API",
+   "Linux seccomp",
+   "AppArmor"
+  ],
+  "notable": [
+   "Minifies images by up to about 30x for typical apps and more for compiled languages, per README examples",
+   "Auto-generates seccomp and AppArmor security profiles from dynamic analysis",
+   "Interactive CLI prompt mode with tab completion, plus scripted --continue-after modes",
+   "Now a CNCF Sandbox project, formerly DockerSlim",
+   "Debug sidecar containers for troubleshooting minified images"
+  ],
+  "caveats": [
+   "Some app stacks need custom HTTP probe commands or --include-path flags to keep all dynamically loaded files",
+   "Lint command's Docker image support is described as work in progress",
+   "Requires a container runtime (Docker) for analysis, since it runs the target container"
+  ],
+  "license": "Apache-2.0",
+  "category": "container image optimization",
+  "keywords": [
+   "docker image minify",
+   "container image slimming",
+   "shrink docker images",
+   "reduce container size",
+   "slim",
+   "slimtoolkit",
+   "docker-slim",
+   "dockerslim",
+   "seccomp profile generator",
+   "apparmor profile generator",
+   "container security hardening",
+   "minify-images",
+   "distroless debugging",
+   "xray container image",
+   "dockerfile lint",
+   "image layer inspection",
+   "smaller docker images",
+   "reduce attack surface containers",
+   "container debug sidecar",
+   "docker image merge",
+   "golang cli",
+   "cncf sandbox",
+   "vulnerability epss",
+   "appbom",
+   "make my container smaller",
+   "dynamic analysis container",
+   "docker registry copy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15807,
+  "output": 1276
+ },
+ "generated": "2026-10-29"
+}

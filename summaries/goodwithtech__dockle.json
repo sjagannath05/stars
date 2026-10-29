@@ -1,0 +1,109 @@
+{
+ "id": "goodwithtech/dockle",
+ "repo": "goodwithtech/dockle",
+ "kind": "star",
+ "description": "Container Image Linter for Security, Helping build the Best-Practice Docker Image, Easy to start",
+ "topics": [
+  "containers",
+  "docker",
+  "go",
+  "golang",
+  "kubernetes",
+  "linter",
+  "security",
+  "security-audit",
+  "security-tools",
+  "vulnerability"
+ ],
+ "language": "Go",
+ "stars": 3300,
+ "license": "Apache-2.0",
+ "homepage": "https://containers.goodwith.tech/",
+ "pushed_at": "2026-08-10",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Dockle is a command-line linter that scans Docker/container images for security and best-practice problems, with checks based partly on CIS Benchmarks.",
+  "what_it_does": "Dockle inspects a container image (by name, or from a saved image tarball) and reports findings grouped under checkpoint codes such as CIS-DI-0001 and DKL-LI-0001, each at a level of FATAL, WARN, INFO, SKIP or PASS. Checks cover items like running as root, use of ADD instead of COPY, secrets in environment variables or files, HEALTHCHECK presence, setuid/setgid files, apt-get cache cleanup, the latest tag, and empty passwords. Output can be plain text, JSON, or SARIF, and can be written to a file. The tool can exit non-zero when WARN or FATAL alerts are found, which suits CI pipelines. Checkpoints can be ignored via flags, an environment variable, or a .dockleignore file, and accept/reject lists for env var names, filenames and extensions can be customized. The README says it can pull images from private registries (Docker Hub, Amazon ECR, GCR, and BasicAuth self-hosted registries) using environment variables.",
+  "use_cases": [
+   "lint a Docker image for security issues before deploying",
+   "check container images for CIS Benchmark compliance",
+   "add image security checks to a CI pipeline",
+   "detect secrets or credential files baked into an image",
+   "enforce exit codes on image lint warnings",
+   "scan private registry images without installing Docker"
+  ],
+  "how_to_run": [
+   "brew install goodwithtech/r/dockle",
+   "dockle [YOUR_IMAGE_NAME]",
+   "docker save alpine:latest -o alpine.tar",
+   "dockle --input alpine.tar",
+   "dockle -f json -o results.json [IMAGE_NAME]",
+   "dockle --exit-code 1 [IMAGE_NAME]"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "AWS SDK",
+   "Google Cloud SDK"
+  ],
+  "notable": [
+   "Checkpoint codes mapped to CIS Docker Benchmark items plus Dockle-specific checks",
+   "Scans images without needing Docker installed when pulling from registries (README states this)",
+   "Outputs JSON and SARIF for tooling integration",
+   "Ignore lists via flags, env var, or .dockleignore file",
+   "Accept and reject lists for suspicious env vars, filenames, and extensions"
+  ],
+  "caveats": [
+   "Requires Docker socket mounting to scan images on the host machine",
+   "By default exits with code 0 even when problems are found; a flag is needed for CI failure",
+   "Registry authentication relies on environment variables, which the README itself advises against on local machines"
+  ],
+  "license": "Apache-2.0",
+  "category": "container image linting",
+  "keywords": [
+   "docker image linter",
+   "container security scanner",
+   "container image lint",
+   "cis benchmark docker",
+   "best practice dockerfile",
+   "docker security audit",
+   "image hardening check",
+   "dockle",
+   "go cli tool",
+   "ci image scanning",
+   "gitlab ci docker check",
+   "github action docker lint",
+   "detect secrets in docker image",
+   "sarif output",
+   "json report docker",
+   "setuid file check",
+   "healthcheck docker",
+   "docker image audit",
+   "check docker image for root user",
+   "lint my container before deploy",
+   "hadolint alternative",
+   "docker bench alternative",
+   "private registry image scan",
+   "ecr image check",
+   "docker hub private image scan",
+   "kubernetes image security",
+   "exit code docker lint",
+   "dockleignore ignore checks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13108,
+  "output": 1313
+ },
+ "generated": "2026-10-29"
+}

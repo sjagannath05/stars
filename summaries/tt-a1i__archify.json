@@ -1,0 +1,92 @@
+{
+ "id": "tt-a1i/archify",
+ "repo": "tt-a1i/archify",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Data Visualization",
+   "entry": "Archify by tt-a1i - An Agent Skill for Claude Code that generates interactive architecture, workflow, sequence, data-flow, and lifecycle diagrams as standalone HTML. Typed JSON, local renderers, and delivery checks support source-linked node details, path tracing, themes, and export."
+  }
+ ],
+ "summary": {
+  "one_liner": "Archify is an Agent Skill for Claude Code and similar coding agents that turns descriptions or repositories into interactive, self-contained HTML diagrams.",
+  "what_it_does": "Given a text description or a request to read a repository, the agent produces typed JSON that Archify validates and renders into a standalone HTML file. Supported diagram types include architecture, workflow, sequence, data flow, lifecycle, ERD, class, tree, timeline, and waterfall. The viewer offers node details, focus and upstream/downstream reach tracing, route probing, themes, and export to PNG, WebP, JPG, or PDF. A CLI provides validate, preview, deliver, and compare commands, and an optional mode can pin source links to a Git commit. The README also describes one-page explainer answers that combine panels, tables, and diagrams.",
+  "use_cases": [
+   "Diagram a system architecture from a description or repository",
+   "Map a CI/CD or approval workflow",
+   "Visualize an API request and cache-miss path",
+   "Document a database schema as an ERD",
+   "Build an interactive explainer page for a technical question",
+   "Compare before and after architecture for design review"
+  ],
+  "how_to_run": [
+   "npx skills add tt-a1i/archify -g",
+   "cd archify",
+   "node bin/archify.mjs doctor",
+   "node bin/archify.mjs demo /tmp/archify-demo"
+  ],
+  "stack": [
+   "Node.js",
+   "JSON schema (typed IR)",
+   "HTML/SVG renderer",
+   "Agent Skill (Claude Code, Cursor, Codex CLI, OpenCode)"
+  ],
+  "notable": [
+   "Typed JSON intermediate representation with schema validation before delivery",
+   "Atomic delivery: a new HTML file replaces the previous output only after all checks pass",
+   "Interactive viewer with focus, upstream/downstream reach, and route tracing",
+   "Optional source-linked architecture nodes pinned to a public Git commit",
+   "Zero-dependency CLI with a loopback-only live preview mode"
+  ],
+  "caveats": [
+   "Automatic Mermaid parsing, general auto-layout, hosted sharing, and WYSIWYG editing are explicitly out of scope",
+   "Update checks make a GET request to a fixed manifest unless ARCHIFY_UPDATE_CHECK_DISABLED=1 is set",
+   "Some install surfaces (e.g. Claude.ai) depend on Node.js access in the sandbox; third-party integrations are community-maintained"
+  ],
+  "license": "Apache-2.0",
+  "category": "agent skill diagramming",
+  "keywords": [
+   "archify",
+   "claude code skill",
+   "agent skill",
+   "architecture diagram",
+   "interactive diagram",
+   "html diagram",
+   "system design visualization",
+   "workflow diagram",
+   "sequence diagram",
+   "data flow diagram",
+   "lifecycle diagram",
+   "erd generator",
+   "class diagram",
+   "timeline diagram",
+   "waterfall chart",
+   "codebase visualization",
+   "repository architecture map",
+   "source linked diagram",
+   "standalone html output",
+   "diagram export png pdf",
+   "json diagram schema",
+   "cursor skill",
+   "codex cli skill",
+   "opencode skill",
+   "draw my system",
+   "map my codebase",
+   "explain system to team",
+   "share architecture diagram",
+   "architecture review before and after",
+   "mermaid alternative",
+   "diagram validation cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10029,
+  "output": 1247
+ },
+ "generated": "2026-10-29"
+}

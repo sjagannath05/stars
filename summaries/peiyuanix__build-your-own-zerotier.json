@@ -1,0 +1,89 @@
+{
+ "id": "peiyuanix/build-your-own-zerotier",
+ "repo": "peiyuanix/build-your-own-zerotier",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Network Stack",
+   "entry": "C / Python: _Build your own VPN/Virtual Switch_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A teaching project that builds a layer-2 virtual switch (VSwitch in Python) and client ports (VPort in C) that bridge Ethernet frames over UDP so computers across the Internet appear to share one LAN.",
+  "what_it_does": "The README describes a server program, vswitch.py, that simulates a physical Ethernet switch by keeping a MAC address table and forwarding frames to the correct port. Each client runs vport.c, which attaches to a Linux TAP virtual network device and relays frames between the local kernel and the VSwitch over a UDP socket. Frames the switch does not have a table entry for are flooded to all other ports so the destination can answer and be learned. The result is that machines on different networks can ping each other on a shared 10.1.1.0/24 subnet. The README states the design only at a high level and does not describe encryption, authentication, or NAT traversal.",
+  "use_cases": [
+   "learn how a layer-2 network switch forwards frames",
+   "connect computers over the Internet into one virtual LAN",
+   "understand TAP devices and virtual network interfaces",
+   "build a simple VPN-like overlay for testing",
+   "study a ZeroTier-style virtual switch implementation"
+  ],
+  "how_to_run": [
+   "make",
+   "python3 vswitch.py ${SERVER_PORT}  (on a server with a public IP)",
+   "sudo ./vport ${SERVER_IP} ${SERVER_PORT}  (on each client)",
+   "sudo ip addr add 10.1.1.101/24 dev tapyuan && sudo ip link set tapyuan up  (client 1 TAP setup)",
+   "sudo ip addr add 10.1.1.102/24 dev tapyuan && sudo ip link set tapyuan up  (client 2 TAP setup)",
+   "ping 10.1.1.102 from client 1 to test connectivity"
+  ],
+  "stack": [
+   "Python 3",
+   "C",
+   "Linux TAP/TUN driver",
+   "UDP sockets"
+  ],
+  "notable": [
+   "Implements a layer-2 MAC-learning switch with flooding for unknown destinations",
+   "Uses a Linux TAP device so the OS sees a normal network interface",
+   "Architecture diagram showing VSwitch, VPort, and TAP/UDP relay path",
+   "Part of the codecrafters build-your-own-x list under network stack projects"
+  ],
+  "caveats": [
+   "Requires Linux and root privileges (sudo) to create and configure TAP devices",
+   "README is a short project guide; no license, security, or production-readiness information is given",
+   "Deployment needs a server with a public IP and at least two clients"
+  ],
+  "license": "unknown",
+  "category": "virtual network switch",
+  "keywords": [
+   "virtual switch",
+   "layer 2 switch",
+   "l2 vpn",
+   "zerotier alternative",
+   "zerotier clone",
+   "vswitch",
+   "vport",
+   "tap device",
+   "tun tap",
+   "mac address table",
+   "ethernet frame",
+   "udp tunnel",
+   "virtual lan",
+   "overlay network",
+   "build your own vpn",
+   "share a network across the internet",
+   "connect computers over internet as lan",
+   "make remote machines same subnet",
+   "python vpn server",
+   "c vpn client",
+   "linux virtual network interface",
+   "network switch implementation",
+   "flooding and mac learning",
+   "virtual private network tutorial",
+   "networking education project",
+   "codecrafters network stack",
+   "ping between remote machines",
+   "software defined network basics"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3665,
+  "output": 1259
+ },
+ "generated": "2026-10-29"
+}

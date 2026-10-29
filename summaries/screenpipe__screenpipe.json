@@ -1,0 +1,107 @@
+{
+ "id": "screenpipe/screenpipe",
+ "repo": "screenpipe/screenpipe",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Screen Recording",
+   "entry": "Screenpipe - Source-available screen and audio recorder with searchable local history, optional cloud AI, and free and paid plans."
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "Screenpipe - 24/7 screen and audio recording with AI-powered search. Local-first, privacy-focused rewind alternative."
+  }
+ ],
+ "summary": {
+  "one_liner": "Screenpipe is a source-available desktop app that continuously records your screen and audio locally, making it searchable with natural language and available to AI assistants and scheduled AI agents (\"pipes\").",
+  "category": "screen recording, personal memory",
+  "keywords": [
+   "screen recorder",
+   "screen recording",
+   "screenpipe",
+   "rewind alternative",
+   "rewind.ai alternative",
+   "limitless alternative",
+   "microsoft recall alternative",
+   "recall alternative",
+   "local screen history",
+   "searchable screen history",
+   "audio transcription",
+   "whisper transcription",
+   "local whisper",
+   "speaker diarization",
+   "ocr",
+   "accessibility tree",
+   "sqlite fts5",
+   "full-text search",
+   "mcp server",
+   "model context protocol",
+   "claude desktop",
+   "cursor context",
+   "rest api localhost",
+   "timeline view",
+   "search what i saw",
+   "record my screen and search it later",
+   "meeting transcription",
+   "private local ai memory",
+   "local-first",
+   "source-available",
+   "ollama",
+   "automate workflows from screen activity",
+   "daily recap",
+   "time tracking"
+  ],
+  "what_it_does": "Screenpipe captures screenshots when meaningful events occur (app switches, clicks, typing pauses, scrolling), pairing each with the OS accessibility tree and falling back to OCR when accessibility data is unavailable. It records system audio and microphone input and transcribes them using local Whisper or cloud Deepgram, with speaker identification. Data is stored in local SQLite with FTS5 full-text search and media files on disk, and can be searched by natural language, app, window, URL, or date range. A timeline view lets you scroll through screen history, and a REST API on localhost:3030 plus an MCP server let AI assistants query it. Pipes are markdown-defined scheduled AI agents with YAML-based data permission controls, and the README lists built-in examples such as meeting-summary and day-recap.",
+  "use_cases": [
+   "recall something seen or heard on the computer",
+   "give AI coding assistants context about current work",
+   "automatic meeting transcription and notes",
+   "daily recap and standup summaries",
+   "time breakdown by app or project",
+   "map and find workflows worth automating"
+  ],
+  "how_to_run": [
+   "npx screenpipe record",
+   "npx screenpipe setup",
+   "claude mcp add screenpipe -- npx -y screenpipe-mcp@latest"
+  ],
+  "stack": [
+   "Rust",
+   "TypeScript",
+   "Tauri",
+   "SQLite (FTS5)",
+   "Whisper",
+   "Deepgram",
+   "Apple Vision OCR",
+   "Tesseract",
+   "Model Context Protocol (MCP)",
+   "PostHog",
+   "Sentry",
+   "Ollama"
+  ],
+  "notable": [
+   "Event-driven capture that takes screenshots only when something changes, pairing them with the accessibility tree rather than recording every second",
+   "Pipes: scheduled AI agents defined as markdown files with YAML permission controls (app/window filters, content types, time ranges, endpoint gating)",
+   "Local-first storage by default, with optional encrypted sync and local model support via Ollama",
+   "MCP server and localhost REST API for connecting Claude Desktop, Cursor, and other clients",
+   "macOS per-app audio exclusion list via ~/.screenpipe/audio-exclusions.json"
+  ],
+  "caveats": [
+   "Source-available under a Screenpipe Commercial License: personal and non-commercial use is permitted, but commercial use requires a license; a limited organizational evaluation is also covered.",
+   "Free, Basic, and Business desktop plans plus custom Enterprise pricing; some features depend on plan, and existing lifetime licenses remain valid but new ones are no longer sold.",
+   "Default-on product analytics (PostHog) and crash reporting (Sentry) send data off-device unless telemetry is disabled; cloud transcription, AI, and sync also send data off-device. Linux support is a desktop AppImage with behavior depending on distribution and desktop environment. The README warns the main branch moves fast and breaks things."
+  ],
+  "license": "Screenpipe Commercial License (source-available; see LICENSE.md)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9243,
+  "output": 1491
+ },
+ "generated": "2026-10-29"
+}

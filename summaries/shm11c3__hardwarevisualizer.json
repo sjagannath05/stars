@@ -1,0 +1,101 @@
+{
+ "id": "shm11c3/hardwarevisualizer",
+ "repo": "shm11C3/HardwareVisualizer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⚙️ System (47)",
+   "entry": "HardwareVisualizer - A cross-platform hardware monitor with real-time metrics, historical insights, and a customizable dashboard."
+  }
+ ],
+ "summary": {
+  "one_liner": "HardwareVisualizer is a desktop app for Windows, Linux, and macOS that shows live hardware metrics and keeps a local history of CPU, memory, GPU, and temperature data for later review.",
+  "category": "desktop hardware monitoring",
+  "keywords": [
+   "hardware monitor",
+   "system monitor",
+   "hardware monitoring",
+   "real-time metrics",
+   "cpu usage",
+   "gpu usage",
+   "cpu temperature",
+   "memory usage",
+   "hardware history",
+   "system insights",
+   "cooling analysis",
+   "fan speed monitor",
+   "power draw monitor",
+   "smart drive health",
+   "storage health",
+   "smartctl",
+   "system specifications",
+   "hardware report",
+   "system tray widget",
+   "menu bar monitor",
+   "tauri app",
+   "rust desktop app",
+   "task manager alternative",
+   "htop alternative for desktop",
+   "hwinfo alternative",
+   "hwmonitor alternative",
+   "open source hardware monitor",
+   "windows hardware monitor",
+   "linux hardware monitor",
+   "macos hardware monitor",
+   "check how hot my cpu runs",
+   "track pc performance over time",
+   "see if cooling is getting worse"
+  ],
+  "what_it_does": "The app shows live CPU, memory, and GPU gauges and usage graphs, per-core usage, running processes, motherboard sensors and fans, and power draw, with Panels, Compact, and Monitor views. A System Specifications section lists CPU, GPU, memory, storage, platform, motherboard/BIOS, and network details and can produce a copyable hardware report, including SMART health for each drive. Insights keeps average, maximum, and minimum history for CPU, memory, CPU temperature, and per-GPU metrics for up to one year, plus process history for up to 30 days. Cooling Insight compares CPU temperature against its own baseline under similar load and plots it alongside load, package power, fan speed, and ambient temperature. A tray or menu bar widget shows CPU and GPU usage and GPU temperature. The README says hardware data stays on the local computer and that there is no telemetry; the app contacts the internet only to check GitHub Releases and, if chosen, to download PawnIO.",
+  "use_cases": [
+   "monitor live cpu and gpu usage",
+   "check whether cpu temperature is rising over time",
+   "review hardware history over months",
+   "look up system specs and copy a hardware report",
+   "check smart health and temperature of drives",
+   "watch fan speed and power draw",
+   "keep a small hardware widget in the system tray"
+  ],
+  "how_to_run": [
+   "Windows: download the .msi (recommended) or .exe installer from GitHub Releases or hardviz.com, or run: winget install shm11C3.HardwareVisualizer",
+   "macOS: open the .dmg for Apple Silicon or Intel and drag HardwareVisualizer to Applications",
+   "Debian/Ubuntu: sudo apt install ./HardwareVisualizer_*.deb",
+   "Fedora/RHEL: sudo dnf install ./HardwareVisualizer-*.rpm",
+   "Other Linux: chmod +x HardwareVisualizer_*.AppImage && ./HardwareVisualizer_*.AppImage",
+   "Launch on Linux from the terminal with: hardware-visualizer"
+  ],
+  "stack": [
+   "Tauri",
+   "Rust",
+   "sysinfo",
+   "nvapi-rs",
+   "PawnIO (optional, Windows)",
+   "smartmontools (smartctl, optional)",
+   "intel_gpu_top (optional, Linux)",
+   "dmidecode (Linux, via polkit)"
+  ],
+  "notable": [
+   "Local-only hardware history retained for 365 days by default, with Insights charts for up to one year",
+   "Cooling Insight compares CPU temperature to its own baseline under similar load",
+   "Optional PawnIO integration enables CPU temperature, CPU package power, and motherboard fan/temperature sensors on Windows",
+   "Apple Silicon power draw for CPU, GPU, ANE, and package",
+   "Supports English, Japanese, and Russian UI languages"
+  ],
+  "caveats": [
+   "Many sensor features are Windows-only or limited: CPU temperature, power, and motherboard sensors are not available on Linux yet, and macOS has no GPU temperature or CPU temperature readings listed in the platform table.",
+   "Motherboard sensor support is limited to specific Nuvoton and ITE chips, several of which are marked experimental; Ambient temperature via SwitchBot is Windows-only.",
+   "Some readings need extra setup: PawnIO and administrator rights on Windows, smartctl and sudo or polkit on Linux."
+  ],
+  "license": "GPL-3.0-or-later (versions before the relicense, including v1.10.1 and the 1.10.x line, remain under MIT)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6500,
+  "output": 1711
+ },
+ "generated": "2026-10-29"
+}

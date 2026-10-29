@@ -1,0 +1,94 @@
+{
+ "id": "tony/claude-code-riper-5",
+ "repo": "tony/claude-code-riper-5",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "RIPER Workflow by Tony Narlock - Structured development workflow enforcing separation between Research, Innovate, Plan, Execute, and Review phases. Features consolidated subagents for context-efficiency, branch-aware memory bank, and strict mode enforcement for guided development."
+  }
+ ],
+ "summary": {
+  "one_liner": "A copy-in set of Claude Code slash commands and subagents that walks a project through Research, Innovate, Plan, Execute, and Review phases with a memory bank for plans and reviews.",
+  "category": "claude code workflow",
+  "keywords": [
+   "claude code",
+   "riper",
+   "riper-5",
+   "research innovate plan execute review",
+   "structured development workflow",
+   "slash commands",
+   "custom subagents",
+   "subagent",
+   "memory bank",
+   "branch-aware memory",
+   "strict mode",
+   "guided development",
+   "phase separation",
+   "plan before coding",
+   "agent orchestration",
+   "context efficiency",
+   "ai coding assistant",
+   "llm development process",
+   "read-only research mode",
+   "technical specification generator",
+   "code review workflow",
+   "execute plan step",
+   "reproducible development",
+   "project planning with ai",
+   "save context for ai sessions",
+   "keep ai from coding too early",
+   "markdown plans",
+   "cursor rules port",
+   "claude .claude directory"
+  ],
+  "what_it_does": "The repository is a .claude directory of custom slash commands and subagents for Claude Code. Running /riper:strict turns on the protocol, and separate commands (/riper:research, /riper:innovate, /riper:plan, /riper:execute, /riper:review) move work through phases with different permissions, such as read-only in research and test-only execution in review. Work is handled by three consolidated agents: research-innovate, plan-execute, and review. Plans and reviews are stored under .claude/memory-bank/, organized into per-branch folders (main and feature branches) containing plans, reviews, and sessions. A /memory:save, /memory:recall, and /memory:list command set manages saved context. Users can run a single plan substep with /riper:execute 2.3, and a /riper:workflow command runs the full sequence. Configuration lives in project-info.md, riper-config.json, and settings.json.",
+  "use_cases": [
+   "enforce plan-before-code discipline on a Claude Code project",
+   "research an unfamiliar codebase before changing it",
+   "write technical specs for multi-step features with an AI agent",
+   "execute an approved plan one substep at a time",
+   "review AI-made changes against a written plan",
+   "keep AI planning notes per git branch"
+  ],
+  "how_to_run": [
+   "cp -r .claude /path/to/your/project/",
+   "Edit .claude/project-info.md with your project details",
+   "Customize .claude/riper-config.json with your tech stack and paths",
+   "echo \".claude/memory-bank/\" >> .gitignore (optional, keeps plans and reviews private)",
+   "Start a session with /riper:strict",
+   "Run /riper:research, then /riper:plan, then /riper:execute, then /riper:review"
+  ],
+  "stack": [
+   "Claude Code",
+   "Claude Code custom slash commands",
+   "Claude Code subagents",
+   "JSON configuration (riper-config.json)",
+   "Markdown memory bank"
+  ],
+  "notable": [
+   "Mode-based permissions: research and innovate are read-only, plan writes only to the memory bank, review allows test execution only",
+   "Three consolidated subagents (research-innovate, plan-execute, review) to reduce context use",
+   "Branch-aware memory bank with separate main and feature-branch folders",
+   "Substep execution such as /riper:execute 2.3 for targeted fixes",
+   "Adapted from the RIPER-5 workflow posted on the Cursor Forums, per the README credits"
+  ],
+  "caveats": [
+   "The README gives no measured context savings; the efficiency claims are stated, not demonstrated",
+   "Setup is manual: copy the directory and edit project-info.md and riper-config.json before use",
+   "Committed memory-bank files must be removed by hand (interactive rebase) if they were added by mistake",
+   "The README says to skip RIPER for simple bug fixes, small text edits, and exploratory coding"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3998,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

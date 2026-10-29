@@ -1,0 +1,104 @@
+{
+ "id": "opendatalab/pdf-extract-kit",
+ "repo": "opendatalab/PDF-Extract-Kit",
+ "kind": "star",
+ "description": "A Comprehensive Toolkit for High-Quality PDF Content Extraction",
+ "topics": [],
+ "language": "Python",
+ "stars": 10064,
+ "license": "AGPL-3.0",
+ "homepage": "https://pdf-extract-kit.readthedocs.io/zh-cn/latest/index.html",
+ "pushed_at": "2025-01-03",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "PDF-Extract-Kit is an open-source modular toolkit of pretrained models for extracting content from complex PDFs, covering layout detection, formula detection and recognition, OCR, and table recognition.",
+  "category": "pdf content extraction",
+  "keywords": [
+   "pdf extraction",
+   "document parsing",
+   "pdf content extraction",
+   "layout detection",
+   "doclayout-yolo",
+   "layoutlmv3",
+   "yolo",
+   "formula detection",
+   "formula recognition",
+   "latex ocr",
+   "unimernet",
+   "ocr",
+   "paddleocr",
+   "table recognition",
+   "structeqtable",
+   "table to latex",
+   "table to html",
+   "table to markdown",
+   "pdf to latex",
+   "math expression recognition",
+   "document layout analysis",
+   "modular toolkit",
+   "mineru",
+   "pdf parsing models",
+   "extract text from scanned pdf",
+   "pull tables out of pdf",
+   "extract equations from pdf",
+   "research paper parsing",
+   "python document ai",
+   "agpl license"
+  ],
+  "what_it_does": "The repository provides a set of document-parsing models wired into runnable scripts, each driven by a YAML config file. Supported tasks are layout detection (images, tables, text, titles, formulas), formula detection (inline and block), formula recognition into LaTeX, OCR using PaddleOCR, and table recognition producing LaTeX, HTML, or Markdown. Layout detection defaults to DocLayout-YOLO, with YOLO-v10 and LayoutLMv3 as alternatives. Results are written to per-task folders under outputs/. The README states the project is a model toolbox and does not rebuild content into new documents such as PDF-to-Markdown; that conversion is left to the separate MinerU project. Reading-order detection is listed as coming soon, and chemical equation tasks are on the to-do list.",
+  "use_cases": [
+   "detect layout regions such as text, tables, and figures in PDFs",
+   "recognize math formulas in document images as LaTeX",
+   "convert table images into LaTeX, HTML, or Markdown",
+   "run OCR on PDF pages or scanned images",
+   "build document QA or translation apps on top of parsed content",
+   "compare layout and formula models on benchmark results"
+  ],
+  "how_to_run": [
+   "conda create -n pdf-extract-kit-1.0 python=3.10",
+   "conda activate pdf-extract-kit-1.0",
+   "pip install -r requirements.txt",
+   "Download model weights per the Model Weights Download Tutorial",
+   "python scripts/layout_detection.py --config=configs/layout_detection.yaml",
+   "python scripts/table_parsing.py --config configs/table_parsing.yaml"
+  ],
+  "stack": [
+   "Python 3.10",
+   "PyTorch-based models (YOLO, LayoutLMv3, UniMERNet)",
+   "PaddleOCR",
+   "DocLayout-YOLO",
+   "StructEqTable / InternVL2-1B",
+   "PyMuPDF",
+   "YAML configuration"
+  ],
+  "notable": [
+   "Modular design: swap models by editing YAML configs with minimal code",
+   "Fine-tuned layout and formula detection models trained on diverse document annotations",
+   "Table recognition outputs LaTeX, HTML, or Markdown via StructTable-InternVL2-1B",
+   "Model weights are hosted on Hugging Face and ModelScope",
+   "Positioned as the model layer beneath the MinerU document-conversion tool"
+  ],
+  "caveats": [
+   "Does not convert PDFs into new documents such as Markdown; the README points to MinerU for that",
+   "Model weights must be downloaded separately before running",
+   "DocLayout-YOLO installation may fail and requires a specific pip install command if so",
+   "Reading order model is not yet available; evaluation metrics are marked Coming Soon",
+   "Licensed AGPL-3.0 because it bundles YOLO and PyMuPDF code, which may limit commercial reuse"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5728,
+  "output": 1438
+ },
+ "generated": "2026-10-29"
+}

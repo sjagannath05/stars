@@ -1,0 +1,103 @@
+{
+ "id": "gowtham012/pinpoint",
+ "repo": "gowtham012/pinpoint",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "Pinpoint by gowtham012 - Local MCP server, Claude Code hooks and a Chrome extension for marking up a running app: clicking an element (or one in the iOS Simulator) and typing a change delivers the comment to Claude Code with the selector, DOM path, computed styles, component chain, source-file hint and a cropped screenshot."
+  }
+ ],
+ "summary": {
+  "one_liner": "Pinpoint is a local MCP server, Claude Code hook set and browser extension (plus iOS Simulator and Android emulator pickers) that lets you click or box-select a running app's UI and send the annotated element, with context, to a coding agent.",
+  "what_it_does": "Runs a bridge on 127.0.0.1:7331 that receives annotations from a Chromium or Firefox extension, the iOS Simulator picker, or the Android emulator picker. For web pages each note includes a CSS selector, DOM path, computed styles, rendered text, bounding box, framework component chain, a source file:line hint where the dev build exposes it, and a cropped element screenshot. Agents receive notes via Claude Code hooks, MCP tools (get_pending_annotations, recheck_annotation, resolve_annotation, reply_annotation, wait_for_annotation and others), or a watch loop. Agents can reply with questions, and users can accept or reopen finished notes, with Before/After crops. Native iOS notes come from the accessibility tree via Maestro, and Android notes from the adb view tree.",
+  "use_cases": [
+   "Marking up UI changes on a local dev site for a coding agent",
+   "Pointing an agent at a specific button or card instead of describing it",
+   "Sending bug reproduction steps with page errors to Claude Code",
+   "Annotating iOS Simulator or Android emulator screens for an agent",
+   "Giving Cursor or Codex a visual, element-level change request",
+   "Reviewing agent changes with Accept or Not quite replies in the browser"
+  ],
+  "how_to_run": [
+   "git clone <repo> && cd pinpoint/bridge && npm install",
+   "node pinpoint/bridge/cli.js setup",
+   "Load extension/ unpacked at chrome://extensions with Developer mode on (setup prints the path)",
+   "claude mcp add pinpoint -s user -- npx -y pinpoint-bridge mcp",
+   "node cli.js --project ~/code/my-app  (start the bridge and leave it running)",
+   "Restart Claude Code once so it picks up the MCP server and hooks"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "JavaScript",
+   "Chromium extension (Manifest, also Firefox 140+ and Safari wrapper)",
+   "Model Context Protocol (MCP), stdio and Streamable HTTP",
+   "Claude Code hooks",
+   "Maestro (iOS accessibility tree)",
+   "adb (Android view tree)",
+   "Playwright (tests)",
+   "Xcode (Safari build and iOS demo)"
+  ],
+  "notable": [
+   "Sends a selector, computed styles, component chain, source hint and cropped screenshot with each note, so the agent does not have to guess which control was meant",
+   "Works with native iOS Simulator and Android emulator screens, not just browser pages",
+   "Supports behaviour notes and multi-step recording of a bug with network and console errors attached",
+   "Agent and user can converse on a note: agent can ask questions, and the user can reopen a resolved note",
+   "Multiple agents share one queue, with wait_for_annotation assigning each note to one waiting agent"
+  ],
+  "caveats": [
+   "Native iOS and Android paths have no source-file hint, no computed styles and no recheck_annotation tool; iOS first load can take about 10 seconds or more",
+   "Safari lacks MAIN-world content scripts, so component chain, source hint and page errors are unavailable there; Chrome Web Store and Edge listings were pending at the time of the README, so unpacked loading is needed",
+   "Windows needs manual handling for the native host (install-native-host is macOS and Linux only), and the bridge only runs on local development hosts by default"
+  ],
+  "license": "MIT",
+  "category": "browser ui annotation",
+  "keywords": [
+   "ui annotation",
+   "visual feedback",
+   "point and click feedback",
+   "claude code",
+   "mcp server",
+   "model context protocol",
+   "browser extension",
+   "chrome extension",
+   "firefox extension",
+   "safari extension",
+   "coding agent",
+   "cursor",
+   "codex",
+   "dev tools",
+   "local dev server",
+   "localhost",
+   "css selector",
+   "computed styles",
+   "react component chain",
+   "vue component",
+   "source map",
+   "screenshot annotation",
+   "bug report",
+   "ios simulator",
+   "android emulator",
+   "accessibility tree",
+   "maestro",
+   "adb",
+   "hooks",
+   "send feedback to ai agent",
+   "tell my ai what to change on the page",
+   "mark up my running app",
+   "annotate a web page for an ai",
+   "visual bug reporting",
+   "reproduce steps capture"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11852,
+  "output": 1628
+ },
+ "generated": "2026-10-29"
+}

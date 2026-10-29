@@ -1,0 +1,94 @@
+{
+ "id": "dlt-hub/dlt",
+ "repo": "dlt-hub/dlt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Ingestion / ETL",
+   "entry": "dlt - A Python library for building data pipelines with automatic schema inference, incremental loading, and support for multiple sources and destinations."
+  }
+ ],
+ "summary": {
+  "one_liner": "dlt is an open-source Python library that loads data from APIs, databases, files and DataFrames into typed, schema-inferred datasets across 20+ destinations.",
+  "what_it_does": "The library lets you describe REST API endpoints declaratively, or wrap any Python generator, iterable, pandas/Polars/Arrow object, SQL database, or cloud bucket of CSV/JSONL/Parquet files as a source. A pipeline then extracts, normalizes and loads the data, inferring schema and column types and creating tables in the destination. It supports incremental loading and merge (upsert) write dispositions via decorators, schema contracts with evolve/freeze/discard modes, and secrets/config injection. Destinations named in the README include DuckDB, Snowflake, BigQuery, Postgres, Redshift, Databricks, Athena, ClickHouse, MotherDuck and filesystem buckets. Loaded data can be read back via dlt.attach and a Dataset API returning DataFrames, Arrow tables or Ibis expressions. The README also mentions a dltHub managed platform and an optional \"hub\" extra, but the core library is pip-installable on its own.",
+  "use_cases": [
+   "load REST API data into a warehouse",
+   "ingest CSV or Parquet files from S3, GCS or Azure",
+   "sync a SQL database into an analytics store",
+   "incremental or upsert loading of changing records",
+   "load pandas or Polars DataFrames into a database",
+   "prototype a data pipeline in a notebook with DuckDB"
+  ],
+  "how_to_run": [
+   "pip install dlt",
+   "pip install \"dlt[duckdb]\"",
+   "Define a @dlt.resource generator or rest_api_source config",
+   "dlt.pipeline(pipeline_name=..., destination=\"duckdb\", dataset_name=...)",
+   "pipeline.run(source)"
+  ],
+  "stack": [
+   "Python (3.10 to 3.14, 3.14 experimental)",
+   "DuckDB",
+   "pandas",
+   "PyArrow",
+   "Polars",
+   "Ibis"
+  ],
+  "notable": [
+   "Declarative REST API source with pagination, filtering and mapping at extraction time",
+   "Schema inference, typing and ALTER TABLE schema drift handling",
+   "Schema contracts with evolve, freeze and discard modes",
+   "Dataset API to read loaded tables back as DataFrame, Arrow or Ibis expression",
+   "Designed as a library rather than a platform, usable in notebooks, Lambda, Airflow or laptops"
+  ],
+  "caveats": [
+   "Some optional extras are not yet available for Python 3.14, so that version is experimental",
+   "Managed deployment and extra features (transformations, data quality, observability) are part of the separate dltHub offering"
+  ],
+  "license": "Apache 2.0",
+  "category": "python data ingestion",
+  "keywords": [
+   "dlt",
+   "data load tool",
+   "etl library",
+   "elt python",
+   "data ingestion",
+   "data pipeline",
+   "schema inference",
+   "incremental loading",
+   "merge upsert",
+   "rest api to database",
+   "sql database replication",
+   "duckdb",
+   "snowflake",
+   "bigquery",
+   "postgres",
+   "pandas to database",
+   "arrow",
+   "polars",
+   "ibis",
+   "schema contracts",
+   "s3 file loader",
+   "csv to warehouse",
+   "parquet loader",
+   "reverse etl",
+   "load api data",
+   "etl for notebooks",
+   "python elt tool",
+   "data loading library",
+   "sync data to warehouse",
+   "pipeline dataset api",
+   "airflow pipeline"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5009,
+  "output": 1299
+ },
+ "generated": "2026-10-29"
+}

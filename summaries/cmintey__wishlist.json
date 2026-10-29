@@ -1,0 +1,94 @@
+{
+ "id": "cmintey/wishlist",
+ "repo": "cmintey/wishlist",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "Wishlist - Wishlist application that you can share with your friends and family. MIT Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Wishlist is a self-hosted wishlist application that you share with friends and family so they can see and claim gift items.",
+  "what_it_does": "Wishlist lets users create wishlists, add items manually or by fetching product data from a URL, and share them with others. Visitors can claim items, and owners can check off claimed items as purchased. It supports multiple groups (for example, friends and family), each with separate wishes and group managers. A Registry Mode turns a group into a single public list that people can claim from without signing in. Suggestions can be made on another person's list with approval, auto-approval, or a hidden \"Surprise Me\" mode. Authentication options include email invites over SMTP, OAuth via OpenID Connect, and proxy/header authentication. A bookmarklet can add items from product pages.",
+  "use_cases": [
+   "share a gift wishlist with family for holidays",
+   "let friends claim gifts so nobody buys duplicates",
+   "create a public wedding or baby registry",
+   "track purchased gifts on a shared list",
+   "self-host a wish list for a group of friends",
+   "add products to a wishlist from a web page using a bookmarklet"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yaml file using the image ghcr.io/cmintey/wishlist:latest, mapping port 3280 and volumes for ./uploads and ./data.",
+   "Set the ORIGIN environment variable to the URL users will connect to (include the port if using an IP address).",
+   "Optionally set TOKEN_TIME, DEFAULT_CURRENCY, and MAX_IMAGE_SIZE environment variables.",
+   "Run: docker compose up -d",
+   "Open http://<host>:3280 and complete the setup wizard to create the first user."
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "SQLite",
+   "OpenID Connect"
+  ],
+  "notable": [
+   "Registry Mode: a single-list public link where visitors claim items without an account",
+   "Suggestion modes including a hidden 'Surprise Me' mode where the recipient cannot see the item",
+   "Multiple groups with separate wishes and group manager roles",
+   "Bookmarklet that opens Wishlist with the current product URL pre-filled",
+   "PWA support and OAuth login via any OpenID Connect provider"
+  ],
+  "caveats": [
+   "Proxy/header authentication is unsafe if the reverse proxy is misconfigured, since forged headers could grant access",
+   "Wishlist does not support running on a different URL subpath; it is recommended to run behind a reverse proxy",
+   "Nginx and Synology NAS proxies need specific buffer settings to avoid a known issue",
+   "Registry Mode claims cannot be un-claimed"
+  ],
+  "license": "MIT",
+  "category": "self-hosted wishlist app",
+  "keywords": [
+   "wishlist",
+   "gift list",
+   "gift registry",
+   "shared wishlist",
+   "self-hosted wishlist",
+   "docker compose",
+   "docker",
+   "sqlite",
+   "openid connect",
+   "oauth login",
+   "oidc",
+   "proxy authentication",
+   "header authentication",
+   "claim gifts",
+   "registry mode",
+   "suggestions",
+   "pwa",
+   "bookmarklet",
+   "family gift list",
+   "holiday gift planning",
+   "avoid duplicate gifts",
+   "birthday wish list",
+   "wedding registry",
+   "share list with friends",
+   "sveltekit",
+   "smtp invite",
+   "multiple groups",
+   "reverse proxy",
+   "helm chart",
+   "kubernetes",
+   "awesome-selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4396,
+  "output": 1284
+ },
+ "generated": "2026-10-29"
+}

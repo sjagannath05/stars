@@ -1,0 +1,89 @@
+{
+ "id": "dgunning/edgartools",
+ "repo": "dgunning/edgartools",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Ingestion / ETL",
+   "entry": "edgartools - Downloads SEC EDGAR filings and XBRL financial statements as structured data."
+  }
+ ],
+ "summary": {
+  "one_liner": "EdgarTools is a Python library that turns SEC EDGAR filings into typed Python objects and DataFrames, covering financial statements, insider trades, 13F holdings, fund portfolios and other filing types.",
+  "what_it_does": "It fetches SEC EDGAR filings and exposes them through one Python API, with standardized income statement, balance sheet and cash flow rows across companies, plus quarterly and trailing-twelve-month figures derived from XBRL. It parses 13F holdings, Form 4 insider transactions, N-PORT fund portfolios and 8-K items into typed objects and DataFrames. It extracts section text (for example Item 1A or Item 7) and whole filings as markdown for RAG use. It also provides full-text search over filing content since 2001, filing lookup by accession number, CIK or ticker, and access to the live filing feed. The README says it handles rate limiting, caching and offline storage, and that it keeps to the SEC's 10-requests-per-second fair-access limit.",
+  "use_cases": [
+   "pull standardized financial statements for public companies",
+   "compare one metric like revenue across many companies",
+   "track insider buys and sells from Form 4 filings",
+   "analyze 13F institutional holdings",
+   "build a RAG corpus from 10-K and 10-Q filings as markdown",
+   "search SEC filing text for keywords or 8-K item numbers"
+  ],
+  "how_to_run": [
+   "uv add edgartools  (or: pip install edgartools)",
+   "from edgar import Company, set_identity",
+   "set_identity(\"your.name@example.com\")",
+   "Company(\"NVDA\").income_statement(periods=5)"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "pandas (DataFrames)",
+   "SEC EDGAR / XBRL data"
+  ],
+  "notable": [
+   "Standardized statement rows that line up across filers, so the same label means the same metric for different companies",
+   "Typed parsers for 13F, Form 4, N-PORT and 8-K filings instead of raw XML",
+   "Full-text search over filing content since 2001, not just metadata",
+   "Optional local MCP server and agent skill for AI assistants, in the ai extra"
+  ],
+  "caveats": [
+   "Requires a contact email passed to the SEC on every request via set_identity; the README notes no API key is needed",
+   "SEC's fair-access limit of 10 requests per second applies",
+   "A hosted edgar.tools platform is offered separately and is paid for ongoing maintenance and cited answers; the library itself is free"
+  ],
+  "license": "MIT",
+  "category": "sec filings python library",
+  "keywords": [
+   "edgartools",
+   "sec edgar",
+   "edgar python",
+   "sec filings api",
+   "xbrl parser",
+   "financial statements python",
+   "income statement download",
+   "10-k parser",
+   "10-q sections",
+   "form 4 insider trades",
+   "13f holdings",
+   "n-port fund holdings",
+   "8-k items",
+   "full-text search sec",
+   "sec data pipeline",
+   "edgar markdown rag",
+   "pandas dataframe financial data",
+   "company financials",
+   "trailing twelve months revenue",
+   "insider trading data",
+   "institutional holdings data",
+   "fund portfolio holdings",
+   "sec filing downloader",
+   "financial data extraction",
+   "get sec filings in python",
+   "edgar full text search",
+   "mcp server sec data",
+   "rate limited sec client",
+   "public company financial data",
+   "quarterly financials python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4580,
+  "output": 1254
+ },
+ "generated": "2026-10-29"
+}

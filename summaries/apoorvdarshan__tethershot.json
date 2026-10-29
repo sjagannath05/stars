@@ -1,0 +1,98 @@
+{
+ "id": "apoorvdarshan/tethershot",
+ "repo": "apoorvdarshan/TetherShot",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🖼️ Images (21)",
+   "entry": "TetherShot - Capture pixel-perfect iPhone screenshots from the macOS menu bar over USB or Wi-Fi."
+  }
+ ],
+ "summary": {
+  "one_liner": "TetherShot is a native macOS menu-bar and window app that captures screenshots from a tethered iPhone (USB or Wi-Fi) or an Android phone (via ADB) and saves them to a folder and the clipboard.",
+  "what_it_does": "TetherShot shows connected iPhones and authorized Android phones in a Mac app window and captures their screen with one click or a global hotkey (⌘⇧7). USB iPhone capture uses native AVFoundation, while Wi-Fi capture runs pymobiledevice3 over a RemoteXPC tunnel kept alive by a root LaunchDaemon (tunneld). Android capture uses ADB discovery and the device's native screencap PNG. Each PNG is saved to a chosen folder (default ~/Pictures/TetherShot) with timestamped filenames, optionally in per-device subfolders, and can be copied to the clipboard. Options include hiding devices, a preferred hotkey device, optional paste-after-capture (needs Accessibility access), Dock and menu-bar visibility, launch at login, and in-app self-update from signed GitHub releases. It is distributed via Homebrew cask, a signed DMG, or an npm CLI that builds from source.",
+  "use_cases": [
+   "capture iPhone screenshots to a Mac folder over USB",
+   "wireless iPhone screenshots without a cable",
+   "grab Android phone screen from a Mac via ADB",
+   "save phone screenshots for documentation or app store mockups",
+   "quick screenshot hotkey for connected phones",
+   "copy phone screenshot straight to clipboard"
+  ],
+  "how_to_run": [
+   "brew install --cask apoorvdarshan/tap/tethershot",
+   "npm install -g tethershot",
+   "tethershot install",
+   "tethershot setup-wifi",
+   "git clone the repository, cd TetherShot, ./build.sh",
+   "open .build/TetherShot.app"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AVFoundation",
+   "CoreMediaIO",
+   "ADB (Android Platform Tools)",
+   "pymobiledevice3",
+   "Python",
+   "Node.js (npm CLI)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "USB iPhone capture via native AVFoundation with no extra setup beyond Trust This Computer",
+   "Cable-free iPhone capture over Wi-Fi through Apple's developer-services tunnel, even when the phone is locked",
+   "Android capture of the native framebuffer over USB or wireless debugging",
+   "In-app updater verifies the GitHub release digest and Developer ID signature before replacing the app",
+   "Local-first: no account, no analytics, no servers"
+  ],
+  "caveats": [
+   "Built and tested only on macOS 26 (Tahoe) with iOS 26; requires macOS 14+",
+   "Wi-Fi capture needs pymobiledevice3 installed and a root LaunchDaemon set up once with an admin password",
+   "First USB capture triggers a macOS Camera permission prompt because the screen is delivered via the AVFoundation camera bucket"
+  ],
+  "category": "macos screenshot utility",
+  "license": "MIT",
+  "keywords": [
+   "iphone screenshot",
+   "android screenshot",
+   "mac screenshot tool",
+   "capture phone screen",
+   "mirror phone screen to mac",
+   "usb screenshot",
+   "wireless screenshot",
+   "wi-fi screen capture",
+   "adb screencap",
+   "screenshot to clipboard",
+   "menu bar app",
+   "global hotkey capture",
+   "pymobiledevice3",
+   "avfoundation",
+   "swiftui macos app",
+   "homebrew cask",
+   "npm cli mac app",
+   "tunneld",
+   "remotexpc",
+   "phone screenshot folder",
+   "save screenshots automatically",
+   "share phone screenshots",
+   "grab iphone screen on mac",
+   "android framebuffer",
+   "screenshot app open source",
+   "mac phone capture",
+   "developer screenshot tool",
+   "ios screenshot without airplay",
+   "self-updating mac app",
+   "local-first screenshot app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4897,
+  "output": 1466
+ },
+ "generated": "2026-10-29"
+}

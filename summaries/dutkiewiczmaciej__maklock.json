@@ -1,0 +1,102 @@
+{
+ "id": "dutkiewiczmaciej/maklock",
+ "repo": "dutkiewiczmaciej/MakLock",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "MakLock - Lock any macOS app with Touch ID, Apple Watch proximity, or password. Full-screen blur overlay on all monitors. [![Open-Source Software][OSS Icon]](https://github.com/dutkiewiczmaciej/MakLock) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "MakLock - Free macOS menu bar app that locks applications with Touch ID, Apple Watch proximity, or password using a full-screen blur overlay."
+  }
+ ],
+ "summary": {
+  "one_liner": "MakLock is a free, open-source macOS menu bar app that locks other applications behind Touch ID, Apple Watch proximity, or a password, shown with a full-screen blur overlay.",
+  "what_it_does": "MakLock watches for launches and activations of protected apps via NSWorkspace and blocks access with a blur overlay on all displays until the user authenticates. Authentication options are Touch ID (single prompt), Apple Watch proximity with wrist detection, or a backup password for Macs without Touch ID. It can auto-lock after a configurable idle timeout and on sleep/wake, auto-close inactive protected apps, and close protected apps on sleep. A panic key (Cmd+Opt+Shift+Ctrl+U) dismisses overlays, and a system blacklist (Terminal, Xcode, Activity Monitor and similar) prevents those apps from being locked. The README compares it against AppLocker and Cisdem AppCrypt, which it describes as sandboxed or trial-limited alternatives.",
+  "use_cases": [
+   "Lock personal apps like Messages on a shared Mac",
+   "Hide app content from people looking over your shoulder",
+   "Prevent notification snooping by auto-closing idle apps",
+   "Require Touch ID to open a sensitive app",
+   "Protect apps on a shared laptop when stepping away"
+  ],
+  "how_to_run": [
+   "brew tap dutkiewiczmaciej/tap",
+   "brew install --cask maklock",
+   "git clone <repository URL>",
+   "cd MakLock",
+   "open MakLock.xcodeproj",
+   "Build and run with Cmd+R (requires Xcode 15+ and macOS 13+)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "LocalAuthentication",
+   "CoreBluetooth",
+   "IOKit",
+   "ServiceManagement",
+   "HotKey (SPM)",
+   "Sparkle 2 (SPM)"
+  ],
+  "notable": [
+   "Non-activating NSPanel overlay that does not steal focus, avoiding content flash on launch",
+   "Re-locks on quit: Cmd+Q clears authentication so the next launch requires re-auth",
+   "Apple Watch proximity unlock with wrist detection and auto-relock when the watch leaves range",
+   "Distributed outside the App Store for full overlay and process management, signed and notarized",
+   "Timeout failsafe auto-dismisses overlays after 60 seconds without interaction"
+  ],
+  "caveats": [
+   "Requires macOS 13.0 (Ventura) or later; Apple Watch unlock requires watchOS 9+ and is optional",
+   "Trusted Wi-Fi auto-unlock and per-window overlay are listed as planned for v1.1 and v1.2",
+   "Distributed outside the App Store, so it is not sandboxed"
+  ],
+  "license": "MIT",
+  "category": "macos app locker",
+  "keywords": [
+   "app lock",
+   "macos app locker",
+   "lock applications mac",
+   "touch id app lock",
+   "apple watch unlock",
+   "menu bar app",
+   "blur overlay",
+   "full-screen overlay",
+   "password protect apps",
+   "privacy on shared mac",
+   "auto-lock idle timeout",
+   "panic key",
+   "nsworkspace",
+   "nspanel",
+   "swift",
+   "swiftui",
+   "sparkle 2 updates",
+   "homebrew cask",
+   "open source alternative to applocker",
+   "alternative to cisdem appcrypt",
+   "lock messages app mac",
+   "hide app contents",
+   "notification snooping prevention",
+   "sleep lock mac",
+   "multi-monitor lock",
+   "free mac security tool",
+   "lock down apps on laptop",
+   "require fingerprint for app",
+   "mac privacy tool",
+   "bluetooth proximity unlock"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3852,
+  "output": 1366
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "xeol-io/bumpgen",
+ "repo": "xeol-io/bumpgen",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "Repo"
+  }
+ ],
+ "summary": {
+  "one_liner": "bumpgen is a CLI and GitHub Action that upgrades a TypeScript/TSX npm dependency and uses an LLM to fix the code that breaks from the bump.",
+  "category": "dependency upgrade automation",
+  "keywords": [
+   "dependency upgrade",
+   "npm package bump",
+   "typescript",
+   "tsx",
+   "breaking changes",
+   "automated code migration",
+   "llm code fixes",
+   "ts-morph",
+   "abstract syntax tree",
+   "plan graph",
+   "codeplan",
+   "dependabot alternative",
+   "renovatebot alternative",
+   "github action",
+   "gpt-4 turbo",
+   "openai",
+   "library upgrade",
+   "fix build errors",
+   "package version upgrade",
+   "codemod",
+   "automated refactoring",
+   "upgrade react-query",
+   "self-upgrading dependencies",
+   "pull request automation",
+   "cli tool",
+   "node package",
+   "update dependencies safely",
+   "fix breaking changes after upgrade"
+  ],
+  "what_it_does": "Given a package name and target version, bumpgen builds the project to find compile errors caused by the bump. It parses the code with ts-morph into an abstract syntax tree to map relationships between statements and to read type definitions for external methods in the new version. It then builds a plan graph (DAG) to order fixes so that changes propagate through the codebase. The error, the affected file, and the plan graph are sent to an LLM to generate the edits. It can also be run without arguments to pick a package from a menu, and a GitHub Action variant runs on dependabot or renovatebot PRs and commits fixes to the PR branch when breaking changes are detected.",
+  "use_cases": [
+   "upgrade a TypeScript dependency and fix resulting compile errors",
+   "automatically patch a dependabot or renovatebot PR with breaking-change fixes",
+   "evaluate whether a major library upgrade is feasible before doing it manually",
+   "migrate code to a new API version of an npm package",
+   "run LLM-assisted refactors in a TypeScript monorepo package"
+  ],
+  "how_to_run": [
+   "export LLM_API_KEY=\" \"",
+   "cd ~/my-repository",
+   "npm install -g bumpgen",
+   "bumpgen @tanstack/react-query 5.28.14",
+   "bumpgen (no arguments, select package from menu)",
+   "bumpgen --help"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js",
+   "ts-morph",
+   "OpenAI GPT-4 Turbo (gpt-4-turbo-preview)",
+   "GitHub Actions"
+  ],
+  "notable": [
+   "Uses build errors plus AST and plan graph (based on Microsoft's codeplan research) to propagate fixes beyond the first error",
+   "Ships a GitHub Action intended to run on dependabot or renovatebot pull requests and commit fixes to the PR branch",
+   "Reports a benchmark of 45% across 67 version-bump tasks with GPT-4 Turbo",
+   "Interactive menu mode when run without arguments"
+  ],
+  "caveats": [
+   "Only TypeScript and TSX are supported; other languages are on the roadmap",
+   "Only gpt-4-turbo-preview is supported as the LLM, and an OpenAI API key is required",
+   "Cannot upgrade multiple packages at once, so peer-dependency groups such as @octokit/core with plugin-retry fail; very large frameworks like vue are a poor fit",
+   "Only detects breaking changes that cause build errors; behavioral changes go unnoticed"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4171,
+  "output": 1285
+ },
+ "generated": "2026-10-29"
+}

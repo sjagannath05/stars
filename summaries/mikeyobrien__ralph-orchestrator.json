@@ -1,0 +1,91 @@
+{
+ "id": "mikeyobrien/ralph-orchestrator",
+ "repo": "mikeyobrien/ralph-orchestrator",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Ralph Wiggum",
+   "entry": "ralph-orchestrator by mikeyobrien - Ralph Orchestrator implements the simple but effective \"Ralph Wiggum\" technique for autonomous task completion, continuously running an AI agent against a prompt file until the task is marked as complete or limits are reached. This implementation provides a robust, well-tested, and feature-complete orchestration system for AI-driven development. Also cited in th"
+  }
+ ],
+ "summary": {
+  "one_liner": "A hat-based orchestration framework that runs AI coding agents in a loop against a prompt until the task is complete or limits are hit (the \"Ralph Wiggum\" technique).",
+  "what_it_does": "Ralph repeatedly runs an AI coding assistant CLI until it outputs a LOOP_COMPLETE marker or reaches an iteration limit. Work is organized into \"hats,\" specialized personas that coordinate through events. Backpressure gates (tests, lint, typecheck) are described as rejecting incomplete work. It includes persistent memories and runtime task tracking, plus a planning command (ralph plan) that creates requirements, design, and implementation-plan files under .ralph/specs/. It supports multiple backends (Claude Code, Kiro, Gemini CLI, Codex, Forge, Amp, Copilot CLI, OpenCode, Pi, Roo, OMP) and five builtin hat presets. Optional features include an alpha web dashboard (ralph web), an MCP server mode over stdio, and Telegram-based human-in-the-loop interaction where agents can ask questions and humans can send guidance mid-loop.",
+  "use_cases": [
+   "Autonomously completing coding tasks with an AI agent in a loop",
+   "Planning a feature into specs before implementation",
+   "Adding input validation or small changes via a single prompt",
+   "Monitoring orchestration loops in a web dashboard",
+   "Exposing agent loop control to MCP-compatible clients",
+   "Getting human answers or guidance from Telegram during an agent run"
+  ],
+  "how_to_run": [
+   "npm install -g @ralph-orchestrator/ralph-cli",
+   "cargo install ralph-cli",
+   "ralph init --backend claude",
+   "ralph plan \"Add user authentication with JWT\"",
+   "ralph run -p \"Implement the feature in .ralph/specs/user-authentication/\"",
+   "ralph web"
+  ],
+  "stack": [
+   "Rust (ralph-api, ralph-cli)",
+   "Node.js >= 18 and npm (web dashboard frontend)",
+   "Telegram bot integration",
+   "ratatui (terminal UI)",
+   "YAML configuration (ralph.yml)"
+  ],
+  "notable": [
+   "Hat system: specialized personas coordinating through events",
+   "Backpressure gates that reject work failing tests, lint, or typecheck",
+   "Supports many AI coding CLI backends behind one loop",
+   "Telegram human-in-the-loop with reply-to and @loop-id routing for parallel loops",
+   "MCP server mode scoped to one workspace root per instance"
+  ],
+  "caveats": [
+   "Web dashboard is in Alpha with expected rough edges and breaking changes",
+   "Requires an external AI coding assistant CLI to be installed; needs Rust toolchain and Node.js for the dashboard",
+   "Homebrew is not currently published from the automated release flow"
+  ],
+  "license": "MIT",
+  "category": "ai agent orchestration",
+  "keywords": [
+   "ralph wiggum technique",
+   "ai agent loop",
+   "autonomous coding agent",
+   "agent orchestration",
+   "hat system",
+   "claude code orchestrator",
+   "multi-backend ai coding",
+   "iterative ai development",
+   "backpressure gates",
+   "run ai until task done",
+   "mcp server",
+   "telegram human in the loop",
+   "task automation with ai",
+   "llm agent framework",
+   "prompt file loop",
+   "rust cli",
+   "npm ralph-cli",
+   "spec driven development",
+   "planning specs for ai coding",
+   "ai pair programming automation",
+   "codex gemini claude orchestration",
+   "agentic workflow runner",
+   "web dashboard for agent loops",
+   "autonomous software development",
+   "ai code review loop",
+   "run coding agent unattended",
+   "orchestrate multiple ai coding tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5045,
+  "output": 1379
+ },
+ "generated": "2026-10-29"
+}

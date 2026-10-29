@@ -1,0 +1,98 @@
+{
+ "id": "sentriz/gonic",
+ "repo": "sentriz/gonic",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "gonic - Lightweight music streaming server. Subsonic compatible. GPL-3.0 Go/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "gonic | Lightweight music streaming server implementing the Subsonic API"
+  }
+ ],
+ "summary": {
+  "one_liner": "gonic is a lightweight, free-software music streaming server that implements the Subsonic API so Subsonic-compatible clients can browse and play a music library.",
+  "category": "self-hosted music streaming",
+  "keywords": [
+   "subsonic",
+   "subsonic api",
+   "music streaming server",
+   "self-hosted music",
+   "go",
+   "golang",
+   "audio streaming",
+   "media server",
+   "music library",
+   "airsonic alternative",
+   "navidrome alternative",
+   "last.fm scrobbling",
+   "listenbrainz",
+   "listen to my music collection from phone",
+   "stream my music library",
+   "transcoding",
+   "ffmpeg transcode",
+   "jukebox mode",
+   "podcasts",
+   "taglib",
+   "m3u playlists",
+   "multi-folder music",
+   "multi-valued tags",
+   "reverse proxy",
+   "raspberry pi music server",
+   "docker music server",
+   "folder browsing",
+   "subsonic clients"
+  ],
+  "what_it_does": "gonic is a Go implementation of the Subsonic API, letting Subsonic-compatible music clients connect to it. It can browse a music collection either by folder structure or by audio tags (via taglib, covering formats such as mp3, opus, flac, ape, m4a and wav). It supports on-the-fly transcoding with caching when ffmpeg is installed, and a jukebox mode that plays audio server-side via mpv. Multiple users can each have their own transcoding preferences, playlists and listening statistics. It also offers Last.fm and ListenBrainz scrobbling, podcast support, and a web interface for configuration and scans. Scanning can run at startup, on an interval, or via a filesystem watcher.",
+  "use_cases": [
+   "stream a personal music collection to Subsonic-compatible apps",
+   "run a lightweight music server on a Raspberry Pi",
+   "browse music by folder or by tags",
+   "share a music library between several users",
+   "scrobble listening history to Last.fm or ListenBrainz",
+   "play music through a server-side jukebox",
+   "serve podcasts alongside music"
+  ],
+  "how_to_run": [
+   "Install from source, Docker, or systemd (see the README's installation sections; details not expanded in the README text provided)",
+   "Set GONIC_MUSIC_PATH or pass -music-path to point at your music folder",
+   "Optionally set GONIC_CACHE_PATH, GONIC_PODCAST_PATH, GONIC_PLAYLISTS_PATH and GONIC_DB_PATH",
+   "Start gonic; it listens on 0.0.0.0:4747 by default",
+   "Log in to the web interface with admin/admin and change the password"
+  ],
+  "stack": [
+   "Go",
+   "taglib",
+   "ffmpeg (optional, for transcoding)",
+   "mpv (for jukebox mode)",
+   "Docker"
+  ],
+  "notable": [
+   "Browses by both folder tree and audio tags, with multi-valued genre and artist handling",
+   "Multiple music folders with ALIAS->PATH naming",
+   "Tested with many Subsonic clients including Symfonium, Amperfy, DSub and Sublime Music",
+   "Per-user transcoding preferences, playlists and top tracks/artists",
+   "Lightweight enough for a Raspberry Pi; ARM images are provided"
+  ],
+  "caveats": [
+   "Transcoding requires ffmpeg to be installed separately",
+   "Folder browsing expects all files of an album to sit in the same folder, and each folder to contain only one album",
+   "Default admin/admin credentials must be changed after first login",
+   "Delimiter-based multi-value tag splitting can produce false positives, per the README"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5294,
+  "output": 1323
+ },
+ "generated": "2026-10-29"
+}

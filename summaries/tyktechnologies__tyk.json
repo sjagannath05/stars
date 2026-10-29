@@ -1,0 +1,100 @@
+{
+ "id": "tyktechnologies/tyk",
+ "repo": "TykTechnologies/tyk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - API Management",
+   "entry": "Tyk - Fast and scalable open source API Gateway. Out of the box, Tyk offers an API Management Platform with an API Gateway, API Analytics, Developer Portal and API Management Dashboard. (Source Code) MPL-2.0 Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tyk Gateway is an open source, Go-based API and AI gateway that handles REST, GraphQL, TCP, gRPC, SOAP and MCP traffic with auth, rate limiting, analytics and transformation.",
+  "what_it_does": "Tyk Gateway sits in front of upstream APIs and applies middleware such as authentication (JWT, bearer tokens, Basic Auth, client certificates), rate limiting and quotas, and per-version or per-operation access control. It can import Swagger/OpenAPI documents (OAS 2.x and 3.0.1) to scaffold APIs, and can generate an MCP proxy from a REST API. It also parses JSON-RPC 2.0 for MCP traffic so policy applies per tool, resource and prompt. Content mediation lets it rewrite headers or convert between SOAP and GraphQL. Plugins can be written in Python, JavaScript, Go, or any gRPC-capable language. Configuration can be reloaded without interrupting active requests. The README also points to separate OSS components: Tyk Pump for analytics export, Tyk Identity Broker for third-party login, and Tyk AI Studio (AGPL-3.0) for LLM management.",
+  "use_cases": [
+   "Put rate limits and API keys in front of internal or partner APIs",
+   "Govern MCP traffic from AI agents with per-tool access control",
+   "Import OpenAPI or Swagger specs to create gateway APIs",
+   "Convert SOAP services to GraphQL or rewrite request and response headers",
+   "Run a Kubernetes-native API gateway with Helm",
+   "Record API usage analytics and send webhooks on quota or auth failures"
+  ],
+  "how_to_run": [
+   "Install Docker and Docker Compose",
+   "Create a tyk.conf gateway configuration file and an apps folder (on Linux)",
+   "Create a Docker Compose file that runs Tyk Gateway and Redis",
+   "Start the gateway with: docker compose up -d",
+   "Test with: curl localhost:8080/hello",
+   "To build from source: git clone the repo, then run go build (Go version from go.mod)"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Docker Compose",
+   "Redis",
+   "Kubernetes (Helm tyk-oss chart)",
+   "gRPC"
+  ],
+  "notable": [
+   "Batteries-included open source gateway with no feature lockout",
+   "Parses MCP JSON-RPC 2.0 and applies policy per tool, resource and prompt",
+   "Generates MCP proxies directly from REST APIs",
+   "Hitless reloads of configuration without dropping active requests",
+   "Dual-licensed: MPL-2.0 for core code, commercial license for the ee folder"
+  ],
+  "caveats": [
+   "Official support is limited to Linux/amd64, Linux/i386 and Linux/arm64",
+   "Tests require Redis running locally on the default port",
+   "The Tyk Operator Kubernetes integration requires a licence",
+   "The full management dashboard, developer portal and enterprise platform are separate commercial offerings (Tyk Self Managed or Tyk Cloud)"
+  ],
+  "license": "MPL-2.0",
+  "category": "api gateway",
+  "keywords": [
+   "api gateway",
+   "api management",
+   "open source api gateway",
+   "rest api gateway",
+   "graphql gateway",
+   "grpc gateway",
+   "tcp proxy",
+   "mcp gateway",
+   "model context protocol",
+   "ai gateway",
+   "llm gateway",
+   "api rate limiting",
+   "api authentication",
+   "jwt authentication",
+   "openapi import",
+   "swagger import",
+   "soap to graphql",
+   "api versioning",
+   "api analytics",
+   "api key management",
+   "kubernetes api gateway",
+   "helm chart api gateway",
+   "go api gateway",
+   "docker api gateway",
+   "self-hosted api gateway",
+   "redis rate limit",
+   "webhooks api events",
+   "cors api gateway",
+   "ip allowlist api",
+   "plugin middleware api",
+   "manage my apis",
+   "limit requests per user",
+   "put a gateway in front of my api",
+   "secure api for ai agents"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4280,
+  "output": 1421
+ },
+ "generated": "2026-10-29"
+}

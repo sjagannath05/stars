@@ -1,0 +1,95 @@
+{
+ "id": "algolia/sup3rs3cretmes5age",
+ "repo": "algolia/sup3rS3cretMes5age",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "Sup3rS3cretMes5age - Very simple (to deploy and to use) secret message service using Hashicorp Vault as a secrets storage. MIT Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted, self-destructing secret message service written in Go that stores messages in HashiCorp Vault's cubbyhole backend and deletes them after one read.",
+  "what_it_does": "Users POST a text message (and optionally a file up to 50MB, base64-encoded) with an optional TTL (default 48h, max 7 days) and receive a one-time token. The recipient uses that token in a GET request to retrieve the message, after which the message and token are permanently deleted. Storage is handled through Vault tokens that have exactly two uses (create and retrieve). The service includes a web UI with plain vanilla JavaScript and self-hosted assets, rate limiting of 10 requests per second, and optional TLS via Let's Encrypt or manual certificates with HTTP-to-HTTPS redirection. It also provides a health check endpoint and shell functions for Bash, Zsh, and Fish for command-line use.",
+  "use_cases": [
+   "share a password or secret with someone once",
+   "send a one-time file securely",
+   "self-destructing message links",
+   "temporary secret sharing for a team",
+   "deploy a secret drop on Kubernetes with Helm",
+   "command-line secret sharing with curl"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into sup3rS3cretMes5age",
+   "make run (starts Vault dev server and app via Docker Compose)",
+   "docker compose -f deploy/docker-compose.yml up --build -d",
+   "go build -o sup3rs3cret cmd/sup3rS3cretMes5age/main.go",
+   "Set VAULT_ADDR, VAULT_TOKEN and SUPERSECRETMESSAGE_HTTP_BINDING_ADDRESS, then run ./sup3rs3cret"
+  ],
+  "stack": [
+   "Go (1.25.1 or later)",
+   "HashiCorp Vault",
+   "Echo web framework",
+   "ClipboardJS",
+   "Docker",
+   "Helm",
+   "Vanilla JavaScript"
+  ],
+  "notable": [
+   "Messages live in Vault cubbyhole storage with one-time tokens that expire after a single retrieval",
+   "Automatic TLS via Let's Encrypt, with optional manual certificate configuration",
+   "Multi-platform Docker images (amd64, arm64) with SBOM and provenance attestations",
+   "Helm chart included for Kubernetes deployment",
+   "Frontend has no external CDN dependencies and a small JavaScript footprint"
+  ],
+  "caveats": [
+   "Requires a separate production HashiCorp Vault server; the bundled setup uses Vault dev mode with an in-memory store and a known root token",
+   "README says to always run behind SSL/TLS in production because secrets over plain HTTP can be intercepted",
+   "Default Docker Compose setup serves plain HTTP on port 8082 until HTTPS is configured"
+  ],
+  "license": "MIT",
+  "category": "self-hosted secret sharing",
+  "keywords": [
+   "self-destructing messages",
+   "secret sharing",
+   "one-time secret",
+   "share password securely",
+   "hashicorp vault",
+   "vault cubbyhole",
+   "go",
+   "golang",
+   "pastebin alternative",
+   "self-hosted",
+   "encrypted message sharing",
+   "one-time download link",
+   "temporary secret storage",
+   "file sharing with expiration",
+   "secure file upload",
+   "docker compose",
+   "helm chart",
+   "kubernetes",
+   "let's encrypt",
+   "tls termination",
+   "rate limiting",
+   "curl command line",
+   "echo framework",
+   "ttl expiration",
+   "secret drop",
+   "send secret to someone",
+   "private note sharing",
+   "mit license",
+   "aws ecs deployment",
+   "vanilla javascript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6042,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "thinkst/opencanary",
+ "repo": "thinkst/opencanary",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "Canary Tokens - Generates lightweight, embedded honeypot triggers called canary tokens for detecting unauthorized access. (Source Code) BSD-3-Clause Docker/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenCanary is an open-source, multi-protocol network honeypot that mimics network services and sends alerts when attackers interact with it inside non-public networks.",
+  "what_it_does": "OpenCanary runs as a daemon (opencanaryd) and emulates several common network protocols that attackers may probe after breaching a network. When something interacts with these decoy services, it sends alerts through configurable mechanisms, highlighting the source IP address. Configuration is a JSON file (opencanary.conf) where you enable protocol modules and alerting. Optional modules include SNMP (requires Scapy), Portscan (Linux only, uses iptables), and a Windows File Share module (smb, requires Samba). The README says it is written in Python, has low resource needs, and can run on a Raspberry Pi. It can be run directly on Linux or macOS, under pkgx, with Docker Compose, or with Docker.",
+  "use_cases": [
+   "detect attackers inside a internal network",
+   "deploy a low-cost honeypot on a Raspberry Pi or small VM",
+   "alert on port scans against non-public hosts",
+   "decoy SNMP or file share services to catch intruders",
+   "run a network honeypot in Docker"
+  ],
+  "how_to_run": [
+   "pip install opencanary",
+   "sudo opencanaryd --copyconfig",
+   "Edit /etc/opencanaryd/opencanary.conf to enable the desired services and alerting",
+   "sudo opencanaryd --start --uid=nobody --gid=nogroup",
+   "docker compose up latest (see Docker section of README)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Scapy (optional, SNMP)",
+   "pcapy-ng (optional, SNMP)",
+   "Samba (optional, Windows File Share module)",
+   "iptables (optional, Portscan on Linux)",
+   "Docker / Docker Compose"
+  ],
+  "notable": [
+   "Multi-protocol honeypot with a JSON config file and modular services",
+   "Runs on low-resource hardware such as a Raspberry Pi",
+   "Drops root privileges after binding ports via --uid/--gid flags",
+   "Open-source edition of the commercial Thinkst Canary honeypot",
+   "Optional uv-based installation path"
+  ],
+  "caveats": [
+   "Portscan module is Linux-only and needs iptables (not nftables); it is disabled in Docker",
+   "Windows File Share (smb) module is not available on macOS and needs Samba",
+   "Config file is read as root and should be root-owned to avoid privilege escalation"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "network honeypot",
+  "keywords": [
+   "honeypot",
+   "network honeypot",
+   "opencanary",
+   "intrusion detection",
+   "breach detection",
+   "canary",
+   "decoy services",
+   "detect attackers on internal network",
+   "python honeypot",
+   "snmp honeypot",
+   "smb honeypot",
+   "port scan detection",
+   "docker honeypot",
+   "raspberry pi security",
+   "lateral movement detection",
+   "intruder alerts",
+   "thinkst",
+   "canary tokens",
+   "security alerting",
+   "daemon",
+   "opencanaryd",
+   "fake services",
+   "bsd-3-clause",
+   "docker compose",
+   "low resource honeypot",
+   "catch hackers",
+   "network security monitoring"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5078,
+  "output": 1212
+ },
+ "generated": "2026-10-29"
+}

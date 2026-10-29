@@ -1,0 +1,96 @@
+{
+ "id": "c4illin/convertx",
+ "repo": "C4illin/ConvertX",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "ConvertX - Online file converter which supports over a thousand different formats. AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ConvertX is a self-hosted online file converter, written in TypeScript on Bun and Elysia, that supports over a thousand file formats through a range of bundled converters.",
+  "what_it_does": "It runs as a web service where users upload files and convert them to other formats through the browser. The README lists about 20 backing converters, including ImageMagick, GraphicsMagick, FFmpeg, Pandoc, LibreOffice, Calibre, Inkscape, Assimp, and VTracer, each covering different categories such as images, video, documents, e-books, and 3D assets. Users can process multiple files at once, and accounts are protected by a password. Multiple accounts are supported, and the README describes optional account registration and unauthenticated access as settings. Configuration is done through environment variables covering JWT secret, auto-deletion of old files, concurrency limits, a URL web root, branding, FFmpeg arguments, and history visibility. Deployment is documented with Docker and docker-compose, using a data volume and PUID/PGID for file permissions.",
+  "use_cases": [
+   "self-hosted file conversion",
+   "convert images between formats",
+   "convert video or audio with FFmpeg",
+   "convert documents with Pandoc or LibreOffice",
+   "convert e-books with Calibre",
+   "batch convert multiple files in a browser",
+   "share a converter with a team behind a login"
+  ],
+  "how_to_run": [
+   "docker run -p 3000:3000 -e PUID=1000 -e PGID=1000 -v ./data:/app/data ghcr.io/c4illin/convertx",
+   "Or use the docker-compose.yml from the README with the ghcr.io/c4illin/convertx image, port 3000, and a ./data volume",
+   "Visit the server in a browser and create the first account immediately",
+   "Development: install Bun and Git, clone the repo, run `bun install`, then `bun run dev`"
+  ],
+  "stack": [
+   "TypeScript",
+   "Bun",
+   "Elysia",
+   "Docker",
+   "ImageMagick",
+   "GraphicsMagick",
+   "FFmpeg",
+   "Pandoc",
+   "LibreOffice",
+   "Calibre",
+   "Inkscape",
+   "Assimp"
+  ],
+  "notable": [
+   "Aggregates many converters (about 20 listed) behind a single web interface",
+   "Lists approximate format counts per converter, such as ImageMagick 245 inputs and FFmpeg around 472 inputs",
+   "Configurable FFmpeg input and output arguments, including hardware acceleration",
+   "Optional auto-deletion of files older than a set number of hours",
+   "Environment-variable configuration with WEBROOT for serving under a sub-path"
+  ],
+  "caveats": [
+   "README warns that login fails over plain HTTP unless HTTP_ALLOWED=true, which should only be set locally",
+   "Account registration and unauthenticated access should not be exposed to the internet, per the README warning",
+   "Anyone can register the first account if the instance is left unconfigured"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted file conversion",
+  "keywords": [
+   "file converter",
+   "online file converter",
+   "self-hosted converter",
+   "document conversion",
+   "image conversion",
+   "video conversion",
+   "ffmpeg",
+   "imagemagick",
+   "pandoc",
+   "libreoffice",
+   "calibre",
+   "ebook converter",
+   "typescript",
+   "bun",
+   "elysia",
+   "docker",
+   "convert files in browser",
+   "batch file conversion",
+   "multi-user file converter",
+   "password protected converter",
+   "agpl",
+   "selfhosted",
+   "format converter",
+   "svg converter",
+   "3d model conversion",
+   "pdf conversion"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3756,
+  "output": 1270
+ },
+ "generated": "2026-10-29"
+}

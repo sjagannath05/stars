@@ -1,0 +1,94 @@
+{
+ "id": "dteoh/slowquitapps",
+ "repo": "dteoh/SlowQuitApps",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "General Tools",
+   "entry": "SlowQuitApps - An OS X app that adds a global delay of 1 second to the Cmd-Q shortcut. [![Open-Source Software][OSS Icon] ![Freeware][Freeware Icon]](https://github.com/dteoh/SlowQuitApps)"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "SlowQuitApps - Add a global delay to Command-Q to stop accidental app quits."
+  }
+ ],
+ "summary": {
+  "one_liner": "SlowQuitApps is a macOS app that adds a global 1-second hold delay to the Cmd-Q shortcut so accidental quits are prevented.",
+  "what_it_does": "It requires the user to hold Cmd-Q for a set delay (1 second by default) before the frontmost application quits. While the delay is active, an overlay showing the time remaining is drawn at the center of the screen. The delay is configurable in milliseconds via the macOS defaults system. A whitelist of bundle IDs can be set so those apps receive Cmd-Q immediately, and an inverted \"blacklist mode\" lets the app handle Cmd-Q only for listed apps. The overlay can be turned off with a defaults setting. The README says the approach mirrors Google Chrome's \"Warn Before Quitting\" feature, applied to every app.",
+  "use_cases": [
+   "prevent accidental app quits on macOS",
+   "add a confirmation delay to Command-Q",
+   "stop losing browser tabs from a stray Cmd-Q",
+   "exempt specific apps from the quit delay",
+   "disable or tune Cmd-Q behavior system-wide"
+  ],
+  "how_to_run": [
+   "brew tap dteoh/sqa",
+   "brew install --cask slowquitapps",
+   "Or download pre-built binaries from the releases page, unzip, drag to Applications, and run",
+   "defaults write com.dteoh.SlowQuitApps delay -int 5000  (example: set delay to 5 seconds)",
+   "defaults write com.dteoh.SlowQuitApps whitelist -array-add com.apple.Notes  (example whitelist entry)",
+   "killall SlowQuitApps  (exit before relaunching after changes)"
+  ],
+  "stack": [
+   "macOS app",
+   "Homebrew cask",
+   "macOS defaults system for configuration",
+   "osascript (used in README examples)"
+  ],
+  "notable": [
+   "Global 1-second hold-to-quit on Cmd-Q for every app",
+   "Configurable delay in milliseconds",
+   "Whitelist of apps that bypass the delay, plus an inverted blacklist mode",
+   "Optional on-screen countdown overlay",
+   "Optional sqa command-line script when installed via Homebrew"
+  ],
+  "caveats": [
+   "Currently developed and supported only on Mojave; older macOS versions need pinned older releases (0.5.0 for 10.9 to 10.13, 0.4.0 for 10.8)",
+   "After upgrading, accessibility permissions must be removed and re-added manually",
+   "Settings require exiting and relaunching the app to take effect"
+  ],
+  "license": "GNU General Public License (version 2 or later, per the license notice in the README)",
+  "category": "macos utilities",
+  "keywords": [
+   "cmd-q delay",
+   "command q",
+   "prevent accidental quit",
+   "macos quit confirmation",
+   "hold to quit",
+   "keyboard shortcut safety",
+   "accidental app quit",
+   "mac utility",
+   "slowquitapps",
+   "dteoh",
+   "global quit delay",
+   "cmd-q override",
+   "whitelist apps",
+   "blacklist mode",
+   "quit overlay",
+   "countdown overlay",
+   "defaults write",
+   "homebrew cask",
+   "brew install slowquitapps",
+   "sqa command line",
+   "accessibility permissions",
+   "osx app",
+   "mojave",
+   "chrome warn before quitting",
+   "disable command-q",
+   "safari lost tabs",
+   "gpl open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3320,
+  "output": 1253
+ },
+ "generated": "2026-10-29"
+}

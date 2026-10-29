@@ -1,0 +1,94 @@
+{
+ "id": "labzink/cc-probeline",
+ "repo": "labzink/cc-probeline",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Usage & Cost",
+   "entry": "cc-probeline by labzink - See where it leaks, stop paying for it — a live Claude Code status line that prices every turn, your subagents, cache rebuilds, plus limits, context and git."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code status line that prices each turn, subagent work, and cache rebuild from the local session log, alongside limits, context, and git info.",
+  "what_it_does": "Reads the session JSONL log on disk and the status-line payload Claude Code sends, then renders a live status line. It shows a per-turn cost table where each turn and each subagent turn is priced as an estimate against a public price table. It tracks prompt-cache TTL countdowns (60 min for the orchestrator, 5 min for subagents) and prices cache rebuilds when they happen. It also shows 5h and 7d rate-limit usage with reset times, extra-usage spend in dollars, context-window fill, model, git, and session time, with colour zones for warning levels. A /cc-probeline-config wizard or a TOML file controls which segments show and their thresholds. The README says rendering is offline; the only network calls are optional, opt-out price/version checks and a background refresh of Claude Code's /usage cache.",
+  "use_cases": [
+   "monitor Claude Code session cost per turn",
+   "see what subagents spend while they run",
+   "track 5h and 7d rate limits in the terminal",
+   "spot prompt cache rebuilds and their dollar cost",
+   "watch context window fill during a session",
+   "customise a Claude Code status line without hand-editing config"
+  ],
+  "how_to_run": [
+   "brew install labzink/homebrew-tap/cc-probeline # macOS (Homebrew)",
+   "curl -fsSL | sh # macOS / Linux (the README's URL is empty in the source)",
+   "/plugin marketplace add labzink/cc-probeline # Claude Code plugin marketplace",
+   "cc-probeline --check # verify installation; prints Installation OK",
+   "/cc-probeline-config # interactive config wizard inside Claude Code",
+   "cc-probeline check-config # validate config.toml"
+  ],
+  "stack": [
+   "Go (single compiled binary, no runtime dependencies)",
+   "Claude Code status line and plugin system",
+   "Homebrew cask",
+   "Scoop (Windows)",
+   "TOML configuration"
+  ],
+  "notable": [
+   "Prices every turn, subagent turn, and cache rebuild live, labelled as estimates from a public price table",
+   "Optional daily price/version check over the network, falling back to the table baked into the build when offline or opted out",
+   "Shows extra-usage spend in dollars against a monthly ceiling, taken from Anthropic's own figure",
+   "Release artifacts ship with SHA256 checksums and signed SLSA build provenance",
+   "README states that the development was done through an AI-agent pipeline; code contributions are accepted only through that workflow"
+  ],
+  "caveats": [
+   "The quota segment (5h / 7d limits, extra usage) requires Claude Code 2.1.80 or newer; on older versions it is hidden",
+   "Per-turn costs are estimates computed from token counts against a public price table",
+   "Scoop install is marked experimental; uninstalling via Scoop requires running cc-probeline uninstall first"
+  ],
+  "license": "MIT",
+  "category": "claude code tooling",
+  "keywords": [
+   "claude code",
+   "status line",
+   "statusline",
+   "terminal prompt",
+   "cost tracking",
+   "token cost",
+   "claude api cost",
+   "subagent cost",
+   "prompt cache",
+   "cache ttl",
+   "rate limit monitor",
+   "usage limits",
+   "context window",
+   "git status",
+   "go binary",
+   "homebrew",
+   "scoop",
+   "claude code plugin",
+   "tui dashboard",
+   "cli monitor",
+   "see where my money goes",
+   "track claude spending",
+   "watch rate limits",
+   "monitor ai coding costs",
+   "toml config",
+   "ccusage alternative",
+   "slsa provenance",
+   "per-turn pricing",
+   "terminal dashboard for claude",
+   "limit reset timer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5468,
+  "output": 1371
+ },
+ "generated": "2026-10-29"
+}

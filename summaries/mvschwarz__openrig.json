@@ -1,0 +1,96 @@
+{
+ "id": "mvschwarz/openrig",
+ "repo": "mvschwarz/openrig",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "OpenRig by Mike Schwarz - Combines Claude Code, Codex, and Pi terminal sessions into persistent long-running teams. Agents message each other directly over tmux and queue work to each other, instead of the user relaying messages. Teams and agents are saved as YAML files, and a running team can be snapshotted and restored later."
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenRig is an open-source, self-hosted system that defines teams of Claude Code, Codex and Pi coding agents in YAML, boots them as persistent tmux sessions, and lets them message and queue work to each other.",
+  "what_it_does": "OpenRig runs a local daemon, CLI (`rig`), terminal UI and MCP server on top of tmux and SQLite to manage a network of coding agents as one system. Teams (called rigs) are defined in YAML RigSpec files with pods, seats, edges and continuity policies, and `rig up` boots them with readiness checks. Agents communicate through commands such as `rig send`, `rig broadcast` and `rig chatroom`, and each agent runs in a tmux session that can be attached to directly. A running topology can be snapshotted with `rig down --snapshot` and restored later, reporting per-seat outcomes such as resumed or awaiting-decision. The README also describes discovering and adopting existing tmux sessions, portable RigBundle archives, and three shipped teams (starter, workshop, factory) plus specialist teams. Setup writes provider trust settings, hooks and tmux configuration into the user's home and project folders, which the README documents in detail.",
+  "use_cases": [
+   "orchestrate multiple coding agents as a persistent team",
+   "run Claude Code and Codex agents together in one rig",
+   "have agents hand off work to each other without relaying messages manually",
+   "snapshot and restore a running multi-agent setup",
+   "define agent team topologies in YAML and boot with one command",
+   "monitor agent sessions in tmux and a terminal dashboard"
+  ],
+  "how_to_run": [
+   "npm install -g @openrig/cli",
+   "rig setup --dry-run",
+   "rig setup",
+   "rig daemon start",
+   "rig specs preview starter --kind rig",
+   "rig up starter --cwd ."
+  ],
+  "stack": [
+   "Node.js 22 or 24",
+   "tmux",
+   "SQLite (better-sqlite3)",
+   "Hono HTTP daemon",
+   "TypeScript CLI (@openrig/cli)",
+   "MCP server",
+   "Claude Code",
+   "Codex",
+   "Pi / Oh My Pi (via RPC runners)",
+   "herdr / cmux (optional terminal workspaces)"
+  ],
+  "notable": [
+   "Teams and agents are defined as declarative YAML (RigSpec and AgentSpec), with reusable pods and edges",
+   "Snapshot and restore of a running topology via rig down --snapshot and rig up",
+   "Agents message each other and queue work through rig send, broadcast and chatroom commands",
+   "Discovers and adopts existing Claude Code and Codex tmux sessions into a managed rig",
+   "Portable RigBundle archives with SHA-256 integrity, shareable across machines"
+  ],
+  "caveats": [
+   "Requires macOS or Linux; Windows is supported only through WSL2, and the automated tests do not run on WSL2 yet",
+   "Setup and launch modify provider configuration files (for example ~/.claude.json, ~/.codex/config.toml, tmux config) and the README says no complete backup or rollback guarantee exists, so back up first",
+   "The README says the older React web UI is in maintenance mode, and Node 20 is no longer supported"
+  ],
+  "license": "Apache 2.0",
+  "category": "agent orchestration tooling",
+  "keywords": [
+   "multi-agent orchestration",
+   "coding agent teams",
+   "claude code",
+   "codex",
+   "tmux",
+   "agent team yaml",
+   "rigspec",
+   "agent messaging",
+   "persistent agent sessions",
+   "snapshot restore agents",
+   "multi-agent harness",
+   "terminal agents",
+   "agent queue",
+   "run agents in parallel",
+   "agent topology",
+   "alternative to manual copy paste between agents",
+   "coordinate multiple ai agents",
+   "self-hosted agent system",
+   "tmux session manager",
+   "agent daemon cli",
+   "mcp server agents",
+   "rig send",
+   "agent team boot one command",
+   "share agent teams",
+   "claude code and codex together",
+   "local agent network",
+   "apache 2.0 agent tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15247,
+  "output": 1475
+ },
+ "generated": "2026-10-29"
+}

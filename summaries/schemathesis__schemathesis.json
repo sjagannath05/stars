@@ -1,0 +1,92 @@
+{
+ "id": "schemathesis/schemathesis",
+ "repo": "schemathesis/schemathesis",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Testing",
+   "entry": "schemathesis - Automatic property-based testing of web APIs from OpenAPI or GraphQL schemas."
+  }
+ ],
+ "summary": {
+  "one_liner": "Schemathesis is a Python tool that automatically generates test inputs from OpenAPI or GraphQL schemas to find bugs in web APIs.",
+  "what_it_does": "Generates inputs from an API schema, adapts to server responses, and chains operations into multi-step workflows for testing. It can run from the command line via `schemathesis run`, from a `schemathesis.toml` config file, or as pytest/unittest tests using `schema.parametrize()`. Supports authentication (static headers, Basic, per-security-scheme credentials, custom refresh logic), custom checks, and fuzz dictionaries. It also provides rate limiting, including `auto` mode that follows Retry-After on 429 responses. Reports include an offline HTML page, JUnit, VCR, HAR, NDJSON, JSON, and Allure, plus a schema coverage report and replay/baseline support for CI.",
+  "use_cases": [
+   "fuzz testing REST APIs",
+   "finding 500 errors in API endpoints",
+   "checking API responses against OpenAPI schema",
+   "stateful API workflow testing",
+   "testing GraphQL APIs",
+   "CI checks for API regressions"
+  ],
+  "how_to_run": [
+   "uv tool install schemathesis",
+   "schemathesis run <schema-url-or-path>",
+   "uv add --dev schemathesis",
+   "Write a test using schema.parametrize() and case.call_and_validate()"
+  ],
+  "stack": [
+   "Python",
+   "Hypothesis",
+   "OpenAPI",
+   "GraphQL",
+   "pytest",
+   "unittest"
+  ],
+  "notable": [
+   "Stateful testing with operation links inferred from the OpenAPI schema or GraphQL type graph",
+   "Adaptive testing that learns constraints and ids from responses",
+   "Offline HTML report with every failure and its curl command",
+   "Config file support (schemathesis.toml) without writing Python",
+   "Replay past failures and fail CI only on new ones (baseline)"
+  ],
+  "caveats": [
+   "Sends real requests that create, change and delete data; the README advises pointing it at dev or staging, not production"
+  ],
+  "license": "MIT",
+  "category": "api testing tools",
+  "keywords": [
+   "api testing",
+   "openapi testing",
+   "graphql testing",
+   "property-based testing",
+   "fuzz testing",
+   "fuzzing",
+   "hypothesis",
+   "pytest plugin",
+   "unittest",
+   "rest api testing",
+   "schema testing",
+   "api bug finder",
+   "500 error detection",
+   "schema validation testing",
+   "stateful testing",
+   "workflow testing",
+   "api regression testing",
+   "ci api testing",
+   "github action api tests",
+   "junit report",
+   "har export",
+   "allure report",
+   "curl repro",
+   "rate limit testing",
+   "authorization testing",
+   "idor testing",
+   "test my api from openapi",
+   "find crashes in my api",
+   "python api tests",
+   "automated api tests",
+   "contract testing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3119,
+  "output": 1072
+ },
+ "generated": "2026-10-29"
+}

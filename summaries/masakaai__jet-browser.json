@@ -1,0 +1,100 @@
+{
+ "id": "masakaai/jet-browser",
+ "repo": "masakaai/jet-browser",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Jet Browser - Portable WPE WebKit runtime for agents with isolated Docker sessions, native input, DOM/text reads, fresh screenshots, and ordered JSONL, MCP, and JavaScript SDK interfaces. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "Jet Browser is a standalone WPE WebKit browser runtime, with a Rust WebDriver bridge, that runs one isolated browser session per Docker container and is driven by ordered JSONL commands.",
+  "what_it_does": "It packages WPE WebKit 2.54 on a headless Wayland compositor (Weston) with a Rust WebDriver bridge as a standalone runtime. Each container runs one browser session and reads one JSON command per input line, returning one JSON response per output line. Supported operations include create, navigate, document state, semantic DOM snapshot, JavaScript evaluation, and PNG screenshots. Native input covers pointer, keyboard, text, touch, wheel, drag, navigation, and tabs. It also provides cookie and web-storage import/export with explicit profile paths, bounded downloads, and versioned JSON Schema tool declarations. The README states that no account, API key, model, or hosted control plane is required, and that the core is not an LLM or agent framework.",
+  "use_cases": [
+   "Running browser actions for an AI agent without bundling a model",
+   "Deterministic browser tests driven from CI or a test runner",
+   "Isolated disposable browser sessions per untrusted task",
+   "Verifying a page with native input, DOM state, and a screenshot",
+   "Non-Chromium browser testing with WPE WebKit",
+   "Embedding browser control in a Python or Node supervisor process"
+  ],
+  "how_to_run": [
+   "curl -fsSL <URL from README> | sh  (Docker only; runs network-disabled smoke verification)",
+   "git clone <repository URL from README>",
+   "docker pull ghcr.io/masakaai/jet-browser:0.9.0",
+   "JET_BROWSER_IMAGE=ghcr.io/masakaai/jet-browser:0.9.0 npm run standalone:smoke",
+   "npm ci && npm test && cargo test --all-targets  (source development)",
+   "docker build -f Dockerfile.standalone -t jet-browser:local ."
+  ],
+  "stack": [
+   "WPE WebKit 2.54",
+   "Weston (headless Wayland compositor)",
+   "Rust",
+   "WebDriver",
+   "Docker",
+   "Node.js 24+ (source builds and SDK)",
+   "Python (dependency-free container supervisor)",
+   "JSON Schema",
+   "MCP (Model Context Protocol)",
+   "seccomp"
+  ],
+  "notable": [
+   "One disposable, resource-bounded browser session per container with networking disabled by default in examples",
+   "Non-Chromium engine (WPE WebKit) as an alternative to Chromium/CDP-based browser stacks",
+   "Ordered line-delimited JSON protocol over stdin/stdout with no required daemon, database, or cloud API",
+   "Published MCP server, Codex/Claude Code plugin, Hermes plugin, and GitHub Marketplace Action for verification",
+   "Reproducible runtime benchmark and stability test scenario with machine-readable reports"
+  ],
+  "caveats": [
+   "Does not attach to a daily Chrome profile, does not support Chromium-only extension, policy, or CDP contracts, and does not include a model or agent",
+   "Docker socket mounts grant host-level control; the MCP verifier should only be used with a trusted local client",
+   "Self-hosted GitHub runners must already permit unprivileged user namespaces for the Action; the README says the Action does not change runner settings",
+   "Source builds and the SDK paths require Node.js 24+ and Docker; on AppArmor hosts the outer container AppArmor profile is disabled"
+  ],
+  "license": "Apache License 2.0",
+  "category": "browser automation runtime",
+  "keywords": [
+   "browser automation",
+   "headless browser",
+   "wpe webkit",
+   "webkit browser",
+   "webdriver",
+   "rust webdriver bridge",
+   "jsonl protocol",
+   "jsonl over stdin",
+   "docker browser sandbox",
+   "isolated browser session",
+   "disposable browser container",
+   "ai agent browser",
+   "agent tool browser",
+   "mcp server browser",
+   "model context protocol",
+   "browser for coding agents",
+   "headless screenshot capture",
+   "dom snapshot",
+   "native input automation",
+   "deterministic browser tests",
+   "ci browser testing",
+   "non-chromium browser",
+   "alternative to playwright",
+   "alternative to chromium automation",
+   "alternative to cdp",
+   "run browser in container",
+   "python browser supervisor",
+   "let my agent control a browser",
+   "take a screenshot of a page from code",
+   "verify web page in ci"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6742,
+  "output": 1611
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,102 @@
+{
+ "id": "zakariagharzouli/sparda",
+ "repo": "zakariagharzouli/sparda",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "SPARDA by Zakaria Gharzouli (Residual Labs) - Converts a running Express or FastAPI app into an MCP server by AST-parsing its routes and injecting a marked, byte-for-byte-removable /mcp router, so the agent can operate your live application (real auth, real data) rather than just read files. Exceptionally safety-minded: writes are disabled by default behind two-phase confirmation, docstrings are s"
+  }
+ ],
+ "summary": {
+  "one_liner": "SPARDA is a local, deterministic gate that compiles an Express, FastAPI, Flask, Next.js, NestJS or Medusa backend into a behavior graph, proves whether AI-written edits break guards or invariants, and can optionally inject an MCP server into the running app.",
+  "category": "ai code safety verification",
+  "keywords": [
+   "static analysis",
+   "backend verification",
+   "mcp server",
+   "model context protocol",
+   "express",
+   "fastapi",
+   "flask",
+   "nextjs",
+   "nestjs",
+   "medusa",
+   "openapi",
+   "guard removal detection",
+   "ai edit gate",
+   "claude code hook",
+   "posttooluse hook",
+   "sarif",
+   "ci gate",
+   "security audit",
+   "unguarded mutation",
+   "invariant checking",
+   "behavior graph",
+   "route extraction",
+   "ast parsing",
+   "self-healing code",
+   "record and replay requests",
+   "mock server",
+   "share files with my team",
+   "check ai generated code is safe",
+   "stop ai from removing auth checks"
+  ],
+  "what_it_does": "Compiles a backend's routes, database queries, state mutations, guards and side-effects into one language-agnostic graph (UBG, stored as .sparda/ubg.json under the SBIR format). The apocalypse command checks that graph against five static obligations, including unguarded mutations, non-atomic aggregate writes, and unvalidated writes to constrained columns. The gate command diffs the graph before and after an edit and reports regressions such as a removed guard, with exit code 2 for use as a Claude Code PostToolUse hook. The init command scans routes via AST and injects a marked, reversible /mcp router that exposes the running app as MCP tools, with write tools disabled by default and two-phase confirmation. Other commands include timeless (record and replay requests), heal (gated self-repair), twin (safe simulated mock server), and mirror (serve the compiled graph over HTTP without the framework). The README says it runs locally with no API key and four exact-pinned runtime dependencies.",
+  "use_cases": [
+   "check an ai-written backend edit before merging",
+   "block claude code edits that remove auth guards",
+   "run a safety check in ci with sarif output",
+   "expose a running express or fastapi app to an ai client as mcp tools",
+   "record a production request and replay it as a test",
+   "serve a mock backend for frontend development"
+  ],
+  "how_to_run": [
+   "npx sparda-mcp apocalypse",
+   "npx sparda-mcp prove",
+   "npx sparda-mcp init",
+   "npx sparda-mcp dev",
+   "npx sparda-mcp demo",
+   "npx sparda-mcp remove"
+  ],
+  "stack": [
+   "Node.js (npx sparda-mcp)",
+   "Python (FastAPI support, Python >= 3.9)",
+   "MCP (Model Context Protocol)",
+   "SBIR / UBG graph format",
+   "Express",
+   "FastAPI",
+   "Flask",
+   "Next.js",
+   "NestJS",
+   "MedusaJS",
+   "Prisma (schema.prisma parsing)",
+   "Zod and Pydantic validation detection",
+   "GitHub Actions (SARIF upload)"
+  ],
+  "notable": [
+   "Two-phase write confirmation: enabled MCP write tools return a single-use token and preview first, and only commit after an explicit confirm step",
+   "Claude Code PostToolUse hook (gate --hook) that blocks edits removing a guard with exit code 2",
+   "Injected /mcp router is marked and removable byte-for-byte via npx sparda-mcp remove",
+   "Deterministic, offline graph verification with PROVEN (PARTIAL) and PREMISE NOT VERIFIED verdicts instead of false greens",
+   "Optional OpenAPI 3.x lowering to compile backends in other stacks such as Go, Java, Rails, Laravel, and .NET"
+  ],
+  "caveats": [
+   "README says most real apps come back NOT_PROVEN under the prover, and that partial coverage is reported as PARTIAL rather than full proof",
+   "Timeless replay is per-request only; concurrent-race capture is stated as out of scope for v1",
+   "OpenAPI lowering accepts JSON specs only in v1; YAML is not supported",
+   "Team features such as per-person access policies and a signed audit log are planned for a future paid tier; the README links to docs/SECURITY.md for known gaps"
+  ],
+  "license": "Business Source License 1.1 (converts to Apache 2.0 four years after each release; no reselling as a competing commercial service)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10201,
+  "output": 1607
+ },
+ "generated": "2026-10-29"
+}

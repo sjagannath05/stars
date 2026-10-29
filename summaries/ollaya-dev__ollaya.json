@@ -1,0 +1,123 @@
+{
+ "id": "ollaya-dev/ollaya",
+ "repo": "ollaya-dev/ollaya",
+ "kind": "star",
+ "description": "Jev-compatible API server for open decision models. Ollama for decision models: pull and serve 29 model families (Laya, pplx-decider, Clef, Winnow, coba...) locally or self-hosted behind /v1/systemone. The TypeSafe SDK works unchanged: set its base URL and pick an open model. CLI, desktop app, Docker, MCP server, public bench.",
+ "topics": [
+  "calibration",
+  "decision-model",
+  "decision-models",
+  "inference-server",
+  "jev",
+  "jev-alternative",
+  "jev-compatible",
+  "laya",
+  "llama-cpp",
+  "local-inference",
+  "mcp-server",
+  "model-serving",
+  "ollama",
+  "onnxruntime",
+  "rust",
+  "self-hosted",
+  "system-one",
+  "systemone",
+  "typed-decisions",
+  "typesafe"
+ ],
+ "language": "Rust",
+ "stars": 1415,
+ "license": "Apache-2.0",
+ "homepage": "https://ollaya.dev",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "programming"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Ollaya is a local daemon and self-hosted API that pulls and serves open decision models (typed questions answered with calibrated probabilities in one forward pass, no text generation), exposing a Jev-compatible /v1/systemone endpoint.",
+  "category": "decision model serving",
+  "keywords": [
+   "decision models",
+   "decision model server",
+   "jev",
+   "jev-compatible",
+   "jev alternative",
+   "typesafe sdk",
+   "typesafe",
+   "systemone",
+   "/v1/systemone",
+   "ollama alternative for decision models",
+   "local inference",
+   "self-hosted api",
+   "model serving",
+   "inference server",
+   "calibrated probabilities",
+   "classification without llm",
+   "routing",
+   "guardrails",
+   "triage",
+   "tool approval",
+   "onnx runtime",
+   "llama.cpp",
+   "gguf",
+   "rust cli",
+   "mcp server",
+   "docker gpu image",
+   "run models on my own hardware",
+   "intent classification locally",
+   "support ticket triage model",
+   "pull open models by name"
+  ],
+  "what_it_does": "Ollaya pulls named open decision models and serves them from a local daemon through an HTTP API that follows the TypeSafe /v1/systemone wire format, so the TypeSafe SDK and Jev clients can be pointed at it by changing the base URL. Each request supplies a state (text or JSON) and typed questions of types choice, score, and noul, and the model returns calibrated probabilities in a single forward pass rather than generated text. The CLI can run a model on a message with presets such as triage, or with custom questions via flags like --ask and --choice. The repository includes the CLI and daemon, the HTTP API crates, a model registry with resumable pulls, inference engines based on ONNX Runtime and llama.cpp for GGUF models, and a Python conversion pipeline with parity checks against PyTorch references. The README also describes a desktop app, Docker images, an MCP server, and a public benchmark, with install commands for Linux, macOS, and Windows.",
+  "use_cases": [
+   "route customer messages to the right team without calling an LLM",
+   "triage support tickets and detect urgency or churn risk",
+   "approve or block agent tool calls with a fast decision model",
+   "add guardrail checks to an AI agent pipeline",
+   "self-host decision models behind a Jev or TypeSafe-compatible API",
+   "run calibrated classification locally on GPU or CPU"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh",
+   "ollaya run winnow:e4b --preset triage \"<message>\"",
+   "docker run -d --gpus=all -p 11435:11435 ghcr.io/ollaya-dev/ollaya:cuda",
+   "cargo test --workspace",
+   "cargo build --release -p ollaya --features cuda",
+   "cd convert && uv sync"
+  ],
+  "stack": [
+   "Rust",
+   "ONNX Runtime",
+   "llama.cpp",
+   "Python (convert pipeline, PyTorch, uv)",
+   "Docker",
+   "CUDA"
+  ],
+  "notable": [
+   "Jev-compatible /v1/systemone API, so existing TypeSafe SDK code works after changing the base URL",
+   "Decision models return calibrated probabilities in one forward pass and never generate text",
+   "Ships 29 model families pulled by name, each with its own license noted in the README",
+   "Three-tier parity testing (K1, K2, K3) against PyTorch reference outputs",
+   "Multiple interfaces: CLI, desktop app, Docker image, MCP server, and public bench"
+  ],
+  "caveats": [
+   "Several bundled models have restrictive terms: nimble:9b-v3 adapter is CC BY-NC 4.0 (no commercial use), and d1 is under the LFM Open License, which excludes organizations with US$10M+ annual revenue",
+   "Linux install requires glibc 2.38 or newer (e.g. Ubuntu 24.04+)",
+   "GPU acceleration needs an NVIDIA driver of R525+ (Linux) or R527+ (Windows), and CUDA builds are listed only for x86-64 Linux and Windows"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4336,
+  "output": 1487
+ },
+ "generated": "2026-10-29"
+}

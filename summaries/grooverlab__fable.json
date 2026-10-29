@@ -1,0 +1,95 @@
+{
+ "id": "grooverlab/fable",
+ "repo": "grooverLab/fable",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "fable by grooverLab - High-fidelity transcript memory for Claude Code — index every session, recall byte-identical, search, prune, compose. Local-first, stdlib-only, MCP."
+  }
+ ],
+ "summary": {
+  "one_liner": "fable is a local-first CLI and MCP server that indexes Claude Code transcripts into a SQLite archive so Claude and the user can search, recall byte-identical conversations, and prune or compose sessions.",
+  "what_it_does": "fable indexes every Claude Code session transcript into a local SQLite archive, with an immutable vault that keeps every byte and a search map that supports keyword and optional local embeddings via Ollama. It provides CLI commands to search threads by relevance (filterable by project, kind, and count), assemble a token-budgeted context pack, retrieve a thread's raw turns byte-identically, and view a file's full edit history across sessions. It can prune or export sessions, show index stats, and remember standing rules. An MCP server lets Claude itself search and recall past conversations mid-session, and a web dashboard is served by `fable serve`. The README also describes composing sessions from chosen conversations, a \"run cold\" mode that mutes recall, and a memory diff that shows what a prune removed.",
+  "use_cases": [
+   "Recall past decisions from earlier Claude Code sessions",
+   "Find when a file or function changed and the conversation behind it",
+   "Resume a long session after compaction or /clear without losing context",
+   "Slim down a heavy session reversibly before resuming it",
+   "Keep transcripts beyond Claude Code's 30-day deletion",
+   "Run sub-agents or audits without injected prior memory"
+  ],
+  "how_to_run": [
+   "pipx install git+ (install the CLI; URL truncated in README)",
+   "fable install (registers MCP, installs hooks, indexes history)",
+   "fable serve (opens dashboard)",
+   "pipx upgrade fable-recall (update later)",
+   "python3 demo/seed_demo.py && fable --db demo/demo.db serve (try on sample data)"
+  ],
+  "stack": [
+   "Python",
+   "SQLite",
+   "MCP (Model Context Protocol)",
+   "Claude Code hooks",
+   "Ollama (optional local embeddings)",
+   "pipx"
+  ],
+  "notable": [
+   "Returns verbatim transcript turns rather than summaries or extracted facts",
+   "Immutable vault plus reversible pruning with a preview and Memory Diff",
+   "File time-travel reconstructs every Edit and Write across sessions",
+   "Composed Sessions stitch chosen conversations into a new resumable session",
+   "Local-first: no API keys, no cloud, no daemons, stdlib-only per the listing"
+  ],
+  "caveats": [
+   "Relies on Claude Code transcript files and hooks, so it depends on how Claude Code stores sessions",
+   "Optional semantic search requires a local Ollama install",
+   "Install URL in the README is truncated, so exact source location must be checked on GitHub",
+   "The README's benchmark numbers come from the author's own archive"
+  ],
+  "license": "MIT",
+  "category": "claude code memory",
+  "keywords": [
+   "claude code",
+   "transcript search",
+   "session memory",
+   "conversation history",
+   "mcp server",
+   "model context protocol",
+   "sqlite",
+   "local-first",
+   "offline",
+   "chat history recall",
+   "search past conversations",
+   "compaction recovery",
+   "context window",
+   "session pruning",
+   "file edit history",
+   "git-like file history",
+   "ollama embeddings",
+   "semantic search",
+   "keyword search",
+   "pipx",
+   "cli tool",
+   "python",
+   "memory layer",
+   "alternative to claude-mem",
+   "alternative to mem0",
+   "resume session",
+   "context pack",
+   "transcript archive",
+   "developer tooling",
+   "remember standing rules"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4077,
+  "output": 1281
+ },
+ "generated": "2026-10-29"
+}

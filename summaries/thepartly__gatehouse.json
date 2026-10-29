@@ -1,0 +1,104 @@
+{
+ "id": "thepartly/gatehouse",
+ "repo": "thepartly/gatehouse",
+ "kind": "star",
+ "description": "A flexible authorization library that combines role-based (RBAC), attribute-based (ABAC), and relationship-based (ReBAC) access control policies.",
+ "topics": [],
+ "language": "Rust",
+ "stars": 353,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Gatehouse is an in-process Rust authorization engine that combines RBAC, ABAC-style predicates, and relationship-based (ReBAC) policies, with request-scoped fact loading for list endpoints.",
+  "what_it_does": "Lets applications define typed authorization domains (subject, action, resource, context) and register grant policies and veto policies with a PermissionChecker. Policies can be synchronous predicates built with PolicyBuilder, async Policy/VetoPolicy implementations, built-in RbacPolicy and RebacPolicy, or DelegatingPolicy that maps inputs into another domain. Each request gets an EvaluationSession that batches, deduplicates, caches, and coalesces fact loads from registered FactSource implementations. Evaluation returns Granted, Denied, or Indeterminate decisions with audit traces, and list helpers (try_filter, try_lookup_page) authorize already-loaded resources or enumerate candidate IDs via LookupSource and Hydrator. Deny-overrides semantics keep veto authority separate from grants.",
+  "use_cases": [
+   "authorize access to a single resource in a Rust web service",
+   "filter list endpoint results by user permissions",
+   "relationship-based checks such as document owner or viewer via SQL facts",
+   "role-based access control in Rust applications",
+   "deny-override global bans or account suspension rules",
+   "cross-domain permission checks with delegation",
+   "paginated authorized lists using lookup and hydration"
+  ],
+  "how_to_run": [
+   "cargo new gatehouse-quickstart",
+   "Add to Cargo.toml: gatehouse = \"=0.6.0-alpha.3\" and tokio = { version = \"1\", features = [\"macros\", \"rt\"] }",
+   "Replace src/main.rs with the quickstart program from the README",
+   "cargo run",
+   "cargo run --example rbac_policy"
+  ],
+  "stack": [
+   "Rust",
+   "tokio",
+   "async-trait",
+   "tracing (optional, enabled by default)",
+   "serde (optional feature)",
+   "PostgreSQL (postgres_bulk_rebac example)",
+   "axum and actix-web (examples)",
+   "Criterion (benchmarks)"
+  ],
+  "notable": [
+   "Deny-overrides veto model: definite vetoes deny, uncertainty blocks grants, and any independent grant authorizes",
+   "EvaluationSession batches, deduplicates, caches, and coalesces fact loads per request, targeting N+1 query problems",
+   "Strict list filtering (try_filter) fails on authorization outages instead of silently omitting items",
+   "Evaluation traces and fact provenance for audit, with optional serde serialization",
+   "Must-use result types that warn when decisions are discarded"
+  ],
+  "caveats": [
+   "Pre-release version (0.6.0-alpha.3) pinned in the quickstart; migration guide from 0.5 is referenced as MIGRATION.md",
+   "authorize does not lock resources or provide transactional guarantees; version checks are the caller's responsibility",
+   "EvaluationSession caches are per-pass, so long-lived streams need periodic reauthorization with fresh sessions"
+  ],
+  "license": "MIT",
+  "category": "authorization library rust",
+  "keywords": [
+   "rust authorization",
+   "access control library",
+   "rbac",
+   "abac",
+   "rebac",
+   "relationship-based access control",
+   "role-based access control",
+   "attribute-based access control",
+   "policy engine",
+   "permission checker",
+   "authorization policies",
+   "deny overrides",
+   "veto policy",
+   "fact source",
+   "request-scoped cache",
+   "batch authorization",
+   "list filtering",
+   "filter resources by permission",
+   "lookup pagination",
+   "hydrator",
+   "in-process policy engine",
+   "check user permissions",
+   "owner-only access",
+   "who can access this document",
+   "postgres relationship checks",
+   "tokio async authorization",
+   "axum authorization",
+   "actix-web authorization",
+   "audit trace",
+   "serde audit logs",
+   "rust permissions crate",
+   "cedar alternative",
+   "casbin alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8913,
+  "output": 1442
+ },
+ "generated": "2026-10-29"
+}

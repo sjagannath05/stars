@@ -1,0 +1,98 @@
+{
+ "id": "hasanjafri/mimer",
+ "repo": "hasanjafri/Mimer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "Mimer - Fast, private, developer-first clipboard manager with type-aware history, ⌘K transforms, and history encrypted at rest."
+  }
+ ],
+ "summary": {
+  "one_liner": "Mimer is a free, open-source, privacy-focused clipboard manager for macOS 14+ that keeps searchable, type-aware clipboard history and offers ⌘K text transforms.",
+  "what_it_does": "Mimer runs in the macOS menu bar and records copied items into a local Core Data history that persists across restarts. A palette opened with ⇧⌘V supports fuzzy search with scoped filters (type:, app:, is:fav, /regex/), and clips are auto-classified by type (links, code, colors, git SHAs, issue keys, file paths). The ⌘K transform engine reshapes a clip with a live preview, covering case changes, slugify, Base64/URL, JSON pretty-print and minify, JSON to TypeScript, JWT decoding, Unix/ISO time conversion, and more. Clip contents and source-app names are encrypted at rest with an AES-GCM key held in the Keychain, and detected secrets are masked on screen. The README also describes a paste-stack, favorites, snippets, per-app exclusions, importing history from Maccy, and a `mimer` CLI and `mimer-mcp` MCP server that expose the transform engine and, optionally, clip history to local AI tools.",
+  "use_cases": [
+   "macOS clipboard history with search",
+   "reformat or convert copied text (JSON, Base64, JWT, timestamps)",
+   "keep copied passwords and API keys hidden during screenshares",
+   "paste several copied items in sequence",
+   "use clipboard transforms from the terminal or scripts",
+   "let a local AI assistant access clipboard history",
+   "migrate clipboard history from Maccy"
+  ],
+  "how_to_run": [
+   "brew install --cask hasanjafri/tap/mimer",
+   "brew install xcodegen",
+   "git clone <repository URL> && cd Mimer",
+   "xcodegen generate",
+   "open Mimer.xcodeproj  (or: xcodebuild -scheme Mimer -configuration Release build)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI (MenuBarExtra)",
+   "AppKit NSPanel",
+   "Core Data",
+   "KeyboardShortcuts",
+   "Sparkle",
+   "XcodeGen"
+  ],
+  "notable": [
+   "Type-aware clips with live color swatches and a hover preview that formats JSON, diffs, and URLs",
+   "Encrypted at rest (AES-GCM, Keychain key) with secrets masked on screen but still pasteable",
+   "Ships a mimer CLI and mimer-mcp server sharing the same ⌘K transform code as the app",
+   "Paste-stack queues several clips and pastes them in order",
+   "Imports history from Maccy, keeping original times, source apps, and pinned items"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later",
+   "AI/MCP clip-reading access is off by default, and the local channel is unauthenticated while enabled",
+   "Encryption is at-rest only; losing the Keychain key makes stored history unreadable",
+   "Planned but not yet built: file clips, more transforms, OCR on images"
+  ],
+  "license": "MIT",
+  "category": "macos clipboard manager",
+  "keywords": [
+   "clipboard manager",
+   "clipboard history",
+   "macos clipboard",
+   "menu bar app",
+   "pasteboard history",
+   "clipboard search",
+   "developer clipboard tool",
+   "text transforms",
+   "json to typescript",
+   "decode jwt",
+   "base64 encode decode",
+   "url encode decode",
+   "unix timestamp converter",
+   "slugify",
+   "encrypted clipboard",
+   "privacy clipboard",
+   "mask secrets",
+   "password manager ignore",
+   "paste stack",
+   "clipboard cli",
+   "mcp server",
+   "claude desktop clipboard",
+   "maccy alternative",
+   "copyclip alternative",
+   "open source clipboard",
+   "free clipboard app",
+   "homebrew cask clipboard",
+   "swiftui menu bar",
+   "command palette",
+   "hotkey paste history",
+   "favorites snippets"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5641,
+  "output": 1388
+ },
+ "generated": "2026-10-29"
+}

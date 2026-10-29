@@ -1,0 +1,100 @@
+{
+ "id": "jordan-dalby/bytestash",
+ "repo": "jordan-dalby/ByteStash",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "ByteStash - Pastebin and file storage service with a simple web interface. Supports syntax highlighting, optional user authentication and public sharing. (Demo) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ByteStash is a self-hosted web app for storing, organising and managing code snippets, with optional user accounts, SSO, PostgreSQL support and an MCP endpoint for AI assistants.",
+  "what_it_does": "ByteStash lets you create, edit and filter code snippets through a web interface, filtering by programming language or by keywords in the content. Snippets are stored in a SQLite database by default, or optionally in PostgreSQL if a connection string or PostgreSQL settings are provided. The Docker setup mounts a data volume and exposes port 5000, with environment variables controlling account creation, token expiry, and base path. It supports OpenID Connect single sign-on with providers such as Authentik, Authelia, Keycloak and Pocket ID. It includes a built-in Model Context Protocol endpoint (Streamable HTTP) that lets AI assistants like Claude, OpenAI and Perplexity search and manage snippets using an API key. A Swagger UI documents the REST API at /api-docs.",
+  "use_cases": [
+   "store and organise code snippets",
+   "self-hosted pastebin",
+   "search snippets by language or content",
+   "share snippets publicly",
+   "single sign-on login for a snippet store",
+   "let AI assistants access my snippets"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the image ghcr.io/jordan-dalby/bytestash:latest and a volume mounted at /data/snippets",
+   "Map port 5000:5000 and set environment variables such as BASE_PATH, TOKEN_EXPIRY and PUBLIC_URL as needed",
+   "Run docker compose up -d",
+   "Open the web UI on port 5000 and create an account (unless account creation is disabled)",
+   "Optionally configure OIDC_* variables for single sign-on or DATABASE_URL / POSTGRES_* variables for PostgreSQL",
+   "Create an API key under Settings → API Keys to use the REST API or MCP endpoint"
+  ],
+  "stack": [
+   "Node.js",
+   "Express",
+   "React",
+   "Tailwind CSS",
+   "SQLite",
+   "PostgreSQL",
+   "Docker",
+   "OpenID Connect",
+   "Model Context Protocol"
+  ],
+  "notable": [
+   "Optional PostgreSQL backend with a built-in SQLite-to-PostgreSQL migration that keeps IDs so share links and API keys keep working",
+   "Built-in MCP endpoint so Claude, OpenAI and Perplexity can read and write snippets with an API key",
+   "OpenID Connect SSO support with configurable redirect URLs",
+   "Swagger UI for the REST API at /api-docs",
+   "Also available through the Unraid App Store and PikaPods"
+  ],
+  "caveats": [
+   "The MCP endpoint requires HTTPS for remote clients, so a TLS-terminating reverse proxy is needed",
+   "Changes made while running on PostgreSQL are not copied back to SQLite",
+   "The README's Docker example sets DEBUG to true and ALLOW_NEW_ACCOUNTS to true, which should be reviewed before exposing publicly"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted snippet manager",
+  "keywords": [
+   "code snippets",
+   "snippet manager",
+   "pastebin",
+   "self-hosted pastebin",
+   "code storage",
+   "syntax highlighting",
+   "docker",
+   "docker compose",
+   "sqlite",
+   "postgresql",
+   "oidc",
+   "single sign-on",
+   "openid connect",
+   "mcp",
+   "model context protocol",
+   "ai assistant integration",
+   "claude",
+   "openai",
+   "perplexity",
+   "api key",
+   "rest api",
+   "swagger",
+   "react",
+   "node.js",
+   "express",
+   "file sharing",
+   "share code publicly",
+   "save code snippets",
+   "organise code snippets",
+   "keep track of code",
+   "self-hosted web app",
+   "gpl-3.0"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4857,
+  "output": 1404
+ },
+ "generated": "2026-10-29"
+}

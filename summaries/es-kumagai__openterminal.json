@@ -1,0 +1,88 @@
+{
+ "id": "es-kumagai/openterminal",
+ "repo": "es-kumagai/OpenTerminal",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📺 Terminal (27)",
+   "entry": "OpenTerminal - App for macOS that opens a new Finder window and changes the current directory to the folder launched by the app."
+  }
+ ],
+ "summary": {
+  "one_liner": "A small macOS app that opens a Terminal (or iTerm2) window at the folder currently shown in Finder, launchable from the Finder toolbar or Dock.",
+  "what_it_does": "Opens a new Terminal window whose current directory is set to the folder shown in the active Finder window. If one or more folders are selected in Finder, each selected folder opens in its own Terminal window. Clicking it with no selection opens Terminal at the Finder window's path. Launched directly, it opens Terminal at the app's bundle path. The README says the target can be switched from Apple Terminal to iTerm2 via a macOS defaults write command, and back again with defaults remove. The app is built from source with xcodebuild.",
+  "use_cases": [
+   "Open a terminal in the folder I'm viewing in Finder",
+   "Add a terminal shortcut to the Finder toolbar",
+   "Open several selected Finder folders in separate terminal windows",
+   "Use iTerm2 instead of Terminal from Finder",
+   "Launch a terminal from the Dock on macOS"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd OpenTerminal",
+   "xcodebuild",
+   "Move the built OpenTerminal.app (in build/Release) to a folder, then drag it with ⌘+⌥ onto a Finder window toolbar",
+   "Optional: defaults write jp.ez-style.appid.OpenTerminal ESTargetTerminalBundleIdentifier \"com.googlecode.iterm2\" to target iTerm2",
+   "Optional: defaults remove jp.ez-style.appid.OpenTerminal ESTargetTerminalBundleIdentifier to return to Terminal"
+  ],
+  "stack": [
+   "Objective-C or Swift via Xcode (xcodebuild)",
+   "AppleScript",
+   "macOS Terminal.app",
+   "iTerm2 (optional target)"
+  ],
+  "notable": [
+   "Finder toolbar integration: click the app icon to open Terminal at the current Finder folder",
+   "Multi-selection support: each selected folder opens in its own Terminal window",
+   "Switchable target between Apple Terminal and iTerm2 via a defaults setting",
+   "Built from source with a single xcodebuild command"
+  ],
+  "caveats": [
+   "Requires Xcode and building from source; the README gives no prebuilt download",
+   "Only works on macOS",
+   "Switching to iTerm2 prompts for AppleScript to select the iTerm2 application"
+  ],
+  "license": "unknown",
+  "category": "macos finder utilities",
+  "keywords": [
+   "macos",
+   "finder",
+   "terminal",
+   "open terminal here",
+   "open terminal in finder",
+   "finder toolbar",
+   "dock app",
+   "iterm2",
+   "iterm",
+   "applescript",
+   "xcode",
+   "xcodebuild",
+   "objective-c",
+   "swift",
+   "current directory",
+   "cd to folder",
+   "finder window path",
+   "folder shortcut",
+   "terminal launcher",
+   "mac utility",
+   "open in terminal",
+   "finder toolbar button",
+   "terminal.app",
+   "shell launcher",
+   "developer tools mac",
+   "navigate directories",
+   "open-source mac app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2258,
+  "output": 1165
+ },
+ "generated": "2026-10-29"
+}

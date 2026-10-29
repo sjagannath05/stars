@@ -1,0 +1,95 @@
+{
+ "id": "lingarr-translate/lingarr",
+ "repo": "lingarr-translate/lingarr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Lingarr - Automatically translate subtitle files in your Radarr and Sonarr media libraries, using LibreTranslate, local AI models, or SaaS translation services. (Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lingarr is a self-hosted app that automatically translates subtitle files in Radarr and Sonarr media libraries using LibreTranslate, AI models, or commercial translation services.",
+  "what_it_does": "Lingarr translates subtitle files into a chosen target language. It supports many translation backends, including LibreTranslate, a local AI option (Ollama or any OpenAI-compatible model/router), DeepL, Anthropic, OpenAI, DeepSeek, Mistral, xAI, Gemini, Google, Bing, Yandex, and Microsoft. It is distributed as Docker images for amd64 and arm64, and the README's compose and CLI examples mount movie and TV folders so it can work on media files. Its database can be MySQL (default), PostgreSQL, or SQLite, with Hangfire used for background jobs. It also exposes a RESTful API with Swagger documentation. An optional LibreTranslate container can be set up alongside it.",
+  "use_cases": [
+   "Translate subtitles for Radarr movie libraries",
+   "Translate subtitles for Sonarr TV libraries",
+   "Run subtitle translation with a local LibreTranslate instance",
+   "Use a local AI model such as Ollama for subtitle translation",
+   "Automate subtitle translation through a REST API",
+   "Translate subtitles with DeepL or other cloud translation services"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the lingarr service (image ghcr.io/lingarr-translate/lingarr:latest) and a MariaDB service, then set the DB_* environment variables and volume mounts for /movies, /tv, and /app/config",
+   "docker network create lingarr",
+   "Start MariaDB with docker run, attached to the lingarr network",
+   "Start Lingarr with docker run, mapping port 9876:9876 and the same DB and volume settings",
+   "Optionally run LibreTranslate (libretranslate/libretranslate) on port 5000, setting LT_LOAD_ONLY to your languages",
+   "Open Lingarr on port 9876 and configure a translation service"
+  ],
+  "stack": [
+   "Docker",
+   "ASP.NET Core",
+   "MySQL / MariaDB",
+   "PostgreSQL",
+   "SQLite",
+   "Hangfire",
+   "LibreTranslate",
+   "Ollama"
+  ],
+  "notable": [
+   "Supports many translation providers, including local LibreTranslate and AI models, through one interface",
+   "Integrates with Radarr and Sonarr media libraries",
+   "Multi-architecture Docker images for amd64 and arm64",
+   "Database choice between MySQL, PostgreSQL, and SQLite",
+   "Includes a RESTful API with Swagger documentation"
+  ],
+  "caveats": [
+   "DeepL support excludes pt-BR",
+   "Requires Docker and a separate database container for the default MySQL setup",
+   "Some translation services are paid SaaS options that need their own API accounts"
+  ],
+  "license": "AGPL-3.0",
+  "category": "subtitle translation automation",
+  "keywords": [
+   "subtitle translation",
+   "translate subtitles",
+   "subtitle files",
+   "srt translation",
+   "radarr",
+   "sonarr",
+   "media library",
+   "libretranslate",
+   "deepl",
+   "ollama",
+   "local ai translation",
+   "openai translation",
+   "anthropic",
+   "gemini",
+   "self-hosted",
+   "docker",
+   "docker compose",
+   "mariadb",
+   "postgresql",
+   "sqlite",
+   "hangfire",
+   "rest api",
+   "swagger",
+   "movie subtitles",
+   "tv subtitles",
+   "multilingual subtitles",
+   "automatic translation",
+   "agpl"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4902,
+  "output": 1323
+ },
+ "generated": "2026-10-29"
+}

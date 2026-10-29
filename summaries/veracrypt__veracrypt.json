@@ -1,0 +1,99 @@
+{
+ "id": "veracrypt/veracrypt",
+ "repo": "veracrypt/VeraCrypt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "VeraCrypt - Disk encryption with strong security based on TrueCrypt."
+  }
+ ],
+ "summary": {
+  "one_liner": "VeraCrypt is a disk encryption tool, based on TrueCrypt 7.1a with security enhancements, whose README covers building its source code on Windows, Linux, macOS, FreeBSD and OpenBSD.",
+  "what_it_does": "This repository is the VeraCrypt source code archive, described as based on TrueCrypt 7.1a with security enhancements and modifications. The README is mainly build documentation: it lists requirements and steps for compiling on Windows (signing and MSI packaging via a sign.bat script and WiX Toolset v3.11), on Linux and macOS (GNU Make, wxWidgets 3.0, FUSE, PCSC-lite, with optional NOGUI console-only builds), and on FreeBSD 14+ and OpenBSD 7.8+. It also covers an EFI boot loader under src\\Boot\\EFI, an Arch Linux makepkg package build, and reproducible .deb and .rpm builds. Contributor guidance asks people to contact the maintainers before implementing features. The README does not describe end-user features in detail.",
+  "use_cases": [
+   "encrypt disks and volumes",
+   "build VeraCrypt from source on Linux",
+   "compile VeraCrypt for Windows with code signing",
+   "build a macOS VeraCrypt package",
+   "create reproducible Linux .deb or .rpm packages",
+   "review TrueCrypt-derived encryption source code"
+  ],
+  "how_to_run": [
+   "Linux/macOS: make WXSTATIC=1 WX_ROOT=/usr/src/wxWidgets wxbuild",
+   "Linux/macOS: make WXSTATIC=1",
+   "Console-only Linux build: make NOGUI=1 WXSTATIC=1",
+   "Arch Linux: cd src/Build/Packaging/arch && makepkg -si",
+   "macOS: ./src/Build/build_veracrypt_macosx.sh -b",
+   "Windows: set WSDK81 environment variable, then run Signing/sign.bat"
+  ],
+  "stack": [
+   "C++",
+   "GNU Make",
+   "wxWidgets 3.0",
+   "YASM",
+   "FUSE",
+   "PCSC-lite",
+   "pkg-config",
+   "WiX Toolset v3.11",
+   "Visual Studio",
+   "Xcode",
+   "macFUSE",
+   "Homebrew"
+  ],
+  "notable": [
+   "Based on the TrueCrypt 7.1a codebase with security enhancements",
+   "Supports Windows, Linux, macOS, FreeBSD and OpenBSD builds",
+   "Optional console-only Linux build without a GUI library",
+   "Reproducible build guidance for .deb and .rpm packages",
+   "Windows driver and binaries are digitally signed by the project's certificate"
+  ],
+  "caveats": [
+   "FreeBSD requires version 14 or later, and OpenBSD requires version 7.8 or later",
+   "Console-only builds are not supported on macOS",
+   "Windows signing assumes a GlobalSign-issued code signing certificate and requires editing sign.bat for other CAs",
+   "macOS builds need Code Signing IDs edited in src/Main/Main.make or commented out; the SDK 10.9 is not recommended with macFUSE"
+  ],
+  "license": "unknown",
+  "category": "disk encryption software",
+  "keywords": [
+   "veracrypt",
+   "disk encryption",
+   "volume encryption",
+   "truecrypt",
+   "truecrypt fork",
+   "encrypted containers",
+   "full disk encryption",
+   "source code build",
+   "wxwidgets",
+   "fuse",
+   "pcsc-lite",
+   "encrypt my hard drive",
+   "encrypt a usb drive",
+   "hidden volume",
+   "secure file container",
+   "cross-platform encryption",
+   "windows code signing",
+   "macfuse",
+   "freebsd",
+   "openbsd",
+   "efi boot loader",
+   "reproducible build",
+   "makefile",
+   "console-only build",
+   "encrypt files on my computer",
+   "password protected drive",
+   "open source encryption"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5019,
+  "output": 1434
+ },
+ "generated": "2026-10-29"
+}

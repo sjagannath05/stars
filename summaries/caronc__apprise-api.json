@@ -1,0 +1,91 @@
+{
+ "id": "caronc/apprise-api",
+ "repo": "caronc/apprise-api",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Communication",
+   "entry": "Apprise API | Send notifications to 100+ services through a single API"
+  }
+ ],
+ "summary": {
+  "one_liner": "Apprise API is a self-hosted REST gateway that lets you send notifications to 150+ services through HTTP calls, with a built-in configuration web UI.",
+  "what_it_does": "Wraps the Apprise notification library in a Docker-deployable HTTP service. A stateless /notify endpoint sends messages (with optional attachments) to URLs supplied in the request or in an environment variable. A stateful mode lets you save Apprise configurations under a Config ID key and send through them by key, with tags to target groups of services. A small web Configuration Manager lets you create, test and review saved configurations. Optional features described in the README include Basic Auth with access modes, Prometheus metrics at /metrics, a /status health check, live progress streaming via server-sent events, and template values in saved YAML configs. The README also mentions an Android companion app (Apprise Mobile) that connects to your server.",
+  "use_cases": [
+   "Send alerts from scripts or infrastructure to many services at once",
+   "Run a self-hosted notification gateway on a home or internal network",
+   "Store notification endpoints centrally and reference them by key",
+   "Route notifications to groups of services using tags",
+   "Send messages with file attachments through a simple HTTP call",
+   "Test and verify Apprise URL configurations in a browser"
+  ],
+  "how_to_run": [
+   "docker pull caronc/apprise:latest",
+   "docker run --name apprise -p 8000:8000 -v /path/to/local/config:/config -v /path/to/local/attach:/attach -e APPRISE_STATEFUL_MODE=simple -d caronc/apprise:latest",
+   "Open the web interface on port 8000 in a browser to manage configurations",
+   "docker compose -f docker-compose.yml up -d (example compose file in README)"
+  ],
+  "stack": [
+   "Docker",
+   "Python",
+   "Django",
+   "Apprise (core notification library)",
+   "Nginx",
+   "Gunicorn",
+   "Supervisord"
+  ],
+  "notable": [
+   "Single HTTP API in front of 150+ notification services via Apprise URLs",
+   "Stateless mode needs no storage; stateful mode persists configs under a key",
+   "Tag expressions (AND with spaces, OR with commas) to target subsets of destinations",
+   "Container-native logging to stdout and a hardened read-only runtime example",
+   "Prometheus /metrics endpoint and JSON /status health check"
+  ],
+  "caveats": [
+   "Authentication is disabled by default and must be enabled with APPRISE_AUTH_REQUIRED=yes",
+   "Official container images are published for amd64, arm/v7 and arm64 only",
+   "Mobile app requires a running Apprise API server; it is not standalone"
+  ],
+  "license": "unknown",
+  "category": "self-hosted notification gateway",
+  "keywords": [
+   "apprise",
+   "notification api",
+   "notification gateway",
+   "self-hosted notifications",
+   "push notifications",
+   "http api notifications",
+   "send notifications rest",
+   "docker notifications",
+   "webhook alternative",
+   "multi-service alerts",
+   "tagged notifications",
+   "notify via api",
+   "send alerts from scripts",
+   "prometheus metrics",
+   "docker compose",
+   "rest api",
+   "python django",
+   "attachments",
+   "configuration manager",
+   "notification routing",
+   "send message to many services",
+   "alerting gateway",
+   "homelab notifications",
+   "notify my phone",
+   "apprise cli alternative",
+   "shoutrrr alternative",
+   "ntfy alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16492,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

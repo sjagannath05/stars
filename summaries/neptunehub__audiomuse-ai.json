@@ -1,0 +1,97 @@
+{
+ "id": "neptunehub/audiomuse-ai",
+ "repo": "NeptuneHub/AudioMuse-AI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "AudioMuse-AI | Local sonic analysis that generates smart playlists for Jellyfin, Navidrome, Emby, Plex and LMS"
+  }
+ ],
+ "summary": {
+  "one_liner": "AudioMuse-AI is a self-hosted tool that uses local sonic analysis to build playlists, clusters, and searches over a music library for Navidrome, Jellyfin, LMS, Lyrion, Emby, and Plex without relying on metadata or external APIs.",
+  "what_it_does": "It analyzes the audio of songs in your library to find sonically similar tracks, then uses that to make playlists, group songs into clusters, and draw a 2D genre-based music map. Users can generate playlists from a text prompt (e.g. \"high-tempo, low-energy music\"), from a seed track, from listening history (Sonic Fingerprint), or as a path between two songs. Song Alchemy lets you mark tracks ADD or SUBTRACT and export the result to your media server. The README also describes text search by mood or instrument, lyrics search by theme (72 languages), and recording-based search where a 20-second clip identifies a song. It can connect several media servers to one deployment, detecting duplicates so each track is analyzed once. Setup is mostly done through a browser Setup Wizard, with PostgreSQL as the database.",
+  "use_cases": [
+   "generate smart playlists from my music library",
+   "rediscover forgotten songs by sound",
+   "find songs similar to a track I like",
+   "search my music by mood, instrument or lyrics theme",
+   "identify a song playing nearby from a recording",
+   "run one music analysis service for several media servers"
+  ],
+  "how_to_run": [
+   "cp deployment/.env.example deployment/.env",
+   "Edit deployment/.env and set POSTGRES_PASSWORD",
+   "docker compose -f deployment/docker-compose.yaml up -d",
+   "Open the Web UI, then go to Analysis and Clustering and click Start Analysis",
+   "docker compose -f deployment/docker-compose.yaml down (to stop)"
+  ],
+  "stack": [
+   "Docker / Docker Compose",
+   "Podman",
+   "Kubernetes (Helm chart available separately)",
+   "PostgreSQL 15",
+   "Flask",
+   "Python workers",
+   "Native packages for macOS, Linux (.deb/.rpm) and Windows"
+  ],
+  "notable": [
+   "Works with several media servers at once, with duplicate detection so each song is analyzed only once",
+   "Analysis runs locally and does not depend on metadata or external APIs",
+   "Setup Wizard in the browser handles configuration after a minimal env file",
+   "Native apps bundle embedded PostgreSQL for macOS, Linux and Windows without Docker",
+   "Search by Recording: identify a song from a 20-second clip"
+  ],
+  "caveats": [
+   "Requires a CPU with AVX2 support; virtual CPUs without it (e.g. default QEMU) will not start the app",
+   "Native macOS build runs only on Apple Silicon, Windows build only on x86_64, and the apps are unsigned",
+   "Lyrics search works only for the 72 listed languages",
+   "Minimum 8 GB RAM and NVMe SSD recommended"
+  ],
+  "license": "unknown",
+  "category": "self-hosted music analysis",
+  "keywords": [
+   "music analysis",
+   "sonic analysis",
+   "smart playlists",
+   "playlist generator",
+   "self-hosted music",
+   "jellyfin playlists",
+   "navidrome playlists",
+   "emby",
+   "plex",
+   "lyrion",
+   "lms music server",
+   "music clustering",
+   "music map",
+   "song similarity",
+   "audio similarity",
+   "find similar songs",
+   "text search music",
+   "lyrics search",
+   "song recognition",
+   "shazam-like recording search",
+   "music discovery",
+   "docker compose music",
+   "postgresql",
+   "kubernetes helm",
+   "arm64 raspberry pi",
+   "share playlists with my media server",
+   "discover forgotten songs",
+   "mood based playlist",
+   "music recommendation self-hosted",
+   "song alchemy",
+   "sonic fingerprint"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6472,
+  "output": 1395
+ },
+ "generated": "2026-10-29"
+}

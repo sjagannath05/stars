@@ -1,0 +1,102 @@
+{
+ "id": "momenbasel/puresnitch",
+ "repo": "momenbasel/puresnitch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "PureSnitch - Open-source application firewall with a Little Snitch-style world map, rule manager, DNS over HTTPS, and pf-based blocking, with no telemetry. [![Open-Source Software][OSS Icon]](https://github.com/momenbasel/puresnitch) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "PureSnitch is a free, open-source, MIT-licensed application firewall and connection monitor for macOS, styled after Little Snitch, with host-wide pf-based IP/CIDR/port blocking and an experimental manual DNS-over-HTTPS proxy.",
+  "category": "macos firewall tool",
+  "keywords": [
+   "macos firewall",
+   "little snitch alternative",
+   "open source little snitch",
+   "application firewall",
+   "outbound firewall",
+   "network monitor",
+   "connection monitor",
+   "pfctl",
+   "pf anchor",
+   "packet filter",
+   "dns over https",
+   "doh proxy",
+   "blocklist",
+   "domain blocklist",
+   "ad blocker",
+   "hosts blocklist",
+   "oisd",
+   "hagezi",
+   "stevenblack",
+   "1hosts",
+   "lulu alternative",
+   "block outbound connections",
+   "see what my mac is connecting to",
+   "block tracker domains",
+   "menubar network traffic",
+   "swiftui",
+   "xpc helper",
+   "smappservice",
+   "no telemetry",
+   "free firewall for mac",
+   "homebrew cask",
+   "ip blocking",
+   "cidr blocking"
+  ],
+  "what_it_does": "PureSnitch shows live network connections per process in a Network Monitor window, with a per-process bandwidth sidebar and host lists for each process. A Rules Manager lists, searches, enables, disables and deletes rules, plus blocklist and rule group sections. Blocklists (1Hosts, OISD, StevenBlack, HaGeZi) are built in and refresh when the helper starts or on request. Enforcement is opt-in and loads deny-only, host-wide IPv4/CIDR/port rules into a runtime pf anchor, and can run an experimental loopback DNS proxy that forwards to a DoH upstream (Cloudflare, Quad9, Google or custom) for clients configured manually. A privileged helper, installed via SMAppService, handles the root-level work over XPC. The README states the app does not perform per-process kernel filtering, does not change system DNS, and collects no telemetry.",
+  "use_cases": [
+   "see which apps on my Mac are making network connections",
+   "block outbound connections to specific IPs or ranges",
+   "block ads and trackers with domain blocklists on macOS",
+   "replace a paid Little Snitch license",
+   "experiment with a local DNS-over-HTTPS proxy",
+   "audit an open-source firewall for macOS"
+  ],
+  "how_to_run": [
+   "brew tap momenbasel/puresnitch",
+   "brew trust --tap momenbasel/puresnitch",
+   "brew install --cask puresnitch",
+   "Or download the signed .dmg from Releases and drag PureSnitch into /Applications",
+   "Build from source: brew install xcodegen; xcodegen generate; xcodebuild -project PureSnitch.xcodeproj -scheme PureSnitch -configuration Release -derivedDataPath build CODE_SIGN_IDENTITY=\"-\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "XcodeGen",
+   "pfctl (pf)",
+   "SMAppService",
+   "XPC (Mach service)",
+   "SQLite",
+   "nettop",
+   "lsof",
+   "DNS over HTTPS"
+  ],
+  "notable": [
+   "Little Snitch-style UI: menubar status item, world map, rules manager and connection alert popups",
+   "Host-wide deny-only pf rules in a runtime com.apple/puresnitch anchor, with enforcement off by default",
+   "Built-in blocklist library (1Hosts, OISD, StevenBlack, HaGeZi) that refreshes on helper start",
+   "Signed, notarized release DMG and Homebrew cask; universal binary from v0.2.0 with macOS 13+ minimum",
+   "Explicit no-telemetry stance; network access limited to blocklist refreshes and opt-in DNS proxy traffic"
+  ],
+  "caveats": [
+   "No per-process kernel filtering in the shipping build; it requires Apple's Network Extension entitlement, which the README says is not yet granted (NetExt is dormant)",
+   "DNS proxy is experimental, loopback-only, and applies only to clients manually configured to use it; it does not replace the system resolver",
+   "Only the Default profile is enforced; other profiles are labels, and SSID-based switching is not implemented",
+   "Requires installing a privileged helper and approving it in System Settings; must be installed in /Applications; the README says a certificate-free source build cannot run live monitoring or enforcement"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8955,
+  "output": 1663
+ },
+ "generated": "2026-10-29"
+}

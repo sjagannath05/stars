@@ -1,0 +1,101 @@
+{
+ "id": "sharevb/it-tools",
+ "repo": "sharevb/it-tools",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "IT-Tools by sharevb - Collection of handy online tools for developers (fork of it-tools). (Demo) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A fork of IT-Tools, a self-hostable collection of browser-based developer and IT utility tools, packaged as a Docker/nginx container with extra tools and customizations.",
+  "what_it_does": "The README describes a fork of the IT Tools web app, a collection of online utilities for developers and IT work, served as a static site from an nginx container. The fork claims many added tools, bug fixes, and a full UI translation into many languages (machine-translated). Runtime options let you change the listening port (PORT), serve from a subfolder (BASE_URL), filter which tools and categories appear, add custom external links or markdown tools, set default tool parameters and default UI language via JSON files mounted into the container. An offline mode hides internet-dependent tools and points some tools at bundled assets or intranet mirrors. Build-time gzip precompression of JS, CSS and WebAssembly is provided. Some tools need companion self-hosted services (for example HTTPS/DNS tools, HTML to PDF, Docker image download, TCP/UDP port tester).",
+  "use_cases": [
+   "Run a private set of developer utilities on an internal server",
+   "Host developer tools under a subfolder behind a reverse proxy",
+   "Run air-gapped or offline developer toolkit",
+   "Customize which tools and home page content are shown",
+   "Encode, decode, format, or convert data in the browser",
+   "Deploy a developer toolbox in Proxmox LXC or Podman"
+  ],
+  "how_to_run": [
+   "docker run --pull always --restart unless-stopped -p 8080:8080 sharevb/it-tools:latest",
+   "Or with Docker Compose: image sharevb/it-tools:latest, ports 8080:8080",
+   "git clone -b chore/all-my-stuffs (repository branch named in README), then cd it-tools/ && pnpm i --ignore-scripts && pnpm dev",
+   "Build for production with pnpm build (needs about 8GB RAM)"
+  ],
+  "stack": [
+   "Vue",
+   "TypeScript",
+   "pnpm",
+   "Vite/rolldown",
+   "nginx",
+   "Docker",
+   "Vitest",
+   "Playwright",
+   "Oxlint/Oxfmt"
+  ],
+  "notable": [
+   "Subfolder hosting via BASE_URL at runtime without rebuilding the image",
+   "Offline/air-gapped mode with bundled fonts, OCR, and ffmpeg assets",
+   "Tool filtering and custom external tools via mounted JSON files",
+   "Build-time gzip precompression served by nginx",
+   "Wide tool set with a create-tool script for new tools"
+  ],
+  "caveats": [
+   "Container now listens on port 8080 instead of 80 (breaking change for older port mappings)",
+   "Building requires around 8GB RAM; local install needs python3, make and g++",
+   "HTTPS is recommended since some tools (like PGP encryption and PWA) need WebCrypto/HTTPS",
+   "Some tools need additional self-hosted companion services; translations are machine-translated"
+  ],
+  "license": "GPL-3.0",
+  "category": "developer tools web app",
+  "keywords": [
+   "it-tools",
+   "developer tools",
+   "online tools",
+   "web utilities",
+   "self-hosted toolbox",
+   "docker",
+   "docker compose",
+   "podman quadlet",
+   "nginx",
+   "vue",
+   "typescript",
+   "subfolder hosting",
+   "reverse proxy",
+   "offline mode",
+   "air-gapped",
+   "custom tools",
+   "tool filter",
+   "encoding decoding",
+   "converter",
+   "formatter",
+   "regex tester",
+   "pgp encryption",
+   "pwa",
+   "proxmox lxc",
+   "gplv3",
+   "fork of it-tools",
+   "browser utilities",
+   "sysadmin toolkit",
+   "network tools",
+   "hash generator",
+   "json tools",
+   "developer toolbox",
+   "run locally",
+   "container image"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7483,
+  "output": 1327
+ },
+ "generated": "2026-10-29"
+}

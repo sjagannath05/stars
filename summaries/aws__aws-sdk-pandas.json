@@ -1,0 +1,93 @@
+{
+ "id": "aws/aws-sdk-pandas",
+ "repo": "aws/aws-sdk-pandas",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Ingestion / ETL",
+   "entry": "awswrangler - Pandas integration with AWS services like Athena, Glue, Redshift, S3, and DynamoDB."
+  }
+ ],
+ "summary": {
+  "one_liner": "AWS SDK for pandas (awswrangler) is a Python library that moves data between pandas DataFrames and AWS services such as S3, Athena, Glue, Redshift, and DynamoDB.",
+  "what_it_does": "The library exposes pandas-style read and write functions for many AWS services, including S3 (Parquet, CSV, JSON, Excel), Athena queries, the Glue Data Catalog, Redshift (including Spectrum), Timestream, OpenSearch, Neptune, QuickSight, CloudWatch Logs, DynamoDB, EMR, Secrets Manager, and PostgreSQL, MySQL, and SQL Server connections. The Quick Start shows writing a DataFrame to an S3 dataset registered in the Glue catalog, then reading it back via S3 or Athena. It also covers Timestream writes and queries. The README says workflows can be distributed over a cluster using Modin and Ray. A large tutorial set and API reference are linked from the README.",
+  "use_cases": [
+   "Store DataFrames as Parquet datasets on S3 with Glue catalog tables",
+   "Run Athena SQL queries and load results into pandas",
+   "Load data from Redshift or Redshift Spectrum into DataFrames",
+   "Write and query Amazon Timestream time-series data",
+   "Move data between pandas and DynamoDB tables",
+   "Run pandas workflows at scale with Ray or Modin"
+  ],
+  "how_to_run": [
+   "pip install awswrangler",
+   "pip install 'awswrangler[redshift]'",
+   "import awswrangler as wr",
+   "wr.s3.to_parquet(df=df, path=\"s3://bucket/dataset/\", dataset=True, database=\"my_db\", table=\"my_table\")",
+   "df = wr.athena.read_sql_query(\"SELECT * FROM my_table\", database=\"my_db\")"
+  ],
+  "stack": [
+   "Python",
+   "pandas",
+   "boto3",
+   "Modin",
+   "Ray"
+  ],
+  "notable": [
+   "Single pandas-style API covering many AWS data services",
+   "Optional modules such as Redshift must be installed explicitly from version 3.0 onward",
+   "Supports distributed execution over Ray and Modin",
+   "Large tutorial collection with notebooks for each service",
+   "Installable via PyPI or conda-forge"
+  ],
+  "caveats": [
+   "From version 3.0, optional modules such as Redshift need explicit extra installs",
+   "Requires AWS accounts and credentials to use the services",
+   "Distributed scaling depends on setting up Ray or Modin clusters, which the README only links to"
+  ],
+  "license": "unknown",
+  "category": "aws data integration",
+  "keywords": [
+   "awswrangler",
+   "aws sdk for pandas",
+   "pandas aws integration",
+   "pandas s3",
+   "parquet s3 pandas",
+   "athena query pandas",
+   "glue catalog",
+   "aws glue data catalog",
+   "redshift pandas",
+   "redshift spectrum",
+   "dynamodb pandas",
+   "timestream",
+   "opensearch python",
+   "neptune python",
+   "quicksight python",
+   "cloudwatch logs python",
+   "secrets manager python",
+   "emr python",
+   "read parquet from s3",
+   "write dataframe to s3",
+   "load athena results into dataframe",
+   "aws etl python",
+   "data lake python",
+   "ray distributed pandas",
+   "modin aws",
+   "boto3 wrapper",
+   "pandas to aws",
+   "s3 csv json excel python",
+   "aws data pipeline python",
+   "postgresql mysql sql server python aws"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3921,
+  "output": 1297
+ },
+ "generated": "2026-10-29"
+}

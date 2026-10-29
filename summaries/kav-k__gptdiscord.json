@@ -1,0 +1,101 @@
+{
+ "id": "kav-k/gptdiscord",
+ "repo": "Kav-K/GPTDiscord",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python Discord bot that brings OpenAI chat, vision, image generation, transcription, moderation, and web search into Discord servers.",
+  "what_it_does": "The bot exposes slash commands such as /gpt ask and /gpt converse for Chat Completions models (including vision and reasoning models), /web for recent information using the Responses API with native web search and visible source links, and /dalle draw for image generation via the GPT Image API. Transcription and moderation use current OpenAI APIs. It supports long conversations, per-user API keys, server role restrictions, prompt optimization, and saved conversations. Optional integrations cover document indexing (LlamaIndex), internet chat with OpenAI or Google search, Qdrant or Pinecone memory, Replicate fallback vision, DeepL translation, and E2B code execution, each installed as separate extras. Configuration is through a .env file, and Docker Compose is supported.",
+  "use_cases": [
+   "chat with an OpenAI model inside a Discord server",
+   "generate images from Discord with /dalle draw",
+   "search the web for recent information with source links",
+   "transcribe audio or video in Discord",
+   "index documents and chat with them in Discord",
+   "restrict bot access to specific Discord roles"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into GPTDiscord",
+   "python3.13 -m venv .venv && source .venv/bin/activate",
+   "python -m pip install .",
+   "cp sample.env .env, then set OPENAI_API_KEY, DISCORD_TOKEN, ALLOWED_GUILDS and DATA_DIR",
+   "python gpt3discord.py",
+   "Alternatively: docker compose up --build -d"
+  ],
+  "stack": [
+   "Python 3.11-3.13",
+   "OpenAI API (Chat Completions, Responses, GPT Image, moderation, transcription)",
+   "Discord application commands",
+   "LlamaIndex (optional document indexing)",
+   "Qdrant and Pinecone (optional memory)",
+   "E2B (optional code execution)",
+   "Replicate (optional vision fallback)",
+   "DeepL (translation)",
+   "FFmpeg (media transcription)",
+   "tiktoken",
+   "Docker"
+  ],
+  "notable": [
+   "Uses the OpenAI Responses API with native web search for /web, with visible source links",
+   "Role-based access control via BOT_ACCESS_ROLE_IDS with role IDs that survive renames",
+   "Optional conversation recovery mode for servers where gateway delivery is unreliable",
+   "Optional extras (index, search, pinecone, qdrant, code, replicate, full) keep the basic bot lightweight",
+   "Generated images offer Vary controls using the GPT Image edit API"
+  ],
+  "caveats": [
+   "Requires an OpenAI API project key; ChatGPT subscriptions do not include API billing",
+   "Search tool calls and image, audio and tool fees are billed separately from token usage; the local usage total is only an estimate",
+   "Discord bot needs Server Members and Message Content privileged intents enabled",
+   "Model names and availability depend on the OpenAI project and change over time"
+  ],
+  "license": "MIT",
+  "category": "discord chatbot",
+  "keywords": [
+   "discord bot",
+   "openai",
+   "chatgpt in discord",
+   "gpt discord",
+   "dalle image generation",
+   "gpt image",
+   "discord slash commands",
+   "web search bot",
+   "image generation discord",
+   "audio transcription discord",
+   "moderation bot",
+   "llamaindex document chat",
+   "qdrant memory",
+   "pinecone memory",
+   "docker compose bot",
+   "python discord bot",
+   "chat with documents discord",
+   "role restricted bot",
+   "vision chat discord",
+   "gpt conversation bot",
+   "openai api wrapper",
+   "responses api web search",
+   "share files with my team",
+   "ai assistant for discord server",
+   "discord ai chatbot",
+   "self-hosted chatgpt discord",
+   "transcribe voice messages",
+   "gpt3discord",
+   "summarize documents in discord",
+   "discord gpt alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7306,
+  "output": 1389
+ },
+ "generated": "2026-10-29"
+}

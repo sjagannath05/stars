@@ -1,0 +1,85 @@
+{
+ "id": "openbao/openbao",
+ "repo": "openbao/openbao",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "OpenBao | Community-driven fork of Vault for managing secrets"
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenBao is a community-driven, open-source fork of HashiCorp Vault for managing, storing, and distributing secrets, certificates, and keys.",
+  "what_it_does": "OpenBao stores arbitrary key/value secrets and encrypts them before writing to persistent storage, with the README naming disk and PostgreSQL as backends. It can generate dynamic secrets on demand for systems such as AWS or SQL databases and automatically revoke them when their lease expires. It offers encryption and decryption as a service so applications can encrypt data without storing it themselves. All secrets carry leases that clients can renew through built-in APIs, and revocation can target single secrets or trees of secrets, such as all secrets read by a given user. The repository also contains the website, documentation, and web UI source under the website and ui subtrees, and publishes the api/v2 and sdk/v2 Go libraries.",
+  "use_cases": [
+   "store database credentials and API keys securely",
+   "generate short-lived AWS or SQL database credentials on demand",
+   "encrypt data before saving it to a database without writing custom crypto",
+   "rotate keys and revoke secrets after an intrusion",
+   "audit who accessed which secrets"
+  ],
+  "how_to_run": [
+   "mkdir -p bin",
+   "go build -o bin/bao .",
+   "go run . server -dev"
+  ],
+  "stack": [
+   "Go",
+   "Go modules"
+  ],
+  "notable": [
+   "Community-driven fork of HashiCorp Vault under open governance",
+   "Dynamic secrets with automatic revocation on lease expiry",
+   "Encryption and decryption without storing the data",
+   "Revocation of individual secrets or whole trees of secrets",
+   "Publishes importable api/v2 and sdk/v2 Go libraries"
+  ],
+  "caveats": [
+   "The README says importing the main openbao module into other projects is not a supported use",
+   "Development setup requires Go; the pinned toolchain is in .go-version",
+   "Security issues should be reported privately by email rather than public issues"
+  ],
+  "license": "unknown",
+  "category": "secrets management",
+  "keywords": [
+   "openbao",
+   "vault fork",
+   "hashicorp vault alternative",
+   "secrets management",
+   "secret storage",
+   "dynamic secrets",
+   "credential management",
+   "key management",
+   "certificate management",
+   "encryption as a service",
+   "transit encryption",
+   "lease renewal",
+   "secret revocation",
+   "key rotation",
+   "audit logs",
+   "aws credentials",
+   "database credentials",
+   "postgresql backend",
+   "go",
+   "golang",
+   "open source vault",
+   "openssf",
+   "self-hosted secrets",
+   "store api keys",
+   "manage passwords for services",
+   "encrypt data without custom code",
+   "temporary cloud credentials",
+   "community fork"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3317,
+  "output": 1022
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,104 @@
+{
+ "id": "tobymarks/esp32-ai-monitor",
+ "repo": "tobymarks/esp32-ai-monitor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "AI Monitor - Companion app that shows Claude, ChatGPT, Gemini, Copilot, and Cursor usage limits on a USB-connected ESP32 desk display."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS/Windows companion app that reads AI provider usage limits through the local CodexBar CLI and streams them over USB serial to an ESP32 desk display (CYD or Guition ESP32-S3-4848S040).",
+  "category": "desk display hardware",
+  "keywords": [
+   "esp32 display",
+   "usb serial display",
+   "ai usage monitor",
+   "claude usage limits",
+   "chatgpt usage limits",
+   "gemini usage",
+   "copilot quota",
+   "cursor usage",
+   "codexbar",
+   "cheap yellow display",
+   "cyd",
+   "esp32-s3 touch display",
+   "guition",
+   "lvgl",
+   "arduino firmware",
+   "platformio",
+   "tauri app",
+   "swift menu bar app",
+   "desk dashboard",
+   "usage limit tracker",
+   "see my ai quota at a glance",
+   "hardware status display for ai tools",
+   "offline desk gadget",
+   "no wifi display",
+   "rate limit monitor",
+   "codex reset credits",
+   "claude code approval alert"
+  ],
+  "what_it_does": "Runs on a Mac or Windows PC and periodically queries the locally installed CodexBar CLI for usage limits from Claude, ChatGPT, Antigravity, Gemini CLI, GitHub Copilot, and Cursor. It sends a compact JSON frame over USB serial to an ESP32 board, which renders the limits on a small display with session, weekly, and provider-specific rows, live reset countdowns, and a local clock. The display can show up to eight windows that rotate or are switched by touch, plus a standby clock when the app is not running. The companion can flash firmware, check GitHub Releases for updates, and store per-device settings such as orientation, theme, brightness, and timezone. Experimental features include declarative display plugins and a Claude Code window that reports sessions waiting for approval or input via local HTTP hooks.",
+  "use_cases": [
+   "glance at remaining Claude or ChatGPT usage while working",
+   "build a physical desk display for AI usage limits",
+   "flash ESP32 CYD firmware for a usage monitor",
+   "track Copilot premium request quota on a desk gadget",
+   "show Cursor or Gemini limits without keeping a browser tab open",
+   "get alerted when Claude Code sessions need input"
+  ],
+  "how_to_run": [
+   "Buy an ESP32-2432S028 (Cheap Yellow Display) or Guition ESP32-S3-4848S040 board",
+   "Install CodexBar so its local CLI is available",
+   "Download the AI Monitor Mac (app-v*) or Windows (win-v*) app from GitHub Releases",
+   "Plug the ESP32 into the computer with a USB data cable",
+   "Flash the matching firmware variant and choose a provider in the AI Monitor settings window",
+   "Build from source: cd companion && ./build.sh (Mac) or cd companion-windows && pnpm install && cargo tauri dev (Windows)"
+  ],
+  "stack": [
+   "PlatformIO",
+   "Arduino-ESP32",
+   "LVGL v9",
+   "ArduinoJson",
+   "TFT_eSPI",
+   "esp_lcd",
+   "GFX Library for Arduino",
+   "Swift",
+   "AppKit",
+   "Tauri 2",
+   "Rust",
+   "serialport",
+   "espflash",
+   "React",
+   "pnpm",
+   "GitHub Pages"
+  ],
+  "notable": [
+   "Data stays on USB: the ESP32 needs no Wi-Fi and never receives cloud credentials, relying on the local CodexBar CLI as the data source",
+   "Intelligent window mode switches the display to whichever provider window has a meaningful usage change, threshold crossing, or reset",
+   "Declarative .aimplugin display plugins contain no executable code and are shown as unsigned before install",
+   "Mac app is signed with Developer ID and notarized; Windows app is a Tauri 2 build with a Rust backend",
+   "Supports both a 2.8in 320x240 CYD and a 4in 480x480 square ESP32-S3 board"
+  ],
+  "caveats": [
+   "Requires CodexBar installed and configured; the app does not talk to AI services directly",
+   "Requires macOS 14+ or Windows 10/11 x64, and a USB data cable (not charge-only)",
+   "Windows installer is not code-signed yet, so SmartScreen warns on first launch",
+   "Display plugins and the Claude Code window are marked as in development",
+   "Requires buying specific ESP32 hardware; some enclosures are third-party MakerWorld designs"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6067,
+  "output": 1610
+ },
+ "generated": "2026-10-29"
+}

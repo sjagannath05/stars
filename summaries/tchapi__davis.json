@@ -1,0 +1,101 @@
+{
+ "id": "tchapi/davis",
+ "repo": "tchapi/davis",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Calendar & Contacts",
+   "entry": "Davis - A simple, dockerizable and fully translatable admin interface for sabre/dav based on Symfony 5 and Bootstrap 4, largely inspired by Baïkal. MIT PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Davis is a dockerizable, translatable CalDAV/CardDAV/WebDAV server with a web admin dashboard, built on sabre/dav and Symfony 7.",
+  "category": "self-hosted calendar contacts server",
+  "keywords": [
+   "caldav",
+   "carddav",
+   "webdav",
+   "sabre/dav",
+   "dav server",
+   "calendar server",
+   "contacts server",
+   "address book server",
+   "self-hosted calendar",
+   "self-hosted contacts",
+   "baikal alternative",
+   "symfony",
+   "php",
+   "docker",
+   "admin dashboard",
+   "calendar sharing",
+   "public calendar",
+   "birthday calendar",
+   "imap authentication",
+   "ldap authentication",
+   "app keys",
+   "sync calendar across devices",
+   "share calendar with family",
+   "host my own contacts",
+   "nixos module",
+   "bootstrap",
+   "dark mode",
+   "caddy",
+   "mysql",
+   "postgresql",
+   "sqlite"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Sync calendars and contacts between phones, desktops and other clients",
+   "Share calendars with other users or via public links",
+   "Manage DAV users, calendars and address books from a web dashboard",
+   "Generate automatic birthday calendars from contact birthdates",
+   "Host a self-hosted CalDAV/CardDAV server behind a reverse proxy",
+   "Authenticate DAV users against IMAP or LDAP directories"
+  ],
+  "how_to_run": [
+   "composer install --no-dev",
+   "openssl rand -hex 16 (set as APP_SECRET in .env.local)",
+   "Configure DATABASE_DRIVER and DATABASE_URL in .env.local",
+   "bin/console doctrine:migrations:migrate",
+   "php -S localhost:8000 -t public (local development)",
+   "cd docker && docker compose up -d"
+  ],
+  "stack": [
+   "PHP 8.2+",
+   "Symfony 7",
+   "sabre/dav",
+   "Bootstrap 5",
+   "Doctrine migrations",
+   "Docker",
+   "MySQL/MariaDB",
+   "PostgreSQL",
+   "SQLite"
+  ],
+  "notable": [
+   "Automatic birthday calendar updated when contact birthdates change",
+   "Supports Basic, IMAP and LDAP authentication methods",
+   "Ships Docker images in standard and standalone (with Caddy) flavours",
+   "Includes an app key system so services can act on a user's calendars without their password",
+   "Diagnostics page in the dashboard for checking configuration"
+  ],
+  "caveats": [
+   "Changing AUTH_REALM on an existing installation breaks legacy password hashes",
+   "IMAP and LDAP extensions are not enabled by default outside the Docker image",
+   "PostgreSQL and SQLite are described as not extensively tested",
+   "App keys are off by default and must be enabled with APP_KEYS_ENABLED=true",
+   "Older release branches (v3.x unmaintained, v4.x security fixes only)"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13401,
+  "output": 1106
+ },
+ "generated": "2026-10-29"
+}

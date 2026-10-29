@@ -1,0 +1,110 @@
+{
+ "id": "charlie85270/dorothy",
+ "repo": "Charlie85270/Dorothy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Dorothy - Desktop app to orchestrate multiple AI CLI agents simultaneously with automations, Kanban management, and remote control via Telegram."
+  },
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI-Powered Compilers and Code Assistants",
+   "entry": "Dorothy - Open-source desktop app to orchestrate multiple AI coding agents (Claude Code, Codex, Gemini) simultaneously with automations, Kanban management, and remote control."
+  }
+ ],
+ "summary": {
+  "one_liner": "Dorothy is a free, open-source Electron desktop app for running and coordinating multiple AI coding CLI agents (Claude Code, Codex, Gemini, Grok, local agents) in parallel, with automations, a Kanban board, and remote control via Telegram and Slack.",
+  "what_it_does": "Runs many agent CLI sessions at once, each in its own PTY terminal, with per-agent skills, model choice, project paths, and persisted state across restarts. A Super Agent uses MCP tools to create, start, stop, and monitor other agents. Automations poll GitHub (via the gh CLI) and JIRA, then spawn a temporary agent per new or updated item using templated prompts. A Kanban board (Backlog, Planned, Ongoing, Done) auto-assigns tasks to agents by skill match. The README also describes cron-based scheduled tasks, a Vault document store with full-text search, SocialData Twitter/X tools, and Google Workspace access via the gws CLI, exposed through five MCP servers.",
+  "use_cases": [
+   "Run multiple AI coding agents across several projects at once",
+   "Automate PR or issue review with an AI agent",
+   "Process JIRA issues automatically with agents",
+   "Control coding agents remotely from Telegram or Slack",
+   "Schedule recurring Claude Code tasks on a cron schedule",
+   "Manage agent work on a visual Kanban board"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd Dorothy/app/dorothy",
+   "npm install",
+   "npx @electron/rebuild",
+   "npm run electron:dev"
+  ],
+  "stack": [
+   "Electron 33",
+   "Next.js 16 (App Router)",
+   "React 19",
+   "TypeScript 5",
+   "Tailwind CSS 4",
+   "Zustand 5",
+   "xterm.js",
+   "node-pty",
+   "better-sqlite3",
+   "@modelcontextprotocol/sdk",
+   "Zod",
+   "node-telegram-bot-api",
+   "@slack/bolt",
+   "Claude Code CLI",
+   "GitHub CLI (gh)"
+  ],
+  "notable": [
+   "Super Agent orchestrates other agents through MCP tools, including temporary agents that are cleaned up after use",
+   "Kanban automation service matches tasks to agents by skill and creates agents when none fit",
+   "Automations poll sources, deduplicate by content hash, and deliver output back to Telegram, Slack, GitHub, or JIRA",
+   "Vault gives agents a shared, searchable markdown knowledge base backed by SQLite FTS5",
+   "Five MCP servers (orchestrator, telegram, kanban, vault, socialdata) communicate over stdio"
+  ],
+  "caveats": [
+   "Requires the Claude Code CLI and GitHub CLI (gh) for GitHub automations; Node.js 18+ is needed to build from source",
+   "Open agent management and terminal features require the Electron app; the web browser mode does not support them",
+   "Several automation sources (Pipedrive, Twitter, RSS, custom) are listed as planned, not active; Google Workspace and SocialData need separate accounts or API keys",
+   "macOS users may need to clear quarantine with xattr before first launch; scheduled tasks use launchd on macOS and cron on Linux"
+  ],
+  "license": "MIT License",
+  "category": "ai agent orchestration",
+  "keywords": [
+   "ai agent orchestration",
+   "multi-agent desktop app",
+   "run multiple claude code agents",
+   "claude code gui",
+   "codex cli",
+   "gemini cli",
+   "electron desktop app",
+   "kanban ai agents",
+   "telegram bot agent control",
+   "slack bot ai agent",
+   "github automation agent",
+   "jira automation",
+   "mcp servers",
+   "model context protocol",
+   "super agent",
+   "pty terminal sessions",
+   "xterm.js",
+   "node-pty",
+   "cron scheduled ai tasks",
+   "vault document store",
+   "sqlite full text search",
+   "google workspace mcp",
+   "twitter search mcp",
+   "parallel coding agents",
+   "orchestrate ai coding assistants",
+   "manage several ai agents at once",
+   "autonomous coding bot",
+   "open source agent dashboard",
+   "ai pr review bot",
+   "remote control ai agents from phone",
+   "task board for ai agents"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13695,
+  "output": 1472
+ },
+ "generated": "2026-10-29"
+}

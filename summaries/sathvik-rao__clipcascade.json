@@ -1,0 +1,99 @@
+{
+ "id": "sathvik-rao/clipcascade",
+ "repo": "Sathvik-Rao/ClipCascade",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Miscellaneous",
+   "entry": "ClipCascade - Syncs your clipboard across multiple devices instantly, without any button press. Available on Windows, macOS, Linux, and Android, it provides seamless and secure clipboard sharing with end-to-end data encryption. GPL-3.0 Java/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ClipCascade is an open-source utility that automatically syncs clipboard content (text, images, files) across multiple desktop and Android devices, with optional end-to-end encryption and a self-hostable Java server.",
+  "what_it_does": "It runs a clipboard monitor on Windows, macOS, Linux (GUI and CLI) and Android that pushes copied content to other connected devices without a manual paste-sync step. Sync can go through a central server (the README points to a live community server at clipcascade.sathvik.dev, or a self-hosted instance) or peer-to-peer, where devices connect directly and the server handles only signaling and authentication. Clipboard data can be encrypted on the client before it leaves the device, with an optional salt and key-derivation iteration count. The server is a Java 21 JAR or Docker image that supports multiple user accounts, signup controls, a web dashboard with admin tools, and many environment variables for message size limits, login lockout, database (H2 by default, PostgreSQL optional), and session handling. Linux clients are Python-based and choose X11 or Wayland clipboard tools automatically, with overrides available.",
+  "use_cases": [
+   "sync clipboard between my computer and phone",
+   "share copied text, images and files across devices",
+   "self-host a clipboard sync server",
+   "end-to-end encrypted clipboard sharing",
+   "peer-to-peer clipboard transfer on a local network",
+   "run a clipboard sync server with Docker"
+  ],
+  "how_to_run": [
+   "Download ClipCascade-Server-JRE_21.jar from the releases page",
+   "Run: java -jar ClipCascade-Server-JRE_21.jar",
+   "Or run: docker run -d --name clipcascade -p 8080:8080 -e CC_MAX_MESSAGE_SIZE_IN_MiB=1 -v ./cc_users:/database sathvikrao/clipcascade",
+   "Install the Windows .msi, macOS .zip, or Android APK from the releases page and log in with your server address",
+   "Linux: download ClipCascade_Linux.zip, install the listed system packages, then run python3 main.py"
+  ],
+  "stack": [
+   "Java 21",
+   "Docker",
+   "Python",
+   "H2 database",
+   "PostgreSQL (optional)",
+   "Tkinter",
+   "GTK 3",
+   "xclip",
+   "wl-clipboard",
+   "ffmpeg (Linux dependency)",
+   "PyInstaller"
+  ],
+  "notable": [
+   "Dual sync modes: centralized server sync or direct peer-to-peer with a STUN server",
+   "Client-side end-to-end encryption; the server does not store the encryption key",
+   "Android clipboard monitoring via ADB permission setup for background operation",
+   "Linux auto-detects X11, XWayland, Hyprland or native Wayland and picks clipboard tools accordingly",
+   "Default admin credentials are admin/admin123 and the README says to change them immediately"
+  ],
+  "caveats": [
+   "Default admin credentials are documented; they must be changed after first login",
+   "Windows and macOS builds are unsigned, so OS security warnings appear; code signing is described as expensive",
+   "Android background monitoring requires ADB commands run from a computer",
+   "Some network configurations may not support P2P mode",
+   "Android text clipboard is limited to about 1 MiB"
+  ],
+  "license": "GPL-3.0",
+  "category": "clipboard sync tool",
+  "keywords": [
+   "clipboard sync",
+   "clipboard sharing",
+   "sync clipboard across devices",
+   "universal clipboard",
+   "copy paste between computers",
+   "cross-platform clipboard",
+   "end-to-end encryption",
+   "e2e encrypted clipboard",
+   "self-hosted",
+   "self-hosting",
+   "docker image",
+   "java server",
+   "websocket sync",
+   "peer-to-peer sync",
+   "p2p clipboard",
+   "stun",
+   "android clipboard monitor",
+   "wayland clipboard",
+   "x11 clipboard",
+   "xclip",
+   "wl-clipboard",
+   "share files with my team",
+   "send copied text to my phone",
+   "clipboard manager",
+   "gpl-3.0 open source",
+   "awesome-selfhosted",
+   "clipboard history alternative",
+   "pushbullet alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17131,
+  "output": 1507
+ },
+ "generated": "2026-10-29"
+}

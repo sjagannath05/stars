@@ -1,0 +1,98 @@
+{
+ "id": "yusing/godoxy",
+ "repo": "yusing/godoxy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Web Servers",
+   "entry": "go-doxy - Lightweight, simple, and performant reverse proxy with WebUI, Docker integration, automatic shutdown/startup for container based on traffic. MIT Docker/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "GoDoxy is a lightweight reverse proxy with a WebUI that routes traffic to Docker and Podman containers, Proxmox nodes and LXC containers, with optional idle sleep for containers.",
+  "what_it_does": "GoDoxy lists running containers, reads their names, labels and port configuration, and creates routes (virtual-host style) automatically, watching for container and config changes to update them. Routes can also be defined with route files or Docker labels such as proxy.aliases for subdomains. It supports HTTP reverse proxying, TCP/UDP port forwarding, OpenID Connect SSO, ForwardAuth integration, HTTP middlewares and custom error pages. Access control includes IP/CIDR rules, country and timezone rules (using a MaxMind account), access logging and periodic summaries. A WebUI manages routes, config, containers, logs, metrics and uptime, and Let's Encrypt certificates can be issued through DNS-01 providers.",
+  "use_cases": [
+   "reverse proxy for self-hosted Docker apps",
+   "automatic subdomain routing for containers",
+   "sleep idle containers to save resources",
+   "wildcard domain proxying to home services",
+   "Proxmox LXC route binding and control",
+   "TCP/UDP port forwarding",
+   "SSO and ForwardAuth in front of web apps"
+  ],
+  "how_to_run": [
+   "Configure a wildcard DNS record (e.g. *.domain.com) pointing to the machine running GoDoxy",
+   "Prepare a new directory for Docker Compose and config files",
+   "Run the setup script inside the directory, or set up manually",
+   "docker compose up -d",
+   "Manual setup: mkdir -p config && wget -O config/config.yml (from config.example.yml), then fetch .env.example and compose.example.yml"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Docker Compose",
+   "Podman",
+   "Proxmox",
+   "Let's Encrypt",
+   "OpenID Connect",
+   "MaxMind"
+  ],
+  "notable": [
+   "Automatic route discovery from Docker/Podman labels with hot reload",
+   "Idle sleep that stops and wakes Docker and Proxmox LXC containers based on traffic",
+   "Proxmox integration with route binding and LXC start/stop/restart from the WebUI",
+   "Built-in WebUI for routes, logs, metrics and uptime",
+   "Ships an install/update/uninstall script supporting systemd and Alpine/OpenRC"
+  ],
+  "caveats": [
+   "Designed to run in Docker host network mode; the README says not to change it",
+   "Platform support listed as Linux amd64 and arm64 only",
+   "Country and timezone rules require a MaxMind account"
+  ],
+  "license": "MIT",
+  "category": "self-hosted reverse proxy",
+  "keywords": [
+   "reverse proxy",
+   "go reverse proxy",
+   "docker reverse proxy",
+   "podman proxy",
+   "webui proxy",
+   "virtual host",
+   "nginx proxy manager alternative",
+   "traefik alternative",
+   "wildcard dns routing",
+   "subdomain routing",
+   "docker label routing",
+   "auto discover containers",
+   "idle container sleep",
+   "wake containers on traffic",
+   "scale to zero containers",
+   "proxmox lxc proxy",
+   "proxmox integration",
+   "tcp udp port forwarding",
+   "openid connect sso",
+   "forwardauth",
+   "lets encrypt dns-01",
+   "ip access control",
+   "geoip country blocking",
+   "access logs",
+   "custom error pages",
+   "self-hosted gateway",
+   "homelab proxy",
+   "share services on my domain",
+   "route traffic to containers",
+   "expose home server with https",
+   "lightweight proxy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3336,
+  "output": 1339
+ },
+ "generated": "2026-10-29"
+}

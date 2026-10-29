@@ -1,0 +1,96 @@
+{
+ "id": "nextcloud/docker",
+ "repo": "nextcloud/docker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Productivity",
+   "entry": "Nextcloud | Productivity platform for file hosting and collaboration"
+  }
+ ],
+ "summary": {
+  "one_liner": "Official-style Docker image packaging the Nextcloud file hosting and collaboration server in Apache and PHP-FPM variants, maintained by community volunteers.",
+  "what_it_does": "The repository provides the Dockerfiles and entrypoint scripts for the Nextcloud image, offered as an apache tag (full Nextcloud with a built-in web server on port 80) and an fpm tag (PHP-FPM on port 9000 that needs a separate web server such as nginx to proxy to it). The README documents configuration through environment variables covering database setup (SQLite, MySQL/MariaDB, PostgreSQL), an initial admin account, Redis caching, SMTP mail, and S3 or OpenStack Swift object storage as primary storage. It also covers PHP and Apache limits, reverse-proxy and trusted-proxy settings, Docker secrets via _FILE variables, and hook folders for pre/post install, upgrade and start scripts. Docker compose examples, volume layouts for data/config/custom_apps, occ command usage, and upgrade and migration steps are included. The README notes that the image is community-maintained and points users to the Nextcloud All-in-One container for a full-featured deployment.",
+  "use_cases": [
+   "self-host a personal cloud file sync server",
+   "share files and calendars with a team using Docker",
+   "run Nextcloud behind an nginx or reverse proxy",
+   "configure Nextcloud with a MariaDB or PostgreSQL database in compose",
+   "store Nextcloud user data in S3 or Swift object storage",
+   "automate Nextcloud installation with environment variables",
+   "migrate an existing Nextcloud install into Docker"
+  ],
+  "how_to_run": [
+   "docker run -d -p 8080:80 nextcloud",
+   "docker compose up -d  (using a compose.yaml with the apache or fpm example)",
+   "docker compose exec -u33 app ./occ config:list system",
+   "docker compose pull && docker compose up -d  (to update)"
+  ],
+  "stack": [
+   "Docker",
+   "PHP",
+   "Apache",
+   "PHP-FPM",
+   "nginx (example proxy)",
+   "MariaDB / MySQL",
+   "PostgreSQL",
+   "SQLite",
+   "Redis",
+   "Alpine Linux"
+  ],
+  "notable": [
+   "Two image variants: apache (all-in-one web server) and fpm (for pairing with a separate web server)",
+   "Full auto-configuration via environment variables, bypassing the web setup wizard",
+   "Hook folders (pre-installation, post-upgrade, before-starting, etc.) for custom scripts",
+   "Object storage support for S3-compatible and OpenStack Swift as primary storage",
+   "Docker secrets support via _FILE environment variables"
+  ],
+  "caveats": [
+   "The README states the image is maintained by community volunteers and designed for expert use; the Nextcloud All-in-One container is recommended for quick deployment with the full Hub feature set",
+   "Upgrades must be done one major version at a time",
+   "Data in /var/www/html is overwritten during upgrades unless listed in upgrade.exclude; custom volumes need care"
+  ],
+  "license": "unknown",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "nextcloud",
+   "nextcloud docker image",
+   "self-hosted cloud storage",
+   "file hosting",
+   "file sync server",
+   "docker compose nextcloud",
+   "php-fpm",
+   "apache docker image",
+   "nginx reverse proxy",
+   "mariadb",
+   "postgresql",
+   "redis cache",
+   "s3 object storage",
+   "openstack swift",
+   "occ command",
+   "docker secrets",
+   "smtp configuration",
+   "share files with my team",
+   "my own dropbox alternative",
+   "host calendars and contacts",
+   "private cloud",
+   "nextcloud upgrade",
+   "docker hook scripts",
+   "trusted proxies",
+   "environment variable configuration",
+   "sqlite database",
+   "self-hosted collaboration",
+   "google drive alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16457,
+  "output": 1424
+ },
+ "generated": "2026-10-29"
+}

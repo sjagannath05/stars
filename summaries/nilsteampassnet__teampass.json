@@ -1,0 +1,100 @@
+{
+ "id": "nilsteampassnet/teampass",
+ "repo": "nilsteampassnet/TeamPass",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Password Managers",
+   "entry": "Teampass - Password manager dedicated for managing passwords in a collaborative way. One symmetric key is used to encrypt all shared/team passwords and stored server side in a file and the database. works on any server Apache, MySQL and PHP. (Source Code) GPL-3.0 PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Teampass is a self-hosted, collaborative password manager for teams, built on PHP and MySQL/MariaDB, with folder-level access control and encrypted shared credentials.",
+  "what_it_does": "Teampass is a credential vault run on your own PHP/MySQL server, with no hosted account required. It provides folders with unlimited nesting and per-folder password complexity rules, plus roles and per-user overrides controlling read, write, no-edit and no-delete rights. Secrets are described as encrypted with AES-256-GCM under per-object keys, with per-user RSA-wrapped key copies so removing an account revokes access. Authentication options include local accounts, LDAP/AD with nested groups, OAuth2/SSO, TOTP, Duo, YubiKey and AGSES MFA. The README also lists a REST API with JWT auth, a browser extension, import from Bitwarden, LastPass, 1Password, KeePassXC and CSV, and export to CSV, PDF and an encrypted offline HTML vault. Governance features include audit trails, access recertification campaigns, compliance reports and password expiry reminders.",
+  "use_cases": [
+   "share team passwords without using chat or spreadsheets",
+   "self-host a password vault for a homelab or small team",
+   "control which users can see which credentials via folders and roles",
+   "enterprise access reviews and compliance evidence for audits",
+   "migrate passwords in from Bitwarden, LastPass, 1Password or KeePassXC",
+   "send one-time secrets to clients or contractors"
+  ],
+  "how_to_run": [
+   "docker run -d --name teampass -p 8080:80 -v teampass_data:/var/www/html teampass/teampass:latest",
+   "Alternatively, install bare metal on a PHP 8.2+ and MySQL 5.7+ or MariaDB 10.7+ server following the official installation guide"
+  ],
+  "stack": [
+   "PHP 8.2+",
+   "MySQL 5.7+ / MariaDB 10.7+",
+   "Apache",
+   "Redis (optional, session storage)",
+   "WebSocket daemon",
+   "Docker"
+  ],
+  "notable": [
+   "Per-user RSA-wrapped object keys so account removal revokes access",
+   "Authenticated AES-256-GCM encryption with PBKDF2-SHA256 key derivation (600,000 iterations)",
+   "Personal folders that administrators cannot read",
+   "Have I Been Pwned checks without sending passwords",
+   "Translated into 25 languages"
+  ],
+  "caveats": [
+   "Commercial browser extension (Pro) is paid, from €49/year with a 30-day trial, and professional services are quoted per engagement",
+   "Requires a specific PHP extension set (openssl, mysqli, gmp, bcmath, etc.), with ldap needed for LDAP/AD",
+   "Development and maintenance described as largely by one person; project is funded by sponsorship"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted password manager",
+  "keywords": [
+   "password manager",
+   "team password manager",
+   "self-hosted password manager",
+   "credential vault",
+   "shared passwords",
+   "password vault",
+   "passwords",
+   "php password manager",
+   "mysql",
+   "mariadb",
+   "aes-256-gcm",
+   "encryption",
+   "folder access control",
+   "role-based access",
+   "rbac",
+   "ldap",
+   "active directory",
+   "oauth2",
+   "sso",
+   "totp",
+   "mfa",
+   "two-factor authentication",
+   "yubikey",
+   "duo",
+   "rest api",
+   "browser extension",
+   "autofill",
+   "bitwarden import",
+   "keepassxc",
+   "lastpass alternative",
+   "1password alternative",
+   "audit trail",
+   "compliance reports",
+   "access review",
+   "docker",
+   "share passwords with my team",
+   "keep team passwords out of chat",
+   "self-hosted vault for homelab",
+   "gpl license password manager"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5141,
+  "output": 1390
+ },
+ "generated": "2026-10-29"
+}

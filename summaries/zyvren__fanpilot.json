@@ -1,0 +1,96 @@
+{
+ "id": "zyvren/fanpilot",
+ "repo": "zyvren/FanPilot",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "FanPilot - Fan control and temperature monitor for Apple Silicon Macs: menu bar temps, manual, max, Auto Boost rules or custom curves, with a fail-safe helper and a CLI. [![Open-Source Software][OSS Icon]](https://github.com/zyvren/FanPilot) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "FanPilot is a macOS menu bar app and CLI for monitoring every temperature sensor on Apple Silicon Macs and controlling fan speed (manual, max, Auto Boost rules, or custom curves) through a root helper daemon.",
+  "what_it_does": "FanPilot shows live temperatures in the macOS menu bar and in a sensors window grouped by area (CPU cores, GPU, SoC, battery, SSD, and others). It lets you set each fan to System, Manual (RPM or %), Max, Auto Boost (speed up when a chosen sensor passes a limit, with separate rules for battery and power adapter), or a temperature curve you draw. A privileged helper, fanpilotd, is the only component that writes fan settings; it clamps targets to the fan's hardware limits, releases fans back to macOS when the app quits, crashes, or the Mac sleeps, and forces full speed at 95 °C. The fanpilotctl command-line tool can list fans, print sensors, watch live values, set speeds with holds, and return control to macOS. Sensor reading needs no privileges. Notifications, CSV logging, and launch at login are also included.",
+  "use_cases": [
+   "monitor Mac temperatures in the menu bar",
+   "control fan speed on an Apple Silicon Mac",
+   "cool a Mac during long renders or compiles",
+   "set custom fan curves based on temperature",
+   "check battery health and sensor diagnostics",
+   "log temperatures and fan speeds to CSV"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/zyvren/FanPilot",
+   "cd FanPilot",
+   "swift build",
+   "swift test",
+   "scripts/build_app.sh",
+   "sudo scripts/install_helper.sh"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "C (CSMC layer)",
+   "AppleSMC",
+   "IOHID",
+   "LaunchDaemon"
+  ],
+  "notable": [
+   "Privileged helper daemon is the only writer to fans, with leased control that reverts to macOS on quit, crash, or sleep",
+   "Thermal failsafe forces both fans to full speed when CPU, GPU or SoC reaches 95 °C on two samples in a row",
+   "Auto Boost rules per power source with hysteresis and an Auto Max variant",
+   "fanpilotctl CLI for scripted sensor reads and fan control",
+   "Per-model sensor name table for Apple Silicon Macs with a fallback classifier"
+  ],
+  "caveats": [
+   "Requires Apple Silicon and macOS 14 or later; MacBook Air and other fanless Macs get monitoring only",
+   "Not notarized by Apple, so macOS shows a warning on first launch; fan control requires installing the root helper with an administrator password",
+   "Fan control verified only on one model (MacBook Pro M5 Pro); other models are untested, and Intel support is untested"
+  ],
+  "license": "MIT",
+  "category": "mac fan control",
+  "keywords": [
+   "fan control",
+   "mac fan control",
+   "apple silicon fan",
+   "menu bar temperature",
+   "temperature monitor",
+   "smc",
+   "applesmc",
+   "iohid sensors",
+   "fan curve",
+   "auto boost",
+   "thermal management",
+   "cpu temperature",
+   "gpu temperature",
+   "macos menu bar app",
+   "swiftui",
+   "swift",
+   "launchdaemon helper",
+   "fanpilotctl",
+   "command line fan speed",
+   "cool my mac",
+   "mac overheating",
+   "monitor mac temperatures",
+   "set fan speed manually",
+   "custom fan curve",
+   "battery health check",
+   "csv temperature logging",
+   "m1 m2 m3 m4 m5 mac",
+   "system monitor mac",
+   "macbook fan speed",
+   "smcfancontrol alternative",
+   "mac temperature sensors"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4958,
+  "output": 1377
+ },
+ "generated": "2026-10-29"
+}

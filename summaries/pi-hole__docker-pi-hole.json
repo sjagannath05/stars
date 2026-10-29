@@ -1,0 +1,84 @@
+{
+ "id": "pi-hole/docker-pi-hole",
+ "repo": "pi-hole/docker-pi-hole",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Networking",
+   "entry": "Pi-hole | Network-wide ad blocking"
+  }
+ ],
+ "summary": {
+  "one_liner": "Docker image and compose setup for Pi-hole, a network-wide DNS-based ad blocker that runs on your own Linux hardware.",
+  "what_it_does": "The README provides a Docker Compose example for running the pihole/pihole image, mapping DNS (53 TCP/UDP), HTTP (80) and HTTPS (443) ports, with optional DHCP (67/udp) and NTP (123/udp) ports. Configuration is done through environment variables such as TZ, the web interface password (FTLCONF_webserver_api_password) and the DNS listening mode (FTLCONF_dns_listeningMode). Volumes persist Pi-hole's databases and config in /etc/pihole, with an optional dnsmasq.d mount for custom dnsmasq files. Optional capabilities (NET_ADMIN, SYS_TIME, SYS_NICE) are added for DHCP, NTP and process priority. The container runs cron to refresh ad lists weekly and flush logs. Image tags include latest, date-based releases, and nightly builds from the development branch.",
+  "use_cases": [
+   "Block ads and trackers across every device on a home network",
+   "Run Pi-hole as a DHCP server in Docker",
+   "Self-host a DNS sink or ad-blocking resolver on a Linux box",
+   "Deploy Pi-hole with docker compose"
+  ],
+  "how_to_run": [
+   "Copy the docker-compose example from the README and adjust the timezone, password and volumes",
+   "Run: docker compose up -d (or docker-compose on older systems)"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Pi-hole",
+   "FTL",
+   "cron"
+  ],
+  "notable": [
+   "Uses environment variables (FTLCONF_*) for configuration",
+   "Optional DHCP and NTP server ports, enabled by uncommenting lines",
+   "Weekly automatic ad list updates via cron built into the container",
+   "Nightly image tag built from the development branch"
+  ],
+  "caveats": [
+   "The README advises against using the --privileged flag on 2022.04 and later, and recommends explicit capabilities instead",
+   "Using Docker's default bridge network requires setting the DNS listening mode to ALL",
+   "Watchtower users are directed to a separate note in the documentation"
+  ],
+  "license": "unknown",
+  "category": "self-hosted dns ad blocking",
+  "keywords": [
+   "pi-hole",
+   "docker pi-hole",
+   "ad blocker",
+   "network-wide ad blocking",
+   "dns sinkhole",
+   "dns server",
+   "ad blocking docker",
+   "block ads on home network",
+   "docker compose",
+   "docker-compose",
+   "pihole image",
+   "self-hosted dns",
+   "dhcp server docker",
+   "ntp server docker",
+   "dnsmasq",
+   "ftl dns",
+   "block trackers all devices",
+   "remove ads from every device",
+   "home network privacy",
+   "linux ad blocker",
+   "pihole web interface",
+   "pihole password",
+   "dns listening mode",
+   "persistent volumes docker",
+   "nightly docker image",
+   "adblock dns resolver",
+   "pihole alternative containers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2895,
+  "output": 1153
+ },
+ "generated": "2026-10-29"
+}

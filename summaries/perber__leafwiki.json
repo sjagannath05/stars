@@ -1,0 +1,93 @@
+{
+ "id": "perber/leafwiki",
+ "repo": "perber/leafwiki",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Wikis",
+   "entry": "LeafWiki - A fast wiki for people who think in folders, not feeds. Fast editing. Tree navigation. Markdown on disk. (Demo) MIT Docker/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "LeafWiki is a self-hosted wiki that ships as a single Go binary, storing pages as Markdown files on disk with SQLite for metadata and a tree-based navigation UI.",
+  "what_it_does": "LeafWiki runs as one Go binary with no external database, using SQLite and a data directory of Markdown files. Pages are organized in an explicit, manually ordered tree rather than a flat feed. The built-in editor offers live preview, keyboard shortcuts, internal link autocomplete, and optimistic locking for concurrent edits. Search covers titles and content with tag filtering, and each page shows backlinks and broken-link status. Access can be fully internal, public read with login-only editing, or open without login, with admin, editor, and viewer roles. Optional features include revision history, link rewriting on rename or move, SMTP email for password reset and invitations, reverse-proxy header authentication, Prometheus metrics, snapshots, and experimental Git backup of content.",
+  "use_cases": [
+   "self-hosted team documentation",
+   "homelab wiki",
+   "engineering notebooks and runbooks",
+   "structured wiki over an existing Markdown or Obsidian vault",
+   "private wiki behind a reverse proxy",
+   "public project documentation with login-only editing"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -v ~/leafwiki-data:/app/data ghcr.io/perber/leafwiki:latest --jwt-secret=yoursecret --admin-password=yourpassword --allow-insecure=true",
+   "Download the release binary for your platform and verify it against its .sha256 file",
+   "./leafwiki --jwt-secret=yoursecret --admin-password=yourpassword --allow-insecure=true",
+   "git clone the repository, then run make dev for the development setup (Go and Node.js required)"
+  ],
+  "stack": [
+   "Go",
+   "React",
+   "Vite",
+   "SQLite",
+   "Docker"
+  ],
+  "notable": [
+   "Single binary with SQLite; no Node.js, Redis, or Postgres needed to run it",
+   "Markdown files on disk, so content is readable outside the app and backup is copying the data directory while stopped",
+   "Explicit manual page ordering and page-as-folder relative link resolution",
+   "Resync via admin UI button or SIGUSR1/SIGHUP to pick up external file edits",
+   "Automatic leafwiki_id in frontmatter preserves page identity across renames and moves"
+  ],
+  "caveats": [
+   "Git backup is marked experimental; real-time collaborative editing is not supported",
+   "--disable-auth gives anyone who can reach the server full read and edit access and must not be exposed publicly",
+   "API keys are in development and not yet ready for use; the Linux installer only works with its own install method",
+   "The hosted beta is limited to 10 spots and is described as starting September 2026"
+  ],
+  "license": "MIT",
+  "category": "self-hosted wiki",
+  "keywords": [
+   "wiki",
+   "self-hosted wiki",
+   "markdown wiki",
+   "go wiki",
+   "single binary wiki",
+   "sqlite wiki",
+   "tree navigation",
+   "folder-based notes",
+   "docker wiki",
+   "homelab documentation",
+   "team documentation",
+   "internal wiki",
+   "knowledge base",
+   "markdown editor",
+   "obsidian vault",
+   "wiki.js alternative",
+   "outline alternative",
+   "markdown on disk",
+   "backlinks",
+   "broken links",
+   "page tree",
+   "reverse proxy wiki",
+   "share documentation with my team",
+   "host my own wiki",
+   "runbook storage",
+   "engineering notebook",
+   "private documentation server",
+   "public docs with login editing",
+   "git backup wiki",
+   "lightweight wiki server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 19581,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

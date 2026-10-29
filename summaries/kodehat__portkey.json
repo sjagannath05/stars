@@ -1,0 +1,93 @@
+{
+ "id": "kodehat/portkey",
+ "repo": "kodehat/portkey",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "portkey - Simple web portal that serves as a startup page, displaying a compilation of links and URLs, while also allowing the addition of custom pages, all managed through a single configuration file. (Demo, Source Code) AGPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "portkey is a lightweight, self-hosted web portal used as a browser startup page, showing a configurable collection of links with optional custom pages.",
+  "what_it_does": "portkey serves a single web page listing links (portals) defined in one config.yml file. Portals can be grouped into labelled sections, shown in a multi-column grid, and given emoji, image, or URL icons. A search box supports configurable keywords and optional fuzzy (Levenshtein) matching. Favicons for external links are fetched automatically and can be cached on disk, either fetched directly or relayed through a Vemetric-compatible favicon service. It can also serve small custom HTML pages at configured paths, and includes dark and light modes plus optional Prometheus-style metrics on a separate port.",
+  "use_cases": [
+   "personal startup page for browser",
+   "self-hosted link dashboard",
+   "organize bookmarks into groups",
+   "homepage for home lab services",
+   "simple intranet or team link portal",
+   "small custom HTML info pages"
+  ],
+  "how_to_run": [
+   "Download the portkey binary for your OS and place it in your PATH",
+   "Create a config.yml or start from the example configuration in the repository",
+   "Start the application with: portkey --config-path=<path to config.yml> (optional if config.yml is in the working directory)",
+   "Open your browser at the configured host and port (default localhost:3000)",
+   "Docker: docker run --rm -it -v $(PWD)/config.yml:/opt/config.yml -p 3000:3000 codehat/portkey:latest (see README for cache and icon volume options)"
+  ],
+  "stack": [
+   "Go",
+   "templ (Go templating)",
+   "TailwindCSS",
+   "AlpineJS",
+   "favifetch",
+   "Docker",
+   "Prometheus metrics"
+  ],
+  "notable": [
+   "All configuration lives in a single config.yml, with environment variable overrides prefixed PORTKEY_",
+   "Favicon handling supports direct discovery or a proxied Vemetric-compatible service, with disk caching and a 7-day TTL",
+   "Optional Prometheus metrics endpoint with portal, search, and favicon cache counters",
+   "Supports custom icon files, emojis, absolute URLs, and data URIs for portal icons"
+  ],
+  "caveats": [
+   "Favicon caching is disabled by default and requires a writable cache directory when enabled",
+   "Custom icon paths in Docker must match the container-side mount point",
+   "Custom pages are not added to the portal list automatically and must be listed manually"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted startup page",
+  "keywords": [
+   "startup page",
+   "browser start page",
+   "homepage",
+   "link dashboard",
+   "personal dashboard",
+   "link portal",
+   "bookmark manager",
+   "bookmarks page",
+   "startpage",
+   "new tab page",
+   "self-hosted homepage",
+   "homelab dashboard",
+   "favicon cache",
+   "fuzzy search links",
+   "search my links",
+   "organize bookmarks into groups",
+   "link collection",
+   "custom html page",
+   "go application",
+   "golang web app",
+   "docker image",
+   "prometheus metrics",
+   "templ",
+   "tailwind css",
+   "dark mode dashboard",
+   "config.yml",
+   "agpl",
+   "portal",
+   "awesome-selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7540,
+  "output": 1199
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "openbmb/xagent",
+ "repo": "OpenBMB/XAgent",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub Repository"
+  }
+ ],
+ "summary": {
+  "one_liner": "XAgent is an open-source experimental LLM-driven autonomous agent from OpenBMB that aims to automatically solve a wide range of tasks.",
+  "what_it_does": "XAgent is a general-purpose autonomous agent built around a Dispatcher (assigns tasks to agents), a Planner (splits tasks into subtasks with milestones and revises plans), and an Actor (uses tools to carry out subtasks and can ask humans for help). Actions run inside ToolServer, a Docker container that provides a File Editor, a Python Notebook, a Web Browser, a Shell, and a Rapid API tool for calling APIs from ToolBench's collection. The README says new tools can be added to ToolServer. Runs can be started from the command line with run.py and a config file, or through a web GUI served by nginx on port 5173. Each run saves a local workspace, a copy of the ToolServer workspace, and intermediate records such as LLM inputs and outputs, with API keys removed so records can be shared or replayed. The README describes the required model setup as OpenAI keys, recommending gpt-4-32k with a gpt-3.5-turbo-16k backup.",
+  "use_cases": [
+   "Automating multi-step data analysis tasks",
+   "Running autonomous web research and reporting",
+   "Writing and debugging code in a sandboxed container",
+   "Training and evaluating machine learning models",
+   "Getting restaurant or life-assistant recommendations with human input",
+   "Experimenting with LLM agent architectures"
+  ],
+  "how_to_run": [
+   "docker compose up",
+   "docker compose build && docker compose up  (build ToolServer image from local sources)",
+   "pip install -r requirements.txt  (Python >= 3.10)",
+   "Edit assets/config.yml to add at least one OpenAI API key",
+   "python run.py --task \"put your task here\" --config-file \"assets/config.yml\"",
+   "Open the web GUI on port 5173 (default login guest / xagent)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Docker",
+   "Docker Compose",
+   "nginx",
+   "OpenAI API (gpt-4-32k, gpt-4, gpt-3.5-turbo-16k)",
+   "Rapid API / ToolBench"
+  ],
+  "notable": [
+   "Dual-loop Planner and Actor design that splits tasks into subtasks and milestones",
+   "Runs all actions inside a Docker container (ToolServer) for safety",
+   "Can ask the human for help mid-task via an AskForHumanHelp tool",
+   "Saves full run records with sensitive data removed for reproduction and sharing",
+   "Includes a web GUI as well as a command-line interface"
+  ],
+  "caveats": [
+   "README describes XAgent as experimental and in early stages",
+   "Requires Docker and Docker Compose plus at least one paid OpenAI API key",
+   "The README says gpt-3.5-turbo is not tested or recommended due to short context length",
+   "The README lists a Benchmarks section but gives no benchmark results"
+  ],
+  "license": "unknown",
+  "category": "autonomous llm agent",
+  "keywords": [
+   "autonomous agent",
+   "llm agent",
+   "gpt-4 agent",
+   "autogpt alternative",
+   "task automation",
+   "dockerized agent",
+   "sandboxed code execution",
+   "toolserver",
+   "planner actor dispatcher",
+   "human in the loop agent",
+   "data analysis agent",
+   "web browsing agent",
+   "python notebook agent",
+   "rapid api tool",
+   "toolbench",
+   "openai agent",
+   "run code safely",
+   "automate complex tasks",
+   "ai assistant that writes code",
+   "agent with gui",
+   "openbmb",
+   "multi-agent framework",
+   "record and replay agent runs",
+   "shell tool agent",
+   "file editing agent",
+   "self-directed ai",
+   "solve tasks automatically"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4717,
+  "output": 1379
+ },
+ "generated": "2026-10-29"
+}

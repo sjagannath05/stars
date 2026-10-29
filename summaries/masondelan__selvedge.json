@@ -1,0 +1,95 @@
+{
+ "id": "masondelan/selvedge",
+ "repo": "masondelan/selvedge",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "Selvedge by masondelan - Long-term memory for AI-coded codebases. A git blame for AI agents — but for the why. MCP server that captures the agent's reasoning live, in context, as each change is made. Local SQLite, zero deps."
+  }
+ ],
+ "summary": {
+  "one_liner": "Selvedge is a local MCP server and CLI that records why an AI agent chose an approach, what it rejected, and what would change its mind, keyed to code entities such as functions, columns, routes and dependencies.",
+  "what_it_does": "It stores structured change events (entity path, change type, diff, reasoning, agent, session, git commit) in a local SQLite database under .selvedge/. Agents call MCP tools such as log_change, prior_attempts, blame, diff, history, changeset, search and stale_decisions, or use the CLI from a shell. Records can mark rejected approaches, reverted changes, and supersede earlier decisions append-only, with optional constraint and stale_when fields. A post-commit hook can stamp events with commit hashes. Users can export a deterministic Markdown digest of decisions for code review, with a --check mode for CI, and import or export Agent Trace v0.1.0 records. The README states core storage and retrieval make no LLM calls and no hosted account is needed.",
+  "use_cases": [
+   "Recall why a past approach was rejected before editing code",
+   "Hand off project decisions between coding agents or sessions",
+   "Record rationale for changes that git diffs do not show",
+   "Generate a reviewable Markdown decision digest for pull requests",
+   "Check in CI whether a decisions digest is stale",
+   "Backfill decision history from migration files or git revert commits"
+  ],
+  "how_to_run": [
+   "uv tool install --upgrade selvedge",
+   "selvedge demo",
+   "cd your-project",
+   "selvedge setup",
+   "selvedge watch",
+   "claude mcp add selvedge -- selvedge-server"
+  ],
+  "stack": [
+   "Python 3.11-3.14 (3.10 compatible, end of life)",
+   "uv",
+   "SQLite",
+   "MCP (stdio server selvedge-server)",
+   "Optional semantic extra using model2vec embeddings"
+  ],
+  "notable": [
+   "Captures the agent's reasoning at the time each change is made, separate from the git diff",
+   "Tracks rejected approaches and reverted decisions, with supersede records that keep full history",
+   "Deterministic Markdown digest with --check mode for stale-digest detection in CI",
+   "Agent Trace v0.1.0 import and export, with schema vendored rather than a runtime dependency",
+   "Works with any local stdio MCP client; presets for Claude Code, Codex, Copilot, Cursor, Gemini and Windsurf"
+  ],
+  "caveats": [
+   "Only explicitly saved decisions are recalled; saved reasoning is self-reported and not verified, and agents are not guaranteed to consult it",
+   "Reviewing exported digests and databases for secrets or private information is the user's responsibility",
+   "Requires Python 3.11-3.14 recommended; Python 3.10 is end of life; a separate check is needed to confirm agent hooks are active"
+  ],
+  "license": "MIT",
+  "category": "AI agent memory",
+  "keywords": [
+   "ai agent memory",
+   "persistent decision memory",
+   "mcp server",
+   "model context protocol",
+   "stdio mcp",
+   "coding agent memory",
+   "claude code memory",
+   "cursor mcp",
+   "codex cli",
+   "gemini cli",
+   "sqlite",
+   "local database",
+   "decision log",
+   "architecture decision records",
+   "adr alternative",
+   "git blame for reasoning",
+   "why history",
+   "rejected approaches",
+   "change history",
+   "changeset tracking",
+   "agent handoff between sessions",
+   "share context across ai tools",
+   "remember why code changed",
+   "pr review decision digest",
+   "markdown export",
+   "agent trace",
+   "migration history import",
+   "semantic search optional",
+   "cli for ai agents",
+   "uv tool install",
+   "keep decisions with project"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11765,
+  "output": 1337
+ },
+ "generated": "2026-10-29"
+}

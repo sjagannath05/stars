@@ -1,0 +1,116 @@
+{
+ "id": "wexare-ai/openbrowserclaw",
+ "repo": "wexare-ai/openbrowserclaw",
+ "kind": "star",
+ "description": "Browser-native personal AI assistant. Zero infrastructure, the browser is the server.",
+ "topics": [
+  "ai-agents",
+  "ai-assistant",
+  "browser",
+  "claude",
+  "claw",
+  "openclaw",
+  "pwa",
+  "typescript"
+ ],
+ "language": "TypeScript",
+ "stars": 604,
+ "license": "MIT",
+ "homepage": "https://openbrowserclaw.com",
+ "pushed_at": "2026-02-26",
+ "archived": false,
+ "accounts": [
+  "sjagannath05",
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A browser-only personal AI assistant that runs entirely in a browser tab as a PWA, using the Anthropic API with no backend server.",
+  "what_it_does": "OpenBrowserClaw is a personal AI chat assistant built as a static web app (PWA) written in TypeScript. The orchestrator runs on the main thread, routing messages and handling a state machine and cron-based task scheduling, while a Web Worker runs the Claude tool-use loop against the raw Anthropic API. Claude can call tools including bash (in an optional WebVM Alpine Linux emulator), a JavaScript eval tool, file read/write/list tools over a per-group OPFS workspace, a fetch_url tool, an update_memory tool that persists to CLAUDE.md, and a create_task tool for recurring cron jobs. Data is stored in IndexedDB and OPFS, and API keys are encrypted with AES-256-GCM using a non-extractable CryptoKey. Channels are the built-in browser chat and an optional Telegram bot that uses only HTTPS. The project describes itself as a browser-only reimplementation of NanoClaw.",
+  "use_cases": [
+   "personal AI chat assistant in the browser",
+   "run Claude with tool use without a server",
+   "self-hosted-free AI assistant as a static site",
+   "chat with an AI assistant through a Telegram bot",
+   "scheduled recurring AI tasks in the browser",
+   "browser-based sandboxed shell and JavaScript execution"
+  ],
+  "how_to_run": [
+   "cd openbrowserclaw",
+   "npm install",
+   "npm run dev",
+   "Open the local URL in a browser, paste your Anthropic API key, and start chatting.",
+   "npm run build (produces static files in dist/ for any static host)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Vite",
+   "Web Workers",
+   "PWA",
+   "IndexedDB",
+   "OPFS",
+   "WebVM",
+   "v86 (Alpine Linux in WASM)",
+   "Anthropic API",
+   "Telegram Bot API",
+   "Web Crypto (AES-256-GCM)"
+  ],
+  "notable": [
+   "Zero infrastructure: deploys as plain HTML, CSS, and JS to any static host with no server",
+   "Zero runtime npm dependencies, per the README comparison table",
+   "Agent runs in a Web Worker separate from the UI thread",
+   "Bash tool runs in an in-browser Alpine Linux VM via v86/WASM (optional)",
+   "Explicit security section listing known gaps such as eval-based JS tool and plaintext Telegram token"
+  ],
+  "caveats": [
+   "Background tasks use setInterval, so the browser tab must stay open for scheduled tasks and Telegram replies",
+   "The bash tool needs manually downloaded v86 and Alpine rootfs files; without them only the error-returning fallback works",
+   "Described as a proof of concept; the Telegram bot token is stored in plaintext and outgoing HTTP has no confirmation step"
+  ],
+  "license": "MIT",
+  "category": "browser-native ai assistant",
+  "keywords": [
+   "browser ai assistant",
+   "personal ai assistant",
+   "claude",
+   "anthropic api",
+   "claude tool use",
+   "browser-only",
+   "serverless ai",
+   "static site ai app",
+   "pwa",
+   "progressive web app",
+   "typescript",
+   "vite",
+   "web worker",
+   "indexeddb",
+   "opfs origin private file system",
+   "webvm",
+   "v86 emulator",
+   "alpine linux wasm",
+   "telegram bot",
+   "telegram chat with ai",
+   "cron scheduled tasks",
+   "nanoclaw alternative",
+   "openclaw",
+   "run ai in browser tab",
+   "no backend chatbot",
+   "self-hosted ai chat without server",
+   "aes-256-gcm credentials",
+   "chat with claude in browser",
+   "ai agent in browser",
+   "bash tool in browser",
+   "github pages deploy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4175,
+  "output": 1375
+ },
+ "generated": "2026-10-29"
+}

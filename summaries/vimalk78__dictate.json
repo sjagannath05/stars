@@ -1,0 +1,99 @@
+{
+ "id": "vimalk78/dictate",
+ "repo": "vimalk78/dictate",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "dictate by Vimal Kumar - Local, offline voice-to-text for Claude Code on Linux built on faster-whisper, with a warm daemon for instant transcription, system-wide push-to-talk, a voice-enabled editor, and per-project vocabulary hints that fix technical terms (\"Claude\" not \"cloud\"). Fully private — no cloud, no API keys, with thoughtful touches like mic-health monitoring and the ability to offload t"
+  }
+ ],
+ "summary": {
+  "one_liner": "A local, offline voice-to-text tool for Linux desktops that records speech on a push-to-talk key and pastes the transcription, built on faster-whisper.",
+  "what_it_does": "Runs a background daemon that keeps a Whisper model loaded in memory, so transcription starts without per-request delay. A separate push-to-talk service listens system-wide via evdev for a trigger key (Right Ctrl by default), records while held, and plays a bell when transcription is ready so the user can paste with Ctrl+V. It includes a voice-enabled nvim editor (dictate-editor) for longer prompts, and a /dictate Claude Code command. Per-project and global vocabulary hint files are merged and sent with each request to improve recognition of technical terms. It can also run a headless TCP transcription server on a LAN GPU machine that laptops forward audio to, and it switches transcription languages on the fly. Mic and keyboard disconnects are detected and reported with desktop notifications.",
+  "use_cases": [
+   "dictating prompts into Claude Code without typing",
+   "offline speech-to-text on a Linux desktop",
+   "private voice transcription with no cloud or API keys",
+   "offloading Whisper transcription to a GPU machine on the LAN",
+   "fixing technical term misrecognition with custom vocabulary",
+   "bilingual dictation with quick language switching"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd dictate",
+   "bash install.sh",
+   "Install the missing system packages the installer lists, add your user to the input group, log out and back in, then run bash install.sh again",
+   "dictate --serve (optional: run the daemon manually)",
+   "dictate --list-devices (check audio inputs)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "faster-whisper",
+   "uv",
+   "evdev",
+   "PortAudio",
+   "PipeWire",
+   "xsel",
+   "libnotify (notify-send)",
+   "nvim",
+   "ctranslate2"
+  ],
+  "notable": [
+   "Push-to-talk works system-wide in any window, including Claude Code, with no special integration",
+   "Warm daemon keeps the Whisper model in memory and a 1-second rolling pre-buffer captures speech from key press",
+   "Per-project vocabulary hints (.dictate-hints.d/) are sent per request, so no daemon restart is needed",
+   "Network mode lets a laptop without a GPU forward raw float32 audio to a GPU server over TCP",
+   "Mic health monitoring and keyboard hot-plug detection, with automatic recalibration"
+  ],
+  "caveats": [
+   "Linux only, requires PipeWire; README says tested on Fedora 43/44 and Ubuntu 22.04/24.04",
+   "Installer needs system packages and input group membership (sudo commands run manually), and evdev compiles from source",
+   "Jetson (aarch64) requires building ctranslate2 from source first",
+   "Default model quality depends on hardware: small on CPU, medium on NVIDIA GPU; large-v3 needs more than 4GB VRAM"
+  ],
+  "license": "unknown",
+  "category": "voice dictation tools",
+  "keywords": [
+   "speech-to-text",
+   "voice to text",
+   "dictation",
+   "whisper",
+   "faster-whisper",
+   "offline transcription",
+   "local speech recognition",
+   "push-to-talk",
+   "voice typing linux",
+   "speak instead of typing",
+   "claude code voice input",
+   "voice prompts for claude code",
+   "evdev",
+   "pipewire",
+   "linux dictation",
+   "private transcription no cloud",
+   "vocabulary hints",
+   "custom vocabulary",
+   "technical term recognition",
+   "network transcription server",
+   "gpu offload whisper",
+   "multilingual dictation",
+   "hindi transcription",
+   "voice editor",
+   "nvim voice",
+   "transcribe audio on linux",
+   "hands-free text input",
+   "wispr flow alternative",
+   "dictate into terminal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5789,
+  "output": 1405
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,84 @@
+{
+ "id": "kezhenxu94/cache-lite",
+ "repo": "kezhenxu94/cache-lite",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Kotlin: _Build Your Own Cache_"
+  }
+ ],
+ "summary": {
+  "one_liner": "Cache-Lite is a small Kotlin library and study project that builds a cache framework step by step, from a plain map to LRU and expirable caches.",
+  "what_it_does": "The README walks through designing a simple cache in Kotlin. It defines a Cache interface with size, set (operator []), get, remove and clear operations. PerpetualCache implements it with a HashMap that never evicts entries. LRUCache wraps any Cache using the decorator pattern and keeps at most a minimal size (default 100), evicting the least recently used entry via LinkedHashMap. ExpirableCache clears the whole cache after a flush interval (default one minute), checked lazily on each operation rather than by a background thread. The README also mentions FIFOCache, SoftCache and WeakCache, and a typealias for a generic cache type. Maven coordinates are given for use in a project.",
+  "use_cases": [
+   "learn how caching works by reading source code",
+   "study cache design patterns in Kotlin",
+   "add a simple in-memory LRU cache to a Kotlin project",
+   "time-based whole-cache expiration for a small app",
+   "reference implementation for a build-your-own-cache exercise"
+  ],
+  "how_to_run": [
+   "Add the Maven dependency io.github.kezhenxu94:cache-lite:${cache-lite.version} to your pom.xml"
+  ],
+  "stack": [
+   "Kotlin",
+   "Java collections (HashMap, LinkedHashMap)",
+   "Maven"
+  ],
+  "notable": [
+   "Walkthrough-style design: each cache type is introduced as a step in the README",
+   "LRUCache and ExpirableCache are decorators that wrap any Cache via Kotlin delegation",
+   "Expiration is lazy: the cache is recycled before each operation instead of using a scheduled task",
+   "Includes FIFO, soft-reference and weak-reference cache variants per the README"
+  ],
+  "caveats": [
+   "Explicitly described as a study case, not a production caching framework",
+   "Expiration clears the entire cache at once, not individual entries",
+   "README does not give installation details beyond the Maven snippet"
+  ],
+  "license": "unknown",
+  "category": "kotlin caching library",
+  "keywords": [
+   "kotlin cache",
+   "cache-lite",
+   "lru cache kotlin",
+   "least recently used cache",
+   "expirable cache",
+   "in-memory cache",
+   "key-value cache",
+   "decorator pattern cache",
+   "build your own cache",
+   "caching tutorial",
+   "learn caching",
+   "cache study project",
+   "fifo cache",
+   "soft reference cache",
+   "weak reference cache",
+   "perpetual cache",
+   "hashmap cache",
+   "linkedhashmap eviction",
+   "maven cache library",
+   "java caching",
+   "cache eviction strategy",
+   "cache expiration",
+   "ehcache alternative",
+   "memcache alternative",
+   "cache2k alternative",
+   "lightweight cache framework",
+   "cache my database results",
+   "how does caching work",
+   "simple in-memory caching in kotlin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4098,
+  "output": 1103
+ },
+ "generated": "2026-10-29"
+}

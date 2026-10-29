@@ -1,0 +1,91 @@
+{
+ "id": "wzh4869/appports",
+ "repo": "wzh4869/AppPorts",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "File Organization Tools",
+   "entry": "AppPorts - Move apps to external storage while keeping working launch links in /Applications. [![Open-Source Software][OSS Icon]](https://github.com/wzh4869/AppPorts) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "AppPorts is a free, open-source macOS app that moves large applications, app data, and tool directories to external storage while leaving lightweight local launchers in place.",
+  "category": "macos storage management",
+  "keywords": [
+   "macos",
+   "move apps to external drive",
+   "external storage",
+   "free up disk space",
+   "mac storage",
+   "app migration",
+   "stub portal",
+   "symbolic links",
+   "symlink",
+   "apfs mount",
+   "apfs container",
+   "finder launcher",
+   "launchpad",
+   "sparkle",
+   "electron",
+   "code signature",
+   "re-sign",
+   "orphaned link",
+   "dock shortcuts",
+   "swiftui",
+   "app store external installation",
+   "data directory management",
+   "npm cache move",
+   "relocate app data",
+   "move photos and videos off mac",
+   "restore apps to internal disk",
+   "free mac disk space",
+   "awesome-mac"
+  ],
+  "what_it_does": "AppPorts moves whole applications from the Mac's internal drive to an external drive and leaves a lightweight local \"Stub Portal\" launcher in place so the app still appears with its normal icon in Finder, the Dock, and Launchpad. It also migrates app data: container data (Containers and Group Containers) can be mounted at the original paths through APFS mount migration, while ordinary data folders, tool directories such as ~/.npm, and user-chosen folders are handled with symbolic links. The app detects update mechanisms such as Sparkle and Electron and can offer a locked migration to protect external copies. It includes checks for code signature status, with backup and restore of original signatures where supported, and flags orphaned links whose targets are unavailable. Restore operations bring apps and data back when the original drive is connected and there is enough local space.",
+  "use_cases": [
+   "move large macOS apps to an external SSD",
+   "free up internal storage on a Mac",
+   "keep migrated apps launchable from Finder and Launchpad",
+   "move WeChat chat history or photos off the internal drive",
+   "relocate developer tool caches like ~/.npm",
+   "restore apps from an external drive to the Mac"
+  ],
+  "how_to_run": [
+   "Download the latest AppPorts.dmg from the official website or Releases.",
+   "Move AppPorts into /Applications and open it.",
+   "Follow the setup checks, connect the external drive, and choose an external app library.",
+   "Quit the app you intend to move, then start migration from within AppPorts.",
+   "If macOS reports the app as damaged, run: xattr -rd com.apple.quarantine /Applications/AppPorts.app",
+   "Development: clone the repository and open the project in Xcode to build."
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Xcode",
+   "APFS"
+  ],
+  "notable": [
+   "Stub Portal: keeps a local launcher with the familiar icon and no shortcut arrow, while the full app lives on the external drive",
+   "APFS mount migration for container data, which preserves original paths and app signatures",
+   "Locked migration for self-updating apps (Sparkle, Electron) to protect external copies",
+   "Signature management with full original-app backups and restore; default mode refuses to re-sign sandboxed apps",
+   "Available in 20+ languages, including Braille and a Martian option, with VoiceOver labels"
+  ],
+  "caveats": [
+   "Container mount migration currently requires unencrypted APFS external storage, and older systems may need administrator authorization and reopening AppPorts after login.",
+   "Mount migration requires a stable application path and does not work from a DMG or temporary location; the external drive must stay connected while migrated apps are used.",
+   "Compatibility varies by app, macOS version, and background components; the README says migrations may not work for every app and some signatures may need repair, and macOS 27 disables login re-signing."
+  ],
+  "license": "Apache License 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5644,
+  "output": 1361
+ },
+ "generated": "2026-10-29"
+}

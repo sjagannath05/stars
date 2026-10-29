@@ -1,0 +1,113 @@
+{
+ "id": "nvlabs/longlive",
+ "repo": "NVlabs/LongLive",
+ "kind": "star",
+ "description": "Long Video Gen / World Model / World Action Model (Embodied) Infrastructure",
+ "topics": [
+  "infra",
+  "long",
+  "nvfp4",
+  "parallel",
+  "real-time",
+  "robotics",
+  "video-generation",
+  "world-action-models",
+  "world-models"
+ ],
+ "language": "Python",
+ "stars": 2844,
+ "license": "Apache-2.0",
+ "homepage": "https://nvlabs.github.io/LongLive",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A monorepo from NVIDIA hosting four long-video-generation and world-action-model projects (Long-WAM, LongLive-Plug, LongLive 2.0, LongLive 1.0), each in its own directory with separate code and docs.",
+  "what_it_does": "The repository is an umbrella for four self-contained projects. Long-WAM covers long-context world-action models for robot policies, with benchmarks (LIBERO, RoboTwin 2.0, RoboCasa) and deployment interfaces for YAM, Franka and Unitree G1. LongLive-Plug provides once-for-all distillation, training functional LoRAs on a base model and attaching them to downstream models across Wan2.1-14B, Wan2.2-TI2V-5B and MiniMax-H3. LongLive 2.0 is an NVFP4 parallel training and inference infrastructure with sequence parallelism, NVFP4 and FP8 inference, KV-cache quantization and multi-shot support. LongLive 1.0 is real-time interactive long video generation where users type sequential prompts and steer the video as it is produced. The README also lists about twenty downstream projects that build on LongLive, and gives a sparse-checkout command to fetch only one sub-project.",
+  "use_cases": [
+   "Generate long videos from text prompts in real time",
+   "Train or evaluate robot policies with world-action models",
+   "Distill video generation capabilities into reusable LoRAs",
+   "Run NVFP4 or FP8 quantized inference for video diffusion models",
+   "Steer a streaming video by typing prompts during generation",
+   "Train autoregressive video models with sequence parallelism"
+  ],
+  "how_to_run": [
+   "git clone --filter=blob:none --sparse --single-branch --branch main --depth 1 <repo-url>",
+   "cd LongLive",
+   "git sparse-checkout set Long-WAM",
+   "cd Long-WAM"
+  ],
+  "stack": [
+   "Python",
+   "Wan2.1",
+   "Wan2.2",
+   "MiniMax-H3",
+   "Self-Forcing",
+   "Triton",
+   "TorchAO",
+   "NVFP4",
+   "VBench"
+  ],
+  "notable": [
+   "Four separate projects in one repo, each with its own directory, and sparse checkout to download only one",
+   "NVFP4 (W4A4) and NVFP4 KV-cache inference, with reported 45.7 FPS for a 2-step 5B variant on one GB200",
+   "LongLive-Plug reusable LoRA capabilities that attach to compatible downstream models without retraining",
+   "Public model checkpoints for Long-WAM, LongLive-Plug, LongLive 2.0 and LongLive 1.3B"
+  ],
+  "caveats": [
+   "Each project has its own setup and docs; the top-level README gives no unified install or run steps",
+   "Some Long-WAM checkpoints are listed as in progress (e.g. a 19.2 s RoboCasa GR1 variant is under investigation)",
+   "FPS figures depend on specific hardware (GB200, H100) and exclude or include VAE decoding differently"
+  ],
+  "license": "Apache-2.0",
+  "category": "video generation research",
+  "keywords": [
+   "long video generation",
+   "world model",
+   "world action model",
+   "robot policy",
+   "embodied ai",
+   "nvfp4 quantization",
+   "fp8 inference",
+   "sequence parallelism",
+   "autoregressive video diffusion",
+   "real-time video generation",
+   "interactive video generation",
+   "text to video",
+   "image to video",
+   "video diffusion",
+   "kv cache compression",
+   "knowledge distillation lora",
+   "wan2.1",
+   "wan2.2",
+   "self-forcing",
+   "robot video generation",
+   "libero benchmark",
+   "robotwin",
+   "streaming video",
+   "multi-shot video",
+   "nvidia research",
+   "generate minute-long videos",
+   "steer video while generating",
+   "quantized video model inference",
+   "vbench",
+   "triton kernels",
+   "model distillation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7349,
+  "output": 1370
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,85 @@
+{
+ "id": "thewicklowwolf/lidatube",
+ "repo": "TheWicklowWolf/LidaTube",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "LidaTube ⚠ - Finding and fetch missing Lidarr albums via yt-dlp. GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "LidaTube is a Dockerized tool that searches for albums missing from a Lidarr library and fetches the tracks using yt-dlp.",
+  "what_it_does": "LidaTube connects to a Lidarr instance and looks for missing albums or songs. It uses yt-dlp to find and download matching audio, with a configurable minimum match ratio (default 90%). A secondary search can use YTS or YTDLP, and the fallback-to-top-result option can accept the best hit when no exact match is found. It can scan the Lidarr library on completion and optionally attempt to import each song directly into Lidarr. Runs can be scheduled at fixed hours of the day, and an optional cookies.txt file can be supplied to yt-dlp. The README documents a web interface on port 5000 but does not describe its features.",
+  "use_cases": [
+   "fill gaps in a Lidarr music library",
+   "automatically fetch missing albums",
+   "scheduled music library syncing",
+   "download missing tracks via yt-dlp",
+   "match downloaded audio to Lidarr albums"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the image thewicklowwolf/lidatube:latest, mounting a config folder, a downloads folder, and /etc/localtime, and exposing port 5000",
+   "Set environment variables such as lidarr_address and lidarr_api_key as needed",
+   "Run docker-compose up -d",
+   "Optionally set sync_schedule (e.g. 2, 20 for 2 AM and 8 PM)",
+   "Optionally place cookies.txt in the config folder for yt-dlp"
+  ],
+  "stack": [
+   "Docker",
+   "yt-dlp",
+   "Lidarr"
+  ],
+  "notable": [
+   "Uses yt-dlp to fetch audio for albums Lidarr reports as missing",
+   "Configurable fuzzy match threshold (minimum_match_ratio, default 90)",
+   "Scheduled syncs via comma-separated 24-hour start hours",
+   "Optional direct import of songs back into Lidarr",
+   "Optional cookies.txt support for yt-dlp"
+  ],
+  "caveats": [
+   "Requires a running Lidarr instance and its API key",
+   "Sync start times have a deadband of up to 10 minutes from the scheduled time",
+   "Default preferred codec is mp3 and the README does not describe other formats"
+  ],
+  "license": "GPL-3.0",
+  "category": "music library automation",
+  "keywords": [
+   "lidarr",
+   "lidarr missing albums",
+   "yt-dlp",
+   "music downloader",
+   "missing album finder",
+   "fetch missing music",
+   "docker music tool",
+   "self-hosted music",
+   "music library automation",
+   "lidatube",
+   "youtube music downloader",
+   "mp3 downloader",
+   "scheduled music sync",
+   "album matching",
+   "fill gaps in music library",
+   "find missing albums",
+   "automate music downloads",
+   "docker-compose music",
+   "yts search",
+   "lidarr integration",
+   "media management",
+   "gpl music tool",
+   "download albums automatically",
+   "music collection completion",
+   "audio fetcher"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2296,
+  "output": 1135
+ },
+ "generated": "2026-10-29"
+}

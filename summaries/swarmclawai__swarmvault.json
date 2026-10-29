@@ -1,0 +1,96 @@
+{
+ "id": "swarmclawai/swarmvault",
+ "repo": "swarmclawai/swarmvault",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "SwarmVault — Local-first RAG knowledge base compiler inspired by Karpathy's LLM Wiki. Three-layer raw/wiki/schema architecture, persistent markdown wiki, knowledge graph, hybrid SQLite FTS + embeddings, contradiction detection, and a built-in MCP server. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "SwarmVault is a local-first CLI that compiles raw documents, code, and URLs into a persistent markdown wiki, a knowledge graph, and a hybrid search index that AI agents can query.",
+  "what_it_does": "Ingests local files, directories, public GitHub repos, URLs, transcripts, email, spreadsheets, and many other formats into an immutable raw/ folder, then compiles them into generated markdown wiki pages with a typed knowledge graph (edges tagged extracted, inferred, or ambiguous). It provides hybrid retrieval combining SQLite full-text search with optional embeddings, plus graph queries such as query, path, explain, and callers. It flags contradictions, stages changes into reviewable approval bundles, and writes context packs and task-ledger records for agents. An MCP server (swarmvault mcp) and per-agent install targets expose the vault to coding agents. The default heuristic provider runs offline without API keys, and Ollama or cloud LLM providers can be configured for sharper extraction.",
+  "use_cases": [
+   "Build a personal knowledge base from notes, papers, and articles",
+   "Document a code repository with a navigable knowledge graph",
+   "Give coding agents bounded, cited context about a codebase",
+   "Turn meeting recordings and transcripts into searchable wiki pages",
+   "Query accumulated research with local search and saved answers",
+   "Audit a body of documents for conflicting claims"
+  ],
+  "how_to_run": [
+   "npm install -g @swarmvaultai/cli",
+   "swarmvault quickstart ./your-repo",
+   "swarmvault query \"What are the key concepts?\"",
+   "swarmvault graph serve",
+   "swarmvault mcp"
+  ],
+  "stack": [
+   "Node.js (>=24)",
+   "TypeScript",
+   "SQLite FTS",
+   "tree-sitter",
+   "Ollama",
+   "whisper.cpp",
+   "Neo4j"
+  ],
+  "notable": [
+   "Three-layer raw/wiki/schema architecture modeled on Karpathy's LLM Wiki pattern",
+   "Runs fully offline with a built-in heuristic provider and no API keys",
+   "Knowledge graph with provenance tags and graph report pages",
+   "Built-in MCP server and install targets for many coding agents",
+   "Approval bundles and candidate pages so generated changes are reviewed before landing"
+  ],
+  "caveats": [
+   "Requires Node.js 24 or newer for the CLI; a desktop app is offered as an alternative",
+   "Some features need external helpers or providers, such as ffmpeg/yt-dlp for video and whisper.cpp or hosted APIs for audio",
+   "Output quality is much sharper with an LLM provider than with the offline heuristic provider",
+   "The local-whisper provider is documented as experimental"
+  ],
+  "license": "MIT",
+  "category": "local knowledge base",
+  "keywords": [
+   "knowledge base",
+   "llm wiki",
+   "rag",
+   "retrieval augmented generation",
+   "knowledge graph",
+   "markdown wiki",
+   "local-first",
+   "offline",
+   "mcp server",
+   "model context protocol",
+   "sqlite fts",
+   "full-text search",
+   "embeddings",
+   "semantic search",
+   "hybrid search",
+   "contradiction detection",
+   "obsidian",
+   "ollama",
+   "code documentation",
+   "codebase graph",
+   "agent context",
+   "coding agent",
+   "claude code",
+   "transcript ingest",
+   "pdf to markdown",
+   "personal knowledge management",
+   "chat with my documents",
+   "organize research notes",
+   "neo4j export",
+   "karpathy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16749,
+  "output": 1292
+ },
+ "generated": "2026-10-29"
+}

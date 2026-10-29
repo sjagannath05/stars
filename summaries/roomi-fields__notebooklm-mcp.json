@@ -1,0 +1,99 @@
+{
+ "id": "roomi-fields/notebooklm-mcp",
+ "repo": "roomi-fields/notebooklm-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "NotebookLM MCP by Romain Peyrichou - A mature MCP server (plus a 33-endpoint REST API) that drives Google NotebookLM for citation-backed Q&amp;A and full Studio generation (audio, video, infographics, reports), with multi-account TOTP re-auth. Notably well-maintained and security-attentive — batch-tested on overnight 1,000-question runs, with a documented changelog that includes patching a transit"
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server and HTTP REST API that drives Google NotebookLM for citation-backed Q&A and Studio content generation (audio, video, infographics, reports and more), unofficial and not affiliated with Google.",
+  "what_it_does": "It exposes NotebookLM notebooks to MCP clients such as Claude Code, Cursor and Codex, and as a 53-endpoint HTTP REST API for tools like n8n, Zapier, Make or curl. It asks questions against notebook sources and returns answers with citations, optionally including quoted source excerpts in several formats. It can generate Studio artifacts (audio overviews, video, infographics, reports, presentations, data tables, flashcards, quizzes, mind maps) and download audio, video and infographic files. Source management covers adding files, URLs, text, YouTube and Google Drive sources, listing, renaming, reading full source text and checking freshness. It uses NotebookLM's internal batchexecute RPC API as the primary transport with a Playwright browser fallback, and supports multi-account rotation with TOTP-based re-authentication. A batch vault tool writes answers to disk as structured JSON for offline querying.",
+  "use_cases": [
+   "Batch research questions against NotebookLM notebooks overnight",
+   "Citation-backed answers from uploaded PDFs and URLs",
+   "Generating podcast-style audio overviews or videos from sources",
+   "Calling NotebookLM as a step in n8n, Zapier or Make workflows",
+   "Giving Claude Code or Cursor access to NotebookLM notebooks",
+   "Caching NotebookLM answers as a searchable local archive"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd notebooklm-mcp",
+   "npm install && npm run build",
+   "npm run setup-auth",
+   "npm run start:http",
+   "claude mcp add notebooklm node /path/to/notebooklm-mcp/dist/index.js"
+  ],
+  "stack": [
+   "Node.js 22+",
+   "TypeScript",
+   "Playwright",
+   "batchexecute RPC",
+   "MCP protocol",
+   "Docker"
+  ],
+  "notable": [
+   "Dual transport: internal batchexecute RPC API with automatic Playwright browser fallback",
+   "Full REST API (53 endpoints per the README, OpenAPI 3.1 spec) plus MCP server from the same package",
+   "Multi-account rotation with TOTP auto-reauth across personal and Google Workspace accounts",
+   "Answers written to disk as JSON against a published schema (nblm-answer-v1) for offline retrieval",
+   "Bundled agent skill covering citation formats and batch patterns"
+  ],
+  "caveats": [
+   "Unofficial project using undocumented NotebookLM endpoints that may change without notice",
+   "Requires Node 22 or newer; remote access and Docker require NOTEBOOKLM_API_KEY per the README",
+   "Google may flag automated usage; the README recommends a dedicated Google account and notes NotebookLM quotas apply at high volume"
+  ],
+  "license": "MIT",
+  "category": "notebooklm automation, mcp server",
+  "keywords": [
+   "notebooklm",
+   "google notebooklm",
+   "gemini notebook",
+   "mcp server",
+   "model context protocol",
+   "claude code",
+   "cursor mcp",
+   "codex",
+   "rest api",
+   "http api",
+   "n8n",
+   "zapier",
+   "make.com",
+   "curl automation",
+   "citation-backed answers",
+   "rag",
+   "retrieval augmented generation",
+   "batch questions",
+   "audio overview",
+   "podcast generation",
+   "flashcards",
+   "quiz generator",
+   "mind map",
+   "infographic generation",
+   "playwright",
+   "browser automation",
+   "batchexecute",
+   "multi-account",
+   "totp reauth",
+   "docker",
+   "ask questions about my documents",
+   "research at scale",
+   "literature review",
+   "offline answer cache"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9618,
+  "output": 1398
+ },
+ "generated": "2026-10-29"
+}

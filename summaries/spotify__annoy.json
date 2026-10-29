@@ -1,0 +1,90 @@
+{
+ "id": "spotify/annoy",
+ "repo": "spotify/annoy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Recommender Systems",
+   "entry": "annoy - Approximate Nearest Neighbors in C++/Python optimized for memory usage."
+  }
+ ],
+ "summary": {
+  "one_liner": "Annoy is a C++ library with Python bindings for approximate nearest neighbor search, building file-based indexes that can be memory-mapped and shared across processes.",
+  "what_it_does": "Builds a forest of random-projection trees over fixed-length vectors and answers queries for the n closest items by vector or by existing item ID. Supports Euclidean, Manhattan, cosine (angular), Hamming, and dot-product distances. Indexes are built once, saved to a file, and loaded via mmap so multiple processes can share the same data with minimal memory. Query accuracy versus speed is tuned with n_trees at build time and search_k at query time. It also offers an on-disk build mode, distance lookups between items, and retrieval of stored vectors. The README also lists a C++ usage path via a single header include.",
+  "use_cases": [
+   "find similar users or items from embedding vectors",
+   "music or product recommendation candidate search",
+   "nearest neighbor lookup over high-dimensional vectors",
+   "sharing a read-only search index across many processes",
+   "low-memory vector similarity search over large datasets",
+   "distributing prebuilt index files to production or batch jobs"
+  ],
+  "how_to_run": [
+   "pip install --user annoy",
+   "from annoy import AnnoyIndex; t = AnnoyIndex(f, 'angular')",
+   "t.add_item(i, v) for each vector",
+   "t.build(10); t.save('test.ann')",
+   "u = AnnoyIndex(f, 'angular'); u.load('test.ann')",
+   "u.get_nns_by_item(0, 1000)"
+  ],
+  "stack": [
+   "C++",
+   "Python",
+   "mmap"
+  ],
+  "notable": [
+   "Indexes are static files that are mmapped, so many processes can share one index with fast load",
+   "Small index memory footprint, a core design goal",
+   "Tunable trade-off via n_trees (build time) and search_k (query time)",
+   "Hamming distance packs data into 64-bit integers and uses bit-count primitives",
+   "Community bindings for R, Java, Scala, Ruby, Go, Lua, Node, Rust"
+  ],
+  "caveats": [
+   "Index is read-only after build or save; no more items can be added",
+   "Integer item IDs only, and memory is allocated for max(id)+1 items",
+   "Works better with fewer dimensions, per the README",
+   "Approximate results, not exact nearest neighbors"
+  ],
+  "license": "unknown",
+  "category": "approximate nearest neighbors",
+  "keywords": [
+   "approximate nearest neighbors",
+   "ann search",
+   "nearest neighbor search",
+   "vector similarity search",
+   "embedding similarity",
+   "c++ library",
+   "python bindings",
+   "mmap index",
+   "memory mapped index",
+   "static index files",
+   "random projection trees",
+   "annoy index",
+   "cosine similarity search",
+   "euclidean distance search",
+   "manhattan distance",
+   "hamming distance",
+   "dot product search",
+   "recommender system candidates",
+   "music recommendations",
+   "find similar items",
+   "find similar users",
+   "share index across processes",
+   "low memory vector search",
+   "high dimensional search",
+   "matrix factorization vectors",
+   "k nearest neighbors alternative",
+   "search similar vectors in python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5068,
+  "output": 1170
+ },
+ "generated": "2026-10-29"
+}

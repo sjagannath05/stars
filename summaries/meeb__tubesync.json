@@ -1,0 +1,95 @@
+{
+ "id": "meeb/tubesync",
+ "repo": "meeb/tubesync",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "tubesync ⚠ - Syncs YouTube channels and playlists to a locally hosted media server. AGPL-3.0 Docker/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "TubeSync is a self-hosted PVR for YouTube that syncs channels and playlists to local directories and updates Plex or Jellyfin when media is downloaded.",
+  "what_it_does": "TubeSync is a web interface wrapper around yt-dlp and ffmpeg with a built-in task scheduler. You add YouTube channels or playlists as sources, choose an index frequency and media quality, and it periodically indexes them and downloads new media. Audio-only media goes to an audio directory and media with video goes to a video directory under the download path. It retries failed downloads with back-off timers over an extended period. It can notify a local Jellyfin or Plex media server once media is downloaded. All administration is done through the web interface.",
+  "use_cases": [
+   "Automatically download new videos from YouTube channels",
+   "Archive YouTube playlists to a local media library",
+   "Feed downloaded YouTube videos into Jellyfin or Plex",
+   "Choose video quality and formats for YouTube downloads",
+   "Self-hosted alternative to a Sonarr-style workflow for YouTube"
+  ],
+  "how_to_run": [
+   "docker pull ghcr.io/meeb/tubesync:latest",
+   "mkdir /some/directory/tubesync-config /some/directory/tubesync-downloads",
+   "docker run -d --name tubesync -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -v /some/directory/tubesync-config:/config -v /some/directory/tubesync-downloads:/downloads -p 4848:4848 --stop-timeout 1800 ghcr.io/meeb/tubesync:latest",
+   "Open http://localhost:4848 in a browser to reach the dashboard and add sources"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "yt-dlp",
+   "ffmpeg",
+   "gunicorn",
+   "Docker",
+   "SQLite",
+   "MariaDB",
+   "PostgreSQL"
+  ],
+  "notable": [
+   "Full PVR workflow with automatic updates to Plex and Jellyfin media servers",
+   "Gradual retry of failed downloads with back-off timers",
+   "Runs in Docker or Podman on amd64 and arm64",
+   "Config, thumbnails and SQLite database kept in one /config directory for easy backup and migration",
+   "Optional HTTP basic auth and external database support"
+  ],
+  "caveats": [
+   "Indexing very large channels on short intervals can keep the instance busy without downloading media, and may get the IP throttled or banned by the source",
+   "Media server integration is limited to Plex and Jellyfin",
+   "Logging, advanced guides and FAQ are on the wiki rather than in the README"
+  ],
+  "license": "AGPL-3.0",
+  "category": "youtube media archiving",
+  "keywords": [
+   "youtube downloader",
+   "youtube pvr",
+   "sync youtube channels",
+   "youtube playlist sync",
+   "yt-dlp web interface",
+   "yt-dlp",
+   "ffmpeg",
+   "django",
+   "docker",
+   "podman",
+   "self-hosted",
+   "plex",
+   "jellyfin",
+   "media server",
+   "personal video recorder",
+   "sonarr alternative",
+   "youtube archiver",
+   "download youtube videos automatically",
+   "auto download new youtube videos",
+   "local copy of youtube channel",
+   "video quality selection",
+   "audio only download",
+   "background task scheduler",
+   "retry failed downloads",
+   "gunicorn",
+   "sqlite",
+   "mariadb",
+   "postgresql",
+   "arm64 raspberry pi",
+   "agpl"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5526,
+  "output": 1284
+ },
+ "generated": "2026-10-29"
+}

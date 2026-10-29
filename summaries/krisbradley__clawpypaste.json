@@ -1,0 +1,98 @@
+{
+ "id": "krisbradley/clawpypaste",
+ "repo": "krisbradley/clawpypaste",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "clawpypaste - Menu bar block picker and session browser for Claude Code. [![Open-Source Software][OSS Icon]](https://github.com/krisbradley/clawpypaste) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that lists grabbable blocks (code, tool output, paths, URLs, messages, tables) from your active Claude Code session so you can click to copy them.",
+  "category": "macos menu bar tool",
+  "keywords": [
+   "claude code",
+   "menu bar app",
+   "macos",
+   "clipboard",
+   "copy code blocks",
+   "terminal copy",
+   "session browser",
+   "jsonl parser",
+   "swift",
+   "swiftui",
+   "nspopover",
+   "clipboard manager for ai",
+   "copy from terminal without selecting",
+   "code snippet picker",
+   "markdown to rich text",
+   "copy as rich text",
+   "slack copy",
+   "tsv csv table copy",
+   "global hotkey",
+   "ctrl option v",
+   "homebrew cask",
+   "launch at login",
+   "cli clipboard tool",
+   "pin blocks",
+   "run command in terminal",
+   "claude code history",
+   "ai chat output copy",
+   "wrapped lines copy",
+   "awesome mac ai tools",
+   "notarized macos app",
+   "ai assistant output extraction"
+  ],
+  "what_it_does": "clawpypaste is a macOS menu bar app that reads the session JSONL files Claude Code writes under ~/.claude/projects/ and extracts blocks such as fenced code, markdown tables, file paths, URLs, tool output, whole messages and sections. Blocks are shown in a popover where you can select with arrow keys and press Return to copy, or drag a block into another app. Right-click menus offer extras such as copy as rich text, copy without markdown, pretty JSON, copy as TSV/CSV, wrapping as a code fence, and running shell commands in Terminal or iTerm2 with a confirmation for destructive commands. It also has a history mode across all sessions, pinning, a detached window, and a CLI (last, search, paste, list, kinds) for shell scripts. The README says the basic features need no accessibility prompts; only \"Inject into Claude prompt\" needs Accessibility permission.",
+  "use_cases": [
+   "copy code from Claude Code output without mouse-selecting wrapped lines",
+   "browse and reuse earlier blocks from past Claude Code sessions",
+   "paste AI output as rich text into Google Docs or Word",
+   "copy markdown tables as TSV or CSV into spreadsheets",
+   "pipe the latest code block into a file from a shell script",
+   "remove AI-typical phrasing from prose before posting"
+  ],
+  "how_to_run": [
+   "brew install --cask krisbradley/tap/clawpypaste",
+   "open /Applications/clawpypaste.app",
+   "clawpypaste --enable-login",
+   "git clone <repo URL> && cd clawpypaste && make install",
+   "make run"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "NSPopover",
+   "Carbon RegisterEventHotKey",
+   "SMAppService",
+   "CGEvent",
+   "DispatchSource",
+   "Homebrew cask",
+   "Make"
+  ],
+  "notable": [
+   "Reads Claude Code's existing session JSONL files, so it needs no terminal scraping or plugins",
+   "Block extraction covers code, tables, paths, URLs, tool I/O, messages and sections, with deduplication by content hash",
+   "Rich text, plain-text, TSV/CSV and humanized copy variants for different destinations",
+   "Right-click Run in new Terminal with confirmation for destructive commands",
+   "Ships as a notarized, Developer ID signed universal binary with a CLI"
+  ],
+  "caveats": [
+   "Requires macOS 13 (Ventura) or newer",
+   "Only works with Claude Code session files on disk; depends on their JSONL format",
+   "Inject into Claude prompt requires Accessibility permission on first use"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4593,
+  "output": 1352
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "vllm-project/vllm",
+ "repo": "vllm-project/vllm",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "vllm - A high-throughput and memory-efficient inference and serving engine for LLMs."
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "AI & LLMs",
+   "entry": "vLLM | High-throughput inference and serving engine for LLMs"
+  }
+ ],
+ "summary": {
+  "one_liner": "vLLM is a fast, memory-efficient library and server for running large language model inference and serving LLMs behind an API.",
+  "what_it_does": "The README describes vLLM as a library for LLM inference and serving, originally developed at UC Berkeley's Sky Computing Lab. It uses PagedAttention to manage attention key-value memory, with continuous batching, chunked prefill, and prefix caching. It supports many quantization formats (e.g., FP8, INT4, GPTQ/AWQ, GGUF) and speculative decoding methods (n-gram, EAGLE, and others). Serving features include an OpenAI-compatible API server, streaming outputs, structured output generation via xgrammar or guidance, tool calling, and multi-LoRA support. It supports distributed inference through tensor, pipeline, data, expert, and context parallelism, and it runs on NVIDIA, AMD, and Intel GPUs as well as several CPU and accelerator plugins. The README states it supports 200+ Hugging Face model architectures, including decoder-only, MoE, multimodal, and embedding models.",
+  "use_cases": [
+   "Serving open-weight LLMs behind an OpenAI-compatible API",
+   "High-throughput batch inference on GPUs",
+   "Running quantized large models on limited GPU memory",
+   "Hosting multimodal or embedding models for retrieval",
+   "Serving multiple LoRA fine-tunes from one base model",
+   "Distributed inference of large mixture-of-experts models"
+  ],
+  "how_to_run": [
+   "uv pip install vllm",
+   "vllm download-kernels"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "CUDA/HIP graphs",
+   "torch.compile",
+   "FlashAttention",
+   "FlashInfer",
+   "Triton",
+   "CUTLASS",
+   "xgrammar",
+   "guidance"
+  ],
+  "notable": [
+   "PagedAttention for efficient KV-cache memory management",
+   "OpenAI-compatible API server plus Anthropic Messages API and gRPC support",
+   "Broad hardware support: NVIDIA, AMD, Intel GPUs, x86/ARM/PowerPC CPUs, and plugins for TPUs, Gaudi, Ascend, Apple Silicon and others",
+   "Supports 200+ Hugging Face model architectures",
+   "Disaggregated prefill, decode, and encode"
+  ],
+  "caveats": [
+   "Hardware-specific features depend on the accelerator; some backends are provided as separate plugins",
+   "Building from source is needed for development use; the README points to documentation for details",
+   "README does not state a license"
+  ],
+  "license": "unknown",
+  "category": "llm inference serving",
+  "keywords": [
+   "llm inference",
+   "llm serving",
+   "vllm",
+   "pagedattention",
+   "high-throughput inference",
+   "openai-compatible api",
+   "self-hosted llm",
+   "run llm locally",
+   "serve hugging face models",
+   "quantized model inference",
+   "gptq",
+   "awq",
+   "gguf",
+   "speculative decoding",
+   "continuous batching",
+   "prefix caching",
+   "multi-lora serving",
+   "tensor parallelism",
+   "structured output llm",
+   "tool calling llm",
+   "llm api server",
+   "gpu inference engine",
+   "model serving engine",
+   "text generation server",
+   "tgi alternative",
+   "inference engine python",
+   "host open-weight models",
+   "deploy llama model",
+   "serve qwen model",
+   "llm throughput optimization"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3109,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "matze/wastebin",
+ "repo": "matze/wastebin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "Wastebin - Lightweight, minimal and fast pastebin with an SQLite backend. (Demo) MIT Rust/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Wastebin is a minimal, self-hostable pastebin written in Rust with an axum/SQLite backend and a design copied from bin.",
+  "category": "self-hosted pastebin",
+  "keywords": [
+   "pastebin",
+   "paste service",
+   "self-hosted pastebin",
+   "rust pastebin",
+   "axum",
+   "sqlite",
+   "sqlite3 backend",
+   "syntax highlighting",
+   "syntect",
+   "markdown rendering",
+   "zstd compression",
+   "chacha20poly1305",
+   "argon2",
+   "encrypted paste",
+   "password protected paste",
+   "burn after reading",
+   "paste expiration",
+   "qr code",
+   "color themes",
+   "dark mode",
+   "docker pastebin",
+   "docker compose",
+   "share code snippets",
+   "share logs from command line",
+   "paste from stdin",
+   "paste from clipboard",
+   "single binary server",
+   "text sharing"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "share code snippets with others via a link",
+   "paste command output or logs from the terminal",
+   "share encrypted or password-protected text",
+   "host a private pastebin on a home server or VPS",
+   "render Markdown notes as HTML pastes",
+   "send temporary text that expires or self-destructs after reading"
+  ],
+  "how_to_run": [
+   "docker run -e WASTEBIN_DATABASE_PATH=/data/state.db -v /path/for/storage:/data -u $(id -u):$(id -g) quxfoo/wastebin:latest",
+   "cargo run --release",
+   "nix run 'github:matze/wastebin#wastebin'"
+  ],
+  "stack": [
+   "Rust",
+   "axum",
+   "SQLite",
+   "syntect",
+   "zstd",
+   "ChaCha20Poly1305",
+   "argon2",
+   "ammonia",
+   "Docker",
+   "Nix"
+  ],
+  "notable": [
+   "Single binary with low memory footprint and SQLite storage",
+   "Syntax highlighting for more than 170 languages via syntect",
+   "Markdown pastes rendered to HTML with GitHub-flavored tables, task lists and admonitions",
+   "Client-side style paste deletion via owner token and signed cookie",
+   "Bundled wastebin-ctl tool to list, purge or delete entries"
+  ],
+  "caveats": [
+   "README advises against exposing it directly to the internet without rate limiting or a reverse proxy, since it lacks authentication and DoS mitigations",
+   "No user authentication or admin functionality",
+   "Documentation covers an unreleased version; released versions are listed separately",
+   "Default database path is in-memory (:memory:) unless WASTEBIN_DATABASE_PATH is set"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5527,
+  "output": 994
+ },
+ "generated": "2026-10-29"
+}

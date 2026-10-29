@@ -1,0 +1,99 @@
+{
+ "id": "degordonstech/pwa2play",
+ "repo": "degordonstech/pwa2play",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Infrastructure & DevOps",
+   "entry": "pwa2play by degordonstech - Packages a PWA into a signed Play Store Android bundle with Bubblewrap and checks target API level, signing key reuse, assetlinks fingerprints and version codes before upload."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin that guides packaging a PWA as a Trusted Web Activity Android app and checking the key rules before a Google Play upload.",
+  "what_it_does": "The plugin wraps Google's Bubblewrap tool to build a Trusted Web Activity, a small Android app that opens a website full screen without browser chrome once the site proves ownership via assetlinks. It provides three slash commands: /pwa2play:package walks through a first release (init, build, assetlinks file, first upload), /pwa2play:update rebuilds an existing app for a new release while keeping the signing key and version code correct, and /pwa2play:check reads the package id, version code, target SDK and min SDK from a built .apk. A skill is also pulled in automatically when the user discusses publishing a PWA to Android. The README lists rules the plugin encodes: reuse one signing key for every update, put the app signing SHA-256 from Play Console into assetlinks.json, raise the version code each upload, target the current API level, and use a test track (personal accounts need a 12-tester, 14-day closed test before production).",
+  "use_cases": [
+   "Publishing a PWA to the Google Play Store",
+   "Packaging a website as an Android Trusted Web Activity",
+   "Fixing browser address bar showing in a TWA app",
+   "Preparing an app update without signing key rejection",
+   "Checking an APK's version code and target SDK before upload",
+   "Setting up assetlinks.json for Digital Asset Links"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add degordonstech/pwa2play",
+   "/plugin install pwa2play@degordons",
+   "Run npm install once inside the plugin folder (needed for the check command)",
+   "Use /pwa2play:package for a first release, /pwa2play:update for later releases, /pwa2play:check to inspect a built .apk"
+  ],
+  "stack": [
+   "Claude Code plugin",
+   "Bubblewrap",
+   "Node.js",
+   "JDK",
+   "Node npm package for the check script",
+   "Trusted Web Activity",
+   "Android APK",
+   "assetlinks.json"
+  ],
+  "notable": [
+   "Encodes the common Play Store rejection traps (signing key reuse, assetlinks fingerprint, version codes, target API level) as guided steps",
+   "Three slash commands plus an automatically invoked skill",
+   "check command reads package id, version code and SDK levels directly from a built APK",
+   "Explains the 12-tester, 14-day closed test requirement for personal accounts"
+  ],
+  "caveats": [
+   "Requires a live PWA served over HTTPS with a valid web manifest and a Google Play developer account",
+   "The check command needs an npm install step inside the plugin folder",
+   "Target API level requirement changes roughly each August, so the guidance needs ongoing updating"
+  ],
+  "license": "MIT",
+  "category": "android play store publishing",
+  "keywords": [
+   "pwa",
+   "progressive web app",
+   "play store",
+   "google play",
+   "android app",
+   "trusted web activity",
+   "twa",
+   "bubblewrap",
+   "claude code plugin",
+   "claude code",
+   "signing key",
+   "keystore",
+   "assetlinks",
+   "assetlinks.json",
+   "digital asset links",
+   "version code",
+   "target sdk",
+   "target api level",
+   "apk",
+   "aab",
+   "android bundle",
+   "wrap website as app",
+   "website to android app",
+   "publish web app to android",
+   "upload to play console",
+   "closed testing",
+   "app update",
+   "web app android",
+   "browser bar fix",
+   "package apk",
+   "apk inspection",
+   "release checklist",
+   "nodejs",
+   "jdk",
+   "pwa2play"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2306,
+  "output": 1240
+ },
+ "generated": "2026-10-29"
+}

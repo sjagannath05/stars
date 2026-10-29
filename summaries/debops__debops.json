@@ -1,0 +1,97 @@
+{
+ "id": "debops/debops",
+ "repo": "debops/debops",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Email - Complete Solutions",
+   "entry": "DebOps - Your Debian-based data center in a box. A set of general-purpose Ansible roles that can be used to manage Debian or Ubuntu hosts. (Source Code) GPL-3.0 Ansible/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "DebOps is a set of general-purpose Ansible roles and playbooks for managing Debian or Ubuntu hosts, described by its authors as a \"Debian-based data center in a box.\"",
+  "what_it_does": "The project provides Ansible roles that can be used to manage Debian or Ubuntu hosts, plus a default set of playbooks that apply those roles using Ansible inventory groups. Roles are built for heavy customization through inventory variables, so role and playbook code can be shared across environments with different configuration. The README says it supports several SQL and NoSQL databases, web servers, programming languages and specialized applications for data center or cluster use. It can also deploy virtualization environments using KVM/libvirt, Docker or LXC. Services can run on one host or be spread across several. Installation is via a Python package (pipx) or an Ansible Galaxy collection.",
+  "use_cases": [
+   "Configure and manage Debian or Ubuntu servers with Ansible",
+   "Deploy databases and web servers across a cluster of hosts",
+   "Set up KVM, Docker or LXC virtualization hosts",
+   "Maintain multiple server environments from shared roles and per-environment inventory",
+   "Bootstrap an Ansible controller for Debian-based infrastructure"
+  ],
+  "how_to_run": [
+   "docker run -it --rm debops/debops",
+   "cd src/controller ; debops run common --diff",
+   "pipx install --user debops[ansible]",
+   "ansible-galaxy collection install debops.debops",
+   "debops project init ~/src/projects/my-environment",
+   "debops run site"
+  ],
+  "stack": [
+   "Ansible",
+   "Python",
+   "Debian",
+   "Ubuntu",
+   "Docker",
+   "Vagrant",
+   "KVM/libvirt",
+   "LXC"
+  ],
+  "notable": [
+   "Roles and playbooks are customized through Ansible inventory, so one codebase can serve many environments",
+   "Ships as both a Python package (debops[ansible]) and an Ansible Galaxy collection (debops.debops)",
+   "Includes a 'debops project init' command to scaffold separate project directories",
+   "Quick start available as a Docker container or a Vagrant VM acting as an Ansible controller",
+   "Disables SSH password authentication by default and configures a firewall, per the README"
+  ],
+  "caveats": [
+   "Firewall created by DebOps can block access during initial deployment, so out-of-band console access is advised",
+   "Recommends SSH key authentication since password authentication is disabled by default",
+   "Targets Debian and Ubuntu hosts only"
+  ],
+  "license": "GPL-3.0-or-later",
+  "category": "infrastructure automation (ansible)",
+  "keywords": [
+   "ansible",
+   "ansible roles",
+   "ansible collection",
+   "debian",
+   "ubuntu",
+   "server configuration",
+   "configuration management",
+   "infrastructure as code",
+   "data center automation",
+   "server provisioning",
+   "kvm",
+   "libvirt",
+   "docker",
+   "lxc",
+   "virtualization",
+   "container management",
+   "debops",
+   "ansible galaxy",
+   "inventory management",
+   "multi-host deployment",
+   "server hardening",
+   "sql databases",
+   "nosql databases",
+   "web server setup",
+   "manage debian servers",
+   "automate server setup",
+   "set up many servers the same way",
+   "configure ubuntu machines",
+   "self-hosted infrastructure",
+   "python ansible tool",
+   "gpl license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3685,
+  "output": 1228
+ },
+ "generated": "2026-10-29"
+}

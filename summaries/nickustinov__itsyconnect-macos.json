@@ -1,0 +1,100 @@
+{
+ "id": "nickustinov/itsyconnect-macos",
+ "repo": "nickustinov/itsyconnect-macos",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "Itsyconnect - App Store Connect client for metadata, TestFlight, reviews, analytics, and localization. [![Open-Source Software][OSS Icon]](https://github.com/nickustinov/itsyconnect-macos)"
+  }
+ ],
+ "summary": {
+  "one_liner": "A free, MIT-licensed desktop app and self-hosted web dashboard that offers an alternative front end to Apple's App Store Connect for managing app metadata, TestFlight, analytics, and customer reviews.",
+  "what_it_does": "Itsyconnect lets you edit App Store listing text (descriptions, keywords, what's new, promotional text, names, subtitles) across all locales at once, and choose build, release method, and phased rollout. It manages TestFlight builds, beta groups, and testers, with per-build installs, sessions, crashes, and tester feedback. It shows analytics such as impressions, downloads, proceeds, and conversion funnel, and tracks keyword character budgets and duplicates per locale. It also handles customer review filtering, translation, and reply drafting, screenshot upload and reordering, and App Store nominations. The README describes AI features that use your own API key from several providers, and an optional diff mode that stages changes locally before pushing them to App Store Connect. Data is stored in a local SQLite file, with credentials encrypted using AES-256-GCM and the master key kept in the macOS Keychain.",
+  "use_cases": [
+   "edit App Store listing text in every locale at once",
+   "manage TestFlight builds, groups, and testers",
+   "review app analytics and crash reports",
+   "reply to customer App Store reviews",
+   "translate app metadata and screenshots with AI",
+   "run a self-hosted App Store Connect dashboard in Docker"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> (the README's clone URL is blank; use https://github.com/nickustinov/itsyconnect-macos)",
+   "cd itsyconnect-macos",
+   "npm install",
+   "npm run electron:dev",
+   "docker run -d -p 3000:3000 -v itsyconnect-data:/app/data ghcr.io/nickustinov/itsyconnect:latest"
+  ],
+  "stack": [
+   "Electron 40",
+   "Next.js 16",
+   "React 19",
+   "TypeScript",
+   "Tailwind v4",
+   "shadcn/ui",
+   "SQLite via better-sqlite3",
+   "Drizzle ORM",
+   "Recharts",
+   "dnd-kit",
+   "Zod",
+   "Vercel AI SDK"
+  ],
+  "notable": [
+   "Local-first: one SQLite database, no cloud, accounts, or telemetry",
+   "Diff mode stages metadata changes and pushes them to App Store Connect in one batch",
+   "MCP server lets AI coding tools such as Claude Code, Codex, Cursor, and OpenCode manage listings",
+   "Screenshot translation via Gemini 3 Pro Image while preserving layout",
+   "Self-hosted Docker option with reverse proxy guidance for Caddy, Nginx, and Tailscale"
+  ],
+  "caveats": [
+   "The Docker container has no built-in authentication and needs a reverse proxy if exposed beyond the local machine",
+   "Desktop builds are distributed as a direct DMG download, and the README requires macOS 11 or later",
+   "AI features require your own API key from a supported provider"
+  ],
+  "license": "MIT",
+  "category": "app store tooling",
+  "keywords": [
+   "app store connect",
+   "app store connect client",
+   "testflight",
+   "testflight manager",
+   "app store metadata editor",
+   "app listing localization",
+   "ios app analytics",
+   "customer review replies",
+   "keyword optimisation",
+   "aso tool",
+   "app store screenshots",
+   "electron app",
+   "next.js dashboard",
+   "self-hosted dashboard",
+   "docker app",
+   "sqlite",
+   "drizzle orm",
+   "aes-256-gcm",
+   "macos keychain",
+   "mcp server",
+   "model context protocol",
+   "ai translation",
+   "bulk translate locales",
+   "diff mode",
+   "apple developer tools",
+   "manage app store listings",
+   "reply to app reviews",
+   "track testflight crashes",
+   "mac desktop app store tool",
+   "free alternative to app store connect"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4632,
+  "output": 1411
+ },
+ "generated": "2026-10-29"
+}

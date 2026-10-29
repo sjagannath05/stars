@@ -1,0 +1,95 @@
+{
+ "id": "turoyt/snowshare",
+ "repo": "TuroYT/snowshare",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "snowshare - File and link sharing platform with URL shortening, code snippet sharing, and file uploads, featuring customizable expiration, privacy settings, and QR codes. (Demo) CC0-1.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "SnowShare is a self-hosted web app for sharing files, short links and text/code pastes, with optional expiration, view limits, passwords and QR codes.",
+  "what_it_does": "Handles three kinds of shares: file uploads (resumable via tus, multiple files per share, browser previews for common formats), a URL shortener with optional custom slugs, and text or code pastes with syntax highlighting. Any share can have an expiration date, a maximum view count, a password and a QR code. The admin side provides user accounts (email/password or OAuth), optional email verification and CAPTCHA, separate quotas for anonymous and logged-in users, custom branding, and local disk or S3-compatible storage. A REST API under /api/v1 uses API keys, with OpenAPI docs served per instance. The interface is translated into English, French, Spanish, German, Dutch and Polish.",
+  "use_cases": [
+   "self-hosted file sharing",
+   "share large files with resumable uploads",
+   "url shortener with custom slugs",
+   "share code snippets or text pastes",
+   "temporary links with expiry and password"
+  ],
+  "how_to_run": [
+   "Create a folder with docker-compose.yml defining a postgres:16-alpine db service and the turodev/snowshare:latest app service",
+   "Generate a .env file with POSTGRES_PASSWORD, NEXTAUTH_URL and NEXTAUTH_SECRET (openssl rand -base64 32)",
+   "Run docker compose up -d",
+   "Development: git clone the repo, npm install, cp .env.example .env, npx prisma migrate dev, npm run dev"
+  ],
+  "stack": [
+   "Node.js 24+",
+   "Next.js 16",
+   "React 19",
+   "TypeScript",
+   "Prisma",
+   "PostgreSQL",
+   "NextAuth.js",
+   "TailwindCSS 4",
+   "tus",
+   "Docker"
+  ],
+  "notable": [
+   "Resumable uploads via tus, so interrupted transfers can continue",
+   "Admin panel changes quotas, OAuth, SMTP, CAPTCHA, branding and S3 without restart",
+   "Works with S3-compatible storage such as MinIO, Garage or R2",
+   "Reverse proxy guidance covering X-Forwarded-For and TRUSTED_PROXY_COUNT",
+   "Docker image built for amd64 and arm64"
+  ],
+  "caveats": [
+   "Requires PostgreSQL and a Docker or Node.js 24+ setup; four variables must be set before it runs",
+   "Large uploads can fail behind a reverse proxy unless the request body size limit is raised (e.g. client_max_body_size 0; on nginx)",
+   "Telemetry is on by default, sending anonymous stats to Plausible unless TELEMETRY=false is set"
+  ],
+  "license": "CC0-1.0",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "self-hosted file sharing",
+   "file transfer",
+   "link sharing",
+   "url shortener",
+   "url shortening",
+   "pastebin",
+   "code snippet sharing",
+   "text paste",
+   "paste site",
+   "resumable upload",
+   "tus protocol",
+   "large file upload",
+   "qr code generator",
+   "expiring links",
+   "password protected share",
+   "view limit",
+   "nextjs",
+   "prisma",
+   "postgresql",
+   "s3 storage",
+   "minio",
+   "docker compose",
+   "rest api",
+   "api keys",
+   "share files with my team",
+   "send big files to someone",
+   "temporary file link",
+   "host my own file sharing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3966,
+  "output": 1243
+ },
+ "generated": "2026-10-29"
+}

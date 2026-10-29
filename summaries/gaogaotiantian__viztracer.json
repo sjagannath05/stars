@@ -1,0 +1,90 @@
+{
+ "id": "gaogaotiantian/viztracer",
+ "repo": "gaogaotiantian/viztracer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "viztracer - A low-overhead tool that traces and visualizes Python code execution."
+  }
+ ],
+ "summary": {
+  "one_liner": "VizTracer is a low-overhead Python tracer and profiler that records function execution and displays it as an interactive timeline in a Perfetto-based viewer.",
+  "what_it_does": "VizTracer records entry and exit of Python function calls while a script runs, and saves the trace as a JSON result file. The vizviewer command opens these traces in a browser-based timeline UI powered by Perfetto, with keyboard navigation (\"AWSD\" to zoom and move). It can be run from the command line on a script, a module, or a console script such as flask, or started and stopped inline in code with a context manager. It also offers Jupyter cell magics and PyTorch profiling via torch.profiler with log_torch. The README lists trace filters (min duration, stack depth, include/exclude files, sparse logging), extra logs (regex-matched variables, function arguments and return values, GC operations, audit events, raised exceptions), and custom events (instant, variable, duration). It states support for threading, multiprocessing, subprocess, asyncio, and remote attach to running processes.",
+  "use_cases": [
+   "trace which functions run and in what order",
+   "find performance bottlenecks in a Python script",
+   "visualize multithreaded or multiprocess Python execution",
+   "profile asyncio or PyTorch code on a timeline",
+   "debug a Flask or module run without changing source code",
+   "inspect a Jupyter cell's execution flow"
+  ],
+  "how_to_run": [
+   "pip install viztracer",
+   "viztracer my_script.py arg1 arg2",
+   "vizviewer result.json",
+   "viztracer --open my_script.py arg1 arg2",
+   "viztracer -m your_module"
+  ],
+  "stack": [
+   "Python",
+   "Perfetto (front-end UI)",
+   "torch.profiler (optional, for PyTorch logging)",
+   "orjson (optional, faster JSON)"
+  ],
+  "notable": [
+   "Low overhead; README says it is observably faster than cProfile and uses sys.monitoring on Python 3.12+",
+   "No source code changes needed for most features",
+   "Command-line wrapper runs scripts, modules, and console scripts like flask run",
+   "Remote attach to arbitrary running Python processes",
+   "Jupyter cell magic and VS Code extension mentioned"
+  ],
+  "caveats": [
+   "Function-call-heavy code can see substantial overhead (README cites 3x-4x on a recursive fib on Python 3.11+)",
+   "Multi-thread and multi-process support beyond the built-in cases needs extra setup (enable_thread_tracing or docs)",
+   "Very large traces may need the external trace processor option"
+  ],
+  "license": "Apache 2.0",
+  "category": "python debugging profiler",
+  "keywords": [
+   "python tracer",
+   "function tracing",
+   "execution tracing",
+   "python profiler",
+   "timeline visualization",
+   "trace visualization",
+   "perfetto",
+   "vizviewer",
+   "cprofile alternative",
+   "profiling tool",
+   "low overhead profiler",
+   "debug python script",
+   "find slow functions",
+   "call graph timeline",
+   "flamegraph",
+   "asyncio tracing",
+   "multiprocessing tracing",
+   "threading debug",
+   "pytorch profiling",
+   "jupyter profiling",
+   "jupyter cell magic",
+   "remote attach python process",
+   "trace flask app",
+   "see order of function calls",
+   "why is my python code slow",
+   "bottleneck finder",
+   "json trace report",
+   "apache license python tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3910,
+  "output": 1251
+ },
+ "generated": "2026-10-29"
+}

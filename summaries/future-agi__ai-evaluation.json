@@ -1,0 +1,96 @@
+{
+ "id": "future-agi/ai-evaluation",
+ "repo": "future-agi/ai-evaluation",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "ai-evaluation - Open-source LLM evaluation framework with 50+ metrics, LLM-as-Judge, guardrail scanners (jailbreak, PII, injection), and AutoEval pipelines with CI/CD support."
+  }
+ ],
+ "summary": {
+  "one_liner": "Agent Learning Kit is a local-first Python SDK and CLI (with a TypeScript evaluation package) for simulating, evaluating, red-teaming, and optimizing AI agents, from the Future AGI project that also hosts the ai-evaluation code.",
+  "what_it_does": "The README describes three engines: simulate (local worlds, tasks, framework adapters, replays, regression artifacts), evals (evaluating prompts, task outputs, runtime contracts, traces, memory, retrieval, safety and robustness evidence), and optimize (searching over prompts, agents, workflows, memory layers and red-team scenarios). Red-teaming is run on top of the simulate and evals engines through a campaign command. The CLI (agent-learn) provides eval, run, optimize, redteam, doctor, release-check and release-proof commands that write JSON artifacts. A harness under src/fi/alk/harness reads an agent's source, builds a world for its tools, and writes test scenarios, driven from a terminal or a local web chat on port 8777. The README states that everything in the quickstart runs offline without an API key, with optional Future AGI platform mode.",
+  "use_cases": [
+   "test an AI agent offline before release",
+   "evaluate LLM prompt and response quality",
+   "red-team an agent with adversarial scenarios",
+   "optimize prompts or agent workflows and compare candidates",
+   "replay agent runs as regression tests in CI",
+   "check retrieval, memory, and tool-use behavior of agents"
+  ],
+  "how_to_run": [
+   "pip install agent-learning-kit",
+   "agent-learn doctor",
+   "agent-learn eval examples/eval_suite.json --output artifacts/eval.json",
+   "AGENT_LEARNING_RUN_EXAMPLE_KEY=offline-demo-key agent-learn run examples/run_manifest.json --no-eval --output artifacts/run.json",
+   "agent-learn release-check --project-root ."
+  ],
+  "stack": [
+   "Python",
+   "TypeScript",
+   "pnpm",
+   "uv",
+   "ruff",
+   "pytest",
+   "LiveKit (optional extra)",
+   "NLI (optional extra)"
+  ],
+  "notable": [
+   "Harness that points at an agent's source and generates proved test scenarios, usable from a terminal or a local web chat",
+   "Single artifact model: simulate, evaluate, optimize, and promote results into replayable artifacts",
+   "Offline quickstart with bundled example manifests and no API key required",
+   "Framework adapter probes for LangChain, LangGraph, LlamaIndex, AutoGen, CrewAI, MCP, A2A and others",
+   "Release-proof command that emits command evidence for the full local test and build stack"
+  ],
+  "caveats": [
+   "The README says the TypeScript npm package publishes only at the v1 launch; today it must be built from source",
+   "Some framework coverage is described as probe-promoted or runtime-simulated rather than full support",
+   "Platform-backed evaluation requires a Future AGI API key; the default mode is local-only"
+  ],
+  "license": "Apache-2.0",
+  "category": "AI agent testing toolkit",
+  "keywords": [
+   "agent testing",
+   "llm evaluation",
+   "ai evaluation",
+   "red teaming",
+   "agent simulation",
+   "prompt optimization",
+   "agent optimization",
+   "llm-as-judge",
+   "regression testing agents",
+   "offline agent testing",
+   "local-first sdk",
+   "agent-learn cli",
+   "fi.alk",
+   "ai-evaluation",
+   "future agi",
+   "multi-agent testing",
+   "tool use evaluation",
+   "rag evaluation",
+   "memory evaluation",
+   "guardrail testing",
+   "langchain testing",
+   "langgraph evaluation",
+   "crewai testing",
+   "mcp agent testing",
+   "ci gates for agents",
+   "replay agent runs",
+   "test ai agent before release",
+   "evaluate chatbot responses",
+   "adversarial prompt testing",
+   "agent workflow optimizer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5009,
+  "output": 1427
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "betterleaks/betterleaks",
+ "repo": "betterleaks/betterleaks",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Supply Chain Security",
+   "entry": "betterleaks - Finds leaked secrets in git history, directories, and files, from the original author of gitleaks."
+  }
+ ],
+ "summary": {
+  "one_liner": "Betterleaks is a configurable secrets scanner for git history, directories, files, stdin, URLs, and hosted sources, from the team behind Gitleaks.",
+  "what_it_does": "Scans git repositories, filesystems, stdin, web responses, GitHub and GitLab orgs/users/projects, Hugging Face repos, and S3 buckets for leaked secrets. Detection rules are written in TOML with regex, keyword prefilters, and Expr-based filters that can inspect attributes such as git author, commit message, and file path. Optional validation (-v) makes asynchronous HTTP requests defined in rules to check whether a credential is active, and optional analysis (-a) resolves identity, scopes, and permissions. Rules can also define an explicit revocation Expr that runs only via a separate revoke command, never during scans. The README also describes BPE-based filtering of natural-language false positives, container image scanning, and a Go SDK for embedding the scanner.",
+  "use_cases": [
+   "scan git history for leaked API keys and tokens",
+   "find secrets in a local directory or files",
+   "check whether detected credentials are still active",
+   "scan GitHub or GitLab orgs for committed secrets",
+   "audit Hugging Face models or datasets for credentials",
+   "scan container images for secrets in layers",
+   "add secret scanning to CI pipelines"
+  ],
+  "how_to_run": [
+   "brew install betterleaks",
+   "docker pull ghcr.io/betterleaks/betterleaks:v2",
+   "go install github.com/betterleaks/betterleaks/v2@latest",
+   "git clone <repo-url> && cd betterleaks && make build",
+   "betterleaks git /path/to/repo",
+   "betterleaks fs /path/to/target -v"
+  ],
+  "stack": [
+   "Go",
+   "Expr",
+   "TOML",
+   "re2",
+   "ahocorasick"
+  ],
+  "notable": [
+   "Optional credential validation and identity/permission analysis defined inside rules using Expr and async HTTP",
+   "Expr-based prefilters and filters that use git author, commit message, and file path context",
+   "BPE tokenization to filter natural-language false positives",
+   "Explicit revocation command separate from scans",
+   "Scans many sources including GitHub, GitLab, Hugging Face, S3, stdin, and container images"
+  ],
+  "caveats": [
+   "The main branch is v2 development; until the first stable v2 release, package managers and the Docker latest tag may still provide v1 (migration guide covers release candidates)",
+   "Validation and analysis send requests to credential providers, so they are off by default and need -v or -a to enable"
+  ],
+  "license": "unknown",
+  "category": "secrets scanning",
+  "keywords": [
+   "secrets scanner",
+   "secret detection",
+   "leaked credentials",
+   "git history scan",
+   "api key detection",
+   "token scanner",
+   "gitleaks alternative",
+   "gitleaks",
+   "credential leak",
+   "find passwords in repo",
+   "scan repo for secrets",
+   "secret validation",
+   "supply chain security",
+   "pre-commit secret check",
+   "ci secret scanning",
+   "github secret scanning",
+   "gitlab secret scanning",
+   "hugging face secrets",
+   "s3 bucket scan",
+   "container image secrets",
+   "expr rules",
+   "toml config secrets",
+   "go secrets tool",
+   "credential revocation",
+   "sast secrets",
+   "detect api keys in files",
+   "secret leak prevention"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5921,
+  "output": 1239
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "cathrynlavery/diagram-design",
+ "repo": "cathrynlavery/diagram-design",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "Diagram Design by Cathryn Lavery - Another welcome contribution to the domain of making Claude Code output look stylish, this collection of skills produces a variety of editorial diagrams in the form of self-contained HTML + SVG. Although I never thought I'd hear these words together, according to the author: \"no Mermaid-slop.\""
+  }
+ ],
+ "summary": {
+  "one_liner": "An agent skill that has the coding agent draw editorial-style diagrams (45 types) as single self-contained HTML + SVG files, styled to match your brand.",
+  "category": "agent skill diagramming",
+  "keywords": [
+   "diagram design",
+   "svg diagrams",
+   "html diagrams",
+   "claude code skill",
+   "agent skill",
+   "architecture diagram",
+   "flowchart",
+   "sequence diagram",
+   "er diagram",
+   "gantt chart",
+   "quadrant chart",
+   "sankey diagram",
+   "uml class diagram",
+   "mermaid alternative",
+   "draw.io alternative",
+   "excalidraw alternative",
+   "brand style guide",
+   "design tokens",
+   "editorial diagrams",
+   "self-contained html",
+   "inline svg",
+   "export svg png",
+   "redraw mermaid",
+   "import drawio",
+   "diagram for blog post",
+   "make diagram from text prompt",
+   "accessible svg diagram",
+   "offline diagram"
+  ],
+  "what_it_does": "The skill tells an agent (Claude Code, Cursor, Codex, Copilot and others) how to produce a diagram as one .html file with inline SVG that opens in a browser without a build step. The README lists 45 diagram types, including architecture, flowchart, sequence, state, ER, swimlane, quadrant, Gantt, Sankey, UML class, heatmap and service blueprint, each with minimal light, minimal dark and full-editorial variants. An onboarding flow can fetch a website's homepage, extract palette and font stack into semantic tokens (paper, ink, accent, fonts), run WCAG AA contrast checks, and save named client profiles. Import commands redraw existing draw.io, Mermaid and Excalidraw files at chosen size and detail levels, with a fidelity ledger of what was merged or dropped. Export commands rasterize to PNG via Playwright or write standalone SVG. Validation scripts (self_check.py and CI lint gates) are included.",
+  "use_cases": [
+   "Draw an architecture diagram for a blog post",
+   "Make a quadrant or Gantt chart for a slide deck",
+   "Redraw a Mermaid or draw.io diagram in a consistent editorial style",
+   "Apply my website's colors and fonts to every diagram",
+   "Export a diagram as SVG for Figma or PNG for slides",
+   "Produce a sequence diagram of an OAuth token refresh flow"
+  ],
+  "how_to_run": [
+   "npx skills add cathrynlavery/diagram-design",
+   "open skills/diagram-design/assets/index.html  # (from a clone) browse the gallery",
+   "cp skills/diagram-design/assets/template.html my-diagram.html  # start from a template",
+   "pip install playwright && playwright install chromium  # only needed for PNG export",
+   "/plugin marketplace add cathrynlavery/diagram-design  # Claude Code plugin route",
+   "/plugin install diagram-design@diagram-design"
+  ],
+  "stack": [
+   "Agent Skills format (SKILL.md)",
+   "HTML",
+   "inline SVG",
+   "CSS",
+   "Python (helper scripts)",
+   "Playwright (PNG rendering)",
+   "Chromium (lint-render CI check)",
+   "Google Fonts (Instrument Serif, Geist, Geist Mono) by default",
+   "Tabler Icons (MIT) and Simple Icons (CC0) for icon set"
+  ],
+  "notable": [
+   "Output is one offline-capable HTML file with no build step or JavaScript for static diagrams",
+   "Brand onboarding pulls palette and fonts from a website URL and writes semantic style tokens",
+   "Imports draw.io, Mermaid and Excalidraw sources and redraws them with a fidelity ledger of changes",
+   "Layout rules: every coordinate on a 4px grid, 1px hairlines, no shadows, one accent color",
+   "Works across many agent hosts via the skills CLI, plus Claude Code, Codex, Copilot, Factory Droid, Pi, Kiro and OpenCode installs"
+  ],
+  "caveats": [
+   "The README says output quality depends on the underlying model and the same prompt can lay out differently on each run",
+   "The result is not an editable source format; there is no text to diff in Git, so Mermaid is recommended for docs that change often",
+   "PNG export requires a separate Python Playwright and Chromium install",
+   "Default fonts load from Google Fonts (a network request); system-font mode is needed for fully offline files",
+   "Some installs (standalone skills CLI, Claude Cowork) need manual update steps or a private mirror of the repo"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 16232,
+  "output": 1636
+ },
+ "generated": "2026-10-29"
+}

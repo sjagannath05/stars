@@ -1,0 +1,97 @@
+{
+ "id": "gmr/claude-status",
+ "repo": "gmr/claude-status",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "Claude Status by Gavin M. Roy - A native macOS menu-bar app with desktop widgets showing the live state of every running Claude Code session — active, waiting-for-input, compacting, or idle — across many terminals and IDEs, with one-click focus to any session's exact window, tab, or pane. SwiftUI + AppKit + WidgetKit, driven by a bundled hook plugin with process-tree and JSONL-tail fallbacks."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu bar app that shows the live state of all your Claude Code sessions and lets you jump to any session's window with a click.",
+  "what_it_does": "Shows an aggregate status indicator in the menu bar for all Claude Code sessions, covering active, waiting for input, compacting context, and idle, with emoji or colored-dot styles. Clicking a session in the dropdown or a desktop widget focuses its window, tab, or pane in the host app. The README lists support for VS Code, Zed, Xcode, JetBrains IDEs, iTerm2, Terminal, Warp, Alacritty, Kitty, WezTerm, Ghostty, and tmux. It tracks time spent in each state and session concurrency through the day, and offers a /name-session command to label sessions. A bundled Claude Code plugin hook writes status files and posts Darwin notifications, with file watching and 5-second polling as backups.",
+  "use_cases": [
+   "monitor multiple Claude Code sessions at once",
+   "jump to the terminal or IDE window running a session",
+   "see whether Claude is waiting for my input",
+   "track daily Claude Code usage and concurrency",
+   "show session status on macOS desktop widgets",
+   "name and organize Claude Code sessions"
+  ],
+  "how_to_run": [
+   "Download the latest release from the Releases page.",
+   "Move Claude Status.app to /Applications and launch it.",
+   "On first launch, accept the prompt to install the Claude Code plugin hook (or install it later from Settings).",
+   "Build from source: git clone the repository, cd claude-status.",
+   "Run: xcodebuild -project \"Claude Status.xcodeproj\" -scheme \"Claude Status\" -configuration Release build",
+   "The built app is at build/Release/Claude Status.app."
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "WidgetKit",
+   "Xcode",
+   "Claude Code plugin hooks",
+   "Darwin notifications"
+  ],
+  "notable": [
+   "Focuses the exact window, tab, or pane of a session, including iTerm2 tab-specific AppleScript focusing and tmux pane selection",
+   "Native WidgetKit desktop widgets for session status, usage analytics, and concurrency",
+   "Three-layer change detection: Darwin notifications, file system watching, and a 5-second polling fallback",
+   "Runs as a menu bar app with no dock icon and can launch at login"
+  ],
+  "caveats": [
+   "Requires macOS 26.2 or later",
+   "Requires the Claude Code CLI to be installed",
+   "Building from source requires Xcode 26 or later"
+  ],
+  "license": "BSD 3-Clause License",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude code",
+   "claude code monitor",
+   "session monitor",
+   "menu bar app",
+   "macos menu bar",
+   "swiftui",
+   "appkit",
+   "widgetkit",
+   "desktop widgets",
+   "status indicator",
+   "tmux",
+   "iterm2",
+   "terminal focus",
+   "ide integration",
+   "vs code",
+   "jetbrains",
+   "claude hooks",
+   "plugin hook",
+   "usage analytics",
+   "concurrency tracking",
+   "session naming",
+   "monitor ai coding sessions",
+   "see which claude session needs input",
+   "switch between terminal windows",
+   "track claude code usage",
+   "darwin notifications",
+   "file system watching",
+   "bsd license",
+   "swift macos app",
+   "ghostty",
+   "warp terminal",
+   "kitty terminal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2723,
+  "output": 1261
+ },
+ "generated": "2026-10-29"
+}

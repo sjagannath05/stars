@@ -1,0 +1,98 @@
+{
+ "id": "myshell-ai/ailice",
+ "repo": "myshell-ai/AIlice",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "AIlice is an open-source, autonomous general-purpose AI agent that decomposes tasks across dynamically created sub-agents, meant to act as a local JARVIS-like assistant built on LLMs.",
+  "what_it_does": "The README describes AIlice as a multi-agent system built on an \"Interactive Agents Call Tree\" (IACT) architecture, where agents are created dynamically to break down tasks and can message their callers for more information. It provides a web dialogue interface launched via the `ailice` command, with optional voice dialogue (speech recognition and TTS). It supports commercial LLM APIs (OpenAI, Anthropic, Mistral, Groq, DeepSeek, OpenRouter) as well as local or self-hosted models through Hugging Face, LM Studio, and ollama via litellm. Extension modules run as separate processes and can be configured in config.json, and MCP servers can be wrapped with `ailice_mcp_wrapper`. Documented use cases include research, coding, system administration, literature review, and document generation. The README also says the project can run in Docker, with optional CUDA and GUI support.",
+  "use_cases": [
+   "Autonomous research on a specialized topic",
+   "Coding and script execution",
+   "System administration tasks on a Linux machine",
+   "Literature review and reading academic papers",
+   "Running local LLMs as a private personal assistant",
+   "Connecting MCP tool servers to an agent",
+   "Voice-driven assistant interaction"
+  ],
+  "how_to_run": [
+   "git clone <repo-url>",
+   "cd AIlice",
+   "pip install -e .",
+   "ailice --contextWindowRatio=0.2",
+   "docker build -t ailice . (sandbox option)",
+   "docker run -it -p 127.0.0.1:5000:5000 --name ailice ailice --expose=1 --contextWindowRatio=0.2"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "litellm",
+   "ollama",
+   "LM Studio",
+   "Hugging Face models",
+   "ChatTTS",
+   "MCP (Model Context Protocol)",
+   "llama.cpp",
+   "CadQuery (referenced in examples)"
+  ],
+  "notable": [
+   "Interactive Agents Call Tree architecture where sub-agents can pause and ask their caller for input",
+   "Interrupt button lets the user pause a running task and send guidance to the active agent",
+   "Per-agent model configuration via agentModelConfig, mixing local and commercial LLMs",
+   "Extension modules run as separate processes and the agent can build new ext-modules itself",
+   "MCP server support via ailice_mcp_wrapper"
+  ],
+  "caveats": [
+   "README says local LLM use needs large hardware; only 70B+ models are said to perform tasks well (e.g., two RTX 4090s)",
+   "Windows support is limited; the README recommends Docker or WSL, and says Windows command execution tools are not integrated",
+   "Google search module is rate-limited by default; heavy use requires a Google Custom Search API key",
+   "Sharing feature (--share) was temporarily removed for security reasons"
+  ],
+  "license": "unknown",
+  "category": "autonomous ai agent",
+  "keywords": [
+   "ai agent",
+   "autonomous agent",
+   "multi-agent system",
+   "general-purpose assistant",
+   "jarvis-like assistant",
+   "local llm assistant",
+   "open-source llm",
+   "interactive agents call tree",
+   "iact architecture",
+   "agent call tree",
+   "coding agent",
+   "research agent",
+   "literature review tool",
+   "voice assistant",
+   "mcp server",
+   "model context protocol",
+   "ollama",
+   "lm studio",
+   "litellm",
+   "openrouter",
+   "docker sandbox",
+   "run llm locally",
+   "self-hosted ai assistant",
+   "python agent framework",
+   "automate tasks with ai",
+   "ask ai to write code and run it",
+   "private personal ai assistant"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15099,
+  "output": 1388
+ },
+ "generated": "2026-10-29"
+}

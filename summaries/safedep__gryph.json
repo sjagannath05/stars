@@ -1,0 +1,95 @@
+{
+ "id": "safedep/gryph",
+ "repo": "safedep/gryph",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Gryph by SafeDep - Gryph is a security layer for AI coding agents. It hooks into Claude Code and enforces YAML policy rules that block, warn, or guide actions in real time, then logs every event to a local SQLite database for review and audit."
+  }
+ ],
+ "summary": {
+  "one_liner": "Gryph is a local security layer for AI coding agents that hooks into tools like Claude Code, enforces YAML policy rules (block, warn, guide, allow), and logs every agent action to a local SQLite database for audit.",
+  "what_it_does": "Gryph installs hooks into supported AI coding agents (Claude Code, Codex, Cursor, Gemini CLI, Windsurf, OpenCode, Devin CLI, and others) so that file reads, file writes, and shell commands send events to Gryph. It stores these events in a local SQLite database and provides commands to query, filter, diff, export, and view session history. Its YAML policy engine can block, warn, guide, or allow actions based on action type, file path, command pattern, tool name, agent, project, and CEL expressions over per-session counters. Sensitive files such as .env and *.pem are flagged automatically, and content is hashed or redacted rather than stored in full. The README also describes self-protection features (doctor checks, hook-change detection and repair) and a managed install mode for administrators.",
+  "use_cases": [
+   "Audit what an AI coding agent read, wrote, and ran during a session",
+   "Block destructive shell commands or risky file writes from an agent",
+   "Find commands an agent ran that left no trace in git",
+   "Flag agent access to secrets and credential files",
+   "Export agent activity to a SIEM or JSONL for review",
+   "Compare how different coding agents behave on the same task"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh",
+   "gryph install",
+   "gryph status",
+   "gryph logs",
+   "brew install safedep/tap/gryph  (alternative)",
+   "npm install -g @safedep/gryph  (alternative)"
+  ],
+  "stack": [
+   "Go",
+   "SQLite",
+   "YAML policy files",
+   "CEL expressions",
+   "JavaScript plugin (OpenCode)"
+  ],
+  "notable": [
+   "Local-only by default: SQLite storage with no cloud or telemetry unless export or SafeDep Cloud is enabled",
+   "YAML policy rules that block, warn, guide, or allow agent actions in real time",
+   "Hooks both pre-tool and post-tool events to capture the full action lifecycle",
+   "Single install command configures hooks for all detected agents",
+   "Managed install mode with a decision service and machine-key signing for multi-user hosts"
+  ],
+  "caveats": [
+   "Self-protection does not stop a determined same-user adversary or root, per the README",
+   "Codex hooks require enabling a codex_hooks feature flag manually",
+   "Devin CLI also loads Claude Code hooks by default, producing duplicate events unless disabled",
+   "Gemini and Windsurf managed hook entries are not lock-protected; missing hooks are detected rather than prevented"
+  ],
+  "license": "Apache 2.0",
+  "category": "AI agent security",
+  "keywords": [
+   "ai coding agent security",
+   "claude code hooks",
+   "agent audit log",
+   "sqlite audit trail",
+   "yaml policy rules",
+   "block agent commands",
+   "guardrails for ai agents",
+   "policy engine",
+   "cel expressions",
+   "audit trail for coding assistants",
+   "monitor claude code",
+   "track file reads and writes by agent",
+   "shell command logging",
+   "sensitive file detection",
+   "secret file protection",
+   "cursor hooks",
+   "gemini cli hooks",
+   "windsurf hooks",
+   "opencode plugin",
+   "codex hooks",
+   "siem export jsonl",
+   "go cli tool",
+   "local-first telemetry",
+   "yolo mode guardrails",
+   "session replay",
+   "llm agent governance",
+   "restrict ai agent actions",
+   "see what the agent did",
+   "agent action logging",
+   "homebrew safedep gryph"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6121,
+  "output": 1342
+ },
+ "generated": "2026-10-29"
+}

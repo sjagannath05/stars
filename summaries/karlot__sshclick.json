@@ -1,0 +1,104 @@
+{
+ "id": "karlot/sshclick",
+ "repo": "karlot/sshclick",
+ "kind": "star",
+ "description": "SSH Config terminal manager based on Python and Click framework with Rich and Textual UI",
+ "topics": [
+  "cli-app",
+  "python",
+  "ssh-config",
+  "ssh-tool"
+ ],
+ "language": "Python",
+ "stars": 193,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-04-20",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop",
+  "dev tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A terminal manager for SSH config files that lists, filters, edits and groups hosts with a Click CLI (sshc) and a Textual browser (ssht).",
+  "what_it_does": "SSHClick parses an existing SSH config file (default ~/.ssh/config) and provides the sshc command to list, show, create, rename, set and delete hosts and groups. Groups and host metadata are stored as special comment lines (#@group, #@desc, #@info, #@host) so they stay readable in the config file and are parsed back by the tool. Several output styles are available for host display (panels, card, simple, table, table2, json), and settings can be stored in the config file via sshc config set. The companion ssht command opens a Textual TUI over the same parsed config, with a tree of groups and hosts, detail panes, and buttons or keys for ssh, sftp, key copy, editing and deleting. Top-level Include files are merged into a read-only view. Commands that only read (show, list) do not modify the file.",
+  "use_cases": [
+   "Browse and search a large ~/.ssh/config",
+   "Organize SSH hosts into named groups",
+   "Open ssh or sftp sessions from a terminal browser",
+   "Add, rename or delete SSH host entries from the command line",
+   "Back up and share SSH config with descriptions and notes embedded as comments",
+   "Display host lists in table or JSON form"
+  ],
+  "how_to_run": [
+   "pip install sshclick",
+   "git clone <repo-url> && cd sshclick && pip install .",
+   "sshc --help",
+   "ssht --config ~/.ssh/config",
+   "eval \"$(_SSHC_COMPLETE=bash_source sshc)\"  (bash autocompletion)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Click",
+   "Rich",
+   "Textual"
+  ],
+  "notable": [
+   "Stores groups and metadata as comment lines inside the existing SSH config, with no separate storage layer",
+   "Two entry points: sshc CLI and ssht Textual TUI sharing one parsed config model",
+   "Read-only merging of top-level Include files",
+   "Output styles including JSON for scripting, and ANSI codes stripped when writing to a file",
+   "Shell autocompletion for bash and zsh"
+  ],
+  "caveats": [
+   "Write commands rewrite the SSH config in SSHClick's own style, so comments outside its format may be lost",
+   "When Include is present, all modification and write-back is disabled",
+   "Only tested on Linux (Debian, Ubuntu); README says it should work elsewhere, including Windows and WSL",
+   "The TUI connectivity view is limited to graph/tunnel diagnostics; delete is unavailable in read-only mode"
+  ],
+  "license": "MIT",
+  "category": "ssh config management",
+  "keywords": [
+   "ssh config",
+   "ssh config manager",
+   "ssh_config editor",
+   "ssh host manager",
+   "ssh terminal ui",
+   "textual tui",
+   "click cli",
+   "python cli",
+   "rich output",
+   "sshc",
+   "ssht",
+   "ssh groups",
+   "host grouping",
+   "proxyjump",
+   "ssh key copy",
+   "sftp browser",
+   "list ssh hosts",
+   "search ssh hosts",
+   "manage ssh hosts from terminal",
+   "ssh config backup",
+   "include directive",
+   "shell autocompletion",
+   "json host output",
+   "ssh config comments metadata",
+   "organize many ssh servers",
+   "~/.ssh/config tool",
+   "terminal ssh launcher",
+   "ssh bastion hosts",
+   "ssh config tidy formatting"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7835,
+  "output": 1287
+ },
+ "generated": "2026-10-29"
+}

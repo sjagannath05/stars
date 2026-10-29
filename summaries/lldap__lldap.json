@@ -1,0 +1,92 @@
+{
+ "id": "lldap/lldap",
+ "repo": "lldap/lldap",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "LLDAP | Lightweight LDAP server for user management"
+  }
+ ],
+ "summary": {
+  "one_liner": "lldap is a lightweight LDAP-based authentication server with a web UI for managing users and groups, aimed at self-hosted services that only support LDAP.",
+  "what_it_does": "lldap provides a simplified LDAP interface for authentication, intentionally not a full LDAP server. It includes a web frontend for creating users, setting passwords, managing groups, and letting users edit their own details or reset passwords by email (when SMTP is configured). Custom attributes can be managed through the web UI or a community CLI. A bootstrap.sh script can enforce a list of users, groups, and attributes from a file, and the server is scriptable through a GraphQL API. Data is stored in SQLite by default, with MySQL/MariaDB or PostgreSQL as alternatives. Installation options named include OCI images (docker/podman), Kubernetes, TrueNAS, distribution packages, and building from source.",
+  "use_cases": [
+   "central user management for self-hosted apps",
+   "LDAP authentication for Nextcloud or Airsonic",
+   "single source of truth for users feeding Authelia or KeyCloak",
+   "managing LDAP users and groups through a web UI",
+   "automating user and group setup from a file",
+   "managing users as code with a terraform provider"
+  ],
+  "how_to_run": [
+   "Install via OCI image (docker/podman), Kubernetes, TrueNAS, or a distribution package manager",
+   "Or build from source with cargo",
+   "Configure the default admin DN cn=admin,ou=people,dc=example,dc=com and password in the configuration",
+   "Point services at LLDAP's LDAP port using the documented DN layout (ou=people, ou=groups)",
+   "Optionally run bootstrap.sh with a file to enforce users, groups, and attributes"
+  ],
+  "stack": [
+   "Rust",
+   "cargo",
+   "GraphQL",
+   "SQLite",
+   "MySQL/MariaDB",
+   "PostgreSQL",
+   "Docker/podman OCI images"
+  ],
+  "notable": [
+   "Opinionated, simplified LDAP interface that avoids needing to understand slapd or full LDAP complexity",
+   "Web UI for user self-service, including password reset by email",
+   "Dedicated groups (lldap_strict_readonly, lldap_password_manager) for limiting service access",
+   "Scriptable through a GraphQL API and an infrastructure-as-code terraform provider",
+   "Supports multiple database backends"
+  ],
+  "caveats": [
+   "Not a full LDAP server; many LDAP browsing tools and features are unsupported",
+   "Services that require password hashes for local validation are incompatible, including Synology",
+   "Windows/Samba integration is described as work in progress"
+  ],
+  "license": "unknown",
+  "category": "self-hosted ldap authentication",
+  "keywords": [
+   "ldap server",
+   "lightweight ldap",
+   "lldap",
+   "user management",
+   "authentication server",
+   "self-hosted sso",
+   "web ui user admin",
+   "ldap for nextcloud",
+   "ldap for authelia",
+   "ldap for keycloak",
+   "openldap alternative",
+   "single sign on backend",
+   "password reset by email",
+   "user and group management",
+   "graphql api",
+   "terraform provider users",
+   "sqlite ldap",
+   "postgresql ldap",
+   "mariadb ldap",
+   "docker ldap server",
+   "kubernetes ldap",
+   "share logins with my apps",
+   "central login for home servers",
+   "manage users without slapd",
+   "pam nslcd linux accounts",
+   "ldap directory for self-hosting",
+   "bootstrap users from file"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3989,
+  "output": 1278
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "hyperopt/hyperopt",
+ "repo": "hyperopt/hyperopt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Machine Learning",
+   "entry": "hyperopt - Distributed asynchronous hyperparameter optimization with Tree-structured Parzen Estimators."
+  }
+ ],
+ "summary": {
+  "one_liner": "Hyperopt is a Python library for serial and parallel hyperparameter optimization over search spaces that can include real-valued, discrete, and conditional dimensions.",
+  "what_it_does": "Provides fmin() to minimize an objective function over a search space defined with hp.* primitives (choice, uniform, lognormal, and others). It implements random search, Tree of Parzen Estimators (TPE), and Adaptive TPE. Search spaces can be conditional, so different branches of the space can contain different parameters. Optimization can run serially or in parallel through Apache Spark or MongoDB. The space_eval() helper maps the best result back to the actual parameter values. Installation is via PyPI, with optional extras named SparkTrials, MongoTrials, and ATPE.",
+  "use_cases": [
+   "tuning machine learning model hyperparameters",
+   "minimizing an expensive objective function",
+   "searching conditional or nested parameter spaces",
+   "running hyperparameter search in parallel on Spark",
+   "distributing trials across workers with MongoDB"
+  ],
+  "how_to_run": [
+   "pip install hyperopt",
+   "uv add hyperopt",
+   "Define an objective function and a search space using hp.* functions",
+   "best = fmin(objective, space, algo=tpe.suggest, max_evals=100)",
+   "space_eval(space, best) to recover the parameter values"
+  ],
+  "stack": [
+   "Python",
+   "Apache Spark (optional extra)",
+   "MongoDB (optional extra)",
+   "uv (for development setup)",
+   "pytest",
+   "nox",
+   "Black",
+   "pre-commit"
+  ],
+  "notable": [
+   "Tree of Parzen Estimators (TPE) and Adaptive TPE optimizers",
+   "Handles conditional and awkward search spaces with mixed real, discrete, and nested dimensions",
+   "Parallel trials via Apache Spark or MongoDB",
+   "Ships with a documented contributing workflow including nox multi-version test runs"
+  ],
+  "caveats": [
+   "README says Gaussian-process and regression-tree Bayesian optimizers are designed for but not currently implemented",
+   "Parallel execution requires setting up Spark or MongoDB; the extras are optional",
+   "Documentation is partly still hosted on the project wiki"
+  ],
+  "license": "unknown",
+  "category": "hyperparameter optimization library",
+  "keywords": [
+   "hyperparameter optimization",
+   "hyperopt",
+   "tree of parzen estimators",
+   "tpe",
+   "adaptive tpe",
+   "bayesian optimization",
+   "random search",
+   "search space",
+   "fmin",
+   "hyperparameter tuning",
+   "model tuning",
+   "parallel optimization",
+   "distributed optimization",
+   "apache spark",
+   "mongodb",
+   "conditional search space",
+   "python optimization library",
+   "black box optimization",
+   "objective function minimization",
+   "automl",
+   "scikit-learn tuning",
+   "grid search alternative",
+   "optuna alternative",
+   "tune model settings",
+   "find best model parameters",
+   "speed up model training search",
+   "run hyperparameter search across machines"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3362,
+  "output": 1124
+ },
+ "generated": "2026-10-29"
+}

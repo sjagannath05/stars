@@ -1,0 +1,98 @@
+{
+ "id": "node9-ai/node9-proxy",
+ "repo": "node9-ai/node9-proxy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Node9 by node9-ai - The Execution Security Layer for the Agentic Era. Providing deterministic \"Sudo\" governance and audit logs for autonomous AI agents."
+  }
+ ],
+ "summary": {
+  "one_liner": "node9 is an access-control gate that sits between AI coding agents and the tools they call, holding or blocking risky actions and keeping an audit record.",
+  "what_it_does": "It intercepts each agent tool call in a hook and checks it against policy before it runs. A credential jail blocks reads of paths like ~/.ssh, ~/.aws and .env files, and shell commands are parsed as an AST rather than matched as text. Always-on rules cover destructive git, SQL without a WHERE, curl piped to bash and unauthorised sudo, and per-service rule packs exist for Postgres, MongoDB, Redis, AWS, Kubernetes, Docker, GitHub and the filesystem. It also scans tool arguments for secrets and PII, can gate network egress from shell commands (off by default), wraps MCP servers with tool pinning, and offers a posture score, repo scanning, session history and a live monitor. Held actions wait for human approval inline in the agent chat or through a shared dashboard; the optional login adds team-wide records and central policy but local enforcement works offline.",
+  "use_cases": [
+   "block AI agents from reading credentials and private keys",
+   "require approval before destructive git, SQL or shell commands",
+   "audit what coding agents did on a machine",
+   "scan a machine or repo for agent security exposure",
+   "govern MCP tool access and pin tool definitions",
+   "run a sandboxed agent with restricted network egress"
+  ],
+  "how_to_run": [
+   "brew tap node9-ai/node9 && brew install node9",
+   "npm install -g node9-ai",
+   "node9",
+   "node9 posture",
+   "claude mcp add --transport stdio node9 -- npx -y node9-ai mcp-server"
+  ],
+  "stack": [
+   "Node.js 22+",
+   "npm",
+   "Homebrew",
+   "MCP (Model Context Protocol)",
+   "Python SDK (node9-python)"
+  ],
+  "notable": [
+   "Credential jail that blocks reads of sensitive paths from every tool, including when wrapped in shell pipes",
+   "Shell commands parsed as an AST rather than text-matched",
+   "Held actions stay blocked until a human approves, even when the agent runs with permissions skipped",
+   "Works offline with no account; login is optional for team dashboards and Slack approvals",
+   "Release artifacts are signed and verifiable with gh attestation verify"
+  ],
+  "caveats": [
+   "Egress control is off by default, and without it a command like curl -d @file is not treated as a read of that file",
+   "Egress gating covers shell commands only, not other tool types",
+   "Requires Node.js 22+"
+  ],
+  "license": "Apache-2.0",
+  "category": "ai agent security",
+  "keywords": [
+   "ai agent security",
+   "claude code security",
+   "access control for ai agents",
+   "agent permission gate",
+   "human approval for agent actions",
+   "credential protection",
+   "secrets detection",
+   "pii detection",
+   "dlp",
+   "mcp gateway",
+   "mcp tool pinning",
+   "mcp server security",
+   "audit log",
+   "audit trail for coding agents",
+   "sudo for ai agents",
+   "shell command guard",
+   "destructive command blocking",
+   "sql guard",
+   "network egress allowlist",
+   "sandbox for agents",
+   "posture score",
+   "repo scanning",
+   "ci workflow hijack detection",
+   "canary credentials",
+   "loop breaker",
+   "claude hooks",
+   "codex cli security",
+   "cursor security",
+   "gemini cli security",
+   "ssh key protection",
+   "aws credentials protection",
+   "keep ai agent from reading secrets",
+   "approve risky agent commands",
+   "see what my ai agent did",
+   "lock down coding agent"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4595,
+  "output": 1306
+ },
+ "generated": "2026-10-29"
+}

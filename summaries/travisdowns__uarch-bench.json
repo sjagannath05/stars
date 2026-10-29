@@ -1,0 +1,98 @@
+{
+ "id": "travisdowns/uarch-bench",
+ "repo": "travisdowns/uarch-bench",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Microbenchmark suites",
+   "entry": "uarch-bench - Isolates memory-level parallelism from load latency as separate tests, with DVFS held off before timing, x86 Linux only."
+  }
+ ],
+ "summary": {
+  "one_liner": "uarch-bench is a C++/NASM collection of fine-grained x86 Linux microbenchmarks for probing CPU micro-architectural behavior and timing small functions repeatably.",
+  "what_it_does": "The project provides a set of low-level benchmarks (assembly and some C++) that target specific micro-architectural features such as dependency chains, store and load behavior, pointer chasing, prefetch instructions, BMI false dependencies, and VZEROALL effects. It includes a framework for timing code, converting measurements to cycles, removing outliers, and running tests over parameter ranges such as buffer sizes. Benchmarks are grouped (for example basic, memory/load-parallel, memory/store-parallel, memory/pointer-chase, bmi, studies/vzeroall) and results are reported in cycles and nanoseconds. A wrapper script, uarch-bench.sh, tries to disable turbo boost or frequency scaling while running and restores the previous setting afterward. The README says that with libpfc enabled (USE_LIBPFC=1) Intel performance counters can be read across the timed region. Benchmarks that need unavailable CPU features, such as AVX-512, are skipped at runtime.",
+  "use_cases": [
+   "measure cycle costs of individual x86 instructions",
+   "study cache size transitions with load and store sweeps",
+   "compare prefetch instruction behavior",
+   "investigate store-to-load and store buffer effects",
+   "compare architectures with micro-benchmark results",
+   "time small assembly or C++ idioms repeatably"
+  ],
+  "how_to_run": [
+   "git clone --recursive https://github.com/travisdowns/uarch-bench (or run: git submodule update --init in an existing clone)",
+   "sudo apt-get install nasm",
+   "sudo apt-get install msr-tools",
+   "make",
+   "sudo ./uarch-bench.sh",
+   "./uarch-bench --help"
+  ],
+  "stack": [
+   "C++",
+   "x86 assembly",
+   "NASM",
+   "make",
+   "libpfc (optional, for Intel performance counters)",
+   "msr-tools (optional, Intel)"
+  ],
+  "notable": [
+   "Sweeps buffer sizes (16 KiB to 32 MiB) to show cache-level transitions in load, store, and prefetch throughput",
+   "Wrapper script disables turbo boost or frequency scaling during runs and restores the prior setting afterward",
+   "Optional libpfc mode reads Intel performance counters across the timed region, reportedly to single-cycle precision",
+   "Reports results in cycles and nanoseconds and skips tests whose required CPU features are missing",
+   "Includes a framework for adding new micro-benchmarks"
+  ],
+  "caveats": [
+   "Supports only x86 Linux; Windows and macOS are not yet supported according to the README",
+   "Work-in-progress with limited documentation and testing, per the README disclaimer",
+   "Best results need root for frequency scaling control and libpfc mode; non-root runs have limitations and leave frequency scaling alone"
+  ],
+  "license": "unknown",
+  "category": "cpu microbenchmark suite",
+  "keywords": [
+   "microbenchmark",
+   "micro-architecture",
+   "uarch",
+   "cpu benchmark",
+   "x86 benchmark",
+   "assembly benchmark",
+   "nasm",
+   "cycle counting",
+   "performance counters",
+   "libpfc",
+   "intel performance counters",
+   "cache size benchmark",
+   "memory-level parallelism",
+   "pointer chasing",
+   "prefetch benchmark",
+   "store buffer",
+   "store-to-load forwarding",
+   "load latency",
+   "turbo boost disable",
+   "frequency scaling",
+   "dvfs",
+   "cpu timing",
+   "linux benchmark",
+   "cycles per instruction",
+   "avx-512 benchmark",
+   "vzeroall",
+   "bmi false dependency",
+   "measure instruction latency",
+   "test cpu cache hierarchy",
+   "compare cpu architectures",
+   "benchmark small functions",
+   "c++ microbenchmark framework",
+   "cpu performance engineering"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7274,
+  "output": 1449
+ },
+ "generated": "2026-10-29"
+}

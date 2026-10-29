@@ -1,0 +1,102 @@
+{
+ "id": "yylo-dev/yylo",
+ "repo": "yylo-dev/yylo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "YYLO CLI - Command-line orchestrator for coding agents with isolated task worktrees, Kanban task state, and a typed merge queue."
+  },
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "YYLO - Open-source command-line orchestrator for coding agents like Pi and Codex, with typed task, validation, merge, and release-readiness boundaries across isolated git worktrees. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "YYLO CLI is an open-source command-line orchestrator that runs coding agents, manages typed tasks in isolated git worktrees, and gates changes through validation and merge steps.",
+  "what_it_does": "YYLO provides the `yylo` and `yy` commands (with `ypl` as a shortcut for `yy pi --live`) to drive coding agents such as Pi and Codex. It initializes a repository workspace under `.juno_task/` and runs agents or command-based loops with bounded iterations, optionally from a YAML workflow file. Feature work is organized as tasks: `task start` creates an isolated git worktree, `task finish` verifies a clean committed result and queues it, and `merge land` integrates one task using native Git with expected-old ref protection. It also records validation evidence tied to exact inputs (`evidence run|status|await`), provides read-only observation of run evidence (`watch`), and includes a workspace topology checker (`doctor workspace`). YYLO Ledger (task/record store) and YYLO Benchmark (evaluation) are separate packages that `yy ledger` and `yy benchmark` delegate to.",
+  "use_cases": [
+   "orchestrate coding agents from the terminal",
+   "run isolated feature tasks in separate git worktrees",
+   "gate repository changes with validation evidence before merging",
+   "run repeatable agent and test loops from a YAML workflow",
+   "inspect and guard integration of task branches into a target branch",
+   "track tasks and records in a Git-native ledger"
+  ],
+  "how_to_run": [
+   "npm install --global '@yylo/cli@latest'",
+   "yy --version",
+   "mkdir yylo-demo && cd yylo-demo && git init",
+   "yy init --task \"Document the onboarding path\" --subagent pi",
+   "yy info --json",
+   "yy doctor workspace"
+  ],
+  "stack": [
+   "Node.js 20.10+",
+   "npm",
+   "Git",
+   "Pi coding agent (optional, @mariozechner/pi-coding-agent)",
+   "YYLO Ledger (Python, yylo-ledger on PyPI, pinned 0.4.0)",
+   "YYLO Benchmark (@yylo/benchmark 0.2.1)"
+  ],
+  "notable": [
+   "Typed task lifecycle (start, finish, merge land, merge project) with isolated git worktrees per task",
+   "Content-addressed validation evidence tied to exact inputs",
+   "Watch commands observe existing run evidence read-only and never launch or retry work",
+   "Ledger references in prompts (##slug) hydrate Records with bounded size and time limits",
+   "Workspace relocation tooling with plan, apply, and verify receipts"
+  ],
+  "caveats": [
+   "Requires separately installed Ledger 0.4.0 exactly and Benchmark 0.2.1 exactly for the unreleased 0.2.12 source; older versions are rejected",
+   "Agent skills are distributed separately in yylo-dev/yylo-skills and need a network install step",
+   "Provider credentials and model availability for agents are configured externally",
+   "The README describes this source as unreleased; the stable npm channel is 0.2.2 at time of writing"
+  ],
+  "license": "MIT",
+  "category": "cli agent orchestration",
+  "keywords": [
+   "coding agent orchestrator",
+   "ai coding agents cli",
+   "command-line agent runner",
+   "git worktree tasks",
+   "isolated git worktrees",
+   "task merge queue",
+   "validation evidence",
+   "yy cli",
+   "yylo",
+   "pi coding agent",
+   "codex agent",
+   "agent workflow yaml",
+   "repeatable agent loops",
+   "kanban task state",
+   "merge gating",
+   "release readiness checks",
+   "ledger records",
+   "benchmark evaluation",
+   "npm cli tool",
+   "node.js command line",
+   "git automation",
+   "run tests in loop",
+   "automate code changes with ai",
+   "run ai agent on my repo",
+   "parallel feature branches",
+   "manage agent tasks from terminal",
+   "open source ai dev tools",
+   "developer workflow automation",
+   "claude code alternative orchestration",
+   "tmux observer",
+   "workspace topology doctor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11210,
+  "output": 1476
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "berkinefeavci/healthy-battery",
+ "repo": "berkinefeavci/healthy-battery",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "Healthy Battery - Open-source charge limiter with live power flow and long-term battery health for Apple Silicon MacBooks. [![Open-Source Software][OSS Icon]](https://github.com/berkinefeavci/healthy-battery) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Free, open-source macOS menu-bar app for Apple Silicon MacBooks that sets an 80–100% charge limit, shows live power flow, and tracks long-term battery health.",
+  "what_it_does": "Drives macOS's native charge-limit control to hold the battery between 80% and 100% in 5% steps, with a Top Up option to charge to 100% temporarily. It shows a live diagram of adapter, battery, CPU, display and other power in watts, with CPU and display values read from Apple SMC sensors and unmeasurable values shown as \"—\". It keeps daily summaries for up to 400 days, with battery-health trend charts and CSV export. Additional features include power-mode switching per power source via pmset, MagSafe LED control, schedules, Apple Shortcuts actions, and a conflict guard that locks its limit writes when other charge-limit tools are present. An experimental section cuts the adapter in software to run the Mac from battery for discharge, calibration, adapter mode and sailing.",
+  "use_cases": [
+   "limit battery charging to 80% to extend battery life",
+   "monitor MacBook battery health over months",
+   "see how many watts the laptop and its adapter are using",
+   "export battery history to CSV",
+   "calibrate a MacBook battery",
+   "schedule power mode or charge limit changes",
+   "control MagSafe LED from the menu bar"
+  ],
+  "how_to_run": [
+   "Download the latest .dmg from Releases and drag Healthy Battery.app to Applications",
+   "Or: brew install --cask berkinefeavci/healthy-battery/healthy-battery",
+   "Build from source (requires Xcode 27): ./check.sh",
+   "./build.sh (produces .build/Cellkeep.app)"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode 27",
+   "Apple PowerUI private framework",
+   "Apple SMC sensors",
+   "pmset",
+   "App Intents (Apple Shortcuts)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Charge limit applied through macOS's own native control, verified with an independent read-back",
+   "Live power flow with measured-only values; unmeasured values show '—' instead of estimates",
+   "Conflict guard that prevents fights with AlDente, BatFi, bclm and similar tools",
+   "Ten Apple Shortcuts actions for reading battery state and controlling limits, Top Up, discharge and power mode",
+   "No telemetry or account; signed and notarized releases; localized in five languages"
+  ],
+  "caveats": [
+   "Apple Silicon only; tested only on macOS 27 and a single Mac model, other versions and models are untested",
+   "Relies on Apple's private PowerUI framework, which a macOS update can break without warning",
+   "Applying a limit is a configuration write, not proof that charge current physically stops at that percentage",
+   "Through-the-adapter features are experimental and need an administrator prompt and a passing adapter test; they work only while the Mac is awake"
+  ],
+  "license": "MIT",
+  "category": "macos battery management",
+  "keywords": [
+   "battery charge limit",
+   "charge limiter",
+   "macos battery health",
+   "apple silicon battery",
+   "macbook battery care",
+   "stop charging at 80%",
+   "battery health monitor",
+   "power flow monitor",
+   "menu bar app",
+   "pmset power mode",
+   "smc sensors",
+   "magsafe led control",
+   "battery calibration",
+   "battery cycle count",
+   "battery history csv export",
+   "app intents shortcuts",
+   "alternative to aldente",
+   "alternative to bclm",
+   "limit macbook charging",
+   "keep battery healthy",
+   "track laptop battery over time",
+   "see adapter wattage",
+   "homebrew cask macos",
+   "open source battery tool",
+   "macos menu bar utility",
+   "battery discharge schedule",
+   "mac battery temperature",
+   "swift macos app",
+   "free battery app macbook",
+   "lengthen battery lifespan"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5582,
+  "output": 1399
+ },
+ "generated": "2026-10-29"
+}

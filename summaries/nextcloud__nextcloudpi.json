@@ -1,0 +1,101 @@
+{
+ "id": "nextcloud/nextcloudpi",
+ "repo": "nextcloud/nextcloudpi",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Self-hosting Solutions",
+   "entry": "NextCloudPi - Nextcloud preinstalled and preconfigured, with a text and web management interface and all the tools needed to self host private data. With installation images for Raspberry Pi, Odroid, Rock64, Docker, and a curl installer for Armbian/Debian. GPL-2.0 Shell/PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "NextcloudPi is a build system and preconfigured image set that packages Nextcloud with a web and terminal management interface for self-hosting private data on Raspberry Pi, VMs, LXD/LXC containers, and Debian-based systems.",
+  "what_it_does": "The repository contains the build code for the NextcloudPi project, which produces ready-to-use images for virtual machines, Raspberry Pi, Odroid HC1, Rock64 and other boards, plus LXD and LXC containers. It bundles Nextcloud with Apache (HTTP/2), PHP 8.1, MariaDB, and Redis memory caching, with HTTPS redirection and HSTS. Optional extras such as Let's Encrypt, Fail2Ban, UFW, Samba, NFS, USB automount, BTRFS snapshots, scheduled rsync, Dynamic DNS providers, and ModSecurity can be enabled through the web interface on port 4443 or the ncp-config command-line TUI. An install script is provided for Debian-based systems, and the README also documents running it on Proxmox via community-scripts.",
+  "use_cases": [
+   "self-host Nextcloud on a Raspberry Pi",
+   "private cloud file storage at home",
+   "share files over Samba with Windows, Mac, or Linux",
+   "run Nextcloud in an LXD or LXC container",
+   "run Nextcloud in a Proxmox LXC container",
+   "build custom Nextcloud server images",
+   "back up and restore a Nextcloud instance"
+  ],
+  "how_to_run": [
+   "sudo ncp-config",
+   "lxc image import \"NextcloudPi_LXD_vX.XX.X.tar.gz\" --alias \"nextcloudpi\"",
+   "lxc launch \"nextcloudpi\" ncp",
+   "lxc start ncp",
+   "./build/build-SD-rpi.sh",
+   "curl -sSL | sudo bash"
+  ],
+  "stack": [
+   "Shell",
+   "PHP",
+   "Nextcloud",
+   "Apache",
+   "PHP 8.1",
+   "MariaDB",
+   "Redis",
+   "Debian",
+   "LXD",
+   "qemu-user-static"
+  ],
+  "notable": [
+   "Preconfigured Nextcloud image for Raspberry Pi, Odroid HC1, Rock64, and VMs",
+   "ncp-config text UI plus a web panel on HTTPS port 4443",
+   "Many optional extras: Let's Encrypt, Fail2Ban, UFW, ModSecurity, BTRFS snapshots, SMART monitoring",
+   "Build scripts for Raspberry Pi, Armbian boards, and LXD",
+   "Proxmox install path via community-scripts helper"
+  ],
+  "caveats": [
+   "Docker support has been discontinued for the time being, according to the README",
+   "Curl installer assumes a clean Debian install and has no rollback method",
+   "Images target specific boards and Debian releases (README names Raspberry Pi OS/Debian 12 Bookworm)",
+   "Documentation is volunteer-written, per the README"
+  ],
+  "license": "GPL-2.0",
+  "category": "self-hosted cloud storage",
+  "keywords": [
+   "nextcloud",
+   "nextcloudpi",
+   "self-hosted cloud",
+   "private cloud",
+   "raspberry pi nextcloud",
+   "home server",
+   "file sync server",
+   "share files with my team",
+   "personal cloud storage",
+   "lxd container",
+   "lxc container",
+   "proxmox lxc",
+   "armbian",
+   "odroid hc1",
+   "rock64",
+   "debian install script",
+   "samba server",
+   "nfs server",
+   "fail2ban",
+   "lets encrypt",
+   "ufw firewall",
+   "modsecurity",
+   "btrfs snapshots",
+   "ncp-config",
+   "mariadb",
+   "redis cache",
+   "apache http2",
+   "self-hosting",
+   "backup nextcloud",
+   "gpl license shell php"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4368,
+  "output": 1402
+ },
+ "generated": "2026-10-29"
+}

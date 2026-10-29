@@ -1,0 +1,105 @@
+{
+ "id": "djolex999/vir",
+ "repo": "djolex999/vir",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Obsidian",
+   "entry": "vir by Djordje Marković - Distills the Claude Code transcripts already on your disk into typed markdown notes (decisions, gotchas, patterns). Serves them via MCP and a CLAUDE.md block. Integrates with Obsidian."
+  }
+ ],
+ "summary": {
+  "one_liner": "vir is a Node/TypeScript CLI that distills your Claude Code and Codex session transcripts into typed, plain-markdown notes (patterns, gotchas, decisions, tools) that work in an Obsidian vault or any folder.",
+  "what_it_does": "vir reads transcripts from ~/.claude/projects and ~/.codex/sessions, filters out subagent, workflow and headless SDK runs, classifies the remaining sessions with a cheap model (Haiku in the README's defaults), and distills durable knowledge with a stronger model (Sonnet by default). Output is markdown with YAML frontmatter and confidence scores, written into a folder that can be an Obsidian vault or any directory. Other inputs include clipped web articles and PDFs. Retrieval is via `vir query` (TF-IDF by default, or optional embeddings through Ollama or a local fastembed model), and an MCP server exposes six tools to Claude Code or Codex mid-session. `vir sync-claude` can inject top notes into CLAUDE.md and existing AGENTS.md files after a diff and confirmation, and `vir review`, `vir lint`, `vir dedupe` and `vir audit` support curation. A daemon can be scheduled via launchd or systemd/cron.",
+  "use_cases": [
+   "Recover decisions and gotchas from old Claude Code sessions before they are pruned",
+   "Build a searchable personal knowledge base from coding agent history",
+   "Give Claude Code or Codex access to past project lessons via MCP",
+   "Keep CLAUDE.md or AGENTS.md updated with reviewed lessons",
+   "Browse AI-session-derived notes in an Obsidian vault",
+   "Synthesize topic pages from related notes"
+  ],
+  "how_to_run": [
+   "npm install -g @djolex999/vir-cli",
+   "vir init",
+   "vir run --dry-run",
+   "vir run",
+   "vir schedule install",
+   "vir mcp install"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 20+",
+   "SQLite",
+   "Anthropic API (Haiku and Sonnet models)",
+   "Claude Code CLI (claude-cli provider)",
+   "Codex CLI (codex-cli provider)",
+   "Kie.ai (optional provider)",
+   "Ollama (optional embeddings)",
+   "fastembed with bge-small-en-v1.5 (optional local embeddings)",
+   "MCP server",
+   "Obsidian (optional)"
+  ],
+  "notable": [
+   "Retroactive distillation: turns months of existing Claude Code and Codex transcripts into notes in one run, before Claude Code prunes them",
+   "Works without Obsidian: output is plain markdown and vir query and the MCP server run with no editor",
+   "Quality controls: project include/exclude triage, confidence scores, human review with verified-note boost, and rules from `vir connect` that need explicit approval",
+   "Zero-dollar options via claude-cli or codex-cli providers, which consume subscription quota and cap runs at 25 sessions",
+   "Reversible actions: rejected and pruned notes move to .rejected/ rather than being deleted"
+  ],
+  "caveats": [
+   "Platform support: macOS is stable; Linux (systemd and cron) is marked experimental and untested; Windows is not supported",
+   "Cursor sessions are not supported yet (planned); the README lists Codex as new in 0.26",
+   "codex-cli provider is marked experimental; claude-cli and codex-cli distills consume subscription usage limits",
+   "Costs apply for API providers; README cites ~$1 to $5 first-run cost and ~$0.05 per run ongoing, and Kie.ai is noted as not recommended for a real vault"
+  ],
+  "license": "MIT",
+  "category": "llm knowledge base",
+  "keywords": [
+   "claude code",
+   "codex",
+   "coding agent transcripts",
+   "session transcripts",
+   "obsidian",
+   "obsidian vault",
+   "markdown notes",
+   "knowledge base",
+   "llm wiki",
+   "karpathy llm wiki",
+   "mcp server",
+   "model context protocol",
+   "claude.md",
+   "agents.md",
+   "semantic search",
+   "tf-idf",
+   "embeddings",
+   "ollama",
+   "fastembed",
+   "anthropic api",
+   "haiku",
+   "sonnet",
+   "typescript cli",
+   "node cli",
+   "retroactive notes",
+   "distill sessions into notes",
+   "remember past decisions",
+   "lessons learned from ai coding",
+   "personal wiki from chat history",
+   "search my old coding sessions",
+   "keep claude.md updated",
+   "alternative to claude-mem",
+   "pdf ingestion",
+   "web clipper notes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13640,
+  "output": 1646
+ },
+ "generated": "2026-10-29"
+}

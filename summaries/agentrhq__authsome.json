@@ -1,0 +1,99 @@
+{
+ "id": "agentrhq/authsome",
+ "repo": "agentrhq/authsome",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "authsome by agentrhq - Credential gateway for AI agents. Log in once via Oauth2 or API Key. Every agent stays authenticated — headless, no SaaS, agents never see your credentials."
+  }
+ ],
+ "summary": {
+  "one_liner": "Authsome is an open-source credential gateway that stores OAuth2 and API-key credentials encrypted and injects them into agent HTTP requests through a proxy, so agents never handle the secrets directly.",
+  "category": "credential gateway for agents",
+  "keywords": [
+   "credential gateway",
+   "ai agents auth",
+   "oauth2",
+   "api key",
+   "credential broker",
+   "secret injection",
+   "http proxy",
+   "token refresh",
+   "encrypted credential store",
+   "headless authentication",
+   "agent credentials",
+   "credential management",
+   "cli auth tool",
+   "authsome",
+   "authsome run",
+   "mcp alternative",
+   "hardcoded env tokens alternative",
+   "secrets manager for agents",
+   "login once for agents",
+   "share credentials with my agent",
+   "keep agents authenticated",
+   "rotate api keys",
+   "self-hosted credential store",
+   "docker daemon",
+   "python cli",
+   "claude code auth",
+   "cursor integration",
+   "langchain integration",
+   "openai agents sdk",
+   "ci credentials",
+   "cron job api access",
+   "store api keys securely",
+   "multi-account oauth"
+  ],
+  "what_it_does": "Authsome is a CLI and daemon that holds login credentials for external services in one encrypted store. Users authenticate once through browser PKCE, device code, or a browser bridge for API key entry. Agents then run commands prefixed with `authsome run --`, and a local auth proxy injects fresh headers into matching requests, matched by provider api_url such as api.openai.com. Tokens are refreshed before expiry. The README says secrets are kept out of the child process environment. It supports multiple accounts per provider and lists bundled OAuth2 and API-key providers. It can also run as a persistent Docker daemon with a Postgres backend, and onboarding can import API keys from a .env file. The README names adapters for Claude Code, Codex, Cursor, OpenCode, LangChain, LlamaIndex, the OpenAI Agents SDK, and the Anthropic SDK.",
+  "use_cases": [
+   "give an AI agent access to gmail or github without sharing passwords",
+   "run headless agents in CI, cron, or SSH sessions with valid API tokens",
+   "replace hardcoded API tokens in environment variables",
+   "rotate and manage API keys across many agents from one place",
+   "check service data such as a Stripe balance from an agent task",
+   "self-host a shared credential daemon for a team"
+  ],
+  "how_to_run": [
+   "uv tool install authsome",
+   "authsome onboard",
+   "authsome login github",
+   "authsome run -- curl -s \"<api url>\"",
+   "npx skills add agentrhq/authsome"
+  ],
+  "stack": [
+   "Python 3.13+",
+   "uv",
+   "Docker",
+   "Docker Compose",
+   "PostgreSQL",
+   "OAuth2",
+   "PKCE",
+   "Postgres"
+  ],
+  "notable": [
+   "Agent-side `authsome run --` wrapper injects credentials at request time without placing secrets in the child process environment",
+   "Login once through browser PKCE, device code, or a browser bridge; agents then run headlessly",
+   "Self-hostable persistent daemon in Docker with no Python needed on the host",
+   "Multi-account support per provider with built-in providers requiring no config",
+   "Ships a skill installable via npx skills for Claude, Codex, Cursor and other agents"
+  ],
+  "caveats": [
+   "Requires Python 3.13 or newer for the CLI install path",
+   "Self-hosting requires setting several secret environment variables (master key, UI session key, Postgres password) and a public HTTPS base URL for hosted use; TLS termination is left to the user per the self-hosting guide",
+   "Roadmap and some integration details are only on the external website, not in the README"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3258,
+  "output": 1349
+ },
+ "generated": "2026-10-29"
+}

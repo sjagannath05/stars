@@ -1,0 +1,98 @@
+{
+ "id": "danielgatis/rembg",
+ "repo": "danielgatis/rembg",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Image Processing",
+   "entry": "rembg - A tool to remove image backgrounds."
+  }
+ ],
+ "summary": {
+  "one_liner": "rembg is a Python tool that removes image backgrounds, usable as a CLI, Python library, HTTP server, or Docker container.",
+  "category": "image background removal",
+  "keywords": [
+   "background removal",
+   "remove background",
+   "image background remover",
+   "cut out subject",
+   "transparent background",
+   "alpha matting",
+   "color decontamination",
+   "onnx",
+   "onnxruntime",
+   "u2net",
+   "birefnet",
+   "bria-rmbg",
+   "isnet",
+   "segment anything sam",
+   "vitmatte",
+   "withoutbg",
+   "atlas cloud",
+   "python library",
+   "command line tool",
+   "http server",
+   "gradio ui",
+   "docker image",
+   "batch processing images",
+   "ffmpeg rgb24 pipe",
+   "mask only output",
+   "portrait segmentation",
+   "make png transparent",
+   "remove photo background",
+   "cli image tool"
+  ],
+  "what_it_does": "rembg removes the background from images and outputs a cutout with transparency or a mask. It exposes a CLI with subcommands for single files (i), folders with optional watch mode (p), an HTTP server (s), raw RGB24 streams from stdin such as FFmpeg output (b), model download (d), and model migration (m). The Python API provides remove() accepting bytes, PIL images, or NumPy arrays, plus new_session() for reusing a model across a batch. It supports many local ONNX models (u2net family, isnet, sam, several birefnet variants, bria-rmbg as default) that download on first use, and two cloud API backends (withoutbg and atlascloud). Edge handling is selectable: default naive, -dc color decontamination, -a alpha matting, or -vm ViTMatte.",
+  "use_cases": [
+   "remove background from product photos",
+   "batch remove backgrounds from a folder of images",
+   "run a background removal web service or API",
+   "cut out hair and fine detail from portraits",
+   "strip backgrounds from video frames via FFmpeg",
+   "extract a foreground mask from an image"
+  ],
+  "how_to_run": [
+   "pip install \"rembg[gpu]\" # for library",
+   "pip install \"rembg[gpu,cli]\" # for library + cli",
+   "rembg i path/to/input.png path/to/output.png",
+   "rembg p path/to/input path/to/output",
+   "rembg s --host 0.0.0.0 --port 7000 --log_level info",
+   "docker run -v .:/data danielgatis/rembg i /data/input.png /data/output.png"
+  ],
+  "stack": [
+   "Python (>=3.11)",
+   "onnxruntime",
+   "ONNX models",
+   "Gradio",
+   "Docker",
+   "FFmpeg (optional, for rgb24 pipe)",
+   "PIL",
+   "NumPy",
+   "OpenCV (cv2 example)"
+  ],
+  "notable": [
+   "Choice of edge modes: naive, color decontamination (-dc), alpha matting (-a), and ViTMatte (-vm), with guidance on when to use each",
+   "Wide model catalog including SAM with point prompts, birefnet variants for portraits and DIS, and a 1 GB default bria-rmbg model",
+   "RGB24 stdin mode (rembg b) designed to pipe FFmpeg video frames",
+   "Models stored under ~/.rembg with migration command from legacy ~/.u2net",
+   "Optional cloud backends (withoutbg, atlascloud) that send images to third-party servers"
+  ],
+  "caveats": [
+   "Default model bria-rmbg is about 1.02 GB and slower than u2net; its RMBG-2.0 weights need a paid BRIA license for commercial use",
+   "NVIDIA GPU acceleration may need onnxruntime-gpu, CUDA and cudnn-devel; the CUDA Docker image is about 11 GB and must be built locally",
+   "Cloud backends upload images to external servers with a 20 MB limit; atlascloud jobs can take over a minute per image",
+   "Model weights carry their own licenses separate from rembg's MIT license"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8765,
+  "output": 1439
+ },
+ "generated": "2026-10-29"
+}

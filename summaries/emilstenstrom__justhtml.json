@@ -1,0 +1,91 @@
+{
+ "id": "emilstenstrom/justhtml",
+ "repo": "EmilStenstrom/justhtml",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "HTML Manipulation",
+   "entry": "justhtml - A pure Python HTML5 parser that sanitizes untrusted HTML by default."
+  }
+ ],
+ "summary": {
+  "one_liner": "JustHTML is a pure-Python, zero-dependency HTML5 parser that sanitizes untrusted HTML by default and offers CSS selector queries, transforms, text extraction, and Markdown output.",
+  "what_it_does": "It parses HTML the way a browser does, including recovering from malformed markup, and builds a single DOM. Sanitization is on by default using an allowlist, with URL policies and inline CSS controls, and can be turned off with sanitize=False for trusted input. Once parsed, you can query nodes with query() and query_one() using CSS selectors, and apply transforms such as Unwrap, Linkify, SetAttrs, and Drop. The DOM can be serialized back to HTML, converted to text with to_text(), or converted to Markdown. The package also includes a command-line tool for pretty-printing, selecting nodes, and extracting text or Markdown, plus a builder API and streaming for large inputs.",
+  "use_cases": [
+   "sanitize user-submitted HTML before display",
+   "parse broken or scraped web pages",
+   "extract text from HTML pages",
+   "convert HTML fragments to Markdown",
+   "query HTML with CSS selectors in Python",
+   "migrate from Bleach sanitization"
+  ],
+  "how_to_run": [
+   "pip install justhtml",
+   "from justhtml import JustHTML; doc = JustHTML(html, fragment=True)",
+   "doc.query_one(\"p.intro\").to_text()",
+   "justhtml index.html --selector \"article\" --format markdown"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "PyPy",
+   "Pyodide"
+  ],
+  "notable": [
+   "Sanitizes by default: JustHTML(html) cleans output before querying or serializing",
+   "Zero runtime dependencies, no C extension, works on PyPy and Pyodide",
+   "Tested against the web platform html5 treebuilder tests with 100% line and branch coverage claimed",
+   "Transform pipeline (Unwrap, Drop, SetAttrs, Linkify) on a single parsed DOM",
+   "Bleach migration guide for moving existing sanitizer policies"
+  ],
+  "caveats": [
+   "The README says parsing terabytes of trusted HTML is better done with a C/Rust parser, since it is pure Python",
+   "Output is not automatically safe inside JavaScript, CSS, URL attributes, or other non-body contexts",
+   "Requires Python 3.10 or later"
+  ],
+  "license": "MIT",
+  "category": "html parsing sanitization",
+  "keywords": [
+   "html parser",
+   "html5 parser",
+   "pure python html parser",
+   "html sanitizer",
+   "sanitize untrusted html",
+   "html sanitization python",
+   "bleach alternative",
+   "beautifulsoup alternative",
+   "html5lib alternative",
+   "lxml alternative",
+   "css selector html",
+   "query html elements",
+   "html to text",
+   "html to markdown",
+   "html transform",
+   "linkify urls",
+   "malformed html parsing",
+   "broken html recovery",
+   "scraped html cleaning",
+   "xss prevention html",
+   "allowlist html cleaner",
+   "url policy html",
+   "command line html tool",
+   "zero dependency html library",
+   "pyodide html",
+   "pypi justhtml",
+   "clean user html input",
+   "extract text from html",
+   "html serializer",
+   "html streaming parser",
+   "parse html in python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3033,
+  "output": 1174
+ },
+ "generated": "2026-10-29"
+}

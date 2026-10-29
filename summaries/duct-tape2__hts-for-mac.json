@@ -1,0 +1,96 @@
+{
+ "id": "duct-tape2/hts-for-mac",
+ "repo": "duct-tape2/hts-for-mac",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Finance",
+   "entry": "HTS for Mac - Read-only Korean and US stock workspace in the style of Windows HTS apps, with a 10-level order book, four-chart layouts, watchlists and saved workspaces; live quotes need your own Kiwoom REST API key. ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A read-only Korean and US stock viewer for macOS that runs in the browser and mimics Windows HTS (home trading system) apps, connecting to live quotes through the user's own Kiwoom REST API key.",
+  "what_it_does": "Shows domestic (Korean) and US stock quotes, a 10-level order book, and market executions, with KRW/USD distinction. Charts support 4-chart layouts, minute/day/week/month/year candles, indicators, drawing tools, and relative-return comparison of up to 4 symbols. Users can create watchlist groups, four workspaces with detachable/linked/pinned windows, and save or restore layouts. Analysis screens cover domestic rankings and flows, program/ETF/theme data, saved Kiwoom condition searches, and watchlist filters, alerts, and memos. It does not offer trading, orders, transfers, or personal account lookups. The README says it ships a synthetic test-data mode that needs no API key.",
+  "use_cases": [
+   "Check Korean and US stock quotes on a Mac without Windows or Parallels",
+   "Compare charts of several stocks or timeframes side by side",
+   "Manage watchlists and saved screen layouts for market research",
+   "Browse domestic stock rankings, flows, and ETF/theme data",
+   "Run a read-only stock analysis workspace alongside a separate brokerage app",
+   "Try the interface with synthetic data before connecting a Kiwoom API key"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd hts-for-mac",
+   "./scripts/setup.sh",
+   "./dev.sh",
+   "npm --prefix frontend run build",
+   "python3 scripts/run_local.py --environment real",
+   "Enter Kiwoom App Key and App Secret in the in-app API connection settings (keys are never committed to Git)"
+  ],
+  "stack": [
+   "Python 3.13 (backend, managed by uv)",
+   "FastAPI",
+   "Node.js 22.x/24.x/26+",
+   "React",
+   "Next.js",
+   "TradingView Lightweight Charts",
+   "FlexLayout",
+   "Kiwoom REST API (official SDK)",
+   "macOS Keychain"
+  ],
+  "notable": [
+   "Read-only by design: no buy, sell, modify, cancel, auto-trading, or transfer features",
+   "Four-chart layout with cross-window symbol linking and comparison of up to 4 symbols' relative returns",
+   "Works with a built-in synthetic-data mode before any real API key is set",
+   "API keys stored in macOS Keychain with automatic access-token renewal and expiry reminders",
+   "Optional DART (OpenDART key) and SEC (User-Agent) data sources for disclosures and financials"
+  ],
+  "caveats": [
+   "Live quotes require the user's own Kiwoom account, REST API application, IP whitelisting, and API key; not an official Kiwoom product",
+   "Source-install pre-release only; no signed standalone macOS app; some Kiwoom endpoints (after-hours order book and rankings, US watchlist aggregate) are explicitly rejected by Kiwoom and show errors",
+   "Requires specific Node.js versions (22.13+ 22.x, 24.x, or 26+; 23.x and 25.x unsupported) plus git, uv, and npm; local 127.0.0.1 only"
+  ],
+  "license": "unknown",
+  "category": "stock market viewer",
+  "keywords": [
+   "stock viewer mac",
+   "korean stock quotes",
+   "us stock charts",
+   "kiwoom rest api",
+   "kiwoom hts mac",
+   "windows hts alternative",
+   "read-only trading viewer",
+   "order book viewer",
+   "stock watchlist",
+   "multi chart layout",
+   "candlestick charts",
+   "tradingview lightweight charts",
+   "fastapi react dashboard",
+   "nextjs stock app",
+   "macos keychain api key",
+   "self-hosted local dashboard",
+   "korean stock market tool",
+   "kospi kosdaq quotes",
+   "compare stock performance",
+   "saved workspace layout",
+   "stock condition search",
+   "etf and theme screener",
+   "how to view stock charts on mac",
+   "alternative to windows trading software",
+   "no trading features",
+   "synthetic test data",
+   "financial analysis workspace",
+   "영웅문 대안"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6265,
+  "output": 1529
+ },
+ "generated": "2026-10-29"
+}

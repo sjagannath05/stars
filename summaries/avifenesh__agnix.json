@@ -1,0 +1,95 @@
+{
+ "id": "avifenesh/agnix",
+ "repo": "avifenesh/agnix",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "AgentSys by avifenesh - Workflow automation system for Claude with a group of useful plugins, agents, and skills. Automates task-to-production workflows, PR management, code cleanup, performance investigation, drift detection, and multi-agent code review. Includes agnix for linting agent configurations. Built on thousands of lines of code with thousands of tests. Uses deterministic detection (rege"
+  }
+ ],
+ "summary": {
+  "one_liner": "agnix is a linter that validates agent configuration files (CLAUDE.md, SKILL.md, hooks, MCP configs, and similar files) across many AI coding tools before they silently break.",
+  "what_it_does": "The README describes a Rust-based validator with 757 rules covering Claude Code, Codex CLI, OpenCode, Cursor, GitHub Copilot, Kiro, Gemini CLI, Cline, MCP and other agent formats. It checks files such as CLAUDE.md, AGENTS.md, SKILL.md, .mcp.json, settings and hook files, and reports diagnostics with file, line and rule ID. It can apply automatic fixes in safe, unsafe, or dry-run modes, and can be limited to one tool's rules with a --target flag. An explain command describes individual rules and their evidence. Output can be plain text or GitHub Actions annotations, and the project ships an npm package, pip package, Homebrew tap, Cargo crate, GitHub Action, editor extensions for VS Code, JetBrains, Neovim and Zed, and a browser playground.",
+  "use_cases": [
+   "lint CLAUDE.md and AGENTS.md files before committing",
+   "validate SKILL.md frontmatter so skills trigger correctly",
+   "check agent configs in CI with a GitHub Action",
+   "auto-fix invalid agent config fields",
+   "catch format mismatches when using several AI coding tools",
+   "validate MCP server configuration files"
+  ],
+  "how_to_run": [
+   "npx agnix .",
+   "npm install -g agnix",
+   "pip install agnix",
+   "cargo install agnix-cli",
+   "agnix --fix-safe .",
+   "agnix --target claude-code ."
+  ],
+  "stack": [
+   "Rust",
+   "WebAssembly",
+   "Node.js (npm package)",
+   "Python (pip package)",
+   "GitHub Actions"
+  ],
+  "notable": [
+   "757 rules across many agent tools, with rule IDs per tool family (e.g. CC-*, CDX-*, KIRO-*, MCP-*)",
+   "Auto-fix with safe, unsafe and dry-run modes that show inline diffs",
+   "Editor integrations via a language server (VS Code, JetBrains, Neovim, Zed)",
+   "agnix explain command gives the evidence behind each rule",
+   "Rust workspace split into rules, core engine, CLI, LSP, MCP server and WASM crates"
+  ],
+  "caveats": [
+   "Support tiers are uneven: Muse Code and Kimi Code validation is still pending, and Continue, Aider, Amazon Q, Tabnine, Codeium, Windsurf/Devin and Amp are outside active support",
+   "Roo Code support was removed in version 0.59.0",
+   "Contributor workflow requires running a preflight script with Rust, Node.js, Python and Bash"
+  ],
+  "license": "MIT OR Apache-2.0",
+  "category": "agent config linting",
+  "keywords": [
+   "agnix",
+   "agent configuration linter",
+   "config validator",
+   "linter for ai coding agents",
+   "claude.md linter",
+   "agents.md validation",
+   "skill.md validation",
+   "claude code config check",
+   "codex cli config",
+   "cursor rules validation",
+   "copilot instructions lint",
+   "kiro steering validation",
+   "gemini cli config",
+   "mcp config validator",
+   "hooks config lint",
+   "auto-fix config errors",
+   "github action lint agent configs",
+   "npx lint config",
+   "rust linter",
+   "language server lsp",
+   "vs code extension linter",
+   "jetbrains plugin",
+   "neovim plugin",
+   "zed extension",
+   "validate my skills don't trigger",
+   "catch broken ai tool config",
+   "lint config files in ci",
+   "multi-tool agent setup",
+   "webassembly validator",
+   "static analysis for prompts",
+   "config drift check"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5523,
+  "output": 1402
+ },
+ "generated": "2026-10-29"
+}

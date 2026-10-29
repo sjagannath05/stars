@@ -1,0 +1,93 @@
+{
+ "id": "superdesk/superdesk",
+ "repo": "superdesk/superdesk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Content Management Systems (CMS)",
+   "entry": "Superdesk ⚠ - End-to-end news creation, production, curation, distribution, and publishing platform. (Source Code) AGPL-3.0 Docker/Python/PHP"
+  }
+ ],
+ "summary": {
+  "one_liner": "Superdesk is an open source, end-to-end platform for news creation, production, curation, distribution and publishing, split into a Python server API and a separate client UI.",
+  "what_it_does": "Superdesk provides the server-side API that processes all client requests, with the user interface delivered by a separate client application built with different technologies. The README describes it as scalable to news organizations of any size. It can be started locally with Docker Compose, after which the data store and search index are initialized and an admin user is created via manage.py commands. A manual install path is also documented, requiring MongoDB, Elasticsearch 7+, Redis, Python 3.12 and Node.js, with the server run via honcho and the client built with npm and grunt. The README also describes a dev workflow that runs the server in Docker and the client natively, with optional sibling repos for analytics and publishing, and helper scripts for setup, start and stop. Optional sample data can be loaded with an app:prepopulate command.",
+  "use_cases": [
+   "newsroom content creation and editing",
+   "news production and workflow management",
+   "news content curation and distribution",
+   "publishing news stories to multiple channels",
+   "self-hosted newsroom platform for news organizations"
+  ],
+  "how_to_run": [
+   "docker compose up -d",
+   "docker compose exec superdesk-server python manage.py app:initialize_data",
+   "docker compose exec superdesk-server python manage.py users:create -u admin -p admin -e admin@localhost --admin",
+   "pip3 install -r requirements.txt (in server/)",
+   "honcho start (in server/)",
+   "npm install && npm run build && npx grunt server (in client/)"
+  ],
+  "stack": [
+   "Python 3.12",
+   "Node.js",
+   "npm",
+   "MongoDB",
+   "Elasticsearch 7+",
+   "Redis",
+   "Docker",
+   "honcho",
+   "grunt"
+  ],
+  "notable": [
+   "Server and client are separate applications, with the client in its own repository (superdesk-client-core)",
+   "Docker Compose quick start with initialization and admin user creation commands",
+   "Developer workflow with server in Docker and client running natively, including helper scripts and optional sibling extension repos",
+   "Includes Claude Code slash commands and a superdesk-dev skill for setup, as described in the README"
+  ],
+  "caveats": [
+   "Requires several backing services (MongoDB, Elasticsearch 7+, Redis) for manual installation, which is a heavy setup",
+   "Client and extension work depends on sibling repositories being cloned in the same parent directory",
+   "The awesome-selfhosted listing carries a warning marker, and the README does not state its maintenance status"
+  ],
+  "license": "AGPL-3.0",
+  "category": "newsroom publishing platform",
+  "keywords": [
+   "superdesk",
+   "newsroom software",
+   "news production",
+   "news publishing platform",
+   "journalism software",
+   "news cms",
+   "content management for newsrooms",
+   "editorial workflow",
+   "news curation",
+   "news distribution",
+   "self-hosted news platform",
+   "open source newsroom",
+   "mongodb",
+   "elasticsearch",
+   "redis",
+   "python",
+   "docker compose",
+   "angular client",
+   "agpl",
+   "publish news stories",
+   "newsroom content management",
+   "media company publishing tool",
+   "honcho",
+   "grunt",
+   "news wire software",
+   "alternative to commercial newsroom systems",
+   "run newsroom locally"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3185,
+  "output": 1210
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,109 @@
+{
+ "id": "mail-in-a-box/mailinabox",
+ "repo": "mail-in-a-box/mailinabox",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Email - Complete Solutions",
+   "entry": "Mail-in-a-Box - Turns any Ubuntu server into a fully functional mail server with one command. (Source Code) CC0-1.0 Shell"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mail-in-a-Box is a set of install scripts that turns a fresh Ubuntu 22.04 server into a complete, self-contained email server with webmail, contacts/calendar, DNS, and admin tools.",
+  "what_it_does": "The repository provides setup scripts (run via sudo setup/start.sh) that install and configure a full mail stack on a fresh Ubuntu 22.04 LTS 64-bit machine. Components named in the README include Postfix (SMTP), Dovecot (IMAP), Nextcloud (CardDAV/CalDAV), z-push (Exchange ActiveSync), Roundcube webmail, and nginx serving email client autoconfig. Spam is handled by SpamAssassin and greylisting by Postgrey. The box runs its own DNS (nsd4) with SPF, DKIM (OpenDKIM), DMARC, DNSSEC, DANE TLSA, MTA-STS, and SSHFP records set automatically. TLS certificates are provisioned from Let's Encrypt, and backups use duplicity, with ufw and fail2ban for firewall and intrusion protection. A control panel and API manage mail users, aliases, custom DNS records, and backups, and a daily health check monitors services, ports, certificates, and DNS.",
+  "use_cases": [
+   "run my own email server for a domain",
+   "replace hosted email with self-hosted mail",
+   "set up webmail and mail clients on my own server",
+   "sync contacts and calendars via CardDAV/CalDAV",
+   "host email for a family or small organization",
+   "automate DNS and email authentication records for a domain"
+  ],
+  "how_to_run": [
+   "Start from a completely fresh Ubuntu 22.04 LTS 64-bit machine",
+   "git clone the mailinabox repository",
+   "cd mailinabox",
+   "git checkout TAGNAME (the most recent release tag)",
+   "sudo setup/start.sh"
+  ],
+  "stack": [
+   "Shell",
+   "Ubuntu 22.04 LTS",
+   "Postfix",
+   "Dovecot",
+   "Nextcloud",
+   "z-push",
+   "Roundcube",
+   "nginx",
+   "SpamAssassin",
+   "Postgrey",
+   "nsd4",
+   "OpenDKIM",
+   "duplicity",
+   "ufw",
+   "fail2ban",
+   "munin"
+  ],
+  "notable": [
+   "One-command installer with no user-configurable setup options, aimed at 'just works' deployment",
+   "Automatically configures SPF, DKIM, DMARC, DNSSEC, DANE TLSA, MTA-STS, and SSHFP DNS records",
+   "Daily health monitoring of services, open ports, TLS certificate validity, and DNS records",
+   "Includes a control panel and an API covering the same administrative actions",
+   "Supports internationalized domain names (SMTPUTF8 is not supported)"
+  ],
+  "caveats": [
+   "Requires a dedicated fresh Ubuntu 22.04 LTS 64-bit machine; the installer changes system packages and configuration",
+   "Not designed for customization by power users, per the stated goals",
+   "Other mail services may block or spam-filter mail sent from the server"
+  ],
+  "license": "CC0-1.0",
+  "category": "self-hosted email server",
+  "keywords": [
+   "mail server",
+   "self-hosted email",
+   "smtp server",
+   "imap server",
+   "email appliance",
+   "mail in a box",
+   "postfix",
+   "dovecot",
+   "roundcube",
+   "webmail",
+   "nextcloud",
+   "carddav",
+   "caldav",
+   "activesync",
+   "z-push",
+   "spamassassin",
+   "postgrey",
+   "greylisting",
+   "dkim",
+   "spf",
+   "dmarc",
+   "dnssec",
+   "mta-sts",
+   "dane",
+   "let's encrypt",
+   "ubuntu mail server",
+   "run my own email",
+   "host my own email for my domain",
+   "replace gmail with my own server",
+   "email for my family",
+   "iredmail alternative",
+   "modoboa alternative",
+   "sync contacts and calendar",
+   "ubuntu 22.04",
+   "self-hosted dns"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3138,
+  "output": 1450
+ },
+ "generated": "2026-10-29"
+}

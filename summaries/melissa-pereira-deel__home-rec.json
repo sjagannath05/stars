@@ -1,0 +1,96 @@
+{
+ "id": "melissa-pereira-deel/home-rec",
+ "repo": "melissa-pereira-deel/home-rec",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "HomeRec - Lightweight native macOS app for recording system audio as high-quality WAV files using ScreenCaptureKit."
+  }
+ ],
+ "summary": {
+  "one_liner": "Home Rec is a free, Apache 2.0-licensed native macOS app that records system audio (or a single app or a microphone) to lossless WAV, FLAC, or M4A files using ScreenCaptureKit.",
+  "what_it_does": "Captures whatever the Mac plays through ScreenCaptureKit, without virtual audio drivers, and can instead record one app or a microphone. Audio is normalised to 48 kHz 32-bit float stereo before encoding, then written as 16-bit PCM WAV, 24-bit FLAC, or AAC M4A at 256 kbps. Recording can run from a menu bar popover with a decibel-scaled live waveform, with the main window closed. The WAV header is rewritten about every 0.7s so a force-quit still leaves a playable file. A Recover Recordings feature repairs interrupted takes, and stream failures finalize the partial file. The README also covers diagnostics export, a disk-space guard, and a configurable save location that defaults to Desktop.",
+  "use_cases": [
+   "Record system audio on a Mac",
+   "Capture meeting or call audio playing on the computer",
+   "Record a single app's audio",
+   "Record a USB or built-in microphone to WAV",
+   "Save voice memos or screen-recording audio as lossless files",
+   "Recover a recording after a crash or force-quit"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd home-rec/HomeRec",
+   "open HomeRec.xcodeproj",
+   "Press Cmd+R in Xcode to build and run",
+   "xcodebuild test -scheme HomeRec -destination 'platform=macOS'"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "ScreenCaptureKit",
+   "AppKit (NSStatusItem, NSPopover)",
+   "Xcode",
+   "os.Logger",
+   "GitHub Actions (CI)",
+   "GlassKit (vendored design system)"
+  ],
+  "notable": [
+   "Uses ScreenCaptureKit for system audio, so no virtual audio drivers or kernel extensions are needed",
+   "Crash-safe WAV: header rewritten about every 0.7s so partial files stay playable",
+   "Recover Recordings finds interrupted takes and repairs them with atomic writes",
+   "Single-app and microphone capture sources, remembered between launches",
+   "Always-dark glass interface that ignores the macOS light/dark setting"
+  ],
+  "caveats": [
+   "Requires the Screen Recording permission, which macOS applies even for audio-only capture",
+   "Microphone and system audio cannot be recorded into the same file",
+   "MP3 export is not yet supported, and a FLAC file interrupted by a crash cannot be played until repaired",
+   "Test coverage is described as a work in progress"
+  ],
+  "license": "Apache 2.0",
+  "category": "macos audio recording",
+  "keywords": [
+   "system audio recorder",
+   "mac audio recorder",
+   "record system audio macos",
+   "screencapturekit",
+   "swift",
+   "swiftui",
+   "wav recorder",
+   "flac export",
+   "m4a export",
+   "lossless audio capture",
+   "microphone recorder",
+   "per-app audio capture",
+   "menu bar recorder",
+   "menu bar app",
+   "voice memo recorder",
+   "meeting audio recording",
+   "record computer sound",
+   "capture what i hear on mac",
+   "audacity alternative for mac",
+   "quicktime audio recording alternative",
+   "audio capture without virtual driver",
+   "background audio recording",
+   "crash-safe wav",
+   "recover interrupted recording",
+   "apache license mac app",
+   "open source mac app",
+   "capture desktop audio",
+   "record audio playing on mac",
+   "homerec"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7752,
+  "output": 1332
+ },
+ "generated": "2026-10-29"
+}

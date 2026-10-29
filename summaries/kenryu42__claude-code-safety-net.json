@@ -1,0 +1,92 @@
+{
+ "id": "kenryu42/claude-code-safety-net",
+ "repo": "kenryu42/claude-code-safety-net",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Claude Code Safety Net by kenryu42 - A coding agent CLI hook that acts as a safety net, catching destructive git and filesystem commands before they execute. Supports Codex, Claude Code, OpenCode, Gemini CLI, Copilot CLI, Kimi Code and Pi."
+  }
+ ],
+ "summary": {
+  "one_liner": "A CLI hook for coding agents that blocks destructive git and filesystem commands and access to secrets before the tool call runs.",
+  "what_it_does": "CC Safety Net parses what a shell command does before it runs, so wrapping a command or reordering flags does not hide it. It blocks destructive operations such as git reset --hard, git push --force, and rm -rf on dangerous targets, plus install scripts piped from the internet (curl ... | bash), including inside bash -c or python -c. It also blocks access to SSH keys, .env files, ~/.aws, and coding-CLI credentials, both from the shell and from the agent's file tools. Policy can be tuned through a GUI (npx cc-safety-net gui) with Standard, Strict, or Paranoid presets, and extended with official rulebooks for Terraform, AWS, gcloud, and Azure or custom JSON rulebooks. A broken config file falls back to safe defaults rather than stopping the agent. It is explicitly not a sandbox and does not contain processes, set filesystem permissions, or watch network egress.",
+  "use_cases": [
+   "Prevent an AI coding agent from running git reset --hard or force pushes",
+   "Stop agents from reading .env files or SSH keys",
+   "Share a common safety policy across a team via git",
+   "Block rm -rf on dangerous paths during agent sessions",
+   "Add custom command rules through JSON rulebooks",
+   "Check commands from Node.js code using the checkCommand library API"
+  ],
+  "how_to_run": [
+   "npx -y cc-safety-net@latest install",
+   "npx -y cc-safety-net@latest doctor",
+   "npx -y cc-safety-net@latest update",
+   "npx -y cc-safety-net uninstall",
+   "npx cc-safety-net gui"
+  ],
+  "stack": [
+   "Node.js 22 or higher",
+   "npm package cc-safety-net",
+   "npx"
+  ],
+  "notable": [
+   "Parses command structure so wrapping or flag reordering does not bypass blocks",
+   "Covers many coding CLIs including Claude Code, Codex, OpenCode, Gemini CLI, Copilot CLI, Kimi Code, and Pi",
+   "Shareable team policy committed in a .cc-safety-net/ directory",
+   "Embeddable checkCommand Node.js library API without installing the hook",
+   "Fail-safe: a broken config falls back to safe defaults"
+  ],
+  "caveats": [
+   "Not a sandbox: does not contain processes, set filesystem permissions, or monitor network egress",
+   "Full documentation is separate from the README; the README is described as the short version",
+   "Use @latest with npx; a bare package spec can run an older cached copy"
+  ],
+  "license": "MIT",
+  "category": "agent safety hooks",
+  "keywords": [
+   "claude code hook",
+   "coding agent safety",
+   "destructive command blocker",
+   "git reset --hard blocker",
+   "block force push",
+   "rm -rf protection",
+   "secret file protection",
+   "ssh key protection",
+   "env file protection",
+   "codex safety",
+   "opencode plugin",
+   "gemini cli hook",
+   "copilot cli hook",
+   "kimi code safety",
+   "pi coding agent",
+   "npx safety net",
+   "cli guardrails",
+   "agent guardrails",
+   "command parser",
+   "shell command filter",
+   "terraform rulebook",
+   "aws rulebook",
+   "gcloud rulebook",
+   "azure rulebook",
+   "team policy git",
+   "policy gui",
+   "checkcommand library",
+   "nodejs library",
+   "prevent ai deleting files",
+   "stop agent reading secrets",
+   "curl pipe bash block"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2437,
+  "output": 1304
+ },
+ "generated": "2026-10-29"
+}

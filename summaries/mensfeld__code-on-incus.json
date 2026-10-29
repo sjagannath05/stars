@@ -1,0 +1,98 @@
+{
+ "id": "mensfeld/code-on-incus",
+ "repo": "mensfeld/code-on-incus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Code on Incus by mensfeld - Give each AI agent its own isolated machine with root, Docker, and systemd. Active defense detects and stops threats automatically.."
+  }
+ ],
+ "summary": {
+  "one_liner": "Coi (Code on Incus) runs AI coding agents such as Claude Code, Codex, and opencode inside isolated Incus system containers with root, systemd, and Docker, and auto-pauses or kills the container when it detects threats.",
+  "what_it_does": "The tool launches an AI coding tool inside a full-OS Incus system container while mounting the current project at /workspace with host-correct file ownership. Credentials such as SSH keys, tokens, .env files, and host environment variables are kept out of the container unless explicitly mounted or forwarded, and `coi shell` lists the grants at startup. Kernel-level monitoring watches for reverse shells, C2, exfiltration, and DNS tunneling, auto-pausing on HIGH and auto-killing on CRITICAL severity. Network egress can be set to open, restricted, or allowlist modes with nftables, plus DNS pinning and per-host port scoping. Reusable named profiles (TOML with inheritance) bundle image, tool, limits, network mode, and build scripts, and headless mode runs prompts for cron and CI with exit codes propagated. A JSONL threat-event audit log and a `coi health` diagnostic command are also provided.",
+  "use_cases": [
+   "run AI coding agents with root access without risking the host machine",
+   "isolate several parallel coding agents from each other",
+   "headless agent runs in cron or CI pipelines",
+   "sandbox untrusted code executed by an AI agent",
+   "stream security threat events to a SIEM",
+   "persistent per-project development environments for AI agents"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash  (installer URL was missing from the README text)",
+   "coi build  (build base image, first time only, ~5-10 min)",
+   "cd your-project",
+   "coi shell"
+  ],
+  "stack": [
+   "Incus (system containers)",
+   "Go or shell installer (not named in README)",
+   "nftables",
+   "Docker (inside container)",
+   "TOML configuration",
+   "Claude Code",
+   "Codex CLI",
+   "opencode",
+   "pi",
+   "omp (Oh My Pi)"
+  ],
+  "notable": [
+   "Full-OS system containers with root, systemd, and native Docker inside, unlike application-level containers",
+   "Active defense: kernel-level detection of reverse shells, C2, exfiltration, and DNS tunneling with automatic pause or kill",
+   "Profiles: reusable named TOML setups with inheritance and a built-in hardened preset",
+   "Supply-chain guards: git hooks and IDE configs mounted read-only, plus a branch guard blocking direct commits to main",
+   "Supports multiple AI tools: Claude Code, Codex, opencode, opencode2, pi, and omp"
+  ],
+  "caveats": [
+   "Requires Linux with Incus; macOS is supported only via Colima/Lima per the README",
+   "Aider and Cursor are listed as planned, not yet supported",
+   "Full setup and configuration details are in an external wiki rather than the README"
+  ],
+  "license": "unknown",
+  "category": "ai agent sandboxing",
+  "keywords": [
+   "sandbox for ai coding agents",
+   "incus",
+   "system containers",
+   "lxd alternative",
+   "claude code sandbox",
+   "codex cli",
+   "opencode",
+   "isolated dev environment",
+   "run agent without risking host",
+   "container isolation",
+   "nftables egress control",
+   "network allowlist",
+   "reverse shell detection",
+   "exfiltration detection",
+   "threat monitoring",
+   "audit log jsonl",
+   "siem integration",
+   "headless agent cron",
+   "ci agent runner",
+   "profiles toml",
+   "persistent dev container",
+   "docker inside container",
+   "supply chain protection",
+   "git hooks read-only",
+   "credential isolation",
+   "ssh key protection",
+   "parallel agents",
+   "file ownership host",
+   "coi shell",
+   "oh my pi",
+   "security sandbox"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4461,
+  "output": 1381
+ },
+ "generated": "2026-10-29"
+}

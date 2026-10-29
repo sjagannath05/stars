@@ -1,0 +1,98 @@
+{
+ "id": "aannoo/claude-hook-comms",
+ "repo": "aannoo/claude-hook-comms",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Claude Code Hook Comms (HCOM) by aannoo - Lightweight CLI tool for real-time communication between Claude Code sub agents using hooks. Enables multi-agent collaboration with @-mention targeting, live dashboard monitoring, and a zero-dependency implementation."
+  }
+ ],
+ "summary": {
+  "one_liner": "hcom is a CLI tool that connects independent coding agents (Claude Code, Codex, OpenCode, Gemini and others) across terminals and machines so they can message each other, observe each other's activity, and launch more agents.",
+  "category": "multi-agent coordination cli",
+  "keywords": [
+   "multi-agent",
+   "agent orchestration",
+   "claude code",
+   "codex",
+   "opencode",
+   "gemini cli",
+   "coding agents",
+   "agent messaging",
+   "inter-agent communication",
+   "hooks",
+   "sqlite",
+   "subagents",
+   "tui dashboard",
+   "agent-to-agent",
+   "mqtt relay",
+   "cross-device agents",
+   "headless agents",
+   "pty",
+   "terminal multiplexer",
+   "tmux",
+   "kitty",
+   "wezterm",
+   "zellij",
+   "workflow scripts",
+   "debate agents",
+   "spawn agents",
+   "fork session",
+   "resume agent",
+   "let agents talk to each other",
+   "share context between ai agents",
+   "run multiple ai coding tools together",
+   "coordinate multiple claude sessions",
+   "avoid copy-pasting between agents",
+   "agent event subscription"
+  ],
+  "what_it_does": "hcom runs as a wrapper: starting an agent with `hcom` in front (for example `hcom claude` or `hcom codex`) connects it to a shared network. Hooks record each agent's activity into a local SQLite database and deliver messages from it, so agents can send messages to one another that arrive mid-turn or wake idle agents. Agents can observe each other's status, transcripts, tool results, file edits, commands, live terminal screens and token usage. They can subscribe to events such as status changes, file edits and collisions, and react automatically. Agents can also spawn, fork, resume and kill other agents, in a terminal emulator or headless. A TUI dashboard (`hcom`) and a CLI (`hcom send`, `hcom list`, `hcom events`) let a person or script interact with the same agents, and an MQTT relay can link agents across machines.",
+  "use_cases": [
+   "coordinate multi-agent pipelines",
+   "have one AI coding agent review another's work",
+   "run different AI CLIs as each other's subagents",
+   "split a task across several agents and collect results",
+   "monitor what running coding agents are doing",
+   "script wake-ups of idle agents when another finishes"
+  ],
+  "how_to_run": [
+   "uv tool install hcom  (or: brew install aannoo/hcom/hcom)",
+   "Terminal 1: hcom claude",
+   "Terminal 2: hcom codex",
+   "hcom  (open the TUI dashboard)",
+   "hcom send -b @luna -- \"wake up and do this task\"  (send a message from any process)"
+  ],
+  "stack": [
+   "Python (installed via uv tool install)",
+   "SQLite",
+   "MQTT (cross-device relay)",
+   "shell hooks in supported coding agent CLIs",
+   "Homebrew (optional install)"
+  ],
+  "notable": [
+   "Works with many agent CLIs, including Claude Code, Codex, OpenCode, Gemini, Copilot CLI, Cursor CLI and Kimi, with messages delivered automatically for supported tools",
+   "Hooks activate only when an agent is launched with hcom in front, so normal usage of those tools is unaffected",
+   "Bundled workflow scripts such as debate, confess, fatcow and onidle, plus support for user-authored scripts",
+   "Cross-device messaging and spawning through an MQTT relay protected by a token",
+   "Per-project state isolation via the HCOM_DIR environment variable"
+  ],
+  "caveats": [
+   "Message delivery is automatic only for listed tools; other tools need manual setup via `hcom listen` or `hcom start`",
+   "Cross-device use requires an MQTT relay and a token that must be treated like an API or SSH key",
+   "Closing panes from `hcom kill` is only supported in certain terminals (kitty, wezterm, tmux, zellij, waveterm, cmux, herdr); other emulators can spawn but the README does not say they can close panes",
+   "Print-mode Claude runs use separate Agent SDK credits"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5546,
+  "output": 1483
+ },
+ "generated": "2026-10-29"
+}

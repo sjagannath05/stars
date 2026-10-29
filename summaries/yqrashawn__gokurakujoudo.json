@@ -1,0 +1,93 @@
+{
+ "id": "yqrashawn/gokurakujoudo",
+ "repo": "yqrashawn/GokuRakuJoudo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⌨️ Keyboard (15)",
+   "entry": "GokuRakuJoudo - Karabiner-Elements configuration manager, rescue to bloated karabiner.json"
+  }
+ ],
+ "summary": {
+  "one_liner": "GokuRakuJoudo (Goku) is a tool that lets you write Karabiner-Elements keyboard configurations in the compact EDN format and compiles them into the verbose karabiner.json file.",
+  "what_it_does": "Goku reads a karabiner.edn file and generates the karabiner.json that Karabiner-Elements uses, so users can edit short EDN rules instead of thousands of lines of JSON. The `goku` command rebuilds karabiner.json once, while `gokuw` watches the EDN file and regenerates the JSON on every change. Goku can run as a background service through `brew services start goku`, with logs written to ~/Library/Logs/goku.log. The config path can be set with the GOKU_EDN_CONFIG_FILE environment variable, and a profile name can be set with the `:profiles` keyword (default is \"Default\"). The README also mentions using joker to lint the EDN file and watchexec to watch it.",
+  "use_cases": [
+   "Editing Karabiner-Elements key remapping rules in a compact format",
+   "Mapping Caps Lock to Escape or other keys on macOS",
+   "Keeping a large karabiner.json manageable",
+   "Auto-regenerating Karabiner config while editing",
+   "Running a keymap compiler as a macOS background service"
+  ],
+  "how_to_run": [
+   "brew install yqrashawn/goku/goku",
+   "Create ~/.config/karabiner.edn (start from example.edn in the repo)",
+   "Make sure Karabiner's GUI has a profile named \"Default\" (or set :profiles)",
+   "goku",
+   "gokuw",
+   "brew services start goku"
+  ],
+  "stack": [
+   "Clojure",
+   "EDN",
+   "GraalVM native-image",
+   "Leiningen",
+   "watchexec",
+   "joker",
+   "Homebrew"
+  ],
+  "notable": [
+   "Converts short EDN rules into Karabiner-Elements karabiner.json",
+   "Watch mode (gokuw) regenerates config on each save",
+   "Can run as a brew background service with logs",
+   "Linting support via joker",
+   "Native binary build via GraalVM"
+  ],
+  "caveats": [
+   "Requires Karabiner-Elements and a profile named \"Default\" unless overridden",
+   "Development build requires Leiningen and, for the native binary, GraalVM native-image",
+   "Commenting out rules with #_ leaves a null rule in karabiner.json (README notes this as a known quirk, though it does not cause errors)"
+  ],
+  "license": "unknown",
+  "category": "keyboard remapping config",
+  "keywords": [
+   "karabiner",
+   "karabiner-elements",
+   "karabiner.json",
+   "karabiner.edn",
+   "goku",
+   "edn config",
+   "keyboard remapping",
+   "key remapping macos",
+   "caps lock to escape",
+   "macos keyboard customization",
+   "keymap compiler",
+   "clojure",
+   "edn",
+   "watch config file",
+   "file watcher",
+   "brew services",
+   "homebrew keyboard tool",
+   "native binary graalvm",
+   "leiningen",
+   "joker linter",
+   "watchexec",
+   "modifier keys mac",
+   "rewrite keyboard shortcuts",
+   "json config generator",
+   "simplify karabiner config",
+   "edit keymap easily",
+   "remap keys on mac",
+   "background keyboard service"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2411,
+  "output": 1198
+ },
+ "generated": "2026-10-29"
+}

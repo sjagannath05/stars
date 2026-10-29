@@ -1,0 +1,94 @@
+{
+ "id": "datarhei/restreamer",
+ "repo": "datarhei/restreamer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "Restreamer - Access H.264 real-time video streaming on your website without a streaming provider. (Source Code) Apache-2.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Restreamer is a self-hosted, Docker-based live streaming server that receives streams, republishes them to websites (HLS) and platforms like YouTube-Live, Twitch, and Vimeo, and includes a web UI and REST API.",
+  "what_it_does": "Restreamer runs as a Docker container and accepts live video inputs, then serves them over HTTP/S (HLS), RTMP/S, and SRT. It can re-stream those feeds to external platforms such as YouTube-Live, Twitch, Vimeo, Twitter, and software like Wowza Media Server. It includes a built-in VideoJS player and a configurable publication website for embedding streams on your own site. The web interface offers a setup wizard, and a REST API with Swagger documentation is provided. The README also mentions viewer and bandwidth monitoring with limiting, optional Prometheus metrics, server and process logging, and automatic Let's Encrypt HTTPS. Hardware acceleration is listed for Raspberry Pi (MMAL/OMX), Nvidia CUDA, and Intel VAAPI.",
+  "use_cases": [
+   "Live stream video on your own website without a streaming provider",
+   "Re-stream one live feed to YouTube, Twitch, and Vimeo at once",
+   "Run a self-hosted RTMP or SRT ingest server",
+   "Serve live video as HLS to web viewers",
+   "Encode live video on a Raspberry Pi or GPU machine",
+   "Monitor viewers and bandwidth for live streams"
+  ],
+  "how_to_run": [
+   "docker run -d --restart=always --name restreamer -v /opt/restreamer/config:/core/config -v /opt/restreamer/data:/core/data -p 8080:8080 -p 8181:8181 -p 1935:1935 -p 1936:1936 -p 6000:6000/udp datarhei/restreamer:latest",
+   "Use datarhei/restreamer:rpi-latest on ARMv7/ARM64 Raspberry Pi (adds --privileged)",
+   "Use datarhei/restreamer:cuda-latest with --runtime=nvidia --privileged for Nvidia CUDA",
+   "Use datarhei/restreamer:vaapi-latest with -v /dev/dri:/dev/dri --privileged for Intel VAAPI",
+   "Build a custom bundle by cloning datarhei/ffmpeg, datarhei/core, and datarhei/restreamer-ui and building each with docker build"
+  ],
+  "stack": [
+   "Docker",
+   "FFmpeg",
+   "Golang (backend core)",
+   "React (restreamer-ui)",
+   "VideoJS",
+   "Swagger"
+  ],
+  "notable": [
+   "Ready-made Docker images for AMD64, ARM, Raspberry Pi, Nvidia CUDA, and Intel VAAPI hardware",
+   "Built-in VideoJS player and embeddable publication website",
+   "Multi-platform restreaming to YouTube-Live, Twitch, Vimeo and others",
+   "REST API with 100% Swagger documentation",
+   "Claims GDPR compliance without third-party providers and no audience data saved"
+  ],
+  "caveats": [
+   "Hardware acceleration and local devices need --privileged or specific runtime flags",
+   "External access may require port forwarding on your router",
+   "Commercial support is offered separately by the vendor (contact support@datarhei.com)"
+  ],
+  "license": "Apache-2.0",
+  "category": "live video streaming",
+  "keywords": [
+   "live streaming server",
+   "self-hosted live streaming",
+   "restreamer",
+   "restream",
+   "multistream",
+   "rtmp server",
+   "srt server",
+   "hls streaming",
+   "video streaming",
+   "stream to youtube live",
+   "stream to twitch",
+   "live stream on my website",
+   "stream without a streaming provider",
+   "ffmpeg",
+   "docker",
+   "raspberry pi streaming",
+   "nvidia cuda encoding",
+   "vaapi hardware encoding",
+   "videojs player",
+   "swagger rest api",
+   "wowza alternative",
+   "restream to multiple platforms",
+   "lets encrypt https streaming",
+   "viewer bandwidth monitoring",
+   "prometheus metrics",
+   "h.264 streaming",
+   "webcam live broadcast",
+   "usb camera streaming",
+   "gdpr streaming",
+   "video relay server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3665,
+  "output": 1552
+ },
+ "generated": "2026-10-29"
+}

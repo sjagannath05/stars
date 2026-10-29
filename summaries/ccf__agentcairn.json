@@ -1,0 +1,101 @@
+{
+ "id": "ccf/agentcairn",
+ "repo": "ccf/agentcairn",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Obsidian",
+   "entry": "agentcairn by ccf - Long-term, cross-project memory for AI coding agents. Your own Obsidian vault as the source of truth. Daemonless and without opaque databases, your memory belongs to you."
+  }
+ ],
+ "summary": {
+  "one_liner": "agentcairn is a local, Markdown-first long-term memory layer that lets multiple coding agents (Claude Code, Codex, Cursor, OpenCode, Hermes Agent and others) share one Obsidian-compatible vault, with a disposable DuckDB index for recall.",
+  "what_it_does": "It captures durable context from supported coding agent tools, stores it as inspectable Markdown notes with frontmatter, provenance and [[wikilinks]], and recalls the most relevant pieces when another agent asks. Recall fuses BM25 and semantic vector search with Reciprocal Rank Fusion, with optional reranking and fallback to BM25 when a model fails. Notes carry validity fields (valid_from, valid_until, superseded_by) so superseded facts stay visible but rank lower. It can import Claude Code's auto-memory files (MEMORY.md and topic files) into the vault, and a sweep command reads supported transcript stores as a backstop capture. Embeddings run locally by default, with Voyage, OpenAI-compatible and Anthropic options that send redacted text off-machine when enabled. A companion agentcairn-obsidian plugin reads the same files.",
+  "use_cases": [
+   "Give coding agents long-term memory across projects",
+   "Share one memory vault between Claude Code, Codex and other agents",
+   "Recall past decisions or bug fixes in a new agent session",
+   "Keep agent memory as plaintext Markdown viewable in Obsidian",
+   "Import Claude Code auto-memory into a shared store",
+   "Schedule background capture of agent transcripts"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add ccf/agentcairn",
+   "claude plugin install agentcairn@agentcairn",
+   "uv tool install agentcairn",
+   "cairn init ~/agentcairn",
+   "cairn recall \"how did we fix the auth bug?\" --vault ~/agentcairn",
+   "uvx agentcairn"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "uv",
+   "DuckDB",
+   "FastEmbed",
+   "nomic-embed-text-v1.5 embeddings",
+   "MCP (stdio server)",
+   "Markdown with wikilinks"
+  ],
+  "notable": [
+   "Markdown vault is canonical; the DuckDB index is a rebuildable cache and can be deleted without losing memory",
+   "Hybrid BM25 + vector retrieval with Reciprocal Rank Fusion and optional cross-encoder reranking",
+   "Time-aware corrections via valid_from, valid_until and superseded_by instead of silent overwrites",
+   "Preview-first installer (cairn install) with backup-first MCP config writes",
+   "No required daemon, external database or telemetry; local by default"
+  ],
+  "caveats": [
+   "Project is beta; the first local model load can be slow",
+   "Vault is plaintext by design; redaction is best-effort and file permissions are the main access control",
+   "Ambient capture varies by host: Cursor and Antigravity rely on out-of-band sweep; some MCP hosts have no lifecycle hooks",
+   "Scheduled automation targets only macOS launchd and Linux user crontab; other systems need a manual scheduler"
+  ],
+  "license": "Apache License 2.0",
+  "category": "agent memory systems",
+  "keywords": [
+   "agent memory",
+   "long-term memory",
+   "coding agent memory",
+   "obsidian vault",
+   "markdown memory",
+   "duckdb",
+   "bm25",
+   "hybrid search",
+   "reciprocal rank fusion",
+   "semantic search",
+   "reranker",
+   "mcp server",
+   "model context protocol",
+   "claude code plugin",
+   "codex plugin",
+   "cursor memory",
+   "opencode",
+   "hermes agent",
+   "fastembed",
+   "local embeddings",
+   "nomic embeddings",
+   "vector search",
+   "recall past sessions",
+   "share memory between agents",
+   "remember decisions across projects",
+   "persistent context for ai agents",
+   "transcript capture",
+   "claude code memory import",
+   "wikilinks graph",
+   "plaintext notes",
+   "self-hosted memory",
+   "knowledge base for agents",
+   "uvx",
+   "python cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6442,
+  "output": 1487
+ },
+ "generated": "2026-10-29"
+}

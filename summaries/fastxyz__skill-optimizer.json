@@ -1,0 +1,92 @@
+{
+ "id": "fastxyz/skill-optimizer",
+ "repo": "fastxyz/skill-optimizer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "skill-optimizer — CLI tool that benchmarks SKILL.md guidance docs against multiple LLMs, measures whether models call the right SDK/CLI/MCP tools with correct arguments, and runs an iterative optimizer to rewrite your docs until every configured model meets a score floor. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Docker-based eval workbench and Agent Skill that runs deterministic, grader-checked evals of agent skills against OpenRouter models via a local CLI.",
+  "category": "agent skill evaluation",
+  "keywords": [
+   "agent skills",
+   "skill evaluation",
+   "eval harness",
+   "deterministic evals",
+   "docker workbench",
+   "openrouter",
+   "llm benchmarking",
+   "skill.md",
+   "graders",
+   "eval suite",
+   "run evals in docker",
+   "test my agent skill",
+   "compare llm models",
+   "claude code plugin",
+   "codex plugin",
+   "cursor rules",
+   "gemini extension",
+   "opencode plugin",
+   "agent skills cli",
+   "mcp server eval",
+   "sql eval",
+   "pdf extraction eval",
+   "typescript cli",
+   "node.js tool",
+   "benchmark models on tasks",
+   "validate agent instructions",
+   "skill-optimizer"
+  ],
+  "what_it_does": "The repository provides an Agent Skill (skills/skill-optimizer/SKILL.md) that can be installed into several coding agents to help author and debug eval suites. It also includes a local CLI that runs cases and suites inside Docker against OpenRouter models. A case is a user-like task plus deterministic graders; a suite is a matrix of cases and models. The agent phase sees only an isolated /work directory populated from references/, while graders run afterward and check files, command logs, SQL results, artifacts, answer.json, or trace.jsonl. The README's examples include PDF extraction/splitting/creation cases and an MCP example that runs a local calculator server as a hidden Docker service. Detailed workbench behavior is documented in docs/workbench.md, which the README does not reproduce.",
+  "use_cases": [
+   "author eval suites for an agent skill",
+   "debug why an agent misuses a skill",
+   "run a task suite against several OpenRouter models",
+   "check whether an agent follows SKILL.md instructions",
+   "test PDF handling instructions for an agent",
+   "evaluate an MCP server through an agent workflow"
+  ],
+  "how_to_run": [
+   "npm install",
+   "npm run build",
+   "export OPENROUTER_API_KEY=... (required for real model runs)",
+   "npx tsx src/cli.ts run-suite examples/workbench/pdf/suite.yml --trials 1",
+   "npx tsx src/cli.ts run-case ./case.yml --model openrouter/google/gemini-2.5-flash",
+   "npx tsx src/cli.ts --help"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 20+",
+   "Docker",
+   "OpenRouter API",
+   "tsx",
+   "MCP"
+  ],
+  "notable": [
+   "Installable as a skill/plugin across Claude Code, OpenAI Codex, Cursor, OpenCode, and Gemini CLI",
+   "Deterministic graders run after the agent phase and inspect workspace files, answer.json, trace.jsonl, and SQL state",
+   "Agent phase is isolated to /work so hidden answers and graders are not visible to the agent",
+   "Suites are a matrix of cases crossed with OpenRouter models",
+   "Includes a negative case checking the agent did not read an unrelated skill file"
+  ],
+  "caveats": [
+   "Only openrouter/... model refs are supported",
+   "Real model runs require an OPENROUTER_API_KEY",
+   "Requires Docker and Node.js 20+ installed locally"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3284,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

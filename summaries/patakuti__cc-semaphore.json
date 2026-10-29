@@ -1,0 +1,97 @@
+{
+ "id": "patakuti/cc-semaphore",
+ "repo": "patakuti/cc-semaphore",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "cc-semaphore by patakuti - A lightweight session monitor for parallel Claude Code sessions. Aggregates running/waiting/idle status across sessions into the OS status bar or system tray, with the same experience on native Linux (GNOME Shell extension) and Windows (system tray via WSL). Also includes a scriptable trigger system for state-transition commands."
+  }
+ ],
+ "summary": {
+  "one_liner": "A lightweight monitor that shows whether parallel Claude Code sessions are running, waiting for input, or idle, surfaced in the Linux GNOME top bar or the Windows system tray (via WSL).",
+  "category": "session monitoring tools",
+  "keywords": [
+   "claude code",
+   "claude code monitor",
+   "parallel sessions",
+   "multiple claude sessions",
+   "session monitor",
+   "status bar",
+   "system tray",
+   "gnome shell extension",
+   "gnome top bar",
+   "windows tray icon",
+   "wsl",
+   "wsl1",
+   "wsl2",
+   "inotify",
+   "rust",
+   "tauri",
+   "cc-semaphored",
+   "daemon",
+   "session status",
+   "waiting for input",
+   "notification triggers",
+   "notify-send",
+   "idle sessions",
+   "state transition hooks",
+   "systemd user service",
+   "terminal watch",
+   "awesome claude code",
+   "is anything waiting on me",
+   "see which session needs attention"
+  ],
+  "what_it_does": "Watches Claude Code sessions and classifies each as running, waiting (needs input or approval), or idle (finished and untouched), publishing a JSON snapshot that frontends read. On native Linux, a GNOME Shell 46 extension shows the three counts in the top bar with a popup session list. On Windows, a Tauri tray app (cc-semaphore-desktop) shows a tray icon and an optional always-on-top panel, reading the snapshot the WSL daemon writes to the Windows side. The cc-semaphored CLI offers once, watch, and daemon modes, plus install-service (systemd) and install-wsl1-autostart commands. An optional triggers.json runs shell commands on state transitions, with a debounce to suppress flicker. Configuration is optional and stored in a JSON config file.",
+  "use_cases": [
+   "see which Claude Code session is waiting for my input",
+   "monitor several parallel Claude Code sessions at once",
+   "get desktop notifications when a Claude Code session finishes",
+   "show Claude Code status in the GNOME top bar",
+   "show Claude Code status in the Windows system tray from WSL",
+   "run a script when a coding agent session becomes idle or waiting"
+  ],
+  "how_to_run": [
+   "mkdir -p ~/.local/bin && mv cc-semaphored-linux-x86_64 ~/.local/bin/cc-semaphored && chmod +x ~/.local/bin/cc-semaphored",
+   "cc-semaphored once",
+   "cc-semaphored install-service && systemctl --user daemon-reload && systemctl --user enable --now cc-semaphore.service (native Linux)",
+   "cc-semaphored install-wsl1-autostart (WSL1 or WSL2)",
+   "ln -sfn \"$(pwd)/extensions/cc-semaphore@patakuti\" ~/.local/share/gnome-shell/extensions/cc-semaphore@patakuti && gnome-extensions enable cc-semaphore@patakuti (GNOME)",
+   "cargo build && cargo test (build from source)"
+  ],
+  "stack": [
+   "Rust",
+   "Tauri v2",
+   "GNOME Shell 46 extension (JavaScript)",
+   "inotify",
+   "plain HTML/CSS/JS (ui/, no build step)",
+   "systemd user service",
+   "NSIS installer"
+  ],
+  "notable": [
+   "Tracks three states (running, waiting, idle) rather than cost or transcripts, so it answers only whether anything needs you",
+   "Windows support runs the daemon in WSL and a separate Windows tray/panel app that reads the snapshot across DrvFs",
+   "Scriptable triggers: shell commands run on state transitions with placeholders like {{name}} and {{waitingFor}} and a debounce",
+   "Daemon snapshot directory is created with 0700 permissions so other local users cannot read session data",
+   "Ships as a static Linux binary with no Rust toolchain needed"
+  ],
+  "caveats": [
+   "On Windows the daemon requires WSL; there is no native Windows build of cc-semaphored",
+   "WSL1 and WSL2 are treated identically with polling; WSL2 inotify behavior is untested",
+   "Windows .exe and installer are unsigned, so SmartScreen warns on first run",
+   "triggers.json is read only at daemon startup and needs a restart after edits",
+   "The GNOME extension targets GNOME Shell 46 and Wayland requires logging out to reload"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6287,
+  "output": 1585
+ },
+ "generated": "2026-10-29"
+}

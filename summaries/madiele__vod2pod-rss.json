@@ -1,0 +1,92 @@
+{
+ "id": "madiele/vod2pod-rss",
+ "repo": "madiele/vod2pod-rss",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "vod2pod-rss ⚠ - Convert YouTube and Twitch channels to podcasts, no storage required. Transcodes VoDs to MP3 192k on the fly, generates an RSS feed to use in podcast clients. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "vod2pod-rss turns YouTube and Twitch channels (and standard RSS feeds) into audio podcast feeds, transcoding VoDs to MP3 on the fly without storing them on the server.",
+  "category": "podcast feed generator",
+  "keywords": [
+   "vod2pod-rss",
+   "youtube to podcast",
+   "twitch to podcast",
+   "rss feed generator",
+   "podcast rss",
+   "mp3 transcoding",
+   "on-the-fly transcoding",
+   "audio streaming",
+   "self-hosted podcast",
+   "docker compose",
+   "yt-dlp",
+   "youtube audio rss",
+   "twitch vod audio",
+   "listen to youtube as podcast",
+   "podcast client feed",
+   "podcast app youtube channel",
+   "stream vod audio",
+   "low bandwidth podcast",
+   "raspberry pi media server",
+   "no storage media feed",
+   "podcatcher feed",
+   "youtube data api",
+   "twitch api",
+   "transcode mp3 192k",
+   "self-hosted rss converter",
+   "channel to podcast",
+   "audio only youtube",
+   "podcast feed from video channel"
+  ],
+  "what_it_does": "The app converts a YouTube or Twitch channel into a podcast RSS feed that can be added to a podcast client. It includes a web UI where you paste a channel URL and copy the generated feed link. VoDs are not downloaded to the server; audio is transcoded to MP3 (192k by default, configurable via MP3_BITRATE) on the fly as it is played. It can also pass through standard RSS/Atom podcast feeds, optionally at a lower bitrate. Optional YouTube and Twitch API keys raise the YouTube item limit above 15 and add a channel avatar and Twitch access. Transcoding can be disabled with TRANSCODE=false if only feeds are needed. Domains allowed for conversion are restricted by VALID_URL_DOMAINS, and cache lifetime is set by CACHE_TTL.",
+  "use_cases": [
+   "listen to YouTube channels as podcasts",
+   "turn Twitch VODs into audio episodes",
+   "generate a podcast feed for a video channel",
+   "save mobile data by using low-bitrate audio feeds",
+   "self-host a podcast feed converter without disk storage",
+   "run a media feed service on a Raspberry Pi"
+  ],
+  "how_to_run": [
+   "git clone the vod2pod-rss repository",
+   "cd vod2pod-rss",
+   "edit docker-compose.yml to set ports and optional API keys (YT_API_KEY, TWITCH_SECRET, TWITCH_CLIENT_ID)",
+   "sudo docker compose up -d",
+   "open the web UI on the hosted port, paste a channel URL, and copy the generated RSS link into a podcast client"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "yt-dlp",
+   "MP3 transcoding",
+   "YouTube Data API (optional)",
+   "Twitch API (optional)"
+  ],
+  "notable": [
+   "No media storage: VoDs are transcoded on the fly rather than downloaded to the server",
+   "Precompiled Docker images for arm64, amd64 and armv7, including Raspberry Pi",
+   "Beta image tag tracks latest yt-dlp releases for faster fixes",
+   "Optional YouTube extra yt-dlp arguments, such as a proxy or custom user-agent",
+   "Also accepts standard RSS/Atom podcast feeds for lower-bitrate versions"
+  ],
+  "caveats": [
+   "Without a YouTube API key, YouTube feeds are limited to 15 items and have no channel avatar",
+   "Twitch support requires your own Twitch client ID and secret for API access",
+   "Listed on awesome-selfhosted with a warning marker; the README does not state a maintenance status"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3591,
+  "output": 1384
+ },
+ "generated": "2026-10-29"
+}

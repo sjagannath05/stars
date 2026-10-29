@@ -1,0 +1,92 @@
+{
+ "id": "cdgriffith/box",
+ "repo": "cdgriffith/Box",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Built-in Classes Enhancement",
+   "entry": "python-box - Python dictionaries with advanced dot notation access."
+  }
+ ],
+ "summary": {
+  "one_liner": "python-box is a Python library providing dictionaries (the Box class) that allow dot-notation attribute access to keys, with automatic recursive conversion of nested dicts and lists.",
+  "what_it_does": "Box is a subclass of dict that makes every stored key accessible as an attribute as well as by key lookup. Nested dicts and lists added to a Box are converted automatically to Box and BoxList objects, so dot access works recursively. Keys that are not valid Python identifiers (such as those with spaces) are made safe to access as attributes by default, and this can be disabled with conversion_box=False. Box can be created the same ways as dict, and includes helpers to convert back to dict or to JSON, YAML, TOML, or msgpack strings or files. The README also mentions several Box types and converters for customization.",
+  "use_cases": [
+   "access nested JSON or config data with dot notation",
+   "replace dict in code with attribute-style access",
+   "load and save YAML, TOML, JSON, or msgpack data as a Box",
+   "convert keys with spaces into attribute-accessible names",
+   "customize dictionary behavior with Box types and converters"
+  ],
+  "how_to_run": [
+   "python -m pip install --upgrade pip",
+   "pip install python-box[all]~=7.0 --upgrade",
+   "from box import Box",
+   "movie_box = Box({ \"Robin Hood: Men in Tights\": { \"imdb stars\": 6.7, \"length\": 104 } })",
+   "movie_box.Robin_Hood_Men_in_Tights.imdb_stars"
+  ],
+  "stack": [
+   "Python",
+   "Cython (optional optimization)",
+   "ruamel.yaml",
+   "PyYAML (optional substitute)",
+   "tomli_w",
+   "msgpack"
+  ],
+  "notable": [
+   "Automatic recursive conversion of nested dicts to Box and lists to BoxList on insertion",
+   "Non-identifier keys such as those with spaces become attribute-accessible by default",
+   "Optional Cython optimization claimed to load large data sets up to 10x faster",
+   "Subclass of dict, usable as a near drop-in replacement",
+   "Optional extras for YAML, TOML, and msgpack serialization"
+  ],
+  "caveats": [
+   "Optimized Cython build is only automatic on x86_64 systems; other platforms need compiler, Python dev files, and Cython and wheel installed",
+   "Box 7 is tested on Python 3.7+ and the README warns of breaking changes between major versions",
+   "YAML, TOML, and msgpack writers are not installed by default and must be selected as extras"
+  ],
+  "license": "MIT",
+  "category": "python data structures",
+  "keywords": [
+   "python-box",
+   "python dict",
+   "dot notation",
+   "attribute access dictionary",
+   "dict subclass",
+   "dotdict",
+   "nested dictionary",
+   "recursive dict",
+   "boxlist",
+   "json to object",
+   "yaml loader",
+   "toml",
+   "msgpack",
+   "config file access",
+   "dictionary attribute access",
+   "access dict keys as attributes",
+   "convert dict to object python",
+   "dict with dot access",
+   "awesome-python library",
+   "access json keys like properties",
+   "nested json python",
+   "cython dict optimization",
+   "ruamel.yaml",
+   "pyyaml",
+   "mit licensed python library",
+   "python 3 dictionary helper",
+   "use dict like object",
+   "easy nested data access",
+   "simplify dictionary lookups"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3130,
+  "output": 1239
+ },
+ "generated": "2026-10-29"
+}

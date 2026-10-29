@@ -1,0 +1,99 @@
+{
+ "id": "diegosouzapw/omniroute",
+ "repo": "diegosouzapw/OmniRoute",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "🤖 AI-Related Tools",
+   "entry": "OmniRoute - Self-hostable AI gateway with 4-tier cascading fallback and multi-provider load balancing. Supports 200+ models across OpenAI, Anthropic, Google, and local providers."
+  }
+ ],
+ "summary": {
+  "one_liner": "OmniRoute is a self-hostable AI gateway that exposes one OpenAI-compatible endpoint and routes requests across many providers with combos, automatic fallback, and free-tier aggregation.",
+  "what_it_does": "It runs as a local or self-hosted server (npm, Docker, Bun, or from source) that provides an OpenAI-compatible /v1 API and a dashboard for connecting your own provider accounts. Requests can target a specific model or the \"auto\" model, which builds a virtual combo from connected providers and scores them live on factors such as quota, cost, latency and health. Users can also build combos with 20 routing strategies (priority, round-robin, cost-optimized, quota-weighted, fusion, pipeline and others) and chain fallbacks across layers. The README describes a prompt compression pipeline of up to 12 engines, a per-combo token-saving option, MCP and A2A endpoints for agents, a CLI with commands to launch or configure tools like Claude Code, Codex and Aider, and a dashboard page that catalogs third-party free tiers. The README's headline figures (377 providers, 1,475 model IDs, and a free-tier token estimate) are self-reported by the project.",
+  "use_cases": [
+   "route one API endpoint to many AI providers",
+   "automatic fallback when a model or provider fails",
+   "run coding agents like Claude Code or Codex through a single gateway",
+   "stack free-tier AI provider quotas",
+   "compress prompts to cut token usage",
+   "self-host an OpenAI-compatible proxy with a dashboard"
+  ],
+  "how_to_run": [
+   "npm install -g omniroute",
+   "omniroute",
+   "docker run -d --name omniroute --restart unless-stopped -p 127.0.0.1:20128:20128 -v omniroute-data:/app/data diegosouzapw/omniroute:latest",
+   "cp .env.example .env && npm install",
+   "PORT=20128 npm run dev"
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "Bun",
+   "Docker",
+   "Electron",
+   "Tauri (menu-bar tray app)",
+   "better-sqlite3",
+   "bun:sqlite",
+   "Playwright",
+   "ONNX Runtime (LLMLingua-2)"
+  ],
+  "notable": [
+   "Combo routing with 20 strategies and an auto model that scores connected providers live",
+   "Free-tier catalog and dashboard page estimating pooled free quotas across providers",
+   "Built-in MCP (stdio, HTTP, SSE) and A2A endpoints so agents can control the gateway",
+   "CLI that launches or configures coding tools such as Claude Code, Codex, Aider and Goose",
+   "Prompt compression stack of 12 engines with presets such as Lite, Standard and Ultra"
+  ],
+  "caveats": [
+   "Requires bringing your own provider accounts and API keys; free tiers are controlled by each provider and can change",
+   "Coding-agent workloads need a large heap; the Docker image defaults to 1024 MB and the README recommends 8 GB or more for heavy use",
+   "npm 11+ may block required postinstall scripts, so specific packages must be allowed during install"
+  ],
+  "license": "MIT",
+  "category": "ai gateway proxy",
+  "keywords": [
+   "ai gateway",
+   "llm gateway",
+   "llm proxy",
+   "openai-compatible api",
+   "self-hosted ai proxy",
+   "multi-provider routing",
+   "load balancing llm",
+   "automatic fallback",
+   "model fallback",
+   "combo routing",
+   "free tier aggregator",
+   "free llm api",
+   "openai alternative",
+   "anthropic api proxy",
+   "gemini api proxy",
+   "local llm proxy",
+   "ollama proxy",
+   "claude code gateway",
+   "codex cli proxy",
+   "mcp server",
+   "a2a agent",
+   "prompt compression",
+   "token saving",
+   "reduce llm cost",
+   "route requests across providers",
+   "share one api key across tools",
+   "use free ai models for coding",
+   "docker ai gateway",
+   "npm ai proxy",
+   "litellm alternative",
+   "openrouter alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 18340,
+  "output": 1466
+ },
+ "generated": "2026-10-29"
+}

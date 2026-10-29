@@ -1,0 +1,92 @@
+{
+ "id": "luzifer/ots",
+ "repo": "Luzifer/ots",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "OTS - One-Time-Secret sharing platform with a symmetric 256bit AES encryption in the browser. (Source Code) Apache-2.0 Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "OTS is a one-time secret sharing web platform that encrypts secrets with AES-256 in the browser before upload and deletes them on first read.",
+  "what_it_does": "The browser encrypts the secret with symmetric 256-bit AES before sending it to the server, and the password stays out of the server's hands; the generated URL contains the secret ID and password. The secret is deleted on the first read. Storage backends are in-memory (mem) or Redis, with a configurable key prefix and an optional expiry in seconds. The OTS-CLI tool can create and fetch secrets from the command line or scripts, including file attachments, basic-auth or token-auth headers for protected instances. The README also documents a bash/openssl workflow for encrypting a secret locally before posting it to the API. The frontend supports i18n translations via an i18n.yaml file.",
+  "use_cases": [
+   "share a password with someone one time",
+   "send a secret that self-destructs after being read",
+   "create one-time links from scripts or the command line",
+   "share files through an expiring encrypted link",
+   "self-host a private secret-sharing service"
+  ],
+  "how_to_run": [
+   "Download the release or pull the Docker image from ghcr.io/luzifer/ots",
+   "Start it and access the server (see ./ots --help for options)",
+   "Optionally configure the Redis backend with REDIS_URL and REDIS_KEY",
+   "Download OTS-CLI from the Releases section or build it from ./cmd/ots-cli",
+   "Run: echo \"my password\" | ots-cli create",
+   "Run: ots-cli fetch <url> to read the secret"
+  ],
+  "stack": [
+   "Go",
+   "Node.js (frontend build, per local development requirements)",
+   "Redis (optional storage backend)",
+   "Tilt (local development)",
+   "Docker"
+  ],
+  "notable": [
+   "Client-side AES-256 encryption so the server never receives the plaintext secret",
+   "Secret is deleted on first read",
+   "OTS-CLI supports create/fetch in scripts, with file attachments and custom auth headers",
+   "Pluggable storage: in-memory or Redis, with optional expiry",
+   "Translations managed through an i18n.yaml file"
+  ],
+  "caveats": [
+   "In-memory storage is wiped on restart; persistence requires Redis",
+   "Detailed customization docs are in the external Wiki rather than the README",
+   "The public ots.fyi instance is operated by the author; self-hosting is needed for full control"
+  ],
+  "license": "Apache-2.0",
+  "category": "one-time secret sharing",
+  "keywords": [
+   "one-time secret",
+   "one-time secret sharing",
+   "secret sharing",
+   "self-destructing message",
+   "burn after reading",
+   "aes-256",
+   "client-side encryption",
+   "end-to-end encryption",
+   "zero knowledge",
+   "password sharing",
+   "share a password securely",
+   "send secret link",
+   "encrypted note",
+   "self-hosted secret sharing",
+   "ots",
+   "ots-cli",
+   "golang",
+   "go",
+   "redis",
+   "docker",
+   "file sharing encrypted",
+   "share files securely",
+   "temporary secret link",
+   "openssl encryption script",
+   "pbkdf2",
+   "ots.fyi",
+   "secret expiry",
+   "i18n translations",
+   "tilt development"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3812,
+  "output": 1182
+ },
+ "generated": "2026-10-29"
+}

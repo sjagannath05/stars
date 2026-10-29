@@ -1,0 +1,93 @@
+{
+ "id": "discourse/discourse_docker",
+ "repo": "discourse/discourse_docker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Communication",
+   "entry": "Discourse | Open-source discussion platform"
+  }
+ ],
+ "summary": {
+  "one_liner": "Docker templates and launcher script for self-hosting the Discourse open-source discussion forum platform.",
+  "category": "self-hosted forum",
+  "keywords": [
+   "discourse",
+   "discussion forum",
+   "docker",
+   "docker compose alternative",
+   "self-hosted forum",
+   "community forum",
+   "discussion platform",
+   "forum software",
+   "docker container",
+   "launcher script",
+   "standalone container",
+   "multi-container setup",
+   "web_only template",
+   "data.yml",
+   "smtp email",
+   "ssl setup",
+   "multisite",
+   "rebuild container",
+   "upgrade forum",
+   "self-host discussion board",
+   "run my own forum",
+   "host community discussions",
+   "proxy configuration",
+   "postgres redis container",
+   "bash launcher",
+   "team discussion board",
+   "online community hosting"
+  ],
+  "what_it_does": "The repository provides Docker configuration for deploying a Discourse forum, with templates and a base image that set Discourse's recommended defaults. A bash script named launcher manages containers: it can bootstrap, start, stop, restart, enter, view logs for, rebuild, and clean up containers based on YAML config files. The README describes a standalone template that bundles everything into one container, and a multi-container setup (data.yml and web_only.yml samples) that separates services for easier upgrades, scaling, and redundancy. Config files support composed templates, port exposure, volume mounts, links, environment variables, labels, and hooks. Email must be configured through the SMTP_URL variable, since the image does not include an MTA.",
+  "use_cases": [
+   "Self-host a Discourse community forum",
+   "Deploy a discussion board on my own server",
+   "Run a multi-server Discourse setup for scaling or redundancy",
+   "Upgrade Discourse with minimal downtime",
+   "Manage Discourse containers with a launcher script",
+   "Run a forum behind a proxy"
+  ],
+  "how_to_run": [
+   "Read the install guide linked from the README (the standalone template is the recommended starting point)",
+   "Copy a template from the samples directory into the containers directory",
+   "./launcher bootstrap my_container",
+   "./launcher start my_container",
+   "./launcher logs my_container",
+   "./launcher rebuild my_container (to upgrade)"
+  ],
+  "stack": [
+   "Docker",
+   "Bash",
+   "YAML",
+   "Ruby (pups-managed templates)",
+   "PostgreSQL",
+   "Redis"
+  ],
+  "notable": [
+   "Standalone template installs Discourse in one container, reportedly in 30 minutes or less",
+   "Multi-container layout allows rebuilding web containers while the site stays up",
+   "Launcher script handles bootstrap, rebuild, enter, and cleanup commands",
+   "Config files can compose child templates and run hooks before or after build steps",
+   "Shared directory keeps uploads and logs outside containers so they survive rebuilds"
+  ],
+  "caveats": [
+   "Email must be set up separately via SMTP_URL; the image contains no mail server",
+   "Multi-container setups need a firewall (e.g. ufw or iptables) to protect postgres and redis ports",
+   "Multi-container setup is more complex than the standalone template",
+   "README mentions Discourse hosting services as a paid option"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4082,
+  "output": 1174
+ },
+ "generated": "2026-10-29"
+}

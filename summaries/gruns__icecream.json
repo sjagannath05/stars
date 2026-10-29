@@ -1,0 +1,87 @@
+{
+ "id": "gruns/icecream",
+ "repo": "gruns/icecream",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "icecream - Inspect variables, expressions, and program execution with a single, simple function call."
+  }
+ ],
+ "summary": {
+  "one_liner": "IceCream (ic) is a Python print-debugging helper that prints variable names with their values, execution context, and pretty-printed, syntax-highlighted output from a single function call.",
+  "what_it_does": "Calling ic(expr) prints the expression text alongside its value, so ic(foo(123)) shows \"foo(123): 456\". Calling ic() with no arguments prints the calling filename, line number, and parent function, which helps trace execution order. ic() returns its arguments, so it can be wrapped around existing code without changing behavior. ic.format() returns the output as a string instead of writing to stderr, and ic.disable()/ic.enable() turn output off and on. configureOutput() customizes the prefix, output function, argument-to-string function (with singledispatch registration for types such as numpy arrays), context inclusion, and absolute paths. install() makes ic available in builtins across all modules.",
+  "use_cases": [
+   "print-debug variable values in Python",
+   "trace which code branches run and in what order",
+   "log debug output with a custom prefix or logger",
+   "customize how specific types like numpy arrays are displayed while debugging",
+   "leave debug calls in code safely with a graceful fallback in production"
+  ],
+  "how_to_run": [
+   "pip install icecream",
+   "from icecream import ic",
+   "ic(variable_or_expression)"
+  ],
+  "stack": [
+   "Python 3",
+   "PyPy3",
+   "executing (by alexmojaki)",
+   "pprint"
+  ],
+  "notable": [
+   "Prints the source text of the expression along with its value, not just the value",
+   "Argument-to-string conversion can be extended per type via functools.singledispatch register/unregister",
+   "Returns its arguments, so it can be inserted into existing code inline",
+   "install() exposes ic globally through the builtins module",
+   "Ports exist in many other languages (Dart, Rust, Go, Ruby, and more)"
+  ],
+  "caveats": [
+   "Output goes to stderr by default; formatting options are only as rich as the configureOutput settings described",
+   "Log-level integration is not built in; the README suggests combining ic.format() with logging as a workaround and calls this clunky",
+   "Targets Python 3 and PyPy3 only per the README"
+  ],
+  "license": "unknown",
+  "category": "python debugging tools",
+  "keywords": [
+   "python debugging",
+   "print debugging",
+   "debug print",
+   "ic",
+   "icecream",
+   "variable inspection",
+   "expression inspection",
+   "execution tracing",
+   "pretty print",
+   "syntax highlighted output",
+   "print alternative",
+   "logging alternative",
+   "debug output",
+   "pprint",
+   "configureoutput",
+   "argtostringfunction",
+   "singledispatch",
+   "numpy array debugging",
+   "install builtins",
+   "graceful fallback import",
+   "executing library",
+   "python 3",
+   "pypy3",
+   "show variable name and value",
+   "trace function calls",
+   "line number debugging",
+   "debugging without print",
+   "awesome python debugging tools"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5078,
+  "output": 1079
+ },
+ "generated": "2026-10-29"
+}

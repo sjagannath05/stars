@@ -1,0 +1,100 @@
+{
+ "id": "diet103/claude-code-infrastructure-showcase",
+ "repo": "diet103/claude-code-infrastructure-showcase",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Skills",
+   "entry": "Claude Code Infrastructure Showcase by diet103 - A remarkably innovative approach to working with Skills, the centerpiece of which being a technique that leverages hooks to ensure that Claude intelligently selects and activates the appropriate Skill given the current context. Well-documented and adaptable to different projects and workflows."
+  }
+ ],
+ "summary": {
+  "one_liner": "A reference library of Claude Code infrastructure (hooks, skills, agents, slash commands) that auto-suggests skills based on prompts and file context, meant to be copied into your own projects rather than run as an application.",
+  "what_it_does": "The repo provides a .claude/ directory with four skills (backend-dev-guidelines, frontend-dev-guidelines, skill-developer, error-tracking), nine hooks, eight agents, and slash commands. A UserPromptSubmit hook checks skill-rules.json against each prompt and file context to suggest relevant skills, and PreToolUse and PostToolUse hooks enforce or track skill activation before and after edits. Skill activation runs in a regex-only mode by default, with an optional AI classification mode (Gemini, OpenAI, Anthropic, or Ollama) that falls back to regex. The README also describes a modular skill layout (a main SKILL.md under 500 lines plus resource files) and a dev docs pattern with plan, context, and tasks files to survive context resets. A setup wizard (setup.ts) copies the files into a target project, detects the tech stack, and runs health checks; a verify-setup script checks the install. The README also describes a Codex CLI adapter that reuses the same hooks.",
+  "use_cases": [
+   "Make Claude Code suggest the right skill automatically based on prompts",
+   "Enforce skill loading before Claude edits files",
+   "Share coding conventions as modular skills with progressive disclosure",
+   "Preserve project context across Claude Code context resets with dev docs",
+   "Set up Claude Code hooks, agents, and slash commands in an existing project",
+   "Use regex or AI-based intent matching to route prompts to skills"
+  ],
+  "how_to_run": [
+   "git clone the repository",
+   "cd claude-code-infrastructure-showcase && npx tsx setup.ts ~/my-project",
+   "Or non-interactive: npx tsx setup.ts ~/my-project --yes",
+   "Manual: cp -r claude-code-infrastructure-showcase/.claude ~/my-project/.claude",
+   "cd ~/my-project/.claude/hooks && npm install && chmod +x *.sh",
+   "bash .claude/scripts/verify-setup.sh"
+  ],
+  "stack": [
+   "Bash",
+   "Node.js 18+",
+   "TypeScript",
+   "tsx",
+   "jq (optional, for Stop hooks)",
+   "Claude Code hooks",
+   "Gemini API (optional)",
+   "OpenAI API (optional)",
+   "Anthropic API (optional)",
+   "Ollama (optional)",
+   "Codex CLI (optional)"
+  ],
+  "notable": [
+   "Hook-based skill auto-activation driven by skill-rules.json, so skills suggest themselves instead of being invoked manually",
+   "Optional PreToolUse guard that blocks edits until mandatory skills are activated, with a two-try model",
+   "Three activation modes (disabled, fallback, ai-only) with regex as a graceful fallback when AI is unavailable",
+   "Setup wizard that copies files, detects the stack, and runs self-verification checks",
+   "Modular skill pattern: main SKILL.md under 500 lines plus resource files loaded on demand"
+  ],
+  "caveats": [
+   "Hooks are bash scripts; macOS, Linux, or WSL2 only, not plain cmd or PowerShell",
+   "Reference library, not a working application; examples use a generic blog domain and some hooks need customization for your project layout",
+   "Optional Stop hooks such as tsc-check are described as heavy and suited to monorepos only"
+  ],
+  "license": "MIT",
+  "category": "claude code infrastructure",
+  "keywords": [
+   "claude code",
+   "claude code hooks",
+   "agent skills",
+   "skill activation",
+   "skill-rules.json",
+   "userpromptsubmit hook",
+   "pretooluse hook",
+   "posttooluse hook",
+   "auto-activate skills",
+   "ai coding assistant config",
+   "claude code subagents",
+   "slash commands",
+   "dev docs",
+   "context reset",
+   "progressive disclosure",
+   "modular skills",
+   "regex intent matching",
+   "llm intent classification",
+   "gemini classifier",
+   "ollama local model",
+   "codex cli hooks",
+   "eslint alternative",
+   "coding conventions for ai",
+   "express prisma guidelines",
+   "react mui guidelines",
+   "sentry error tracking",
+   "share coding rules with ai",
+   "setup wizard",
+   "typescript microservices",
+   "bash hook scripts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10442,
+  "output": 1608
+ },
+ "generated": "2026-10-29"
+}

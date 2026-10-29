@@ -1,0 +1,98 @@
+{
+ "id": "spec-first/connexion",
+ "repo": "spec-first/connexion",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web APIs",
+   "entry": "connexion - A spec-first framework that handles requests based on your OpenAPI specification."
+  }
+ ],
+ "summary": {
+  "one_liner": "Connexion is a spec-first Python web framework that routes, validates, and serializes requests based on your OpenAPI (or Swagger) specification.",
+  "what_it_does": "Connexion takes an OpenAPI or Swagger specification and automatically registers routes, linking each operation to a Python function via its operationId. It validates request headers, parameters, and bodies and response bodies against the spec, and unpacks parameters into function arguments. It serializes returned Python objects into responses and handles authentication separately from application logic. It can run as a standalone app via AsyncApp or FlaskApp, or wrap an existing ASGI or WSGI app through ConnexionMiddleware. A Swagger UI console and a command line tool (connexion run) for testing and mocking a spec are also provided.",
+  "use_cases": [
+   "Build a REST API from an OpenAPI spec",
+   "Validate incoming requests against an API specification",
+   "Serve interactive API documentation with Swagger UI",
+   "Mock or test an OpenAPI spec from the command line",
+   "Add OpenAPI-driven routing to an existing ASGI or WSGI app",
+   "Migrate a Flask-based API from Connexion 2.x"
+  ],
+  "how_to_run": [
+   "pip install connexion",
+   "pip install connexion[swagger-ui,uvicorn]",
+   "app = AsyncApp(__name__)  # then app.add_api(\"openapi.yaml\")",
+   "app.run()  # development only, requires uvicorn extra",
+   "uvicorn run:app  # production, with an ASGI server",
+   "gunicorn -k uvicorn.workers.UvicornWorker run:app"
+  ],
+  "stack": [
+   "Python",
+   "OpenAPI",
+   "Swagger",
+   "ASGI",
+   "WSGI",
+   "Flask",
+   "uvicorn",
+   "gunicorn",
+   "Swagger UI"
+  ],
+  "notable": [
+   "Spec-first: the OpenAPI document drives routing, validation, and serialization instead of generating the spec from code",
+   "Automatic route registration via operationId, with no route decorators needed",
+   "Can run standalone or wrap any ASGI or WSGI framework",
+   "Optional extras for Swagger UI, uvicorn, and Flask support",
+   "Built-in connexion run CLI to test and mock a specification"
+  ],
+  "caveats": [
+   "Requires writing a detailed OpenAPI spec first, so the spec must be kept in sync with code",
+   "app.run() is recommended only for development; production needs an external ASGI server",
+   "Swagger UI and uvicorn features need optional extras installed"
+  ],
+  "license": "Apache License 2.0",
+  "category": "spec-first api framework",
+  "keywords": [
+   "connexion",
+   "openapi",
+   "swagger",
+   "spec-first",
+   "api-first",
+   "openapi validation",
+   "request validation",
+   "response serialization",
+   "rest api framework",
+   "python web framework",
+   "asgi",
+   "wsgi",
+   "flask",
+   "swagger ui",
+   "uvicorn",
+   "gunicorn",
+   "asyncapp",
+   "build api from spec",
+   "generate routes from openapi",
+   "validate api requests",
+   "mock api server",
+   "api documentation console",
+   "openapi 3",
+   "api mocking",
+   "middleware for existing app",
+   "write spec before code",
+   "python rest api",
+   "apache license api framework",
+   "api testing from specification",
+   "authentication split from logic"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4002,
+  "output": 1219
+ },
+ "generated": "2026-10-29"
+}

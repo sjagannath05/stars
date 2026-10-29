@@ -1,0 +1,102 @@
+{
+ "id": "wenyuchiou/ai-research-skills",
+ "repo": "WenyuChiou/ai-research-skills",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Research & Scientific Inquiry",
+   "entry": "AI Research Skills by Wenyu Chiou - A catalog of 15 Claude Code skills mapped to 8 research-workflow stages (literature → gap analysis → design → drafting → reviewer response), where each stage emits an explicit YAML/Markdown deliverable the next stage consumes. Thoughtfully designed around anti-hallucination — schemas force \"gap\" status on unsupported claims, and downstream skills refuse malforme"
+  }
+ ],
+ "summary": {
+  "one_liner": "A catalog and installer for 17 portable Claude Code (and other agent host) skills that walk research work through an eight-stage lifecycle, with YAML/Markdown handoffs between stages and human gates before consequential steps.",
+  "category": "research workflow skills",
+  "keywords": [
+   "claude code skills",
+   "claude code plugin",
+   "research workflow",
+   "literature review",
+   "literature triage",
+   "gap analysis",
+   "research gap",
+   "research design",
+   "manuscript drafting",
+   "reviewer response",
+   "zotero",
+   "obsidian",
+   "notebooklm",
+   "research-hub",
+   "systematic literature review tool",
+   "paper comparison matrix",
+   "citation verification",
+   "hallucinated citations",
+   "anti-hallucination",
+   "evidence gaps",
+   "human-in-the-loop",
+   "agent skills",
+   "skill.md",
+   "codex delegate",
+   "antigravity",
+   "academic writing assistant",
+   "thesis planning",
+   "research project manifest",
+   "share research context with ai",
+   "check ai citations",
+   "compare papers by method"
+  ],
+  "what_it_does": "Provides 17 SKILL.md contracts, grouped into 12 skills in the research-workspace plugin and others in four standalone plugins (academic-writing, paper-review, zotero-skills, codex-delegate, antigravity-delegate). Skills cover literature discovery and triage, a three-gate go/no-go check on candidate gaps, research design dialog, project manifests in .research/ so new AI sessions can re-orient, and manuscript claim tracking in .paper/claims.yml. The README states that claims with no evidence artifacts must be marked status: gap with a gap_reason, and that downstream skills can reject malformed handoffs. It also describes an optional research-hub Python CLI (pip install research-hub-pipeline) for resumable literature runs that can use Zotero, Obsidian and NotebookLM when available. Routing across Claude, Codex and Antigravity is handled by a separate multi-AI skill. The repo is also a registry: its docs describe how to install the skills into non-Claude hosts such as Hermes, Codex CLI and Cursor.",
+  "use_cases": [
+   "compare several papers by method, data and limitations",
+   "decide whether a research gap is worth a thesis or proposal",
+   "plan research design before coding",
+   "maintain persistent research context across AI sessions",
+   "track manuscript claims and their evidence",
+   "prepare reviewer responses and audit manuscript prose",
+   "automate a live literature search and ingest into Zotero or Obsidian"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add WenyuChiou/ai-research-skills",
+   "claude plugin install research-workspace@ai-research-skills",
+   "pip install research-hub-pipeline",
+   "research-hub setup --persona researcher",
+   "research-hub doctor"
+  ],
+  "stack": [
+   "Claude Code plugin marketplace",
+   "SKILL.md portable skill files",
+   "YAML and Markdown schemas",
+   "Python (research-hub-pipeline CLI)",
+   "Codex CLI",
+   "Antigravity CLI",
+   "Zotero",
+   "Obsidian",
+   "NotebookLM",
+   "arXiv and Semantic Scholar search (via research-hub)"
+  ],
+  "notable": [
+   "Eight-stage research lifecycle where each stage's output file is the next stage's input",
+   "Schema rule that forces status: gap on claims without evidence, so unsupported claims are not marked supported",
+   "Explicit human gates for semantic acceptance, external writes and release authorization",
+   "Portable SKILL.md contracts usable outside Claude Code, with a documented Hermes skill-load check for one skill",
+   "Character-based routing that sends bounded mechanical coding work to Codex or Antigravity and keeps judgment with the primary model"
+  ],
+  "caveats": [
+   "Written and tested by one graduate-student researcher; not validated at corpus scale",
+   "Domain bias toward water resources and agent-based modeling; not validated for social sciences, ML or clinical writing",
+   "Behavior on real inputs depends on the source repos of each plugin; no claude plugin install round-trip is asserted by CI",
+   "Live research-hub runs make network calls, model calls and writes, and the README requires authorization before running them",
+   "Only some non-Claude hosts are verified (Hermes for one skill); OpenClaw and others are not release-verified"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10213,
+  "output": 1573
+ },
+ "generated": "2026-10-29"
+}

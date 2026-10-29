@@ -1,0 +1,93 @@
+{
+ "id": "gosu/ruby-app",
+ "repo": "gosu/ruby-app",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📦 Other (27)",
+   "entry": "Ruby.app - macOS app that contains a full Ruby installation (for use with Ruby/Gosu)."
+  }
+ ],
+ "summary": {
+  "one_liner": "Ruby.app is a macOS application wrapper that bundles a full universal MRI Ruby installation so Ruby apps and Ruby/Gosu games can be shipped as a standalone .app.",
+  "what_it_does": "The repository provides a Ruby.app bundle containing a self-contained, universal (Intel and ARM) MRI/C Ruby installation. The user places a main.rb file in Ruby.app/Contents/Resources/ to start their game or application. The README says it has so far only been used for Ruby/Gosu games but could be adapted to other toolkits. The build process uses rvm on an Intel Mac and an ARM Mac, with a Rakefile that installs Ruby and gems, and then merges the binaries into a UniversalRuby folder. The README also says Ruby versions and gems can be set in the Rakefile.",
+  "use_cases": [
+   "Package a Ruby/Gosu game as a macOS app",
+   "Ship a Ruby application without requiring users to install Ruby",
+   "Bundle a universal Ruby runtime for Intel and Apple Silicon Macs",
+   "Avoid depending on the deprecated system Ruby on macOS",
+   "Wrap a Ruby script in a double-clickable macOS application"
+  ],
+  "how_to_run": [
+   "Optional: update the Rakefile with the desired Ruby version and gems",
+   "Install rvm on one Intel Mac and one ARM Mac",
+   "Run rake on the Intel Mac to install Ruby and gems via rvm and copy them into the UniversalRuby folder",
+   "AirDrop the UniversalRuby folder to the ARM Mac",
+   "Run rake on the ARM Mac to build and merge ARM binaries into the UniversalRuby folder",
+   "Place main.rb in Ruby.app/Contents/Resources/"
+  ],
+  "stack": [
+   "Ruby (MRI/C Ruby)",
+   "rvm",
+   "Rake",
+   "Ruby/Gosu",
+   "macOS universal binaries"
+  ],
+  "notable": [
+   "Full universal Ruby installation bundled inside the .app, so users don't need Ruby installed",
+   "Built to handle C extensions common in Ruby/Gosu games",
+   "Build requires one Intel Mac and one ARM Mac to produce universal binaries",
+   "Free and MIT-licensed, positioned as an alternative to RubyMotion and Platypus"
+  ],
+  "caveats": [
+   "Build requires both an Intel Mac and an ARM Mac plus rvm, which is a heavy setup",
+   "Known issue: OpenSSL and YAML extensions have unportable dependencies on /opt/homebrew (the README text is cut off here)",
+   "Ruby installation licensing is separate; users must check Ruby and standard library licenses"
+  ],
+  "license": "MIT",
+  "category": "macos app packaging",
+  "keywords": [
+   "ruby",
+   "ruby.app",
+   "macos app",
+   "app bundle",
+   "standalone ruby",
+   "bundled ruby runtime",
+   "mri ruby",
+   "c ruby",
+   "gosu",
+   "ruby gosu",
+   "game packaging",
+   "ruby game distribution",
+   "universal binary",
+   "apple silicon",
+   "intel and arm",
+   "rvm",
+   "rake",
+   "rakefile",
+   "platypus alternative",
+   "rubymotion alternative",
+   "system ruby replacement",
+   "deploy ruby app mac",
+   "ship ruby game on mac",
+   "portable ruby installation",
+   "macos dmg game",
+   "ruby app wrapper",
+   "main.rb launcher",
+   "gem bundling",
+   "c extensions packaging",
+   "app wrapper",
+   "mac game distribution"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2168,
+  "output": 1316
+ },
+ "generated": "2026-10-29"
+}

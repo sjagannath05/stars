@@ -1,0 +1,104 @@
+{
+ "id": "qwenlm/qwen3",
+ "repo": "QwenLM/Qwen3",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Qwen",
+   "entry": "Qwen3"
+  }
+ ],
+ "summary": {
+  "one_liner": "Official repository for Qwen3, Alibaba's family of open-weight dense and Mixture-of-Experts large language models, with usage guides for running, deploying, and fine-tuning them.",
+  "what_it_does": "The README introduces the Qwen3 model family (dense and MoE models from 0.6B up to 235B-A22B) and the Qwen3-2507 updates, which include separate Instruct and Thinking variants and support for 256K-token context extendable to 1 million tokens. It gives Transformers code snippets for chat generation and shows how to switch thinking mode on or off for earlier Qwen3 models. It documents local inference with llama.cpp, Ollama, LM Studio, MLX LM, ExecuTorch, MNN, and OpenVINO, and server deployment with SGLang, vLLM, and TensorRT-LLM. It also points to Qwen-Agent for tool use and lists training frameworks such as Axolotl, LLaMA-Factory, and Swift for fine-tuning. Model weights are distributed through Hugging Face and ModelScope.",
+  "use_cases": [
+   "run a local chat LLM on a laptop or GPU",
+   "serve an OpenAI-compatible API for a language model",
+   "fine-tune an open LLM with SFT or GRPO",
+   "build tool-using or agent applications",
+   "run long-context document processing with up to 1M tokens",
+   "deploy a model on mobile or Apple Silicon",
+   "multilingual translation and instruction following"
+  ],
+  "how_to_run": [
+   "pip install -U transformers  (transformers>=4.51.0 required)",
+   "ollama serve",
+   "ollama run qwen3:8b",
+   "vllm serve Qwen/Qwen3-8B --port 8000 --max-model-len 131072 --enable-reasoning --reasoning-parser qwen3",
+   "python -m sglang.launch_server --model-path Qwen/Qwen3-8B --port 30000 --context-length 131072 --reasoning-parser qwen3",
+   "./llama-cli -hf Qwen/Qwen3-8B-GGUF:Q8_0 --jinja --color -ngl 99 -fa"
+  ],
+  "stack": [
+   "Python",
+   "Hugging Face Transformers",
+   "llama.cpp",
+   "Ollama",
+   "SGLang",
+   "vLLM",
+   "TensorRT-LLM",
+   "ModelScope",
+   "MLX LM",
+   "OpenVINO",
+   "ExecuTorch",
+   "MNN"
+  ],
+  "notable": [
+   "Dense and MoE models from 0.6B to 235B-A22B, with separate Instruct and Thinking variants in the 2507 release",
+   "Switchable thinking and non-thinking modes for earlier Qwen3 models via enable_thinking or /think and /no_think",
+   "Context support of 256K tokens, extendable to 1 million tokens",
+   "Wide local and server runtime coverage, from llama.cpp and Ollama to vLLM, SGLang, and TensorRT-LLM",
+   "Apache 2.0 license for open-weight models"
+  ],
+  "caveats": [
+   "Ollama default context settings (num_ctx 2048) can cause problems, so users must set num_ctx and num_predict manually",
+   "Multi-step tool use with Qwen3 thinking models may be degraded in SGLang and vLLM because reasoning_content is dropped during request preprocessing",
+   "The README is a model-release hub, so the actual model weights and detailed guides live in linked Hugging Face, ModelScope, and documentation pages; the repository itself contains no model code"
+  ],
+  "license": "Apache 2.0",
+  "category": "large language models",
+  "keywords": [
+   "qwen3",
+   "qwen",
+   "large language model",
+   "llm",
+   "open-weight model",
+   "mixture of experts",
+   "moe",
+   "dense model",
+   "transformers",
+   "hugging face",
+   "modelscope",
+   "llama.cpp",
+   "gguf",
+   "ollama",
+   "lm studio",
+   "vllm",
+   "sglang",
+   "tensorrt-llm",
+   "openai-compatible api",
+   "local llm",
+   "run llm locally",
+   "serve llm api",
+   "fine-tune language model",
+   "tool use",
+   "function calling",
+   "long context 1 million tokens",
+   "thinking mode",
+   "reasoning model",
+   "multilingual model",
+   "apple silicon llm",
+   "self-host chatbot",
+   "alternative to chatgpt api"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10132,
+  "output": 1559
+ },
+ "generated": "2026-10-29"
+}

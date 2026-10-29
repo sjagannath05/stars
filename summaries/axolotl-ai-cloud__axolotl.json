@@ -1,0 +1,101 @@
+{
+ "id": "axolotl-ai-cloud/axolotl",
+ "repo": "axolotl-ai-cloud/axolotl",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "axolotl - A framework for fine-tuning and post-training large language models."
+  }
+ ],
+ "summary": {
+  "one_liner": "Axolotl is a free, open-source framework for fine-tuning and post-training large language models, driven by YAML configuration files.",
+  "what_it_does": "Axolotl runs full fine-tuning, LoRA, and QLoRA on many LLM and vision-language architectures from the Hugging Face Hub, including MoE models. It also covers quantization-aware training, preference tuning (DPO, IPO, KTO, ORPO), reinforcement learning (GRPO, GDPO), and reward and process reward modelling. A single YAML config can cover dataset preprocessing, training, evaluation, quantization, and inference. The README lists performance features such as multipacking, Flash Attention, Liger Kernel, FSDP2/DeepSpeed multi-GPU training, and Torchrun/Ray multi-node training. It can load datasets from local disk, Hugging Face, and cloud storage (S3, Azure, GCP, OCI). It also ships built-in documentation for AI coding agents via an `axolotl agent-docs` command.",
+  "use_cases": [
+   "fine-tune an open LLM on custom data",
+   "LoRA or QLoRA training on a single GPU",
+   "multi-GPU or multi-node LLM training",
+   "preference tuning with DPO or ORPO",
+   "GRPO reinforcement learning for language models",
+   "fine-tune vision-language models",
+   "export fine-tuned models to GGUF for llama.cpp or Ollama"
+  ],
+  "how_to_run": [
+   "curl -LsSf https://astral.sh/uv/install.sh | sh (install uv; the README link is truncated, so this URL is inferred)",
+   "uv venv --python 3.12 && source .venv/bin/activate",
+   "uv pip install torch==2.14.0 torchvision",
+   "uv pip install --no-build-isolation axolotl[deepspeed]",
+   "axolotl fetch examples",
+   "axolotl train examples/llama-3/lora-1b.yml"
+  ],
+  "stack": [
+   "Python 3.12+",
+   "PyTorch",
+   "Hugging Face Hub",
+   "DeepSpeed",
+   "FSDP2",
+   "Flash Attention",
+   "Liger Kernel",
+   "torchao",
+   "Triton",
+   "uv",
+   "Docker"
+  ],
+  "notable": [
+   "YAML-driven pipeline that reuses one config from dataset prep through training, evaluation, quantization and inference",
+   "Broad training-method coverage, including QAT, NVFP4/MXFP4 MoE LoRA, GRPO/GDPO, and DFT-style loss options",
+   "Context and expert parallelism options (Ulysses, ring/USP, EP, N-D parallelism) for long-context and MoE training",
+   "Ships docs for AI coding agents through the pip package"
+  ],
+  "caveats": [
+   "Requires an NVIDIA Ampere-or-newer GPU for bf16 and Flash Attention, or an AMD GPU; needs Python 3.12+ and PyTorch 2.13+",
+   "Several advanced features are tied to specific hardware or setups (for example NVFP4 and NVLink/PCIe expert parallelism), so support varies by environment",
+   "The README says telemetry is enabled by default and can be disabled with AXOLOTL_DO_NOT_TRACK=1"
+  ],
+  "license": "Apache-2.0",
+  "category": "LLM fine-tuning framework",
+  "keywords": [
+   "llm fine-tuning",
+   "llm post-training",
+   "lora",
+   "qlora",
+   "full fine-tuning",
+   "yaml config training",
+   "dpo",
+   "orpo",
+   "kto",
+   "grpo",
+   "reward modelling",
+   "multi-gpu training",
+   "deepspeed",
+   "fsdp2",
+   "flash attention",
+   "moe training",
+   "vision language model fine-tuning",
+   "quantization aware training",
+   "gguf export",
+   "hugging face models",
+   "train my own chatbot",
+   "customize open source language model",
+   "fine-tune llama on my data",
+   "multi-node training",
+   "sequence parallelism",
+   "liger kernel",
+   "unsloth alternative",
+   "llama factory alternative",
+   "trl alternative",
+   "instruction tuning",
+   "docker llm training"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6111,
+  "output": 1490
+ },
+ "generated": "2026-10-29"
+}

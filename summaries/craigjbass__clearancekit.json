@@ -1,0 +1,95 @@
+{
+ "id": "craigjbass/clearancekit",
+ "repo": "craigjbass/clearancekit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "ClearanceKit - File-access control for macOS that protects sensitive user data from supply-chain attacks using Endpoint Security."
+  }
+ ],
+ "summary": {
+  "one_liner": "ClearanceKit is a macOS file-access control app that uses Endpoint Security to block unapproved processes from reading or changing protected paths, with policies keyed to code signing identity.",
+  "what_it_does": "It intercepts file-system events on macOS (opens, renames, deletes, hard links, creates, truncations, copies, directory reads, data exchanges, clones) and enforces per-process policies on paths the user marks as protected. A process without an explicit allow rule is denied access to a protected path. Jail rules confine a named process to a set of path prefixes and deny everything outside them. Denied events appear in a SwiftUI interface where the user can review them and build policy. Policies reference a Team ID and Signing ID rather than file paths or hashes, so they persist across software updates. Policies can also be delivered by MDM through managed preferences, and ancestor-based allowlists let rules trust a process based on its parent chain.",
+  "use_cases": [
+   "protect SSH keys and cloud credentials from package install scripts",
+   "block unknown processes from reading browser cookies or messages",
+   "confine a tool to a fixed set of directories with a jail rule",
+   "review denied file access events and build policy from them",
+   "deploy file-access policies to managed Macs via MDM",
+   "lock down config files so only specific signed binaries can modify them"
+  ],
+  "how_to_run": [
+   "Download the latest DMG from the Releases page",
+   "Open the DMG and drag clearancekit to Applications",
+   "Launch the app and open the Setup tab",
+   "Click Activate Extension and approve it in System Settings",
+   "Grant Full Disk Access to the system extension when prompted"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Endpoint Security framework",
+   "XPC",
+   "SQLite",
+   "CFPreferences (managed preferences)"
+  ],
+  "notable": [
+   "Policies bind to Team ID and Signing ID rather than file hashes, so they survive updates",
+   "Jail rules confine a process to specific path prefixes regardless of other rules",
+   "Ancestor allowlists trust a process based on its parent chain",
+   "MDM support via managed preference profiles with a reference .mobileconfig",
+   "Zero third-party dependencies, using only Apple frameworks"
+  ],
+  "caveats": [
+   "Requires an Apple Developer account with the Endpoint Security entitlement, plus Developer ID provisioning profiles, to build from source",
+   "Needs system extension approval and Full Disk Access on first launch",
+   "Does not restrict execution events; it only governs file access (no lockdown mode like Santa)",
+   "No auto-update; updates must be checked manually on the Releases page"
+  ],
+  "license": "unknown",
+  "category": "macos endpoint security",
+  "keywords": [
+   "file access control",
+   "macos",
+   "endpoint security",
+   "endpoint security framework",
+   "es client",
+   "system extension",
+   "supply chain attack protection",
+   "npm install security",
+   "pip install security",
+   "protect ssh keys",
+   "credential protection",
+   "code signing policy",
+   "team id signing id",
+   "process jail",
+   "sandbox alternative",
+   "file integrity",
+   "swiftui app",
+   "xpc",
+   "mdm managed preferences",
+   "mobileconfig",
+   "block unauthorized file access",
+   "protect browser cookies",
+   "restrict process file access",
+   "santa alternative",
+   "blockblock",
+   "mac security tool",
+   "lock down config files",
+   "monitor denied file access",
+   "allowlist processes",
+   "developer workstation security"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10311,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

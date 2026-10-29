@@ -1,0 +1,99 @@
+{
+ "id": "team-telnyx/hermes-inference-provider",
+ "repo": "team-telnyx/hermes-inference-provider",
+ "kind": "star",
+ "description": "Telnyx model-provider plugin for Hermes Agent — OpenAI-compatible inference, hosted open models + frontier routes",
+ "topics": [
+  "hermes-agent",
+  "llm-provider",
+  "telnyx"
+ ],
+ "language": "Python",
+ "stars": 1,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-09-22",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Telnyx-maintained model-provider plugin that lets Hermes Agent use Telnyx's OpenAI-compatible inference endpoint for hosted open-weight and frontier models.",
+  "what_it_does": "Adds Telnyx as a provider inside Hermes Agent through the external model-provider plugin surface, so it lives outside the hermes-agent tree. It exposes OpenAI-compatible chat completions with streaming, tool calling, and usage reported on the final chunk. The model list is pulled live from the authenticated /v2/ai/openai/models endpoint and filtered to text-generation models, including open-weight models hosted on Telnyx GPU infrastructure (Kimi, GLM, MiniMax, Qwen, Llama) plus proxied frontier routes. When the live catalog cannot be reached, it falls back to a curated, tool-call-verified list. The installer prompts for TELNYX_API_KEY and stores it in the Hermes env file.",
+  "use_cases": [
+   "Use Telnyx-hosted open models inside Hermes Agent",
+   "Run Kimi, GLM, MiniMax or Qwen models through one API key",
+   "Switch Hermes to a Telnyx model with the interactive picker",
+   "Add an OpenAI-compatible provider to a Hermes setup",
+   "Test tool-calling agents against hosted open-weight models"
+  ],
+  "how_to_run": [
+   "hermes plugins install team-telnyx/hermes-inference-provider",
+   "hermes model  # pick Telnyx",
+   "hermes chat --provider telnyx -m moonshotai/Kimi-K3",
+   "hermes plugins update telnyx-provider",
+   "hermes plugins remove telnyx-provider"
+  ],
+  "stack": [
+   "Python 3.11-3.13",
+   "Hermes Agent >=0.21.4",
+   "OpenAI-compatible chat completions API",
+   "pytest",
+   "pyyaml"
+  ],
+  "notable": [
+   "Live model catalog fetched from the authenticated Telnyx /models endpoint, with curated offline fallback",
+   "Registers through Hermes's documented external provider plugin surface (providers.register_provider)",
+   "Intentionally sets no default output cap, because max_tokens with function tools triggers Telnyx error 10015 on some hosted models",
+   "Optional live pricing test validates exposed models against the Telnyx catalog before release",
+   "Vendor-maintained by Telnyx"
+  ],
+  "caveats": [
+   "Requires Hermes Agent 0.21.4 or newer for correct per-million-token price normalization",
+   "Model list requires a valid TELNYX_API_KEY; anonymous requests get 401 and show only the fallback list",
+   "Restarting long-running hermes gateway processes is needed after install because discovery runs once per process"
+  ],
+  "license": "MIT",
+  "category": "llm provider plugin",
+  "keywords": [
+   "telnyx",
+   "hermes agent",
+   "hermes-agent plugin",
+   "llm provider",
+   "model provider",
+   "openai-compatible",
+   "openai compatible api",
+   "chat completions",
+   "streaming",
+   "tool calling",
+   "function calling",
+   "open-weight models",
+   "kimi",
+   "glm",
+   "minimax",
+   "qwen",
+   "llama",
+   "hosted open models",
+   "inference api",
+   "model picker",
+   "live model catalog",
+   "fallback model list",
+   "per-million-token pricing",
+   "api key setup",
+   "gpu inference",
+   "use telnyx with hermes",
+   "connect hermes to hosted llms",
+   "switch ai model provider",
+   "agent llm backend"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3277,
+  "output": 1296
+ },
+ "generated": "2026-10-29"
+}

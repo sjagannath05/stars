@@ -1,0 +1,96 @@
+{
+ "id": "rustfs/rustfs",
+ "repo": "rustfs/rustfs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "File Sharing",
+   "entry": "RustFS | High-performance S3-compatible object storage written in Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "RustFS is a high-performance, distributed, S3-compatible object storage system written in Rust, released under Apache 2.0.",
+  "what_it_does": "RustFS is a distributed object storage server built in Rust that aims for broad S3 API compatibility for supported features. The README lists support for erasure-coded distributed and single-node modes, bitrot protection, healing and a scanner, versioning, Object Lock, server-side encryption, IAM/policies, OIDC/SSO, bucket replication, site replication, lifecycle management, event notifications, and a web console. It also documents OpenStack Swift API and Keystone authentication (behind an opt-in cargo feature), FTPS and WebDAV in the default build, and SFTP as an opt-in feature. Deployment options include a one-line install script, Docker and Podman images, Docker Compose files, a Helm chart for Kubernetes, a Nix flake, and an x-cmd entry. Some features are marked as preview, including S3 Tables (Iceberg REST catalog) and MinIO on-disk compatibility.",
+  "use_cases": [
+   "self-hosted S3-compatible object storage",
+   "running a private alternative to cloud buckets",
+   "data lake and big data object storage",
+   "storing backups and media files behind S3 clients",
+   "Kubernetes object storage via Helm chart",
+   "edge device object storage"
+  ],
+  "how_to_run": [
+   "docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -v $(pwd)/logs:/logs rustfs/rustfs:latest",
+   "docker compose -f docker-compose-simple.yml up -d",
+   "nix run github:rustfs/rustfs",
+   "x rustfs",
+   "curl -O && bash install_rustfs.sh"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "Docker Compose",
+   "Helm",
+   "Nix",
+   "Apache 2.0 license"
+  ],
+  "notable": [
+   "Written in Rust with a stated focus on memory safety and performance, compared against MinIO in the README",
+   "Broad feature set including Object Lock, bitrot protection, pool expansion/decommission, and site replication",
+   "Native OpenStack Swift and Keystone authentication support",
+   "Apache 2.0 license, contrasted with AGPL in the README",
+   "Default web console at port 9001 with a documented default admin login"
+  ],
+  "caveats": [
+   "Several features are preview or opt-in: S3 Tables, MinIO on-disk compatibility (rio-v2 feature), Swift and SFTP (cargo features)",
+   "Objects encrypted by MinIO are not readable by RustFS",
+   "Docker bind mounts must be writable by UID/GID 10001:10001 or startup fails; upgrading older root-owned volumes requires manual ownership changes",
+   "Single-node single-drive deployments cannot be expanded in place or added as a pool"
+  ],
+  "license": "Apache 2.0",
+  "category": "object storage server",
+  "keywords": [
+   "object storage",
+   "s3 compatible",
+   "s3-compatible storage",
+   "self-hosted s3",
+   "rust",
+   "rustfs",
+   "minio alternative",
+   "distributed storage",
+   "object store server",
+   "file storage server",
+   "share files with my team",
+   "store files on my own server",
+   "data lake storage",
+   "iceberg rest catalog",
+   "openstack swift",
+   "keystone authentication",
+   "erasure coding",
+   "bitrot protection",
+   "bucket replication",
+   "object lock worm",
+   "web console storage",
+   "helm chart object storage",
+   "docker object storage",
+   "nix flake",
+   "webdav server",
+   "sftp server",
+   "ftps server",
+   "apache 2.0 storage",
+   "s3 api server",
+   "kubernetes object storage",
+   "backup storage server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8730,
+  "output": 1357
+ },
+ "generated": "2026-10-29"
+}

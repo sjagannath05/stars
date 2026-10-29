@@ -1,0 +1,93 @@
+{
+ "id": "linuxserver/docker-qbittorrent",
+ "repo": "linuxserver/docker-qbittorrent",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "qBittorrent | BitTorrent client with a web UI"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Docker container image packaging the qBittorrent BitTorrent client with its web UI, maintained by the LinuxServer.io team.",
+  "what_it_does": "Provides a containerized qBittorrent client (C++/Qt, built on libtorrent) that exposes a web UI on port 8080 by default. The admin password is printed to the container log at first startup and should be changed in the web UI settings. Ports for the web UI and the torrenting connection (TCP and UDP) can be changed through WEBUI_PORT and TORRENTING_PORT variables. Volumes map a config directory and a downloads directory, with PUID/PGID for host file permissions. Two tags are offered: latest (libtorrent v2) and libtorrentv1. Images are published for amd64 and arm64.",
+  "use_cases": [
+   "Run a torrent client on a home server or NAS",
+   "Download torrents through a browser-based web UI",
+   "Manage BitTorrent downloads in a Docker Compose stack",
+   "Run qBittorrent with a read-only or non-root container",
+   "Choose between libtorrent v1 and v2 builds"
+  ],
+  "how_to_run": [
+   "docker-compose: define the qbittorrent service with image lscr.io/linuxserver/qbittorrent:latest, environment PUID/PGID/TZ/WEBUI_PORT/TORRENTING_PORT, volumes for /config and /downloads, and ports 8080, 6881 tcp and 6881 udp",
+   "docker compose up -d (or docker-compose up -d)",
+   "Or use docker run -d --name=qbittorrent with the same -e, -p and -v flags",
+   "Read the container log (docker logs -f qbittorrent) to find the temporary admin password",
+   "Log in to the web UI on port 8080 and change the username and password"
+  ],
+  "stack": [
+   "Docker",
+   "qBittorrent",
+   "libtorrent",
+   "C++",
+   "Qt",
+   "Alpine Linux",
+   "s6 overlay"
+  ],
+  "notable": [
+   "Multi-arch images for x86-64 and arm64 via a Docker manifest",
+   "Choice of libtorrent v2 (latest) or libtorrent v1 (libtorrentv1 tag)",
+   "Supports PUID/PGID user mapping and FILE__ environment variables from Docker secrets",
+   "Optional UMASK setting and read-only or non-root operation",
+   "Built on a custom base image with s6 overlay and regular rebuilds"
+  ],
+  "caveats": [
+   "If the web UI password is not changed, a new one is generated every time the container starts",
+   "Changing the web UI port requires updating both the port mapping and WEBUI_PORT",
+   "An active torrenting port needs to be opened on the host; the README notes this can differ from the internal port",
+   "armhf is deprecated; only amd64 and arm64 are supported"
+  ],
+  "license": "unknown",
+  "category": "self-hosted torrent client",
+  "keywords": [
+   "qbittorrent",
+   "qbittorrent docker",
+   "bittorrent client",
+   "torrent client",
+   "torrent web ui",
+   "libtorrent",
+   "libtorrent v1",
+   "libtorrent v2",
+   "docker container torrent",
+   "linuxserver",
+   "lscr.io",
+   "docker compose torrent",
+   "self-hosted torrent",
+   "torrent downloader server",
+   "download torrents remotely",
+   "run torrent client in docker",
+   "torrent on nas",
+   "webui torrent client",
+   "p2p file download",
+   "magnet link downloader",
+   "puid pgid docker",
+   "read-only container",
+   "non-root docker",
+   "arm64 docker image",
+   "torrent seedbox",
+   "home server downloads",
+   "transmission alternative",
+   "deluge alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6361,
+  "output": 1337
+ },
+ "generated": "2026-10-29"
+}

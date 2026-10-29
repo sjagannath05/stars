@@ -1,0 +1,91 @@
+{
+ "id": "taskiq-python/taskiq",
+ "repo": "taskiq-python/taskiq",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Task Queues",
+   "entry": "taskiq - Distributed task queue with native asyncio support and pluggable brokers."
+  }
+ ],
+ "summary": {
+  "one_liner": "Taskiq is an asynchronous distributed task queue for Python that runs both sync and async functions, with pluggable queue brokers and integrations for async web frameworks.",
+  "what_it_does": "Lets you declare Python functions as tasks with a decorator on a broker object, then send them to a queue with `.kiq()` and run them in separate worker processes. The README names brokers for NATS, Redis, RabbitMQ and Kafka, with the example using the taskiq_nats JetStream broker. Workers are started with the `taskiq worker` command, which can auto-import modules named tasks.py via `--fs-discover`. A `--reload` flag restarts workers on code changes when the optional reload extra is installed. The README says it has integrations with FastAPI and AioHTTP so tasks can reuse web app dependencies. All code is described as type-hinted and uses PEP-612 for editor autosuggestions.",
+  "use_cases": [
+   "run background jobs in an asyncio Python app",
+   "distribute async or sync functions across worker processes",
+   "offload slow work from a FastAPI or AioHTTP web app",
+   "schedule and dispatch tasks through NATS, Redis, RabbitMQ or Kafka queues",
+   "replace Celery or Dramatiq style task processing"
+  ],
+  "how_to_run": [
+   "pip install taskiq",
+   "pip install taskiq_nats (or another broker package for your queue backend)",
+   "Create a broker instance and decorate functions with @broker.task",
+   "taskiq worker path.to.the.module:broker",
+   "taskiq worker path.to.the.module:broker --fs-discover (auto-import tasks.py files)",
+   "pip install taskiq[reload] then add --reload for hot reload during development"
+  ],
+  "stack": [
+   "Python",
+   "asyncio",
+   "taskiq_nats (broker package named in README)"
+  ],
+  "notable": [
+   "Runs both sync and async functions as distributed tasks",
+   "Pluggable broker design, with separate packages per queue backend",
+   "Integrations with FastAPI and AioHTTP to reuse web app dependencies in tasks",
+   "Worker hot reload and filesystem task auto-discovery"
+  ],
+  "caveats": [
+   "README does not list the license, and no license text is included in the provided content",
+   "Broker backends are separate packages, so you must install one that matches your queue",
+   "Full feature documentation is only linked externally; the README does not cover all details",
+   "Hot reload requires the optional reload extra"
+  ],
+  "license": "unknown",
+  "category": "python task queue",
+  "keywords": [
+   "taskiq",
+   "task queue",
+   "distributed task queue",
+   "background jobs",
+   "asyncio tasks",
+   "async task queue",
+   "python workers",
+   "celery alternative",
+   "dramatiq alternative",
+   "message broker",
+   "nats broker",
+   "redis broker",
+   "rabbitmq broker",
+   "kafka broker",
+   "fastapi background tasks",
+   "aiohttp tasks",
+   "run functions in background",
+   "worker processes",
+   "hot reload workers",
+   "type-hinted tasks",
+   "pep-612",
+   "distribute jobs across workers",
+   "queue async functions",
+   "taskiq worker command",
+   "scheduled jobs python",
+   "offload work from web app",
+   "pluggable brokers",
+   "sync and async tasks",
+   "python job queue",
+   "kiq task dispatch"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2443,
+  "output": 1211
+ },
+ "generated": "2026-10-29"
+}

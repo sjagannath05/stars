@@ -1,0 +1,90 @@
+{
+ "id": "muhammadtalhamt/claude-intercom",
+ "repo": "MuhammadTalhaMT/claude-intercom",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "claude-intercom by MuhammadTalhaMT - Relays messages between two Claude Code sessions on separate machines using the Channels API, with delivery tracking and per-message reply budget. Pairs sessions belonging to different accounts, which native cross-session messaging does not. Although this sort of functionality is now a platform feature, it's always cool to see people who have built their own so"
+  }
+ ],
+ "summary": {
+  "one_liner": "A two-way bridge that relays messages between Claude Code sessions on different machines (possibly different people's accounts) over HTTP, delivering them as channel notifications.",
+  "what_it_does": "Runs as an MCP server (intercom.ts, via npx or Bun) that declares the Claude Code channel capability and starts an HTTP listener. A send_message tool POSTs a message to the other machine's intercom, authenticated with a shared secret in an X-Intercom-Secret header. The receiving session gets the message as a channel notification tagged with its id and can reply with replyTo set. A check_message tool reports whether each outbound message is sent, delivered-to-process, or answered, with per-message expectReplyWithin deadlines. The README says the body is schema-validated (size and character limits) and that a GET /health endpoint is unauthenticated. Messages are not persisted.",
+  "use_cases": [
+   "Let a backend and frontend developer's Claude sessions ask each other questions across machines",
+   "Relay code review findings from one Claude session to another developer's session",
+   "Coordinate Claude sessions working on different packages in a monorepo",
+   "Push CI/CD build results into a running Claude Code session via webhook",
+   "Connect Claude sessions across a Tailscale network, ngrok tunnel, or VPN"
+  ],
+  "how_to_run": [
+   "npx -y claude-intercom (configured as an MCP server in .mcp.json with MY_ROLE, REMOTE_HOST, INTERCOM_SECRET, INTERCOM_PORT)",
+   "openssl rand -base64 32 (generate a shared secret; use the same value on both machines)",
+   "export INTERCOM_SECRET='...' in the shell that launches Claude Code",
+   "claude --dangerously-load-development-channels server:intercom (run on both machines)",
+   "Alternative from source: git clone, cd claude-intercom, bun install, then use command bun with args pointing to intercom.ts"
+  ],
+  "stack": [
+   "TypeScript",
+   "Bun",
+   "Node/npx",
+   "Claude Code Channels API",
+   "MCP (Model Context Protocol) over stdio",
+   "HTTP"
+  ],
+  "notable": [
+   "Pairs sessions belonging to different people or accounts, which the README says native cross-session messaging cannot do",
+   "Three-state delivery tracking (sent, delivered-to-process, answered) via send_message and check_message",
+   "Per-message reply deadlines via expectReplyWithin rather than one global timeout",
+   "Works across OSes and cloud providers (Bedrock, Vertex, Foundry) per the README, with direct HTTP instead of Anthropic-relayed messages",
+   "Config can reference ${INTERCOM_SECRET} so the secret stays out of the committed .mcp.json"
+  ],
+  "caveats": [
+   "Shared-secret auth only: secret is sent as plaintext header, so it must run over Tailscale, HTTPS, or another encrypted transport; no replay protection",
+   "Inbound messages can inject text into a Claude session; the README says this is not enforced by a real permission boundary, so pair only with trusted peers",
+   "Requires the --dangerously-load-development-channels flag and a stdio-attached session; not usable as a remote-hosted MCP server"
+  ],
+  "license": "MIT",
+  "category": "claude code tooling",
+  "keywords": [
+   "claude code",
+   "claude code channels",
+   "inter-session messaging",
+   "cross-machine messaging",
+   "two claude sessions",
+   "mcp server",
+   "model context protocol",
+   "bun",
+   "typescript",
+   "http relay",
+   "shared secret auth",
+   "tailscale",
+   "ngrok tunnel",
+   "delivery tracking",
+   "reply correlation",
+   "agent to agent communication",
+   "multi agent coordination",
+   "send messages between ai sessions",
+   "pair two developers ai",
+   "talk to another claude",
+   "cross account messaging",
+   "native cross-session messaging alternative",
+   "remote claude session",
+   "webhook into claude",
+   "claude code notifications",
+   "backend frontend coordination",
+   "vpn messaging between machines"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6202,
+  "output": 1464
+ },
+ "generated": "2026-10-29"
+}

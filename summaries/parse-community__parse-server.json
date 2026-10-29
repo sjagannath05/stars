@@ -1,0 +1,93 @@
+{
+ "id": "parse-community/parse-server",
+ "repo": "parse-community/parse-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Backend & Low-Code",
+   "entry": "Parse Server | Backend framework with a REST/GraphQL API, auth and push notifications"
+  }
+ ],
+ "summary": {
+  "one_liner": "Parse Server is an open source Node.js backend that runs on Express and provides a REST and GraphQL API over MongoDB or PostgreSQL, with user auth, Cloud Code, file storage and live queries.",
+  "what_it_does": "Parse Server can be deployed to any infrastructure that can run Node.js and can be added to an existing Express web application or run standalone. It exposes a REST API and automatically generates a GraphQL API from the application schema, and custom GraphQL queries and mutations can be bound to Cloud Code functions. The README describes user login and logout, email verification and password reset (which require an email adapter), account lockout and password policy settings, and push-related installation deduplication. It stores data in MongoDB or PostgreSQL (with PostGIS), and files can go to GridFS (default), S3, Google Cloud Storage, or local disk. Live Query support is available for real-time updates, and custom web pages can be served through custom routes with localization. Access to REST routes can be restricted with a route allow list.",
+  "use_cases": [
+   "Backend API for a mobile or web app",
+   "User accounts with login and password reset",
+   "Running custom server logic via Cloud Code",
+   "Real-time data updates with live queries",
+   "Hosting files attached to app data",
+   "Serving GraphQL API alongside REST"
+  ],
+  "how_to_run": [
+   "npm install -g parse-server mongodb-runner",
+   "mongodb-runner start",
+   "parse-server --appId APPLICATION_ID --masterKey MASTER_KEY --databaseURI mongodb://localhost/test --publicServerURL <url> --mountGraphQL",
+   "docker build --tag parse-server . (from a cloned parse-server repo)",
+   "npm install parse-server express --save (to embed in an Express app)"
+  ],
+  "stack": [
+   "Node.js",
+   "Express",
+   "MongoDB",
+   "PostgreSQL with PostGIS",
+   "GraphQL",
+   "npm"
+  ],
+  "notable": [
+   "Automatically generated REST and GraphQL APIs based on the app schema",
+   "Pluggable file adapters: GridFS, S3, Google Cloud Storage, local filesystem",
+   "Route allow list to lock down which REST routes external clients can call",
+   "Logs to console and daily rotating JSON files, with optional JSON error logs",
+   "Long-term-support branches for previous major versions"
+  ],
+  "caveats": [
+   "Multi-tenancy is not supported; only one Parse Server instance per Express app, with no isolation between apps",
+   "The GraphQL Playground exposes the master key and should not be used in production",
+   "Idempotency enforcement is experimental and not recommended for production; the Postgres version needs a separate cron job",
+   "LTS branches receive only security fixes and may leave some vulnerabilities to the community"
+  ],
+  "license": "unknown",
+  "category": "backend api framework",
+  "keywords": [
+   "parse server",
+   "node.js backend",
+   "baas",
+   "backend as a service",
+   "rest api",
+   "graphql api",
+   "express",
+   "mongodb",
+   "postgresql",
+   "cloud code",
+   "user authentication",
+   "login and signup",
+   "password reset",
+   "email verification",
+   "live query",
+   "real-time database",
+   "file hosting",
+   "s3 file storage",
+   "self-hosted backend",
+   "mobile app backend",
+   "push notifications",
+   "firebase alternative",
+   "parse platform",
+   "server-side functions",
+   "api server",
+   "self host backend",
+   "alternative to hosted backend service",
+   "build backend for my app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16480,
+  "output": 1259
+ },
+ "generated": "2026-10-29"
+}

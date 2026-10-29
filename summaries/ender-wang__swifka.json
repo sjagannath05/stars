@@ -1,0 +1,94 @@
+{
+ "id": "ender-wang/swifka",
+ "repo": "Ender-Wang/Swifka",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "Swifka - Read-only Kafka monitor for safely inspecting topics, messages, and consumer state. [![Open-Source Software][OSS Icon]](https://github.com/Ender-Wang/Swifka) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Swifka is a native macOS Kafka monitor that lets you browse topics, messages, consumer lag and broker health in a read-only way.",
+  "category": "kafka monitoring tool",
+  "keywords": [
+   "kafka",
+   "kafka monitor",
+   "macos",
+   "native mac app",
+   "read-only",
+   "kafka client",
+   "redpanda",
+   "consumer lag",
+   "consumer group",
+   "topic browser",
+   "message viewer",
+   "kafka gui",
+   "broker health",
+   "librdkafka",
+   "swift",
+   "swiftui",
+   "schema registry",
+   "confluent wire format",
+   "protobuf decode",
+   "avro decode",
+   "alternative to offset explorer",
+   "alternative to conduktor",
+   "alternative to kafdrop",
+   "alternative to akhq",
+   "alternative to kcat",
+   "monitor kafka safely in production",
+   "view kafka messages on mac",
+   "kafka lag alerts",
+   "menu bar kafka monitor",
+   "homebrew cask kafka"
+  ],
+  "what_it_does": "Swifka connects to Kafka-compatible clusters (Kafka, Redpanda, and others the README mentions) and shows topics, partitions, and messages with metadata. Messages can be decoded as UTF-8, Hex, Base64, Protobuf (with imported .proto files), Avro, or JSON, and Schema Registry integration auto-decodes Confluent wire-format messages. Consumer group lag is shown per partition and per member, alongside live and historical trend charts for throughput, lag, and ISR health stored in SQLite. Configurable alert rules cover ISR health, cluster lag, broker latency, and broker offline, with macOS notifications. The README says the app is read-only: the KafkaService exposes no produce, delete, or admin operations.</what_it_does>\n<parameter name=\"how_to_run\">[\"brew install --cask ender-wang/tap/swifka\", \"Or download the latest .dmg from Releases\"]",
+  "use_cases": [
+   "monitor kafka consumer lag on a mac",
+   "browse topics and messages without risk of writes",
+   "inspect protobuf or avro messages from a schema registry",
+   "give on-call engineers a safe read-only kafka view",
+   "watch broker health and ISR trends",
+   "export kafka chart data to Excel"
+  ],
+  "how_to_run": [
+   "brew install --cask ender-wang/tap/swifka",
+   "Or download the latest .dmg from Releases"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "librdkafka",
+   "swift-kafka-client",
+   "SQLite.swift",
+   "SwiftProtobuf",
+   "SwiftFormat",
+   "macOS Keychain",
+   "GitHub Releases API"
+  ],
+  "notable": [
+   "Read-only by design: KafkaService exposes only read methods, with no produce, delete, or admin operations",
+   "Native macOS app built with SwiftUI and an @Observable state model, rather than Java or web",
+   "Decodes Confluent Schema Registry wire-format messages (Protobuf, Avro, JSON)",
+   "Alert rules for ISR health, cluster lag, broker latency and broker offline, with history and macOS notifications",
+   "Custom JSON-based localization with English and Simplified Chinese, plus in-app DMG auto-update with checksum verification"
+  ],
+  "caveats": [
+   "Requires macOS 15.7+ and Xcode 16.2+ to build from source",
+   "Monitoring only: it cannot produce, delete, or administer topics",
+   "README does not state a Linux or Windows version"
+  ],
+  "license": "GNU General Public License v3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5452,
+  "output": 1302
+ },
+ "generated": "2026-10-29"
+}

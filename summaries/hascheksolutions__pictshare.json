@@ -1,0 +1,92 @@
+{
+ "id": "hascheksolutions/pictshare",
+ "repo": "HaschekSolutions/pictshare",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "PictShare - Multi lingual image hosting service with a simple resizing and upload API. (Source Code) Apache-2.0 PHP/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "PictShare is a self-hosted file host for images, GIFs, MP4 videos, audio, and text pastes, with URL-based resizing and filters and a simple upload API.",
+  "what_it_does": "PictShare stores uploaded images, GIFs, MP4s, audio files, and text bins on your own server, with no database required since it is file based. Images and videos can be resized, filtered, or rotated by editing the URL, and GIFs can be converted to MP4. JPG and PNG files can be converted to WebP when the requesting browser supports it. It removes EXIF data on upload, and identical files are stored once with duplicates linking to the first copy. Uploads can be grouped into immutable albums with a single gallery URL, and it includes URL shortening, Markdown rendering, identicon and placeholder image generation, and optional external storage with encryption. A built-in MCP endpoint lets LLM agents upload and manage files.",
+  "use_cases": [
+   "self-host an image hosting service",
+   "share images and videos with a direct link",
+   "host pastebin-style text snippets",
+   "resize or filter images via URL parameters",
+   "upload files from scripts or an API",
+   "let LLM agents upload files via MCP",
+   "bundle uploads into a shared album"
+  ],
+  "how_to_run": [
+   "docker run -d -p 8080:80 --name=pictshare ghcr.io/hascheksolutions/pictshare",
+   "cp .env.example .env",
+   "docker compose up --build"
+  ],
+  "stack": [
+   "PHP",
+   "Docker",
+   "FFmpeg",
+   "S3 (optional external storage)"
+  ],
+  "notable": [
+   "File-based storage with no database needed",
+   "Image and video transformations controlled entirely by the URL",
+   "Built-in MCP server at POST /mcp for LLM agents",
+   "Strips EXIF/GPS metadata from uploads",
+   "Albums and a browser-side 'My Uploads' tab"
+  ],
+  "caveats": [
+   "v3 may not be fully compatible with previous PictShare versions and drops several config options (TITLE, UPLOAD_FORM_LOCATION, ALLOW_BLOATING)",
+   "Several roadmap items are still unchecked, including upload quotas, autodestruct, and URL shortening upload",
+   "The file name must now be the last part of the URL, which breaks older link formats"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted image hosting",
+  "keywords": [
+   "image hosting",
+   "self-hosted image host",
+   "file hosting",
+   "share images",
+   "upload images",
+   "image resizing",
+   "url image resize",
+   "gif to mp4",
+   "webp conversion",
+   "exif removal",
+   "strip metadata",
+   "pastebin alternative",
+   "text bin",
+   "albums",
+   "image gallery",
+   "mp4 hosting",
+   "video hosting",
+   "audio hosting",
+   "url shortener",
+   "upload api",
+   "rest api",
+   "mcp server",
+   "llm agent file upload",
+   "docker image",
+   "php",
+   "ffmpeg",
+   "s3 storage",
+   "encrypted storage",
+   "imgur alternative",
+   "share files with my team",
+   "host my own pictures"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3442,
+  "output": 1143
+ },
+ "generated": "2026-10-29"
+}

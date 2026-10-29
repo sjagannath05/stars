@@ -1,0 +1,88 @@
+{
+ "id": "oracle/python-oracledb",
+ "repo": "oracle/python-oracledb",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database Drivers",
+   "entry": "oracledb - The official Python driver for Oracle Database, successor to cx_Oracle."
+  }
+ ],
+ "summary": {
+  "one_liner": "python-oracledb is the official, Oracle-maintained Python driver for connecting to Oracle Database, and the successor to the obsolete cx_Oracle driver.",
+  "what_it_does": "The driver conforms to the Python Database API 2.0 specification with additions, and is built with Cython. It runs in a default 'Thin' mode that connects directly to Oracle Database without extra libraries, or in 'Thick' mode when optional Oracle Client libraries are loaded for advanced functionality. The README lists support for SQL and PL/SQL execution, data frames, fast data ingestion, NoSQL-style document APIs, message queueing, database notifications, and starting and stopping the database. It also mentions high availability and security features, synchronous and concurrent coding styles, and optional pipelining of database operations. An optional embedded OpenTelemetry plugin can be enabled explicitly, which emits the db.client.operation.duration metric when a MeterProvider is configured.",
+  "use_cases": [
+   "connect a Python program to Oracle Database",
+   "run SQL and PL/SQL statements from Python",
+   "bulk or fast data loading into Oracle tables",
+   "receive database notifications in Python",
+   "add OpenTelemetry tracing to Oracle database calls",
+   "migrate legacy cx_Oracle code to a maintained driver"
+  ],
+  "how_to_run": [
+   "python -m pip install oracledb --upgrade",
+   "python -m pip install \"oracledb[opentelemetry]\" (optional OpenTelemetry plugin)",
+   "Set user, password and DSN, then call oracledb.connect(user=un, password=pw, dsn=cs)",
+   "Run the basic example: cursor.execute(\"select sysdate from dual\")"
+  ],
+  "stack": [
+   "Python 3.10 to 3.15",
+   "Cython",
+   "Oracle Instant Client (optional, for Thick mode)",
+   "OpenTelemetry (optional plugin)"
+  ],
+  "notable": [
+   "Thin mode needs no Oracle Client libraries; Thick mode is optional",
+   "Conforms to Python DB API 2.0 with a feature list of additions",
+   "Supports synchronous and concurrent coding styles and pipelining",
+   "Optional embedded OpenTelemetry plugin that must be enabled explicitly",
+   "Maintained by Oracle and succeeds cx_Oracle"
+  ],
+  "caveats": [
+   "Thin mode requires Oracle Database 12.1 or later; Thick mode requires 11.2 or later depending on client release",
+   "Some advanced functionality is only available in Thick mode with Oracle Client libraries installed",
+   "Do not run the OpenTelemetry plugin alongside other Oracle or DBAPI OpenTelemetry instrumentation in the same process"
+  ],
+  "license": "unknown",
+  "category": "database driver",
+  "keywords": [
+   "python oracle driver",
+   "oracledb",
+   "python-oracledb",
+   "cx_oracle successor",
+   "oracle database python connector",
+   "dbapi 2.0 oracle",
+   "thin mode",
+   "thick mode",
+   "oracle instant client",
+   "cython database driver",
+   "connect python to oracle",
+   "query oracle from python",
+   "pl/sql from python",
+   "oracle database client library",
+   "python database api",
+   "concurrent oracle queries",
+   "pipelined database operations",
+   "oracle database notifications",
+   "oracle message queue python",
+   "opentelemetry oracle",
+   "oracle bulk insert python",
+   "python oracle orm backend",
+   "oracle sql python",
+   "oracle database access python",
+   "oracle python sdk",
+   "oracle database adapter",
+   "sysdate from dual example"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3208,
+  "output": 1324
+ },
+ "generated": "2026-10-29"
+}

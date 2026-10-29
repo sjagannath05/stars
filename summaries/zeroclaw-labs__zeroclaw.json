@@ -1,0 +1,96 @@
+{
+ "id": "zeroclaw-labs/zeroclaw",
+ "repo": "zeroclaw-labs/zeroclaw",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Ecosystem & Extensions",
+   "entry": "ZeroClaw – Lightweight autonomous agent framework"
+  }
+ ],
+ "summary": {
+  "one_liner": "ZeroClaw is a self-hosted personal AI agent runtime, shipped as a single Rust binary, that connects LLM providers to many chat channels and tools.",
+  "what_it_does": "ZeroClaw is configured through one TOML file (~/.zeroclaw/config.toml) and run locally with your own provider keys and workspace. It connects to LLM providers such as Anthropic, OpenAI, and Ollama, plus any OpenAI-compatible endpoint, with fallback chains and routing when a provider fails. It receives messages from channels including Discord, Telegram, Matrix, email, voice, webhooks, and CLI, all handled by one agent loop. Tools include shell, browser, HTTP, hardware access, and custom MCP servers. It also provides an HTTP/WebSocket gateway with a web dashboard, an event-triggered SOP engine (MQTT, webhook, cron, peripheral), and ACP for editor integration over JSON-RPC stdio.",
+  "use_cases": [
+   "run a personal AI assistant on my own machine",
+   "chat with an LLM agent through Discord or Telegram",
+   "automate shell and browser tasks with an agent",
+   "control GPIO, I2C, or SPI hardware from an AI agent",
+   "trigger agent workflows from webhooks, MQTT, or cron",
+   "connect an AI agent to my code editor"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh  (Unix installer; the URL was stripped from the README)",
+   "\"${CARGO_HOME:-$HOME/.cargo}/bin/zeroclaw\" quickstart",
+   "zeroclaw agent -a  (interactive chat using an agents entry)",
+   "zeroclaw service install",
+   "zeroclaw service start"
+  ],
+  "stack": [
+   "Rust",
+   "TOML configuration",
+   "SQLite memory",
+   "MCP (Model Context Protocol) servers",
+   "JSON-RPC 2.0 (ACP)",
+   "Landlock / Bubblewrap / Seatbelt / Docker sandboxes"
+  ],
+  "notable": [
+   "Single Rust binary with 30+ channel adapters and roughly 20+ model providers",
+   "Default 'supervised' autonomy: medium-risk actions need approval, high-risk blocked",
+   "Cryptographic tool receipts recorded for every action",
+   "Hardware support via a Peripheral trait for Raspberry Pi, STM32, Arduino, and ESP32",
+   "Event-driven SOP engine with approval gates and resumable runs"
+  ],
+  "caveats": [
+   "Default security mode requires approval for medium-risk actions; YOLO mode skips safety gates and is intended only for trusted dev environments",
+   "Some setup steps (Codex auth import, Claude setup token, docs submodule) add configuration work",
+   "Windows path uses a PowerShell prebuilt install rather than the Unix installer"
+  ],
+  "license": "MIT OR Apache 2.0",
+  "category": "self-hosted ai agent",
+  "keywords": [
+   "ai agent runtime",
+   "personal ai assistant",
+   "autonomous agent",
+   "rust agent framework",
+   "self-hosted llm agent",
+   "llm gateway",
+   "multi-channel chatbot",
+   "discord bot ai",
+   "telegram bot ai",
+   "matrix bot",
+   "mcp servers",
+   "agent client protocol",
+   "acp editor integration",
+   "ollama local models",
+   "anthropic openai agent",
+   "openai compatible endpoint",
+   "tool-using agent",
+   "shell and browser automation",
+   "raspberry pi gpio ai",
+   "iot hardware agent",
+   "sop workflow automation",
+   "webhook triggered agent",
+   "mqtt automation",
+   "cron agent scheduling",
+   "local ai assistant",
+   "run ai on my own machine",
+   "keep my data private ai",
+   "agent sandbox landlock docker",
+   "langchain alternative",
+   "openclaw alternative",
+   "single binary ai agent",
+   "ai chat dashboard web ui"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4234,
+  "output": 1482
+ },
+ "generated": "2026-10-29"
+}

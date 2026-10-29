@@ -1,0 +1,88 @@
+{
+ "id": "pyinfra-dev/pyinfra",
+ "repo": "pyinfra-dev/pyinfra",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "DevOps Tools",
+   "entry": "pyinfra - Turns Python code into shell commands and runs them on your servers."
+  }
+ ],
+ "summary": {
+  "one_liner": "pyinfra is a Python-based automation tool that runs shell commands and declarative operations on SSH servers, the local machine, and Docker containers without installing agents.",
+  "what_it_does": "pyinfra turns Python code into shell commands and executes them on target hosts. It supports ad-hoc command execution via an exec operation and declarative operations (for example apt.packages) that describe desired state. Targets include SSH servers, the local machine, and Docker containers, and the README mentions connectors for Terraform and Vagrant as well. Operations are idempotent, which the README says enables diffs and dry runs before changes are made. Hosts can be defined in an inventory Python file and combined with deploy scripts on the command line. The README states it is agentless and can scale from one server to thousands.",
+  "use_cases": [
+   "configure remote servers over SSH",
+   "run ad-hoc commands across many hosts",
+   "manage Docker containers as deployment targets",
+   "install and maintain apt packages on servers",
+   "write infrastructure deployment scripts in Python",
+   "preview configuration changes with dry runs"
+  ],
+  "how_to_run": [
+   "uv tool install pyinfra",
+   "pyinfra my-server.net exec -- echo \"hello world\"",
+   "pyinfra @docker/ubuntu exec -- echo \"Hello world\"",
+   "pyinfra @local exec -- echo \"Hello world\"",
+   "pyinfra @docker/ubuntu apt.packages iftop update=true _sudo=true",
+   "pyinfra inventory.py deploy.py"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "SSH",
+   "Docker"
+  ],
+  "notable": [
+   "Agentless execution over SSH, local, and Docker targets",
+   "Operations are idempotent and support diffs and dry runs",
+   "Real-time stdin/stdout/stderr output with -vvv debugging",
+   "Hosts and logic written in Python instead of YAML, usable with the full Python package ecosystem"
+  ],
+  "caveats": [
+   "The README does not state a license",
+   "Operations require shell access to the target hosts"
+  ],
+  "license": "unknown",
+  "category": "devops automation tooling",
+  "keywords": [
+   "pyinfra",
+   "python automation",
+   "configuration management",
+   "infrastructure as code",
+   "ansible alternative",
+   "agentless deployment",
+   "ssh automation",
+   "remote command execution",
+   "docker deployment",
+   "idempotent operations",
+   "dry run",
+   "server provisioning",
+   "deploy scripts",
+   "inventory file",
+   "apt packages",
+   "terraform connector",
+   "vagrant connector",
+   "run commands on many servers",
+   "push configuration to servers",
+   "automate server setup in python",
+   "fleet management",
+   "local machine automation",
+   "devops tools",
+   "shell command runner",
+   "yaml-free automation",
+   "configure linux servers",
+   "uv tool install"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2220,
+  "output": 1055
+ },
+ "generated": "2026-10-29"
+}

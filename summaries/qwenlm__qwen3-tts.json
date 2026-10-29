@@ -1,0 +1,100 @@
+{
+ "id": "qwenlm/qwen3-tts",
+ "repo": "QwenLM/Qwen3-TTS",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Qwen",
+   "entry": "Qwen3-TTS – Speech / voice generation"
+  }
+ ],
+ "summary": {
+  "one_liner": "Qwen3-TTS is Qwen's family of open speech generation models (0.6B and 1.7B) that cover custom voices, voice design from text descriptions, voice cloning, and a companion speech tokenizer.",
+  "category": "speech generation models",
+  "keywords": [
+   "text to speech",
+   "tts",
+   "speech synthesis",
+   "voice cloning",
+   "voice clone",
+   "voice design",
+   "custom voice",
+   "speaker embedding",
+   "speech tokenizer",
+   "audio codec",
+   "qwen3-tts",
+   "qwen tts",
+   "streaming tts",
+   "low latency speech",
+   "voice control with instructions",
+   "emotional speech generation",
+   "multilingual tts",
+   "text to voice",
+   "clone my voice from a short clip",
+   "make an audio narration from text",
+   "create a character voice",
+   "huggingface tts model",
+   "modelscope",
+   "vllm speech",
+   "vllm-omni",
+   "gradio web ui speech",
+   "fine tuning tts",
+   "flash attention",
+   "dashscope api",
+   "elevenlabs alternative",
+   "gpt-4o-mini-tts alternative",
+   "voice synthesis python package",
+   "speech to codes encode decode"
+  ],
+  "what_it_does": "The README describes a series of Qwen3-TTS models released as 0.6B and 1.7B variants: CustomVoice (preset speakers steered by instructions), VoiceDesign (voice created from a natural-language description), and Base (3-second voice cloning from reference audio, also usable for fine-tuning). A separate Qwen3-TTS-Tokenizer-12Hz encodes speech into codes and decodes them back to audio. The qwen-tts Python package exposes generate_custom_voice, generate_voice_design, and generate_voice_clone functions, with single and batch inputs, and reusable voice-clone prompts. A Gradio-based local web UI is started with a qwen-tts-demo command. The README also documents vLLM-Omni offline inference examples, a fine-tuning repo reference, a DashScope API, and benchmark tables for WER, speaker similarity, and tokenizer quality.",
+  "use_cases": [
+   "generate speech audio from text in multiple languages",
+   "clone a speaker's voice from a short reference clip",
+   "design a new voice from a text description",
+   "build a consistent character voice across many lines",
+   "run a local web demo for text to speech",
+   "fine-tune a TTS model on custom voices"
+  ],
+  "how_to_run": [
+   "conda create -n qwen3-tts python=3.12 -y",
+   "conda activate qwen3-tts",
+   "pip install -U qwen-tts",
+   "pip install -U flash-attn --no-build-isolation",
+   "qwen-tts-demo Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice --ip 0.0.0.0 --port 8000"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Hugging Face Transformers",
+   "FlashAttention 2",
+   "Gradio",
+   "vLLM-Omni",
+   "ModelScope",
+   "Hugging Face Hub",
+   "soundfile"
+  ],
+  "notable": [
+   "Single model supports both streaming and non-streaming generation, with end-to-end latency the README gives as low as 97ms",
+   "Voice design from natural-language instructions, with a documented workflow to turn a designed voice into a reusable clone prompt",
+   "Ships 9 preset speakers with per-speaker native-language notes, covering dialects such as Beijing and Sichuan",
+   "Custom Qwen3-TTS-Tokenizer-12Hz codec built on a multi-codebook discrete LM architecture rather than LM+DiT"
+  ],
+  "caveats": [
+   "FlashAttention 2 needs compatible hardware and only works with float16 or bfloat16; the README suggests MAX_JOBS=4 on machines with under 96GB RAM",
+   "Base-model web demo should be served over HTTPS for microphone access, using a self-signed cert for testing",
+   "vLLM-Omni support is offline-only for now; online serving is stated as future work",
+   "The DashScope API documentation links in the README are empty in the provided text, and the README states other technical-report models will be released later"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 15757,
+  "output": 1507
+ },
+ "generated": "2026-10-29"
+}

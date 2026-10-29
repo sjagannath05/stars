@@ -1,0 +1,93 @@
+{
+ "id": "microsoft/ufo",
+ "repo": "microsoft/UFO",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "UFO³ is Microsoft's multi-device agent framework (Galaxy) that decomposes requests into DAGs of tasks run across Windows, Linux and Android devices, built on top of the UFO² Windows desktop agent.",
+  "what_it_does": "The README describes two components: Galaxy (UFO³), a multi-device orchestration framework where a ConstellationAgent decomposes a user request into a DAG of tasks, assigns them to registered devices by platform and capability, and runs them asynchronously with dependency tracking and dynamic DAG editing. Devices communicate with the orchestrator over a WebSocket-based Unified Agent Interaction Protocol (AIP), and device agents are built from a template with MCP (Model Context Protocol) tool integration. UFO² is the single-device Windows agent, combining Windows UIA/Win32/COM control with GUI and API actions, and it can act as a Windows device agent inside Galaxy. The README also includes a comparison table, migration notes, quick-start commands (pip install, config files, `python -m galaxy --interactive`) and LLM configuration examples for OpenAI and Azure OpenAI. It lists citations to the UFO, UFO² and UFO³ papers.",
+  "use_cases": [
+   "orchestrate tasks across multiple computers",
+   "cross-device GUI automation on Windows, Linux and Android",
+   "automate Windows desktop applications with an LLM agent",
+   "run parallel multi-step workflows as a task DAG",
+   "research on GUI agents and multi-agent orchestration",
+   "integrate MCP tools into device agents"
+  ],
+  "how_to_run": [
+   "pip install -r requirements.txt",
+   "copy config\\galaxy\\agent.yaml.template config\\galaxy\\agent.yaml, then add API keys",
+   "Edit config\\galaxy\\devices.yaml to register devices",
+   "Start device agents (server, MCP servers and client) per platform-specific guides",
+   "python -m galaxy --interactive",
+   "For UFO² standalone: copy config\\ufo\\agents.yaml.template to config\\ufo\\agents.yaml, then python -m ufo --task <task>"
+  ],
+  "stack": [
+   "Python",
+   "WebSocket (AIP protocol)",
+   "MCP (Model Context Protocol)",
+   "YAML configuration",
+   "OpenAI API",
+   "Azure OpenAI"
+  ],
+  "notable": [
+   "Galaxy (UFO³) decomposes requests into a DAG of TaskStars with dependencies and supports runtime DAG rewriting",
+   "UFO² is marked LTS, and the README says it can serve as a Windows device agent for Galaxy",
+   "UFO² reports a 51% reduction in LLM calls via speculative multi-action",
+   "Custom device agents are built from a template with MCP integration"
+  ],
+  "caveats": [
+   "Galaxy is described as active development; some components such as advanced device types and enhanced monitoring are still in development",
+   "Galaxy setup is rated moderate difficulty and requires configuring LLM API keys and each device agent",
+   "UFO² is documented as Windows-only for its desktop agent"
+  ],
+  "license": "MIT License",
+  "category": "multi-device gui agent",
+  "keywords": [
+   "ufo3",
+   "ufo2",
+   "galaxy framework",
+   "multi-device agent",
+   "desktop agentos",
+   "windows automation agent",
+   "gui agent",
+   "computer use agent",
+   "llm agent",
+   "task dag orchestration",
+   "constellation agent",
+   "cross-device automation",
+   "agent orchestration",
+   "mcp agent",
+   "model context protocol",
+   "websocket agent protocol",
+   "aip protocol",
+   "windows uia automation",
+   "linux agent",
+   "android agent",
+   "parallel task execution",
+   "azure openai agent",
+   "openai agent",
+   "microsoft agent framework",
+   "automate windows apps with ai",
+   "run tasks on multiple computers",
+   "ai control of desktop apps",
+   "research gui agents",
+   "python agent orchestrator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9233,
+  "output": 1457
+ },
+ "generated": "2026-10-29"
+}

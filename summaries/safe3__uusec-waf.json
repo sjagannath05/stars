@@ -1,0 +1,96 @@
+{
+ "id": "safe3/uusec-waf",
+ "repo": "Safe3/uusec-waf",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Web Servers",
+   "entry": "UUSEC WAF - Industry-leading high-performance, AI and semantic technology web application firewall and API security gateway (fork of nginx). (Source Code) GPL-3.0 C/Lua/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "UUSEC WAF is a free, nginx-based web application firewall and API security gateway that uses machine learning and semantic analysis engines to block web attacks.",
+  "what_it_does": "The README describes a reverse-proxy WAF built on nginx and LuaJIT, deployed via Docker and Docker Compose and managed through a web admin backend. It claims an anomaly-detection approach that learns normal parameter patterns to build whitelist rules, aiming to block zero-day attacks without new rules. It includes four semantic detection engines (SQL, XSS, RCE, LFI) and decoding of base64, JSON and form data. It supports traditional rule creation plus Lua script rules and plugins, with rules taking effect without restarting. The README also mentions a cache purge feature using regex URL matching, and host-level (HIPS) and runtime (RASP, for Java JVM and PHP Zend) protection. Responses carry a server header of uuWAF, and HTTPS certificates can be uploaded or obtained via Let's Encrypt.",
+  "use_cases": [
+   "protect a website from SQL injection and XSS attacks",
+   "reverse-proxy WAF in front of existing web servers",
+   "API security gateway for web traffic",
+   "block zero-day web vulnerabilities without rule updates",
+   "manage HTTPS certificates and Let's Encrypt renewal for protected sites",
+   "CDN-style caching with regex-based cache purge"
+  ],
+  "how_to_run": [
+   "Install Docker CE 20.10.14 or above and Docker Compose 2.0.0 or above",
+   "Run the installer: sudo bash -c \"$(curl -fsSL ...)\" (URL truncated in README)",
+   "Manage the container with: bash /opt/waf/manager.sh",
+   "Log in to the management UI with the default username admin and password #Passw0rd (change it)",
+   "Add a site domain and its backend server IP under the Sites menu",
+   "Upload an SSL certificate or request a Let's Encrypt certificate, then point the domain's DNS A record to the WAF server"
+  ],
+  "stack": [
+   "C",
+   "Lua",
+   "LuaJIT",
+   "nginx",
+   "Docker",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Semantic analysis engines for SQL, XSS, RCE and LFI instead of only regex rules",
+   "Machine-learning whitelist generation from normal traffic parameters",
+   "Lua script rules and plugin extension",
+   "RASP instrumentation for Java JVM and PHP Zend runtimes",
+   "Regex-based URL cache purge beyond commercial nginx proxy_cache_purge wildcard matching"
+  ],
+  "caveats": [
+   "README recommends a pure Linux x86_64 server because it needs ports 80 and 443 by default",
+   "Requires Docker CE and Docker Compose with specific minimum versions",
+   "Effect comparison table is labeled 'for reference only' and is vendor-provided; the Pro edition results are from the vendor",
+   "Some features (Pro edition, full documentation) are referenced via an official website not included in the README"
+  ],
+  "license": "GPL-3.0",
+  "category": "web application firewall",
+  "keywords": [
+   "web application firewall",
+   "waf",
+   "nginx waf",
+   "openresty",
+   "lua waf",
+   "api security gateway",
+   "reverse proxy firewall",
+   "sql injection protection",
+   "xss protection",
+   "rce detection",
+   "lfi detection",
+   "semantic analysis",
+   "machine learning waf",
+   "zero-day defense",
+   "rasp",
+   "hips host intrusion prevention",
+   "modsecurity alternative",
+   "cloudflare alternative",
+   "cloud waf self-hosted",
+   "docker waf",
+   "lets encrypt ssl",
+   "http cache purge",
+   "cdn acceleration",
+   "website security",
+   "block web attacks",
+   "protect my website from hackers",
+   "self-hosted firewall for websites",
+   "luajit",
+   "gpl waf",
+   "uusec"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3833,
+  "output": 1423
+ },
+ "generated": "2026-10-29"
+}

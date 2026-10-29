@@ -1,0 +1,101 @@
+{
+ "id": "markeljan/web3gpt",
+ "repo": "markeljan/web3gpt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "Web3GPT is an AI agent app that writes, compiles, deploys, pins and verifies Solidity smart contracts on EVM chains from plain-language requests.",
+  "what_it_does": "The agent turns a plain-language description into Solidity, picks a solc compiler matching the contract's pragma (0.4.11 and later, checksum-verified), and deploys it to a supported EVM chain. Sources, ABI, bytecode and standard JSON input are pinned to IPFS via Pinata, and a background cron job queues verification on Blockscout or Etherscan. Users can chat in the browser, deploy with their own wallet through RainbowKit, or create custom agents with their own instructions and share them by link. A public HTTP skill API (POST /api/skill) lets other agents or scripts hold conversations, including deployments, without an account. The README lists supported chains (Polygon mainnet for agent deploys only, plus several Sepolia testnets) and describes per-IP and per-deployment rate limits.",
+  "use_cases": [
+   "deploy an ERC-20 or NFT contract from a text description",
+   "generate and compile Solidity with the correct solc version",
+   "let an AI agent deploy smart contracts via an HTTP API",
+   "verify contracts on Blockscout or Etherscan",
+   "pin contract sources and metadata to IPFS",
+   "deploy contracts to testnets from a browser chat"
+  ],
+  "how_to_run": [
+   "git clone <repository-url>",
+   "cd web3gpt",
+   "bun install",
+   "cp .env.example .env.local",
+   "bun dev"
+  ],
+  "stack": [
+   "TypeScript",
+   "Next.js",
+   "Bun",
+   "viem",
+   "AI SDK",
+   "OpenAI",
+   "Redis (Upstash)",
+   "Pinata / IPFS",
+   "RainbowKit",
+   "Better Auth",
+   "Vercel",
+   "OpenZeppelin imports"
+  ],
+  "notable": [
+   "Agent-to-agent skill API (POST /api/skill) that works without an account",
+   "Chooses the Solidity compiler version from each contract's pragma",
+   "Pins sources, ABI, bytecode and standard JSON input to IPFS",
+   "Custom agents shareable by link",
+   "Users can choose agent-paid deployment or deploy with their own wallet"
+  ],
+  "caveats": [
+   "Agent deployments are rate-limited (e.g. 10 testnet deploys per caller per hour; 2 per day on Polygon mainnet)",
+   "Self-hosting needs many services: OpenAI key, Upstash Redis, funded EVM key, Pinata account, GitHub OAuth app",
+   "Built for Vercel; verification depends on a cron job and API routes up to 300s"
+  ],
+  "license": "MIT",
+  "category": "smart contract tooling",
+  "keywords": [
+   "smart contracts",
+   "solidity",
+   "ai agent",
+   "web3",
+   "evm",
+   "contract deployment",
+   "solc compiler",
+   "contract verification",
+   "etherscan",
+   "blockscout",
+   "ipfs",
+   "pinata",
+   "erc-20 generator",
+   "nft contract",
+   "viem",
+   "next.js",
+   "openai",
+   "chatbot for blockchain",
+   "generate smart contract from text",
+   "deploy contract with ai",
+   "agent api",
+   "hardhat alternative",
+   "remix alternative",
+   "deploy to polygon amoy",
+   "deploy to base sepolia",
+   "wallet connect deploy",
+   "rainbowkit",
+   "openzeppelin",
+   "natural language to solidity",
+   "share ai chat link",
+   "blockchain developer tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5014,
+  "output": 1250
+ },
+ "generated": "2026-10-29"
+}

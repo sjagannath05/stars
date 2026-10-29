@@ -1,0 +1,88 @@
+{
+ "id": "pex-tool/pex",
+ "repo": "pex-tool/pex",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Distribution",
+   "entry": "pex - A tool for building self-contained Python executable environments (PEP 441 zipapps)."
+  }
+ ],
+ "summary": {
+  "one_liner": "pex is a tool and library for building .pex (Python EXecutable) files, self-contained executable Python environments in the spirit of virtualenvs, based on PEP 441.",
+  "what_it_does": "pex builds single-file .pex executables that bundle a Python environment with the requested dependencies, so an application can be deployed by copying one file. The README says a pex file may include multiple platform-specific distributions, making one file portable across Linux and OS X. Builds are driven by the `pex` command, which takes requirements, a console script or entry point (`-c`/`--console-script`), an output file (`-o`/`--output-file`), and an interpreter choice (for example `--python=pypy`). Running `pex --help` lists all options. The README also notes that the Pants, Buck, and {py}gradle build systems can build .pex files directly. Installation is via `pip install pex`, or by building from a git clone with uv and dev-cmd.",
+  "use_cases": [
+   "package a Python application as a single deployable file",
+   "build a portable executable Python environment",
+   "bundle a console script with its dependencies",
+   "create a PyPy-based executable environment",
+   "build .pex files inside Pants, Buck, or gradle builds"
+  ],
+  "how_to_run": [
+   "pip install pex",
+   "pex requests flask 'psutil>2, <3' -o my-env.pex",
+   "pex \"pex>=2.1.35\" -c pex-tools --python=pypy -o pex-tools-pypy-executable.pex",
+   "git clone the repo and run: uv run dev-cmd package",
+   "cp dist/pex ~/bin"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "dev-cmd",
+   "pytest",
+   "MyPy"
+  ],
+  "notable": [
+   "Implements the ideas of PEP 441 zipapps, extending them with multi-platform distributions in one file",
+   "Can be built with the pex tool itself or directly by Pants, Buck, and gradle build systems",
+   "Supports choosing a specific interpreter type such as PyPy",
+   "Installs with pip or builds a standalone pex binary from source"
+  ],
+  "caveats": [
+   "Development workflow depends on uv and dev-cmd, which must be installed separately",
+   "The README does not state platform limits beyond the Linux and OS X portability example"
+  ],
+  "license": "Apache2",
+  "category": "python packaging tool",
+  "keywords": [
+   "pex",
+   "python executable",
+   "pex files",
+   "pep 441",
+   "zipapp",
+   "python zipapp",
+   "self-contained python",
+   "executable python environment",
+   "virtualenv alternative",
+   "deploy python app",
+   "single file python deployment",
+   "bundle python dependencies",
+   "package python app as one file",
+   "portable python executable",
+   "cross-platform python binary",
+   "pypy executable",
+   "console script packaging",
+   "pants build",
+   "buck build",
+   "gradle python",
+   "pip install pex",
+   "python deployment tool",
+   "build executable python",
+   "python distribution",
+   "uv dev-cmd",
+   "pytest python tests",
+   "make python app runnable with cp",
+   "python packaging"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2666,
+  "output": 1116
+ },
+ "generated": "2026-10-29"
+}

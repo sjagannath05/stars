@@ -1,0 +1,94 @@
+{
+ "id": "heyrenan/showreel",
+ "repo": "HeyRenan/showreel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Documentation, Knowledge & Learning",
+   "entry": "showreel by HeyRenan - A Claude Code plugin that turns CSS selectors + text into finished visual documentation — annotated screenshots, flow GIFs/MP4s, terminal recordings, and before/after composites — placing every annotation deterministically and pixel-verifying each artifact (PASS/FAIL) before it is saved. Self-contained (bundles its own headless Chromium, no browser MCP, no telemetry); every "
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin that turns a URL plus CSS selectors into annotated screenshots, flow GIFs/MP4s, terminal recordings and before/after composites, pixel-verifying each output before saving.",
+  "what_it_does": "Takes a page URL and CSS selectors, measures the DOM, and draws annotations (rectangles, callouts, arrows, badges, blur, zoom) placed deterministically on the target element. Its \"auto\" mode discovers salient elements on a page (heading, primary action, nav, metrics, hero, cards) without selectors and annotates each one. The \"rec\" tool renders narrated flow GIFs or MP4s from JSON steps covering clicks, fills, scrolling, camera moves, spotlight, and state effects such as countup, sparkline and confetti. \"tape\" records terminal sessions via vhs, \"compose\" builds before/after comparisons, and \"shrink\" and \"beautify\" optimize file size and add browser-window or social-card frames. Each artifact is validated by a pixel check (PASS/FAIL) and a failed capture is treated as an error rather than saved.",
+  "use_cases": [
+   "annotated screenshots for documenting a UI change",
+   "narrated GIF or MP4 walkthrough of a web flow",
+   "visual proof that a page element renders correctly",
+   "before/after comparison images for a pull request",
+   "terminal session recording as a GIF",
+   "social card or browser-frame wrapping of screenshots"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add HeyRenan/showreel",
+   "claude plugin install showreel@showreel",
+   "bash ~/.claude/plugins/showreel/showreel/scripts/preflight.sh",
+   "node ~/.claude/plugins/showreel/showreel/scripts/ensure-deps.mjs",
+   "node scripts/prove.mjs \".cards .card:first-child\" out.png --label \"Service card verified\"",
+   "node scripts/auto.mjs"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "Playwright",
+   "headless Chromium (bundled)",
+   "ffmpeg (optional, for GIF quality)",
+   "vhs (optional, for terminal recordings)"
+  ],
+  "notable": [
+   "Bundles its own headless Chromium, so no browser MCP or credentials are needed",
+   "Deterministic annotation placement computed from DOM measurements, with no pixel guessing or retry loop",
+   "Every output is pixel-verified (vcheck) and exits non-zero on FAIL",
+   "Flow recordings support a viewport camera, spotlight, live-updating glossary panels and offline virtual-clock rendering",
+   "--batch mode renders many captures in one browser launch"
+  ],
+  "caveats": [
+   "Requires a one-time Playwright and Chromium download of about 90MB from npm and Microsoft's CDN on first run",
+   "Offline rendering is best for static or text-heavy takes; motion effects like confetti and sparkline need a realtime take",
+   "Terminal recordings additionally require the optional vhs tool"
+  ],
+  "license": "MIT",
+  "category": "visual documentation tooling",
+  "keywords": [
+   "screenshot annotation",
+   "annotated screenshots",
+   "gif recording",
+   "screen recording",
+   "browser automation",
+   "headless chromium",
+   "playwright",
+   "css selector",
+   "visual documentation",
+   "claude code plugin",
+   "claude code",
+   "before after comparison",
+   "terminal recording",
+   "vhs",
+   "tape gif",
+   "documentation generator",
+   "pixel verification",
+   "flow walkthrough",
+   "record a web flow",
+   "explain a ui change",
+   "make a gif of my app",
+   "share screenshots with my team",
+   "highlight element on page",
+   "social card screenshot",
+   "image compression gif",
+   "product demo video",
+   "ffmpeg",
+   "mp4 export",
+   "auto annotate page",
+   "tutorial screenshots"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6019,
+  "output": 1351
+ },
+ "generated": "2026-10-29"
+}

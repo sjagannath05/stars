@@ -1,0 +1,96 @@
+{
+ "id": "disler/claude-code-hooks-multi-agent-observability",
+ "repo": "disler/claude-code-hooks-multi-agent-observability",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability",
+   "entry": "Multi-Agent Observability by disler - A real-time dashboard that captures Claude Code hook events across concurrent agents — tracing every tool call, task handoff, and lifecycle event through a Bun/SQLite/WebSocket/Vue stack, with session tracking and live filtering."
+  }
+ ],
+ "summary": {
+  "one_liner": "A real-time dashboard that captures Claude Code hook events from concurrent agents and displays them through a Bun server, SQLite storage, WebSocket streaming, and a Vue 3 client.",
+  "category": "agent observability dashboard",
+  "keywords": [
+   "claude code",
+   "claude code hooks",
+   "multi-agent observability",
+   "agent monitoring",
+   "event tracing",
+   "tool call tracing",
+   "hook events",
+   "bun server",
+   "sqlite",
+   "websocket",
+   "vue 3 dashboard",
+   "real-time dashboard",
+   "live event stream",
+   "session tracking",
+   "agent teams",
+   "subagent tracking",
+   "live filtering",
+   "pulse chart",
+   "event timeline",
+   "agent swarm monitoring",
+   "debug ai agents",
+   "trace agent tool use",
+   "watch what my agents are doing",
+   "monitor parallel coding agents",
+   "task handoff tracking",
+   "permission request logging",
+   "uv hook scripts"
+  ],
+  "what_it_does": "Captures Claude Code lifecycle hook events (12 types, including PreToolUse, PostToolUse, PostToolUseFailure, SubagentStart/Stop, SessionStart/End, Stop, and PermissionRequest) using Python hook scripts run with uv. The send_event.py script POSTs each event to a Bun TypeScript server that stores it in SQLite (WAL mode) and broadcasts it over a WebSocket. A Vue 3 client shows the events in a timeline with multi-criteria filters by app, session, and event type, plus a live canvas pulse chart. The README also describes a chat transcript viewer, emoji labels for tool types, and a time range selector (1m, 3m, 5m). The repo includes a .claude directory with example hooks and agent team definitions that can be copied into other projects.",
+  "use_cases": [
+   "watch every tool call made by parallel Claude Code agents",
+   "debug what a Claude Code session did",
+   "track subagent start and stop events",
+   "monitor agent team task handoffs",
+   "review user prompts and session history",
+   "spot tool failures and permission requests across agents"
+  ],
+  "how_to_run": [
+   "Install Claude Code, Astral uv, and Bun (or npm/yarn), and optionally just",
+   "Run ./scripts/start-system.sh (or 'just start') to launch the server on port 4000 and the client on port 5173",
+   "Open the dashboard in a browser",
+   "Copy the .claude directory into your project and replace YOUR_PROJECT_NAME in settings.json with a project identifier",
+   "Run ./scripts/test-system.sh or 'just test-event' to check the setup"
+  ],
+  "stack": [
+   "Bun",
+   "TypeScript",
+   "SQLite",
+   "WebSocket",
+   "Vue 3",
+   "Vite",
+   "Tailwind CSS",
+   "Python 3.11+",
+   "Astral uv",
+   "ElevenLabs or OpenAI TTS (optional)"
+  ],
+  "notable": [
+   "Covers all 12 Claude Code hook event types with a universal send_event.py forwarder",
+   "Live pulse chart with session-colored bars and event-type emoji",
+   "Dual color system marking both the source app and the session",
+   "Includes example team agents (builder and read-only validator) and a /plan_w_team command",
+   "Chat transcript storage and viewer for Stop and SubagentStop events"
+  ],
+  "caveats": [
+   "Requires several tools installed first (Claude Code, uv, Bun or npm/yarn); the Python hooks need Python 3.11+",
+   "Setup means copying the .claude directory into each project and editing settings.json by hand",
+   "Several features need optional API keys (ElevenLabs, OpenAI, Firecrawl), and the README's TTS and summary features depend on them",
+   "The README does not state a license"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9247,
+  "output": 1372
+ },
+ "generated": "2026-10-29"
+}

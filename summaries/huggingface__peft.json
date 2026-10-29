@@ -1,0 +1,94 @@
+{
+ "id": "huggingface/peft",
+ "repo": "huggingface/peft",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "peft - A library for parameter-efficient fine-tuning of large pretrained models."
+  }
+ ],
+ "summary": {
+  "one_liner": "PEFT is a Hugging Face library for parameter-efficient fine-tuning, adapting large pretrained models by training only a small set of extra parameters such as LoRA adapters.",
+  "what_it_does": "Provides implementations of parameter-efficient fine-tuning methods (LoRA is the main example shown) that freeze the base model and train a small number of added parameters. The get_peft_model function wraps a Transformers model with a PEFT config, and print_trainable_parameters reports the trainable fraction. Trained adapters are saved with save_pretrained and loaded onto a base model with PeftModel.from_pretrained. The README says PEFT integrates with Transformers (add_adapter, load_adapter, set_adapter), Diffusers for managing adapters, and Accelerate for distributed training and inference. It also mentions use with TRL for RLHF-style training and quantization such as QLoRA and 8-bit.",
+  "use_cases": [
+   "fine-tune a large language model on a consumer GPU",
+   "train small LoRA adapters instead of full model checkpoints",
+   "switch between multiple task-specific adapters on one base model",
+   "fine-tune Stable Diffusion with LoRA",
+   "reduce GPU memory needed for training large models",
+   "apply DPO or RLHF to an LLM with limited compute"
+  ],
+  "how_to_run": [
+   "pip install peft",
+   "Wrap a base model: model = get_peft_model(model, LoraConfig(...))",
+   "model.print_trainable_parameters()",
+   "model.save_pretrained(\"qwen2.5-3b-lora\")",
+   "model = PeftModel.from_pretrained(base_model, \"qwen2.5-3b-lora\")"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Transformers",
+   "Diffusers",
+   "Accelerate",
+   "TRL"
+  ],
+  "notable": [
+   "Single get_peft_model call wraps any supported Transformers model with a LoRA or other PEFT config",
+   "Small adapter checkpoints (the README cites 19MB versus 11GB for the full T0_3B model)",
+   "Adapters can be loaded, switched, and managed through Transformers and Diffusers integrations",
+   "Works with quantization such as QLoRA and 8-bit training"
+  ],
+  "caveats": [
+   "The Transformers integration does not include every PEFT feature, such as merging adapters into the base model",
+   "Benchmarks in the README are on an A100 80GB GPU with more than 64GB CPU RAM, so results on other hardware will differ",
+   "Models not listed in the model support Space may need manual configuration"
+  ],
+  "license": "unknown",
+  "category": "parameter-efficient fine-tuning",
+  "keywords": [
+   "peft",
+   "parameter-efficient fine-tuning",
+   "lora",
+   "qlora",
+   "adapters",
+   "fine-tune llm",
+   "low-rank adaptation",
+   "soft prompts",
+   "ia3",
+   "huggingface",
+   "transformers",
+   "diffusers",
+   "accelerate",
+   "trl",
+   "dpo",
+   "rlhf",
+   "stable diffusion lora",
+   "quantization",
+   "8-bit training",
+   "consumer gpu training",
+   "reduce gpu memory",
+   "small checkpoint",
+   "save storage fine-tuning",
+   "adapter switching",
+   "pretrained model adaptation",
+   "python library",
+   "fine-tune whisper",
+   "catastrophic forgetting",
+   "get_peft_model",
+   "peft adapters",
+   "train large model cheaply"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5167,
+  "output": 1266
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "tinytag/tinytag",
+ "repo": "tinytag/tinytag",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Audio & Video Processing",
+   "entry": "tinytag - A library for reading audio file metadata of MP3, MP4, WAV, OGG, FLAC, WMA, and AIFF files."
+  }
+ ],
+ "summary": {
+  "one_liner": "tinytag is a pure-Python library for reading metadata, embedded images and audio properties from MP3, MP4/M4A, WAV, OGG, FLAC, WMA/ASF and AIFF files.",
+  "what_it_does": "It parses ID3v1/v2 tags, MP4 atoms, RIFF/WAV chunks, Vorbis/Opus/Speex/FLAC comments, ASF objects and AIFF chunks through one common API. It exposes common fields such as artist, album, title, track, year, genre and duration, plus a flat \"other\" dictionary for extra or format-specific fields. Embedded images can be read with image=True and accessed by kind, such as front cover. It also reports audio properties like bitrate, samplerate, channels, bit depth, lossless flag and MIME/codec type. A command-line module (python3 -m tinytag) prints metadata as JSON, and it can read from file-like objects. It is read-only; writing tags is out of scope.",
+  "use_cases": [
+   "read artist, album and title from music files",
+   "get duration or bitrate of audio files",
+   "extract embedded album cover art",
+   "list audio file metadata from the command line",
+   "identify codec or MIME type of an audio file",
+   "read tags from in-memory BytesIO audio data"
+  ],
+  "how_to_run": [
+   "python3 -m pip install tinytag",
+   "from tinytag import TinyTag",
+   "tag = TinyTag.get('/some/music.mp3')",
+   "print(tag.artist, tag.duration)",
+   "python3 -m tinytag /some/music.mp3"
+  ],
+  "stack": [
+   "Python 3.7+",
+   "pure Python, no dependencies",
+   "Flit build backend"
+  ],
+  "notable": [
+   "Same API across MP3, MP4, WAV, OGG, FLAC, WMA and AIFF formats",
+   "Pure Python with no third-party dependencies",
+   "Embedded image extraction by standardized kind, e.g. front_cover",
+   "Optional magic-byte detection, which can be disabled",
+   "Read-only by design; the README points to Mutagen or pytaglib for writing"
+  ],
+  "caveats": [
+   "Cannot write or change metadata; the README recommends Mutagen or pytaglib for that",
+   "The ignore_errors parameter and tag.audio_offset attribute are obsolete and slated for removal",
+   "The 'extra' dictionary and get_image() are deprecated in favour of 'other' and images.any"
+  ],
+  "license": "unknown",
+  "category": "audio metadata reading",
+  "keywords": [
+   "tinytag",
+   "audio metadata",
+   "id3 tag reader",
+   "mp3 tags",
+   "read mp3 metadata",
+   "id3v2",
+   "mp4 tags",
+   "m4a metadata",
+   "flac tags",
+   "ogg vorbis tags",
+   "wav metadata",
+   "wma metadata",
+   "asf metadata",
+   "aiff metadata",
+   "audio duration",
+   "bitrate reader",
+   "samplerate",
+   "embedded album art",
+   "cover image extraction",
+   "music library tagging",
+   "python audio library",
+   "pure python",
+   "command line audio info",
+   "codec detection",
+   "mime type audio",
+   "read id3 tags python",
+   "music file information",
+   "mutagen alternative",
+   "pytaglib alternative",
+   "song title and artist",
+   "read-only tag reader",
+   "file-like object audio"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10444,
+  "output": 1217
+ },
+ "generated": "2026-10-29"
+}

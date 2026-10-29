@@ -1,0 +1,89 @@
+{
+ "id": "scality/cloudserver",
+ "repo": "scality/cloudserver",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Object Storage & File Servers",
+   "entry": "Zenko CloudServer - Implementation of the Amazon S3 protocol on the front-end and backend storage capabilities to multiple clouds, including Azure and Google. (Source Code) Apache-2.0 Docker/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Zenko CloudServer is an open-source, Amazon S3-compatible object storage server from Scality that can route requests to file, memory, or multiple cloud backends.",
+  "what_it_does": "The server exposes an AWS S3-compatible API on port 8000 and stores data on a local file backend by default, with metadata and data in local directories that can be relocated via environment variables. It can run with an in-memory backend for testing, or with multiple data backends where each PUT request can choose a destination through the x-amz-meta-scal-location-constraint header or bucket location constraint. It can also use Vault for user management, which the README says is proprietary and must be accessed separately. The README describes it as useful for running a local CI test environment that emulates AWS S3 and as an abstraction layer for developing object-storage applications. Setup requires Node.js 10.x and yarn, with TypeScript installed for a required sub-package.",
+  "use_cases": [
+   "emulate AWS S3 locally for continuous integration tests",
+   "develop S3-enabled applications without an AWS account",
+   "store objects on local disk behind an S3 API",
+   "route S3 writes to multiple cloud or on-premise backends",
+   "temporary in-memory object storage for testing"
+  ],
+  "how_to_run": [
+   "git clone <repository URL from README; left blank in source>",
+   "cd cloudserver",
+   "yarn install --frozen-lockfile",
+   "npm install -g typescript",
+   "yarn start",
+   "export S3DATA=mem && yarn start  (in-memory backend)"
+  ],
+  "stack": [
+   "Node.js 10.x",
+   "yarn v1.17.x",
+   "TypeScript",
+   "Docker"
+  ],
+  "notable": [
+   "Single S3 API front end over multiple backend storage locations, including cloud providers named in the listing (Azure, Google)",
+   "Per-request backend selection via x-amz-meta-scal-location-constraint header in multiple-backend mode",
+   "In-memory backend mode for fast, non-persistent testing",
+   "Part of Zenko, Scality's open-source multi-cloud data controller"
+  ],
+  "caveats": [
+   "Requires Node.js 10.x and yarn 1.17.x, which are old versions, plus TypeScript for a sub-package",
+   "Vault user management is proprietary and must be accessed separately",
+   "Native dependencies such as diskUsage and level-down may need g++ or a yarn cache clean to install"
+  ],
+  "license": "Apache-2.0",
+  "category": "s3-compatible object storage",
+  "keywords": [
+   "s3 compatible server",
+   "object storage server",
+   "amazon s3 api",
+   "s3 emulator",
+   "local s3 for testing",
+   "ci test environment s3",
+   "multi-cloud storage",
+   "zenko",
+   "scality",
+   "cloudserver",
+   "s3 server nodejs",
+   "file backend",
+   "in-memory backend",
+   "multiple data backends",
+   "location constraint",
+   "self-hosted object storage",
+   "azure storage gateway",
+   "google cloud storage gateway",
+   "docker s3 server",
+   "node.js s3",
+   "store files with s3 api locally",
+   "mock s3 for development",
+   "s3 abstraction layer",
+   "vault user management",
+   "apache 2.0 object storage",
+   "formerly s3 server",
+   "on-premise s3 storage",
+   "s3 protocol proxy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2888,
+  "output": 1205
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "simdjson/simdjson",
+ "repo": "simdjson/simdjson",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "SIMD libraries and measured kernels",
+   "entry": "simdjson - Where that technique ships, with a kernel per ISA and the harness that keeps its published comparisons reproducible."
+  }
+ ],
+ "summary": {
+  "one_liner": "simdjson is a C++ library that parses JSON (and validates UTF-8, minifies JSON, and handles NDJSON) using SIMD instructions, selecting a CPU-specific parser at runtime.",
+  "what_it_does": "The library parses JSON using commonly available SIMD instructions and microparallel algorithms, with full JSON and UTF-8 validation and lossless parsing. Its default front-end is the On-Demand API, which the README describes as its main interface, and it is documented as a single .h and .cpp file that can be pulled into a project. It picks a CPU-tailored parser at runtime without configuration. The README also names separate features for minifying JSON, validating UTF-8, and parsing NDJSON, with a multithreaded function for NDJSON files. It includes a number serializer based on the bundled Dragonbox algorithm. The README lists many bindings and language ports (for example Rust, C#, Python, Go, Zig, Java) and cites peer-reviewed papers describing the design.",
+  "use_cases": [
+   "Parse large JSON files quickly in C++",
+   "Validate JSON and UTF-8 input at high throughput",
+   "Minify JSON documents",
+   "Parse NDJSON streams with multithreading",
+   "Use fast JSON parsing from Python, Rust, C#, Go, or other languages via bindings",
+   "Serialize JSON numbers efficiently"
+  ],
+  "how_to_run": [
+   "Download simdjson.h and simdjson.cpp into a directory (the README uses wget; the URL is not shown in the provided text)",
+   "Create quickstart.cpp that includes simdjson.h and uses ondemand::parser",
+   "Compile with g++ 7+ or clang++ 6+ (use -std=c++17 with clang++ if needed)",
+   "Run the resulting binary against a JSON file such as twitter.json"
+  ],
+  "stack": [
+   "C++",
+   "SIMD instructions",
+   "C++17 (or earlier with bundled string-view)",
+   "Dragonbox (bundled)",
+   "string-view library (bundled)"
+  ],
+  "notable": [
+   "On-Demand front-end as the default parsing API",
+   "Runtime selection of a CPU-tailored parser",
+   "Full JSON and UTF-8 validation with lossless parsing",
+   "Multithreaded NDJSON parsing functions",
+   "Many bindings and ports across languages, distinguished in the README from full ports"
+  ],
+  "caveats": [
+   "Requires a 64-bit system with a command-line shell per the Quick Start; other environments such as Visual Studio and Xcode need different steps",
+   "README advises product users to work from a tagged release",
+   "Performance claims (e.g., GB/s figures) are the project's own; the README does not describe the measurement harness in detail in the provided text"
+  ],
+  "license": "Apache License 2.0 and MIT License (user may choose either)",
+  "category": "high-performance json parsing",
+  "keywords": [
+   "simdjson",
+   "json parser",
+   "c++ json library",
+   "simd json",
+   "fast json parsing",
+   "parse json quickly",
+   "json validation",
+   "utf-8 validation",
+   "ndjson parser",
+   "json minify",
+   "on-demand api",
+   "rapidjson alternative",
+   "nlohmann json alternative",
+   "sse avx simd",
+   "runtime cpu dispatch",
+   "multithreaded ndjson",
+   "json bindings",
+   "python json parser fast",
+   "rust json parser",
+   "c# json parser",
+   "go json parser",
+   "zig json parser",
+   "json serialization numbers",
+   "dragonbox",
+   "high throughput parsing",
+   "parse gigabytes of json",
+   "cpu-tailored parser",
+   "lossless json parsing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4524,
+  "output": 1324
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,112 @@
+{
+ "id": "liketrek/trek",
+ "repo": "liketrek/TREK",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Travel Organization",
+   "entry": "TREK - Collaborative trip planner with interactive maps, day-by-day itineraries, budgets, packing lists, reservations, journey journaling, and PWA support. (Demo) AGPL-3.0 Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "TREK is a self-hosted, real-time collaborative travel planner covering itineraries, maps, bookings, costs, packing, journaling and an optional AI assistant.",
+  "category": "self-hosted trip planning",
+  "keywords": [
+   "trip planner",
+   "travel planner",
+   "itinerary planner",
+   "collaborative travel",
+   "self-hosted travel",
+   "day-by-day itinerary",
+   "interactive maps",
+   "leaflet",
+   "mapbox gl",
+   "maplibre",
+   "packing list",
+   "travel budget",
+   "expense splitting",
+   "bookings manager",
+   "travel journal",
+   "photo book",
+   "pwa",
+   "websocket sync",
+   "docker",
+   "kubernetes",
+   "helm chart",
+   "oidc",
+   "passkeys",
+   "mcp server",
+   "gpx import",
+   "offline travel app",
+   "trip collaboration",
+   "plan a trip with friends",
+   "share itinerary with group",
+   "track trip costs",
+   "agpl",
+   "wanderlog alternative",
+   "tripit alternative",
+   "splitwise style costs"
+  ],
+  "what_it_does": "TREK organizes a trip into day plans where places, notes and bookings can be dragged between days, with maps in Leaflet, Mapbox GL or MapLibre GL. It includes route sorting and travel modes over OSRM or Valhalla, public transport itineraries, GPX/KML/KMZ import and export, and a 16-day weather forecast. Bookings cover 18 reservation types, flight and train legs, file attachments, and import of confirmations via KItinerary or an AI model. A cost module splits expenses in cents with settle-up suggestions and CSV export, and packing lists and to-dos are included. Members collaborate in real time over WebSocket, with permissions, invite links, a read-only public share page, and group chat. Optional addons add a journal, tours (hiking, cycling, paddling, skiing), a photo book studio, a leave calendar, an atlas of visited countries, plugins, and an AI assistant with MCP server.",
+  "use_cases": [
+   "plan a multi-day trip with friends",
+   "split group travel expenses",
+   "organize flight and hotel confirmations in one place",
+   "build a packing list for a trip",
+   "keep a travel journal with photos",
+   "self-host a shared itinerary for family",
+   "plan hiking or cycling routes for a trip"
+  ],
+  "how_to_run": [
+   "ENCRYPTION_KEY=$(openssl rand -hex 32) docker run -d --name trek -p 3000:3000 -e ENCRYPTION_KEY=$ENCRYPTION_KEY -e COOKIE_SECURE=false -v ./data:/app/data -v ./uploads:/app/uploads mauriceboe/trek",
+   "Open http://<host>:3000 and sign in with the admin credentials (set via ADMIN_EMAIL/ADMIN_PASSWORD, or printed in docker logs trek)",
+   "For production: docker compose up -d using the docker-compose.yml shipped in the repository",
+   "Helm: helm repo add trek <repo-url>; helm repo update; helm install trek trek/trek",
+   "Put TREK behind a TLS reverse proxy that supports WebSocket upgrades on /ws"
+  ],
+  "stack": [
+   "NestJS 11",
+   "Node.js",
+   "WebSocket (ws)",
+   "Zustand",
+   "Leaflet",
+   "Mapbox GL",
+   "MapLibre GL",
+   "Docker",
+   "Kubernetes (Helm)",
+   "JWT",
+   "OAuth 2.1",
+   "OIDC",
+   "WebAuthn passkeys",
+   "TOTP",
+   "Open-Meteo",
+   "OSRM",
+   "Valhalla",
+   "OpenStreetMap"
+  ],
+  "notable": [
+   "Optional addons toggled by an admin, including Journey, MCP server, AI assistant, Road trip, Dawarich and AirTrail integrations",
+   "Tour planning with routing by hiking SAC grade, ski pistes, paddle water routes and 3D terrain maps",
+   "Offline support: installable PWA with per-user IndexedDB store and queued offline writes",
+   "Plugin system with sandboxed child processes and a signed plugin registry",
+   "Cost splitting in integer cents with multiple payers and settle-up suggestions"
+  ],
+  "caveats": [
+   "Requires HTTPS behind a reverse proxy for production and WebSocket upgrade support on /ws; the MCP addon also needs Mcp-Session-Id passthrough",
+   "COOKIE_SECURE=false is only for plain HTTP testing; login sessions fail without HTTPS otherwise",
+   "Several major features (Journey, AI assistant, MCP, Road trip, Collections) are off by default and must be enabled by an admin",
+   "Some integrations (Google Places, Amap, AI providers) need your own API keys"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7599,
+  "output": 1724
+ },
+ "generated": "2026-10-29"
+}

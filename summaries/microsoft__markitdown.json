@@ -1,0 +1,92 @@
+{
+ "id": "microsoft/markitdown",
+ "repo": "microsoft/markitdown",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Format Processing",
+   "entry": "markitdown - Python tool for converting files and office documents to Markdown."
+  }
+ ],
+ "summary": {
+  "one_liner": "MarkItDown is a Python library and command-line tool from Microsoft that converts files such as PDF, Office documents, images, audio, HTML, and YouTube URLs into Markdown for LLM and text-analysis pipelines.",
+  "what_it_does": "The tool converts many input types to Markdown while trying to preserve structure such as headings, lists, tables, and links. Supported inputs named in the README include PDF, PowerPoint, Word, Excel, images (EXIF metadata and OCR), audio (EXIF metadata and speech transcription), HTML, CSV, JSON, XML, ZIP archives (iterating over contents), YouTube URLs, and EPub. It can be used from Python via a MarkItDown class with convert methods (convert_local, convert_stream, convert_response) or from the markitdown CLI, including piping content in. Optional dependency groups (for example [pdf], [docx], [pptx]) keep installs lean. It also supports third-party plugins, which are disabled by default, and optional Azure Document Intelligence and Azure Content Understanding backends, plus LLM-generated image descriptions when an OpenAI-compatible client is provided.",
+  "use_cases": [
+   "Convert PDFs and Word documents to Markdown for LLM input",
+   "Extract text and tables from Excel or PowerPoint files",
+   "Turn HTML pages or YouTube videos into text for analysis",
+   "Transcribe audio files to text",
+   "Batch-convert a folder of mixed office files for a RAG pipeline",
+   "Generate image descriptions with a vision-capable LLM"
+  ],
+  "how_to_run": [
+   "python -m venv .venv",
+   "source .venv/bin/activate",
+   "pip install 'markitdown[all]'",
+   "markitdown path-to-file.pdf -o document.md"
+  ],
+  "stack": [
+   "Python 3.10-3.14",
+   "pip / optional extras",
+   "Azure Document Intelligence (optional)",
+   "Azure Content Understanding (optional)",
+   "OpenAI-compatible client (optional)",
+   "Docker"
+  ],
+  "notable": [
+   "Output is Markdown designed for LLM consumption, not high-fidelity human-facing conversion",
+   "Modular optional extras so only needed format dependencies are installed",
+   "Third-party plugin system with a markitdown-ocr plugin for LLM-vision OCR of embedded images",
+   "Azure Document Intelligence and Content Understanding backends add structured fields as YAML front matter",
+   "Security guidance on narrowest convert_* method for untrusted input"
+  ],
+  "caveats": [
+   "Performs I/O with the privileges of the running process; untrusted inputs must be sanitized",
+   "Azure backends are billable cloud API calls; Content Understanding is the only video option",
+   "Built-in converters offer only basic audio transcription and no video support",
+   "Not intended as a high-fidelity converter for human reading"
+  ],
+  "license": "unknown",
+  "category": "document to markdown conversion",
+  "keywords": [
+   "markitdown",
+   "markdown converter",
+   "document to markdown",
+   "pdf to markdown",
+   "docx to markdown",
+   "pptx to markdown",
+   "xlsx to markdown",
+   "office document conversion",
+   "llm document ingestion",
+   "text extraction",
+   "ocr",
+   "audio transcription",
+   "youtube transcript",
+   "epub converter",
+   "html to markdown",
+   "textract alternative",
+   "azure document intelligence",
+   "azure content understanding",
+   "python library",
+   "command line converter",
+   "rag preprocessing",
+   "markitdown plugins",
+   "image description llm",
+   "convert files for chatgpt",
+   "share files with my team",
+   "turn word files into text",
+   "docker converter",
+   "zip contents extraction"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8124,
+  "output": 1338
+ },
+ "generated": "2026-10-29"
+}

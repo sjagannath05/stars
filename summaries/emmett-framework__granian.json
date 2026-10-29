@@ -1,0 +1,96 @@
+{
+ "id": "emmett-framework/granian",
+ "repo": "emmett-framework/granian",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web Servers",
+   "entry": "granian - A Rust HTTP server for Python apps built on Hyper and Tokio, supporting WSGI/ASGI/RSGI."
+  }
+ ],
+ "summary": {
+  "one_liner": "Granian is a Rust-based HTTP server for Python web applications, built on Hyper and Tokio, that serves ASGI, RSGI and WSGI apps over HTTP/1 and HTTP/2.",
+  "what_it_does": "Granian runs Python applications behind a Rust HTTP stack (Hyper and Tokio), and is started from a CLI with an app target such as main:app and an --interface option (asgi, asginl, rsgi or wsgi). It supports HTTP/1 and HTTP/2, HTTPS and mTLS, and websockets. It can serve static files directly without calling the Python app, and provides a multi-worker process model with options for workers, blocking threads, backpressure, runtime mode and event loop choice (asyncio, rloop, uvloop, winloop). It also includes Prometheus metrics export, worker respawn on lifetime or memory limits, access logging, and proxy-header wrapper utilities for ASGI and WSGI apps. Free-threaded Python is supported experimentally, and an embeddable async server is available for use inside existing event loops.",
+  "use_cases": [
+   "serve a Python ASGI or WSGI web app over HTTP/2",
+   "run a Python app with HTTPS or mTLS",
+   "serve static files alongside a Python application",
+   "expose Prometheus metrics from a Python web server",
+   "embed an async HTTP server inside an existing asyncio program",
+   "replace a Gunicorn plus uvicorn setup with a single package"
+  ],
+  "how_to_run": [
+   "pip install granian",
+   "granian --interface asgi main:app",
+   "granian --interface rsgi main:app",
+   "granian --interface wsgi main:app",
+   "pip install granian[pname,uvloop]"
+  ],
+  "stack": [
+   "Python",
+   "Rust",
+   "Hyper",
+   "Tokio",
+   "AsyncIO",
+   "uvloop",
+   "rloop",
+   "winloop"
+  ],
+  "notable": [
+   "Single package serving ASGI, RSGI and WSGI applications",
+   "Static file serving offloaded to the server without invoking Python",
+   "Backpressure limiter at the per-worker accept loop",
+   "Worker respawn based on lifetime, max RSS, or failures, with Prometheus metrics",
+   "Embeddable async server for running inside an existing event loop"
+  ],
+  "caveats": [
+   "Not a pure Python solution, and the README notes it is not ideal for applications relying on trio or gevent",
+   "Free-threaded Python support is experimental and discouraged in production; the embeddable server is also experimental and limited to async protocols with a single worker",
+   "Some respawn options on Linux with multiple workers require kernel 5.14 or newer and a sysctl setting"
+  ],
+  "license": "BSD License",
+  "category": "python web server",
+  "keywords": [
+   "granian",
+   "rust http server",
+   "python http server",
+   "asgi server",
+   "rsgi server",
+   "wsgi server",
+   "hyper",
+   "tokio",
+   "http/2 python",
+   "https mtls python",
+   "websockets python server",
+   "static files server python",
+   "gunicorn alternative",
+   "uvicorn alternative",
+   "gunicorn uvicorn replacement",
+   "serve python web app",
+   "run asgi app",
+   "run wsgi app",
+   "python app production server",
+   "prometheus metrics python server",
+   "worker respawn",
+   "backpressure concurrency",
+   "uvloop",
+   "embeddable server asyncio",
+   "reverse proxy forwarded headers python",
+   "free-threaded python",
+   "bsd license python server",
+   "fast python web server",
+   "serve python app over http2",
+   "single dependency python server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10465,
+  "output": 1284
+ },
+ "generated": "2026-10-29"
+}

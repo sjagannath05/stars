@@ -1,0 +1,107 @@
+{
+ "id": "bravenewxyz/agent-c",
+ "repo": "bravenewxyz/agent-c",
+ "kind": "star",
+ "description": "Ultra-lightweight AI Agent",
+ "topics": [
+  "agent",
+  "ai-agent",
+  "openrouter"
+ ],
+ "language": "C",
+ "stars": 443,
+ "license": "",
+ "homepage": "https://bravenew.xyz",
+ "pushed_at": "2026-03-05",
+ "archived": false,
+ "accounts": [
+  "sjagannath05",
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Agent-C is an ultra-lightweight AI agent written in C that talks to the OpenRouter API and can run shell commands as tool calls.",
+  "what_it_does": "The agent sends chat messages to OpenRouter with a single `sh` tool definition using the OpenAI-compatible tools API. Responses stream to the terminal token by token via SSE. When the model returns tool calls, the agent executes the command, returns the output to the model, and gets a follow-up reply, up to 5 tool calls per turn. It keeps a sliding window of 20 messages, including tool call history, as conversation memory. The README says it uses native TLS (macOS SecureTransport) instead of curl or libssl, and the build targets a single source file, agent.c, packed into a small binary.",
+  "use_cases": [
+   "run an AI assistant from the terminal",
+   "let an LLM execute shell commands",
+   "chat with OpenRouter models from C",
+   "minimal footprint AI agent on macOS or Linux",
+   "experiment with OpenAI-style tool calling"
+  ],
+  "how_to_run": [
+   "export OR_KEY=your_openrouter_api_key",
+   "make",
+   "./agent-c",
+   "make macos  # macOS build with LZMA compression",
+   "make linux  # Linux build with UPX compression",
+   "make clean  # remove build artifacts"
+  ],
+  "stack": [
+   "C",
+   "OpenRouter API",
+   "SSE streaming",
+   "macOS SecureTransport (TLS)",
+   "LZMA",
+   "UPX"
+  ],
+  "notable": [
+   "Zero dependencies: no curl or libssl, native TLS on macOS",
+   "Single-file implementation (agent.c) with a roughly 4KB binary claim",
+   "OpenAI-compatible tools API used for shell command execution",
+   "Streaming output printed as tokens arrive",
+   "Sliding window conversation memory of 20 messages"
+  ],
+  "caveats": [
+   "README names macOS and Linux only; TLS path is described for macOS SecureTransport",
+   "Requires an OpenRouter API key via OR_KEY",
+   "Executes model-requested shell commands, so it runs with the user's permissions"
+  ],
+  "license": "CC0 (no rights reserved)",
+  "category": "terminal ai agent",
+  "keywords": [
+   "ai agent",
+   "c language",
+   "ultra lightweight",
+   "openrouter",
+   "openrouter api",
+   "llm client",
+   "tool calling",
+   "function calling",
+   "shell command execution",
+   "streaming responses",
+   "server-sent events",
+   "sse",
+   "terminal chatbot",
+   "command line assistant",
+   "minimal ai agent",
+   "small binary",
+   "single file",
+   "zero dependencies",
+   "no libcurl",
+   "macos secure transport",
+   "tls without openssl",
+   "lzma compression",
+   "upx",
+   "conversation memory",
+   "sliding window",
+   "openai compatible api",
+   "run commands with ai",
+   "ai shell assistant",
+   "llm in c",
+   "cc0 license",
+   "makefile build",
+   "linux and macos"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 1817,
+  "output": 1097
+ },
+ "generated": "2026-10-29"
+}

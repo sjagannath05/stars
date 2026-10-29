@@ -1,0 +1,98 @@
+{
+ "id": "jwilder/dockerize",
+ "repo": "jwilder/dockerize",
+ "kind": "star",
+ "description": "Utility to simplify running applications in docker containers",
+ "topics": [
+  "docker",
+  "go"
+ ],
+ "language": "Go",
+ "stars": 5206,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-21",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Go command-line utility that generates config files from templates and environment variables, tails log files to stdout/stderr, and waits for network services before starting a container's main process.",
+  "what_it_does": "dockerize renders Go text/template files into configuration files at container startup, using environment variables and built-in helper functions such as default, split, replace, jsonQuery, and loop. It can tail one or more log files to STDOUT and/or STDERR so application logs appear in docker logs. It can block startup until a file, TCP/TCP4/TCP6, HTTP(S), or unix socket target is available, with configurable timeout and retry interval. It wraps the main application command via ENTRYPOINT or CMD. The README also describes flag validation that rejects options given without their companion flags, and it accepts a directory as a template source.",
+  "use_cases": [
+   "generate config files from templates at container start",
+   "wait for a database or service to be ready before launching an app",
+   "send application log files to docker logs",
+   "pass environment variables into apps that only read config files",
+   "poll for file changes when inotify is unavailable in a container"
+  ],
+  "how_to_run": [
+   "FROM jwilder/dockerize (base image, dockerize is on PATH)",
+   "ENV DOCKERIZE_VERSION v0.16.0 and download the release tarball in an Ubuntu or Alpine Dockerfile",
+   "dockerize -template /etc/nginx/nginx.tmpl:/etc/nginx/nginx.conf -stdout /var/log/nginx/access.log -stderr /var/log/nginx/error.log -wait tcp://web:8000 nginx"
+  ],
+  "stack": [
+   "Go",
+   "Golang text/template",
+   "Docker",
+   "gcr.io/distroless/static (base image)"
+  ],
+  "notable": [
+   "Single binary that combines templating, log tailing, and dependency waiting",
+   "Wait-for supports file, tcp, tcp4, tcp6, http, https, and unix schemes",
+   "Template directories are processed in sorted order",
+   "jsonQuery helper for pulling values out of JSON environment variables",
+   "Prebuilt binaries for linux amd64/armel/arm64/armhf, alpine amd64, and darwin amd64/arm64"
+  ],
+  "caveats": [
+   "The README says the -poll, -timeout, and related flag combinations now fail with exit status 1 when the companion flag is missing, a behaviour change for existing command lines",
+   "Relative file paths are rejected; file and unix URLs must be absolute",
+   "Wait timeouts must be positive; the README notes that Docker itself does not provide this feature"
+  ],
+  "license": "MIT",
+  "category": "docker container utility",
+  "keywords": [
+   "dockerize",
+   "docker entrypoint",
+   "container startup",
+   "go template",
+   "golang text/template",
+   "config file generation",
+   "environment variables to config",
+   "wait for service",
+   "wait for port",
+   "tcp readiness check",
+   "http health wait",
+   "unix socket wait",
+   "tail log files",
+   "stdout logging container",
+   "docker logs",
+   "nginx log forwarding",
+   "docker base image",
+   "docker compose dependency",
+   "depends on database startup",
+   "render template from env",
+   "jsonquery",
+   "poll file changes",
+   "inotify alternative",
+   "startup race condition",
+   "entrypoint wrapper",
+   "container init script",
+   "sqlalchemy config env",
+   "template rendering cli",
+   "wait-for-it alternative",
+   "docker-compose wait",
+   "service readiness",
+   "distroless base image"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5321,
+  "output": 1260
+ },
+ "generated": "2026-10-29"
+}

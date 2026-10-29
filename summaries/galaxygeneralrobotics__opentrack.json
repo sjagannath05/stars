@@ -1,0 +1,110 @@
+{
+ "id": "galaxygeneralrobotics/opentrack",
+ "repo": "GalaxyGeneralRobotics/OpenTrack",
+ "kind": "star",
+ "description": "Official implementation of Any2Track.",
+ "topics": [],
+ "language": "C++",
+ "stars": 772,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-06-04",
+ "archived": false,
+ "accounts": [
+  "sjagannath05",
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "OpenTrack is an open-source humanoid motion tracking codebase (official implementation of Any2Track) that trains and evaluates Unitree G1 motion-tracking policies in MuJoCo JAX with multi-GPU training.",
+  "what_it_does": "The repository provides a pipeline for training humanoid motion-tracking policies on mocap data, using MuJoCo JAX for simulation. It includes motion preprocessing that resamples .npz motion files to a control frequency (50Hz by default) and recomputes velocities and state features. Specialist teacher policies can be trained with PPO, then distilled into a generalist student via DAgger, with optional DDP across multiple GPUs. An adapter training stage finetunes a base tracker in environments with dynamics randomization. Evaluation scripts export checkpoints to ONNX and play them back with an optional viewer or renderer. Pretrained LAFAN1 generalist v1 and v2 checkpoints are referenced in the README, along with real-world deployment code for the Unitree G1.",
+  "use_cases": [
+   "train humanoid motion tracking policies",
+   "track LAFAN1 mocap motions on a Unitree G1",
+   "distill specialist teachers into a generalist student policy",
+   "finetune a tracker for dynamics adaptivity",
+   "preprocess custom mocap motion data for training",
+   "deploy tracking policies on a real Unitree G1 robot"
+  ],
+  "how_to_run": [
+   "git clone git@github.com:GalaxyGeneralRobotics/OpenTrack.git",
+   "uv sync -i (install dependencies in a virtual environment)",
+   "Create a .env file with GLI_PATH, WANDB_PROJECT, WANDB_ENTITY, WANDB_API_KEY, then: source .venv/bin/activate; source .env",
+   "Download mocap data into storage/data/mocap/ and run python track_mj/app/mj_playground_init.py",
+   "python -m track_mj.learning.train.train_ppo_track --task G1TrackingGeneralDR --exp_name <name>",
+   "python -m track_mj.eval.dagger.mj_onnx_video --task G1TrackingGeneral --exp_name <name> --use_viewer"
+  ],
+  "stack": [
+   "C++ (repository language per GitHub metadata)",
+   "Python",
+   "JAX",
+   "Brax",
+   "MuJoCo / MuJoCo Playground",
+   "LocoMuJoCo",
+   "PyTorch (torchrun DDP for DAgger)",
+   "ONNX",
+   "OSQP (motion preprocessing IK solver)",
+   "uv",
+   "Weights & Biases"
+  ],
+  "notable": [
+   "Specialist-to-generalist distillation: multiple teacher policies, each covering a motion cluster, are distilled via DAgger into one student tracker",
+   "Preprocessing includes an IK-based smooth transition from the default pose to the first motion frame, using OSQP with foot and CoM constraints",
+   "Adapter training finetunes a base tracker for dynamics randomization",
+   "Pretrained LAFAN1 generalist checkpoints are offered, with the README claiming 40/40 LAFAN1 motions tracked by v2",
+   "Built on jax, brax, loco-mujoco and mujoco_playground"
+  ],
+  "caveats": [
+   "Requires downloading mocap data and pretrained checkpoints separately; setup involves a .env file with Weights & Biases credentials",
+   "Preprocessing overwrites original motion files",
+   "Real-world deployment is described as targeting the Unitree G1 and is documented in a separate deploy README"
+  ],
+  "license": "Apache-2.0",
+  "category": "humanoid motion tracking",
+  "keywords": [
+   "humanoid motion tracking",
+   "motion tracking policy",
+   "unitree g1",
+   "mujoco",
+   "mujoco jax",
+   "brax",
+   "jax",
+   "reinforcement learning",
+   "ppo training",
+   "dagger distillation",
+   "teacher student distillation",
+   "generalist policy",
+   "domain randomization",
+   "adapter finetuning",
+   "lafan1 dataset",
+   "mocap retargeting",
+   "motion preprocessing",
+   "onnx export",
+   "sim to real deployment",
+   "humanoid robot control",
+   "multi-gpu training",
+   "torchrun ddp",
+   "robot motion imitation",
+   "any2track",
+   "dynamics adaptivity",
+   "legged robot simulation",
+   "train humanoid to dance",
+   "imitation learning robot motions",
+   "policy evaluation video",
+   "loco-mujoco",
+   "mujoco playground",
+   "physical humanoid robot deployment"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4950,
+  "output": 1635
+ },
+ "generated": "2026-10-29"
+}

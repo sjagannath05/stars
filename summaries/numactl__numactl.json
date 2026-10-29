@@ -1,0 +1,82 @@
+{
+ "id": "numactl/numactl",
+ "repo": "numactl/numactl",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "NUMA and Linux memory placement",
+   "entry": "numactl - Reference implementation of the policy API, prints the distance table and binds a binary that cannot be rebuilt."
+  }
+ ],
+ "summary": {
+  "one_liner": "numactl is a Linux tool and C library for setting NUMA memory placement policy, both for running programs under a given policy and for applications calling the libnuma API.",
+  "what_it_does": "It provides a numactl program that runs other programs under a specific NUMA policy, and a libnuma shared library (the \"NUMA API\") that applications can use to set NUMA policy themselves. The README says the libnuma binary interface is meant to stay binary compatible, with incompatible changes using new symbol version numbers. It also ships utility programs such as numastat, which displays NUMA allocation statistics, and memhog. A small regression test suite lives in the test/ directory. The README says the regression test assumes an unloaded machine with free memory on each node, otherwise the non-strict policies (preferred, interleave) may show spurious failures. Manpages numactl.8 and numa.3 document usage.",
+  "use_cases": [
+   "run a program with interleaved memory across NUMA nodes",
+   "bind a process to specific NUMA nodes",
+   "view NUMA allocation statistics with numastat",
+   "set NUMA memory policy from a C application via libnuma",
+   "test NUMA policy behavior with the regression suite",
+   "benchmark memory bandwidth per NUMA node with numademo"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "C",
+   "libnuma shared library",
+   "GNU General Public License v2 programs",
+   "Linux manpages (numactl.8, numa.3)"
+  ],
+  "notable": [
+   "Ships both a command-line policy launcher (numactl) and a C library (libnuma) for applications",
+   "Includes numastat for NUMA allocation statistics and memhog for memory load testing",
+   "Includes numademo, which bundles a derived STREAM benchmark sub-test",
+   "Binary compatibility policy for libnuma using symbol versioning"
+  ],
+  "caveats": [
+   "The regression suite assumes an unloaded machine with free memory on each node; otherwise non-strict policy tests can fail spuriously",
+   "Publishing numademo output may require attention to STREAM benchmark licensing; the STREAM results may need filtering"
+  ],
+  "license": "GPL-2.0 for numactl and demo programs; LGPL-2.1 for libnuma",
+  "category": "linux numa memory policy",
+  "keywords": [
+   "numa",
+   "numactl",
+   "libnuma",
+   "numa policy",
+   "memory placement",
+   "numa node binding",
+   "linux memory policy",
+   "numastat",
+   "memhog",
+   "numademo",
+   "interleave memory",
+   "preferred node",
+   "cpu affinity numa",
+   "set memory policy",
+   "numa api",
+   "bind process to node",
+   "numa allocation statistics",
+   "regression test numa",
+   "stream benchmark",
+   "memory bandwidth benchmark",
+   "numa-aware allocation",
+   "linux numa tuning",
+   "control memory locality",
+   "run program on numa node",
+   "numa c library",
+   "gpl numa tool",
+   "numa manpages",
+   "memory interleaving linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2030,
+  "output": 1110
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,90 @@
+{
+ "id": "acmel/dwarves",
+ "repo": "acmel/dwarves",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Struct layout, software prefetch and page size",
+   "entry": "dwarves (pahole) - Prints a struct's holes, padding and cache-line boundaries from DWARF, so a layout is seen rather than guessed."
+  }
+ ],
+ "summary": {
+  "one_liner": "dwarves is a set of tools (including pahole) that read DWARF and BTF debugging information from compiled binaries and print or convert type and struct layouts.",
+  "what_it_does": "The README covers only build and test instructions, so the capabilities below come from the listing note rather than the README itself. The listing describes pahole as printing a struct's holes, padding and cache-line boundaries from DWARF data. The README says tests run against a vmlinux binary that must contain DWARF, which is converted to BTF. The README also notes that libbpf is a git submodule. It does not describe the individual tools or their command-line usage.",
+  "use_cases": [
+   "inspect struct layout and padding in C programs",
+   "find holes and cache-line boundaries in structs",
+   "convert DWARF debug info to BTF",
+   "check struct layout of a kernel vmlinux binary",
+   "run pahole regression tests"
+  ],
+  "how_to_run": [
+   "install cmake",
+   "mkdir build",
+   "cd build",
+   "cmake ..",
+   "make install",
+   "git submodule update --init --recursive"
+  ],
+  "stack": [
+   "C",
+   "CMake",
+   "DWARF",
+   "BTF",
+   "libbpf"
+  ],
+  "notable": [
+   "Prints struct holes, padding and cache-line boundaries from DWARF data (per listing note)",
+   "Converts DWARF to BTF using a vmlinux binary with debug info",
+   "Supports shared or static library builds via CMake options",
+   "Test suite runnable locally or through GitHub Actions scripts"
+  ],
+  "caveats": [
+   "README covers build and test steps only; tool usage is not documented in it",
+   "Test runs need a vmlinux binary that contains DWARF information",
+   "Requires the libbpf git submodule to be initialized"
+  ],
+  "license": "unknown",
+  "category": "binary debug info tooling",
+  "keywords": [
+   "pahole",
+   "dwarves",
+   "struct layout",
+   "struct padding",
+   "struct holes",
+   "cache line boundaries",
+   "dwarf debug info",
+   "btf",
+   "btf conversion",
+   "vmlinux",
+   "c struct inspection",
+   "memory layout analysis",
+   "struct packing",
+   "cmake build",
+   "libbpf",
+   "debug symbols",
+   "elf binary analysis",
+   "kernel struct layout",
+   "see struct layout in c",
+   "find wasted padding in structs",
+   "reduce struct size",
+   "show struct memory layout",
+   "compiler debug info tools",
+   "cache alignment check",
+   "dwarf to btf",
+   "kernel debug info",
+   "build from source with cmake",
+   "linux kernel tooling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2044,
+  "output": 958
+ },
+ "generated": "2026-10-29"
+}

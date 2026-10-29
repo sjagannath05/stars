@@ -1,0 +1,102 @@
+{
+ "id": "centrifugal/centrifugo",
+ "repo": "centrifugal/centrifugo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Centrifugo - Language-agnostic real-time messaging (Websocket or SockJS) server. (Demo, Source Code) MIT Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Centrifugo is a scalable, language-agnostic real-time messaging server that delivers channel-based pub/sub messages to connected users over WebSocket, SSE, HTTP-streaming, GRPC and WebTransport.",
+  "category": "real-time messaging server",
+  "keywords": [
+   "real-time messaging",
+   "pub/sub server",
+   "websocket server",
+   "server-sent events",
+   "sse",
+   "http streaming",
+   "grpc",
+   "webtransport",
+   "centrifugo",
+   "live updates",
+   "chat backend",
+   "push messages to browser",
+   "live comments",
+   "multiplayer game backend",
+   "realtime notifications",
+   "redis pubsub",
+   "postgresql",
+   "nats",
+   "kafka consumer",
+   "transactional outbox",
+   "presence",
+   "message history recovery",
+   "delta compression",
+   "fossil delta",
+   "protobuf",
+   "admin web ui",
+   "prometheus metrics",
+   "grafana dashboard",
+   "go",
+   "docker",
+   "kubernetes",
+   "self-hosted",
+   "push data to users from backend",
+   "socket.io alternative",
+   "pusher alternative"
+  ],
+  "what_it_does": "Centrifugo sits between an application backend and its end users, delivering messages to clients connected over WebSocket, HTTP-streaming, Server-Sent Events, GRPC and WebTransport (experimental). The backend publishes messages into named channels through a simple HTTP or GRPC API, and clients subscribe to those channels, using official SDKs or a unidirectional approach without an SDK. It supports channel subscriptions with stream, map, shared poll and proxy models, plus presence information with join/leave notifications. Message history allows automatic recovery after reconnects, and a cache recovery mode delivers the latest publication on subscribe. Scaling is provided by Redis (including Cluster and compatible stores), PostgreSQL or NATS, and connection authentication can use JWT or a proxy-style request to the backend. An embedded admin web UI and Prometheus metrics are included.",
+  "use_cases": [
+   "build chat or messenger apps",
+   "add live comments to a website",
+   "stream AI responses to users in the browser",
+   "push real-time updates from a backend to connected clients",
+   "power multiplayer game or collaborative tool messaging",
+   "run real-time data visualizations"
+  ],
+  "how_to_run": [
+   "docker run -it --rm -p 8000:8000 centrifugo/centrifugo:latest centrifugo --client.insecure --admin.enabled --admin.insecure (local trial only)",
+   "Install native binaries, Homebrew or packages per the official installation instructions",
+   "Follow the official quickstart tutorial to connect a first client"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Redis",
+   "PostgreSQL",
+   "NATS",
+   "Kafka",
+   "Protobuf",
+   "GRPC",
+   "WebSocket",
+   "Prometheus",
+   "Grafana"
+  ],
+  "notable": [
+   "Language-agnostic: any backend talks to it over HTTP or GRPC API",
+   "Multiple transports including WebSocket, SSE, HTTP-streaming, GRPC and WebTransport",
+   "Message history with automatic recovery on reconnect and delta compression based on Fossil",
+   "Official client SDKs for JavaScript, Dart/Flutter, Swift, Java, Python, Go and C#",
+   "Embedded admin web UI for watching connections and publishing messages"
+  ],
+  "caveats": [
+   "Quick start Docker flags disable authentication and are for local trial only",
+   "WebTransport support is marked experimental and the .NET/MAUI/Unity SDK is marked WIP",
+   "Scaling beyond a single node requires an external store such as Redis, PostgreSQL or NATS"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3237,
+  "output": 1354
+ },
+ "generated": "2026-10-29"
+}

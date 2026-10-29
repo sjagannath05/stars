@@ -1,0 +1,119 @@
+{
+ "id": "leaningtech/webvm",
+ "repo": "leaningtech/webvm",
+ "kind": "star",
+ "description": "Virtual Machine for the Web",
+ "topics": [
+  "cheerp",
+  "cheerpx",
+  "cpp",
+  "lwip",
+  "repl",
+  "tailscale",
+  "vm",
+  "wasm",
+  "webassembly",
+  "webvm",
+  "xterm-js"
+ ],
+ "language": "Svelte",
+ "stars": 17455,
+ "license": "Apache-2.0",
+ "homepage": "https://webvm.io",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop",
+  "dev tools",
+  "my company",
+  "webtools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "WebVM is a Linux virtual machine that runs entirely in the browser via WebAssembly, booting an unmodified Debian image using the CheerpX x86-to-WebAssembly engine.",
+  "what_it_does": "The repository hosts the source for WebVM, a serverless x86 Linux environment running client-side in HTML5/WebAssembly. It is powered by CheerpX, which provides an x86-to-WebAssembly JIT compiler, a virtual block-based file system, a Linux syscall emulator, and sandboxed execution. Users have root by default, and the README describes Debian images with native development toolchains, plus an Alpine/Xorg/i3 graphical environment. Networking is built on Tailscale, with optional use of an exit node for internet access and support for self-hosted Headscale control servers. The README also covers deploying a fork to GitHub Pages, building custom .ext2 disk images from a Dockerfile, serving locally with nginx, and an optional Claude AI integration in the UI that requires a user-supplied API key.",
+  "use_cases": [
+   "Run a Linux shell or dev toolchain in a browser tab",
+   "Host a custom Linux environment on GitHub Pages",
+   "Build a browser-based Python REPL from a Dockerfile",
+   "Access a private Tailscale network from a web VM",
+   "Experiment with x86 binaries and CTF challenges in the browser",
+   "Demo or teach Linux without server-side infrastructure"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd webvm",
+   "Download the debian_mini .ext2 image from Releases into custom-disk-images/",
+   "Edit config_public_terminal.js to set diskImageUrl and diskImageType = \"bytes\"",
+   "npm install",
+   "npm run build",
+   "nginx -p . -c nginx.conf, then open the local URL in a browser"
+  ],
+  "stack": [
+   "Svelte",
+   "WebAssembly",
+   "CheerpX",
+   "xterm.js",
+   "Tailscale",
+   "lwIP (compiled via Cheerp)",
+   "nginx",
+   "npm",
+   "Docker (for custom image builds)"
+  ],
+  "notable": [
+   "Runs an unmodified Debian distribution in the browser with no server-side compute",
+   "Tailscale integration lets the browser VM reach a private network and, with an exit node, the internet",
+   "A GitHub Actions Deploy workflow builds custom .ext2 images from any Dockerfile and publishes to Pages or Releases",
+   "Setting CMD in the Dockerfile to /usr/bin/python3 yields a Python REPL deployment",
+   "Immutable builds: versions tied to the CheerpX npm package stay working"
+  ],
+  "caveats": [
+   "Some low-level networking such as ICMP ping is not available; use curl or wget instead",
+   "dockerfiles/debian_large is too large for GitHub Pages",
+   "CheerpX public deployment is free only for individual exploration; organizations, including non-profits and academia, need a license, and hosting a CheerpX build elsewhere needs a commercial license"
+  ],
+  "license": "Apache-2.0",
+  "category": "browser linux virtualization",
+  "keywords": [
+   "webvm",
+   "cheerpx",
+   "linux in browser",
+   "webassembly vm",
+   "wasm virtual machine",
+   "x86 to wasm jit",
+   "browser terminal",
+   "xterm.js",
+   "debian in browser",
+   "tailscale",
+   "headscale",
+   "lwip",
+   "serverless linux",
+   "run linux in browser",
+   "browser-based shell",
+   "online linux terminal",
+   "github pages deploy",
+   "custom ext2 disk image",
+   "dockerfile to vm",
+   "python repl in browser",
+   "svelte app",
+   "client-side virtual machine",
+   "x86 emulation browser",
+   "ctf in browser",
+   "vpn in browser",
+   "linux sandbox web",
+   "nginx local hosting",
+   "alpine i3 desktop",
+   "run binaries in browser",
+   "web-based dev environment"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4437,
+  "output": 1432
+ },
+ "generated": "2026-10-29"
+}

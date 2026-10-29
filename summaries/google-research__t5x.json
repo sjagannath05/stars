@@ -1,0 +1,99 @@
+{
+ "id": "google-research/t5x",
+ "repo": "google-research/t5x",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "💻 Software for Large Language Models",
+   "entry": "Flan-T5 - A variant of Google’s T5 model, fine-tuned with instruction-based learning (Flan). Flan-T5 is popular in the open-source community for various natural language processing tasks, and it can be deployed on local hardware for private usage."
+  }
+ ],
+ "summary": {
+  "one_liner": "T5X is Google's modular JAX/Flax framework for training, evaluating, and running inference on sequence-to-sequence language models (such as T5) at many scales, primarily on Google Cloud TPUs.",
+  "category": "ml training framework",
+  "keywords": [
+   "t5x",
+   "t5",
+   "jax",
+   "flax",
+   "seqio",
+   "gin config",
+   "sequence models",
+   "encoder-decoder",
+   "language model training",
+   "fine-tuning",
+   "tpu training",
+   "vertex ai",
+   "xmanager",
+   "mesh tensorflow",
+   "wmt translation",
+   "machine translation",
+   "bleu evaluation",
+   "model checkpoints",
+   "saved model export",
+   "gpu training",
+   "slurm",
+   "pretraining",
+   "text-to-text",
+   "flan-t5",
+   "train language model on tpu",
+   "fine-tune a t5 model",
+   "run translation model training",
+   "large scale model training",
+   "llm training framework",
+   "tensorboard"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Train a T5-style encoder-decoder model from scratch on TPUs",
+   "Fine-tune a pretrained T5 checkpoint on a custom dataset",
+   "Run offline evaluation and inference on trained sequence models",
+   "Translate text with a WMT-style English-German model pipeline",
+   "Export a trained model as a TensorFlow Saved Model"
+  ],
+  "how_to_run": [
+   "export TFDS_DATA_DIR=gs://$GOOGLE_CLOUD_BUCKET_NAME/t5x/data",
+   "tfds build wmt_t2t_translate --data_dir=$TFDS_DATA_DIR",
+   "python3 -m pip install -e '.[tpu]' -f (see README for find-links URL)",
+   "python3 ${T5X_DIR}/t5x/train.py --gin_file=\"t5x/examples/t5/t5_1_1/examples/base_wmt_from_scratch.gin\" --gin.MODEL_DIR=\"${MODEL_DIR}\" --tfds_data_dir=${TFDS_DATA_DIR}",
+   "python3 ${T5X_DIR}/t5x/eval.py --gin_file=\"t5x/examples/t5/t5_1_1/examples/base_wmt_eval.gin\" ...",
+   "python3 ${T5X_DIR}/t5x/infer.py --gin_file=\"t5x/examples/t5/t5_1_1/examples/base_wmt_infer.gin\" ..."
+  ],
+  "stack": [
+   "Python",
+   "JAX",
+   "Flax",
+   "Gin-config",
+   "SeqIO",
+   "TensorFlow Datasets",
+   "Mesh TensorFlow (checkpoint compatibility)",
+   "Google Cloud TPU / Vertex AI",
+   "XManager",
+   "TensorBoard"
+  ],
+  "notable": [
+   "Gin-based configuration via dependency injection, so custom models and datasets can be plugged in without modifying core code",
+   "SeqIO tasks package datasets, vocabularies, preprocessing, and metrics such as BLEU",
+   "Supports single TPU VM development scaling up to pod slices, plus GPU and SLURM+pyxis configurations in contrib/gpu",
+   "Loads Mesh TensorFlow T5 checkpoints directly and provides released native T5X-format checkpoints",
+   "Can export models as TensorFlow Saved Models for Vertex AI Prediction"
+  ],
+  "caveats": [
+   "Google states it is not an officially supported Google product",
+   "Quick start assumes Google Cloud (TPUs, GCS buckets, Vertex AI) and requires GCP quota requests",
+   "Restoring directly from Mesh TensorFlow checkpoints can be inefficient for heavy model parallelism; conversion is recommended",
+   "README points GPU users to NVIDIA's Rosetta fork for newer H100 FP8 support and updated performance work"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9722,
+  "output": 1436
+ },
+ "generated": "2026-10-29"
+}

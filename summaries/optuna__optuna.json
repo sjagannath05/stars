@@ -1,0 +1,94 @@
+{
+ "id": "optuna/optuna",
+ "repo": "optuna/optuna",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Machine Learning",
+   "entry": "optuna - A hyperparameter optimization framework with define-by-run search spaces and pruning of unpromising trials."
+  }
+ ],
+ "summary": {
+  "one_liner": "Optuna is a Python framework for automatic hyperparameter optimization with a define-by-run API, letting users build search spaces dynamically in ordinary Python code.",
+  "what_it_does": "Users write an objective function that calls trial.suggest_* methods to sample hyperparameters, and Optuna runs many trials to find the best values. Search spaces can include conditionals and loops because they are defined in normal Python. The README describes state-of-the-art sampling and pruning of unpromising trials, and parallel scaling to many workers with few code changes. Studies can persist to a database such as SQLite, and the optuna-dashboard package provides a real-time web UI for optimization history and hyperparameter importance. The README also covers an experimental Rust reimplementation called Rustuna and OptunaHub, a platform for sharing registered samplers and features.",
+  "use_cases": [
+   "tune hyperparameters of a scikit-learn model",
+   "search machine learning model settings automatically",
+   "prune unpromising training runs early",
+   "run distributed hyperparameter searches across workers",
+   "visualize optimization history and parameter importance",
+   "multi-objective or constrained optimization experiments"
+  ],
+  "how_to_run": [
+   "pip install optuna",
+   "conda install -c conda-forge optuna",
+   "Write an objective(trial) function using trial.suggest_* calls",
+   "study = optuna.create_study(); study.optimize(objective, n_trials=100)",
+   "pip install optuna-dashboard",
+   "optuna-dashboard sqlite:///db.sqlite3"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Rust (Rustuna, experimental)",
+   "SQLite (storage option)",
+   "scikit-learn (example)",
+   "PyTorch, cmaes, scipy (OptunaHub AutoSampler dependencies)"
+  ],
+  "notable": [
+   "Define-by-run API: search spaces are built dynamically with normal Python conditionals and loops",
+   "Pruning of unpromising trials to save compute",
+   "Optuna Dashboard web UI for live study inspection",
+   "OptunaHub for loading community samplers and features",
+   "Rustuna, an experimental Rust implementation with faster samplers and zero Python runtime dependencies"
+  ],
+  "caveats": [
+   "Rustuna is experimental and lacks some Optuna features and APIs",
+   "Optuna requires Python 3.10 or newer",
+   "OptunaHub AutoSampler needs extra dependencies such as PyTorch"
+  ],
+  "license": "MIT",
+  "category": "hyperparameter optimization framework",
+  "keywords": [
+   "hyperparameter optimization",
+   "hyperparameter tuning",
+   "automl",
+   "define-by-run",
+   "search space",
+   "pruning",
+   "bayesian optimization",
+   "tpe sampler",
+   "nsga-ii",
+   "cma-es",
+   "study and trial",
+   "parallel optimization",
+   "distributed hyperparameter search",
+   "optuna dashboard",
+   "optimization history visualization",
+   "sqlite storage",
+   "python machine learning tuning",
+   "scikit-learn tuning",
+   "multi-objective optimization",
+   "constrained optimization",
+   "rustuna",
+   "optunahub",
+   "tune model settings",
+   "find best model parameters",
+   "automatic parameter search",
+   "early stopping of bad trials",
+   "hyperopt alternative",
+   "rust reimplementation",
+   "ml experiment tuning",
+   "grid search alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4793,
+  "output": 1242
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "redlib-org/redlib",
+ "repo": "redlib-org/redlib",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Social Networks and Forums",
+   "entry": "Redlib ⚠ - An alternative private front-end to Reddit, with its origins in Libreddit. AGPL-3.0 Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "Redlib is a private, JavaScript-free alternative front-end for browsing Reddit, originating as a fork of Libreddit.",
+  "what_it_does": "Redlib is a Rust web server that proxies Reddit pages and media so browsers never contact Reddit directly. It serves Reddit's signed-out functionality without JavaScript, ads, or tracking, and it offers a strict Content Security Policy. It provides many selectable themes and default user settings such as layout, sort order, NSFW blurring, and HLS video. Optional features include RSS feed generation, SFW-only mode, and per-instance banners. Deployment options include Docker, Podman Quadlets, a standalone binary, a systemd service, a launchd plist, and building from source with Cargo. The README also describes OAuth token spoofing and periodic token refreshing used to avoid Reddit rate limits, and it supports HTTP, HTTPS, and SOCKS forward proxies.",
+  "use_cases": [
+   "browse Reddit without being tracked",
+   "self-host a private Reddit front-end",
+   "read Reddit without ads or JavaScript",
+   "redirect Reddit links to a private mirror",
+   "run a Reddit RSS feed generator",
+   "host a Reddit proxy for a small group"
+  ],
+  "how_to_run": [
+   "docker pull quay.io/redlib/redlib:latest",
+   "docker run -d --name redlib -p 8080:8080 quay.io/redlib/redlib:latest",
+   "docker compose up -d (using compose.yaml from the repo)",
+   "cargo run (after git clone and cd redlib)"
+  ],
+  "stack": [
+   "Rust",
+   "Hyper",
+   "Askama",
+   "Rustls",
+   "BoringSSL (via boring-sys2)",
+   "Docker",
+   "Podman"
+  ],
+  "notable": [
+   "Proxies all requests, including media, through the server",
+   "Uses OAuth token spoofing of the Android client and refreshes the token every 24 hours",
+   "Forked from Libreddit and renamed to avoid legal issues with the Reddit name",
+   "Configurable via REDLIB_DEFAULT_* environment variables or a redlib.toml file",
+   "Publishes container images for amd64, arm64, and armv7"
+  ],
+  "caveats": [
+   "The README says the -r HTTPS redirect flag is no longer functional",
+   "Replit and Heroku hosting is not private and the operators monitor usage",
+   "Building requires BoringSSL from source, with CMake, NASM, and LLVM needed on Windows",
+   "Redlib lacks a few Reddit features, since it covers most but not all signed-out functionality"
+  ],
+  "license": "AGPL-3.0",
+  "category": "private reddit frontend",
+  "keywords": [
+   "reddit frontend",
+   "reddit proxy",
+   "private reddit",
+   "libreddit alternative",
+   "rust web server",
+   "self-hosted reddit",
+   "reddit viewer no javascript",
+   "anonymous reddit browsing",
+   "reddit without tracking",
+   "privacy frontend",
+   "invidious for reddit",
+   "teddit alternative",
+   "hyper askama",
+   "docker reddit",
+   "podman quadlet",
+   "systemd service",
+   "launchd macos",
+   "content security policy",
+   "oauth token spoofing",
+   "rss feed reddit",
+   "forward proxy socks5",
+   "rustls boringssl",
+   "nsfw filter",
+   "subreddit viewer",
+   "redlib instances",
+   "reddit mirror",
+   "browse reddit privately",
+   "self host reddit alternative",
+   "libredirect",
+   "privacy redirect"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7645,
+  "output": 1289
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "xquik-dev/x-twitter-scraper",
+ "repo": "Xquik-dev/x-twitter-scraper",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "X Twitter Scraper - Agent skill and MCP server for tweet search, user lookup, follower export, media download, webhooks, and confirmation-gated X actions. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "A hosted X (Twitter) scraper API, MCP server, and agent Skill set from Xquik that searches tweets, looks up profiles, runs bulk extractions, and sends signed webhooks, billed per delivered result.",
+  "what_it_does": "The README documents a REST API at Xquik with a single x-api-key credential for searching tweets with server-side filters (language, minimum likes, excluding replies/retweets/quotes) and paging with next_cursor. It also covers profile lookups, follower and reply extraction, and bulk extraction jobs with estimates, result caps, and JSON/CSV/XLSX/PDF-style exports. Monitoring of accounts and keywords is offered with HMAC-signed webhooks and replayable events. The project ships as Agent Skills and a hosted MCP server for AI clients, plus TypeScript, Python, and other SDKs, a Go CLI, and an Apify Actor. Connected X account actions (posting, DMs, likes, follows) are available once an X account is linked, and the README says agents must never receive X passwords, cookies, or 2FA codes.",
+  "use_cases": [
+   "search tweets by keyword with engagement filters",
+   "export follower or reply lists to CSV or JSON",
+   "monitor X accounts or keywords and receive webhooks",
+   "give an AI agent read access to X data via MCP",
+   "bulk-collect tweets for research datasets",
+   "migrate app code away from the official X API"
+  ],
+  "how_to_run": [
+   "export XQUIK_API_KEY='xq_replace_me'",
+   "bunx skills@1.5.3 add Xquik-dev/x-twitter-scraper",
+   "bun add x-twitter-scraper",
+   "go install 'github.com/Xquik-dev/x-twitter-scraper-cli/cmd/x-twitter-scraper@v0.13.3'",
+   "codex plugin marketplace add Xquik-dev/x-twitter-scraper",
+   "curl --get '<Xquik search endpoint>' --header \"x-api-key: ${XQUIK_API_KEY}\" --data-urlencode 'q=machine learning' --data-urlencode 'limit=25'"
+  ],
+  "stack": [
+   "REST API",
+   "MCP server",
+   "TypeScript SDK",
+   "Python SDK",
+   "Go CLI",
+   "Apify Actor",
+   "Agent Skills",
+   "Bun"
+  ],
+  "notable": [
+   "Pay-per-delivered-result billing: 1 credit per returned tweet, estimates available before bulk jobs",
+   "Server-side tweet and profile filters applied before billing",
+   "Hosted MCP server exposing docs, search, and execute tools for AI clients",
+   "Signed webhooks with HMAC verification and event cursors for recovery after downtime",
+   "Official SDKs across many languages plus integrations with n8n, Zapier, Make, and Pipedream"
+  ],
+  "caveats": [
+   "Requires an Xquik account and API key; usage is metered in credits and pay-as-you-go pricing applies",
+   "Not affiliated with X Corp; deleted, protected, or restricted content may stay inaccessible and optional fields can be omitted",
+   "Active monitors cost 30 credits per hour each, and private reads or X actions need a connected X account"
+  ],
+  "license": "MIT",
+  "category": "x twitter scraping",
+  "keywords": [
+   "twitter scraper",
+   "x scraper",
+   "tweet scraper",
+   "twitter api alternative",
+   "x api alternative",
+   "mcp server",
+   "agent skill",
+   "scrape tweets",
+   "search tweets by keyword",
+   "follower export",
+   "reply scraper",
+   "profile lookup",
+   "webhooks",
+   "account monitoring",
+   "keyword monitoring",
+   "bulk extraction",
+   "cursor pagination",
+   "signed webhooks hmac",
+   "typescript sdk",
+   "python sdk",
+   "go cli",
+   "apify actor",
+   "claude code tools",
+   "codex plugin",
+   "export tweets to csv",
+   "collect tweets for research",
+   "social media data api",
+   "pay per result scraping",
+   "twitter data for ai agents",
+   "x tweet search api",
+   "xquik"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10058,
+  "output": 1444
+ },
+ "generated": "2026-10-29"
+}

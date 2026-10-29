@@ -1,0 +1,97 @@
+{
+ "id": "jserv/mini-arm-os",
+ "repo": "jserv/mini-arm-os",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Operating System",
+   "entry": "C: _Build a minimal multi-tasking kernel for ARM from scratch_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A teaching project that builds a minimal multi-tasking kernel for ARM Cortex-M microcontrollers in incremental steps, from semihosted \"hello world\" through preemptive round-robin scheduling with user-level threads.",
+  "what_it_does": "The repository is a series of numbered steps (00 to 08) that each add one kernel feature for an STM32-based ARM Cortex-M board. The steps cover semihosted and USART \"hello world\" output, improved startup code, switching between user and kernel mode, system calls as the way back into the kernel, two tasks alternating, SysTick timer interrupts, preemptive scheduling, and user-level threads. The final step, 08-CMSIS, adds a hardware abstraction layer using CMSIS and targets both an emulated STM32-P103 under QEMU and a real STM32F429i-Discovery board. The README describes a core/platform split for porting to other devices and a Makefile with build, QEMU, and ST-LINK flashing and GDB targets.",
+  "use_cases": [
+   "learn how an operating system kernel works from scratch",
+   "study context switching on ARM Cortex-M",
+   "run a small preemptive scheduler on an emulated STM32 board",
+   "flash a multitasking kernel onto an STM32F429i-Discovery board",
+   "port a bare-metal kernel to a new microcontroller using CMSIS"
+  ],
+  "how_to_run": [
+   "git submodule init",
+   "git submodule update",
+   "make p103",
+   "make qemu",
+   "make f429disco"
+  ],
+  "stack": [
+   "C",
+   "ARM assembly",
+   "ARM Cortex-M",
+   "STM32",
+   "QEMU (STM32-P103 machine)",
+   "GNU Toolchain for ARM",
+   "CMSIS",
+   "GDB",
+   "st-link or OpenOCD"
+  ],
+  "notable": [
+   "Incremental, step-by-step directories (00-Semihosting through 08-CMSIS) that each isolate one OS concept",
+   "Runs under QEMU emulation of the STM32-P103 board, so no hardware is needed to try it",
+   "Final step supports a real STM32F429i-Discovery board over USART1 at 115200 baud",
+   "Core and platform split with CMSIS submodule designed to make porting to new devices easier",
+   "Makefile builds per-target bin, elf and objdump files into a release directory"
+  ],
+  "caveats": [
+   "Requires a specific QEMU build with STM32 support and custom flags, plus an ARM GNU toolchain",
+   "Real-hardware flashing needs an extra tool such as st-link or OpenOCD and a serial terminal",
+   "Porting to a new device is described as the most difficult part and requires hand-written platform code"
+  ],
+  "license": "BSD (two-clause, per the README; see LICENSE file)",
+  "category": "embedded os kernel",
+  "keywords": [
+   "arm kernel",
+   "cortex-m",
+   "stm32",
+   "qemu",
+   "mini os",
+   "minimal operating system",
+   "multitasking kernel",
+   "preemptive scheduler",
+   "round-robin scheduling",
+   "context switch",
+   "user-level threads",
+   "systick",
+   "system call",
+   "cmsis",
+   "hardware abstraction layer",
+   "bare metal",
+   "embedded systems",
+   "os from scratch",
+   "build your own os",
+   "semihosting",
+   "usart serial",
+   "stm32f429 discovery",
+   "gnu arm toolchain",
+   "gdb debugging",
+   "teaching operating systems",
+   "embedded c tutorial",
+   "run os in emulator",
+   "write a kernel",
+   "task switching",
+   "arm assembly",
+   "hobby os development"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4438,
+  "output": 1299
+ },
+ "generated": "2026-10-29"
+}

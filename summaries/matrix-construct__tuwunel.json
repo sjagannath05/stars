@@ -1,0 +1,88 @@
+{
+ "id": "matrix-construct/tuwunel",
+ "repo": "matrix-construct/tuwunel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Tuwunel - High-performance and feature-rich chat server for Matrix, and the successor to conduwuit (fork of Conduit). (Demo, Source Code) Apache-2.0 deb/Docker/Nix/Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tuwunel is a Rust-written Matrix homeserver (an alternative to Synapse) and the official successor to conduwuit, a fork of Conduit.",
+  "what_it_does": "Tuwunel is a Matrix homeserver written entirely in Rust, intended to be used in place of Synapse with Matrix clients, bridges, and bots. The README says it fully implements the Matrix Specification for all but the most niche uses. It is distributed through GitHub releases, Docker images (DockerHub and GHCR), static binaries, deb and RPM packages, an Apt repository, a COPR repository, AUR packages, a Nix package and NixOS module, an Alpine package, and a Gentoo ebuild. Configuration is done by copying and editing a tuwunel-example.toml file, where server_name and database_path must be set. The README gives a Caddy reverse-proxy example for TLS and serving the Element web client. The first registered user becomes server admin, and a registration_token can be set to restrict sign-ups. It documents migration paths in place from conduwuit, its forks, and Conduit, using a RocksDB database; migration from Synapse is listed as not yet supported.",
+  "use_cases": [
+   "self-hosted Matrix chat server",
+   "replace Synapse homeserver",
+   "run a private Matrix server for a community or company",
+   "migrate from conduwuit or Conduit",
+   "host Matrix with Docker",
+   "deploy Matrix on NixOS or Debian"
+  ],
+  "how_to_run": [
+   "docker pull jevolk/tuwunel:latest",
+   "docker pull ghcr.io/matrix-construct/tuwunel:latest",
+   "Copy and edit tuwunel-example.toml, setting server_name and database_path",
+   "Configure TLS, e.g. with the Caddy reverse proxy example in the README",
+   "Start the server, connect a Matrix client, and register the first user (who becomes admin)"
+  ],
+  "stack": [
+   "Rust",
+   "RocksDB",
+   "Caddy (example reverse proxy)",
+   "Element (example web client)"
+  ],
+  "notable": [
+   "Official successor to conduwuit, with in-place database migration from Conduit and conduwuit forks",
+   "Broad packaging: Docker, static binaries, deb/RPM, Apt, COPR, AUR, Nix, Alpine, Gentoo",
+   "Container tags :latest, :preview, and :main offer different update cadences",
+   "Downgrades are generally blocked by a guard when unsafe",
+   "Primarily sponsored by the government of Switzerland, per the README"
+  ],
+  "caveats": [
+   "Migration from Synapse is not yet supported according to the README",
+   "Migrating between two other Conduit forks can permanently corrupt the database, so backups are strongly advised",
+   "Migration from Conduit requires care with media layout as noted in the deploying guide"
+  ],
+  "license": "Apache-2.0",
+  "category": "matrix homeserver",
+  "keywords": [
+   "matrix homeserver",
+   "matrix server",
+   "tuwunel",
+   "conduwuit",
+   "conduit",
+   "synapse alternative",
+   "rust matrix server",
+   "self-hosted chat",
+   "federated chat server",
+   "decentralized messaging",
+   "element client backend",
+   "matrix protocol",
+   "chat server",
+   "rocksdb",
+   "docker matrix",
+   "nixos matrix",
+   "debian matrix server",
+   "reverse proxy caddy",
+   "homeserver migration",
+   "run my own chat server",
+   "private team chat",
+   "federation",
+   "apache-2.0",
+   "rust",
+   "matrix bots and bridges backend",
+   "lightweight chat server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4032,
+  "output": 1312
+ },
+ "generated": "2026-10-29"
+}

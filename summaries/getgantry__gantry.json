@@ -1,0 +1,103 @@
+{
+ "id": "getgantry/gantry",
+ "repo": "getgantry/gantry",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Virtualization",
+   "entry": "Gantry - Docker management client for local and SSH remote hosts with built-in MCP server support for agent workflows. [![Open-Source Software][OSS Icon]](https://github.com/getgantry/gantry) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Gantry is a native SwiftUI macOS app for managing Docker containers, images, volumes and networks on the local daemon and remote hosts over SSH, with a built-in MCP server for AI agents.",
+  "what_it_does": "Gantry manages and monitors the local Docker daemon and any number of remote Docker hosts reached over SSH, plus apple/container hosts on the Mac. It covers container lifecycle, image build/pull/tag/prune, volumes, networks, Docker Compose projects with a YAML editor, and a Smart Cleanup panel for reclaiming disk space. It offers live logs with regex search, stats charts, and a Docker-events-driven UI. Remote hosts connect like `docker -H ssh://`, using ~/.ssh/config, ProxyJump, and Keychain-stored secrets. It also includes an exec terminal, a debug sidecar shell for containers without a shell, a file browser, port forwarding, and Cloudflare Tunnel sharing. A bundled gantry-mcp binary and App Intents let agents and Shortcuts drive the same hosts.",
+  "use_cases": [
+   "manage Docker containers on a Mac",
+   "monitor remote Docker hosts over SSH",
+   "build and prune Docker images",
+   "run docker-compose projects on Mac",
+   "let an AI agent control Docker via MCP",
+   "share a local dev server publicly via Cloudflare Tunnel",
+   "debug distroless containers with a sidecar shell"
+  ],
+  "how_to_run": [
+   "brew install --cask getgantry/tap/gantry",
+   "xattr -dr com.apple.quarantine /Applications/Gantry.app",
+   "claude mcp add gantry -- /Applications/Gantry.app/Contents/Resources/gantry-mcp",
+   "git clone <repository URL> && cd gantry",
+   "open Gantry.xcodeproj  # Xcode 26+, build the \"Gantry\" scheme"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "Swift Charts",
+   "SwiftTerm",
+   "Citadel (SSH)",
+   "SwiftNIO / async-http-client",
+   "Sparkle (auto-update)",
+   "Homebrew",
+   "apple/container CLI",
+   "MCP (Model Context Protocol)"
+  ],
+  "notable": [
+   "Native macOS app with no Electron; works with Docker Desktop, OrbStack, Colima, or plain remote dockerd",
+   "Remote SSH hosts run `docker system dial-stdio` with no server-side install beyond Docker",
+   "Bundled gantry-mcp stdio server exposes containers, images, volumes, Compose and tunnels to AI agents",
+   "Support for apple/container hosts, including Compose orchestration and custom kernels",
+   "Debug shell attaches a toolbox sidecar sharing the target container's namespaces without modifying it"
+  ],
+  "caveats": [
+   "Requires macOS 26 (Tahoe) or later",
+   "Not notarized; first launch needs right-click Open or clearing quarantine, and Sparkle updates go through Homebrew",
+   "ECDSA private keys in OpenSSH format are not supported",
+   "Remote hosts need docker on PATH for dial-stdio"
+  ],
+  "license": "MIT",
+  "category": "macos docker management",
+  "keywords": [
+   "docker",
+   "docker management",
+   "docker gui",
+   "mac docker client",
+   "native macos app",
+   "swiftui",
+   "container management",
+   "docker over ssh",
+   "remote docker",
+   "ssh docker host",
+   "mcp server",
+   "model context protocol",
+   "ai agent docker",
+   "claude docker",
+   "docker compose",
+   "compose up",
+   "container logs",
+   "docker logs viewer",
+   "docker stats",
+   "image build",
+   "image prune",
+   "docker cleanup",
+   "volumes and networks",
+   "apple container",
+   "orbstack alternative",
+   "docker desktop alternative",
+   "colima",
+   "cloudflare tunnel",
+   "port forwarding ssh",
+   "docker exec terminal",
+   "manage containers on my mac",
+   "monitor remote servers docker",
+   "free open source docker app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8294,
+  "output": 1472
+ },
+ "generated": "2026-10-29"
+}

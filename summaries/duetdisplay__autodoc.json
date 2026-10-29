@@ -1,0 +1,106 @@
+{
+ "id": "duetdisplay/autodoc",
+ "repo": "DuetDisplay/AutoDoc",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "AutoDoc - Private, local-first meeting notes with on-device transcription and AI summaries."
+  }
+ ],
+ "summary": {
+  "one_liner": "AutoDoc is an open-source, local-first meeting notes app for macOS and Windows that records screen and meeting audio, transcribes on-device, and generates editable notes with clickable timestamps for replay.",
+  "what_it_does": "It records screen, microphone, and system audio as separate streams, labeling the microphone as \"Me\" and combined system audio as \"Them\" without identifying individual remote participants. Transcription runs on-device (MLX Whisper on Apple Silicon Macs, Parakeet or Whisper on Windows), and notes are generated through a local Ollama instance that AutoDoc manages. Users can edit summaries and topics, copy them as plain text, or export to PDF, Word, or Markdown. The app offers full-text search across transcripts and notes, an Ask AI feature over past meetings that runs on-device, and calendar integration with Google and Microsoft for per-event auto-record. Meeting detection for Zoom, Meet, Teams, Webex, and Slack offers to start recording. Recordings, transcripts, notes, and metadata are encrypted at rest with AES-256-GCM.",
+  "use_cases": [
+   "record and replay meeting video",
+   "generate meeting notes and summaries locally",
+   "private transcription of calls",
+   "search across past meeting transcripts",
+   "ask questions over meeting history offline",
+   "auto-record calendar events",
+   "export meeting notes to PDF, Word, or Markdown"
+  ],
+  "how_to_run": [
+   "Download the macOS .dmg or Windows .exe installer from the latest release",
+   "Open the installer and move AutoDoc to Applications (macOS) or run the setup prompts (Windows)",
+   "Launch AutoDoc and grant Screen Recording, Microphone, and system audio permissions on first run",
+   "Allow the one-time model download (~10 GB)",
+   "To build from source: git clone the repo, cd AutoDoc, npm ci",
+   "Run npm run build:mac or npm run build:win, or npm run dev for development"
+  ],
+  "stack": [
+   "Electron",
+   "electron-vite",
+   "React",
+   "Node.js 20+",
+   "MLX Whisper",
+   "Parakeet TDT",
+   "Whisper large-v3-turbo",
+   "Canary",
+   "Ollama",
+   "qwen3:4b-instruct",
+   "llama3.2:3b",
+   "FFmpeg",
+   "ONNX Runtime and DirectML",
+   "faster-whisper and CTranslate2",
+   "whisper.cpp"
+  ],
+  "notable": [
+   "Fully local pipeline: transcription, notes, and Ask AI run on-device with no AutoDoc account or API key",
+   "Click a note's timestamp to jump to that moment in the screen recording",
+   "Multi-track capture keeps microphone and system audio as separate streams",
+   "AES-256-GCM encryption at rest, with the key protected by macOS Keychain or Windows DPAPI when available",
+   "Supports 27 meeting languages on supported hardware, with lower-spec profiles for 8 GB machines"
+  ],
+  "caveats": [
+   "Requires Apple Silicon on Mac (no Intel or Rosetta fallback) and does not support Windows on ARM; Windows needs x64 with 8 GB RAM minimum",
+   "Needs about 10 GB of free storage for first-run model downloads and internet access for that first download",
+   "Action items are currently omitted from generated notes while Next Steps is disabled, and generated notes should be reviewed before relying on them"
+  ],
+  "license": "GNU Affero General Public License v3.0",
+  "category": "local meeting notes",
+  "keywords": [
+   "meeting notes",
+   "meeting transcription",
+   "local-first",
+   "on-device transcription",
+   "offline transcription",
+   "screen recording",
+   "meeting recorder",
+   "meeting replay",
+   "ai meeting summary",
+   "ai notes",
+   "ollama",
+   "whisper",
+   "parakeet",
+   "mlx whisper",
+   "electron app",
+   "macos app",
+   "windows app",
+   "private meeting notes",
+   "granola alternative",
+   "calendar auto-record",
+   "zoom recording",
+   "teams recording",
+   "full-text transcript search",
+   "ask ai over meetings",
+   "export notes to pdf",
+   "markdown meeting notes",
+   "aes-256-gcm encryption",
+   "record my screen during calls",
+   "take notes from video calls without cloud",
+   "open source otter alternative",
+   "affero gpl meeting app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5724,
+  "output": 1555
+ },
+ "generated": "2026-10-29"
+}

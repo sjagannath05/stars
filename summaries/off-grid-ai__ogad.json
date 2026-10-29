@@ -1,0 +1,103 @@
+{
+ "id": "off-grid-ai/ogad",
+ "repo": "off-grid-ai/OGAD",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "💬 Chat (26)",
+   "entry": "Off Grid AI Desktop - Private on-device AI suite for Apple Silicon Macs: local LLM chat via llama.cpp, RAG search over your own data, MCP connectors, and Stable Diffusion image generation, with no account, no telemetry, and no cloud."
+  }
+ ],
+ "summary": {
+  "one_liner": "Off Grid AI Desktop (OGAD) is an open-core, local-first AI desktop app and OpenAI-compatible gateway for running open models (text, vision, image, voice, speech) entirely on your own machine.",
+  "what_it_does": "The free desktop app offers chat with text and vision input, streaming, and a reasoning mode, using bundled llama.cpp for inference. It includes on-device image generation via stable-diffusion.cpp (SDXL-Lightning, SDXL, SD 1.5/2.1, Z-Image-Turbo), and voice input/output using whisper.cpp and Kokoro-82M. Projects let you upload documents (txt, md, PDF, DOCX, image, audio, video) and chat with RAG and cited sources. Chats can call local tools and MCP connectors (none, token, or OAuth auth), and artifacts such as HTML, React, SVG, and Mermaid render in a sandboxed iframe. A local gateway exposes OpenAI-style endpoints for chat, images, transcription, speech, embeddings, and model management, and can run headless with no UI. The README also describes a separate paid Pro layer (screen capture/OCR, memory, meetings, dictation, clipboard) that lives in a private package and is absent from this open core.",
+  "use_cases": [
+   "Run a private local chatbot on an Apple Silicon Mac",
+   "Chat with my own documents using RAG and cited sources",
+   "Serve local models to apps through an OpenAI-compatible API",
+   "Generate images offline with Stable Diffusion models",
+   "Transcribe and speak text locally with whisper and Kokoro",
+   "Run a headless local AI server on a homelab machine"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd OGAD",
+   "git lfs install && git lfs pull (required for bundled native binaries in resources/bin)",
+   "npm install",
+   "npm run dev (full desktop app)",
+   "npm run gateway (headless gateway on port 7878)",
+   "npm run build:mac (package a macOS app)"
+  ],
+  "stack": [
+   "Electron 39",
+   "React 19",
+   "Tailwind v4",
+   "electron-vite",
+   "better-sqlite3-multiple-ciphers",
+   "@lancedb/lancedb",
+   "llama.cpp",
+   "whisper.cpp",
+   "stable-diffusion.cpp",
+   "ffmpeg",
+   "Kokoro-82M",
+   "Node.js 20",
+   "Python 3.12 (Windows build)"
+  ],
+  "notable": [
+   "OpenAI-compatible local gateway with /v1/chat/completions, images, audio, embeddings, and model pull/activate/delete endpoints",
+   "Headless gateway mode (--server-only or OFFGRID_SERVER_ONLY=1) for servers without a UI",
+   "Encrypted local SQLite database and LanceDB vector store",
+   "Open-core split: a private Pro package is loaded as a git submodule and the open core never imports it",
+   "Artifacts render HTML, React/JSX, SVG, and Mermaid in a network-isolated sandboxed iframe"
+  ],
+  "caveats": [
+   "Pre-built binaries and the main install path target Apple Silicon macOS; Windows (x64) and Linux (x64, Ubuntu 24.04+) are also supported but Windows must be built on a Windows machine",
+   "Building requires Git LFS; without git lfs pull the runtimes fail with ENOEXEC",
+   "Linux CUDA build needs Docker; Windows build needs Node 20, Python 3.12, and VS 2022 Build Tools",
+   "Pro features are a paid license (one key covers up to 5 devices) and are not in this open repository"
+  ],
+  "license": "AGPL-3.0-only",
+  "category": "local ai desktop app",
+  "keywords": [
+   "local llm",
+   "on-device ai",
+   "private ai chat",
+   "offline chatbot",
+   "llama.cpp",
+   "openai-compatible api",
+   "local openai api",
+   "ollama alternative",
+   "lm studio alternative",
+   "rag document chat",
+   "chat with my documents",
+   "mcp connectors",
+   "model context protocol",
+   "stable diffusion",
+   "local image generation",
+   "whisper speech to text",
+   "kokoro text to speech",
+   "electron app",
+   "apple silicon ai",
+   "gguf models",
+   "hugging face models",
+   "headless ai gateway",
+   "self-hosted ai",
+   "no cloud ai",
+   "private ai assistant",
+   "run ai locally",
+   "agpl ai app",
+   "artifacts sandbox",
+   "local embeddings",
+   "homelab ai server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6353,
+  "output": 1568
+ },
+ "generated": "2026-10-29"
+}

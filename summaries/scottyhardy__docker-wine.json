@@ -1,0 +1,111 @@
+{
+ "id": "scottyhardy/docker-wine",
+ "repo": "scottyhardy/docker-wine",
+ "kind": "star",
+ "description": "Docker image that includes Wine and Winetricks for running Windows applications on Linux and macOS",
+ "topics": [
+  "dockerfile",
+  "linux",
+  "macos",
+  "pulseaudio",
+  "remote-desktop",
+  "unix-sockets",
+  "wine",
+  "xfce",
+  "xrdp"
+ ],
+ "language": "Shell",
+ "stars": 1541,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2025-05-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Docker image bundling Wine and Winetricks, run through a helper script to launch Windows applications on Linux and macOS with X11 forwarding, Xvfb, or an RDP desktop.",
+  "what_it_does": "The docker-wine script starts a container with Wine and Winetricks preinstalled, opening an interactive bash shell by default or running a given command such as wine notepad or winecfg. By default it forwards X11 to the host's X server and passes sound through PulseAudio. It can also run under an Xvfb virtual framebuffer, in attached no-tty mode, or as an XRDP server that a Remote Desktop client connects to, either as a foreground session or a detached daemon started and stopped with flags. The script supports running as root or as the current user's UID/GID and home path, and passes extra environment variables, devices and volumes through standard Docker syntax. A persistent volume named winehome keeps user data across container runs. The README also covers encrypting the RDP password with openssl, building the image locally with a build script, and using the image as a base for other Dockerfiles.",
+  "use_cases": [
+   "run Windows applications on Linux",
+   "run Windows programs on macOS with Wine",
+   "run Windows software on a headless server via remote desktop",
+   "test Wine apps with Winetricks",
+   "persist Wine user data between container runs",
+   "build a custom Wine-based Docker image"
+  ],
+  "how_to_run": [
+   "wget <URL from README> && chmod +x docker-wine (Linux; README omits the URL)",
+   "curl -O <URL from README> && chmod +x docker-wine (macOS; README omits the URL)",
+   "./docker-wine wine notepad",
+   "./docker-wine --rdp",
+   "./docker-wine --rdp=start",
+   "./build (after cloning the repo, to build locally, then run with ./docker-wine --local)"
+  ],
+  "stack": [
+   "Docker",
+   "Wine",
+   "Winetricks",
+   "Shell",
+   "XFCE",
+   "XRDP",
+   "PulseAudio",
+   "Xvfb",
+   "openssl"
+  ],
+  "notable": [
+   "Switchable display modes: X11 forwarding, Xvfb virtual framebuffer, or XRDP remote desktop",
+   "Persistent winehome volume keeps user data when the container is removed or the image is updated",
+   "--as-me option maps the host user's UID, GID and home path into the container",
+   "Documented secure password options (--password-prompt, encrypted --secure-password)"
+  ],
+  "caveats": [
+   "The README says PulseAudio redirection on Linux and X11 on macOS need extra prerequisites that are not fully documented yet (a wiki is promised)",
+   "Remote RDP access requires TCP port 3389 to be open through the firewall",
+   "Passing --password exposes the password in the host process list, as the README notes"
+  ],
+  "category": "wine docker containers",
+  "license": "MIT",
+  "keywords": [
+   "wine",
+   "winetricks",
+   "docker",
+   "dockerfile",
+   "run windows apps on linux",
+   "run windows programs on mac",
+   "windows emulation",
+   "x11 forwarding",
+   "xvfb",
+   "xrdp",
+   "rdp server",
+   "remote desktop container",
+   "remmina",
+   "pulseaudio",
+   "headless windows apps",
+   "docker wine image",
+   "wine in docker",
+   "xfce",
+   "unix sockets",
+   "run exe files linux",
+   "container for windows software",
+   "wineconfig",
+   "winecfg",
+   "persistent docker volume",
+   "docker run wine notepad",
+   "linux windows compatibility",
+   "macos wine docker",
+   "shell script docker wrapper"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4109,
+  "output": 1293
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,128 @@
+{
+ "id": "rohitg00/pro-workflow",
+ "repo": "rohitg00/pro-workflow",
+ "kind": "star",
+ "description": "Claude Code learns from your corrections: self-correcting memory that compounds over 50+ sessions. Context engineering, parallel worktrees, agent teams, and 17 battle-tested skills.",
+ "topics": [
+  "agent-orchestration",
+  "ai-agents",
+  "ai-coding",
+  "ai-workflow",
+  "claude",
+  "claude-code",
+  "claude-code-plugin",
+  "claude-code-skills",
+  "claude-skills",
+  "codex",
+  "context-engineering",
+  "cursor",
+  "developer-tools",
+  "gemini-cli",
+  "hooks",
+  "productivity",
+  "self-correction",
+  "workflow",
+  "worktrees"
+ ],
+ "language": "JavaScript",
+ "stars": 2935,
+ "license": "",
+ "homepage": "https://rohitg00.github.io/pro-workflow/infographic.html",
+ "pushed_at": "2026-09-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Claude Code plugin that turns your corrections into persistent SQLite-backed rules and builds FTS5-indexed research wikis, with skills, agents, commands and hooks for workflow automation.",
+  "category": "claude code plugin",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "claude skills",
+   "ai coding agent",
+   "self-correction",
+   "persistent memory",
+   "learnings",
+   "sqlite",
+   "fts5",
+   "bm25",
+   "full-text search",
+   "research wiki",
+   "knowledge base",
+   "auto-research",
+   "hybrid retrieval",
+   "vector search",
+   "rrf",
+   "llm council",
+   "multi-llm",
+   "hooks",
+   "pre-tool-use",
+   "git worktrees",
+   "parallel agents",
+   "agent teams",
+   "context engineering",
+   "context compaction",
+   "cost tracking",
+   "mcp audit",
+   "cursor",
+   "codex",
+   "gemini cli",
+   "remember corrections across sessions",
+   "stop repeating mistakes to ai",
+   "share workflow across coding agents"
+  ],
+  "what_it_does": "Pro Workflow is a plugin for Claude Code, installable through the Claude Code plugin marketplace or via a cross-agent skills installer (npx skills add rohitg00/pro-workflow). It stores corrections as rules in a SQLite database with FTS5 search and loads them at session start. It also maintains persistent research wikis on disk with an FTS5 index, with commands to initialize, add pages, query with BM25, and view them as a single HTML file. An optional auto-research loop can seed and expand a wiki under a budget cap and kill switch. The package bundles 41 skills, 8 agents, 23 slash commands, and 33 hook scripts across 22 hook events, covering commit and secret guards, compaction state preservation, permission analysis, and cost tracking. The README also describes hybrid BM25 plus vector retrieval, and a multi-provider LLM deliberation command, both optional and configured with API keys.",
+  "use_cases": [
+   "Stop repeating the same corrections to Claude Code across sessions",
+   "Build a persistent research wiki on a topic and query it later",
+   "Run a budget-capped automated research loop over web or arXiv sources",
+   "Set up parallel git worktree sessions for large changes",
+   "Add commit, secret, and destructive-command guardrails to Claude Code",
+   "Analyze permission denials and MCP token overhead"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add rohitg00/pro-workflow",
+   "/plugin install pro-workflow@pro-workflow",
+   "npx skills add rohitg00/pro-workflow",
+   "skills sync",
+   "/doctor",
+   "cd ~/.claude/plugins/*/pro-workflow && npm install && npm run build  (only if /doctor reports KB: missing)"
+  ],
+  "stack": [
+   "JavaScript",
+   "TypeScript",
+   "SQLite",
+   "FTS5",
+   "Claude Code plugin system",
+   "Node.js/npm",
+   "Anthropic, OpenAI, OpenRouter, Fireworks and custom LLM providers (optional)",
+   "OpenAI or Voyage embeddings (optional)",
+   "MCP servers (context7, playwright, GitHub)"
+  ],
+  "notable": [
+   "Corrections become SQLite rules that auto-load on SessionStart, so learnings persist across sessions",
+   "Knowledge plane: FTS5 research wikis with 9 flavors, path-traversal guard, and a single-file HTML viewer",
+   "Budget-capped auto-research loop with convergence detection and a STOP-file kill switch",
+   "Hooks include LLM-powered checks (type: prompt) alongside deterministic git and secret guards",
+   "Cross-agent install reaches 32+ agents through the skills CLI"
+  ],
+  "caveats": [
+   "SQLite components need an npm build step; some marketplace installs skip it and /doctor will report KB missing",
+   "Optional features (embeddings, council, survey, GitHub research) need your own provider API keys; env keys like OPENAI_API_KEY are not read automatically in standalone use",
+   "Other agents lack first-class plugins, so cross-agent installs only copy the skill bundle and need a skills sync step; the README notes some adapter names target products that have changed"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11069,
+  "output": 1541
+ },
+ "generated": "2026-10-29"
+}

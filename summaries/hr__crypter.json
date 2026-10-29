@@ -1,0 +1,96 @@
+{
+ "id": "hr/crypter",
+ "repo": "HR/Crypter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "Crypter - Crypter is an innovative, convenient and secure cross-platform crypto app that simplifies secure password generation and management by requiring you to only remember one bit, the MasterPass."
+  }
+ ],
+ "summary": {
+  "one_liner": "Crypter is a cross-platform desktop app (built with Electron) that encrypts files and folders with AES-256-GCM and derives all keys from a single MasterPass you need to remember.",
+  "category": "desktop encryption utility",
+  "keywords": [
+   "file encryption",
+   "folder encryption",
+   "desktop crypto app",
+   "electron app",
+   "aes-256-gcm",
+   "pbkdf2",
+   "key derivation",
+   "master password",
+   "password manager alternative",
+   "password generation",
+   "single password encryption",
+   "encrypt files mac",
+   "encrypt files windows",
+   "encrypt files linux",
+   "encrypted archive",
+   "crypto file",
+   "tar archive encryption",
+   "portable encryption credentials",
+   "export credentials",
+   "import credentials",
+   "authenticated encryption",
+   "macos utility",
+   "homebrew cask",
+   "appimage",
+   "encrypt files with one password",
+   "secure file storage",
+   "mocha chai tests",
+   "gulp build",
+   "encrypt a folder",
+   "keychain storage"
+  ],
+  "what_it_does": "Crypter encrypts and decrypts any file or folder; folders are tarred before encryption. Each encrypted item becomes a .crypto file, which is a tar archive containing the encrypted data and a creds file with the public parameters (IV, auth tag, salt) needed for decryption. Encryption keys are derived with PBKDF2 from a MasterPassKey, which is itself derived from the user's MasterPass, so the MasterPass is never used directly for encryption and is not stored. The app enforces MasterPass rules (minimum 8 characters with upper, lower, digit and special character). Users can export and import MasterPass credentials as a credentials.crypter file to decrypt on another machine. The README states prebuilt binaries exist for macOS, Linux (AppImage) and Windows, and that it is available via Homebrew Cask for macOS.",
+  "use_cases": [
+   "encrypt a single file before storing or sharing it",
+   "encrypt a folder into a single .crypto file",
+   "generate and manage strong passwords with one memorized MasterPass",
+   "move encrypted files to another computer with exported credentials",
+   "decrypt files previously encrypted with the same MasterPass"
+  ],
+  "how_to_run": [
+   "brew install --cask crypter@4.0.0",
+   "yarn install",
+   "npm install electron-builder@next -g (build step)",
+   "yarn test",
+   "yarn run build:mac / build:lin / build:win"
+  ],
+  "stack": [
+   "JavaScript",
+   "Electron",
+   "Node.js",
+   "gulp",
+   "yarn",
+   "mocha",
+   "chai",
+   "babel",
+   "istanbul",
+   "electron-builder"
+  ],
+  "notable": [
+   "Two-level key derivation: MasterPass to MasterPassKey (PBKDF2, 100000 iterations) to per-file encryption keys (PBKDF2, 50000 iterations), with random credentials per MasterPass set or reset",
+   "MasterPassKey is held in a WeakMap inside a closure rather than written to disk",
+   "Encrypted files are self-contained .crypto tar archives with a separate public creds file",
+   "Credentials export/import workflow for decrypting on a different machine"
+  ],
+  "caveats": [
+   "Decrypting on another machine or after resetting the MasterPass requires exporting and importing the MasterPass credentials file; a plain MasterPass is not enough, per the README",
+   "Per the README, the Keychain-based storage of the MasterPass is a v5.0 goal that was still incomplete (the README asks for PRs to finish it)",
+   "The README says JS cannot wipe memory, so MasterPassKey erasure relies on garbage collection"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7868,
+  "output": 1327
+ },
+ "generated": "2026-10-29"
+}

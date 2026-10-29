@@ -1,0 +1,98 @@
+{
+ "id": "rockxyapp/tracexy",
+ "repo": "RockxyApp/Tracexy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⚙️ System (47)",
+   "entry": "Tracexy - Native, local-first network intelligence for macOS that turns live traffic and saved PCAP or PCAPNG captures into app-aware sessions."
+  }
+ ],
+ "summary": {
+  "one_liner": "Tracexy is a native macOS, local-first network analyzer that captures live traffic or opens saved PCAP/PCAPNG files and groups packets into app-aware, session-first views.",
+  "category": "network traffic analysis",
+  "keywords": [
+   "packet analyzer",
+   "wireshark alternative",
+   "macos network analysis",
+   "pcap viewer",
+   "pcapng reader",
+   "libpcap capture",
+   "network sessions",
+   "five-tuple grouping",
+   "per-app network traffic",
+   "process network attribution",
+   "packet capture mac",
+   "tcpdump alternative",
+   "tshark alternative",
+   "dns lookups",
+   "tls sni inspection",
+   "http request viewer",
+   "hex packet viewer",
+   "local-first network tool",
+   "session table",
+   "flow map",
+   "swiftui app",
+   "traffic investigation",
+   "see which app talks to which host",
+   "analyze saved capture file",
+   "open pcap on mac",
+   "network troubleshooting mac",
+   "agpl network tool",
+   "mcp read-only history"
+  ],
+  "what_it_does": "Tracexy captures traffic passively through a privileged helper using libpcap, or opens existing .pcap, .pcapng, and some other capture formats for analysis. It decodes frames across link, network, transport, and application metadata layers, including ARP, IPv4/IPv6, ICMP, TCP/UDP, DNS, DHCP, NTP, TLS, HTTP/1, STUN, and QUIC long headers. Traffic is grouped into bidirectional sessions by canonical five-tuple, with byte and timing summaries and higher-level activity correlation. The workspace offers an overview, session table, flow map, search, protocol hierarchy, DNS lookups, Follow Stream, decoded fields, hex evidence, notes, and tags. Projects keep separate investigations isolated, and History stores local session summaries in SQLite without packet payloads.",
+  "use_cases": [
+   "see which app or process contacted which host on a Mac",
+   "analyze a saved PCAP or PCAPNG capture without admin rights",
+   "troubleshoot network behavior on macOS",
+   "inspect DNS, TLS metadata, and HTTP headers in a capture",
+   "hand off a support-ready network investigation",
+   "review security-relevant traffic metadata locally"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> (the README leaves the URL blank)",
+   "cd Tracexy",
+   "cp Configuration/Developer.xcconfig.template Configuration/Developer.xcconfig",
+   "Set TRACEXY_TEAM_ID to your Apple Developer Team ID in Configuration/Developer.xcconfig",
+   "open Tracexy.xcodeproj",
+   "xcodebuild -project Tracexy.xcodeproj -scheme Tracexy -destination 'platform=macOS' build"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "libpcap",
+   "SQLite",
+   "Sparkle",
+   "XPC privileged helper",
+   "Xcode 16",
+   "SwiftLint",
+   "SwiftFormat"
+  ],
+  "notable": [
+   "Session-first design: bidirectional traffic grouped by canonical five-tuple, with raw packets one click away",
+   "Live capture via a narrow, typed XPC boundary to a privileged helper with code-signing checks",
+   "Opening saved PCAP/PCAPNG files needs no helper or administrator access",
+   "Read-only MCP stdio tool and read-only command line for History data, with no network listener",
+   "Honest unknowns: missing process or hostname evidence is shown as unknown rather than guessed"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later and Xcode 16 or later, plus an Apple Developer Team for code signing",
+   "No TLS or QUIC decryption; HTTPS visibility is limited to metadata",
+   "No deep HTTP/2, HTTP/3, or WebSocket decoding; no general always-on TCP reassembly",
+   "Live capture requires one-time approval of the privileged helper in System Settings; helper changes need reinstalling"
+  ],
+  "license": "AGPL-3.0-or-later"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7818,
+  "output": 1494
+ },
+ "generated": "2026-10-29"
+}

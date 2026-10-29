@@ -1,0 +1,117 @@
+{
+ "id": "starcat-app/starcat",
+ "repo": "starcat-app/Starcat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Starcat - Native, local-first GitHub Stars manager that turns saved repositories into a searchable, AI-assisted knowledge base."
+  }
+ ],
+ "summary": {
+  "one_liner": "Starcat is a native macOS app (SwiftUI) that syncs your GitHub Stars into a local SQLite workspace and turns the repos you keep into a searchable, AI-assisted knowledge base.",
+  "category": "macos github stars manager",
+  "keywords": [
+   "github stars",
+   "star manager",
+   "starred repositories",
+   "macos app",
+   "swiftui",
+   "native mac app",
+   "local-first",
+   "sqlite",
+   "grdb",
+   "fts5",
+   "full-text search",
+   "semantic search",
+   "rag",
+   "retrieval augmented generation",
+   "knowledge base",
+   "ai summaries",
+   "byok",
+   "ollama",
+   "openai",
+   "claude",
+   "gemini",
+   "deepseek",
+   "tags",
+   "private notes",
+   "reading status",
+   "readme rendering",
+   "mcp",
+   "cli",
+   "bookmark manager alternative",
+   "ohmystar alternative",
+   "starship alternative",
+   "githubstarsmanager alternative",
+   "organize github stars",
+   "search my saved repos",
+   "ask questions about my starred repos",
+   "homebrew cask",
+   "mac app store",
+   "keychain",
+   "github oauth",
+   "openssf scorecard",
+   "trending",
+   "repo health"
+  ],
+  "what_it_does": "Starcat signs in to GitHub with OAuth, incrementally syncs starred repositories, and caches them in a local SQLite database with FTS5 search. Users can add tags, private notes, reading status (Unread/Reading/Adopted/Deprecated), Smart Collections, and pinning, and can render READMEs including Mermaid diagrams. Repos the user ingests into a knowledge base feed a RAG workspace that answers questions with chunk-level citations, using keyword, embedding, and RRF retrieval. AI summaries, tag suggestions, notes, and repo chat use a bring-your-own key or self-hosted provider such as Ollama. The app also includes a GitHub notifications inbox, repo health and OpenSSF Scorecard views, release subscriptions, Explore and Trending discovery, and an embedded codebase analyzer (codebase-memory-mcp and CodeFlow). The README also lists companion CLI, MCP, browser, and launcher integrations that read the same local store.",
+  "use_cases": [
+   "organize and search my GitHub stars",
+   "ask questions across saved repositories",
+   "build a personal knowledge base of useful open-source projects",
+   "add notes and tags to starred repos",
+   "track reading status and releases of starred repos",
+   "share a starred repo via a public page",
+   "explore GitHub Trending and weekly picks on a Mac"
+  ],
+  "how_to_run": [
+   "brew tap starcat-app/starcat",
+   "brew trust starcat-app/starcat",
+   "brew install --cask starcat",
+   "Build from source: install Xcode 26+, run `brew install xcodegen`, copy Configs/Secrets.xcconfig.template, run `xcodegen generate`, then run the Starcat scheme",
+   "cd supports && ./clone-all.sh  (optional: clone supporting repos)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "GRDB.swift (SQLite, FTS5)",
+   "Keychain",
+   "XcodeGen",
+   "swift-markdown-ui",
+   "Kingfisher",
+   "Sparkle",
+   "MCP Swift SDK",
+   "OpenAI-compatible client",
+   "ZIPFoundation",
+   "Mermaid",
+   "CodeFlow",
+   "codebase-memory-mcp",
+   "Repomix"
+  ],
+  "notable": [
+   "Knowledge base is separate from GitHub Stars: only ingested repos enter search, summaries, and RAG",
+   "Chunk-level RAG citations that can point to a specific paragraph in a README or note",
+   "Local-first: tags, notes, and reading status stay in local SQLite; API keys stay in Keychain",
+   "Embedded analyzers for symbol-level knowledge graphs and architecture health checks of starred repos",
+   "Companion ecosystem of CLI, MCP, Agent Skill, browser extensions, and launcher plugins, plus self-hostable APIs"
+  ],
+  "caveats": [
+   "Requires macOS 15 or newer; the public Direct download is Apple Silicon only; no iOS, Windows, or Android builds",
+   "Official builds use App Store in-app purchase or a Direct license for Pro workflows and higher AI quotas; the license API is private",
+   "Building from source needs Apple Developer Program membership and Xcode 26+; some supporting repos are private and need org access",
+   "CloudKit sync fields are reserved and the production adapter is not wired yet; some features depend on optional self-hosted support APIs"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8210,
+  "output": 1655
+ },
+ "generated": "2026-10-29"
+}

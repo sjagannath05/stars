@@ -1,0 +1,95 @@
+{
+ "id": "simple10/agents-observe",
+ "repo": "simple10/agents-observe",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability",
+   "entry": "agents-observe by Joe Johnston - A real-time Claude Code observability dashboard installed as a plugin: it registers hooks across the full session lifecycle (tool calls, subagent start/stop, task and permission events) and streams them to a local React UI backed by a Dockerized SQLite server, with filtering, parent/subagent hierarchy, full session replay, and per-model token stats."
+  }
+ ],
+ "summary": {
+  "one_liner": "A real-time observability dashboard for Claude Code (and planned Codex) agents that streams hook events from a Dockerized SQLite server to a local React UI, installed as a Claude Code plugin.",
+  "category": "agent observability dashboard",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "agent observability",
+   "agent monitoring",
+   "real-time dashboard",
+   "hooks",
+   "claude hooks",
+   "subagent tracing",
+   "multi-agent debugging",
+   "session replay",
+   "tool call logging",
+   "sqlite",
+   "docker",
+   "react dashboard",
+   "websocket",
+   "token usage",
+   "cost tracking",
+   "per-model token stats",
+   "event stream",
+   "filter tool calls",
+   "parent child agent hierarchy",
+   "codex",
+   "mcp server",
+   "session history",
+   "debug autonomous agents",
+   "see what claude is doing",
+   "track claude code token usage",
+   "trace subagent actions",
+   "audit claude code commands"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Watching live tool calls and subagent activity during Claude Code sessions",
+   "Tracing which subagent was spawned by which parent agent",
+   "Replaying a past Claude Code session event by event",
+   "Reviewing token usage and cost per session or model",
+   "Debugging a bad edit or destructive command after the fact",
+   "Searching and filtering events by agent or tool type"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add simple10/agents-observe",
+   "claude plugin install agents-observe",
+   "claude",
+   "/observe status",
+   "open http://localhost:4981 (default dashboard URL per README)"
+  ],
+  "stack": [
+   "Node.js",
+   "Bash",
+   "Docker",
+   "SQLite",
+   "React 19",
+   "shadcn",
+   "Hono",
+   "WebSocket"
+  ],
+  "notable": [
+   "Installs as a Claude Code plugin that auto-starts the server and captures hook events",
+   "Covers the full session lifecycle: tool calls, subagent start/stop, task and permission events",
+   "Shows agent parent/subagent hierarchy and full session replay",
+   "Per-model token usage and cost breakdowns in session stats (v0.9.7)",
+   "Agent-class-specific libs keep the server agent-neutral, with Codex support on the roadmap"
+  ],
+  "caveats": [
+   "Requires Docker, Node.js, and Bash on the host; the plugin fails to load without them",
+   "Codex, OpenClaw, and pi-code support are listed as unchecked roadmap items",
+   "Standalone setup needs manual hook configuration and the justfile toolchain"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6065,
+  "output": 989
+ },
+ "generated": "2026-10-29"
+}

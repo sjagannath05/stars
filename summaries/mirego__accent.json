@@ -1,0 +1,94 @@
+{
+ "id": "mirego/accent",
+ "repo": "mirego/accent",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Localization",
+   "entry": "Accent - Developer-oriented translation tool. (Source Code) BSD-3-Clause Elixir/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Accent is a developer-oriented translation tool for managing translations in web and native apps, with a web UI, CLI, collaboration features, and a GraphQL API.",
+  "what_it_does": "Accent provides a workflow for maintaining translations in web and native apps, with asynchronous collaboration between translators and developers. It keeps a full history of changes, showing who changed what and when, and supports rolling back actions. It includes a web UI for translators and developers, a command line tool for adding Accent to a developer workflow, and threaded discussions around translations. The API that powers the UI is GraphQL, documented and open, so plugins, CLIs, or libraries can be built on it. The README describes a Phoenix/Elixir backend with a PostgreSQL database and a webapp built with Node.js.",
+  "use_cases": [
+   "manage app translations with translators",
+   "track who changed which translation and roll back",
+   "build a plugin or CLI on top of a translation API",
+   "run a self-hosted translation management instance",
+   "collaborate with translators on strings in web or native apps"
+  ],
+  "how_to_run": [
+   "Create a .env file with DATABASE_URL, DUMMY_LOGIN_ENABLED, and SECRET_KEY_BASE (64-byte string, e.g. from openssl rand -hex 64)",
+   "docker run --env-file .env -p 4000:4000 mirego/accent",
+   "Development: install Erlang ~> 26.1, Elixir ~> 1.15, PostgreSQL >= 9.4, Node.js >= 16.19",
+   "Run make dependencies, then mix ecto.setup, then mix phx.server",
+   "Production-style: run make build, make dev-start-postgresql, make dev-start-application with docker-compose"
+  ],
+  "stack": [
+   "Elixir",
+   "Erlang",
+   "Phoenix",
+   "PostgreSQL",
+   "Node.js",
+   "GraphQL",
+   "Docker",
+   "Ueberauth",
+   "OpenTelemetry"
+  ],
+  "notable": [
+   "Full history control with rollback of actions and attribution of who changed what and when",
+   "GraphQL API that powers the UI is open and documented",
+   "Ships with OpenTelemetry instrumentation exporting traces via OTLP",
+   "Many login providers via Ueberauth, including OIDC, GitHub, GitLab, Google, Slack, Discord, and Microsoft",
+   "Configuration via environment variables following the Twelve-Factor pattern"
+  ],
+  "caveats": [
+   "Requires an external PostgreSQL database",
+   "Production use needs a valid authentication setup and proper secret keys; defaults are marked unsafe",
+   "The README's Kubernetes helm chart section points to a fork by a third party rather than this repository"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "localization translation management",
+  "keywords": [
+   "translation management",
+   "localization",
+   "i18n",
+   "l10n",
+   "translation tool",
+   "translators",
+   "self-hosted translation",
+   "phoenix",
+   "elixir",
+   "graphql api",
+   "postgresql",
+   "docker",
+   "history rollback",
+   "translation collaboration",
+   "string translation workflow",
+   "command line translation tool",
+   "ueberauth",
+   "oidc login",
+   "opentelemetry",
+   "developer translation tool",
+   "translate app strings with my team",
+   "manage translations for web app",
+   "host my own translation server",
+   "roll back translation changes",
+   "alternative to hosted translation platforms",
+   "translation api",
+   "mobile app localization",
+   "open source localization platform"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6986,
+  "output": 1261
+ },
+ "generated": "2026-10-29"
+}

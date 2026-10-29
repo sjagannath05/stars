@@ -1,0 +1,97 @@
+{
+ "id": "shiinasama/wifi-lens",
+ "repo": "SHIINASAMA/wifi-lens",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Network Analysis",
+   "entry": "WiFi Lens - Native open-source Wi-Fi analyzer and network diagnostics app with real-time spectrum scanning, channel congestion visualization, and BLE device tracking. [![Open-Source Software][OSS Icon]](https://github.com/SHIINASAMA/wifi-lens) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "WiFi Lens is an open-source native macOS Wi-Fi analyzer and network diagnostics app that scans nearby networks, visualizes channel congestion, and tracks BLE devices.",
+  "what_it_does": "The open-source edition scans nearby Wi-Fi networks across 2.4, 5, and 6 GHz bands and shows spectrum occupancy with Gaussian channel charts, congestion scores, and regional channel recommendations. It inspects network details such as PHY generation, channel width, 802.11k/r/v, and WPA3, and shows connection info including IP, gateway, DNS, MAC, Tx rate, and security. It offers roaming tests with AP handoff monitoring and session save/load, a per-band channel heatmap, and AP Radar that tracks a selected AP by RSSI with optional audio feedback. It also includes a BLE scanner, a one-click Network Self-Check (path, DNS, HTTPS, proxy; marked Preview), an embedded local MCP server, and PNG/CSV export. The README also describes a separate paid Pro edition with continuous monitoring, history, statistics, and insights, which are not in the open-source edition.",
+  "use_cases": [
+   "Diagnose Wi-Fi channel congestion at home or office",
+   "Compare 2.4/5/6 GHz band occupancy",
+   "Check which nearby networks support WPA3 or 802.11k/r/v",
+   "Test roaming handoffs between access points",
+   "Locate a weak access point using RSSI guidance",
+   "Scan nearby Bluetooth LE devices"
+  ],
+  "how_to_run": [
+   "brew tap ShiinaLabs/apps && brew install --cask ShiinaLabs/apps/wifi-lens",
+   "git clone https://github.com/SHIINASAMA/wifi-lens (see README for clone URL)",
+   "cd wifi-lens && git submodule update --init ChartLens && cd WiFiLens",
+   "xcodebuild -project WiFiLens.xcodeproj -scheme \"WiFi Lens\" -configuration Debug -destination 'platform=macOS' build",
+   "xcodebuild -project WiFiLens.xcodeproj -scheme \"WiFi Lens\" -configuration Debug -destination 'platform=macOS' -skipPackageUpdates test -only-testing:WiFiLensTests -only-testing:WiFiLensCoreTests"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "ChartLens (git submodule)",
+   "Sparkle (auto-updates, GitHub edition)",
+   "Embedded HTTP MCP server",
+   "IEEE OUI MAC vendor data"
+  ],
+  "notable": [
+   "Native macOS app with live 2.4/5/6 GHz scanning and spectrum charts",
+   "Embedded MCP server bound to 127.0.0.1 so AI assistants like Codex Desktop or Claude Desktop can read local Wi-Fi data",
+   "AP Radar tracks a selected access point by RSSI with optional audio feedback",
+   "Local-first with no telemetry; scan data stays on the Mac",
+   "Forked from tiny-wifi-analyzer; Apache-2.0 licensed"
+  ],
+  "caveats": [
+   "Requires macOS 14.6 or later; 6 GHz scanning needs Wi-Fi 6E/7 hardware",
+   "Location Services must be enabled for SSID names to be read",
+   "Continuous monitoring, event history, statistics, insights, spectrum recording and menu bar monitoring are Pro-only (paid Mac App Store edition)"
+  ],
+  "license": "Apache License 2.0",
+  "category": "macos wi-fi analyzer",
+  "keywords": [
+   "wifi analyzer",
+   "wi-fi analyzer mac",
+   "wifi scanner",
+   "channel congestion",
+   "wifi channel analyzer",
+   "spectrum analyzer",
+   "2.4 ghz 5 ghz 6 ghz",
+   "wifi 6e",
+   "wpa3 check",
+   "802.11k",
+   "802.11r",
+   "802.11v",
+   "roaming test",
+   "ap handoff",
+   "wifi heatmap",
+   "rssi signal strength",
+   "ble scanner",
+   "bluetooth low energy",
+   "network diagnostics",
+   "dns check",
+   "proxy check",
+   "wifi troubleshooting",
+   "mcp server",
+   "ai assistant wifi data",
+   "homebrew cask",
+   "macos network tool",
+   "native mac app",
+   "wifi signal finder",
+   "find weak access point",
+   "airport utility alternative",
+   "wifi scanner for mac",
+   "menu bar wifi monitor",
+   "open source wifi tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5470,
+  "output": 1668
+ },
+ "generated": "2026-10-29"
+}

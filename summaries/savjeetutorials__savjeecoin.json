@@ -1,0 +1,88 @@
+{
+ "id": "savjeetutorials/savjeecoin",
+ "repo": "SavjeeTutorials/SavjeeCoin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Blockchain / Cryptocurrency",
+   "entry": "JavaScript: _Creating a blockchain with JavaScript_"
+  }
+ ],
+ "summary": {
+  "one_liner": "SavjeeCoin is a small educational JavaScript blockchain library with proof-of-work mining, chain verification, wallet key generation and transaction signing.",
+  "what_it_does": "The README describes a simple blockchain implemented in JavaScript and published as the npm package \"savjeecoin\". It includes a basic proof-of-work mining algorithm and a way to verify the chain to detect tampering. Users can generate an elliptic-curve keypair (secp256k1) where the public key serves as a wallet address and the private key signs transactions. Transactions are created with a sender, recipient and amount, signed, added to a pending pool, and finalized by mining a block that pays a mining reward to the miner's address. The README is a short getting-started guide tied to the author's YouTube video series, which also includes an Angular front-end tutorial.",
+  "use_cases": [
+   "learning how a blockchain works",
+   "following a blockchain tutorial in JavaScript",
+   "experimenting with proof-of-work mining",
+   "generating wallet keypairs for a toy chain",
+   "signing and verifying transactions in a demo",
+   "prototyping a simple cryptocurrency"
+  ],
+  "how_to_run": [
+   "npm install --save savjeecoin",
+   "const EC = require('elliptic').ec; const ec = new EC('secp256k1'); const myKey = ec.genKeyPair();",
+   "const {Blockchain, Transaction} = require('savjeecoin'); const myChain = new Blockchain();",
+   "const tx = new Transaction(myKey.getPublic('hex'), 'toAddress', 100); tx.sign(myKey); myChain.addTransaction(tx);",
+   "myChain.minePendingTransactions(myKey.getPublic('hex'));"
+  ],
+  "stack": [
+   "JavaScript",
+   "Node.js",
+   "npm",
+   "elliptic (secp256k1 keypairs)"
+  ],
+  "notable": [
+   "Built as a teaching project with an accompanying multi-part YouTube video series",
+   "Uses secp256k1 elliptic-curve keys for wallet addresses and transaction signatures",
+   "Chain verification is included to detect tampering",
+   "Mining pays a reward to the address supplied to minePendingTransactions"
+  ],
+  "caveats": [
+   "The author states it is for education only, is not a complete implementation, and is not secure",
+   "Simple proof-of-work only; no networking or peer-to-peer features are mentioned in the README"
+  ],
+  "license": "unknown",
+  "category": "blockchain education library",
+  "keywords": [
+   "blockchain",
+   "javascript blockchain",
+   "simple blockchain",
+   "cryptocurrency tutorial",
+   "build your own cryptocurrency",
+   "proof of work",
+   "proof-of-work mining",
+   "mining rewards",
+   "wallet keypair",
+   "public private key",
+   "secp256k1",
+   "elliptic curve",
+   "elliptic",
+   "sign transactions",
+   "transaction signing",
+   "verify blockchain",
+   "tamper detection",
+   "npm package savjeecoin",
+   "node.js blockchain",
+   "educational blockchain",
+   "toy cryptocurrency",
+   "learn blockchain",
+   "blockchain from scratch",
+   "coin mining simulation",
+   "wallet address generation",
+   "crypto demo",
+   "blockchain youtube tutorial",
+   "angular blockchain front-end"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2078,
+  "output": 1211
+ },
+ "generated": "2026-10-29"
+}

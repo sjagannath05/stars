@@ -1,0 +1,90 @@
+{
+ "id": "pythonnet/pythonnet",
+ "repo": "pythonnet/pythonnet",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Microsoft Windows",
+   "entry": "pythonnet - Python integration with the .NET Common Language Runtime (CLR)."
+  }
+ ],
+ "summary": {
+  "one_liner": "Python.NET (pythonnet) is a package that lets Python code call .NET Common Language Runtime code and lets .NET applications embed Python.",
+  "what_it_does": "It exposes CLR namespaces as Python packages, so Python code can import .NET types such as System.String or System.Collections. Assemblies are loaded with clr.AddReference. By default it uses Mono on Linux and macOS and the .NET Framework on Windows. Setting PYTHONNET_RUNTIME=coreclr or calling pythonnet.load(\"coreclr\") switches to .NET Core. For .NET developers, the README describes embedding Python in a .NET app through PythonEngine.Initialize, Py.GIL, and Py.Import, with dynamic objects and keyword arguments. The README's example calls numpy from C#.",
+  "use_cases": [
+   "call .NET libraries from Python scripts",
+   "load System.Windows.Forms assemblies from Python",
+   "embed Python scripting inside a .NET application",
+   "use numpy from C# code",
+   "script .NET applications with Python"
+  ],
+  "how_to_run": [
+   "pip install pythonnet (package name from PyPI badge; not stated as a command in README)",
+   "import clr",
+   "clr.AddReference(\"System.Windows.Forms\")",
+   "from System.Windows.Forms import Form",
+   "Optional: set PYTHONNET_RUNTIME=coreclr or call pythonnet.load(\"coreclr\") to use .NET Core"
+  ],
+  "stack": [
+   "Python",
+   "C#",
+   ".NET Framework",
+   "Mono",
+   ".NET Core (coreclr)",
+   "CLR"
+  ],
+  "notable": [
+   "Treats CLR namespaces as Python packages for near-seamless interop",
+   "Can embed Python into a .NET application via PythonEngine and Py.GIL",
+   "Selectable runtime: Mono, .NET Framework, or .NET Core",
+   "Keyword arguments supported through Py.kw or named C# arguments",
+   "Supported by the .NET Foundation"
+  ],
+  "caveats": [
+   "Embedding requires setting Runtime.PythonDLL or PYTHONNET_PYDLL from version 3.0 onward, or Initialize throws BadPythonDllException",
+   "Mathematical operations need the Python object on the left side (np.pi * 2 works, 2 * np.pi does not)",
+   ".NET Core use requires .NET Core to be installed in a default location or on PATH"
+  ],
+  "license": "unknown",
+  "category": "python dotnet interop",
+  "keywords": [
+   "pythonnet",
+   "python.net",
+   "clr",
+   "common language runtime",
+   "dotnet interop",
+   "call c# from python",
+   "call .net from python",
+   "embed python in .net",
+   "python csharp bridge",
+   "pythonnet clr",
+   "mono",
+   ".net framework",
+   ".net core",
+   "coreclr",
+   "system.windows.forms python",
+   "pythonengine",
+   "py.gil",
+   "numpy from c#",
+   "clr.addreference",
+   "python in windows apps",
+   "windows python integration",
+   "use .net library in python",
+   "python scripting for .net apps",
+   "c# python bindings",
+   "net foundation",
+   "cross-runtime interop",
+   "python dll embedding"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3069,
+  "output": 1177
+ },
+ "generated": "2026-10-29"
+}

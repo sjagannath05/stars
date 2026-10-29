@@ -1,0 +1,96 @@
+{
+ "id": "bestpractical/rt",
+ "repo": "bestpractical/rt",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Ticketing",
+   "entry": "Request Tracker - Enterprise-grade issue tracking system. (Source Code) GPL-2.0 Perl"
+  }
+ ],
+ "summary": {
+  "one_liner": "Request Tracker (RT) is an open source, enterprise-grade issue and ticket tracking system written in Perl that helps organizations track tasks, owners, and completion history.",
+  "what_it_does": "RT lets organizations track what needs to get done, who is working on which tasks, what has already been done, and when tasks were or were not completed. It is organized around queues, and it receives email through a mail gateway that pipes incoming messages into RT. The README describes a web interface, a web installer (rt-server), and command-line utilities for session cleanup, digest emails, dashboard emails, and scheduled processes. Ticket relationship graphing uses graphviz, and dashboard emails with charts need a Chrome-based browser. Full-text search is supported when the database has full-text indexing configured. Users, groups, queues, scrips, and access control are set up after installation.",
+  "use_cases": [
+   "Track IT helpdesk or support requests",
+   "Assign and follow tasks across a team",
+   "Manage incoming email as tickets",
+   "Record when tasks were completed",
+   "Run scheduled ticket automation such as auto-resolving old tickets",
+   "Self-host an issue tracker with Perl and a SQL database"
+  ],
+  "how_to_run": [
+   "Unpack the distribution: tar xzvf rt.tar.gz",
+   "Run ./configure (see ./configure --help for options; default install is /opt/rt6)",
+   "Run make testdeps, then make fixdeps to install missing Perl modules",
+   "Run make install, then make initialize-database (or use the web installer via /opt/rt6/sbin/rt-server)",
+   "Configure a web server with FastCGI or mod_perl, and set up cron jobs and the mail gateway as described in the README",
+   "Change the default root/password credentials before use"
+  ],
+  "stack": [
+   "Perl 5.26.3 or later",
+   "MySQL 8.0.31+ / MariaDB 10.6+ / PostgreSQL 13+ / Oracle 18c+ / SQLite (testing only)",
+   "Apache with mod_fcgid or mod_perl, nginx, or another FastCGI-capable server",
+   "graphviz (optional, for ticket relationship graphs)",
+   "Chrome-based browser (optional, for dashboard chart emails)"
+  ],
+  "notable": [
+   "Enterprise-grade ticket tracking under GPL v2 with no licensing cost at any scale",
+   "Supports several production databases, including MySQL, MariaDB, PostgreSQL, and Oracle",
+   "Email gateway (rt-mailgate) lets queues be reached by sending mail to addresses",
+   "Scheduled processes and digest/dashboard emails run via cron-style jobs",
+   "Includes a make-based dependency checker (make testdeps / make fixdeps) and documented upgrade paths"
+  ],
+  "caveats": [
+   "Commercial support, hosting, and training are offered by Best Practical; the README recommends a support contract for heavy or mission-critical use",
+   "Full-text search is slow unless database full-text indexing is set up, and it is disabled by default",
+   "SQLite is for testing only with no upgrade path guaranteed; the default /opt/rt6 install path does not work under SELinux's default configuration"
+  ],
+  "license": "GPL-2.0",
+  "category": "issue ticket tracking",
+  "keywords": [
+   "request tracker",
+   "rt",
+   "ticket tracking",
+   "issue tracker",
+   "helpdesk software",
+   "help desk",
+   "ticketing system",
+   "support ticket system",
+   "perl web application",
+   "self-hosted ticketing",
+   "gpl-2.0",
+   "mysql",
+   "mariadb",
+   "postgresql",
+   "oracle database",
+   "fastcgi",
+   "mod_perl",
+   "apache",
+   "nginx",
+   "rt-mailgate",
+   "email gateway",
+   "email to ticket",
+   "queues and scrips",
+   "access control",
+   "task tracking",
+   "track team tasks",
+   "customer support requests",
+   "it service desk",
+   "full text search",
+   "graphviz",
+   "cron jobs",
+   "enterprise issue tracker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6513,
+  "output": 1448
+ },
+ "generated": "2026-10-29"
+}

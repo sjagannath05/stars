@@ -1,0 +1,94 @@
+{
+ "id": "sortlist/signals-cli",
+ "repo": "sortlist/signals-cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Unsorted category",
+   "entry": "Signals CLI - Intent signal monitoring. Track LinkedIn engagers, keyword posters, job changers, funding events. JSON output for agent pipelines. npm i -g signals-sortlist-cli"
+  }
+ ],
+ "summary": {
+  "one_liner": "A command-line client for the Max lead-intelligence API that lets developers and AI agents create monitoring subscriptions and pull discovered leads as JSON.",
+  "what_it_does": "The README describes a CLI (\"Max CLI\") for the Max API, which monitors sources such as LinkedIn and funding databases for new leads. It covers browsing a read-only catalog of signal types, and managing businesses (including creating one from a website with an auto-generated Ideal Customer Profile). It also covers creating, pausing, resuming and deleting subscriptions, which are activated signals with a specific config. Leads found by subscriptions can be listed, fetched and soft-deleted. Webhooks can be registered to receive HTTP POSTs with optional HMAC-SHA256 signatures when new leads appear. All output is JSON, intended for jq or agent use.",
+  "use_cases": [
+   "track people engaging with a company's LinkedIn page",
+   "pull new leads into an automated agent pipeline",
+   "get real-time alerts when new leads are found via webhook",
+   "monitor keyword posters or job changers as sales signals",
+   "manage multiple businesses and their ideal customer profiles from the terminal"
+  ],
+  "how_to_run": [
+   "npm install -g sortlist-max-cli",
+   "max login",
+   "max signals:list",
+   "max businesses:create --website <url>",
+   "max subscriptions:create --business 1 --signal linkedin-company-engagers --name \"Acme Engagers\" --config '{\"linkedin_url\":\"...\"}'",
+   "max leads:list --business 1"
+  ],
+  "stack": [
+   "Node.js / npm",
+   "TypeScript",
+   "yargs",
+   "Max API (api.yourmax.ai)"
+  ],
+  "notable": [
+   "JSON output from every command, designed for jq and AI agents",
+   "Installable as an agent skill via npx skills add sortlist/max-cli (SKILL.md)",
+   "Business-scoped subscriptions, leads and webhooks, with a --business flag",
+   "Pause and resume subscriptions without deleting them",
+   "API key can be set via MAX_API_KEY or saved with max login"
+  ],
+  "caveats": [
+   "Requires a Max API key from the dashboard; API keys are scoped to a team",
+   "API rate limit is 60 requests per minute",
+   "The README does not say what pricing or plan limits apply"
+  ],
+  "license": "MIT",
+  "category": "lead intelligence cli",
+  "keywords": [
+   "lead generation cli",
+   "lead intelligence",
+   "intent signals",
+   "sales signals",
+   "linkedin engagers",
+   "linkedin lead tracking",
+   "job change alerts",
+   "funding event alerts",
+   "keyword monitoring",
+   "ideal customer profile",
+   "icp",
+   "json cli",
+   "agent pipeline",
+   "ai agent tools",
+   "claude code skill",
+   "cursor skill",
+   "webhook notifications",
+   "hmac signature",
+   "subscription monitoring",
+   "pause and resume",
+   "jq scripting",
+   "node cli",
+   "typescript cli",
+   "yargs",
+   "sortlist",
+   "max api",
+   "find prospects from terminal",
+   "track who engages with my company",
+   "get notified about new sales leads",
+   "automate lead discovery",
+   "sales prospecting automation",
+   "b2b lead sourcing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4557,
+  "output": 1144
+ },
+ "generated": "2026-10-29"
+}

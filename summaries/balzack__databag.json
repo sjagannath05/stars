@@ -1,0 +1,96 @@
+{
+ "id": "balzack/databag",
+ "repo": "balzack/databag",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Databag - Federated, end-to-end encrypted messaging service for the web, iOS, and Android, supporting text, photos, video, and WebRTC video and audio calls. Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Databag is a self-hostable, federated messenger with end-to-end encryption and topic-based threads, with clients for web, iOS, and Android.",
+  "what_it_does": "Databag is a messaging server you run yourself, paired with apps for browsers, iOS, and Android (the README says the app is on F-Droid, Google Play, and the Apple App Store). Accounts on different nodes can talk to each other via federation. Conversations are organized as topic-based threads rather than contacts, with no stated limit on group members. The README says topics can be sealed with end-to-end encryption so the hosting admin cannot read them. Text, photos, video, and audio/video calls are supported, with calls relying on a separate STUN/TURN relay for NAT traversal. Mobile alerts are sent via UnifiedPush, FCM, or APN, and multi-factor authentication works with TOTP apps. The README says the server is lightweight enough to run on a Raspberry Pi Zero v1.3.",
+  "use_cases": [
+   "self-hosted family messenger",
+   "federated group chat server",
+   "end-to-end encrypted topic threads",
+   "private messaging on a home server",
+   "running a chat node on a Raspberry Pi",
+   "self-hosted audio and video calls with a TURN relay"
+  ],
+  "how_to_run": [
+   "From the net/container sub directory: docker-compose -f compose.yaml -p databag up",
+   "For HTTPS with certbot: create a DNS entry, edit net/container/docker-compose-swag.yml with your domain, then from the project root run: docker-compose -f net/container/docker-compose-swag.yml -p databag up",
+   "Alternatively, run the balzack/databag:latest image (port 7000, ADMIN environment variable for the admin password, volume at /var/lib/databag)",
+   "Put the node behind a reverse proxy with a valid certificate (README gives Nginx Proxy Manager and nginx-proxy examples)",
+   "In the browser, open the server address, log in to admin settings, set the Federated Host, then generate an account link"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "WebSockets",
+   "coturn (STUN/TURN, optional)",
+   "Cloudflare TURN (optional)",
+   "UnifiedPush",
+   "FCM",
+   "APN",
+   "Let's Encrypt / SWAG certbot (optional)"
+  ],
+  "notable": [
+   "Federated design where accounts on separate nodes can communicate, with identity based on public-private keys rather than a domain or blockchain",
+   "Sealed topics that are end-to-end encrypted so the node admin cannot view them",
+   "Runs on arm64 and amd64 containers and is described as light enough for a Raspberry Pi Zero",
+   "One-click install listings for CapRover, CasaOS, Unraid, Runtipi, Kubero, and Umbrel"
+  ],
+  "caveats": [
+   "Audio and video calls need a separate STUN/TURN relay server; the README offers coturn or Cloudflare TURN, and a demo relay for testing only",
+   "You need a DNS name pointing to your node with a certificate; the README says a container service is much easier than a manual deploy",
+   "The public test server is regularly wiped, so it should not be used for important content"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted messaging",
+  "keywords": [
+   "federated messenger",
+   "self-hosted chat",
+   "end-to-end encryption",
+   "e2ee messaging",
+   "private group chat",
+   "family messenger",
+   "matrix alternative",
+   "signal alternative",
+   "topic based threads",
+   "webrtc calls",
+   "video calls self-hosted",
+   "audio calls",
+   "coturn",
+   "stun turn relay",
+   "docker compose",
+   "docker image",
+   "raspberry pi chat server",
+   "arm64 docker",
+   "unifiedpush",
+   "fcm push notifications",
+   "totp multi-factor authentication",
+   "websocket push",
+   "reverse proxy nginx",
+   "lets encrypt certificate",
+   "send photos and videos privately",
+   "chat with my family on my own server",
+   "run my own chat server",
+   "decentralized messaging",
+   "mobile app for self-hosted chat",
+   "apache license messaging"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3489,
+  "output": 1494
+ },
+ "generated": "2026-10-29"
+}

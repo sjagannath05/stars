@@ -1,0 +1,99 @@
+{
+ "id": "armamut/md-quicklook",
+ "repo": "armamut/md-quicklook",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "QuickLook Plugins",
+   "entry": "MD QuickLook - Native Quick Look extension for Markdown with syntax highlighting, math, and Mermaid diagrams, without a web engine. [![Open-Source Software][OSS Icon]](https://github.com/armamut/md-quicklook) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "MD QuickLook is a native macOS Quick Look extension that previews Markdown files with GFM support, syntax highlighting, math, and Mermaid diagrams without using a web engine.",
+  "what_it_does": "It adds Markdown previews to Finder's space-bar panel, preview pane, and column view, so pressing Space on a .md file shows it rendered in light or dark mode. A Rust core (comrak and syntect) parses the Markdown into a layout that a Swift extension draws with TextKit. It supports GitHub Flavored Markdown elements such as tables, task lists, alerts, footnotes, emoji shortcodes, and front matter. Code is syntax-highlighted for 220 languages, and math is typeset natively with SwiftMath. Mermaid diagram blocks are drawn natively, and local images next to the file are embedded. The README also describes an optional WebKit renderer that can be chosen in the app, and a host app with an updater.",
+  "use_cases": [
+   "preview Markdown files in Finder without opening an editor",
+   "read README files with syntax-highlighted code on a Mac",
+   "view math formulas in Markdown notes offline",
+   "render Mermaid flowcharts and diagrams from .md files on macOS",
+   "check Markdown changelogs or docs quickly from the space bar",
+   "generate Finder thumbnails for Markdown files"
+  ],
+  "how_to_run": [
+   "brew install --cask armamut/tap/md-quicklook",
+   "curl -fsSL | bash (one-line installer, downloads latest release into /Applications)",
+   "Manual: download MD-QuickLook-x.y.z.zip from Releases, move the app to /Applications, open it once, and run xattr -dr com.apple.quarantine on it",
+   "git clone the repository, cd md-quicklook, then make install (needs Rust and Xcode Command Line Tools)",
+   "Open the app once to register the extensions; enable it under System Settings > General > Login Items & Extensions > Quick Look, then click Reset Quick Look"
+  ],
+  "stack": [
+   "Rust",
+   "comrak",
+   "syntect",
+   "Swift",
+   "TextKit",
+   "SwiftMath",
+   "KaTeX symbols",
+   "mermaid-rs-renderer",
+   "WebKit (optional renderer)",
+   "C API"
+  ],
+  "notable": [
+   "Native rendering with no web engine, no JavaScript, and no network requests from the extensions",
+   "Mermaid diagrams drawn natively via mermaid-rs-renderer, in the background so documents open quickly",
+   "Badges from static shields.io URLs drawn locally; remote images optional",
+   "Math typesetting for inline, display, and math code blocks, with docs/math.md listing supported formulas",
+   "Built-in updater in the host app that verifies downloads and replaces the app in place"
+  ],
+  "caveats": [
+   "The app is not notarized, so macOS quarantine must be removed manually for the manual install",
+   "Mermaid rendering is young: some layouts differ from mermaid.js, and Gantt dates and multi-event timelines are known gaps",
+   "Math supports only a subset of TeX; the README notes that only what is supported will typeset",
+   "Requires macOS Quick Look; building from source needs Rust and the Xcode Command Line Tools"
+  ],
+  "license": "MIT",
+  "category": "macos quick look markdown",
+  "keywords": [
+   "quick look",
+   "quicklook plugin",
+   "markdown preview",
+   "macos finder preview",
+   "space bar preview",
+   "md viewer",
+   "markdown viewer mac",
+   "syntax highlighting",
+   "mermaid diagrams",
+   "latex math",
+   "katex",
+   "native renderer",
+   "textkit",
+   "swift extension",
+   "rust core",
+   "comrak",
+   "syntect",
+   "gfm",
+   "github flavored markdown",
+   "finder thumbnails",
+   "dark mode",
+   "preview markdown without browser",
+   "view readme in finder",
+   "render math offline",
+   "mermaid on mac",
+   "markdown files quick view",
+   "webkit alternative",
+   "homebrew cask",
+   "lightweight markdown previewer",
+   "no web engine"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3600,
+  "output": 1463
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "libvips/pyvips",
+ "repo": "libvips/pyvips",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Image Processing",
+   "entry": "pyvips - A binding for libvips, a fast image processing library with low memory needs."
+  }
+ ],
+ "summary": {
+  "one_liner": "pyvips is a Python binding for the libvips image processing library, letting you build streaming, low-memory image pipelines from Python.",
+  "what_it_does": "It wraps libvips through cffi, building either a compiled API-mode extension or using ABI mode against the shared library. Programs describe a pipeline of image operations on a source image, and libvips executes the whole pipeline at once, streaming the image in sections from source to destination. The README says it passes the libvips test suite on Windows, macOS and Linux under CPython and PyPy3. It includes PEP 561 type stubs (pyvips/__init__.pyi) that can be regenerated when libvips operations change. A binary package (pyvips[binary]) bundles common libraries for pip install, and the Conda package ships a matching libvips.",
+  "use_cases": [
+   "resize or shrink large images with low memory",
+   "batch convert or sharpen JPG and TIFF images",
+   "apply convolution filters to images in Python",
+   "process large whole-slide or tiff images in a streaming pipeline",
+   "speed up image thumbnailing scripts"
+  ],
+  "how_to_run": [
+   "pip install \"pyvips[binary]\"",
+   "sudo apt install libvips-dev --no-install-recommends",
+   "pip install pyvips",
+   "brew install vips python pkg-config",
+   "conda install --channel conda-forge pyvips"
+  ],
+  "stack": [
+   "Python",
+   "cffi",
+   "libvips (C shared library)",
+   "PyPy3"
+  ],
+  "notable": [
+   "Streams image pipelines in parallel so entire images need not sit in memory",
+   "Uses cffi API mode when a C compiler and libvips headers are present, falling back to ABI mode otherwise",
+   "Ships PEP 561 type stubs with mypy support",
+   "Pre-built binary package via pip install pyvips[binary]",
+   "Benchmark claim in README: about 3x faster than ImageMagick and 5x less memory on one test"
+  ],
+  "caveats": [
+   "The pip binary package lacks some features such as PDF load and OpenSlide support",
+   "Requires libvips 8.2 or later, with 8.9 or later needed for all features",
+   "On Windows, DLL search paths must be set manually in code, and 64-bit Python is needed",
+   "ABI mode starts slower and is about 20% slower in execution"
+  ],
+  "license": "unknown",
+  "category": "image processing bindings",
+  "keywords": [
+   "pyvips",
+   "libvips",
+   "python image processing",
+   "image processing library",
+   "cffi binding",
+   "streaming image pipeline",
+   "low memory image processing",
+   "resize images python",
+   "convert image formats",
+   "thumbnail generation",
+   "image convolution",
+   "sharpen images",
+   "large tiff processing",
+   "imagemagick alternative",
+   "pillow alternative",
+   "pypy image processing",
+   "type stubs image library",
+   "batch image resize",
+   "shrink photos script",
+   "image conversion python",
+   "libvips python wrapper",
+   "fast image resize",
+   "tiff whole slide images",
+   "pip install image library",
+   "image pipeline python",
+   "process jpg in python",
+   "vips binding"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4006,
+  "output": 1137
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "not-three/main",
+ "repo": "not-three/main",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "not-th.re - Simple paste sharing platform, with client side encryption, featuring the monaco browser-based code editor. (Demo, Source Code) AGPL-3.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "!3 (not-th.re) is a paste sharing platform with client-side encryption and a Monaco-based code editor, offered as a hosted service or as self-hosted API and UI deployments.",
+  "what_it_does": "The project provides a web UI for sharing pastes, notes and files, where content is encrypted in the browser before it is sent to the server. It includes syntax highlighting, dark mode, and file transfers. A command-line tool (@not3/cli, also available as a Docker image) can save and fetch notes, pipe logs into shared notes, and upload and download encrypted files. Bash and PowerShell scripts are also described for creating and decrypting notes and files without installing the CLI. The README lists newer features including peer-to-peer sessions, browser-local conversion/encryption/formatting tools, an HTML/JavaScript/Markdown/PHP previewer, and Excalidraw integration. The README describes \"Note Bundles\" as planned. Deployment options are a \"micro\" setup (API only, using the public UI) and a \"minimal\" setup with the API and UIs together, with a proxy mode on the UI.",
+  "use_cases": [
+   "share code snippets with a link",
+   "pipe command output or logs to a shareable URL",
+   "send encrypted files to someone",
+   "host a private paste server",
+   "encrypt notes locally before sharing",
+   "preview HTML or Markdown from a paste"
+  ],
+  "how_to_run": [
+   "npm install -g @not3/cli",
+   "docker run --rm -it -v \"$(pwd):/data\" ghcr.io/not-three/cli --help",
+   "docker compose up (using the micro or minimal example YAML: ghcr.io/not-three/api:latest)",
+   "Set customServer url and password in the public UI under About -> Edit Settings (micro deployment)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js",
+   "Nuxt (Vue)",
+   "NestJS",
+   "Monaco editor",
+   "Excalidraw",
+   "React",
+   "Docker",
+   "Web Crypto API"
+  ],
+  "notable": [
+   "Client-side encryption via the Web Crypto API; the server does not see plaintext content",
+   "Monaco code editor in the browser",
+   "CLI can pipe logs or command output directly into a shared note",
+   "Shell and PowerShell scripts allow creating and decrypting notes without installing the CLI",
+   "Private instances can be linked to the public UI, with a confirmation prompt before loading data from an external server"
+  ],
+  "caveats": [
+   "The UI must be served over HTTPS because it depends on crypto.subtle; the README says it will not work without it",
+   "The API without SSL is described as strongly discouraged, and the example deployments do not configure SSL",
+   "Note Bundles are listed as planned, not available"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted pastebin",
+  "keywords": [
+   "pastebin",
+   "paste sharing",
+   "hastebin alternative",
+   "pastebin alternative",
+   "self-hosted pastebin",
+   "client-side encryption",
+   "end-to-end encrypted paste",
+   "monaco editor",
+   "code sharing",
+   "share code snippets",
+   "share text with a link",
+   "encrypted notes",
+   "encrypted file transfer",
+   "send files securely",
+   "share files with my team",
+   "cli upload",
+   "pipe logs to a link",
+   "command line paste",
+   "nuxt",
+   "nestjs",
+   "typescript",
+   "excalidraw",
+   "markdown previewer",
+   "html previewer",
+   "peer to peer sharing",
+   "docker compose",
+   "agpl",
+   "syntax highlighting",
+   "dark mode paste",
+   "private paste server",
+   "web crypto api",
+   "not3",
+   "not-th.re"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5779,
+  "output": 1323
+ },
+ "generated": "2026-10-29"
+}

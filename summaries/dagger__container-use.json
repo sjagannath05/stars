@@ -1,0 +1,90 @@
+{
+ "id": "dagger/container-use",
+ "repo": "dagger/container-use",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Container Use by dagger - Containerized development environments for coding agents, from the Dagger team. Gives each agent its own isolated stack so several can work in parallel without reaching into your host or each other's workspaces."
+  }
+ ],
+ "summary": {
+  "one_liner": "Container Use is an open-source MCP server from Dagger that gives each coding agent its own containerized environment on a separate git branch so multiple agents can work in parallel.",
+  "what_it_does": "It runs as an MCP server (started with `container-use stdio`) that works with MCP-compatible agents such as Claude Code and Cursor. Each agent gets a fresh container in its own git branch, so agents can run side by side without conflicts and failed experiments can be discarded. The README says it records the complete command history and logs of what each agent ran. Users can drop into an agent's terminal to inspect its state and take over. Work is reviewed with standard git commands such as `git checkout` to switch to an agent's branch. The tool is powered by Dagger and is also available under the shorter `cu` command.",
+  "use_cases": [
+   "running multiple coding agents in parallel",
+   "isolating agent work from the host machine",
+   "reviewing agent changes via git branches",
+   "auditing what an AI agent executed",
+   "taking over a stuck coding agent's terminal",
+   "safely experimenting with agent-generated code"
+  ],
+  "how_to_run": [
+   "brew install dagger/tap/container-use (macOS)",
+   "curl -fsSL | bash (all platforms; URL missing from README text)",
+   "cd /path/to/repository",
+   "claude mcp add container-use -- container-use stdio",
+   "curl >> CLAUDE.md (optional agent rules; URL missing from README text)"
+  ],
+  "stack": [
+   "Dagger",
+   "MCP (Model Context Protocol)",
+   "git",
+   "containers"
+  ],
+  "notable": [
+   "Each agent gets its own container and git branch, so work stays isolated from the host and from other agents",
+   "Logs and command history show what agents actually executed",
+   "Direct terminal intervention into a running agent's environment",
+   "Works with any MCP-compatible agent and model, with no vendor lock-in claimed",
+   "Available as both container-use and cu commands"
+  ],
+  "caveats": [
+   "README says the project is in early development and actively evolving",
+   "Requires a container runtime and the Dagger tooling; the README does not list specific requirements",
+   "Install script URL is missing from the provided README text"
+  ],
+  "license": "unknown",
+  "category": "containerized agent environments",
+  "keywords": [
+   "container use",
+   "dagger",
+   "mcp server",
+   "model context protocol",
+   "coding agents",
+   "ai coding agent sandbox",
+   "containerized development",
+   "isolated environments",
+   "parallel agents",
+   "git branch per agent",
+   "claude code",
+   "cursor",
+   "agent sandbox",
+   "docker containers for agents",
+   "run agents safely",
+   "isolate ai agent from host",
+   "multiple agents at once",
+   "review agent work with git",
+   "agent command logs",
+   "terminal takeover",
+   "cu command",
+   "container-use stdio",
+   "dev environment for ai",
+   "sandboxed code execution",
+   "let ai write code safely",
+   "agent workspace isolation",
+   "devcontainer alternative",
+   "security for coding agents"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2213,
+  "output": 1097
+ },
+ "generated": "2026-10-29"
+}

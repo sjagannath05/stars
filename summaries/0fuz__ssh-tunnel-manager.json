@@ -1,0 +1,95 @@
+{
+ "id": "0fuz/ssh-tunnel-manager",
+ "repo": "0fuz/ssh-tunnel-manager",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "SSH Tunnel Manager - Menu bar app for managing SSH port forwards (local, remote, SOCKS, jump host) that auto-reconnects when the connection drops."
+  }
+ ],
+ "summary": {
+  "one_liner": "A lightweight macOS menu bar app written in native Swift/AppKit for managing SSH port forwards (local, remote, SOCKS, jump host) with auto-reconnect.",
+  "category": "macos ssh tunnel manager",
+  "keywords": [
+   "ssh tunnel",
+   "ssh port forwarding",
+   "menu bar app",
+   "macos",
+   "swift",
+   "appkit",
+   "ssh -l",
+   "ssh -r",
+   "ssh -d",
+   "socks proxy",
+   "socks5",
+   "jump host",
+   "bastion",
+   "ssh -j",
+   "auto reconnect",
+   "keepalive",
+   "remote forward",
+   "local forward",
+   "reverse ssh",
+   "database tunnel",
+   "postgres tunnel",
+   "ssh config aliases",
+   "launch at login",
+   "connection alerts",
+   "port conflict",
+   "tunnel toggle",
+   "homebrew cask",
+   "open source alternative to core tunnel",
+   "share local service publicly",
+   "access private network through server",
+   "keep ssh tunnel alive"
+  ],
+  "what_it_does": "The app runs in the macOS menu bar and lets you configure SSH tunnels once and toggle them on or off with one click. Each tunnel can hold multiple port mappings over one SSH connection, including local (-L), remote (-R), and dynamic SOCKS (-D) forwards. A jump host option adds -J so you can reach a host behind one or more bastions. Tunnels auto-reconnect when they drop, and failed or dropped tunnels display a reason such as auth failure, refused, unreachable, DNS, changed host key, or port in use. The README also covers per-tunnel options (ConnectTimeout, keepalive, compression, host-key handling, extra ssh flags), sound and notification alerts, a port-conflict guard, and reuse of ~/.ssh/config aliases. It uses the system SSH binary and stores config in a JSON file under Application Support.",
+  "use_cases": [
+   "keep a database tunnel to a remote server running",
+   "reach internal services through a bastion host",
+   "run a SOCKS proxy into a private network",
+   "expose a local dev server through a public server",
+   "auto-reconnect SSH port forwards after sleep or network drops",
+   "manage many ssh -L tunnels from the menu bar"
+  ],
+  "how_to_run": [
+   "brew install --cask 0fuz/tap/ssh-tunnel-manager",
+   "xattr -dr com.apple.quarantine /Applications/SSHTunnelManager.app",
+   "git clone <repository-url>",
+   "cd ssh-tunnel-manager/SSHTunnelManager",
+   "xcodebuild -scheme SSHTunnelManager -configuration Release"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "Xcode 15+",
+   "macOS 14+",
+   "system ssh"
+  ],
+  "notable": [
+   "Native Swift/AppKit with no Electron and no bundled SSH binaries; uses system ssh",
+   "Supports local, remote, and SOCKS forwards mixed within one tunnel, plus multi-hop jump host chains",
+   "Failure reasons shown in the menu bar and detail view, not just 'disconnected'",
+   "Port-conflict guard prevents two tunnels from claiming the same local port",
+   "Config stored as JSON at ~/Library/Application Support/SSHTunnelManager/tunnels.json"
+  ],
+  "caveats": [
+   "Requires macOS 14+ and Xcode 15+ to build from source",
+   "The app is not notarized; first launch needs right-click Open or a quarantine-clearing command",
+   "Remote forwards bound to 0.0.0.0 need GatewayPorts yes in the server's sshd_config",
+   "Skip host key check option disables host-key verification and is insecure"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4397,
+  "output": 1367
+ },
+ "generated": "2026-10-29"
+}

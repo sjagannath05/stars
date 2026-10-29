@@ -1,0 +1,96 @@
+{
+ "id": "hakanotal/freeaudio",
+ "repo": "hakanotal/FreeAudio",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "FreeAudio - Per-app volume and mute, output device switching, and volume control for HDMI/DisplayPort monitors. [![Open-Source Software][OSS Icon]](https://github.com/hakanotal/FreeAudio) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "FreeAudio is a free, open-source macOS menu bar app that offers per-app volume and mute, output device switching, and software volume for HDMI/DisplayPort monitors.",
+  "what_it_does": "It provides a volume slider and mute for each app that plays sound, with app sliders running from 0 to 200% and 100% as the default midpoint. Browser and Electron helper processes are grouped under their parent app. Per-app settings are remembered by bundle ID and applied from the app's first sound, including after a relaunch. It lets you switch output devices and set output volume and mute, and it adds a software volume slider and mute for HDMI/DisplayPort outputs that lack hardware volume. On those outputs it also takes over the volume keys and shows its own HUD. The README says it handles headphones, AirPods and monitors connecting and disconnecting, sample-rate changes, and sleep/wake, and it can launch at login and restart after a crash. It is presented as a free alternative to the paid SoundSource app.",
+  "use_cases": [
+   "control volume of individual apps on a Mac",
+   "turn up quiet HDMI or DisplayPort monitor audio",
+   "switch audio output between headphones, AirPods and monitors",
+   "mute a single app's sound from the menu bar",
+   "free alternative to SoundSource",
+   "use volume keys with external monitor speakers"
+  ],
+  "how_to_run": [
+   "Download the latest FreeAudio .dmg from GitHub Releases (Apple silicon, macOS 27+)",
+   "Open the DMG and drag FreeAudio.app to Applications",
+   "On first launch, approve the app in System Settings → Privacy & Security → Open Anyway, or run: xattr -dr com.apple.quarantine /Applications/FreeAudio.app",
+   "Grant System Audio Recording permission when first changing an app's volume",
+   "Build from source: git clone the repo, cd FreeAudio, then ./scripts/build-dmg.sh",
+   "Run unit tests with ./scripts/test.sh"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI (MenuBarExtra)",
+   "Core Audio process taps",
+   "Core Audio private aggregate devices",
+   "Private APIs via dlsym (process responsibility, TCC preflight)",
+   "XcodeGen (optional, for project generation)"
+  ],
+  "notable": [
+   "Software volume for HDMI/DisplayPort monitors where macOS greys out the volume slider",
+   "Uses Core Audio process taps, so no system-wide virtual audio driver is installed",
+   "Per-app volume and settings remembered by bundle ID",
+   "Zero third-party dependencies, per the README",
+   "Sibling project of FreeDisplay with shared foundation"
+  ],
+  "caveats": [
+   "Requires Apple silicon and macOS 27+ for the release DMG, per the README",
+   "App is not notarized, so macOS blocks it on first launch and needs a manual override",
+   "Calling apps (FaceTime, Zoom, Teams) should be left at 100% because echo cancellation breaks, and other audio-tap tools can interfere",
+   "Level meters and input device control are listed as planned or partial in the README"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar audio",
+  "keywords": [
+   "per-app volume",
+   "app volume mixer",
+   "mac volume control",
+   "menu bar app",
+   "macos audio",
+   "soundsource alternative",
+   "free soundsource",
+   "hdmi volume",
+   "displayport volume",
+   "monitor volume control",
+   "software volume",
+   "volume keys",
+   "output device switching",
+   "audio output switcher",
+   "per-app mute",
+   "volume boost",
+   "core audio",
+   "process taps",
+   "swift",
+   "swiftui",
+   "menubarextra",
+   "open source audio mixer",
+   "airpods output switch",
+   "headphones switch",
+   "change volume of one app",
+   "mute single app mac",
+   "external monitor volume mac",
+   "finetune alternative",
+   "eqmac alternative",
+   "freedisplay"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3761,
+  "output": 1434
+ },
+ "generated": "2026-10-29"
+}

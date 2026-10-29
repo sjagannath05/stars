@@ -1,0 +1,96 @@
+{
+ "id": "pikvm/ustreamer",
+ "repo": "pikvm/ustreamer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Multimedia Streaming",
+   "entry": "µStreamer - Lightweight and very quick server to stream MJPEG video from any V4L2 device to the net. GPL-3.0 C/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "µStreamer is a lightweight, fast server that streams MJPEG video from V4L2 capture devices over the network, part of the PiKVM project.",
+  "what_it_does": "µStreamer captures video from any V4L2 device and serves it as an MJPEG stream over HTTP that browsers and common video players can open. It encodes JPEG frames using multiple threads and can use hardware M2M encoding on Raspberry Pi. It can keep showing a \"NO LIVE VIDEO\" black screen when the device disconnects and reconnects once it is back. Options include DV-timings for resolution changes from the source signal, dropping identical frames to save bandwidth on static HDMI input, streaming over a UNIX domain socket, and systemd socket activation. It also offers GPIO stream-state signaling via libgpiod, an optional built-in file server, and an optional H.264/Janus WebRTC integration. The README says it aims to be compatible with mjpg-streamer's API, but it does not expose webcam controls over HTTP the way mjpg-streamer does.",
+  "use_cases": [
+   "stream a webcam over the network in the browser",
+   "stream HDMI capture card output with high FPS",
+   "serve MJPEG video from V4L2 devices",
+   "low-bandwidth streaming of static screen content",
+   "remote KVM video streaming on Raspberry Pi",
+   "replace mjpg-streamer for high-quality live video"
+  ],
+  "how_to_run": [
+   "git clone --depth=1 https://github.com/pikvm/ustreamer",
+   "cd ustreamer",
+   "make",
+   "./ustreamer --help",
+   "./ustreamer --device=/dev/video1 --host=0.0.0.0 --port=80",
+   "docker run --device /dev/video0:/dev/video0 -e EDID=1 -p 8080:8080 pikvm/ustreamer:latest"
+  ],
+  "stack": [
+   "C",
+   "make",
+   "libevent",
+   "libjpeg-turbo",
+   "libbsd",
+   "libgpiod (optional)",
+   "systemd (optional)",
+   "Janus WebRTC (optional)",
+   "Docker"
+  ],
+  "notable": [
+   "Multithreaded JPEG encoding, with hardware M2M encoding on Raspberry Pi",
+   "--drop-same-frames option skips byte-identical frames to cut HDMI streaming traffic",
+   "Shows a NO LIVE VIDEO screen on device disconnect instead of stopping the stream",
+   "DV-timings support for changing resolution on the fly",
+   "Part of the PiKVM project"
+  ],
+  "caveats": [
+   "Hardware M2M encoding on Raspberry Pi needs kernel 5.15.32 or newer; OpenMAX and MMAL support were removed",
+   "Cross-domain requests are disabled by default since v2.0 and must be enabled with --allow-origin",
+   "Does not provide HTTP access to webcam controls such as focus or brightness, unlike mjpg-streamer"
+  ],
+  "license": "GPL-3.0",
+  "category": "video streaming server",
+  "keywords": [
+   "mjpeg streaming",
+   "v4l2",
+   "v4l2 capture",
+   "webcam streaming",
+   "video over http",
+   "mjpg-streamer alternative",
+   "mjpg-streamer",
+   "hdmi capture streaming",
+   "low latency video",
+   "raspberry pi video server",
+   "uvc webcam",
+   "stream camera to browser",
+   "live video server",
+   "pikvm",
+   "kvm video",
+   "libevent",
+   "libjpeg-turbo",
+   "drop duplicate frames",
+   "dv-timings",
+   "h264 webrtc",
+   "janus streaming",
+   "docker video stream",
+   "systemd socket activation",
+   "unix socket streaming",
+   "stream webcam over network",
+   "self-hosted video stream",
+   "c video server",
+   "gpl video tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5587,
+  "output": 1372
+ },
+ "generated": "2026-10-29"
+}

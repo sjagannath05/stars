@@ -1,0 +1,89 @@
+{
+ "id": "cantino/mcfly",
+ "repo": "cantino/mcfly",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "ibraheemdev/modern-unix",
+   "section": "",
+   "entry": "mcfly"
+  }
+ ],
+ "summary": {
+  "one_liner": "McFly is a Rust tool that replaces the shell's ctrl-r history search with a context-aware search that ranks suggestions using a small neural network.",
+  "what_it_does": "McFly rebinds ctrl-r to a full-screen reverse history search and ranks results by factors such as the working directory, the preceding commands, run frequency, recency, prior selections, and historical exit status. It records each command's exit status, timestamp, and execution directory in a SQLite database while also keeping the normal shell history file. A scrub action removes a history item from both McFly's database and the shell history files. The dump subcommand prints history as JSON or CSV, with optional time-range and regex filters. Searches support % as a wildcard and can be switched to fuzzy matching, and many display options are set through environment variables.",
+  "use_cases": [
+   "Find a previously run shell command faster with ctrl-r",
+   "Search shell history filtered to the current project directory",
+   "Export shell command history as JSON or CSV",
+   "Remove sensitive or unwanted commands from shell history",
+   "Ignore noisy or secret-containing commands from being recorded"
+  ],
+  "how_to_run": [
+   "brew install mcfly",
+   "eval \"$(mcfly init bash)\"  (or zsh / fish equivalent, added to your shell rc file)",
+   "curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sh -s -- --git cantino/mcfly",
+   "git clone https://github.com/cantino/mcfly && cd mcfly && cargo install --path .",
+   "winget install AndrewCantino.McFly  (Windows, unmaintained by the project)"
+  ],
+  "stack": [
+   "Rust",
+   "SQLite",
+   "chrono-systemd-time",
+   "regex crate"
+  ],
+  "notable": [
+   "Small neural network re-ranks history suggestions in real time",
+   "Records directory, exit status, and timestamp alongside each command",
+   "Supports Zsh, Bash 3+, Fish, and PowerShell 7+",
+   "Dump command with JSON/CSV output and systemd-style time filters",
+   "Workaround for Bash TIOCSTI removal in newer Linux kernels using dummy keybindings"
+  ],
+  "caveats": [
+   "The maintainer is seeking co-maintainers and has limited time for the project",
+   "Winget install script is not maintained by the project and its accuracy and safety are not vouched for",
+   "Very large history databases can slow startup unless MCFLY_HISTORY_LIMIT is set"
+  ],
+  "license": "unknown",
+  "category": "shell history search",
+  "keywords": [
+   "shell history",
+   "ctrl-r",
+   "reverse history search",
+   "bash history",
+   "zsh history",
+   "fish shell",
+   "powershell history",
+   "command history search",
+   "rust cli",
+   "sqlite history database",
+   "neural network ranking",
+   "directory-aware history",
+   "fuzzy history search",
+   "history dump json csv",
+   "atuin alternative",
+   "hstr alternative",
+   "fzf history alternative",
+   "search previous commands",
+   "find old terminal command",
+   "remember a shell command",
+   "share history across terminals",
+   "delete command from history",
+   "smarter ctrl-r",
+   "history prioritization",
+   "terminal command recall",
+   "shell command recall tool",
+   "history filter regex",
+   "ignore commands in history"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8012,
+  "output": 1213
+ },
+ "generated": "2026-10-29"
+}

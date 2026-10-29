@@ -1,0 +1,91 @@
+{
+ "id": "harskish/ganspace",
+ "repo": "harskish/ganspace",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Image Generation Tools",
+   "entry": "GANSpace - Discovering interpretable GAN controls."
+  }
+ ],
+ "summary": {
+  "one_liner": "GANSpace is a research codebase that uses PCA in GAN activation space to find interpretable, layer-wise controls for image synthesis in models such as BigGAN, StyleGAN and StyleGAN2.",
+  "what_it_does": "The repository provides code accompanying the NeurIPS 2020 paper of the same name. It applies Principal Components Analysis to GAN activations to find latent directions that correspond to visual edits such as viewpoint, aging, lighting, and time of day. It includes versions of BigGAN, StyleGAN and StyleGAN2 modified to accept per-layer latent vectors. An interactive.py script lets a user explore and save edits, and a visualize.py script renders principal components, optionally as videos. Jupyter notebooks are included to regenerate the paper's figures. Supported models named in the README are ProGAN, BigGAN-512/256/128, StyleGAN, and StyleGAN2.",
+  "use_cases": [
+   "Find interpretable edit directions in a pretrained GAN",
+   "Explore BigGAN or StyleGAN2 latent space interactively",
+   "Create videos of principal component edits",
+   "Reproduce figures from the GANSpace paper",
+   "Add a new GAN model to a PCA-based editing pipeline",
+   "Import StyleGAN weights from TensorFlow checkpoints"
+  ],
+  "how_to_run": [
+   "See the setup instructions referenced in the README (no explicit install commands given)",
+   "python interactive.py --model=StyleGAN2 --class=ffhq --layer=style --use_w -n=1_000_000 -b=10_000",
+   "python visualize.py --model=StyleGAN2 --class=ffhq --use_w --layer=style -b=10_000",
+   "python visualize.py --model=StyleGAN --class=wikiart --use_w --layer=g_mapping -b=10_000 --batch --video",
+   "python interactive.py --model=StyleGAN2 --class=ffhq --layer=style --use_w --inputs=out/directions"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Jupyter notebooks",
+   "TensorFlow (only for optional StyleGAN checkpoint import)"
+  ],
+  "notable": [
+   "Layer-wise latent edits: applies PCA edit directions at chosen network layers, StyleGAN-like control of BigGAN",
+   "Includes modified BigGAN, StyleGAN and StyleGAN2 code supporting per-layer latent vectors",
+   "Jupyter notebooks reproduce each main paper figure",
+   "Documented wrapper interface (BaseModel) for integrating new models"
+  ],
+  "caveats": [
+   "Interactive viewer may freeze on startup on Ubuntu 18.04 (workaround described in README)",
+   "A landscape StyleGAN model from ArtBreeder is used in the paper but cannot be distributed with the repo",
+   "Setup is delegated to separate instructions; StyleGAN checkpoint import requires TensorFlow 1.x and manual code edits"
+  ],
+  "license": "Apache 2.0 (netdissect is MIT; models/biggan and models/stylegan2 are MIT)",
+  "category": "gan latent control research",
+  "keywords": [
+   "gan",
+   "generative adversarial network",
+   "gan controls",
+   "interpretable gan",
+   "pca",
+   "principal component analysis",
+   "latent space editing",
+   "latent directions",
+   "stylegan",
+   "stylegan2",
+   "biggan",
+   "progan",
+   "image synthesis",
+   "image editing",
+   "layer-wise edits",
+   "w space",
+   "z space",
+   "interactive exploration",
+   "ganspace",
+   "neurips 2020",
+   "gan dissection",
+   "discover controls for generated images",
+   "change viewpoint of generated image",
+   "edit age or lighting in gan output",
+   "make gan images with sliders",
+   "research code for image generation",
+   "pytorch gan",
+   "interpretable latent directions",
+   "tensorflow stylegan import",
+   "video of latent edits"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3754,
+  "output": 1432
+ },
+ "generated": "2026-10-29"
+}

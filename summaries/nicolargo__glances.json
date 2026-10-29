@@ -1,0 +1,108 @@
+{
+ "id": "nicolargo/glances",
+ "repo": "nicolargo/glances",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Glances | Cross-platform monitoring tool"
+  },
+  {
+   "list": "ibraheemdev/modern-unix",
+   "section": "",
+   "entry": "glances"
+  },
+  {
+   "list": "charlax/professional-programming",
+   "section": "Dev environment & tools",
+   "entry": "Glances: An eye on your system"
+  }
+ ],
+ "summary": {
+  "one_liner": "Glances is a cross-platform Python system monitoring tool with a terminal dashboard, a web UI and REST API, and export to databases and files.",
+  "what_it_does": "Glances shows real-time stats for CPU, memory, disk, network, running processes, logged-in users, temperatures, voltages and fan speeds, and supports container monitoring for Docker and LXC. It runs as a terminal dashboard in standalone mode, or as a server exposing a REST API and web interface, and a TUI client can connect to a remote server. Stats can be printed to stdout as raw, CSV or JSON, or exported to CSV/JSON files and to databases and brokers such as InfluxDB, Prometheus, Kafka and others. Since version 4.5.1 it can also expose an MCP server so AI assistants can query it. The README also describes a fetch mode for a quick system summary and a Python API for using Glances as a library.",
+  "use_cases": [
+   "monitor CPU, memory, disk and network usage in a terminal",
+   "watch a remote server's resource usage from a browser",
+   "export system metrics to Prometheus or InfluxDB",
+   "log system stats to CSV or JSON files",
+   "monitor Docker or Podman containers",
+   "let an AI assistant query server health via MCP"
+  ],
+  "how_to_run": [
+   "pip install glances",
+   "glances",
+   "pip install 'glances[web]'",
+   "glances -s",
+   "uvx glances",
+   "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --network host -it nicolargo/glances:latest-full"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "psutil",
+   "FastAPI",
+   "uvicorn",
+   "Docker",
+   "Alpine Linux",
+   "Ubuntu"
+  ],
+  "notable": [
+   "Web server mode with REST API under /api/5 and a built-in WebUI",
+   "Built-in MCP server (SSE transport) for AI assistant integration",
+   "Stdout, CSV and JSON output modes for scripting",
+   "Extensible plugin and export module architecture",
+   "Python library API (glances.api) for reading stats in code"
+  ],
+  "caveats": [
+   "The server is unprotected by default; a password must be set manually with --set-password",
+   "Binding to 0.0.0.0 for remote access exposes the server, and the Docker socket mount gives the container control of the Docker daemon",
+   "Distribution packages are often outdated and enable only basic plugins, so the README recommends pip instead",
+   "Some features need extra dependencies installed through pip extras such as [web], [containers] or [all]"
+  ],
+  "license": "LGPL version 3",
+  "category": "system monitoring tool",
+  "keywords": [
+   "system monitoring",
+   "resource monitor",
+   "terminal dashboard",
+   "top alternative",
+   "htop alternative",
+   "cpu memory disk network monitor",
+   "server monitoring",
+   "remote monitoring",
+   "web ui monitoring",
+   "rest api",
+   "prometheus exporter",
+   "influxdb export",
+   "docker container monitoring",
+   "podman monitoring",
+   "mcp server",
+   "ai assistant monitoring",
+   "python monitoring library",
+   "psutil",
+   "fastapi",
+   "csv export",
+   "json stats",
+   "sensors temperature fan",
+   "self-hosted dashboard",
+   "monitor my server",
+   "see what is using my cpu",
+   "linux performance monitor",
+   "cross platform monitor",
+   "system stats export",
+   "tui client",
+   "command line monitoring",
+   "glances"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8861,
+  "output": 1230
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,116 @@
+{
+ "id": "jurecerkez-code/blab",
+ "repo": "jurecerkez-code/Blab",
+ "kind": "star",
+ "description": "Record a talk, type notes, get a transcript. All on your own machine. No account, no cloud, no network.",
+ "topics": [
+  "electron",
+  "local-first",
+  "note-taking",
+  "offline",
+  "speech-to-text",
+  "transcription",
+  "whisper"
+ ],
+ "language": "TypeScript",
+ "stars": 2,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-13",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "awesome",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Blab is an offline, local-first desktop app that records a talk, takes typed notes alongside it, and transcribes the recording on your own machine using bundled Whisper speech models.",
+  "what_it_does": "Blab records audio while you type notes, then runs Whisper speech-to-text locally when you press Stop, producing a transcript next to your notes. Clicking a transcript line plays the audio from that moment. Each recording is saved as three plain files in a user-chosen folder: audio.webm, notes.md and transcript.md, with no database. It offers live captions during recording, a Windows-only option to record system audio for meetings, import of existing audio files, and export of .srt and .vtt subtitles or a plain text block. The app picks a speech model suited to the machine (Best, Balanced or Fast), and the installers bundle all three models so no later download is needed. The README states the app is designed to block all outgoing network connections.",
+  "use_cases": [
+   "transcribe a recorded lecture or talk offline",
+   "take notes while recording a presentation",
+   "transcribe meeting audio on Windows",
+   "convert an audio file to subtitles (srt/vtt)",
+   "private transcription without cloud accounts"
+  ],
+  "how_to_run": [
+   "Download the installer for your OS from the releases page (Blab-Setup-*.exe, Blab-*.dmg, or Blab-*.AppImage)",
+   "Windows: run the installer and choose Run anyway on the SmartScreen prompt",
+   "Mac: drag Blab into Applications and approve it in System Settings > Privacy & Security",
+   "Linux: chmod +x Blab-*.AppImage && ./Blab-*.AppImage --no-sandbox",
+   "Build from source: git clone the repo, cd Blab, npm install, npm run setup (downloads models, needs internet), npm run app",
+   "Package an installer for your OS with npm run package"
+  ],
+  "stack": [
+   "TypeScript",
+   "Electron",
+   "@huggingface/transformers",
+   "Whisper",
+   "WebAssembly threads",
+   "Web Worker",
+   "Silero VAD",
+   "onnxruntime",
+   "Web Audio API",
+   "File System Access API"
+  ],
+  "notable": [
+   "Runs Whisper speech-to-text fully offline; installers bundle all three models (about 758 MB download)",
+   "Notes typed during recording are aligned with the transcript; clicking a line plays audio from that point",
+   "Each recording is three plain files (audio.webm, notes.md, transcript.md) with no database",
+   "Silero voice-activity detection removes silence before transcription, and timestamps map back to the original recording",
+   "Detects repetitive transcription loops and reports them to the user"
+  ],
+  "caveats": [
+   "Installers are unsigned, so Windows and macOS show security warnings on first run",
+   "System audio recording is Windows only",
+   "The window must stay open during transcription; closing it stops the job",
+   "Linux AppImage may need libfuse2 on Ubuntu 22 and older, and requires the --no-sandbox flag"
+  ],
+  "license": "MIT",
+  "category": "offline speech-to-text",
+  "keywords": [
+   "speech-to-text",
+   "transcription",
+   "offline transcription",
+   "local-first",
+   "whisper",
+   "whisper desktop app",
+   "electron app",
+   "note-taking",
+   "lecture notes",
+   "record and take notes",
+   "meeting transcript",
+   "subtitles srt vtt",
+   "audio to text",
+   "private transcription",
+   "no cloud",
+   "no account",
+   "self-hosted transcription",
+   "voice to text",
+   "transcribe recording",
+   "live captions",
+   "talk recorder",
+   "typescript electron",
+   "onnxruntime",
+   "silero vad",
+   "huggingface transformers",
+   "wasm whisper",
+   "transcribe audio file",
+   "share notes with transcript",
+   "record a talk",
+   "offline note app",
+   "open source transcription tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3739,
+  "output": 1375
+ },
+ "generated": "2026-10-29"
+}

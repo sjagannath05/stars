@@ -1,0 +1,98 @@
+{
+ "id": "arp242/goatcounter",
+ "repo": "arp242/goatcounter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Analytics",
+   "entry": "GoatCounter - Easy web statistics without tracking of personal data. (Source Code) EUPL-1.2 Go"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Analytics",
+   "entry": "GoatCounter | Easy web analytics with no tracking of personal data"
+  }
+ ],
+ "summary": {
+  "one_liner": "GoatCounter is an open source, privacy-friendly web analytics platform that can be used as a hosted service or self-hosted as a single Go application.",
+  "what_it_does": "It collects website statistics such as pageviews, browser, location, screen size, referring sites and campaigns, and identifies unique visits without cookies using a non-identifiable hash. Data can be gathered with a single JavaScript script tag, a no-JavaScript image tracking pixel, the HTTP/REST API from backend middleware, or by importing web server log files (nginx, Apache, Caddy, CloudFront and others). It can be self-hosted with an embedded web server, using SQLite by default or PostgreSQL as the database. The README describes TLS with automatic ACME certificate generation, a Docker image, a server management page, a /status health URL, and database migration commands. Data can be exported at any time.",
+  "use_cases": [
+   "self-hosted website analytics",
+   "privacy-friendly alternative to Google Analytics",
+   "web traffic statistics without cookies",
+   "analyzing server log files for pageviews",
+   "tracking pageviews from backend middleware",
+   "running analytics in Docker or Podman"
+  ],
+  "how_to_run": [
+   "git clone --branch=release-2.7 <repository URL>",
+   "cd goatcounter",
+   "go build ./cmd/goatcounter",
+   "goatcounter serve",
+   "goatcounter db create site -vhost=stats.example.com -user.email=me@example.com",
+   "docker run -p 8080:8080 -v goatcounter-data:/home/goatcounter/goatcounter-data arp242/goatcounter"
+  ],
+  "stack": [
+   "Go 1.21 or newer",
+   "SQLite",
+   "PostgreSQL",
+   "Docker",
+   "C compiler (optional, needed for SQLite builds with cgo)"
+  ],
+  "notable": [
+   "Works without cookies or unique identifiers and states it does not need a GDPR consent notice",
+   "Can import and analyze existing web server log files",
+   "Single statically compiled binary with no required dependency beyond a SQLite file or PostgreSQL connection",
+   "Built-in TLS and automatic ACME certificate generation",
+   "Interface stated to work with screen readers and other assistive technology"
+  ],
+  "caveats": [
+   "The README notes performance depends on how spread out pageviews are across pages; SQLite may be slow for sites with very many distinct pages, where PostgreSQL is recommended",
+   "Building from source requires Go 1.21+ and a C compiler unless CGO_ENABLED=0 is used, which limits you to PostgreSQL",
+   "The author notes the main branch is reasonably stable but makes no guarantees and release notes may be missing, so upgrades may surprise you"
+  ],
+  "license": "EUPL-1.2",
+  "category": "self-hosted web analytics",
+  "keywords": [
+   "web analytics",
+   "self-hosted analytics",
+   "website statistics",
+   "privacy-friendly analytics",
+   "google analytics alternative",
+   "matomo alternative",
+   "no cookies tracking",
+   "gdpr analytics",
+   "pageview tracking",
+   "log file analysis",
+   "access log import",
+   "tracking pixel",
+   "javascript tracker",
+   "rest api analytics",
+   "go application",
+   "sqlite",
+   "postgresql",
+   "docker analytics",
+   "podman",
+   "acme tls certificates",
+   "referrer tracking",
+   "campaign tracking",
+   "unique visitors",
+   "visitor statistics",
+   "analytics for my website",
+   "track my site traffic without cookies",
+   "health check endpoint",
+   "eupl license",
+   "awesome selfhosted analytics"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4727,
+  "output": 1305
+ },
+ "generated": "2026-10-29"
+}

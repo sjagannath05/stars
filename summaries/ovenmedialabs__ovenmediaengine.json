@@ -1,0 +1,95 @@
+{
+ "id": "ovenmedialabs/ovenmediaengine",
+ "repo": "OvenMediaLabs/OvenMediaEngine",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "OvenMediaEngine - Streaming Server with Sub-Second Latency. (Demo) AGPL-3.0 C++/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "OvenMediaEngine is a C++ live streaming server that ingests streams over WebRTC, SRT, RTMP, RTSP and MPEG-2 TS and delivers them to viewers with sub-second latency via LLHLS and WebRTC.",
+  "what_it_does": "OvenMediaEngine (OME) ingests live streams over WebRTC, WHIP, SRT, RTMP, E-RTMP, RTSP, OVT and MPEG-2 TS/UDP. It includes an embedded live transcoder that encodes to ABR (VP8, H.264, H.265, AV1, Opus, AAC) and serves viewers over Low Latency HLS and WebRTC, with a legacy HLS v3 output and SRT output as well. The README also lists an embedded WebRTC signalling server, an embedded TURN server, DVR/live rewind, DRM (Widevine, FairPlay, PlayReady), WebVTT subtitles, file recording, and push re-streaming to SRT, RTMP and MPEG-2 TS. Access control is handled through admission webhooks and signed policies, and a REST API and clustering (origin-edge structure) are provided. The README claims support for hundreds of thousands of viewers.",
+  "use_cases": [
+   "live video streaming to large audiences",
+   "low-latency live broadcasting with WebRTC",
+   "re-streaming RTMP or SRT input to other destinations",
+   "ingesting camera feeds over RTSP",
+   "adaptive bitrate live streaming with LLHLS",
+   "recording live streams to files"
+  ],
+  "how_to_run": [
+   "docker run --name ome -d -e OME_HOST_IP=Your.HOST.IP.Address -p 1935:1935 -p 9999:9999/udp -p 9000:9000 -p 3333:3333 -p 3478:3478 -p 10000-10003:10000-10003/udp -p 10000:10000/tcp ovenmedialabs/ovenmediaengine:latest",
+   "Optional: add -v ome-origin-conf:/opt/ovenmediaengine/bin/origin_conf -v ome-edge-conf:/opt/ovenmediaengine/bin/edge_conf to persist configuration files",
+   "Building from source requires libstdc++ 10 or newer (see README for supported platforms)"
+  ],
+  "stack": [
+   "C++",
+   "Docker",
+   "libstdc++ 10+",
+   "OvenPlayer (companion JavaScript player)",
+   "OvenLiveKit (companion JavaScript encoder)"
+  ],
+  "notable": [
+   "Sub-second latency streaming over both WebRTC and LLHLS from one server",
+   "Embedded live transcoder producing ABR outputs without a separate transcoding service",
+   "Accepts many ingest protocols including WebRTC/WHIP, SRT, RTMP, RTSP and MPEG-2 TS",
+   "Origin-edge clustering plus admission webhooks and signed policies for access control",
+   "Companion projects OvenPlayer and OvenLiveKit for playback and browser-based encoding"
+  ],
+  "caveats": [
+   "Building from source needs libstdc++ 10 or newer; older distributions such as Ubuntu 18.04/20.04 and RHEL 8 must use the Docker image",
+   "Fedora 44 is not supported yet",
+   "Hardware H.265 transcoding is listed as hardware only; commercial licensing is available by contacting the maintainers for non-AGPL use"
+  ],
+  "license": "AGPL-3.0-only",
+  "category": "live video streaming",
+  "keywords": [
+   "live streaming server",
+   "sub-second latency streaming",
+   "low latency hls",
+   "llhls",
+   "webrtc server",
+   "whip ingest",
+   "srt server",
+   "rtmp server",
+   "rtsp ingest",
+   "mpeg-2 ts",
+   "adaptive bitrate streaming",
+   "abr transcoder",
+   "live transcoder",
+   "stream to many viewers",
+   "broadcast live video",
+   "self-hosted live streaming",
+   "restream rtmp",
+   "re-stream srt",
+   "live stream recording",
+   "dvr live rewind",
+   "drm live streams",
+   "turn server",
+   "signalling server",
+   "clustering origin edge",
+   "admission webhook",
+   "signed policy access control",
+   "rest api streaming",
+   "docker live streaming",
+   "c++ media server",
+   "agpl streaming software",
+   "ovenplayer",
+   "ovenlivekit",
+   "share live video with audience",
+   "watch camera feed in browser"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4177,
+  "output": 1617
+ },
+ "generated": "2026-10-29"
+}

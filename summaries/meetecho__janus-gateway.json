@@ -1,0 +1,107 @@
+{
+ "id": "meetecho/janus-gateway",
+ "repo": "meetecho/janus-gateway",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Video Conferencing",
+   "entry": "Janus - General-purpose, lightweight, minimalist WebRTC Server. (Demo, Source Code) GPL-3.0 C"
+  }
+ ],
+ "summary": {
+  "one_liner": "Janus is an open source, general-purpose WebRTC server developed by Meetecho, tailored for Linux (with macOS support) and built from C with a plugin architecture.",
+  "what_it_does": "Janus is a WebRTC server that handles WebRTC media and signaling through a core plus pluggable modules. The README describes plugins for SIP, AudioBridge (Opus audio mixing), Streaming, recordings post-processing, and Lua, Duktape, and sample Event Handler plugins. The core can be controlled through an HTTP REST API, and optionally through WebSockets, MQTT, RabbitMQ, or Nanomsg, and it can emit events to those transports. It supports optional Data Channels (via usrsctp), ICE Lite, ICE-TCP, TURN REST API support, NAT 1:1 configuration, and RTP port ranges. Configuration is via a jcfg file or command-line options, and the repo includes HTML demo pages in an html folder for testing.",
+  "use_cases": [
+   "run a WebRTC media server",
+   "build a video conferencing backend",
+   "audio conference bridge with Opus mixing",
+   "stream RTP or RTSP media to browsers",
+   "SIP gateway for WebRTC clients",
+   "WebRTC recording of streams"
+  ],
+  "how_to_run": [
+   "sh autogen.sh",
+   "./configure --prefix=/opt/janus",
+   "make",
+   "make install",
+   "make configs",
+   "/bin/janus"
+  ],
+  "stack": [
+   "C",
+   "GLib",
+   "Jansson",
+   "libconfig",
+   "libnice",
+   "OpenSSL",
+   "libsrtp",
+   "libmicrohttpd",
+   "libwebsockets",
+   "usrsctp",
+   "Sofia-SIP",
+   "libopus",
+   "libogg",
+   "libcurl",
+   "rabbitmq-c",
+   "paho.mqtt.c",
+   "nanomsg",
+   "Lua",
+   "Duktape",
+   "Meson",
+   "Ninja"
+  ],
+  "notable": [
+   "Plugin architecture with SIP, AudioBridge, Streaming, Lua, and Duktape plugins",
+   "Multiple control transports: HTTP REST, WebSockets, MQTT, RabbitMQ, Nanomsg",
+   "Optional Data Channels via usrsctp",
+   "Built-in demo pages in the html folder for testing",
+   "Developed and maintained by Meetecho"
+  ],
+  "caveats": [
+   "Windows is not supported; it only works under Windows Subsystem for Linux, and the README warns against unofficial .exe builds",
+   "Many optional dependencies must be installed manually (libnice, libsrtp 2.x, usrsctp, libwebsockets, rabbitmq-c), and the README recommends building some from source",
+   "FreeBSD note: rtp_forward only works when streaming to IPv6"
+  ],
+  "license": "GPL-3.0",
+  "category": "webrtc media server",
+  "keywords": [
+   "webrtc server",
+   "webrtc gateway",
+   "janus gateway",
+   "video conferencing server",
+   "media server",
+   "sfu",
+   "rtp forwarding",
+   "sip gateway",
+   "audio bridge",
+   "opus mixing",
+   "rtsp streaming",
+   "data channels",
+   "websocket api",
+   "rest api",
+   "mqtt",
+   "rabbitmq",
+   "turn",
+   "ice lite",
+   "dtls srtp",
+   "self-hosted video chat",
+   "open source webrtc",
+   "meetecho",
+   "build webrtc server linux",
+   "stream video to browsers",
+   "conference rooms",
+   "webrtc recording",
+   "alternative to commercial webrtc servers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8714,
+  "output": 1292
+ },
+ "generated": "2026-10-29"
+}

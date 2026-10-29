@@ -1,0 +1,102 @@
+{
+ "id": "logiclabs-ou/openarchiver",
+ "repo": "LogicLabs-OU/OpenArchiver",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Archiving and Digital Preservation (DP)",
+   "entry": "Open Archiver - Email archiving solution with full-text search and eDiscovery search features. (Demo, Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Open Archiver is a self-hosted, open-source email archiving platform that ingests mail from Gmail, Microsoft 365, IMAP, PST and mbox sources and makes it searchable with full-text and eDiscovery tools.",
+  "what_it_does": "Open Archiver connects to Google Workspace, Microsoft 365, generic IMAP inboxes, and imports from PST, zipped .eml and mbox files, with continuous sync after the initial bulk import. Emails are stored in standard .eml format with deduplication, compression, and encryption at rest, on either local filesystem or S3-compatible object storage. A search engine indexes email bodies and attachments such as PDF and DOCX for full-text search with filters. It also offers thread discovery, granular retention policies, and legal holds (marked TBD in the README). File hashes are stored at ingestion so altered files can be detected, with an \"Integrity Report\" per email, and an immutable audit trail logs system activity. The stack is SvelteKit frontend, Node.js/Express/TypeScript backend, BullMQ on Redis (Valkey in Compose), Meilisearch, and PostgreSQL.",
+  "use_cases": [
+   "archive company email permanently",
+   "search across old emails and attachments",
+   "ediscovery and legal hold for email",
+   "compliance retention policies for email",
+   "import PST or mbox archives into one place",
+   "self-hosted Gmail or Microsoft 365 backup"
+  ],
+  "how_to_run": [
+   "git clone the OpenArchiver repository and cd into it",
+   "cp .env.example .env and edit admin passwords and secret keys",
+   "docker compose up -d to pull images and start all services",
+   "Open the web interface in a browser and configure an ingestion source (Google Workspace, Microsoft 365, or generic IMAP)"
+  ],
+  "stack": [
+   "SvelteKit",
+   "Svelte 5",
+   "Node.js",
+   "Express.js",
+   "TypeScript",
+   "BullMQ",
+   "Redis",
+   "Valkey",
+   "Meilisearch",
+   "PostgreSQL",
+   "Docker Compose",
+   "S3-compatible storage",
+   "MinIO"
+  ],
+  "notable": [
+   "Ingests from Gmail, Microsoft 365, generic IMAP, PST, zipped .eml and mbox files with ongoing sync",
+   "Per-email Integrity Report based on stored file hashes to detect alterations",
+   "Emails stored as standard .eml with deduplication, compression and encryption at rest",
+   "Pluggable storage: local filesystem or S3-compatible object storage",
+   "Immutable audit trail of system activity"
+  ],
+  "caveats": [
+   "Requires at least 4GB RAM (2GB with external Postgres, Redis/Valkey and Meilisearch)",
+   "Legal hold feature is marked TBD in the README",
+   "Deployment is documented only via Docker Compose"
+  ],
+  "license": "AGPL-3.0",
+  "category": "email archiving",
+  "keywords": [
+   "email archiving",
+   "self-hosted email archive",
+   "open archiver",
+   "email archive software",
+   "ediscovery",
+   "legal hold",
+   "compliance retention",
+   "full-text email search",
+   "attachment search",
+   "gmail backup",
+   "google workspace archive",
+   "microsoft 365 archive",
+   "imap archive",
+   "pst import",
+   "mbox import",
+   "eml storage",
+   "email deduplication",
+   "integrity report",
+   "file hash verification",
+   "audit trail",
+   "meilisearch",
+   "bullmq",
+   "sveltekit",
+   "docker compose email",
+   "s3 email storage",
+   "minio",
+   "thread discovery",
+   "search old emails",
+   "keep permanent record of email",
+   "agpl email tool",
+   "sovereign email archive",
+   "vendor lock-in free email storage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3105,
+  "output": 1340
+ },
+ "generated": "2026-10-29"
+}

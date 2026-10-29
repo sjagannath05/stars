@@ -1,0 +1,94 @@
+{
+ "id": "colemurray/claude-code-otel",
+ "repo": "ColeMurray/claude-code-otel",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability",
+   "entry": "Claude Code Observability Stack by Cole Murray - A Dockerized OpenTelemetry-to-Grafana observability stack for Claude Code that implements Anthropic's observability guidance, surfacing session activity, performance, token usage, and cost in prebuilt dashboards."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Dockerized observability stack that receives Claude Code OpenTelemetry data through an OTel Collector and visualizes usage, cost, and performance in prebuilt Grafana dashboards backed by Prometheus and Loki.",
+  "what_it_does": "The stack runs an OpenTelemetry Collector that ingests Claude Code telemetry over OTLP (gRPC on 4317, HTTP on 4318), sends metrics to Prometheus and events/logs to Loki, and shows them in Grafana. The README describes dashboards covering cost by model, API request counts, token usage by type (input/output/cache/creation), tool usage and success rates, API latency and errors, and code productivity (lines changed, commits, pull requests). It lists metrics such as claude_code.session.count, claude_code.cost.usage and claude_code.token.usage, plus event types such as api_request, api_error and tool_result. Prompt content logging is controlled by an environment variable and is stated to be off by default. Management is done through make targets such as make up, make down and make validate-config.",
+  "use_cases": [
+   "Track Claude Code spending by model",
+   "Monitor token usage across input, output and cache",
+   "Measure developer productivity from AI-assisted coding",
+   "Investigate Claude Code API errors and latency",
+   "Review tool usage and success rates in Claude Code",
+   "Build team dashboards for AI coding assistant usage"
+  ],
+  "how_to_run": [
+   "make up",
+   "make status",
+   "export CLAUDE_CODE_ENABLE_TELEMETRY=1",
+   "export OTEL_METRICS_EXPORTER=otlp",
+   "export OTEL_LOGS_EXPORTER=otlp",
+   "export OTEL_EXPORTER_OTLP_PROTOCOL=grpc"
+  ],
+  "stack": [
+   "Docker",
+   "OpenTelemetry Collector",
+   "Prometheus",
+   "Loki",
+   "Grafana",
+   "Makefile"
+  ],
+  "notable": [
+   "Prebuilt Grafana dashboards for Claude Code cost, tokens, tools, performance and productivity",
+   "Follows the Claude Code observability documentation's metric and event naming",
+   "Configurable cardinality controls for session, version and account attributes",
+   "Prompt content logging off by default, toggled by OTEL_LOG_USER_PROMPTS",
+   "Single make-based workflow for starting, stopping and validating the stack"
+  ],
+  "caveats": [
+   "Requires Docker and running Prometheus, Loki, Grafana and an OTel Collector locally; the README does not describe a hosted option",
+   "Depends on the separate Claude Code observability documentation (CLAUDE_OBSERVABILITY.md) for the full configuration reference",
+   "Grafana default credentials are admin/admin as shown in the README"
+  ],
+  "license": "MIT",
+  "category": "observability dashboards",
+  "keywords": [
+   "claude code",
+   "opentelemetry",
+   "otel collector",
+   "grafana",
+   "prometheus",
+   "loki",
+   "docker",
+   "observability",
+   "telemetry",
+   "llm cost tracking",
+   "token usage monitoring",
+   "ai coding assistant metrics",
+   "developer productivity dashboard",
+   "api latency monitoring",
+   "cost dashboard",
+   "otlp",
+   "docker compose stack",
+   "monitor claude usage",
+   "track ai spending",
+   "see how much claude code costs",
+   "measure coding productivity with ai",
+   "log aggregation",
+   "metrics dashboard",
+   "tool usage analytics",
+   "session tracking",
+   "error monitoring",
+   "self-hosted monitoring",
+   "makefile",
+   "observability stack"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5546,
+  "output": 1314
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "alexbates/tamari",
+ "repo": "alexbates/Tamari",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Recipe Management",
+   "entry": "Tamari - Recipe manager web app with a built-in collection of recipes. Organize by favorites and categories, create shopping lists, and plan meals. (Demo, Source Code) GPL-3.0 Docker/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tamari is a self-hostable recipe manager web app built with Python and Flask, with recipe storage, shopping lists, meal planning, and a built-in collection of imported recipes.",
+  "category": "recipe management",
+  "keywords": [
+   "recipe manager",
+   "recipe management",
+   "recipe app",
+   "self-hosted recipes",
+   "flask recipe app",
+   "python web app",
+   "docker recipe manager",
+   "meal planner",
+   "meal planning",
+   "shopping list",
+   "grocery list",
+   "shopping list app",
+   "recipe collection",
+   "recipe import",
+   "favorite recipes",
+   "recipe categories",
+   "search recipes",
+   "recipe sharing",
+   "public recipe url",
+   "rest api recipes",
+   "cooking app",
+   "plan meals for the week",
+   "share recipes with family",
+   "save recipes from websites",
+   "barcode scanner shopping",
+   "dark mode recipes",
+   "gunicorn flask",
+   "mealie alternative",
+   "tandoor alternative",
+   "recipe organizer",
+   "kitchen app"
+  ],
+  "what_it_does": "Tamari is a Flask-based recipe manager that lets users create accounts with email and password and store recipes with a title, category, description, times, servings, URL, nutrition info, ingredients, instructions, and a photo. Recipes are private by default but can be made public and shared by URL. Users can mark favorites, organize by category, and search as they type. The app includes an Explore section with a collection of over 400,000 recipes from 300 recipe sharing websites, which can be imported into \"My Recipes\" with one click. Shopping lists can be kept per store, filled with a recipe's ingredients in one click, and checked off while shopping; the README also mentions barcode scanning to add items. A Meal Planner assigns recipes to dates up to 30 days ahead, and a REST API covers recipes, shopping lists, and meal plans.",
+  "use_cases": [
+   "Store and organize personal family recipes",
+   "Generate a shopping list from a recipe",
+   "Plan weekly dinners on a calendar",
+   "Import recipes found on other websites",
+   "Share a single recipe with friends through a public link",
+   "Host a private recipe site on a home server"
+  ],
+  "how_to_run": [
+   "docker run -d --restart=always -p 4888:4888 -v tamariappdata:/app/appdata --name tamari alexbates/tamari:1.7.1",
+   "Optional: add -e MAIL_SERVER=... -e MAIL_PORT=587 -e MAIL_USE_TLS=1 -e MAIL_USERNAME=... -e MAIL_PASSWORD=... to enable password reset emails",
+   "Manual (Debian 12 / Ubuntu 24.10): install python3, python3-venv, git and the listed system libraries (libpango, libcairo2, etc.)",
+   "git clone the repo, cd Tamari, python3 -m venv venv, source venv/bin/activate, pip install -r requirements.txt",
+   "flask db init && flask db migrate -m \"Initial\" && flask db upgrade, then export FLASK_APP=tamari.py",
+   "gunicorn -b 0.0.0.0:4888 -w 4 app:app, then open the app in a browser"
+  ],
+  "stack": [
+   "Python",
+   "Flask",
+   "Docker",
+   "Gunicorn",
+   "SQLAlchemy/Flask-Migrate (flask db commands)"
+  ],
+  "notable": [
+   "Built-in collection of over 400,000 recipes from 300 recipe sharing websites, importable with one click",
+   "Shopping lists per store with one-click addition of a recipe's ingredients",
+   "Meal Planner that assigns recipes to dates up to 30 days in advance",
+   "Recipes are private by default and can be shared via a public URL",
+   "Comprehensive REST API for recipes, shopping lists, and meal plans"
+  ],
+  "caveats": [
+   "Manual installation requires several system packages and database migration steps; Docker is the simpler path",
+   "Password reset by email only works if mail settings are configured",
+   "The README does not describe the license beyond the metadata; documentation for usage and upgrades is hosted externally"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2881,
+  "output": 1488
+ },
+ "generated": "2026-10-29"
+}

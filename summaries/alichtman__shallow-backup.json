@@ -1,0 +1,93 @@
+{
+ "id": "alichtman/shallow-backup",
+ "repo": "alichtman/shallow-backup",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "💾 Backup (8)",
+   "entry": "shallow-backup - Easily create lightweight documentation of installed applications, dotfiles, and more."
+  }
+ ],
+ "summary": {
+  "one_liner": "shallow-backup is a command-line tool that creates lightweight backups of installed packages, apps, fonts, and dotfiles and can push them to a remote Git repository.",
+  "what_it_does": "It backs up dotfiles and dotfolders from where they live on the system, plus app config files (VSCode, Sublime Text, Terminal.app), installed package lists (brew, cask, cargo, gem, pip, npm, macports, VSCode extensions, Sublime packages, system applications), and user-installed fonts. Files are copied rather than symlinked, and reinstallation from the backup directory is described as idempotent. Behavior is controlled by a JSON config file that lists which dotfiles to back up, gitignore rules, and a config_mapping for app configs. Each dotfile entry can have optional backup_condition and reinstall_condition expressions evaluated with bash. It is git-integrated, can use a nested dotfiles repo as a submodule, and offers both an interactive mode and command-line flags for scripting.",
+  "use_cases": [
+   "back up dotfiles from home directory",
+   "sync dotfiles across multiple computers",
+   "record list of installed Homebrew and npm packages",
+   "restore dotfiles on a new machine",
+   "document installed macOS applications",
+   "back up user-installed fonts"
+  ],
+  "how_to_run": [
+   "pipx install shallow-backup",
+   "git clone <repo-url> && cd shallow-backup && pip3 install .",
+   "shallow-backup",
+   "shallow-backup --backup-dots",
+   "shallow-backup --reinstall-dots"
+  ],
+  "stack": [
+   "Python",
+   "pipx",
+   "pip",
+   "git",
+   "bash",
+   "pre-commit",
+   "trufflehog"
+  ],
+  "notable": [
+   "Copies dotfiles from their live locations instead of symlinking them",
+   "Conditional backup and reinstall using bash expressions per dotfile",
+   "Git integration with a trufflehog pre-commit secret scan (v6.2+)",
+   "Can track a separate dotfiles repo as a git submodule",
+   "Every interactive feature is also available as a command-line flag"
+  ],
+  "caveats": [
+   "Config files can execute code via condition expressions, so the config should not be writable by untrusted users and the tool should not be run with elevated privileges",
+   "Requires pre-commit and trufflehog as dependencies, which must be installed separately",
+   "Several app-config and package features are specific to macOS apps and tools such as Terminal.app and Sublime Text"
+  ],
+  "license": "unknown",
+  "category": "dotfiles backup tool",
+  "keywords": [
+   "dotfiles",
+   "dotfile backup",
+   "dotfile manager",
+   "backup dotfiles",
+   "package list backup",
+   "homebrew package export",
+   "brew list backup",
+   "npm list backup",
+   "pip list backup",
+   "installed apps inventory",
+   "git backup",
+   "push backup to git remote",
+   "sync dotfiles between computers",
+   "restore dotfiles",
+   "reinstall packages",
+   "macos backup",
+   "config file backup",
+   "vscode settings backup",
+   "sublime text backup",
+   "font backup",
+   "pipx cli",
+   "command line backup tool",
+   "copy instead of symlink",
+   "dotfiles submodule",
+   "secret scanning trufflehog",
+   "environment setup restore",
+   "new mac setup",
+   "shell config backup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5972,
+  "output": 1210
+ },
+ "generated": "2026-10-29"
+}

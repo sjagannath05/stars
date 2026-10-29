@@ -1,0 +1,93 @@
+{
+ "id": "tarampampam/webhook-tester",
+ "repo": "tarampampam/webhook-tester",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Testing",
+   "entry": "WebHook Tester - Powerful tool for testing WebHooks and more. MIT Docker/Go/deb/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted webhook and HTTP request testing tool that generates unique URLs, records incoming requests, and lets you customize the responses, with a ReactJS UI compiled into a Go binary.",
+  "what_it_does": "WebHook Tester gives you randomly generated URLs that capture incoming webhooks and HTTP requests, and shows them in a built-in web UI. You can set the response status code, Content-Type header, response body, and a response delay. The Go binary embeds the ReactJS frontend, so no extra assets are needed. WebSocket support pushes new requests to the UI in real time. Storage can be in memory, Redis, or the local filesystem, and pub/sub can be memory or Redis. An optional ngrok tunnel driver exposes a local instance to the internet. The app also provides a /healthz endpoint and a CLI health check subcommand.",
+  "use_cases": [
+   "Debug and inspect incoming webhooks from third-party services",
+   "Test HTTP client requests and see exactly what was sent",
+   "Self-host a webhook.site-style request inspector",
+   "Receive GitHub, GitLab or Bitbucket webhooks on a local machine via ngrok tunnel",
+   "Simulate endpoints with custom status codes, headers and delayed responses",
+   "Run a webhook capture service on Kubernetes with Helm"
+  ],
+  "how_to_run": [
+   "docker run --rm -t -p \"8080:8080/tcp\" ghcr.io/tarampampam/webhook-tester:2",
+   "Open localhost:8080 in a browser",
+   "Alternatively, download the release binary for your OS and architecture and run: ./webhook-tester start",
+   "Kubernetes: install the Helm chart from ArtifactHUB"
+  ],
+  "stack": [
+   "Go",
+   "ReactJS",
+   "Docker (scratch-based image)",
+   "Redis (optional storage and pub/sub)",
+   "ngrok (optional tunneling)",
+   "Helm (Kubernetes)"
+  ],
+  "notable": [
+   "Single binary with the React UI embedded, no extra assets needed",
+   "Three storage drivers: memory, Redis, and fs, selected with --storage-driver",
+   "Auto-create sessions for requests that carry a UUID-formatted prefix",
+   "Built-in ngrok tunnel driver that starts without installing ngrok separately",
+   "Multi-architecture Docker image that runs as an unprivileged user"
+  ],
+  "caveats": [
+   "The public demo at wh.tarampamp.am is limited, does not persist data, and may be unavailable",
+   "Tunneling requires an ngrok auth token",
+   "Multiple app instances need the Redis pub/sub driver and, for shared data, Redis storage"
+  ],
+  "license": "MIT",
+  "category": "webhook testing tool",
+  "keywords": [
+   "webhook tester",
+   "webhook debugging",
+   "http request inspector",
+   "self-hosted webhook.site alternative",
+   "request bin",
+   "capture http requests",
+   "test webhooks locally",
+   "inspect webhook payloads",
+   "mock http responses",
+   "custom response status code",
+   "ngrok tunnel",
+   "expose localhost to internet",
+   "websocket live updates",
+   "redis storage",
+   "filesystem storage",
+   "go binary",
+   "reactjs ui",
+   "docker image",
+   "helm chart kubernetes",
+   "healthz endpoint",
+   "share webhook url with team",
+   "see what a service sent me",
+   "webhook receiver",
+   "request logging tool",
+   "http echo server",
+   "liveness probe",
+   "mit license",
+   "self-hosted",
+   "debug github webhooks",
+   "pubsub redis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5430,
+  "output": 1304
+ },
+ "generated": "2026-10-29"
+}

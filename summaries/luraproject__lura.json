@@ -1,0 +1,85 @@
+{
+ "id": "luraproject/lura",
+ "repo": "luraproject/lura",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - API Management",
+   "entry": "Lura - High-performance API Gateway. (Source Code) Apache-2.0 Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lura is an open Go framework (formerly the KrakenD framework) for assembling high-performance API gateways and proxies out of middleware and reusable components.",
+  "what_it_does": "Lura is a set of generic Go libraries for building API gateways and proxies that sit between clients and backend servers. It can aggregate responses from several backend sources into a single endpoint, and lets you group, wrap, transform and shrink those responses so clients receive only the fields they need. The README states it supports HTTP(S) and, because it is a generic library set, can be used to build other gateway types such as an RPC gateway. It is designed to be extended with your own middleware through small, independent components. The README's example shows a Go program that parses a JSON configuration file, sets up a logger, and runs a Gin-based router with the proxy factory. The repository is the source code; the README points to the KrakenD binary for a ready-to-run gateway.",
+  "use_cases": [
+   "build a custom API gateway in Go",
+   "aggregate multiple backend APIs into one endpoint",
+   "trim and reshape JSON responses for mobile or UI clients",
+   "reuse proxy components in another Go application",
+   "build a non-HTTP RPC gateway from generic libraries"
+  ],
+  "how_to_run": [
+   "Install Go on your system",
+   "Add the library to your Go module: import github.com/luraproject/lura/v3 packages (config, logging, proxy, router/gin)",
+   "Write a main.go that parses a configuration file with config.NewParser()",
+   "Create a router with gin.DefaultFactory(proxy.DefaultFactory(logger), logger)",
+   "Run routerFactory.New().Run(serviceConfig)",
+   "Compile and run the program with your configuration file"
+  ],
+  "stack": [
+   "Go",
+   "Gin router",
+   "KrakenD (related gateway project)"
+  ],
+  "notable": [
+   "Generic library set: can be used to build HTTP gateways or other kinds of proxies such as RPC gateways",
+   "Aggregates several backend sources into single endpoints and reshapes responses",
+   "Formerly known as the KrakenD framework and is the core service of the KrakenD API Gateway",
+   "Designed for custom middleware and small, reusable, Unix-style components"
+  ],
+  "caveats": [
+   "It is a library, not a ready-to-use gateway; you need Go and must write your own application (the README points to the KrakenD binary for a turnkey gateway)",
+   "The README's configuration file section is a placeholder with no details, so configuration must be learned from the external documentation"
+  ],
+  "license": "Apache-2.0",
+  "category": "api gateway framework",
+  "keywords": [
+   "api gateway",
+   "api gateway library",
+   "go api gateway",
+   "reverse proxy",
+   "api aggregation",
+   "response aggregation",
+   "response transformation",
+   "middleware framework",
+   "microservices gateway",
+   "backend for frontend",
+   "bff",
+   "json response filtering",
+   "golang proxy",
+   "gin router",
+   "rpc gateway",
+   "krakend",
+   "lura",
+   "api management",
+   "build my own api gateway",
+   "combine multiple api calls into one",
+   "reduce mobile api payload size",
+   "http proxy library",
+   "go libraries",
+   "unix philosophy components",
+   "api composition",
+   "gateway builder"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2858,
+  "output": 1186
+ },
+ "generated": "2026-10-29"
+}

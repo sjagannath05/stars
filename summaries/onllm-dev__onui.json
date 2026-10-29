@@ -1,0 +1,95 @@
+{
+ "id": "onllm-dev/onui",
+ "repo": "onllm-dev/onUI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI-Powered Compilers and Code Assistants",
+   "entry": "onUI - Open-source browser extension and MCP server for annotation-first UI pair programming with AI agents. Works with Claude Code, Cursor, Windsurf, Copilot. Chrome, Edge, Firefox. Free, GPL-3.0."
+  }
+ ],
+ "summary": {
+  "one_liner": "onUI is an open-source browser extension plus local MCP bridge that lets you annotate page elements and regions so AI coding agents can act on them.",
+  "what_it_does": "Adds a per-tab toggle browser extension for Chrome, Edge, and Firefox that injects an annotation toolbar into web pages without changing app code. Users can hover and click elements, or hold Shift to batch-select several, then attach intent and severity in a shared dialog. A draw mode lets users mark rectangular or elliptical regions. Annotations can be exported in compact, standard, detailed, or forensic formats, and a local MCP server and native bridge expose them to AI agents. The README says there is no cloud backend, and the UI uses Shadow DOM for style isolation.",
+  "use_cases": [
+   "annotate UI bugs for an AI coding agent",
+   "pair program on frontend changes with Claude Code",
+   "send page element context to an MCP-connected assistant",
+   "mark regions of a web page for visual feedback",
+   "export structured UI annotation reports"
+  ],
+  "how_to_run": [
+   "curl -fsSL <installer URL from README> | bash  (macOS/Linux; add --firefox for Firefox artifact)",
+   "Answer y when prompted to set up the local MCP bridge",
+   "Chrome/Edge: open chrome://extensions or edge://extensions, enable Developer mode, Load unpacked, select ~/.onui/extensions/current",
+   "pnpm build:mcp",
+   "pnpm setup:mcp",
+   "pnpm doctor:mcp"
+  ],
+  "stack": [
+   "TypeScript",
+   "pnpm workspaces",
+   "Node.js 20+",
+   "Browser extension (Chrome, Edge, Firefox)",
+   "MCP (Model Context Protocol) server",
+   "Shadow DOM"
+  ],
+  "notable": [
+   "Annotation-first workflow: select elements or regions on the live page, then send structured context to AI agents",
+   "Per-tab ON/OFF control, off by default",
+   "Local-only MCP server and native bridge with no cloud backend required",
+   "Auto-registers the onui-local MCP entry for Claude Code and Codex when installed",
+   "Release is packaged locally via app.sh with no CI/CD dependency"
+  ],
+  "caveats": [
+   "Browser support in this release is Chrome stable, Edge stable, and Firefox stable (unpacked) only",
+   "MCP setup needs Node 20+ and the repo itself, since @onui/mcp-server is private and workspace-local",
+   "Chromium unpacked installs need a manual Load unpacked step"
+  ],
+  "license": "GPL-3.0",
+  "category": "browser ui annotation tools",
+  "keywords": [
+   "browser extension",
+   "mcp server",
+   "model context protocol",
+   "ui annotation",
+   "visual feedback for ai",
+   "pair programming with ai",
+   "claude code",
+   "cursor",
+   "windsurf",
+   "copilot",
+   "codex",
+   "chrome extension",
+   "edge extension",
+   "firefox extension",
+   "element picker",
+   "region annotation",
+   "draw mode",
+   "annotate web page",
+   "shadow dom",
+   "local mcp bridge",
+   "export annotations",
+   "bug report for ai agent",
+   "frontend debugging",
+   "typescript",
+   "pnpm monorepo",
+   "gpl-3.0 open source",
+   "onllm",
+   "point at element for ai",
+   "share ui feedback with ai",
+   "markup web page screenshot",
+   "dev tools for ai coding"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4218,
+  "output": 1204
+ },
+ "generated": "2026-10-29"
+}

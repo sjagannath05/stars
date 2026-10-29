@@ -1,0 +1,96 @@
+{
+ "id": "sjdonado/bit",
+ "repo": "sjdonado/bit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "URL Shorteners",
+   "entry": "bit - Fast, lightweight, resource-efficient, compiled URL shortener. MIT Docker/Crystal"
+  }
+ ],
+ "summary": {
+  "one_liner": "bit is a fast, lightweight, self-hosted URL shortener written in Crystal, distributed as a Docker image and deployable via Docker Compose or Dokku.",
+  "what_it_does": "bit shortens URLs and records click analytics: country, browser, OS and referer. It states it uses no cookies or persistent tracking beyond what a basic client request provides. Redirect responses include X-Forwarded-For and User-Agent headers, with caching disabled. Multiple users are supported through API key authentication, and keys are created, listed and deleted through a CLI. The README says the UA regexes and GeoLite2 database update automatically. Setup is configured through environment variables such as ENV, DATABASE_URL, APP_URL, ADMIN_NAME and ADMIN_API_KEY, and it uses SQLite as its database in the examples.",
+  "use_cases": [
+   "self-host a URL shortener",
+   "shorten links with click analytics",
+   "track link clicks by country and browser",
+   "manage API keys for multiple users of a link shortener",
+   "deploy a short-link service on Dokku",
+   "run a lightweight redirect service in Docker"
+  ],
+  "how_to_run": [
+   "docker run --name bit -p 4000:4000 -e ENV=\"production\" -e DATABASE_URL=\"sqlite3://./sqlite/data.db\" -e APP_URL=\" -e ADMIN_NAME=\"Admin\" -e ADMIN_API_KEY=$(openssl rand -base64 32) sjdonado/bit",
+   "docker exec -it bit cli --create-user=Admin",
+   "ADMIN_API_KEY=$(openssl rand -base64 32) docker-compose up",
+   "docker-compose exec -it app cli --create-user=Admin",
+   "Dokku: create the app, set domains, configure storage and config:set variables as shown in the README, then add ports http:80:4000 and https:443:4000",
+   "dokku run bit cli --create-user=Admin"
+  ],
+  "stack": [
+   "Crystal",
+   "Docker",
+   "Docker Compose",
+   "Dokku",
+   "SQLite",
+   "GeoLite2"
+  ],
+  "notable": [
+   "Very high throughput claimed: 21k req/sec, 6ms latency, about 32 MiB average memory in the README benchmark",
+   "Image size under 20 MiB with minimal dependencies",
+   "Privacy-minded analytics: no cookies or persistent tracking beyond the basic request",
+   "Ruby on Rails inspired structure, described as easy to extend",
+   "Listed under URL Shorteners on awesome-selfhosted"
+  ],
+  "caveats": [
+   "The README says new features are not planned; only bug fixes will continue",
+   "Example deployments use SQLite with a mounted storage directory, so the database is tied to a single host",
+   "Benchmark figures are the author's and come from a specific test setup"
+  ],
+  "license": "MIT",
+  "category": "self-hosted url shortener",
+  "keywords": [
+   "url shortener",
+   "link shortener",
+   "short links",
+   "self-hosted url shortener",
+   "crystal",
+   "crystal lang",
+   "docker",
+   "docker image",
+   "docker compose",
+   "dokku",
+   "sqlite",
+   "click tracking",
+   "link analytics",
+   "referer tracking",
+   "geolite2",
+   "geoip country tracking",
+   "api key authentication",
+   "cli user management",
+   "redirect service",
+   "lightweight",
+   "fast redirects",
+   "high throughput",
+   "awesome selfhosted",
+   "bitly alternative",
+   "shorten my links",
+   "track clicks on short links",
+   "host my own link shortener",
+   "private url shortener",
+   "no cookies analytics",
+   "multi user api keys",
+   "deploy url shortener on my server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2459,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

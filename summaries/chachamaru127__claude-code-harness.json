@@ -1,0 +1,99 @@
+{
+ "id": "chachamaru127/claude-code-harness",
+ "repo": "Chachamaru127/claude-code-harness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Agent Orchestration",
+   "entry": "Claude Code Harness by Chachamaru - A Claude Code development harness that enables reliable high-quality development through an autonomous Plan -&gt; Work -&gt; Review cycle. Well documented and includes an Output Style."
+  }
+ ],
+ "summary": {
+  "one_liner": "A development harness for AI coding assistants (Claude Code, Codex CLI, Cursor, Grok and others) that runs a Plan, Work, Review cycle driven by spec.md and Plans.md files.",
+  "what_it_does": "Harness adds slash-command or skill workflows to a coding assistant: /harness-plan drafts spec.md and Plans.md with tasks, completion criteria, and unknowns for the user to approve; /harness-work runs approved tasks with checks; /harness-review asks a separate reviewer to examine the change; /harness-sync compares the recorded plan with the project state; /harness-release prepares a release plan. Progress is shown via /harness-progress, and interrupted runs can be resumed with /harness-work --resume latest. Execution hooks run a bundled Go-native guardrail engine that checks protected files, direct pushes to main, forced pushes, and other risky operations. Larger jobs can be split with /breezing, and /harness-loop repeats work up to a default of eight cycles.",
+  "use_cases": [
+   "Planning a small feature change with reviewable acceptance criteria",
+   "Running approved multi-task work with checks inside an AI coding assistant",
+   "Getting a separate review of AI-written code before publishing",
+   "Tracking task status and pending decisions for an AI-driven project",
+   "Resuming an interrupted AI coding session",
+   "Preparing a versioned release with an approved publication plan"
+  ],
+  "how_to_run": [
+   "Install and sign in to a supported coding assistant (e.g., Claude Code v2.1+)",
+   "In Claude Code, run: /plugin marketplace add Chachamaru127/claude-code-harness",
+   "Run: /plugin install harness@claude-code-harness-marketplace",
+   "Run: /harness-setup",
+   "Run: /harness-plan <your small change>, then /harness-work all, then /harness-review",
+   "For other tools, clone the repo and run the matching scripts/setup-<tool>.sh script (e.g., setup-codex.sh --user, setup-cursor.sh, setup-grok.sh)"
+  ],
+  "stack": [
+   "Go (guardrail engine; Go 1.26.0+ to build from source)",
+   "Shell setup scripts",
+   "Claude Code plugin system",
+   "Codex CLI",
+   "Cursor",
+   "Grok",
+   "OpenCode (internal-compatible)",
+   "Git"
+  ],
+  "notable": [
+   "Plan, Work, Review workflow with spec.md and Plans.md as shared job sheet and checklist",
+   "Separate reviewer role for checking implementation apart from its author",
+   "Go-native guardrail engine that applies execution-hook permission rules without requiring Node.js",
+   "Resumable runs via /harness-work --resume latest",
+   "Bilingual docs with Japanese language option (CLAUDE_CODE_HARNESS_LANG=ja)"
+  ],
+  "caveats": [
+   "Support tiers vary by tool: Claude Code, Codex CLI, Cursor, and Grok are marked supported; OpenCode is internal-compatible; Codex app, Hermes Agent, and GitHub Copilot CLI are candidate; Antigravity CLI is unsupported",
+   "Cursor has no traditional filesystem isolation; restrictions are applied by Harness, and native Codex child agents can inherit parent permissions",
+   "Guardrails do not guarantee every command is contained; the Codex --user setup replaces existing worker.toml and reviewer.toml files"
+  ],
+  "license": "MIT",
+  "category": "ai coding workflow",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "codex cli",
+   "cursor",
+   "grok",
+   "opencode",
+   "ai coding assistant",
+   "agent orchestration",
+   "plan work review",
+   "spec.md",
+   "plans.md",
+   "task planning",
+   "code review agent",
+   "guardrails",
+   "permission hooks",
+   "autonomous coding",
+   "multi-agent",
+   "breezing",
+   "harness-loop",
+   "release automation",
+   "resume session",
+   "development harness",
+   "ai pair programming",
+   "plan a feature with ai",
+   "review ai-written code",
+   "track ai task progress",
+   "keep ai coding on rails",
+   "japanese language support",
+   "go guardrail engine",
+   "setup script",
+   "mit license"
+  ],
+  "category_note": "unused"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5590,
+  "output": 1551
+ },
+ "generated": "2026-10-29"
+}

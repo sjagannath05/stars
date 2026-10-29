@@ -1,0 +1,93 @@
+{
+ "id": "gilles-g/localpr",
+ "repo": "gilles-g/localpr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Skills",
+   "entry": "localpr by gilles-g - Reviews Claude's uncommitted changes in a local GitHub-style pull request page: comment on any line, send comments in batches while Claude keeps working, ask Claude questions answered inline in the thread, and get each comment back marked fixed or refused."
+  }
+ ],
+ "summary": {
+  "one_liner": "localpr is a standard-library Python tool that renders Claude's uncommitted changes as a local, offline GitHub-style pull request page where you can comment on lines and get each comment answered or applied by Claude.",
+  "what_it_does": "It generates a local HTML review page from the git diff of the working tree, a branch against a base, or another repository, and opens it without any network or service. You can comment on any line, and each comment is anchored to a line with a fingerprint so anchors can be re-found if the file changes. Comments are sent to Claude in batches with Send comments while the review continues, or all at once with Finish review, which writes a TODO.md that Claude Code reads. Each comment is tagged Must fix, Follow-up, or Workflow note, and comes back with a verdict such as fixed, refused, out-of-scope, or anchor-lost. The page also supports asking Claude one-off questions in a thread, replying in threads, and requesting a whole-diff review by a fresh agent whose suggestions can be taken up or dismissed. It has unified and split views, light, dark and dark dimmed themes, a searchable file tree, and Viewed checkboxes for files.",
+  "use_cases": [
+   "review Claude's uncommitted code changes before committing",
+   "comment on specific diff lines and have an AI agent fix them",
+   "offline local code review of a git diff",
+   "batch code review feedback to an AI coding assistant",
+   "get a second-opinion review of a working tree or branch diff"
+  ],
+  "how_to_run": [
+   "Install the plugin: /plugin marketplace add gilles-g/localpr",
+   "/plugin install localpr@localpr",
+   "In Claude Code, from any repository, run: /localpr:review",
+   "Optionally: /localpr:review --base develop to review the branch against develop",
+   "Optionally: /localpr:review ../other-repo to review another repository",
+   "Open the printed page URL, comment, then use Send comments or Finish review"
+  ],
+  "stack": [
+   "Python 3.9+ (standard library only)",
+   "git",
+   "Claude Code plugin",
+   "HTML/CSS/JS inlined in the generated page"
+  ],
+  "notable": [
+   "Runs entirely offline with no service or account; the page works over file://",
+   "Comments are sent in batches while Claude keeps working on earlier ones",
+   "Each comment returns with a verdict: fixed, refused, out-of-scope, or anchor-lost",
+   "Never writes to the repository and runs no git write commands",
+   "Review suggestions from a fresh agent can be taken up or dismissed, and dismissed ones are not raised again"
+  ],
+  "caveats": [
+   "Requires Claude Code to drive the workflow; comments are read back by Claude via files in ~/.claude/reviews",
+   "Binary files, mode changes, submodules and nested repositories show only a one-line notice rather than a rendered diff",
+   "A comment on a deleted line cannot be re-anchored; the hunk travels with it instead"
+  ],
+  "license": "MIT",
+  "category": "local code review",
+  "keywords": [
+   "code review",
+   "local code review",
+   "pull request review",
+   "diff review",
+   "git diff",
+   "uncommitted changes",
+   "claude code plugin",
+   "claude code",
+   "ai code review",
+   "review ai generated code",
+   "line comments",
+   "offline review",
+   "local pull request",
+   "github-style diff",
+   "batch comments",
+   "python standard library",
+   "file:// html page",
+   "review before commit",
+   "code review tool",
+   "pr review locally",
+   "diff viewer",
+   "split diff view",
+   "unified diff",
+   "review agent",
+   "ai coding assistant feedback",
+   "send feedback to claude",
+   "self-review",
+   "commit review",
+   "branch diff review",
+   "share review with ai",
+   "review my changes before committing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3678,
+  "output": 1326
+ },
+ "generated": "2026-10-29"
+}

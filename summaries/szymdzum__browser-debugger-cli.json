@@ -1,0 +1,95 @@
+{
+ "id": "szymdzum/browser-debugger-cli",
+ "repo": "szymdzum/browser-debugger-cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Design & UI/UX",
+   "entry": "bdg (Browser Debugger CLI) by szymdzum - A CLI and Claude Code skill for UI debugging in Chrome using the DevTools Protocol, including DOM inspection, browser events, rendered styles, and detailed layout information."
+  }
+ ],
+ "summary": {
+  "one_liner": "A command-line browser debugger that keeps a Chrome session open in the background so an AI agent or developer can drive a live page and inspect its network, console, DOM, styles and layout one shell command at a time.",
+  "what_it_does": "bdg starts a persistent browser session and exposes commands for navigation, clicking, filling forms, waiting for elements, and emulating viewport, mobile and color-scheme settings. It reads back telemetry: network requests and headers (including Authorization), HAR export, cookies (including HttpOnly), console messages, and a live peek --follow mode. For inspection it reports element styles with the CSS cascade, layout and visibility, page-wide audits (contrast, overflow, layers, animations), stylesheet search, the accessibility tree, and event listeners. Any Chrome DevTools Protocol method can be called directly with bdg cdp, which also supports searching and describing methods. Output is compact and designed to pipe into jq, and --json and --help --json are available for agents.",
+  "use_cases": [
+   "debug a web page's failing request or console error from the shell",
+   "let an AI coding agent drive and inspect a live browser",
+   "reuse a browser login's cookies or tokens in curl requests",
+   "check element layout, computed styles and CSS rule origins",
+   "audit page color contrast and accessibility tree",
+   "profile performance metrics or throttle CPU and network",
+   "run parallel named browser sessions for testing"
+  ],
+  "how_to_run": [
+   "npm install -g browser-debugger-cli",
+   "bdg localhost:3000",
+   "bdg dom click 'button:has-text(\"Search\")'",
+   "bdg network list --preset errors",
+   "bdg console",
+   "bdg stop"
+  ],
+  "stack": [
+   "Node.js 22.12+",
+   "Chrome DevTools Protocol",
+   "Chromium-based browser (Chrome, Chromium or Microsoft Edge)"
+  ],
+  "notable": [
+   "Persistent background browser session driven one command at a time, suited to agent loops",
+   "Raw CDP access with --search, --describe and a suggestion system for typos and unknown methods",
+   "Includes HttpOnly cookies and Authorization headers for reusing a logged-in session",
+   "Ships an agent skill via bdg install-skill for Claude Code and other agents",
+   "Can attach to an already-open browser profile without reloading tabs"
+  ],
+  "caveats": [
+   "Requires Node.js 22.12+ and a Chromium-based browser; Firefox and Safari are not supported",
+   "Native PowerShell and Git Bash are not supported; Windows works only via WSL",
+   "Benchmark comparison in README is from November 2025 and the author notes the compared MCP tool has since changed"
+  ],
+  "license": "MIT",
+  "category": "browser debugging cli",
+  "keywords": [
+   "browser debugger",
+   "chrome devtools protocol",
+   "cdp",
+   "cli",
+   "command line browser",
+   "ai agent browser",
+   "claude code skill",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "browser automation",
+   "headless chrome",
+   "network inspection",
+   "console messages",
+   "dom inspection",
+   "css styles",
+   "computed styles",
+   "layout debugging",
+   "accessibility tree",
+   "contrast audit",
+   "har export",
+   "cookies",
+   "performance profiling",
+   "cpu throttling",
+   "chrome devtools mcp alternative",
+   "playwright alternative",
+   "puppeteer alternative",
+   "debug web page from terminal",
+   "let agent use a browser",
+   "reuse browser login in curl",
+   "inspect live page step by step",
+   "parallel browser sessions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5267,
+  "output": 1295
+ },
+ "generated": "2026-10-29"
+}

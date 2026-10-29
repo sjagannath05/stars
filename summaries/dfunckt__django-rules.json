@@ -1,0 +1,93 @@
+{
+ "id": "dfunckt/django-rules",
+ "repo": "dfunckt/django-rules",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Authentication",
+   "entry": "django-rules - A tiny but powerful app for object-level permissions in Django, without a database."
+  }
+ ],
+ "summary": {
+  "one_liner": "django-rules is a small Python library, with an optional Django integration, for defining object-level permissions as rules built from composable predicate functions, with no database queries needed.",
+  "what_it_does": "It lets you wrap plain callables in a @predicate decorator and combine them with &, |, ^ and ~ into rules, which are stored in a dict-like RuleSet. Rules can be tested directly with test_rule, or registered as Django permissions via add_perm and checked with user.has_perm through the included ObjectPermissionBackend. The README also covers Django integration points: a permission_required view decorator and PermissionRequiredMixin for class-based views, an AutoPermissionRequiredMixin, template tags ({% has_perm %} and {% test_rule %}), and an ObjectPermissionsModelAdmin for per-object checks in the Admin. Predicates can store data in a per-invocation context, bind to self, return None to be skipped, and log evaluations to a 'rules' logger. Predefined predicates include is_authenticated, is_staff, is_superuser, and is_group_member.",
+  "use_cases": [
+   "object-level permissions in Django",
+   "restricting book edits to the author or editors group",
+   "checking permissions in Django templates",
+   "per-object access control in the Django Admin",
+   "authorization for Django views and class-based views",
+   "building rule-based decision logic without a database"
+  ],
+  "how_to_run": [
+   "pip install rules",
+   "Add 'rules' to INSTALLED_APPS in Django settings",
+   "Add 'rules.permissions.ObjectPermissionBackend' to AUTHENTICATION_BACKENDS",
+   "Define predicates with @rules.predicate and register them with rules.add_perm or rules.add_rule",
+   "Check permissions with user.has_perm('app.action_model', obj)",
+   "Run tests with ./runtests.sh from a git clone"
+  ],
+  "stack": [
+   "Python 3.8+",
+   "Django 3.2+ (optional integration)",
+   "Django REST Framework (optional integration)"
+  ],
+  "notable": [
+   "Predicates work without a database and can be combined with boolean operators",
+   "Works as a standalone rule engine outside Django",
+   "Per-object permissions for Django views, templates, models Meta options and Admin",
+   "Predicates can share per-call context and skip evaluation by returning None",
+   "Optional debug logging of each predicate evaluation"
+  ],
+  "caveats": [
+   "Django integration requires adding a custom authentication backend to settings",
+   "Model-based permission declaration (rules_permissions Meta option) works on Python 3 only",
+   "Django Admin object permissions need the ObjectPermissionsModelAdmin subclass",
+   "Superusers always pass has_perm checks"
+  ],
+  "license": "MIT",
+  "category": "django authorization library",
+  "keywords": [
+   "django",
+   "object-level permissions",
+   "django permissions",
+   "rule engine",
+   "predicates",
+   "rule-based authorization",
+   "decision tree",
+   "has_perm",
+   "authentication backend",
+   "permission_required decorator",
+   "permissionrequiredmixin",
+   "django admin permissions",
+   "django rest framework permissions",
+   "template permission check",
+   "access control",
+   "authorization library",
+   "role based access",
+   "python authorization",
+   "rules engine",
+   "no database permissions",
+   "pyrules",
+   "guardian alternative",
+   "django-guardian alternative",
+   "user can edit own objects",
+   "group membership check",
+   "share files with my team",
+   "restrict edits to author",
+   "who can edit this record",
+   "python decorator predicates",
+   "boolean permission logic"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14295,
+  "output": 1280
+ },
+ "generated": "2026-10-29"
+}

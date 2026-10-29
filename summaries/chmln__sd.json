@@ -1,0 +1,91 @@
+{
+ "id": "chmln/sd",
+ "repo": "chmln/sd",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "ibraheemdev/modern-unix",
+   "section": "",
+   "entry": "sd"
+  }
+ ],
+ "summary": {
+  "one_liner": "sd is a command-line find-and-replace tool that uses familiar regex syntax by default, with a string-literal mode and in-place file editing.",
+  "what_it_does": "sd takes a search pattern and a replacement string as separate arguments and applies them to stdin or to files. By default it treats patterns as regular expressions using JavaScript/Python-style syntax. The -F/--fixed-strings flag switches to literal matching. Capture groups can be referenced by index ($1) or by name (named groups like (?P<name>...)), and $$ escapes a literal dollar sign. Files are modified in place, and -p previews changes. By default it processes input line by line to keep memory low and stream output; the -A/--across flag allows patterns to match across line boundaries, such as replacing newlines. The README includes benchmarks against sed showing it is faster on large JSON files and simple replacements.",
+  "use_cases": [
+   "replace text across many files in a project",
+   "find and replace in a file in place",
+   "trim trailing whitespace from lines",
+   "replace literal strings containing regex special characters",
+   "swap or reformat captured groups in text",
+   "replace newlines with another character",
+   "preview find-and-replace changes before applying"
+  ],
+  "how_to_run": [
+   "cargo install sd",
+   "echo 'lorem ipsum 23 ' | sd '\\s+$' ''",
+   "sd 'window.fetch' 'fetch' http.js",
+   "sd -p 'window.fetch' 'fetch' http.js",
+   "echo -e \"hello\\nworld\" | sd -A '\\n' ','",
+   "fd --type file --exec sd 'from \"react\"' 'from \"preact\"'"
+  ],
+  "stack": [
+   "Rust",
+   "cargo"
+  ],
+  "notable": [
+   "Regex syntax familiar from JavaScript and Python instead of sed/awk quirks",
+   "Literal string mode via -F with no escaping needed",
+   "Line-by-line processing by default with low memory use and streaming stdin output",
+   "Across mode (-A) for multi-line patterns like matching newlines",
+   "Named and indexed capture groups in replacement strings"
+  ],
+  "caveats": [
+   "Line-by-line default means patterns cannot span lines unless -A is used, which uses more memory (about 74 MB peak in the README benchmark versus 3 MB)",
+   "Arguments starting with '-' are parsed as flags, so they need a -- separator"
+  ],
+  "license": "unknown",
+  "category": "command-line text replacement",
+  "keywords": [
+   "sd",
+   "find and replace",
+   "search and replace",
+   "regex replace",
+   "sed alternative",
+   "sed replacement",
+   "string replacement cli",
+   "fixed strings",
+   "literal string replace",
+   "capture groups",
+   "named capture groups",
+   "in-place file edit",
+   "bulk text replace",
+   "replace across files",
+   "multi-line regex",
+   "across mode",
+   "line by line processing",
+   "stream editor",
+   "rust cli",
+   "cargo install",
+   "text substitution",
+   "regex find replace command line",
+   "replace text in project",
+   "fd exec replace",
+   "dry run preview replace",
+   "stdin text transform",
+   "trim trailing whitespace",
+   "json replace performance",
+   "rewrite text files",
+   "command line search replace"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4525,
+  "output": 1177
+ },
+ "generated": "2026-10-29"
+}

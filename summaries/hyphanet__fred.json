@@ -1,0 +1,86 @@
+{
+ "id": "hyphanet/fred",
+ "repo": "hyphanet/fred",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Hyphanet - Anonymously share files, browse and publish _freesites_ (web sites accessible only through Hyphanet) and chat on forums. (Source Code) GPL-2.0 Java"
+  }
+ ],
+ "summary": {
+  "one_liner": "Fred is the Java reference daemon for Freenet, a peer-to-peer, encrypted, decentralized datastore for censorship-resistant communication and publishing.",
+  "what_it_does": "The README describes Freenet as peer-to-peer software that provides a distributed, encrypted, decentralized datastore on which websites and applications such as forums and chat are built. Fred (\"Freenet REference Daemon\") is the codebase that runs the node. The README covers building with the included Gradle wrapper (./gradlew jar) or with Ant, running unit tests with Gradle, and testing a custom build by replacing freenet.jar in an existing Freenet directory. It also explains how installers are produced in separate repositories (Linux/macOS/*nix and Windows) and how new dependencies must be published on Freenet itself and registered in dependencies.properties. Integration tests are marked as TODO in the README.",
+  "use_cases": [
+   "anonymous file sharing",
+   "censorship-resistant publishing",
+   "hosting freesites on a decentralized network",
+   "anonymous forums and chat",
+   "contributing to Freenet node development"
+  ],
+  "how_to_run": [
+   "./gradlew jar",
+   "./gradlew --parallel test",
+   "mkdir -p lib; (cd lib && grep -o CHK.* ../dependencies.properties | xargs -P16 -I {} bash -c 'fcpget -v {} \"$(echo {} | sed s,^.*/,,)\"')",
+   "ant -propertyfile build.properties -f build-clean.xml -Dtest.skip=true -Dfindbugs.skip=true"
+  ],
+  "stack": [
+   "Java",
+   "Gradle",
+   "Apache Ant",
+   "fcpget/FCP (for fetching dependencies from Freenet)"
+  ],
+  "notable": [
+   "Dependencies are distributed through Freenet itself (CHK keys in dependencies.properties) rather than a public package repository",
+   "Windows installer is code-signed free of charge via SignPath.io, per the README",
+   "Builds with a committed Gradle wrapper that verifies the checksum of the downloaded archive",
+   "Installers are built from separate hyphanet repositories"
+  ],
+  "caveats": [
+   "Integration tests are not documented (README says TODO)",
+   "Building the dependencies from source requires fetching them through Freenet with fcpget, which is an extra setup step",
+   "Licensing notes say some plugins are GPL3 and some bundled code is Apache 2.0 or BSD"
+  ],
+  "license": "GPL-2.0 (README: GPL version 2 or later)",
+  "category": "peer-to-peer anonymous networking",
+  "keywords": [
+   "freenet",
+   "hyphanet",
+   "fred",
+   "freenet reference daemon",
+   "peer-to-peer",
+   "p2p network",
+   "anonymous file sharing",
+   "censorship resistant",
+   "decentralized datastore",
+   "freesites",
+   "anonymous publishing",
+   "anonymous forums",
+   "anonymous chat",
+   "encrypted datastore",
+   "java",
+   "gradle",
+   "ant build",
+   "self-hosted node",
+   "share files anonymously",
+   "publish website without censorship",
+   "private browsing network",
+   "darknet",
+   "distributed web hosting",
+   "fcp",
+   "gpl java application",
+   "freenet node",
+   "decentralized forums"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3038,
+  "output": 1207
+ },
+ "generated": "2026-10-29"
+}

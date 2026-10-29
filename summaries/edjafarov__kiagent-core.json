@@ -1,0 +1,95 @@
+{
+ "id": "edjafarov/kiagent-core",
+ "repo": "edjafarov/kiagent-core",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "KIAgent - Personal digital memory: indexes your mail, chats and documents into a local SQLite database and serves them to AI assistants over MCP."
+  }
+ ],
+ "summary": {
+  "one_liner": "KIAgent core is an MIT-licensed Electron desktop app that indexes your mail, documents and chats into a local SQLite database and serves them to AI assistants over MCP.",
+  "what_it_does": "Ingests personal data (mail, documents, chats, notes) on the local machine and stores it in a SQLite database (better-sqlite3) with search indexes. An ingestion engine pulls batches from sources on a cadence, converts raw items such as mail, PDFs and images into indexed documents, and commits them to the store. The database is exposed to AI assistants through an MCP server with two transports sharing one tool registry: an HTTP server inside the app and a standalone stdio entry point that clients like Claude Desktop can spawn. OCR, vision and LLM inference run locally via a bundled llama.cpp server and native helpers. A plugin/extension system runs connectors in isolated host processes with a permission-gated view of the platform, and a GitHub-backed marketplace handles discovery and installs. Built-in sources include Gmail, IMAP, Microsoft 365 and local folders.",
+  "use_cases": [
+   "let an AI assistant answer questions about my personal mail and documents",
+   "index local folders of PDFs and images for search",
+   "run a private personal knowledge base on my own machine",
+   "connect Claude Desktop to my local documents via MCP",
+   "OCR scanned documents without sending them to the cloud",
+   "build a custom data connector plugin for a personal data source"
+  ],
+  "how_to_run": [
+   "npm install",
+   "npm start",
+   "npm test",
+   "npm run package:oss"
+  ],
+  "stack": [
+   "Electron",
+   "TypeScript",
+   "React",
+   "SQLite",
+   "better-sqlite3",
+   "llama.cpp",
+   "MCP",
+   "Node.js"
+  ],
+  "notable": [
+   "Runs ingestion, OCR, vision and LLM inference entirely on the local machine using a bundled llama.cpp server",
+   "Single MCP tool registry exposed over both an in-app HTTP server and a standalone stdio entry point",
+   "Sandboxed plugin system with manifest-declared, permission-gated access to sources, auth, storage and network",
+   "Open-core model: npm run package:oss builds an unbranded redistributable version under MIT"
+  ],
+  "caveats": [
+   "OAuth-backed sources (Gmail, Microsoft) need client credentials from the environment at build time; forks and OSS builds must supply their own OAuth client IDs",
+   "Local LLM inference requires fetching llama.cpp binaries with npm run vendor:inference before building",
+   "The README does not state supported operating systems or minimum hardware requirements"
+  ],
+  "license": "MIT",
+  "category": "personal ai knowledge base",
+  "keywords": [
+   "personal knowledge base",
+   "local ai assistant",
+   "mcp server",
+   "model context protocol",
+   "sqlite search",
+   "local llm",
+   "llama.cpp",
+   "electron app",
+   "personal data indexing",
+   "email indexing",
+   "document search",
+   "ocr",
+   "claude desktop integration",
+   "private ai",
+   "on-device inference",
+   "plugin system",
+   "desktop app",
+   "gmail connector",
+   "imap",
+   "local folder indexing",
+   "personal digital memory",
+   "offline ai",
+   "company brain alternative",
+   "semantic document search",
+   "better-sqlite3",
+   "open source electron app",
+   "chat history search",
+   "pdf indexing",
+   "self-hosted ai memory",
+   "stdio transport",
+   "ai assistant data access"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3822,
+  "output": 1212
+ },
+ "generated": "2026-10-29"
+}

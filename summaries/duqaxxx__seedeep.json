@@ -1,0 +1,95 @@
+{
+ "id": "duqaxxx/seedeep",
+ "repo": "duqaXxX/seedeep",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability & Monitoring",
+   "entry": "seedeep by duqaXxX - Reads the JSONL session logs Claude Code already writes and shows, live during a turn, what the session is doing: each model call and tool, the context window filling, every subagent on its own window and its own model, and the commits and files the session produced. Bun + TypeScript server serving a local browser GUI, with an optional Tauri menu-bar tray; single-file binaries"
+  }
+ ],
+ "summary": {
+  "one_liner": "seedeep is a read-only live monitor that tails Claude Code's local JSONL session logs and shows each turn as it happens: API calls, tool calls, context window fill, subagents, and the commits and files a session produced.",
+  "what_it_does": "It tails the session log files Claude Code writes to disk and rebuilds the turn while it is still running, showing the context window filling, each API call with latency and token split, each tool call and its result, and subagents nested under the spawn that launched them. Subagents are shown on their own context windows and models. It runs seven deterministic waste checks as each turn closes, and it reports commits and tracker cards attributed to the session that made them. Data is pushed from a local Bun/TypeScript server to a browser GUI over Server-Sent Events. An optional Tauri menu-bar tray polls the same server and can send notifications for approval waits and failed API calls. It makes no proxy or network interception and writes nothing back to session files.",
+  "use_cases": [
+   "monitor Claude Code sessions live while a turn runs",
+   "find where Claude Code token spend and cache re-reads come from",
+   "see which model each subagent runs on",
+   "get notified when a Claude Code session is waiting for approval or hit an API error",
+   "review past Claude Code sessions and search prompts and answers",
+   "check context window usage across sessions"
+  ],
+  "how_to_run": [
+   "npm i -g seedeep",
+   "seedeep",
+   "bun install -g seedeep --trust",
+   "Download a standalone binary for your platform from the latest release and run it",
+   "Optional: install the tray .dmg (macOS) or -setup.exe (Windows) from the same release",
+   "Inside Claude Code, run seedeep install-command to add the /seedeep command"
+  ],
+  "stack": [
+   "Bun",
+   "TypeScript",
+   "Node (optional install path)",
+   "Server-Sent Events",
+   "Tauri (tray app)",
+   "Rust (for building tray)"
+  ],
+  "notable": [
+   "Read-only: tails existing Claude Code JSONL logs without proxying or changing the session",
+   "Per-turn waste scoring with seven deterministic checks, each citing Claude Code documentation",
+   "Subagents shown under their own model and context window, with the spawn tree rebuilt",
+   "Optional menu-bar tray with notifications for approval waits and failed API calls",
+   "Standalone single-file binaries that embed the runtime and browser GUI"
+  ],
+  "caveats": [
+   "Linux builds require glibc; Alpine and other musl-based distributions are not supported",
+   "Builds are unsigned, so macOS and Windows show first-launch warnings and macOS re-asks notification permission after updates",
+   "Under active development; the Linux x64 build has not been used by a person, only tested in CI",
+   "Desktop app Code tab does not show tool-approval waits as amber"
+  ],
+  "license": "MIT",
+  "category": "claude code observability",
+  "keywords": [
+   "claude code",
+   "session monitor",
+   "live monitoring",
+   "jsonl logs",
+   "log tailing",
+   "token usage",
+   "cache reads",
+   "context window",
+   "subagent tracking",
+   "observability",
+   "dashboard",
+   "menu bar tray",
+   "tauri",
+   "bun",
+   "typescript",
+   "server-sent events",
+   "cost tracking",
+   "api call latency",
+   "waste detection",
+   "turn analysis",
+   "approval notification",
+   "session search",
+   "read-only monitor",
+   "standalone binary",
+   "see what claude is doing",
+   "track claude code spending",
+   "watch claude code subagents",
+   "debug claude code session",
+   "local browser dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5423,
+  "output": 1279
+ },
+ "generated": "2026-10-29"
+}

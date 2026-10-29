@@ -1,0 +1,91 @@
+{
+ "id": "ijl/orjson",
+ "repo": "ijl/orjson",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Serialization",
+   "entry": "orjson - Fast, correct JSON library."
+  }
+ ],
+ "summary": {
+  "one_liner": "orjson is a fast, RFC 8259-compliant JSON library for Python that serializes to bytes and deserializes with a Rust implementation.",
+  "what_it_does": "orjson.dumps() serializes Python objects such as str, dict, list, int, float, bool, None, dataclasses, TypedDict, datetime, date, time, UUID, numpy arrays, and orjson.Fragment to UTF-8 bytes. It accepts a default callable for arbitrary types and a set of option flags controlling output, such as indentation, sorted keys, naive-UTC datetimes, non-str dict keys, and 53-bit integer limits. orjson.loads() deserializes bytes, bytearray, memoryview, or str into standard Python types and rejects NaN, Infinity, and invalid UTF-8. The README states it is strict about UTF-8 and rejects invalid JSON that the standard json module accepts. It does not read or write files, NDJSON/JSONL, or deserialize into custom classes.",
+  "use_cases": [
+   "fast JSON serialization in Python services",
+   "serializing dataclasses and datetimes to JSON",
+   "encoding numpy arrays to JSON without tolist()",
+   "strict RFC 8259 JSON parsing and validation",
+   "embedding pre-serialized JSON blobs in a document",
+   "pretty-printing JSON with two-space indent"
+  ],
+  "how_to_run": [
+   "pip install orjson",
+   "maturin build --release --strip",
+   "pytest -q test"
+  ],
+  "stack": [
+   "Python (CPython 3.10 to 3.15)",
+   "Rust (minimum 1.95, for building)",
+   "maturin (build tool)",
+   "optional: numpy, pytz (tests only)"
+  ],
+  "notable": [
+   "Serializes dataclass, datetime, UUID, and numpy instances natively without a default function",
+   "orjson.Fragment embeds already-serialized JSON without deserializing it first",
+   "Strict UTF-8 and RFC 8259 compliance; rejects NaN and Infinity on load",
+   "Serializing new object types without an opt-in flag is treated as a breaking change under semantic versioning",
+   "Does not depend on numpy at install time; reads arrays via PyArrayInterface"
+  ],
+  "caveats": [
+   "Does not support PyPy, embedded Android/iOS Python builds, or PEP 554 subinterpreters",
+   "Does not read or write files, NDJSON, or JSONL, and does not deserialize into dataclasses or UUIDs",
+   "dumps() returns bytes rather than str, so code expecting str needs changes when migrating from json"
+  ],
+  "license": "Mozilla Public License 2.0, Apache 2.0, and MIT (multiple licenses for different source files)",
+  "category": "python json serialization",
+  "keywords": [
+   "json",
+   "python json library",
+   "fast json",
+   "json serializer",
+   "json parser",
+   "rfc 8259",
+   "utf-8 json",
+   "orjson",
+   "serialize dataclass to json",
+   "numpy to json",
+   "datetime to json",
+   "uuid to json",
+   "replace json module",
+   "alternative to json standard library",
+   "faster than json.dumps",
+   "json.loads speed",
+   "rust json library",
+   "pretty print json python",
+   "embed raw json fragment",
+   "json bytes output",
+   "validate json strictly",
+   "reject nan in json",
+   "serialize python objects to bytes",
+   "json for web apis",
+   "json performance benchmark",
+   "json encoder default function",
+   "sort json keys python",
+   "naive datetime utc json",
+   "53-bit integer json",
+   "json serialization cpython",
+   "ndjson not supported"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 16854,
+  "output": 1301
+ },
+ "generated": "2026-10-29"
+}

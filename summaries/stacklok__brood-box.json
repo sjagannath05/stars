@@ -1,0 +1,92 @@
+{
+ "id": "stacklok/brood-box",
+ "repo": "stacklok/brood-box",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Brood Box by stacklok - CLI tool for running coding agents inside hardware-isolated microVMs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Brood Box (bbox) is an experimental CLI that runs coding agents such as Claude Code, Codex and OpenCode inside hardware-isolated libkrun/KVM microVMs, with a copy-on-write workspace snapshot that you review file by file before changes are flushed back.",
+  "category": "sandboxed coding agents",
+  "keywords": [
+   "coding agent sandbox",
+   "microvm",
+   "libkrun",
+   "kvm",
+   "hypervisor.framework",
+   "hardware isolation",
+   "claude code",
+   "codex",
+   "opencode",
+   "gemini cli",
+   "hermes",
+   "copy-on-write snapshot",
+   "workspace snapshot",
+   "diff review",
+   "per-file review",
+   "egress firewall",
+   "dns egress policy",
+   "mcp proxy",
+   "toolhive",
+   "ssh agent forwarding",
+   "ephemeral session",
+   "run ai agent safely",
+   "sandbox untrusted code",
+   "review agent changes before applying",
+   "run ai coding assistant in vm",
+   "go",
+   "oci image"
+  ],
+  "what_it_does": "Brood Box launches a coding agent in a lightweight VM rather than a container, so the agent does not share the host kernel. By default it creates a copy-on-write snapshot of the current workspace, boots a microVM from the agent's OCI image, and opens an interactive SSH session in the guest. When the agent exits, the VM is stopped and a SHA-256 based differ shows unified diffs per file so you can accept or reject each change, and accepted changes are flushed back with hash re-verification. It forwards only the environment variables and git credentials you configure, and can restrict outbound traffic with egress profiles (permissive, standard, locked) plus extra allowed hostnames. It can also proxy ToolHive MCP servers into the VM, and a run-image subcommand runs an arbitrary OCI image as an ephemeral one-shot. A direct workspace mode skips snapshot isolation for trusted, turn-by-turn work.",
+  "use_cases": [
+   "run claude code without giving it full access to my machine",
+   "review every file change an ai agent makes before it lands",
+   "sandbox a coding agent in a microvm",
+   "restrict network access for an llm coding agent",
+   "run an arbitrary container image as a throwaway agent sandbox",
+   "keep API keys away from an autonomous coding tool"
+  ],
+  "how_to_run": [
+   "Install a release binary (tar xzf bbox-linux-amd64.tar.gz; sudo mv bbox /usr/local/bin/) or build with: task build",
+   "export ANTHROPIC_API_KEY=\"sk-ant-...\"",
+   "bbox claude-code"
+  ],
+  "stack": [
+   "Go (pure Go, no CGO)",
+   "libkrun / libkrunfw",
+   "KVM and Hypervisor.framework",
+   "go-microvm runtime",
+   "Task (task runner)",
+   "OCI images",
+   "virtio-fs",
+   "SSH (embedded server in bbox-init guest init)"
+  ],
+  "notable": [
+   "Custom Go init binary (bbox-init) runs as PID 1 in the guest, with no shell scripts or external sshd",
+   "Interactive per-file diff review of the agent's changes, with the VM stopped before review",
+   "Three egress profiles (permissive, standard, locked) with DNS-hostname allow-listing",
+   "Security-sensitive files such as .env, *.pem, .ssh/ and .aws/ are always excluded from snapshots",
+   "run-image subcommand runs any OCI image as an ephemeral sandbox with safer defaults"
+  ],
+  "caveats": [
+   "Explicitly EXPERIMENTAL: APIs, CLI flags and config format may change without notice",
+   "Requires Linux with /dev/kvm accessible, or macOS with Hypervisor.framework on Apple Silicon",
+   "direct workspace mode writes straight to your files with no review or undo, and it requires --yes on first use",
+   "Building from source requires Go 1.26+ and Task; agent images are pulled from ghcr.io"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6828,
+  "output": 1470
+ },
+ "generated": "2026-10-29"
+}

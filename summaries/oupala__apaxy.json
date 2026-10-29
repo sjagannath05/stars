@@ -1,0 +1,93 @@
+{
+ "id": "oupala/apaxy",
+ "repo": "oupala/apaxy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Web-based File Managers",
+   "entry": "Apaxy - Theme built to enhance the experience of browsing web directories, using the mod_autoindex Apache module and some CSS to override the default style of a directory listing. (Source Code) GPL-3.0 Javascript"
+  }
+ ],
+ "summary": {
+  "one_liner": "Apaxy is a customisable theme that restyles Apache's mod_autoindex directory listings using CSS, with optional JavaScript and a lightgallery-based gallery.",
+  "what_it_does": "Apaxy overrides the default look of Apache directory listings by working through mod_autoindex and a set of .htaccess rules plus CSS. Its theme files (header.html, footer.html, style.css) can be edited to change styling, add JavaScript, and show welcome messages, download instructions, or copyright notices. Custom icons can be assigned to media types through .htaccess rules, and custom error pages are supported. An optional gallery feature is built on lightgallery.js. The README states that the generated table structure of the listing cannot be changed, only its visual style. A bundled apaxy-configure.sh script can automate installation, and a docker-compose setup starts a local demo.",
+  "use_cases": [
+   "styling an Apache directory listing",
+   "sharing a folder of files over the web with a nicer index page",
+   "adding download instructions or notices to a web directory",
+   "viewing images in a web folder as a gallery",
+   "customising file-type icons on an Apache file index"
+  ],
+  "how_to_run": [
+   "Ensure Apache 2.4+ is running and set AllowOverride Options Indexes FileInfo for the listing folder",
+   "Edit apaxy.config to set apacheWebRootPath and installWebPath",
+   "Run: sudo -u www-data ./apaxy-configure.sh",
+   "Manual alternative: copy the apaxy folder contents into the share folder, update {FOLDERNAME} paths in htaccess.txt and html files, then rename htaccess.txt to .htaccess",
+   "Optional gallery: rename header-lightgallery.html to header.html and footer-lightgallery.html to footer.html",
+   "Demo: docker-compose up"
+  ],
+  "stack": [
+   "Apache HTTP Server 2.4+",
+   "mod_autoindex",
+   "CSS",
+   "JavaScript",
+   "lightgallery.js",
+   "Bash",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Works purely through Apache mod_autoindex and .htaccess, with no server-side application code",
+   "Optional lightgallery.js gallery mode for image folders",
+   "Bundled apaxy-configure.sh install script with CLI options",
+   "Custom media-type icons via AddIconByType rules, using Faenza icons by default",
+   "Inspired by h5ai, according to the README"
+  ],
+  "caveats": [
+   "Only visual styling can be changed; the generated listing table structure cannot be altered",
+   "Requires Apache 2.4+ with AllowOverride set correctly for the folder, or the .htaccess rules will not apply",
+   "Manual install requires editing {FOLDERNAME} paths in several files"
+  ],
+  "license": "GPL-3.0",
+  "category": "directory listing theme",
+  "keywords": [
+   "apache directory listing",
+   "apache autoindex theme",
+   "mod_autoindex",
+   "directory index css",
+   "web directory browser",
+   "fancy apache index",
+   "htaccess theme",
+   "file listing style",
+   "lightgallery",
+   "gallery for web folder",
+   "apache 2.4",
+   "custom file icons",
+   "static file index",
+   "self-hosted file browsing",
+   "share files over http",
+   "browse folder in browser",
+   "web file manager",
+   "style directory listing",
+   "h5ai alternative",
+   "fancy index",
+   "apache index page",
+   "css theme",
+   "docker demo",
+   "bash install script",
+   "gpl-3.0 theme",
+   "customise apache index",
+   "publish downloads folder",
+   "share folder via web server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4113,
+  "output": 1302
+ },
+ "generated": "2026-10-29"
+}

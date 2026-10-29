@@ -1,0 +1,102 @@
+{
+ "id": "unary-works/unfoldly",
+ "repo": "Unary-Works/Unfoldly",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "Unfoldly - Local-first AI file search for macOS that indexes selected personal files on-device with embeddings, visual search, and local GGUF models."
+  }
+ ],
+ "summary": {
+  "one_liner": "Unfoldly is a local-first macOS app that indexes selected personal files on-device so you can search them by meaning, including images and video moments, and ask follow-up questions about the results.",
+  "what_it_does": "Users pick folders or files to index, and Unfoldly extracts text, visual signals, metadata, transcripts, and embeddings depending on file type. Searches are described in natural language (for example, finding images of a dog or a video where a demo was presented) rather than by exact filename. Matching files can be opened, and follow-up questions such as summarizing a document or asking about a video or audio file are answered in the context of the source. The README says indexes, models, preferences, chat history, and logs stay in the local app data directory, and that personal file contents are not uploaded. Retrieval uses ChromaDB with BGE-family embedding and reranking models, and models run as local GGUF files through llama.cpp / llama-cpp-python. The uninstall script shows and removes local app data without deleting the original source files.",
+  "use_cases": [
+   "find a file when you only remember its contents",
+   "search photos and screenshots by what is in them",
+   "locate a video moment by description",
+   "ask questions about PDFs and documents on your computer",
+   "search meeting audio recordings by topic",
+   "chat with a folder of local files privately"
+  ],
+  "how_to_run": [
+   "python3 -m venv .venv",
+   ".venv/bin/pip install -r requirements.txt",
+   "./scripts/start-dev.sh",
+   "bash scripts/build-release.sh arm64"
+  ],
+  "stack": [
+   "Tauri",
+   "React",
+   "TypeScript",
+   "Vite",
+   "Rust",
+   "PyO3",
+   "Python 3.12",
+   "ChromaDB",
+   "llama.cpp",
+   "llama-cpp-python",
+   "GGUF models",
+   "BGE embedding and reranking models"
+  ],
+  "notable": [
+   "Semantic search over personal files with visual search for images, screenshots, and video moments",
+   "Runs locally with no account required; the README says file contents are not uploaded",
+   "Only indexes folders and files the user selects",
+   "Packaged app embeds the Python backend in Tauri, so no separate local HTTP server is needed in normal use",
+   "Uninstall helper with a --show preview mode and a confirmation prompt before deletion"
+  ],
+  "caveats": [
+   "Early beta and macOS-only; the public build is a signed, notarized macOS app",
+   "Support quality varies by file structure, size, parser availability, and selected model",
+   "Model downloads and app release downloads require internet access"
+  ],
+  "license": "Apache License 2.0",
+  "category": "local ai file search",
+  "keywords": [
+   "local file search",
+   "semantic file search",
+   "ai file search",
+   "macos file search",
+   "search by meaning",
+   "find files by content",
+   "visual search",
+   "image search",
+   "video moment search",
+   "audio transcript search",
+   "pdf search",
+   "document q&a",
+   "chat with files",
+   "on-device ai",
+   "local-first",
+   "private file search",
+   "gguf models",
+   "llama.cpp",
+   "llama-cpp-python",
+   "chromadb",
+   "vector search",
+   "embeddings",
+   "reranking",
+   "bge embeddings",
+   "tauri app",
+   "rust pyo3",
+   "react typescript",
+   "find forgotten file",
+   "search my downloads folder",
+   "search my documents by content",
+   "find photo i remember",
+   "offline ai assistant",
+   "spotlight alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4063,
+  "output": 1216
+ },
+ "generated": "2026-10-29"
+}

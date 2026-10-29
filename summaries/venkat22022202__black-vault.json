@@ -1,0 +1,97 @@
+{
+ "id": "venkat22022202/black-vault",
+ "repo": "venkat22022202/black-vault",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "BlackVault - Open-source proxy gateway for AI API keys. Generate proxy tokens for agents — BlackVault injects the real key server-side and forwards to OpenAI, Anthropic, Google AI, and Nebius AI. Kill a token for instant revocation."
+  }
+ ],
+ "summary": {
+  "one_liner": "BlackVault is an open-source proxy gateway that issues revocable proxy tokens (bvt_) so AI agents can call OpenAI, Anthropic, Google AI, and Nebius without ever seeing the real provider API key.",
+  "what_it_does": "BlackVault stores provider API keys in an encrypted vault (AES-256-GCM) and hands out bvt_ proxy tokens to agents. Requests sent with a token are checked against per-token limits (rate limits, spend budgets, model allowlists, IP allowlists), then forwarded to the provider with the real key injected server-side. It exposes an OpenAI-compatible endpoint at /api/v1/chat/completions that routes by model name (gpt-*, claude-*, gemini-*, and Nebius-hosted models) and translates request and response formats between OpenAI and Anthropic or Gemini. It also includes a direct proxy route per provider with SSE streaming, a kill switch that revokes a token, session, or everything, and a remote MCP server exposing list_models and chat tools. A /api/health endpoint reports database and Redis status.",
+  "use_cases": [
+   "give AI agents API access without sharing the real key",
+   "revoke a single agent's AI API access instantly",
+   "cap spending per agent or per token",
+   "route OpenAI-compatible tools to Claude or Gemini models",
+   "govern MCP client access to AI provider keys",
+   "proxy calls to a self-hosted model server such as Ollama or vLLM"
+  ],
+  "how_to_run": [
+   "npm run build",
+   "npm start"
+  ],
+  "stack": [
+   "Next.js 16",
+   "React 19",
+   "TypeScript",
+   "tRPC 11",
+   "Neon Postgres",
+   "Drizzle ORM",
+   "Upstash Redis",
+   "Clerk",
+   "Tailwind CSS v4",
+   "Framer Motion",
+   "Recharts",
+   "Node.js crypto"
+  ],
+  "notable": [
+   "Agents hold only a bvt_ proxy token; the real provider key stays server-side, and revoking the token gives an immediate 401",
+   "One OpenAI-compatible endpoint auto-routes by model name and translates OpenAI format to Anthropic and Gemini formats",
+   "Budget enforcement counts spend in integer nano-dollars atomically, so concurrent requests cannot overshoot by more than one request",
+   "Redis failure handling with a circuit breaker and a declared open or closed fail mode, with X-BlackVault-Degraded response header"
+  ],
+  "caveats": [
+   "Designed around Vercel deployment and Clerk auth; self-hosting needs Postgres and optionally Redis, and without Redis rate limits are off",
+   "Some roadmap items are unchecked, including Groq, Mistral, Together AI, webhook alerts, token scoping, analytics, and team workspaces",
+   "MCP tools are limited to list_models and chat; generic HTTP-credential brokering is only on the roadmap"
+  ],
+  "license": "MIT",
+  "category": "ai api gateway",
+  "keywords": [
+   "api key proxy",
+   "ai gateway",
+   "llm proxy",
+   "openai proxy",
+   "anthropic proxy",
+   "gemini proxy",
+   "nebius",
+   "proxy token",
+   "revoke api key",
+   "api key firewall",
+   "llm ops",
+   "mcp server",
+   "litellm alternative",
+   "openai compatible endpoint",
+   "ai agent api key",
+   "rate limit ai api",
+   "budget cap llm",
+   "spend limit openai",
+   "model allowlist",
+   "kill switch",
+   "langchain proxy",
+   "crewai",
+   "cursor base url",
+   "self-hosted llm gateway",
+   "next.js api gateway",
+   "share api key safely",
+   "hide api key from agent",
+   "encrypted api key vault",
+   "sse streaming proxy",
+   "ollama proxy",
+   "vllm gateway"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5825,
+  "output": 1376
+ },
+ "generated": "2026-10-29"
+}

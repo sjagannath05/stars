@@ -1,0 +1,94 @@
+{
+ "id": "cfu288/mere-medical",
+ "repo": "cfu288/mere-medical",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Health and Fitness",
+   "entry": "Mere Medical ⚠ - Manage all of your medical records from Epic MyChart, Cerner, and OnPatient patient portals in one place. Privacy-focused, self-hosted, and offline-first. (Demo, Source Code) GPL-3.0 Docker/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mere Medical is a self-hosted, offline-first web app that aggregates and syncs medical records from multiple patient portals into one timeline.",
+  "what_it_does": "Mere Medical pulls medical records from patient portals and electronic medical record systems into a single personal health record. The README says it supports thousands of hospitals and clinics and major EMR systems, naming Epic MyChart, Cerner, OnPatient, Veradigm, VA, Healow, Athena Health and NextGen. Records can be viewed in a timeline or summarized. It is described as self-hosted and offline-first, with core functionality meant to work without internet access. Portal access depends on per-provider client IDs and secrets set as environment variables. The app is deployed with Docker Compose or built locally with Nx, Node.js and npm.",
+  "use_cases": [
+   "aggregate medical records from multiple patient portals",
+   "view health records in a timeline",
+   "self-host a personal health record",
+   "sync Epic MyChart records to your own server",
+   "keep medical data private and offline-first"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the cfu288/mere-medical image, port 4200:8080, and the required client ID environment variables, including PUBLIC_URL.",
+   "Run docker compose up to start the app on port 4200.",
+   "For local development: git clone the repo, then run nvm install v26.7.0, nvm use, and npm install.",
+   "Install Nx globally with npm i nx -g, then run npx nx migrate --run-migrations if prompted.",
+   "Copy apps/api/.example.env to apps/api/.env and edit apps/web/src/environments/config.json with your values.",
+   "Run npx nx run-many --target=serve --projects=api,web --output-style=stream to start the full app."
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "Nx",
+   "Docker",
+   "Angular (web app, inferred from the web/e2e project names)",
+   "mkcert (local SSL certs)"
+  ],
+  "notable": [
+   "Connects to many EMR and patient portal providers, each with its own client ID setup",
+   "Offline-first design goal: core functions should work without internet",
+   "Documented design goals prioritize user control, privacy, and local-first storage",
+   "Supports both legacy DSTU2 and newer R4 FHIR endpoints for Epic and Cerner",
+   "Single-developer project maintained alongside a medical residency"
+  ],
+  "caveats": [
+   "Some providers need separate developer credentials; the VA client ID only works with the VA sandbox, not production",
+   "The README says the project is still labeled pre-release, though the maintainer notes it has been stable since 2022",
+   "Supported by a single developer with limited time; hosting costs are noted as a concern"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted health records",
+  "keywords": [
+   "medical records",
+   "personal health record",
+   "phr",
+   "patient portal",
+   "epic mychart",
+   "cerner",
+   "onpatient",
+   "drchrono",
+   "healow",
+   "athena health",
+   "nextgen",
+   "veradigm",
+   "va health records",
+   "self-hosted",
+   "offline-first",
+   "docker",
+   "docker compose",
+   "node.js",
+   "nx",
+   "angular",
+   "health records aggregator",
+   "download my medical records",
+   "consolidate doctor visit records",
+   "view all my health data in one place",
+   "privacy-focused health app",
+   "timeline of medical history",
+   "fhir",
+   "dstu2",
+   "r4",
+   "gpl-3.0"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4873,
+  "output": 1259
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "pymysql/pymysql",
+ "repo": "PyMySQL/PyMySQL",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database Drivers",
+   "entry": "pymysql - A pure-Python MySQL and MariaDB client library, based on PEP 249."
+  }
+ ],
+ "summary": {
+  "one_liner": "PyMySQL is a pure-Python client library for connecting to MySQL and MariaDB servers, implementing the PEP 249 (DB-API 2.0) interface.",
+  "what_it_does": "The package provides a pure-Python driver for MySQL and MariaDB databases, following the DB-API 2.0 specification (PEP 249). You open a connection with pymysql.connect(), create cursors, run parameterized SQL with execute(), and fetch results with fetchone() and similar methods. Cursors can return rows as dictionaries via pymysql.cursors.DictCursor. Connections are not autocommit by default, so the README shows an explicit commit() call. Optional extras are available for the \"sha256_password\" and \"caching_sha2_password\" authentication methods (the [rsa] extra) and MariaDB's \"ed25519\" method (the [ed25519] extra). The README's example creates a users table, inserts a row, and reads it back.",
+  "use_cases": [
+   "connect a Python app to a MySQL database",
+   "connect a Python app to a MariaDB database",
+   "run parameterized SQL queries from Python",
+   "insert and read rows with DB-API cursors",
+   "authenticate with caching_sha2_password or ed25519 accounts"
+  ],
+  "how_to_run": [
+   "$ python3 -m pip install PyMySQL",
+   "$ python3 -m pip install PyMySQL[rsa]  (for sha256_password or caching_sha2_password)",
+   "$ python3 -m pip install PyMySQL[ed25519]  (for MariaDB ed25519 auth)",
+   "Call pymysql.connect(host, user, password, database, cursorclass=...) and use the connection as a context manager",
+   "Run SQL with cursor.execute(sql, params), then connection.commit() for writes"
+  ],
+  "stack": [
+   "Python",
+   "CPython 3.9+",
+   "PyPy 3.x",
+   "MySQL",
+   "MariaDB",
+   "PyPI"
+  ],
+  "notable": [
+   "Pure Python, with no compiled MySQL client library needed",
+   "Implements the PEP 249 (DB-API 2.0) interface",
+   "DictCursor returns rows as dictionaries",
+   "Optional extras for rsa and ed25519 authentication plugins"
+  ],
+  "caveats": [
+   "Requires CPython 3.9 or newer, or a recent PyPy 3.x",
+   "Targets MySQL LTS and MariaDB LTS server versions only",
+   "Authentication methods sha256_password and caching_sha2_password need the extra rsa dependency, and ed25519 needs its own extra"
+  ],
+  "license": "MIT",
+  "category": "database driver",
+  "keywords": [
+   "pymysql",
+   "mysql client",
+   "mariadb client",
+   "mysql python driver",
+   "mysql connector python",
+   "pep 249",
+   "db-api 2.0",
+   "python database library",
+   "pure python mysql",
+   "sql queries python",
+   "parameterized queries",
+   "dictcursor",
+   "mysql connection python",
+   "connect python to mysql",
+   "connect python to mariadb",
+   "run sql from python",
+   "database access python",
+   "python mysql library",
+   "caching_sha2_password",
+   "sha256_password",
+   "ed25519 authentication",
+   "mysql protocol",
+   "pypi mysql package",
+   "python sql client",
+   "insert rows mysql python",
+   "mysql database driver",
+   "mit licensed database library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2376,
+  "output": 1225
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "phitux/dailytxt",
+ "repo": "PhiTux/DailyTxT",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Note-taking & Editors",
+   "entry": "DailyTxT - Encrypted diary Web application to save your personal memories of each day. Includes a search function and encrypted file upload. (Demo) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "DailyTxT is a self-hosted, encrypted diary/journal web app written in Svelte and Go, run via Docker, with encrypted entries and file uploads.",
+  "what_it_does": "DailyTxT lets multiple users write daily diary entries in Markdown with a live preview, tags, and a search across words, tags and filenames. Each user's entries and uploaded files (up to 500 MB each) are encrypted with ChaCha20-Poly1305 before being written to disk, using a per-user key derived from the password with Argon2id. Data is stored as JSON files with no database. Additional features include an image gallery per day, a map for pinning locations and showing GPX tracks, custom templates, a read mode, HTML export, backup and import, and a statistics panel. An admin panel manages users and can temporarily open registration. The app is available in about ten languages and can be installed as a PWA.",
+  "use_cases": [
+   "keep a private encrypted daily journal",
+   "self-host a personal diary web app",
+   "write and search markdown diary entries",
+   "attach photos and files to daily entries",
+   "track locations and GPX routes for each day",
+   "export or back up personal journal data"
+  ],
+  "how_to_run": [
+   "Use the docker-compose.yml file in the repository, adjusting environment variables",
+   "Generate a secret token with: openssl rand -base64 32 and set SECRET_TOKEN",
+   "Set ADMIN_PASSWORD and ALLOW_REGISTRATION as needed",
+   "Run: docker compose up -d",
+   "Developers: install Go (1.24+) and Node.js (24+), then run the backend with go build and the frontend with npm install and npm run dev"
+  ],
+  "stack": [
+   "Svelte",
+   "Go",
+   "Docker",
+   "Node.js",
+   "ChaCha20-Poly1305",
+   "Argon2id",
+   "Markdown"
+  ],
+  "notable": [
+   "Server-side encryption of all entries and uploads with per-user keys; no client-side E2E so search still works",
+   "Data stored as plain JSON files with no database, for portability",
+   "Backup-keys can be used to recover access if a password is lost",
+   "Automatic migration from version 1 data when an old user logs in",
+   "Supports AMD64 and ARM64 Docker images"
+  ],
+  "caveats": [
+   "Migrating from version 1 requires following specific steps; updating only the image tag causes server errors",
+   "Author states no backward-compatibility guarantee between versions; back up data before updating",
+   "Testing-tagged releases are non-stable"
+  ],
+  "license": "MIT",
+  "category": "encrypted journaling app",
+  "keywords": [
+   "encrypted diary",
+   "private journal",
+   "self-hosted journal",
+   "diary web app",
+   "journaling software",
+   "daily journal",
+   "markdown editor",
+   "note-taking",
+   "chacha20-poly1305",
+   "argon2id",
+   "encrypted file upload",
+   "photo journal",
+   "docker compose",
+   "svelte app",
+   "golang backend",
+   "pwa journal",
+   "map journal gpx",
+   "diary search",
+   "tag entries",
+   "export journal html",
+   "personal memories",
+   "write daily entries",
+   "share files with my team",
+   "keep private notes safe",
+   "encrypted notes self-hosted",
+   "alternative to cloud diary",
+   "multi-user diary",
+   "password recovery backup key",
+   "json file storage",
+   "day journal calendar",
+   "awesome-selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6785,
+  "output": 1224
+ },
+ "generated": "2026-10-29"
+}

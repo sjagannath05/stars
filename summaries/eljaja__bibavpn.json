@@ -1,0 +1,97 @@
+{
+ "id": "eljaja/bibavpn",
+ "repo": "Eljaja/BibaVPN",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "BibaVPN | Self-hosted SOCKS5 and HTTP CONNECT tunnel over TLS and WebSocket for single-VPS deployments"
+  }
+ ],
+ "summary": {
+  "one_liner": "BibaVPN is an experimental self-hosted Rust tunnel that carries SOCKS5 and HTTP CONNECT traffic over TLS and WebSocket to a server you run on your own VPS.",
+  "what_it_does": "The project provides a Rust server and CLI client that forward local SOCKS5 and optional HTTP CONNECT proxy traffic through an encrypted TLS plus WebSocket tunnel to a VPS you control. SOCKS5 UDP relay is supported over a separate WebSocket session. The default tunnel adds ChaCha20-Poly1305 encryption, authenticated control frames and padding inside TLS. Configuration covers traffic shaping (padding, jitter, decoy traffic, TLS profiles), 1–4 parallel TCP WebSocket sessions, certificate pinning, and an optional camouflage website on the same TLS port. Encrypted biba:// invitation URIs let other devices connect using a passphrase. Desktop and Android apps are included, and an optional REALITY handshake mode is described as BibaVPN's own protocol rather than Xray-compatible.",
+  "use_cases": [
+   "self-hosted VPN on a single VPS",
+   "route browser traffic through a personal proxy",
+   "SOCKS5 proxy with DNS through the tunnel",
+   "share connection settings with another device via invitation",
+   "tunnel HTTP CONNECT traffic for proxy-aware tools",
+   "test a tunnel locally with Docker"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into BibaVPN",
+   "export BIBA_VPN_TOKEN and BIBA_VPN_PSK with openssl rand, then run: docker compose -f docker-compose.hub.yml up -d (local lab)",
+   "cargo build --release -p bibavpn --bin bibavpn-server --bin bibavpn-client",
+   "On the VPS: ./target/release/bibavpn-server --listen 0.0.0.0:8443 --cert fullchain.pem --key privkey.pem --token \"$BIBA_VPN_TOKEN\" --psk \"$BIBA_VPN_PSK\"",
+   "On the client: ./target/release/bibavpn-client --server host:8443 --sni host --token ... --psk ... --socks5 127.0.0.1:1080"
+  ],
+  "stack": [
+   "Rust",
+   "Docker Compose",
+   "TLS (rustls, optional BoringSSL)",
+   "WebSocket",
+   "ChaCha20-Poly1305",
+   "Argon2id",
+   "Android app",
+   "desktop app"
+  ],
+  "notable": [
+   "SOCKS5 and HTTP CONNECT tunnel over TLS + WebSocket with padding and timing jitter",
+   "Encrypted biba:// invitation URIs protected by a passphrase (Argon2id in v2 format)",
+   "Camouflage website served on the same TLS port",
+   "Multiplexed TCP streams across 1–4 WebSocket sessions",
+   "Prebuilt-image Docker lab for trying the full tunnel locally"
+  ],
+  "caveats": [
+   "Experimental and evolving; protocol not frozen and has no third-party security audit",
+   "DPI resistance depends on network and configuration and is not a guarantee",
+   "iOS app is unfinished: the Packet Tunnel extension does not forward traffic yet; the CLI only proxies apps configured to use it rather than capturing all traffic"
+  ],
+  "license": "MIT",
+  "category": "self-hosted vpn tunnel",
+  "keywords": [
+   "vpn",
+   "self-hosted vpn",
+   "socks5 proxy",
+   "http connect proxy",
+   "tls tunnel",
+   "websocket tunnel",
+   "rust",
+   "vps",
+   "own exit server",
+   "dpi evasion",
+   "traffic obfuscation",
+   "censorship circumvention",
+   "wss",
+   "encrypted tunnel",
+   "docker compose",
+   "invitation link",
+   "proxy for browser",
+   "socks5 udp",
+   "chacha20-poly1305",
+   "tunnel over websocket",
+   "personal proxy server",
+   "alternative to commercial vpn",
+   "route traffic through my server",
+   "hide traffic from isp",
+   "android vpn app",
+   "desktop vpn client",
+   "camouflage website",
+   "certificate pinning",
+   "shadowsocks-like proxy",
+   "xray reality alternative",
+   "run my own vpn"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5921,
+  "output": 1570
+ },
+ "generated": "2026-10-29"
+}

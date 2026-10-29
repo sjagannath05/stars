@@ -1,0 +1,94 @@
+{
+ "id": "owntracks/recorder",
+ "repo": "owntracks/recorder",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Maps and Global Positioning System (GPS)",
+   "entry": "OwnTracks Recorder ⚠ - Store and access data published by OwnTracks location tracking apps. GPL-2.0 C/Lua/deb/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "OwnTracks Recorder is a lightweight program that stores location data published by the OwnTracks apps (via MQTT or HTTP) in plain files and serves it through a REST API, WebSocket live map, and the ocat CLI.",
+  "what_it_does": "The Recorder subscribes to an MQTT broker or accepts OwnTracks JSON via HTTP POST, and writes the data into a file-based store with no external database required. It serves a built-in HTTP server with a REST API (JSON data at /api/0/), static pages, example views such as a last-position table and live map updated over WebSocket, and GeoJSON maps and tracks. The ocat command-line tool reads the store directly and outputs JSON, GeoJSON, CSV, GPX, XML, or raw formats, with filters for user, device, time range, and limit. It performs reverse-geocoding of coordinates (via OpenCage, Google, revgeod, or a Lua hook) with an LMDB cache, and can expire cached entries. Views let you share a restricted, time-limited slice of data via a small JSON file with optional digest authentication. Optional features include payload encryption, Lua hooks, and friends lists in HTTP mode.",
+  "use_cases": [
+   "self-host a location history for OwnTracks phones",
+   "record and replay personal GPS tracks",
+   "share a limited time window of location with friends",
+   "export location data to GPX, CSV, or GeoJSON",
+   "show live device positions on a map",
+   "reverse-geocode location history into addresses and countries"
+  ],
+  "how_to_run": [
+   "Install from the OwnTracks package repository, or pull the Docker image from Docker Hub",
+   "Or build from source (see Building section of README)",
+   "Configure settings in /etc/default/ot-recorder (OTR_* variables) or via command-line options",
+   "Run ot-recorder with MQTT broker settings (OTR_HOST, OTR_PORT, OTR_TOPICS) or enable HTTP mode",
+   "Query data with ocat, e.g. ocat --last --user demo --device iphone",
+   "Open the built-in web server (default port 8083) to view the table and live map"
+  ],
+  "stack": [
+   "C",
+   "Lua",
+   "MQTT",
+   "LMDB",
+   "Docker",
+   "Debian packages",
+   "Mosquitto (libmosquitto)",
+   "GeoJSON"
+  ],
+  "notable": [
+   "Stores data in plain files with no external database; LMDB is used only for the reverse-geo cache and named databases",
+   "ocat CLI reads the store directly and exports many formats including GPX and GeoJSON",
+   "Views give visitors a sandboxed, date-limited view of selected user/device data",
+   "Optional payload encryption and Lua hooks for customizing behavior",
+   "Built-in WebSocket live map that updates as new publishes arrive"
+  ],
+  "caveats": [
+   "The built-in HTTP server only speaks plain HTTP; the README says to put TLS and authentication in front (e.g. nginx, Apache, Caddy) before exposing it publicly",
+   "Packages are no longer built for Debian 10, 11, and 12; those users must compile from source",
+   "Reverse-geo lookups with Google or OpenCage require API keys and respect provider quotas"
+  ],
+  "license": "GPL-2.0",
+  "category": "location tracking server",
+  "keywords": [
+   "owntracks",
+   "location tracking",
+   "gps tracker storage",
+   "mqtt location recorder",
+   "location history",
+   "gps track recorder",
+   "self-hosted location history",
+   "geojson export",
+   "gpx export",
+   "ocat cli",
+   "rest api location",
+   "websocket live map",
+   "reverse geocoding",
+   "geohash",
+   "lmdb cache",
+   "lua hooks",
+   "http post location",
+   "payload encryption",
+   "time-limited location sharing",
+   "share location with friends",
+   "track my phone location",
+   "record gps history",
+   "owntracks recorder docker",
+   "mqtt subscriber",
+   "location data export csv",
+   "live map of devices",
+   "reverse proxy nginx location"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 16666,
+  "output": 1440
+ },
+ "generated": "2026-10-29"
+}

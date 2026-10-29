@@ -1,0 +1,92 @@
+{
+ "id": "aryanbrite/openrabbit",
+ "repo": "aryanbrite/openrabbit",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI-Powered Compilers and Code Assistants",
+   "entry": "OpenRabbit - Free, open-source, self-hosted AI GitHub PR reviewer that runs entirely in GitHub Actions."
+  }
+ ],
+ "summary": {
+  "one_liner": "OpenRabbit is a free, open-source, self-hosted GitHub pull request reviewer that runs inside your own GitHub Actions and uses a pluggable LLM provider to post review comments.",
+  "what_it_does": "It analyzes PR diffs and sends them to an LLM provider (the README names Groq and OpenRouter, plus others via adapters), then posts a structured review with a summary and inline comments or suggestions. It can fetch extra project files when it lacks context and reads linked GitHub issues to understand intent. Review behavior is configured through the workflow, including review_mode (summary, inline, or both) and tone_mode. The README also describes a mentor-style \"Socratic\" tone, a performance/scalability check, a security auditor pass, suggestion validation, and DRIFT detection for unrelated changes that should go in a separate PR. The workflow runs on pull_request_target events (opened, reopened, edited, synchronize).",
+  "use_cases": [
+   "automated code review on GitHub pull requests",
+   "self-hosted AI PR review without a SaaS subscription",
+   "catching security issues like SQL injection or XSS in PRs",
+   "getting inline review suggestions in CI",
+   "free AI code review using OpenRouter free models",
+   "replacing third-party PR review bots"
+  ],
+  "how_to_run": [
+   "Create .github/workflows/reviewer.yml in your repository.",
+   "Paste the workflow that uses aryanbrite/openrabbit@main, with github_token and llm_api_key inputs.",
+   "Set llm_provider (openrouter or groq) and llm_model (default example: openrouter/free).",
+   "Store your LLM API key as a repository secret named LLM_API_KEY under Settings > Secrets and variables > Actions.",
+   "Open or update a pull request to trigger the reviewer."
+  ],
+  "stack": [
+   "GitHub Actions",
+   "YAML workflow configuration",
+   "LLM providers: Groq, OpenRouter (others via adapters in src/llm)"
+  ],
+  "notable": [
+   "Runs entirely in your own GitHub Actions runner with no central server or proxy",
+   "Default uses OpenRouter's free model pool, rotating between free models to handle rate limits",
+   "Two-stage file fetch and linked issue awareness to reduce context blindness",
+   "DRIFT detection flags unrelated changes and suggests moving them to a separate PR",
+   "Review modes: summary, inline, or both"
+  ],
+  "caveats": [
+   "The free OpenRouter pool is rate-limited and the README says it is not super reliable or consistent; a personal API key is recommended for better results",
+   "Requires an LLM API key stored as a secret",
+   "Uses pull_request_target, which runs with repository secrets and write permissions, so the workflow setup needs care"
+  ],
+  "license": "MIT",
+  "category": "AI code review",
+  "keywords": [
+   "ai code review",
+   "pull request reviewer",
+   "pr review bot",
+   "github actions",
+   "self-hosted code review",
+   "open source code review",
+   "llm code review",
+   "openrouter",
+   "groq",
+   "free ai reviewer",
+   "automated pull request review",
+   "inline code comments",
+   "code review suggestions",
+   "security review of pull requests",
+   "sql injection detection",
+   "xss detection",
+   "github pr linter",
+   "ci code review",
+   "review my pull request with ai",
+   "replace coderabbit-style tools",
+   "alternative to third-party pr review bots",
+   "llm provider adapter",
+   "pluggable llm",
+   "linked issue context",
+   "devsecops pr scanning",
+   "performance review ai",
+   "scope creep detection",
+   "free llm api",
+   "openrouter free models",
+   "mentor style code review",
+   "pull request automation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3398,
+  "output": 1320
+ },
+ "generated": "2026-10-29"
+}

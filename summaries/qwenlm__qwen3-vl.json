@@ -1,0 +1,96 @@
+{
+ "id": "qwenlm/qwen3-vl",
+ "repo": "QwenLM/Qwen3-VL",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Qwen",
+   "entry": "Qwen3-VL – Vision-language models"
+  }
+ ],
+ "summary": {
+  "one_liner": "Qwen3-VL is Alibaba Qwen's open vision-language model family (Dense and MoE, Instruct and Thinking editions) for image, video, OCR, GUI-agent and grounding tasks.",
+  "what_it_does": "The README introduces Qwen3-VL as a multimodal model family available in Dense and MoE architectures, with Instruct and reasoning-enhanced Thinking variants, and lists model sizes from 2B to 235B-A22B. It describes capabilities including operating PC and mobile GUIs, generating Draw.io/HTML/CSS/JS from images or videos, 2D and 3D grounding, a native 256K context (expandable to 1M), video understanding with timestamps, and OCR across 32 languages. Quickstart code shows loading the model with Hugging Face Transformers for single-image, multi-image, video and batch inference, plus controls for pixel and frame budgets via the processor and the qwen-vl-utils package. Deployment sections cover vLLM and SGLang servers, offline inference, a Gradio-style web UI, and a Docker image. The README also covers YaRN configuration for long contexts and a hosted API option through DashScope.",
+  "use_cases": [
+   "describe or caption images and videos",
+   "read text and extract information from documents",
+   "automate PC or mobile GUI tasks with a visual agent",
+   "generate HTML or code from screenshots or mockups",
+   "locate objects with 2D or 3D bounding boxes",
+   "serve a multimodal model with vLLM or SGLang"
+  ],
+  "how_to_run": [
+   "pip install \"transformers>=4.57.0\"",
+   "pip install qwen-vl-utils==0.0.14",
+   "pip install accelerate",
+   "uv pip install -U vllm",
+   "vllm serve Qwen/Qwen3-VL-235B-A22B-Instruct-FP8 --tensor-parallel-size 8 --host 0.0.0.0 --port 22002",
+   "pip install -r requirements_web_demo.txt && python web_demo_mm.py -c /your/path/to/qwen3vl/weight"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Hugging Face Transformers",
+   "qwen-vl-utils",
+   "vLLM",
+   "SGLang",
+   "Flash-Attention 2",
+   "Docker",
+   "ModelScope",
+   "OpenAI-compatible API client"
+  ],
+  "notable": [
+   "Dense and MoE model sizes with Instruct and Thinking editions, including FP8 checkpoints",
+   "Native 256K context extendable to 1M tokens via YaRN configuration",
+   "Interleaved-MRoPE, DeepStack and text-timestamp alignment architecture updates",
+   "Fine-grained visual token budget control for images and videos, plus fps or frame sampling for video",
+   "Ready-made Docker image and web demo for local use"
+  ],
+  "caveats": [
+   "The largest models (e.g. 235B-A22B) require multi-GPU setups such as 8x H100/H200 in the README's serving examples",
+   "Several cookbooks are listed as being prepared and have no content yet",
+   "Video decoding depends on optional backends; the README notes decord has known hangs and is no longer maintained, and torchcodec needs FFmpeg"
+  ],
+  "license": "unknown",
+  "category": "vision-language models",
+  "keywords": [
+   "qwen3-vl",
+   "vision-language model",
+   "multimodal llm",
+   "vlm",
+   "image understanding",
+   "video understanding",
+   "visual question answering",
+   "ocr",
+   "document parsing",
+   "gui agent",
+   "computer-use agent",
+   "visual grounding",
+   "bounding box detection",
+   "image to code",
+   "long context",
+   "huggingface transformers",
+   "vllm serving",
+   "sglang",
+   "flash attention",
+   "docker image",
+   "gradio web demo",
+   "describe images",
+   "read text in photos",
+   "screenshot to html",
+   "multimodal chatbot",
+   "open weights model",
+   "alibaba qwen"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 17806,
+  "output": 1431
+ },
+ "generated": "2026-10-29"
+}

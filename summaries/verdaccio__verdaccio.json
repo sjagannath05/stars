@@ -1,0 +1,93 @@
+{
+ "id": "verdaccio/verdaccio",
+ "repo": "verdaccio/verdaccio",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "Verdaccio | Lightweight private npm proxy registry"
+  }
+ ],
+ "summary": {
+  "one_liner": "Verdaccio is a lightweight, zero-config private npm registry that can also proxy and cache public registries such as npmjs.org.",
+  "what_it_does": "Verdaccio runs as a local npm registry with its own built-in small database, so no external database is needed to start. It can host private packages that are published and installed like public ones. It can proxy other registries (such as npmjs.org) and cache downloaded modules, and it can chain multiple registries behind one endpoint via uplinks. Packages can be overridden by publishing a locally modified version under the same name. Storage can be extended with community plugins for services such as Amazon S3 and Google Cloud Storage, or with custom plugins built using a Yeoman generator. The README says npm commands such as publish, install, unpublish, dist-tag, deprecate, adduser, token, search, ping and audit are supported, and that yarn and pnpm are tested in CI.",
+  "use_cases": [
+   "host private npm packages inside a company",
+   "cache npmjs.org packages for multiple servers",
+   "run a private registry for end-to-end testing in CI",
+   "override a third-party npm package with a local fix",
+   "chain multiple npm registries behind one endpoint",
+   "publish internal packages without sending code to a public registry"
+  ],
+  "how_to_run": [
+   "npm install -g verdaccio@next-9",
+   "verdaccio",
+   "npm set registry <url>  (optional, points npm at the local registry)",
+   "docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio",
+   "npm adduser --registry <url>",
+   "npm publish --registry <url>"
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "Docker",
+   "Helm",
+   "Yeoman (plugin generator)"
+  ],
+  "notable": [
+   "Zero-config startup with a built-in small database; no external DB needed",
+   "Proxies and caches npmjs.org and can chain multiple uplink registries",
+   "Plugin ecosystem for storage backends such as S3 and Google Cloud Storage",
+   "Fast enough to boot in seconds, used for end-to-end testing in many open source projects",
+   "Official Docker image and Helm chart"
+  ],
+  "caveats": [
+   "The README says it does not currently support PM2 cluster mode and may behave unexpectedly with it",
+   "This master branch (Version Next) requires Node.js 24 or higher; Version 6 requires Node.js 22 or higher",
+   "Some npm features are not fully covered, since the README says support is not always possible"
+  ],
+  "license": "MIT",
+  "category": "private npm registry",
+  "keywords": [
+   "npm registry",
+   "private npm registry",
+   "private npm packages",
+   "npm proxy",
+   "npm cache",
+   "node.js registry",
+   "package registry",
+   "self-hosted npm",
+   "lightweight registry",
+   "npmjs.org mirror",
+   "npm mirror",
+   "uplink registries",
+   "pnpm registry",
+   "yarn registry",
+   "verdaccio docker",
+   "npm publish locally",
+   "host private packages",
+   "override npm package",
+   "e2e testing registry",
+   "ci npm registry",
+   "s3 npm storage",
+   "google cloud storage npm",
+   "npm plugin",
+   "nexus alternative",
+   "artifactory alternative",
+   "share npm packages with my team",
+   "cache npm downloads",
+   "private node modules",
+   "helm npm registry"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5708,
+  "output": 1217
+ },
+ "generated": "2026-10-29"
+}

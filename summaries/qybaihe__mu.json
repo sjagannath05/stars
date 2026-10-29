@@ -1,0 +1,95 @@
+{
+ "id": "qybaihe/mu",
+ "repo": "qybaihe/mu",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "mu - Open-source coding agent with a CLI and a desktop app, in which a small judge model makes routine calls such as what enters the context and whether a flagged command was asked for. [![Open-Source Software][OSS Icon]](https://github.com/qybaihe/mu) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "mu is an MIT-licensed coding agent built on pi, with a CLI and desktop app, that hands about 40 routine yes/no decisions (context admission, command approval, completion checks) to a small judge model.",
+  "what_it_does": "It wraps the pi coding agent with a judgment kernel that sends bounded questions to a small, fast judge model at 40 named decision points in the agent loop. Decision points cover what enters the prompt, trimming repeated test-log output, approving or refusing commands, screening web and MCP output for prompt injections, and checking whether a run actually finished. Each decision point can be active, shadow (logged only) or off, and every verdict is written to a local ledger with probabilities and timing. The default judge is the hosted Jev model; mu also supports a local mude 1.0 model on Apple silicon Macs, OpenAI's decision model, Hugging Face models, classifier models and any LLM, chained in tiers. It also includes a multi-subagent \"hive\" with a shared findings board and a plain-language progress board.",
+  "use_cases": [
+   "run a coding agent in the terminal with fewer approval prompts",
+   "reduce token use from long test logs and tool output",
+   "screen web pages and MCP output for prompt injection",
+   "continue Claude Code or Codex CLI conversations in another agent",
+   "run a local decision model on a Mac for coding agent decisions",
+   "coordinate several subagents working on one codebase"
+  ],
+  "how_to_run": [
+   "npm i -g mu-agent # Node.js 22.19 or newer",
+   "mu setup # connect a model",
+   "mu # start a session in the current directory",
+   "mu doctor # check the installation, the judges and the connections"
+  ],
+  "stack": [
+   "Node.js 22.19 or newer",
+   "pi coding agent (MIT, upstream)",
+   "TypeScript",
+   "Bun (desktop app development)",
+   "MLX (mude 1.0 on Apple silicon)",
+   "Python (mude local install environment)"
+  ],
+  "notable": [
+   "A small judge model answers bounded yes/no, choice and score questions at 40 decision points, with a probability for each answer",
+   "Shadow mode records what a judge would decide without acting on it, for comparing judges before switching",
+   "Local ledger of every verdict, viewable via mu ledger, /status or the desktop app's Judge tab",
+   "Reported Terminal-Bench 2.1 result: 68.2% of attempts passed versus 58.7% for pi, on one Mac with a single model (self-reported)",
+   "Lossless folding of exact repeats in failing test logs, with the full log kept on disk"
+  ],
+  "caveats": [
+   "The local mude 1.0 setup supports only Macs with Apple silicon (macOS 14 or later, 8 GB memory or more); other platforms need a manual System One server setup",
+   "With no key set, the default Jev judge runs free on OpenCode Zen for a limited time, and judged content goes to OpenCode, which the README says does not train on it",
+   "Benchmark numbers are self-reported by the authors and were measured on one Mac with Rosetta, which the README says lowers absolute pass rates"
+  ],
+  "license": "MIT",
+  "category": "ai coding agent",
+  "keywords": [
+   "coding agent",
+   "ai coding assistant",
+   "terminal agent",
+   "cli agent",
+   "desktop app",
+   "judge model",
+   "decision model",
+   "small language model",
+   "llm judge",
+   "pi coding agent",
+   "mude",
+   "jev",
+   "token savings",
+   "test log trimming",
+   "prompt injection screen",
+   "approve commands automatically",
+   "tool approval",
+   "subagents",
+   "hive",
+   "context compaction",
+   "prompt cache",
+   "local model apple silicon",
+   "mlx",
+   "mcp server",
+   "claude code import",
+   "codex cli import",
+   "npm mu-agent",
+   "reduce ai approval prompts",
+   "agent that checks its own work",
+   "stop agent from quitting early",
+   "run ai coding agent locally",
+   "open source agent with judge"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13332,
+  "output": 1373
+ },
+ "generated": "2026-10-29"
+}

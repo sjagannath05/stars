@@ -1,0 +1,91 @@
+{
+ "id": "thomaspoignant/go-feature-flag",
+ "repo": "thomaspoignant/go-feature-flag",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Feature Toggle",
+   "entry": "GO Feature Flag - Simple, complete, and lightweight feature flag solution (alternative to LaunchDarkly). (Source Code) MIT Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "GO Feature Flag is a self-hosted, open-source feature flag solution usable as a Go module or through a relay proxy that serves OpenFeature SDKs in other languages.",
+  "what_it_does": "It lets you define feature flags in YAML, JSON or TOML files, with variations of type bool, int, float, string, JSON array or JSON object. Flag files can be loaded from sources such as local file, HTTP, S3, Kubernetes ConfigMaps, MongoDB, Redis and PostgreSQL. Targeting rules use a simple query expression language or JSONLogic, and rollouts support percentages, progressive, scheduled and experimentation (A/B) strategies. A relay proxy exposes an HTTP API so non-Go code can evaluate flags via OpenFeature providers. Flag evaluation events can be exported to destinations like S3, Kafka, BigQuery or OpenTelemetry, and change notifications can go to Slack, webhooks, Discord or Microsoft Teams.",
+  "use_cases": [
+   "Roll out a feature to a percentage of users",
+   "Run A/B tests with feature flags",
+   "Toggle features per user with targeting rules",
+   "Serve feature flags to Go, Java, Python or JavaScript apps via a central proxy",
+   "Store and version flag configuration in a file or remote bucket",
+   "Export flag usage data for analytics"
+  ],
+  "how_to_run": [
+   "docker run -p 1031:1031 -v $(pwd)/flag-config.yaml:/goff/flag-config.yaml -v $(pwd)/goff-proxy.yaml:/goff/goff-proxy.yaml gofeatureflag/go-feature-flag:latest",
+   "npm i @openfeature/server-sdk @openfeature/go-feature-flag-provider",
+   "go get github.com/thomaspoignant/go-feature-flag"
+  ],
+  "stack": [
+   "Go",
+   "OpenFeature SDKs",
+   "nikunjy/rules (query expression library)",
+   "JSONLogic",
+   "Docker"
+  ],
+  "notable": [
+   "Works as a Go module embedded in code or as a self-hosted relay proxy for multi-language use",
+   "Built on the OpenFeature standard with provider packages for many languages",
+   "Flag files can be stored in many backends including GitHub, GitLab, S3 and Kubernetes ConfigMaps",
+   "Companion GO Feature Flag Editor and CLI linter for writing and checking configs"
+  ],
+  "caveats": [
+   "Multi-language support depends on running the relay proxy as a separate service",
+   "OpenFeature is described as early stage, so some languages are unsupported and changes are expected",
+   "Only feature events are currently exported"
+  ],
+  "license": "MIT",
+  "category": "feature flag management",
+  "keywords": [
+   "feature flags",
+   "feature toggle",
+   "feature toggles",
+   "self-hosted feature flags",
+   "open source launchdarkly alternative",
+   "launchdarkly alternative",
+   "openfeature",
+   "openfeature provider",
+   "relay proxy",
+   "go feature flag library",
+   "golang feature toggle",
+   "a/b testing",
+   "progressive rollout",
+   "percentage rollout",
+   "targeting rules",
+   "gradual feature release",
+   "flag configuration yaml",
+   "flag config json toml",
+   "experimentation rollout",
+   "flag evaluation api",
+   "feature events export",
+   "flag change notifications",
+   "kill switch for features",
+   "share feature flags across languages",
+   "manage flags without a backend server",
+   "canary release",
+   "dark launch",
+   "jsonlogic targeting",
+   "evaluation context",
+   "bucketing key",
+   "go module"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9118,
+  "output": 1272
+ },
+ "generated": "2026-10-29"
+}

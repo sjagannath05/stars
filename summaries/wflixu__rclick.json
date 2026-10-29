@@ -1,0 +1,95 @@
+{
+ "id": "wflixu/rclick",
+ "repo": "wflixu/RClick",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Finder Tools",
+   "entry": "RClick - Add new functionality to the macOS Finder context menu. [![Open-Source Software][OSS Icon]](https://github.com/wflixu/RClick) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "RClick is a macOS app that adds custom actions (open with apps, copy path, delete, hide/unhide, AirDrop, new file templates, quick-access folders) to the Finder right-click context menu.",
+  "what_it_does": "RClick runs as a SwiftUI menu bar app paired with a FinderSync extension that injects custom items into Finder's context menu. Its listed features include opening files or folders with another installed app (with custom arguments and environment variables), copying full paths to the clipboard, deleting items directly without using the Trash, toggling file visibility, and sharing via AirDrop. It can also create new files from templates (.txt, .json, .md, .docx, .pptx, .xlsx, and Apple's .pages, .key, .numbers) and pin frequently used folders to the menu. The README also describes a declarative custom_menu.json for hierarchical submenus, separators, and custom titles and icons. Settings are stored with SwiftData in a shared App Group container, and the two processes communicate through DistributedNotificationCenter.",
+  "use_cases": [
+   "add custom actions to the Finder right-click menu",
+   "copy file paths from Finder",
+   "open files with a different app from Finder",
+   "create new files from templates in Finder",
+   "delete files without sending them to the Trash",
+   "toggle hidden files in Finder",
+   "pin favorite folders to the context menu"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd RClick",
+   "open RClick.xcodeproj",
+   "Select the RClick scheme, then Product → Build (⌘B)",
+   "xcodebuild -project RClick.xcodeproj -scheme RClick -destination 'platform=macOS'",
+   "Enable the Finder extension in System Settings → Privacy & Security → Extensions → Added Extensions"
+  ],
+  "stack": [
+   "Swift 6.2",
+   "SwiftUI",
+   "AppKit (NSWorkspace, NSPasteboard)",
+   "SwiftData",
+   "FinderSync framework",
+   "DistributedNotificationCenter",
+   "Xcode 16.4+",
+   "Localizable.xcstrings"
+  ],
+  "notable": [
+   "Dual-process design: a menu bar app plus a FinderSync extension injected into Finder",
+   "Declarative custom_menu.json for nested submenus, separators, and custom titles/icons; invalid files leave the existing menu unchanged",
+   "Localized in English, Simplified Chinese, Japanese, Spanish, and French, with system language auto-detected",
+   "Create-new-file templates include Apple iWork formats (.pages, .key, .numbers)"
+  ],
+  "caveats": [
+   "Requires macOS 15.6+ and Xcode 16.4+ to build from source",
+   "The Finder extension must be manually enabled in System Settings, and per-folder authorization is prompted for file operations",
+   "Accessibility permission is needed for certain automation features"
+  ],
+  "license": "unknown",
+  "category": "macos finder extension",
+  "keywords": [
+   "finder context menu",
+   "right-click menu",
+   "macos finder extension",
+   "finder custom actions",
+   "findersync",
+   "swiftui macos app",
+   "swift",
+   "context menu customization",
+   "open with app",
+   "copy path finder",
+   "delete without trash",
+   "show hidden files",
+   "airdrop from finder",
+   "new file templates",
+   "quick access folders",
+   "custom_menu.json",
+   "hierarchical menu",
+   "menu bar app",
+   "dark mode",
+   "localization",
+   "xcode build",
+   "mac productivity",
+   "add items to right click",
+   "create txt file finder",
+   "share files with airdrop",
+   "alternative to szcontext",
+   "alternative to menuhelper",
+   "alternative to openinterminal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3447,
+  "output": 1329
+ },
+ "generated": "2026-10-29"
+}

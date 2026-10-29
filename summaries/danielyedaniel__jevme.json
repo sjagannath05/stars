@@ -1,0 +1,98 @@
+{
+ "id": "danielyedaniel/jevme",
+ "repo": "danielyedaniel/jevme",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "jevme - Voice control for any Mac app that acts while you're still talking and learns from its own AI decisions."
+  }
+ ],
+ "summary": {
+  "one_liner": "jevme is a macOS voice-control app that carries out spoken commands in any app while you are still talking, using a fast classifier and memoizing slower LLM decisions for reuse.",
+  "what_it_does": "Streams live speech from the Mac microphone through Apple's speech recognizer and routes each partial transcript to the TypeSafe Jev classifier, which picks a built-in tool or hands off to an agent. Completed clauses of a sentence run in spoken order while the user keeps talking, and \"stop\" cancels queued work. A 35-tool shortcut catalog covers opening and quitting apps, site and Google searches, media keys, tabs, volume and dark mode. For other tasks, an agent reads the front window through macOS Accessibility and clicks, types, or presses keys step by step, with a Claude Haiku screenshot fallback when no controls are exposed. Claude Opus writes new AppleScript/JXA/shell tools or composes replies when asked, and results are saved locally as UI cases, task recipes and learned tools so repeated requests take a faster path. Generated scripts pass a policy check, compile check and Jev review, and risky actions wait for a spoken confirmation.",
+  "use_cases": [
+   "voice control of a Mac without touching the keyboard",
+   "open apps and websites by speaking commands",
+   "click buttons, links or tabs by describing them",
+   "dictate or compose replies, summaries or code in an open app",
+   "automate repeated multi-step tasks on the desktop by replaying learned recipes",
+   "teach a Mac assistant a new command by demonstration"
+  ],
+  "how_to_run": [
+   "curl -LsSf (uv installer) | sh  # installs uv, which installs Python 3.12",
+   "git clone the repo and cd jevme",
+   "./run.sh setup  # installs deps, creates .env, checks keys and permissions",
+   "Add TYPESAFE_API_KEY and ANTHROPIC_API_KEY to .env",
+   "./run.sh start  # start in background; ./run.sh doctor checks permissions and keys",
+   "uv run jevme  # or run in the foreground"
+  ],
+  "stack": [
+   "Python 3.12",
+   "uv",
+   "Apple SFSpeechRecognizer",
+   "macOS Accessibility API",
+   "TypeSafe Jev",
+   "Claude Haiku 4.5",
+   "Claude Opus 5",
+   "AppleScript / JXA"
+  ],
+  "notable": [
+   "Executes commands clause by clause while the user is still speaking, rather than waiting for the sentence to end",
+   "Memoizes slow LLM reasoning into fast classifier cases, so repeated tasks get cheaper and faster over time",
+   "Learns from demonstration: when the agent fails, it records the user's clicks (role and label only, never typed text)",
+   "Generated tools must pass a hard safety policy, compile check and Jev review before running",
+   "Personalizes speech recognition with on-screen control names and learned vocabulary"
+  ],
+  "caveats": [
+   "Requires macOS 14+ and Accessibility, Microphone, Speech Recognition and Screen Recording permissions granted to the launching app",
+   "Needs a paid TypeSafe API key, and an Anthropic key is recommended; without it, it falls back to the slower signed-in claude CLI",
+   "Uses cloud model calls for everything except local speech recognition and accessibility reads"
+  ],
+  "license": "MIT",
+  "category": "voice control automation",
+  "keywords": [
+   "voice control mac",
+   "speech to action",
+   "voice assistant macos",
+   "hands-free computer control",
+   "accessibility automation",
+   "macos automation",
+   "voice commands desktop",
+   "dictation",
+   "speech recognition macos",
+   "apple speech framework",
+   "llm agent desktop",
+   "computer use agent",
+   "ai desktop agent",
+   "memoization",
+   "claude haiku",
+   "claude opus",
+   "typesafe jev",
+   "applescript generator",
+   "control apps by voice",
+   "open apps by talking",
+   "click buttons by voice",
+   "talk to my computer",
+   "speak commands to mac",
+   "automate mac with my voice",
+   "streaming voice commands",
+   "python voice assistant",
+   "menu bar app",
+   "screen reader style automation",
+   "keyboard free navigation",
+   "learn from demonstration",
+   "voice shortcuts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7569,
+  "output": 1518
+ },
+ "generated": "2026-10-29"
+}

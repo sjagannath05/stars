@@ -1,0 +1,96 @@
+{
+ "id": "conorbronsdon/avoid-ai-writing",
+ "repo": "conorbronsdon/avoid-ai-writing",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Writing & Prose Quality",
+   "entry": "Avoid AI Writing by Conor Bronsdon - A portable writing skill that audits and rewrites prose to remove \"AI-isms\" — 49+ pattern categories and a tiered word-replacement vocabulary, with detect / rewrite / edit-in-place modes, content-type and voice profiles, and a two-pass re-check. Stands well above the crowded de-slop field: it ships a deterministic, zero-dependency detector engine (the single so"
+  }
+ ],
+ "summary": {
+  "one_liner": "A portable agent skill that audits and rewrites prose to remove \"AI-isms,\" backed by a deterministic zero-dependency detector engine.",
+  "what_it_does": "The skill runs in rewrite, detect, or edit-in-place modes. Rewrite mode flags AI writing patterns, applies up to two editing passes, and returns one final version. Detect mode lists flags grouped by severity (P0/P1/P2) and separates real problems from judgment calls without changing the text. Edit mode makes minimal targeted changes to a prose file and refuses source code, configuration, and generated data. It uses a tiered word-replacement table (112 entries across three tiers plus 10 Tier 3 phrases) and a catalog of 74 pattern categories described in references/patterns.md. Optional voice profiles (casual, professional, technical, warm, blunt) and content-type profiles shape the output. A bundled Node detector computes a 0–100 score, and CLI, GitHub Action, pre-commit hook, and MCP server wrappers expose it.",
+  "use_cases": [
+   "Removing chatbot-style phrasing from a blog post or draft",
+   "Auditing a document for AI tells without altering it",
+   "Editing a prose file in place with minimal changes",
+   "Gating markdown docs for AI-sounding prose in CI or pre-commit",
+   "Replacing buzzwords like 'leverage' or 'robust' with plainer wording",
+   "Cleaning up AI-written issue or PR replies"
+  ],
+  "how_to_run": [
+   "git clone ~/.claude/skills/avoid-ai-writing",
+   "npm install avoid-ai-writing-detector",
+   "npx --package avoid-ai-writing-detector avoid-ai-writing draft.md",
+   "node detector/validate.js before.md after.md",
+   "npm test"
+  ],
+  "stack": [
+   "Node.js (>=18)",
+   "JavaScript",
+   "Python (packaging and validation scripts)",
+   "Markdown",
+   "agentskills.io skill format",
+   "GitHub Actions",
+   "pre-commit",
+   "MCP (Model Context Protocol)"
+  ],
+  "notable": [
+   "Deterministic zero-dependency detector engine that produces the single numeric score",
+   "Three-tier word vocabulary, with frequency markers weighted separately from clarity edits",
+   "Two-pass rewrite with a shared editing limit and a preservation validator for code, URLs, tables, and headings",
+   "Packaged for many agents: Claude Code, Cowork plugin, OpenClaw, Cursor, Hermes, Codex, ChatGPT, and others",
+   "Gate CLI and GitHub Action that fail on finding count per file rather than the composite score"
+  ],
+  "caveats": [
+   "Rules and detector are calibrated for English only; other languages come from community adaptations",
+   "Some pattern categories are judgment calls that a regex cannot decide, so detect mode may flag intentional writing",
+   "Single-file dist version (about 138 KB) exceeds the instruction limits of some tools, such as Windsurf rule files and Custom GPT Instructions"
+  ],
+  "license": "unknown",
+  "category": "ai writing cleanup",
+  "keywords": [
+   "ai writing detector",
+   "remove ai-isms",
+   "de-slop",
+   "ai tells",
+   "prose editor",
+   "writing linter",
+   "rewrite ai text",
+   "humanize writing",
+   "claude code skill",
+   "agent skill",
+   "agentskills.io",
+   "style checker",
+   "ai-generated text audit",
+   "markdown linter",
+   "pre-commit hook",
+   "github action prose gate",
+   "word replacement table",
+   "avoid buzzwords",
+   "clean up chatbot phrasing",
+   "edit prose in place",
+   "voice profile",
+   "tone rewrite",
+   "detect ai patterns",
+   "writing quality gate",
+   "mcp server prose",
+   "vale alternative",
+   "proselint alternative",
+   "plain english rewriter",
+   "draft cleanup",
+   "ai content audit"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16321,
+  "output": 1371
+ },
+ "generated": "2026-10-29"
+}

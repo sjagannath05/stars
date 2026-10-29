@@ -1,0 +1,113 @@
+{
+ "id": "raceychan/premier",
+ "repo": "raceychan/premier",
+ "kind": "star",
+ "description": "A Flexible, Lightweight API-Gateway written in python that can be used as an ASGI middleware, app, or decorators.",
+ "topics": [
+  "api",
+  "api-gateway",
+  "asgi",
+  "lihil",
+  "python",
+  "retry",
+  "throttling",
+  "timeout"
+ ],
+ "language": "Python",
+ "stars": 63,
+ "license": "MIT",
+ "homepage": "https://lihil.cc/premier",
+ "pushed_at": "2025-07-12",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "coding",
+  "dev tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Premier is a lightweight Python API gateway that runs as an ASGI middleware or app wrapper, a standalone gateway, or as per-function decorators, adding caching, rate limiting, retry, timeout and monitoring.",
+  "category": "python api gateway",
+  "keywords": [
+   "api gateway",
+   "python api gateway",
+   "asgi",
+   "asgi middleware",
+   "asgi gateway",
+   "rate limiting",
+   "throttling",
+   "request throttling",
+   "retry",
+   "retry decorator",
+   "timeout",
+   "timeout decorator",
+   "caching",
+   "response cache",
+   "circuit breaker",
+   "load balancing",
+   "round robin",
+   "websocket proxy",
+   "websocket rate limiting",
+   "yaml configuration",
+   "fastapi",
+   "starlette",
+   "django asgi",
+   "uvicorn",
+   "redis cache",
+   "sliding window",
+   "token bucket",
+   "leaky bucket",
+   "request monitoring",
+   "dashboard",
+   "reverse proxy",
+   "lightweight gateway",
+   "wrap existing app"
+  ],
+  "what_it_does": "Premier wraps an existing ASGI application with a gateway layer configured through YAML path patterns, so different routes can get different features. Available features in the README include response caching with expiration, rate limiting with fixed window, sliding window, token bucket and leaky bucket algorithms, timeouts, retries with configurable wait, and monitoring that logs requests above a time threshold. It can also run as a standalone gateway that forwards requests to listed backend server URLs, with round-robin load balancing and a circuit breaker. WebSocket connections can be given the same policies. The same resilience features are available as plain decorators (retry, timeit, timeout) on individual functions. A built-in web dashboard is described for monitoring requests and managing configuration, and Redis can be plugged in as a distributed cache backend.",
+  "use_cases": [
+   "add rate limiting to an existing FastAPI or Starlette app",
+   "put a lightweight gateway in front of backend services",
+   "add retries and timeouts to outbound async calls",
+   "cache API responses for specific routes",
+   "monitor slow requests in a Python web service",
+   "proxy and throttle WebSocket connections"
+  ],
+  "how_to_run": [
+   "pip install premier",
+   "pip install premier[redis]  (optional Redis support)",
+   "Create a gateway.yaml with premier paths and features",
+   "from premier.asgi import ASGIGateway, GatewayConfig; config = GatewayConfig.from_file(\"gateway.yaml\")",
+   "app = ASGIGateway(config=config, app=your_app)",
+   "uvicorn <module>:app"
+  ],
+  "stack": [
+   "Python >= 3.10",
+   "PyYAML",
+   "aiohttp (optional, standalone mode)",
+   "redis >= 5.0.3 (optional)",
+   "ASGI"
+  ],
+  "notable": [
+   "Three usage modes: ASGI app/middleware wrapper, standalone gateway, and function decorators",
+   "Per-route policies via regex or glob path patterns in YAML, with default features",
+   "Multiple rate limit algorithms: fixed window, sliding window, token bucket, leaky bucket",
+   "WebSocket proxying with the same rate limiting and monitoring features",
+   "Built-in web dashboard and hot-reloadable configuration"
+  ],
+  "caveats": [
+   "What's Next list marks auth (OAuth, JWT), authorization and MCP integration as not yet done",
+   "Standalone mode needs the optional aiohttp dependency; Redis support is optional and needs a separate install",
+   "README has some broken or truncated code blocks (the standalone example and the servers list are cut off), so exact standalone setup is unclear from the README alone"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6626,
+  "output": 1349
+ },
+ "generated": "2026-10-29"
+}

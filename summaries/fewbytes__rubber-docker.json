@@ -1,0 +1,91 @@
+{
+ "id": "fewbytes/rubber-docker",
+ "repo": "Fewbytes/rubber-docker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Docker",
+   "entry": "Python: _A workshop on Linux containers: Rebuild Docker from Scratch_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A hands-on Python workshop that teaches Linux container internals by having you rebuild a minimal Docker-like engine from scratch, level by level.",
+  "what_it_does": "The README describes a workshop in which learners add container features step by step, starting at levels/00_fork_exec and progressing through numbered levels. A preparatory talk covers Linux syscalls and glibc wrappers, chroot vs pivot_root, namespaces, cgroups, and capabilities. It provides a Python module called \"linux\" (defined in linux.c) that exposes system calls not available in Python's standard library, keeping C-like semantics. Each level has a skeleton, and the solution for level N is included in the level N+1 skeleton. The README also mentions pre-populated images for ubuntu and busybox and a `make install` / `make build` flow for the linux module. It does not cover seccomp, user namespaces, or other features of full container engines.",
+  "use_cases": [
+   "learn how Linux containers work internally",
+   "build a toy container runtime in Python",
+   "run a containers-from-scratch training workshop",
+   "practice namespaces, chroot/pivot_root, and cgroups",
+   "teach Docker internals to a team"
+  ],
+  "how_to_run": [
+   "Start the workshop at /workshop/rubber-docker/levels/00_fork_exec on a prepared AMI, or create your own with the provided packer template",
+   "Read the prep docs in the docs folder before starting",
+   "make install  (builds and installs the linux Python module)",
+   "make build  (creates a distributable wheel package)"
+  ],
+  "stack": [
+   "Python",
+   "C (linux.c, the linux Python module)",
+   "Linux system calls",
+   "Makefile",
+   "Vagrant (optional)",
+   "Packer (optional)"
+  ],
+  "notable": [
+   "Levels are incremental: the solution to each level is in the next level's skeleton",
+   "Custom 'linux' Python module exposes syscalls not in the standard library",
+   "Ships a preparatory talk covering namespaces, cgroups, capabilities",
+   "Ready-made AMIs in several AWS regions with tooling preinstalled"
+  ],
+  "caveats": [
+   "Vagrantfile option is noted as not yet fully tested",
+   "Scope excludes seccomp, user containers, and other full-engine features",
+   "Running the workshop on your own requires building the linux module and a Linux environment"
+  ],
+  "license": "MIT",
+  "category": "container internals workshop",
+  "keywords": [
+   "docker from scratch",
+   "rebuild docker",
+   "linux containers",
+   "container runtime python",
+   "build your own docker",
+   "namespaces",
+   "cgroups",
+   "chroot",
+   "pivot_root",
+   "linux capabilities",
+   "syscalls python",
+   "fork exec",
+   "container internals",
+   "workshop",
+   "learn containers",
+   "understand docker",
+   "toy docker",
+   "mini container engine",
+   "rubber docker",
+   "linux module python",
+   "syscall wrappers",
+   "ctypes linux",
+   "container isolation",
+   "how do containers work",
+   "teach docker internals",
+   "hands on container course",
+   "busybox rootfs",
+   "ubuntu image container",
+   "packer ami",
+   "vagrant linux vm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2665,
+  "output": 1154
+ },
+ "generated": "2026-10-29"
+}

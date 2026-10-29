@@ -1,0 +1,98 @@
+{
+ "id": "avazbek22/devprojex",
+ "repo": "Avazbek22/DevProjex",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "DevProjex - Cross-platform macOS codebase-context app for Intel and Apple Silicon, with GUI, TUI, CLI, live preview, redaction, and a built-in read-only MCP server."
+  }
+ ],
+ "summary": {
+  "one_liner": "DevProjex is a cross-platform desktop, terminal, CLI, and read-only MCP server that turns folders or Git repositories into token-efficient, secret-masked context for AI chats and coding agents.",
+  "what_it_does": "Lets you pick files and folders in a tree, preview the result with line, character, and token counters, and export it as ASCII, Markdown, JSON, or XML to a file or clipboard. It can also export a masked copy of a project as a folder or ZIP. Smart Ignore hides build output and dependency folders only when it finds evidence, and Git modes limit the view to tracked, staged, changed, or ref-to-ref diff files. Hide Secrets masks detected credentials in place using a pinned Gitleaks rule set, and an optional switch masks emails, IPs, user paths, and similar private data. Code compression keeps signatures and empties function bodies, and comment stripping covers 20 language packs via Tree-sitter. The built-in MCP server exposes eight read-only tools (tree, search, file reads, related files, pack, read pack) with masking always on, and a Live Context mode where the files ticked in the desktop app become the agent's focus. A local agent journal records session metadata without file bodies.",
+  "use_cases": [
+   "Prepare project context for ChatGPT or Claude",
+   "Give Claude Code, Codex, or Cursor read-only access to a project",
+   "Fail a CI build when secrets would leak into packed context",
+   "Export a masked copy of a project as a ZIP",
+   "Analyze repository files, lines, and token counts from the command line",
+   "Share only selected modules or files for code review"
+  ],
+  "how_to_run": [
+   "npx devprojex tree . # Node.js 20+",
+   "dnx devprojex tree . # .NET SDK 10",
+   "./DevProjex tree . # release binary (DevProjex.exe on Windows)",
+   "claude mcp add devprojex -- npx -y devprojex mcp --root /absolute/path/to/project",
+   "dotnet build -c Release",
+   "dotnet test"
+  ],
+  "stack": [
+   ".NET 10",
+   "Avalonia UI",
+   "Tree-sitter",
+   "Gitleaks rules",
+   "Model Context Protocol C# SDK",
+   "npm package",
+   "NuGet package"
+  ],
+  "notable": [
+   "One shared engine, filters, and masking pipeline across the desktop app, Terminal Workspace, CLI, and MCP server",
+   "Live Context: ticks in the desktop app become the agent's focus on its next call",
+   "Secret masking in MCP mode has no off switch",
+   "Agent journal logs session metadata and masked-value counts, never file bodies",
+   "Code compression keeps declarations and empties bodies, about 3x smaller on C# sources per the README"
+  ],
+  "caveats": [
+   "Secret detection is heuristic; the README says to review packs before publishing them outside your environment",
+   "The desktop app is not included in the npm and NuGet packages, which provide only the CLI, Terminal Workspace, and MCP server",
+   "Project copies with masking enabled are intentionally not byte-for-byte and may not build or run",
+   "Requires .NET 10 SDK to run via dnx or to build from source; Node.js 20+ for npx"
+  ],
+  "license": "Apache-2.0",
+  "category": "codebase context for AI",
+  "keywords": [
+   "codebase context",
+   "llm context packing",
+   "repomix alternative",
+   "mcp server",
+   "model context protocol",
+   "claude code",
+   "codex",
+   "cursor mcp",
+   "secret masking",
+   "redact api keys",
+   "hide secrets",
+   "token estimate",
+   "file tree selection",
+   "project to markdown",
+   "project to xml",
+   "project to json",
+   "code compression",
+   "tree-sitter",
+   "smart ignore",
+   "gitignore filter",
+   "terminal ui",
+   "cli export",
+   "ci secret scan",
+   "avalonia desktop app",
+   "dotnet tool",
+   "npx devprojex",
+   "share project with ai",
+   "copy project to zip",
+   "read-only agent access",
+   "macos codebase tool",
+   "git diff context"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9729,
+  "output": 1452
+ },
+ "generated": "2026-10-29"
+}

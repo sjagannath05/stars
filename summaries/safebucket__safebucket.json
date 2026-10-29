@@ -1,0 +1,100 @@
+{
+ "id": "safebucket/safebucket",
+ "repo": "safebucket/safebucket",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Single-click & Drag-n-drop Upload",
+   "entry": "Safebucket - File sharing platform with pluggable infrastructure, where uploads and downloads go directly between clients and S3-compatible storage. (Source Code) Apache-2.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Safebucket is an open source file sharing platform with pluggable infrastructure where files go directly between clients and storage via presigned URLs, bypassing the server.",
+  "what_it_does": "The README describes direct uploads and downloads through presigned URLs so files bypass the server. Every component (storage, database, events, cache, notifier) is described as swappable. It supports SSO via any OIDC provider with local auth for external users, and role-based access control at platform and bucket level. Users can create quick or reverse shares as public links with options such as password, max downloads, and max views. It also lists real-time activity tracking, audit logs, TOTP multifactor authentication, file expiration, a trash with configurable retention, and an admin dashboard with platform-wide statistics.",
+  "use_cases": [
+   "share files with external users via public links",
+   "file sharing with password-protected downloads",
+   "self-hosted file transfer with S3-compatible storage",
+   "collect files from others via reverse share",
+   "audit file access in a team bucket",
+   "time-limited file expiration with trash retention"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd safebucket/deployments/local/lite",
+   "docker compose up -d",
+   "Open the web UI and log in with admin@safebucket.io / ChangeMePlease (change this password)",
+   "For external access, set STORAGE__RUSTFS__EXTERNAL_ENDPOINT, APP__ALLOWED_ORIGINS, APP__API_URL and APP__WEB_URL in the .env file to your host IP or domain"
+  ],
+  "stack": [
+   "Go",
+   "React",
+   "Docker",
+   "Gorm",
+   "Goose",
+   "Watermill",
+   "Koanf",
+   "Radix UI",
+   "shadcn/ui",
+   "Lucide",
+   "cosign"
+  ],
+  "notable": [
+   "Files bypass the server via presigned URLs for direct client-to-storage transfer",
+   "Every component (storage, database, events, cache, notifier) is swappable",
+   "Quick and reverse share links with password, max downloads, and max views",
+   "Container images are signed with cosign keyless signing through GitHub Actions OIDC",
+   "Local quick start uses docker compose with a RustFS storage endpoint"
+  ],
+  "caveats": [
+   "The quick start uses a default admin password that must be changed",
+   "External access requires manually editing several environment variables in .env",
+   "README does not state platform support or production hardening guidance beyond the local lite deployment"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "file sharing",
+   "file sharing platform",
+   "self-hosted file sharing",
+   "presigned urls",
+   "direct upload",
+   "direct download",
+   "s3-compatible storage",
+   "s3 storage",
+   "pluggable infrastructure",
+   "oidc sso",
+   "single sign-on",
+   "role-based access control",
+   "rbac",
+   "public share links",
+   "reverse share",
+   "password protected links",
+   "download limits",
+   "file expiration",
+   "trash retention",
+   "audit logs",
+   "activity tracking",
+   "totp mfa",
+   "two-factor authentication",
+   "admin dashboard",
+   "go file sharing",
+   "docker compose file sharing",
+   "send large files",
+   "share files with my team",
+   "share files with external users",
+   "temporary file links",
+   "alternative to wetransfer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2446,
+  "output": 1200
+ },
+ "generated": "2026-10-29"
+}

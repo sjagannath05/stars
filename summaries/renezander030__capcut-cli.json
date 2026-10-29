@@ -1,0 +1,98 @@
+{
+ "id": "renezander030/capcut-cli",
+ "repo": "renezander030/capcut-cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Creative Media",
+   "entry": "capcut-cli by René Zander - A zero-dependency Node CLI (and Claude Code plugin/skill) that lets the agent edit CapCut / JianYing video projects programmatically — inspect timelines, build drafts, add text/audio, word-level captions and Whisper transcription, templates, and cut long-form into shorts — JSON in, JSON out, no server. Deeply mature for a media tool: 205 tests across macOS/Windows/Linux"
+  }
+ ],
+ "summary": {
+  "one_liner": "A zero-dependency Node CLI, library, and Claude Code skill that lets an LLM agent or person create and edit local CapCut / JianYing draft projects from JSON, with no server.",
+  "what_it_does": "Reads and writes the local CapCut/JianYing draft store directly, validating against a version-aware schema and writing back atomically with a .bak. Commands cover inspecting tracks, segments, texts and materials; building drafts from a JSON spec (compile, quickstart); adding video, audio and text (including Wikimedia URLs, license-checked); trims, speed, volume, transitions, masks, animations and easing; templates and portable text presets; and subtitles via caption, SRT/VTT import and export, and multi-language translate. It also provides a low-res ffmpeg preview (render), silence and scene detection, and cut for turning long-form footage into shorts. An opt-in experimental caption --cloud uploads audio to ByteDance for transcription; otherwise Whisper is used locally for captions.",
+  "use_cases": [
+   "Generate an editable CapCut or JianYing draft from a script or spec",
+   "Add captions and subtitles to a video project",
+   "Convert a long recording into shorts using silence or scene detection",
+   "Let an AI agent inspect and edit a CapCut timeline safely",
+   "Batch-process drafts through a JSONL job queue",
+   "Create multi-language subtitle versions of a draft"
+  ],
+  "how_to_run": [
+   "npm install -g capcut-cli",
+   "capcut doctor",
+   "capcut quickstart my-first --video clip.mp4 --srt captions.srt",
+   "capcut info ./my-first/ -H",
+   "npx skills add renezander030/capcut-cli"
+  ],
+  "stack": [
+   "Node.js >= 18",
+   "TypeScript",
+   "Whisper (optional, for caption)",
+   "FFmpeg (optional, for render)",
+   "ffprobe (optional, for media metadata)",
+   "Anthropic API via ANTHROPIC_API_KEY (optional, for translate)",
+   "WebAssembly Component (experimental wasm/capcut-core)",
+   "Python wrapper (pip install capcut)"
+  ],
+  "notable": [
+   "JSON in, JSON out design with no MCP server, HTTP daemon, or upload by default",
+   "Claude Code skill and plugin, installable via npx skills or the plugin marketplace",
+   "Works on both CapCut and JianYing enum namespaces via a flag",
+   "Experimental capability-free Wasm component exposing inspect, diff and lint-portable as read-only tools",
+   "Word-level captions and karaoke timings via whisper.cpp"
+  ],
+  "caveats": [
+   "Experimental caption --cloud uploads transcribed audio to ByteDance servers",
+   "Unofficial and not affiliated with CapCut or ByteDance; CapCut/JianYing version support is version-dependent (see docs/version-support.md)",
+   "Some features need optional external tools: Whisper, FFmpeg, ffprobe, or an Anthropic API key"
+  ],
+  "license": "MIT",
+  "category": "video editing automation",
+  "keywords": [
+   "capcut",
+   "jianying",
+   "剪映",
+   "capcut cli",
+   "video editing cli",
+   "draft project",
+   "edit capcut projects programmatically",
+   "claude code skill",
+   "ai agent video editing",
+   "llm video tools",
+   "subtitles",
+   "captions",
+   "whisper transcription",
+   "word-level captions",
+   "srt import export",
+   "vtt",
+   "long-form to shorts",
+   "silence detection",
+   "scene detection",
+   "video templates",
+   "json cli",
+   "node cli",
+   "zero dependency",
+   "wasm agent tools",
+   "mcp alternative",
+   "jsonl job runner",
+   "ffmpeg preview",
+   "translate subtitles",
+   "automate video edits",
+   "batch video processing",
+   "create editable video timeline",
+   "cut video into shorts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6242,
+  "output": 1399
+ },
+ "generated": "2026-10-29"
+}

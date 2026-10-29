@@ -1,0 +1,92 @@
+{
+ "id": "kennethsible/mkvpriority",
+ "repo": "kennethsible/mkvpriority",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "MKVPriority - Selects preferred audio and subtitle tracks using configurable priority scores and sets the appropriate default and forced flags. MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "MKVPriority is a Python/Docker tool that scores audio and subtitle tracks in MKV files and sets default and forced flags in place using mkvpropedit, without remuxing.",
+  "category": "media file management",
+  "keywords": [
+   "mkv",
+   "matroska",
+   "audio track selection",
+   "subtitle track selection",
+   "default flag",
+   "forced subtitles",
+   "mkvpropedit",
+   "mkvtoolnix",
+   "track priority",
+   "radarr",
+   "sonarr",
+   "custom formats",
+   "media library",
+   "tag flags in place",
+   "no remux",
+   "cron scheduler",
+   "docker",
+   "python",
+   "toml config",
+   "sidecar subtitles",
+   "subtitle extractor",
+   "subtitle converter",
+   "anime audio preference",
+   "japanese audio default",
+   "select preferred audio",
+   "set default subtitle",
+   "jellyfin plex subtitle naming",
+   "self-hosted media"
+  ],
+  "what_it_does": "MKVPriority assigns configurable priority scores to audio and subtitle tracks based on properties such as language, codec, and track name filters. It then sets the default and forced flags on the highest-scoring tracks and clears them on lower-priority ones, editing the MKV headers in place with mkvpropedit rather than remuxing. It estimates forced subtitles using dialogue-density heuristics and can suppress default subtitle flags when the native audio is playing. External sidecar subtitles are scored alongside embedded tracks, and their filenames can be updated to match. The tool runs as a CLI, as a Docker image, or as a cron-scheduled job with an archive database to skip already-processed files. Radarr and Sonarr can call it through a custom script on import or upgrade. Optional extension modules add post-processing such as subtitle extraction, conversion, restyling, renaming, and multiplexing.",
+  "use_cases": [
+   "set Japanese audio and ASS subtitles as default in anime libraries",
+   "automatically pick the right audio and subtitle track in MKV movies",
+   "process new files as Radarr or Sonarr imports them",
+   "batch-update flags across an existing media library on a cron schedule",
+   "extract default or forced subtitles to external files for players with limited support",
+   "deprioritize commentary or dub tracks in MKV files"
+  ],
+  "how_to_run": [
+   "docker run --rm -v /path/to/media:/media ghcr.io/kennethsible/mkvpriority /media",
+   "pip install mkvpriority",
+   "uv tool install mkvpriority",
+   "uvx mkvpriority",
+   "mkvpriority --archive archive.db /path/to/media  (CLI; requires MKVToolNix installed)"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "MKVToolNix (mkvpropedit, mkvmerge)",
+   "TOML configuration",
+   "uv / pip"
+  ],
+  "notable": [
+   "Edits MKV track flags in place with mkvpropedit, so no remuxing is needed",
+   "Scores tracks like Radarr/Sonarr custom formats, configured via TOML files",
+   "Heuristic forced-subtitle detection that does not rely only on track names",
+   "Extension module system with example subtitle extractor, converter, restyler, renamer, and multiplexer",
+   "Tag-based multiple configs that map to Radarr/Sonarr tags"
+  ],
+  "caveats": [
+   "Requires MKVToolNix installed for the CLI; Docker image avoids this",
+   "Changing file metadata can break hardlinks",
+   "Multiplexer and subtitle extraction features are optional extension modules that must be enabled",
+   "Radarr/Sonarr integration requires the script to be visible inside the container and mount paths to match"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6815,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

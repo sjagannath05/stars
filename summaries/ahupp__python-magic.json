@@ -1,0 +1,90 @@
+{
+ "id": "ahupp/python-magic",
+ "repo": "ahupp/python-magic",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "python-magic - A Python interface to the libmagic file type identification library."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python interface to the libmagic C library for identifying file types from their headers, both from file paths and in-memory buffers.",
+  "what_it_does": "Provides magic.from_file, magic.from_buffer, and magic.from_descriptor functions that return a human-readable file type description (e.g. 'PDF document, version 1.2'), or a MIME type when mime=True. A Magic class exposes more control, including options like uncompress to look inside compressed files, a custom magic database file, and character encoding detection. The identification methods are serialized with a per-instance lock so they can be called from multiple threads on the same instance. The README notes it is a thin wrapper, so most reported bugs are in libmagic itself. It was originally built with SWIG and later switched to ctypes.",
+  "use_cases": [
+   "identify file type from its contents",
+   "detect MIME type of uploaded files",
+   "check file type from a byte buffer",
+   "determine if a compressed file is text",
+   "file type detection in Python scripts",
+   "validate file format before processing"
+  ],
+  "how_to_run": [
+   "sudo apt-get install libmagic1",
+   "pip install python-magic",
+   "import magic",
+   "magic.from_file(\"testdata/test.pdf\")",
+   "magic.from_file(\"testdata/test.pdf\", mime=True)"
+  ],
+  "stack": [
+   "Python",
+   "libmagic (C library)",
+   "ctypes",
+   "tox (test runner)"
+  ],
+  "notable": [
+   "Wraps the libmagic library used by the Unix file command",
+   "Magic class with options such as uncompress, mime, and custom magic database path",
+   "Thread-safe identification methods on a per-instance lock",
+   "Includes a compatibility layer for the libmagic Python API (see COMPAT.md)"
+  ],
+  "caveats": [
+   "Requires the system libmagic library to be installed separately",
+   "Windows and macOS setup may need manual libmagic builds or DYLD_LIBRARY_PATH changes",
+   "Recommends at least the first 2048 bytes for accurate buffer identification"
+  ],
+  "license": "MIT",
+  "category": "file type detection",
+  "keywords": [
+   "python-magic",
+   "libmagic",
+   "file type detection",
+   "mime type",
+   "mimetype detection",
+   "file identification",
+   "magic numbers",
+   "file signature",
+   "file command python",
+   "detect file format",
+   "identify file type",
+   "from_buffer",
+   "from_file",
+   "content type detection",
+   "unix file command",
+   "ctypes wrapper",
+   "python file type library",
+   "check file type of upload",
+   "guess mime type",
+   "file header inspection",
+   "binary file identification",
+   "determine file format",
+   "compressed file detection",
+   "charset detection",
+   "magic database",
+   "detect pdf file",
+   "file type checker python",
+   "identify files by contents",
+   "mime sniffing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2972,
+  "output": 1026
+ },
+ "generated": "2026-10-29"
+}

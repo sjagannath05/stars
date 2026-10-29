@@ -1,0 +1,102 @@
+{
+ "id": "simple-login/app",
+ "repo": "simple-login/app",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Email - Complete Solutions",
+   "entry": "SimpleLogin - Open source email alias solution to protect your email address. Comes with browser extensions and mobile apps. (Source Code) MIT Docker/Python"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Email",
+   "entry": "SimpleLogin | Email alias service to protect your inbox"
+  }
+ ],
+ "summary": {
+  "one_liner": "SimpleLogin is an open-source, self-hostable email alias service that forwards mail sent to aliases to your real inbox so your address stays private.",
+  "what_it_does": "The README is a self-hosting guide for running your own SimpleLogin instance on a Linux server using Docker containers. It covers DNS setup for MX, A, DKIM, SPF and DMARC records, and generating DKIM keys. It walks through installing and configuring Postfix against a Postgres database, which links relay domains and transport maps to the SimpleLogin email handler. It then describes running the webapp, email handler and job runner containers from the simplelogin/app:3.4.0 image, with an Nginx reverse proxy in front. The README notes that the API URL in the Chrome/Firefox extension and Android/iOS apps can be pointed at a self-hosted server. Options for disabling registration and making accounts premium are also described.",
+  "use_cases": [
+   "self-host an email alias service",
+   "hide my real email address from websites",
+   "forward alias emails to my inbox",
+   "run a private email alias server for my team",
+   "manage custom domains for email aliases"
+  ],
+  "how_to_run": [
+   "sudo apt update && sudo apt install -y dnsutils",
+   "Create the sl/ data directories, generate DKIM keys with openssl, and set up MX, A, DKIM, SPF and DMARC DNS records",
+   "Install and configure Postfix with postfix-pgsql, then restart Postfix",
+   "Create simplelogin.env with your domain, FLASK_SECRET and database settings",
+   "Run flask db upgrade and python init_app.py using the simplelogin/app:3.4.0 Docker image",
+   "Start the sl-app, sl-email and sl-job-runner Docker containers, then set up Nginx and SSL"
+  ],
+  "stack": [
+   "Python",
+   "Flask",
+   "Docker",
+   "PostgreSQL",
+   "Postfix",
+   "Nginx",
+   "GnuPG",
+   "DKIM"
+  ],
+  "notable": [
+   "Self-hosted alternative with a documented Docker-based setup using a Postgres container and a dedicated Docker network",
+   "Browser extensions and Android/iOS apps can be pointed at a self-hosted API URL",
+   "Includes DKIM, SPF and DMARC DNS configuration guidance for outbound mail",
+   "Splits the backend into webapp, email handler and job runner containers",
+   "Disables the alias suffix requirement for self-hosted installs"
+  ],
+  "caveats": [
+   "Requires a Linux server with at least 2 GB RAM recommended, open ports 25, 80, 443 and 22, and a domain you control for DNS",
+   "Setup is involved: Postfix, Postgres, DNS records, SSL and Nginx must all be configured manually",
+   "Accounts are not premium by default; unlimited aliases require a manual database update"
+  ],
+  "license": "MIT",
+  "category": "self-hosted email aliases",
+  "keywords": [
+   "email alias",
+   "email alias service",
+   "self-hosted email alias",
+   "simplelogin",
+   "hide email address",
+   "protect email privacy",
+   "anonymous email",
+   "disposable email",
+   "email forwarding",
+   "postfix",
+   "postgres",
+   "docker",
+   "flask",
+   "python",
+   "dkim",
+   "spf",
+   "dmarc",
+   "mx record",
+   "nginx",
+   "custom domain email",
+   "reply from alias",
+   "privacy email",
+   "avoid spam email",
+   "online identity protection",
+   "open source email privacy",
+   "self-host email forwarding",
+   "forward alias to inbox",
+   "email tracking protection",
+   "sign up without real email",
+   "alias generator",
+   "mail relay"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8505,
+  "output": 1259
+ },
+ "generated": "2026-10-29"
+}

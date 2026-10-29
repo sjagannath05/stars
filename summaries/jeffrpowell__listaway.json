@@ -1,0 +1,94 @@
+{
+ "id": "jeffrpowell/listaway",
+ "repo": "jeffrpowell/listaway",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "Listaway - List management app for creating and publicly sharing lists of items. Supports auth, admin tools, item notes and priorities, and opt-in public read-only links with randomized URLs (alternative to Amazon Lists). (Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Listaway is a self-hostable app for creating lists of items (wishlists or tracking lists) and optionally sharing them publicly via randomized read-only URLs.",
+  "what_it_does": "Lets authenticated users, individually or as a team, create and manage lists of items, each with a name, optional URL, optional priority, and optional notes. Lists and collections (groups of lists, including shared lists) can have optional descriptions. Lists are sortable by name and priority. Lists and collections can be opted in to public read-only access via a URL containing a random string, and lists can be shared with other group members as read-only or editable. The app includes group and instance administration, email/password login with password reset, and optional OIDC/OAuth2 single sign-on. It runs against PostgreSQL and is deployed via Docker Compose using a published image.",
+  "use_cases": [
+   "share a gift wishlist with family",
+   "track a list of books to read",
+   "publish a custom PC build parts list",
+   "share a list of tasks needing help",
+   "manage team lists with shared edit access",
+   "self-hosted alternative to Amazon Lists"
+  ],
+  "how_to_run": [
+   "Create a PostgreSQL role, database, and schema for listaway with the grants shown in the README",
+   "Create a docker-compose.yml using image ghcr.io/jeffrpowell/listaway:v1.18.2 on port 8080 with an env_file",
+   "Create a .env file with LISTAWAY_AUTH_KEY, PORT, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, and POSTGRES_DATABASE",
+   "Run docker compose up",
+   "For source builds: run yarn --cwd web run build, then go run cmd/listaway/main.go"
+  ],
+  "stack": [
+   "Go",
+   "PostgreSQL",
+   "Node.js",
+   "Yarn",
+   "Docker",
+   "Docker Compose",
+   "OIDC/OAuth2"
+  ],
+  "notable": [
+   "Shared lists use a random string in the URL, so they can be opened without logging in",
+   "Supports email/password plus OIDC/OAuth2 single sign-on with documented setup for Google, GitHub, Microsoft, Auth0, and generic OIDC providers",
+   "Optional SMTP for password reset emails; without it, reset emails are logged to the console",
+   "Password reset links expire after 1 hour and can only be used once",
+   "Includes a devcontainer for a quick development setup"
+  ],
+  "caveats": [
+   "Requires an existing PostgreSQL server; no embedded database is described",
+   "Building from source needs Go, Postgres, Node.js, and Yarn installed or a devcontainer",
+   "Without SMTP configured, password reset emails are only logged, not delivered"
+  ],
+  "license": "MIT",
+  "category": "self-hosted list management",
+  "keywords": [
+   "list management",
+   "wishlist app",
+   "shareable wishlist",
+   "gift registry",
+   "to-do lists",
+   "task lists",
+   "public read-only links",
+   "randomized url sharing",
+   "self-hosted lists",
+   "amazon lists alternative",
+   "postgresql",
+   "go app",
+   "docker compose",
+   "docker image",
+   "oidc login",
+   "oauth2 single sign-on",
+   "google login",
+   "github oauth",
+   "password reset email",
+   "smtp",
+   "team lists",
+   "shared lists",
+   "item priority",
+   "item notes",
+   "sortable table",
+   "collections of lists",
+   "admin dashboard",
+   "share lists with team",
+   "self-host wishlist"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3543,
+  "output": 1261
+ },
+ "generated": "2026-10-29"
+}

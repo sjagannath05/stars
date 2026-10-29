@@ -1,0 +1,91 @@
+{
+ "id": "piebald-ai/tweakcc",
+ "repo": "Piebald-AI/tweakcc",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Configuration",
+   "entry": "tweakcc by Piebald-AI - Command-line tool to customize your Claude Code installation: themes, thinking verbs, spinners, and input-box styling, plus deeper tweaks like custom toolsets, system-prompt edits, input pattern highlighters, and AGENTS.md support. Works against both native and npm installs."
+  }
+ ],
+ "summary": {
+  "one_liner": "tweakcc is a command-line tool that customizes a Claude Code installation by patching its code with themes, thinking verbs, spinners, system prompts, toolsets, and other UI and behavior tweaks.",
+  "what_it_does": "The tool reads customizations from a local config file (~/.tweakcc/config.json) and patches Claude Code's JavaScript, which it does for both npm installs (cli.js directly) and native Bun binaries (extracted, patched, and repacked via node-lief). It offers an interactive TUI (npx tweakcc) for themes, thinking verbs and spinner animations, input box styling, and user message display. System prompt parts are stored as editable markdown files in ~/.tweakcc/system-prompts and applied with --apply. Toolsets limit which built-in tools are sent to the model, and the /toolset command switches between them. The README also describes adhoc-patch for one-off string, regex, or sandboxed JavaScript patches, unpack/repack for native binaries, a --restore option, a Remote Config option to apply a config from a URL, and an npm API.",
+  "use_cases": [
+   "customize Claude Code colors and themes",
+   "edit Claude Code system prompts",
+   "limit which tools Claude Code can call",
+   "change thinking verbs and spinner animation",
+   "apply custom patches to a Claude Code binary",
+   "share a Claude Code config via a gist or URL",
+   "highlight patterns in the Claude Code input box"
+  ],
+  "how_to_run": [
+   "npx tweakcc",
+   "pnpm dlx tweakcc",
+   "npx tweakcc --apply",
+   "npx tweakcc adhoc-patch --string '\"Claude Code\"' '\"My App\"'",
+   "npm i tweakcc"
+  ],
+  "stack": [
+   "Node.js",
+   "JavaScript",
+   "node-lief (LIEF bindings for native binary patching)",
+   "Ink",
+   "React"
+  ],
+  "notable": [
+   "Patches both native Bun executables and npm-based Claude Code installs, across Windows, macOS, and Linux",
+   "System prompts are editable markdown files, with conflict resolution and HTML diffs when Anthropic changes them",
+   "Toolsets remove tools from the model's prompt entirely, not just from permissions",
+   "adhoc-patch runs sandboxed Node scripts with --experimental-permission, and can load them from URLs",
+   "Includes an npm API for use in other projects"
+  ],
+  "caveats": [
+   "Verified against Claude Code 2.1.162 only; other versions may have patches that fail, though system prompt patching is said to work with any version that has prompt data",
+   "Patches are overwritten on Claude Code updates and must be reapplied with --apply",
+   "adhoc-patch does not create a backup, so --apply must be run first if restore is needed"
+  ],
+  "license": "unknown",
+  "category": "claude code customization",
+  "keywords": [
+   "claude code",
+   "claude code themes",
+   "claude code customization",
+   "cli patcher",
+   "system prompt editor",
+   "toolsets",
+   "thinking verbs",
+   "spinner animation",
+   "terminal ui customization",
+   "node-lief",
+   "bun binary patching",
+   "adhoc patch",
+   "regex patch",
+   "config.json",
+   "agents.md support",
+   "input box highlighter",
+   "remote config url",
+   "npm cli tool",
+   "customize ai coding assistant",
+   "change claude code colors",
+   "edit claude code prompts",
+   "limit claude code tools",
+   "restrict tools for ai agent",
+   "personalize claude code ui",
+   "patch anthropic cli",
+   "tweak claude code look",
+   "share claude code settings"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16757,
+  "output": 1301
+ },
+ "generated": "2026-10-29"
+}

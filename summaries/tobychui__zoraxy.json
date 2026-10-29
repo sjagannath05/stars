@@ -1,0 +1,102 @@
+{
+ "id": "tobychui/zoraxy",
+ "repo": "tobychui/zoraxy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Web Servers",
+   "entry": "Zoraxy - General purpose HTTP reverse proxy and forwarding tool. (Source Code) AGPL-3.0 Go/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Networking",
+   "entry": "Zoraxy | General-purpose HTTP reverse proxy and forwarding tool with a web UI"
+  }
+ ],
+ "summary": {
+  "one_liner": "Zoraxy is a general-purpose HTTP reverse proxy and forwarding tool with a web UI, written in Go.",
+  "what_it_does": "Zoraxy runs as a single binary that acts as a reverse proxy for HTTP/HTTP2 traffic, with virtual directories, automatic WebSocket proxying, basic auth, alias hostnames, custom headers, and load balancing. It handles TLS/SSL, including ACME certificates with auto-renew, SNI and SAN certs, and DNS challenges for Let's Encrypt with listed DNS providers. It can filter traffic by country or IP (single IP, CIDR, or wildcard), and it includes TCP/UDP stream proxying and an integrated uptime monitor. Extra utilities include a web SSH terminal, CIDR converters, mDNS and IP/port scanners, Wake-on-LAN, and a plugin system. Management is done through a web interface, with a standalone single-admin mode or an external permission mode for use behind another auth proxy.",
+  "use_cases": [
+   "Reverse proxy for homelab web services",
+   "Obtain and auto-renew Let's Encrypt certificates for sites",
+   "Route traffic to multiple backend servers with load balancing",
+   "Forward TCP or UDP streams to internal hosts",
+   "Restrict site access by country or IP address",
+   "Manage proxy routes from a web UI instead of editing config files"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd ./zoraxy/src/",
+   "go mod tidy",
+   "go build",
+   "sudo ./zoraxy -port=:8000"
+  ],
+  "stack": [
+   "Go 1.23+",
+   "Docker",
+   "leveldb",
+   "boltdb"
+  ],
+  "notable": [
+   "Web UI for managing reverse proxy rules, certificates and access control",
+   "Automatic WebSocket proxying with no extra setup",
+   "Built-in ACME with DNS challenge support and auto-renew",
+   "Experimental nginx-to-Zoraxy config converter",
+   "Community forward-auth support for Authelia and Authentik, plus OAuth2 and reCAPTCHA"
+  ],
+  "caveats": [
+   "Web SSH supports Linux-based systems only",
+   "Loopback SSH connections are disabled by default and the no-auth mode is a security risk unless behind another auth layer",
+   "ACME integration and some features are community-maintained, and the README lists maintainer vacancies",
+   "Fastgeoip needs about 1GB extra memory"
+  ],
+  "license": "AGPL-3.0",
+  "category": "reverse proxy server",
+  "keywords": [
+   "reverse proxy",
+   "http reverse proxy",
+   "go reverse proxy",
+   "web ui reverse proxy",
+   "reverse proxy web interface",
+   "nginx alternative",
+   "nginx proxy manager alternative",
+   "npm alternative",
+   "lets encrypt",
+   "acme certificates",
+   "auto renew ssl",
+   "ssl certificate manager",
+   "dns challenge",
+   "sni",
+   "load balancing",
+   "websocket proxy",
+   "tcp udp forwarding",
+   "stream proxy",
+   "ip blacklist",
+   "country blocking",
+   "geoip filter",
+   "uptime monitor",
+   "web ssh terminal",
+   "wake on lan",
+   "mdns scanner",
+   "port scanner",
+   "homelab proxy",
+   "self-hosted gateway",
+   "forward auth authelia",
+   "authentik proxy",
+   "oauth2 proxy",
+   "expose homelab services over https",
+   "route subdomains to local apps",
+   "docker reverse proxy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4552,
+  "output": 1301
+ },
+ "generated": "2026-10-29"
+}

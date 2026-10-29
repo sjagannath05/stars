@@ -1,0 +1,93 @@
+{
+ "id": "ceph/ceph",
+ "repo": "ceph/ceph",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "File Sharing",
+   "entry": "Ceph | Distributed object, block, and file storage platform"
+  }
+ ],
+ "summary": {
+  "one_liner": "Ceph is a scalable distributed storage system (object, block, and file storage) whose source repository this README documents for building and testing it from source.",
+  "what_it_does": "The README covers developer-focused setup for the Ceph source tree: cloning the repo with submodules, installing build prerequisites via install-deps.sh, and configuring a build with do_cmake.sh and CMake. It describes building with ninja, choosing Debug or RelWithDebInfo build types, and optional flags such as disabling RADOS Gateway or using system libraries for Boost, RocksDB and Arrow. It explains how to launch a local test cluster with vstart.sh and interact with it using the ceph, rbd and rados commands. It also covers running unit tests with ctest, building inside Podman or Docker containers, building documentation, and basic troubleshooting pointers to logs. The README itself is a developer guide and does not describe production deployment.",
+  "use_cases": [
+   "build Ceph from source for development",
+   "run a local test Ceph cluster",
+   "run Ceph unit tests with ctest",
+   "containerized Ceph builds with Podman or Docker",
+   "build Ceph documentation"
+  ],
+  "how_to_run": [
+   "git clone git@github.com:ceph/ceph",
+   "cd ceph && git submodule update --init --recursive --progress",
+   "./install-deps.sh",
+   "./do_cmake.sh",
+   "cd build && ninja -j3",
+   "ninja vstart && ../src/vstart.sh --debug --new -x --localhost --bluestore"
+  ],
+  "stack": [
+   "C++",
+   "CMake",
+   "Ninja",
+   "Python",
+   "RocksDB",
+   "Boost",
+   "Arrow",
+   "ctest"
+  ],
+  "notable": [
+   "Distributed object, block (rbd) and file storage in one system",
+   "vstart.sh script spins up a local development cluster without installation",
+   "Supports optional bundled or system-provided dependencies via CMake flags",
+   "Container-based build tooling using Podman or Docker"
+  ],
+  "caveats": [
+   "Build is resource-heavy: roughly 2.5 GiB RAM per parallel ninja job, and Debug builds can be much slower than release builds",
+   "README is a developer build guide; it does not cover production deployment",
+   "Targets Debian/Ubuntu apt commands; other package managers need different commands"
+  ],
+  "license": "LGPL 2.1 or 3.0 (most code); some code public domain or BSD-style; documentation CC-BY-SA-3.0; some headers GPL",
+  "category": "distributed storage system",
+  "keywords": [
+   "ceph",
+   "distributed storage",
+   "object storage",
+   "block storage",
+   "file storage",
+   "scalable storage",
+   "software-defined storage",
+   "rados",
+   "rbd",
+   "radosgw",
+   "build from source",
+   "cmake",
+   "ninja",
+   "vstart",
+   "local test cluster",
+   "ctest",
+   "unit tests",
+   "docker build",
+   "podman build",
+   "lgpl",
+   "storage cluster",
+   "share files with my team",
+   "network storage for servers",
+   "self-hosted storage cluster",
+   "osd",
+   "bluestore",
+   "rocksdb",
+   "dev environment setup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5453,
+  "output": 1155
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "sebastien/multiplex",
+ "repo": "sebastien/multiplex",
+ "kind": "star",
+ "description": "Command-line process multiplexer",
+ "topics": [],
+ "language": "Python",
+ "stars": 153,
+ "license": "BSD-3-Clause",
+ "homepage": "",
+ "pushed_at": "2026-10-02",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "Multiplex is a command-line process multiplexer with a compact syntax for running several processes in parallel, coordinating them with delays and dependencies, and merging their output.",
+  "what_it_does": "Runs multiple commands in parallel from a single CLI invocation, without a config file, and gracefully shuts down child processes. Its output streams are multiplexed to stdout and stderr in a format that is easy to parse with standard command-line tools. A compact command syntax supports named channels, colors, start delays, dependencies on other processes ending or starting, and actions such as terminating everything when one process ends. Guards let a command wait for a glob or regexp match in a process's output or on standard input. The tool also offers detached, filesystem-backed runs managed with start, status, tail and stop subcommands, and a simple Python API.",
+  "use_cases": [
+   "run a web server, database and worker together",
+   "combine output from multiple parallel commands",
+   "start a service and run a test once it is ready",
+   "sequential build then run pipeline without a shell script",
+   "stagger process startup with delays",
+   "run background processes detached from the terminal"
+  ],
+  "how_to_run": [
+   "uv tool install multiplex-sh",
+   "multiplex --help",
+   "pip install multiplex-sh",
+   "multiplex \"DB=mongod\" \"API:DB+2=node server.js\" \":API&=npm test\"",
+   "multiplex start dev \"API=npm run dev\" \"WEB=npm run web\"",
+   "multiplex status"
+  ],
+  "stack": [
+   "Python 3.8+",
+   "PyPI package multiplex-sh",
+   "uv or pip for installation"
+  ],
+  "notable": [
+   "Compact one-line syntax for delays, dependencies, colors and actions, with no config file needed",
+   "Dependencies can wait on a process start (&) or end, chained with delays",
+   "Guards match glob or regexp patterns in process stdout, stderr or standard input",
+   "Detached runs with state and logs stored in .multiplex/ directory",
+   "Optional Python API for more advanced orchestration"
+  ],
+  "caveats": [
+   "Only tested on Linux and macOS according to the README",
+   "Input guards consume standard input and only work in foreground mode",
+   "Guard names must not collide with action names"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "cli process orchestration",
+  "keywords": [
+   "process multiplexer",
+   "command-line multiplexer",
+   "run multiple processes",
+   "parallel commands",
+   "process orchestration",
+   "task runner",
+   "procfile alternative",
+   "foreman alternative",
+   "overmind alternative",
+   "mprocs alternative",
+   "honcho alternative",
+   "multiplex output",
+   "combine process output",
+   "start processes in parallel",
+   "stop all processes at once",
+   "dependency chain commands",
+   "wait for process to start",
+   "delayed command start",
+   "graceful shutdown child processes",
+   "regex output matching",
+   "glob guard stdin",
+   "colored process output",
+   "detached background processes",
+   "process timestamps",
+   "shell one-liner orchestration",
+   "python process manager",
+   "run web server and tests",
+   "multiplex-sh",
+   "start services in order"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7715,
+  "output": 1140
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "andikleen/pmu-tools",
+ "repo": "andikleen/pmu-tools",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Top-down analysis",
+   "entry": "pmu-tools - Runs the TMA tree on Linux from the spreadsheet and states why multiplexed levels mislead on short or varied workloads."
+  }
+ ],
+ "summary": {
+  "one_liner": "A collection of Python tools and a C library for Intel CPU performance profiling on Linux perf, centered on the toplev top-down (TMA) bottleneck analyzer.",
+  "what_it_does": "The repository bundles several tools for collecting and analyzing Intel CPU performance counters through Linux perf. toplev implements the TopDown/TopDown2 methodology to identify micro-architectural bottlenecks for a workload, with options for levels, node metrics, a bottlenecks view, drilldown with minimal multiplexing, and interval CSV output. ocperf wraps perf with full Intel core event lists using symbolic names, and it can be used as a Python library. ucevent handles uncore events, and jevents is a C library for resolving named Intel events to perf_event_attr. The README also mentions cputop for topology and hybrid core queries, msr and pci for register access, and plotting or XLSX spreadsheet generation for post-processing interval measurements. The tools are run from the source directory and download Intel event lists on first run.",
+  "use_cases": [
+   "Find CPU bottlenecks in a program with top-down analysis",
+   "Generate a spreadsheet or charts of CPU metrics",
+   "Measure a workload with symbolic Intel event names",
+   "Collect interval CSV performance data for a whole system",
+   "Measure uncore events such as memory or interconnect counters",
+   "Query CPU topology or pin workloads to specific cores"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/andikleen/pmu-tools",
+   "cd pmu-tools",
+   "./toplev -l2 program",
+   "pip install -r requirements.txt   (optional, for plots and XLSX output)",
+   "cd jevents && make   (optional, to build the jevents C library)"
+  ],
+  "stack": [
+   "Python 2.7 / Python 3",
+   "C (jevents library, built with gcc/make)",
+   "Linux perf",
+   "Optional: external Python libraries from requirements.txt for plots and XLSX"
+  ],
+  "notable": [
+   "toplev implements the TopDown / TopDown2 methodology and is updated to recent TMA model versions",
+   "Bottlenecks view summarizes the TMA tree into a short list of performance issues",
+   "--drilldown reruns the workload with minimal multiplexing to find the critical bottleneck",
+   "Runs out of the source directory with no install step for most tools"
+  ],
+  "caveats": [
+   "Requires Intel CPUs; needs a reasonably recent kernel and perf tools for newer CPU models",
+   "Needs internet access on first run to download Intel event lists; later runs can be offline",
+   "Plots and XLSX spreadsheets need extra Python packages",
+   "Some older tools such as simple-pebs are no longer supported",
+   "Multiplexing counters can introduce measurement errors, as the README notes for -NB runs"
+  ],
+  "license": "GPLv2 for ocperf, toplev, ucevent, parser; modified BSD for jevents",
+  "category": "cpu performance profiling",
+  "keywords": [
+   "intel cpu profiling",
+   "linux perf",
+   "perf wrapper",
+   "top-down analysis",
+   "tma",
+   "topdown methodology",
+   "toplev",
+   "ocperf",
+   "ucevent",
+   "jevents",
+   "performance counters",
+   "pmu events",
+   "cpu bottleneck analysis",
+   "micro-architecture analysis",
+   "multiplexing",
+   "uncore events",
+   "hardware counters",
+   "perf stat",
+   "cputop",
+   "msr access",
+   "xlsx spreadsheet cpu metrics",
+   "interval measurement csv",
+   "profile my program on intel",
+   "find why my code is slow",
+   "cpu stall analysis",
+   "symbolic event names",
+   "hyperthreading topology",
+   "memory bandwidth measurement",
+   "bottleneck view"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10656,
+  "output": 1369
+ },
+ "generated": "2026-10-29"
+}

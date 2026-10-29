@@ -1,0 +1,99 @@
+{
+ "id": "imolatte/claude-cli-telegram",
+ "repo": "Imolatte/claude-cli-telegram",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Remote Control, Notifications & Voice I/O",
+   "entry": "Claude CLI ↔ Telegram by Imolatte - A feature-rich Telegram bot that turns your machine into a remote Claude Code terminal driven from your phone: streaming tool progress, voice input, a git panel, Mac remote control, and 30+ commands. Its standout is the approval flow — dangerous-op Approve/Deny taps are injected straight into the real terminal prompt via tmux send-keys, so you authorize from you"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Telegram bot that runs the real Claude Code CLI on your Mac or Linux machine so you can drive it from your phone, with streaming progress, voice input, and phone-based approval of dangerous operations.",
+  "what_it_does": "The bot receives Telegram messages (text, voice, photos, files, forwards) and spawns the Claude Code CLI with full tool access, then streams tool activity (Read, Edit, Bash, etc.) back to the chat and sends the final response. Voice notes are transcribed with Groq Whisper STT. Sessions auto-resume and can be listed, switched, renamed, and deleted from inline keyboards. Dangerous operations such as git push/reset, rm -rf, Docker, DB migrations, and deploys can require Approve/Deny taps; with tmux, those taps are injected into the terminal prompt via tmux send-keys. The bot also includes a git panel, quick shell/system-info/clipboard commands, Mac sleep/lock/shutdown/battery commands, and an optional server-first setup where a Linux server runs Claude and a Mac takes over on demand. The UI is available in English and Russian.",
+  "use_cases": [
+   "Control Claude Code on my computer from my phone",
+   "Approve or deny risky AI agent actions remotely",
+   "Dictate coding tasks to Claude by voice message",
+   "Check git status, diff, and push from Telegram",
+   "Run a 24/7 Claude Code assistant on a Linux server",
+   "Get notified when Claude finishes or needs permission"
+  ],
+  "how_to_run": [
+   "git clone <repo> (URL not shown in README)",
+   "cd tg-claude && cp config.example.json config.json",
+   "Edit config.json with botToken, chatId, and groqApiKey",
+   "cd worker && npm install && node index.mjs",
+   "Send /start to the bot to run the setup wizard",
+   "Optionally add the approval-hook.mjs and stop-hook.mjs entries to ~/.claude/settings.json"
+  ],
+  "stack": [
+   "Node.js 20+",
+   "Claude Code CLI",
+   "Telegram Bot API",
+   "Groq Whisper (STT)",
+   "tmux (optional)",
+   "FFmpeg (optional)",
+   "Puppeteer (optional, screenshots)",
+   "systemd (server setup)",
+   "ssh (Mac/server handover)"
+  ],
+  "notable": [
+   "Approval buttons inject keystrokes into the real terminal prompt via tmux send-keys, so the session keeps running",
+   "Server-first mode with a Mac standby that takes over via heartbeat and /where commands",
+   "Vanilla Node.js ESM with no frameworks; file-based IPC between hooks and bot",
+   "Owner-only access by chat ID, with a group allowlist and automatic denial of dangerous ops from non-owners",
+   "Claude can message you back via MCP tools send_telegram and send_file_telegram"
+  ],
+  "caveats": [
+   "Without tmux, only a Take over session fallback is offered, which loses in-memory plan/todo state",
+   "Mac remote control and autostart are macOS-oriented; the README says it works on macOS and Linux",
+   "Requires a Telegram bot token, a Groq API key for voice, and Node.js 20+",
+   "Claude refuses --dangerously-skip-permissions under root, so the server must run as a regular user"
+  ],
+  "license": "MIT",
+  "category": "remote claude control",
+  "keywords": [
+   "claude code",
+   "telegram bot",
+   "remote terminal",
+   "control claude from phone",
+   "claude cli wrapper",
+   "tmux send-keys",
+   "approval flow",
+   "voice input",
+   "groq whisper",
+   "speech to text",
+   "git panel",
+   "node.js telegram",
+   "mobile coding",
+   "remote approval",
+   "dangerous operation approval",
+   "session management",
+   "streaming progress",
+   "mac remote control",
+   "linux server bot",
+   "systemd service",
+   "ssh handover",
+   "chat bot for coding",
+   "notifications from claude",
+   "run ai agent remotely",
+   "telegram bot for developers",
+   "claude code notifications",
+   "hooks",
+   "mcp telegram",
+   "i18n russian",
+   "self-hosted bot"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7002,
+  "output": 1487
+ },
+ "generated": "2026-10-29"
+}

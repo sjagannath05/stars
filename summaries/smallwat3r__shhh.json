@@ -1,0 +1,100 @@
+{
+ "id": "smallwat3r/shhh",
+ "repo": "smallwat3r/shhh",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "Shhh - Keep secrets out of emails or chat logs, share them using secure links with passphrase and expiration dates. MIT Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "Shhh is a small Flask web app that creates encrypted, passphrase-protected, self-destructing links for sharing secrets so they stay out of emails and chat logs.",
+  "what_it_does": "The sender sets an expiration date and a passphrase, and Shhh generates a unique link to share with the receiver alongside the passphrase. Secrets are encrypted with Fernet using a password, a random salt and 100,000 iterations, and the passphrases are not stored. A secret is permanently deleted from the database when its expiration date passes, when the receiver decrypts it, or when the number of failed open attempts is exceeded. The README also mentions an API, a Heroku one-click deploy option, and Docker-based development setup with PostgreSQL or MySQL plus Adminer. A separate Go command-line client, shhh-cli, is mentioned. Secret length is configurable, defaulting to 250 characters.",
+  "use_cases": [
+   "Sharing passwords with a colleague without putting them in email",
+   "Sending one-time sensitive text with an expiring link",
+   "Self-hosting a private secret-sharing service for an organisation",
+   "Passing credentials through chat without leaving them in chat logs",
+   "Deploying a secret-sharing app to Heroku"
+  ],
+  "how_to_run": [
+   "make dc-start",
+   "make dc-start-adminer",
+   "make dc-stop",
+   "make db c='upgrade'",
+   "make venv deps"
+  ],
+  "stack": [
+   "Python",
+   "Flask",
+   "Gunicorn",
+   "Nginx",
+   "PostgreSQL",
+   "MySQL",
+   "Fernet encryption",
+   "Docker",
+   "Yarn",
+   "Ruff",
+   "Bandit",
+   "Mypy",
+   "Yapf"
+  ],
+  "notable": [
+   "Secrets are encrypted and deleted after expiry, first successful read, or too many attempts",
+   "Passphrases are never stored",
+   "Supports PostgreSQL or MySQL",
+   "Includes a REST API and a separate Go CLI client (shhh-cli)",
+   "One-click Heroku deploy configuration included"
+  ],
+  "caveats": [
+   "The project is being sunset in favor of secretapi, according to the README",
+   "The hosted public instance is temporarily unavailable, so self-hosting is needed",
+   "Docker setup and environment files are described as for development only, not production"
+  ],
+  "license": "MIT",
+  "category": "self-hosted secret sharing",
+  "keywords": [
+   "secret sharing",
+   "share passwords securely",
+   "one-time secret link",
+   "self-destructing message",
+   "expiring link",
+   "passphrase protected secret",
+   "encrypted secret sharing",
+   "keep secrets out of email",
+   "flask app",
+   "python flask",
+   "fernet encryption",
+   "self-hosted",
+   "private secret sharing server",
+   "gunicorn nginx",
+   "postgresql",
+   "mysql",
+   "docker compose",
+   "heroku deploy",
+   "rest api",
+   "command line client",
+   "shhh-cli",
+   "secretapi",
+   "password sharing alternative",
+   "burn after reading",
+   "temporary secret",
+   "view once secret",
+   "secure note sharing",
+   "share credentials with team",
+   "encrypted link generator",
+   "awesome-selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3805,
+  "output": 1161
+ },
+ "generated": "2026-10-29"
+}

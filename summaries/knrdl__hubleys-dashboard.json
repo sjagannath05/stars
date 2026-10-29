@@ -1,0 +1,94 @@
+{
+ "id": "knrdl/hubleys-dashboard",
+ "repo": "knrdl/hubleys-dashboard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Hubleys - Personal dashboards to organize links for multiple users via a central yaml config. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Hubleys is a self-hosted, Docker-based personal dashboard that gives multiple users their own set of predefined links, search engines, events and messages, configured centrally in a YAML file.",
+  "what_it_does": "Hubleys generates a separate dashboard for each user based on their groups and permissions, with all content predefined by admins in a central config.yml. Dashboard features listed include link tiles organized into folders, search engines with autocomplete, upcoming calendar events, and messages shown to users. It also offers customizable backgrounds (including a wallpaper collection and Unsplash images), current weather and forecast via OpenWeatherMap, and clock, stopwatch and timer widgets. User identity comes from forward auth HTTP headers (Remote-User, Remote-Groups, Remote-Name, Remote-Email) set by a reverse proxy and auth provider. Persistent data lives under /data, and users can save their own settings and uploaded backgrounds.",
+  "use_cases": [
+   "share a set of self-hosted service links with multiple users",
+   "give each user a dashboard based on their group membership",
+   "central start page for a家庭 or team homelab",
+   "show announcements or messages on a shared start page",
+   "start page with weather, clock and calendar events",
+   "dashboard behind Authelia or Caddy forward auth"
+  ],
+  "how_to_run": [
+   "docker run -it --rm -e SINGLE_USER_MODE=1 -e ORIGIN= -p127.0.0.1:3000:3000 ghcr.io/knrdl/hubleys-dashboard:edge",
+   "Create a docker-compose.yml using image ghcr.io/knrdl/hubleys-dashboard with ADMINS, OPENWEATHERMAP_API_KEY and UNSPLASH_API_KEY environment variables and a ./data:/data volume",
+   "chown -R 1000:1000 ./data",
+   "Edit ./data/config.yml to define dashboard contents, then restart the application",
+   "Configure a reverse proxy (Caddy or Nginx examples given) with an auth provider such as Authelia to pass Remote-User and related headers",
+   "Connect the container to the proxy network and proxy to port 3000"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "YAML configuration",
+   "OpenWeatherMap API",
+   "Unsplash API",
+   "Caddy (example)",
+   "Nginx (example)",
+   "Authelia (example)"
+  ],
+  "notable": [
+   "Per-user dashboards driven by group membership from forward-auth headers",
+   "All dashboard content predefined by admins in one config.yml, reloadable without restart via admin settings",
+   "Demo runs with a single docker run command in single-user mode",
+   "Customizable and dynamic backgrounds, including a local wallpaper folder",
+   "Users can save their own settings and upload backgrounds"
+  ],
+  "caveats": [
+   "Requires a reverse proxy and an auth provider sending Remote-User headers; no built-in login",
+   "Weather and Unsplash backgrounds need API keys and do not work in the demo",
+   "Config changes need an application restart or the admin reload action"
+  ],
+  "license": "MIT",
+  "category": "self-hosted start page",
+  "keywords": [
+   "personal dashboard",
+   "start page",
+   "homepage",
+   "link dashboard",
+   "multi-user dashboard",
+   "self-hosted dashboard",
+   "docker dashboard",
+   "docker compose",
+   "yaml config",
+   "forward auth",
+   "reverse proxy auth",
+   "authelia",
+   "caddy",
+   "nginx",
+   "remote-user header",
+   "openweathermap",
+   "unsplash backgrounds",
+   "weather widget",
+   "calendar events",
+   "search engines autocomplete",
+   "bookmarks for team",
+   "share service links with family",
+   "organize links into folders",
+   "user groups permissions dashboard",
+   "homelab landing page",
+   "announcements for users",
+   "clock stopwatch timer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3533,
+  "output": 1406
+ },
+ "generated": "2026-10-29"
+}

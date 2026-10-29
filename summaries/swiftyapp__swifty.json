@@ -1,0 +1,98 @@
+{
+ "id": "swiftyapp/swifty",
+ "repo": "swiftyapp/swifty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "Swifty - Free and offline password manager."
+  }
+ ],
+ "summary": {
+  "one_liner": "Rowel (repo name swifty) is a free, open-source, offline-first password and secrets manager that stores encrypted vaults on your own devices, with optional sync through your own Google Drive, Dropbox or iCloud.",
+  "category": "password manager",
+  "keywords": [
+   "password manager",
+   "offline password manager",
+   "encrypted vault",
+   "passkeys",
+   "totp",
+   "ssh key manager",
+   "env file storage",
+   "api key manager",
+   "secrets manager",
+   "self-hosted password manager",
+   "no account password manager",
+   "free password manager",
+   "open source password manager",
+   "bitwarden alternative",
+   "1password alternative",
+   "keepass alternative",
+   "lastpass alternative",
+   "password generator",
+   "browser autofill",
+   "import passwords",
+   "export passwords csv",
+   "sync passwords google drive",
+   "sync passwords dropbox",
+   "icloud keychain alternative",
+   "credit card storage",
+   "share password by link",
+   "vault health breach check",
+   "tauri rust app",
+   "sqlcipher",
+   "store passwords on my own devices",
+   "share files with my team"
+  ],
+  "what_it_does": "Rowel stores logins, passkeys, TOTP codes, credit cards, identities, documents, secure notes, file attachments, SSH keys, API keys and whole .env files in an encrypted vault. The vault is split into lockboxes (for example Personal or Work), each kept as an encrypted SQLCipher database on the local device, with each item sealed again at the application layer. Optional sync uploads each lockbox as one encrypted file to Google Drive, Dropbox or iCloud, and edits from different devices merge per item. It can import from 1Password, LastPass, Bitwarden, KeePass CSV, Enpass, Chrome, Safari and FIDO CXF exports, and export to CSV, FIDO CXF, or Bitwarden-compatible JSON. Browser autofill and passkeys are offered for Chrome, Edge, Brave, Vivaldi, Firefox and Safari, and iOS AutoFill is included. The README also describes AI agent grants, time-limited encrypted item sharing links, Vault Health checks, and a command line tool.",
+  "use_cases": [
+   "store passwords and passkeys offline",
+   "keep SSH keys and .env files secret",
+   "migrate passwords from another manager",
+   "sync an encrypted vault across devices with my own cloud",
+   "share a single login securely by expiring link",
+   "autofill logins in the browser"
+  ],
+  "how_to_run": [
+   "Download the installer for your platform from the releases page (.dmg, setup .exe, .deb/.rpm/.AppImage, or TestFlight on iOS)",
+   "Or: gh release download --repo fwdai/rowel --pattern 'Rowel_universal.dmg'",
+   "Build from source: git clone && cd rowel",
+   "bun install && bun run tauri:dev"
+  ],
+  "stack": [
+   "Tauri 2",
+   "Rust",
+   "React",
+   "TypeScript",
+   "SQLCipher",
+   "Bun",
+   "GitHub Actions",
+   "CycloneDX SBOM"
+  ],
+  "notable": [
+   "No account and no backend server; vault lives in encrypted files on your own disk and works offline",
+   "Each item is encrypted a second time inside the vault, so list and search run without unsealing secrets",
+   "Developer item types for SSH keys (Ed25519 generation in-app), API keys with scopes, and whole .env files",
+   "Releases ship SLSA build provenance, and desktop auto-updates only install minisign-signed updates",
+   "Private sharing by link that expires in 24 hours and can be revoked"
+  ],
+  "caveats": [
+   "Windows and Linux installers are not code-signed yet; verify with build provenance instead",
+   "iOS is distributed only through Apple TestFlight while in beta",
+   "iCloud sync on Mac depends on the build carrying Apple's iCloud entitlement",
+   "A paid tier for professional teams is mentioned as a possible future option; the README says the free app will not lose features",
+   "Building from source requires Bun and the Tauri/Rust toolchain, plus extra setup described in docs/development.md for iOS and Google OAuth"
+  ],
+  "license": "GNU General Public License v3.0 (desktop and iOS apps, browser extension); Rust library crates under src-tauri/crates are MIT or Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5161,
+  "output": 1546
+ },
+ "generated": "2026-10-29"
+}

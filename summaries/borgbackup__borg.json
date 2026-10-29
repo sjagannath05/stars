@@ -1,0 +1,92 @@
+{
+ "id": "borgbackup/borg",
+ "repo": "borgbackup/borg",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "DevOps Tools",
+   "entry": "borgbackup - A deduplicating archiver with compression and encryption."
+  }
+ ],
+ "summary": {
+  "one_liner": "BorgBackup (Borg) is a deduplicating backup program with optional compression and authenticated encryption; this README is for the unstable Borg2 beta on the master branch.",
+  "what_it_does": "Borg splits files into variable-length chunks using content-defined chunking and stores only chunks not already in the repository, so repeated backups store only changes. Deduplication works across files, machines and archives sharing one repo, and does not depend on file names or timestamps staying the same. Data can be compressed with lz4, zstd, zlib or lzma, and encrypted client-side with AES-OCB or chacha20-poly1305, or authenticated-only modes. Repositories can live on remote hosts via ssh://, http(s)://, sftp://, s3://, b2:// or rclone:. Archives can be mounted as user-space filesystems for browsing and restoring. The README says single-file binaries are provided for Linux, macOS, FreeBSD and Windows (experimental).",
+  "use_cases": [
+   "automated daily backups of home or server directories",
+   "off-site encrypted backups to untrusted storage",
+   "backing up virtual machine images or raw disks efficiently",
+   "browsing and restoring old backup archives as a filesystem",
+   "backing up to S3, B2, SFTP or rclone-supported cloud storage"
+  ],
+  "how_to_run": [
+   "export BORG_REPO=/path/to/repo",
+   "borg repo-create --encryption=aes256-ocb --key-location=repokey",
+   "borg create docs ~/Documents",
+   "borg create -v --stats docs ~/Documents"
+  ],
+  "stack": [
+   "Python",
+   "C",
+   "Cython",
+   "rclone (optional remote backend)"
+  ],
+  "notable": [
+   "Content-defined chunking deduplication, with fastcdc as default chunker",
+   "Client-side authenticated encryption (AES-OCB, chacha20-poly1305) with HMAC-SHA256 or Blake3 hashing",
+   "Remote repositories over ssh, http(s), sftp, S3, B2 and rclone",
+   "Archives mountable as user-space filesystems",
+   "Single-file binaries for several platforms"
+  ],
+  "caveats": [
+   "Borg2 is in beta; the README says breaking changes occur between betas with no upgrade path, so repos must be recreated, and it should not be used for production backups",
+   "Some platforms (NetBSD, OpenBSD, illumos/Solaris) are install-from-source or package only, with partial xattr/ACL support",
+   "Windows, Cygwin and WSL support are marked experimental"
+  ],
+  "license": "BSD 3-clause",
+  "category": "backup software",
+  "keywords": [
+   "deduplicating backup",
+   "backup archiver",
+   "borg",
+   "borgbackup",
+   "borg2",
+   "deduplication",
+   "content-defined chunking",
+   "encrypted backup",
+   "authenticated encryption",
+   "compression backup",
+   "zstd backup",
+   "lz4",
+   "off-site backup",
+   "remote backup over ssh",
+   "sftp backup",
+   "s3 backup",
+   "b2 backup",
+   "rclone backup",
+   "mount backup as filesystem",
+   "restic alternative",
+   "duplicity alternative",
+   "backup to untrusted server",
+   "daily backup tool",
+   "incremental backup",
+   "vm image backup",
+   "backup encryption aes256",
+   "chunk deduplication",
+   "backup command line tool",
+   "save disk space backups",
+   "back up my documents",
+   "python backup program",
+   "bsd license backup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4369,
+  "output": 1261
+ },
+ "generated": "2026-10-29"
+}

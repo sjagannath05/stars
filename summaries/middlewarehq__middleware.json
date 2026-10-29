@@ -1,0 +1,91 @@
+{
+ "id": "middlewarehq/middleware",
+ "repo": "middlewarehq/middleware",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Analytics",
+   "entry": "Middleware - Tool designed to help engineering leaders measure and analyze the effectiveness of their teams using the DORA metrics. (Source Code) Apache-2.0 Docker/Python/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Middleware is an open-source tool that helps engineering leaders measure and analyze team effectiveness using the DORA metrics.",
+  "what_it_does": "Middleware is a self-hosted engineering management tool that calculates the four DORA metrics (Deployment Frequency, Lead Time for Changes, Mean Time to Restore, Change Failure Rate) for teams. According to the README, it can display DORA metrics using only Pull Request data from Git, and it also draws on Deployments and Incidents. Users generate a personal access token from their code provider, create a team, select repositories for that team, and then view DORA metrics. Settings cover incident filters, excluded pull requests, and production branches. The README also lists CI/CD tool integration, visualization of KPIs, customizable reports and dashboards, and integration with project management platforms as features. The app runs as separate analytics and sync servers alongside a web frontend, backed by Postgres and Redis.",
+  "use_cases": [
+   "measure engineering team delivery performance",
+   "track deployment frequency and lead time for changes",
+   "monitor mean time to restore after incidents",
+   "calculate change failure rate from pull requests",
+   "build DORA metrics dashboards for engineering managers"
+  ],
+  "how_to_run": [
+   "Ensure Docker is installed and running.",
+   "docker volume create middleware_postgres_data",
+   "docker volume create middleware_keys",
+   "docker run --name middleware -p 3333:3333 -p 9696:9696 -p 9697:9697 -v middleware_postgres_data:/var/lib/postgresql/data -v middleware_keys:/app/keys -d middlewareeng/middleware:latest",
+   "docker logs -f middleware (then wait for services to start)"
+  ],
+  "stack": [
+   "Docker",
+   "Python 3.11",
+   "Flask",
+   "Node.js 22",
+   "Yarn",
+   "PostgreSQL",
+   "Redis"
+  ],
+  "notable": [
+   "Calculates DORA metrics from Pull Request data alone, without requiring other integrations",
+   "Ships as a single Docker image with analytics server, sync server, and web app",
+   "Includes dev.sh script for Docker-based development with docker compose watch",
+   "Includes a developer automation script (make_new_setting.py) to scaffold new backend settings",
+   "Gitpod support for running in a remote workspace"
+  ],
+  "caveats": [
+   "README recommends at least 16GB RAM for local development",
+   "Roadmap section says only 'Coming Soon!'",
+   "Manual setup requires Python 3.11.6, Node.js 22, Postgres and Redis configured separately"
+  ],
+  "license": "Apache-2.0",
+  "category": "engineering metrics dashboard",
+  "keywords": [
+   "dora metrics",
+   "devops metrics",
+   "engineering metrics",
+   "engineering management",
+   "deployment frequency",
+   "lead time for changes",
+   "mean time to restore",
+   "change failure rate",
+   "team productivity analytics",
+   "engineering effectiveness",
+   "pull request analytics",
+   "software delivery performance",
+   "self-hosted analytics",
+   "docker engineering dashboard",
+   "measure developer productivity",
+   "engineering leader dashboard",
+   "git metrics",
+   "ci/cd metrics",
+   "incident tracking metrics",
+   "flask analytics app",
+   "nodejs web dashboard",
+   "open source engineering management",
+   "track team deploys",
+   "dora dashboard alternative",
+   "measure how my team ships",
+   "apache 2.0 analytics tool",
+   "postgres redis analytics"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5722,
+  "output": 1268
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "plexinc/pms-docker",
+ "repo": "plexinc/pms-docker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "Plex | Media server"
+  }
+ ],
+ "summary": {
+  "one_liner": "Official Docker image for running Plex Media Server, which streams a user's video, music and photo collections to Plex apps on many devices.",
+  "what_it_does": "Provides the official Docker container for Plex Media Server, configured through docker run flags or docker-compose templates. It documents three networking modes (bridge, host, and macvlan) with example commands and the port list needed for bridge mode. Environment variables control first-run settings such as hostname, timezone, PLEX_CLAIM token, ADVERTISE_IP, PLEX_UID/PLEX_GID, ALLOWED_NETWORKS, and CHANGE_CONFIG_DIR_OWNERSHIP. Separate volumes hold server config, transcoder temp files, and media. The README also covers the beta and public tags, which download and install the server on startup, plus Intel Quick Sync hardware transcoding via /dev/dri passthrough.",
+  "use_cases": [
+   "run a Plex media server in Docker",
+   "stream personal movies and music to devices",
+   "set up Plex with host or bridge networking",
+   "enable Intel Quick Sync hardware transcoding in a container",
+   "migrate an existing Plex config directory into Docker",
+   "keep Plex auto-updated via beta or public image tags"
+  ],
+  "how_to_run": [
+   "docker run -d --name plex --network=host -e TZ=\" \" -e PLEX_CLAIM=\" \" -v :/config -v :/transcode -v :/data plexinc/pms-docker",
+   "For bridge networking, publish ports 32400/tcp, 8324/tcp, 32469/tcp, 1900/udp, 32410-32414/udp and set ADVERTISE_IP",
+   "For macvlan networking, use --network=<macvlan name> with --ip and -h",
+   "docker start plex / docker stop plex / docker logs -f plex"
+  ],
+  "stack": [
+   "Docker",
+   "docker-compose",
+   "Plex Media Server",
+   "s6 supervision (referenced in logs)"
+  ],
+  "notable": [
+   "Official image maintained by Plex, with beta and public tags that fetch and install the server at container start",
+   "Documents bridge, host and macvlan networking with concrete commands and caveats for each",
+   "Intel Quick Sync hardware transcoding setup via /dev/dri device passthrough",
+   "Warns that the config directory needs file locking, so network shares and Windows SMB mounts can corrupt the database"
+  ],
+  "caveats": [
+   "Hardware transcoding requires a Plex Pass subscription, per the README",
+   "Bridge networking needs manual router port forwarding for remote access",
+   "Config on NFS, SMB or Windows-hosted SMB mounts risks database corruption; Windows is marked not recommended"
+  ],
+  "license": "unknown",
+  "category": "media server docker",
+  "keywords": [
+   "plex",
+   "plex media server",
+   "plex docker",
+   "pms-docker",
+   "plexinc",
+   "media server",
+   "self-hosted media server",
+   "docker container",
+   "docker-compose",
+   "stream movies",
+   "stream music",
+   "personal media streaming",
+   "home media server",
+   "host networking",
+   "bridge networking",
+   "macvlan",
+   "intel quick sync",
+   "hardware transcoding",
+   "dri device passthrough",
+   "transcoder",
+   "plex pass",
+   "claim token",
+   "config directory migration",
+   "beta tag",
+   "watch media from anywhere",
+   "stream to smart tv",
+   "run plex in a container"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6378,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,94 @@
+{
+ "id": "sztheory/exifcleaner",
+ "repo": "szTheory/exifcleaner",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🖼️ Images (21)",
+   "entry": "ExifCleaner - Remove image metadata with drag and drop, multi-core batch processing, and dark mode."
+  }
+ ],
+ "summary": {
+  "one_liner": "ExifCleaner is a free, open-source Electron desktop app that strips metadata from supported image, video, and PDF files via drag and drop, using ExifTool under the hood.",
+  "what_it_does": "It batch-processes files through ExifTool's stay-open protocol and accepts drag-and-drop of files or whole folders, with optional folder recursion. It accepts a fixed allowlist of image formats (JPEG, PNG, HEIC, WebP, many camera RAW types, and others), media formats (MP4, MOV, AVI, M4V, WMV and similar), and PDF. Privacy options include preserving orientation and timestamps, saving as a copy instead of overwriting, and removing macOS extended attributes. Users can expand a processed file to see a before/after metadata diff. The README says the app makes no automatic updates or network calls, and it is localized into 25 languages with dark mode following the OS setting.",
+  "use_cases": [
+   "remove GPS location from photos before sharing",
+   "strip metadata from images and videos in batch",
+   "clean EXIF data from camera RAW files",
+   "scrub privacy-sensitive metadata from files before posting online",
+   "inspect what metadata a file contains before and after cleaning"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into exifcleaner",
+   "yarn install",
+   "yarn run update-exiftool (requires Perl, macOS/Linux only)",
+   "yarn dev"
+  ],
+  "stack": [
+   "Electron",
+   "React 19",
+   "TypeScript (strict mode)",
+   "ExifTool",
+   "Vitest",
+   "Playwright",
+   "Yarn"
+  ],
+  "notable": [
+   "Hand-rolled ExifTool adapter using the -stay_open protocol for fast batch work",
+   "Before/after metadata diff view for each processed file",
+   "Explicit per-format limitation table, e.g. RAF refused, PDF metadata not securely erasable, MKV rejected",
+   "Published SHA-256 checksums and CI that installs and smoke-tests the built artifacts",
+   "Native Apple Silicon and Intel macOS builds"
+  ],
+  "caveats": [
+   "Builds are not code-signed, so macOS and Windows show warnings on first launch and require manual override steps",
+   "Metadata removal is not guaranteed complete for all formats; PDF metadata is not securely erased and TIFF/AVIF removal may be partial",
+   "Development setup needs Perl for the ExifTool update script, which the README limits to macOS/Linux",
+   "Supported OS: macOS 13+, Windows 10+, and 64-bit Linux"
+  ],
+  "license": "MIT",
+  "category": "image metadata cleaner",
+  "keywords": [
+   "exif remover",
+   "strip exif",
+   "remove image metadata",
+   "metadata cleaner",
+   "gps location removal",
+   "photo privacy",
+   "scrub metadata",
+   "exiftool gui",
+   "electron app",
+   "desktop app",
+   "batch processing",
+   "drag and drop",
+   "video metadata removal",
+   "pdf metadata removal",
+   "raw photo cleaner",
+   "heic metadata",
+   "open source privacy tool",
+   "offline metadata tool",
+   "clean photos before sharing",
+   "remove location from photos",
+   "exiftool",
+   "electron",
+   "react",
+   "typescript",
+   "macos app",
+   "windows app",
+   "linux appimage",
+   "dark mode",
+   "multi-language",
+   "mit license"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6382,
+  "output": 1185
+ },
+ "generated": "2026-10-29"
+}

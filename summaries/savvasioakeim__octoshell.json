@@ -1,0 +1,99 @@
+{
+ "id": "savvasioakeim/octoshell",
+ "repo": "savvasioakeim/OctoShell",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "SDLC",
+   "entry": "OctoShell by savvasioakeim - Terminal workspace for Windows and macOS, built on command blocks, that runs Claude Code in git worktrees, one per task, each with its own shell and dev server. Features include Strategy Mode (several agents plan a change before writing code), a Reviewer agent that reads each change for regressions, and QA Mode (checklist over the running app)."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Windows and macOS desktop workspace (Tauri v2, Rust, React) that gives each coding-agent task its own git worktree, terminal and managed dev server, with planning, review and QA steps around it.",
+  "what_it_does": "OctoShell takes a task or a saved plan, turns it into tasks, creates a git worktree and branch for each one, and starts an agent (Claude Code, Gemini CLI, or any ACP agent) inside it. Agents can ask OctoShell to start dev servers, which get a port, a log and a row in a list marked with the requesting agent. Strategy Mode has several role-based agents discuss a change before code is written, and the user moderates rounds and gets a plan report. QA mode starts a worktree's dev server and shows the agent's checklist over the running app so the user can approve or decline with a note that becomes the agent's next task. The terminal shows output as command blocks with exit codes read from OSC 133 shell integration. Other features include a Ports panel, a per-agent step list, a PR button that uses the gh CLI, an optional Docker sandbox for ACP agents, and a time-limited phone companion view.",
+  "use_cases": [
+   "run several coding agents on separate branches at once",
+   "review and approve agent changes against a running dev server",
+   "plan a code change with multiple agents before writing code",
+   "manage dev servers and ports for parallel agent tasks",
+   "create, check and merge pull requests from a desktop app"
+  ],
+  "how_to_run": [
+   "npm install",
+   "npm run tauri dev",
+   "Optional: set ANTHROPIC_API_KEY; without it, agents use the local claude CLI login",
+   "Release build: npm run tauri build",
+   "Windows needs PowerShell 7 (pwsh), WebView2 and MSVC build tools; macOS needs Xcode Command Line Tools",
+   "Requires Node.js 18+ and Rust 1.85+"
+  ],
+  "stack": [
+   "Tauri v2",
+   "Rust",
+   "React",
+   "TypeScript",
+   "Vite",
+   "xterm.js",
+   "SQLite",
+   "bollard (Docker API)",
+   "Agent Client Protocol (ACP)",
+   "Claude Code CLI",
+   "Gemini CLI",
+   "gh CLI",
+   "Ollama"
+  ],
+  "notable": [
+   "One git worktree and branch per agent task, leaving the user's own checkout untouched",
+   "Strategy Mode: role-based agents (Architect, Backend, QA, Security) debate a change before any code is written",
+   "QA mode overlays the agent's checklist on the running dev server for approve or decline",
+   "Terminal command blocks with exit codes parsed from OSC 133 shell integration, including zsh and bash on macOS",
+   "Docker sandbox option with --cap-drop=ALL, memory and pid limits, and only the worktree mounted"
+  ],
+  "caveats": [
+   "Windows first; macOS supported on Apple Silicon only; Linux not planned and no Intel Mac build",
+   "Not code signed, so Windows SmartScreen and macOS Gatekeeper warn on first launch",
+   "Young project with rough edges; agents ask for approval by default but can be set to skip permissions"
+  ],
+  "license": "MIT",
+  "category": "agent workspace desktop app",
+  "keywords": [
+   "coding agents",
+   "ai coding agent",
+   "claude code",
+   "gemini cli",
+   "agent client protocol",
+   "acp",
+   "git worktree",
+   "worktrees per task",
+   "parallel agents",
+   "tauri",
+   "rust desktop app",
+   "windows desktop app",
+   "macos desktop app",
+   "xterm.js terminal",
+   "command blocks terminal",
+   "osc 133",
+   "dev server manager",
+   "port manager",
+   "qa checklist",
+   "agent code review",
+   "multi-agent planning",
+   "docker sandbox agent",
+   "pull request automation",
+   "gh cli",
+   "run agents in parallel",
+   "review agent changes before merge",
+   "manage dev servers for agents",
+   "vibe kanban alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6344,
+  "output": 1420
+ },
+ "generated": "2026-10-29"
+}

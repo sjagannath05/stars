@@ -1,0 +1,86 @@
+{
+ "id": "slskd/slskd",
+ "repo": "slskd/slskd",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Peer-to-peer Filesharing",
+   "entry": "slskd ⚠ - A modern client-server application for the Soulseek file sharing network. AGPL-3.0 Docker/C#"
+  }
+ ],
+ "summary": {
+  "one_liner": "slskd is a web-accessible, client-server application for the Soulseek peer-to-peer file-sharing network, run as a daemon, Docker container, or binary.",
+  "what_it_does": "Provides a browser-based interface for searching the Soulseek network, sorting and filtering results, and downloading files. Downloads can be monitored by speed and status, grouped by user and folder, with controls to fetch queue position, cancel, retry, or clear them. The README says it can browse user shares, join chat rooms, and privately chat with other users, covering most of what the official Soulseek client does. Access is secured with a token and the app is described as suitable for internet exposure and reverse proxies. Configuration is stored in a slskd.yml file, and remote configuration from the web UI can be toggled with an environment variable.",
+  "use_cases": [
+   "Searching and downloading files on the Soulseek network",
+   "Running a headless Soulseek client on a server or NAS",
+   "Managing Soulseek downloads through a web browser",
+   "Browsing other users' shared folders",
+   "Joining Soulseek chat rooms and private messaging from a browser"
+  ],
+  "how_to_run": [
+   "docker run -d -p 5030:5030 -p 5031:5031 -p 50300:50300 -e SLSKD_REMOTE_CONFIGURATION=true -v :/app --name slskd --user 1000:1000 slskd/slskd:latest",
+   "Or use docker-compose with the slskd/slskd image, mapping ports 5030, 5031, and 50300",
+   "Open the web UI on http://localhost:5030 (HTTPS on 5031) and log in with the default slskd/slskd credentials, then change them",
+   "Binaries: download the zip from the releases page, extract it, and run",
+   "Edit the generated slskd.yml in the application directory to add Soulseek credentials"
+  ],
+  "stack": [
+   "C#",
+   ".NET",
+   "Docker"
+  ],
+  "notable": [
+   "Web UI accessible from a browser, designed to be exposed to the internet with token-based security",
+   "Multiple search entry and result filtering similar to the official Soulseek client",
+   "Download manager grouped by user and folder with queue-position lookup",
+   "Docker image with PUID/PGID or built-in user options",
+   "Supports reverse proxies"
+  ],
+  "caveats": [
+   "Default credentials slskd/slskd must be changed before internet-facing use",
+   "SLSKD_REMOTE_CONFIGURATION lets the web UI change settings, which the README advises against for internet-facing installs",
+   "Requires a Soulseek network account configured in slskd.yml; some setup may be needed behind a reverse proxy"
+  ],
+  "license": "AGPL-3.0",
+  "category": "peer-to-peer file sharing",
+  "keywords": [
+   "soulseek",
+   "soulseek client",
+   "slskd",
+   "p2p file sharing",
+   "peer-to-peer",
+   "file sharing client",
+   "web ui file downloads",
+   "self-hosted soulseek",
+   "docker container",
+   "docker-compose",
+   "csharp",
+   "dotnet",
+   "agpl",
+   "download manager",
+   "music sharing",
+   "reverse proxy",
+   "headless client",
+   "share files with friends",
+   "browse user shares",
+   "chat rooms",
+   "search and download files",
+   "remote web interface",
+   "file transfer server",
+   "alternative to official soulseek client",
+   "daemon",
+   "self-hosted file sharing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3016,
+  "output": 1239
+ },
+ "generated": "2026-10-29"
+}

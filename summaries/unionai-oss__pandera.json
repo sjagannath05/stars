@@ -1,0 +1,92 @@
+{
+ "id": "unionai-oss/pandera",
+ "repo": "unionai-oss/pandera",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Data Validation",
+   "entry": "pandera - A data validation library for dataframes, with support for pandas, polars, PySpark, and more."
+  }
+ ],
+ "summary": {
+  "one_liner": "Pandera is an open-source Python framework for validating dataframe-like objects, using either an object-based schema API or a class-based model API.",
+  "what_it_does": "Pandera lets you define schemas for dataframes and check them against data, with the stated goal of making data pipelines more readable and robust through statically typed dataframes. It supports multiple dataframe libraries, including pandas, polars, and PySpark, per the README. The object-based API builds a DataFrameSchema from Column definitions with built-in checks (such as ge, lt, isin) and custom lambda checks. The class-based API defines a DataFrameModel with typed class attributes, pa.Field constraints, and @pa.check decorated methods. Calling validate() returns the validated dataframe. The README's examples use pandas only.",
+  "use_cases": [
+   "validate pandas dataframes before processing",
+   "enforce column types and value ranges in data pipelines",
+   "write reusable schemas for dataframe data",
+   "add custom row-level checks to a dataset",
+   "validate polars or PySpark dataframes"
+  ],
+  "how_to_run": [
+   "pip install 'pandera[pandas]'",
+   "uv pip install 'pandera[pandas]'",
+   "conda install -c conda-forge pandera-pandas",
+   "import pandera.pandas as pa",
+   "schema = pa.DataFrameSchema({...}); schema.validate(df)",
+   "class Schema(pa.DataFrameModel): ...; Schema.validate(df)"
+  ],
+  "stack": [
+   "Python",
+   "pandas",
+   "polars",
+   "PySpark"
+  ],
+  "notable": [
+   "Two APIs: object-based DataFrameSchema and class-based DataFrameModel",
+   "Built-in checks (ge, lt, isin) plus custom lambda and decorated methods",
+   "Supports pandas, polars, PySpark and more via optional extras",
+   "Top-level pandera imports are being replaced by pandera.pandas from v0.24.0"
+  ],
+  "caveats": [
+   "Top-level 'import pandera' schema definitions emit a FutureWarning and are slated for deprecation in v0.29.0; use pandera.pandas instead",
+   "Install requires choosing the extra for your dataframe library (e.g., pandas)",
+   "The README defers detailed documentation to the official docs and does not list all supported libraries"
+  ],
+  "license": "unknown",
+  "category": "dataframe data validation",
+  "keywords": [
+   "data validation",
+   "dataframe validation",
+   "schema validation",
+   "pandas validation",
+   "pandera",
+   "polars validation",
+   "pyspark validation",
+   "data quality",
+   "dataset validation",
+   "type checking dataframes",
+   "dataframeschema",
+   "dataframemodel",
+   "column constraints",
+   "data pipeline checks",
+   "python data validation library",
+   "check my dataframe",
+   "validate csv data",
+   "data contracts",
+   "schema enforcement",
+   "pandas schema",
+   "great expectations alternative",
+   "pydantic for dataframes",
+   "data cleaning checks",
+   "dataframe type hints",
+   "catch bad data",
+   "data integrity",
+   "validate pandas columns",
+   "statistically typed dataframes",
+   "pa.field",
+   "pa.check",
+   "unionai"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2518,
+  "output": 1135
+ },
+ "generated": "2026-10-29"
+}

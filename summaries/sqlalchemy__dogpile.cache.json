@@ -1,0 +1,87 @@
+{
+ "id": "sqlalchemy/dogpile.cache",
+ "repo": "sqlalchemy/dogpile.cache",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Caching",
+   "entry": "dogpile.cache - A caching API for Redis, Memcached, and others, with coordinated value regeneration."
+  }
+ ],
+ "summary": {
+  "one_liner": "dogpile.cache is a Python caching API with generic backends (memcached, Redis, dbm, dict) and a \"dogpile\" lock that lets one thread regenerate an expired value while others keep using the previous version.",
+  "what_it_does": "The project has two layers: \"dogpile\", a lock that selects a single creator thread for a resource while other threads read the previous value during regeneration (or block if none exists), and \"dogpile.cache\", a caching API built on that lock. dogpile.cache offers up-front configuration of named \"regions\" that each define a backend, options, and default expiration. It provides get/set/delete calls and a function decorator, with pluggable key generators and optional key manglers (such as encoding or SHA-1 hashing). Included backends are three memcached clients (python-memcached, pylibmc, bmemcached), a Redis backend, an anydbm-based file backend, and a plain dictionary backend. Backends can supply their own distributed lock, and new backends can be registered directly or through setuptools entry points. The README describes it as a replacement for the Beaker caching system.",
+  "use_cases": [
+   "caching function results in a Python application",
+   "preventing cache stampedes when a popular value expires",
+   "caching values in memcached or Redis from Python",
+   "replacing Beaker caching in an existing project",
+   "file-based key-value caching with dbm",
+   "caching for Mako templates"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Python",
+   "memcached clients (python-memcached, pylibmc, bmemcached)",
+   "Redis",
+   "dbm (anydbm)",
+   "Mako (third-party plugin)"
+  ],
+  "notable": [
+   "Coordinated value regeneration: one thread recreates an expired value while others get the old copy",
+   "Region-based configuration with pluggable key generators and key manglers",
+   "Backends can implement their own distributed lock matched to the storage system",
+   "Part of the SQLAlchemy Project and follows its conventions",
+   "Successor to the Beaker caching system by the same author"
+  ],
+  "caveats": [
+   "README gives no installation or usage commands; full documentation is on an external site",
+   "Backend support is limited to those listed; others must be written or supplied as third-party plugins"
+  ],
+  "license": "MIT",
+  "category": "python caching library",
+  "keywords": [
+   "caching",
+   "python cache",
+   "dogpile",
+   "dogpile.cache",
+   "dogpile lock",
+   "cache stampede",
+   "thundering herd",
+   "memcached",
+   "pylibmc",
+   "python-memcached",
+   "bmemcached",
+   "redis cache",
+   "dbm cache",
+   "dictionary cache",
+   "function decorator cache",
+   "cache key generator",
+   "key mangler",
+   "cache regions",
+   "cache expiration",
+   "distributed lock",
+   "beaker replacement",
+   "sqlalchemy project",
+   "mako cache",
+   "cache backend",
+   "memoize python function",
+   "store results temporarily",
+   "speed up repeated function calls",
+   "avoid duplicate cache regeneration",
+   "python memcache library",
+   "redis python caching",
+   "mit licensed python library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2680,
+  "output": 1123
+ },
+ "generated": "2026-10-29"
+}

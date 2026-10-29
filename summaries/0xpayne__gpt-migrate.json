@@ -1,0 +1,88 @@
+{
+ "id": "0xpayne/gpt-migrate",
+ "repo": "0xpayne/gpt-migrate",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Description",
+   "entry": "GPT Migrate team is working on adding benchmarks for the agent"
+  }
+ ],
+ "summary": {
+  "one_liner": "GPT-Migrate is a tool that uses LLMs to migrate a codebase from one framework or language to another, such as Flask/Python to Node.js, generating the new code, Docker environment, and unit tests.",
+  "what_it_does": "Takes a source directory and entrypoint, then uses an LLM (OpenRouter or OpenAI, default GPT-4-32k) to rebuild the code in a target language (e.g. --targetlang nodejs) into a target directory. It first creates a Docker environment for the target language, identifies third-party source dependencies and picks target equivalents, and recursively rewrites files starting from the entrypoint. It then runs the new app in Docker on a target port, writes Python unittest-based tests, optionally checks those tests against the running original app on a source port, and iteratively debugs the migrated code using logs and error messages. Steps can be run separately via --step setup, migrate, test, or all. The README notes that shell actions such as moving files require user confirmation.",
+  "use_cases": [
+   "Migrate a Python Flask app to Node.js",
+   "Port a codebase from one framework to another",
+   "Rewrite a legacy project in a new language",
+   "Generate unit tests for a migrated REST API",
+   "Scaffold a Docker environment for a target language"
+  ],
+  "how_to_run": [
+   "Install Docker and make sure it is running",
+   "poetry install",
+   "export OPENROUTER_API_KEY=<your key>  (or export OPENAI_API_KEY=<your key>)",
+   "pip install -r requirements.txt",
+   "python main.py --targetlang nodejs"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "Poetry",
+   "OpenRouter API",
+   "OpenAI API",
+   "Flask (benchmark source)",
+   "Node.js (default target)"
+  ],
+  "notable": [
+   "Multi-step pipeline: setup, migrate, test, and debug, runnable individually via --step",
+   "Optional validation of generated unit tests against the original running app via --sourceport",
+   "Prompt system organized into four preference levels (HIERARCHY, p1 to p4) that compose into prompts",
+   "Ships with a flask-nodejs benchmark app; default model gpt-4-32k"
+  ],
+  "caveats": [
+   "Alpha-stage software; the README says it is not yet ready for production use and should not be trusted blindly",
+   "Costs can add up quickly because it may rewrite an entire codebase; GPT-4-class models are recommended",
+   "Per the README, about 50% success on simple languages like Python or JavaScript, and complex languages like C++ or Rust need human help"
+  ],
+  "license": "unknown",
+  "category": "ai code migration",
+  "keywords": [
+   "code migration",
+   "codebase migration",
+   "language migration",
+   "framework migration",
+   "llm code translation",
+   "gpt-4 code conversion",
+   "flask to nodejs",
+   "python to node",
+   "port code to another language",
+   "automated refactoring",
+   "legacy code modernization",
+   "openrouter",
+   "openai api",
+   "docker code generation",
+   "unit test generation",
+   "llm agent",
+   "code rewriting tool",
+   "migrate my app to a new language",
+   "convert python project to javascript",
+   "ai code translator",
+   "poetry python project",
+   "benchmark migration",
+   "autonomous debugging",
+   "source to target language",
+   "gpt-migrate alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4508,
+  "output": 1211
+ },
+ "generated": "2026-10-29"
+}

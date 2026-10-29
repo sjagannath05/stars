@@ -1,0 +1,92 @@
+{
+ "id": "jackett/jackett",
+ "repo": "Jackett/Jackett",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "Jackett | Torrent indexer API proxy for the *arr stack"
+  }
+ ],
+ "summary": {
+  "one_liner": "Jackett is a self-hosted proxy server that translates requests from apps like Sonarr and Radarr into tracker-specific queries for torrent and usenet indexers, returning results in Torznab or TorrentPotato format.",
+  "what_it_does": "Jackett runs as a local web server that acts as a bridge between media apps and torrent trackers. It translates incoming search queries into site-specific HTTP requests, parses the HTML or JSON responses, and returns results in a standardized Torznab or TorrentPotato format. The README lists a very large set of public, semi-private and private trackers it supports, with some marked as lacking an active maintainer. It offers an internal search cache with configurable TTL and result limits, and an optional FlareSolverr integration for Cloudflare-protected indexers. It also provides filter and aggregate \"all\" indexer endpoints that combine results across configured indexers, and a set of command-line switches for port, data folder, and update behavior.",
+  "use_cases": [
+   "Feed torrent search results to Sonarr or Radarr",
+   "Search many private and public trackers from one API",
+   "Set up a Torznab indexer for a download client",
+   "Run an indexer proxy on a home server or Raspberry Pi",
+   "Bypass Cloudflare protection on indexers with FlareSolverr",
+   "Combine results from several indexers into one feed"
+  ],
+  "how_to_run": [
+   "Linux: cd /opt && sudo tar -xz (extract the release), then cd /opt/Jackett && sudo ./install_service_systemd.sh",
+   "Run without installing as a service: extract the release and run ./jackett",
+   "Docker: see the LinuxServer.io Jackett Docker image (README points to external instructions)",
+   "macOS: double-click install_service_macos from the extracted release",
+   "Windows: run the Jackett.Installer.Windows.exe installer"
+  ],
+  "stack": [
+   ".NET (net9.0 build targets)",
+   "Mono (legacy ARMv6 and below)",
+   "Torznab API",
+   "TorrentPotato API",
+   "FlareSolverr (optional)",
+   "systemd (Linux service install)"
+  ],
+  "notable": [
+   "Supports public, semi-private and private trackers, with a long list of named indexers",
+   "Torznab and TorrentPotato API compatibility for *arr apps",
+   "Filter indexer endpoint lets you query subsets by type, tag, language, or health status",
+   "Optional FlareSolverr integration for Cloudflare-protected trackers",
+   "Web UI on default port 9117 with Windows, Linux, macOS and Docker installs"
+  ],
+  "caveats": [
+   "Trackers marked as invite-needed have no active maintainer and may be broken",
+   "Only versions 0.24.x and later are supported, with Windows 10 1607+ and macOS 13.0+ required",
+   "Heavy use can get you banned by tracker sites; the README warns about request volume",
+   "ARMv6 and older systems require Mono, which the README notes can be unstable"
+  ],
+  "license": "unknown",
+  "category": "torrent indexer proxy",
+  "keywords": [
+   "jackett",
+   "torznab",
+   "torrent indexer",
+   "indexer proxy",
+   "sonarr indexer",
+   "radarr indexer",
+   "arr stack",
+   "torrentpotato",
+   "private tracker search",
+   "flaresolverr",
+   "cloudflare bypass",
+   "torrent search api",
+   "lidarr",
+   "self-hosted indexer",
+   "docker torrent indexer",
+   "newznab alternative",
+   "search multiple torrent trackers",
+   "aggregate torrent search",
+   "tracker proxy",
+   "torznab api",
+   "dotnet torrent tool",
+   "raspberry pi indexer",
+   "homelab media automation",
+   "connect sonarr to trackers",
+   "find torrents for tv shows",
+   "jackett docker",
+   "prowlarr alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 19431,
+  "output": 1385
+ },
+ "generated": "2026-10-29"
+}

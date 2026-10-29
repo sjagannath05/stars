@@ -1,0 +1,93 @@
+{
+ "id": "aboudjem/sleepless",
+ "repo": "Aboudjem/Sleepless",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "Sleepless - Keeps your laptop awake with lid-closed support, auto-off timer, and battery-floor cutoff. [![Open-Source Software][OSS Icon]](https://github.com/Aboudjem/Sleepless)"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Sleepless - Keep your MacBook awake with the lid closed, on battery, with no external display, with a battery-floor auto-off."
+  }
+ ],
+ "summary": {
+  "one_liner": "x",
+  "what_it_does": "It adds a single menu-bar switch that turns on a lid-closed, on-battery awake mode. An auto-off timer (1h or 2h, with a live countdown) turns the mode off automatically. A battery-floor cutoff, configurable from 5–50% on battery (default 15%), reverts the setting before the Mac drains flat. It also steps aside when Low Power Mode is on while on battery. The app reads the SleepDisabled flag back so the menu bar reflects the real state, and it reverts on reboot. Installation adds a sudoers rule that allows exactly two pmset commands without a password, so the GUI can flip the setting.",
+  "use_cases": [
+   "Keep a MacBook running overnight with the lid closed",
+   "Finish builds, renders, or ML training while the laptop is closed",
+   "Leave large downloads, uploads, or backups running on battery",
+   "Share a phone hotspot from a closed laptop in a bag",
+   "Keep a local server or SSH session reachable with the lid shut"
+  ],
+  "how_to_run": [
+   "brew install --cask aboudjem/tap/sleepless",
+   "/Applications/Sleepless.app/Contents/Resources/grant.sh # one-time passwordless grant",
+   "Alternatively: download the latest release, unzip to /Applications, and approve it under System Settings → Privacy & Security → Open Anyway",
+   "Alternatively, build from source: git clone the repo, cd Sleepless, and run ./install.sh",
+   "Click the cup in the menu bar, flip the switch, and close the lid"
+  ],
+  "stack": [
+   "Swift/AppKit (one file)",
+   "pmset (macOS power management)",
+   "sudoers scoped grant",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Uses pmset disablesleep, which the README says can keep the Mac awake with the lid closed where caffeinate-based apps cannot",
+   "Safety nets: battery-floor cutoff, Low Power Mode auto-off, timer, and reversion on reboot",
+   "Scoped sudoers rule limited to two exact pmset commands, with no daemon, helper script, or kext",
+   "Verifiable downloads via SHA256SUMS and gh attestation verify",
+   "No Dock icon and no background daemon"
+  ],
+  "caveats": [
+   "Ad-hoc signed and not notarized, so Gatekeeper requires manual approval unless built from source",
+   "Heavy sustained load with the lid closed can reduce airflow and overheat the Mac, so the README advises judgement",
+   "Behavior is described as hardware and macOS-version dependent",
+   "Not on the App Store; the README says the App Store verdict is covered in SECURITY.md"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "mac keep awake",
+   "macbook lid closed",
+   "prevent sleep macos",
+   "pmset disablesleep",
+   "caffeinate alternative",
+   "amphetamine alternative",
+   "keepingyouawake alternative",
+   "menu bar app",
+   "battery floor",
+   "auto-off timer",
+   "low power mode",
+   "clamshell mode",
+   "closed lid on battery",
+   "stay awake overnight",
+   "run downloads with lid closed",
+   "sudoers nopasswd",
+   "apple silicon sleep",
+   "swift appkit",
+   "homebrew cask",
+   "open source mac app",
+   "disable sleep macbook",
+   "hotspot from bag",
+   "keep ssh session alive",
+   "background build laptop closed",
+   "prevent mac sleep on battery",
+   "mit license mac utility"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4142,
+  "output": 1392
+ },
+ "generated": "2026-10-29"
+}

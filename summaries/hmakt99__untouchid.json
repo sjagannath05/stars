@@ -1,0 +1,96 @@
+{
+ "id": "hmakt99/untouchid",
+ "repo": "HMAKT99/UnTouchID",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "TouchBridge - Authenticate with your phone's fingerprint as a free Touch ID keyboard alternative. [![Open-Source Software][OSS Icon]](https://github.com/HMAKT99/UnTouchID) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "UnTouchID - Use your phone's fingerprint to authenticate on any Mac."
+  }
+ ],
+ "summary": {
+  "one_liner": "TouchBridge lets an iPhone's Face ID or Touch ID approve macOS PAM authentication (such as sudo) through a companion app, with a root-run PAM module verifying the phone's signature.",
+  "what_it_does": "The project provides a privileged PAM module that verifies signed evidence from an iPhone companion app, and a user-level daemon (touchbridged) that transports that evidence between phone and Mac over BLE. Users pair the phone by scanning a QR code, verify fingerprints on the phone, and then enroll administrator-approved keys. The README describes an auto-lock feature that locks the Mac when verified companions leave and cancels the lock on reconnect. It also includes diagnostic modes (--simulator, --interactive, --web) that the README explicitly says cannot approve real PAM. An unpair command clears session state and invalidates the signing capability. v2.0.0 is described as a breaking protocol change requiring the iPhone app to be rebuilt and devices re-paired.",
+  "use_cases": [
+   "approve sudo with iPhone Face ID or Touch ID",
+   "use phone biometrics for Mac admin authentication",
+   "replace Touch ID prompts on a Mac with a phone",
+   "auto-lock Mac when phone leaves range",
+   "pair an iPhone with a Mac over Bluetooth"
+  ],
+  "how_to_run": [
+   "brew install --cask touchbridge",
+   "cd daemon && swift build -c release --jobs 2",
+   "cd .. && make -C pam",
+   "sudo bash scripts/install.sh",
+   "sudo bash /Library/Security/TouchBridge/patch-pam.sh",
+   "touchbridged serve"
+  ],
+  "stack": [
+   "Swift",
+   "C (PAM module)",
+   "Make",
+   "Xcode / iOS SDK",
+   "Bluetooth Low Energy",
+   "Homebrew"
+  ],
+  "notable": [
+   "PAM module independently verifies canonical signed evidence against root-managed, per-UID trust",
+   "Rejects v1 peers, bare success strings, and unsigned metadata (fail closed)",
+   "Installer retires legacy hooks and leaves PAM disabled until explicit enrollment",
+   "Auto-lock tracks verified companions and checks actual lock state",
+   "Uninstall preserves unrelated PAM entries and backups"
+  ],
+  "caveats": [
+   "Requires macOS 13+, Xcode with iOS SDK, and a physical iPhone; the iPhone companion app must be built with your own signing team since Homebrew installs only Mac tools",
+   "Upgrading from 1.x requires rebuilding the iPhone app, re-pairing, and re-enrolling keys; older release versions must not be used",
+   "Android, Apple Watch, browser autofill and Authorization Plugin are not accepted privileged paths; FileVault preboot, Apple Pay and hardware-bound Keychain items are out of scope"
+  ],
+  "license": "MIT",
+  "category": "mac authentication security",
+  "keywords": [
+   "touch id alternative",
+   "iphone face id mac",
+   "phone fingerprint authentication",
+   "sudo with iphone",
+   "pam module",
+   "macos pam",
+   "touchbridge",
+   "untouchid",
+   "ble pairing",
+   "bluetooth unlock mac",
+   "auto lock mac",
+   "two-factor mac admin",
+   "swift daemon",
+   "homebrew cask",
+   "mac admin approval",
+   "use phone to approve sudo",
+   "unlock mac with iphone",
+   "passwordless sudo macos",
+   "phone as security key mac",
+   "biometric authentication macos",
+   "companion app ios",
+   "secure enclave",
+   "privilege escalation approval",
+   "launch daemon mac",
+   "mac security tools",
+   "free touch id keyboard alternative",
+   "open source macos apps"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2852,
+  "output": 1368
+ },
+ "generated": "2026-10-29"
+}

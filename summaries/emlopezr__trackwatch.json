@@ -1,0 +1,101 @@
+{
+ "id": "emlopezr/trackwatch",
+ "repo": "emlopezr/trackwatch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "TrackWatch ⚠ - Automated music release tracker for Spotify with email notifications, discography generator, and ghost track cleaner (alternative to Release Radar). (Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "TrackWatch is a self-hosted web app that tracks new releases from artists you follow on Spotify and adds them to a dedicated playlist.",
+  "what_it_does": "It connects to a user's Spotify account via OAuth and lets them follow artists whose new releases are tracked automatically. New releases are added to a dedicated TrackWatch playlist. It includes ghost track detection to find and remove unavailable tracks from playlists. Checks run on a schedule (README says 3x daily at 7am, 2pm, 9pm by default, configurable via environment variables), or can be triggered externally by webhook. The README also mentions email notifications via Resend and a discography generator, though the discography feature is only named in the awesome-selfhosted listing and not described in the README. The stack is a multi-container Docker Compose setup: Nginx frontend, Django/Gunicorn backend, optional APScheduler worker, and PostgreSQL.",
+  "use_cases": [
+   "track new releases from favorite artists on Spotify",
+   "automatically fill a Spotify playlist with new music",
+   "self-host a Release Radar alternative",
+   "find and remove unavailable tracks from Spotify playlists",
+   "schedule periodic checks for new album drops",
+   "receive email notifications about new releases"
+  ],
+  "how_to_run": [
+   "git clone <repository-url>",
+   "cd trackwatch",
+   "cp .env.docker.example .env",
+   "Edit .env with SECRET_KEY, DATABASE_PASSWORD, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET",
+   "docker-compose up -d --build",
+   "Optional: docker-compose --profile scheduler up -d --build to run the internal scheduler"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "React 18",
+   "TypeScript",
+   "Vite",
+   "React Router 7",
+   "Django 5",
+   "Django REST Framework",
+   "APScheduler",
+   "Gunicorn",
+   "PostgreSQL 15",
+   "Nginx",
+   "Spotify Web API",
+   "Resend"
+  ],
+  "notable": [
+   "Spotify OAuth integration with an automatically maintained TrackWatch playlist",
+   "Ghost track detection removes unavailable tracks from playlists",
+   "Scheduler is optional; external triggers via authenticated webhook (n8n or cron) are supported",
+   "Multi-container architecture with separate frontend, backend, scheduler, and database services",
+   "Prebuilt images published to GitHub Container Registry"
+  ],
+  "caveats": [
+   "Spotify redirect URIs require HTTPS except for 127.0.0.1; localhost is not accepted and LAN IPs or custom domains need HTTPS",
+   "Requires creating your own Spotify Developer app with a Client ID and Secret",
+   "Email notifications require a Resend API key (optional)",
+   "The legacy all-in-one Docker image is still documented but the multi-container setup is the active model"
+  ],
+  "license": "MIT",
+  "category": "music release tracking",
+  "keywords": [
+   "spotify release tracker",
+   "new music notifications",
+   "release radar alternative",
+   "self-hosted music tracker",
+   "artist release tracking",
+   "spotify playlist automation",
+   "ghost track cleaner",
+   "unavailable track removal",
+   "discography generator",
+   "music release email alerts",
+   "django spotify app",
+   "react spotify frontend",
+   "docker compose music app",
+   "apscheduler music",
+   "postgresql django",
+   "spotify oauth",
+   "new album alerts",
+   "follow artists new releases",
+   "keep up with new music",
+   "automatic spotify playlist",
+   "spotify web api",
+   "resend email notifications",
+   "gunicorn nginx docker",
+   "scheduled release checks",
+   "music discovery self hosted",
+   "spotify new releases feed",
+   "cleanup spotify playlists"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4451,
+  "output": 1377
+ },
+ "generated": "2026-10-29"
+}

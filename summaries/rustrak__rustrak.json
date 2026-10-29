@@ -1,0 +1,96 @@
+{
+ "id": "rustrak/rustrak",
+ "repo": "rustrak/rustrak",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Ticketing",
+   "entry": "Rustrak - Error tracking server compatible with Sentry SDKs, using 32 MB of memory at idle with SQLite storage. (Source Code) GPL-3.0 Rust/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Rustrak is a self-hosted error tracker that accepts the Sentry protocol, so existing Sentry SDKs can point at it by changing the DSN, and it also stores logs, transactions, release health and AI-agent traces.",
+  "what_it_does": "Accepts standard Sentry envelopes from any Sentry SDK and groups events into issues using a deterministic fingerprint. Runs as a single process with SQLite by default, serving both the API and a static dashboard, with PostgreSQL available via a separate compose file. Ingestion writes the envelope to disk and returns 200 before a spawned task does the database work. It also provides performance views with p95 ranking, structured logs with six severities, release health (crash-free sessions and users), and AI agent trace pages that read Sentry's Spans Protocol v2. Alert rules for new issues, regressions and unmutes can notify Slack, SMTP email or a JSON webhook. An optional built-in MCP endpoint lets AI assistants query the instance, and there is a typed TypeScript REST client.",
+  "use_cases": [
+   "self-hosted error tracking",
+   "replace a SaaS Sentry subscription",
+   "collect application crash reports",
+   "monitor release health after deploys",
+   "trace LLM and agent runs",
+   "centralized application logs with trace links",
+   "alert team on new or regressed errors"
+  ],
+  "how_to_run": [
+   "export SESSION_SECRET_KEY=$(openssl rand -hex 32)",
+   "export CREATE_SUPERUSER=admin@example.com:changeme123",
+   "docker compose up -d",
+   "Open the dashboard in a browser and sign in with the superuser credentials",
+   "Create a project, copy its DSN and set it in your Sentry SDK"
+  ],
+  "stack": [
+   "Rust",
+   "Docker",
+   "SQLite",
+   "PostgreSQL",
+   "TypeScript client (@rustrak/client)",
+   "nginx (rustrak-ui image)"
+  ],
+  "notable": [
+   "Speaks the Sentry protocol so existing Sentry SDKs work by changing the DSN",
+   "Single container with SQLite by default; dashboard served as static files by the same process",
+   "Two-phase ingestion: accepts events before database work",
+   "Built-in MCP endpoint for AI assistants",
+   "Reports exact AI token counts rather than cost estimates"
+  ],
+  "caveats": [
+   "Telemetry is on by default, sending an anonymous report every six hours unless disabled with RUSTRAK_TELEMETRY=off or DO_NOT_TRACK=1",
+   "Sponsorship-funded with no paid tier or hosted plan stated; the README does not describe a hosted service",
+   "Scale-out guidance points to PostgreSQL; the README does not give limits beyond the single benchmark (about 5k events/sec on a 4-core box with SQLite)"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted error tracking",
+  "keywords": [
+   "error tracking",
+   "self-hosted error tracker",
+   "sentry alternative",
+   "sentry compatible server",
+   "sentry sdk",
+   "crash reporting",
+   "exception monitoring",
+   "error monitoring",
+   "issue tracking",
+   "release health",
+   "crash-free sessions",
+   "application logs",
+   "structured logs",
+   "performance monitoring",
+   "transaction tracing",
+   "ai agent traces",
+   "llm tracing",
+   "mcp server",
+   "sqlite",
+   "postgresql",
+   "docker compose",
+   "rust",
+   "source maps",
+   "slack alerts",
+   "webhook alerts",
+   "dsn",
+   "envelope endpoint",
+   "self-hosted monitoring",
+   "track application errors",
+   "replace sentry",
+   "on-premise error tracking"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4842,
+  "output": 1339
+ },
+ "generated": "2026-10-29"
+}

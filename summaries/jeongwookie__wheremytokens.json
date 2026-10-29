@@ -1,0 +1,95 @@
+{
+ "id": "jeongwookie/wheremytokens",
+ "repo": "jeongwookie/WhereMyTokens",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "WhereMyTokens - Open-source Windows tray app for real-time Claude Code usage monitoring. Tracks per-session tokens, cost, context window, and 5h/1w rate limits from local JSONL session files and Claude Code's statusLine hook."
+  }
+ ],
+ "summary": {
+  "one_liner": "WhereMyTokens is a local-first Windows tray app that monitors Claude Code, Codex, and Antigravity token usage, quota windows, and API-equivalent cost estimates.",
+  "what_it_does": "It shows quota windows, token totals, cost estimates in USD/KRW/CNY, cache efficiency, sessions, model usage, and activity patterns for AI coding tools. For Claude Code it prefers the official statusLine hook for live 5h and 7-day limits, with an optional read-only fallback that queries account windows using the existing access token. Codex usage is read from local auth and provider data, and Antigravity is read via local RPC only. Persistent totals are stored in a local usage-index.sqlite with tiered retention (request detail 8 days, hourly 35 days, daily 180 days, monthly indefinitely). It also offers a draggable taskbar mini display, git output metrics for tracked repositories, and Japanese, English, and Simplified Chinese UI.",
+  "use_cases": [
+   "monitor Claude Code token usage and rate limits on Windows",
+   "track AI coding tool API-equivalent cost per session",
+   "see 5h and weekly quota windows in the system tray",
+   "compare Claude Code, Codex, and Antigravity usage in one place",
+   "review cache efficiency and model usage for coding sessions",
+   "view git output metrics alongside AI coding activity"
+  ],
+  "how_to_run": [
+   "Download WhereMyTokens-Setup.exe from the Releases page, or the portable ZIP",
+   "Run the installer, or extract the ZIP and run WhereMyTokens.exe",
+   "Open the dashboard from the Windows tray",
+   "Enable the providers you use: Claude Code, Codex, Antigravity",
+   "Enable Claude Code Integration to register the statusLine bridge for live Claude quota data"
+  ],
+  "stack": [
+   "Windows desktop app",
+   "Electron-style src/main/providers adapters (JavaScript/TypeScript not explicitly named in README)",
+   "SQLite (usage-index.sqlite)",
+   "Claude Code statusLine hook",
+   "OpenAI/ChatGPT and Anthropic quota endpoints (HTTPS)"
+  ],
+  "notable": [
+   "Reads local JSONL session files and the official Claude Code statusLine hook rather than uploading logs",
+   "Never refreshes or writes Claude credentials; prompts the official claude auth login flow on expiry",
+   "Taskbar mini display with normalized 5h/7d quota entries",
+   "Tiered retention of usage history with automatic verification and backup of corrected history after upgrades",
+   "Built-in Japanese, English, and Simplified Chinese UI"
+  ],
+  "caveats": [
+   "Windows 10/11 only in this repository; macOS is a separate repository",
+   "Claude compatibility fallback sends the access token to api.anthropic.com and is rate-limited to once per 15 minutes",
+   "Currency exchange rates are manual, not live market quotes",
+   "Cost figures are API-equivalent estimates"
+  ],
+  "license": "MIT",
+  "category": "desktop usage monitoring",
+  "keywords": [
+   "claude code usage",
+   "token usage monitor",
+   "windows tray app",
+   "system tray widget",
+   "ai coding cost tracker",
+   "api cost estimate",
+   "rate limit monitor",
+   "5h quota",
+   "weekly quota",
+   "codex usage",
+   "antigravity",
+   "statusline hook",
+   "session token counter",
+   "cache efficiency",
+   "local-first desktop app",
+   "jsonl session logs",
+   "taskbar mini display",
+   "git metrics",
+   "usage dashboard",
+   "llm usage tracker",
+   "ai spend monitor",
+   "track claude spending",
+   "see how many tokens i used",
+   "offline usage analytics",
+   "tokscale alternative",
+   "ccusage alternative",
+   "electron tray app",
+   "sqlite usage index",
+   "korean developer tool",
+   "multi-currency cost display",
+   "claude quota on windows"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4360,
+  "output": 1428
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "jarynclouatre/bindery",
+ "repo": "jarynclouatre/bindery",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Document Management - E-books",
+   "entry": "Bindery - Folder-watching converter for e-books and comics. EPUB to Kobo KEPUB via kepubify, CBZ/CBR/PDF via Kindle Comic Converter, with per-device profiles, ComicInfo.xml naming, chapter-to-volume bundling and a web UI. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bindery is a self-hosted, Dockerized folder watcher that converts e-books to Kobo KEPUB and comics/PDFs to device-optimised files via a web UI.",
+  "what_it_does": "Watches folders for dropped files and converts them automatically. EPUBs are converted to Kobo .kepub using kepubify, with its own settings in the web UI. Comic archives (.cbz, .cbr, .zip, .rar) and PDFs are converted with Kindle Comic Converter (KCC), using per-device profiles, each with its own input and output folders. Folders of images become one bundled volume with subfolders as chapters, and optional bundling turns a folder of chapter archives into one volume. A web UI on port 5000 handles runtime settings, uploads, a live job status table with retry, a browser for the output folders, and Apprise notifications. Originals can be deleted, moved to an archive folder, or kept in place. A /api/stats JSON endpoint and /health endpoint are provided for dashboards and monitors.",
+  "use_cases": [
+   "convert epub to kepub for Kobo",
+   "convert comics and manga for e-readers",
+   "automatic ebook conversion from a watched folder",
+   "prepare CBZ or PDF files for Kindle or reMarkable",
+   "feed converted books into Calibre-Web Automated or Calibre",
+   "bundle chapter archives into one comic volume"
+  ],
+  "how_to_run": [
+   "Copy docker-compose.yml from the repo and edit the volume paths",
+   "Run `id` to find your user and group IDs",
+   "Set PUID and PGID in docker-compose.yml",
+   "Run `docker compose up -d`",
+   "Open the WebUI at http://<host>:5000",
+   "To update: `docker compose pull && docker compose up -d`"
+  ],
+  "stack": [
+   "Docker",
+   "kepubify",
+   "Kindle Comic Converter (KCC)",
+   "Apprise",
+   "Web UI"
+  ],
+  "notable": [
+   "Per-device profiles: each profile gets its own Comics_in and Comics_out folders and KCC settings",
+   "Settings changeable at runtime through the web UI without a container rebuild",
+   "ComicInfo.xml naming and chapter-to-volume bundling for folders of images or archives",
+   "Multi-arch image (x86 and ARM64), with PUID/PGID mapping and poll or inotify watcher modes",
+   "Keep-in-place originals mode records converted files so they are not reconverted"
+  ],
+  "caveats": [
+   "The web UI has no authentication and should stay on a LAN or VPN",
+   "MOBI and KFX output were removed in v3.4.0 because required binaries/plugins cannot ship in the image",
+   "Failed files are renamed to .failed and are only retried via the web UI Retry button"
+  ],
+  "license": "MIT",
+  "category": "ebook and comic conversion",
+  "keywords": [
+   "ebook converter",
+   "comic converter",
+   "epub to kepub",
+   "kepubify",
+   "kindle comic converter",
+   "kcc",
+   "cbz",
+   "cbr",
+   "pdf to kindle",
+   "kobo",
+   "kindle",
+   "remarkable",
+   "e-reader",
+   "folder watcher",
+   "watch folder",
+   "docker",
+   "self-hosted",
+   "web ui",
+   "apprise notifications",
+   "ntfy",
+   "comicinfo.xml",
+   "manga",
+   "calibre-web automated",
+   "calibre",
+   "homepage dashboard",
+   "uptime kuma",
+   "rclone",
+   "convert ebooks automatically",
+   "prepare comics for e-reader",
+   "bulk convert manga",
+   "automatic conversion from folder"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6833,
+  "output": 1309
+ },
+ "generated": "2026-10-29"
+}

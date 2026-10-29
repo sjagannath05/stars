@@ -1,0 +1,126 @@
+{
+ "id": "shmayro/dockerify-android",
+ "repo": "Shmayro/dockerify-android",
+ "kind": "star",
+ "description": "A Dockerized Android emulator supporting multiple CPU architectures (x86 and arm64) with native performance and seamless ADB & Scrcpy Web access.",
+ "topics": [
+  "android",
+  "android-emulator",
+  "arm-on-x86",
+  "arm-translation",
+  "arm64",
+  "ci-pipeline",
+  "docker",
+  "docker-android",
+  "emulator-in-browser",
+  "gapps",
+  "headless",
+  "magisk",
+  "ndk-translation",
+  "play-store",
+  "root-android",
+  "rooted-android",
+  "scrcpy-android",
+  "scrcpy-web",
+  "selfhosted"
+ ],
+ "language": "Shell",
+ "stars": 648,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-05-29",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Dockerized Android emulator that runs Android virtual devices in containers, with optional root/Magisk, PICO GApps, ARM app translation, and browser or ADB access.",
+  "category": "docker android emulator",
+  "keywords": [
+   "docker android",
+   "android emulator",
+   "dockerized emulator",
+   "android virtual device",
+   "avd",
+   "headless android",
+   "scrcpy web",
+   "scrcpy",
+   "adb",
+   "adb over network",
+   "browser android emulator",
+   "emulator in browser",
+   "x86 android",
+   "arm64 android",
+   "arm translation",
+   "ndk_translation",
+   "arm-on-x86",
+   "magisk",
+   "root android",
+   "pico gapps",
+   "google play store",
+   "docker compose android",
+   "android testing environment",
+   "ci android testing",
+   "self-hosted android",
+   "run android in docker",
+   "control android from browser",
+   "remote android device",
+   "android 11 emulator",
+   "selfhosted android",
+   "supervisor",
+   "docker-android"
+  ],
+  "what_it_does": "Runs an Android Virtual Device (Android 11 / API 30 per the README) inside a Docker container, started with docker compose up -d. A bundled scrcpy-web interface lets you view and control the device from a web browser, with H264, Tiny H264, and Broadway.js streaming options. The device is also reachable over ADB on port 5555 from the host or other networked machines, and desktop scrcpy can connect to it. Optional environment variables enable root with Magisk, PICO GApps, and ARM/ARM64 app translation via ndk_translation, and set RAM, screen resolution, density and a private DNS. First boot runs a setup script that can take 10-15 minutes, and logs from the emulator and boot process go to Docker's log system. Versioned Docker image tags are published from GitHub Releases.",
+  "use_cases": [
+   "Run Android apps in a container for automated testing",
+   "Control an Android emulator from a web browser",
+   "Set up a headless Android device in CI pipelines",
+   "Install ARM-only Android apps on an x86 host",
+   "Share a remote Android emulator with a team",
+   "Connect to an emulator with adb or desktop scrcpy"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd dockerify-android",
+   "docker compose up -d",
+   "adb connect localhost:5555",
+   "docker logs -f dockerify-android"
+  ],
+  "stack": [
+   "Shell",
+   "Docker",
+   "Docker Compose",
+   "scrcpy / scrcpy-web",
+   "Supervisor",
+   "ndk_translation",
+   "Magisk",
+   "PICO GApps",
+   "Android emulator (AVD)"
+  ],
+  "notable": [
+   "Browser-based device control through an integrated scrcpy-web interface",
+   "ARM/ARM64 app support on x86_64 via ndk_translation, enabled by an environment variable",
+   "Optional root with Magisk and PICO GApps, set at first boot",
+   "Multi-architecture support for x86 and arm64 hosts",
+   "Docker image tags generated from GitHub Releases plus edge builds from main"
+  ],
+  "caveats": [
+   "Requires KVM hardware virtualization (vmx or svm CPU flag, /dev/kvm access)",
+   "First boot takes about 10-15 minutes, longer with root or ARM translation enabled",
+   "ROOT_SETUP, GAPPS_SETUP and ARM_TRANSLATION cannot be undone without recreating the data volume",
+   "Only Android 30 (Android 11) is currently supported, per the roadmap"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5850,
+  "output": 1291
+ },
+ "generated": "2026-10-29"
+}

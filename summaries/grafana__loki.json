@@ -1,0 +1,91 @@
+{
+ "id": "grafana/loki",
+ "repo": "grafana/loki",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Loki | Horizontally scalable log aggregation system"
+  }
+ ],
+ "summary": {
+  "one_liner": "Loki is a horizontally scalable, multi-tenant log aggregation system inspired by Prometheus that indexes only log labels rather than log contents.",
+  "what_it_does": "Loki stores compressed, unstructured logs and indexes only a set of labels per log stream, instead of doing full-text indexing. It uses the same label model as Prometheus so users can move between metrics and logs with the same labels. Logs are delivered by push rather than pull. The README describes a three-part stack: Alloy as the agent that collects logs and sends them to Loki, Loki itself for storage and queries, and Grafana for querying and display. It can run as a single binary with no dependencies, and it can be run with multiple tenants when auth is enabled. The README also lists related tools: Docker Driver Client for sending container logs, LogCLI for command-line queries, and Loki Canary for detecting missing logs.",
+  "use_cases": [
+   "centralized log aggregation",
+   "storing Kubernetes pod logs",
+   "querying logs alongside Prometheus metrics",
+   "multi-tenant log storage",
+   "cost-effective log retention",
+   "sending Docker container logs to a central store"
+  ],
+  "how_to_run": [
+   "git clone the loki repository and cd into it",
+   "go build ./cmd/loki",
+   "./loki -config.file=./cmd/loki/loki-local-config.yaml",
+   "Alternatively, on Unix systems: make loki",
+   "./cmd/loki/loki -config.file=./cmd/loki/loki-local-config.yaml",
+   "For multi-tenant local runs: set auth_enabled to true and run ./loki with loki-local-multi-tenant-config.yaml and loki-overrides.yaml"
+  ],
+  "stack": [
+   "Go",
+   "Grafana",
+   "Grafana Alloy",
+   "Prometheus-style labels"
+  ],
+  "notable": [
+   "Indexes labels only, not log contents, which keeps storage and operation cheap",
+   "Single-binary, no-dependency local mode",
+   "Native Grafana datasource support",
+   "Multi-tenant mode with runtime config overrides",
+   "Uses Prometheus-style label model to link metrics and logs"
+  ],
+  "caveats": [
+   "The README notes Promtail has been replaced by Alloy for log collection, and Promtail is feature complete",
+   "The Helm chart is moving to a separate grafana-community repository effective March 16, 2026; the Loki repo chart is maintained only for GEL users",
+   "Native Grafana support is described as needing Grafana v6.0 or later",
+   "Building from source requires an up-to-date version of Go"
+  ],
+  "license": "AGPL-3.0-only",
+  "category": "log aggregation system",
+  "keywords": [
+   "log aggregation",
+   "centralized logging",
+   "loki",
+   "grafana loki",
+   "log storage",
+   "label-based indexing",
+   "prometheus for logs",
+   "horizontally scalable logs",
+   "multi-tenant logging",
+   "kubernetes pod logs",
+   "docker logs collection",
+   "grafana alloy",
+   "promtail alternative",
+   "elasticsearch alternative",
+   "elk stack alternative",
+   "log search",
+   "logcli",
+   "loki canary",
+   "log shipping",
+   "push logs to server",
+   "self-hosted logging",
+   "query logs",
+   "logs and metrics correlation",
+   "go logging backend",
+   "agpl log server",
+   "collect container logs",
+   "send logs to central server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3476,
+  "output": 1234
+ },
+ "generated": "2026-10-29"
+}

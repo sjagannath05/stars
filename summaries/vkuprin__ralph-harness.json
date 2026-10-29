@@ -1,0 +1,95 @@
+{
+ "id": "vkuprin/ralph-harness",
+ "repo": "vkuprin/ralph-harness",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Ralph Wiggum",
+   "entry": "ralph-harness by Vitaly Kuprin - A CLI that runs Claude Code in a loop, with a fresh claude -p process for each iteration in a harness-owned git worktree."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Bun-based CLI that runs Claude Code in a long-lived loop, starting a fresh `claude -p` process per iteration inside a harness-owned git worktree, and only shipping commits that pass git, your VERIFY_CMD, FROZEN paths and a read-only reviewer.",
+  "category": "autonomous coding agent harness",
+  "keywords": [
+   "ralph loop",
+   "ralph wiggum",
+   "claude code",
+   "claude -p",
+   "agent loop",
+   "autonomous coding",
+   "long-running agent",
+   "bash loop alternative",
+   "git worktree",
+   "pull request automation",
+   "verify command",
+   "code review gate",
+   "reviewer agent",
+   "bun cli",
+   "typescript",
+   "background job runner",
+   "rate limit retry",
+   "usage limit wait",
+   "steering agent",
+   "progress notes",
+   "prompt.md",
+   "overnight coding agent",
+   "run ai agent for days",
+   "automate commits with ai",
+   "ci feedback loop",
+   "homebrew cli",
+   "npm global package",
+   "windows git bash",
+   "agent sandbox worktree",
+   "continuous claude",
+   "autoresearch harness"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Run a Claude Code agent unattended for many hours on a coding job",
+   "Gate AI-generated commits behind tests and a reviewer before they are pushed",
+   "Open one pull request that collects all of an agent's kept commits",
+   "Keep an autonomous agent from touching frozen paths or your own checkout",
+   "Resume an agent loop automatically after usage limits",
+   "Steer or stop a running background agent loop from the terminal"
+  ],
+  "how_to_run": [
+   "brew install vkuprin/tap/ralph",
+   "bun add -g @vkuprin/ralph-harness",
+   "git clone https://github.com/vkuprin/ralph-harness && cd ralph-harness && ln -s \"$PWD/bin/ralph\" ~/.local/bin/ralph",
+   "cd ~/code/my-app && ralph setup",
+   "ralph new audit ~/code/my-app --set 'VERIFY_CMD=npm test'",
+   "ralph edit audit && ralph start audit && ralph status"
+  ],
+  "stack": [
+   "bun",
+   "git",
+   "Claude Code CLI (claude -p)",
+   "TypeScript",
+   "gh (GitHub CLI, used for pull requests)"
+  ],
+  "notable": [
+   "Each iteration is a fresh claude -p process; state carries over only via PROMPT.md and PROGRESS.md",
+   "The harness, not the agent, pushes; reset commits are kept under refs/ralph for inspection",
+   "Usage-limit waits do not count toward MAX_ITER and time asleep does not count toward timeouts",
+   "Hard constraints are numbered pass/fail tests that the reviewer enforces and the agent cannot loosen",
+   "Native Windows support via Git Bash, with a ralph.stop file for graceful stop"
+  ],
+  "caveats": [
+   "The agent runs with --dangerously-skip-permissions, so the README advises running it in a container or VM without production credentials",
+   "Dollar figures reported are API-equivalent estimates and a lower bound, not subscription bills",
+   "On Windows, the npm claude.cmd wrapper is refused; the native claude.exe build is required"
+  ],
+  "license": "MIT, except hooks/steer.ts (Apache-2.0)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9324,
+  "output": 1242
+ },
+ "generated": "2026-10-29"
+}

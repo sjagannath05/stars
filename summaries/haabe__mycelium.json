@@ -1,0 +1,90 @@
+{
+ "id": "haabe/mycelium",
+ "repo": "haabe/mycelium",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "SDLC",
+   "entry": "Mycelium by Håvard Bartnes - A plugin that holds the agent back from writing code until the builder has answered four questions in the repo: what the problem is, who has it, what is assumed, and what would show it to be wrong. The answers live in the repo as YAML the agent is held to, next to a decision log."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin that holds the agent back from writing new code until the builder has answered four discovery questions (problem, who has it, assumptions, what would prove it wrong) and recorded them as YAML and a decision log in the repo.",
+  "what_it_does": "The plugin is set up in a repo with /mycelium:start, which walks the user through four questions and stores the answers as YAML files (a \"canvas\") alongside a decision log. Hooks gate the agent: before discovery is written down, it cannot create a brand new source file in a repo, and once building has started, product code waits until a delivery \"diamond\" is open with its reasons recorded above it. Some stops can be bypassed with skip-acknowledgement files that the user must agree to, and warnings are printed for other cases. The README describes a six-layer model (Purpose, Strategy, Opportunity, Solution, Delivery, Market) where each layer opens under the one above it, and market feedback loops back to strategy and opportunity. The README says it costs roughly six thousand tokens per session and that the files can be ported to opencode, Codex and Cursor. Uninstalling leaves the YAML files behind as plain text.",
+  "use_cases": [
+   "Validating a product idea before writing code",
+   "Recording assumptions and reasons for a side project",
+   "Keeping an AI coding agent from building without a stated problem and audience",
+   "Keeping a decision log alongside code in git",
+   "Structuring early-stage product discovery for solo founders or small teams"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add haabe/mycelium",
+   "/plugin install mycelium@haabe-mycelium",
+   "/mycelium:start"
+  ],
+  "stack": [
+   "Claude Code plugin",
+   "YAML",
+   "Markdown",
+   "Mermaid diagrams",
+   "Git"
+  ],
+  "notable": [
+   "Hooks structurally gate the agent: new source files are blocked until discovery answers exist, and product code is blocked until a delivery diamond is open with its reasons written down",
+   "Four-question canvas (problem, who, assumptions, what would show it wrong) stored as YAML in the repo as the spec",
+   "Six-layer model from Purpose to Market, with market signals feeding back into strategy and opportunity",
+   "Skip-acknowledgement files let the user opt out of the first-file stop, with the agent barred from writing them without asking",
+   "Other agents (opencode, Codex, Cursor) are said to be supported through install paths; the README describes the files as portable"
+  ],
+  "caveats": [
+   "The README says it is pre-1.0 and that schema and skill names change between minor versions, with migrations",
+   "Discovery questions are asked once per repo; the README says nothing prompts revisiting them later",
+   "Roughly six thousand tokens of overhead per session, always on, measured by the author",
+   "The README says it is not built for several people editing one canvas at once"
+  ],
+  "license": "MIT",
+  "category": "ai agent workflow",
+  "keywords": [
+   "claude code plugin",
+   "claude code hooks",
+   "ai coding agent guardrails",
+   "product discovery",
+   "idea validation",
+   "customer discovery",
+   "assumption tracking",
+   "decision log",
+   "yaml spec",
+   "pre-build validation",
+   "lean startup",
+   "discovery canvas",
+   "solo founder tools",
+   "vibe coding",
+   "agent gating",
+   "stop agent from coding",
+   "prototype validation",
+   "product strategy framework",
+   "opencode",
+   "codex",
+   "cursor",
+   "markdown canvas",
+   "git decision record",
+   "mvp planning",
+   "hypothesis testing",
+   "build the right thing",
+   "validate startup idea before coding",
+   "keep ai from building without a plan",
+   "mycelium"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5657,
+  "output": 1325
+ },
+ "generated": "2026-10-29"
+}

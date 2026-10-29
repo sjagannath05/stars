@@ -1,0 +1,92 @@
+{
+ "id": "factoryboy/factory_boy",
+ "repo": "FactoryBoy/factory_boy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Testing",
+   "entry": "factory-boy - A test fixtures replacement for Python."
+  }
+ ],
+ "summary": {
+  "one_liner": "factory_boy is a Python test fixtures replacement that builds configurable test objects from declarative factory classes, with ORM integrations for Django, MongoEngine, Mogo and SQLAlchemy.",
+  "what_it_does": "Lets you define factory classes that declare default attributes for a Python object, then build instances per test by overriding only the fields that matter. Supports build (unsaved), create (saved via ORM base class) and stub strategies, plus build_batch for creating many objects at once. Offers lazy attributes computed from other fields, sequences for unique values, and SubFactory for nested associated objects. Integrates with Faker for realistic random values and provides helpers to reseed the random generator for reproducible runs. A factory.debug() helper and the 'factory' logger expose the chain of factory calls for troubleshooting.",
+  "use_cases": [
+   "replace hard-to-maintain test fixtures",
+   "generate test data for Django models",
+   "create SQLAlchemy objects in unit tests",
+   "build realistic random test data with Faker",
+   "produce unique sequential values such as emails for tests",
+   "create nested related objects for test setup"
+  ],
+  "how_to_run": [
+   "pip install factory_boy",
+   "class UserFactory(factory.Factory): class Meta: model = models.User; first_name = 'John'",
+   "user = UserFactory.build(first_name='Joe')",
+   "users = UserFactory.build_batch(10)"
+  ],
+  "stack": [
+   "Python",
+   "Faker (for random values)",
+   "Django (optional ORM integration)",
+   "SQLAlchemy (optional ORM integration)",
+   "MongoEngine (optional ORM integration)",
+   "Mogo (optional ORM integration)",
+   "tox",
+   "make"
+  ],
+  "notable": [
+   "Declarative factory classes with a Meta.model attribute and multiple factories per model, including inheritance",
+   "Build, create and stub instantiation strategies from the same factory",
+   "LazyAttribute and LazyFunction for values computed per instance",
+   "SubFactory for building associated objects with the chosen strategy",
+   "Inspired by thoughtbot's factory_bot"
+  ],
+  "caveats": [
+   "The create strategy requires an ORM base class such as DjangoModelFactory, so plain factories only build unsaved objects",
+   "Development and testing setup depends on tox and make, with separate environments for Django, SQLAlchemy and MongoEngine",
+   "README does not state platform limits or a maintenance status"
+  ],
+  "license": "MIT License",
+  "category": "python test fixtures",
+  "keywords": [
+   "factory_boy",
+   "test fixtures",
+   "python testing",
+   "test data factory",
+   "fixtures replacement",
+   "factory_bot alternative",
+   "object factory",
+   "fake test data",
+   "faker",
+   "django factory",
+   "sqlalchemy factory",
+   "mongoengine factory",
+   "build test objects",
+   "unit test setup",
+   "lazy attributes",
+   "sequences",
+   "subfactory",
+   "build_batch",
+   "reproducible random data",
+   "stub objects",
+   "create test data in django",
+   "generate sample database records for tests",
+   "avoid static yaml fixtures",
+   "mock object builder",
+   "test object builder",
+   "debugging factories",
+   "pip install test helper"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5570,
+  "output": 1172
+ },
+ "generated": "2026-10-29"
+}

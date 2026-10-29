@@ -1,0 +1,94 @@
+{
+ "id": "deepseek-ai/deepseek-vl2",
+ "repo": "deepseek-ai/DeepSeek-VL2",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "DeepSeek",
+   "entry": "DeepSeek-VL2"
+  }
+ ],
+ "summary": {
+  "one_liner": "DeepSeek-VL2 is a family of open-weight Mixture-of-Experts vision-language models (Tiny, Small, and base) for image understanding tasks such as visual question answering, OCR, document/chart understanding, and visual grounding.",
+  "what_it_does": "The README describes three variants with 1.0B, 2.8B, and 4.5B activated parameters (DeepSeek-VL2-Tiny, -Small, and -Base as named in the text). Models are downloadable from Hugging Face with a 4096 sequence length. Quick-start code loads the model via transformers with trust_remote_code and runs single-image, multi-image, and interleaved image-text chat, including visual grounding that returns bounding box coordinates. An incremental prefilling option is shown to reduce GPU memory use for the Small model, and a Gradio web demo and inference script are provided. The README points to vLLM, SGLang, and LMDeploy as options for production deployment, but does not provide them.",
+  "use_cases": [
+   "visual question answering over images",
+   "OCR and text extraction from images",
+   "document, table, and chart understanding",
+   "visual grounding with bounding boxes",
+   "multi-image comparison and interleaved image-text chat",
+   "running a local multimodal chat demo"
+  ],
+  "how_to_run": [
+   "pip install -e .",
+   "Load model with DeepseekVLV2Processor.from_pretrained and AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True), then move to GPU in bfloat16",
+   "CUDA_VISIBLE_DEVICES=0 python inference.py --model_path \"deepseek-ai/deepseek-vl2\"",
+   "pip install -e .[gradio]",
+   "CUDA_VISIBLE_DEVICES=2 python web_demo.py --model_name \"deepseek-ai/deepseek-vl2\" --port 37914"
+  ],
+  "stack": [
+   "Python >= 3.8",
+   "PyTorch",
+   "Hugging Face transformers",
+   "Gradio",
+   "Hugging Face Hub model weights"
+  ],
+  "notable": [
+   "Mixture-of-Experts vision-language models with 1.0B, 2.8B, and 4.5B activated parameters across three sizes",
+   "Visual grounding that outputs bounding box coordinates for referenced objects",
+   "Incremental prefilling lets the Small model run within 40GB GPU memory",
+   "Supports multi-image and interleaved image-text conversations",
+   "Code under MIT License with models under the DeepSeek Model License, which the README says allows commercial use"
+  ],
+  "caveats": [
+   "The README says about 80GB GPU memory is needed for the Small model, and more for the base model, unless incremental prefilling is used",
+   "The bundled Gradio demo is described as a basic implementation without deployment optimizations and may be slow",
+   "Model use is subject to the separate DeepSeek Model License"
+  ],
+  "license": "MIT License for code; DeepSeek Model License for model weights",
+  "category": "multimodal vision-language models",
+  "keywords": [
+   "deepseek-vl2",
+   "vision-language model",
+   "multimodal llm",
+   "mixture of experts",
+   "moe vlm",
+   "visual question answering",
+   "vqa",
+   "ocr",
+   "document understanding",
+   "chart understanding",
+   "table understanding",
+   "visual grounding",
+   "bounding box detection",
+   "image captioning",
+   "image-text chat",
+   "multi-image reasoning",
+   "huggingface model",
+   "transformers",
+   "gradio demo",
+   "incremental prefilling",
+   "low gpu memory inference",
+   "local image chatbot",
+   "open-source vision model",
+   "read text from image",
+   "ask questions about a picture",
+   "analyze charts and documents",
+   "vllm alternative",
+   "sglang",
+   "lmdeploy",
+   "vlmevalkit",
+   "image understanding model"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6840,
+  "output": 1386
+ },
+ "generated": "2026-10-29"
+}

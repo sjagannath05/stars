@@ -1,0 +1,99 @@
+{
+ "id": "huginn/huginn",
+ "repo": "huginn/huginn",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Huginn - Build agents that monitor and act on your behalf. MIT Ruby"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Automation",
+   "entry": "Huginn | Build agents that monitor the web and act on your behalf"
+  }
+ ],
+ "summary": {
+  "one_liner": "Huginn is a self-hosted system for building agents that monitor the web and other sources, then take actions on your behalf, like a hackable IFTTT or Zapier on your own server.",
+  "what_it_does": "Agents create and consume events, passing them along a directed graph. The README lists uses such as scraping websites and emailing on change, watching RSS feeds, IMAP mailboxes, webhooks and MQTT topics, and tracking weather or travel deals. Agents can post to Slack, Telegram, Pushover, Twilio and other services, and call OpenAI-compatible APIs to summarize, classify, translate, or generate images and speech. They can store files on Dropbox, S3, FTP and the local filesystem, run custom logic in JavaScript, Liquid or jq, and publish feeds or JSON endpoints from collected events. Additional Agents can be added as external gems.",
+  "use_cases": [
+   "Get an email when a web page changes",
+   "Monitor RSS feeds or IMAP mailboxes and forward matching items",
+   "Receive weather alerts such as rain forecasts",
+   "Post automated updates to Slack, Telegram or other chat services",
+   "Send scheduled digest emails",
+   "Connect webhooks between different services"
+  ],
+  "how_to_run": [
+   "docker run -it -p 3000:3000 ghcr.io/huginn/huginn",
+   "Open the web UI and log in as admin with the password printed in the container log",
+   "For local development: cp .env.example .env, then bundle and npm install",
+   "bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:seed",
+   "bundle exec foreman start"
+  ],
+  "stack": [
+   "Ruby",
+   "Rails",
+   "MySQL or PostgreSQL",
+   "Node.js",
+   "Docker"
+  ],
+  "notable": [
+   "Agents are chained in a directed event graph, similar to IFTTT or Zapier but self-hosted",
+   "Custom logic via JavaScript, Liquid templates or jq",
+   "Extensible through external Agent gems loaded with ADDITIONAL_GEMS",
+   "Official Docker images, including a single-process variant for separate worker containers",
+   "Can publish feeds and JSON endpoints from collected events"
+  ],
+  "caveats": [
+   "A background worker must stay running, so hosting needs an always-on process and usually a managed database; no free-tier worker on the listed platforms",
+   "Running the full spec suite needs Chrome and ChromeDriver or the Docker test environment",
+   "Community packages on YunoHost and Unraid may lag behind releases"
+  ],
+  "license": "MIT",
+  "category": "self-hosted automation",
+  "keywords": [
+   "huginn",
+   "web monitoring agents",
+   "self-hosted automation",
+   "ifttt alternative",
+   "zapier alternative",
+   "self-hosted zapier",
+   "website change monitor",
+   "scrape website alerts",
+   "rss feed watcher",
+   "imap email watcher",
+   "webhook automation",
+   "mqtt automation",
+   "event workflow",
+   "directed graph events",
+   "slack notifications automation",
+   "telegram bot automation",
+   "twilio sms automation",
+   "openai text automation",
+   "dropbox file automation",
+   "s3 file automation",
+   "ruby on rails automation",
+   "javascript liquid jq transforms",
+   "docker self-hosted automation",
+   "digest emails",
+   "weather alert email",
+   "monitor prices and deals",
+   "share automation on my own server",
+   "run my own ifttt",
+   "send alert when page changes",
+   "rss to email",
+   "automate tasks without cloud service"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4012,
+  "output": 1285
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "fail2ban/fail2ban",
+ "repo": "fail2ban/fail2ban",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "Fail2ban | Intrusion prevention software framework"
+  }
+ ],
+ "summary": {
+  "one_liner": "Fail2Ban is an intrusion prevention framework that scans log files for repeated failed logins and bans offending IP addresses by updating firewall rules.",
+  "what_it_does": "Fail2Ban scans log files such as /var/log/auth.log and bans IP addresses that make too many failed login attempts. It bans by updating system firewall rules to reject new connections from those addresses for a configurable time. It ships with ready-to-use rules for standard logs such as sshd and Apache, and can be configured to read any log file for any error pattern. It supports matching IPv6 addresses since v0.10. Configuration lives in /etc/fail2ban, and runtime control is done through the fail2ban-client command.",
+  "use_cases": [
+   "block brute-force ssh login attempts",
+   "ban IPs after repeated failed logins",
+   "protect apache or other web logins from abuse",
+   "custom log-based intrusion blocking",
+   "reduce automated authentication attacks on servers"
+  ],
+  "how_to_run": [
+   "git clone <repository URL from README; the README omits the URL>",
+   "cd fail2ban",
+   "sudo python setup.py install",
+   "fail2ban-client -h",
+   "fail2ban-client version"
+  ],
+  "stack": [
+   "Python 3.5+ or PyPy3",
+   "setuptools",
+   "pyinotify (optional)",
+   "systemd python bindings (optional)",
+   "dnspython (optional)"
+  ],
+  "notable": [
+   "Config-driven: any log file and error pattern can be watched through files in /etc/fail2ban",
+   "Controlled at runtime with fail2ban-client rather than calling the server directly",
+   "Ships with out-of-the-box filters for common services like sshd and Apache",
+   "Long-running community project; original author Cyril Jaquier"
+  ],
+  "caveats": [
+   "The README says it cannot eliminate risk from weak authentication and recommends two-factor or key-based auth",
+   "The init/service script is not installed automatically and must be copied manually from the files directory",
+   "Install is from source via setup.py; distro packages are the preferred route according to the README",
+   "Code status section is blank in the README"
+  ],
+  "license": "GNU General Public License v2 or later (GPL-2.0-or-later)",
+  "category": "intrusion prevention software",
+  "keywords": [
+   "fail2ban",
+   "intrusion prevention",
+   "ip banning",
+   "brute force protection",
+   "block failed logins",
+   "log file monitoring",
+   "firewall rules",
+   "iptables",
+   "sshd protection",
+   "apache log ban",
+   "ssh brute force",
+   "auth.log",
+   "security framework",
+   "python security tool",
+   "block attacker ip",
+   "ban hosts",
+   "fail2ban-client",
+   "jail configuration",
+   "ipv6 banning",
+   "self-hosted security",
+   "server hardening",
+   "rate limit login attempts",
+   "intrusion detection",
+   "automatic ip block",
+   "linux server security",
+   "stop repeated login failures",
+   "defend ssh server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2971,
+  "output": 1085
+ },
+ "generated": "2026-10-29"
+}

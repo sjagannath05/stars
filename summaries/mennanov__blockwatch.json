@@ -1,0 +1,93 @@
+{
+ "id": "mennanov/blockwatch",
+ "repo": "mennanov/blockwatch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Linting",
+   "entry": "BlockWatch by mennanov - A language-agnostic linter (Rust) that keeps co-dependent code, docs, and config in sync, with a Claude Code plugin skill."
+  }
+ ],
+ "summary": {
+  "one_liner": "blockwatch is a language-agnostic Rust linter that lets you declare rules in code comments so that co-dependent code, docs, and config stay in sync, failing pre-commit or CI when they drift.",
+  "what_it_does": "Lets you wrap lines in start and end tags inside comments and attach rules such as affects, same-as, keep-sorted, keep-unique, line-pattern, line-count, check-ai, and check-lua. The same-as validator compares block contents across files, including whole files, JSON/TOML/YAML keys, Markdown sections, and some language constants, without needing a diff. The affects validator reads a unified diff from stdin and fails when a changed block's target was not also edited. Blocks can also be declared in blockwatch.toml for files that cannot hold comments, such as package.json. The README says it supports 37 languages and their common file names, and it provides a `blockwatch skill` command that prints an agent skill file. Subcommands include list, explain, and --suppress for known violations.",
+  "use_cases": [
+   "keep docs in sync with code",
+   "check duplicated values across config files",
+   "fail pre-commit when linked code changes",
+   "enforce sorted lists in source files",
+   "validate code comments and blocks in CI",
+   "give AI coding agents project sync rules"
+  ],
+  "how_to_run": [
+   "brew install mennanov/blockwatch/blockwatch",
+   "pipx install blockwatch-cli # or: uv tool install blockwatch-cli",
+   "cargo install blockwatch",
+   "blockwatch",
+   "git diff --patch | blockwatch --diff --only-changed"
+  ],
+  "stack": [
+   "Rust",
+   "Lua (for check-lua validator)",
+   "pre-commit",
+   "GitHub Actions"
+  ],
+  "notable": [
+   "Rules written as comments next to the code they describe, with no separate config for most blocks",
+   "Language-agnostic: covers 37 languages and common file names such as Gemfile, Dockerfile, and Tiltfile",
+   "Cross-file same-as and affects validators, including pointers to JSON keys and Markdown sections",
+   "Ships an agent skill via `blockwatch skill` and a Claude Code plugin install",
+   "Known violations can be suppressed by address with --suppress without editing source"
+  ],
+  "caveats": [
+   "Deleting a block or its file silently removes its rule; the run does not warn",
+   "Files with blocks must be UTF-8; UTF-16 files with tags are skipped silently",
+   "Files with unsupported extensions are skipped silently unless mapped with -E or extensions config"
+  ],
+  "license": "unknown",
+  "category": "code consistency linting",
+  "keywords": [
+   "blockwatch",
+   "linter",
+   "rust linter",
+   "language-agnostic linter",
+   "keep code and docs in sync",
+   "sync docs with code",
+   "co-dependent code",
+   "same-as validator",
+   "affects validator",
+   "pre-commit hook",
+   "ci lint check",
+   "github actions",
+   "claude code plugin",
+   "agent skill",
+   "keep-sorted",
+   "keep-unique",
+   "line-count",
+   "line-pattern",
+   "check-lua",
+   "check-ai",
+   "lint comments",
+   "config drift detection",
+   "duplicated values across configs",
+   "diff-based linting",
+   "sarif output",
+   "code review nitpicks",
+   "toml config",
+   "homebrew install",
+   "cargo install",
+   "multi-language linting",
+   "detect stale documentation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5682,
+  "output": 1232
+ },
+ "generated": "2026-10-29"
+}

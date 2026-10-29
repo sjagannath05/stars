@@ -1,0 +1,108 @@
+{
+ "id": "rexray/rexray",
+ "repo": "rexray/rexray",
+ "kind": "star",
+ "description": "REX-Ray is a container storage orchestration engine enabling persistence for cloud native workloads",
+ "topics": [
+  "containers",
+  "docker",
+  "go",
+  "kubernetes",
+  "mesos",
+  "rex-ray",
+  "storage-orchestration",
+  "storage-providers"
+ ],
+ "language": "Go",
+ "stars": 2217,
+ "license": "Apache-2.0",
+ "homepage": "http://rexray.io",
+ "pushed_at": "2023-09-02",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "REX-Ray is a vendor-agnostic storage orchestration engine that provides persistent storage volumes for Docker, Kubernetes, and Mesos workloads across many cloud and storage platforms.",
+  "what_it_does": "REX-Ray runs as a standalone process, a client-server model, a Go package, a CLI tool, or a Linux service. The CLI lists and manages volumes (for example, `rexray volume ls`). The service mode exposes an HTTP/JSON interface so Docker, Mesos, and similar platforms can request volume attachment, discovery, formatting, and mounting. It also installs as a Docker plugin (Docker 1.13+) so containers can use a volume driver directly. The README lists supported providers including Amazon EBS/EFS/S3FS, Ceph RBD, Dell EMC Isilon and ScaleIO, DigitalOcean Block Storage, Google Persistent Disk, Microsoft Azure Unmanaged Disk, OpenStack Cinder, and VirtualBox. Supported operating systems include Ubuntu, Debian, RedHat, CentOS, CoreOS, and OS X, with Windows not supported. The README also states that CSI support is planned once CSI reaches version 1.0.",
+  "use_cases": [
+   "persistent storage for docker containers",
+   "attach cloud block volumes to kubernetes or mesos workloads",
+   "manage ebs volumes from the command line",
+   "mount openstack cinder or google persistent disk into containers",
+   "use ceph rbd or dell emc storage as docker volumes"
+  ],
+  "how_to_run": [
+   "curl -sSL | sh -  (install script, URL omitted in README)",
+   "export REXRAY_SERVICE=ebs; export EBS_ACCESSKEY=...; export EBS_SECRETKEY=...",
+   "rexray volume ls",
+   "rexray service start",
+   "docker plugin install rexray/ebs EBS_ACCESSKEY=access_key EBS_SECRETKEY=secret_key",
+   "docker run -ti --volume-driver=rexray/ebs -v test:/test busybox"
+  ],
+  "stack": [
+   "Go",
+   "Docker plugin system",
+   "Linux service managers",
+   "HTTP/JSON"
+  ],
+  "notable": [
+   "Vendor-agnostic storage orchestration with many cloud and on-prem storage backends behind one interface",
+   "Runs as CLI, background service, or Docker managed plugin",
+   "Client-server architecture where the client handles local device attach, format, and mount",
+   "Go package usable as a library"
+  ],
+  "caveats": [
+   "Windows is not supported; the OS support table lists no Windows entries",
+   "CSI support is deferred until CSI 1.0, which the README projects for late 2018",
+   "Hosted unstable and staged binaries older than 0.11.2-rc1 were pruned, so older builds may be unavailable",
+   "Provider setup requires cloud credentials and per-provider configuration, documented externally"
+  ],
+  "license": "Apache-2.0",
+  "category": "container storage orchestration",
+  "keywords": [
+   "container storage",
+   "persistent volumes",
+   "docker volume plugin",
+   "docker persistent storage",
+   "kubernetes storage",
+   "mesos storage",
+   "storage orchestration",
+   "csi",
+   "container storage interface",
+   "cloud block storage",
+   "ebs volumes",
+   "openstack cinder",
+   "ceph rbd",
+   "dell emc isilon",
+   "scaleio",
+   "google persistent disk",
+   "azure disk",
+   "digitalocean block storage",
+   "volume driver",
+   "rexray",
+   "stateful containers",
+   "docker volumes in the cloud",
+   "attach cloud disk to container",
+   "vendor agnostic storage",
+   "go storage tool",
+   "volume management cli",
+   "storage plugin for docker",
+   "cloud native persistence",
+   "mount volumes in containers",
+   "storage providers",
+   "linux storage service"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3407,
+  "output": 1409
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "dyoshikawa/rulesync",
+ "repo": "dyoshikawa/rulesync",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Configuration",
+   "entry": "Rulesync by dyoshikawa - A Node.js CLI tool that automatically generates configs (rules, ignore files, MCP servers, commands, and subagents) for various AI coding agents. Rulesync can convert configs between Claude Code and other AI agents in both directions."
+  }
+ ],
+ "summary": {
+  "one_liner": "Rulesync is a Node.js CLI that generates AI coding tool configuration files (rules, ignore files, MCP servers, commands, subagents, skills) from a unified set of source rule files, and can convert configs between tools.",
+  "what_it_does": "Rulesync reads unified AI rule files from a .rulesync/ directory and generates the native configuration files for many AI coding tools, with selective generation by target and feature. It can also import existing tool configs (such as CLAUDE.md, .cursorrules, or .github/copilot-instructions.md) into .rulesync/. A convert command translates configs directly from one tool to others without writing .rulesync/ files. The README lists a large set of supported tools across rules, ignore, MCP, commands, subagents, skills, hooks, permissions, and checks. It also includes a fetch command for installing official skills. Several targets are marked deprecated or end-of-life, and the README documents how each is still handled.",
+  "use_cases": [
+   "keep one set of AI rules in sync across multiple coding assistants",
+   "convert Cursor rules to Claude Code or GitHub Copilot",
+   "import existing CLAUDE.md or .cursorrules into a unified format",
+   "generate MCP server configs for several AI tools at once",
+   "install shared AI agent skills into a project",
+   "migrate AI tool configuration between vendors"
+  ],
+  "how_to_run": [
+   "npm install -g rulesync",
+   "rulesync init",
+   "rulesync fetch dyoshikawa/rulesync",
+   "rulesync generate --targets \"*\" --features \"*\"",
+   "rulesync import --targets claudecode",
+   "rulesync convert --from cursor --to copilot,claudecode"
+  ],
+  "stack": [
+   "Node.js",
+   "npm",
+   "Homebrew"
+  ],
+  "notable": [
+   "Converts configs directly between AI tools with a convert command, without requiring a .rulesync/ source directory",
+   "Supports bidirectional import and export across a large list of AI coding tools",
+   "Project-only plugin packaging targets write into existing plugin directories via --output-roots",
+   "Documents deprecations and end-of-life status for several targets (Continue, Roo Code, Tabnine CLI, Rovo Dev), with guidance on replacements",
+   "Can be installed as a single binary via a curl install script"
+  ],
+  "caveats": [
+   "The ignore feature is deprecated in favor of permissions, though existing ignore configs remain supported in 14.x",
+   "Several targets are deprecated or end-of-life (Continue, Roo Code, Tabnine legacy CLI, Rovo Dev standalone), and remain supported only as frozen-compatibility targets",
+   "Plugin targets are excluded from --targets \"*\" and must be selected explicitly"
+  ],
+  "license": "MIT",
+  "category": "ai coding config",
+  "keywords": [
+   "rulesync",
+   "ai coding rules",
+   "config generator",
+   "cli tool",
+   "nodejs cli",
+   "claude code",
+   "cursor rules",
+   "github copilot instructions",
+   "agents.md",
+   "mcp server config",
+   "subagents",
+   "skills",
+   "convert cursor to claude code",
+   "import claude.md",
+   "sync rules across ai tools",
+   "share rules between coding assistants",
+   "one config for many ai agents",
+   "generate ignore files",
+   "claudecode config",
+   "cursorrules converter",
+   "ai agent configuration",
+   "npm package",
+   "homebrew tap",
+   "unified rules file",
+   "migrate ai tool settings",
+   "codex cli config",
+   "gemini cli rules",
+   "agent rules management",
+   "coding assistant setup"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7759,
+  "output": 1300
+ },
+ "generated": "2026-10-29"
+}

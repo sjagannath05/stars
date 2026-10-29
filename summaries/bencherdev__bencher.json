@@ -1,0 +1,90 @@
+{
+ "id": "bencherdev/bencher",
+ "repo": "bencherdev/bencher",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Testing",
+   "entry": "Bencher - Suite of continuous benchmarking tools designed to catch performance regressions in CI. (Source Code) MIT/Apache-2.0 Rust"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bencher is a continuous benchmarking platform (CLI, API server, and web console) that runs benchmarks locally or in CI and flags performance regressions before they merge.",
+  "what_it_does": "The bencher CLI runs your existing benchmarks and stores the results on a Bencher server. The web console tracks, queries, and graphs results over time by source branch, testbed, benchmark, and measure. Analytics detect regressions against configurable thresholds and alerts, and the GitHub Action can comment on pull requests with a report. The README lists adapters for many harnesses, including Rust (libtest bench, Criterion, Iai, Gungraun), Go (go test -bench), Python (pytest-benchmark), C++ (Google Benchmark, Catch2), JavaScript (Benchmark.js, Vitest), and generic JSON, plus build-time and file-size tracking. Bencher Bare Metal runners are offered as a hosted option for more consistent results than shared CI runners. The suite is available as Bencher Cloud or self-hosted via Docker, Kubernetes, or bare metal.",
+  "use_cases": [
+   "catch performance regressions in pull requests",
+   "track benchmark results over time with graphs",
+   "continuous benchmarking in GitHub Actions or GitLab CI",
+   "self-host a benchmark tracking server",
+   "track build time and binary file size",
+   "compare benchmark runs on consistent hardware"
+  ],
+  "how_to_run": [
+   "uses: bencherdev/bencher@main (GitHub Actions step to install the CLI)",
+   "bencher run \"bencher mock\"",
+   "bencher run --error-on-alert \"<your benchmark command>\"",
+   "bencher run --github-actions \"${{ secrets.GITHUB_TOKEN }}\" \"<your benchmark command>\"",
+   "Set BENCHER_PROJECT and BENCHER_API_TOKEN environment variables",
+   "See the Self-Hosted Quickstart for on-prem deployment"
+  ],
+  "stack": [
+   "Rust",
+   "GitHub Actions",
+   "GitLab CI/CD",
+   "Docker",
+   "Kubernetes"
+  ],
+  "notable": [
+   "Bare metal runners aim to remove the >30% variance typical of shared CI runners",
+   "Supports many benchmark harnesses across Rust, Go, Python, C++, C#, Java, JavaScript, Ruby, Dart, and Shell (Hyperfine)",
+   "Can fail CI on alerts (--error-on-alert) or comment results on PRs",
+   "Available as hosted Bencher Cloud or self-hosted deployment",
+   "Localized docs in several languages"
+  ],
+  "caveats": [
+   "Bare metal runners and Bencher Cloud are paid, billed by the minute (free tier implied by 'Benchmark for free')",
+   "Bencher Cloud has occasional breaking changes, so exact CLI versions are recommended only for self-hosted use",
+   "Some directories named 'plus' fall under a separate Bencher Plus License, not Apache-2.0/MIT"
+  ],
+  "license": "Apache-2.0 or MIT (at your discretion); 'plus' directories under Bencher Plus License",
+  "category": "continuous benchmarking",
+  "keywords": [
+   "continuous benchmarking",
+   "performance regression testing",
+   "benchmark tracking",
+   "benchmark ci",
+   "criterion",
+   "go test -bench",
+   "pytest-benchmark",
+   "google benchmark",
+   "hyperfine",
+   "benchmark dashboard",
+   "self-hosted benchmarks",
+   "track performance over time",
+   "catch slowdowns in pull requests",
+   "bare metal benchmarking",
+   "github action benchmarks",
+   "gitlab ci benchmarks",
+   "benchmark graphs",
+   "benchmark alerts thresholds",
+   "build time tracking",
+   "binary size tracking",
+   "rust benchmarking",
+   "performance testing in ci",
+   "noisy ci benchmarks",
+   "benchmark results web console",
+   "benchmark comparison",
+   "perf regression detection"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5365,
+  "output": 1459
+ },
+ "generated": "2026-10-29"
+}

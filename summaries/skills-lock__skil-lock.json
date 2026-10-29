@@ -1,0 +1,96 @@
+{
+ "id": "skills-lock/skil-lock",
+ "repo": "skills-lock/skil-lock",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "SkilLock by skills-lock - Pin AI Skill behavior. Block unapproved drift in CI. See exactly what changed in every PR."
+  }
+ ],
+ "summary": {
+  "one_liner": "SkilLock is a Go CLI and GitHub Action that pins the literal capability surface (shell commands, network hosts, file paths, allowed tools, bundled scripts) of Claude Code and Codex Skills in a committed skills.lock file and blocks unapproved drift in pull requests.",
+  "what_it_does": "It scans .claude/skills/ and .codex/skills/ SKILL.md files and bundled scripts, extracting shell verbs, network URLs, file reads and writes, and allowed-tools written literally in the skill. A baseline is committed as skills.lock via \"init --baseline\", and the \"ci\" command re-scans and diffs capability sets rather than raw text. On each PR, a GitHub Action posts a comment listing added or removed capabilities with severity and reason, and returns BLOCK until a paste-ready approval entry is recorded in .skil-lock-approvals.yaml. It can also emit SARIF v2.1.0 for GitHub Code Scanning, and offers scan, lock, list, and diff subcommands. Per-file content digests bind approvals to the exact script body reviewed.",
+  "use_cases": [
+   "gate AI skill changes in pull requests",
+   "review what a Claude Code skill can execute or reach",
+   "pin approved SKILL.md behavior in a repo",
+   "detect new curl or network calls added to agent skills",
+   "upload skill capability findings to GitHub Code Scanning",
+   "audit approvals of agent skill changes"
+  ],
+  "how_to_run": [
+   "go install github.com/skills-lock/skil-lock/cmd/skil-lock@v0.2.5  (or use prebuilt binary or Homebrew: brew install skills-lock/tap/skil-lock)",
+   "skil-lock init --baseline .",
+   "git add skills.lock && git commit -m \"Pin approved AI Skill behavior\"",
+   "Add .github/workflows/skil-lock.yml using uses: skills-lock/skil-lock-action@v0.2.1 with pin-binary: v0.2.5",
+   "skil-lock ci  (run locally to preview the PR comment)",
+   "skil-lock scan . / skil-lock list . / skil-lock diff old.lock new.lock for inspection"
+  ],
+  "stack": [
+   "Go 1.22+",
+   "GitHub Actions",
+   "YAML policy and approval files",
+   "SARIF v2.1.0",
+   "JSON Schema",
+   "cosign",
+   "SLSA provenance",
+   "SBOM"
+  ],
+  "notable": [
+   "Diffs capability sets (shell, URLs, paths, tools) instead of raw text, so prose edits do not create noise",
+   "Approvals are recorded in git with reviewer, timestamp, and reason, and PR-scoped approvals re-block reintroduced deltas",
+   "Hashes every file a skill ships and binds approvals to the reviewed digest",
+   "Explicit detection boundary: documents what is not caught, such as runtime-assembled commands and natural-language intent",
+   "Maps findings to OWASP Agentic Skills Top 10 (AST01-AST10) IDs in SARIF output"
+  ],
+  "caveats": [
+   "Only Claude Code and Codex are supported in v0.1; Cursor, Copilot Skills, and Windsurf/MCP are planned",
+   "Static literal-text detection only: runtime-assembled commands, base64/eval-hidden URLs, natural-language intent, MCP servers, and cross-file references are not caught",
+   "Not a sandbox; the README states it does not analyze natural-language intent"
+  ],
+  "license": "Apache 2.0",
+  "category": "ai agent security",
+  "keywords": [
+   "ai skill security",
+   "claude code skills",
+   "codex skills",
+   "skill lockfile",
+   "skills.lock",
+   "capability pinning",
+   "pr security review",
+   "github action",
+   "ci drift detection",
+   "shell command detection",
+   "network url detection",
+   "file access policy",
+   "sarif output",
+   "code scanning",
+   "github code scanning",
+   "approval audit trail",
+   "package-lock for skills",
+   "dependabot style review",
+   "go cli",
+   "skill behavior diff",
+   "block unapproved changes",
+   "review agent skill pull requests",
+   "prompt injection risk in skills",
+   "detect curl in skill",
+   "pin agent behavior",
+   "security review for markdown agent instructions",
+   "audit ai skill changes",
+   "owasp agentic skills",
+   "skil-lock"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8408,
+  "output": 1568
+ },
+ "generated": "2026-10-29"
+}

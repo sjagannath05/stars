@@ -1,0 +1,97 @@
+{
+ "id": "rss-bridge/rss-bridge",
+ "repo": "RSS-Bridge/rss-bridge",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Feed Readers",
+   "entry": "RSS-Bridge - Generate RSS/ATOM feeds for websites which don't have one. Unlicense PHP/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "RSS-Bridge is a PHP web application that generates RSS/Atom feeds for websites that do not offer one.",
+  "what_it_does": "RSS-Bridge is a PHP web application that produces web feeds from sites that lack them. It ships with a collection of \"bridges\" (447 in total per the README), each targeting a specific site, such as Reddit, YouTube, Mastodon, Telegram, TikTok, Twitch, and The Pirate Bay. It also includes generic bridges: CssSelectorBridge and XPathBridge scrape feeds using CSS selectors or XPath, FeedMergeBridge combines several feeds, FeedReducerBridge thins out noisy feeds, and FilterBridge filters items by keyword. Output can be in Atom, HTML, JSON, MRSS, Plaintext, or Sfeed format. Responses are cached through file, SQLite, Memcached, array, or null backends, and the operator can choose which bridges are enabled. Errors can be shown as feed items, as HTTP errors, or suppressed. Optional token or HTTP Basic Auth can password-protect an instance.",
+  "use_cases": [
+   "Generate an RSS feed for a website that has none",
+   "Follow a subreddit, YouTube channel, or Mastodon account in a feed reader",
+   "Scrape a page into a feed using CSS selectors or XPath",
+   "Merge or filter several feeds into one",
+   "Self-host a private feed generator for personal use",
+   "Reduce noise in a high-volume feed"
+  ],
+  "how_to_run": [
+   "cd /var/www && composer create-project -v --no-dev --no-scripts rss-bridge/rss-bridge",
+   "docker create --name=rss-bridge --publish 3000:80 --volume $(pwd)/config:/config rssbridge/rss-bridge",
+   "docker start rss-bridge",
+   "php -S 127.0.0.1:9001"
+  ],
+  "stack": [
+   "PHP 7.4+",
+   "Docker",
+   "nginx or Caddy with php-fpm (install guides)",
+   "Parsedown",
+   "PHP Simple HTML DOM Parser",
+   "php-urljoin",
+   "Laravel framework (cited as third-party library)"
+  ],
+  "notable": [
+   "Large bridge library (447 bridges) covering many social and video sites",
+   "Generic CssSelectorBridge and XPathBridge let you build feeds for arbitrary pages without writing code",
+   "Multiple output formats including Atom, JSON, and Sfeed",
+   "Operators choose which bridges are enabled and can tune caching and error reporting",
+   "Public Domain source code"
+  ],
+  "caveats": [
+   "Some bridges depend on third-party sites that may change or block scraping; the README notes the Heroku quick deploy currently does not work",
+   "Requires PHP 7.4 or newer with several extensions in traditional installs, and a web server setup for production",
+   "Self-hosted instances need configuration and a cache directory with correct write permissions"
+  ],
+  "license": "Unlicense",
+  "category": "rss feed generator",
+  "keywords": [
+   "rss",
+   "atom",
+   "feed generator",
+   "rss bridge",
+   "web feed",
+   "feed reader",
+   "make rss from website",
+   "website to rss",
+   "scrape to feed",
+   "css selector feed",
+   "xpath feed",
+   "youtube rss",
+   "reddit rss",
+   "mastodon feed",
+   "telegram channel feed",
+   "self-hosted feed",
+   "php application",
+   "docker feed",
+   "composer install",
+   "feed merge",
+   "feed filter",
+   "feed reducer",
+   "rss without feed",
+   "follow websites in feed reader",
+   "no rss feed workaround",
+   "social media rss",
+   "json feed output",
+   "sfeed",
+   "memcached cache",
+   "sqlite cache",
+   "php-fpm nginx",
+   "caddy php",
+   "unlicense open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6406,
+  "output": 1331
+ },
+ "generated": "2026-10-29"
+}

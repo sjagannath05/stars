@@ -1,0 +1,108 @@
+{
+ "id": "gorakhargosh/watchdog",
+ "repo": "gorakhargosh/watchdog",
+ "kind": "star",
+ "description": "Python library and shell utilities to monitor filesystem events.",
+ "topics": [],
+ "language": "Python",
+ "stars": 7429,
+ "license": "Apache-2.0",
+ "homepage": "http://packages.python.org/watchdog/",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "coding",
+  "dev tools",
+  "my company"
+ ],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "watchdog - API and shell utilities to monitor file system events."
+  }
+ ],
+ "summary": {
+  "one_liner": "Python API and shell utilities (including the watchmedo command) for monitoring file system events across Linux, macOS, BSD, and Windows.",
+  "category": "file system monitoring",
+  "keywords": [
+   "watchdog",
+   "file system events",
+   "filesystem monitor",
+   "directory watcher",
+   "file watcher",
+   "inotify",
+   "fsevents",
+   "kqueue",
+   "readdirectorychangesw",
+   "polling observer",
+   "watchmedo",
+   "shell command on file change",
+   "python file monitoring",
+   "detect file changes",
+   "monitor directory changes",
+   "trigger command when file changes",
+   "auto reload on save",
+   "log file system events",
+   "pyinotify alternative",
+   "fsmonitor alternative",
+   "guard alternative",
+   "inotify-tools alternative",
+   "run script when files change",
+   "watch folder for new files",
+   "cifs file watching",
+   "recursive directory monitoring",
+   "event handler",
+   "tricks.yaml"
+  ],
+  "what_it_does": "Provides a Python API where you schedule event handlers on one or more directories (optionally recursive) and receive events such as file creation, modification, deletion, and moves. It includes an optional command-line tool, watchmedo, with subcommands such as log (print events matching glob patterns) and shell-command (run a shell command per event, with variables like watch_src_path). watchmedo can also read tricks.yaml files to run event-handler classes called tricks, which plugin authors write. The library selects a native backend per platform (inotify on Linux, FSEvents or kqueue on macOS, kqueue on BSD, ReadDirectoryChangesW on Windows) and offers a polling observer that compares directory snapshots as a portable fallback. The README also notes the PollingObserver as the recommended choice for CIFS shares and that Vim's backup-and-swap saving prevents modified events from firing.",
+  "use_cases": [
+   "Run a build or test command when source files change",
+   "Log file creation, modification, and deletion in a directory tree",
+   "Watch a folder for new files and process them",
+   "Auto-reload a development server on save",
+   "Monitor network-mounted (CIFS) directories with polling",
+   "Sync or mirror changes between directories"
+  ],
+  "how_to_run": [
+   "python -m pip install -U watchdog",
+   "python -m pip install -U 'watchdog[watchmedo]'",
+   "python script.py dir1 dir2",
+   "watchmedo log --patterns='**/*.py;**/*.txt' --ignore-directories --recursive --verbose .",
+   "watchmedo shell-command --patterns='**/*.py;**/*.txt' --recursive --command='echo \"${watch_src_path}\"' ."
+  ],
+  "stack": [
+   "Python 3.11+",
+   "PyYAML (for watchmedo)",
+   "inotify (Linux)",
+   "FSEvents (macOS)",
+   "kqueue (macOS/BSD)",
+   "ReadDirectoryChangesW (Windows)",
+   "tox (development)"
+  ],
+  "notable": [
+   "Cross-platform observers that pick the native OS file-event API, with a polling fallback",
+   "watchmedo CLI for logging events or running shell commands without writing code",
+   "tricks.yaml plugin system for reusable event handlers configured declaratively",
+   "Observer usable as a context manager for clean startup and shutdown",
+   "Documents specific quirks such as Vim's swap-file saves and kqueue file-descriptor limits"
+  ],
+  "caveats": [
+   "Requires Python 3.11 or above",
+   "kqueue backend needs the file descriptor limit raised (ulimit -n) and scales poorly on large trees",
+   "Polling observer is slow and not recommended, though it is needed for CIFS shares",
+   "Free-threaded CPython support exists, but a full thread-safety audit has not been completed, particularly for macOS FSEvents"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4985,
+  "output": 1389
+ },
+ "generated": "2026-10-29"
+}

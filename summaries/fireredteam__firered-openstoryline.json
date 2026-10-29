@@ -1,0 +1,112 @@
+{
+ "id": "fireredteam/firered-openstoryline",
+ "repo": "FireRedTeam/FireRed-OpenStoryline",
+ "kind": "star",
+ "description": "FireRed-OpenStoryline is an AI video editing agent that transforms manual editing into intention-driven directing through natural language interaction, LLM-powered planning, and precise tool orchestration. It facilitates transparent, human-in-the-loop creation with reusable Style Skills for consistent, professional storytelling.",
+ "topics": [
+  "agent",
+  "chatbot",
+  "langchain",
+  "mcp",
+  "skills",
+  "video",
+  "video-cut",
+  "video-editing",
+  "video-editing-tools"
+ ],
+ "language": "Python",
+ "stars": 3585,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-07-31",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "FireRed-OpenStoryline is an open-source AI video editing agent that lets you create and refine videos through natural-language conversation with LLM-driven planning.",
+  "what_it_does": "The project turns video creation into conversational editing: you describe the result you want and an LLM agent plans and calls editing tools. It advertises online search and download of matching images and video clips, clip segmentation and content understanding, and script generation with few-shot style transfer from reference text. It also recommends background music, voiceovers and fonts based on mood, and supports importing personal playlists with beat-syncing. Edits such as cutting, swapping, reordering clips, changing script text, color, font, stroke and position are made via natural language. Workflows can be saved as reusable Style Skills and applied to new media. Recent news items mention an ASR-based rough cut for speech videos that removes filler words, and AI transition generation via third-party AIGC services.",
+  "use_cases": [
+   "Turn a folder of clips into a finished video by describing the tone",
+   "Batch-produce videos by reapplying a saved editing style to new footage",
+   "Remove filler words and repeated sentences from speech recordings",
+   "Generate a narration script in a reference copywriting style",
+   "Auto-select background music and fonts matching a mood",
+   "Create transition shots between two clips"
+  ],
+  "how_to_run": [
+   "git clone <repo> && cd FireRed-OpenStoryline",
+   "conda create -n storyline python=3.11 && conda activate storyline",
+   "sh build_env.sh (Linux/macOS) or run download.sh and install requirements.txt manually",
+   "pip install -r requirements.txt",
+   "PYTHONPATH=src python -m open_storyline.mcp.server (Windows: $env:PYTHONPATH=\"src\"; python -m open_storyline.mcp.server)",
+   "python cli.py (CLI) or uvicorn agent_fastapi:app --host 127.0.0.1 --port 8005 (web)"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "MoviePy",
+   "FFmpeg",
+   "LangChain",
+   "MCP (Model Context Protocol)",
+   "FastAPI / uvicorn",
+   "Docker"
+  ],
+  "notable": [
+   "Editing workflows can be saved as reusable Skills and reapplied to new media",
+   "Human-in-the-loop, natural-language-only editing of clips, scripts and visual details",
+   "Ships Agent Skills for OpenClaw and Claude Code (openstoryline-install and openstoryline-use)",
+   "Optional local ASR (storyline.local_asr) for speech rough cuts",
+   "Available as a Docker image and a HuggingFace demo"
+  ],
+  "caveats": [
+   "Requires API keys configured in config.toml before use",
+   "AI transitions depend on third-party AIGC services that are costly and produce unpredictable results",
+   "Commercial-grade fonts, music and VFX need a custom asset library setup; open-source assets are basic and restricted",
+   "Local ASR needs torchaudio installed separately; automatic install script is Linux/macOS only",
+   "Several features are listed as TODO (voiceover-type editing, voice cloning, GPU-accelerated rendering)"
+  ],
+  "license": "Apache-2.0",
+  "category": "AI video editing agent",
+  "keywords": [
+   "ai video editing",
+   "video editing agent",
+   "natural language video editor",
+   "llm video editing",
+   "conversational video editing",
+   "mcp server",
+   "model context protocol",
+   "langchain agent",
+   "agent skills",
+   "claude code skill",
+   "openclaw skill",
+   "video cut",
+   "auto video cutting",
+   "rough cut",
+   "filler word removal",
+   "speech video editing",
+   "background music recommendation",
+   "auto voiceover and font",
+   "script generation",
+   "style transfer copywriting",
+   "reusable editing template",
+   "batch video creation",
+   "ffmpeg",
+   "moviepy",
+   "ai transition generation",
+   "video storytelling tool",
+   "make a video from clips by describing it",
+   "edit video by chatting",
+   "automate short video production",
+   "python video editor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6046,
+  "output": 1455
+ },
+ "generated": "2026-10-29"
+}

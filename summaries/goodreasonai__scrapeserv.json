@@ -1,0 +1,92 @@
+{
+ "id": "goodreasonai/scrapeserv",
+ "repo": "goodreasonai/ScrapeServ",
+ "kind": "star",
+ "description": "A self-hosted API that takes a URL and returns a file with browser screenshots.",
+ "topics": [],
+ "language": "Python",
+ "stars": 1174,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2025-03-09",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "A self-hosted Docker-based API that takes a URL and returns the page's data file plus browser screenshots as a multipart response.",
+  "category": "web scraping",
+  "keywords": [
+   "url to screenshots",
+   "website screenshot api",
+   "self-hosted screenshot server",
+   "web page capture",
+   "playwright scraper",
+   "firefox headless",
+   "javascript rendering",
+   "scrape website",
+   "page screenshots",
+   "docker scraper",
+   "http status and headers",
+   "download link handling",
+   "redirect following",
+   "multipart response",
+   "job queue",
+   "scroll screenshot",
+   "full page capture",
+   "webpage archive",
+   "rest api scraper",
+   "fetch rendered html",
+   "screenshot service",
+   "web scraping api",
+   "headless browser api",
+   "share files with my team",
+   "save webpage as image",
+   "capture website for ai",
+   "ripmime",
+   "bearer api key"
+  ],
+  "what_it_does": "ScrapeServ runs as a web server that accepts a JSON POST to /scrape with a URL and optional settings such as browser dimensions, wait time, and maximum screenshot count. It uses Playwright to launch a Firefox browser context per job, runs the page's JavaScript, scrolls through it, and captures screenshots of different sections. The response is a multipart/mixed payload containing a JSON part with the first request's HTTP status, headers, and metadata, the website data (usually HTML), and up to a set number of screenshots. The output image format (JPEG by default, or WebP or PNG) is chosen through the Accept header. Tasks run through a queue with configurable memory limits, and the service keeps no state between requests.</what_it_does>\n<parameter name=\"use_cases\">[\"Capture screenshots of a list of websites\", \"Fetch rendered HTML from JavaScript-heavy pages\", \"Feed web page data and images into an AI or RAG pipeline\", \"Check a URL's HTTP status and headers\", \"Download files behind links via a scraping API\", \"Run a private scraping service inside Docker\"]",
+  "use_cases": [
+   "Capture screenshots of a list of websites"
+  ],
+  "how_to_run": [
+   "Install Docker and docker compose",
+   "Create docker-compose.yml with service 'scraper' using image usaiinc/scraper:latest and port 5006:5006, then run 'docker compose up'",
+   "Or clone the repo and run 'docker compose up' to build from source",
+   "POST JSON {\"url\": \"...\"} to the /scrape endpoint on port 5006",
+   "Optionally set SCRAPER_API_KEY values in a .env file inside the scraper folder"
+  ],
+  "stack": [
+   "Python",
+   "Playwright",
+   "Firefox",
+   "Docker",
+   "docker compose",
+   "PIL"
+  ],
+  "notable": [
+   "Browser-based scraping that runs the site's JavaScript and scrolls through sections to screenshot them",
+   "Each job runs in a fresh browser context with memory limits and timeouts",
+   "Built-in URL checks reject loopback, local, and non-HTTP targets",
+   "Optional API keys via SCRAPER_API_KEY environment variables using Bearer auth",
+   "Pre-built Docker image available, so no build is needed"
+  ],
+  "caveats": [
+   "Resource intensive because each job launches a Firefox browser",
+   "README warns that navigating to untrusted websites is a security risk and recommends isolation and URL screening",
+   "Default memory limit is 4 GB per child scraping process and up to 3 concurrent tasks",
+   "Blocking API with no persistent state"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3777,
+  "output": 1290
+ },
+ "generated": "2026-10-29"
+}

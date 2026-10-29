@@ -1,0 +1,97 @@
+{
+ "id": "roypadina/languard",
+ "repo": "roypadina/LanGuard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "LanGuard - Wi-Fi off when wired LAN active, back on when unplugged. Edge-based, wake-aware, no admin required."
+  }
+ ],
+ "summary": {
+  "one_liner": "LanGuard is a small native macOS menu-bar app that turns Wi-Fi off when a wired Ethernet link comes up and back on when the cable is unplugged.",
+  "what_it_does": "It watches wired link state through SystemConfiguration and toggles Wi-Fi power via CoreWLAN, acting only on plug/unplug transitions so a manual Wi-Fi change is respected until the next unplug. It handles wake-from-sleep transitions, lets you choose which wired and Wi-Fi adapters are triggers or controlled, and ignores virtual adapters (VPN, bridge, VMware vmnet) by default. A \"Switch to Wi-Fi\" action (default shortcut ⌃⌥⌘L) moves traffic to Wi-Fi with a progress window before you unplug, and a master switch pauses automatic toggling. The optional Connection Protection feature installs a root helper and LaunchDaemon guardian to keep a stable address across LAN and Wi-Fi, and includes a panic restore path.",
+  "use_cases": [
+   "automatically turn off Wi-Fi when docked on Ethernet",
+   "stop Wi-Fi and wired LAN from competing for default route",
+   "switch to Wi-Fi safely before unplugging a cable",
+   "keep Mac network connections stable when swapping LAN and Wi-Fi",
+   "menu-bar network toggle without admin password"
+  ],
+  "how_to_run": [
+   "brew install --cask roypadina/tap/languard",
+   "xattr -dr com.apple.quarantine \"/Applications/LanGuard.app\" (optional, if macOS blocks the ad-hoc signed app)",
+   "git clone the repository, then cd LanGuard",
+   "xcodebuild -workspace LanGuard.xcworkspace -scheme LanGuard -configuration Release build",
+   "cp -R ~/Library/Developer/Xcode/DerivedData/LanGuard-*/Build/Products/Release/LanGuard.app /Applications/",
+   "open /Applications/LanGuard.app"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "CoreWLAN",
+   "SystemConfiguration (SCDynamicStore)",
+   "NSWorkspace",
+   "SMAppService",
+   "UNUserNotificationCenter",
+   "ifconfig (fallback link-state check)",
+   "root helper shell script and LaunchDaemon (optional connection protection)"
+  ],
+  "notable": [
+   "Edge-based toggling: only reacts to plug/unplug transitions, so manual Wi-Fi changes stick",
+   "No admin rights needed for the core Wi-Fi toggle; only optional Connection Protection asks for one admin prompt",
+   "Per-interface selection of wired triggers and controlled Wi-Fi adapters",
+   "Switch to Wi-Fi action waits for internet reachability before saying it is safe to unplug",
+   "Panic restore path via menu, terminal script, or manual commands"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later; universal binary for Apple Silicon and Intel",
+   "Ad-hoc signed and not notarized, so macOS blocks first launch until you approve it in System Settings",
+   "Connection Protection is IPv4 only, needs DHCP on both LAN and Wi-Fi, and conflicts with full-tunnel VPNs",
+   "Notarization is listed as roadmap and needs a paid Apple Developer ID"
+  ],
+  "license": "MIT",
+  "category": "macos network utilities",
+  "keywords": [
+   "wifi off when ethernet plugged in",
+   "disable wifi when wired",
+   "macos wifi toggle",
+   "menu bar network app",
+   "ethernet wifi switcher",
+   "auto wifi toggle",
+   "lan wifi switch",
+   "macos ethernet priority",
+   "wifi power corewlan",
+   "systemconfiguration link state",
+   "edge-based network toggle",
+   "wake from sleep network",
+   "usb-c dock ethernet",
+   "thunderbolt dock wifi",
+   "usb ethernet adapter macos",
+   "disable wifi on dock",
+   "stop wifi competing with ethernet",
+   "default route wired wifi",
+   "virtual adapter ignore vpn vmnet",
+   "switch to wifi before unplugging",
+   "swift macos app",
+   "homebrew cask macos",
+   "no admin macos utility",
+   "connection protection macos",
+   "toggle wifi automatically",
+   "languard alternative bridgechecker",
+   "togglewifi alternative",
+   "open source macos network tool",
+   "wired and wireless handover"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6747,
+  "output": 1633
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "benfred/py-spy",
+ "repo": "benfred/py-spy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "py-spy - A sampling profiler for Python programs. Written in Rust."
+  }
+ ],
+ "summary": {
+  "one_liner": "py-spy is a low-overhead sampling profiler for CPython programs, written in Rust, that attaches to a running process by PID or launches a script, without modifying the program's code.",
+  "what_it_does": "py-spy reads the memory of a running Python process to reconstruct its call stacks, so it does not run inside the profiled program. The record subcommand samples a process and writes a flame graph (SVG), speedscope profile, or raw data, with options for sampling rate, GIL-only filtering, native extension profiling, thread IDs, and subprocesses. The top subcommand shows a live, top-style view of which functions consume the most time. The dump subcommand prints the current call stack of each Python thread, optionally with local variables, which is useful for finding where a program is hung. The README says it supports Linux, macOS, Windows and FreeBSD and CPython versions 2.3-2.7 and 3.3-3.15. Idle-thread detection and a --nonblocking mode that avoids pausing the target are also described.",
+  "use_cases": [
+   "profile a slow Python program without changing its code",
+   "find where a production Python service spends CPU time",
+   "generate a flame graph of a Python process",
+   "diagnose a hung Python process by dumping thread stacks",
+   "live view of hot functions in a running Python program",
+   "profile multiprocessing or gunicorn worker subprocesses"
+  ],
+  "how_to_run": [
+   "pip install py-spy",
+   "py-spy record -o profile.svg --pid 12345",
+   "py-spy record -o profile.svg -- python myprogram.py",
+   "py-spy top --pid 12345",
+   "py-spy dump --pid 12345"
+  ],
+  "stack": [
+   "Rust",
+   "CPython",
+   "process_vm_readv (Linux)",
+   "vm_read (macOS)",
+   "ReadProcessMemory (Windows)",
+   "bindgen",
+   "libunwind (Rust build on Linux/Windows)"
+  ],
+  "notable": [
+   "Samples from outside the process, so it is safe for production use per the README",
+   "Works without restarting the program or modifying its code",
+   "Record, top, and dump subcommands cover flame graphs, live views, and stack snapshots",
+   "Can profile native C/C++/Cython extensions with --native on supported platforms",
+   "Installable from PyPI as prebuilt wheels"
+  ],
+  "caveats": [
+   "Attaching to an existing PID usually requires root on Linux, and macOS always requires root; Docker and Kubernetes need SYS_PTRACE capability",
+   "macOS System Integrity Protection blocks profiling of the system /usr/bin/python",
+   "Native extension profiling is only available on some platforms and architectures; 32-bit Windows, PyPy, and UCS2 Python 2 are not supported",
+   "Idle-thread detection is heuristic and can produce false positives; --nonblocking can yield occasional errors or partial stacks"
+  ],
+  "category": "python profiling tools",
+  "license": "MIT License",
+  "keywords": [
+   "py-spy",
+   "sampling profiler",
+   "python profiler",
+   "flame graph",
+   "flamegraph",
+   "speedscope",
+   "rust profiler",
+   "low overhead profiling",
+   "production profiling",
+   "attach to running process",
+   "live top view",
+   "stack dump",
+   "thread dump",
+   "debug hung python process",
+   "cpython profiling",
+   "native extension profiling",
+   "cython profiling",
+   "gil detection",
+   "profile without modifying code",
+   "find slow functions",
+   "performance bottleneck python",
+   "py-spy alternative",
+   "rbspy",
+   "cprofile alternative",
+   "profile gunicorn workers",
+   "multiprocessing profiling",
+   "pip profiler tool",
+   "docker profiling ptrace",
+   "kubernetes profiling",
+   "where is my python program spending time"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5869,
+  "output": 1345
+ },
+ "generated": "2026-10-29"
+}

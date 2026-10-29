@@ -1,0 +1,99 @@
+{
+ "id": "ryware/nona-config",
+ "repo": "Ryware/nona-config",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Software Development - Feature Toggle",
+   "entry": "Nona - Remote configuration and feature flag service with a single REST API, multiple environments, and official JavaScript and .NET clients (alternative to Firebase Remote Config). (Source Code) Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Nona is a self-hosted feature flag and remote configuration service, positioned as an open-source alternative to Firebase Remote Config, shipped as a Docker image with a REST API and web UI.",
+  "what_it_does": "Nona stores key-value configuration per project and environment and serves it over a single HTTP API, where the API key determines the project and the response body is the raw stored value with its logical type in the X-Nona-Content-Type header. It includes an admin web UI for editing parameters and feature toggles without redeploying, and supports releases, including fetching from an active release or an exact or wildcard release version. Official client libraries are described for JavaScript/Node.js/React Native, .NET, Kotlin/Android (Java usable), and Swift, plus OpenFeature providers for server and browser JavaScript. A CLI (npm, Chocolatey, or GitHub Releases binary) includes a command to migrate parameters from Firebase Remote Config and AWS Parameter Store. The README states that reads are not evaluated per user: there is no built-in targeting, percentage rollout, or userId-based evaluation on the HTTP read path. Standalone mode uses SQLite; a primary/replica Docker Compose setup uses embedded libSQL with gRPC replication.",
+  "use_cases": [
+   "toggle feature flags without redeploying",
+   "update mobile app config without an app store release",
+   "kill switch to disable broken features",
+   "migrate from Firebase Remote Config",
+   "serve app configuration over a plain REST API",
+   "self-host remote config for web and mobile apps"
+  ],
+  "how_to_run": [
+   "docker run -d --name nona --restart unless-stopped -p 18080:8080 -v nona-data:/var/lib/nona rywaredev/nona:latest",
+   "Open the web UI, create a project, add an environment, set a key-value pair, and create an API key (guided setup described in README)",
+   "curl \"<API base>/api/environments/{environmentId}/parameters/{key}\" -H \"X-Api-Key: your-api-key\"",
+   "Standalone compose: copy deploy/compose/standalone-prod.yml to your server and run docker compose -f standalone-prod.yml up -d",
+   "npm install nona-client (JavaScript) or dotnet add package Nona.Client (.NET)"
+  ],
+  "stack": [
+   "Docker",
+   "SQLite",
+   "libSQL / sqld",
+   "JavaScript / Node.js",
+   "React Native",
+   ".NET / C#",
+   "Kotlin",
+   "Swift",
+   "OpenFeature",
+   "Go and Python examples (plain HTTP)",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Plain HTTP API usable from any language with no SDK required",
+   "Migration command imports existing Firebase Remote Config parameters",
+   "Single Docker container with SQLite standalone mode and optional libSQL primary/replica replication",
+   "OpenFeature providers for server and browser JavaScript",
+   "Release-based reads with exact or wildcard version selectors"
+  ],
+  "caveats": [
+   "No runtime targeting, percentage rollout, or per-user evaluation on the HTTP read path",
+   "Primary/replica compose files leave SQL HTTP and replication gRPC listeners unauthenticated on the private network, per the README",
+   "Frontend-scoped API key required for the Kotlin and browser OpenFeature clients"
+  ],
+  "license": "Apache-2.0",
+  "category": "feature flag service",
+  "keywords": [
+   "feature flags",
+   "feature toggle",
+   "remote config",
+   "remote configuration",
+   "firebase remote config alternative",
+   "self-hosted feature flags",
+   "kill switch",
+   "openfeature",
+   "openfeature provider",
+   "libsql",
+   "sqlite",
+   "rest api config",
+   "docker compose",
+   "mobile app config",
+   "dotnet client",
+   "javascript client",
+   "cli migration tool",
+   "config without redeploy",
+   "toggle features from dashboard",
+   "app config server",
+   "self-host config service",
+   "dynamic configuration",
+   "environment variables service",
+   "release management config",
+   "apache 2.0 config tool",
+   "configuration as a service self-hosted",
+   "launchdarkly alternative",
+   "flag management",
+   "runtime configuration",
+   "feature rollout kill switch"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6403,
+  "output": 1478
+ },
+ "generated": "2026-10-29"
+}

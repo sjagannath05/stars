@@ -1,0 +1,100 @@
+{
+ "id": "sara-star-quant/presence",
+ "repo": "sara-star-quant/presence",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "presence by sara-star-quant - Per-repo memory, outcome telemetry, and a calibrated-confidence gate for Claude Code, with MCP and AGENTS.md projections so other AI coding tools can read its context. Notes survive sessions; success claims need test evidence; your reverts are remembered. Local-only, stdlib runtime."
+  }
+ ],
+ "summary": {
+  "one_liner": "presence is a local-only Claude Code plugin that keeps per-repo notes, outcome telemetry, and a confidence gate so later sessions pick up prior context, with read-only MCP and AGENTS.md projections for other AI tools.",
+  "what_it_does": "It builds and reuses a living model of each repo Claude Code touches, so architecture notes persist across sessions. It tracks commits Claude made and watches for reverts, amends, and PR closes, then surfaces that history in future sessions. It collects file changes, test failures, and build results between turns and shows them at the next prompt. A Stop hook checks whether success claims like \"fixed\" or \"done\" are backed by test or build evidence since the change, warns when they are not, and can optionally hard-gate git commit and push. A read-only MCP server and an AGENTS.md adapter expose the same context to other clients. State is stored under ~/.claude/presence/ and is not uploaded.",
+  "use_cases": [
+   "give Claude Code memory of a repo across sessions",
+   "track whether committed changes get reverted",
+   "require test evidence before accepting 'done' claims",
+   "share project context with Cursor, Codex, or Gemini CLI via AGENTS.md",
+   "expose project notes to MCP clients like Claude Desktop",
+   "enforce commit gates in regulated or high-security setups"
+  ],
+  "how_to_run": [
+   "curl -fsSL <installer URL from README> | bash",
+   "Optional: append -s -- --bootstrap to auto-install Python 3.13 via uv",
+   "~/.claude/plugins/presence/install.sh --verify",
+   "Restart Claude Code and run /presence-status",
+   "Optional: ./install.sh --build-ext for the Rust fast path"
+  ],
+  "stack": [
+   "Python 3.12+ (stdlib runtime)",
+   "Claude Code plugin hooks",
+   "MCP server over JSON-RPC stdio",
+   "AGENTS.md adapter",
+   "Rust daemon client (optional, via --build-ext or --download-ext)",
+   "cryptography (optional, for Zero-Trust at-rest encryption)",
+   "gh CLI (optional, for PR status)"
+  ],
+  "notable": [
+   "Global install with no per-project setup; four presets from solo-dev to zerotrust",
+   "Outcome telemetry tracks reverts and amends of Claude's own commits",
+   "Calibrated-confidence Stop hook checks success claims against test and build evidence",
+   "Read-only MCP and AGENTS.md projections let Cursor, Codex, Gemini CLI and others read the same context",
+   "Zero-Trust preset adds AES-GCM at rest, tamper-evident audit log, and fail-closed integrity checks"
+  ],
+  "caveats": [
+   "Windows is not supported directly; the README says to install in WSL2",
+   "The README documents CI only on macOS arm64 and Linux x86_64",
+   "Optional features (PR status via gh, update check, webhook notifier) make network calls when enabled; they are off by default",
+   "Not a compliance certification; the README's disclaimer says it is not a substitute for tests, review, or security review"
+  ],
+  "license": "Apache-2.0",
+  "category": "claude code memory plugin",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "persistent memory",
+   "session memory",
+   "project notes",
+   "context persistence",
+   "mcp server",
+   "model context protocol",
+   "agents.md",
+   "cross-tool context",
+   "cursor",
+   "codex",
+   "gemini cli",
+   "windsurf",
+   "github copilot",
+   "claude desktop",
+   "outcome telemetry",
+   "revert tracking",
+   "confidence gate",
+   "verification gate",
+   "stop hook",
+   "commit gate",
+   "git hooks",
+   "local-only",
+   "privacy",
+   "zero trust",
+   "aes-gcm encryption",
+   "redaction",
+   "pii redaction",
+   "stdlib python",
+   "event digest",
+   "test evidence",
+   "keep context between sessions",
+   "stop claude from claiming done without tests"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7217,
+  "output": 1416
+ },
+ "generated": "2026-10-29"
+}

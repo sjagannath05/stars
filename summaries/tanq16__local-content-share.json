@@ -1,0 +1,90 @@
+{
+ "id": "tanq16/local-content-share",
+ "repo": "Tanq16/local-content-share",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "Local Content Share - Store and share text snippets and files within your local network. MIT Docker/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted app for sharing text snippets, files, and links across a local network with no client-side setup, and a built-in Markdown notepad.",
+  "category": "self-hosted file sharing",
+  "keywords": [
+   "local network sharing",
+   "snippet sharing",
+   "text snippets",
+   "pastebin",
+   "self-hosted pastebin",
+   "file sharing",
+   "local file share",
+   "airdrop alternative",
+   "scratchpad",
+   "notepad",
+   "markdown notepad",
+   "link sharing",
+   "homelab",
+   "docker",
+   "go",
+   "sse",
+   "server-sent events",
+   "pwa",
+   "catppuccin",
+   "drag and drop upload",
+   "file expiration",
+   "ttl",
+   "auto delete files",
+   "share files with my team",
+   "share text between devices",
+   "paste from clipboard",
+   "lan file sharing",
+   "temporary file hosting",
+   "local-pastebin alternative"
+  ],
+  "what_it_does": "Lets you store and share text snippets, uploaded files, and links with any device on your local network through a web browser, with no client software needed. Snippets can be created, renamed, edited, viewed, and copied, and files can be uploaded (including multiple files via drag-and-drop or paste), downloaded, renamed, and deleted. Each item can have an expiration of Never, 1 hour, 4 hours, 1 day, or a custom value such as 3w or 2M, and a DEFAULT_EXPIRY environment variable can set the default. Links are listed in last-in, first-shown order, and a Notepad supports Markdown editing and preview with autosave. The UI pushes live updates to all connected clients using SSE, and the frontend works offline with local assets and as a PWA.",
+  "use_cases": [
+   "share text snippets between devices on a home network",
+   "temporarily host files for others on the LAN",
+   "quick paste of text or screenshots from a phone to a computer",
+   "keep a shared scratchpad or Markdown notes accessible from any device",
+   "store and share a list of useful links",
+   "AirDrop-style transfer between devices without cloud services"
+  ],
+  "how_to_run": [
+   "mkdir $HOME/.localcontentshare",
+   "docker run --name local-content-share -p 8080:8080 -v $HOME/.localcontentshare:/app/data tanq16/local-content-share:main",
+   "go install github.com/tanq16/local-content-share@latest",
+   "git clone the repository, cd local-content-share, then go build ."
+  ],
+  "stack": [
+   "Go (1.23+ for building from source)",
+   "Docker (multi-arch x86-64 and ARM64 image)",
+   "Server-Sent Events (SSE)",
+   "Markdown editor and preview",
+   "Catppuccin theme"
+  ],
+  "notable": [
+   "Automatic per-item expiration (TTL) with cycling presets and custom durations",
+   "Multi-file drag-and-drop upload and clipboard paste of files or screenshots",
+   "Real-time updates to all clients via SSE",
+   "Works fully offline with local assets and can be installed as a PWA",
+   "Single binary or Docker image, with a data directory that holds files, snippets, notes, and expiration.json"
+  ],
+  "caveats": [
+   "No authentication is implemented; the README says it is meant only for the homelab and must be placed behind auth if exposed publicly",
+   "Reverse proxies may impose upload size limits or buffer uploads, so extra settings (for example, Nginx Proxy Manager custom config) may be needed"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3898,
+  "output": 1257
+ },
+ "generated": "2026-10-29"
+}

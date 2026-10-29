@@ -1,0 +1,98 @@
+{
+ "id": "harry-kp/vortix",
+ "repo": "Harry-kp/vortix",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📺 Terminal (27)",
+   "entry": "Vortix - Terminal UI for WireGuard and OpenVPN with multi-tunnel control, real-time telemetry, and leak guarding."
+  }
+ ],
+ "summary": {
+  "one_liner": "Vortix is a keyboard-driven terminal UI (with a CLI and JSON output) for managing multiple WireGuard and OpenVPN tunnels, showing live network telemetry and checking for IP, IPv6, and DNS leaks.",
+  "what_it_does": "Vortix imports WireGuard .conf, OpenVPN .ovpn/.conf, and NetBird .netbird profiles, and connects them from an interactive dashboard or the command line. It runs multiple tunnels at once, distinguishing the default-route tunnel from split-route tunnels, with a Switch or Cancel choice when routes conflict. It shows throughput, latency, jitter, packet loss, public IP, ISP, and location. A Security Guard panel reports IPv4/IPv6 exposure, DNS policy, encryption, and kill-switch state as one verdict. It orchestrates the system wg, wg-quick, and openvpn tools rather than implementing the protocols itself.",
+  "use_cases": [
+   "Manage several WireGuard or OpenVPN profiles at once",
+   "Check whether a VPN connection leaks IPv4, IPv6, or DNS traffic",
+   "Monitor tunnel throughput, latency, and packet loss in a terminal",
+   "Connect and disconnect VPN tunnels over SSH",
+   "Script VPN control with JSON output and exit codes",
+   "Enable a firewall kill switch for a tunnel on macOS or Linux"
+  ],
+  "how_to_run": [
+   "brew install wireguard-tools openvpn",
+   "brew install vortix",
+   "vortix import ./work.conf",
+   "sudo vortix",
+   "sudo vortix up work",
+   "vortix status"
+  ],
+  "stack": [
+   "Rust (source builds need Rust 1.85+)",
+   "WireGuard tools (wg, wg-quick)",
+   "OpenVPN",
+   "PF (pfctl) on macOS",
+   "nftables on Linux",
+   "systemd-resolved or resolvconf"
+  ],
+  "notable": [
+   "Distinguishes the default-route tunnel from split-route tunnels running side by side",
+   "Security Guard gives one verdict covering IPv4, IPv6, DNS, encryption, and kill-switch state",
+   "Kill switch modes: off, block-on-drop, and vpn-only",
+   "Versioned JSON envelope, NDJSON watch streams, and stable exit codes for automation",
+   "Also imports NetBird networks (.netbird)"
+  ],
+  "caveats": [
+   "Requires the system wireguard-tools and openvpn packages to be installed separately unless installed via .deb or .rpm",
+   "Changing tunnels, routes, DNS, or the firewall requires root",
+   "macOS is the primary development platform; Linux is tested on Ubuntu and Fedora in CI"
+  ],
+  "license": "unknown",
+  "category": "terminal vpn client",
+  "keywords": [
+   "vpn",
+   "terminal ui",
+   "tui",
+   "wireguard",
+   "openvpn",
+   "wg-quick",
+   "multi-tunnel",
+   "split tunnel",
+   "leak detection",
+   "dns leak",
+   "ipv6 leak",
+   "kill switch",
+   "network telemetry",
+   "throughput monitor",
+   "latency jitter",
+   "packet loss",
+   "profile management",
+   "vpn profiles",
+   "netbird",
+   "rust cli",
+   "ratatui",
+   "macos vpn",
+   "linux vpn",
+   "pf firewall",
+   "nftables",
+   "ssh vpn management",
+   "json output",
+   "cli vpn manager",
+   "connect vpn from terminal",
+   "check my vpn is leaking",
+   "manage multiple vpn connections",
+   "keyboard vpn client",
+   "wireguard tui"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3902,
+  "output": 1329
+ },
+ "generated": "2026-10-29"
+}

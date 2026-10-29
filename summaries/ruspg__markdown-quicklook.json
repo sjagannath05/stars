@@ -1,0 +1,100 @@
+{
+ "id": "ruspg/markdown-quicklook",
+ "repo": "ruspg/markdown-quicklook",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "QuickLook Plugins",
+   "entry": "markdown-quicklook - Quick Look plugin for rendered Markdown previews with syntax highlighting. [![Open-Source Software][OSS Icon]](https://github.com/ruspg/markdown-quicklook) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📝 Markdown (22)",
+   "entry": "markdown-quicklook - Rendered Markdown Quick Look preview with syntax highlighting, YAML front matter, configurable fonts/colors, and a menu bar toggle."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS build wrapper that adds rendered Markdown with syntax highlighting to Quick Look previews, built on the PreviewMarkdown extensions by smittytone.",
+  "what_it_does": "Makes pressing Space on a .md file in Finder show a rendered preview instead of plain source. The README says it applies a GitHub-style \"Compact\" theme with Helvetica Neue body text, Menlo code, a measured column width, and automatic light and dark pages. Rendering is done by building an NSAttributedString and laying it out with TextKit, not by a WebView or CSS. A companion menu bar app, QLToggle, switches Markdown rendering on or off for both the preview and thumbnail extensions, shows extension status via pluginkit, offers Launch at Login, and can restart Quick Look. The build script clones the upstream PreviewMarkdown submodule, applies a patch layer to a clean checkout, verifies the patches by outcome, and builds ad-hoc signed apps into ~/Applications. The README also mentions YAML front matter and configurable fonts and colours in the host app's Settings.",
+  "use_cases": [
+   "preview markdown files in Finder without opening an editor",
+   "rendered Quick Look preview for .md documents",
+   "toggle between rendered and plain-text Markdown previews on macOS",
+   "build a local Quick Look Markdown plugin from source",
+   "customise Quick Look fonts and colours for Markdown reading"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash",
+   "git clone --recursive <repository-url>",
+   "cd markdown-quicklook",
+   "./build.sh",
+   "./test.sh",
+   "./reset-settings.sh"
+  ],
+  "stack": [
+   "Swift",
+   "Objective-C-free TextKit rendering",
+   "NSAttributedString",
+   "bash",
+   "sed/perl patch layer",
+   "Xcode (full install required for source builds)",
+   "PreviewMarkdown (upstream submodule by smittytone)"
+  ],
+  "notable": [
+   "Patch layer applied to a clean submodule checkout, with 74 outcome-based assertions in the build (68 in one section of the README)",
+   "No CSS or WebView in the render path; theme is built from Swift attributes and paragraph styles",
+   "QLToggle menu bar app toggles Previewer and Thumbnailer extensions together",
+   "Universal binary for Apple Silicon and Intel, one-line installer that pins versions optionally"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later; source builds need a full Xcode install, not only command line tools",
+   "Builds are ad-hoc signed and not notarized, so downloaded copies need quarantine cleared",
+   "Thumbnails look plainer than previews and the qlmanage thumbnail channel is hard to drive from scripts"
+  ],
+  "license": "MIT for QLToggle, the build and test scripts, and the patch layer; PreviewMarkdown itself is under its upstream license",
+  "category": "macos quick look plugin",
+  "keywords": [
+   "quick look",
+   "quicklook",
+   "markdown preview",
+   "macos markdown viewer",
+   "rendered markdown",
+   "syntax highlighting",
+   "finder preview",
+   "press space preview",
+   "qlmanage",
+   "quick look plugin",
+   "previewmarkdown",
+   "textkit",
+   "nsattributedstring",
+   "swift",
+   "menu bar toggle",
+   "dark mode",
+   "light and dark theme",
+   "yaml front matter",
+   "github markdown style",
+   "markdown thumbnails",
+   "view md files on mac",
+   "read markdown without editor",
+   "source-available wrapper",
+   "ad-hoc signed build",
+   "universal binary",
+   "apple silicon",
+   "intel mac",
+   "local build script",
+   "markdown reader",
+   "plain text vs rendered",
+   "launch at login"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3983,
+  "output": 1369
+ },
+ "generated": "2026-10-29"
+}

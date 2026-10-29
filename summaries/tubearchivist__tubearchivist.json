@@ -1,0 +1,101 @@
+{
+ "id": "tubearchivist/tubearchivist",
+ "repo": "tubearchivist/tubearchivist",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "Tube Archivist ⚠ - Organize, search, and enjoy your YouTube collection. Subscribe, download, and track viewed content with metadata indexing and a user-friendly interface. (Source Code, Clients) GPL-3.0 Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "Tube Archivist | Archive and index your favourite YouTube channels"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tube Archivist is a self-hosted, Docker-based web app that downloads, indexes, and organizes your YouTube channel subscriptions and videos for offline search and playback.",
+  "what_it_does": "It lets you subscribe to YouTube channels and download videos using yt-dlp, then indexes them with metadata from YouTube so they can be searched and browsed through a web interface. It tracks which videos have been viewed or not viewed. The README also mentions playlists, SponsorBlock integration, subtitle download and indexing, comment download, per-channel settings, and scheduled rescans and downloads. Authentication options include local accounts, LDAP, and reverse-proxy forwarded auth. Elasticsearch is used for search and Redis is a required connection.",
+  "use_cases": [
+   "archive a YouTube channel for offline viewing",
+   "search a large downloaded YouTube video collection",
+   "track watched and unwatched YouTube videos",
+   "subscribe to channels and auto-download new uploads",
+   "self-hosted YouTube media server for kids or family",
+   "feed archived videos into Jellyfin or Plex"
+  ],
+  "how_to_run": [
+   "Install Docker and make sure it is running.",
+   "Copy the example docker-compose.yml from the repository.",
+   "Set the required environment variables: TA_HOST, TA_USERNAME, TA_PASSWORD, ELASTIC_PASSWORD, REDIS_CON, and TZ.",
+   "On Linux hosts, set vm.max_map_count to at least 262144 for Elasticsearch.",
+   "Start the stack with docker compose and open the web interface.",
+   "In settings, set the download format, subscribe to channels, then start the download."
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "Docker",
+   "Elasticsearch",
+   "Redis",
+   "yt-dlp",
+   "Nginx"
+  ],
+  "notable": [
+   "Browser companion extension for Firefox and Chrome, plus Jellyfin and Plex plugins",
+   "Per-channel settings and optional auto-deletion of watched items",
+   "Apprise notification support",
+   "Backup and restore, and import from JSON files",
+   "Optional automatic yt-dlp updates on container start"
+  ],
+  "caveats": [
+   "Needs about 2GB RAM for a small setup and about 4GB for mid to large installations, plus Elasticsearch.",
+   "Inherits all yt-dlp limitations; videos YouTube or yt-dlp cannot extract will not download.",
+   "Media file naming is not flexible, and created files must be playable in the browser you use."
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted youtube archiver",
+  "keywords": [
+   "youtube archiver",
+   "youtube archive",
+   "self-hosted youtube",
+   "youtube downloader",
+   "yt-dlp",
+   "youtube-dl alternative",
+   "video archiving",
+   "offline youtube",
+   "media server",
+   "docker compose",
+   "elasticsearch",
+   "redis",
+   "django",
+   "channel subscriptions",
+   "watch history tracking",
+   "search my youtube videos",
+   "save youtube channels locally",
+   "back up youtube videos",
+   "organize downloaded videos",
+   "sponsorblock",
+   "subtitles indexing",
+   "jellyfin plugin",
+   "plex plugin",
+   "ldap login",
+   "reverse proxy auth",
+   "homelab video library",
+   "download youtube playlists",
+   "youtube for kids offline",
+   "apprise notifications",
+   "tubearchivist"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7089,
+  "output": 1260
+ },
+ "generated": "2026-10-29"
+}

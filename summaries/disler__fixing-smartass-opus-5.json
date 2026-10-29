@@ -1,0 +1,97 @@
+{
+ "id": "disler/fixing-smartass-opus-5",
+ "repo": "disler/fixing-smartass-opus-5",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Configuration",
+   "entry": "Fixing Opus 5 by disler - A single appendable system prompt that retunes Opus 5's communication channel — cutting verbal tics, heading theater, and output-token bloat — passed via --append-system-prompt-file with no build step or dependencies. Comes with a just-driven side-by-side compare loop so you can see the difference, and a set of diagrams breaking down the prompt's anatomy. Opinionated, unu"
+  }
+ ],
+ "summary": {
+  "one_liner": "A single appendable system prompt file that tunes Claude Opus 5 toward terser, less bloated engineering responses, with a just-driven side-by-side comparison against the stock model.",
+  "what_it_does": "The core deliverable is sr_opus_5_system_prompt.md, a markdown file passed to Claude Code via --append-system-prompt-file. It contains a purpose statement, positive and negative behavior patterns (including a banned-phrase list for tics like \"load-bearing\" and flattery), short reference codes (F1, D1, O1, R1, Q1, A1) for referring back to findings, decisions, options, risks, questions and actions, hard scope boundaries (no unrequested cleanup, no co-author credits, no completion claims without evidence), and short aliases such as scr, eli, foc and ref. A examples section holds do and do-not response pairs. A justfile provides recipes that run stock Opus 5 against the modified prompt on the same task (summarizing a long blog post), and a compare recipe opens a herdr workspace with both Claude Code panes so response length, output tokens and time can be observed. Parallel Pi recipes run the same experiment using --append-system-prompt. The README also describes an /install slash command that checks toolchain prerequisites.",
+  "use_cases": [
+   "reduce verbose or padded output from Claude Opus 5",
+   "tune a coding agent's response style globally",
+   "compare stock and customized system prompts side by side",
+   "stop AI tools from adding co-author credits to commits",
+   "cut output token usage in coding sessions",
+   "portable system prompt for Claude Code or Pi"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into it",
+   "brew install just herdr jq",
+   "npm install -g @mariozechner/pi (optional, for Pi recipes)",
+   "just (lists available recipes)",
+   "just sr-opus (boots Opus 5 with the system prompt appended)",
+   "just compare (opens side-by-side herdr workspace with stock and modified prompts)"
+  ],
+  "stack": [
+   "Claude Code",
+   "Claude Opus 5",
+   "just",
+   "herdr",
+   "jq",
+   "Pi coding agent",
+   "Markdown"
+  ],
+  "notable": [
+   "Entire product is one markdown file appended at launch, with no build step or dependencies",
+   "Reference-code system (F1, D1, O1, R1, Q1, A1) lets follow-ups be short commands like 'keep D1, reject O2'",
+   "Built-in A/B compare loop that runs stock and modified prompts on the same task in parallel panes",
+   "Same prompt file is claimed to work in both Claude Code and the Pi agent"
+  ],
+  "caveats": [
+   "Probabilistic: banned phrases and em dashes can still slip through; the README says to extend the negative list when they do",
+   "Appends to rather than replaces Claude Code's built-in system prompt, so harness-level behaviors persist",
+   "The verbal tic list is specific to Opus 5 and will need retuning for newer models"
+  ],
+  "license": "MIT",
+  "category": "claude system prompts",
+  "keywords": [
+   "system prompt",
+   "claude opus 5",
+   "claude code",
+   "append system prompt",
+   "prompt engineering",
+   "verbose ai output",
+   "concise responses",
+   "output token reduction",
+   "banned phrases",
+   "sycophancy removal",
+   "co-author credit",
+   "commit message attribution",
+   "reference codes",
+   "aliases",
+   "side by side comparison",
+   "a/b test prompts",
+   "herdr",
+   "just recipes",
+   "justfile",
+   "pi coding agent",
+   "coding agent configuration",
+   "ai response style",
+   "terse answers",
+   "ai assistant tone",
+   "shorten ai answers",
+   "control llm verbosity",
+   "cut ai fluff",
+   "make claude more direct",
+   "agent operating contract",
+   "few-shot examples prompt",
+   "markdown system prompt"
+  ],
+  "kind": "tool"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4555,
+  "output": 1412
+ },
+ "generated": "2026-10-29"
+}

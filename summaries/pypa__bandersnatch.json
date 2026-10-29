@@ -1,0 +1,90 @@
+{
+ "id": "pypa/bandersnatch",
+ "repo": "pypa/bandersnatch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Package Repositories",
+   "entry": "bandersnatch - PyPI mirroring tool provided by the Python Packaging Authority (PyPA)."
+  }
+ ],
+ "summary": {
+  "one_liner": "bandersnatch is a PyPI mirroring client from the Python Packaging Authority that syncs PyPI's static package files and metadata to a local mirror.",
+  "what_it_does": "Implements PEP 381, PEP 503, and PEP 691 mirroring of the Python Package Index. It uses the PEP 691 Simple JSON API for package metadata and, since version 8.0, mirrors PEP 658 / PEP 714 core metadata files (on by default via the core-metadata config option). The mirror is served as static files from the web/ subdirectory, which a webserver such as nginx can publish. Commands include mirror, delete, and verify, plus a --force-check flag for a full resync. Blocklist and allowlist plugins limit which packages are mirrored. A runner script in the Docker image runs mirror periodically.",
+  "use_cases": [
+   "mirror PyPI locally for an organization",
+   "reduce WAN bandwidth for pip installs",
+   "serve Python packages on an internal network",
+   "limit a local mirror to selected packages with an allowlist or blocklist",
+   "run periodic PyPI syncs from cron or systemd timers"
+  ],
+  "how_to_run": [
+   "python3 -m venv bandersnatch",
+   "bandersnatch/bin/pip install bandersnatch",
+   "bandersnatch/bin/bandersnatch --help",
+   "bandersnatch mirror",
+   "docker pull pypa/bandersnatch"
+  ],
+  "stack": [
+   "Python 3.12+",
+   "Docker",
+   "PEP 381 / PEP 503 / PEP 691 / PEP 658 / PEP 714 mirroring protocols"
+  ],
+  "notable": [
+   "Mirrors PEP 691 Simple JSON API metadata and PEP 658 / PEP 714 core metadata files",
+   "Plugin-based blocklist and allowlist to reduce mirror size",
+   "Official Docker image with a runner script for periodic mirroring",
+   "Maintained under the Python Packaging Authority (PyPA)"
+  ],
+  "caveats": [
+   "Requires a case-sensitive filesystem and a filesystem that handles many subdirectories (ext4 or newer recommended, ext3 avoided)",
+   "On Windows it needs an elevated prompt or symlink permissions",
+   "Mirror lags PyPI by up to about an hour due to CDN caching; full syncs can take hours. The README also asks for more maintainers."
+  ],
+  "license": "unknown",
+  "category": "pypi mirroring tool",
+  "keywords": [
+   "pypi mirror",
+   "python package mirror",
+   "bandersnatch",
+   "pep 381",
+   "pep 503",
+   "pep 691",
+   "pep 658",
+   "pep 714",
+   "simple api",
+   "local pypi server",
+   "offline pip mirror",
+   "package index mirror",
+   "pip mirror",
+   "python packaging authority",
+   "pypa",
+   "mirror pypi packages",
+   "allowlist",
+   "blocklist",
+   "docker pypi mirror",
+   "cron mirror sync",
+   "static mirror",
+   "core metadata mirroring",
+   "pypi caching proxy",
+   "internal package index",
+   "sync python packages",
+   "reduce pip download bandwidth",
+   "self-hosted pypi",
+   "python 3.12 tool",
+   "webserver static files",
+   "nginx pypi",
+   "package repository mirroring"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4240,
+  "output": 1167
+ },
+ "generated": "2026-10-29"
+}

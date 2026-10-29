@@ -1,0 +1,90 @@
+{
+ "id": "thenewnormal/corectl.app",
+ "repo": "TheNewNormal/corectl.app",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🌍 Web Development (15)",
+   "entry": "Corectl App for macOS - Corectl App is a macOS Status bar App which works like a wrapper around the corectl command line tool corectld to control the server runtime process."
+  }
+ ],
+ "summary": {
+  "one_liner": "Corectl App is a macOS status bar app that wraps the corectl command-line tool and its corectld server daemon, letting you start, monitor, and restart the server that runs CoreOS VMs on the native macOS Hypervisor framework.",
+  "what_it_does": "The app sits in the macOS status bar and controls the corectld server runtime process rather than running VMs itself. Its menu shows whether the server is running, the server version, and the active VMs, and it can restart the server. It can also check for a new app version and check for and download a new corectl version. It can fetch the latest CoreOS ISO images into ~/.coreos/images for sharing between VMs. The README says a local Docker registry runs at 192.168.64.1:5000 with images stored under ~/.coreos/registry/. The README states the app is very light on system resources, and that corectld uses little when no VMs are running.",
+  "use_cases": [
+   "Run CoreOS virtual machines on a Mac without VirtualBox",
+   "Start and restart the corectld server from the menu bar",
+   "See which VMs are active on the Mac",
+   "Download the latest CoreOS ISO images",
+   "Host a shared local Docker registry for VMs",
+   "Run a single-node or multi-node Kubernetes cluster on macOS"
+  ],
+  "how_to_run": [
+   "Download corectl_app.dmg from the Releases page",
+   "brew install libev",
+   "Open the DMG and drag the app to /Applications",
+   "Start Corectl from /Applications and enter your Mac user password when prompted"
+  ],
+  "stack": [
+   "macOS",
+   "corectl",
+   "corectld",
+   "Hypervisor framework",
+   "Homebrew",
+   "libev",
+   "qcow-tool"
+  ],
+  "notable": [
+   "Wraps the corectl CLI in a status bar app with a menu for server status and VM listing",
+   "Uses the native macOS Hypervisor framework, so no VirtualBox or similar virtualisation software is needed",
+   "Includes a local Docker registry shared among all VMs",
+   "Can fetch and store CoreOS ISO images for reuse across VMs",
+   "Used by the TheNewNormal CoreOS and Kubernetes-on-macOS projects"
+  ],
+  "caveats": [
+   "Requires macOS 10.10.3 Yosemite or later and a Mac from 2010 or later",
+   "Needs libev installed through Homebrew until qcow-tool works as a standalone binary",
+   "Asks for the Mac user password on each start because corectl runs as root for networking"
+  ],
+  "license": "Apache License, Version 2.0",
+  "category": "macos virtualization tools",
+  "keywords": [
+   "corectl",
+   "corectld",
+   "corectl app",
+   "macos status bar app",
+   "menu bar app",
+   "coreos vm",
+   "coreos on mac",
+   "xhyve",
+   "hypervisor framework",
+   "macos hypervisor",
+   "run coreos locally",
+   "virtualbox alternative",
+   "local vm mac",
+   "docker registry local",
+   "local docker registry mac",
+   "coreos iso download",
+   "kubernetes solo cluster mac",
+   "multi node kubernetes mac",
+   "vm server control",
+   "server daemon wrapper",
+   "homebrew libev",
+   "qcow-tool",
+   "run linux vms on mac",
+   "lightweight vm manager",
+   "container host macos",
+   "apache 2.0 macos app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2208,
+  "output": 1211
+ },
+ "generated": "2026-10-29"
+}

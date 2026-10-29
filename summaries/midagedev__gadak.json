@@ -1,0 +1,99 @@
+{
+ "id": "midagedev/gadak",
+ "repo": "midagedev/gadak",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🗄️ Database (20)",
+   "entry": "gadak - Keeps Jira, Linear and Confluence in one local SQLite file you query with SQL, and is a tracker of its own with no account."
+  }
+ ],
+ "summary": {
+  "one_liner": "gadak mirrors selected Jira Cloud projects and Confluence spaces into one local SQLite file that you can query with SQL, browse in a desktop app or browser, script from a CLI, or expose over MCP.",
+  "what_it_does": "It syncs the Jira Cloud projects and Confluence spaces you choose (issues, comments, history, wiki pages) into a single SQLite database on your machine, indexed for offline search. You can read that mirror through a desktop app, a browser tab via `gadak serve`, the CLI, or MCP. Ad hoc SQL such as GROUP BY counts runs against the local file, which JQL cannot express. Writes (create, edit, comment, transition and similar) go to Jira first, and the mirror refreshes after Jira accepts them. The README also describes support for Jira Server/Data Center and Linear origins, a built-in tracker, and an iOS app in beta. Agents can read the mirror through a shipped skill or MCP registration.",
+  "use_cases": [
+   "query Jira issues with SQL",
+   "offline search of Jira and Confluence",
+   "count open issues per epic",
+   "give a coding agent read access to a Jira mirror",
+   "local tracker without an account",
+   "faster Jira list and search than the REST API"
+  ],
+  "how_to_run": [
+   "brew install --cask midagedev/tap/gadak",
+   "brew install midagedev/tap/gadak-cli",
+   "gadak init && gadak serve",
+   "gadak init --local && gadak serve",
+   "gadak init --projects ENG,PROD --spaces ENG",
+   "gadak sql \"select epic_key, count(*) from issues_full where resolved_at is null and epic_key <> '' group by epic_key order by 2 desc\""
+  ],
+  "stack": [
+   "Go CLI binary",
+   "SQLite",
+   "Jira Cloud REST API",
+   "Confluence",
+   "MCP",
+   "Datasette Lite (demo)",
+   "Linear API",
+   "Jira Server/Data Center (Personal Access Token)"
+  ],
+  "notable": [
+   "Single binary and single SQLite file mirror that can be deleted and rebuilt without loss",
+   "Writes go through the origin first; rejected writes fail immediately and nothing is queued",
+   "Same verbs across Atlassian Cloud, Jira Server/Data Center, Linear and a built-in tracker",
+   "Agent skill install for Claude Code and other hosts, plus MCP registration",
+   "Benchmarks published against a live Cloud site, with cases where gadak is slower documented"
+  ],
+  "caveats": [
+   "Status is 0.x with a single maintainer; compatibility promised only for a few listed items",
+   "First full sync is slow (3.7 minutes for the benchmark site) and reads lag Jira by up to one sync interval (60 seconds default)",
+   "Sprint UI, Jira dashboards and notification inbox stay in Jira and are not available on any origin; iOS app is beta via TestFlight only",
+   "Windows desktop zip is unsigned; Microsoft Store install is the signed route"
+  ],
+  "license": "Apache-2.0",
+  "category": "local jira mirror",
+  "keywords": [
+   "jira sql",
+   "query jira with sql",
+   "local sqlite mirror",
+   "offline jira",
+   "jira cache",
+   "confluence offline search",
+   "jira cli",
+   "jira desktop app",
+   "mcp server jira",
+   "claude code jira",
+   "jira alternative rovo mcp",
+   "jira server data center",
+   "linear tracker",
+   "issue tracker local",
+   "sqlite issue tracker",
+   "count issues per epic",
+   "jql alternative",
+   "search jira without api",
+   "jira offline reads",
+   "agent reads jira",
+   "jira issue search fast",
+   "apache-2.0 tracker",
+   "macos jira app",
+   "jira backlog query",
+   "wiki mirror sqlite",
+   "self-hosted tracker mirror",
+   "go binary cli",
+   "jira write-through",
+   "jira browser ui gadak serve",
+   "query tracker with sql",
+   "share jira data with agent"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6323,
+  "output": 1438
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,100 @@
+{
+ "id": "ellite/wallos",
+ "repo": "ellite/wallos",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "Wallos - Lightweight personal subscription tracker with statistics and optional notifications. (Demo, Source Code) GPL-3.0 PHP/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Finance",
+   "entry": "Wallos | Personal subscription tracker to manage recurring expenses"
+  }
+ ],
+ "summary": {
+  "one_liner": "Wallos is a self-hostable web app for tracking recurring subscriptions and expenses, with multi-currency support, statistics, and optional notifications.",
+  "what_it_does": "Wallos lets you record subscriptions and recurring payments, organize them into customizable categories, and see upcoming due dates. It supports multiple currencies and integrates with the Fixer API for exchange rates so all subscriptions can be shown in a main currency. A statistics view shows spending from different angles, and sorting and a mobile view are included. Notifications can be sent by email, Discord, Pushover, Telegram, Gotify, or webhooks. The README also mentions OIDC/OAuth login, optional AI recommendations via ChatGPT, Gemini, or local Ollama, and a documented API. It runs on bare metal with PHP and SQLite or as a Docker container.",
+  "use_cases": [
+   "track recurring subscriptions and due dates",
+   "manage monthly expenses in multiple currencies",
+   "self-hosted personal finance tracking",
+   "get notified before subscription payments",
+   "analyze spending by category",
+   "replace spreadsheets for expense tracking"
+  ],
+  "how_to_run": [
+   "docker run -d --name wallos -v /path/to/config/wallos/db:/var/www/html/db -v /path/to/config/wallos/logos:/var/www/html/images/uploads/logos -e TZ=Europe/Berlin -p 8282:80 --restart unless-stopped bellamy/wallos:latest",
+   "Baremetal: move files into web root (e.g. /var/www/html)",
+   "Baremetal: rename /db/wallos.empty.db to /db/wallos.db",
+   "Baremetal: open the app in a browser so migrations run on the registration page",
+   "Baremetal: add the cronjob entries from the README via crontab -e",
+   "Updating: git pull, then run php endpoints/db/migrate.php"
+  ],
+  "stack": [
+   "PHP 8.3",
+   "SQLite",
+   "NGINX or Apache",
+   "Docker",
+   "Fixer API",
+   "OIDC/OAuth"
+  ],
+  "notable": [
+   "Configurable OIDC settings via OIDC_* environment variables with discovery support",
+   "SSRF allowlist can be provisioned through an environment variable",
+   "Logo search fetches subscription logos from the web if no upload is provided",
+   "AI recommendations with ChatGPT, Gemini, or local Ollama",
+   "Multi-language support with a documented translation process"
+  ],
+  "caveats": [
+   "Baremetal install needs PHP 8.3 with several modules plus cron jobs configured manually",
+   "Currency conversion relies on the Fixer API",
+   "Demo database resets every 2 hours"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted expense tracking",
+  "keywords": [
+   "subscription tracker",
+   "recurring expenses",
+   "personal finance",
+   "budgeting app",
+   "expense tracker",
+   "self-hosted finance",
+   "subscription manager",
+   "bill reminder",
+   "payment due dates",
+   "multi-currency",
+   "currency conversion",
+   "spending statistics",
+   "php app",
+   "sqlite",
+   "docker container",
+   "bellamy/wallos",
+   "oidc login",
+   "oauth single sign-on",
+   "payment notifications",
+   "discord webhook notifications",
+   "telegram notifications",
+   "gotify",
+   "pushover",
+   "ollama",
+   "spreadsheet alternative",
+   "track monthly bills",
+   "money management",
+   "gpl license",
+   "self-hosted web app",
+   "fixer api"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5060,
+  "output": 1285
+ },
+ "generated": "2026-10-29"
+}

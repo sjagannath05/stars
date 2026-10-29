@@ -1,0 +1,92 @@
+{
+ "id": "arran4/gobookmarks",
+ "repo": "arran4/gobookmarks",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "gobookmarks - Landing page to display bookmarks stored in GitHub, GitLab or local Git. AGPL-3.0 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted personal start page that renders bookmarks from a plaintext file stored in GitHub, GitLab, a local Git repo, or SQL.",
+  "what_it_does": "Renders a multi-tab, multi-page landing page from a simple plaintext bookmarks format using Category, Column, Page, Tab and horizontal-rule directives. Bookmarks are saved to a file in a GitHub or GitLab repository, a local Git repository, or a SQL database (MySQL or SQLite). Provides a visual drag-and-drop editor and a full-text editor, with edits checked against the file SHA to detect conflicting changes. Offers keyboard-driven search across the current tab, with shortcuts for switching tabs and pages. Keeps git-style history so earlier versions can be browsed or rolled back, and caches favicons on disk. Includes a CLI with a lint command for strict syntax checks and convert commands between the native format and JSON.",
+  "use_cases": [
+   "Self-hosted browser start page",
+   "Personal bookmark dashboard",
+   "Version-controlled bookmark storage",
+   "Sharing a bookmark landing page across devices",
+   "Linting bookmark files in CI",
+   "Converting bookmark files to JSON"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -v /my/cache:/var/cache/gobookmarks -v /my/db:/var/lib/gobookmarks -e EXTERNAL_URL= -e GITHUB_CLIENT_ID=abc -e GITHUB_SECRET=def -e FAVICON_CACHE_DIR=/var/cache/gobookmarks/favcache -e LOCAL_GIT_PATH=/var/lib/gobookmarks/localgit ghcr.io/arran4/gobookmarks",
+   "Or download a precompiled binary from GitHub Releases",
+   "Development build: go run ./cmd/gobookmarks"
+  ],
+  "stack": [
+   "Go",
+   "Docker (Alpine base image)",
+   "Git",
+   "MySQL",
+   "SQLite",
+   "OAuth2 (GitHub, GitLab)"
+  ],
+  "notable": [
+   "Bookmarks live in a plaintext file you own, backed by Git, so there is no lock-in",
+   "Multiple login providers: database, local Git, GitHub, GitLab",
+   "Search widgets via a search: URL scheme with $query substitution",
+   "Lint and convert CLI commands intended for CI/CD pipelines",
+   "Systemd and FreeBSD rc.d service files included in release packages"
+  ],
+  "caveats": [
+   "GitHub and GitLab logins require creating OAuth2 applications and setting client credentials",
+   "The SQL provider stores only the latest bookmarks; full commit history lives in a separate history table",
+   "Legacy migration from goa4web-bookmarks requires manually running a SQL script"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted start page",
+  "keywords": [
+   "start page",
+   "landing page",
+   "bookmark manager",
+   "personal dashboard",
+   "self-hosted bookmarks",
+   "bookmarks dashboard",
+   "new tab page",
+   "git-backed bookmarks",
+   "plaintext bookmarks",
+   "github bookmarks",
+   "gitlab bookmarks",
+   "local git",
+   "mysql bookmarks",
+   "sqlite bookmarks",
+   "bookmark history",
+   "bookmark search",
+   "favicon cache",
+   "oauth2 login",
+   "docker bookmarks",
+   "golang web app",
+   "bookmarks lint",
+   "bookmarks to json",
+   "share bookmarks across devices",
+   "organize links into categories",
+   "keyboard shortcut search links",
+   "version control bookmarks",
+   "homepage for browser",
+   "awesome selfhosted dashboard",
+   "tabs and pages layout",
+   "roll back bookmark changes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7752,
+  "output": 1395
+ },
+ "generated": "2026-10-29"
+}

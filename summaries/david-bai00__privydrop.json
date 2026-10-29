@@ -1,0 +1,105 @@
+{
+ "id": "david-bai00/privydrop",
+ "repo": "david-bai00/PrivyDrop",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Peer-to-peer Filesharing",
+   "entry": "PrivyDrop - Simple and user-friendly, breakpoint-resumable peer-to-peer text, image, and file transfer tool based on WebRTC. (Source Code) MIT Docker/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "PrivyDrop is a browser-based, WebRTC peer-to-peer tool for sending text, images, files, and folders directly between devices without a server relaying the data.",
+  "what_it_does": "PrivyDrop transfers files, folders, and rich text directly between browsers over WebRTC, so content does not pass through a central server. A Node.js/Express backend with Socket.IO and Redis handles signaling, while the Next.js frontend provides the UI. Multiple receivers can join one room and download at the same time, and a link or QR code is used to invite them. When the save directory is set, Chrome can stream large files straight to disk, and interrupted transfers can resume from the point of interruption. The README notes that after an interruption, both sender and receiver pages must currently be refreshed to restart. Deployment is covered by a Docker script with several modes (LAN HTTP, LAN TLS, public IP, full domain with Let's Encrypt) and an optional TURN server.",
+  "use_cases": [
+   "share files between my own devices in a browser",
+   "send large files without uploading to a cloud service",
+   "share a folder or several files with multiple people at once",
+   "send formatted text or clipboard content to another device",
+   "self-host a private LAN file transfer page",
+   "transfer files over a LAN with optional TURN for NAT traversal"
+  ],
+  "how_to_run": [
+   "bash ./deploy.sh --mode lan-http",
+   "bash ./deploy.sh --mode lan-http --with-turn",
+   "git clone <repo> && cd PrivyDrop && sudo apt-get install -y redis-server",
+   "cd backend && npm install && cp .env_development_example .env.development && npm run dev",
+   "cd frontend && pnpm install && cp .env_development_example .env.development && pnpm dev",
+   "Open the frontend address in your browser and start sharing"
+  ],
+  "stack": [
+   "TypeScript",
+   "Next.js 14",
+   "React 18",
+   "Tailwind CSS",
+   "shadcn/ui",
+   "Zustand",
+   "Node.js",
+   "Express.js",
+   "Socket.IO",
+   "WebRTC",
+   "Redis",
+   "Docker",
+   "Docker Compose"
+  ],
+  "notable": [
+   "Peer-to-peer transfer over WebRTC with no server-side data relay",
+   "Chrome direct-to-disk streaming for files of any size when a save directory is set",
+   "Multiple receivers can download from one room, and new receivers can join mid-transfer",
+   "One-command Docker deployment with LAN, public IP, and domain modes, including optional TURN and Let's Encrypt",
+   "In-app navigation keeps ongoing transfers alive via a singleton Zustand store and webrtcService"
+  ],
+  "caveats": [
+   "Resume needs a save directory set, and after an interruption both sender and receiver pages must be refreshed to restart",
+   "LAN TLS uses a self-signed CA that must be imported into each browser or system trust store",
+   "Requires Redis for the backend and Node.js v18+ for local development"
+  ],
+  "license": "MIT",
+  "category": "peer-to-peer file sharing",
+  "keywords": [
+   "webrtc file sharing",
+   "peer-to-peer file transfer",
+   "p2p file sharing",
+   "browser file transfer",
+   "privydrop",
+   "secureshare",
+   "end-to-end encrypted file sharing",
+   "no server relay file transfer",
+   "resumable file transfer",
+   "breakpoint resume transfer",
+   "large file transfer",
+   "folder transfer",
+   "send text between devices",
+   "clipboard sharing",
+   "qr code file sharing",
+   "share files with my team",
+   "send files to phone from browser",
+   "self-hosted file transfer",
+   "lan file sharing",
+   "docker file sharing",
+   "turn server webrtc",
+   "socket.io signaling",
+   "next.js file transfer",
+   "nodejs webrtc app",
+   "redis signaling server",
+   "zustand react app",
+   "awesome selfhosted file transfer",
+   "multi receiver file sharing",
+   "private file sharing alternative",
+   "airdrop alternative browser",
+   "wetransfer alternative self hosted",
+   "lets encrypt docker deployment",
+   "chrome direct to disk streaming"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4044,
+  "output": 1468
+ },
+ "generated": "2026-10-29"
+}

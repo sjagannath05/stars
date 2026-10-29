@@ -1,0 +1,91 @@
+{
+ "id": "aminalaee/uuid-utils",
+ "repo": "aminalaee/uuid-utils",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Built-in Classes Enhancement",
+   "entry": "uuid-utils - A fast, Rust-backed drop-in replacement for Python's built-in uuid module."
+  }
+ ],
+ "summary": {
+  "one_liner": "A fast, Rust-powered drop-in replacement for Python's built-in uuid module, providing uuid1 through uuid8 generators.",
+  "what_it_does": "Provides Python functions for generating UUIDs of versions 1, 3, 4, 5, 6, 7 and 8, implemented in Rust. Versions 3 and 5 hash a namespace UUID and a name (MD5 and SHA-1 respectively), version 4 uses random data, version 7 uses a Unix timestamp so values sort by time, and version 8 takes user-defined data. The README says it can be used in place of the standard uuid module. A separate uuid_utils.compat module returns standard-library uuid.UUID instances for frameworks such as Django that require them. The README includes a benchmark run on macOS with Python 3.14 showing uuid4 and uuid7 generation, and from_hex and from_bytes parsing, several times faster than the stdlib in its own tests.",
+  "use_cases": [
+   "generate random unique identifiers",
+   "time-ordered primary keys for databases",
+   "deterministic UUIDs from names via namespace hashing",
+   "speeding up UUID creation in Python code",
+   "parsing UUIDs from hex or bytes quickly",
+   "using UUIDs with Django that need stdlib UUID objects"
+  ],
+  "how_to_run": [
+   "pip install uuid-utils",
+   "conda install -c conda-forge uuid-utils",
+   "import uuid_utils as uuid",
+   "uuid.uuid7()",
+   "import uuid_utils.compat as uuid  # returns stdlib uuid.UUID objects",
+   "make build && make test  # local development"
+  ],
+  "stack": [
+   "Python",
+   "Rust",
+   "maturin"
+  ],
+  "notable": [
+   "Drop-in replacement API for Python's uuid module",
+   "uuid_utils.compat returns stdlib uuid.UUID instances for frameworks like Django",
+   "Supports UUID versions 1 through 8",
+   "Benchmarks in README show several-fold speedups over stdlib on Apple M3 Pro"
+  ],
+  "caveats": [
+   "Benchmark numbers come from a single macOS Apple M3 Pro run and may differ elsewhere",
+   "Default uuid_utils objects are a custom subclass, so code needing stdlib uuid.UUID must use the compat module",
+   "Local development requires building the Rust extension with make or maturin"
+  ],
+  "license": "unknown",
+  "category": "python uuid library",
+  "keywords": [
+   "uuid",
+   "uuid generator",
+   "uuid7",
+   "uuid4",
+   "uuid1",
+   "uuid5",
+   "uuid3",
+   "uuid6",
+   "uuid8",
+   "python uuid",
+   "rust python extension",
+   "rust-backed",
+   "fast uuid",
+   "drop-in replacement",
+   "stdlib uuid alternative",
+   "python uuid module replacement",
+   "time-ordered uuid",
+   "sortable uuid",
+   "unique id generation",
+   "random id",
+   "namespace uuid hash",
+   "sha1 uuid",
+   "md5 uuid",
+   "django uuid compatibility",
+   "uuid compat",
+   "generate unique ids python",
+   "faster uuid creation",
+   "primary key identifiers",
+   "maturin",
+   "pyo3"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2911,
+  "output": 1182
+ },
+ "generated": "2026-10-29"
+}

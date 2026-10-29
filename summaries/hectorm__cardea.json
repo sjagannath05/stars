@@ -1,0 +1,92 @@
+{
+ "id": "hectorm/cardea",
+ "repo": "hectorm/cardea",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Remote Access",
+   "entry": "Cardea - SSH bastion server with access control, session recording, and optional TPM-backed key protection. EUPL-1.2 Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Cardea is an SSH bastion server that routes client connections to backend servers based on access rules in a text file, with optional session recording and TPM-backed key protection.",
+  "category": "ssh bastion server",
+  "keywords": [
+   "ssh bastion",
+   "jump host",
+   "ssh proxy",
+   "ssh gateway",
+   "access control",
+   "session recording",
+   "asciinema",
+   "tpm 2.0",
+   "tpm key protection",
+   "ssh certificate authority",
+   "known hosts",
+   "port forwarding control",
+   "remote access",
+   "infrastructure as code access rules",
+   "text-file access policy",
+   "permitconnect",
+   "authorized keys",
+   "trust on first use",
+   "tofu",
+   "go",
+   "docker",
+   "self-hosted",
+   "secure remote access to servers",
+   "control who can ssh to which server",
+   "record ssh sessions",
+   "audit ssh commands",
+   "bastion host alternative",
+   "no database ssh access"
+  ],
+  "what_it_does": "Clients connect with any standard SSH client and encode the backend target in the SSH username (for example user@backend@bastion or user+backend@bastion). Cardea validates the client's public key and checks access rules defined in a text file, using options such as permitconnect, permitopen, permitlisten, and from. It then connects to the backend using its own key. The rules file supports macros, pipe-separated key groups, and line continuation, so it can be reviewed and versioned. Options also control environment variables, PTY allocation, port and Unix socket forwarding, time windows, forced commands, and key validity periods. Sessions can optionally be recorded in asciinema v3 format. Host key verification uses the OpenSSH known hosts format, with a strict default policy or an opt-in trust-on-first-use mode, and supports @cert-authority entries.",
+  "use_cases": [
+   "Give a team controlled SSH access to internal servers through one entry point",
+   "Restrict which users can reach which backend hosts and ports",
+   "Manage SSH access rules in version-controlled files reviewed in pull requests",
+   "Record terminal sessions for auditing",
+   "Protect the bastion's private key with a TPM 2.0 module",
+   "Allow only specific forwarded ports or Unix sockets for a given key"
+  ],
+  "how_to_run": [
+   "Write an access rules file with permitconnect options and authorized public keys",
+   "Populate the known hosts file with backend host keys (or use @cert-authority entries)",
+   "Add the bastion's public key to the backend servers' authorized_keys",
+   "Start cardea (for example: cardea --key-strategy=tpm --tpm-parent-handle=0x81000001 for TPM mode)",
+   "Connect with: ssh -p 2222 alice@10.0.1.1@cardea.internal"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "OpenSSH known hosts and authorized_keys formats",
+   "TPM 2.0 (tpm2-tools for persistent SRK provisioning)",
+   "asciinema v3 recording format"
+  ],
+  "notable": [
+   "Access rules live in a plain text file, with no database or web UI required",
+   "Backend target is chosen via the SSH username, so any standard SSH client works",
+   "Optional TPM 2.0 mode prevents extraction of the bastion's private key",
+   "Fine-grained options for time windows, forwarding, environment variables, and source IPs",
+   "Optional session recording in asciinema v3 format"
+  ],
+  "caveats": [
+   "TPM mode is available only on Linux and Windows",
+   "Default unknown-hosts policy is strict; TOFU mode is vulnerable to man-in-the-middle attacks on first connection",
+   "Persistent TPM SRK requires manual provisioning with tpm2-tools",
+   "Backend servers must be configured to accept the bastion key and any forwarded environment variables"
+  ],
+  "license": "EUPL-1.2"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7180,
+  "output": 1381
+ },
+ "generated": "2026-10-29"
+}

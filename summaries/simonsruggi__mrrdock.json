@@ -1,0 +1,96 @@
+{
+ "id": "simonsruggi/mrrdock",
+ "repo": "simonsruggi/MRRDock",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "MRRDock - Menu bar app that adds up your MRR from Stripe, RevenueCat, Paddle, Lemon Squeezy, Polar, Dodo Payments and Gumroad, keeping the API keys in the macOS Keychain."
+  }
+ ],
+ "summary": {
+  "one_liner": "MRRDock is a free, open-source macOS menu bar app that reads subscription revenue from Stripe, RevenueCat, Paddle, Lemon Squeezy, Polar, Dodo Payments, Gumroad and custom HTTPS endpoints, sums it into one MRR figure, and keeps API keys in the Keychain.",
+  "what_it_does": "It polls each configured payment platform directly from the Mac every 15 minutes by default (configurable from 5 minutes to 6 hours) and converts all sources into a display currency using exchange rates cached for 12 hours. It shows the total in the menu bar in several modes (MRR, MRR with 30-day change, ARR, 28-day revenue, active subscriptions, cycling per source, or icon only) and offers a popover with per-source breakdown, trend chart, and a privacy mode that hides figures. Each MRR figure is computed per line item (yearly divided by 12, trials excluded, percentage coupons applied), and usage-based prices are flagged as unpriced rather than guessed. It can send MRR milestone and daily summary notifications to Discord or Slack webhooks. Gumroad contributes 28-day revenue only, since it has no subscription ledger.",
+  "use_cases": [
+   "track MRR across several payment platforms",
+   "see current monthly recurring revenue in the menu bar",
+   "combine Stripe and RevenueCat revenue into one total",
+   "get Discord or Slack alerts on revenue milestones",
+   "monitor SaaS or indie app revenue without opening dashboards",
+   "feed custom revenue data into a menu bar tracker"
+  ],
+  "how_to_run": [
+   "brew install --cask simonsruggi/tap/mrrdock",
+   "git clone <repository URL> (URL not given in README)",
+   "cd MRRDock",
+   "./build-app.sh  # builds universal MRRDock.app in ./build",
+   "open build/MRRDock.app",
+   "swift run MRRDock  # alternative: run from SwiftPM"
+  ],
+  "stack": [
+   "Swift 5.9",
+   "SwiftUI",
+   "Sparkle (auto-updates)",
+   "macOS Keychain",
+   "Yahoo Finance quote endpoint (exchange rates)",
+   "Discord and Slack webhooks"
+  ],
+  "notable": [
+   "Sums MRR across several accounts of the same platform and several platforms in one converted total",
+   "API keys stored in macOS Keychain; app issues only read-only GET requests",
+   "Usage-based or tiered prices are reported as unpriced instead of being estimated",
+   "Custom HTTPS endpoint source lets users route any revenue API or private billing data into the total",
+   "No server, no account, no analytics; data stored as local JSON"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; no Windows or Linux version",
+   "Gumroad provides revenue only, no MRR; App Store Connect and Google Play are not yet supported directly",
+   "Totals may differ from provider dashboards because fixed-amount coupons are not applied and usage-based prices are excluded"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar app",
+  "keywords": [
+   "mrr tracker",
+   "monthly recurring revenue",
+   "arr tracker",
+   "saas metrics",
+   "menu bar app",
+   "macos menu bar",
+   "mac revenue dashboard",
+   "stripe mrr",
+   "revenuecat",
+   "paddle",
+   "lemon squeezy",
+   "polar payments",
+   "dodo payments",
+   "gumroad revenue",
+   "subscription revenue",
+   "revenue aggregation",
+   "multi currency revenue",
+   "keychain api keys",
+   "swiftui app",
+   "sparkle updates",
+   "open source baremetrics alternative",
+   "free chartmogul alternative",
+   "catbar alternative",
+   "discord revenue notifications",
+   "slack revenue notifications",
+   "see my revenue in menu bar",
+   "combine stripe accounts",
+   "track subscription income from several platforms",
+   "indie app revenue",
+   "saas revenue at a glance",
+   "self-hosted revenue monitor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9003,
+  "output": 1458
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,102 @@
+{
+ "id": "allinurl/goaccess",
+ "repo": "allinurl/goaccess",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Analytics",
+   "entry": "GoAccess - Real-time web log analyzer and interactive viewer that runs in a terminal. (Source Code) GPL-2.0 C"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Analytics",
+   "entry": "GoAccess | Real-time web log analyzer"
+  }
+ ],
+ "summary": {
+  "one_liner": "GoAccess is an open source, real-time web server log analyzer that shows interactive statistics in a terminal or as a live HTML dashboard.",
+  "what_it_does": "GoAccess parses web server access logs (Apache, Nginx, CloudFront, S3, ELB, Caddy JSON, IIS W3C and other formats, or custom format strings) and presents hits, visitors, bandwidth, response times, virtual hosts, UTM campaigns, bots and ASN data. Output goes to an interactive terminal UI by default, or to a self-contained HTML report that can update in real time over its built-in WebSocket server. It can also write JSON and CSV reports. Input can come from files, multiple logs, compressed files via zcat, or piped streams such as tail -f. Incremental processing lets it save a dataset to disk with --persist and append new logs later with --restore. Multi-threaded parsing is available with -j.",
+  "use_cases": [
+   "Analyze web server access logs over SSH in a terminal",
+   "Generate a static HTML traffic report from nginx or apache logs",
+   "Monitor live site traffic in a browser dashboard",
+   "Spot scanners, bots and brute-force attempts in logs",
+   "Track slow requests and response times",
+   "Process rotated or compressed logs incrementally"
+  ],
+  "how_to_run": [
+   "./configure --enable-utf8 --enable-geoip=mmdb --with-zlib",
+   "make",
+   "# make install",
+   "# goaccess access.log",
+   "# goaccess access.log -a > report.html",
+   "tail -f access.log | goaccess --log-format=COMBINED -"
+  ],
+  "stack": [
+   "C",
+   "ncurses",
+   "GeoIP / GeoIP2 MaxMind DB (optional)",
+   "OpenSSL (optional)",
+   "zlib (optional)",
+   "Docker"
+  ],
+  "notable": [
+   "Real-time terminal and HTML dashboards that refresh every 200 ms (terminal) and every second (HTML)",
+   "Single-file HTML reports with no external file dependencies",
+   "Incremental log processing with on-disk persistence (--persist / --restore)",
+   "ASN-based exclusion of whole networks with --exclude-asn",
+   "Built-in WebSocket server with JWT authentication for live reports"
+  ],
+  "caveats": [
+   "Default in-memory hash tables limit dataset size to available physical memory",
+   "Runs on *nix systems; Windows support is only through Cygwin or WSL",
+   "Piped input does not prompt for log format, so the format must be set in config or on the command line",
+   "GeoIP2 ASN exclusion needs a separately supplied ASN database"
+  ],
+  "category": "web log analysis",
+  "license": "GPL-2.0",
+  "keywords": [
+   "web log analyzer",
+   "access log analysis",
+   "real-time log viewer",
+   "terminal log analyzer",
+   "apache log analyzer",
+   "nginx log analyzer",
+   "html report generator",
+   "web server statistics",
+   "traffic analytics",
+   "visitor statistics",
+   "log parser",
+   "ncurses",
+   "c program",
+   "geoip",
+   "asn filter",
+   "json report",
+   "csv report",
+   "websocket dashboard",
+   "live traffic monitor",
+   "tail -f log monitoring",
+   "awstats alternative",
+   "webalizer alternative",
+   "analyze access logs over ssh",
+   "bot detection logs",
+   "utm campaign tracking",
+   "incremental log processing",
+   "log persistence",
+   "docker log report",
+   "cloudfront log analysis",
+   "s3 access log analysis",
+   "response time analysis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9247,
+  "output": 1284
+ },
+ "generated": "2026-10-29"
+}

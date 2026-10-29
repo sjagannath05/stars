@@ -1,0 +1,91 @@
+{
+ "id": "ralex91/razzia",
+ "repo": "Ralex91/Razzia",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Games",
+   "entry": "Razzia - Quiz game platform, designed for smaller self-hosted events (alternative to Kahoot!). MIT Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Razzia is an open-source quiz platform that you host on your own server for smaller events, as a self-hosted alternative to Kahoot!.",
+  "what_it_does": "Razzia lets a manager host live quiz games on their own server. The manager logs into a management interface with a password set via MANAGER_PASSWORD, then shares a game URL and room code so participants can join. Quizzes and results are stored as files in a ./config folder, which is created on first run with an example quiz and can be edited from the host. The README describes a documentation set covering configuration, quiz structure, custom branding, reverse proxy setup, a WebSocket protocol for custom clients (such as an ESP32 physical buzzer), and an HTTP API for sessions, quiz and result management, and game creation. It can be run with Docker or directly with Node.js and pnpm.",
+  "use_cases": [
+   "host a quiz game for a small event",
+   "self-hosted alternative to Kahoot",
+   "run live quizzes for a classroom or meetup",
+   "build a physical buzzer client for a quiz",
+   "store and edit quizzes as local files"
+  ],
+  "how_to_run": [
+   "Create a compose.yml with the razzia image, port 3000:3000, a ./config volume, and env_file .env",
+   "Create a .env file containing MANAGER_PASSWORD=your-password",
+   "Run: docker compose up -d",
+   "Without Docker: requires Node.js 24 and pnpm 10.16+; run pnpm install",
+   "Copy .env.example to .env and set MANAGER_PASSWORD (WEB_PORT default 3000, SOCKET_PORT default 3001)",
+   "Run pnpm build then pnpm start"
+  ],
+  "stack": [
+   "Node.js 24",
+   "pnpm",
+   "Docker",
+   "Docker Compose",
+   "WebSocket"
+  ],
+  "notable": [
+   "Designed for smaller self-hosted events rather than large-scale use",
+   "Quizzes and results persist as editable files in a mounted config folder",
+   "Documented WebSocket protocol allows building custom clients such as an ESP32 buzzer",
+   "Documented HTTP API for sessions, quizzes, results, and game creation",
+   "Available as a Docker image on Docker Hub and GHCR"
+  ],
+  "caveats": [
+   "Intended for smaller events, according to the README",
+   "Non-Docker setup requires Node.js 24 and pnpm 10.16+"
+  ],
+  "license": "MIT",
+  "category": "self-hosted quiz game",
+  "keywords": [
+   "quiz platform",
+   "self-hosted quiz",
+   "kahoot alternative",
+   "kahoot self-hosted",
+   "live quiz game",
+   "trivia game server",
+   "multiplayer quiz",
+   "classroom quiz",
+   "event quiz host",
+   "docker quiz",
+   "docker compose",
+   "nodejs quiz",
+   "pnpm",
+   "websocket",
+   "esp32 buzzer",
+   "buzzer client",
+   "http api",
+   "reverse proxy",
+   "traefik",
+   "nginx",
+   "caddy",
+   "quiz game room code",
+   "host quiz on my server",
+   "run quiz for meetup",
+   "trivia for students",
+   "open source quiz",
+   "mit license",
+   "custom branding quiz",
+   "quiz results storage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2445,
+  "output": 1182
+ },
+ "generated": "2026-10-29"
+}

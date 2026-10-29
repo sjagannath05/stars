@@ -1,0 +1,98 @@
+{
+ "id": "hakanotal/freedisplay",
+ "repo": "hakanotal/FreeDisplay",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "FreeDisplay - Control external display brightness, HiDPI modes, resolution, and arrangement from the menu bar. [![Open-Source Software][OSS Icon]](https://github.com/hakanotal/FreeDisplay) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "FreeDisplay is a free, open-source macOS menu bar app that provides many of the core display-control features of the paid BetterDisplay app, including brightness, HiDPI modes, resolution, arrangement, color profiles and night mode.",
+  "what_it_does": "It controls external monitor brightness over DDC/CI (IOKit on Intel, IOAVService on Apple Silicon), falling back to software dimming through the gamma table when DDC is not answered. It controls built-in and Apple display backlights through DisplayServices, and intercepts keyboard brightness keys to route them to the display under the cursor. It lets you browse and switch display modes including HiDPI, add HiDPI modes to external monitors via override files in /Library/Displays, and drag displays to arrange them with edge snapping. It also switches ICC color profiles per display, applies image adjustments (contrast, temperature, RGB, invert), provides a night mode blue-light filter on a schedule, and can create virtual displays through the CGVirtualDisplay private API. Presets save and restore full display configurations, and the app can launch at login and restart after a crash. The UI is available in Turkish and English.",
+  "use_cases": [
+   "control external monitor brightness from the menu bar",
+   "enable HiDPI or Retina modes on an external monitor",
+   "change display resolution on macOS",
+   "arrange multiple displays and set the main display",
+   "switch ICC color profiles per monitor",
+   "reduce blue light with a night mode schedule",
+   "create a virtual display on a Mac"
+  ],
+  "how_to_run": [
+   "Option 1: download the latest FreeDisplay .dmg from GitHub Releases and drag FreeDisplay.app to Applications",
+   "First launch: open the app, then allow it in System Settings → Privacy & Security → Open Anyway (or run xattr -dr com.apple.quarantine /Applications/FreeDisplay.app)",
+   "Option 2: git clone the repository, then cd FreeDisplay",
+   "Run ./scripts/build-dmg.sh to produce build/FreeDisplay.app and a DMG",
+   "Xcode is optional; the script works with Command Line Tools (xcode-select --install)",
+   "Grant Accessibility permission for brightness key interception"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI (MenuBarExtra)",
+   "IOKit",
+   "CoreGraphics",
+   "ColorSync",
+   "CGVirtualDisplay (private API)",
+   "DisplayServices (private API, via dlopen)",
+   "xcodegen",
+   "macOS 14+"
+  ],
+  "notable": [
+   "Free alternative to BetterDisplay's paid Pro features, with no third-party dependencies",
+   "Per-monitor DDC channel matching by vendor, model, serial and name, with coalesced commands",
+   "Software gamma fallback for monitors that do not respond to DDC, such as some USB-C docks",
+   "Brightness key interception via a CGEventTap that routes keys to the display under the mouse cursor",
+   "Explicitly excludes EDID override, screen streaming and XDR/HDR extra brightness"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; uses private APIs (CGVirtualDisplay, DisplayServices).",
+   "The app is not notarized, so macOS blocks the first launch and Accessibility permission may need to be re-granted after updates.",
+   "HiDPI changes need an administrator password and HiDPI modes appear only after the monitor reconnects."
+  ],
+  "license": "MIT",
+  "category": "macos menu bar display tools",
+  "keywords": [
+   "macos display control",
+   "menu bar app",
+   "external monitor brightness",
+   "ddc/ci brightness",
+   "hidpi mode",
+   "retina scaling external monitor",
+   "display resolution switcher",
+   "display arrangement",
+   "icc color profile switcher",
+   "night mode",
+   "blue light filter",
+   "virtual display",
+   "gamma brightness software dimming",
+   "brightness keys external display",
+   "free betterdisplay alternative",
+   "open source betterdisplay alternative",
+   "monitorcontrol alternative",
+   "lunar alternative",
+   "swift swiftui app",
+   "apple silicon display",
+   "intel mac monitor",
+   "notch hide menu bar",
+   "display presets",
+   "launch at login",
+   "turkish english ui",
+   "control monitor brightness mac",
+   "use hidpi on monitor",
+   "change mac screen resolution",
+   "multi monitor layout mac"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4852,
+  "output": 1585
+ },
+ "generated": "2026-10-29"
+}

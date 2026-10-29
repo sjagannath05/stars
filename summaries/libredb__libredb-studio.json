@@ -1,0 +1,105 @@
+{
+ "id": "libredb/libredb-studio",
+ "repo": "libredb/libredb-studio",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Database Management",
+   "entry": "LibreDB Studio - Browser-based SQL IDE for PostgreSQL, MySQL, Oracle, SQL Server, MongoDB, Redis, ClickHouse, DuckDB and more, with SSO, audit trail, ER diagrams and optional AI assistance on your own model key (alternative to DataGrip, DBeaver, CloudBeaver). (Source Code) MIT Docker/K8S"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "LibreDB Studio | Web-based SQL IDE for PostgreSQL, MySQL, MongoDB, Redis and more, with AI query assistance"
+  }
+ ],
+ "summary": {
+  "one_liner": "LibreDB Studio is a browser-based database editor and SQL IDE that deploys alongside your data and connects to dozens of SQL and NoSQL engines, with optional AI assistance using your own model key.",
+  "what_it_does": "The README describes a web-based SQL IDE with a Monaco editor, schema-aware autocomplete, multi-tab workspace, saved queries with JSON backup, visual EXPLAIN plans, interactive ER diagrams, and schema diff with migration SQL generation for several SQL engines. It has a virtualized data grid with inline editing, column filtering, pivot tables, exports, and charts. Analyst tools include an AI data profiler, ORM code generators, a test data generator, and auto-generated database documentation. Admin-only DBA tools cover live monitoring, threshold alerts, one-click maintenance operations, and an audit trail. Authentication supports local login, OIDC single sign-on with PKCE and role mapping, and passkeys. The README states the engine list is 42 and that most non-SQL connectors are read-only by design; an optional read-only agent and Plan mode use Gemini, OpenAI, Ollama, or OpenAI-compatible endpoints.",
+  "use_cases": [
+   "browse and query PostgreSQL or MySQL in a browser",
+   "explore MongoDB, Redis, or ClickHouse data from one interface",
+   "draw ER diagrams of an existing schema",
+   "compare schemas and generate migration SQL",
+   "run a self-hosted database editor for a team with SSO",
+   "ask an AI agent questions about a database using a local model"
+  ],
+  "how_to_run": [
+   "docker run -p 3000:3000 ghcr.io/libredb/libredb-studio:latest",
+   "npx @libredb/studio (requires Node.js 24+)",
+   "On first run, the admin password is printed to the log.",
+   "If accessed over plain HTTP on a LAN, set AUTH_COOKIE_SECURE=false."
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js",
+   "Monaco editor",
+   "React",
+   "ReactFlow",
+   "ELK.js",
+   "Recharts",
+   "TanStack",
+   "Docker",
+   "Helm"
+  ],
+  "notable": [
+   "Covers 42 engines through one interface, including relational, document, key-value, vector, time-series, and messaging systems",
+   "Agent runs are read-only enforced per engine, with audited execution and cited report claims",
+   "Read-only by construction for many non-SQL connectors such as Firestore, Kubernetes, S3, and MQTT",
+   "OIDC SSO, RBAC, audit log, and ER diagrams ship in the MIT build",
+   "Deployable as container, Helm chart, npm package, or PaaS template"
+  ],
+  "caveats": [
+   "Several engines are read-only or have missing features (e.g., Druid, Elasticsearch, OpenSearch have no UPDATE; DuckDB has no slow-query or session panels)",
+   "AI agent mode only works on a subset of engines and needs a tool-capable model; the agent rail is absent in the embedded npm package",
+   "Display masking is client-side only and not server-enforced"
+  ],
+  "license": "MIT",
+  "category": "database admin tools",
+  "keywords": [
+   "sql ide",
+   "database editor",
+   "web sql client",
+   "browser database client",
+   "postgresql gui",
+   "mysql gui",
+   "mongodb client",
+   "redis gui",
+   "clickhouse client",
+   "duckdb editor",
+   "er diagram",
+   "schema diff",
+   "self-hosted database tool",
+   "datagrip alternative",
+   "dbeaver alternative",
+   "cloudbeaver alternative",
+   "oidc sso database",
+   "ai sql assistant",
+   "text to sql",
+   "query explain plan",
+   "database migration sql",
+   "data grid",
+   "database audit trail",
+   "docker database tool",
+   "helm chart database",
+   "nosql explorer",
+   "vector database ui",
+   "kafka browser",
+   "kubernetes resource viewer",
+   "s3 browser",
+   "query my database in the browser",
+   "share database access with my team",
+   "open source db admin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16875,
+  "output": 1405
+ },
+ "generated": "2026-10-29"
+}

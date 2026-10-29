@@ -1,0 +1,92 @@
+{
+ "id": "meta-llama/llama-models",
+ "repo": "meta-llama/llama-models",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Unsorted category",
+   "entry": "Meta LLaMA 3.1 Models - Official repository to use and implement LLaMA 3.1 models, Meta's state-of-the-art large language models."
+  }
+ ],
+ "summary": {
+  "one_liner": "Official Meta repository for the Llama family of open large language model weights, tokenizer, and reference code, plus a CLI for listing, downloading, and verifying models.",
+  "what_it_does": "The README documents Meta's Llama model line from Llama 2 through Llama 4, with a table of launch dates, model sizes, context lengths, and tokenizers. It explains how to request access, then download weights from Meta or Hugging Face using the `llama-model` CLI (list, describe, download, verify-download, remove, prompt-format). It provides example torchrun scripts for chat and completion inference with Llama 4 models, and describes FP8 and Int4 quantization modes (fp8_mixed, int4_mixed) to lower GPU memory use. It also includes a transformers snippet for loading Llama 4 Scout from Hugging Face. The README notes that the package can be installed with pip as llama-models.",
+  "use_cases": [
+   "download Llama model weights and tokenizers",
+   "run Llama 4 chat inference on multiple GPUs",
+   "reduce Llama memory use with FP8 or Int4 quantization",
+   "compare Llama model versions and context lengths",
+   "load Llama models with Hugging Face transformers"
+  ],
+  "how_to_run": [
+   "pip install llama-models",
+   "llama-model list",
+   "llama-model download --source meta --model-id CHOSEN_MODEL_ID",
+   "pip install .[torch]  (from a cloned repo, for running the models)",
+   "torchrun --nproc_per_node=4 -m models.llama4.scripts.chat_completion $CHECKPOINT_DIR --world_size 4"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch (torch, via pip extra)",
+   "torchrun",
+   "Hugging Face transformers",
+   "Hugging Face huggingface-hub",
+   "TikToken-based and Sentencepiece tokenizers"
+  ],
+  "notable": [
+   "Official Meta source for Llama model weights, with a CLI that can download from Meta or Hugging Face",
+   "Covers Llama 2, 3, 3.1, 3.2 (including Vision), 3.3, and 4 in one table",
+   "FP8 and Int4 mixed-precision inference modes to reduce GPU memory",
+   "Llama 4 example scripts for chat and base completion via torchrun"
+  ],
+  "caveats": [
+   "Download links expire after 24 hours and are limited in number; access requires accepting Meta's license and waiting for approval",
+   "Llama 4 at full bf16 precision requires at least 4 GPUs; FP8 needs 2 x 80GB GPUs and Int4 needs one 80GB GPU for Scout",
+   "Weights are governed by Meta's license and Acceptable Use Policy rather than an open-source license"
+  ],
+  "license": "unknown",
+  "category": "llm model weights",
+  "keywords": [
+   "llama",
+   "llama models",
+   "meta llama",
+   "llama 3.1",
+   "llama 4",
+   "llama 3.2 vision",
+   "open llm",
+   "large language model",
+   "llm weights",
+   "model weights download",
+   "llama-model cli",
+   "llama-models pip",
+   "torchrun inference",
+   "fp8 quantization",
+   "int4 quantization",
+   "quantized llm inference",
+   "tokenizer",
+   "tiktoken tokenizer",
+   "sentencepiece",
+   "hugging face transformers",
+   "hugging face llama",
+   "run llm locally",
+   "self-host llm",
+   "multi-gpu inference",
+   "chat completion",
+   "open source ai model",
+   "llama alternative",
+   "download llama weights",
+   "run llama on gpu",
+   "llm context length"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4639,
+  "output": 1306
+ },
+ "generated": "2026-10-29"
+}

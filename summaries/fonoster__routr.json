@@ -1,0 +1,102 @@
+{
+ "id": "fonoster/routr",
+ "repo": "fonoster/routr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - SIP",
+   "entry": "Routr - Lightweight SIP proxy, location server, and registrar for a reliable and scalable SIP infrastructure. (Source Code) MIT Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Routr is a lightweight SIP proxy, location server, and registrar for building telephony and SIP infrastructure, deployable with Docker or Kubernetes.",
+  "what_it_does": "Routr provides core SIP server functions: proxy, registrar, and location service. It supports programmable and configurable routing (intra-domain, domain ingress/egress, peer egress), load balancing across media servers such as Asterisk and FreeSWITCH, and multi-tenant/multi-domain setups with domain-level access control lists. Transports listed are TCP, UDP, TLS, WS, and WSS, with in-memory or Redis location storage and JSON, YAML, or Postgres as data sources. It can be managed through a gRPC API, a command-line tool (@routr/ctl), and a Node.js SDK, and it is extensible through custom Processors and Middleware. Additional listed features include RTPEngine middleware, JWT endpoint authentication for web phones, call message recording and replay, and OpenTelemetry traces, metrics, and logs.",
+  "use_cases": [
+   "Running a SIP proxy and registrar for a telephony carrier",
+   "Load balancing calls across Asterisk or FreeSWITCH media servers",
+   "Multi-tenant SIP hosting with per-domain access control",
+   "Deploying a SIP server on Kubernetes with Helm",
+   "Building custom SIP call-routing logic with Node.js processors",
+   "Authenticating web phones with JWT"
+  ],
+  "how_to_run": [
+   "Create a directory named routr and add the compose.yaml file from the README",
+   "DOCKER_HOST_ADDRESS=192.168.1.3 docker compose up",
+   "helm repo add routr && helm repo update",
+   "kubectl create namespace routr",
+   "helm install my-release routr/routr-connect --namespace routr",
+   "npm install --location=global @routr/ctl"
+  ],
+  "stack": [
+   "Node.js",
+   "JavaScript",
+   "Java (JDK 17, per Dev Containers section)",
+   "Docker",
+   "Kubernetes and Helm",
+   "Postgres",
+   "Redis",
+   "RTPEngine",
+   "gRPC",
+   "npm packages @routr/ctl, @routr/sdk, @routr/processor"
+  ],
+  "notable": [
+   "Programmable routing with configurable ingress, egress, and intra-domain strategies",
+   "Multi-tenant and multi-domain support with domain-level ACLs",
+   "Helm chart for Kubernetes deployment and a single-container all-in-one Docker image",
+   "Extensible through custom Processors and Middleware, with a Node.js SDK",
+   "Built-in OpenTelemetry tracing, metrics, and logs plus call recording and replay"
+  ],
+  "caveats": [
+   "Region-based routing and STIR/SHAKEN support are listed as unchecked, not yet implemented",
+   "The README notes VS Code only forwards TCP ports, so SIP over UDP from a host softphone will not reach a Dev Container",
+   "Postgres, Redis, and RTPEngine must be started separately for some workflows and are optional for the basic echo test",
+   "Web Application is listed as a planned item, not a current feature"
+  ],
+  "license": "MIT",
+  "category": "sip server infrastructure",
+  "keywords": [
+   "sip proxy",
+   "sip registrar",
+   "location server",
+   "sip server",
+   "voip server",
+   "telephony infrastructure",
+   "session initiation protocol",
+   "load balancing media servers",
+   "asterisk load balancer",
+   "freeswitch",
+   "multi-tenant sip",
+   "kubernetes sip",
+   "helm chart sip",
+   "docker sip server",
+   "rtpengine",
+   "webrtc sip gateway",
+   "web phone authentication",
+   "jwt authentication sip",
+   "redis location service",
+   "postgres sip",
+   "node sdk telephony",
+   "custom sip processor",
+   "sip message recording",
+   "opentelemetry sip",
+   "carrier sip server",
+   "communication service provider software",
+   "self-hosted voip",
+   "run my own phone system",
+   "sip trunk server",
+   "open source pbx alternative",
+   "sip routing engine",
+   "grpc sip management"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5365,
+  "output": 1418
+ },
+ "generated": "2026-10-29"
+}

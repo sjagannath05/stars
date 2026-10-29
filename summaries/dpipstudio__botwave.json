@@ -1,0 +1,94 @@
+{
+ "id": "dpipstudio/botwave",
+ "repo": "dpipstudio/botwave",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Audio Streaming",
+   "entry": "BotWave - FM broadcasting system with server-client architecture for managing multiple Raspberry Pi transmitters remotely. (Source Code) GPL-3.0 Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "BotWave is a Python FM broadcasting system that lets Raspberry Pi devices transmit audio over FM radio, either standalone or managed from a central server across multiple Pis.",
+  "what_it_does": "BotWave broadcasts audio files or live audio output over FM using Raspberry Pi hardware. A single Pi can run the standalone local client (bw-local) with a CLI for uploading, downloading, starting and stopping broadcasts. For multiple Pis, a server (bw-server) connects to clients (bw-client) over the network, with passkey authentication and protocol versioning. The server CLI can target clients by ID, hostname, comma-separated list, or all. Audio files in common formats such as MP3, WAV, FLAC, AAC and OGG are converted automatically. The README also describes a queue system, task automation on events and boot, and remote management over WebSocket via the BWSC tool.",
+  "use_cases": [
+   "broadcast audio over FM radio from a Raspberry Pi",
+   "manage a network of Raspberry Pi FM transmitters",
+   "live stream audio from an application over FM",
+   "play playlists of audio files on FM",
+   "learning and experimenting with FM broadcasting",
+   "remotely control FM broadcasts from a server"
+  ],
+  "how_to_run": [
+   "curl -sSL -o bw_install.sh <URL from README> && cat bw_install.sh",
+   "sudo bash bw_install.sh",
+   "sudo bw-local",
+   "botwave › start ss.wav 88",
+   "bw-server",
+   "sudo bw-client <server_host>"
+  ],
+  "stack": [
+   "Python >= 3.10",
+   "Raspberry Pi GPIO",
+   "ALSA loopback (optional, for live broadcasting)",
+   "WebSocket remote management",
+   "BWSC (npm, remote CLI client)"
+  ],
+  "notable": [
+   "Standalone local client for a single Pi, or server-client mode for multiple Pis",
+   "Live broadcasting of output from any application via ALSA loopback",
+   "Remote management over WebSocket with optional passkey, using the BWSC tool",
+   "Target clients by ID, hostname, list, or 'all' from the server CLI",
+   "Custom handlers (l_ for local, s_ for server) and event-based task automation"
+  ],
+  "caveats": [
+   "Client requires Raspberry Pi models 2, 3, 4, or Zero; Pi 5 and Pico are not supported, and root access is needed",
+   "Broadcasting FM signals may be regulated; the README warns users to check local laws and use a band-pass filter",
+   "Requires a wire or antenna on GPIO 4 (pin 7) to broadcast"
+  ],
+  "license": "GPL-3.0",
+  "category": "fm radio broadcasting",
+  "keywords": [
+   "fm broadcasting",
+   "fm transmitter",
+   "raspberry pi radio",
+   "raspberry pi fm",
+   "pi transmitter network",
+   "multi-pi management",
+   "audio streaming",
+   "live audio broadcast",
+   "bw-server",
+   "bw-client",
+   "bw-local",
+   "bwsc",
+   "alsa loopback",
+   "gpio 4 transmitter",
+   "websocket remote control",
+   "python audio broadcaster",
+   "server client architecture",
+   "queue playlist fm",
+   "play mp3 over radio",
+   "broadcast audio to fm radio",
+   "share audio over fm",
+   "self-hosted radio station",
+   "pirate radio",
+   "fm radio experiments",
+   "remote fm control",
+   "audio file converter",
+   "handlers automation",
+   "gpl-3.0 software",
+   "self-hosted audio streaming",
+   "control many raspberry pis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6417,
+  "output": 1312
+ },
+ "generated": "2026-10-29"
+}

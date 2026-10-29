@@ -1,0 +1,94 @@
+{
+ "id": "jax-ml/jax",
+ "repo": "jax-ml/jax",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Deep Learning",
+   "entry": "jax - A library for high-performance numerical computing with autodiff and JIT compilation."
+  }
+ ],
+ "summary": {
+  "one_liner": "JAX is a Python library for accelerator-oriented array computation and composable program transformations (autodiff, JIT compilation via XLA, and vectorization) aimed at high-performance numerical computing and large-scale machine learning.",
+  "what_it_does": "JAX differentiates native Python and NumPy functions, including through loops, branches, recursion, and closures, and supports reverse-mode (jax.grad) and forward-mode differentiation composable to any order. The jax.jit transform uses XLA to compile pure functions end-to-end for TPUs, GPUs, and other accelerators. The jax.vmap transform auto-vectorizes functions over array axes, which can be composed with grad and jit to get per-example gradients or Jacobians. The README also describes scaling across many devices through automatic parallelization, explicit sharding with jax.sharding types, and manual per-device programming with explicit collectives. The README describes JAX as a research project rather than an official Google product.",
+  "use_cases": [
+   "automatic differentiation of numerical Python code",
+   "compiling NumPy-style programs for GPUs and TPUs",
+   "computing per-example gradients",
+   "batching a function over array axes without manual loops",
+   "sharding machine learning training across many devices",
+   "computing higher-order derivatives or Jacobians"
+  ],
+  "how_to_run": [
+   "pip install -U jax",
+   "pip install -U \"jax[cuda13]\"  (NVIDIA GPU)",
+   "pip install -U \"jax[tpu]\"  (Google TPU)",
+   "pip install -U \"jax[oneapi]\"  (Intel GPU)"
+  ],
+  "stack": [
+   "Python",
+   "NumPy API (jax.numpy)",
+   "XLA compiler",
+   "CUDA",
+   "ROCm",
+   "oneAPI"
+  ],
+  "notable": [
+   "Composable transformations: grad, jit, and vmap can be nested arbitrarily",
+   "Differentiates through Python control flow such as if-statements and loops",
+   "Three scaling modes: automatic, explicit sharding, and manual per-device with collectives",
+   "Installable with hardware-specific extras for CPU, NVIDIA, AMD, TPU, and Intel GPUs"
+  ],
+  "caveats": [
+   "The README states it is a research project, not an official Google product, and warns to expect sharp edges",
+   "jax.jit constrains which Python control flow can be used inside compiled functions",
+   "GPU and platform support varies: Windows native has no NVIDIA or AMD GPU support, and several GPU paths are marked experimental"
+  ],
+  "license": "unknown",
+  "category": "numerical computing library",
+  "keywords": [
+   "jax",
+   "autodiff",
+   "automatic differentiation",
+   "backpropagation",
+   "jit compilation",
+   "xla",
+   "vectorization",
+   "vmap",
+   "grad",
+   "numpy on gpu",
+   "numpy on tpu",
+   "accelerator computing",
+   "hardware accelerators",
+   "per-example gradients",
+   "jacobian",
+   "higher-order derivatives",
+   "function transformations",
+   "composable transforms",
+   "gpu acceleration python",
+   "tpu python",
+   "machine learning research",
+   "deep learning framework",
+   "distributed training",
+   "sharding",
+   "fsdp",
+   "batch parallelism",
+   "reverse-mode differentiation",
+   "forward-mode differentiation",
+   "speed up numpy code",
+   "cuda python",
+   "rocm",
+   "backprop library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4736,
+  "output": 1240
+ },
+ "generated": "2026-10-29"
+}

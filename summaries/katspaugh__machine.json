@@ -1,0 +1,99 @@
+{
+ "id": "katspaugh/machine",
+ "repo": "katspaugh/machine",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "machine by katspaugh - One isolated Lima VM per GitHub project — sandboxed Claude Code/Codex, Docker, Node, signed git"
+  }
+ ],
+ "summary": {
+  "one_liner": "machine is a macOS CLI that boots one isolated Lima VM per GitHub project, pre-provisioned with Docker, Node, agent CLIs (Claude Code, Codex), gh, and signed git.",
+  "what_it_does": "It creates a Lima VM (Ubuntu 24.04 guest, using Lima's vz driver) for each project, provisioned at boot by cloud-init with Docker, Node with corepack package managers, Claude Code and Codex CLIs, GitHub CLI, and git identity and signing rendered from host settings. Opt-in profiles add Cypress, Playwright, or Supabase CLI plus flyctl, and the README also mentions modern CLI tools. The VM mounts no host filesystem, and git auth and commit signing go through the forwarded SSH agent so private keys stay on the host. Secrets from 1Password Environments can be rendered into tmpfs inside the VM via `machine secrets`. Commands cover up, down, ssh, claude (runs Claude Code in tmux), run, destroy, and doctor, and a projects.toml or per-repo .machine.toml sets repos, profiles, and resources.",
+  "use_cases": [
+   "sandbox AI coding agents with full autonomy",
+   "isolated dev environment per GitHub project",
+   "run Claude Code or Codex in a VM away from host keys",
+   "set up a ready-to-use dev VM with Docker and Node",
+   "run Cypress or Playwright browser tests in a VM",
+   "inject 1Password secrets into a VM without writing to disk"
+  ],
+  "how_to_run": [
+   "brew install katspaugh/machine/machine",
+   "machine doctor",
+   "machine up blog",
+   "machine ssh blog",
+   "machine claude blog"
+  ],
+  "stack": [
+   "Lima (>= 2.0, vz driver)",
+   "Apple Virtualization framework",
+   "Python 3.12",
+   "Bash",
+   "cloud-init",
+   "Docker",
+   "Node.js",
+   "GitHub CLI",
+   "tmux",
+   "Nix flake (optional install)"
+  ],
+  "notable": [
+   "Per-project VM with no host filesystem mount, so one project cannot read another's code or env",
+   "Claude Code preinstalled with several plugins and permission defaultMode set to auto",
+   "Documents an explicit threat model: forwarded SSH agent lets VM ask for signatures with every key the agent holds",
+   "Config can travel with repo via .machine.toml; multi-repo VMs clone sibling repos",
+   "Provisioning is shell scripts under provision/ and Lima templates composed with base:, re-applied on every boot"
+  ],
+  "caveats": [
+   "macOS 13 or newer only; Linux and Windows hosts are not supported",
+   "Requires Lima 2.0 or newer; the README notes Lima 1.x will not work",
+   "Forwarded SSH agent grants any process in the VM signing and auth rights for every key the agent holds while connected; README recommends mitigations"
+  ],
+  "license": "unknown",
+  "category": "vm sandboxing for dev",
+  "keywords": [
+   "lima vm",
+   "macos virtual machine",
+   "isolated dev environment",
+   "sandbox claude code",
+   "sandboxed coding agent",
+   "claude code",
+   "codex cli",
+   "per project vm",
+   "dev vm",
+   "devcontainer alternative",
+   "tart alternative",
+   "apple container alternative",
+   "docker in vm",
+   "node dev environment",
+   "signed git commits",
+   "ssh agent forwarding",
+   "github cli",
+   "cypress vm",
+   "playwright vm",
+   "1password secrets",
+   "env injection",
+   "tmpfs secrets",
+   "homebrew formula",
+   "nix flake",
+   "cloud-init provisioning",
+   "run ai agent safely",
+   "isolate npm installs",
+   "share dev environment with team",
+   "vscode remote ssh vm",
+   "lima 2.0",
+   "project vm launcher"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12314,
+  "output": 1393
+ },
+ "generated": "2026-10-29"
+}

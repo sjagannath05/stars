@@ -1,0 +1,105 @@
+{
+ "id": "betabots-llc/callimachus",
+ "repo": "BetaBots-LLC/callimachus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Memory & Context Persistence",
+   "entry": "Callimachus by BetaBots-LLC - One local, searchable index of your AI coding-agent history Claude Code, Codex, Cursor, Gemini &amp; more. Keyword + semantic search, MCP server, CLI &amp; VS Code extension."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local, searchable index of your AI coding-agent conversation history across 11 tools (Claude Code, Codex, Cursor, Gemini CLI and more), exposed as a desktop app, an MCP server, a `cal` CLI and a VS Code/Cursor extension.",
+  "category": "AI agent history search",
+  "keywords": [
+   "coding agent history",
+   "ai conversation search",
+   "claude code history",
+   "codex history",
+   "cursor chat history",
+   "gemini cli",
+   "local search",
+   "sqlite fts5",
+   "bm25",
+   "semantic search",
+   "hybrid search",
+   "reciprocal rank fusion",
+   "sqlite-vec",
+   "fastembed",
+   "mcp server",
+   "model context protocol",
+   "cli tool",
+   "vs code extension",
+   "obsidian export",
+   "rag over history",
+   "knowledge distillation",
+   "project memory",
+   "agents.md",
+   "session snapshot",
+   "tauri desktop app",
+   "rust",
+   "local-first",
+   "find past conversations",
+   "search what my ai agent did before",
+   "share context between coding agents",
+   "keychain api keys",
+   "awesome-claude-code memory"
+  ],
+  "what_it_does": "Callimachus watches and indexes conversations from 11 coding agents (Claude Code, Codex, Cursor, Gemini CLI, Qwen Code, Goose, OpenCode, Continue, Cline, Roo Code, Kilo Code) into one local SQLite store. Search combines keyword (FTS5/BM25) and on-device semantic ranking (sqlite-vec KNN) via Reciprocal Rank Fusion, with filters for source, project, starred and tags. It can extract TODOs, and optionally uses an LLM (local Ollama, logged-in Claude Code or Codex CLI, or a cloud key) to distill decisions and gotchas into per-project memory. It also provides a cited RAG Q&A over history, a chat view, file-path and commit linking, session snapshots, and an MCP server whose tools let agents read the index and write back to Callimachus's own memory. Everything is designed to stay on the local machine apart from the chosen LLM provider.",
+  "use_cases": [
+   "find a past conversation where I solved a similar problem",
+   "search what my coding agents did across tools",
+   "let an agent query its own prior work via MCP",
+   "export a thread to an Obsidian note",
+   "record and recall project decisions and gotchas",
+   "find which sessions touched a given file"
+  ],
+  "how_to_run": [
+   "Download a signed build from the Releases page (macOS .dmg, Windows .msi, Linux .AppImage/.deb)",
+   "claude mcp add callimachus -- npx -y callimachus-mcp",
+   "pnpm install",
+   "pnpm desktop:dev",
+   "cargo install --path apps/desktop/src-tauri --bin cal",
+   "cal search \"vector index migration\" -y"
+  ],
+  "stack": [
+   "Tauri 2",
+   "Rust",
+   "React 19",
+   "TypeScript",
+   "Vite 8",
+   "SQLite FTS5 (rusqlite)",
+   "sqlite-vec",
+   "fastembed (bge-small-en-v1.5)",
+   "notify",
+   "genai crate",
+   "keyring crate",
+   "Turborepo",
+   "pnpm",
+   "VS Code extension API"
+  ],
+  "notable": [
+   "Indexes 11 different coding-agent tools into one searchable local store",
+   "Two-way MCP server: 21 tools, with write-back to project memory (complete TODOs, record decisions, snapshot sessions)",
+   "Links threads to the git commits they likely produced, inferred on-device from shared files and time windows",
+   "Projects memory and AGENTS.md / CLAUDE.md managed block, plus a Claude Code SessionStart hook",
+   "LLM options include keyless use of a logged-in Claude Code or Codex CLI subscription"
+  ],
+  "caveats": [
+   "The 'Open in CLI' and 'Resume' launchers are macOS-only (AppleScript); Windows/Linux show a not-supported notice",
+   "Cline, Roo Code and Kilo Code are index-only because they have no CLI, and Cursor threads have no project path",
+   "Large first index is a one-time cost; semantic search needs a separate 'Build semantic index' step"
+  ],
+  "license": "AGPL-3.0-or-later (dual-licensed; a commercial license is available for closed-source or SaaS use)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7033,
+  "output": 1558
+ },
+ "generated": "2026-10-29"
+}

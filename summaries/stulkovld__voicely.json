@@ -1,0 +1,97 @@
+{
+ "id": "stulkovld/voicely",
+ "repo": "StulkovLD/Voicely",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Voicely - Offline dictation into any app, call recording with speaker labels and audio/video file transcription, all on-device with a local speech model."
+  }
+ ],
+ "summary": {
+  "one_liner": "Voicely is a free, MIT-licensed, on-device dictation and transcription app for macOS (Apple Silicon) that also runs a local MCP server so AI agents can transcribe files and read calls and dictations.",
+  "what_it_does": "Press Option+Space to dictate text into whatever app has the cursor, using Accessibility for native fields, the clipboard and Cmd+V for Chromium/Electron apps, and typed text for terminals. It records calls by mixing system audio (via ScreenCaptureKit) with the microphone, then produces a speaker-separated transcript with \"You\" identified by mic activity. It transcribes any audio or video file, with optional speaker diarization, from the terminal (`voicely transcribe`) or via an agent tool. Transcripts are saved as plain markdown, JSONL and WAV files under ~/Documents/Voicely/. The `voicely mcp` stdio server exposes four tools (transcribe_file, list_transcripts, get_transcript, get_last_call), and `voicely connect` registers it with Claude Code, Codex, Cursor, Hermes and OpenClaw. The speech model is NVIDIA Parakeet TDT 0.6B v3 running via FluidAudio's CoreML port, covering 25 European languages.",
+  "use_cases": [
+   "Dictate text into any Mac app with a hotkey",
+   "Transcribe recorded calls with speaker labels",
+   "Convert audio or video files to text offline",
+   "Give Claude Code or Codex access to transcripts via MCP",
+   "Keep private voice notes and dictations on-device",
+   "Pull action items from meeting recordings"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh",
+   "brew install --cask stulkovld/voicely/voicely",
+   "/Applications/Voicely.app/Contents/Helpers/voicely setup",
+   "voicely connect",
+   "git clone <repo> && cd Voicely && swift build -c release --product Voicely && swift build -c release --product VoicelyCLI"
+  ],
+  "stack": [
+   "Swift 6",
+   "AppKit",
+   "FluidAudio",
+   "NVIDIA Parakeet TDT 0.6B v3 (CoreML)",
+   "ScreenCaptureKit",
+   "pyannote community-1 segmentation",
+   "WeSpeaker embeddings",
+   "WhisperKit (acknowledged)",
+   "yt-dlp (used by the skill for online video)"
+  ],
+  "notable": [
+   "Fully on-device: no account, cloud or subscription, and the MCP server works offline",
+   "Records system audio without a virtual audio device, using ScreenCaptureKit",
+   "Clipboard is restored after pasting into Chromium/Electron apps, and transcripts are marked so clipboard managers skip them",
+   "Registers the MCP server with several agent harnesses via each harness's own mcp add command",
+   "Transcripts are plain markdown files readable by any tool"
+  ],
+  "caveats": [
+   "Requires macOS 14+ on Apple Silicon",
+   "Public build is signed with a self-made certificate and is not notarized by Apple",
+   "Speech model download is about 470 MB and the first prepare step takes about a minute"
+  ],
+  "license": "MIT",
+  "category": "macos dictation transcription",
+  "keywords": [
+   "offline dictation",
+   "macos speech to text",
+   "voice typing mac",
+   "on-device transcription",
+   "parakeet",
+   "coreml",
+   "fluidaudio",
+   "speaker diarization",
+   "call recording transcript",
+   "meeting transcription",
+   "transcribe audio file",
+   "video transcription",
+   "mcp server",
+   "claude code integration",
+   "codex mcp",
+   "cursor mcp",
+   "model context protocol",
+   "push to talk dictation",
+   "hotkey dictation",
+   "voice to text",
+   "alternative to superwhisper",
+   "alternative to macwhisper",
+   "alternative to wispr flow",
+   "privacy transcription",
+   "local speech recognition",
+   "swift macos app",
+   "screencapturekit",
+   "share audio with ai agent",
+   "dictate into any app",
+   "free dictation app"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5435,
+  "output": 1461
+ },
+ "generated": "2026-10-29"
+}

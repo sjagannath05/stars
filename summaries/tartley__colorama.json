@@ -1,0 +1,88 @@
+{
+ "id": "tartley/colorama",
+ "repo": "tartley/colorama",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "CLI Development",
+   "entry": "colorama - Cross-platform colored terminal text."
+  }
+ ],
+ "summary": {
+  "one_liner": "Colorama makes ANSI escape sequences for colored terminal text and cursor positioning work on Windows, and does nothing on other platforms.",
+  "what_it_does": "Wraps stdout/stderr and converts recognised ANSI color and cursor sequences into win32 console calls, so Python output using ANSI codes displays correctly on Windows. The newer just_fix_windows_console() function (since v0.4.6) enables Windows' built-in ANSI support on recent Windows 10+ consoles, or wraps the streams on older versions. The older init() function adds keyword options: autoreset, strip, convert, and wrap. It also provides Fore, Back and Style constants for basic colors and styles, plus deinit()/reinit() to turn it on and off. Only a defined subset of ANSI sequences is converted (basic 8 colors, bright/dim/normal, cursor movement, and screen/line clearing); other sequences are stripped on Windows. On non-Windows platforms it does nothing by default.",
+  "use_cases": [
+   "Show colored terminal output from Python scripts on Windows",
+   "Make existing ANSI-colored CLI output work on Windows",
+   "Print colored text with Termcolor or Rich on Windows",
+   "Reset terminal colors automatically after each print",
+   "Strip ANSI codes when output is redirected to a file",
+   "Position the cursor in a terminal UI on Windows"
+  ],
+  "how_to_run": [
+   "pip install colorama",
+   "from colorama import just_fix_windows_console",
+   "just_fix_windows_console()"
+  ],
+  "stack": [
+   "Python",
+   "CPython",
+   "PyPy",
+   "win32 console API"
+  ],
+  "notable": [
+   "Pure standard library, no dependencies",
+   "Calling just_fix_windows_console() is a no-op on non-Windows platforms",
+   "Works alongside libraries like Termcolor, Blessings, and Rich rather than generating new ANSI codes itself",
+   "Limited conversion: only a documented subset of ANSI sequences is handled",
+   "Dim text looks the same as normal text on Windows"
+  ],
+  "caveats": [
+   "Only a limited subset of ANSI sequences is recognised; others are silently stripped on Windows",
+   "On Windows, Colorama does not support ANSI dim text; it looks the same as normal text",
+   "The init() interface can cause side-effects and must not be called multiple times; it is recommended to use just_fix_windows_console() instead"
+  ],
+  "license": "BSD 3-Clause",
+  "category": "terminal color output",
+  "keywords": [
+   "colorama",
+   "ansi escape codes",
+   "ansi sequences",
+   "terminal colors",
+   "colored terminal text",
+   "windows ansi support",
+   "windows console colors",
+   "cross-platform colored output",
+   "win32 console",
+   "ansi to win32",
+   "python colored print",
+   "cursor positioning",
+   "termcolor windows",
+   "rich windows",
+   "blessings",
+   "enable ansi on windows",
+   "just_fix_windows_console",
+   "ansi.sys",
+   "strip ansi codes",
+   "autoreset terminal color",
+   "fore back style constants",
+   "color text in cli",
+   "make colors work on windows",
+   "pip install colorama",
+   "ansi color library python",
+   "terminal escape sequences windows",
+   "print red text python",
+   "bsd license python library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6972,
+  "output": 1203
+ },
+ "generated": "2026-10-29"
+}

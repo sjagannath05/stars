@@ -1,0 +1,95 @@
+{
+ "id": "hoshinosuzumi/chronoframe",
+ "repo": "HoshinoSuzumi/chronoframe",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Photo Galleries",
+   "entry": "ChronoFrame - Personal gallery application with online photo management, supporting Live/Motion Photos, and explore map. (Demo, Source Code) MIT Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "ChronoFrame is a self-hosted photo gallery that extracts EXIF data, generates previews, identifies shooting locations, and supports Live Photos and an explore map.",
+  "what_it_does": "Users upload photos, and the app extracts EXIF metadata, creates previews, and identifies shooting locations via reverse geocoding. Visitors can browse by time, album, or map, zoom into large images with WebGL tiled rendering, and play Live Photos. Albums can be reordered, hidden, or protected with passwords. The dashboard handles batch uploads, metadata and rating edits, batch downloads, reindexing, and a task queue with live logs. Storage can be local files, S3-compatible services, or OpenList, with CDN URLs managed in the dashboard. A browser-based setup wizard creates the administrator and configures storage.",
+  "use_cases": [
+   "self-hosted personal photo gallery",
+   "share photo albums with visitors",
+   "browse photos by map location",
+   "play Apple Live Photos on a website",
+   "store photos in S3-compatible object storage",
+   "password-protect private photo albums"
+  ],
+  "how_to_run": [
+   "Create docker-compose.yml with the ghcr.io/hoshinosuzumi/chronoframe:latest image, port 3000:3000, and ./data:/app/data volume",
+   "Run: docker compose up -d",
+   "Or run directly: docker run -d --name chronoframe --restart unless-stopped -p 3000:3000 -v \"$(pwd)/data:/app/data\" ghcr.io/hoshinosuzumi/chronoframe:latest",
+   "Open the app in a browser and complete the setup wizard; for local storage enter /app/data/storage",
+   "Development: corepack enable, then pnpm install --frozen-lockfile, then pnpm dev (Node.js 22, pnpm 10.34.6)"
+  ],
+  "stack": [
+   "Node.js",
+   "Nuxt",
+   "Vue",
+   "Tailwind CSS",
+   "Drizzle ORM",
+   "MapLibre",
+   "Mapbox",
+   "Docker",
+   "pnpm"
+  ],
+  "notable": [
+   "Automatic pairing of Apple Live/Motion Photo image and video files by shared filename",
+   "WebGL zoom and tiled rendering for large images",
+   "Storage backends include local files, S3-compatible services, and OpenList with CDN URL support",
+   "Browser-based setup wizard for admin and storage configuration",
+   "Explore map with reverse geocoding and selectable place-name language"
+  ],
+  "caveats": [
+   "Album passwords only control access within ChronoFrame; public S3, OpenList, or CDN URLs must be secured in those services",
+   "Public deployments should use HTTPS, which requires a proxy setup not covered in the README",
+   "Map features need a MapLibre or Mapbox token configured later"
+  ],
+  "license": "MIT",
+  "category": "self-hosted photo gallery",
+  "keywords": [
+   "photo gallery",
+   "self-hosted photos",
+   "photo management",
+   "live photos",
+   "motion photos",
+   "exif viewer",
+   "photo map",
+   "geotagged photos",
+   "photo albums",
+   "share photos online",
+   "personal photo website",
+   "photo hosting",
+   "s3 photo storage",
+   "openlist",
+   "webgl image zoom",
+   "heic photos",
+   "reverse geocoding",
+   "nuxt photo app",
+   "docker photo gallery",
+   "photo timeline",
+   "password protected albums",
+   "photo upload dashboard",
+   "maplibre",
+   "mapbox",
+   "drizzle orm",
+   "photo previews",
+   "apple live photo viewer",
+   "self hosted gallery alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3155,
+  "output": 1317
+ },
+ "generated": "2026-10-29"
+}

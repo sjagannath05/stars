@@ -1,0 +1,97 @@
+{
+ "id": "finos/git-proxy",
+ "repo": "finos/git-proxy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Proxy",
+   "entry": "GitProxy - Proxy for Git that applies rules and workflows to all outgoing git push operations and ensures they are compliant. It supports both HTTP/HTTPS and SSH protocols with security scanning and validation. (Source Code) Apache-2.0 Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "GitProxy is a FINOS application that sits between developers and a Git remote and applies configurable rules and workflows (plugins) to outgoing git push operations over HTTP/HTTPS and SSH.",
+  "what_it_does": "GitProxy intercepts git push operations headed to a remote such as github.com and runs them through a chain of checks before forwarding them. The README describes a security processor chain that includes secret detection via gitleaks, commit message and author validation, hidden commit detection, and pre-receive hooks. Pushes that fail checks are blocked, and the README says pushes can be approved manually or automatically through workflows. It supports both HTTP/HTTPS (basic auth and JWT tokens) and SSH (key-based auth with agent forwarding), and states that both protocols get the same scanning. It also provides audit logging. The stated goal is to let teams keep the standard branch-and-merge git workflow while meeting compliance requirements, for example in regulated financial services. It can also run locally to enforce a single developer's practices.",
+  "use_cases": [
+   "enforce push policies on git pushes",
+   "scan outgoing commits for secrets before pushing",
+   "compliance checks for git workflows in regulated industries",
+   "validate commit messages and author identity before push",
+   "local pre-push guardrails for a single developer",
+   "audit logging of git push activity"
+  ],
+  "how_to_run": [
+   "npx -- @finos/git-proxy",
+   "git clone <repo> && cd <repo>",
+   "git remote add proxy <GitProxy URL> (HTTPS) or ssh://git@localhost:2222/github.com/<user>/<repo>.git (SSH)",
+   "git config core.sshCommand \"ssh -A\" (SSH only, agent forwarding)",
+   "git push proxy <default-branch>",
+   "Add the repository URL to proxy.config.json so pushes are allowed; default config blocks pushes"
+  ],
+  "stack": [
+   "Node.js",
+   "Docker",
+   "gitleaks",
+   "SSH",
+   "JWT"
+  ],
+  "notable": [
+   "Same security processor chain for both HTTP/HTTPS and SSH pushes",
+   "Rules and workflows implemented as configurable plugins",
+   "Default configuration blocks pushes until the repository is added to proxy.config.json",
+   "Can run locally for individual developers or as a shared control point for teams",
+   "Part of the FINOS open source foundation"
+  ],
+  "caveats": [
+   "Default config blocks all pushes until the target repository is added to proxy.config.json",
+   "SSH use requires agent forwarding and extra setup described in docs/SSH_SETUP.md",
+   "Requires Node.js to run via npx"
+  ],
+  "license": "Apache-2.0",
+  "category": "git push policy proxy",
+  "keywords": [
+   "git proxy",
+   "git push proxy",
+   "push policy enforcement",
+   "secret scanning git",
+   "gitleaks",
+   "pre-receive hook",
+   "commit message validation",
+   "compliance git workflow",
+   "financial services git compliance",
+   "regulated industry git",
+   "ssh git proxy",
+   "https git proxy",
+   "audit logging git",
+   "nodejs git tool",
+   "docker git proxy",
+   "npx git-proxy",
+   "pre-push checks",
+   "block secrets in commits",
+   "approval workflow for git pushes",
+   "developer best practices enforcement",
+   "finos",
+   "git remote proxy",
+   "github push rules",
+   "jwt git auth",
+   "ssh agent forwarding",
+   "plugin based git rules",
+   "hidden commit detection",
+   "legal compliance git",
+   "git security scanning",
+   "git guardrails",
+   "policy as code git",
+   "self-hosted git proxy",
+   "git governance"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3551,
+  "output": 1321
+ },
+ "generated": "2026-10-29"
+}

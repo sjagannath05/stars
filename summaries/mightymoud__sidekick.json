@@ -1,0 +1,116 @@
+{
+ "id": "mightymoud/sidekick",
+ "repo": "MightyMoud/sidekick",
+ "kind": "star",
+ "description": "Bare metal to production ready in mins; your own fly server on your VPS.",
+ "topics": [
+  "deployment",
+  "heroku",
+  "self-host",
+  "self-hostable",
+  "self-hosted",
+  "self-hosting",
+  "selfhosting",
+  "vps-admin",
+  "vps-server",
+  "vps-setup",
+  "vps-ubuntu"
+ ],
+ "language": "Go",
+ "stars": 7595,
+ "license": "GPL-3.0",
+ "homepage": "https://www.sidekickdeploy.com",
+ "pushed_at": "2026-02-03",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dkr k8s cloud",
+  "my company",
+  "my stack",
+  "webtools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Sidekick is a Go CLI that sets up an Ubuntu VPS with Docker, Traefik and SOPS, then deploys Dockerfile-based apps to it, aiming to act like a self-hosted fly.io.",
+  "what_it_does": "Sidekick runs a one-time setup on a VPS (creates a sidekick user, disables root login, installs Docker, sops and age, and sets up Traefik with SSL certs). The `sidekick launch` command builds a local Dockerfile image for Linux, transfers it to the VPS, encrypts an optional .env file with sops, and runs the container via docker compose behind Traefik. `sidekick deploy` redeploys with zero downtime and re-encrypts the env file only when its checksum changes. `sidekick deploy preview` creates preview apps tagged by git commit hash, which requires a clean git tree. Domains can be connected directly or served under sslip.io for testing.",
+  "use_cases": [
+   "Host side projects on a cheap VPS",
+   "Deploy a Dockerfile app to a VPS without Kubernetes",
+   "Set up a fresh Ubuntu VPS for Docker hosting",
+   "Spin up preview deployments per git commit",
+   "Manage encrypted env secrets for a self-hosted app",
+   "Run multiple apps on one VPS behind Traefik"
+  ],
+  "how_to_run": [
+   "brew install sidekick",
+   "sidekick init  (enter VPS IP address and email for SSL certs)",
+   "sidekick launch  (run in app folder containing a Dockerfile)",
+   "sidekick deploy",
+   "sidekick deploy preview  (requires a clean git tree)"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Traefik",
+   "SOPS",
+   "age",
+   "docker compose",
+   "Ubuntu"
+  ],
+  "notable": [
+   "Brings a fly.io-style deploy workflow to a plain VPS with one setup command",
+   "Zero-config SSL certificates, or sslip.io domains out of the box",
+   "Built-in SOPS integration for encrypting and injecting env secrets at runtime",
+   "Preview environments tied to git commit hashes"
+  ],
+  "caveats": [
+   "Requires Homebrew (brew) on the local machine, since it uses brew to install sops",
+   "Targets Ubuntu LTS VPS hosts with SSH key login",
+   "Roadmap items such as firewall setup, multi-VPS management, databases and compose support are not yet built; some features may move to a paid version"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted deployment cli",
+  "keywords": [
+   "vps deployment",
+   "self-hosted deployment",
+   "self-hosting",
+   "heroku alternative",
+   "fly.io alternative",
+   "fly.io on vps",
+   "paas on vps",
+   "deploy dockerfile",
+   "docker deployment",
+   "traefik",
+   "traefik reverse proxy",
+   "sops",
+   "age encryption",
+   "encrypted env file",
+   "zero downtime deploy",
+   "preview environments",
+   "ssl certificates",
+   "lets encrypt",
+   "sslip.io",
+   "vps setup",
+   "ubuntu server setup",
+   "digitalocean droplet",
+   "hetzner",
+   "side project hosting",
+   "go cli",
+   "docker compose",
+   "vendor lock-in avoidance",
+   "deploy app to my own server",
+   "host side projects cheaply",
+   "one command server setup",
+   "self-hostable paas"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3925,
+  "output": 1250
+ },
+ "generated": "2026-10-29"
+}

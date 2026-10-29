@@ -1,0 +1,91 @@
+{
+ "id": "eduard256/strix",
+ "repo": "eduard256/Strix",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Video Surveillance",
+   "entry": "Strix - Auto-discovers working stream URLs for IP cameras and generates ready-to-use Frigate and go2rtc configs. MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Strix is a camera stream discovery tool that finds working stream URLs for IP cameras and generates Frigate and go2rtc configs.",
+  "what_it_does": "Strix probes a camera IP for open ports, MAC vendor, mDNS/HomeKit and HTTP server details. You search for the camera model in its SQLite database of 3,600+ brands and 100,000+ URL patterns, optionally entering credentials. It then builds candidate stream URLs from those patterns and tests them with 20 parallel workers, collecting live screenshots, codecs, resolution and latency. You pick main and sub streams from the results and get a ready Frigate config that can be copied, downloaded, or saved directly into Frigate. It also auto-discovers Frigate and go2rtc on the local network and smart-merges into an existing setup. Supported protocols listed are RTSP, RTSPS, HTTP/HTTPS (MJPEG, snapshots, HLS, MPEG-TS), RTMP, Bubble, DVRIP and HomeKit.",
+  "use_cases": [
+   "discover RTSP stream URL for an IP camera",
+   "generate Frigate camera config",
+   "set up go2rtc streams for cameras",
+   "find camera model stream paths in a database",
+   "test which camera URLs actually work",
+   "add IP cameras to a home NVR setup"
+  ],
+  "how_to_run": [
+   "bash <install script from README; the command was cut off in the source, so see the README>",
+   "docker run -d --name strix --network host --restart unless-stopped eduard256/strix:latest",
+   "chmod +x strix-linux-amd64",
+   "STRIX_LISTEN=:4567 ./strix-linux-amd64"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "SQLite",
+   "ffmpeg (for screenshot conversion)",
+   "Frigate",
+   "go2rtc"
+  ],
+  "notable": [
+   "Camera stream database of 3,600+ brands and 100,000+ URL patterns, maintained separately in StrixCamDB",
+   "Auto-discovery of Frigate and go2rtc on the local network",
+   "Tests every candidate URL with 20 parallel workers and live screenshots",
+   "Zero-dependency static binary for Linux amd64/arm64",
+   "Exposes an HTTP API for integration into smart home platforms"
+  ],
+  "caveats": [
+   "Network scanning needs NET_RAW and NET_ADMIN capabilities (or privileged mode) under Podman",
+   "Binary install requires ffmpeg for screenshot conversion",
+   "Binary releases are published for Linux amd64/arm64 only"
+  ],
+  "license": "MIT",
+  "category": "video surveillance tooling",
+  "keywords": [
+   "camera stream discovery",
+   "rtsp url finder",
+   "ip camera",
+   "frigate config generator",
+   "go2rtc",
+   "camera stream url",
+   "rtsp",
+   "rtsps",
+   "mjpeg",
+   "onvif",
+   "hikvision",
+   "dahua",
+   "nvr",
+   "dvr",
+   "homekit camera",
+   "home assistant add-on",
+   "self-hosted video surveillance",
+   "camera brand database",
+   "find my camera stream url",
+   "test camera rtsp links",
+   "set up frigate cameras",
+   "add ip camera to frigate",
+   "docker camera tool",
+   "go binary",
+   "sqlite camera database",
+   "mdns camera discovery",
+   "camera screenshot testing",
+   "smart home camera integration"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3183,
+  "output": 1256
+ },
+ "generated": "2026-10-29"
+}

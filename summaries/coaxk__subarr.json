@@ -1,0 +1,101 @@
+{
+ "id": "coaxk/subarr",
+ "repo": "coaxk/subarr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "subarr | Coordination layer beside Bazarr and subgen: calibrated audio-language detection, library-wide subtitle coverage, and a queue UI for Whisper transcription."
+  }
+ ],
+ "summary": {
+  "one_liner": "subarr is a coordination layer beside Bazarr and subgen that finds which media files truly lack subtitles, verifies audio language, and queues Whisper transcription through a web UI.",
+  "what_it_does": "Subarr walks your Sonarr/Radarr/Bazarr library and reports per-language subtitle coverage, only treating a file as a gap after it has actually probed the file. It runs calibrated audio-language detection by sampling three Whisper chunks across each file and voting, and flags mislabeled or bilingual tracks for manual review. It queues transcription jobs to subgen through a backpressured queue with pause, reorder, requeue and cancel, and tracks which provider supplied each subtitle. It also offers a Tuning Lab that sweeps Whisper recipes against a live subgen, post-transcription Aftercare quality review, automatic re-timing, and Plex and Jellyfin library refresh after a subtitle lands. Authentication is on by default, and multiple libraries and separate Sonarr/Bazarr stacks are supported.",
+  "use_cases": [
+   "fill missing subtitles across a multi-language library",
+   "detect the real spoken language of anime or dubbed files",
+   "queue Whisper transcription through a web UI",
+   "review and fix wrong audio-language tags",
+   "track which Bazarr provider supplied each subtitle",
+   "refresh Plex or Jellyfin after new subtitles land",
+   "tune Whisper settings per language on local hardware"
+  ],
+  "how_to_run": [
+   "Copy docker-compose.yml from the repo (compose.yaml example uses image ghcr.io/coaxk/subarr:latest)",
+   "Mount a persistent volume for /data (SUBARR_DB_PATH=/data/subarr.db) and your media at the same path Bazarr and subgen see",
+   "docker compose up -d",
+   "Open the onboarding wizard in the browser on port 9922 to auto-detect Sonarr, Radarr, Bazarr, Tautulli and subgen"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "SQLite",
+   "Whisper via subgen (ghcr.io/coaxk/subarr-subgen or mccloud/subgen)",
+   "Bazarr",
+   "Sonarr",
+   "Radarr",
+   "Plex",
+   "Jellyfin",
+   "Tautulli",
+   "silero VAD",
+   "ffprobe",
+   "mkvtoolnix (mkvpropedit)",
+   "optional Ollama"
+  ],
+  "notable": [
+   "Probe-gate: only files subarr has verified appear as gaps; unprobed files wait in an Analyzing bucket",
+   "Calibrated audio-language detection: three Whisper chunks at 10/50/90 percent of the file, majority vote, confidence is the minimum across agreeing chunks",
+   "Tuning Lab sweeps Whisper recipes against live subgen and ranks them per language",
+   "Multiple libraries and multiple Sonarr/Radarr/Bazarr instances with writeback routed to the owning instance",
+   "Non-root container with hardened capability-drop deployment option"
+  ],
+  "caveats": [
+   "Full feature set needs the custom ghcr.io/coaxk/subarr-subgen image; vanilla mccloud/subgen runs in a reduced compat mode",
+   "Single-admin authentication only, no per-user accounts or roles; SQLite only, single host, no Emby support",
+   "Whisper writes one subtitle language per job (English in translate mode), so some wanted languages cannot be produced; Logs page needs Docker socket access"
+  ],
+  "license": "unknown",
+  "category": "subtitle coordination tooling",
+  "keywords": [
+   "subtitles",
+   "subtitle coverage",
+   "bazarr companion",
+   "subgen",
+   "whisper transcription",
+   "speech to text subtitles",
+   "audio language detection",
+   "sonarr",
+   "radarr",
+   "plex subtitles",
+   "jellyfin subtitles",
+   "missing subtitles",
+   "subtitle queue",
+   "tautulli",
+   "arr stack",
+   "self-hosted media",
+   "docker compose",
+   "mislabeled audio track",
+   "anime dual audio",
+   "transcribe my videos",
+   "find missing subtitle files",
+   "subtitle provider tracking",
+   "whisper tuning",
+   "media library subtitles",
+   "forced subtitles",
+   "subtitle sync retime",
+   "sdh subtitles",
+   "subarr",
+   "subtitle backfill"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17023,
+  "output": 1577
+ },
+ "generated": "2026-10-29"
+}

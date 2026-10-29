@@ -1,0 +1,123 @@
+{
+ "id": "avsribhas/somaos",
+ "repo": "avsribhas/SomaOS",
+ "kind": "star",
+ "description": "AI-native OS where the AI is a first-class user — not a chatbot bolted on top.",
+ "topics": [
+  "ai",
+  "bare-metal",
+  "compositor",
+  "drm-kms",
+  "llm",
+  "operating-system",
+  "rust",
+  "wayland-alternative"
+ ],
+ "language": "Rust",
+ "stars": 14,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-05-23",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm",
+  "desktop",
+  "my company",
+  "personal ai"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "SomaOS is an experimental Linux-based operating system with a custom DRM/KMS compositor and an LLM agent that acts as a peer desktop user alongside the human.",
+  "what_it_does": "The project builds a minimal bootable Linux image (via Buildroot) that boots into a custom Rust compositor rendering directly to DRM/KMS framebuffers, with no X11 or Wayland server. The desktop has floating windows, a dock, a menu bar, and an AI sidebar with chat, plan cards, and a human-approval (HITL) modal. A Rust agent daemon exposes roughly 40 built-in capability actions across filesystem, process, system, network, package, browser, vision, meta, and desktop-control modules, plus user-defined shell-backed capabilities loaded from JSON files. The agent can drive the desktop (open/focus windows, type text) and spawn declarative widget-tree windows at runtime. It supports Ollama, Anthropic, OpenAI, and Gemini providers via native tool calling, and records desktop events for workflow learning unless private mode is on. The README describes the project as v2.0 with a \"soma-substrate\" crate for resource-state monitoring and action tiers, and it lists dual-interface apps (soma-sheets, soma-docs) as planned or partially implemented.",
+  "use_cases": [
+   "experimenting with an AI-native desktop environment",
+   "running a local LLM agent that controls apps and windows",
+   "building a custom DRM/KMS compositor in Rust",
+   "giving an AI agent human-approved access to system commands",
+   "prototyping self-extending agent capabilities via JSON definitions",
+   "booting a minimal Linux image in a VM with an AI desktop"
+  ],
+  "how_to_run": [
+   "git clone git@github.com:avsribhas-svg/SomaOS.git && cd SomaOS",
+   "ollama pull qwen2.5-coder:7b",
+   "ollama serve &",
+   "cargo run -p soma-agent",
+   "cargo run -p soma-compositor",
+   "cargo run -p soma-cli"
+  ],
+  "stack": [
+   "Rust",
+   "Buildroot",
+   "systemd",
+   "Ollama",
+   "tiny-skia",
+   "cosmic-text",
+   "DRM/KMS",
+   "evdev",
+   "tokio",
+   "reqwest",
+   "serde",
+   "winit",
+   "headless Chromium",
+   "qwen2.5-vl"
+  ],
+  "notable": [
+   "Human and AI agent share the same desktop; the agent uses structured IPC rather than pixel-scraping",
+   "Compositor renders directly to DRM/KMS with no X11 or Wayland server",
+   "Agent can propose new capabilities as JSON shell templates, which the human approves through a HITL gate",
+   "Private mode disables desktop event observation for workflow learning",
+   "Native tool calling across multiple LLM providers with a keyword fast-path layer"
+  ],
+  "caveats": [
+   "Dev mode uses a winit window and skips the login screen; the full bare-metal path needs a Buildroot image or VM",
+   "Requires Ollama and a local model (default qwen2.5-coder:7b) for the default configuration",
+   "Several described features, such as the WebKitGTK browser embedding and soma-sheets/soma-docs AgentAPI, are presented as future or long-term stack items",
+   "Image builds depend on Docker, and VM setup guides are separate per architecture (x86_64 and ARM64)"
+  ],
+  "license": "MIT",
+  "category": "ai operating system",
+  "keywords": [
+   "ai operating system",
+   "agent os",
+   "llm desktop",
+   "ai-native os",
+   "rust compositor",
+   "drm kms",
+   "direct rendering manager",
+   "wayland alternative",
+   "x11 alternative",
+   "bare metal os",
+   "buildroot image",
+   "local llm agent",
+   "ollama agent",
+   "human in the loop approval",
+   "hitl gate",
+   "tool calling",
+   "function calling",
+   "desktop automation agent",
+   "computer use agent",
+   "ai agent controls desktop",
+   "floating window compositor",
+   "evdev input",
+   "tiny-skia rendering",
+   "linux distro for ai",
+   "self-improving agent",
+   "json capabilities",
+   "share files with my team",
+   "let an ai run commands on my computer",
+   "build my own os in rust",
+   "boot ai desktop in virtualbox",
+   "local privacy-first assistant"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17857,
+  "output": 1535
+ },
+ "generated": "2026-10-29"
+}

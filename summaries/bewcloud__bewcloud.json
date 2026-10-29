@@ -1,0 +1,94 @@
+{
+ "id": "bewcloud/bewcloud",
+ "repo": "bewcloud/bewcloud",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer & Synchronization",
+   "entry": "bewCloud - File sharing + sync, notes, and photos (alternative to Nextcloud and ownCloud's RSS reader). (Source Code, Clients) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "bewCloud is a self-hosted file sync, sharing, notes, and photos app built with Deno and deployed via Docker Compose.",
+  "what_it_does": "The README describes a Deno-based web app that is run with docker compose alongside a Postgres database. It stores user-uploaded files in a local data directory and includes optional CalDAV/CardDAV contacts and calendar support through a Radicale container. Setup uses a .env file and a bewcloud.config.ts file, with a make migrate-db step to initialize or update the database. The README points to separate repositories for the desktop sync client (bewcloud-desktop) and the mobile app (bewcloud-mobile). The FAQ on the website covers private calendar and file sharing and .env-based configuration. Development commands cover starting the dev server, formatting, testing, and building production CSS.",
+  "use_cases": [
+   "self-host personal file storage and sync",
+   "share files with others from my own server",
+   "host private calendar and contacts with CalDAV/CardDAV",
+   "run a private photo and notes app",
+   "alternative to Nextcloud or ownCloud"
+  ],
+  "how_to_run": [
+   "mkdir data-files data-radicale radicale-config",
+   "Copy docker-compose.yml, .env.sample (save as .env), bewcloud.config.sample.ts (save as bewcloud.config.ts), and radicale-config/config into place",
+   "docker compose up -d",
+   "docker compose run --rm website bash -c \"cd /app && make migrate-db\"",
+   "For local development: docker compose -f docker-compose.dev.yml up, then make migrate-db and make start"
+  ],
+  "stack": [
+   "Deno",
+   "Docker",
+   "Docker Compose",
+   "PostgreSQL",
+   "Radicale",
+   "CSS build tooling (make build)"
+  ],
+  "notable": [
+   "Separate desktop sync client (bewcloud-desktop) and mobile app (bewcloud-mobile) repositories",
+   "Optional CalDAV/CardDAV support via Radicale",
+   "Mirrored to Codeberg (Forgejo) as well as GitHub",
+   "Community NixOS and Helm chart alternatives to Docker deployment"
+  ],
+  "caveats": [
+   "The default configuration is described as working but very unsafe, so settings must be changed before real use",
+   "With signups disabled, the first signup still succeeds and becomes an admin",
+   "Permission issues on the data-files directory may require a chown to UID 1993 as noted in the README"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted file sync",
+  "keywords": [
+   "file sync",
+   "file sharing",
+   "self-hosted cloud",
+   "nextcloud alternative",
+   "owncloud alternative",
+   "deno",
+   "docker compose",
+   "postgresql",
+   "caldav",
+   "carddav",
+   "radicale",
+   "calendar and contacts server",
+   "photo storage",
+   "notes app",
+   "private cloud storage",
+   "share files with my team",
+   "host my own dropbox alternative",
+   "personal cloud server",
+   "file upload server",
+   "web file manager",
+   "agpl software",
+   "deno web app",
+   "self hosted photos",
+   "sync files across devices",
+   "docker self hosting",
+   "google drive alternative",
+   "contacts sync server",
+   "migrate db",
+   "bewcloud desktop client",
+   "bewcloud mobile app",
+   "nixos bewcloud",
+   "helm chart bewcloud"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3008,
+  "output": 1232
+ },
+ "generated": "2026-10-29"
+}

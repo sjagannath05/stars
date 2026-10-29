@@ -1,0 +1,98 @@
+{
+ "id": "outsourc-e/hermes-workspace",
+ "repo": "outsourc-e/hermes-workspace",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Personal / Always-On Agents",
+   "entry": "Hermes Agent *(NousResearch)* — The self-improving AI agent. Builds reusable skills from experience and improves them during use, giving it a compounding learning loop. Persistent cross-session memory (SQLite + FTS5), multi-platform gateway (Telegram, Discord, Slack, WhatsApp, Signal, CLI), 40+ built-in tools, and RL/trajectory-generation support via Atropos. One-line install. MIT. → Website · awe"
+  }
+ ],
+ "summary": {
+  "one_liner": "A web UI workspace (chat, files, memory, skills, MCP, terminal, dashboard, and tmux-backed agent swarm) that pairs with a Hermes Agent gateway or any OpenAI-compatible backend.",
+  "what_it_does": "Hermes Workspace is a browser-based control panel for Hermes Agent, NousResearch's agent. It provides real-time SSE chat with tool call rendering, multi-session support, and markdown/syntax highlighting. It includes browsers and editors for agent memory and skills (the README cites 2,000+ skills with a marketplace), an MCP page, a workspace file browser with Monaco editor, and a cross-platform PTY terminal. It also offers an Operations dashboard with agent profile presets, a Conductor for mission dispatch, and a Swarm Mode that runs persistent tmux-backed Hermes Agent workers with role-based dispatch and a Kanban task board. It talks to two services: the Hermes gateway on port 8642 for chat and the dashboard on port 9119 for sessions, skills, config, and jobs. Without those, it runs in a \"portable mode\" against any OpenAI-compatible server such as Ollama or LM Studio.",
+  "use_cases": [
+   "Chat with a self-hosted AI agent from a browser",
+   "Browse and edit agent memory and skills",
+   "Run a multi-agent swarm with task board and review gates",
+   "Control a Hermes Agent from a phone over Tailscale",
+   "Use a local Ollama or LM Studio model through a web chat UI",
+   "Manage MCP servers and agent sessions from one dashboard"
+  ],
+  "how_to_run": [
+   "curl -fsSL <installer URL> | bash  (one-line install; URL missing from README text)",
+   "hermes gateway run",
+   "cd ~/hermes-workspace && pnpm dev",
+   "git clone <repo> && cd hermes-workspace && pnpm install && cp .env.example .env",
+   "Set HERMES_API_URL and HERMES_DASHBOARD_URL in .env, then pnpm dev",
+   "docker compose up  (pulls nousresearch/hermes-agent and ghcr.io/outsourc-e/hermes-workspace images)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 22+",
+   "pnpm",
+   "Monaco editor",
+   "tmux",
+   "Docker Compose",
+   "Hermes Agent (NousResearch)",
+   "Python 3.11+ (optional, for local gateway)",
+   "Tailscale (optional)"
+  ],
+  "notable": [
+   "Zero-fork design: runs on vanilla NousResearch/hermes-agent with no custom fork required",
+   "Conductor falls back to a Workspace-native Swarm dispatch when the dashboard mission API is absent",
+   "Works in portable mode with any OpenAI-compatible backend, not only Hermes Agent",
+   "Installable as a PWA with Tailscale access from phones",
+   "Built-in auth middleware, path-traversal guard, and fail-closed remote bind requiring a password"
+  ],
+  "caveats": [
+   "Full features need both the Hermes gateway (:8642) and dashboard (:9119) running; otherwise sessions, memory, and skills show 'Not Available'",
+   "Native Electron desktop app and cloud/hosted version are listed as in development or coming soon, not shipped",
+   "Remote access requires setting API_SERVER_HOST and HERMES_PASSWORD, and some Docker setups need cookie and proxy env tweaks"
+  ],
+  "license": "MIT",
+  "category": "ai agent web ui",
+  "keywords": [
+   "hermes workspace",
+   "hermes agent",
+   "nous research",
+   "ai agent dashboard",
+   "agent control panel",
+   "web ui for ai agent",
+   "openai compatible frontend",
+   "chat ui",
+   "self-hosted chat interface",
+   "ollama web ui",
+   "lm studio frontend",
+   "vllm chat frontend",
+   "mcp manager",
+   "mcp marketplace",
+   "agent memory browser",
+   "skills marketplace",
+   "multi-agent swarm",
+   "tmux workers",
+   "kanban task board",
+   "agent orchestration",
+   "terminal in browser",
+   "monaco file editor",
+   "pwa install",
+   "tailscale remote access",
+   "docker compose agent",
+   "run ai agent at home",
+   "chat with my local model",
+   "manage multiple ai agents",
+   "sse streaming chat",
+   "agent sessions dashboard"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14345,
+  "output": 1591
+ },
+ "generated": "2026-10-29"
+}

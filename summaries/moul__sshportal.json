@@ -1,0 +1,110 @@
+{
+ "id": "moul/sshportal",
+ "repo": "moul/sshportal",
+ "kind": "star",
+ "description": ":tophat: simple, fun and transparent SSH (and telnet) bastion server",
+ "topics": [
+  "bastion",
+  "devops",
+  "fun",
+  "security",
+  "ssh",
+  "ssh-server"
+ ],
+ "language": "Go",
+ "stars": 1944,
+ "license": "Apache-2.0",
+ "homepage": "https://manfred.life/sshportal",
+ "pushed_at": "2026-09-19",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "my company"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A transparent SSH (and telnet) bastion server in Go that lets users reach remote hosts through a single portal without modifying their SSH clients.",
+  "what_it_does": "sshportal runs as a single binary that embeds an SSH server and client, so users connect to it and are routed to configured remote hosts. It manages hosts, host groups, users, user groups, SSH keys and ACLs, and includes an invite system so new users can associate their own public key via a token. Users can run admin commands directly over SSH or through an interactive configuration shell. The README lists session recording in ttyrec format, an audit log, session and tunnel logging, and backup/restore via JSON export. Data is stored in SQLite by default or MySQL for running multiple stateless instances. It also has a healthcheck mode and supports scp, rsync, sftp, port forwarding, ssh-agent, X11 forwarding, Git, and telnet targets.",
+  "use_cases": [
+   "give students or temporary users controlled access to servers",
+   "central jump host that logs all SSH sessions",
+   "manage access to servers and routers without sharing credentials",
+   "invite multiple people to an event with pre-made accounts",
+   "record and replay terminal sessions for audit",
+   "SSH access to telnet-only devices through a bastion"
+  ],
+  "how_to_run": [
+   "docker run -p 2222:2222 -d --name=sshportal -v \"$(pwd):$(pwd)\" -w \"$(pwd)\" moul/sshportal:v1.10.0",
+   "docker logs -f sshportal",
+   "GO111MODULE=on go get -u moul.io/sshportal",
+   "sshportal server",
+   "ssh localhost -p 2222 -l admin",
+   "ssh admin@portal.example.org host inspect toto"
+  ],
+  "stack": [
+   "Go",
+   "SSH",
+   "SQLite",
+   "MySQL",
+   "Docker",
+   "gorm"
+  ],
+  "notable": [
+   "Transparent bastion: users need no client modification or custom .ssh/config to reach hosts",
+   "Invite-token onboarding so users attach their own public keys without sharing them manually",
+   "Session recording in ttyrec format with ttyplay replay",
+   "Stateless design; horizontal scaling possible with a shared MySQL backend",
+   "Built-in configuration shell accessible over SSH, also usable for one-off commands"
+  ],
+  "caveats": [
+   "Does not work with mosh (per README)",
+   "A user cannot access a host with the same name as their username",
+   "Host named 'healthcheck' cannot be accessed because it is a built-in command",
+   "Default SQLite storage is not scalable; horizontal scaling requires MySQL"
+  ],
+  "license": "Apache-2.0",
+  "category": "ssh bastion server",
+  "keywords": [
+   "ssh bastion",
+   "jump host",
+   "jump server",
+   "transparent ssh proxy",
+   "ssh gateway",
+   "bastion host",
+   "ssh server go",
+   "telnet proxy",
+   "session recording",
+   "ttyrec",
+   "audit log ssh",
+   "ssh access control",
+   "acl ssh",
+   "user invitations ssh keys",
+   "sqlite ssh",
+   "mysql backend",
+   "horizontal scaling ssh",
+   "docker ssh server",
+   "sftp proxy",
+   "scp rsync proxy",
+   "port forwarding bastion",
+   "ssh key management",
+   "team server access",
+   "give students server access",
+   "monitor ssh connections",
+   "replace teleport",
+   "alternative to jump box",
+   "log who ran what on servers",
+   "central ssh access point",
+   "temporary server access"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6576,
+  "output": 1280
+ },
+ "generated": "2026-10-29"
+}

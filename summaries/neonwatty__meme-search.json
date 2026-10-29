@@ -1,0 +1,98 @@
+{
+ "id": "neonwatty/meme-search",
+ "repo": "neonwatty/meme-search",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Search Engines",
+   "entry": "Meme Search - AI-powered meme search engine. Automatically extracts descriptions from images using vision-language models, then indexes with vector embeddings for semantic and keyword search. (Source Code) Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hosted meme search engine that uses vision-language models to generate descriptions for your images and searches them by keyword or semantic vector similarity.",
+  "what_it_does": "Meme Search scans meme image directories and generates text descriptions with a local image-to-text model (Florence-2, SmolVLM, or Moondream2 variants) or an OpenAI-compatible vision API. Descriptions are stored in Postgres with pgvector, so you can run keyword search or vector (embedding) search, filter by tags and directory paths, and edit descriptions by hand. The web app supports bulk description generation, directory rescans, and drag-and-drop or paste uploads (JPG, PNG, WEBP, GIF; first frame used for GIF descriptions). A read-only, token-authenticated Search API v1 and a dependency-free Python CLI are included, along with an experimental Chromium popup. Deployment is via Docker Compose, with the web UI bound to 127.0.0.1 by default.",
+  "use_cases": [
+   "search my meme collection by what's in the image",
+   "auto-describe memes with a vision-language model",
+   "self-hosted image tagging and organization",
+   "semantic search over a local photo or image library",
+   "upload and index memes through a web interface",
+   "query meme index from a terminal or script"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd meme-search",
+   "docker compose up",
+   "Open the web app on port 3000 (default, bound to 127.0.0.1)",
+   "Upload images by drag-and-drop or paste, or mount a meme directory into the meme_search service"
+  ],
+  "stack": [
+   "Ruby",
+   "Rails 8.0.4",
+   "Python 3.12",
+   "PostgreSQL 17",
+   "pgvector",
+   "Solid Queue",
+   "Docker Compose",
+   "Node.js"
+  ],
+  "notable": [
+   "Runs image-to-text description generation fully locally by default, with an optional OpenAI-compatible vision API mode where only descriptions are sent externally",
+   "Choice of several vision-language models, including an INT8-quantized Moondream2 for lower-memory machines",
+   "Read-only Search API v1 with scoped bearer tokens, plus a Python CLI and experimental Chromium popup",
+   "Keyword and vector search with tags, directory-path filters, and manual description editing"
+  ],
+  "caveats": [
+   "The web UI has no user authentication and is supported only on loopback; public or LAN exposure is unsupported",
+   "API tokens protect only the /api/v1 endpoints, not the web UI or settings",
+   "Docker images are built manually before releases, and multi-platform builds are resource intensive",
+   "First description generation is slow while model weights download"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted meme search",
+  "keywords": [
+   "meme search",
+   "meme search engine",
+   "image search",
+   "semantic image search",
+   "vector search",
+   "vector embeddings",
+   "pgvector",
+   "postgres",
+   "keyword search",
+   "image captioning",
+   "vision language model",
+   "florence-2",
+   "smolvlm",
+   "moondream2",
+   "auto tagging images",
+   "image description generation",
+   "ocr text from images",
+   "self-hosted",
+   "docker compose",
+   "rails app",
+   "python generator",
+   "search my memes",
+   "find meme by text",
+   "organize meme collection",
+   "tag images",
+   "openai compatible api",
+   "vision api",
+   "local ai image search",
+   "upload images search",
+   "photo library search",
+   "search api",
+   "python cli"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8223,
+  "output": 1258
+ },
+ "generated": "2026-10-29"
+}

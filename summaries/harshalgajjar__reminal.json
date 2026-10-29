@@ -1,0 +1,105 @@
+{
+ "id": "harshalgajjar/reminal",
+ "repo": "harshalgajjar/Reminal",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📺 Terminal (27)",
+   "entry": "reminal - Streams every window and terminal to any browser with input; software closed-lid mode keeps the Mac awake headlessly."
+  }
+ ],
+ "summary": {
+  "one_liner": "reminal is a tool that shares terminals and individual app windows (or the whole desktop) from one machine to any browser, with input control, via an outbound-only relay.",
+  "what_it_does": "Runs a session on your machine that viewers reach through a browser by session ID and PIN, or by scanning a QR code, with no open ports on the host. It provides a full terminal in the browser, live mirroring and remote control of individual app windows or the full desktop (H.264 up to 60 fps on macOS, JPEG on Windows, X11 on Linux), and sessions that survive disconnects. It includes closed-lid mode on macOS, which keeps the Mac awake and creates a virtual display when no monitor is attached. Other features include an owner-device mode for PIN-free access to your own machines, a `reminal machines` view across enrolled machines, an MCP server so AI agent CLIs can list and type into sessions, public HTTPS forwarding of local ports, and one-time-code file transfer between machines. The relay is Cloudflare Workers and can be self-hosted.",
+  "use_cases": [
+   "remote access to a Mac or laptop from a phone or browser",
+   "keep a laptop serving with the lid closed and no monitor",
+   "share a terminal session with a teammate",
+   "mirror and control a remote GUI app window",
+   "expose a local dev server on a public HTTPS URL",
+   "copy files between machines without a cloud drive",
+   "let AI agents read or type into other terminal sessions"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh",
+   "reminal",
+   "On Windows (PowerShell): irm | iex",
+   "reminal"
+  ],
+  "stack": [
+   "Go",
+   "Swift (native macOS ScreenCaptureKit capture helper)",
+   "WebRTC",
+   "xterm.js",
+   "Cloudflare Workers",
+   "Durable Objects",
+   "WebSocket (WSS)",
+   "AES-256-GCM",
+   "CPace PAKE",
+   "wmctrl, xdotool, ImageMagick (Linux capture/input)"
+  ],
+  "notable": [
+   "Closed-lid mode on macOS disables clamshell sleep and auto-creates a virtual display so window mirroring works with the lid shut and nothing attached",
+   "Outbound-only design: the host dials out to a relay and opens no listening ports",
+   "Window frames stream peer-to-peer over WebRTC; the relay only routes end-to-end encrypted traffic",
+   "MCP server registers with many agent CLIs so agents can read and type into each other's sessions",
+   "Built-in public port forwarding (expose) that is PIN-gated by default"
+  ],
+  "caveats": [
+   "Closed-lid mode is macOS-only, and Linux window capture needs an X11 session (native Wayland is not supported)",
+   "Windows streaming uses the JPEG path at about 5-15 fps; the 60 fps H.264 pipeline is macOS-only",
+   "reminal expose traffic is not end-to-end encrypted and is readable by the relay",
+   "Licensed AGPL-3.0 with a commercial license needed for embedding in a distributed product or running a modified copy as a service"
+  ],
+  "license": "AGPL-3.0 (dual-licensed; commercial license available)",
+  "category": "remote desktop access",
+  "keywords": [
+   "remote terminal",
+   "browser terminal",
+   "remote desktop",
+   "screen sharing",
+   "window mirroring",
+   "remote control mac",
+   "closed lid mode",
+   "clamshell sleep",
+   "headless mac",
+   "virtual display",
+   "web terminal",
+   "xterm.js",
+   "webrtc",
+   "peer to peer streaming",
+   "h.264 streaming",
+   "ssh alternative",
+   "no open ports",
+   "tunnel",
+   "ngrok alternative",
+   "expose localhost",
+   "public url for local port",
+   "share terminal with teammate",
+   "control app from phone",
+   "mcp server",
+   "ai agent terminal",
+   "file transfer between machines",
+   "airdrop alternative",
+   "cloudflare workers relay",
+   "self-hosted relay",
+   "qr code login",
+   "pin session",
+   "agpl",
+   "go",
+   "macos",
+   "linux x11",
+   "windows conpty"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11393,
+  "output": 1478
+ },
+ "generated": "2026-10-29"
+}

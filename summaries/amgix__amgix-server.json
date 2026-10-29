@@ -1,0 +1,97 @@
+{
+ "id": "amgix/amgix-server",
+ "repo": "amgix/amgix-server",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Search Engines",
+   "entry": "Amgix - Hybrid search engine built for flexible deployment and real-world messy data. (Demo, Source Code, Clients) AGPL-3.0 Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Amgix is an open-source hybrid search system that handles ingestion, embedding, keyword and semantic retrieval, and ranking behind a single REST API.",
+  "what_it_does": "The README describes a REST API for defining collections, bulk-uploading documents, and searching them. Collections can mix keyword vectors (with a built-in tokenizer aimed at identifier-heavy data) and dense embedding model vectors (the example uses sentence-transformers/all-MiniLM-L6-v2). Ingestion is handled through built-in async queues with retries and deduplication. Search performs query vectorization, semantic and keyword retrieval, and fusion/ranking on the server in one call. The README says it can run on Postgres, MariaDB, or Qdrant without changing application code. Amgix One is a single-container image that bundles the API, encoders, RabbitMQ, and Qdrant. Client libraries are listed for Python, TypeScript, Rust, and C#.",
+  "use_cases": [
+   "hybrid keyword and semantic search over documents",
+   "searching product or part catalogs with identifiers and messy codes",
+   "adding semantic search to an existing application without building embedding pipelines",
+   "self-hosted search API with Docker",
+   "fusing keyword and vector search results into one ranking"
+  ],
+  "how_to_run": [
+   "docker run -d -p 8234:8234 -v :/data amgixio/amgix-one:1",
+   "For GPU support: docker run with the image tag amgixio/amgix-one:1-gpu (requires NVIDIA Container Toolkit)",
+   "POST /v1/collections/{name} to define a collection with keyword and dense_model vectors",
+   "POST /v1/collections/{name}/documents/bulk to upload documents",
+   "POST /v1/collections/{name}/search with a query string"
+  ],
+  "stack": [
+   "Docker",
+   "Kubernetes (K8S, per listing)",
+   "RabbitMQ",
+   "Qdrant",
+   "Hugging Face models",
+   "sentence-transformers",
+   "Postgres",
+   "MariaDB"
+  ],
+  "notable": [
+   "Single container (Amgix One) bundles API, encoders, RabbitMQ, and Qdrant",
+   "Custom keyword tokenizer that handles missing punctuation in identifiers",
+   "Backend-agnostic: Postgres, MariaDB, or Qdrant",
+   "Server-side hybrid fusion so the application does not combine result sets itself",
+   "Models load and rebalance across nodes based on demand"
+  ],
+  "caveats": [
+   "GPU image requires NVIDIA Container Toolkit",
+   "README points to external documentation for the full feature list; details of the full feature set are not in the README itself",
+   "Kubernetes support is listed in the awesome-selfhosted entry but no K8S setup steps appear in the README"
+  ],
+  "license": "AGPL-3.0",
+  "category": "hybrid search engine",
+  "keywords": [
+   "hybrid search",
+   "semantic search",
+   "keyword search",
+   "vector search",
+   "embeddings",
+   "dense vectors",
+   "sentence transformers",
+   "rest api search",
+   "search engine",
+   "full text search alternative",
+   "qdrant",
+   "rabbitmq",
+   "postgres search",
+   "mariadb search",
+   "docker search server",
+   "kubernetes search",
+   "identifier search",
+   "typo tolerant search",
+   "fuse keyword and semantic results",
+   "search my documents",
+   "search product catalog",
+   "find similar text",
+   "self-hosted search",
+   "ingestion queue",
+   "bulk document indexing",
+   "python search client",
+   "typescript search client",
+   "rust search client",
+   "agpl search engine",
+   "amgix",
+   "amalgam index",
+   "search without building embeddings pipeline"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2850,
+  "output": 1294
+ },
+ "generated": "2026-10-29"
+}

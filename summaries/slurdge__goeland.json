@@ -1,0 +1,98 @@
+{
+ "id": "slurdge/goeland",
+ "repo": "slurdge/goeland",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Feed Readers",
+   "entry": "Goeland - Turns any RSS/Atom feed into a beautiful email digest. MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Goeland is a self-hosted tool that turns RSS, Atom, JSON, Imgur, and Miniflux sources into HTML email digests.",
+  "what_it_does": "Goeland fetches entries from configured sources (RSS/Atom/JSON feeds, Imgur tags, Miniflux instances, or merged sources) and runs them through a chain of composable filters. Filters include unseen (deduplication tracked in goeland.db), today, lasthours, retrieve (full-article fetch via CSS selector), language, reskip (regex title skip), limitwords, and digest/combine to bundle entries into one email. Pipes connect a source to a destination such as email, a terminal, or standalone HTML files. Emails use a responsive HTML template that can be customized. A built-in daemon mode runs each pipe on its own cron schedule, and the README also describes rate limiting, logging levels, and environment-variable configuration.",
+  "use_cases": [
+   "Receive a daily or weekly email digest of RSS feeds",
+   "Email a summary of a subreddit or blog",
+   "Send unread Miniflux entries as an email digest",
+   "Merge several feeds on one topic into a single email",
+   "Write feed entries as standalone HTML files",
+   "Filter feed items by language, keyword, or age before sending"
+  ],
+  "how_to_run": [
+   "Download the latest binary from the release page and run: goeland run",
+   "docker run -v ./config.toml:/data/config.toml slurdge/goeland",
+   "docker run -v ./config.toml:/data/config.toml ghcr.io/slurdge/goeland",
+   "Mount ./goeland.db:/data/goeland.db in Docker to persist unseen filter state",
+   "Edit config.toml to set the [email] SMTP details and define [sources] and [pipes]",
+   "Run goeland daemon to execute pipes on their cron schedules"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "SMTP",
+   "TOML configuration",
+   "go-simple-mail",
+   "Miniflux REST API",
+   "Imgur"
+  ],
+  "notable": [
+   "Composable, order-sensitive filter pipeline with over 20 filters",
+   "Built-in per-pipe cron scheduler, so no external cron is needed",
+   "Full-text retrieval of article content via CSS selectors",
+   "Can read unread or starred entries directly from a Miniflux instance",
+   "Pre-built binaries and Docker images for multiple platforms and architectures"
+  ],
+  "caveats": [
+   "Email delivery requires you to supply your own SMTP server credentials",
+   "Binary releases listed cover linux, darwin, and windows only, with no mobile or BSD builds",
+   "Miniflux sources only read entries by default, so the unseen filter or mark-as-read is needed to avoid repeats",
+   "Some features such as the image inliner and go-readability integration are listed only as roadmap items"
+  ],
+  "license": "MIT",
+  "category": "feed to email digest",
+  "keywords": [
+   "rss to email",
+   "email digest",
+   "feed reader",
+   "rss digest",
+   "atom feed",
+   "json feed",
+   "self-hosted newsletter",
+   "daily digest email",
+   "weekly digest",
+   "go rss tool",
+   "docker feed reader",
+   "cron feed emailer",
+   "miniflux",
+   "imgur",
+   "full-text extraction",
+   "article retrieval",
+   "html email template",
+   "smtp",
+   "feed filters",
+   "unseen entries",
+   "deduplicate feed items",
+   "send rss to inbox",
+   "share feed with team",
+   "rss newsletter generator",
+   "reddit rss email",
+   "feed merge",
+   "self-hosted rss",
+   "goeland",
+   "email my feeds",
+   "daily news email",
+   "scheduled feed delivery"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7030,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

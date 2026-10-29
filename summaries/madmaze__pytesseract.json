@@ -1,0 +1,91 @@
+{
+ "id": "madmaze/pytesseract",
+ "repo": "madmaze/pytesseract",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Computer Vision",
+   "entry": "pytesseract - A wrapper for the Tesseract OCR engine."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python wrapper around Google's Tesseract-OCR engine that reads text from images and also works as a standalone command-line script.",
+  "what_it_does": "Python-tesseract takes an image (PIL Image, NumPy array, or file path) and runs the Tesseract OCR engine on it to extract embedded text. Its functions return plain text, bounding boxes per character, verbose per-word data with confidences, orientation and script detection (OSD), ALTO XML, HOCR, and searchable PDFs. A run_and_get_multiple_output function can produce several output formats (txt, pdf, hocr, box, tsv) from one Tesseract call. It supports language selection (e.g. lang='eng+fra'), custom Tesseract flags via config, a timeout that terminates long jobs, and a CLI invocation that prints recognized text. Images are read through Pillow and Leptonica formats such as jpeg, png, gif, bmp and tiff.",
+  "use_cases": [
+   "extract text from scanned documents or photos",
+   "make searchable PDFs from images",
+   "get word bounding boxes and confidence scores",
+   "batch OCR a list of image files",
+   "detect text orientation and script",
+   "OCR images in French, Chinese, or other languages"
+  ],
+  "how_to_run": [
+   "Install Google Tesseract OCR on the system (e.g. Debian/Ubuntu package tesseract-ocr, or Homebrew tesseract on macOS)",
+   "pip install pytesseract",
+   "Optionally set pytesseract.pytesseract.tesseract_cmd if tesseract is not on PATH",
+   "from PIL import Image; import pytesseract; print(pytesseract.image_to_string(Image.open('test.png')))",
+   "CLI: pytesseract [-l lang] image_file"
+  ],
+  "stack": [
+   "Python 3.6+",
+   "Pillow (PIL)",
+   "Google Tesseract OCR engine",
+   "Leptonica",
+   "pandas (optional, for DATAFRAME output)",
+   "NumPy/OpenCV (optional image input)"
+  ],
+  "notable": [
+   "Wraps the Tesseract CLI, so output options like HOCR, ALTO XML, TSV and searchable PDF are all available",
+   "run_and_get_multiple_output gets several output formats from a single Tesseract call",
+   "Accepts PIL images, NumPy arrays and file paths directly",
+   "Timeout parameter terminates a stuck OCR job and raises RuntimeError",
+   "Also usable as a stand-alone CLI that prints recognized text"
+  ],
+  "caveats": [
+   "Requires the separate Tesseract OCR engine to be installed and reachable as a command; the pip package alone is not enough",
+   "Some setups need extra tessdata or tessconfigs files if the OS package lacks them",
+   "The nice option is not supported on Windows"
+  ],
+  "license": "Apache License Version 2.0",
+  "category": "ocr text recognition",
+  "keywords": [
+   "ocr",
+   "optical character recognition",
+   "tesseract",
+   "tesseract-ocr",
+   "python wrapper",
+   "image to text",
+   "extract text from image",
+   "read text from photo",
+   "scanned document text extraction",
+   "pillow",
+   "pil image",
+   "opencv numpy",
+   "searchable pdf",
+   "hocr",
+   "alto xml",
+   "bounding boxes",
+   "word confidence",
+   "osd orientation detection",
+   "multi-language ocr",
+   "tessdata",
+   "image text reader",
+   "pdf from scanned images",
+   "command line ocr",
+   "batch image processing",
+   "computer vision",
+   "leptonica",
+   "text in picture"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4897,
+  "output": 1298
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "fsinfuhh/bitpoll",
+ "repo": "fsinfuhh/Bitpoll",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Polls and Events",
+   "entry": "Bitpoll - Conduct polls about dates, times or general questions. (Demo) GPL-3.0 Docker/Python"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bitpoll is a self-hostable web app for running polls about dates, times, or general questions, rewritten in Django from the earlier Dudel project.",
+  "what_it_does": "Bitpoll lets you create polls for scheduling dates and times or for general questions. Poll creators can choose whether votes are anonymous or require a name, and whether voting requires registration. Private events can be restricted to invited people only. Polls can cover a full day or just a few hours, and custom classes can be defined. Poll URLs can be set manually or generated randomly. The backend is built on the Django framework.",
+  "use_cases": [
+   "schedule a meeting time with a group",
+   "run an anonymous poll",
+   "create a private invite-only poll",
+   "find a date that suits everyone",
+   "collect general survey-style votes"
+  ],
+  "how_to_run": [
+   "mkdir -p run/{log,static,config}",
+   "wget -O run/config/settings.py (example settings file; URL not given in README), then adapt database settings, secret key, and allowed hosts",
+   "docker run -a stdout -a stderr --rm --name bitpoll -p 3008:3008 -p 3009:3009 --volume ./run/static:/opt/static --volume ./run/config:/opt/config ghcr.io/fsinfuhh/bitpoll",
+   "git clone (repository URL not given in README), then uv sync --group dev",
+   "copy bitpoll/settings_local.sample.py to bitpoll/settings_local.py, then ./manage.py migrate and ./manage.py runserver"
+  ],
+  "stack": [
+   "Python",
+   "Django",
+   "uv",
+   "uwsgi",
+   "Docker",
+   "django-auth-ldap",
+   "Sentry",
+   "psycopg2",
+   "pytest"
+  ],
+  "notable": [
+   "Anonymous voting or name-required voting, selectable per poll",
+   "Private events visible only to invited people",
+   "Full-day or short-time-slot polls with custom classes",
+   "Official Docker image built from master on ghcr.io",
+   "LDAP login support via django-auth-ldap"
+  ],
+  "caveats": [
+   "Production setup requires several system packages (g++, libldap2-dev, libsasl2-dev, etc.) and running compilemessages and collectstatic",
+   "Manual install needs uv and a settings_local.py file configured before use",
+   "README is a fork-style rewrite of Dudel; demo and GUI screenshots are referenced but not included in the text"
+  ],
+  "license": "GPL-3.0",
+  "category": "self-hosted polls and scheduling",
+  "keywords": [
+   "bitpoll",
+   "poll software",
+   "scheduling poll",
+   "date poll",
+   "doodle alternative",
+   "dudel alternative",
+   "dudel rewrite",
+   "meeting scheduler",
+   "find a meeting time",
+   "group scheduling",
+   "self-hosted poll",
+   "private poll",
+   "anonymous voting",
+   "django poll app",
+   "django",
+   "python",
+   "docker poll",
+   "ghcr docker image",
+   "uwsgi",
+   "ldap login",
+   "event planning",
+   "date and time voting",
+   "survey tool",
+   "invite-only poll",
+   "custom poll url",
+   "full day event poll",
+   "schedule a meeting with a group",
+   "run an anonymous poll",
+   "self-hosted doodle-style tool",
+   "uv package manager",
+   "gpl-3.0 software"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2523,
+  "output": 1203
+ },
+ "generated": "2026-10-29"
+}

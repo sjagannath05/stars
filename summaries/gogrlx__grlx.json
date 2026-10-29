@@ -1,0 +1,113 @@
+{
+ "id": "gogrlx/grlx",
+ "repo": "gogrlx/grlx",
+ "kind": "star",
+ "description": "Effective fleet configuration management in Go: declarative recipes, NATS-powered farmer/sprout agents, and fast parallel infrastructure automation",
+ "topics": [
+  "automation",
+  "configuration",
+  "configuration-management",
+  "devops",
+  "fleet-management",
+  "garlic",
+  "go",
+  "golang",
+  "grlx",
+  "infrastructure-as-code",
+  "management",
+  "nats",
+  "orchestration",
+  "salt-alternative"
+ ],
+ "language": "Go",
+ "stars": 226,
+ "license": "0BSD",
+ "homepage": "https://grlx.dev",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud",
+  "my company"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "grlx is a pure-Go configuration management and DevOps automation engine that uses a central \"farmer\" server and \"sprout\" agents on managed nodes, driven by a CLI and YAML \"recipes\".",
+  "what_it_does": "grlx runs as three parts: a farmer daemon on a management server, sprout daemons on managed nodes, and a grlx command-line tool. The farmer embeds a NATS pub-sub bus and an API server, and sprouts subscribe to messages over that bus. Desired state is written as YAML documents called recipes, which are applied to sprouts with the \"cook\" command. The CLI can run locally on the farmer or remotely over a TLS-encrypted API. The README's quick start shows targeting all nodes to run connectivity tests and remote commands, with output available as JSON. The README says the farmer exposes an API so other tools could create jobs, but the CLI is the only supported method at this time.",
+  "use_cases": [
+   "manage configuration across a fleet of Linux or macOS servers",
+   "push declarative desired-state recipes to many nodes",
+   "run ad hoc commands across all managed hosts",
+   "replace heavier Python-based config management tools",
+   "automate infrastructure setup with TLS-secured agents"
+  ],
+  "how_to_run": [
+   "Download the grlx CLI from releases and run: ./grlx init (choose farmer interface and ports, then note the admin public key)",
+   "On the control server, install the farmer using the bootstrap script from the README (curl ... | sudo bash)",
+   "On each node, install the sprout using the bootstrap script, setting FARMERINTERFACE to the farmer address",
+   "Run: grlx keys accept -A to accept sprout keys and TLS cert",
+   "Run: grlx -T \\* test ping",
+   "Run: grlx -T \\* cmd run whoami"
+  ],
+  "stack": [
+   "Go",
+   "NATS (embedded messaging pub-sub)",
+   "TLS with elliptic curve keys",
+   "YAML recipes"
+  ],
+  "notable": [
+   "Pure-Go single-binary design aimed at low resource use, contrasted with Python-based tools",
+   "Embedded NATS message bus so sprouts subscribe to farmer messages without a separate broker",
+   "Public-key authentication for sprouts and TLS-encrypted API by default",
+   "Declarative YAML recipes applied with a cook command",
+   "Targeted ad hoc commands across fleet with -T glob-style selection"
+  ],
+  "caveats": [
+   "The README says the CLI is the only supported way to create jobs for now; the API is exposed but not officially supported for other clients",
+   "Quick start requires installing three components (CLI, farmer, sprouts) and manual key acceptance",
+   "Commercial and prioritized support is offered through a partner (ADAtomic, Inc.), and some package hosting depends on Cloudsmith"
+  ],
+  "license": "0BSD",
+  "category": "fleet configuration management",
+  "keywords": [
+   "configuration management",
+   "fleet management",
+   "infrastructure automation",
+   "devops automation",
+   "golang config management",
+   "go",
+   "nats",
+   "message bus",
+   "salt alternative",
+   "saltstack alternative",
+   "ansible alternative",
+   "declarative recipes",
+   "yaml recipes",
+   "farmer sprout agent",
+   "remote command execution",
+   "push configuration to many servers",
+   "manage many servers at once",
+   "infrastructure as code",
+   "agent based orchestration",
+   "tls encrypted api",
+   "public key agent authentication",
+   "lightweight automation engine",
+   "single binary devops tool",
+   "run commands on all servers",
+   "server orchestration",
+   "desired state configuration",
+   "zero dependency config tool",
+   "0bsd open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3134,
+  "output": 1328
+ },
+ "generated": "2026-10-29"
+}

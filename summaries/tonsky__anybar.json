@@ -1,0 +1,92 @@
+{
+ "id": "tonsky/anybar",
+ "repo": "tonsky/AnyBar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "AnyBar - macOS menubar status indicator."
+  }
+ ],
+ "summary": {
+  "one_liner": "AnyBar is a small macOS menubar app that shows a colored dot whose meaning and changes are controlled by UDP messages sent from scripts or other tools.",
+  "what_it_does": "AnyBar puts a single dot in the macOS menubar. It listens on UDP port 1738 by default, and sending a text command such as \"red\", \"green\", or \"question\" changes the dot's style. Built-in styles include white, red, orange, yellow, green, cyan, blue, purple, black, question, exclamation, filled, and hollow. Custom images placed in ~/.AnyBar can be shown by sending their name. The ANYBAR_PORT, ANYBAR_TITLE, and ANYBAR_INIT environment variables set the port, a text label, and the starting color, and several instances can run side by side. The README also lists client libraries and shell helpers for many languages, plus integrations such as build-status and command-monitoring tools.",
+  "use_cases": [
+   "show build or CI status in the menubar",
+   "monitor long-running shell commands with a visual indicator",
+   "signal server or service health from scripts",
+   "run multiple status dots on different ports",
+   "display custom icons in the macOS menubar"
+  ],
+  "how_to_run": [
+   "Install with Homebrew Cask: brew install --cask anybar",
+   "Launch the app: open -a AnyBar",
+   "Send a color command: echo -n \"black\" | nc -4u -w0 localhost 1738",
+   "Or from bash: bash -c 'echo -n \"black\" > /dev/udp/localhost/1738'",
+   "Run multiple instances: ANYBAR_PORT=1739 open -na AnyBar",
+   "Quit by sending: echo -n \"quit\" | nc -4u -w0 localhost 1738"
+  ],
+  "stack": [
+   "Objective-C/Swift macOS app (inferred from AppleScript support and .app bundle)",
+   "UDP networking",
+   "Homebrew Cask",
+   "nc or bash /dev/udp for clients"
+  ],
+  "notable": [
+   "Controlled entirely by plain-text UDP messages, so any language or shell can drive it",
+   "Client libraries listed for Go, Node, Python, Rust, Ruby, Erlang, C#, Emacs, and more",
+   "AppleScript support for setting the dot and reading its state",
+   "Custom images from ~/.AnyBar at 19x19 or 38x38 pixels",
+   "filled and hollow styles adapt to menubar appearance changes on Big Sur"
+  ],
+  "caveats": [
+   "macOS only; the README describes OS X and Big Sur behavior",
+   "Client libraries and integrations are third-party and not maintained by the author",
+   "The README does not state a current maintenance status"
+  ],
+  "license": "Eclipse Public License",
+  "category": "macos menubar utility",
+  "keywords": [
+   "anybar",
+   "macos menubar",
+   "menu bar status indicator",
+   "status dot",
+   "udp status light",
+   "colored dot menubar",
+   "osx menubar app",
+   "build status indicator",
+   "command monitoring",
+   "udp port 1738",
+   "netcat udp",
+   "nc -4u",
+   "homebrew cask anybar",
+   "custom menubar icon",
+   "applescript menubar",
+   "multiple menubar instances",
+   "menubar health indicator",
+   "shell status notifier",
+   "desktop status light",
+   "tray indicator mac",
+   "ci status menubar",
+   "server status indicator",
+   "macos status light",
+   "menubar notification dot",
+   "eclipse public license utility",
+   "small mac utility",
+   "scripting menubar",
+   "anybar alternative",
+   "status icon from script",
+   "monitor process from terminal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3212,
+  "output": 1257
+ },
+ "generated": "2026-10-29"
+}

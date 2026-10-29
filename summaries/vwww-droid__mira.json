@@ -1,0 +1,93 @@
+{
+ "id": "vwww-droid/mira",
+ "repo": "vwww-droid/Mira",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "Mira — AI-assisted runtime protection analysis platform for third-party Android and iOS apps, enabling agents to use host-app-side shell, Java, Native, and Frida capabilities for environment risk detection and hardening validation."
+  }
+ ],
+ "summary": {
+  "one_liner": "Mira is a mobile runtime detection workbench for iOS and Android that gives AI agents and researchers shell, PTY, file, and Frida tools inside the Mira host app's own sandbox.",
+  "what_it_does": "The README describes Mira as a workbench that turns real runtime detection cases into reusable workflows, tools, and notes. Its host app provides shell, PTY, screen capture, and file tools that run inside the Mira app sandbox on Android and iOS. It can run one-time Frida tasks that execute Java and native hooks with RPC. A Relay server lets devices connect to a browser or desktop session, and an MCP server lets AI clients work in the same sessions. The research updates list examples on root, emulator, and scrcpy-style projection detection via proc audit side channels.",
+  "use_cases": [
+   "analyze runtime protection in third-party Android apps",
+   "detect root, emulator, or screen projection from inside an app sandbox",
+   "run one-time Frida Java and native hooks on a device",
+   "let an AI agent drive a phone's sandboxed shell via MCP",
+   "share a live device session through a relay server"
+  ],
+  "how_to_run": [
+   "PYTHONPATH=. python3 -m mira.relay.server --host 0.0.0.0 --port 8765 --advertise-url http://<host>:8765",
+   "Open the browser workbench on the desktop using the relay address",
+   "Android: download the latest APK, install it, and enter http://<host>:8765 in the app",
+   "iOS: see docs/GETTING-STARTED.md (verified on iOS 16.7.10)",
+   "PYTHONPATH=. python3 -m mira.mcp.server --relay <relay-url> (see docs/MCP.md for client config)"
+  ],
+  "stack": [
+   "Python (relay and MCP server)",
+   "Android APK with offline Python/Frida runtime",
+   "Frida",
+   "Shared native PTY layer (C)",
+   "iSH compatibility layer (iOS)",
+   "MCP"
+  ],
+  "notable": [
+   "Runs tools inside the Mira host app's own sandbox rather than controlling other apps",
+   "Relay mode can temporarily expose an authorized session beyond the local network",
+   "MCP integration lets AI agents work in the same live session as a human",
+   "Research updates document proc audit side-channel detection cases (Magisk, qemu, scrcpy)"
+  ],
+  "caveats": [
+   "Android APK's offline Python/Frida runtime requires arm64-v8a and supports Android 10 through 15",
+   "Android 16 Java hooks are not supported and no confirmed official Frida fix is available",
+   "iOS is verified only on a real device running iOS 16.7.10 per the README",
+   "Explicitly does not control unrelated apps, provide system-wide control, or provide root/jailbreak bypass"
+  ],
+  "license": "GPL-3.0-only",
+  "category": "mobile runtime security",
+  "keywords": [
+   "mobile runtime detection",
+   "android runtime protection analysis",
+   "ios runtime analysis",
+   "frida",
+   "frida hooks",
+   "java hooks",
+   "native hooks",
+   "mcp server",
+   "ai agent tools",
+   "relay server",
+   "remote shell on phone",
+   "pty terminal",
+   "root detection research",
+   "emulator detection research",
+   "scrcpy detection",
+   "magisk detection",
+   "reverse engineering workbench",
+   "mobile security research",
+   "app sandbox tools",
+   "device testing",
+   "hardening validation",
+   "detect rooted device",
+   "analyze third-party apps on phone",
+   "let ai control device shell",
+   "share device session remotely",
+   "lsposed trace",
+   "jailbreak trace",
+   "ish linux shell",
+   "termux-like shell android",
+   "gpl-3.0 mobile tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2805,
+  "output": 1301
+ },
+ "generated": "2026-10-29"
+}

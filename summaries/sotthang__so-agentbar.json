@@ -1,0 +1,96 @@
+{
+ "id": "sotthang/so-agentbar",
+ "repo": "sotthang/so-agentbar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Session Monitors",
+   "entry": "so-agentbar by sotthang - A native macOS menu-bar app that watches Claude Code and OpenAI Codex CLI session logs in real time and shows each running session's live status, tokens, and cost, with subagent grouping and an optional animated pixel-art view. Swift/SwiftUI + SpriteKit, using FSEvents with incremental JSONL parsing plus multi-provider quota tracking."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu-bar app that monitors live Claude Code and OpenAI Codex CLI agent sessions, showing each session's status, tokens, cost, and quota usage.",
+  "category": "macos menu bar monitor",
+  "keywords": [
+   "macos menu bar app",
+   "claude code monitor",
+   "codex cli monitor",
+   "ai agent session tracker",
+   "session monitor",
+   "token usage tracker",
+   "cost estimation",
+   "quota tracking",
+   "fsevents",
+   "jsonl log parsing",
+   "swiftui",
+   "spritekit",
+   "subagent grouping",
+   "menu bar utility",
+   "claude quota percentage",
+   "codex token usage",
+   "cursor request usage",
+   "keep awake mac",
+   "dock pin",
+   "clipboard history",
+   "sparkle auto update",
+   "ccusage alternative",
+   "track ai coding costs",
+   "see running agent sessions",
+   "monitor claude sessions on mac",
+   "statistics dashboard",
+   "global hotkey panel",
+   "notifications when agent needs approval"
+  ],
+  "what_it_does": "Watches Claude Code and Codex CLI session log files (via FSEvents) and lists each running session with its live status, input/output tokens, and estimated cost. Subagents spawned through the Agent tool are folded under their parent session with a count badge, and the parent's totals include subagent usage. For Claude it reads the 5-hour and weekly quota utilization from Anthropic's OAuth usage endpoint using a Keychain token. For Codex it estimates usage from local rollout logs over a 24-hour window, and it can also show Cursor request counts through an unofficial endpoint. The menu bar can display quota percentages, with an optional animated icon that reflects agent activity. Additional utilities include notifications for completion, errors, approvals and quota thresholds, a statistics dashboard, clipboard history, a quick note tab, keep-awake modes, and an opt-in Dock pinning feature.",
+  "use_cases": [
+   "see which Claude Code sessions are running and their status",
+   "track token usage and API cost of coding agents on a Mac",
+   "check Claude 5-hour and weekly quota usage from the menu bar",
+   "get alerted when an agent needs approval or finishes a task",
+   "monitor Codex CLI or VSCode Codex session usage",
+   "keep a Mac awake while Claude sessions are running"
+  ],
+  "how_to_run": [
+   "Download so-agentbar.dmg from Releases",
+   "Drag so-agentbar.app to Applications",
+   "Launch the app; it appears in the menu bar",
+   "git clone the repository",
+   "cd so-agentbar",
+   "open SoAgentBar.xcodeproj and build and run with Xcode (⌘R)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "SpriteKit",
+   "FSEvents",
+   "Sparkle",
+   "ServiceManagement",
+   "Xcode"
+  ],
+  "notable": [
+   "Subagent grouping: subagents spawned via the Agent tool appear under the parent with a badge, and parent totals include their usage",
+   "Claude quota read from Anthropic's OAuth usage API for accurate 5-hour and weekly percentages",
+   "Menu bar icon shows live session/weekly quota % with threshold color highlight and activity-based bounce animation",
+   "Incremental JSONL parsing restores token and cost data after app restart",
+   "Dock Pin keeps the macOS Dock on one display, requiring Accessibility permission"
+  ],
+  "caveats": [
+   "Requires macOS 14.0 (Sonoma) or later",
+   "Codex usage is estimated from local logs, not an official quota, and Codex status updates only after each turn completes",
+   "Cursor support uses an unofficial endpoint that may change; Cursor cost info is unavailable",
+   "Dock Pin needs Accessibility permission and runs periodic background checks that endpoint security tools may log",
+   "Dock Pin README notes it was tested on macOS 27"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6599,
+  "output": 1434
+ },
+ "generated": "2026-10-29"
+}

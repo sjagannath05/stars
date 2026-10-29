@@ -1,0 +1,99 @@
+{
+ "id": "traceapps/nutritrace",
+ "repo": "TraceApps/nutritrace",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Health and Fitness",
+   "entry": "NutriTrace - Nutrition and diet tracker with barcode scanning, wearable integrations (Fitbit, Withings, Garmin, Health Connect), adaptive calorie goals, multi-user sharing, and a built-in AI assistant (alternative to MyFitnessPal, Cronometer). (Source Code) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "NutriTrace is a self-hosted nutrition and calorie tracker that runs as a single Docker container, with a browser PWA and a native Android app.",
+  "what_it_does": "NutriTrace provides a food diary with configurable meal slots, a personal food/meal/recipe database, and barcode and label scanning via Open Food Facts and an AI OCR feature. It offers calorie goals in Fixed, Dynamic, or Adaptive TDEE modes, plus manual activity logging and an intermittent fasting timer. Optional integrations include Fitbit (via Google Health), Withings, Garmin, and Health Connect, with computed Sleep, Readiness, and Resilience scores. Trace AI can answer questions about your data and propose food entries from photos for you to confirm, and an MCP server and /api/v1 Bearer-token API expose data to external tools. Data is stored in SQLite with uploads on disk, and the app supports multi-user accounts with OIDC SSO. An offline mode in the browser and Android app syncs changes when the connection returns.",
+  "use_cases": [
+   "track daily calories and macros for self-hosting",
+   "sync fitness data from Fitbit, Garmin, or Withings",
+   "scan food barcodes and labels into a diary",
+   "adaptive calorie goal setting",
+   "migrate diary data from MyFitnessPal, Lose It, or Cronometer",
+   "share a nutrition tracker among household users with SSO"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml using the image ghcr.io/traceapps/nutritrace:latest with port 3001, volumes for DB and uploads, and DB_PATH, UPLOADS_PATH, and JWT_SECRET set.",
+   "Generate a JWT secret with: openssl rand -base64 48",
+   "Start the container with: docker compose up -d",
+   "Open the app in a browser and complete the first-run wizard to create an admin account.",
+   "Update later with: docker compose pull && docker compose up -d"
+  ],
+  "stack": [
+   "Svelte 5",
+   "Vite 6",
+   "Capacitor 8",
+   "Node.js",
+   "Express 5",
+   "better-sqlite3",
+   "DuckDB",
+   "JWT",
+   "OpenID Connect",
+   "Docker"
+  ],
+  "notable": [
+   "No accounts on external services, no telemetry, and data stays on the user's hardware unless a third-party integration is enabled",
+   "Offline-first browser and Android app that syncs when reconnected",
+   "Local Parquet mirror of Open Food Facts for air-gapped setups",
+   "MCP server and scoped Bearer-token API for external AI agents, off by default",
+   "Foldable-aware layouts for Android devices"
+  ],
+  "caveats": [
+   "No iOS or iPhone app; the author says building one needs a Mac and developer accounts",
+   "Trace AI, Scan Label, and Adaptive TDEE outputs are informational only and not medical advice, per the disclaimer",
+   "Built and maintained by a single person, according to the README"
+  ],
+  "license": "AGPL-3.0",
+  "category": "self-hosted nutrition tracking",
+  "keywords": [
+   "nutrition tracker",
+   "calorie counter",
+   "diet diary",
+   "macro tracking",
+   "self-hosted food diary",
+   "myfitnesspal alternative",
+   "cronometer alternative",
+   "lose it alternative",
+   "barcode scanner food",
+   "open food facts",
+   "fitbit sync",
+   "garmin integration",
+   "withings",
+   "health connect android",
+   "adaptive tdee",
+   "intermittent fasting timer",
+   "docker nutrition app",
+   "pwa food tracker",
+   "offline calorie tracker",
+   "sqlite docker app",
+   "oidc sso multi-user",
+   "mcp server nutrition",
+   "track calories at home",
+   "meal logging app",
+   "recipe nutrition",
+   "private health tracker",
+   "agpl nutrition software",
+   "usda food database",
+   "ai food photo logging",
+   "weight and calorie goals",
+   "no cloud food diary"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7045,
+  "output": 1402
+ },
+ "generated": "2026-10-29"
+}

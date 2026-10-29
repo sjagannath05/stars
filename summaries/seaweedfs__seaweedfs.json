@@ -1,0 +1,97 @@
+{
+ "id": "seaweedfs/seaweedfs",
+ "repo": "seaweedfs/seaweedfs",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Object Storage & File Servers",
+   "entry": "SeaweedFS - SeaweedFS is an open source distributed file system supporting WebDAV, S3 API, FUSE mount, HDFS, etc, optimized for lots of small files, and easy to add capacity. Apache-2.0 Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "SeaweedFS is an Apache-2.0 licensed distributed file system in Go that serves an S3 object store, POSIX file system, and Iceberg/Lance lakehouse tables from one `weed` binary, optimized for storing and serving large numbers of small files.",
+  "what_it_does": "The single `weed` binary runs master, volume, filer, S3, WebDAV, Iceberg REST catalog, and Admin UI components, either together via `weed mini` or as separate processes. Volume servers store blobs in append-only volume files with an in-memory index so each blob is one disk read, and small files are packed together rather than stored as individual files. Filer servers add directories and metadata on top, with metadata kept in a configurable store such as LevelDB, PostgreSQL, MySQL, Redis, or etcd. The S3 gateway covers object, bucket, S3 Tables, IAM, and STS APIs, and the same data can be exposed through FUSE mount, WebDAV, SFTP, HDFS, and HTTP. The README also describes cloud tiering and caching of remote buckets, active-active replication between clusters, erasure coding for warm data, and encryption at rest.",
+  "use_cases": [
+   "self-hosted S3-compatible object storage",
+   "storing billions of small files",
+   "sharing a POSIX or WebDAV file system across machines",
+   "backing an Apache Iceberg or Lance data lakehouse",
+   "caching a cloud bucket locally",
+   "Kubernetes persistent storage via CSI driver"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash  (install script, per README; URL not included in source)",
+   "AWS_ACCESS_KEY_ID=admin AWS_SECRET_ACCESS_KEY=secret S3_BUCKET=my-bucket ./weed mini -dir=./data",
+   "docker run -p 8333:8333 -v weed-data:/data -e AWS_ACCESS_KEY_ID=admin -e AWS_SECRET_ACCESS_KEY=secret -e S3_BUCKET=my-bucket chrislusf/seaweedfs",
+   "helm repo add seaweedfs <repo URL not included in source>; helm install seaweedfs seaweedfs/seaweedfs -n seaweedfs --create-namespace -f values.yaml",
+   "git clone <URL not included in source>; cd seaweedfs/weed && make install",
+   "weed volume -dir=/data -master=<master>:9333"
+  ],
+  "stack": [
+   "Go",
+   "Rust (optional volume server)",
+   "Docker",
+   "Kubernetes / Helm",
+   "Raft (master group)",
+   "AWS S3 SDK and CLI compatibility",
+   "Apache Iceberg REST catalog"
+  ],
+  "notable": [
+   "Single `weed` binary runs S3, filer, WebDAV, Iceberg catalog, and Admin UI together via `weed mini`",
+   "Keeps a 16-byte in-memory index per blob so reads take one disk seek, including for erasure-coded data",
+   "Built-in S3 Tables support for Apache Iceberg and Lance, with automated compaction and snapshot expiration",
+   "Cloud Drive mode caches buckets from S3, GCS, Azure, B2, and others into local cluster storage",
+   "Metadata store is pluggable across many databases including LevelDB, PostgreSQL, Redis, and etcd"
+  ],
+  "caveats": [
+   "Enterprise Edition with features such as self-healing storage and customizable erasure coding is offered separately through seaweedfs.com",
+   "Benchmark numbers are unscientific single-machine results from a MacBook, per the README",
+   "Admin UI and worker control plane bind to loopback unless Admin password or mTLS is configured"
+  ],
+  "license": "Apache-2.0",
+  "category": "distributed object storage",
+  "keywords": [
+   "distributed file system",
+   "object storage",
+   "s3 compatible storage",
+   "s3 api",
+   "small files storage",
+   "blob store",
+   "file server",
+   "webdav server",
+   "fuse mount",
+   "hdfs alternative",
+   "ceph alternative",
+   "minio alternative",
+   "glusterfs alternative",
+   "seaweed",
+   "iceberg catalog",
+   "lakehouse storage",
+   "apache iceberg",
+   "lance tables",
+   "data lake",
+   "self-hosted cloud storage",
+   "store billions of files",
+   "share files with my team",
+   "kubernetes csi driver",
+   "erasure coding",
+   "volume server",
+   "filer",
+   "cloud storage cache",
+   "replicate files across data centers",
+   "go file system",
+   "s3 gateway",
+   "rclone backend"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11252,
+  "output": 1596
+ },
+ "generated": "2026-10-29"
+}

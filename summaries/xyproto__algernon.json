@@ -1,0 +1,105 @@
+{
+ "id": "xyproto/algernon",
+ "repo": "xyproto/algernon",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Web Servers",
+   "entry": "Algernon - Small self-contained pure-Go web server with Lua, Markdown, HTTP/2, QUIC, Redis and PostgreSQL support. (Source Code) BSD-3-Clause Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Algernon is a small, self-contained pure-Go web server that serves Markdown, templates, JSX/TypeScript and Lua-scripted pages, with built-in HTTP/2, HTTP/3 (QUIC) and database support.",
+  "what_it_does": "Algernon serves static files and dynamically rendered pages from a directory, choosing the renderer by filename (index.md, index.lua, index.pongo2, index.amber, index.jsx, index.tsx, index.prompt and others). It converts Sass/SCSS, GCSS, JSX and TypeScript on the fly without a separate build step. Lua scripts (and optionally Teal) act as request handlers, with functions for headers, forms, redirects, HTTP client calls, JSON files, file uploads and a file cache. Data can be stored in Redis/Valkey (recommended), a built-in Bolt database, or accessed through SQLite, PostgreSQL, MSSQL and MariaDB/MySQL. The README also describes users and permissions, rate limiting via tollbooth, an auto-refresh feature that reloads the browser on source changes, a REPL, plugins that talk JSON-RPC, and Ollama-based LLM helpers.",
+  "use_cases": [
+   "serve a local Markdown or static site without a separate build step",
+   "prototype web pages with Lua handlers and live reload",
+   "run a small self-hosted web app with a built-in database",
+   "preview README.md files in a browser",
+   "serve HTTP/2 or HTTP/3 (QUIC) with a single binary",
+   "generate pages using local Ollama LLMs"
+  ],
+  "how_to_run": [
+   "go install github.com/xyproto/algernon@latest",
+   "git clone the repository, cd algernon, go build -mod=vendor",
+   "mkdir mypage && cd mypage && create index.lua containing print(\"Hello, Algernon\")",
+   "algernon --httponly --autorefresh",
+   "Docker: docker run -it -p4000:4000 -v .:/srv/algernon xyproto/algernon"
+  ],
+  "stack": [
+   "Go (1.26 or later)",
+   "Lua via gopher-lua",
+   "Teal (optional)",
+   "quic-go",
+   "gomarkdown/markdown",
+   "Pongo2",
+   "amber",
+   "Sass(SCSS) and GCSS",
+   "esbuild",
+   "logrus",
+   "tollbooth",
+   "pie (plugins)",
+   "Redis/Valkey, BoltDB, SQLite, PostgreSQL, MySQL/MariaDB, MSSQL"
+  ],
+  "notable": [
+   "Single self-contained executable with no external runtime dependencies, under 17MB Docker image according to the README",
+   "Filename-based rendering: index.md, index.lua, index.amber and similar files are handled automatically",
+   "Built-in HTTP/2 over TLS and HTTP/3 (QUIC), with plain HTTP as fallback",
+   "Falls back to the built-in Bolt database when no Redis server is available",
+   "Zipped .alg applications can be loaded at startup"
+  ],
+  "caveats": [
+   "Auto-refresh only works on Linux and macOS, according to the README",
+   "The Lua implementation (gopherlua) does not support package.loadlib",
+   "Requires Go 1.26 or later to build from source"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "self-hosted web server",
+  "keywords": [
+   "web server",
+   "go web server",
+   "self-contained executable",
+   "http/2",
+   "http/3",
+   "quic",
+   "lua scripting",
+   "teal",
+   "markdown server",
+   "markdown renderer",
+   "pongo2 templates",
+   "amber templates",
+   "sass scss",
+   "gcss",
+   "jsx",
+   "typescript",
+   "react",
+   "hyperapp",
+   "redis",
+   "valkey",
+   "boltdb",
+   "postgresql",
+   "sqlite",
+   "mysql",
+   "mariadb",
+   "mssql",
+   "rate limiting",
+   "live reload",
+   "auto-refresh",
+   "ollama llm",
+   "serve markdown files locally",
+   "lightweight web server",
+   "self-hosted site",
+   "alternative to nginx for static sites"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16014,
+  "output": 1473
+ },
+ "generated": "2026-10-29"
+}

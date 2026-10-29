@@ -1,0 +1,82 @@
+{
+ "id": "jariz/akku",
+ "repo": "jariz/Akku",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Akku - The missing macOS bluetooth headset battery indicator app."
+  }
+ ],
+ "summary": {
+  "one_liner": "Akku is a macOS menu bar app that shows battery levels for Bluetooth headsets, which macOS otherwise only displays for Apple accessories, and optionally notifies you when they get low.",
+  "what_it_does": "Displays headset battery status in the macOS menu bar for Bluetooth headsets that macOS does not report on its own. It can optionally send a notification when the headset battery gets low. The README says it works with any headset that follows the Apple Bluetooth battery spec, with the practical test being whether an Android or iPhone device can read the headset's battery status. It needs root access to install a privileged helper that monitors Bluetooth traffic through IOKit and the IOBluetoothHCIController driver, decoding HCI events, L2CAP and RFCOMM packets. Only normalized battery signals are passed back to the unprivileged app. The author states that development has stopped because macOS Monterey added native third-party headset support, and Akku will not work on Monterey.",
+  "use_cases": [
+   "Check AirPods or other third-party Bluetooth headset battery on a Mac",
+   "Get a low-battery alert for a wireless headset",
+   "Monitor Bluetooth headset battery from the menu bar",
+   "Diagnose headset battery reporting on macOS"
+  ],
+  "how_to_run": [
+   "Download the latest .DMG from the project's releases (per README: 'Get the latest .DMG here')"
+  ],
+  "stack": [
+   "Swift",
+   "Objective-C/Swift helper with XPC",
+   "CocoaPods",
+   "IOKit",
+   "SwiftPrivilegedHelper",
+   "cocoapods-amimono"
+  ],
+  "notable": [
+   "Reads headset battery status that macOS hides for non-Apple Bluetooth headsets",
+   "Privileged helper app communicates with the main app over XPC and monitors Bluetooth data via IOKit",
+   "Decodes HCI events, L2CAP and RFCOMM packets",
+   "Optional low-battery notifications and a menu bar icon"
+  ],
+  "caveats": [
+   "Development has stopped; the app does not work on macOS Monterey, which added native third-party headset battery support",
+   "Requires giving the app root access to install a privileged helper",
+   "Not available on the Mac App Store; the README says it uses API's unlikely to pass the sandbox"
+  ],
+  "license": "unknown",
+  "category": "macos menubar utility",
+  "keywords": [
+   "bluetooth battery indicator",
+   "headset battery macos",
+   "airpods battery mac",
+   "bluetooth headset battery",
+   "menu bar battery monitor",
+   "macos menubar app",
+   "low battery notification",
+   "wireless headset battery",
+   "hci l2cap rfcomm",
+   "iokit bluetooth",
+   "xpc privileged helper",
+   "swift macos app",
+   "android headset battery",
+   "bluetooth battery level",
+   "headset battery status",
+   "airpods menu bar",
+   "third party headset mac",
+   "bluetooth monitoring tool",
+   "battery alert headphones",
+   "bartender menu bar",
+   "dmg download macos",
+   "cocoapods macos",
+   "discontinued macos app",
+   "see headphone battery on mac",
+   "check bluetooth earbuds battery"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2746,
+  "output": 1171
+ },
+ "generated": "2026-10-29"
+}

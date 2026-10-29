@@ -1,0 +1,84 @@
+{
+ "id": "codeintegrity-ai/mutahunter",
+ "repo": "codeintegrity-ai/mutahunter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "Documentation"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mutahunter is an open-source, language-agnostic mutation testing tool that uses LLMs to generate code mutants and report how many your test suite catches.",
+  "what_it_does": "The README describes a CLI called \"mutahunter run\" that takes a test command, a model name, a source file path, and a test file path. It uses an LLM (the example uses gpt-4o-mini, with an OpenAI API key) to create mutants of the source file, runs the test command against each mutant, and labels each as killed or survived. It also reports compile-error and timeout mutants separately. At the end it prints an overall mutation coverage percentage, mutant counts, and the total LLM cost in USD. The example output shows a Java Maven project, and the README says there are further examples for other languages in an examples directory.",
+  "use_cases": [
+   "measure how well unit tests catch bugs",
+   "run mutation testing on Java Maven projects",
+   "find weak spots in a test suite",
+   "estimate LLM cost of mutation testing runs",
+   "evaluate test quality across languages"
+  ],
+  "how_to_run": [
+   "pip install (package installed via GitHub; Python 3.11+ required)",
+   "export OPENAI_API_KEY=your-key-goes-here",
+   "mutahunter run --test-command \"mvn clean test\" --model \"gpt-4o-mini\" --source-path \"src/main/java/com/example/BankAccount.java\" --test-path \"src/test/java/BankAccountTest.java\""
+  ],
+  "stack": [
+   "Python 3.11+",
+   "OpenAI API (GPT-4o / gpt-4o-mini)",
+   "Maven (in the Java example)"
+  ],
+  "notable": [
+   "Language-agnostic: the test command is supplied by the user, so any test runner can be used",
+   "LLM-generated mutants rather than rule-based operators",
+   "Reports mutation coverage, killed/survived counts, and total LLM cost per run",
+   "Includes a Java example in the examples directory"
+  ],
+  "caveats": [
+   "Requires an OpenAI API key and incurs LLM usage costs",
+   "The README's install command is missing its package reference, so the exact install step is unclear from the text",
+   "The README does not describe platform support beyond the examples shown"
+  ],
+  "license": "unknown",
+  "category": "mutation testing tool",
+  "keywords": [
+   "mutation testing",
+   "mutahunter",
+   "llm mutation testing",
+   "mutants",
+   "mutation coverage",
+   "killed mutants",
+   "survived mutants",
+   "test quality",
+   "test suite evaluation",
+   "unit test effectiveness",
+   "python mutation testing",
+   "java mutation testing",
+   "maven mutation testing",
+   "openai gpt-4o",
+   "gpt-4o-mini",
+   "language agnostic testing",
+   "test command runner",
+   "code mutation",
+   "find weak tests",
+   "check how good my tests are",
+   "test coverage alternative",
+   "llm cost tracking",
+   "cli testing tool",
+   "python cli",
+   "mutant generation",
+   "software testing",
+   "bug detection in tests"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2275,
+  "output": 1113
+ },
+ "generated": "2026-10-29"
+}

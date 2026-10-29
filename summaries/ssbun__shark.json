@@ -1,0 +1,89 @@
+{
+ "id": "ssbun/shark",
+ "repo": "SSBun/Shark",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Shark - Cursor IDE workspace manager for macOS."
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS app (SharkSpace) that organizes project and component folders into virtual workspaces built from real directories and symlinks, so Codex, Claude Code, terminals and other agent tools can open them like ordinary projects.",
+  "what_it_does": "Shark creates a real directory for each workspace and mounts multiple project or component folders into it via symlinks, with metadata stored in .shark-workspace.json. It provides a sidebar of workspaces (pin, rename, health check with symlink rebuild) and a folder list showing git branch, latest tag, working tree and upstream status, plus a workspace-wide Git overview. It also lists Codex sessions for each workspace, with activity grouping, archiving, deletion, display names, preview, and jumping to running iTerm2 sessions after installing Codex hooks. The README also describes a Venomfiles dependency checker and a component selector that browses configurable search paths.",
+  "use_cases": [
+   "group several repositories into one folder for an AI coding agent",
+   "open a multi-repo workspace in a terminal or editor with one double-click",
+   "browse and resume Codex sessions per project on macOS",
+   "check workspace folders for missing or broken symlinks",
+   "view git status across many repositories at once",
+   "manage Venomfiles component dependencies"
+  ],
+  "how_to_run": [
+   "curl -sL | bash",
+   "Alternatively, download the latest SharkSpace-x.x.x.dmg from Releases, open it, and drag SharkSpace.app to Applications",
+   "If macOS reports \"Shark is damaged\", run: xattr -rd com.apple.quarantine /Applications/SharkSpace.app",
+   "Clone the repository: git clone (URL not given in README), cd Shark, ./install_latest.sh"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "Sparkle 2",
+   "SQLite (Codex session data)",
+   "UserDefaults"
+  ],
+  "notable": [
+   "Virtual workspaces are real directories containing symlinks, so any tool that opens a folder can open the whole workspace",
+   "Local-first: metadata stays on the machine, with no telemetry or cloud sync",
+   "Codex session browser with activity groups, archive handling, previews and iTerm2 jump via installed hooks",
+   "Non-destructive project handling: removing or renaming a project only changes Shark's list, not the directory on disk"
+  ],
+  "caveats": [
+   "Requires macOS 15.2 or later",
+   "Sparkle auto-update is marked as in development; 1.14.0 lacks it, and unsigned (no-certificate) builds are not notarized and may need manual approval in macOS privacy settings",
+   "Some features depend on Codex hooks, iTerm2, or Venomfiles, which must be set up separately"
+  ],
+  "license": "unknown",
+  "category": "macos workspace manager",
+  "keywords": [
+   "macos",
+   "workspace manager",
+   "virtual workspace",
+   "symlink",
+   "symbolic links",
+   "multi-repo",
+   "monorepo alternative",
+   "project organizer",
+   "codex",
+   "codex sessions",
+   "claude code",
+   "ai coding agent",
+   "agent tools",
+   "terminal",
+   "iterm2",
+   "git status",
+   "swiftui",
+   "swift 6",
+   "sparkle updater",
+   "venomfiles",
+   "finder",
+   "cursor ide workspace",
+   "group projects together",
+   "open multiple folders in one place",
+   "browse coding agent sessions",
+   "check git status across repos",
+   "sidebar workspace app",
+   "dmg install"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4657,
+  "output": 1275
+ },
+ "generated": "2026-10-29"
+}

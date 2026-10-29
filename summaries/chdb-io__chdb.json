@@ -1,0 +1,91 @@
+{
+ "id": "chdb-io/chdb",
+ "repo": "chdb-io/chdb",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database",
+   "entry": "chdb - In-process OLAP SQL engine with the full ClickHouse dialect, zero-copy pandas/Arrow interop, and federation to remote ClickHouse clusters via remoteSecure()."
+  }
+ ],
+ "summary": {
+  "one_liner": "chDB is an in-process SQL OLAP engine built on ClickHouse, usable from Python (SQL, DB-API, pandas-style DataStore API) and other language bindings.",
+  "what_it_does": "chDB embeds the ClickHouse engine inside a host process so SQL queries run locally without installing a ClickHouse server. It can run one-shot queries via chdb.query(), or use connection objects with cursors and a DB-API 2.0 driver, plus stateful Sessions for multi-step pipelines. Input and output cover Parquet, CSV, JSON, Arrow, ORC and 60+ formats, and it can query pandas DataFrames and Arrow tables directly as Python table sources. The README also describes a pandas-compatible DataStore API that records lazy operations and compiles them to SQL, plus streaming results, Python UDFs, progress reporting, and AI-assisted SQL generation via configurable providers. Other bindings and a WebAssembly build (chDB-Wasm) are mentioned.",
+  "use_cases": [
+   "run SQL on local Parquet or CSV files without a database server",
+   "analyze pandas DataFrames with SQL",
+   "embed an OLAP engine inside a Python application",
+   "query S3, MySQL or PostgreSQL data with SQL from Python",
+   "stream large query results in constant memory",
+   "build agent tools that let an LLM run read-only SQL"
+  ],
+  "how_to_run": [
+   "pip install chdb",
+   "python3 -m chdb \"SELECT 1,'abc'\" Pretty",
+   "import chdb; print(chdb.query('select version()', 'Pretty'))"
+  ],
+  "stack": [
+   "Python 3.9+",
+   "ClickHouse engine (C++)",
+   "pandas",
+   "Apache Arrow / pyarrow",
+   "ADBC (optional, pip install chdb[adbc])"
+  ],
+  "notable": [
+   "In-process ClickHouse engine with no separate server to install",
+   "Pandas-compatible DataStore API that compiles lazy operations to SQL",
+   "Zero-copy style interop with pandas DataFrames and Arrow tables via Python(df) table functions",
+   "Stateful Sessions and DB-API 2.0 driver for multi-step SQL workflows",
+   "chDB-Wasm build that runs the engine in the browser"
+  ],
+  "caveats": [
+   "Python bindings are documented for macOS and Linux (x86_64 and ARM64) only",
+   "chdb-core allows only one active data path per process, so switching data paths requires closing first",
+   "Several language bindings are marked experimental, early, or unpublished in the capability matrix"
+  ],
+  "license": "Apache 2.0",
+  "category": "embedded sql engine",
+  "keywords": [
+   "chdb",
+   "clickhouse",
+   "in-process database",
+   "embedded olap",
+   "olap engine",
+   "sql engine python",
+   "embedded sql",
+   "run sql on parquet",
+   "query csv with sql",
+   "query pandas dataframe with sql",
+   "arrow sql",
+   "pyarrow query",
+   "dbapi driver",
+   "db-api 2.0",
+   "pandas alternative",
+   "lazy dataframe",
+   "datastore api",
+   "sql on files",
+   "query s3 with sql",
+   "mysql query python",
+   "postgresql query python",
+   "streaming query",
+   "python udf sql",
+   "clickhouse without server",
+   "local analytics",
+   "data analysis sql",
+   "webassembly sql",
+   "adbc",
+   "agent sql tool",
+   "share files with my team"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10630,
+  "output": 1264
+ },
+ "generated": "2026-10-29"
+}

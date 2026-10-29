@@ -1,0 +1,96 @@
+{
+ "id": "xemle/home-gallery",
+ "repo": "xemle/home-gallery",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Photo Galleries",
+   "entry": "HomeGallery - Browse personal photos and videos featuring tagging, mobile-friendly, and AI powered image discovery. (Demo, Source Code) MIT Nodejs/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "HomeGallery is a self-hosted web gallery for browsing personal photos and videos, with tagging, face and similar-image search, and a mobile-friendly PWA interface.",
+  "what_it_does": "The software indexes local media source directories (such as a Pictures folder or NAS share), generates previews and extracts metadata, then serves a browser-based gallery on localhost:3000 by default. It supports tagging with single and multi selection, an expressive query language with and/or/not operators, and endless scrolling through the archive. It offers reverse image lookup for finding similar photos, face detection and search by similar faces, and GEO location reverse lookups. Videos are transcoded, and media are identified by content so duplicates are processed once. It can also export a static web gallery, write XMP sidecar metadata, and stream to Chromecast devices.",
+  "use_cases": [
+   "self-hosted photo library browsing",
+   "browsing personal photos and videos on a phone",
+   "finding similar photos without manual tagging",
+   "face search across a家庭 photo archive",
+   "tagging and searching a NAS media collection",
+   "exporting a static photo gallery website"
+  ],
+  "how_to_run": [
+   "curl -sL -o gallery <binary URL from dl.home-gallery.org/dist>",
+   "chmod 755 gallery",
+   "./gallery init --source ~/Pictures",
+   "./gallery run server",
+   "Docker: mkdir -p data, then run docker run with -v for data and Pictures, -p 3000:3000 xemle/home-gallery"
+  ],
+  "stack": [
+   "NodeJS",
+   "npm workspaces / pnpm",
+   "Docker",
+   "sharp",
+   "ffmpeg",
+   "ffprobe",
+   "vipsthumbnail",
+   "Gauge (end-to-end tests)"
+  ],
+  "notable": [
+   "Runs on low-power hardware such as Raspberry Pi and works with read-only or offline media sources after initial extraction",
+   "Media identified by content hash, so renames and moves do not require reprocessing previews",
+   "Optional self-hosted API for reverse image lookup and face recognition, though the default uses the public api.home-gallery.org",
+   "Claims a user with over 400,000 media files, though the whole database is loaded into the browser"
+  ],
+  "caveats": [
+   "Per the README, the project is a private spare-time project provided without warranty",
+   "Default AI features send preview images to the public api.home-gallery.org; local API setup requires technical knowledge and maintenance",
+   "The complete media database is loaded into the browser, so very large archives (about 100,000 media is cited as about 100 MB JSON) may be heavy"
+  ],
+  "license": "MIT",
+  "category": "self-hosted photo gallery",
+  "keywords": [
+   "photo gallery",
+   "video gallery",
+   "self-hosted photos",
+   "personal photo library",
+   "media browser",
+   "image tagging",
+   "face recognition search",
+   "similar image search",
+   "reverse image search",
+   "nodejs gallery",
+   "docker photo gallery",
+   "nas photo viewer",
+   "mobile photo gallery",
+   "pwa gallery",
+   "raspberry pi gallery",
+   "xmp sidecar export",
+   "chromecast photos",
+   "video transcoding",
+   "geo location photos",
+   "static gallery export",
+   "find similar photos",
+   "share photos locally",
+   "browse old photos",
+   "photo archive organizer",
+   "offline media sources",
+   "duplicate photo detection",
+   "home media server",
+   "privacy photo gallery",
+   "self hosted media library",
+   "photo face search",
+   "tag my pictures"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4117,
+  "output": 1218
+ },
+ "generated": "2026-10-29"
+}

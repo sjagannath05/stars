@@ -1,0 +1,100 @@
+{
+ "id": "d8a-tech/d8a",
+ "repo": "d8a-tech/d8a",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Analytics",
+   "entry": "d8a.tech - A data collection service that works with your existing Google Analytics setup to capture user activity and send it straight to your own private database. (Demo, Source Code) MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "d8a.tech is an open source, warehouse-native web analytics pipeline that receives GA4, Matomo or its own web tracker traffic, builds sessions on the backend, and writes flat tables to BigQuery, ClickHouse, or CSV/Parquet files.",
+  "what_it_does": "It accepts GA4 and Matomo tracking protocol requests, or hits from its own web tracker (a drop-in replacement for gtag.js), and groups them into sessions server-side with a configurable inactivity timeout (30 minutes by default). Sessions split on campaign changes, user ID changes, maximum duration and maximum event count. Each closed session and its events are written as flat, documented columns to BigQuery, ClickHouse, or CSV/Parquet files on S3, MinIO, GCS or local disk. It derives source and medium from click IDs, referrers and UTM parameters, and supports expression-based traffic filters with a test mode. IP addresses can be stored in full or masked at one of four levels. The repository ships without a reporting UI; users bring their own BI tool or use a prebuilt Data Studio dashboard.",
+  "use_cases": [
+   "self-hosted web analytics with my own database",
+   "replace Google Analytics data collection while keeping GA4 tags",
+   "sessionized web analytics tables for BigQuery or ClickHouse",
+   "air-gapped or on-premises visitor analytics",
+   "export website traffic to CSV or Parquet files on S3 or MinIO",
+   "filter internal traffic and bots from analytics"
+  ],
+  "how_to_run": [
+   "go run main.go server --config config.dev.yaml",
+   "curl -X POST to the local endpoint with a sample hit (URL truncated in README)",
+   "Wait about 10 seconds for the session to close (dev config uses a short timeout)",
+   "Check console output to verify events are processed",
+   "go test ./...",
+   "Production: see the Getting started and production operations guides (Docker)"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Google BigQuery",
+   "ClickHouse",
+   "Parquet",
+   "CSV",
+   "S3",
+   "MinIO",
+   "Google Cloud Storage",
+   "GA4 and Matomo tracking protocols"
+  ],
+  "notable": [
+   "Sessions are built on the backend and written to the warehouse only when closed, so every row is final on arrival",
+   "Flat schema with no UNNEST needed; custom parameters can map to their own columns and the schema reference is generated from column docs",
+   "Dedicated columns for click IDs such as gclid, gbraid, wbraid, dclid, srsltid, fbclid and msclkid",
+   "--airgapped flag disables built-in outbound integrations",
+   "Accepts existing GA4 requests, which can be duplicated to d8a or redirected to it"
+  ],
+  "caveats": [
+   "No built-in reporting UI in the open source version; dashboards, goals, funnels and Ask AI are only in the d8a.tech Cloud paid plans",
+   "Session processing runs on a single worker that scales vertically; only receivers scale out",
+   "Local development uses a config file and a manual curl test; production setup is documented separately in guides"
+  ],
+  "license": "MIT",
+  "category": "web analytics pipeline",
+  "keywords": [
+   "web analytics",
+   "self-hosted analytics",
+   "google analytics alternative",
+   "ga4 alternative",
+   "matomo",
+   "warehouse-native analytics",
+   "bigquery",
+   "clickhouse",
+   "parquet",
+   "csv export",
+   "sessionization",
+   "session building",
+   "click id",
+   "utm attribution",
+   "traffic attribution",
+   "traffic filters",
+   "bot filtering",
+   "internal traffic exclusion",
+   "gtag replacement",
+   "gtm server side",
+   "air-gapped analytics",
+   "on-premises analytics",
+   "healthcare analytics",
+   "privacy analytics",
+   "s3 minio storage",
+   "go analytics backend",
+   "docker analytics",
+   "own my analytics data",
+   "send website traffic to my database",
+   "flat analytics tables",
+   "data pipeline for web events"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3796,
+  "output": 1449
+ },
+ "generated": "2026-10-29"
+}

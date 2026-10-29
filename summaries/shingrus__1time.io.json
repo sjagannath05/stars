@@ -1,0 +1,95 @@
+{
+ "id": "shingrus/1time.io",
+ "repo": "shingrus/1time.io",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Pastebins",
+   "entry": "1time - Zero-knowledge one-time secret sharing. Create a one-time link for a password, API key, or file. Encrypted client-side in the browser, never reaches the server in plaintext, self-destructs after the allowed number of views (one by default). (Demo, Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hostable zero-knowledge tool for sharing passwords, API keys, text, and encrypted files through one-time, self-destructing links.",
+  "what_it_does": "Secrets are encrypted in the browser with AES-256-GCM (keys derived via HKDF-SHA256) before upload, so the server stores only encrypted data. The encryption key sits in the URL fragment, which is never sent to the server. The sender uploads only a SHA-256 hash of the read token, and the server deletes the stored blob after the last allowed view. Text secrets can allow a few views, while file links default to one download and can allow up to 10. The project includes built-in password, passphrase, API key, and WiFi password generators, plus a first-party CLI (@1time/cli) for piping secrets from a terminal. A browser extension is also provided. The backend is Go with Redis, and the frontend is a static Astro build served by nginx, deployable with Docker Compose.",
+  "use_cases": [
+   "share a password with a colleague via one-time link",
+   "send an API key without leaving it in chat logs",
+   "transfer an encrypted file with a one-download link",
+   "pipe secrets from a terminal in DevOps scripts",
+   "self-host a private secret-sharing service",
+   "generate passwords, passphrases, or WiFi passwords"
+  ],
+  "how_to_run": [
+   "curl -O (download docker-compose file from README link)",
+   "cp .env.example .env",
+   "Edit .env: set APP_HOSTNAME to your domain",
+   "docker compose up -d",
+   "npm install -g @1time/cli (optional CLI)"
+  ],
+  "stack": [
+   "Go",
+   "Redis",
+   "Astro",
+   "nginx",
+   "Node.js",
+   "Docker Compose",
+   "Web Crypto API"
+  ],
+  "notable": [
+   "Zero-knowledge design: the key stays in the URL fragment and the server stores only a hash of the read token",
+   "Encrypted file sharing with one-time download links",
+   "First-party CLI with send/read and send-file/read-file commands",
+   "Built-in password, passphrase, API key, and WiFi password generators",
+   "Multi-arch Docker images (amd64 and arm64)"
+  ],
+  "caveats": [
+   "Hosted instance and self-hosting both require a separate reverse proxy for HTTPS/TLS termination, which the operator must set up",
+   "Redis is required as a dependency, and a VM deployment path needs nginx and Redis installed by the script",
+   "README lists no explicit limits beyond pointing to a developer page for limits"
+  ],
+  "license": "MIT",
+  "category": "self-hosted secret sharing",
+  "keywords": [
+   "one-time secret sharing",
+   "self-destructing links",
+   "zero-knowledge encryption",
+   "end-to-end encryption",
+   "encrypted file sharing",
+   "share passwords securely",
+   "share api keys",
+   "one-time download link",
+   "secure note sharing",
+   "self-hosted pastebin",
+   "onetimesecret alternative",
+   "yopass alternative",
+   "privatebin alternative",
+   "password pusher alternative",
+   "go redis app",
+   "aes-gcm browser encryption",
+   "hkdf-sha256",
+   "docker compose secret sharing",
+   "node cli secret sharing",
+   "password generator",
+   "passphrase generator",
+   "wifi password generator",
+   "api key generator",
+   "pipe secret from terminal",
+   "devops secret sharing",
+   "share files with my team",
+   "send a password to someone safely",
+   "temporary secret link",
+   "burn after reading",
+   "self-host secret share"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5079,
+  "output": 1230
+ },
+ "generated": "2026-10-29"
+}

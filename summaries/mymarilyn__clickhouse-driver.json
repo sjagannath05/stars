@@ -1,0 +1,86 @@
+{
+ "id": "mymarilyn/clickhouse-driver",
+ "repo": "mymarilyn/clickhouse-driver",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Database Drivers",
+   "entry": "clickhouse-driver - Python driver with native interface for ClickHouse."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Python driver for ClickHouse that talks to the server over its native TCP interface, offering both a direct Client and a DB API 2.0 interface.",
+  "what_it_does": "The driver connects to a ClickHouse server over the native (TCP) protocol and runs queries through a pure Client object or through the Python DB API 2.0 cursor interface. It supports INSERT with external Python data, query settings, and compression, plus TLS. It maps a broad set of ClickHouse types, including Array, Nullable, Map, Tuple, Decimal, UUID, IPv4/IPv6, LowCardinality and JSON. It can stream results block by block, report query progress, read query profile info, and receive server logs. It also supports multiple hosts and optional NumPy arrays.",
+  "use_cases": [
+   "Run SQL queries against a ClickHouse server from Python",
+   "Bulk insert Python data into ClickHouse tables",
+   "Stream large ClickHouse query results block by block",
+   "Connect to ClickHouse through a DB API 2.0 cursor",
+   "Connect to ClickHouse over TLS with multiple host failover",
+   "Retrieve NumPy arrays from ClickHouse query results"
+  ],
+  "how_to_run": [
+   "from clickhouse_driver import Client",
+   "client = Client('localhost')",
+   "client.execute('SELECT sum(x) FROM test')",
+   "from clickhouse_driver import connect",
+   "conn = connect('clickhouse://localhost')",
+   "cursor = conn.cursor()"
+  ],
+  "stack": [
+   "Python",
+   "ClickHouse native TCP protocol",
+   "NumPy (optional)"
+  ],
+  "notable": [
+   "Uses the native TCP interface rather than HTTP",
+   "Implements the Python DB API 2.0 specification alongside a pure Client API",
+   "Broad ClickHouse type support, including JSON, Map, Nested and Decimal",
+   "Supports multiple hosts and TLS connections"
+  ],
+  "caveats": [
+   "The README does not state platform or version limits.",
+   "An asynchronous wrapper exists but is a separate project; this README only links to it."
+  ],
+  "license": "MIT",
+  "category": "database driver",
+  "keywords": [
+   "clickhouse",
+   "clickhouse driver",
+   "clickhouse python",
+   "python database driver",
+   "native tcp protocol",
+   "clickhouse client",
+   "db api 2.0",
+   "dbapi",
+   "python dbapi connector",
+   "sql client python",
+   "olap database python",
+   "columnar database client",
+   "bulk insert",
+   "streaming query results",
+   "numpy arrays",
+   "tls connection",
+   "query settings",
+   "compression",
+   "multiple hosts",
+   "connect to clickhouse",
+   "run sql from python",
+   "query clickhouse from python script",
+   "analytics database access",
+   "executemany",
+   "clickhouse-driver alternative",
+   "http clickhouse client alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2740,
+  "output": 1067
+ },
+ "generated": "2026-10-29"
+}

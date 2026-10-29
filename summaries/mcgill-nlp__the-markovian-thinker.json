@@ -1,0 +1,98 @@
+{
+ "id": "mcgill-nlp/the-markovian-thinker",
+ "repo": "McGill-NLP/the-markovian-thinker",
+ "kind": "star",
+ "description": "Code for paper \"The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning\"",
+ "topics": [],
+ "language": "Python",
+ "stars": 350,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-03-16",
+ "archived": false,
+ "accounts": [
+  "sjagannath05",
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Research codebase for \"The Markovian Thinker,\" an RL training method (Delethink) that chunks LLM reasoning into fixed-size segments so compute scales linearly with thinking length.",
+  "what_it_does": "The repository holds the training and tracing code for the Markovian Thinker paper. Delethink splits generation into fixed-size chunks, resetting the context at each boundary to the original question plus a short carryover, so the model learns to carry progress forward in text. The codebase is built on verl and SGLang and includes configs for DeepScaleR and OpenMath experiments at 24K and 96K response budgets, plus LongCoT-RL baselines at 8K and 24K. A single-file tracing demo runs Delethink inference on AIME 2024 with DeepSeek-R1-Distill-Qwen-1.5B. The README also describes a trajectory viewer script for inspecting LongCoT and Delethink rollouts.",
+  "use_cases": [
+   "reproduce Markovian thinking RL experiments",
+   "train reasoning LLMs with bounded context",
+   "run Delethink tracing on AIME math problems",
+   "compare LongCoT and Delethink training cost",
+   "visualize RL rollout trajectories"
+  ],
+  "how_to_run": [
+   "Install following INSTALLATION.md (uv-based recipe or pre-built docker image)",
+   "bash examples/reproduce_rl_training/delethink_24k.sh",
+   "python delething_tracing_demo.py",
+   "pip install textual==0.52.1",
+   "python scripts/rollout_viewer.py experiments/ /train_rollouts_delethink"
+  ],
+  "stack": [
+   "Python",
+   "verl",
+   "SGLang",
+   "Hydra configs",
+   "uv",
+   "textual"
+  ],
+  "notable": [
+   "Delethink chunked reasoning: resets context to the question plus a short carryover at each boundary, keeping active context fixed (e.g., 8K)",
+   "Linear compute and flat memory with thinking length, per the paper's claim",
+   "Pre-trained Hugging Face models released for delethink-24k, delethink-96k, longcot-24k, and longcot-8k on 1.5B",
+   "Ready-made example scripts for reproducing paper RL experiments on 8xH100 nodes"
+  ],
+  "caveats": [
+   "Reproduction scripts are tested on a single 8xH100 GPU node; multi-node needs a separate template",
+   "Evaluation section is marked TBD in the README",
+   "Setup depends on verl and SGLang, so installation is nontrivial"
+  ],
+  "license": "Apache-2.0",
+  "category": "rl reasoning llm training",
+  "keywords": [
+   "markovian thinking",
+   "delethink",
+   "linear scaling reasoning",
+   "longcot",
+   "reinforcement learning llm",
+   "rlvr",
+   "reasoning llm training",
+   "chunked reasoning",
+   "bounded context reasoning",
+   "verl",
+   "sglang",
+   "deepscaler",
+   "deepseek-r1-distill-qwen-1.5b",
+   "aime 2024 evaluation",
+   "math reasoning rl",
+   "long chain of thought",
+   "think longer with fixed memory",
+   "reduce quadratic cost of long reasoning",
+   "train model to reason in chunks",
+   "ppo policy training",
+   "grpo-style rollouts",
+   "gpt-oss qwen3 reasoning",
+   "tracing demo",
+   "rollout viewer",
+   "trajectory visualization",
+   "multi-node rl training",
+   "apache license research code",
+   "reproduce paper experiments",
+   "llm inference memory usage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7877,
+  "output": 1291
+ },
+ "generated": "2026-10-29"
+}

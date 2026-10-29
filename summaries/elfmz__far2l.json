@@ -1,0 +1,106 @@
+{
+ "id": "elfmz/far2l",
+ "repo": "elfmz/far2l",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⏱️ Productivity (152)",
+   "entry": "far2l - Linux/Mac fork of FAR Manager v2"
+  }
+ ],
+ "summary": {
+  "one_liner": "far2l is a Linux (also macOS and BSD) port of the FAR Manager v2 file manager, a text-mode dual-panel file manager with many plugins.",
+  "category": "terminal file manager",
+  "keywords": [
+   "far manager",
+   "far2l",
+   "file manager",
+   "dual panel file manager",
+   "terminal file manager",
+   "tui file manager",
+   "linux file manager",
+   "macos file manager",
+   "ftp client",
+   "sftp client",
+   "smb client",
+   "netrocks",
+   "text editor",
+   "archive browser",
+   "multiarc",
+   "hex editor",
+   "midnight commander alternative",
+   "norton commander alternative",
+   "tty backend",
+   "wxwidgets gui",
+   "sdl gui",
+   "osc 52 clipboard",
+   "python plugins",
+   "mtp browser",
+   "adb browser",
+   "image viewer",
+   "manage files over ssh",
+   "browse archives in terminal",
+   "c++ project"
+  ],
+  "what_it_does": "far2l is a fork of FAR Manager v2 for Linux, also said to work on macOS and BSD (BSD not regularly tested). It runs in several UI backends: a plain terminal (TTY) mode, TTY modes that use X11 for clipboard and keyboard, and GUI modes built on wxWidgets or SDL. The README lists a large set of plugins, including NetRocks for SFTP/SCP/FTP/FTPS/SMB/NFS/WebDAV/AWS S3, multiarc and arclite for archives, hexitor for hex editing, colorer for syntax highlighting, ImageViewer, MTP and ADB access, a Python scripting plugin, and Transformer for external-command text transformations. Keyboard shortcuts follow the Windows FAR Manager tradition. The README also documents clipboard access via OSC 52 and a set of terminals and SSH clients with extended keyboard support. Build options are set through CMake flags that enable or disable individual plugins and optional dependencies.",
+  "use_cases": [
+   "browse and manage files in a terminal on a Linux or macOS server",
+   "transfer files to remote servers over SFTP, FTP, SMB or S3 from a dual-panel manager",
+   "browse and extract archives",
+   "edit text and hex files with editor plugins",
+   "view images from a file manager",
+   "manage Android devices via ADB or MTP",
+   "run a FAR-style file manager on a desktop with a GUI backend"
+  ],
+  "how_to_run": [
+   "Debian/Ubuntu: sudo apt install far2l-wx (GUI|WX) or sudo apt install far2l (TTY X/Xi) or sudo apt install --no-install-recommends far2l (plain TTY)",
+   "macOS/Linux via Homebrew: brew install far2l-tty (compact TTY-only version)",
+   "Build from source: git clone the repo, mkdir -p _build && cd _build",
+   "cmake -DUSEWX=yes -DCMAKE_BUILD_TYPE=Release .. && cmake --build . -j$(nproc --all)",
+   "Run from ./install/far2l or install with sudo cmake --install .",
+   "Docker: docker build . -t far2l && docker run -it far2l"
+  ],
+  "stack": [
+   "C++",
+   "CMake",
+   "wxWidgets",
+   "SDL2",
+   "X11 (libx11, libxi)",
+   "libssh",
+   "OpenSSL",
+   "libsmbclient",
+   "libnfs",
+   "neon (WebDAV)",
+   "libarchive",
+   "libxml2",
+   "uchardet",
+   "Python 3 (cffi, optional plugins)",
+   "7-Zip (runtime, optional)"
+  ],
+  "notable": [
+   "Multiple UI backends (plain TTY, TTY|X, TTY|Xi, GUI|WX, GUI|SDL) that automatically fall back when components are missing",
+   "NetRocks plugin covers SFTP, SCP, FTP, FTPS, SMB, NFS, WebDAV and AWS S3 in one panel",
+   "Sticky-key and OSC 52 clipboard workarounds for keys that desktop environments usually capture",
+   "Many FAR-style plugins with per-plugin CMake flags to turn them off",
+   "Packaged in Debian/Ubuntu, Homebrew, PPA, and Docker, with a Nix packaging option"
+  ],
+  "caveats": [
+   "README labels the project a BETA version and says to use it at your own risk",
+   "BSD support is not regularly tested; macOS GUI via Homebrew cask is deprecated because of Apple signing requirements",
+   "Some keyboard shortcuts need global desktop shortcut release or workarounds, and clipboard in plain TTY depends on terminal OSC 52 support",
+   "Homebrew compact TTY build lacks Python plugins and SMB support; the full build comes from a third-party tap",
+   "Only English, Russian, Ukrainian and Belarusian translations are considered valid"
+  ],
+  "license": "GNU/GPLv2"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13337,
+  "output": 1748
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,101 @@
+{
+ "id": "hauxir/rapidbay",
+ "repo": "hauxir/rapidbay",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "Rapidbay - Videostreaming service/torrent client that allows searching and playing videos from torrents in the browser or from a Chromecast/AppleTV/Smart TV. MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "RapidBay is a self-hosted web app that searches torrent indexers and turns selected videos into browser- or Chromecast-playable streams.",
+  "what_it_does": "It uses Jackett and/or Prowlarr as a search backend, with results merged and deduplicated when both are configured. Users pick individual video files from a torrent, and the app downloads and converts them into a streamable format. It automatically fetches subtitles from OpenSubtitles.org and converts video, subtitles, and unsupported audio (to AAC) so they play across browsers, Chromecast, and Apple TV. It can register as a handler for magnet links and removes its own disk usage automatically. The README also mentions Kodi support and optional debrid caching through Real Debrid and TorBox.",
+  "use_cases": [
+   "stream torrent videos in a browser",
+   "cast torrent movies to Chromecast or Apple TV",
+   "search torrent indexers for video content",
+   "automatically download subtitles for torrented videos",
+   "self-hosted torrent streaming on a home server",
+   "play magnet links from a web interface"
+  ],
+  "how_to_run": [
+   "docker run -p 5000:5000 -e JACKETT_HOST=\"<your Jackett URL>\" -e JACKETT_API_KEY=\"YourAPIKey\" hauxir/rapidbay",
+   "docker run -p 5000:5000 -e PROWLARR_HOST=\"<your Prowlarr URL>\" -e PROWLARR_API_KEY=\"YourAPIKey\" hauxir/rapidbay",
+   "sudo apt install python3 python3-venv ffmpeg mediainfo nginx",
+   "uv sync",
+   "cd app && uvicorn app:app --host 0.0.0.0 --port 5000 --workers 1 --timeout-keep-alive 900"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "FastAPI",
+   "uvicorn",
+   "ffmpeg",
+   "mediainfo",
+   "nginx",
+   "Jackett",
+   "Prowlarr",
+   "OpenSubtitles.org",
+   "Real Debrid",
+   "TorBox"
+  ],
+  "notable": [
+   "Accepts both Jackett and Prowlarr as search backends and merges their results",
+   "Converts video, subtitles and unsupported audio so files play on most devices",
+   "Registers as a default handler for magnet links via /registerHandler",
+   "Optional debrid caching with Real Debrid, falling back to TorBox",
+   "Automatic cleanup of disk space"
+  ],
+  "caveats": [
+   "Subtitle downloads require a VIP account at OpenSubtitles.org",
+   "Requires a separately running Jackett or Prowlarr indexer for search",
+   "Non-Docker setup needs ffmpeg, mediainfo and nginx installed on the host"
+  ],
+  "license": "MIT",
+  "category": "torrent video streaming",
+  "keywords": [
+   "torrent streaming",
+   "video streaming",
+   "torrent client",
+   "web torrent player",
+   "jackett",
+   "prowlarr",
+   "chromecast",
+   "apple tv",
+   "smart tv playback",
+   "kodi",
+   "subtitles",
+   "opensubtitles",
+   "ffmpeg conversion",
+   "audio transcoding aac",
+   "magnet link handler",
+   "self hosted media",
+   "docker",
+   "fastapi",
+   "python",
+   "debrid",
+   "real debrid",
+   "torbox",
+   "stream torrent in browser",
+   "play videos from torrents",
+   "search torrents and play",
+   "cast torrent to tv",
+   "home media server",
+   "automatic subtitle download",
+   "torrent indexer frontend",
+   "nginx",
+   "password protected streaming"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3002,
+  "output": 1314
+ },
+ "generated": "2026-10-29"
+}

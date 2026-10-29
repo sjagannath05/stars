@@ -1,0 +1,92 @@
+{
+ "id": "42wim/matterbridge",
+ "repo": "42wim/matterbridge",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Communication",
+   "entry": "Matterbridge | Bridge between various chat protocols"
+  }
+ ],
+ "summary": {
+  "one_liner": "Matterbridge is a chat bridge written in Go that relays messages and files between many chat platforms, such as Discord, IRC, Matrix, Slack, Telegram, and XMPP.",
+  "what_it_does": "Matterbridge connects multiple chat services so that messages posted in one channel appear in linked channels on other platforms. It is configured with a TOML file that defines accounts per protocol and gateways that map channels together. According to the README it supports message edits and deletes, preserves threading when possible, handles attachments and files, and can spoof usernames and avatars. Natively supported protocols include Discord, Gitter, IRC, Keybase, Matrix, Mattermost, Microsoft Teams, Mumble, Nextcloud Talk, Rocket.Chat, Slack, Telegram, Twitch, VK, WhatsApp, XMPP, and Zulip. It also exposes a basic API used by several third-party bridges for Minecraft, Reddit, and other services.",
+  "use_cases": [
+   "bridge IRC channel to Discord server",
+   "relay messages between Slack and Telegram groups",
+   "connect Matrix room with Mattermost channel",
+   "link Minecraft server chat to other chat apps",
+   "bridge WhatsApp group to Telegram",
+   "run a multi-platform community chat"
+  ],
+  "how_to_run": [
+   "Download the latest binary from the releases page (chmod a+x on Linux/macOS if needed)",
+   "Create a matterbridge.toml config following the howto walkthrough",
+   "go install github.com/42wim/matterbridge@master (requires Go 1.18+)",
+   "go install -tags nomsteams,nozulip github.com/42wim/matterbridge (lighter build without Teams or Zulip)",
+   "matterbridge -conf matterbridge.toml",
+   "Docker: see the Docker wiki page referenced in the README"
+  ],
+  "stack": [
+   "Go",
+   "TOML configuration",
+   "Docker (optional)",
+   "systemd (optional)",
+   "gops agent (optional debugging)"
+  ],
+  "notable": [
+   "Supports a wide range of chat protocols, including many less common ones like Mumble, VK, and Ssh-chat",
+   "Multiple gateways can be defined to link channels across protocols",
+   "Build tags let you exclude heavy bridges (nomsteams, nozulip) to reduce memory use",
+   "A WhatsApp multidevice mode is available only by building from source because of GPL3 library licensing"
+  ],
+  "caveats": [
+   "Building with all bridges needs about 3GB RAM; the nomsteams tag reduces this to about 0.5GB",
+   "WhatsApp multidevice support is beta and must be compiled yourself with the whatsappmulti tag",
+   "Steam support has been discontinued",
+   "The API is described as basic"
+  ],
+  "license": "unknown",
+  "category": "chat bridging",
+  "keywords": [
+   "chat bridge",
+   "message relay",
+   "cross-platform chat",
+   "bridge discord irc",
+   "bridge slack telegram",
+   "matrix bridge",
+   "mattermost bridge",
+   "irc bridge",
+   "xmpp bridge",
+   "rocket.chat bridge",
+   "zulip bridge",
+   "whatsapp bridge",
+   "gateway",
+   "toml config",
+   "go binary",
+   "self-hosted chat",
+   "link chat channels",
+   "sync chat rooms",
+   "relay messages between platforms",
+   "connect group chats",
+   "minecraft chat bridge",
+   "chatbot relay",
+   "team chat integration",
+   "bridge communities",
+   "message threading",
+   "file relay",
+   "avatar spoofing",
+   "matterbridge alternative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5456,
+  "output": 1314
+ },
+ "generated": "2026-10-29"
+}

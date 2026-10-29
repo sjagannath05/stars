@@ -1,0 +1,94 @@
+{
+ "id": "darrylmorley/whatcable",
+ "repo": "darrylmorley/whatcable",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "WhatCable - Tells you, in plain English, what each USB-C cable plugged into your Mac can do — speed, power, and e-marker info — from the menu bar."
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that explains in plain English what each USB-C cable on your Mac can do (speed, power, e-marker data) and why charging may be slow.",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "usb-c cable checker",
+   "usb c cable tester macos",
+   "cable e-marker",
+   "usb-pd diagnostics",
+   "charging speed diagnosis",
+   "why is my mac charging slowly",
+   "thunderbolt cable info",
+   "usb4 cable speed",
+   "iokit viewer",
+   "menu bar app",
+   "macos menubar",
+   "usb power delivery",
+   "pdo list",
+   "cable identification",
+   "usb-if certification lookup",
+   "usb device tree",
+   "thunderbolt fabric viewer",
+   "swift app",
+   "swiftui",
+   "whatcable cli",
+   "command line usb info",
+   "ioreg alternative",
+   "system_profiler usb alternative",
+   "check cable wattage",
+   "is this cable any good",
+   "display diagnostics",
+   "homebrew cask",
+   "usb-c port status"
+  ],
+  "what_it_does": "Shows, per USB-C port on an Apple Silicon Mac, what is connected and what it can do: a headline status, a charging diagnostic that names the bottleneck (cable, charger, or battery full), and data-speed verdicts for the Mac port, cable, and device. It decodes cable e-marker chips for speed, current rating and vendor, and lists the charger's advertised power profiles with the negotiated one highlighted. It also lists connected devices in a tree (hubs hidden by default), and shows Thunderbolt/USB4 lanes, generation and tunnels. A command-line tool, whatcable, provides the same data as text, JSON, or a live watch stream. The README also describes a paid Pro tier (live power metering, cable history, display and negotiation diagnostics, terminal dashboard) that is not open source.",
+  "use_cases": [
+   "figure out why a USB-C charger is charging slowly",
+   "check what a USB-C cable supports (speed, wattage)",
+   "see what is plugged into each USB-C port on a Mac",
+   "debug Thunderbolt or USB4 link speed through a dock",
+   "inspect USB-C power delivery profiles from a terminal",
+   "script USB-C port info as JSON"
+  ],
+  "how_to_run": [
+   "brew install --cask darrylmorley/whatcable/whatcable",
+   "brew install darrylmorley/whatcable/whatcable-cli",
+   "Download WhatCable.zip from the Releases page, unzip, and drag WhatCable.app to /Applications",
+   "swift build",
+   "swift run WhatCable",
+   "swift run whatcable-cli"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "IOKit",
+   "WidgetKit",
+   "SQLite",
+   "Swift Package Manager"
+  ],
+  "notable": [
+   "Reads USB-C port, PD, e-marker and Thunderbolt state from IOKit with no entitlements, private APIs or helper daemons",
+   "Cable identification and USB-IF certification lookup use a bundled offline database, with no network lookup",
+   "Mid-session fault warnings read port fault counters, catching cable problems that appear only under load",
+   "Localised into about 18 languages, and ships a CLI with --json, --watch and --raw flags",
+   "Signed and notarised with Developer ID, distributed outside the Mac App Store"
+  ],
+  "caveats": [
+   "Apple Silicon only, requires macOS 14 (Sonoma) or later; the README says Intel Macs do not expose the USB-C port-controller data it needs",
+   "Most USB-C cables under 60 W are unmarked, so e-marker details are often unavailable for them",
+   "Some cables only reveal their e-marker once a device is attached at the far end; desktop front USB ports show devices but no cable or power detail",
+   "Pro features require a one-time purchase (up to 2 Macs), and the Pro code is not described as open source"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11399,
+  "output": 1432
+ },
+ "generated": "2026-10-29"
+}

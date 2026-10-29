@@ -1,0 +1,92 @@
+{
+ "id": "cpys/codex-quota-overlay",
+ "repo": "cpys/codex-quota-overlay",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Codex Quota Overlay - Independent desktop companion showing Codex quota, reset time, and reset credits beside the conversation title on Windows and macOS. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Windows (and macOS source-build) desktop overlay that shows Codex quota, reset time, and reset credits beside the Codex conversation title, with a local Quota Center dashboard.",
+  "category": "desktop overlay utility",
+  "keywords": [
+   "codex quota overlay",
+   "codex",
+   "codex desktop",
+   "rate limit display",
+   "quota monitor",
+   "usage meter",
+   "reset countdown",
+   "burn rate",
+   "quota forecast",
+   "tray app",
+   "menu bar app",
+   "windows tray utility",
+   "macos menu bar",
+   "click-through overlay",
+   "always-on-top overlay",
+   "codex app server",
+   "account/ratelimits/read",
+   "local dashboard",
+   "usage history",
+   "quota alerts",
+   "electron",
+   "node.js",
+   "inno setup",
+   "see how much codex quota is left",
+   "show codex usage beside conversation",
+   "track openai codex limits",
+   "free open source codex tool",
+   "privacy local quota data"
+  ],
+  "what_it_does": "The app runs in the Windows notification area or macOS menu bar and reads the local Codex App Server's account/rateLimits/read method to show the current limit beside the Codex conversation title. It lists every reported rate-limit bucket with its primary and secondary windows, plus reset countdown and reset-credit count when provided. A Quota Center dashboard estimates recent burn rate, a safe pace to the next reset, possible exhaustion time, and forecast confidence from current-cycle samples. It can also summarize activity totals via account/usage/read when available. The overlay appears only while Codex Desktop is active and never takes focus or intercepts pointer input. Quota history stays in memory unless the user enables 7/14/30/90-day persistence, and alerts are off by default.",
+  "use_cases": [
+   "check remaining Codex quota while working",
+   "see when the Codex rate limit resets",
+   "track Codex usage pace and forecast exhaustion",
+   "get alerts when Codex quota drops below thresholds",
+   "review local Codex usage history",
+   "monitor multiple Codex rate-limit buckets"
+  ],
+  "how_to_run": [
+   "Windows: download CodexQuotaOverlay-Windows-Setup-*-x64.exe from GitHub Releases and run the installer (or extract the portable ZIP).",
+   "Launch the app; its icon stays in the notification area.",
+   "Source build: install Node.js 24 and npm, then run `npm ci`.",
+   "Run tests with `.\\test.ps1` (Windows) or `npm test` (macOS).",
+   "Package with `.\\package.ps1` on Windows (requires Inno Setup 6), or `npm run dist:mac` on macOS."
+  ],
+  "stack": [
+   "Node.js 24",
+   "npm",
+   "Inno Setup 6 (Windows installer)",
+   "native macOS helper (universal binary)",
+   "Codex App Server (local JSON methods)"
+  ],
+  "notable": [
+   "Shows every reported rate-limit bucket and its primary/secondary windows rather than collapsing to one value",
+   "Pace, forecast, and exhaustion-time estimates from current-cycle samples",
+   "Never captures screenshots or reads conversation titles; window probe leaves title empty",
+   "Session-only history by default; optional persistence stores only normalized percentages and timestamps",
+   "Short diagnostic codes (at most 200 characters) without account, path, or token data"
+  ],
+  "caveats": [
+   "Windows 10/11 x64 is the only distributed platform in version 0.4.0; macOS has no release binary and is source-build only",
+   "Quota data requires a ChatGPT-managed Codex sign-in; API-key-only configurations may not expose it",
+   "The Windows package is not commercially code-signed",
+   "No official Codex Desktop app exists for Linux, so no Linux packages are published"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4127,
+  "output": 1379
+ },
+ "generated": "2026-10-29"
+}

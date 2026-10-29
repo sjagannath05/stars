@@ -1,0 +1,100 @@
+{
+ "id": "bouliw/earshot",
+ "repo": "Bouliw/earshot",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Earshot - Live on-device transcription of any app you pick, with speaker names in Microsoft Teams."
+  }
+ ],
+ "summary": {
+  "one_liner": "Earshot is a macOS menu bar app that live-transcribes the audio of any app you pick (Teams, Zoom, Chrome, Discord, etc.) on-device, with speaker names in Microsoft Teams.",
+  "what_it_does": "Earshot lists the apps currently playing sound in the menu bar; choosing one captures only that app's audio via Core Audio process taps and transcribes it live with whisper.cpp (Metal), cutting audio at pauses and skipping silence. An optional \"Include my microphone\" setting transcribes your own voice under your name. In Microsoft Teams, speaker names are taken from Teams' Live Captions panel read through the accessibility API. Sessions are filed under the matching calendar event (via EventKit) and saved as Transcript.txt and Audio.m4a, with Markdown and .srt export from the Library. An optional live subtitles window offers two engines: Apple's on-device SpeechAnalyzer (\"Fast\") or Kyutai STT 1B on MLX (\"High\", a 2.4 GB download). The interface is available in English and French.",
+  "use_cases": [
+   "Transcribe a Teams or Zoom meeting locally without a bot joining the call",
+   "Get named speaker transcripts from Microsoft Teams captions",
+   "Record and transcribe university classes filed by calendar event",
+   "Show live subtitles for audio playing on the Mac",
+   "Export meeting transcripts to Markdown or SRT subtitles",
+   "Make class transcripts searchable alongside other documents"
+  ],
+  "how_to_run": [
+   "Download Earshot.dmg from the releases, open it and drag Earshot to Applications",
+   "mkdir -p ~/Library/Application\\ Support/Earshot/Models",
+   "curl -L -o ~/Library/Application\\ Support/Earshot/Models/ggml-large-v3-turbo.bin <model URL from README>",
+   "Open Earshot from Applications and approve it in System Settings › Privacy & Security › Open Anyway (not notarized)",
+   "Build from source: scripts/build.sh --install (Command Line Tools only)",
+   "Test on a file: build/Earshot.app/Contents/MacOS/Earshot --transcribe some-recording.wav"
+  ],
+  "stack": [
+   "Swift",
+   "whisper.cpp (Metal)",
+   "Core Audio process taps (CATapDescription)",
+   "AXUIElement accessibility API",
+   "EventKit",
+   "Apple SpeechAnalyzer",
+   "Kyutai STT 1B with MLX",
+   "Python (for High subtitles)",
+   "Whisper ggml models"
+  ],
+  "notable": [
+   "Captures a single app's audio output rather than the whole system or the microphone",
+   "Runs fully on-device; audio never leaves the Mac",
+   "Speaker names from Teams' live captions via the accessibility API",
+   "Sessions saved as plain text files that folder indexers like doc-indexer-macos can search",
+   "Two live subtitle engines: Apple's on-device recognition or Kyutai STT"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later on Apple silicon",
+   "Not notarized by Apple; first launch needs manual approval in System Settings",
+   "Speaker names only work with Microsoft Teams; needs Accessibility-style permission and Teams captions on",
+   "High subtitles need a 2.4 GB download and Python 3.10–3.12 installed separately"
+  ],
+  "license": "MIT",
+  "category": "macos audio transcription",
+  "keywords": [
+   "live transcription",
+   "on-device transcription",
+   "app audio capture",
+   "meeting transcription",
+   "teams transcription",
+   "speaker names",
+   "speech to text mac",
+   "whisper.cpp",
+   "whisper mac app",
+   "core audio tap",
+   "live subtitles",
+   "kyutai stt",
+   "class recording transcript",
+   "lecture transcription",
+   "zoom transcript",
+   "discord transcript",
+   "menu bar app",
+   "calendar recording",
+   "srt subtitles export",
+   "markdown transcript export",
+   "offline transcription",
+   "private transcription no cloud",
+   "transcribe call without bot",
+   "record class audio",
+   "searchable transcripts",
+   "doc-indexer",
+   "mlx speech recognition",
+   "apple speechanalyzer",
+   "record teams call mac",
+   "transcribe meeting audio on mac",
+   "french english transcription"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3723,
+  "output": 1554
+ },
+ "generated": "2026-10-29"
+}

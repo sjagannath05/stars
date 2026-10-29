@@ -1,0 +1,88 @@
+{
+ "id": "gwittebolle/claude-carbon",
+ "repo": "gwittebolle/claude-carbon",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Status Lines",
+   "entry": "claude-carbon by Gaëtan Wittebolle - Tracks the carbon footprint of Claude Code sessions, feautring a live CO2 estimate in the status line, computed locally from token usage, next to the session cost."
+  }
+ ],
+ "summary": {
+  "one_liner": "claude-carbon is an open source Claude Code plugin that estimates the CO2 footprint of your sessions locally from token usage and shows it in the status line and the desktop app's Code tab, next to the API-equivalent cost.",
+  "what_it_does": "It computes a live CO2 estimate from each session's token counts (input, cache write, cache read, output) using per-model emission factors from Jegham et al. 2025, and shows it in the Claude Code status line next to the API-list-price cost. It records each session to a local SQLite database so history survives Claude Code's 30-day transcript purge, and can backfill from existing ~/.claude transcripts. Slash commands produce a text report (/carbon-report), PNG report cards (/carbon-card), a README badge (/carbon-badge), and a PR footprint comment (/carbon-pr). A mod adds a per-answer CO2 line and a /carbon-panel pane with a molecule, usage periods and warming stripes in the desktop app. Cost figures are theoretical pay-as-you-go API values, not subscription billing.",
+  "use_cases": [
+   "track the carbon footprint of Claude Code usage",
+   "see CO2 estimate in the status line",
+   "generate a yearly carbon report for AI coding sessions",
+   "share a footprint report card as PNG",
+   "measure the footprint of a pull request's development",
+   "add a carbon badge to a GitHub profile README"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash   (macOS, Linux, WSL; URL truncated in README)",
+   "irm | iex   (Windows PowerShell, needs Git for Windows)",
+   "npx claude-carbon",
+   "Restart Claude Code, then use /carbon-report or /carbon-card",
+   "Manual: git clone the repo, then bash scripts/setup.sh and bash scripts/configure-settings.sh"
+  ],
+  "stack": [
+   "Bash",
+   "jq",
+   "sqlite3",
+   "Node.js (npx installer, optional PNG export)",
+   "Google Chrome / Edge / Chromium / Brave or playwright-core (optional, for PNG export)",
+   "curl (optional, OAuth usage endpoint)",
+   "Claude Code plugin and hooks system"
+  ],
+  "notable": [
+   "Computes CO2 locally from token usage with sourced per-model factors, with no network calls for the estimate",
+   "Persists sessions to SQLite so history survives the 30-day transcript deletion",
+   "Per-answer CO2 line and /carbon-panel desktop pane with warming stripes and a usage molecule",
+   "Recompute script regenerates CO2 and cost from stored raw tokens when factors or prices change",
+   "Golden test vectors pin the methodology for downstream consumers"
+  ],
+  "caveats": [
+   "Results are order-of-magnitude estimates, not measurements; the carbon intensity uses an AWS region grid average",
+   "Status line and hooks do not run in the Claude web app, the chat/Cowork tabs, or the VS Code chat panel; the desktop app shows CO2 under the prompt and in its Code tab rather than a status line",
+   "Claude Code's status line accepts one command, so ccstatusline and claude-carbon's full status line cannot run side by side without the segment mode"
+  ],
+  "license": "unknown",
+  "category": "claude code tooling",
+  "keywords": [
+   "carbon footprint",
+   "co2 tracker",
+   "claude code plugin",
+   "claude code status line",
+   "statusline",
+   "token usage",
+   "emissions estimate",
+   "sustainability",
+   "green ai",
+   "carbon report",
+   "sqlite session history",
+   "ccusage alternative",
+   "ccstatusline",
+   "ai energy footprint",
+   "co2 per session",
+   "report card png",
+   "claude desktop app",
+   "pull request footprint",
+   "track my ai carbon",
+   "measure how much co2 my coding sessions emit",
+   "bash hooks",
+   "emission factors",
+   "carbon badge readme"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15981,
+  "output": 1417
+ },
+ "generated": "2026-10-29"
+}

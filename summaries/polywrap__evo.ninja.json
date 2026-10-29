@@ -1,0 +1,93 @@
+{
+ "id": "polywrap/evo.ninja",
+ "repo": "polywrap/evo.ninja",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "evo.ninja is an autonomous agent tool that runs a loop of predicting, selecting, and executing steps toward a user goal, switching between specialist personas, with a CLI and a Supabase-backed web UI.",
+  "what_it_does": "Evo takes a user goal and runs an execution loop until the goal is judged achieved. Each iteration it predicts the next step, selects the best-fit agent persona (Synthesizer for text files, Csv Analyst for CSV data, Researcher for internet search, Developer for software building with a Python focus), trims the chat history to the most relevant messages, and then evaluates and executes an agent function. The agent reads and writes only inside a per-session workspace under ./sessions, and keeps a chat.md markdown log of its output plus optional debug logs. It can be run from the terminal with goal, session, timeout, and debug options, or through a UI that the README says depends on a local Supabase database run via Docker.",
+  "use_cases": [
+   "autonomous task execution from a single goal",
+   "summarizing and reporting on text files",
+   "analyzing and extracting insights from CSV data",
+   "researching information on the internet",
+   "generating Python software with an AI agent"
+  ],
+  "how_to_run": [
+   "git clone the repository",
+   "cp .env.template .env, then set OPENAI_API_KEY and SERP_API_KEY in .env",
+   "nvm install && nvm use",
+   "npm install -g yarn",
+   "yarn && yarn build",
+   "yarn start (CLI); for UI: cd apps/browser, yarn db:start, update .env.local, yarn dev"
+  ],
+  "stack": [
+   "nodejs",
+   "yarn",
+   "nvm",
+   "openai api",
+   "serp api",
+   "supabase",
+   "docker",
+   "next.js"
+  ],
+  "notable": [
+   "Switches between predefined agent personas on every loop iteration based on the predicted next step",
+   "Sandboxes the agent to a per-session workspace directory",
+   "Writes a markdown chat.md transcript of agent output",
+   "Website available for use without building from source"
+  ],
+  "caveats": [
+   "Requires paid-style API keys for OpenAI and SERP API before it runs",
+   "The UI requires Docker Desktop running and a local Supabase database that can take about 3 minutes to start",
+   "Setup needs git, nodejs, yarn, and nvm installed"
+  ],
+  "license": "unknown",
+  "category": "autonomous ai agent",
+  "keywords": [
+   "autonomous agent",
+   "ai agent",
+   "llm agent",
+   "agent personas",
+   "execution loop",
+   "openai",
+   "serp api",
+   "web search agent",
+   "csv analysis",
+   "csv analyst",
+   "text summarization",
+   "report generation",
+   "research assistant",
+   "python developer agent",
+   "cli agent",
+   "session workspace",
+   "supabase",
+   "docker",
+   "next.js",
+   "nodejs",
+   "yarn",
+   "run ai to achieve a goal",
+   "automate research tasks",
+   "analyze spreadsheet data with ai",
+   "summarize text files with ai",
+   "ai that writes code",
+   "evo ninja alternative to autogpt",
+   "self-directed ai task runner"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2848,
+  "output": 1134
+ },
+ "generated": "2026-10-29"
+}

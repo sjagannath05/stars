@@ -1,0 +1,90 @@
+{
+ "id": "xtensor-stack/xsimd",
+ "repo": "xtensor-stack/xsimd",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "SIMD libraries and measured kernels",
+   "entry": "xsimd - Fixes a batch type per ISA and width, the compile-time vector length model, and still reaches NEON and SVE."
+  }
+ ],
+ "summary": {
+  "one_liner": "xsimd is a C++17 header-based library of wrappers around SIMD intrinsics that lets you write batch arithmetic with ordinary operators and provides vectorized math functions.",
+  "what_it_does": "Provides a batch type that wraps SIMD registers so that arithmetic operators work on groups of numbers the same way they work on single values. It includes accelerated implementations of common mathematical functions operating on batches. The README lists support for many instruction sets: x86 (SSE2 through AVX512 and FMA variants), ARM (NEON, NEON64, SVE with fixed vector sizes), WebAssembly, powerpc64 VSX, RISC-V fixed-size vectors, LoongArch64 LSX/LASX, and IBM Z VXE. Aligned load and store helpers are available for moving data in and out of batches. Installation is documented via conda-forge, Spack, or CMake from source, and the test suite is built with CMake.",
+  "use_cases": [
+   "vectorize numerical loops in C++",
+   "write portable SIMD code across x86 and ARM",
+   "accelerate math functions on arrays of doubles or floats",
+   "build SIMD-accelerated kernels for a C++ library",
+   "replace hand-written intrinsics with a unified API"
+  ],
+  "how_to_run": [
+   "mamba install -c conda-forge xsimd",
+   "spack install xsimd",
+   "spack load xsimd",
+   "cmake -D CMAKE_INSTALL_PREFIX=your_install_prefix .",
+   "make install",
+   "mkdir build && cd build && cmake ../ -DBUILD_TESTS=ON && make xtest"
+  ],
+  "stack": [
+   "C++17",
+   "CMake",
+   "SIMD intrinsics (SSE, AVX, AVX512, NEON, SVE, WASM, VSX, RVV, LSX/LASX, VXE)",
+   "optional xtl",
+   "Doxygen, Sphinx, Breathe (docs)"
+  ],
+  "notable": [
+   "Batch type with the same arithmetic operators as scalar values, across many ISAs",
+   "Covers x86, ARM NEON/SVE, WebAssembly, powerpc64, RISC-V, LoongArch64 and IBM Z in one API",
+   "Math function implementations derived from the deprecated boost.SIMD project",
+   "Used by Mozilla Firefox, Apache Arrow, Pandas, Krita, Meta Velox, Milvus and Pythran (per README)"
+  ],
+  "caveats": [
+   "ARM SVE and RISC-V support is limited to fixed vector sizes per the README",
+   "Optional xtl dependency is needed for xtl::xcomplex vectorization",
+   "Official compiler support is MSVC 2022+, g++ 10+, clang 16+; the README notes the v8 API differs from 7.x and a migration guide is 'coming soon'"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "simd c++ library",
+  "keywords": [
+   "simd",
+   "c++ simd",
+   "simd wrapper",
+   "simd intrinsics",
+   "batch arithmetic",
+   "vectorization",
+   "vectorized math",
+   "sse",
+   "avx",
+   "avx2",
+   "avx512",
+   "neon",
+   "sve",
+   "wasm simd",
+   "risc-v vector",
+   "powerpc vsx",
+   "loongarch",
+   "header-only library",
+   "xtensor",
+   "cmake",
+   "conda-forge",
+   "spack",
+   "performance engineering",
+   "data parallel loops",
+   "portable simd code",
+   "simd alternative to intrinsics",
+   "numerical computing c++",
+   "speed up c++ array math"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3866,
+  "output": 1315
+ },
+ "generated": "2026-10-29"
+}

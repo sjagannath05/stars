@@ -1,0 +1,91 @@
+{
+ "id": "rblsb/synctube",
+ "repo": "RblSb/SyncTube",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Video Streaming",
+   "entry": "SyncTube - Lightweight and very simple to setup CyTube alternative to watch videos with friends and chat. MIT Nodejs/Haxe"
+  }
+ ],
+ "summary": {
+  "one_liner": "SyncTube is a lightweight, self-hosted web app for watching synchronized videos with friends, with a built-in chat, written in Haxe and run on Node.js.",
+  "what_it_does": "It keeps video playback in sync across all connected page users, with a \"Leader\" button that grants global play/pause, seeking and speed control. Users add videos by URL, and it supports YouTube, Twitch, Vimeo, Streamable, VK, Peertube, raw mp4/m3u8 files, and iframes (without sync). A chat includes time-rewind commands such as /30 or /-1h9m54, plus admin commands for banning, kicking and clearing chat. Local video files can be started while still uploading. External vtt/srt/ass subtitles and external audio tracks are supported, and a server-side cache for supported sites is available as an optional feature using ffmpeg/ffprobe. The README also mentions a native mobile client, hotkeys, and a user/ folder for overriding front-end files and server settings.",
+  "use_cases": [
+   "watch videos synchronously with friends",
+   "host a shared movie or video night",
+   "chat while watching YouTube together",
+   "share local video files with a small group",
+   "run a self-hosted CyTube-style watch party"
+  ],
+  "how_to_run": [
+   "npm ci (NodeJS 14+ required)",
+   "node build/server.js",
+   "Open the 'Local' link for yourself and send the 'Global' link to friends",
+   "Alternatively: docker build -t synctube . && docker run --rm -it -p 4200:4200 -v ${PWD}/user:/app/user synctube",
+   "Or: docker compose up -d",
+   "Optional cache feature: npm i, plus ffmpeg/ffprobe installed on the server"
+  ],
+  "stack": [
+   "Haxe",
+   "Node.js",
+   "Docker (optional)",
+   "ffmpeg/ffprobe (optional, for server cache)"
+  ],
+  "notable": [
+   "Leader button system for global playback control, with optional requestLeaderOnPause and unpauseWithoutLeader settings",
+   "Time-rewind chat commands such as /30, /-21 and /ad to skip YouTube sponsor blocks",
+   "Start playing local files while they are still uploading",
+   "Links mask like foo.com/bar${1-4}.mp4 to add multiple items at once",
+   "Front-end files can be overridden through the user/res folder"
+  ],
+  "caveats": [
+   "Server-side caching requires installing ffmpeg/ffprobe and an extra npm step; the default cache size is 3.0 GiB",
+   "Docker setup hides real local and global IPs, so these must be checked manually",
+   "Platform-as-a-service hosts without permanent storage need extra configuration to avoid sleeping and to keep user config"
+  ],
+  "license": "MIT",
+  "category": "self-hosted video watch party",
+  "keywords": [
+   "synctube",
+   "synchronized video",
+   "watch party",
+   "watch videos with friends",
+   "synchronized playback",
+   "cytube alternative",
+   "cytube",
+   "video chat",
+   "group video watching",
+   "shared video player",
+   "youtube sync",
+   "haxe",
+   "nodejs",
+   "self-hosted",
+   "docker",
+   "mp4 streaming",
+   "m3u8",
+   "subtitles srt vtt ass",
+   "external audio track",
+   "leader playback control",
+   "video night online",
+   "remote movie night",
+   "local video sharing",
+   "twitch vimeo youtube player",
+   "peertube",
+   "lightweight video app",
+   "chat commands rewind",
+   "video server cache",
+   "mobile client"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3146,
+  "output": 1281
+ },
+ "generated": "2026-10-29"
+}

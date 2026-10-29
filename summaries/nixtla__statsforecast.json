@@ -1,0 +1,96 @@
+{
+ "id": "nixtla/statsforecast",
+ "repo": "Nixtla/statsforecast",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Machine Learning",
+   "entry": "statsforecast - Fast statistical forecasting models such as ARIMA, ETS, and Theta, compiled with numba."
+  }
+ ],
+ "summary": {
+  "one_liner": "StatsForecast is a Python library of univariate time series forecasting models (AutoARIMA, AutoETS, AutoCES, Theta, MSTL and others) built for fast fitting on large collections of series.",
+  "what_it_does": "The README describes a collection of univariate forecasting models including automatic ARIMA, ETS, CES and Theta, plus a large set of benchmark models. Models are used through a StatsForecast class with sklearn-style .fit and .predict methods, and predictions can include point forecasts and prediction intervals at chosen confidence levels. Supported model families listed in the README include ARIMA/AutoRegressive, Theta variants, MSTL/MFLES/TBATS for multiple seasonalities, GARCH and ARCH for volatility, baselines (Naive, HistoricAverage, SeasonalNaive and others), exponential smoothing (Simple, Holt, HoltWinters), and intermittent-demand models (ADIDA, Croston variants, IMAPA, TSB). The README says some models accept exogenous variables and that the library offers anomaly detection based on in-sample prediction intervals. It also states it can run on Spark, Dask and Ray for large numbers of series.",
+  "use_cases": [
+   "forecast many univariate time series in production",
+   "benchmark statistical forecasting models",
+   "forecast demand with intermittent sales",
+   "detect anomalies in time series using prediction intervals",
+   "forecast electricity load with multiple seasonalities",
+   "replace Prophet for forecasting"
+  ],
+  "how_to_run": [
+   "pip install statsforecast",
+   "conda install -c conda-forge statsforecast",
+   "from statsforecast import StatsForecast; from statsforecast.models import AutoARIMA",
+   "sf = StatsForecast(models=[AutoARIMA(season_length=12)], freq='ME'); sf.fit(df)",
+   "sf.predict(h=12, level=[95])"
+  ],
+  "stack": [
+   "Python",
+   "numba",
+   "Spark",
+   "Dask",
+   "Ray",
+   "conda-forge"
+  ],
+  "notable": [
+   "Automatic model selection for ARIMA, ETS, CES and Theta across many series at once",
+   "Large battery of benchmark and intermittent-demand models in one package",
+   "Probabilistic forecasts and in-sample prediction intervals",
+   "Scales to millions of series with Spark, Dask or Ray according to the README",
+   "Sklearn-style fit/predict API"
+  ],
+  "caveats": [
+   "Performance claims (for example 20x faster than pmdarima, 1.5x faster than R) are stated in the README and not independently verified here",
+   "Scaling to distributed backends is described as out-of-the-box but requires those frameworks to be set up separately"
+  ],
+  "license": "unknown",
+  "category": "time series forecasting",
+  "keywords": [
+   "time series forecasting",
+   "statistical forecasting",
+   "arima",
+   "autoarima",
+   "ets",
+   "autoets",
+   "theta model",
+   "ces",
+   "mstl",
+   "garch",
+   "arch volatility",
+   "exponential smoothing",
+   "holt winters",
+   "croston intermittent demand",
+   "tsb",
+   "baseline forecasting models",
+   "prediction intervals",
+   "probabilistic forecast",
+   "anomaly detection time series",
+   "exogenous variables",
+   "numba",
+   "spark forecasting",
+   "dask",
+   "ray distributed",
+   "python forecasting library",
+   "alternative to prophet",
+   "alternative to pmdarima",
+   "alternative to statsmodels",
+   "forecast many series at once",
+   "predict future sales",
+   "forecast electricity demand",
+   "sklearn style fit predict",
+   "econometric models"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4966,
+  "output": 1267
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,105 @@
+{
+ "id": "anthropics/sandbox-runtime",
+ "repo": "anthropics/sandbox-runtime",
+ "kind": "star",
+ "description": "A lightweight sandboxing tool for enforcing filesystem and network restrictions on arbitrary processes at the OS level, without requiring a container.",
+ "topics": [],
+ "language": "TypeScript",
+ "stars": 6824,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "desktop",
+  "dev tools",
+  "my company",
+  "my stack"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A CLI and library from Anthropic (srt) that runs arbitrary processes under OS-level filesystem and network restrictions without a container.",
+  "what_it_does": "The tool wraps any command (agents, local MCP servers, bash commands) and enforces read/write path rules and domain-based network allowlists on the process tree. On macOS it generates Seatbelt profiles for sandbox-exec; on Linux it uses bubblewrap with a network namespace removed and traffic routed through host-side proxies over Unix sockets; on Windows it runs the process under a dedicated local account with a Windows Filtering Platform egress fence. HTTP/HTTPS traffic goes through an HTTP proxy and other TCP through a SOCKS5 proxy, both enforcing allow and deny lists with optional port suffixes. Settings live in ~/.srt-settings.json and default to no network access and no writes outside default paths. The README also describes optional TLS termination, request filtering hooks, Unix socket blocking, and a control channel for updating config while a command runs.",
+  "use_cases": [
+   "sandbox AI agent shell commands",
+   "restrict local MCP server file and network access",
+   "limit filesystem access of untrusted processes",
+   "allowlist outbound domains for a command",
+   "block reads of SSH keys and secrets",
+   "run build or test commands with no network"
+  ],
+  "how_to_run": [
+   "npm install -g @anthropic-ai/sandbox-runtime",
+   "srt \"curl anthropic.com\"",
+   "srt --settings /path/to/srt-settings.json npm install",
+   "srt --debug curl"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js",
+   "Bun",
+   "sandbox-exec (macOS Seatbelt)",
+   "bubblewrap (Linux)",
+   "seccomp (Linux)",
+   "Windows Filtering Platform",
+   "Zod"
+  ],
+  "notable": [
+   "Secure-by-default allow-only network and write policies, with deny-then-allow for reads",
+   "Per-platform native enforcement: Seatbelt, bubblewrap with seccomp, and a Windows srt-sandbox account with WFP",
+   "Resolved-address check that blocks allowed hostnames from resolving to loopback, metadata, or local interface addresses",
+   "Library API with violation attribution, per-command network allow lists, and an ask callback for undecided hosts",
+   "Optional experimental TLS termination for inspecting and rewriting HTTPS requests"
+  ],
+  "caveats": [
+   "Described as a beta research preview whose APIs and configuration formats may change",
+   "Linux glob support for filesystem rules is narrower than macOS; wildcards in leading path components are skipped",
+   "Unix socket blocking on Linux needs seccomp, which is x64/arm64 only; otherwise sockets are unrestricted with a warning",
+   "TLS termination needs Node or Bun 1.4+ and is marked experimental"
+  ],
+  "license": "Apache-2.0",
+  "category": "process sandboxing tool",
+  "keywords": [
+   "sandbox runtime",
+   "process sandbox",
+   "srt",
+   "sandbox-exec",
+   "seatbelt",
+   "bubblewrap",
+   "bwrap",
+   "seccomp",
+   "filesystem restrictions",
+   "network allowlist",
+   "domain allowlist",
+   "egress filtering",
+   "ai agent sandbox",
+   "claude code sandbox",
+   "mcp server sandbox",
+   "run untrusted code safely",
+   "restrict process file access",
+   "block network access for command",
+   "lightweight container alternative",
+   "without docker",
+   "sandboxing without containers",
+   "socks5 proxy",
+   "http proxy filtering",
+   "windows filtering platform",
+   "unix socket restriction",
+   "deny read ssh keys",
+   "limit commands writes",
+   "secure agent tool execution",
+   "nodejs sandbox cli",
+   "typescript sandbox library"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16432,
+  "output": 1396
+ },
+ "generated": "2026-10-29"
+}

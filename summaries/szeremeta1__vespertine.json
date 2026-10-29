@@ -1,0 +1,94 @@
+{
+ "id": "szeremeta1/vespertine",
+ "repo": "szeremeta1/Vespertine",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "Vespertine - Bit-perfect music player that switches the DAC to each track's native format, plays DSD, Dolby Atmos, TrueHD and DTS, and detects fake hi-res files."
+  }
+ ],
+ "summary": {
+  "one_liner": "Vespertine is a free, GPL-3.0 macOS music player for stereo and surround collections that switches the DAC to each file's native format, plays DSD and disc images, and flags fake hi-res files.",
+  "what_it_does": "It plays stereo and surround music from one library, including SACD ISO images, DVD-Video LPCM (ISO or VIDEO_TS folder), DTS CDs, Dolby TrueHD, DTS-HD MA, Atmos and FLAC, reading disc images directly without mounting or extracting. It switches the output sample rate to each track's rate, offers exclusive (hog) mode, and shows the signal path (decoding, resampling, mixing, gain, output format) read back from Core Audio, with a BIT-PERFECT label only when conditions are met. Native DSD (DSF and DSDIFF, DSD64 to DSD512) goes out as DoP or converts to high-rate PCM. A fake hi-res detector flags 16-bit audio padded to 24, likely upsampled masters and likely lossy sources; the vespertine-analyze tool runs the same analysis on Linux. It also includes a 20-band parametric EQ, a tag editor that backs up files before writing, library filters and smart playlists, and SMB/NFS/WebDAV network share support.",
+  "use_cases": [
+   "play SACD ISO and DVD-Video rips on a Mac",
+   "check whether hi-res FLAC files are really hi-res",
+   "play surround and Atmos music files with Spatial Audio on AirPods",
+   "send DSD files to a DAC over DoP",
+   "bit-perfect local music playback with automatic DAC rate switching",
+   "analyze a music library on a Linux server"
+  ],
+  "how_to_run": [
+   "Download the DMG from the project page, or run: brew install --cask szeremeta1/tap/vespertine",
+   "Build from source: install Xcode and XcodeGen (brew install xcodegen)",
+   "scripts/generate-project.sh && open Vespertine.xcodeproj",
+   "Run tests with swift test in Packages/VespertineKit and Packages/VespertineAnalysis, or scripts/audit.sh for everything"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "XcodeGen",
+   "Core Audio",
+   "Swift Package Manager"
+  ],
+  "notable": [
+   "Signed and notarized, with no account and no telemetry",
+   "Fake hi-res analysis shows measurements behind each verdict, and vespertine-analyze runs on Linux",
+   "Plays SACD ISO and DVD-Video LPCM directly from disc images, claimed bit-for-bit match with sacd_extract on two discs",
+   "Signal path display and built-in loopback test check the software path sample by sample",
+   "Localized into 45 languages, including right-to-left layouts"
+  ],
+  "caveats": [
+   "Intel Macs are untested (the Intel build has run under Rosetta); requires macOS 14.4+",
+   "Multichannel USB DAC output and Dolby/DTS receiver bitstream are experimental and only one device (a Sony TV over HDMI) has been tested",
+   "No convolution, audio effect plugins, streaming services or UPnP/DLNA; no DVD-Audio or DRM-protected Apple Music downloads",
+   "TrueHD Atmos and DTS:X objects are not rendered; TrueHD and DTS-HD MA receiver passthrough is unsupported on macOS"
+  ],
+  "license": "GPL-3.0-or-later",
+  "category": "macOS music player",
+  "keywords": [
+   "bit-perfect player",
+   "hi-res audio",
+   "mac music player",
+   "macos audio player",
+   "dsd player",
+   "dsf",
+   "dsdiff",
+   "dop",
+   "direct stream digital",
+   "sacd iso",
+   "sacd_extract",
+   "dvd-video lpcm",
+   "dolby atmos",
+   "truehd",
+   "dts-hd ma",
+   "surround music",
+   "spatial audio airpods",
+   "exclusive mode",
+   "hog mode",
+   "dac sample rate switching",
+   "fake hi-res detector",
+   "audio file analysis",
+   "flac player",
+   "parametric eq",
+   "autoeq",
+   "equalizer apo",
+   "gpl audio player",
+   "open source music player",
+   "play music from nas",
+   "audiophile player",
+   "vespertine"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5224,
+  "output": 1540
+ },
+ "generated": "2026-10-29"
+}

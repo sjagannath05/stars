@@ -1,0 +1,102 @@
+{
+ "id": "project-copacetic/copacetic",
+ "repo": "project-copacetic/copacetic",
+ "kind": "star",
+ "description": "🧵 CLI tool for directly patching container images!",
+ "topics": [
+  "cncf",
+  "compliance",
+  "container-image",
+  "container-security",
+  "containers",
+  "devsecops",
+  "docker",
+  "hacktoberfest",
+  "patching",
+  "security",
+  "security-tools",
+  "trivy",
+  "vulnerabilities",
+  "vulnerability",
+  "vulnerability-management"
+ ],
+ "language": "Go",
+ "stars": 1739,
+ "license": "Apache-2.0",
+ "homepage": "https://project-copacetic.github.io/copacetic/",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "dev tools",
+  "dkr k8s cloud"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Copa is a Go CLI that directly patches OS package vulnerabilities in existing container images without a full rebuild, using vulnerability scan reports or package metadata.",
+  "what_it_does": "Copa takes an existing container image and applies package updates as an extra patch layer, using buildkit to write the result. It can read vulnerability reports from scanners such as Trivy to decide which packages to update, or run a comprehensive update from package metadata in the image. Updates are obtained through the relevant package-manager tooling or Chisel release definitions, and the README says new adapters can be added for more package managers and report formats. The README also describes support for Ubuntu Chiseled images: full-status images support report-driven and comprehensive updates, while native Chisel images with /var/lib/chisel/manifest.wall support comprehensive updates only, with --chisel-release to select a release. The README states that Trivy v0.69.3 does not extract OS package inventory from native manifest.wall files.",
+  "use_cases": [
+   "patch OS package vulnerabilities in container images without rebuilding",
+   "apply scanner-reported fixes to third-party images",
+   "patch inherited base image vulnerabilities faster than waiting for upstream",
+   "add a remediation step after Trivy vulnerability scans",
+   "patch Ubuntu Chiseled images",
+   "reduce redistribution size of patched images with a small patch layer"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Go",
+   "buildkit",
+   "Trivy"
+  ],
+  "notable": [
+   "Patches existing images without requiring the publisher to change their build",
+   "Can work from vulnerability scanner reports or from package metadata in the image",
+   "Adds a patch layer rather than rebuilding, so layer hashes of the original image are preserved",
+   "Supports native Chisel manifest.wall images with --chisel-release, including public HTTPS Git URLs pinned to a commit or tag"
+  ],
+  "caveats": [
+   "Trivy does not extract OS package inventory from native Chisel manifest.wall files (verified with Trivy v0.69.3), and native manifest images support only comprehensive updates",
+   "Chisel support initially uses public archives only"
+  ],
+  "license": "Apache-2.0",
+  "category": "container image patching",
+  "keywords": [
+   "container patching",
+   "patch container images",
+   "copa",
+   "copacetic",
+   "container image vulnerabilities",
+   "vulnerability remediation",
+   "trivy",
+   "trivy report patching",
+   "buildkit",
+   "go cli",
+   "devsecops",
+   "container security",
+   "image patching without rebuild",
+   "patch docker image",
+   "fix vulnerable packages in image",
+   "ubuntu chiselled images",
+   "chisel",
+   "patch base image vulnerabilities",
+   "security patching tool",
+   "cncf project",
+   "vulnerability management",
+   "docker image security",
+   "apply security updates to container",
+   "patch third party images",
+   "oci image patch layer",
+   "compliance container scanning"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2970,
+  "output": 1090
+ },
+ "generated": "2026-10-29"
+}

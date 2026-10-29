@@ -1,0 +1,101 @@
+{
+ "id": "higangssh/homebutler",
+ "repo": "Higangssh/homebutler",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Self-hosting Solutions",
+   "entry": "HomeButler - Installs and manages a curated catalog of applications via Docker Compose, maps containers and exposed ports, verifies backups restore, and reports what changed since the last run with CLI, JSON, web and MCP interfaces. (Source Code) MIT Docker/Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "HomeButler is a single Go binary that snapshots a homelab server, reports what changed since the last run, and offers the same answers through a CLI, JSON output, a web dashboard, and an MCP server.",
+  "what_it_does": "It writes a health report that compares the current server state against the latest saved snapshot and classifies each change as gone, new, replaced, image, state, port, disk, or skipped. It can install a curated set of self-hosted apps via docker compose with pre-checks for Docker, ports, and duplicates. It maps containers, exposed ports, and topology through inventory scan, with Mermaid export. Backup drill boots a backup archive in an isolated container and requires an HTTP health check to pass. It also includes a doctor preflight check, a watch command that tracks container, systemd, and PM2 restarts with crash analysis, and Proxmox VE cluster status and guest power actions. It runs over SSH on remote machines and needs no daemon.",
+  "use_cases": [
+   "detect what changed on a homelab server since last time",
+   "install self-hosted apps like Uptime Kuma or Jellyfin with docker compose",
+   "verify that a backup can actually be restored",
+   "find which container owns a port or which ports are exposed",
+   "give an AI assistant read-only access to server status",
+   "monitor container restarts and diagnose crash loops",
+   "check a Proxmox cluster's nodes and guests"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh",
+   "brew install Higangssh/homebutler/homebutler",
+   "homebutler init",
+   "homebutler report",
+   "homebutler install uptime-kuma",
+   "homebutler serve"
+  ],
+  "stack": [
+   "Go",
+   "Docker Compose",
+   "SSH",
+   "Bubble Tea (TUI)",
+   "MCP (JSON-RPC over stdio)",
+   "npm (MCP wrapper package)",
+   "Node (build of web dashboard only)"
+  ],
+  "notable": [
+   "Change reports use a fixed kind word (gone, new, replaced, image, state, port, disk, skipped) that is shared between human output and --json, so agents can branch on it",
+   "backup drill boots backup archives in isolated Docker networks and fails non-zero when the health check fails",
+   "No daemon, no database, and no open ports by default; the web dashboard is opt-in and binds 127.0.0.1",
+   "MCP server supports a --max-risk read mode that hides tools that make changes",
+   "Web dashboard is embedded in the Go binary via go:embed"
+  ],
+  "caveats": [
+   "Power actions on Proxmox guests need a separate action token and an explicit --confirm flag",
+   "Restarting systemd services needs root or a polkit rule; flapping targets are intentionally not restarted",
+   "Building the web dashboard with make build-all requires Node; make build produces a CLI without it"
+  ],
+  "license": "MIT",
+  "category": "homelab server monitoring",
+  "keywords": [
+   "homelab",
+   "self-hosted",
+   "server health report",
+   "change detection",
+   "snapshot diff",
+   "docker compose installer",
+   "app installer",
+   "backup verification",
+   "backup restore test",
+   "backup drill",
+   "container monitoring",
+   "restart watch",
+   "crash analysis",
+   "port mapping",
+   "docker port inventory",
+   "mcp server",
+   "ai agent server access",
+   "claude desktop tool",
+   "ssh remote management",
+   "go binary",
+   "cli tool",
+   "web dashboard",
+   "terminal dashboard",
+   "tui",
+   "proxmox",
+   "wake on lan",
+   "uptime-kuma",
+   "vaultwarden",
+   "jellyfin",
+   "pi-hole",
+   "portainer alternative",
+   "check what changed on my server",
+   "verify my backup works",
+   "install self hosted apps"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 16352,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "andialbrecht/sqlparse",
+ "repo": "andialbrecht/sqlparse",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Text Processing",
+   "entry": "sqlparse - A non-validating SQL parser."
+  }
+ ],
+ "summary": {
+  "one_liner": "sqlparse is a non-validating SQL parser for Python that splits scripts into statements, formats SQL, and exposes a token tree for inspection.",
+  "what_it_does": "It tokenizes SQL text and groups recognized parts into a tree of statements, clauses, identifiers and expressions. It accepts input without validating it and makes no assumptions about a specific SQL dialect, so vendor extensions and templated SQL can be parsed. The module-level functions split() (divide a script into statements), format() (reindent, change keyword case, strip comments, set indent width, and similar options) and parse() (return a statement tree) cover most uses. It also installs a sqlformat command-line tool that reads stdin or files and can rewrite files in place. A pre-commit hook for sqlformat is documented.",
+  "use_cases": [
+   "split a SQL script into individual statements",
+   "auto-format or reindent SQL queries",
+   "strip comments from SQL files",
+   "format SQL files on commit with pre-commit",
+   "walk the token tree of a SQL statement",
+   "build a linter or query analysis tool"
+  ],
+  "how_to_run": [
+   "pip install sqlparse",
+   "import sqlparse; sqlparse.split(\"select * from foo; select * from bar;\")",
+   "print(sqlparse.format(sql, reindent=True, keyword_case=\"upper\"))",
+   "statement = sqlparse.parse(sql)[0]; statement.get_type()",
+   "sqlformat --reindent --keywords upper query.sql"
+  ],
+  "stack": [
+   "Python"
+  ],
+  "notable": [
+   "Non-validating parser that accepts any input, so vendor extensions and templated SQL parse",
+   "Dialect-agnostic tokenizer and grouping into a navigable token tree",
+   "Provides both a Python API and the sqlformat command-line tool",
+   "Pre-commit hook integration for formatting SQL files",
+   "Parts of the code are based on Pygments"
+  ],
+  "caveats": [
+   "Non-validating: it does not check that SQL is correct",
+   "Maintained in spare time, so issue and pull request replies can be slow"
+  ],
+  "license": "New BSD license",
+  "category": "sql parsing library",
+  "keywords": [
+   "sql parser",
+   "python sql parser",
+   "sql formatter",
+   "sql splitter",
+   "split sql statements",
+   "format sql query",
+   "reindent sql",
+   "sql keyword case",
+   "strip sql comments",
+   "sqlformat command line",
+   "token tree",
+   "parse sql statements",
+   "non-validating parser",
+   "sql linter building block",
+   "query analysis",
+   "pre-commit sql hook",
+   "pygments based lexer",
+   "sql pretty printer",
+   "beautify sql",
+   "tidy up sql code",
+   "format my sql files",
+   "clean up messy sql",
+   "dialect agnostic sql parsing",
+   "templated sql parsing",
+   "sql tokenizer",
+   "sql ast",
+   "in-place sql formatting",
+   "pip install sql tool",
+   "awesome python text processing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2546,
+  "output": 1102
+ },
+ "generated": "2026-10-29"
+}

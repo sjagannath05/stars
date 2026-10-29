@@ -1,0 +1,91 @@
+{
+ "id": "jenkinsci/docker",
+ "repo": "jenkinsci/docker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Development",
+   "entry": "Jenkins | Automation server for CI/CD"
+  }
+ ],
+ "summary": {
+  "one_liner": "The official Docker image for the Jenkins continuous integration and delivery automation server, published on Docker Hub as jenkins/jenkins.",
+  "what_it_does": "Packages a full Jenkins controller in a Docker image, with LTS, latest and versioned tags on Docker Hub. The README covers running it with port 8080 for the web UI and 50000 for inbound TCP agents, persisting data in /var/jenkins_home via a named volume, and setting JVM options through JAVA_OPTS or JENKINS_JAVA_OPTS. It documents extending the image to set built-in executors, install apt packages as root, copy init.groovy.d scripts, and bake in plugins via the jenkins-plugin-cli tool, with update center variables and marker-file-based plugin upgrade controls. It also includes a Docker Compose example pairing Jenkins with a jenkins/ssh-agent container, plus notes on logging, access logs, environment variable substitution in reference config files, and upgrading by pulling a new image.",
+  "use_cases": [
+   "run a Jenkins CI/CD server in a container",
+   "set up Jenkins with Docker Compose and an SSH build agent",
+   "preinstall Jenkins plugins in a custom image",
+   "persist Jenkins configuration and build data across upgrades",
+   "connect inbound TCP or SSH build agents to a Jenkins controller",
+   "customize Jenkins with init groovy scripts"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk21",
+   "docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk21",
+   "docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk21",
+   "docker compose up -d"
+  ],
+  "stack": [
+   "Docker",
+   "Java",
+   "Jenkins",
+   "Docker Compose",
+   "Groovy"
+  ],
+  "notable": [
+   "Official image maintained under the jenkinsci organization, published as jenkins/jenkins on Docker Hub",
+   "jenkins-plugin-cli tool for preinstalling plugins from a list file, with configurable update centers",
+   "Init groovy hooks via /usr/share/jenkins/ref/init.groovy.d for custom startup configuration",
+   "Optional environment variable substitution (${VAR:-default}) in copied .xml, .conf, .properties and .groovy reference files",
+   "Plugin upgrade controls using marker files and PLUGINS_FORCE_UPGRADE or TRY_UPGRADE_IF_NO_MARKER"
+  ],
+  "caveats": [
+   "Bind-mounting jenkins_home to a host folder can cause permission issues; the README recommends a named volume",
+   "Plugin manager CLI needs internet access to the default update centers",
+   "Changing update center variables does not change the update center the Jenkins runtime uses"
+  ],
+  "license": "unknown",
+  "category": "ci/cd automation server",
+  "keywords": [
+   "jenkins",
+   "jenkins docker image",
+   "jenkins docker",
+   "ci/cd server",
+   "continuous integration",
+   "continuous delivery",
+   "build automation",
+   "automation server",
+   "jenkins controller",
+   "jenkins agent",
+   "inbound tcp agent",
+   "ssh build agent",
+   "jenkins_home",
+   "jenkins plugins docker",
+   "jenkins-plugin-cli",
+   "preinstall plugins",
+   "docker compose jenkins",
+   "run jenkins in docker",
+   "self-hosted ci",
+   "build pipeline server",
+   "jenkins lts image",
+   "jenkins upgrade docker",
+   "init.groovy.d",
+   "jenkins backup volume",
+   "jvm options jenkins",
+   "alternative to github actions self-hosted",
+   "run ci server in container",
+   "automate builds and deployments",
+   "docker hub jenkins"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6837,
+  "output": 1477
+ },
+ "generated": "2026-10-29"
+}

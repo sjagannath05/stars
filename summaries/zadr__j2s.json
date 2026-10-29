@@ -1,0 +1,77 @@
+{
+ "id": "zadr/j2s",
+ "repo": "zadr/j2s",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔄 JSON Parsing (4)",
+   "entry": "j2s - macOS app to convert JSON objects into Swift structs (currently targets Swift 4 and Codable)."
+  }
+ ],
+ "summary": {
+  "one_liner": "j2s is a macOS app that converts JSON dictionaries into Codable-compliant Swift structs.",
+  "what_it_does": "Takes a JSON file and generates Swift struct definitions, writing them either to a single file or to one file per struct. Converts snake_case keys into camelCase property names. For arrays of dictionaries, it naively depluralizes the key name to choose the struct type name. Strings in ISO8601 format are typed as Date, integers as Int, and floating-point numbers as Double. Structs that conflict across multiple parses, or fields that appear as null alongside a type, are treated as Optional, and null values become Any?. The README says the generated code includes static create(with:) helpers that decode via JSONDecoder.",
+  "use_cases": [
+   "generate Swift structs from JSON",
+   "convert API responses into Codable models",
+   "create Swift model code from a JSON sample",
+   "map snake_case JSON keys to camelCase Swift properties"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "macOS",
+   "Codable"
+  ],
+  "notable": [
+   "Outputs Codable-compliant Swift structs with static create(with:) decoding helpers",
+   "Can write all structs to one file or one file per struct",
+   "Infers Date type from ISO8601 strings and Int vs Double from numbers",
+   "Converts snake_case keys to camelCase property names"
+  ],
+  "caveats": [
+   "Requires Swift 4 and Xcode 9 or greater; the generated code also requires Swift 4",
+   "Depluralization is a simple if-statement list and gets some words wrong (e.g. matrices becomes matrex)",
+   "Only ISO8601 is named as a supported date format"
+  ],
+  "license": "2-Clause BSD License",
+  "category": "json to swift codegen",
+  "keywords": [
+   "json to swift",
+   "swift struct generator",
+   "codable generator",
+   "json parser",
+   "macos app",
+   "swift 4",
+   "codable structs",
+   "snake case to camel case",
+   "depluralization",
+   "iso8601 date",
+   "json model generation",
+   "xcode",
+   "swift codegen",
+   "json to struct",
+   "api response models",
+   "data model generator",
+   "decodable",
+   "jsondecoder",
+   "swift models from json",
+   "generate swift code",
+   "json file converter",
+   "swift type inference",
+   "sourcery alternative",
+   "2-clause bsd"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3368,
+  "output": 875
+ },
+ "generated": "2026-10-29"
+}

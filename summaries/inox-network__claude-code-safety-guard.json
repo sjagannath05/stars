@@ -1,0 +1,93 @@
+{
+ "id": "inox-network/claude-code-safety-guard",
+ "repo": "inoX-Network/claude-code-safety-guard",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "Claude Code Safety Guard by inoX-Network - 3-level override system for Claude Code - prevents destructive system operations. Born from a real incident."
+  }
+ ],
+ "summary": {
+  "one_liner": "A deterministic tool-call guard for Claude Code and opencode (plus an Antigravity adapter) that blocks catastrophic shell, file and git operations before they run, with a scoped 3-level override system.",
+  "what_it_does": "Runs as a PreToolUse hook (Claude Code) or plugin (opencode 2.x and 1.x) that inspects every tool call before execution and returns allow or block. Always-on blocks cover patterns such as rm -rf on system or home paths, mkfs, chmod 777, fork bombs, pipe-to-shell, recursive chown/chmod on system directories, force-push to main/master, git reset --hard and --no-verify. Level-dependent checks protect paths like ~/.ssh, /etc, /boot and /usr/bin, and block Read access to private keys, cloud credentials and .env files without an override. Overrides are granted per agent or main session, expire by time, and are issued through owner-run scripts rather than by the AI. The guard also protects its own files and shell startup files from being written by AI tool calls, and writes a JSONL audit log with secret redaction. The README includes an explicit threat model and a list of known limitations, such as unresolved symlinks and glob handling.",
+  "use_cases": [
+   "prevent an AI coding agent from running destructive shell commands",
+   "block agent access to ~/.ssh keys and cloud credentials",
+   "stop force-pushes to main from an AI assistant",
+   "add a safety layer to Claude Code hooks",
+   "audit what an AI coding agent tried to do",
+   "gate elevated sudo access for AI agents with time-limited overrides"
+  ],
+  "how_to_run": [
+   "cp security-rules.example.json ~/.claude/safety-guard/security-rules.json",
+   "Register hooks/command-guard.py as a PreToolUse hook in ~/.claude/settings.json (full guide in INSTALL.md)",
+   "opencode 2.x: copy opencode/v2 to ~/.config/opencode/plugins/safety-guard, then run npm ci --ignore-scripts --omit=optional there",
+   "Optional: python3 tools/would-it-help.py to assess fit before installing"
+  ],
+  "stack": [
+   "Python",
+   "TypeScript (opencode plugin)",
+   "Node.js npm (opencode v2 adapter)",
+   "Claude Code hooks (PreToolUse)",
+   "JSON rules and config files"
+  ],
+  "notable": [
+   "Deterministic: no LLM in the verdict loop; same input gives same result",
+   "Three-level override system scoped per agent_id, with no inheritance between subagent and main session",
+   "Self-protection so the AI cannot disarm the guard, its settings or its own override directory",
+   "Audit log with secret redaction and a tool that reports blocks and false alarms",
+   "Measured hardening history: documents five audit-found bypasses and their fixes with regression tests"
+  ],
+  "caveats": [
+   "Known limitations are documented: symlinks are not resolved, and a target built at runtime (variables, decoders) is invisible to text matching",
+   "Designed for sessions with permission prompts turned off; it is a guardrail, not a sandbox, and the README says an OS sandbox or least privilege is the hard boundary",
+   "Covers zones and catastrophic patterns only; ordinary deletes outside protected zones are allowed by design"
+  ],
+  "license": "unknown",
+  "category": "ai agent safety guard",
+  "keywords": [
+   "claude code hook",
+   "pretooluse hook",
+   "opencode plugin",
+   "antigravity agy",
+   "ai agent guardrail",
+   "tool call filter",
+   "destructive command blocker",
+   "rm -rf protection",
+   "force push protection",
+   "git safety hook",
+   "credential read protection",
+   "ssh key protection",
+   "env file protection",
+   "sudo override",
+   "time-limited permission",
+   "privilege escalation control",
+   "audit log",
+   "secret redaction",
+   "prompt injection detection",
+   "self-protection",
+   "shell startup file protection",
+   "container guard docker",
+   "block dangerous shell commands",
+   "stop ai from deleting files",
+   "keep coding agent from wiping system",
+   "deterministic policy engine",
+   "python guard script",
+   "safety net for llm agent",
+   "protect ssh keys from ai",
+   "agent permission override levels",
+   "defense in depth ai coding"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16615,
+  "output": 1534
+ },
+ "generated": "2026-10-29"
+}

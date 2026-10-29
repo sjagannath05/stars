@@ -1,0 +1,97 @@
+{
+ "id": "marks-zyz/nomicswitch",
+ "repo": "marks-zyz/NoMicSwitch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (64)",
+   "entry": "NoMicSwitch - Pins the default audio input to the Mac's built-in microphone and locks the input volume, so AirPods never take it over."
+  }
+ ],
+ "summary": {
+  "one_liner": "NoMicSwitch is a small macOS daemon that pins the default audio input to the built-in microphone and locks input volume, reverting any change (such as AirPods taking over the mic) within milliseconds.",
+  "what_it_does": "The daemon registers three CoreAudio property listeners: default input device changes, input volume changes, and device connect/disconnect events. When the default input moves away from the chosen device, it switches it back; when input volume is lowered, it raises it back to the configured level (default 100%). It can pin any input device by UID, with --list showing available UIDs, and --no-volume leaves volume alone. The process sleeps between events, and the README reports 0.0% idle CPU and about 14 MB RAM on macOS 26. Installation is a dependency-free curl one-liner that fetches a prebuilt universal binary and checks its SHA-256, with Homebrew and source build options also given. It runs as a LaunchAgent so it restarts at login and after crashes.",
+  "use_cases": [
+   "stop AirPods from taking over the Mac microphone",
+   "keep the MacBook built-in mic as default input",
+   "lock microphone input volume at 100%",
+   "prevent Zoom or Teams from switching the mic",
+   "pin a USB microphone as the default input on macOS",
+   "avoid low-quality AirPods headset mode in calls"
+  ],
+  "how_to_run": [
+   "curl -fsSL <install script URL> | bash",
+   "brew install marks-zyz/tap/nomicswitch",
+   "brew services start nomicswitch",
+   "git clone <repository URL>",
+   "cd NoMicSwitch",
+   "make install"
+  ],
+  "stack": [
+   "Swift",
+   "CoreAudio",
+   "launchd LaunchAgent",
+   "Homebrew (optional)",
+   "Make"
+  ],
+  "notable": [
+   "Event-driven: sleeps between CoreAudio notifications, so idle CPU is zero",
+   "Reverts changes in under 100 ms rather than polling every few seconds",
+   "Pins devices by stable UID, not localized device name",
+   "Dependency-free one-line installer that verifies a SHA-256 checksum",
+   "Unlicense (public domain) with README in English, Portuguese and Spanish"
+  ],
+  "caveats": [
+   "Cannot prevent changes, only revert them, because macOS has no API to lock the default input device",
+   "While the daemon runs you cannot select another microphone by hand; you must pause the service first",
+   "Tested on macOS 26 on Apple Silicon; README says macOS 12 or newer should work, and older SDKs may need a symbol rename",
+   "No .pkg or .app; the binary is ad-hoc signed, not Developer ID signed"
+  ],
+  "category": "macos audio utilities",
+  "keywords": [
+   "microphone lock",
+   "default input device",
+   "airpods microphone",
+   "airpods sound quality",
+   "coreaudio",
+   "macos daemon",
+   "launchagent",
+   "input volume lock",
+   "built-in microphone",
+   "pin audio input",
+   "brew services",
+   "event-driven daemon",
+   "bluetooth headset mic",
+   "auto-switch microphone",
+   "stop mic switching",
+   "keep macbook mic",
+   "zoom microphone switching",
+   "teams microphone",
+   "usb microphone default",
+   "iphone continuity mic",
+   "audio input volume 100",
+   "swift command line tool",
+   "menu-free audio tool",
+   "unlicense",
+   "airpods pro call quality",
+   "headset mode fix",
+   "toothfairy alternative",
+   "soundsource alternative",
+   "airbuddy alternative",
+   "airpodssoundqualityfixer alternative",
+   "mac microphone guard",
+   "prevent input device change"
+  ],
+  "license": "Unlicense"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8081,
+  "output": 1326
+ },
+ "generated": "2026-10-29"
+}

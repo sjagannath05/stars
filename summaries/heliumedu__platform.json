@@ -1,0 +1,94 @@
+{
+ "id": "heliumedu/platform",
+ "repo": "HeliumEdu/platform",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Learning and Courses",
+   "entry": "Helium - Color-coded student planner for classes, homework, grades, and notes with smart notifications and multi-device sync. (Demo, Source Code) MIT Python/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Helium platform is the open-source backend (Django API and worker) for the Helium color-coded online student planner covering classes, homework, grades, and notes.",
+  "what_it_does": "The repository holds the backend \"platform\" for Helium, a student planner, including its API and a worker process for async and scheduled tasks. It is written in Python with Django and organized into the apps auth, common, feed, importexport, and planner, with configuration under conf. The README describes a Docker-based development setup that starts separate API and worker containers, plus a LocalStack container to emulate AWS services locally. Environment variables control the hostname mode (dev-local, local, prod), AWS Secrets Manager use, and ngrok tunneling for local runserver use. Tests run via make test with a coverage report, and auto-generated API documentation is served at /docs. The frontend lives in a separate repository.",
+  "use_cases": [
+   "Running a self-hosted student planner backend",
+   "Developing or contributing to the Helium planner API",
+   "Tracking classes, homework, and grades in a planner app",
+   "Integrating third-party clients with a student planner API",
+   "Running async and scheduled notification tasks for a planner"
+  ],
+  "how_to_run": [
+   "Install Docker, Python (>= 3.12), MySQL (>= 8), and Redis (>= 7)",
+   "Run `make` to build and start the API and worker containers",
+   "Create an admin user with `docker exec -it platform-api-1 python manage.py createsuperuser`",
+   "Open a shell in a container with `docker exec -it platform-api-1 /bin/bash`",
+   "Run tests with `make test`"
+  ],
+  "stack": [
+   "Python 3.12+",
+   "Django",
+   "Docker",
+   "MySQL 8+",
+   "Redis 7+",
+   "LocalStack",
+   "ngrok (optional via pyngrok)",
+   "AWS ECR, Secrets Manager, SES"
+  ],
+  "notable": [
+   "Split into API and worker containers for async and scheduled tasks",
+   "Local development uses LocalStack to emulate AWS services offline",
+   "Environment modes switch hostnames between localhost and prod-like domains",
+   "Auto-generated API docs available at /docs",
+   "Released container images published to AWS ECR"
+  ],
+  "caveats": [
+   "Frontend is in a separate repository, so the full app needs both repos",
+   "Some features such as email and text messages need Internet-connected third-party services and Terraform workspace setup",
+   "Default Docker image targets linux/arm64; x86 users must set PLATFORM=amd64"
+  ],
+  "license": "MIT",
+  "category": "student planner backend",
+  "keywords": [
+   "student planner",
+   "homework tracker",
+   "class schedule",
+   "grade tracker",
+   "note taking for students",
+   "color-coded planner",
+   "django api",
+   "python backend",
+   "docker compose",
+   "redis worker",
+   "mysql",
+   "localstack",
+   "self-hosted planner",
+   "assignment reminders",
+   "academic planner",
+   "education app backend",
+   "rest api",
+   "celery-style worker",
+   "scheduled tasks",
+   "share planner across devices",
+   "keep track of assignments",
+   "open source study planner",
+   "ngrok tunnel",
+   "aws ses",
+   "mit licensed planner",
+   "helium planner",
+   "student organizer software",
+   "homework deadlines app",
+   "planner sync between devices"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2615,
+  "output": 1201
+ },
+ "generated": "2026-10-29"
+}

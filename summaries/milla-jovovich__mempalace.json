@@ -1,0 +1,99 @@
+{
+ "id": "milla-jovovich/mempalace",
+ "repo": "milla-jovovich/mempalace",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "mempalace — Memory-oriented tooling for AI agents, focused on persistent context, recall, and more structured long-term memory behavior."
+  }
+ ],
+ "summary": {
+  "one_liner": "MemPalace is a local-first AI memory system that stores conversation history and project content verbatim and retrieves it with semantic search, with no API calls required for the core path.",
+  "what_it_does": "MemPalace stores conversation history as verbatim text and retrieves it via semantic search without summarizing or paraphrasing. Content is organized into wings (people and projects), rooms (topics), and drawers (original content) so searches can be scoped. The retrieval layer is pluggable, with ChromaDB as the default and additional local and server backends such as sqlite_exact, rust_exact, milvus, qdrant, and pgvector. It ships a CLI (mine, search, wake-up, audit, sweep) and an MCP server with 47 tools covering palace reads and writes, a temporal knowledge graph backed by local SQLite, agent diaries, and agent coordination. Auto-save hooks are documented for Claude Code, Codex CLI, and Cursor IDE. The README reports 96.6% R@5 raw recall on LongMemEval with no LLM, plus additional benchmark figures.",
+  "use_cases": [
+   "give an AI coding agent persistent memory across sessions",
+   "search past Claude Code or Codex conversation history",
+   "store and semantically search project files for later recall",
+   "run a private local memory store with no cloud calls",
+   "share a memory hub across a team via a server deployment",
+   "track entities and relationships over time in a local knowledge graph"
+  ],
+  "how_to_run": [
+   "uv tool install mempalace",
+   "mempalace init ~/projects/myapp",
+   "mempalace mine ~/.claude/projects/ --mode convos",
+   "mempalace search \"why did we switch to GraphQL\"",
+   "mempalace wake-up",
+   "docker pull ghcr.io/mempalace/mempalace:latest"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "ChromaDB",
+   "SQLite",
+   "Rust (native vector engine, crates/)",
+   "PyO3",
+   "Docker",
+   "MCP (Model Context Protocol)",
+   "ONNX Runtime",
+   "embeddinggemma / all-MiniLM-L6-v2 embedding models",
+   "uv / pipx / pip"
+  ],
+  "notable": [
+   "Verbatim storage with no summarization; retrieval scoped by wings, rooms, and drawers",
+   "Pluggable storage backend contract with multiple local and server options",
+   "Reports 96.6% R@5 raw on LongMemEval with no LLM or API key",
+   "Temporal knowledge graph with validity windows, backed by local SQLite",
+   "Optional OpenAI-compatible embedding endpoint for local or LAN servers"
+  ],
+  "caveats": [
+   "Native Termux installation is unsupported; Android ARM64 users must use a Debian PRoot container",
+   "The GPU Docker image is x86_64-only and is not published, so it must be built locally",
+   "The README warns of impostor domains and says only the GitHub repo, PyPI package, and mempalaceofficial.com are official"
+  ],
+  "license": "MIT",
+  "category": "AI agent memory",
+  "keywords": [
+   "ai agent memory",
+   "persistent memory for llm",
+   "long-term memory agents",
+   "semantic search",
+   "vector search",
+   "chromadb",
+   "sqlite vector search",
+   "mcp server",
+   "model context protocol",
+   "claude code memory",
+   "codex cli hooks",
+   "cursor ide hooks",
+   "conversation history search",
+   "verbatim storage",
+   "local-first ai",
+   "knowledge graph",
+   "temporal knowledge graph",
+   "longmemeval benchmark",
+   "embedding model",
+   "rag retrieval",
+   "recall past conversations",
+   "search my chat history",
+   "give ai assistant memory",
+   "private local memory store",
+   "rust vector engine",
+   "qdrant pgvector milvus backend",
+   "self-hosted memory server",
+   "agent diary",
+   "mine project files for ai",
+   "docker mcp server"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7260,
+  "output": 1410
+ },
+ "generated": "2026-10-29"
+}

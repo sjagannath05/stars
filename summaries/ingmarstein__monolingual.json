@@ -1,0 +1,94 @@
+{
+ "id": "ingmarstein/monolingual",
+ "repo": "IngmarStein/Monolingual",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🛠️ Utilities (227)",
+   "entry": "Monolingual - Remove unnecessary language resources from macOS"
+  }
+ ],
+ "summary": {
+  "one_liner": "Monolingual is a macOS app that deletes unneeded language localization files and unused architecture slices from installed applications to free disk space.",
+  "what_it_does": "The app scans folders (by default /Applications and /Library) and lets you choose language resources and architecture slices to remove. A privileged helper, registered as a launch daemon via Service Management (SMAppService), performs the deletions and talks to the app over XPC. Removals show progress in a sheet with the current file and space freed so far, can be cancelled, and send a notification with the space saved. The language and architecture lists have a search field that filters as you type. English language files cannot be selected for removal. Updates use Sparkle 2 with EdDSA-signed releases. The README also describes a bundled lipo tool built with swift-argument-parser.",
+  "use_cases": [
+   "free disk space by removing unused app languages",
+   "strip unneeded architectures from universal binaries",
+   "thin macOS applications to save storage",
+   "remove unwanted localization files from Mac apps",
+   "clean up old language packs on a Mac"
+  ],
+  "how_to_run": [
+   "Build (Debug): make development",
+   "Build (Release): make deployment",
+   "Release packaging (signing, notarization, disk image): make release",
+   "Run the tests: swift test"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "Swift Package Manager",
+   "Sparkle 2",
+   "swift-argument-parser",
+   "XPC",
+   "Service Management (SMAppService)",
+   "SwiftLint",
+   "SwiftFormat",
+   "Xcode 27"
+  ],
+  "notable": [
+   "Privileged helper registered as a launch daemon with SMAppService, approved once in System Settings",
+   "Refuses to remove English language files, which would break macOS",
+   "Search field filters the language and architecture lists as you type",
+   "Localized into 17 languages, kept in a String Catalog",
+   "Notarized app with EdDSA-signed Sparkle updates"
+  ],
+  "caveats": [
+   "Requires macOS 27 on Apple silicon, per the README",
+   "Needs an administrator to approve the helper in System Settings › General › Login Items & Extensions before it can run",
+   "The app is no longer sandboxed, so settings from 2.0 do not carry over and added folders must be re-added"
+  ],
+  "license": "GNU GPL v3",
+  "category": "macos disk cleanup utility",
+  "keywords": [
+   "monolingual",
+   "remove language files",
+   "delete localization files",
+   "macos",
+   "mac app",
+   "language resources",
+   "lproj removal",
+   "universal binary thinning",
+   "strip architectures",
+   "fat binary",
+   "free disk space",
+   "disk cleanup",
+   "app thinning",
+   "unused languages mac",
+   "remove unused languages",
+   "swift",
+   "swiftui",
+   "sparkle updates",
+   "xpc helper",
+   "launch daemon",
+   "smappservice",
+   "gpl v3",
+   "lipo",
+   "apple silicon",
+   "storage cleanup",
+   "delete unused translations",
+   "reclaim disk space",
+   "mac storage saver"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3563,
+  "output": 1113
+ },
+ "generated": "2026-10-29"
+}

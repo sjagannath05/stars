@@ -1,0 +1,94 @@
+{
+ "id": "stmol/ssh-keys-manager-macos-app",
+ "repo": "Stmol/ssh-keys-manager-macos-app",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "SSH Keys Manager - Native macOS app for managing local SSH keys and Git identities. [![Open-Source Software][OSS Icon]](https://github.com/Stmol/ssh-keys-manager-macos-app) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS app (Swift/SwiftUI) for browsing, generating, organizing and copying local SSH keys and editing SSH config entries.",
+  "what_it_does": "Browses SSH keys in the default ~/.ssh directory or a custom directory and shows key metadata. Generates new key pairs with a chosen filename, key type, comment and optional passphrase, and can rename, duplicate, re-comment, change passphrases of, or remove keys. Creates, edits, reorders and deletes Host blocks in the SSH config through a form-based editor, and maps hosts to private keys via IdentityFile selection. The sidebar can check whether configured hosts are reachable directly. A menu bar interface lets you copy public and private keys without opening the main window. A Read-only mode blocks any operation that would modify existing SSH files.",
+  "use_cases": [
+   "managing SSH keys on a Mac without the terminal",
+   "generating new SSH key pairs with a passphrase",
+   "editing ~/.ssh/config Host blocks visually",
+   "assigning IdentityFile entries to hosts",
+   "copying public keys quickly from the menu bar",
+   "auditing an SSH setup safely in read-only mode"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd ssh-keys-manager",
+   "open \"SSH Keys Manager.xcodeproj\"  (then build and run the SSH Keys Manager scheme in Xcode)",
+   "make release-dmg VERSION=v0.1.0  (builds an unsigned release DMG locally)",
+   "make release-app VERSION=v0.1.0  (builds a local release .app)",
+   "ditto \"build/release/Products/Release/SSH Keys Manager.app\" \"/Applications/SSH Keys Manager.app\""
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Xcode",
+   "make"
+  ],
+  "notable": [
+   "Read-only safety mode that blocks file-modifying operations",
+   "Menu bar access for copying public and private keys",
+   "Form-based SSH config Host block editor with IdentityFile mapping",
+   "Reachability check for configured SSH hosts from the sidebar",
+   "Make-based pipeline producing DMG and dSYM release assets"
+  ],
+  "caveats": [
+   "GitHub release builds are unsigned and not notarized, so macOS may report the app as damaged and require removing the quarantine attribute",
+   "Requires building from source with Xcode for the development route; the README does not describe other platforms",
+   "Parts of the codebase were AI-generated, which the README states was reviewed by a human developer"
+  ],
+  "license": "MIT",
+  "category": "macos ssh key manager",
+  "keywords": [
+   "ssh key manager",
+   "macos app",
+   "swiftui",
+   "swift",
+   "ssh keys",
+   "ssh config editor",
+   "ssh config",
+   "identityfile",
+   "generate ssh key",
+   "ed25519 key generation",
+   "rsa key generation",
+   "key pair",
+   "git identities",
+   "menu bar app",
+   "menubar",
+   "copy public key",
+   "copy private key",
+   "read-only mode",
+   "~/.ssh directory",
+   "ssh workspace",
+   "native mac utility",
+   "keychain alternative",
+   "ssh host editor",
+   "manage ssh keys without terminal",
+   "rename ssh key",
+   "duplicate ssh key",
+   "passphrase change",
+   "check ssh host reachability",
+   "dmg release",
+   "xcode project",
+   "open source mac utility"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3239,
+  "output": 1224
+ },
+ "generated": "2026-10-29"
+}

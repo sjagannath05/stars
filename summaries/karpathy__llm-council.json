@@ -1,0 +1,100 @@
+{
+ "id": "karpathy/llm-council",
+ "repo": "karpathy/llm-council",
+ "kind": "star",
+ "description": "LLM Council works together to answer your hardest questions",
+ "topics": [],
+ "language": "Python",
+ "stars": 26029,
+ "license": "",
+ "homepage": "",
+ "pushed_at": "2025-11-22",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A local, ChatGPT-style web app that sends one query to several LLMs via OpenRouter, has them anonymously rank each other's answers, and then has a chairman model write a final synthesized response.",
+  "what_it_does": "The app takes a user question and sends it to every model in a configured council. Stage 1 collects each model's individual response, which the UI shows in a tab view so each can be inspected. Stage 2 gives each model the other responses with model identities anonymized, and asks it to rank them for accuracy and insight. Stage 3 has a designated Chairman model compile all responses and rankings into one final answer. The backend is FastAPI and the frontend is React with Vite, and conversations are stored as JSON files in data/conversations/. Council members and the chairman are set in backend/config.py.",
+  "use_cases": [
+   "compare answers from several LLMs side by side",
+   "get a synthesized answer from multiple models",
+   "cross-check LLM responses against each other",
+   "explore which LLM gives the best answers to a hard question",
+   "use multiple models while reading books together"
+  ],
+  "how_to_run": [
+   "uv sync",
+   "cd frontend && npm install && cd ..",
+   "Create a .env file in the project root with OPENROUTER_API_KEY=your key",
+   "Optionally edit backend/config.py to set COUNCIL_MODELS and CHAIRMAN_MODEL",
+   "./start.sh (or run 'uv run python -m backend.main' for the backend and 'npm run dev' in frontend/ for the frontend)",
+   "Open the frontend URL in your browser"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "FastAPI",
+   "httpx",
+   "OpenRouter API",
+   "React",
+   "Vite",
+   "react-markdown",
+   "uv",
+   "npm"
+  ],
+  "notable": [
+   "Anonymized peer review: models rank each other's responses without knowing which model wrote them",
+   "Three-stage pipeline: individual answers, peer ranking, then chairman synthesis",
+   "Uses OpenRouter so one API key reaches many LLM providers",
+   "Simple local setup with JSON file storage and no database"
+  ],
+  "caveats": [
+   "The author states the project is provided as-is and will not be supported or improved",
+   "Requires an OpenRouter API key and purchased or topped-up credits",
+   "Described as a simple local app; no hosted deployment is mentioned"
+  ],
+  "license": "unknown",
+  "category": "multi-llm chat tooling",
+  "keywords": [
+   "llm council",
+   "multi-model llm",
+   "openrouter",
+   "compare llms",
+   "llm ensemble",
+   "peer review llm",
+   "chairman model",
+   "fastapi",
+   "react vite",
+   "local chat app",
+   "chatgpt alternative",
+   "ask multiple ai models",
+   "compare chatgpt gemini claude grok",
+   "synthesize llm answers",
+   "anonymized ranking",
+   "llm self-review",
+   "side by side ai responses",
+   "json conversation storage",
+   "python web app",
+   "answer hard questions with ai",
+   "run several ai models at once",
+   "ai answer aggregation",
+   "model comparison tool",
+   "book reading with llms",
+   "uv python",
+   "httpx async",
+   "self-hosted ai chat",
+   "cross-opinion llm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2498,
+  "output": 1175
+ },
+ "generated": "2026-10-29"
+}

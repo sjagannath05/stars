@@ -1,0 +1,87 @@
+{
+ "id": "xames3/slowtorch",
+ "repo": "xames3/slowtorch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Neural Network",
+   "entry": "Python: _SlowTorch: Implementation of PyTorch from the ground up in 100% pure Python_"
+  }
+ ],
+ "summary": {
+  "one_liner": "SlowTorch is a pure-Python reimplementation of core PyTorch tensor operations and reverse-mode automatic differentiation, built for learning how tensors and backpropagation work.",
+  "category": "educational deep learning library",
+  "keywords": [
+   "pure python tensor library",
+   "pytorch reimplementation",
+   "pytorch from scratch",
+   "tensor library",
+   "automatic differentiation",
+   "autograd",
+   "backpropagation",
+   "backprop tutorial",
+   "neural network from scratch",
+   "micrograd alternative",
+   "pytorch alternative",
+   "multidimensional arrays",
+   "broadcasting",
+   "gradient computation",
+   "computational graph",
+   "slowtorch",
+   "xsnumpy",
+   "linear layer",
+   "mse loss",
+   "sgd optimizer",
+   "tanh activation",
+   "softmax",
+   "relu",
+   "learn how pytorch works",
+   "understand backpropagation",
+   "no dependencies python",
+   "build your own neural network",
+   "tensor operations education"
+  ],
+  "what_it_does": "The library provides a Tensor class with creation functions such as tensor, zeros, ones, full, arange, linspace, cat, and triangular helpers, plus arithmetic and comparison operations with broadcasting. It includes an autograd system: setting requires_grad=True records operations, and calling backward() fills in .grad values. Many operations have named backward nodes (for example AddBackward0, MulBackward0, MatmulBackward-style DotBackward0, SumBackward0, and activations such as ReLU, Tanh, Sigmoid, and Softmax). A render() method prints the computation graph. A small nn module offers Module, Linear, activation layers, and MSELoss/L1Loss, and optim.SGD is shown training a model. The README states it is not a replacement for PyTorch.",
+  "use_cases": [
+   "learn how tensors and autograd work",
+   "study backpropagation mechanics",
+   "experiment with a minimal neural network training loop",
+   "teach PyTorch-style tensor operations",
+   "explore multidimensional array computation"
+  ],
+  "how_to_run": [
+   "pip install slowtorch",
+   "pip install -U git+ (latest version from the project's git repository; URL truncated in the README)",
+   "import slowtorch",
+   "import slowtorch.nn as snn",
+   "a = slowtorch.rand(2, 4, requires_grad=True); d = (a + b) * c; d.backward()"
+  ],
+  "stack": [
+   "Python 3.10+ (CPython)",
+   "no external packages required"
+  ],
+  "notable": [
+   "Implements reverse-mode autodiff in pure Python, modeled on PyTorch's autograd and inspired by Karpathy's micrograd",
+   "Named backward functions (e.g. AddBackward0, MulBackward0) mirror PyTorch's grad_fn names",
+   "Custom render() method prints the computation graph of a tensor",
+   "Includes a small nn module and SGD optimizer that train a 5-layer tanh network in the README demo",
+   "Zero dependencies, so it is easy to read and modify"
+  ],
+  "caveats": [
+   "The README says it is not a replacement for PyTorch and should not be used as one",
+   "Pure Python makes it slow, as the name and README indicate",
+   "Requires Python 3.10 or newer; the author says it may not work on 3.9 and below due to typing changes"
+  ],
+  "license": "MIT License"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 19488,
+  "output": 1231
+ },
+ "generated": "2026-10-29"
+}

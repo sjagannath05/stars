@@ -1,0 +1,98 @@
+{
+ "id": "frankbria/ralph-claude-code",
+ "repo": "frankbria/ralph-claude-code",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Ralph Wiggum",
+   "entry": "Ralph for Claude Code by Frank Bria - An autonomous AI development framework that enables Claude Code to work iteratively on projects until completion. Features intelligent exit detection, rate limiting, circuit breaker patterns, and comprehensive safety guardrails to prevent infinite loops and API overuse. Built with Bash, integrated with tmux for live monitoring, and includes 75+ comprehensive t"
+  }
+ ],
+ "summary": {
+  "one_liner": "Ralph for Claude Code is a Bash framework that runs Claude Code in an autonomous loop on a project until its task list is complete, with exit detection, rate limiting, and a circuit breaker to stop runaway loops.",
+  "what_it_does": "Installs global commands (ralph, ralph-monitor, ralph-setup, ralph-enable, ralph-import, ralph-queue, ralph-migrate, ralph-stats) that repeatedly invoke Claude Code against a project's .ralph/PROMPT.md and .ralph/fix_plan.md. Exit requires both heuristic completion indicators and an explicit EXIT_SIGNAL: true from Claude. Rate limiting caps calls per hour (default 100) and optionally tokens per hour, and a circuit breaker opens after no-progress or repeated-error thresholds. It can import requirements from PRD files or GitHub issues, process a batch queue of issues, and optionally run each iteration inside a Docker or E2B cloud sandbox. A tmux-based monitor and live streaming output provide visibility into the loop.",
+  "use_cases": [
+   "run Claude Code autonomously overnight on a backlog of tasks",
+   "convert a PRD or spec document into a task list for an AI coding agent",
+   "import GitHub issues as work items for an automated coding loop",
+   "limit API call and token usage during unattended AI coding sessions",
+   "run AI coding iterations inside an isolated Docker container",
+   "monitor a long-running autonomous coding loop in tmux"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd ralph-claude-code",
+   "./install.sh",
+   "cd my-existing-project && ralph-enable",
+   "ralph --monitor"
+  ],
+  "stack": [
+   "Bash",
+   "Claude Code CLI",
+   "tmux",
+   "jq",
+   "git",
+   "GNU coreutils",
+   "GitHub CLI (gh)",
+   "Docker",
+   "E2B Python SDK"
+  ],
+  "notable": [
+   "Dual-condition exit gate: completion indicators plus explicit EXIT_SIGNAL: true from Claude before stopping",
+   "Three-layer 5-hour API limit detection with auto-wait for unattended runs",
+   "Optional sections in fix_plan.md that do not block completion",
+   "Docker and E2B sandbox providers keep the loop on the host while Claude runs in isolation",
+   "Batch queue (ralph-queue) processes GitHub issues one at a time with priority and dependency ordering"
+  ],
+  "caveats": [
+   "Requires Bash 4.0+, Claude Code CLI, jq, git, and GNU coreutils timeout (macOS needs brew coreutils); tmux recommended",
+   "Unreleased change makes .ralphrc parsed as data, so older .ralphrc files using shell syntax break",
+   "Parallel queue processing is explicitly out of scope; items run one at a time on a single branch",
+   "E2B sandbox commits made inside the sandbox are not synced back; E2B cost is only estimated from runtime"
+  ],
+  "license": "unknown",
+  "category": "autonomous coding agent",
+  "keywords": [
+   "autonomous coding loop",
+   "claude code wrapper",
+   "ai coding agent",
+   "bash automation",
+   "rate limiting",
+   "circuit breaker",
+   "exit detection",
+   "tmux monitoring",
+   "prd import",
+   "github issue import",
+   "ralph wiggum technique",
+   "geoffrey huntley ralph",
+   "docker sandbox",
+   "e2b sandbox",
+   "batch issue queue",
+   "run ai unattended",
+   "overnight coding agent",
+   "task list automation",
+   "fix_plan markdown",
+   "api usage limit",
+   "token budget per hour",
+   "session continuity",
+   "live streaming output",
+   "desktop notifications",
+   "git backup branch",
+   "ralph-enable wizard",
+   "let claude finish my backlog",
+   "convert requirements to tasks",
+   "headless claude automation",
+   "stop runaway ai loops"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17667,
+  "output": 1431
+ },
+ "generated": "2026-10-29"
+}

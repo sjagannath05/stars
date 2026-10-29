@@ -1,0 +1,87 @@
+{
+ "id": "smallstep/certificates",
+ "repo": "smallstep/certificates",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Security",
+   "entry": "step-ca | Private certificate authority and ACME server"
+  }
+ ],
+ "summary": {
+  "one_liner": "step-ca is an online private certificate authority and ACME server for issuing and automating TLS, SSH and client certificates, maintained by Smallstep Labs as the server counterpart to the step CLI.",
+  "category": "private certificate authority",
+  "keywords": [
+   "step-ca",
+   "private certificate authority",
+   "private ca",
+   "pki",
+   "public key infrastructure",
+   "acme server",
+   "acmev2",
+   "rfc8555",
+   "certbot alternative",
+   "internal certificate authority",
+   "tls certificates",
+   "https certificates",
+   "ssh certificates",
+   "ssh certificate authority",
+   "certificate automation",
+   "short-lived certificates",
+   "certificate renewal",
+   "certificate revocation",
+   "oidc ssh login",
+   "sso ssh certificates",
+   "lego",
+   "acme challenge http-01 dns-01",
+   "root and intermediate ca",
+   "step cli",
+   "smallstep",
+   "badger boltdb postgres mysql",
+   "issue certificates for devops",
+   "self-hosted certificate authority"
+  ],
+  "what_it_does": "step-ca is an online certificate authority that issues HTTPS server and client certificates, TLS certificates for VMs, containers and services, and SSH user and host certificates. It runs as an ACMEv2 server supporting the http-01, dns-01 and tls-alpn-01 challenge types, and the README lists examples with certbot, acme.sh, Caddy, Traefik, nginx and others. Issuance is authorized through provisioners such as OIDC single sign-on tokens, cloud instance identity documents (AWS, GCP, Azure), JWK tokens from CD tools, X.509 certificates, Nebula host certificates, and SCEP. It can operate as an online intermediate CA for an existing root and stores state in Badger, BoltDB, Postgres or MySQL. The README says it pairs with the step CLI for key generation, renewal, revocation and certificate inspection.",
+  "use_cases": [
+   "run a private certificate authority for an internal network",
+   "issue short-lived TLS certificates for services and containers",
+   "run a private ACME server for development and pre-production",
+   "replace SSH authorized_keys with SSH certificates",
+   "automate host certificate renewal",
+   "issue certificates via single sign-on identity tokens"
+  ],
+  "how_to_run": [
+   "See the installation docs on smallstep.com (the README links to them but gives no commands)"
+  ],
+  "stack": [
+   "Go",
+   "step CLI",
+   "Badger",
+   "BoltDB",
+   "Postgres",
+   "MySQL"
+  ],
+  "notable": [
+   "Acts as a private ACME server compatible with standard ACMEv2 clients",
+   "Issues SSH user certificates via OAuth OIDC single sign-on and SSH host certificates from cloud identity documents",
+   "Supports multiple provisioner types, including Nebula, SCEP, X5C and JWK tokens",
+   "Can run as an online intermediate CA under an existing root",
+   "Pairs with the step CLI for key generation, renewal and revocation"
+  ],
+  "caveats": [
+   "The README is aimed at a two-tier PKI; multiple CAs, active revocation (CRL/OCSP), HA/high-volume, EAB, web admin UI, FIPS and HSM support are named as features of the commercial product instead",
+   "The README gives no install commands and points to external documentation for installation"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3579,
+  "output": 1231
+ },
+ "generated": "2026-10-29"
+}

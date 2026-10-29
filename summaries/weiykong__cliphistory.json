@@ -1,0 +1,92 @@
+{
+ "id": "weiykong/cliphistory",
+ "repo": "weiykong/ClipHistory",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Clipboard Tools",
+   "entry": "ClipHistory - Lightweight native clipboard manager with instant hotkey popup, search, pinning, and text/image history. [![Open-Source Software][OSS Icon]](https://github.com/weiykong/ClipHistory) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A lightweight, native macOS clipboard history manager with a global hotkey popup, search, pinning, and text and image capture.",
+  "what_it_does": "Runs as a menu bar app on macOS that records clipboard history, including plain text and images such as screenshots and copied images from Finder, browsers, and Preview. Pressing the hotkey (default ⌥V, customisable in Settings) opens a popup at the cursor where you can search as you type, navigate with arrow keys, and press Return to paste the selected item. Items can be pinned so they stay at the top and are not evicted by newer copies. History is stored on disk encrypted with AES-256-GCM, with the key kept in the Keychain. It skips items marked as concealed by password managers, lets you exclude specific apps from recording, and offers a toggle to hide images in the popup.",
+  "use_cases": [
+   "Recall previously copied text or images on a Mac",
+   "Search clipboard history by content or source app",
+   "Keep frequently used snippets pinned for quick paste",
+   "Avoid recording passwords copied from password managers",
+   "Exclude specific apps from clipboard logging",
+   "Lightweight free alternative to paid clipboard managers"
+  ],
+  "how_to_run": [
+   "Download ClipHistory.dmg from the Releases page and drag ClipHistory.app to /Applications",
+   "Run xattr -d com.apple.quarantine /Applications/ClipHistory.app in Terminal to bypass the missing Apple certificate block (one-time)",
+   "Open ClipHistory and grant Accessibility permission when onboarding asks",
+   "To build from source: git clone the repository, cd ClipHistory, then run bash scripts/build-dmg.sh (output: dist/ClipHistory.dmg)",
+   "Requires Xcode Command Line Tools for building from source (xcode-select --install)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit (NSPanel, NSApplication)",
+   "Swift Package Manager",
+   "CGEventTap",
+   "Carbon hotkey registration",
+   "Keychain",
+   "AES-256-GCM"
+  ],
+  "notable": [
+   "Native Swift with zero dependencies, described as about 1 MB",
+   "Popup uses a non-activating panel so the source app keeps its text cursor and Cmd+V pastes straight into it",
+   "Encrypted history file with the 256-bit key stored in the Keychain",
+   "Skips clipboard items flagged with org.nspasteboard.ConcealedType",
+   "Image thumbnailing downscales captures to 480 px PNG"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later",
+   "Unsigned builds need a Terminal command to clear the quarantine attribute before first launch",
+   "Requires Accessibility permission to operate"
+  ],
+  "license": "MIT",
+  "category": "macos clipboard manager",
+  "keywords": [
+   "clipboard manager",
+   "clipboard history",
+   "macos clipboard",
+   "swift",
+   "swiftui",
+   "menu bar app",
+   "global hotkey",
+   "clipboard search",
+   "pin clipboard items",
+   "image clipboard history",
+   "encrypted clipboard history",
+   "aes-256-gcm",
+   "keychain",
+   "password manager concealed data",
+   "exclude apps from clipboard",
+   "copy paste history mac",
+   "recall copied text",
+   "free alternative to paste app",
+   "lightweight clipboard tool",
+   "open source clipboard",
+   "cliphistory",
+   "clipboard popup",
+   "accessibility permission",
+   "nspasteboard",
+   "find previously copied item",
+   "snippet manager"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3627,
+  "output": 1309
+ },
+ "generated": "2026-10-29"
+}

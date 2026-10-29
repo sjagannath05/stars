@@ -1,0 +1,96 @@
+{
+ "id": "micropython/micropython",
+ "repo": "micropython/micropython",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Implementations",
+   "entry": "micropython - A lean and efficient Python implementation for microcontrollers and constrained systems."
+  }
+ ],
+ "summary": {
+  "one_liner": "MicroPython is a lean implementation of Python 3 for microcontrollers, embedded systems, and other constrained platforms, with a core VM plus many hardware ports.",
+  "what_it_does": "The repository contains the core Python implementation (compiler, runtime, core library) written in C, plus the mpy-cross cross-compiler that turns scripts into precompiled .mpy bytecode. It supports a large part of Python 3 syntax and core types (str, bytes, list, dict, set, namedtuple, classes, and more), and builtin modules such as os, sys, time, re, and struct, with some ports offering _thread, socket, ssl, and asyncio. It also provides MicroPython-specific modules for hardware access such as GPIO, timers, ADC, DAC, PWM, SPI, I2C, CAN, Bluetooth, and USB. The ports/ directory holds platform-specific code for many targets, grouped into three support tiers, and the Unix and Windows ports can be used for development and testing. Scripts can run from source or bytecode, from an on-device filesystem or frozen into the firmware.",
+  "use_cases": [
+   "programming ESP32 or Raspberry Pi Pico boards in Python",
+   "running Python on microcontrollers with limited flash and RAM",
+   "controlling GPIO, PWM, SPI, I2C hardware from Python",
+   "precompiling Python scripts to .mpy bytecode",
+   "lightweight Python interpreter on embedded Linux",
+   "porting a Python runtime to a new microcontroller"
+  ],
+  "how_to_run": [
+   "cd mpy-cross",
+   "make",
+   "cd ports/name",
+   "make submodules",
+   "Build the chosen port with make (gmake on BSD-based systems); requires bash, gcc, and python3",
+   "Some ports (rp2, esp32) additionally require CMake"
+  ],
+  "stack": [
+   "C",
+   "Python",
+   "make",
+   "CMake",
+   "bash",
+   "gcc",
+   "Sphinx reStructuredText (docs)"
+  ],
+  "notable": [
+   "Runs on dozens of ports, from tiny Cortex-M and ESP32 boards to Linux, macOS, and Windows",
+   "Includes mpy-cross to precompile scripts into frozen .mpy bytecode",
+   "Tiered port support model (Tier 1, 2, 3) indicating maturity",
+   "Designed for Python compatibility so most scripts run unchanged",
+   "Includes a minimal port intended as a starting template for new microcontroller ports"
+  ],
+  "caveats": [
+   "Only a subset of Python 3 functionality is implemented for data types and modules",
+   "Lower-tier and Tier 3 ports are less actively tested; some ports are maintenance-only",
+   "Smallest targets need roughly 256kiB flash and 16kiB RAM, and fuller features need more"
+  ],
+  "license": "MIT",
+  "category": "embedded python interpreter",
+  "keywords": [
+   "micropython",
+   "python for microcontrollers",
+   "embedded python",
+   "python interpreter",
+   "bytecode compiler",
+   "mpy-cross",
+   "mpy bytecode",
+   "esp32",
+   "raspberry pi pico",
+   "rp2040",
+   "stm32",
+   "samd",
+   "iot devices",
+   "arduino alternative",
+   "run python on a board",
+   "microcontroller scripting",
+   "gpio control python",
+   "i2c spi python",
+   "pyboard",
+   "constrained systems runtime",
+   "embedded linux python",
+   "cpython alternative lightweight",
+   "zephyr port",
+   "asyncio on microcontroller",
+   "firmware python",
+   "bare-metal python",
+   "port python to new mcu",
+   "wifi bluetooth microcontroller python",
+   "frozen modules",
+   "embedded systems programming"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4666,
+  "output": 1344
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "jelmer/xandikos",
+ "repo": "jelmer/xandikos",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Calendar & Contacts",
+   "entry": "Xandikos - Open source CardDAV and CalDAV server with minimal administrative overhead, backed by a Git repository. GPL-3.0 Python/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "Xandikos is a lightweight CardDAV/CalDAV server that stores its calendar and contact data in a Git repository.",
+  "what_it_does": "Xandikos implements a range of WebDAV-based calendar and contact standards, including CalDAV (RFC 4791), CardDAV (RFC 6352), current principal discovery, collection synchronization (RFC 6578), and calendar availability (RFC 7953). It backs its data onto Git repositories, with one repository per calendar or addressbook. It also handles CalDAV scheduling (RFC 6638) between principals on the same server, with iTIP REQUEST/CANCEL/REPLY messages delivered to attendee inboxes. Outbound iMIP to remote attendees is off by default and can go through sendmail or SMTP. Inbound iMIP can arrive via an import subcommand or an LMTP listener. Optional WebDAV-Push support is available via a flag. The README lists many tested clients, including DAVx5, Thunderbird, evolution, vdirsyncer and iOS.",
+  "use_cases": [
+   "self-hosted calendar server",
+   "self-hosted contacts server",
+   "sync calendars and contacts to phone or desktop",
+   "share calendars with family or team",
+   "CalDAV scheduling and meeting invitations",
+   "store calendar data in git"
+  ],
+  "how_to_run": [
+   "./bin/xandikos --defaults -d $HOME/dav"
+  ],
+  "stack": [
+   "Python 3",
+   "PyPy 3",
+   "Dulwich",
+   "Jinja2",
+   "icalendar",
+   "defusedxml",
+   "aiosmtpd (optional, for iMIP listener)"
+  ],
+  "notable": [
+   "Stores all calendar and contact data as Git repositories",
+   "Implements CalDAV scheduling with iMIP inbound and outbound delivery",
+   "Includes an LMTP endpoint for receiving iMIP from a mail server",
+   "Ships a Containerfile with environment-variable configuration",
+   "Supports WebDAV-Push via Web Push with VAPID"
+  ],
+  "caveats": [
+   "Multi-user support is experimental",
+   "Core WebDAV LOCK operations are not implemented; RFC 7529 quota is not implemented"
+  ],
+  "license": "GPL-3.0",
+  "category": "calendar and contacts server",
+  "keywords": [
+   "caldav server",
+   "carddav server",
+   "xandikos",
+   "calendar server",
+   "contacts server",
+   "addressbook server",
+   "webdav",
+   "git backed storage",
+   "git repository calendar",
+   "self-hosted calendar",
+   "self-hosted contacts",
+   "sync calendar to phone",
+   "sync contacts to phone",
+   "davx5 server",
+   "thunderbird caldav",
+   "vdirsyncer",
+   "ical scheduling",
+   "itip",
+   "imip",
+   "rfc 4791",
+   "rfc 6352",
+   "calendar sharing",
+   "share calendar with team",
+   "family calendar server",
+   "python dav server",
+   "dulwich",
+   "webdav-push",
+   "lmtp imip",
+   "sendmail invitations",
+   "alternative to nextcloud calendar",
+   "alternative to radicale",
+   "alternative to baikal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5018,
+  "output": 1117
+ },
+ "generated": "2026-10-29"
+}

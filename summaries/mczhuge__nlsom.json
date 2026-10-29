@@ -1,0 +1,100 @@
+{
+ "id": "mczhuge/nlsom",
+ "repo": "mczhuge/NLSOM",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "GitHub"
+  }
+ ],
+ "summary": {
+  "one_liner": "NLSOM is a Python/Streamlit framework where groups of LLMs, neural-network experts, APIs and role-players communicate in natural language, recommend and load agent \"communities\" for a task, and reward agents for their contributions.",
+  "what_it_does": "The project is the technical extension of a position paper on Natural Language-Based Societies of Mind. Given a user objective, it autonomously recommends relevant agent communities (such as vqa, search, role-play, image_colorization, image_captioning, text_to_video) and loads their agents. The agents then run a \"Mindstorm\" process in which they answer and interview each other before a review step checks whether the objective is solved and a summary is produced. A rough reward mechanism scores each agent by its contribution to the task. The README says the repo has 16 communities and 34 agents and is driven through a Streamlit app (app.py) that accepts text, image, audio and video inputs. The demos show visual question answering, multi-source search over arXiv, Wolfram Alpha, Wikipedia and Bing, a role-play example, and a colorize-caption-to-video chain.",
+  "use_cases": [
+   "multimodal visual question answering with several models",
+   "combining search sources (arXiv, Wikipedia, Bing, WolframAlpha) for a research question",
+   "chaining image colorization, captioning and text-to-video",
+   "role-play multi-agent discussion",
+   "experimenting with multi-agent LLM collaboration and reward schemes",
+   "research prototype for society-of-mind style agent orchestration"
+  ],
+  "how_to_run": [
+   "conda create -n nlsom python=3.8",
+   "conda env create -n nlsom -f nlsom.yaml (alternative to the steps above)",
+   "pip install -r requirements.txt (pip route, after creating the env)",
+   "Fill API keys in .env.template (OpenAI key is mandatory), then mv .env.template .env",
+   "streamlit run app.py"
+  ],
+  "stack": [
+   "Python 3.8",
+   "PyTorch 1.10.1",
+   "LangChain 0.0.158",
+   "Streamlit 1.22.0",
+   "Hugging Face transformers",
+   "ModelScope",
+   "OpenAI API",
+   "TensorFlow 2.12",
+   "wolframalpha, wikipedia, arxiv search clients",
+   "easyocr",
+   "Replicate"
+  ],
+  "notable": [
+   "Mindstorm: agents interview each other in natural language to reach an answer, rather than one model handling a fixed function",
+   "Self-organizing recommendation of communities and agents from a user's natural-language goal",
+   "Per-agent reward scores recorded after each task to rate which models are useful",
+   "Modular template design so new communities and agents can be added",
+   "Accepted to CVMJ 2025 and won a Best Paper Award at the NeurIPS 2023 Ro-FoMo workshop, per the README"
+  ],
+  "caveats": [
+   "Install is heavy and fiddly: pinned old versions (Python 3.8, PyTorch 1.10.1, LangChain 0.0.158), manual validators build, TTS flagged as 'not recommended due to environmental conflicts'",
+   "Requires API keys (OpenAI mandatory) and manual edits to transformers and modelscope cache paths for custom checkpoint directories",
+   "Reward mechanism is described by the authors as 'albeit rough', and the v1.0 hardcoded version is distinct from the v2.0 self-organized version; v3.0 features (RL, self-improvement) are future work"
+  ],
+  "license": "unknown",
+  "category": "multi-agent llm framework",
+  "keywords": [
+   "multi-agent",
+   "society of mind",
+   "mindstorm",
+   "natural language agents",
+   "agent orchestration",
+   "llm agents",
+   "multi-agent collaboration",
+   "agent recommendation",
+   "reward mechanism for agents",
+   "langchain",
+   "streamlit app",
+   "visual question answering",
+   "image captioning",
+   "text to video",
+   "image colorization",
+   "wolframalpha",
+   "wikipedia search",
+   "arxiv search",
+   "bing search",
+   "role-play agents",
+   "hugging face models",
+   "modelscope",
+   "openai api",
+   "multimodal ai",
+   "autonomous agents",
+   "ai model ensemble",
+   "compare multiple ai models",
+   "combine several ai tools for one task",
+   "research prototype for multi-agent systems",
+   "alternative to visualchatgpt",
+   "alternative to hugginggpt"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8866,
+  "output": 1566
+ },
+ "generated": "2026-10-29"
+}

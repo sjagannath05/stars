@@ -1,0 +1,94 @@
+{
+ "id": "rrze-hpc/likwid",
+ "repo": "RRZE-HPC/likwid",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Roofline and the execution-cache-memory model",
+   "entry": "LIKWID - Measures the roofs with likwid-bench and the point from likwid-perfctr groups on Intel, AMD and Arm server cores."
+  }
+ ],
+ "summary": {
+  "one_liner": "LIKWID is a command-line toolsuite and library for Linux that reads hardware performance counters, pins threads, reports CPU/NUMA topology and runs micro-benchmarks on Intel, AMD and ARM processors.",
+  "what_it_does": "LIKWID is a set of command-line tools plus a library for performance-oriented programmers on Linux. likwid-topology prints thread, cache and NUMA layout, and likwid-perfctr configures and reads hardware performance counters using event groups such as L2 that also derive metrics like bandwidth and CPI. likwid-pin pins pthread, Intel and gcc OpenMP threads to chosen cores, and likwid-mpirun wraps MPI and hybrid MPI/OpenMP launches (Intel MPI, OpenMPI, MPICH, SLURM). likwid-bench is a micro-benchmarking platform that runs kernels such as triad with chosen vector length and NUMA placement. Other tools cover RAPL energy and turbo info (likwid-powermeter), hardware prefetchers (likwid-features), frequency control (likwid-setFrequencies), and live timeline plots via gnuplot (likwid-perfscope). The README also lists Nvidia and AMD GPU support and Java, Python and Julia interfaces.",
+  "use_cases": [
+   "measure hardware performance counters for an application",
+   "pin OpenMP or pthread threads to specific cores",
+   "run memory bandwidth micro-benchmarks such as triad",
+   "check CPU cache and NUMA topology",
+   "launch MPI and hybrid MPI/OpenMP jobs with core placement",
+   "read RAPL energy and power consumption"
+  ],
+  "how_to_run": [
+   "VERSION=stable",
+   "wget <release tarball URL from README; link was stripped>",
+   "tar -xaf likwid-$VERSION.tar.gz && cd likwid-*",
+   "vi config.mk  # set installation prefix and architecture flags",
+   "make",
+   "sudo make install  # installs the access daemon with proper permissions"
+  ],
+  "stack": [
+   "C",
+   "Linux",
+   "gnuplot (used by likwid-perfscope)",
+   "make",
+   "Nvidia GPU interface (optional build flag)",
+   "AMD ROCm GPU interface (optional build flag)"
+  ],
+  "notable": [
+   "Covers a long list of Intel, AMD, ARM (incl. Neoverse, A64FX, Apple M1 on Linux) and POWER architectures in one toolset",
+   "Modular command-line tools: each does one job (topology, counters, pinning, benchmarks, power)",
+   "likwid-bench runs micro-benchmarks and reports cycles per update, MFlops/s and MByte/s",
+   "Marker API and Python (pylikwid), Java and Julia interfaces listed"
+  ],
+  "caveats": [
+   "Requires Linux; the README says Apple M1 is supported only with Linux",
+   "Some architectures (ARMv7, POWER8/9) are stated to be untested by the maintainers; POWER support is marked experimental",
+   "Installation needs sudo to install the access daemon, and config.mk must be edited for ARM, POWER or GPU builds"
+  ],
+  "license": "unknown",
+  "category": "cpu performance profiling",
+  "keywords": [
+   "likwid",
+   "hardware performance counters",
+   "likwid-perfctr",
+   "likwid-bench",
+   "likwid-pin",
+   "thread pinning",
+   "cpu affinity",
+   "micro benchmark",
+   "roofline model",
+   "memory bandwidth benchmark",
+   "hpc performance analysis",
+   "performance profiling tool",
+   "numa topology",
+   "cpu topology",
+   "rapl energy measurement",
+   "power measurement",
+   "mpi launcher",
+   "likwid-mpirun",
+   "openmp pinning",
+   "hardware prefetcher control",
+   "perf counters linux",
+   "intel amd arm performance",
+   "gpu performance counters",
+   "perf alternative",
+   "measure flops and bandwidth",
+   "cache topology tool",
+   "hpc benchmarking",
+   "profile my c program",
+   "pin threads to cores",
+   "check cpu cache sizes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7212,
+  "output": 1485
+ },
+ "generated": "2026-10-29"
+}

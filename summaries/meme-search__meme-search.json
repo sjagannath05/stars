@@ -1,0 +1,100 @@
+{
+ "id": "meme-search/meme-search",
+ "repo": "meme-search/meme-search",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Search Engines",
+   "entry": "Meme Search - AI-powered meme search engine. Automatically extracts descriptions from images using vision-language models, then indexes with vector embeddings for semantic and keyword search. (Source Code) Apache-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A self-hostable meme search engine that uses vision-language models to generate descriptions of your images and indexes them with embeddings for semantic and keyword search.",
+  "what_it_does": "Meme Search scans meme image directories and generates text descriptions with a local image-to-text model (Florence-2, SmolVLM, or Moondream2 variants) or an OpenAI-compatible vision API. Descriptions are stored in Postgres with pgvector, enabling vector and keyword search. The web app supports manual description editing, tags, directory-path filtering, bulk description generation, and directory rescans. Drag-and-drop upload accepts JPG, PNG, WEBP, and GIF files, with up to 50 files per bulk upload. A read-only, token-authenticated /api/v1 search API, a Python CLI, and an experimental Chromium popup are also included. The stack runs under Docker Compose with Rails, a Solid Queue worker, and a Python generator service.",
+  "use_cases": [
+   "Search a personal meme collection by what is in the image",
+   "Auto-generate descriptions for untagged images",
+   "Self-host a semantic image search for a folder of pictures",
+   "Organize memes with tags and subdirectory filters",
+   "Query a meme library from a terminal via the CLI",
+   "Run image captioning with a local vision model without cloud calls"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/meme-search/meme-search",
+   "cd meme-search",
+   "docker compose up",
+   "Open the web app on port 3000 (bound to 127.0.0.1 by default)"
+  ],
+  "stack": [
+   "Ruby",
+   "Rails 8",
+   "Python 3.12",
+   "PostgreSQL 17",
+   "pgvector",
+   "Solid Queue",
+   "Docker Compose",
+   "Node.js",
+   "Florence-2",
+   "SmolVLM",
+   "Moondream2"
+  ],
+  "notable": [
+   "Local-first: image-to-text and embeddings run on your machine by default",
+   "Optional OpenAI-compatible vision API for description generation, with embeddings and search kept local",
+   "Read-only /api/v1 search API with scoped bearer tokens, plus a Python CLI",
+   "Multiple selectable vision-language models, including an INT8 quantized Moondream2 for lower memory use",
+   "Animated GIFs stay animated in display; descriptions use the first frame"
+  ],
+  "caveats": [
+   "Web UI has no user authentication; official support is loopback-only and public exposure is unsupported",
+   "First description generation downloads model weights and is slow",
+   "Linux users may need an extra_hosts entry for container networking",
+   "Chromium popup is marked experimental"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted meme search",
+  "keywords": [
+   "meme search",
+   "self-hosted image search",
+   "semantic image search",
+   "vector search",
+   "pgvector",
+   "postgres vector search",
+   "image captioning",
+   "vision language model",
+   "florence-2",
+   "smolvlm",
+   "moondream2",
+   "image-to-text",
+   "ai image tagging",
+   "search my memes",
+   "find memes by text",
+   "keyword search images",
+   "docker compose",
+   "rails app",
+   "ruby on rails",
+   "python generator",
+   "meme library",
+   "photo search",
+   "ocr-like image text search",
+   "openai compatible vision api",
+   "local ai inference",
+   "image description generator",
+   "meme organizer",
+   "search api",
+   "image tags",
+   "drag and drop upload",
+   "embedding search"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8222,
+  "output": 1250
+ },
+ "generated": "2026-10-29"
+}

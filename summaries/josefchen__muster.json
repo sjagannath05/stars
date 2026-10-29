@@ -1,0 +1,94 @@
+{
+ "id": "josefchen/muster",
+ "repo": "josefchen/muster",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (55)",
+   "entry": "Muster - Menu bar app that monitors Claude Code, Codex and Cursor sessions, answers Claude Code and Codex permission prompts from alerts, and switches sessions with Option-Tab."
+  }
+ ],
+ "summary": {
+  "one_liner": "Muster is a free, open-source macOS menu bar app that monitors Claude Code, Codex and Cursor sessions, lets you answer their permission prompts from an alert, and switches between sessions with Option-Tab.",
+  "what_it_does": "Muster sits in the menu bar and shows a glass alert when a coding agent is waiting on you, and the alert stays until answered. You can allow or deny Claude Code and Codex permission requests, or pick answers to Claude Code multiple-choice questions and plan approvals, without switching apps; Cursor prompts open in Cursor. Option-Down unfolds the agent's reason, full command, or answer options. Option-Tab switches sessions, most urgent first, and Control-Option-Space searches the last three hours of sessions with token and API-rate cost estimates. It reads the session files each app already writes (Claude transcripts, Codex SQLite and rollout logs, Cursor chat lists and transcripts) read-only. An optional, in-development remote mode monitors enabled SSH hosts and can install opt-in remote approval hooks.",
+  "use_cases": [
+   "monitor multiple Claude Code sessions from the menu bar",
+   "approve or deny agent permission prompts without switching windows",
+   "switch quickly between running coding agent sessions",
+   "search past Claude Code, Codex and Cursor sessions",
+   "track token usage and API cost of agent sessions",
+   "monitor coding agents running on remote hosts over SSH"
+  ],
+  "how_to_run": [
+   "brew install --cask josefchen/tap/muster",
+   "git clone && cd muster",
+   "./build.sh # build, install to ~/Applications, launch",
+   "./test.sh # reader tests against fixture files"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "Liquid Glass",
+   "Python 3 (remote hook and remote-approvals script)",
+   "SSH",
+   "SQLite (Codex thread reads)"
+  ],
+  "notable": [
+   "Answers Claude Code and Codex permission prompts from the alert using Option-Return and Option-Backspace, without moving focus to the agent's app",
+   "Installs one hook per agent in the agent's own settings, keeps .muster-original and .muster-backup copies, and removes only its own hook when turned off",
+   "Optional SSH monitoring reads session summaries from enabled hosts in memory and uses no TCP listener for remote approvals",
+   "Coexists with Agent Relay by sharing one hook per agent and withdrawing the other copy after the first answer"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; Liquid Glass styling needs macOS 26",
+   "Remote sessions are marked 1.4, in development, and need Python 3 and noninteractive SSH access on each host",
+   "Codex approvals require enabling and trusting the Muster hook manually in Codex Settings; Cursor cannot be answered directly, only opened",
+   "Cost figures are estimates from public list prices; Codex figures are a floor and Cursor records no token counts"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude code",
+   "codex",
+   "cursor",
+   "coding agent monitor",
+   "ai agent sessions",
+   "menu bar app",
+   "macos",
+   "permission prompts",
+   "approve agent commands",
+   "agent waiting for input",
+   "session switcher",
+   "option tab switcher",
+   "search agent sessions",
+   "token cost tracker",
+   "api cost estimate",
+   "ssh remote sessions",
+   "remote agent monitoring",
+   "agent relay",
+   "appkit",
+   "swift",
+   "open source mac app",
+   "homebrew cask",
+   "liquid glass",
+   "notifications for agents",
+   "answer agent questions",
+   "hook based approvals",
+   "local prompt server",
+   "transcript reader",
+   "keyboard shortcuts",
+   "monitor ai coding tools",
+   "switch between terminals"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5550,
+  "output": 1347
+ },
+ "generated": "2026-10-29"
+}

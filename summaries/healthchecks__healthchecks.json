@@ -1,0 +1,105 @@
+{
+ "id": "healthchecks/healthchecks",
+ "repo": "healthchecks/healthchecks",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "Healthchecks - Listen for pings and sends alerts when pings are late. (Source Code) BSD-3-Clause Python/Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Healthchecks | Cron job and background task monitoring with alerts"
+  }
+ ],
+ "summary": {
+  "one_liner": "Healthchecks is a self-hostable cron job and background task monitoring service that listens for HTTP or email pings and sends alerts when pings arrive late.",
+  "what_it_does": "Checks are defined by a Period and Grace Time, or by a cron expression (parsed with the cronsim library). Jobs signal they ran by sending an HTTP request or an email to a unique address, and Healthchecks sends alerts when a ping is missing past its grace time. It provides a web dashboard with live status, a per-check event log, public hard-to-guess status badges, and an API. It supports 25+ notification integrations (for example Slack, Discord, Pushover, Signal, Telegram, Matrix, PagerDuty, Apprise) and monthly email reports. Management commands handle alert sending (sendalerts), reports (sendreports), an SMTP listener for email pings (smtpd), and cleanup of old pings and accounts. Optional features include WebAuthn 2FA, external authentication via proxy headers, team projects with read-only access, and S3-compatible object storage for large ping bodies.",
+  "use_cases": [
+   "monitor cron jobs and scheduled tasks",
+   "get alerted when a backup script stops running",
+   "track background worker heartbeats",
+   "send job failure alerts to Slack, Discord, or Telegram",
+   "show public status badges for scheduled jobs",
+   "self-host a dead man's switch monitoring service"
+  ],
+  "how_to_run": [
+   "sudo apt install -y python3-venv",
+   "python3 -m venv .venv && source .venv/bin/activate",
+   "pip install -r healthchecks/requirements.txt -r healthchecks/requirements-dev.txt",
+   "cd healthchecks && ./manage.py migrate && ./manage.py createsuperuser",
+   "./manage.py runserver  (development only)",
+   "A Dockerfile and prebuilt Docker images are available; the Docker images run migrations and sendalerts/sendreports/smtpd automatically."
+  ],
+  "stack": [
+   "Python 3.12+",
+   "Django 6.1",
+   "PostgreSQL, MySQL or MariaDB (SQLite by default in development)",
+   "cronsim",
+   "Whitenoise",
+   "apprise (optional)",
+   "signal-cli (optional)",
+   "MinIO Python library (optional, object storage)",
+   "Docker"
+  ],
+  "notable": [
+   "Email pings: a built-in SMTP listener lets cron jobs ping by sending an email to a check's unique address",
+   "Cron-expression schedules as an alternative to fixed period and grace time",
+   "WebAuthn two-factor authentication and external authentication via trusted proxy headers",
+   "Shell Commands integration runs local commands on up/down events",
+   "Optional S3-compatible storage for large ping bodies"
+  ],
+  "caveats": [
+   "Production use requires a reverse proxy for TLS, a process manager for sendalerts and sendreports, and a configured SMTP server for email",
+   "Docker images do not handle TLS termination",
+   "Shell Commands integration is a security risk unless all users are fully trusted; it is disabled by default",
+   "Deleted checks' stored objects in external storage must be cleaned up manually with pruneobjects; there is no script to migrate ping bodies back from object storage to the database"
+  ],
+  "license": "BSD-3-Clause",
+  "category": "cron job monitoring",
+  "keywords": [
+   "cron monitoring",
+   "cron job monitoring",
+   "dead man's switch",
+   "heartbeat monitoring",
+   "scheduled task monitoring",
+   "background job monitoring",
+   "missed ping alerts",
+   "job failure alerts",
+   "uptime checks for jobs",
+   "healthchecks.io",
+   "self-hosted cronitor alternative",
+   "cronitor alternative",
+   "self-hosted cron monitor",
+   "django monitoring app",
+   "python monitoring service",
+   "status badges",
+   "email ping monitoring",
+   "smtp listener",
+   "slack alerts",
+   "discord alerts",
+   "telegram alerts",
+   "pushover notifications",
+   "signal notifications",
+   "matrix notifications",
+   "pagerduty integration",
+   "apprise notifications",
+   "backup job monitoring",
+   "monitor scheduled tasks",
+   "get notified when cron stops",
+   "webauthn 2fa",
+   "docker monitoring tool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9703,
+  "output": 1529
+ },
+ "generated": "2026-10-29"
+}

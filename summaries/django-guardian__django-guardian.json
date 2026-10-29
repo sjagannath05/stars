@@ -1,0 +1,84 @@
+{
+ "id": "django-guardian/django-guardian",
+ "repo": "django-guardian/django-guardian",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Authentication",
+   "entry": "django-guardian - Implementation of per-object permissions for Django."
+  }
+ ],
+ "summary": {
+  "one_liner": "django-guardian adds per-object permissions to Django's authorization system, so users can be granted rights on individual model instances rather than only globally.",
+  "what_it_does": "It plugs into Django's built-in auth framework as an extra authentication backend, letting you check permissions like has_perm on a specific object. The assign_perm shortcut grants a permission to a user or group for one object, and the has_perm check then reflects that per-object grant. Global permissions remain unaffected, so a user granted change rights on one group does not gain them everywhere. The README also describes a GuardedModelAdmin class that replaces the standard Django admin ModelAdmin to add object-level permission support in the admin panel. A contrib module provides integration with django-unfold.",
+  "use_cases": [
+   "restrict editing of individual records to specific users",
+   "per-object access control in Django admin",
+   "grant a user change rights on one object only",
+   "row-level permissions in a Django web app",
+   "share a single item with a particular user or group"
+  ],
+  "how_to_run": [
+   "uv add django-guardian",
+   "pip install django-guardian",
+   "Add 'guardian' to INSTALLED_APPS in settings.py",
+   "Add 'guardian.backends.ObjectPermissionBackend' to AUTHENTICATION_BACKENDS",
+   "python manage.py migrate",
+   "Use guardian.shortcuts.assign_perm to grant object permissions, and replace admin.ModelAdmin with GuardedModelAdmin for admin support"
+  ],
+  "stack": [
+   "Python",
+   "Django"
+  ],
+  "notable": [
+   "Per-object permissions layered on Django's standard authorization backend",
+   "GuardedModelAdmin replaces ModelAdmin for object-level permissions in the admin",
+   "assign_perm shortcut for granting object permissions",
+   "Optional contrib integration for django-unfold"
+  ],
+  "caveats": [
+   "The README does not state any caveats or platform limits.",
+   "Requires adding a database migration step to create guardian tables."
+  ],
+  "license": "unknown",
+  "category": "django authorization library",
+  "keywords": [
+   "django-guardian",
+   "django",
+   "per-object permissions",
+   "object-level permissions",
+   "row-level permissions",
+   "django authorization",
+   "django auth backend",
+   "has_perm",
+   "assign_perm",
+   "guardian",
+   "guardedmodeladmin",
+   "django admin permissions",
+   "django-unfold",
+   "access control",
+   "user permissions",
+   "group permissions",
+   "restrict record access",
+   "share object with user",
+   "python authentication",
+   "authorization backend",
+   "objectpermissionbackend",
+   "django permissions per object",
+   "django row permissions",
+   "django admin object permissions",
+   "python access control library",
+   "limit editing to specific users"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2418,
+  "output": 1012
+ },
+ "generated": "2026-10-29"
+}

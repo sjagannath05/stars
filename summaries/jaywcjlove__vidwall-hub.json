@@ -1,0 +1,87 @@
+{
+ "id": "jaywcjlove/vidwall-hub",
+ "repo": "jaywcjlove/vidwall-hub",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "",
+   "entry": ""
+  }
+ ],
+ "summary": {
+  "one_liner": "Vidwall Hub imports mp4, mov, or m4v videos into the macOS system Aerial wallpaper catalog so they can be used as animated lock screens and wallpapers, for macOS 26 and 27.",
+  "what_it_does": "The README describes a tool that imports local video files (mp4, mov, m4v) and registers them in the system Aerial wallpaper catalog (entries.json, videos, thumbnails, and Store/Index.plist under ~/Library/Application Support/com.apple.wallpaper). It creates a \"Vidwall Videos\" category on first import, adds asset entries without rewriting the whole catalog, generates a PNG thumbnail from the first frame, and sets the imported video as the current wallpaper. On macOS 26, mp4 and m4v files are remuxed to mov with passthrough export. On macOS 27, videos without HEVC temporal layers are re-encoded to HEVC Main 10 with temporal layers, capped at the first 30 seconds. Deleting an entry also cleans up its files and retargets the current wallpaper if needed. A URL scheme (vidwallhub://open?file=...) can trigger an import from a file path. The README states this repository is the official website and issue tracker, not an open-source project; the app is installed via Homebrew cask.",
+  "use_cases": [
+   "use a video as a macOS lock screen animation",
+   "set an mp4 or mov as a dynamic wallpaper on Mac",
+   "import videos into System Settings wallpaper list",
+   "automate video import via URL scheme",
+   "convert video for macOS Aerial wallpaper compatibility"
+  ],
+  "how_to_run": [
+   "brew install --cask jaywcjlove/tap/vidwall-hub",
+   "Open the app, or use: vidwallhub://open?file=/file/to/path/video.mp4"
+  ],
+  "stack": [
+   "macOS",
+   "Homebrew cask",
+   "AVFoundation (AVAssetExportPresetPassthrough named in README)",
+   "HEVC encoding"
+  ],
+  "notable": [
+   "Writes to the system Aerial catalog so imported videos appear in System Settings → Wallpaper",
+   "Patches only its own category and asset entries instead of rewriting the full catalog",
+   "macOS 27 path re-encodes non-temporal videos to HEVC with temporal layers, first 30 seconds only",
+   "Supports a vidwallhub:// URL scheme for importing a file by path",
+   "Runs with user-level permissions, no administrator privileges needed"
+  ],
+  "caveats": [
+   "Requires macOS Tahoe 26 or later; macOS 15 is not supported yet",
+   "The repository is not open source; it serves as the official website and issue tracker, and the app is a standalone tool",
+   "Lock screen support relies on undocumented system Aerial paths because macOS has no public API for dynamic lock screens"
+  ],
+  "license": "unknown",
+  "category": "macos wallpaper tool",
+  "keywords": [
+   "vidwall hub",
+   "macos wallpaper",
+   "dynamic wallpaper mac",
+   "animated lock screen",
+   "lock screen video",
+   "live wallpaper macos",
+   "aerial wallpaper",
+   "system aerial catalog",
+   "import video wallpaper",
+   "mp4 wallpaper mac",
+   "mov wallpaper",
+   "m4v video",
+   "homebrew cask",
+   "brew install wallpaper app",
+   "url scheme import",
+   "vidwallhub",
+   "macos tahoe",
+   "macos 26",
+   "macos 27",
+   "hevc transcode",
+   "temporal scalability",
+   "avfoundation export",
+   "wallpaperagent",
+   "video as wallpaper",
+   "set video as lock screen",
+   "mac animated background",
+   "macos video wallpaper app",
+   "use my video as desktop background",
+   "system settings wallpaper"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3246,
+  "output": 1373
+ },
+ "generated": "2026-10-29"
+}

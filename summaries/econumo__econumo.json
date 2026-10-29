@@ -1,0 +1,95 @@
+{
+ "id": "econumo/econumo",
+ "repo": "econumo/econumo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Money, Budgeting & Management",
+   "entry": "Econumo - Budgeting application for managing personal and family finances, supporting multiple currencies, joint accounts, and budgets. (Demo, Source Code) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Econumo is a self-hosted personal finance and budgeting app, shipped as a single Go binary in a Docker image with a React web UI.",
+  "what_it_does": "The app runs as one self-contained Go binary that serves both the API and the web app, and applies database migrations automatically on boot. It defaults to SQLite and can be switched to PostgreSQL through the DATABASE_URL setting. Configuration lives in a .env file, with .env.example documenting the database, mail, currencies, CORS and logging options. Password-recovery email is enabled by setting MAILER_DSN. CLI commands such as creating users or updating currency rates run through the binary inside the container. The README also describes a health endpoint at /health and a locales/ folder of JSON translation catalogues for contributing new languages. Upgrading from the v0.x PHP version is described as a migration that reuses the existing database.",
+  "use_cases": [
+   "Self-host a personal budgeting app",
+   "Track household or family finances",
+   "Manage personal finances on a home server",
+   "Migrate from Econumo v0.x PHP to v1.x",
+   "Send password-recovery email for a self-hosted finance app",
+   "Run a finance app without Docker under systemd"
+  ],
+  "how_to_run": [
+   "git clone --single-branch <repository URL> && cd econumo",
+   "cp .env.example .env",
+   "docker compose pull && docker compose up -d",
+   "Open the web UI in a browser and create the first user",
+   "docker compose exec econumo /app/econumo user:create \"Name\" user@example.com password (optional CLI user creation)"
+  ],
+  "stack": [
+   "Go",
+   "React",
+   "Docker",
+   "Docker Compose",
+   "SQLite",
+   "PostgreSQL"
+  ],
+  "notable": [
+   "Single self-contained Go binary with the web UI embedded; the README says it uses up to about 10 MB of RAM",
+   "Works with SQLite by default and PostgreSQL via DATABASE_URL",
+   "Database migrations run automatically on startup",
+   "Translations kept in the repository as JSON files, with key and placeholder parity checked by the test suite",
+   "Optional MCP setup for connecting Claude or Codex to an instance"
+  ],
+  "caveats": [
+   "Upgrading from v0.x (PHP) requires following the separate migration guide, and the old Docker Hub image is no longer updated",
+   "The README does not describe the feature set beyond the setup, so budgeting features such as multi-currency and joint accounts are only taken from the listing metadata",
+   "Some setup details, such as the full configuration reference and the non-Docker walkthrough, are in external docs not included in the README"
+  ],
+  "license": "MIT",
+  "category": "self-hosted budgeting app",
+  "keywords": [
+   "personal finance",
+   "budgeting app",
+   "self-hosted budget",
+   "family finances",
+   "household budget",
+   "expense tracker",
+   "money management",
+   "multi-currency",
+   "joint accounts",
+   "shared budget",
+   "go binary",
+   "docker compose",
+   "sqlite",
+   "postgresql",
+   "react frontend",
+   "mcp",
+   "claude integration",
+   "password recovery email",
+   "database migrations",
+   "budget software alternative",
+   "track spending at home",
+   "manage money with my partner",
+   "self-hosted finance",
+   "php migration",
+   "localization json",
+   "distroless docker",
+   "systemd service",
+   "personal money tracker",
+   "budget app on my server",
+   "econumo",
+   "awesome-selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2656,
+  "output": 1240
+ },
+ "generated": "2026-10-29"
+}

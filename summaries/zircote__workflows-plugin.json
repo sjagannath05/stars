@@ -1,0 +1,91 @@
+{
+ "id": "zircote/workflows-plugin",
+ "repo": "zircote/workflows-plugin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Dynamic Workflows",
+   "entry": "Dynamic Workflow Design Patterns by Robert Allen - A Skill based on this extremely well authored article about dynamic workflows. Detailed explanations regarding the Workflow tool and sensible advice covering a range of patterns and anti-patterns."
+  }
+ ],
+ "summary": {
+  "one_liner": "A standalone Claude Code plugin that ships a single skill teaching orchestration patterns and anti-patterns for the Workflow tool, which runs JavaScript scripts that coordinate many subagents.",
+  "what_it_does": "The repository packages one skill, dynamic-workflows, that guides Claude Code in writing and reviewing scripts for the Workflow tool, using agent(), parallel(), pipeline(), phase(), log() and workflow() plus the args and budget globals. The skill separates mechanics from vocabulary. reference/api.md holds distilled runtime constraints, the core constructs, pipeline() versus parallel(), and approval, cost and resume behavior, drawn from Anthropic's docs and the tool spec. reference/patterns.md is a catalog of 20 named orchestration patterns in four families (Structural, Behavioral, Verification, Contract), plus 8 named anti-patterns and a decision guide, drawn from a field note titled Dynamic Workflow Design Patterns. The SKILL.md file contains an opt-in authoring checklist, a review checklist, and a quick pattern index. Six eval cases check that the skill selects the right pattern. Vendored source copies are tracked in vendor/VENDOR.lock, with npm scripts for hydrating and checking drift and for validating plugin structure.",
+  "use_cases": [
+   "writing a Claude Code Workflow script that fans out to many subagents",
+   "choosing between pipeline and parallel orchestration",
+   "reviewing an existing workflow script for anti-patterns",
+   "applying adversarial verification or loop-until-dry patterns to agent work",
+   "structuring phase-gated staging for multi-step agent jobs"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add zircote/workflows-plugin",
+   "claude plugin install dynamic-workflows@dynamic-workflows",
+   "npm ci",
+   "npm run validate-plugin",
+   "npm test"
+  ],
+  "stack": [
+   "Claude Code plugin",
+   "Claude Code Workflow tool",
+   "JavaScript",
+   "Node.js",
+   "npm"
+  ],
+  "notable": [
+   "Separates authoritative tool mechanics (api.md) from a named pattern vocabulary (patterns.md), and says the mechanics win on conflicts",
+   "Catalogs 20 patterns in four families plus 8 anti-patterns, GoF-style",
+   "Vendored source documents with a lock file recording URL, sha256 and fetch time",
+   "Includes a hydrate-vendor drift check that can run in CI",
+   "Ships 6 eval cases testing pattern selection"
+  ],
+  "caveats": [
+   "The Workflow tool's option spec has no stable public URL, so it must be refreshed by hand from a live Claude Code session",
+   "The pattern catalog is a secondary field note, and the README says mechanics win when the two conflict",
+   "Requires Claude Code with the Workflow tool available; the README does not describe other platforms"
+  ],
+  "license": "MIT",
+  "category": "claude code plugin",
+  "keywords": [
+   "claude code",
+   "claude code plugin",
+   "workflow tool",
+   "dynamic workflows",
+   "subagents",
+   "agent orchestration",
+   "multi-agent coordination",
+   "orchestration patterns",
+   "anti-patterns",
+   "pipeline vs parallel",
+   "fan out agents",
+   "background agents",
+   "javascript workflow script",
+   "agent() parallel() pipeline()",
+   "phase gating",
+   "adversarial verification",
+   "loop until dry",
+   "schema binding",
+   "agent workflow design",
+   "skill for claude",
+   "plugin marketplace",
+   "vendored docs",
+   "hydrate vendor",
+   "workflow review checklist",
+   "coordinate many agents",
+   "run agents in background",
+   "design patterns for ai agents",
+   "gof style patterns",
+   "claude code skill"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2996,
+  "output": 1378
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "bereciartua/ek-bridge",
+ "repo": "bereciartua/ek-bridge",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "EK Bridge - Menu bar app that lets AI agents such as Claude, Codex and Cursor use only the calendars and reminder lists you choose, over MCP, and asks you before each change."
+  }
+ ],
+ "summary": {
+  "one_liner": "EK Bridge is a free, open-source macOS menu bar app that lets AI agents (Claude, Codex, Cursor and others) access only the Calendar and Reminders lists you choose over MCP, and asks before each change.",
+  "what_it_does": "It runs as a Mac menu bar app and is the only component holding Calendar and Reminders permission; agents talk to it rather than to EventKit directly. Each agent or script gets its own key and per-calendar or per-reminder-list grants for Read, Create, Edit, Delete, and Complete (reminders). A local MCP server on 127.0.0.1:47615 exposes twelve tools for events and reminders, and each agent sees only the tools its grants allow. By default, a panel shows every field a write would set, and nothing changes until you click Allow. An Activity log records changes and refusals by item name, and agents can be paused or removed individually or all at once. An optional Remote Access mode (experimental, off by default) forwards cloud agents through a tunnel you run.",
+  "use_cases": [
+   "let AI agents read my calendar without full access",
+   "approve calendar changes made by an AI assistant",
+   "add reminders from Claude or Cursor",
+   "limit which calendars an agent can see",
+   "audit what an AI agent changed in my calendar",
+   "script calendar and reminder access from the command line"
+  ],
+  "how_to_run": [
+   "sh test.sh",
+   "sh build.sh",
+   "Download EKBridge.dmg from Releases, drag EK Bridge to Applications, and open it",
+   "brew install --cask bereciartua/tap/ek-bridge",
+   "Follow the three-step setup in the app: allow Calendar/Reminders access, add an agent with its granted collections, then connect it"
+  ],
+  "stack": [
+   "Swift",
+   "EventKit",
+   "MCP (Model Context Protocol)",
+   "Ed25519 signing",
+   "Python 3 (build and test scripts)",
+   "Sparkle-style EdDSA signed updates via appcast.xml"
+  ],
+  "notable": [
+   "Per-agent, per-calendar grants: a new agent starts with no access",
+   "Approval panel shows every field before a write, with Allow/Deny and optional 15-minute windows",
+   "Prompts when an agent requests an action it lacks, instead of silently refusing",
+   "Activity log with plain-language refusals and Show in Calendar links; stores only EventKit IDs, not titles",
+   "Local-only by default: MCP listens on loopback, no analytics or accounts"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; in public preview with best-effort support",
+   "Remote Access for cloud agents (claude.ai, ChatGPT) is experimental and needs a tunnel you run; not yet tested live with every cloud agent",
+   "Does not protect against other processes running as the same macOS user; some features like inviting attendees or attachments are not possible through EventKit"
+  ],
+  "license": "Apache License 2.0",
+  "category": "AI agent calendar access",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "mac menu bar app",
+   "macos calendar",
+   "eventkit",
+   "reminders",
+   "claude desktop",
+   "claude code",
+   "cursor",
+   "codex",
+   "chatgpt calendar",
+   "ai agent permissions",
+   "approve ai changes",
+   "calendar access control",
+   "scoped access",
+   "per calendar permissions",
+   "activity log",
+   "command line calendar client",
+   "bridge-client",
+   "local loopback server",
+   "tunnel remote access",
+   "tailscale funnel",
+   "ai assistant calendar",
+   "schedule reminders with ai",
+   "let chatbot read my calendar",
+   "limit ai access to calendar",
+   "audit ai calendar changes",
+   "open source calendar bridge",
+   "apple calendar automation",
+   "gemini cli",
+   "vs code copilot mcp",
+   "ek bridge",
+   "eventkit bridge"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8811,
+  "output": 1391
+ },
+ "generated": "2026-10-29"
+}

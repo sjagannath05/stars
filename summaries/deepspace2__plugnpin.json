@@ -1,0 +1,92 @@
+{
+ "id": "deepspace2/plugnpin",
+ "repo": "deepspace2/plugnpin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "PlugNPiN - Automatically scrapes containers with specific labels and creates local DNS/CNAME entries in Pi-Hole/AdGuard Home and proxy hosts in Nginx Proxy Manager. (Source Code) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "PlugNPiN is a Docker-based tool that watches for containers labeled with plugNPiN.ip and plugNPiN.url and automatically creates matching DNS/CNAME records in Pi-Hole or AdGuard Home plus proxy hosts in Nginx Proxy Manager.",
+  "what_it_does": "PlugNPiN scans Docker containers for the labels plugNPiN.ip (IP and port of the container) and plugNPiN.url (desired hostname, with multiple comma-separated domains allowed). For each matching container it creates a local DNS record or CNAME pointing the URL at the IP in Pi-Hole, or a DNS Rewrite in AdGuard Home, and creates a proxy host in Nginx Proxy Manager that routes the URL to the container. It listens for container start, stop and kill events to add or remove entries in real time, and runs a full sync at an interval set by RUN_INTERVAL to correct any missed or inconsistent entries. It can monitor multiple Docker hosts and supports a Docker socket proxy. Pi-Hole is enabled by default and AdGuard Home is disabled by default, and each can be toggled individually.",
+  "use_cases": [
+   "automatically create local DNS names for Docker containers",
+   "add Pi-hole local DNS records from container labels",
+   "create Nginx Proxy Manager proxy hosts for new containers",
+   "sync AdGuard Home DNS rewrites with running Docker services",
+   "manage homelab service hostnames without manual DNS edits",
+   "monitor multiple Docker hosts for service discovery"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml with the plugnpin service using image ghcr.io/deepspace2/plugnpin:latest",
+   "Set NGINX_PROXY_MANAGER_HOST, NGINX_PROXY_MANAGER_USERNAME and NGINX_PROXY_MANAGER_PASSWORD environment variables",
+   "Set PIHOLE_HOST and PIHOLE_PASSWORD environment variables (or enable AdGuard Home instead)",
+   "Recommended: run a Docker socket proxy (e.g. lscr.io/linuxserver/socket-proxy) and set DOCKER_HOST=tcp://socket-proxy:2375",
+   "Alternatively mount /var/run/docker.sock read-only, which the README does not recommend",
+   "Start with docker compose up -d; see the documentation site for full configuration"
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Pi-hole",
+   "AdGuard Home",
+   "Nginx Proxy Manager",
+   "Docker socket proxy (linuxserver socket-proxy)"
+  ],
+  "notable": [
+   "Label-driven: containers opt in with plugNPiN.ip and plugNPiN.url labels",
+   "Real-time Docker event listening combined with periodic full resync (RUN_INTERVAL)",
+   "Supports both Pi-Hole and AdGuard Home, individually toggleable",
+   "Can create CNAME records pointing to a configurable target domain",
+   "Supports Docker socket proxy for reduced daemon exposure"
+  ],
+  "caveats": [
+   "The README points to an external documentation site for full setup and configuration, so the README alone does not cover all settings",
+   "Direct Docker socket mounting is marked not recommended for security reasons",
+   "Requires existing Pi-hole or AdGuard Home and Nginx Proxy Manager instances with credentials"
+  ],
+  "license": "GPL-3.0",
+  "category": "docker service discovery",
+  "keywords": [
+   "docker",
+   "container dns",
+   "pi-hole",
+   "pihole",
+   "adguard home",
+   "dns rewrites",
+   "nginx proxy manager",
+   "reverse proxy",
+   "local dns",
+   "cname records",
+   "service discovery",
+   "docker labels",
+   "homelab",
+   "self-hosted",
+   "docker socket proxy",
+   "automatic dns records",
+   "auto proxy host",
+   "container hostnames",
+   "docker event listener",
+   "dns automation",
+   "local hostnames for containers",
+   "share services on my network",
+   "map container to domain name",
+   "periodic sync",
+   "multi host docker monitoring",
+   "gpl-3.0 tool",
+   "docker compose"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3024,
+  "output": 1482
+ },
+ "generated": "2026-10-29"
+}

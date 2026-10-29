@@ -1,0 +1,89 @@
+{
+ "id": "sandbaseai/cli",
+ "repo": "sandbaseai/cli",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "SandBase CLI - Open-source CLI and MCP bridge for OpenAI-compatible access to 2,000+ AI models through usage-based pricing and a free plan. #freemium #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "SandBase CLI (@sandbaseai/cli) is an Apache-2.0 command-line tool that connects AI coding agents to 2,000+ AI models and data APIs through a local MCP bridge.",
+  "what_it_does": "Running `connect` opens a browser sign-in, saves an API key locally with 0600 permissions, and configures a local MCP bridge for supported AI clients. The bridge exposes SandBase tools (discover, inspect, run, run_get, runs, account, run_cancel) so an agent can search the catalog, read schemas and pricing, and execute models or APIs. The README also describes a shell transport with equivalent commands (discover, inspect, run, runs, balance, upload) for agents without MCP. Data APIs get 100 free calls per organization per UTC day, then are billed per call; models are paid per call or per token. Discovery, inspection, run status, and balance checks are free. The README lists 25 client targets, including Cursor, Claude Code, Codex, Windsurf, Gemini CLI, OpenClaw, and Hermes, with auto-configuration for many and manual setup for ChatGPT and Claude Desktop.",
+  "use_cases": [
+   "connect coding agents to web search and social media data",
+   "generate images or video from an agent",
+   "call LLMs like GPT-4o or Claude without managing separate API keys",
+   "scrape public webpages for data",
+   "research e-commerce prices or stock and company data",
+   "transcribe audio or generate speech from a shell script"
+  ],
+  "how_to_run": [
+   "npx -y @sandbaseai/cli@latest connect",
+   "npx -y @sandbaseai/cli@latest catalog --json",
+   "npx -y @sandbaseai/cli@latest connect --client cursor",
+   "npx -y @sandbaseai/cli@latest doctor --client openclaw",
+   "brew install sandbaseai/tap/sandbaseai-cli && sandbase connect"
+  ],
+  "stack": [
+   "Node.js / npm (@sandbaseai/cli)",
+   "Homebrew formula (macOS/Linux)",
+   "Model Context Protocol (MCP)",
+   "OAuth device flow with PKCE",
+   "OpenAI-compatible API access (per listing)"
+  ],
+  "notable": [
+   "One-command setup that configures many AI clients, with doctor and unregister commands that only touch SandBase-owned config",
+   "Discover-then-inspect-then-run workflow where discovery and inspection are free and show live pricing before any paid call",
+   "Shell transport mirrors MCP tools for agents without MCP support, with JSON output and exit codes",
+   "Published SHA-256 checksums per release so an exact tarball build can be pinned and verified"
+  ],
+  "caveats": [
+   "Requires a SandBase account and browser sign-in; paid models and data APIs beyond the daily free quota are billed per call",
+   "Depends on the hosted api.sandbase.ai service; if it is unreachable, tools stay visible but return errors",
+   "OpenClaw has no supported Skill removal command, so unregister leaves the Skill installed"
+  ],
+  "license": "Apache-2.0",
+  "category": "ai agent tooling",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "cli",
+   "command line tool",
+   "ai agent tools",
+   "llm gateway",
+   "openai-compatible api",
+   "multi-model access",
+   "image generation",
+   "video generation",
+   "web search api",
+   "social media data api",
+   "web scraping api",
+   "claude code integration",
+   "cursor mcp",
+   "codex plugin",
+   "windsurf",
+   "gemini cli",
+   "homebrew",
+   "npx",
+   "pay per call api",
+   "free tier ai api",
+   "access many ai models",
+   "give my agent web search",
+   "agent tool connector",
+   "sandbase",
+   "apache-2.0 open source"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6950,
+  "output": 1329
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "kincaidyang/whois",
+ "repo": "KincaidYang/whois",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Network Utilities",
+   "entry": "whois - WHOIS/RDAP query API for domains, IP addresses, CIDR prefixes and ASNs, with unified JSON output, caching, API key authentication, batch queries and MCP support for AI assistants. (Demo) MIT Go/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A Go-based WHOIS/RDAP lookup service that returns domain, IP, CIDR and ASN registration data as unified JSON over HTTP, with caching, optional API key auth, batch queries and an MCP endpoint for AI assistants.",
+  "what_it_does": "The service answers GET requests for domain names (including IDN, converted to Punycode), IPv4/IPv6 addresses, CIDR prefixes and ASNs, using RDAP where available and formatting raw WHOIS text into JSON for many ccTLDs. Responses follow RDAP vocabulary (RFC 9083) with RFC 3339 dates, and contact fields such as owner email, address and phone are omitted per ICANN/GDPR rules. Typed paths (/domain, /ip, /asn) return 400 on type mismatch, and ?raw=1 returns the unparsed WHOIS text for domains. Caching uses Redis with an in-memory LRU fallback, and responses carry X-Cache, Cache-Control and ETag headers. Optional features include API key authentication with per-key rate limits, a POST /batch endpoint, health/readiness/info/metrics endpoints, an OpenAPI 3.1 document, and a /mcp Streamable HTTP endpoint exposing whois_lookup and whois_batch_lookup tools.",
+  "use_cases": [
+   "look up domain registration and expiry dates via an API",
+   "query WHOIS/RDAP data for IP addresses or CIDR blocks",
+   "bulk-check many domains, IPs or ASNs in one request",
+   "give an AI assistant a WHOIS lookup tool over MCP",
+   "self-host a WHOIS lookup service for internal tools or a frontend",
+   "check ASN ownership and details"
+  ],
+  "how_to_run": [
+   "docker run -d --name redis -p 6379:6379 redis:latest",
+   "docker run -d --name whois -p 8043:8043 --link redis:redis jinzeyang/whois",
+   "git clone <repo-url> && cd whois && go build && ./whois",
+   "Edit config.yaml to adjust port, cache, auth.keys, batch and proxy settings (or set WHOIS_* environment variables)"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Redis (optional)",
+   "go-redis/v9",
+   "prometheus client_golang",
+   "modelcontextprotocol go-sdk",
+   "golang.org/x/net (idna, publicsuffix)",
+   "gopkg.in/yaml.v3",
+   "IANA RDAP bootstrap data"
+  ],
+  "notable": [
+   "Unified JSON output following RDAP (RFC 9083) with RFC 9457 problem+json errors",
+   "Built-in MCP endpoint so AI assistants can call whois_lookup and whois_batch_lookup",
+   "Optional API keys with named clients and per-key token-bucket rate limits",
+   "Falls back to in-memory LRU cache when Redis is unavailable",
+   "Published OpenAPI 3.1 spec at /openapi.json"
+  ],
+  "caveats": [
+   "Many ccTLDs lack RDAP, so their output is only partially parsed and may return unparsed raw text; parser coverage is incomplete by the author's admission",
+   "Batch and refresh features are off by default; the README advises enabling auth.keys before exposing batch publicly",
+   "Upstream rate limits do not restrict end-user requests; the README recommends a reverse proxy such as Nginx for limiting"
+  ],
+  "license": "MIT",
+  "category": "whois rdap lookup api",
+  "keywords": [
+   "whois",
+   "rdap",
+   "whois lookup",
+   "domain lookup",
+   "ip whois",
+   "asn lookup",
+   "cidr lookup",
+   "golang",
+   "go service",
+   "docker",
+   "redis cache",
+   "json api",
+   "rest api",
+   "mcp server",
+   "model context protocol",
+   "ai assistant tool",
+   "batch query",
+   "api key authentication",
+   "rate limiting",
+   "prometheus metrics",
+   "openapi",
+   "idn punycode",
+   "domain expiration check",
+   "registrar information",
+   "self-hosted whois",
+   "tld whois",
+   "bulk domain check",
+   "dns lookup alternative",
+   "check who owns a domain",
+   "domain registration date"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11607,
+  "output": 1516
+ },
+ "generated": "2026-10-29"
+}

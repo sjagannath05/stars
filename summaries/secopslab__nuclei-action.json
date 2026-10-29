@@ -1,0 +1,91 @@
+{
+ "id": "secopslab/nuclei-action",
+ "repo": "secopslab/nuclei-action",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hahwul/DevSecOps",
+   "section": "4. Test",
+   "entry": "3. DAST using projectdiscovery Nuclei (github action)"
+  }
+ ],
+ "summary": {
+  "one_liner": "A GitHub Action that installs and runs ProjectDiscovery's Nuclei vulnerability scanner inside CI workflows, configured through CLI args or a Nuclei config file.",
+  "category": "dast security scanning",
+  "keywords": [
+   "nuclei",
+   "nuclei action",
+   "github action",
+   "github actions",
+   "dast",
+   "dynamic application security testing",
+   "vulnerability scanner",
+   "projectdiscovery",
+   "security scanning in ci",
+   "devsecops",
+   "continuous security",
+   "sarif",
+   "github code scanning",
+   "sarif export",
+   "install nuclei",
+   "nuclei templates",
+   "web vulnerability scan",
+   "pipeline security testing",
+   "run nuclei in workflow",
+   "scan urls in ci",
+   "nuclei config file",
+   "issue tracker reporting",
+   "github issues from scan results",
+   "secure sdlc",
+   "security regression testing",
+   "pin nuclei version",
+   "node24 action",
+   "automated pentest pipeline",
+   "vulnerability scanning ci"
+  ],
+  "what_it_does": "The action downloads a chosen Nuclei release (latest or a specific vX.Y.Z version) from GitHub and makes it available in a workflow job. It can run Nuclei with the arguments you pass in the args input, or install only, with an install-only option for later steps. Nuclei settings can be supplied inline through the config input, from a repository file via config-path, or from a repository variable. Caching of Nuclei caches, configs, templates and browser can be turned on or off. Stdout and stderr from the Nuclei run are exposed as action outputs. The README also shows exporting SARIF results for GitHub code scanning and a reporting setup that creates GitHub issues from findings using an issue-tracker config file.",
+  "use_cases": [
+   "run nuclei scans against a web app in ci",
+   "upload nuclei results to github code scanning",
+   "pin a specific nuclei version in a workflow",
+   "install nuclei for later workflow steps",
+   "open github issues for nuclei findings",
+   "add dast checks to a devsecops pipeline"
+  ],
+  "how_to_run": [
+   "- uses: projectdiscovery/nuclei-action@v3 with: args: -u <target>",
+   "- uses: projectdiscovery/nuclei-action@v3 with: version: v3.6.0 install-only: true",
+   "- run: nuclei -version",
+   "- uses: projectdiscovery/nuclei-action@v3 with: version: latest config: | (Nuclei config with target and sarif-export)",
+   "- uses: github/codeql-action/upload-sarif@v3 with: sarif_file: results.sarif category: nuclei-results",
+   "- uses: projectdiscovery/nuclei-action@v3 with: args: -u <target> config: | report-config: issue-tracker-config.yaml"
+  ],
+  "stack": [
+   "GitHub Actions",
+   "Node.js 24 (node24 action runtime)",
+   "ProjectDiscovery Nuclei"
+  ],
+  "notable": [
+   "Installs any Nuclei release by version string or 'latest', and can install without scanning.",
+   "Nuclei config can come inline, from a repo file, or from a repository variable.",
+   "Can export SARIF results to feed GitHub code scanning.",
+   "Supports creating issue-tracker entries from findings with allow/deny filters by severity or tags.",
+   "Debug logging automatically adds -debug and -verbose flags to Nuclei."
+  ],
+  "caveats": [
+   "Versions v2.x are deprecated and unsupported after March 1, 2026; v1 runs on Node.js v16 and v3 uses a different, CLI-first interface, so workflows need migration (see MIGRATION.md).",
+   "The config and config-path inputs must not be set together, and args overrides both.",
+   "The README names the action as an upstream project that accepts a token to fetch releases; it does not describe scan coverage beyond running Nuclei with the templates you provide."
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3858,
+  "output": 1419
+ },
+ "generated": "2026-10-29"
+}

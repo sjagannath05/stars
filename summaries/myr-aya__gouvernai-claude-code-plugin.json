@@ -1,0 +1,90 @@
+{
+ "id": "myr-aya/gouvernai-claude-code-plugin",
+ "repo": "Myr-Aya/GouvernAI-claude-code-plugin",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Security",
+   "entry": "GouvernAI by Myr-Aya - Runtime guardrails for Claude Code. Auto-approve what's safe, gate what's risky, block what's dangerous. Dual enforcement, full audit trail. MIT."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin that adds runtime guardrails: it auto-approves low-risk actions, pauses for approval on risky ones, and hard-blocks dangerous patterns via PreToolUse hooks.",
+  "what_it_does": "GouvernAI classifies agent actions into four risk tiers (T1 to T4), with reads and drafts passing silently, file writes auto-approved with a notification, and network calls, config changes, and credential access requiring approval. A skill layer (SKILL.md and Markdown policy files) handles nuanced classification and escalation, while a Python PreToolUse hook (scripts/guardrails-enforce.py) runs on Bash, Write, and Edit calls to deterministically block obfuscated commands, credential exfiltration, catastrophic commands, self-modification of guardrails files, and API keys written into files. Slash commands (/guardrails) set modes such as strict, relaxed, and audit-only, plus an optional token cap, and mode settings persist in guardrails-mode.json. Every gated action is written to a guardrails_log.md audit log. The policy files are plain Markdown the user can read and edit.",
+  "use_cases": [
+   "Add safety prompts to Claude Code without turning off all permissions",
+   "Keep Claude Code fast while gating risky actions like deletes and installs",
+   "Block accidental credential leaks into committed files",
+   "Run unattended Claude Code jobs or CI with logged, non-interactive approval rules",
+   "Keep an audit trail of agent actions per session",
+   "Cap the payload size of agent actions for cost control"
+  ],
+  "how_to_run": [
+   "claude plugin marketplace add Myr-Aya/GouvernAI-claude-code-plugin",
+   "claude plugin install gouvernai@mindxo",
+   "Start a Claude Code session and run /gouvernai to activate the hooks and skill layer",
+   "Optional: copy the hook config into ~/.claude/settings.json for hooks that fire from session start (replace ${CLAUDE_PLUGIN_ROOT} with an absolute path)"
+  ],
+  "stack": [
+   "Python (guardrails-enforce.py hook script)",
+   "Claude Code plugin system (hooks.json, skills, slash commands)",
+   "Markdown policy and skill files"
+  ],
+  "notable": [
+   "Dual enforcement: probabilistic skill-layer tier classification plus deterministic PreToolUse hooks that exit with code 2 to hard-block",
+   "Fails closed: if the hook cannot parse its input, it blocks the action",
+   "Policies are plain Markdown files (ACTIONS.md, TIERS.md, POLICY.md) the user can edit",
+   "Modes (full-gate, strict, relaxed, audit-only) and token cap persist across sessions in guardrails-mode.json",
+   "Self-modification protection covers the guardrails files themselves"
+  ],
+  "caveats": [
+   "Hooks do not intercept MCP tool calls, and the skill layer is the only coverage there; the README says skill compliance varies by model, with smaller models like Haiku less reliable",
+   "The hook patterns target Unix/Bash syntax, so PowerShell equivalents are not covered, and the README explicitly says it is not a security boundary against determined adversaries",
+   "Manual hook registration in settings.json does not auto-update with the plugin, and the README notes a known Claude Code bug where plugin hooks may not fire without running /gouvernai each session"
+  ],
+  "license": "MIT",
+  "category": "claude code guardrails",
+  "keywords": [
+   "claude code plugin",
+   "ai agent guardrails",
+   "runtime guardrails",
+   "permission prompts",
+   "auto-approve",
+   "approval gate",
+   "pretooluse hook",
+   "claude code hooks",
+   "dangerously-skip-permissions",
+   "agent safety",
+   "audit log",
+   "credential exfiltration blocking",
+   "secret detection",
+   "api key leak prevention",
+   "bulk delete protection",
+   "risk tiers",
+   "policy as markdown",
+   "audit-only mode",
+   "ci unattended agent",
+   "token cap",
+   "cost governance",
+   "alternative to auto mode",
+   "python hook script",
+   "obfuscated command blocking",
+   "self-modification prevention",
+   "permission management for coding agents",
+   "keep claude code from deleting files",
+   "safety layer for ai coding assistant",
+   "approve risky commands",
+   "log agent actions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9374,
+  "output": 1560
+ },
+ "generated": "2026-10-29"
+}

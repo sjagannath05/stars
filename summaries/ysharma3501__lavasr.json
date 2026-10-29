@@ -1,0 +1,104 @@
+{
+ "id": "ysharma3501/lavasr",
+ "repo": "ysharma3501/LavaSR",
+ "kind": "star",
+ "description": "🌋LavaSR: Fast Speech restoration and enhancement",
+ "topics": [],
+ "language": "Python",
+ "stars": 622,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-06-19",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "LavaSR is a lightweight Python speech enhancement and bandwidth-extension model that upsamples low-quality, noisy speech (8–48 kHz input) into clean 48 kHz audio.",
+  "what_it_does": "LavaSR takes low-sample-rate or noisy speech and produces cleaner 48 kHz output. It adapts the Vocos architecture for bandwidth extension (audio upsampling) and adds a Linkwitz-Riley-inspired refiner to improve quality. The README says it accepts any input sample rate from 8 kHz to 48 kHz. It has an optional denoise flag for audio with noise, and a batch flag for very long audio. Usage is through a Python API: load a model with LavaEnhance2, call load_audio and enhance, then save with soundfile. The README claims about 5000x realtime on GPU, over 60x realtime on CPU, and roughly 500 MB VRAM. It also lists community ports (ComfyUI node, GUI app, C++, ONNX).",
+  "use_cases": [
+   "Enhancing low-quality speech recordings",
+   "Improving TTS model output quality",
+   "Restoring or cleaning audio datasets",
+   "On-device enhancement of calls or audio",
+   "Upsampling 8/16/24 kHz audio to 48 kHz",
+   "Denoising speech recordings"
+  ],
+  "how_to_run": [
+   "uv pip install git+ (URL truncated in README)",
+   "from LavaSR.model import LavaEnhance2",
+   "lava_model = LavaEnhance2(\"YatharthS/LavaSR\", device)",
+   "input_audio, input_sr = lava_model.load_audio('input.wav')",
+   "output_audio = lava_model.enhance(input_audio).cpu().numpy().squeeze()",
+   "sf.write('output.wav', output_audio, 48000)"
+  ],
+  "stack": [
+   "Python",
+   "PyTorch",
+   "Vocos architecture",
+   "soundfile",
+   "uv",
+   "ONNX (community implementation)",
+   "ComfyUI (community node)"
+  ],
+  "notable": [
+   "Vocos-based single-pass architecture, which the README credits for its speed",
+   "Accepts any input sampling rate from 8 kHz to 48 kHz",
+   "Reported model size around 50 MB, far smaller than diffusion-based alternatives in its comparison table",
+   "Trained from a Vocos prior with 50k steps on VCTK, using random resampling and added noise",
+   "Community ports including ComfyUI node, C++, and ONNX"
+  ],
+  "caveats": [
+   "The install command in the README is truncated (\"uv pip install git+\") so the exact URL is missing",
+   "Speed and quality figures are the author's, measured on an A100 GPU and VCTK validation",
+   "Training code and music/general-audio models are listed as not yet released on the roadmap",
+   "Lowering the cutoff can improve quality but may sound metallic, per the README"
+  ],
+  "license": "Apache-2.0",
+  "category": "speech enhancement model",
+  "keywords": [
+   "speech enhancement",
+   "audio super-resolution",
+   "bandwidth extension",
+   "audio upsampling",
+   "speech restoration",
+   "denoise speech",
+   "clean up noisy audio",
+   "low quality audio to high quality",
+   "8khz to 48khz",
+   "tts enhancement",
+   "vocos",
+   "vocoder",
+   "pytorch",
+   "python",
+   "onnx",
+   "comfyui node",
+   "realtime audio enhancement",
+   "on-device speech processing",
+   "audio dataset restoration",
+   "improve text to speech quality",
+   "upsample phone call audio",
+   "audiosr alternative",
+   "ap-bwe alternative",
+   "speech denoising model",
+   "lightweight audio model",
+   "gpu audio processing",
+   "cpu audio processing",
+   "linkwitz-riley refiner",
+   "audio cleanup tool",
+   "enhance voice recordings",
+   "interspeech paper"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3537,
+  "output": 1410
+ },
+ "generated": "2026-10-29"
+}

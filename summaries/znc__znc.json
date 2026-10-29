@@ -1,0 +1,97 @@
+{
+ "id": "znc/znc",
+ "repo": "znc/znc",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - IRC",
+   "entry": "ZNC - Advanced IRC bouncer. (Source Code) Apache-2.0 C++/deb"
+  }
+ ],
+ "summary": {
+  "one_liner": "ZNC is an advanced IRC bouncer written in C++ that stays connected to IRC servers on your behalf and replays missed messages to your clients.",
+  "what_it_does": "ZNC runs as a persistent server that holds IRC connections open while you are offline, then replays buffered channel messages when you reconnect. Clients connect to ZNC with a username:password server password, and users can run multiple networks. Configuration is created interactively with `znc --makeconf` and can be changed at runtime through IRC commands such as `/msg *status`, with SIGUSR1 forcing a config rewrite. Functionality is extended through modules, which can be written in C++, Python (via the ModPython global module) or Perl (via ModPerl). Optional features include SSL/TLS, Cyrus SASL authentication, ICU character encodings, and Boost.Locale UI translation. The README covers build requirements, CMake-based installation, file locations, and where to get help on the #znc channel on Libera.Chat.",
+  "use_cases": [
+   "keep an IRC connection online while offline",
+   "replay missed IRC messages on reconnect",
+   "run a shared IRC bouncer for multiple clients",
+   "host IRC access for several users",
+   "write custom IRC bot or bouncer modules in Python or Perl"
+  ],
+  "how_to_run": [
+   "mkdir build",
+   "cd build",
+   "cmake ..",
+   "make",
+   "make install",
+   "znc --makeconf"
+  ],
+  "stack": [
+   "C++",
+   "CMake",
+   "OpenSSL",
+   "Python (ModPython)",
+   "Perl (ModPerl)",
+   "ICU",
+   "Boost.Locale",
+   "libargon2",
+   "Cyrus SASL",
+   "SWIG"
+  ],
+  "notable": [
+   "Buffer replay of recent channel messages on client reconnect, with an option to keep buffers after replay",
+   "Modules can be written in C++, Python, or Perl",
+   "Multiple networks per user account",
+   "Configurable via IRC commands and a config file, with optional webadmin and controlpanel modules mentioned",
+   "configure.sh wrapper accepts old ./configure parameters for migration to CMake"
+  ],
+  "caveats": [
+   "Building from source requires several toolchain and optional library dependencies (GCC 8 or clang 5, CMake 3.13, and more for optional modules)",
+   "The README advises against editing the config file while ZNC is running",
+   "Some features depend on optional libraries such as OpenSSL, Python, Perl, or ICU"
+  ],
+  "license": "Apache-2.0",
+  "category": "irc bouncer",
+  "keywords": [
+   "irc bouncer",
+   "irc proxy",
+   "znc",
+   "bouncer",
+   "irc client persistence",
+   "stay connected to irc",
+   "irc bridge",
+   "always-on irc",
+   "message buffer replay",
+   "irc backlog",
+   "missed messages irc",
+   "cmake",
+   "c++",
+   "ssl irc",
+   "tls",
+   "perl modules",
+   "python modules",
+   "irc modules",
+   "self-hosted irc",
+   "multi-user irc",
+   "libera chat",
+   "irc networks",
+   "sasl",
+   "irc server proxy",
+   "chat history",
+   "znc modules",
+   "irc connection keepalive",
+   "run irc in background",
+   "irc relay"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3290,
+  "output": 1181
+ },
+ "generated": "2026-10-29"
+}

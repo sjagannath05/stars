@@ -1,0 +1,92 @@
+{
+ "id": "ericjypark/codex-island",
+ "repo": "ericjypark/codex-island",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "CodexIsland - Turns the MacBook notch into a Dynamic Island-style live activity for Claude Code and Codex CLI rate limits and spend, computed locally with no telemetry. [![Open-Source Software][OSS Icon]](https://github.com/ericjypark/codex-island) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "CodexIsland is a free, open-source, unsigned native macOS app that turns the MacBook notch into a Dynamic Island-style display of AI coding subscription usage limits and local-log cost estimates.",
+  "what_it_does": "The app sits over the notch and shows the 5-hour usage percentage on hover, with an expandable panel for usage windows and reset timing. It reads credentials already written by the Claude Code and Codex CLIs (no passwords or API keys entered) and calls those providers' usage endpoints. Its Cost screen estimates spend and token throughput from local Claude Code, Codex CLI, and OpenCode session logs, and an Overview screen shows a year-long usage calendar. It can also generate a shareable usage card image, offers configurable alert thresholds, and includes Sparkle auto-updates. The README states it is local-first with no app telemetry or crash reporting.",
+  "use_cases": [
+   "monitor Claude Code rate limits in the menu bar or notch",
+   "track Codex CLI usage and reset times",
+   "estimate monthly AI coding API spend from local logs",
+   "view a yearly AI token usage calendar",
+   "share a usage summary card image"
+  ],
+  "how_to_run": [
+   "brew install --cask ericjypark/tap/codexisland",
+   "xattr -dr com.apple.quarantine /Applications/CodexIsland.app (direct download only)",
+   "git clone <repository URL>",
+   "cd codex-island",
+   "./build.sh",
+   "open build/CodexIsland.app"
+  ],
+  "stack": [
+   "Swift",
+   "swiftc",
+   "lipo",
+   "Sparkle (EdDSA-signed auto-updates)",
+   "SQLite (usage-history database)",
+   "create-dmg (release packaging)"
+  ],
+  "notable": [
+   "Turns the notch into a hover-to-peek and click-to-expand live activity panel",
+   "Reads existing CLI credentials read-only; never refreshes or writes tokens",
+   "Local cost and token estimates from Claude Code, Codex CLI, and OpenCode logs",
+   "Universal arm64 and x86_64 binary targeting macOS 13+",
+   "Native app with no telemetry, analytics, or proxy service"
+  ],
+  "caveats": [
+   "Builds are unsigned by Apple, so Gatekeeper requires a dequarantine command or Open Anyway",
+   "Claude and Codex usage endpoints are undocumented and may break",
+   "Sparkline history only covers readings recorded while the app is running",
+   "Polling is limited to 5m, 15m, or 30m; requires macOS 13+"
+  ],
+  "license": "MIT",
+  "category": "macos menu bar tools",
+  "keywords": [
+   "macos notch app",
+   "dynamic island mac",
+   "menu bar usage monitor",
+   "claude code usage",
+   "codex cli usage",
+   "rate limit tracker",
+   "api spend estimate",
+   "token usage tracker",
+   "ai coding cost",
+   "local log cost calculator",
+   "swift macos app",
+   "sparkle auto update",
+   "homebrew cask",
+   "usage calendar",
+   "notch overlay",
+   "claude code limits",
+   "openai codex quota",
+   "opencode usage",
+   "track ai subscription",
+   "see how much claude code costs",
+   "offline usage tracking",
+   "privacy friendly usage monitor",
+   "menu bar app mac",
+   "live activity mac",
+   "shareable usage card",
+   "quota reset timer",
+   "accessory app no dock icon"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8322,
+  "output": 1241
+ },
+ "generated": "2026-10-29"
+}

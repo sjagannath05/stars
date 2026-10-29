@@ -1,0 +1,98 @@
+{
+ "id": "rmyndharis/openwa-plugins",
+ "repo": "rmyndharis/OpenWA-plugins",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Custom Communication Systems",
+   "entry": "OpenWA ⚠ - WhatsApp API gateway exposing messaging as REST endpoints, with a web dashboard, multi-account sessions, and webhook events (alternative to WhatsApp Business API providers). (Source Code, Clients) MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "A plugin repository for OpenWA, the self-hosted WhatsApp API gateway, containing a catalog of installable extensions (auto-replies, logging, chatbot flows, AI responder, Chatwoot sync, voice transcription) plus the authoring kit and contract docs for building new ones.",
+  "what_it_does": "The repository is a curated catalog of 11 OpenWA plugins, each packaged as a .zip with a manifest.json and a bundled dist/index.js. Plugins react to WhatsApp events such as message:received through a typed hook system and act through permission-gated capabilities like sending messages, fetching URLs, reading engine data, and storage. Plugins are uploaded or installed from a URL, configured per session through the dashboard or REST API, and only run after an admin enables them. The README also documents the management endpoints, the IPlugin lifecycle, the manifest schema, and the constraints (JavaScript only, package size limits, sandboxed worker threads). It includes a build script (node package.mjs <plugin>) that bundles TypeScript and zips the result, plus a vendored types/openwa.d.ts file.",
+  "use_cases": [
+   "Auto-reply to WhatsApp customers outside business hours",
+   "Log WhatsApp messages to a Google Sheet",
+   "Build interactive menu-driven WhatsApp chatbots",
+   "Connect WhatsApp to a Chatwoot inbox for two-way support",
+   "Transcribe WhatsApp voice notes to text",
+   "Trigger REST API calls from WhatsApp commands",
+   "Translate group chat messages between languages",
+   "Deliver Supabase phone OTP codes over WhatsApp"
+  ],
+  "how_to_run": [
+   "Build a plugin package: node package.mjs gsheets-logger",
+   "Install the zip: curl -X POST <base-url>/api/plugins/install -H \"X-API-Key: <admin-key>\" -F \"file=@gsheets-logger.zip\"",
+   "Configure the plugin with PUT /api/plugins/:id/config using a JSON body of { \"config\": { ... } }",
+   "Enable the plugin with POST /api/plugins/:id/enable using an admin-scoped API key"
+  ],
+  "stack": [
+   "OpenWA plugin runtime",
+   "TypeScript",
+   "Node.js worker threads",
+   "esbuild (dev-only, for bundling)",
+   "OpenAI-compatible Chat Completions API (ai-responder)",
+   "Chatwoot (chatwoot-adapter)",
+   "LibreTranslate (group-translate)",
+   "Typebot (typebot-connector)",
+   "Google Sheets service account (gsheets-logger)"
+  ],
+  "notable": [
+   "Plugins are disabled on install and only run after an admin enables them; the enable decision persists across host restarts",
+   "Per-session config overrides let one plugin run different settings for different WhatsApp sessions, with a per-plugin support table",
+   "Sandboxed worker thread per plugin, with permissions checked at each capability call and SSRF-guarded outbound HTTP",
+   "Documentation states it reflects the verified runtime rather than aspirational design docs"
+  ],
+  "caveats": [
+   "Plugins run as trusted code inside a worker thread that still has Node APIs, so only install plugins you trust",
+   "Requires a running OpenWA host (v0.26.0 is the verified baseline); live WhatsApp sessions and provider credentials are outside the tested scope",
+   "gsheets-logger does not support per-session config; one instance per session is needed",
+   "Some plugins are marked beta, and the README notes certain upstream design features are not implemented"
+  ],
+  "license": "MIT",
+  "category": "whatsapp gateway plugins",
+  "keywords": [
+   "openwa",
+   "whatsapp api",
+   "whatsapp gateway",
+   "whatsapp plugins",
+   "whatsapp bot",
+   "whatsapp auto reply",
+   "self-hosted whatsapp",
+   "whatsapp business api alternative",
+   "plugin catalog",
+   "plugin authoring",
+   "chatbot",
+   "typescript plugins",
+   "webhook",
+   "chatwoot integration",
+   "google sheets logger",
+   "voice transcription",
+   "speech to text",
+   "openai compatible",
+   "libretranslate",
+   "typebot",
+   "faq bot",
+   "rest api",
+   "plugin sandbox",
+   "worker threads",
+   "message logging",
+   "customer support bot",
+   "send whatsapp messages from code",
+   "automate whatsapp replies",
+   "esbuild",
+   "awesome-selfhosted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9422,
+  "output": 1614
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "a692570/bolo",
+ "repo": "a692570/bolo",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Bolo - Voice dictation menubar app using Telnyx STT and LLM APIs."
+  }
+ ],
+ "summary": {
+  "one_liner": "Bolo is a free, self-hosted macOS push-to-talk dictation menubar app that transcribes speech via Telnyx-hosted STT and pastes the result into the active text field.",
+  "category": "macos voice dictation",
+  "keywords": [
+   "voice dictation",
+   "speech to text",
+   "push to talk",
+   "macos menubar app",
+   "dictation app",
+   "telnyx",
+   "whisper",
+   "deepgram",
+   "nova-3",
+   "parakeet mlx",
+   "whisper.cpp",
+   "offline transcription",
+   "hotkey dictation",
+   "voice typing mac",
+   "speech recognition",
+   "rust",
+   "llm cleanup",
+   "wispr flow alternative",
+   "open source dictation",
+   "self-hosted dictation",
+   "transcribe speech into any app",
+   "dictate into slack",
+   "custom vocabulary",
+   "clipboard paste",
+   "menu bar transcript history",
+   "accessibility permission",
+   "local whisper model",
+   "dictate without typing",
+   "free voice typing for mac"
+  ],
+  "what_it_does": "Bolo runs as a macOS menubar app where holding a configurable hotkey records the microphone and releasing it pastes the transcript at the cursor, using the clipboard and restoring prior contents by default. Cloud transcription goes through Telnyx APIs, with Deepgram streaming for live partials, a batch model for the final transcript, and optional provider fallbacks such as xAI. An optional offline tier uses parakeet-mlx, qwen3-asr, or a local whisper.cpp model, and local vocabulary, alias, and replacement files are applied before insertion. Optional LLM cleanup runs through a LiteLLM-compatible endpoint or Telnyx, and voice commands can polish, rewrite, or correct the previous dictation. It keeps a local history of the 10 most recent transcripts and learns single-word corrections the user makes after pasting.",
+  "use_cases": [
+   "dictate messages into Slack or email on a Mac",
+   "push-to-talk voice typing in any text field",
+   "replace typing with speech in code editors or terminals",
+   "offline dictation with a local model",
+   "teach a dictation tool custom names and jargon",
+   "polish or rewrite selected text by voice"
+  ],
+  "how_to_run": [
+   "git clone https://github.com/a692570/bolo && cd bolo",
+   "./install.sh",
+   "export TELNYX_API_KEY=\"your_key_here\"",
+   "Grant Microphone and Accessibility permissions, adding ~/.bolo/venv/bin/python3 to Accessibility",
+   "./restart.sh",
+   "Alternatively, download the Bolo DMG from a GitHub release if one is attached"
+  ],
+  "stack": [
+   "Rust",
+   "Python helper (~/.bolo/venv)",
+   "Telnyx STT and LLM APIs",
+   "Deepgram Nova-3 / flux-multi streaming via Telnyx",
+   "whisper.cpp (Metal)",
+   "parakeet-mlx",
+   "qwen3-asr-mlx",
+   "WebRTC audio processing",
+   "pyobjc"
+  ],
+  "notable": [
+   "Push-to-talk with a configurable hotkey; records only while the key is held and pastes at the cursor",
+   "Tiered speech pipeline: streaming partials, batch final transcript, then an optional fully offline ladder (parakeet, qwen3-asr, whisper.cpp)",
+   "Learns corrections from user edits made within 15 seconds and applies them to future dictations",
+   "Verbatim gate on LLM cleanup rejects any output that changes words, limiting it to formatting",
+   "Cross-install instance lock with version-based arbitration to avoid duplicate processes"
+  ],
+  "caveats": [
+   "Requires a Telnyx API key; the default cloud pipeline needs internet access",
+   "macOS only (macOS 12+) and needs Microphone and Accessibility permissions",
+   "DMG builds are ad-hoc signed, not notarized, so macOS 15 Gatekeeper requires manual approval",
+   "Offline parakeet rung is English-only; the offline tier needs extra setup and about 466 MB to 1.2 GB of model downloads",
+   "Author describes the project as under active development; long dictation is still being validated and the recording watchdog caps a single dictation at 30 seconds by default"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12321,
+  "output": 1548
+ },
+ "generated": "2026-10-29"
+}

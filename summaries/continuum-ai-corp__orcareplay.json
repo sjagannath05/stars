@@ -1,0 +1,95 @@
+{
+ "id": "continuum-ai-corp/orcareplay",
+ "repo": "Continuum-AI-Corp/OrcaReplay",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Observability",
+   "entry": "OrcaReplay by Continuum AI - Records a Claude Code run through a local proxy and replays it offline, reproducing it byte-for-byte with the network off, or forking it from any checkpoint onto a different model. Capture happens below the harness, so shell exit codes, per-turn file changes and MCP calls land on the same timeline as the model traffic. (NB: Status: \"Early\")"
+  },
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "OrcaReplay - Records a coding-agent run and replays it back to the agent with no model called, or forks a checkpoint onto other models to compare. #free"
+  }
+ ],
+ "summary": {
+  "one_liner": "OrcaReplay is a local proxy-based recorder for coding-agent runs that can replay a recording offline with no model called, or fork it from a checkpoint onto a different model for comparison.",
+  "what_it_does": "Records a coding agent's run by standing up a local proxy and setting base-URL environment variables, capturing model requests and streamed responses, plus shell exit codes and timings, per-turn filesystem changes, and MCP traffic on one timeline. Replay mode serves the recorded run from disk with network egress blocked, so no model is called and no tokens are spent; the README says recorded tool calls still execute for real. A cursor can be placed at a checkpoint so that later turns are answered by a different model, and a compare command runs several models from the same checkpoint and grades each with a user-supplied command. Output includes a per-run HTML timeline, an event/graph view, SVG/PNG/GIF export of failure chains, and JSON output for scripts. It also supports pushing and pulling runs to a gateway, and serves the trace store over MCP. The README is closely tied to its authors' OrcaRouter gateway, which is the default gateway for the setup command.",
+  "use_cases": [
+   "debug why a coding agent broke something",
+   "replay an agent run offline without spending tokens",
+   "compare coding models on the same task from a checkpoint",
+   "record Claude Code or Codex CLI sessions for later review",
+   "share an agent run as an HTML or SVG artifact in an issue",
+   "feed run traces to an agent over MCP"
+  ],
+  "how_to_run": [
+   "npm i -g orcareplay",
+   "orca record claude",
+   "orca replay last",
+   "orca replay last --from 4 --model claude-haiku-4-5 --ui"
+  ],
+  "stack": [
+   "Node.js",
+   "npm (orcareplay package)",
+   "MCP (JSON-RPC over stdio)",
+   "OrcaRouter gateway (default, optional)"
+  ],
+  "notable": [
+   "Capture happens below the agent at the proxy/socket boundary, so the agent does not need modification",
+   "Replay with egress blocked reproduces recorded model traffic byte-for-byte without calling a model",
+   "Fork from any derived checkpoint onto a different model, with the model as the only variable",
+   "Per-run HTML timeline that works offline as a single file with no external references",
+   "Optional TLS interception with a per-run CA to capture harnesses that cannot be redirected, such as Codex CLI with ChatGPT login"
+  ],
+  "caveats": [
+   "Replay is not a sandbox: recorded tool calls execute for real, and shell or MCP commands that open their own sockets are outside the no-egress guarantee",
+   "Several agent integrations are documented as having caveats, such as goose shell calls lacking real exit codes unless recorded with --no-shell",
+   "The listing marks the project status as Early, and the README is heavily tied to the OrcaRouter gateway (the default gateway, and the push/pull feature needs a gateway key)"
+  ],
+  "license": "unknown",
+  "category": "agent run replay",
+  "keywords": [
+   "agent replay",
+   "coding agent debugging",
+   "record agent run",
+   "offline replay",
+   "llm proxy recorder",
+   "claude code recorder",
+   "codex cli recording",
+   "fork agent run",
+   "model comparison",
+   "checkpoint fork",
+   "trace replay",
+   "egress blocked replay",
+   "tls interception",
+   "mcp server",
+   "observability alternative",
+   "agent observability",
+   "llm cost tracking alternative",
+   "run an agent again without tokens",
+   "compare models on same task",
+   "share agent run in issue",
+   "debug why agent deleted file",
+   "record shell and file changes",
+   "npm cli orca",
+   "base url proxy",
+   "harness recording",
+   "agent trace viewer",
+   "deterministic llm replay",
+   "test different model on coding task",
+   "html timeline export"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16293,
+  "output": 1381
+ },
+ "generated": "2026-10-29"
+}

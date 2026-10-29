@@ -1,0 +1,90 @@
+{
+ "id": "skills-directory/skill-codex",
+ "repo": "skills-directory/skill-codex",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Providers, Runtime & Integration Infrastructure",
+   "entry": "Codex Skill by klaudworks - Enables users to prompt codex from claude code. Unlike the raw codex mcp server, this skill infers parameters such as model, reasoning effort, sandboxing from your prompt or asks you to specify them. It also simplifies continuing prior codex sessions so that codex can continue with the prior context."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Claude Code plugin/skill that lets Claude invoke the Codex CLI (codex exec and session resumes) to analyze, refactor, or edit code.",
+  "category": "claude code skill",
+  "keywords": [
+   "claude code",
+   "codex cli",
+   "codex exec",
+   "claude code plugin",
+   "claude skill",
+   "agent skill",
+   "session resume",
+   "codex session continue",
+   "sandbox mode",
+   "read-only sandbox",
+   "reasoning effort",
+   "model selection",
+   "code analysis",
+   "code refactoring",
+   "automated code editing",
+   "delegate to codex",
+   "second opinion code review",
+   "run codex from claude",
+   "codex integration",
+   "plugin marketplace",
+   "mcp alternative",
+   "codex mcp server alternative",
+   "shell command wrapper",
+   "agentic workflow",
+   "ai coding agent",
+   "openai codex",
+   "prompt codex from claude",
+   "continue previous codex conversation"
+  ],
+  "what_it_does": "The README describes a Claude Code skill that lets Claude Code run the Codex CLI through codex exec and session resumes for code analysis, refactoring, and editing. Before using it, the user needs the codex CLI on PATH with valid credentials, and can verify with codex --version. The skill asks for the model and reasoning effort unless the prompt already specifies them, and selects a sandbox mode, defaulting to read-only for analysis. It suppresses Codex's stderr thinking tokens by default (2>/dev/null) to keep Claude's context small, and the user can ask for them to be shown. The README's example shows a codex exec command with model, reasoning effort, and sandbox flags, followed by a summary of the output. It can be installed as a Claude Code plugin from a marketplace or as a standalone skill folder copied into ~/.claude/skills. Detailed operational instructions live in SKILL.md, which the README points to.",
+  "use_cases": [
+   "Get a second opinion on code from Codex while working in Claude Code",
+   "Have Codex analyze a repository and suggest improvements",
+   "Delegate refactoring or code edits to Codex from Claude Code",
+   "Continue a previous Codex session with its context",
+   "Run Codex in read-only or sandboxed mode from a Claude Code prompt"
+  ],
+  "how_to_run": [
+   "Install the codex CLI and confirm it works with: codex --version",
+   "In Claude Code: /plugin marketplace add skills-directory/skill-codex",
+   "In Claude Code: /plugin install skill-codex@skill-codex",
+   "Or standalone: git clone --depth 1 git@github.com:skills-directory/skill-codex.git /tmp/skills-temp && mkdir -p ~/.claude/skills && cp -r /tmp/skills-temp/plugins/skill-codex/skills/codex ~/.claude/skills/codex && rm -rf /tmp/skills-temp",
+   "Ask Claude to use codex to perform a task; it will prompt for model and reasoning effort if not given",
+   "See plugins/skill-codex/skills/codex/SKILL.md for full CLI options and workflow"
+  ],
+  "stack": [
+   "Claude Code (plugin and skill system)",
+   "Codex CLI",
+   "Shell (bash)"
+  ],
+  "notable": [
+   "Infers model, reasoning effort, and sandbox settings from the prompt or asks the user, unlike calling the raw Codex MCP server",
+   "Simplifies continuing prior Codex sessions so Codex keeps earlier context",
+   "Defaults to read-only sandbox for analysis tasks",
+   "Suppresses Codex stderr thinking tokens by default to save context window space",
+   "Installable as a Claude Code plugin marketplace entry or as a standalone skill folder"
+  ],
+  "caveats": [
+   "Requires the codex CLI installed locally with valid credentials",
+   "README notes legacy models such as gpt-5.5 are rejected for ChatGPT-account sign-ins",
+   "Thinking tokens are hidden by default and must be requested explicitly to view",
+   "README references a skip-flag permission gate in the example without detailing it here; full behavior is in SKILL.md"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2622,
+  "output": 1492
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,101 @@
+{
+ "id": "project-osrm/osrm-backend",
+ "repo": "Project-OSRM/osrm-backend",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Maps and Global Positioning System (GPS)",
+   "entry": "Open Source Routing Machine (OSRM) - High performance routing engine designed to run on OpenStreetMap data and offering an HTTP API, C++ library interface, and Nodejs wrapper. (Demo, Source Code) BSD-2-Clause C++"
+  }
+ ],
+ "summary": {
+  "one_liner": "OSRM is a high-performance C++ routing engine for OpenStreetMap data, exposing nearest, route, table, match, trip, and tile services over an HTTP API, a C++ library, and Node.js and Python bindings.",
+  "what_it_does": "The engine preprocesses OpenStreetMap extracts (using either the Multi-Level Dijkstra or Contraction Hierarchies pipeline) and then serves routing queries. The README lists six services: Nearest snaps coordinates to the street network, Route finds the fastest path between coordinates, Table computes durations or distances between all pairs of points, Match snaps noisy GPS traces to roads, Trip solves the traveling salesman problem with a greedy heuristic, and Tile generates Mapbox Vector Tiles with routing metadata. These are available through the osrm-routed HTTP server, a C++ library interface, and bindings for Node.js and Python (read-only access). Pre-built Docker images are provided, and the project also documents building from source with vcpkg and CMake.",
+  "use_cases": [
+   "self-hosted turn-by-turn route planning",
+   "computing travel time matrices between many locations",
+   "snapping GPS traces to roads",
+   "routing API for a map application",
+   "solving small traveling salesman trip orders",
+   "generating routing-aware vector map tiles"
+  ],
+  "how_to_run": [
+   "docker run -t -v \"${PWD}:/data\" ghcr.io/project-osrm/osrm-backend osrm-extract -p /opt/car.lua /data/berlin-latest.osm.pbf",
+   "docker run -t -v \"${PWD}:/data\" ghcr.io/project-osrm/osrm-backend osrm-partition /data/berlin-latest.osrm",
+   "docker run -t -v \"${PWD}:/data\" ghcr.io/project-osrm/osrm-backend osrm-customize /data/berlin-latest.osrm",
+   "docker run -t -i -p 5000:5000 -v \"${PWD}:/data\" ghcr.io/project-osrm/osrm-backend osrm-routed --algorithm mld /data/berlin-latest.osrm",
+   "docker run -p 9966:9966 osrm/osrm-frontend",
+   "pip install osrm-bindings"
+  ],
+  "stack": [
+   "C++20",
+   "CMake",
+   "Ninja",
+   "vcpkg",
+   "Lua",
+   "Boost",
+   "TBB",
+   "libosmium",
+   "Node.js",
+   "Python",
+   "nanobind",
+   "Docker"
+  ],
+  "notable": [
+   "Two preprocessing pipelines: Multi-Level Dijkstra (recommended default) and Contraction Hierarchies, the latter suited to very large distance matrices",
+   "Six services covering nearest, route, table, match, trip, and vector tile generation",
+   "Official Docker images on ghcr.io, plus a separate osrm-frontend demo UI",
+   "Python bindings distributed as abi3 wheels built with nanobind, plus Node.js bindings"
+  ],
+  "caveats": [
+   "Preprocessing large extracts is slow; the README cites about 30 minutes for a 550.7MB file",
+   "Bindings provide read-only access to the routing engine",
+   "The public demo server is subject to an API usage policy",
+   "Building from source requires a C++20 compiler, CMake 3.29 or newer, and vcpkg, and the first configure builds all dependencies from source"
+  ],
+  "license": "BSD-2-Clause",
+  "category": "map routing engine",
+  "keywords": [
+   "osrm",
+   "open source routing machine",
+   "openstreetmap routing",
+   "osm routing engine",
+   "route planning",
+   "shortest path",
+   "fastest route",
+   "distance matrix",
+   "travel time matrix",
+   "gps trace map matching",
+   "map matching",
+   "traveling salesman",
+   "tsp solver",
+   "mapbox vector tiles",
+   "contraction hierarchies",
+   "multi-level dijkstra",
+   "osrm-routed",
+   "http routing api",
+   "self-hosted routing",
+   "navigation engine",
+   "directions api",
+   "nearest road snapping",
+   "c++ routing library",
+   "nodejs routing bindings",
+   "python routing bindings",
+   "docker routing server",
+   "run my own maps routing",
+   "offline directions server",
+   "route between coordinates",
+   "geospatial routing service"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4655,
+  "output": 1506
+ },
+ "generated": "2026-10-29"
+}

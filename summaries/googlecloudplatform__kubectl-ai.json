@@ -1,0 +1,110 @@
+{
+ "id": "googlecloudplatform/kubectl-ai",
+ "repo": "GoogleCloudPlatform/kubectl-ai",
+ "kind": "star",
+ "description": "AI powered Kubernetes Assistant",
+ "topics": [
+  "ai",
+  "assistant",
+  "cli",
+  "kubernetes"
+ ],
+ "language": "Go",
+ "stars": 7597,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-07-15",
+ "archived": false,
+ "accounts": [
+  "JagannathS"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "kubectl-ai is a Go command-line assistant that turns natural-language requests into Kubernetes operations using LLMs, runnable as a standalone binary or kubectl plugin.",
+  "what_it_does": "It translates user intent into kubectl and bash operations, using built-in tools for both and allowing custom tool definitions via a tools.yaml config. It supports many LLM providers, including Gemini (default), Vertex AI, Azure OpenAI, OpenAI, Grok, AWS Bedrock, and local models through ollama and llama.cpp. It runs in an interactive chat mode that keeps context across questions, or in a one-shot mode with a task passed as an argument. It can act as an MCP client to use tools from external MCP servers, and as an MCP server exposing its kubectl tools to clients over stdio or streamable HTTP, with optional OAuth 2.1 bearer-token auth on the HTTP endpoint. Settings can come from flags, a YAML config file, or environment variables, and a Docker image and web UI option are provided.",
+  "use_cases": [
+   "Ask an AI to run kubectl commands in plain English",
+   "Fetch pod logs for an app in a namespace",
+   "Use local LLMs like ollama with a Kubernetes cluster",
+   "Expose Kubernetes tools to other AI clients via MCP",
+   "Aggregate Kubernetes and external MCP tools behind one endpoint",
+   "Run a Kubernetes assistant in a Docker container against GKE"
+  ],
+  "how_to_run": [
+   "curl -sSL | bash  (quick install, Linux and macOS)",
+   "kubectl krew install ai  (install via krew)",
+   "export GEMINI_API_KEY=your_api_key_here && kubectl-ai",
+   "kubectl-ai --quiet \"fetch logs for nginx app in hello namespace\"",
+   "kubectl-ai --mcp-server --mcp-server-mode streamable-http --http-port 9080",
+   "docker build -t kubectl-ai:latest -f images/kubectl-ai/Dockerfile ."
+  ],
+  "stack": [
+   "Go",
+   "kubectl",
+   "Gemini API",
+   "Vertex AI",
+   "Azure OpenAI",
+   "OpenAI",
+   "Grok (X.AI)",
+   "AWS Bedrock",
+   "ollama",
+   "llama.cpp",
+   "MCP (Model Context Protocol)",
+   "Docker"
+  ],
+  "notable": [
+   "Supports many LLM providers including local models via ollama and llama.cpp",
+   "Works as both an MCP client and an MCP server, aggregating tools from other MCP servers",
+   "Optional OAuth 2.1 bearer-token authentication for the HTTP MCP endpoint",
+   "Runs as a kubectl plugin (kubectl ai) and as a standalone binary"
+  ],
+  "caveats": [
+   "The README says it is not an officially supported Google product and is not eligible for the Google VRP",
+   "The streamable-http MCP endpoint is unauthenticated unless OAuth flags are set",
+   "Some models need the --enable-tool-use-shim flag for tool calling",
+   "MCP client mode requires version v0.0.12 or later"
+  ],
+  "license": "Apache-2.0",
+  "category": "kubernetes ai assistant",
+  "keywords": [
+   "kubernetes assistant",
+   "kubectl ai",
+   "natural language kubernetes",
+   "ai kubectl plugin",
+   "llm kubernetes cli",
+   "gemini kubernetes",
+   "ollama kubernetes",
+   "llama.cpp",
+   "openai cli",
+   "bedrock claude kubernetes",
+   "azure openai kubernetes",
+   "mcp server kubernetes",
+   "mcp client",
+   "model context protocol",
+   "kubectl commands in plain english",
+   "ask ai to run kubectl",
+   "fetch pod logs",
+   "k8s chatbot",
+   "cluster management with ai",
+   "devops ai helper",
+   "docker kubectl assistant",
+   "gke assistant",
+   "oauth 2.1 mcp",
+   "streamable http mcp",
+   "tool aggregation hub",
+   "krew plugin ai",
+   "local llm kubernetes",
+   "interactive kubernetes shell",
+   "kubernetes troubleshooting ai",
+   "go cli kubernetes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7086,
+  "output": 1467
+ },
+ "generated": "2026-10-29"
+}

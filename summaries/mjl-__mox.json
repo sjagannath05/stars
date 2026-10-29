@@ -1,0 +1,88 @@
+{
+ "id": "mjl-/mox",
+ "repo": "mjl-/mox",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Communication - Email - Complete Solutions",
+   "entry": "Mox - Complete e-mail solution with IMAP4, SMTP, SPF, DKIM, DMARC, MTA-STS, DANE and DNSSEC, reputation-based and content-based junk filtering, Internationalization (IDNA), automatic TLS with ACME and Let's Encrypt, account autoconfiguration, and webmail. (Source Code) MIT Go"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mox is an MIT-licensed, self-hosted mail server written in Go that bundles SMTP, IMAP, webmail, email authentication (SPF/DKIM/DMARC), spam filtering and automatic TLS.",
+  "what_it_does": "Mox provides SMTP for receiving, submitting and delivering email, and IMAP4 for client access, with webmail for browser-based reading and sending. It authenticates messages and deliveries with SPF, DKIM, DMARC (including aggregate reports), DANE and MTA-STS, and supports REQUIRETLS and TLSRPT reporting. Spam handling combines per-user reputation tracking, a per-user Bayesian filter learning from Junk/Non-Junk classification, and temporary slowing of low-reputation senders, with rejected mail held in a Rejects mailbox. It obtains TLS certificates automatically via ACME (Let's Encrypt and other CAs), and includes a web admin interface for domains, accounts, aliases and DNS record instructions. Other features named include account autodiscovery, a built-in webserver/reverse proxy, an HTTP/JSON webapi and webhooks for transactional email, Prometheus metrics, and a \"mox localserve\" test mode.",
+  "use_cases": [
+   "Self-host a mail server for my own domain",
+   "Run email for a small team or family",
+   "Send transactional email through an HTTP API",
+   "Set up IMAP and SMTP accounts with automatic TLS",
+   "Browse and send email from a web browser",
+   "Test email delivery locally during development"
+  ],
+  "how_to_run": [
+   "useradd -m -d /home/mox mox",
+   "cd /home/mox",
+   "GOBIN=$PWD CGO_ENABLED=0 go install github.com/mjl-/mox@latest",
+   "./mox quickstart you@example.com"
+  ],
+  "stack": [
+   "Go (>= 1.24)",
+   "bbolt via bstore database library",
+   "ACME / Let's Encrypt",
+   "Docker image (optional)"
+  ],
+  "notable": [
+   "Complete mail stack (SMTP, IMAP4, webmail, admin UI) in one binary",
+   "Reputation-based and Bayesian junk filtering learned per user",
+   "Automatic TLS via ACME with DANE and MTA-STS support",
+   "Quickstart command generates config and prints required DNS records",
+   "Built-in webserver/reverse proxy and HTTP/JSON webapi with webhooks"
+  ],
+  "caveats": [
+   "Only fully works on unix systems; on Windows 'mox serve' does not yet work (localserve and most subcommands do); no Plan 9 support",
+   "Modern email requires HTTPS and mox currently needs its own webserver for ACME, so a dedicated machine is recommended",
+   "Docker is described as not recommended and requires host networking; POP3 and direct maildir access are not planned"
+  ],
+  "category": "self-hosted email server",
+  "keywords": [
+   "mail server",
+   "self-hosted email",
+   "smtp server",
+   "imap server",
+   "webmail",
+   "spf dkim dmarc",
+   "spam filter",
+   "bayesian spam filtering",
+   "junk mail filter",
+   "lets encrypt email",
+   "acme tls",
+   "mta-sts",
+   "dane",
+   "mox",
+   "golang mail server",
+   "email for my own domain",
+   "run my own email",
+   "transactional email api",
+   "email autoconfig",
+   "mail server for family",
+   "replace gmail for my domain",
+   "mail delivery reputation",
+   "catch-all email hosting",
+   "imap client access",
+   "dmarc aggregate reports",
+   "single binary email server",
+   "email localserve testing"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10128,
+  "output": 1286
+ },
+ "generated": "2026-10-29"
+}

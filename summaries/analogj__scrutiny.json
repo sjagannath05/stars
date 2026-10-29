@@ -1,0 +1,88 @@
+{
+ "id": "analogj/scrutiny",
+ "repo": "AnalogJ/scrutiny",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Monitoring",
+   "entry": "Scrutiny | Hard drive S.M.A.R.T. monitoring with a web dashboard"
+  }
+ ],
+ "summary": {
+  "one_liner": "Scrutiny is a hard drive health dashboard that wraps smartd/smartctl S.M.A.R.T. data collection in a web UI with historical tracking and notifications.",
+  "what_it_does": "Scrutiny runs a collector that uses smartctl --scan to auto-detect connected drives and records their S.M.A.R.T. metrics on a schedule (daily by default). A web dashboard focuses on critical metrics and keeps S.M.A.R.T attribute history so slow degradation is visible. It merges manufacturer S.M.A.R.T thresholds with real-world failure rates to set customized thresholds. It also tracks drive temperature. Notifications for SMART failures, collector errors, and missed uploads can be sent through many services, including email, webhooks, Slack, Telegram, and ntfy. It ships as a Docker omnibus image, a hub/spoke Docker setup with a separate InfluxDB, or a manual install.",
+  "use_cases": [
+   "monitor hard drive health on a home or head-less server",
+   "track S.M.A.R.T attribute trends over time",
+   "get alerts when a drive is failing",
+   "view all server disks in one web dashboard",
+   "run smartd monitoring in Docker across multiple servers"
+  ],
+  "how_to_run": [
+   "docker run -p 8080:8080 -p 8086:8086 --restart unless-stopped -v `pwd`/scrutiny:/opt/scrutiny/config -v `pwd`/influxdb2:/opt/scrutiny/influxdb -v /run/udev:/run/udev:ro --cap-add SYS_RAWIO --device=/dev/sda --device=/dev/sdb --name scrutiny ghcr.io/analogj/scrutiny:latest-omnibus",
+   "docker exec scrutiny /opt/scrutiny/bin/scrutiny-collector-metrics run"
+  ],
+  "stack": [
+   "Go",
+   "smartctl / smartmontools",
+   "InfluxDB 2.8",
+   "Docker",
+   "YAML configuration"
+  ],
+  "notable": [
+   "Customized thresholds based on real-world failure rates, not only manufacturer S.M.A.R.T. limits",
+   "Auto-detects drives via smartctl --scan, including many RAID controllers",
+   "Notifications for SMART failures, collector errors, and missed uploads, with per-device overrides",
+   "Omnibus, hub/spoke, rootless Podman Quadlet, and manual install options",
+   "Builds for linux amd64/arm/arm64, freebsd, macOS, and Windows binaries"
+  ],
+  "caveats": [
+   "README says it is a Work-in-Progress with rough edges",
+   "NVMe drives need the extra SYS_ADMIN capability; RAID disks must be passed through to the container",
+   "Windows Docker support is marked WIP; some ARM targets have only binaries or limited Docker support",
+   "Hub/spoke mode requires running InfluxDB separately"
+  ],
+  "license": "MIT",
+  "category": "hard drive monitoring",
+  "keywords": [
+   "s.m.a.r.t monitoring",
+   "smart monitoring",
+   "smartd",
+   "smartctl",
+   "smartmontools",
+   "hard drive health",
+   "disk health dashboard",
+   "drive failure prediction",
+   "hard disk temperature",
+   "disk failure alerts",
+   "docker disk monitor",
+   "influxdb",
+   "raid drive monitoring",
+   "nvme health",
+   "check my hard drives",
+   "see if my disk is failing",
+   "get notified when a drive dies",
+   "webui for smartd",
+   "self-hosted disk monitor",
+   "homelab storage monitoring",
+   "ntfy notifications",
+   "webhook alerts",
+   "drive attribute history",
+   "omnibus docker image",
+   "hub spoke collector",
+   "go",
+   "disk health web ui",
+   "backup drive warning"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6513,
+  "output": 1388
+ },
+ "generated": "2026-10-29"
+}

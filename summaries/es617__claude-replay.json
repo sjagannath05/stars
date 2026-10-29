@@ -1,0 +1,92 @@
+{
+ "id": "es617/claude-replay",
+ "repo": "es617/claude-replay",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Creative Media",
+   "entry": "claude-replay by es617 - An outstanding, creative library that converts Claude Code session transcripts into self-contained, embeddable HTML replays - interactive playback with speed control, a local editor, collapsible tool-call and thinking blocks, redaction for private information - the output is fantastic. Also supports other providers."
+  }
+ ],
+ "summary": {
+  "one_liner": "A CLI and web editor that converts AI coding agent session transcripts (Claude Code, Cursor, Codex CLI, Gemini CLI, OpenCode, Kimi Code, Hermes Agent) into self-contained, interactive HTML replays.",
+  "what_it_does": "Parses agent session logs (JSONL, JSON, or Hermes SQLite) and renders them as a single HTML file with no external dependencies. The player offers play/pause, step controls, a progress bar, speed control from 0.5x to 5x, keyboard shortcuts, and collapsible tool-call and thinking blocks. Output can include bookmarks, a file activity sidebar, and a choice of color themes or custom theme JSON. Sessions can be chained into one replay, and filtered by turn or time range. Automatic secret redaction runs before export, with extra manual redaction rules. A local web editor (default when run with no arguments) lets you browse discovered sessions, include or exclude turns, edit prompts, and export. A --serve --watch mode regenerates the replay as the session file changes.",
+  "use_cases": [
+   "Share an AI coding session as a blog post or demo",
+   "Attach a replay to a bug report instead of raw logs",
+   "Embed an agent session in documentation via iframe",
+   "Monitor a running agent session live on a remote machine",
+   "Redact secrets from a transcript before publishing",
+   "Step through an AI agent's reasoning and tool usage for teaching"
+  ],
+  "how_to_run": [
+   "npm install -g claude-replay",
+   "npx claude-replay",
+   "claude-replay abc123def456 -o replay.html",
+   "claude-replay session.jsonl --serve --watch"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "Vanilla JavaScript player",
+   "esbuild (dev-only, for minified template)",
+   "node:sqlite (Node 22.5+, optional for live Hermes reads)",
+   "Browser DecompressionStream API"
+  ],
+  "notable": [
+   "Output is a single self-contained HTML file with compressed embedded transcript data",
+   "Auto-detects transcript format across seven agent tools",
+   "Maps tool names from other agents to Claude Code equivalents for consistent rendering",
+   "Web editor works on a local server without modifying original JSONL files",
+   "Paced wording mode reveals prose word by word at a tunable reading speed"
+  ],
+  "caveats": [
+   "Replays embed the full transcript, including code, paths and tool outputs; pattern-based redaction is best-effort only",
+   "Reading live Hermes sessions requires Node 22.5+; OpenCode sessions must be exported first",
+   "Cursor transcripts have no timestamps, so playback uses synthetic paced timing by default",
+   "Not affiliated with or endorsed by Anthropic (community tool)"
+  ],
+  "license": "MIT",
+  "category": "ai session replay",
+  "keywords": [
+   "claude code replay",
+   "session transcript viewer",
+   "agent session playback",
+   "html replay generator",
+   "terminal recording alternative",
+   "asciinema-like playback",
+   "share ai coding session",
+   "cursor transcript converter",
+   "codex cli logs",
+   "gemini cli chat export",
+   "opencode export",
+   "kimi code transcript",
+   "hermes agent sessions",
+   "jsonl to html",
+   "embed replay iframe",
+   "self-contained html",
+   "secret redaction transcript",
+   "live watch agent session",
+   "coding session demo",
+   "bug report attachment",
+   "interactive transcript player",
+   "replay editor web ui",
+   "tool call viewer",
+   "thinking block viewer",
+   "paced playback timing",
+   "color theme html export",
+   "chat log to html",
+   "session recording share",
+   "ai pair programming replay"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10294,
+  "output": 1336
+ },
+ "generated": "2026-10-29"
+}

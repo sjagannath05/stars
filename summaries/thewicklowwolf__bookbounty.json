@@ -1,0 +1,84 @@
+{
+ "id": "thewicklowwolf/bookbounty",
+ "repo": "TheWicklowWolf/BookBounty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Automation",
+   "entry": "BookBounty ⚠ - Retrieve missing Readarr books from Library Genesis. MPL-2.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "BookBounty is a Docker-based tool that searches Library Genesis for books missing from a Readarr library and downloads matches.",
+  "category": "media automation tooling",
+  "keywords": [
+   "readarr",
+   "missing books",
+   "library genesis",
+   "libgen",
+   "ebook downloader",
+   "book automation",
+   "docker",
+   "docker-compose",
+   "readarr integration",
+   "find missing ebooks",
+   "fill gaps in ebook library",
+   "epub downloader",
+   "mobi",
+   "azw3",
+   "djvu",
+   "fiction search",
+   "non-fiction search",
+   "scheduled sync",
+   "library scan",
+   "rename files readarr",
+   "self-hosted book library",
+   "pdf downloader",
+   "book metadata matching",
+   "ebook library automation",
+   "sonarr for books"
+  ],
+  "what_it_does": "BookBounty looks for books that Readarr is tracking but does not have, and searches Library Genesis for them. It matches results against Readarr titles and authors using a minimum match ratio (default 90%). It filters downloads by preferred file extensions, with separate lists for fiction and non-fiction, and by language, taken from the Readarr Metadata Profile where possible. Downloads can be saved as single files or in an author/book folder structure. It can run on a schedule set by hour of day, and can trigger a Readarr library scan when downloads finish. Settings are supplied through environment variables, including the Readarr URL and API key, request timeout, thread limit, and an optional sleep interval between downloads.",
+  "use_cases": [
+   "fill gaps in a Readarr ebook library",
+   "automatically fetch missing ebooks on a schedule",
+   "download fiction or non-fiction books by title and author",
+   "organize downloaded books into author folders for Readarr",
+   "filter ebook downloads by format such as epub or mobi"
+  ],
+  "how_to_run": [
+   "Create a docker-compose.yml using the image thewicklowwolf/bookbounty:latest, mapping port 5000, /bookbounty/config, /bookbounty/downloads and /etc/localtime.",
+   "Set environment variables such as readarr_address, readarr_api_key, libgen_address and sync_schedule as needed.",
+   "Run docker-compose up -d.",
+   "Open the web interface on port 5000."
+  ],
+  "stack": [
+   "Docker",
+   "Docker Compose",
+   "Readarr",
+   "Library Genesis"
+  ],
+  "notable": [
+   "Can be scheduled to run at set hours of the day, with a deadband of up to 10 minutes from the start time",
+   "Two Readarr integration modes: mapping downloads straight into the main Readarr folder, or using an unprocessed folder with manual import",
+   "Can trigger a Readarr library scan automatically after downloads complete",
+   "Separate preferred extension lists for fiction and non-fiction searches"
+  ],
+  "caveats": [
+   "The only supported libgen_address URL is stated in the README, and the README does not say which other URLs are supported",
+   "Readarr does not rename files on import, so the Rename Files function may be needed afterwards",
+   "In the unprocessed-folder mode, some files may need manual import into Readarr"
+  ],
+  "license": "MPL-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2707,
+  "output": 1163
+ },
+ "generated": "2026-10-29"
+}

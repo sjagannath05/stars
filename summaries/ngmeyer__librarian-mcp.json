@@ -1,0 +1,91 @@
+{
+ "id": "ngmeyer/librarian-mcp",
+ "repo": "ngmeyer/librarian-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Obsidian",
+   "entry": "Librarian by ngmeyer - A standalone MCP server that gives Claude a markdown second-brain over any Obsidian vault or folder of .md files, with trigram search, auto-wikilinks on write, and real graph analytics (Louvain communities, PageRank, shortest-path, D3 visualization). Runs entirely locally with no network calls or telemetry, productionizing the \"LLM wiki\" pattern."
+  }
+ ],
+ "summary": {
+  "one_liner": "Librarian is a standalone, local MCP server that gives Claude read, write, search and graph-analysis tools over an Obsidian vault or any folder of markdown files.",
+  "what_it_does": "Librarian runs as a binary that Claude connects to over stdio via the Model Context Protocol. It exposes 17 tools for reading, writing, listing and tagging markdown files, plus daily-note creation and importing PDF, DOCX and image files to markdown (the import tool requires MarkItDown). Search uses an in-memory trigram index built at startup. When writing with library_write, it wraps mentions of existing note titles in [[wikilinks]], respecting frontmatter aliases and skipping code, URLs and existing links. Graph tools build a bidirectional link graph for BFS traversal, shortest path, connected components, hubs, bridges and orphans. Community detection uses Louvain, and the report and visualize tools produce god-node rankings (betweenness and PageRank) and a D3.js HTML graph view. The --setup flag writes config into Claude Desktop and Claude Code and installs a /librarian skill with 12 slash commands.",
+  "use_cases": [
+   "Search across an Obsidian vault from Claude",
+   "Automatically link related notes when Claude writes files",
+   "Map how notes connect and find hub or orphan notes",
+   "Detect topic clusters in a markdown knowledge base",
+   "Append to a daily journal note from Claude",
+   "Convert PDFs or DOCX files into vault markdown"
+  ],
+  "how_to_run": [
+   "brew install ngmeyer/tap/librarian-mcp",
+   "librarian-mcp --setup ~/my-vault",
+   "Restart Claude, then use /librarian analyze, /librarian search or /librarian status"
+  ],
+  "stack": [
+   "Rust",
+   "Model Context Protocol (stdio)",
+   "D3.js",
+   "MarkItDown (optional, for library_import)"
+  ],
+  "notable": [
+   "Runs entirely locally with no network calls or telemetry, per the README",
+   "Auto-wikilinks only on explicit library_write calls, never on files the user did not ask to change",
+   "Louvain community detection plus PageRank and betweenness for god-node ranking",
+   "--setup writes Claude Desktop and Claude Code configs with backups and installs a /librarian skill",
+   "Includes a 16-file example research vault"
+  ],
+  "caveats": [
+   "library_import depends on the separately installed MarkItDown tool",
+   "Multi-vault via LIBRARIAN_VAULTS is Unix only (colon-separated)",
+   "Source build requires Rust and the README's cargo install command is truncated"
+  ],
+  "license": "MIT",
+  "category": "obsidian mcp server",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "claude",
+   "claude desktop",
+   "claude code",
+   "obsidian",
+   "obsidian vault",
+   "markdown",
+   "markdown notes",
+   "second brain",
+   "personal knowledge base",
+   "wikilinks",
+   "auto-linking",
+   "trigram search",
+   "full-text search",
+   "knowledge graph",
+   "graph traversal",
+   "shortest path",
+   "louvain",
+   "community detection",
+   "pagerank",
+   "d3 visualization",
+   "graph view",
+   "backlinks",
+   "daily notes",
+   "pdf to markdown",
+   "local-first",
+   "offline notes",
+   "search my notes with ai",
+   "link my notes automatically",
+   "rust binary"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4661,
+  "output": 1203
+ },
+ "generated": "2026-10-29"
+}

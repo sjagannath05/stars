@@ -1,0 +1,98 @@
+{
+ "id": "kieraneglin/pinchflat",
+ "repo": "kieraneglin/pinchflat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Management",
+   "entry": "Pinchflat ⚠ - Download YouTube content built using yt-dlp. AGPL-3.0 Docker"
+  },
+  {
+   "list": "hotheadhacker/awesome-selfhost-docker",
+   "section": "Media",
+   "entry": "Pinchflat | YouTube media manager that downloads new content automatically"
+  }
+ ],
+ "summary": {
+  "one_liner": "Pinchflat is a self-hosted app that automatically downloads content from YouTube channels and playlists using yt-dlp, saving it to disk for media center apps.",
+  "what_it_does": "You set up rules for downloading from YouTube channels or playlists, and the app periodically checks for new content and downloads it. It is designed to be lightweight and self-contained, shipped as a single Docker container with a web interface and presets. Downloads go to disk so they can be watched in Plex, Jellyfin, Kodi, or VLC rather than in the app itself. It can also serve RSS feeds for podcast apps, download audio-only content, and integrate with SponsorBlock and Apprise notifications. Individual videos can be downloaded, but the README says it is best suited to channels and playlists. Advanced options include custom yt-dlp options, cookies for private playlists, cutoff dates, title filters, and automatic deletion of old content.",
+  "use_cases": [
+   "Automatically download new videos from YouTube channels",
+   "Archive YouTube playlists to local disk",
+   "Build a Plex, Jellyfin, or Kodi library from YouTube content",
+   "Turn YouTube channels into podcast RSS feeds",
+   "Download audio-only content from YouTube",
+   "Download private playlists using browser cookies"
+  ],
+  "how_to_run": [
+   "docker pull ghcr.io/kieraneglin/pinchflat:latest",
+   "docker run -e TZ=America/New_York -p 8945:8945 -v /host/path/to/config:/config -v /host/path/to/downloads:/downloads ghcr.io/kieraneglin/pinchflat:latest",
+   "Alternatively, install from the Unraid Community Apps store or use the Portainer/Docker Compose file in the README",
+   "Open the web interface on port 8945"
+  ],
+  "stack": [
+   "Elixir",
+   "yt-dlp",
+   "SQLite",
+   "Docker",
+   "Apprise",
+   "SponsorBlock"
+  ],
+  "notable": [
+   "Built on yt-dlp with a claimed novel approach for quickly detecting new uploads",
+   "Single Docker container with no external dependencies",
+   "Supports Plex, Jellyfin, and Kodi naming and layout, plus RSS feeds for podcast apps",
+   "Optional Prometheus metrics and Podman rootless setup documented",
+   "Available through Unraid Community Apps"
+  ],
+  "caveats": [
+   "README states the software is in active development and anything can break; no stability guarantees",
+   "Not intended for in-app viewing; content must be watched through a media center app or VLC",
+   "Users getting IP-limited may need to lower YT_DLP_WORKER_CONCURRENCY to 1",
+   "Config on network shares requires changing SQLite journal mode, with possible data loss if switched on an existing instance"
+  ],
+  "license": "AGPL-3.0",
+  "category": "youtube media downloader",
+  "keywords": [
+   "youtube downloader",
+   "yt-dlp",
+   "yt-dlp web interface",
+   "self-hosted youtube",
+   "youtube channel archiver",
+   "youtube playlist download",
+   "automatic video downloads",
+   "plex youtube",
+   "jellyfin youtube",
+   "kodi youtube",
+   "podcast rss from youtube",
+   "youtube audio download",
+   "sponsorblock",
+   "apprise notifications",
+   "docker youtube app",
+   "media archiving",
+   "youtube to podcast",
+   "download new youtube uploads",
+   "youtube shorts filter",
+   "livestream download rules",
+   "tube archivist alternative",
+   "ytdl-sub alternative",
+   "tubesync alternative",
+   "unraid youtube",
+   "podman youtube",
+   "youtube private playlist cookies",
+   "prometheus metrics",
+   "self-hosted media manager",
+   "archive youtube channel"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4545,
+  "output": 1364
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,96 @@
+{
+ "id": "adinhodovic/compass",
+ "repo": "adinhodovic/compass",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Compass - Landing page for services, dashboards, and documents, with automatic discovery from sources such as Docker, Kubernetes, and Tailscale. (Source Code) Apache-2.0 Go/Docker/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "Compass is a self-hosted landing page that automatically discovers and displays services, dashboards, and documents from sources such as Docker, Kubernetes, and Tailscale.",
+  "what_it_does": "Compass reads a YAML config that lists one or more service sources and renders what those sources expose as a server-driven web UI. The README names Docker, Kubernetes, Tailscale, Headscale, static config, and JSON API sources. It shows per-source health and refresh status, along with service metadata, panels, tags, and debug views. Users can search, filter, and jump into discovered services without writing hand-maintained cards. The UI is server-rendered HTML using HTMX, Alpine.js, Tailwind, and daisyUI. The README gives Docker and Helm (OCI chart) quick-start examples for running it.",
+  "use_cases": [
+   "homelab service dashboard",
+   "auto-discover docker containers as links",
+   "kubernetes cluster service landing page",
+   "browse tailscale or headscale machines and services",
+   "central page for internal dashboards and documents",
+   "search and filter self-hosted services"
+  ],
+  "how_to_run": [
+   "Write a compass.yaml with an organization name and a docker source (type: docker, name: local)",
+   "docker run --rm -p 8080:8080 --group-add $(getent group docker | cut -d: -f3) -v /var/run/docker.sock:/var/run/docker.sock:ro -v $PWD/compass.yaml:/etc/compass/compass.yaml:ro adinhodovic/compass:latest -c /etc/compass/compass.yaml",
+   "For Kubernetes, write compass.yaml with a kubernetes source (type: kubernetes) and namespaces: []",
+   "helm install compass oci://ghcr.io/adinhodovic/charts/compass -n compass --create-namespace --set-file config=compass.yaml"
+  ],
+  "stack": [
+   "Go",
+   "Docker",
+   "Kubernetes (Helm chart)",
+   "HTMX",
+   "Alpine.js",
+   "Tailwind CSS",
+   "daisyUI"
+  ],
+  "notable": [
+   "Automatic discovery from Docker, Kubernetes, Tailscale, and Headscale sources",
+   "Source health and refresh status shown in the UI",
+   "Helm chart installs with in-cluster RBAC for Kubernetes discovery",
+   "Server-rendered HTML UI with HTMX and Alpine.js rather than a heavy SPA"
+  ],
+  "caveats": [
+   "Docker source needs access to the Docker socket; the README suggests adding the host docker GID or using a socket proxy such as tecnativa/docker-socket-proxy",
+   "Kubernetes setup relies on Helm-granted in-cluster RBAC for discovery",
+   "README points to separate Getting started and Docs pages for fuller configuration; the README itself gives only minimal examples"
+  ],
+  "license": "Apache-2.0",
+  "category": "self-hosted service dashboard",
+  "keywords": [
+   "landing page",
+   "service dashboard",
+   "homepage",
+   "service discovery",
+   "docker dashboard",
+   "kubernetes dashboard",
+   "tailscale",
+   "headscale",
+   "homelab dashboard",
+   "self-hosted dashboard",
+   "container discovery",
+   "docker socket",
+   "helm chart",
+   "htmx",
+   "go application",
+   "personal dashboard",
+   "service directory",
+   "link portal",
+   "start page",
+   "find my services",
+   "list running containers",
+   "show my homelab services",
+   "status of services",
+   "search services",
+   "tags and metadata",
+   "static config",
+   "json api source",
+   "daisyui",
+   "tailwind",
+   "alpine.js",
+   "docker-socket-proxy",
+   "internal dashboards",
+   "bookmarks page"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2092,
+  "output": 1287
+ },
+ "generated": "2026-10-29"
+}

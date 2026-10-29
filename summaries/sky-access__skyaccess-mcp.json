@@ -1,0 +1,93 @@
+{
+ "id": "sky-access/skyaccess-mcp",
+ "repo": "sky-access/skyaccess-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Travel",
+   "entry": "SkyAccess MCP - Search 5,000+ live empty leg flights, get charter price estimates and booking links. No account or API key. #free #mcp"
+  }
+ ],
+ "summary": {
+  "one_liner": "A free, anonymous hosted MCP server that lets AI assistants search live empty leg private jet flights, get indicative charter price estimates, and generate booking links.",
+  "what_it_does": "The server exposes five tools over Streamable HTTP: search_empty_legs (filter live empty leg flights by origin, destination, date range, passengers and max price, returning up to 5 flights), get_flight (re-read one flight by id), booking_handoff (return a SkyAccess booking page link for a flight id without holding or changing anything), get_charter_estimate (indicative USD price range per aircraft category for a route), and request_booking (send the traveler's name, email and trip details so a SkyAccess specialist can follow up; this is the only write tool). The README says inventory is around 5,000+ flights from 900+ certified charter operators, mostly in the United States, and that no payment is taken by any tool. There is no account or API key, and nothing needs to be installed beyond adding the endpoint to a client. A npm package provides an installer and a stdio-to-HTTP bridge for clients that cannot accept a URL.",
+  "use_cases": [
+   "find cheap private jet empty legs",
+   "compare charter price estimates for a route",
+   "get a booking link for an empty leg flight",
+   "request a charter quote from a specialist",
+   "add a flight search tool to an AI assistant",
+   "search private flights by route and date"
+  ],
+  "how_to_run": [
+   "claude mcp add --transport http skyaccess <endpoint URL from README>",
+   "claude plugin marketplace add sky-access/skyaccess-mcp",
+   "claude plugin install skyaccess@skyaccess",
+   "gemini extensions install (see README for the extension source)",
+   "npx -y skyaccess-mcp  # registers with supported clients found on this machine (Node 20+)"
+  ],
+  "stack": [
+   "Model Context Protocol (MCP)",
+   "Streamable HTTP transport",
+   "JSON-RPC",
+   "Node.js 20+ (npm package skyaccess-mcp, no runtime dependencies)",
+   "vitest (dev dependency)"
+  ],
+  "notable": [
+   "Hosted endpoint with no account, sign-up or API key; nothing runs locally for the core server",
+   "Ships client-specific packages for Claude Code, Gemini CLI, VS Code Copilot, Kiro, Google Antigravity, GitHub Copilot CLI, Cursor and a Dify plugin",
+   "Read-only tools are separated from the single write tool, request_booking, which is annotated as non-read-only",
+   "Stdio-to-HTTP bridge and a config installer that backs up existing entries and leaves other keys untouched",
+   "Documented rate limits and error codes, with a troubleshooting table"
+  ],
+  "caveats": [
+   "Tool calls are rate limited to 30 per 60 seconds per IP, and request_booking to 10 per hour per IP",
+   "Flights with price null have no published price, and prices and estimates are indicative only",
+   "Inventory is mostly in the United States and changes constantly, so results vary from run to run"
+  ],
+  "license": "MIT",
+  "category": "travel flight search",
+  "keywords": [
+   "empty leg flights",
+   "private jet search",
+   "charter flights",
+   "charter price estimate",
+   "mcp server",
+   "model context protocol",
+   "streamable http",
+   "ai assistant tool",
+   "claude code plugin",
+   "gemini cli extension",
+   "cursor mcp",
+   "vs code copilot mcp",
+   "kiro power",
+   "private aviation",
+   "book private jet",
+   "cheap private jet deals",
+   "find jet flights",
+   "charter quote",
+   "flight booking link",
+   "stdio bridge",
+   "json-rpc",
+   "hosted mcp endpoint",
+   "no api key",
+   "free mcp server",
+   "faa part 135",
+   "aircraft charter",
+   "one-way jet flight",
+   "private flight deals",
+   "npm skyaccess-mcp",
+   "travel tools for ai"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7177,
+  "output": 1409
+ },
+ "generated": "2026-10-29"
+}

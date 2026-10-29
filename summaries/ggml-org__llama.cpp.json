@@ -1,0 +1,105 @@
+{
+ "id": "ggml-org/llama.cpp",
+ "repo": "ggml-org/llama.cpp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "AI Agent Tools",
+   "entry": "llama.cpp — High-performance local inference engine for LLMs and multimodal models, supporting CPU/GPU execution, quantization, and broad model compatibility."
+  },
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Runtimes",
+   "entry": "llama.cpp - Where new quantization types, kernels and thread pools land first, each with the perplexity and speed table behind it."
+  }
+ ],
+ "summary": {
+  "one_liner": "llama.cpp is a C/C++ inference engine for running LLMs and vision-language models locally or in the cloud across CPUs and many GPU backends.",
+  "what_it_does": "The README describes llama.cpp as a plain C/C++ implementation (no dependencies) built on the ggml library, aimed at LLM and VLM inference with minimal setup. It lists support for 1.5- to 8-bit integer quantization, SIMD paths for x86 (AVX/AVX2/AVX512/AMX), ARM NEON and Apple Metal/Accelerate, and RISC-V vector extensions. GPU backends named include CUDA, HIP (AMD), MUSA (Moore Threads), Vulkan, SYCL, Metal, OpenCL, WebGPU and others, and CPU+GPU hybrid inference is supported for models larger than VRAM. The README also shows a `llama cli` tool and a `llama serve` command that exposes an OpenAI-compatible API server with a built-in web UI, plus GBNF grammar support and a llama-server REST API.",
+  "use_cases": [
+   "run LLMs locally on a laptop or desktop",
+   "serve an OpenAI-compatible chat API on local hardware",
+   "run quantized models on limited memory",
+   "multimodal (vision-language) inference from the command line",
+   "partial GPU offload for models bigger than VRAM",
+   "inference on Apple silicon, NVIDIA, AMD or Intel hardware"
+  ],
+  "how_to_run": [
+   "curl -LsSf https://... | sh  (installer, per README)",
+   "Download pre-built binaries from the releases page",
+   "Run with Docker (see Docker documentation)",
+   "Build from source by cloning the repository (see build guide)",
+   "llama cli -hf ggml-org/Qwen3.5-0.8B-GGUF",
+   "llama serve -hf ggml-org/Qwen3.5-0.8B-GGUF"
+  ],
+  "stack": [
+   "C",
+   "C++",
+   "ggml",
+   "CUDA",
+   "Metal",
+   "Vulkan",
+   "SYCL",
+   "cpp-httplib",
+   "nlohmann/json",
+   "stb",
+   "miniaudio"
+  ],
+  "notable": [
+   "Plain C/C++ with no external dependencies, built on the ggml library",
+   "Broad backend coverage from CUDA, HIP and Metal to Vulkan, SYCL, WebGPU and CANN (Ascend NPU)",
+   "Integer quantization from 1.5-bit to 8-bit",
+   "Built-in web UI and OpenAI-compatible llama-server",
+   "Hybrid CPU+GPU inference for models larger than VRAM"
+  ],
+  "caveats": [
+   "Some backends are marked as in progress (e.g., OpenVINO), so support may be incomplete",
+   "Hardware-specific builds and backends need separate setup, as described in the build docs",
+   "The README does not give detailed platform or performance numbers"
+  ],
+  "license": "unknown",
+  "category": "local llm inference",
+  "keywords": [
+   "llama.cpp",
+   "ggml",
+   "llm inference",
+   "local llm",
+   "run llm locally",
+   "gguf",
+   "quantization",
+   "int4 quantization",
+   "gguf models",
+   "openai compatible server",
+   "llama-server",
+   "vlm inference",
+   "multimodal inference",
+   "cpu inference",
+   "gpu inference",
+   "cuda",
+   "metal",
+   "vulkan",
+   "sycl",
+   "hip amd",
+   "apple silicon llm",
+   "ollama alternative",
+   "lm studio alternative",
+   "self-hosted llm api",
+   "chat with model offline",
+   "partial gpu offload",
+   "hybrid cpu gpu inference",
+   "gbnf grammar",
+   "c++ inference engine",
+   "run ai model on laptop"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2910,
+  "output": 1358
+ },
+ "generated": "2026-10-29"
+}

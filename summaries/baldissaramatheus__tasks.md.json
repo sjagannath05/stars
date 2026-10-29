@@ -1,0 +1,91 @@
+{
+ "id": "baldissaramatheus/tasks.md",
+ "repo": "BaldissaraMatheus/Tasks.md",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Task Management & To-do Lists",
+   "entry": "Tasks.md - A self-hosted, file based task management board that supports Markdown syntax. MIT Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tasks.md is a self-hosted task management board where lanes, cards and tags are stored as plain Markdown files on disk, run mainly via a single Docker image.",
+  "what_it_does": "It provides a responsive web board for creating cards, lanes and tags, with each card written as a Markdown file. Every lane is a directory in the filesystem and every task is a file, so the data stays readable outside the app. It offers light and dark themes that follow the operating system, plus three built-in color themes (Adwaita, Nord, Catppuccin) and custom CSS overrides via a custom.css file. It supports running under a subpath reverse proxy through a BASE_PATH variable, can be installed as a PWA, and includes multilingual support with browser-based locale detection. A background cleanup removes local images no longer referenced by any task, on a configurable interval.",
+  "use_cases": [
+   "self-hosted kanban board for personal to-dos",
+   "managing tasks as Markdown files on disk",
+   "team task lanes behind a reverse proxy",
+   "keeping project tasks alongside Obsidian notes",
+   "customizing a task board's look with CSS themes"
+  ],
+  "how_to_run": [
+   "docker run -d --name tasks.md -e PUID=1000 -e PGID=1000 -p 8080:8080 -v /path/to/tasks/:/tasks/ -v /path/to/config/:/config/ --restart unless-stopped baldissaramatheus/tasks.md",
+   "Alternatively, use the docker-compose example in the README with image baldissaramatheus/tasks.md, mapping /tasks and /config volumes and port 8080.",
+   "Source install: git clone --recursive the repo, then run npm install and npm start in both the /frontend and /backend directories.",
+   "Optional environment variables: TITLE, BASE_PATH, LOCAL_IMAGES_CLEANUP_INTERVAL (set to 0 to disable cleanup)."
+  ],
+  "stack": [
+   "SolidJS",
+   "Koa",
+   "Stacks-Editor",
+   "serve-static",
+   "Node.js (npm)",
+   "Docker"
+  ],
+  "notable": [
+   "Tasks are plain Markdown files and lanes are directories, so data is portable and works with Obsidian",
+   "Single Docker image install with PUID/PGID support for file ownership",
+   "Three default color themes plus full CSS color-variable customization",
+   "Subpath reverse-proxy support and installable as a PWA",
+   "Automatic cleanup of unused local images"
+  ],
+  "caveats": [
+   "PWA does not work when BASE_PATH is set to anything other than \"/\"",
+   "Upgrading from version 2.x to 3.x requires extra steps described in the README",
+   "The README describes the project as low maintenance, with a deliberately narrow feature scope"
+  ],
+  "license": "MIT",
+  "category": "self-hosted task management",
+  "keywords": [
+   "tasks.md",
+   "kanban board",
+   "self-hosted kanban",
+   "task management",
+   "to-do list",
+   "todo app",
+   "markdown tasks",
+   "markdown files",
+   "file based tasks",
+   "docker task board",
+   "docker kanban",
+   "lanes and cards",
+   "trello alternative",
+   "personal task board",
+   "project board",
+   "obsidian tasks",
+   "reverse proxy subpath",
+   "pwa task app",
+   "dark mode task board",
+   "custom css theme",
+   "nord theme",
+   "catppuccin theme",
+   "adwaita theme",
+   "solidjs",
+   "koa backend",
+   "share tasks with my team",
+   "organize to-dos in folders",
+   "self hosted to do list",
+   "multilingual task board"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3396,
+  "output": 1298
+ },
+ "generated": "2026-10-29"
+}

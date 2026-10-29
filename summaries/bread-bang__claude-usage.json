@@ -1,0 +1,98 @@
+{
+ "id": "bread-bang/claude-usage",
+ "repo": "Bread-bang/claude-usage",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Claude Usage - Menu bar app for Claude Code that keeps per-pane context (in the status line) and session/weekly usage always visible — no usage or context command to run. [![Open-Source Software][OSS Icon]](https://github.com/Bread-bang/claude-usage) ![Freeware][Freeware Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Claude Usage - Menu bar app that shows your Claude Code usage — current session, weekly, Sonnet, and credits."
+  }
+ ],
+ "summary": {
+  "one_liner": "A lightweight native macOS menu bar app that shows Claude Code session and weekly usage, plus a live context readout in the Claude Code status line.",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude code",
+   "claude usage",
+   "menu bar app",
+   "macos menubar",
+   "menubar extra",
+   "swiftui",
+   "swift",
+   "status line",
+   "context window",
+   "token usage",
+   "usage monitor",
+   "rate limit monitor",
+   "session usage",
+   "weekly usage",
+   "anthropic api",
+   "oauth keychain",
+   "tmux",
+   "cmux",
+   "homebrew cask",
+   "notarized macos app",
+   "track claude spending",
+   "see how much claude code i have left",
+   "watch my context window fill up",
+   "know when to run compact",
+   "usage bar",
+   "menu bar usage widget",
+   "claude code statusline",
+   "electron alternative",
+   "open source mac utility",
+   "pay as you go credits tracker"
+  ],
+  "what_it_does": "The app sits in the macOS menu bar and shows the current 5-hour session, the weekly usage (all models and Sonnet only), and pay-as-you-go credits, each with a utilization bar and reset time. It fetches this from the usage endpoint Claude Code uses, without launching Claude Code. It also adds a one-line status readout under the Claude Code prompt showing model, percent of context full, and tokens used (for example \"Opus 4.8 · 11% · 113K/1M\"), so users can run /compact before context fills. Each pane renders its own status line, so it works across tmux and cmux panes. The README says it reads the OAuth token from the existing Keychain item and makes no other network requests, with no analytics. Settings include a selectable icon, a refresh interval of 30s, 1m, or 5m, and a menu-bar number for a chosen window with traffic-light colors. It keeps the last good data when refreshes fail and backs off on rate limits.",
+  "use_cases": [
+   "check Claude Code session and weekly usage without opening a terminal",
+   "monitor context window fill level in Claude Code",
+   "decide when to run /compact in a long session",
+   "track pay-as-you-go Claude credits",
+   "see usage reset times at a glance on macOS",
+   "show Claude Code status line in tmux or cmux panes"
+  ],
+  "how_to_run": [
+   "brew install bread-bang/tap/claude-usage",
+   "git clone <repository URL>",
+   "cd claude-usage",
+   "./scripts/bundle.sh --open",
+   "swift run  (run from source, per Development section)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "MenuBarExtra",
+   "macOS Keychain via /usr/bin/security",
+   "Homebrew"
+  ],
+  "notable": [
+   "Context readout in the Claude Code status line for each pane, with no Accessibility permissions needed",
+   "Usage data fetched from the same endpoint Claude Code uses, without spending Agent SDK credits",
+   "Reuses the OAuth token already in the macOS Keychain from Claude Code; no backend or telemetry",
+   "Pure Swift and SwiftUI with no Electron and no dependencies; notarized build",
+   "Does not overwrite another tool's status line in ~/.claude/settings.json"
+  ],
+  "caveats": [
+   "Relies on the undocumented api.anthropic.com/api/oauth/usage endpoint and Claude Code's Keychain format, which can change without notice",
+   "Requires macOS 13 or later and Claude Code signed in at least once",
+   "Only shows data for the Claude Code account signed in via the Keychain item; the claude.ai usage endpoint is deliberately not used"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2934,
+  "output": 1320
+ },
+ "generated": "2026-10-29"
+}

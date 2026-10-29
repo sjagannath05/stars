@@ -1,0 +1,94 @@
+{
+ "id": "future-agi/traceai",
+ "repo": "future-agi/traceAI",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "LLM Ops",
+   "entry": "traceAI - Open-source OpenTelemetry-native tracing framework for LLM and AI agent applications. Auto-instruments 20+ frameworks (OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, Bedrock)."
+  }
+ ],
+ "summary": {
+  "one_liner": "traceAI is an open-source, OpenTelemetry-native tracing library that instruments LLM calls, prompts, tokens, retrieval steps and agent actions in Python, TypeScript, Java and C# and sends them to any OTel-compatible backend.",
+  "category": "llm observability tracing",
+  "keywords": [
+   "opentelemetry",
+   "otel",
+   "llm tracing",
+   "llm observability",
+   "ai observability",
+   "agent tracing",
+   "distributed tracing",
+   "otlp exporter",
+   "genai semantic conventions",
+   "openai instrumentation",
+   "anthropic instrumentation",
+   "langchain tracing",
+   "llamaindex tracing",
+   "crewai tracing",
+   "bedrock instrumentation",
+   "vector database tracing",
+   "monitor llm calls",
+   "debug ai agent",
+   "trace prompts and tokens",
+   "datadog llm monitoring",
+   "grafana llm traces",
+   "jaeger tracing",
+   "langsmith alternative",
+   "langfuse alternative",
+   "auto instrumentation python",
+   "spring ai tracing",
+   "mcp tracing",
+   "track token usage",
+   "find where rag broke"
+  ],
+  "what_it_does": "traceAI provides drop-in instrumentation packages that wrap LLM provider SDKs, agent frameworks, MCP, voice tools and vector databases so their calls are recorded as OpenTelemetry spans. Captured data includes prompts and completions, token counts, model parameters, tool calls and arguments, streaming chunks, errors, and per-step timing, following OpenTelemetry GenAI semantic conventions. The README lists packages for Python (for example traceai-openai, traceai-langchain), TypeScript (@traceai/*), Java (traceai-java-*) and C# (fi-instrumentation-otel). Traces are exported via standard OTLP HTTP or gRPC to backends such as Datadog, Grafana, Jaeger or Future AGI. The README also shows how to attach traceAI to a custom TracerProvider and span processor.",
+  "use_cases": [
+   "trace LLM calls and token usage in production",
+   "debug RAG retrieval or tool-call failures in agents",
+   "send AI traces to an existing Datadog or Grafana setup",
+   "instrument OpenAI or Anthropic code with minimal changes",
+   "monitor vector database queries in AI apps",
+   "add observability to Spring AI or LangChain4j apps"
+  ],
+  "how_to_run": [
+   "pip install traceai-openai",
+   "Set FI_API_KEY, FI_SECRET_KEY and OPENAI_API_KEY environment variables",
+   "Call register(project_type=ProjectType.OBSERVE, project_name=...) from fi_instrumentation",
+   "OpenAIInstrumentor().instrument(tracer_provider=trace_provider)",
+   "npm install @traceai/openai @traceai/fi-core (TypeScript)",
+   "dotnet add package fi-instrumentation-otel (C#)"
+  ],
+  "stack": [
+   "Python",
+   "TypeScript / Node.js",
+   "Java (JitPack)",
+   "C# / .NET (NuGet)",
+   "OpenTelemetry SDK and OTLP exporters",
+   "OpenTelemetry GenAI semantic conventions"
+  ],
+  "notable": [
+   "Instruments 50+ AI frameworks and providers across four languages with a consistent API",
+   "Vendor-neutral: exports standard OTLP traces to any OpenTelemetry backend rather than requiring a new dashboard",
+   "Covers vector databases (Pinecone, Qdrant, pgvector and others) alongside LLM providers and agent frameworks",
+   "Compatibility matrix in the README shows which framework is available in which language",
+   "Custom TracerProvider and span processor setup is documented for BYO OpenTelemetry configurations"
+  ],
+  "caveats": [
+   "Quickstart examples use Future AGI keys (FI_API_KEY, FI_SECRET_KEY) for the default register() path, though the README says traces work with other backends",
+   "Compatibility is uneven: many frameworks are Python-only, and Go support is listed only on the roadmap",
+   "Sampling strategies and evaluation integration are roadmap items, not current features"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9709,
+  "output": 1523
+ },
+ "generated": "2026-10-29"
+}
