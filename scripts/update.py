@@ -22,6 +22,37 @@ ATTEMPTS = DATA / "page_attempts.json"
 SCRIPTS = Path(__file__).resolve().parent
 report = {"date": date.today().isoformat(), "dry_run": DRY}
 
+def normalize_secret(name):
+    """Tolerate common paste slips in CI secrets: surrounding quotes/whitespace, a 'NAME=' or 'KEY=' prefix."""
+    v = os.environ.get(name, "").strip().strip('"').strip("'").strip()
+    if "=" in v and v.split("=", 1)[0].strip().isupper():
+        v = v.split("=", 1)[1].strip().strip('"').strip("'")
+    if v: os.environ[name] = v
+    return v
+
+def fail(msg):
+    report["error"] = msg
+    (DATA / "last_update.json").write_text(json.dumps(report, indent=1))
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh: fh.write(f"### Stars weekly update FAILED\n\n{msg}\n")
+    print("ERROR:", msg, flush=True); sys.exit(1)
+
+def preflight():
+    key, ws = normalize_secret("ANTHROPIC_API_KEY"), normalize_secret("ANTHROPIC_WORKSPACE_ID")
+    shape = (f"key: prefix={key[:10]!r} length={len(key)}; "
+             f"workspace: {'set, starts with wrkspc_' if ws.startswith('wrkspc_') else ('set but does not start with wrkspc_' if ws else 'not set')}")
+    print("credentials:", shape, flush=True)
+    if not key.startswith("sk-ant-"):
+        fail(f"ANTHROPIC_API_KEY does not look like an Anthropic key ({shape}). Store only the sk-ant-... value.")
+    import batch
+    try:
+        batch.client().messages.create(model=batch.MODEL, max_tokens=5, messages=[{"role": "user", "content": "Reply ok"}])
+    except Exception as e:
+        fail(f"Claude API check failed: {type(e).__name__}: {str(e)[:300]} ({shape})")
+
+if not DRY:
+    preflight()
+
 def run(*args, env=None):
     print("$", " ".join(args), flush=True)
     subprocess.run([sys.executable, *args], cwd=SCRIPTS, check=True, env={**os.environ, **(env or {})})
@@ -50,7 +81,10 @@ def call_claude(jobs, label):
                 return key, (dict(tool.input) if tool else None), m.usage
             except Exception as e:
                 err = e; time.sleep(5 * (attempt + 1))
-        print(f"  {label} failed: {key}: {err}", flush=True); return key, None, None
+        print(f"  {label} failed: {key}: {err}", flush=True)
+        report.setdefault("call_errors", [])
+        if len(report["call_errors"]) < 3: report["call_errors"].append(f"{key}: {type(err).__name__}: {str(err)[:200]}")
+        return key, None, None
     with ThreadPoolExecutor(4) as pool:
         for f in as_completed([pool.submit(one, k, p) for k, p in jobs]):
             key, data, usage = f.result()
@@ -104,8 +138,10 @@ pages = {p["id"]: p for p in read_jsonl(DATA / "pages.jsonl")}
 attempts = jload(ATTEMPTS, {})
 page_sums = {p.stem: p for p in PAGE_SUMS.glob("*.json")} if PAGE_SUMS.exists() else {}
 pages_removed = [i for i in page_sums if i not in pages]
+# fetch a page if it has no summary and: never tried, OR it was readable (so its summary failed and must be retried),
+# OR it was unreadable long enough ago to try again
 to_fetch = [i for i, p in pages.items() if i not in page_sums and
-            (i not in attempts or (not attempts[i].get("readable") and days_since(attempts[i].get("date", "")) >= PAGE_RETRY_DAYS))]
+            (i not in attempts or attempts[i].get("readable") or days_since(attempts[i].get("date", "")) >= PAGE_RETRY_DAYS)]
 report.update({"pages_total": len(pages), "pages_to_fetch": len(to_fetch), "pages_removed": len(pages_removed)})
 print(json.dumps(report, indent=1), flush=True)
 
@@ -162,6 +198,8 @@ for i, (out, usage) in pres.items():
            "model": batch.MODEL, "usage": {"input": usage.input_tokens, "output": usage.output_tokens}, "generated": report["date"]}
     (PAGE_SUMS / f"{i}.json").write_text(json.dumps(rec, ensure_ascii=False, indent=1))
 report.update({"repos_summarized": len(res), "pages_summarized": len(pres)})
+if (repo_jobs or page_jobs) and not res and not pres:
+    fail(f"all {len(repo_jobs) + len(page_jobs)} Claude calls failed; first errors: {report.get('call_errors')}")
 
 HASHES.write_text(json.dumps(hashes, indent=0, sort_keys=True))
 ATTEMPTS.write_text(json.dumps(attempts, indent=0, sort_keys=True))
