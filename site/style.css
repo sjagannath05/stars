@@ -267,3 +267,11 @@ main.wrap{overflow-x:clip}
 .brand{letter-spacing:-.015em}
 .hero h1{max-width:24ch}
 .hero .sky{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 62% 50%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 50% 50% at 62% 50%,#000 25%,transparent 75%)}
+
+/* full-index loading bar under the search box */
+.loadbar{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:13px;color:var(--muted)}
+.loadbar .track{flex:0 0 160px;height:6px;border-radius:999px;background:var(--chip);overflow:hidden}
+.loadbar .fill{height:100%;width:2%;border-radius:inherit;background:linear-gradient(90deg,var(--accent-strong),#f7d27a);transition:width .2s ease}
+.loadbar.done .fill{background:var(--t-w)}
+.loadbar.failed .fill{background:var(--warn)}
+@media (prefers-reduced-motion:reduce){.loadbar .fill{transition:none}}

@@ -1,13 +1,17 @@
-/* stars — home page search. Data comes from index.js (window.STARS), so the page also works from file://. */
+/* Starchive — home page search.
+   Your stars are inlined in the page (window.STARS_MINE) so search works instantly; the full index
+   (assets/index.json) streams in the background with a progress bar, then replaces them. */
 (() => {
-  const D = window.STARS || [];
+  const META = window.STARS_META || { counts: {}, browse: [], total: 0 };
+  let D = window.STARS_MINE || window.STARS || [];
+  let ready = !!window.STARS;
   const $ = s => document.querySelector(s);
   const STOP = new Set("a an and are as at be by for from how i in into is it me my of on or that the this to tool tools want with need app apps something some".split(" "));
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = n => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "k" : String(n);
 
-  // Pre-lowercase searchable fields once.
-  for (const d of D) {
+  // Pre-lowercase searchable fields once per entry.
+  const prep = list => { for (const d of list) {
     d._name = d.n.toLowerCase(); d._owner = (d.d || "").toLowerCase();
     d._cat = (d.c || "").toLowerCase();
     d._kw = d.k.map(k => k.toLowerCase());
@@ -15,7 +19,8 @@
     d._one = (d.o || "").toLowerCase();
     d._use = (d.u || []).join(" | ").toLowerCase();
     d._tags = (d.g || []).join(" ").toLowerCase();
-  }
+  } return list; };
+  prep(D);
 
   const state = { q: "", src: "all", list: "", cat: "", shown: 40 };
   const terms = q => q.toLowerCase().split(/[^a-z0-9+#.\-]+/).filter(w => w.length > 1 && !STOP.has(w));
@@ -96,14 +101,17 @@
     const { rows, ts } = run();
     const total = rows.length;
     $("#count").textContent = state.q || state.list || state.cat || state.src !== "all"
-      ? `${total.toLocaleString()} match${total === 1 ? "" : "es"}` : `${D.length.toLocaleString()} repos, tools and articles`;
+      ? `${total.toLocaleString()} match${total === 1 ? "" : "es"}${ready ? "" : " in your stars so far · the full index is still loading"}`
+      : `${(META.total || D.length).toLocaleString()} repos, tools and articles`;
     $("#clear").hidden = !(state.q || state.list || state.cat || state.src !== "all");
     $("#results").innerHTML = rows.slice(0, state.shown).map(d => card(d, ts)).join("") ||
       `<li class="empty">Nothing matched. Try fewer or plainer words, like “file sharing” or “terminal”.</li>`;
     $("#more").hidden = total <= state.shown;
     const browsing = !state.q && !state.list && !state.cat;
     $("#browse").hidden = !browsing;
-    if (browsing) {
+    if (browsing && !ready && state.src === "all" && META.browse.length) {
+      $("#catgrid").innerHTML = META.browse.map(([c, n]) => `<button type="button" class="cat-tile" data-cat="${esc(c)}"><span>${esc(c)}</span><small>${n}</small></button>`).join("");
+    } else if (browsing) {
       const cc = {};
       const GENERIC = /^(links?|misc(ellaneous)?|other|others|resources?|writing|general|tools?|apps?|external links|related|contents?|table of contents|about|license|contributing|reading|articles?|books?|videos?|talks?)$/;
       for (const d of filtered()) if (d._cat && !d.x && !GENERIC.test(d._cat)) cc[d._cat] = (cc[d._cat] || 0) + 1;
@@ -143,9 +151,13 @@
   for (const d of D) for (const g of d.g || []) listCounts[g] = (listCounts[g] || 0) + 1;
   $("#list").innerHTML = `<option value="">All my lists</option>` +
     Object.entries(listCounts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<option value="${esc(g)}">${esc(g)} (${n})</option>`).join("");
-  const cnt = f => D.filter(f).length.toLocaleString();
-  $("#n-all").textContent = D.length.toLocaleString(); $("#n-mine").textContent = cnt(d => d.t === "r" && d.m);
-  $("#n-aw").textContent = cnt(d => d.t === "r" && !d.m); $("#n-tool").textContent = cnt(d => d.t === "w"); $("#n-art").textContent = cnt(d => d.t === "a");
+  const setCounts = () => {
+    const c = META.counts || {}, n = (k, f) => (ready ? D.filter(f).length : (c[k] || 0)).toLocaleString();
+    $("#n-all").textContent = (ready ? D.length : (META.total || D.length)).toLocaleString();
+    $("#n-mine").textContent = n("mine", d => d.t === "r" && d.m); $("#n-aw").textContent = n("awesome", d => d.t === "r" && !d.m);
+    $("#n-tool").textContent = n("tool", d => d.t === "w"); $("#n-art").textContent = n("article", d => d.t === "a");
+  };
+  setCounts();
 
   let timer;
   $("#q").addEventListener("input", e => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; state.shown = 40; state.cat = ""; render(); }, 90); });
@@ -162,4 +174,33 @@
   });
   window.addEventListener("hashchange", () => { readHash(); render(); });
   readHash(); render();
+
+  // Stream the full index with a progress bar, then swap it in.
+  async function loadFull() {
+    const bar = $("#loadbar"), fill = $("#loadfill"), text = $("#loadtext");
+    if (ready || !META.url || !bar) { if (bar) bar.hidden = true; return; }
+    bar.hidden = false;
+    const show = f => { const pct = Math.max(2, Math.min(99, Math.round(f * 100))); fill.style.width = pct + "%"; text.textContent = `Loading the full index… ${pct}%`; };
+    try {
+      const r = await fetch(META.url);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      let raw;
+      if (r.body && r.body.getReader && META.bytes) {
+        const reader = r.body.getReader(), parts = []; let got = 0;
+        for (;;) { const { done, value } = await reader.read(); if (done) break; parts.push(value); got += value.length; show(got / META.bytes); }
+        const buf = new Uint8Array(got); let off = 0; for (const p of parts) { buf.set(p, off); off += p.length; }
+        raw = new TextDecoder().decode(buf);
+      } else raw = await r.text();
+      text.textContent = "Preparing search…"; fill.style.width = "100%";
+      await new Promise(res => setTimeout(res, 0));
+      D = prep(JSON.parse(raw)); window.STARS = D; ready = true;
+      setCounts(); render();
+      text.textContent = `Ready: ${D.length.toLocaleString()} entries`;
+      bar.classList.add("done"); setTimeout(() => (bar.hidden = true), 1200);
+    } catch (e) {
+      bar.classList.add("failed");
+      text.textContent = "Couldn't load the full index, so search covers your stars only. Reload to try again.";
+    }
+  }
+  loadFull();
 })();

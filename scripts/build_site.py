@@ -109,6 +109,17 @@ def run_item(text):
     t = re.sub(r"`([^`]+)`", lambda m: f"<code>{e(m.group(1))}</code>", e(t))
     return f'<p class="note">{t}</p>'
 
+ASSET_V = {}
+PRELOAD = [""]
+
+def asset_version(name):
+    """Short content hash of site/<name> (or the built index.js), used as ?v= to bust browser caches."""
+    if name not in ASSET_V:
+        import hashlib
+        p = (DOCS / "assets" / name) if name in ("index.js", "index.json") else (SITE_SRC / name)
+        ASSET_V[name] = hashlib.sha1(p.read_bytes()).hexdigest()[:8] if p.exists() else "0"
+    return ASSET_V[name]
+
 def head(title, desc, depth):
     pre = "../" * depth
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -116,7 +127,7 @@ def head(title, desc, depth):
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23b7791f'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E">
-{FONTS}<link rel="stylesheet" href="{pre}assets/style.css"><script src="{pre}assets/theme.js"></script></head><body>"""
+{FONTS}{PRELOAD[0] if depth == 0 else ""}<link rel="stylesheet" href="{pre}assets/style.css?v={asset_version("style.css")}"><script src="{pre}assets/theme.js?v={asset_version("theme.js")}"></script></head><body>"""
 
 ACCT_COUNTS = {}
 
@@ -221,6 +232,7 @@ def sim_card(x, depth):
     return f'<a href="{href}"><div class="n">{e(name)}</div><div class="o">{e(x["summary"].get("one_liner",""))}</div></a>'
 
 STATS = []
+INLINE = [""]
 
 def index_page(n_all, n_mine, gen):
     tries = ["self-host a file share", "scrape a protected site", "mac clipboard manager", "kubernetes log viewer",
@@ -230,6 +242,7 @@ def index_page(n_all, n_mine, gen):
 <p>{n_all:,} repos, tools and articles from my GitHub stars and the awesome lists I follow, each one read and summarized. Describe the job in plain words and the right one comes up.</p>
 <div class="searchbox"><svg class="glass" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
 <input id="q" type="search" placeholder="e.g. share files with my team" autocomplete="off" spellcheck="false" aria-label="Search repositories"><kbd>/</kbd></div>
+<div class="loadbar" id="loadbar" role="status" aria-live="polite" hidden><div class="track"><div class="fill" id="loadfill"></div></div><span id="loadtext">Loading the full index…</span></div>
 <div class="tries"><span>Try</span>{"".join(f'<button class="try" type="button">{e(t)}</button>' for t in tries)}</div>
 <dl class="stats">{"".join(f'<div class="stat {c}"><dt>{e(lbl)}</dt><dd>{n:,}</dd></div>' for c, lbl, n in STATS)}</dl></section>
 <div class="filters"><div class="seg" role="group" aria-label="Source">
@@ -239,7 +252,7 @@ def index_page(n_all, n_mine, gen):
 <div class="summary-line"><span id="count"></span><button class="iconbtn" id="clear" type="button" hidden>Clear</button></div>
 <section class="browse" id="browse" hidden><h2>Browse by category</h2><div class="cat-grid" id="catgrid"></div></section>
 <ol class="results" id="results"></ol><button class="more" id="more" type="button" hidden></button></main>
-<script src="assets/index.js"></script><script src="assets/app.js"></script>""" + footer(gen))
+<script>{INLINE[0]}</script><script src="assets/app.js?v={asset_version("app.js")}"></script>""" + footer(gen))
 
 def main():
     recs, links = load()
@@ -283,13 +296,28 @@ def main():
         idx.append({"id": u["id"], "t": "a" if u["kind"] == "article" else "w", "n": u["name"], "d": domain(u["url"]),
                     "o": u["desc"], "c": u["section"].lower()[:40], "k": [], "u": [], "g": [], "m": 0, "s": 0, "l": "",
                     "v": via_of(u.get("sources", [])), "x": u["url"]})
-    (DOCS / "assets" / "index.js").write_text("window.STARS=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";")
+    full = json.dumps(idx, ensure_ascii=False, separators=(",", ":"))
+    (DOCS / "assets" / "index.json").write_text(full)
+    old_js = DOCS / "assets" / "index.js"
+    if old_js.exists(): old_js.write_text("window.STARS=null;")  # retired; kept tiny for old cached pages
+    mine = [x for x in idx if x["t"] == "r" and x["m"]]
+    generic = re.compile(r"^(links?|misc(ellaneous)?|other|others|resources?|writing|general|tools?|apps?|external links|related|contents?|"
+                         r"table of contents|about|license|contributing|reading|articles?|books?|videos?|talks?)$")
+    cats = collections.Counter(x["c"].lower() for x in idx if x.get("c") and not x.get("x") and not generic.match(x["c"].lower()))
+    meta = {"url": f"assets/index.json?v={asset_version('index.json')}", "bytes": len(full.encode()), "total": len(idx),
+            "counts": {"mine": len(mine), "awesome": sum(1 for x in idx if x["t"] == "r" and not x["m"]),
+                       "tool": sum(1 for x in idx if x["t"] == "w"), "article": sum(1 for x in idx if x["t"] == "a")},
+            "browse": cats.most_common(24)}
+    js = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    INLINE[0] = f"window.STARS_MINE={js(mine)};window.STARS_META={js(meta)};"
+    PRELOAD[0] = f'<link rel="preload" href="{meta["url"]}" as="fetch" crossorigin>'
     n_mine = sum(1 for r in recs if r["kind"] == "star")
     (DOCS / "index.html").write_text(index_page(len(idx), n_mine, gen))
     (DOCS / ".nojekyll").write_text("")
     size = sum(p.stat().st_size for p in DOCS.rglob("*") if p.is_file())
     print(f"built {len(recs)} repo pages, {len(pages)} tool/article pages, {len(unread)} link-only cards "
-          f"into {DOCS.name}/ ({size/1e6:.1f} MB, index.js {(DOCS/'assets'/'index.js').stat().st_size/1e6:.1f} MB)")
+          f"into {DOCS.name}/ ({size/1e6:.1f} MB, index.json {(DOCS/'assets'/'index.json').stat().st_size/1e6:.1f} MB, "
+          f"inline stars {len(INLINE[0])/1e3:.0f} KB)")
 
 if __name__ == "__main__":
     main()
