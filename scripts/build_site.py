@@ -24,6 +24,7 @@ def domain(u):
     return urlparse(u).netloc.lower().removeprefix("www.")
 
 def entry_name_desc(entry):
+    entry = re.sub(r"(?<![A-Za-z0-9])[_*]{1,2}([^_*]+?)[_*]{1,2}(?![A-Za-z0-9])", r"\1", entry or "").strip()
     m = re.match(r"^(.{1,80}?)\s+[-–—:]\s+(.*)$", entry or "")
     return (m.group(1).strip(), m.group(2).strip()) if m else ((entry or "")[:60], entry or "")
 
