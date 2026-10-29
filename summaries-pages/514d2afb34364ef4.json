@@ -1,0 +1,66 @@
+{
+ "id": "514d2afb34364ef4",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-source-signal",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/source-and-signals/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/source-and-signals",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 5: Source and signals"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger Part 5: Source and Signals",
+  "one_liner": "You learn how to use DWARF line tables and function DIEs from a libelfin-based C++ debugger to map a program counter to source lines, print source context at a breakpoint, and decode SIGTRAP causes with PTRACE_GETSIGINFO.",
+  "category": "linux debugger development",
+  "keywords": [
+   "linux debugger",
+   "writing a debugger in c++",
+   "dwarf debug information",
+   "libelfin",
+   "dwarf parser",
+   "ptrace",
+   "ptrace getsiginfo",
+   "siginfo_t",
+   "sigtrap breakpoint",
+   "si_code",
+   "program counter to source line",
+   "line table lookup",
+   "print source context",
+   "position independent executable load address",
+   "proc maps load address",
+   "get_function_from_pc",
+   "get_line_entry_from_pc",
+   "debugger signal handling",
+   "source-level debugging",
+   "building a debugger tutorial"
+  ],
+  "takeaways": [
+   "Parse the ELF file and its DWARF sections with libelfin, opening the file with a descriptor so it can be mmapped.",
+   "Find the function DIE (DW_TAG_subprogram) and line table entry that contain a given program counter by walking compilation units.",
+   "For PIE binaries, compute the load address from /proc/<pid>/maps and subtract it from the PC before querying DWARF.",
+   "Use PTRACE_GETSIGINFO and si_code (SI_KERNEL, TRAP_BRKPT, TRAP_TRACE) to tell why a SIGTRAP occurred, then print source lines around the current location."
+  ],
+  "summary": "This is part 5 of a series on writing a Linux debugger in C++ using ptrace and libelfin for DWARF parsing. It adds ELF and DWARF loading to the debugger, implements helper functions to find a function DIE and line table entry from a PC, and computes a load address for position-independent executables. It then adds a print_source function that shows a window of source lines with a cursor on the current line. Finally it improves signal handling by using PTRACE_GETSIGINFO to distinguish breakpoint hits from single-step completions. The page is a series entry with a link to a book version.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "ptrace",
+   "DWARF",
+   "ELF",
+   "libelfin",
+   "Linux",
+   "GDB-style debugging"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5343,
+  "output": 931
+ },
+ "generated": "2026-10-29"
+}

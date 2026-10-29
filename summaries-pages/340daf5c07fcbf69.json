@@ -1,0 +1,69 @@
+{
+ "id": "340daf5c07fcbf69",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-breakpoints",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/breakpoints/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/breakpoints",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 2: Breakpoints"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger Part 2: Breakpoints",
+  "one_liner": "You learn how x86 Linux software breakpoints work (int 3 / 0xcc overwrite via ptrace) and how to implement, set, and test them in a C++ debugger.",
+  "category": "debuggers, C++ systems programming",
+  "keywords": [
+   "software breakpoints",
+   "hardware breakpoints",
+   "int 3",
+   "0xcc opcode",
+   "sigtrap",
+   "ptrace ptrace_peekdata",
+   "ptrace ptrace_pokedata",
+   "waitpid",
+   "breakpoint class c++",
+   "linux debugger tutorial",
+   "how do debuggers set breakpoints",
+   "x86 interrupt vector table",
+   "address space layout randomization",
+   "personality addr_no_randomize",
+   "load address /proc maps",
+   "position independent executable",
+   "objdump disassembly",
+   "std::unordered_map breakpoints",
+   "single step continue breakpoint",
+   "write a debugger from scratch",
+   "no-pie",
+   "x86 linux debugger series"
+  ],
+  "takeaways": [
+   "Software breakpoints replace the first byte of an instruction with 0xcc (int 3), which raises SIGTRAP when executed.",
+   "ptrace PEEKDATA and POKEDATA read and write whole words, so the breakpoint code saves and restores only the low byte.",
+   "The debugger uses waitpid to catch the SIGTRAP and report the stopped location.",
+   "Disabling ASLR with personality(ADDR_NO_RANDOMIZE) and reading /proc/<pid>/maps gives the load address needed to convert offsets into real breakpoint addresses.",
+   "Continuing from a breakpoint needs disabling it, single-stepping, re-enabling it, and fixing the program counter, which is deferred to the next part."
+  ],
+  "summary": "The article is part 2 of a series on writing a Linux debugger in C++. It explains hardware versus software breakpoints on x86, then shows how the int 3 instruction (0xcc) is written into memory using ptrace to create a breakpoint class with enable and disable methods. It adds a breakpoint map and a break command to the debugger, then covers the caveat that continuing from a breakpoint requires more work. The final section tests the breakpoints with objdump disassembly and by disabling address space randomization to find the load address via /proc/<pid>/maps.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C++",
+   "ptrace",
+   "x86",
+   "Linux",
+   "objdump",
+   "waitpid",
+   "/proc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5732,
+  "output": 998
+ },
+ "generated": "2026-10-29"
+}

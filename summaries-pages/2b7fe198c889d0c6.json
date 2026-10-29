@@ -1,0 +1,63 @@
+{
+ "id": "2b7fe198c889d0c6",
+ "url": "https://netflixtechblog.com/making-the-netflix-api-more-resilient-a8ec62159c2d",
+ "final_url": "https://netflixtechblog.com/making-the-netflix-api-more-resilient-a8ec62159c2d",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Making the Netflix API More Resilient",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Integration patterns (dependency management)",
+   "entry": "Making the Netflix API More Resilient, Netflix Blog"
+  }
+ ],
+ "summary": {
+  "title": "Making the Netflix API More Resilient",
+  "one_liner": "Learn how Netflix wrapped its API's service dependencies in a circuit breaker with fallbacks and a 10-second real-time stats dashboard to keep streaming up during failures.",
+  "category": "integration patterns (dependency management)",
+  "keywords": [
+   "circuit breaker pattern",
+   "circuit breaker",
+   "fallback responses",
+   "graceful degradation",
+   "fail silent",
+   "fail fast",
+   "custom fallback",
+   "service dependency decorator",
+   "resiliency",
+   "high availability api",
+   "rolling window error rate",
+   "thread pool bulkhead",
+   "bounded task queue",
+   "real-time dashboard",
+   "traffic light status page",
+   "netflix api resilience",
+   "microservices failure propagation",
+   "local query cache fallback",
+   "release it! michael nygard",
+   "timeouts and exceptions in remote calls",
+   "hystrix-style circuit breaking",
+   "5xx responses under load",
+   "database throttling incident"
+  ],
+  "takeaways": [
+   "Wrap each service dependency in a decorator that tracks call results and trips a circuit when the error rate passes a threshold.",
+   "Failures counted toward tripping include request timeouts, a full thread pool and bounded queue, and client library exceptions.",
+   "Choose a fallback per dependency: custom (cache or client fallback), fail silent (return null), or fail fast (return 5xx) when data is required.",
+   "Use a short rolling window (10 seconds here) and real-time dashboards so decisions and diagnostics reflect what is happening now."
+  ],
+  "summary": "This 2011 Netflix Tech Blog post by Ben Schmaus explains how the Netflix API team made its service dependency layer more resilient. It describes a circuit breaker decorator inspired by Michael Nygard's CircuitBreaker pattern, which counts failures over a 10-second rolling window and serves fallbacks when a threshold is exceeded. The post covers three fallback strategies (custom, fail silent, fail fast) and a real incident where database throttling tripped a circuit and a local query cache kept member impact low. It also shows a traffic-light style dashboard used for diagnostics.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Java"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3952,
+  "output": 877
+ },
+ "generated": "2026-10-29"
+}

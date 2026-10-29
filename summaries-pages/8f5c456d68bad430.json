@@ -1,0 +1,65 @@
+{
+ "id": "8f5c456d68bad430",
+ "url": "https://www.intel.com/content/www/us/en/developer/articles/tool/intelr-memory-latency-checker.html",
+ "final_url": "https://www.intel.com/content/www/us/en/developer/articles/tool/intelr-memory-latency-checker.html",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Intel® Memory Latency Checker v3.12",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Migration, balancing and measured effects",
+   "entry": "Intel Memory Latency Checker - Measures the node-to-node latency and bandwidth matrix and loaded latency on the x86 at hand, which no datasheet states."
+  }
+ ],
+ "summary": {
+  "title": "Intel® Memory Latency Checker v3.12",
+  "one_liner": "Intel MLC is a command-line tool that measures memory latency and bandwidth on x86 systems, including how latency rises under increasing load, NUMA node-to-node matrices, and cache-to-cache transfers.",
+  "category": "performance benchmarking",
+  "keywords": [
+   "intel mlc",
+   "memory latency checker",
+   "memory latency measurement",
+   "memory bandwidth benchmark",
+   "loaded latency",
+   "idle latency",
+   "numa latency matrix",
+   "cross-socket memory latency",
+   "cache-to-cache latency",
+   "peak injection bandwidth",
+   "max bandwidth test",
+   "hardware prefetcher control",
+   "msr driver",
+   "pointer chase latency",
+   "x86 memory benchmark",
+   "how to measure memory latency on linux",
+   "measure bandwidth read write ratio",
+   "memory bandwidth scan"
+  ],
+  "takeaways": [
+   "Running mlc with no arguments prints an idle latency matrix, peak bandwidth by read/write mix, a bandwidth matrix, and latency at different bandwidth points.",
+   "Load-generation threads inject increasing traffic while a single latency thread runs dependent pointer-chase reads, showing how latency changes with load.",
+   "MLC disables hardware prefetchers during tests, which requires root on Linux (the msr module must be loaded) unless run with the -e option.",
+   "Command-line options such as --latency_matrix, --bandwidth_matrix, --loaded_latency, --c2c_latency and --memory_bandwidth_scan select specific measurements."
+  ],
+  "summary": "This Intel Developer article documents the Intel Memory Latency Checker (MLC) v3.12 tool. It explains what the tool measures (idle latency matrices across sockets, peak and max bandwidth for read/write mixes, latency versus bandwidth load, and cache-to-cache transfers), and how it works: load-generation threads throttle traffic while one latency thread runs dependent reads. It covers Linux and Windows installation, the need for root access to control hardware prefetchers, the main command-line options, and a version changelog from 1.0 through 3.13. The page lists new features but does not include usage examples or sample output beyond what is described.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Linux",
+   "Windows",
+   "x86",
+   "Intel processors",
+   "NUMA",
+   "glibc",
+   "MSR"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5845,
+  "output": 947
+ },
+ "generated": "2026-10-29"
+}

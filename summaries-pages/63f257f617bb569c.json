@@ -1,0 +1,68 @@
+{
+ "id": "63f257f617bb569c",
+ "url": "https://cloud.google.com/blog/products/application-development/api-design-why-you-should-use-links-not-keys-to-represent-relationships-in-apis",
+ "final_url": "https://cloud.google.com/blog/products/application-development/api-design-why-you-should-use-links-not-keys-to-represent-relationships-in-apis",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Google Cloud Blog",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "API design & development",
+   "entry": "Why you should use links, not keys, to represent relationships in APIs, Martin Nally, Google"
+  }
+ ],
+ "summary": {
+  "title": "API links vs keys: Why you should use links, not keys, to represent relationships in APIs",
+  "one_liner": "Web APIs should expose relationships between resources as HTTP URL links rather than database foreign keys, which reduces client-server coupling and the documentation clients must learn.",
+  "category": "api design",
+  "keywords": [
+   "api design",
+   "web api links",
+   "foreign keys in apis",
+   "hateoas",
+   "hypermedia api",
+   "uri template",
+   "url vs foreign key",
+   "self link json",
+   "relative vs absolute urls",
+   "api versioning url",
+   "accept-version header",
+   "json links format",
+   "rdf/json",
+   "openapi links",
+   "query parameters in url",
+   "graphql alternative",
+   "reverse proxy url rewriting",
+   "pet store api example",
+   "google drive api links",
+   "github api links",
+   "put vs post resource creation"
+  ],
+  "takeaways": [
+   "Represent relationships with URL links (with a relation name) instead of database keys, so clients don't need to compose URLs from keys.",
+   "Links reduce the number of URI templates a provider must document and a client must learn, and let the server change URL formats freely.",
+   "Caveats include reverse-proxy URL rewriting, API versioning in URLs (use links to unversioned URLs), and documenting templates for PUT or query support.",
+   "Use a nested object style such as {\"owner\": {\"self\": \"/people/98765\"}} to make clear the value is a URL, and use a standard 'self' name."
+  ],
+  "summary": "Martin Nally, a Google API designer, argues that APIs should represent entity relationships with links based on HTTP URLs rather than foreign keys. He walks through a pet store example, comparing a key-based design (with many URI templates) to a link-based one, and explains the benefits for coupling and documentation. The post also covers caveats such as proxy URL rewriting, versioning, PUT-based creation, query URLs, and JSON link styles.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "HTTP",
+   "URI/URL",
+   "JSON",
+   "OpenAPI",
+   "GraphQL",
+   "RDF/JSON",
+   "Google Drive API",
+   "GitHub API"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7436,
+  "output": 836
+ },
+ "generated": "2026-10-29"
+}

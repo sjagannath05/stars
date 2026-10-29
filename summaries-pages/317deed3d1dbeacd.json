@@ -1,0 +1,66 @@
+{
+ "id": "317deed3d1dbeacd",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-source-break",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/source-level-breakpoints/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/source-level-breakpoints",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 7: Source-level breakpoints"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger: Part 7 - Source-Level Breakpoints",
+  "one_liner": "You learn how to set breakpoints on function names and source lines by mapping them to addresses via DWARF debug info, and how to look up ELF symbols.",
+  "category": "debugger development",
+  "keywords": [
+   "source-level breakpoints",
+   "function breakpoint",
+   "line breakpoint",
+   "dwarf line table",
+   "dw_at_low_pc",
+   "function prologue skip",
+   "is_stmt line table entry",
+   "elf symbol table",
+   "symbol lookup",
+   "symtab readelf",
+   "libelfin",
+   "debugger breakpoints tutorial",
+   "how to set breakpoint on source line in debugger",
+   "how to set breakpoint on function name",
+   "gdb-style break command",
+   "name mangling c++ symbols",
+   "write your own debugger c++",
+   "linux debugger from scratch",
+   "ptrace debugger",
+   "dwarf debug information"
+  ],
+  "takeaways": [
+   "Function breakpoints use DW_AT_low_pc, then skip the prologue by advancing one line table entry.",
+   "Source line breakpoints find the line table entry matching file and line with is_stmt set, then set a breakpoint at its address.",
+   "ELF symbols can be read from .symtab/.dynsym sections and mapped to a symbol type, name and address.",
+   "The debugger's break command infers breakpoint kind from its argument: hex address, file:line, or function name."
+  ],
+  "summary": "This post, part 7 of a series on building a Linux debugger in C++, adds source-level breakpoints. It uses the DWARF debug info (function address ranges and the line table) to translate function names and file:line pairs into machine addresses. It also adds a symbol lookup command that searches ELF symbol tables, using libelfin for parsing. The post ends with the command-parsing code and testing suggestions.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "DWARF",
+   "ELF",
+   "libelfin",
+   "readelf",
+   "clang",
+   "GDB"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7578,
+  "output": 809
+ },
+ "generated": "2026-10-29"
+}

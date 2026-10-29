@@ -1,0 +1,66 @@
+{
+ "id": "5b8384c4ac25c09e",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-registers",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/registers-and-memory/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/registers-and-memory",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 3: Registers and memory"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger Part 3: Registers and Memory",
+  "one_liner": "You learn how to read and write x86_64 registers and process memory with ptrace in a C++ Linux debugger, and how to step over a breakpoint when continuing execution.",
+  "category": "linux debugger development",
+  "keywords": [
+   "linux debugger",
+   "ptrace",
+   "ptrace_getregs",
+   "ptrace_setregs",
+   "x86_64 registers",
+   "read registers c++",
+   "write registers debugger",
+   "ptrace_peekdata",
+   "ptrace_pokedata",
+   "read process memory",
+   "write process memory",
+   "dwarf register numbers",
+   "system v x86_64 abi",
+   "user_regs_struct",
+   "step over breakpoint",
+   "program counter rip manipulation",
+   "continue execution debugger",
+   "process_vm_readv",
+   "/proc/pid/mem",
+   "build a debugger tutorial",
+   "writing a linux debugger series"
+  ],
+  "takeaways": [
+   "Use a register descriptor table ordered like user_regs_struct to map register names, DWARF numbers and ptrace fields.",
+   "Read and write registers with PTRACE_GETREGS and PTRACE_SETREGS, and read or write memory words with PTRACE_PEEKDATA and PTRACE_POKEDATA.",
+   "Step over an enabled breakpoint by rewinding the PC, disabling the breakpoint, single-stepping, then re-enabling it before continuing.",
+   "Expose register and memory commands in the debugger UI and test them by manipulating the program counter in a hello world program."
+  ],
+  "summary": "This is part 3 of a series on building a debugger for Linux in C++. It introduces x86_64 register handling by defining a scoped enum and a descriptor array ordered like the ptrace user_regs_struct, then implements get and set functions by register, DWARF number, and name. It adds memory read and write helpers over ptrace, along with commands for the UI. The post then rewrites continue_execution to step over breakpoints, and ends with a test that changes the program counter to print Hello world a second time.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C++",
+   "ptrace",
+   "x86_64 assembly",
+   "DWARF",
+   "objdump",
+   "Linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5846,
+  "output": 892
+ },
+ "generated": "2026-10-29"
+}

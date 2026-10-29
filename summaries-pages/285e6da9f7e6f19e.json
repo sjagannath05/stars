@@ -1,0 +1,60 @@
+{
+ "id": "285e6da9f7e6f19e",
+ "url": "https://ieeexplore.ieee.org/document/4607",
+ "final_url": "https://ieeexplore.ieee.org/document/4607",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Implementing precise interrupts in pipelined processors",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory access and retire",
+   "entry": "Implementing Precise Interrupts in Pipelined Processors - Introduces the reorder buffer and defines a precise exception as in-order commit of out-of-order results."
+  }
+ ],
+ "summary": {
+  "title": "Implementing precise interrupts in pipelined processors",
+  "one_liner": "Learn five ways to make interrupts precise in pipelined CPUs, where saved state matches sequential execution even when instructions finish out of order.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "precise interrupts",
+   "precise exceptions",
+   "pipelined processors",
+   "out-of-order completion",
+   "reorder buffer",
+   "in-order commit",
+   "saved process state",
+   "sequential model of execution",
+   "interrupt handling in cpus",
+   "cray-1s",
+   "pipeline performance loss",
+   "restoring precise state",
+   "parallel pipeline structure",
+   "vector architectures interrupts",
+   "virtual memory exceptions",
+   "linear pipeline",
+   "cpu exception handling research paper"
+  ],
+  "takeaways": [
+   "An interrupt is precise when the saved state matches a sequential model where each instruction completes before the next begins.",
+   "Forcing instructions to complete in architectural order is the simplest solution but costs at least 16% performance on the Cray-1S simulation.",
+   "The other four solutions let instructions finish out of order and add hardware to restore a precise state on interrupt.",
+   "Three of the out-of-order solutions lose as little as 3% performance, per the paper's simulation results.",
+   "The paper briefly discusses extensions to vector architectures, virtual memory, and linear pipelines."
+  ],
+  "summary": "This is a research paper on the precise interrupt problem in pipelined processors, where an instruction may start before its predecessors finish. It describes and evaluates five solutions. The first enforces in-order completion and state update, while the other four allow out-of-order completion and add hardware, such as a reorder buffer, to restore precise state. The methods are discussed in a parallel pipeline context and evaluated with simulation results for the Cray-1S scalar architecture. The page text is only the abstract, so details of the individual hardware designs are not visible here.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Cray-1S",
+   "pipelined processors",
+   "reorder buffer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1766,
+  "output": 818
+ },
+ "generated": "2026-10-29"
+}

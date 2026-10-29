@@ -1,0 +1,72 @@
+{
+ "id": "c7111de6198540ee",
+ "url": "https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/speculative-execution-side-channel-mitigations.html",
+ "final_url": "https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/speculative-execution-side-channel-mitigations.html",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Speculative Execution Side Channel Mitigations",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branch prediction and speculation",
+   "entry": "Speculative Execution Side Channel Mitigations - Defines the indirect-branch and store-bypass controls (IBRS, STIBP, IBPB, SSBD) and states which carry a large cost."
+  }
+ ],
+ "summary": {
+  "title": "Speculative Execution Side Channel Mitigations",
+  "one_liner": "Intel's technical guidance explaining branch target injection, bounds check bypass, and speculative store bypass, and the IBRS, STIBP, IBPB and LFENCE-based mitigations for them.",
+  "category": "cpu security",
+  "keywords": [
+   "speculative execution side channel",
+   "transient execution mitigation",
+   "branch target injection",
+   "spectre variant 2",
+   "bounds check bypass",
+   "spectre variant 1",
+   "speculative store bypass",
+   "ibrs",
+   "indirect branch restricted speculation",
+   "stibp",
+   "single thread indirect branch predictors",
+   "ibpb",
+   "indirect branch predictor barrier",
+   "retpoline",
+   "lfence speculation barrier",
+   "return stack buffer",
+   "enhanced ibrs",
+   "ssbd",
+   "hyper-threading branch predictor sharing",
+   "how to mitigate spectre in software",
+   "intel cpu side channel defenses",
+   "predictor mode host guest user supervisor"
+  ],
+  "takeaways": [
+   "Branch target injection exploits shared indirect branch predictors; IBRS, STIBP and IBPB are the three indirect branch control mechanisms Intel defines against it.",
+   "IBRS restricts indirect branch speculation, STIBP limits predictor sharing between sibling hyperthreads on a core, and IBPB is a command that creates a barrier between software contexts.",
+   "STIBP carries a significant performance cost on existing Core-family processors, so the document advises against setting it during all application execution.",
+   "Enhanced IBRS can be set once and left on, avoiding repeated WRMSR costs on ring transitions, and makes STIBP unnecessary when IBRS is set.",
+   "Bounds check bypass is mitigated in software by inserting an LFENCE or other serializing instruction between a bounds check and the dependent load."
+  ],
+  "summary": "This Intel revision 2.0 document (originally published May 2018) describes three transient execution side channels: branch target injection, bounds check bypass, and speculative store bypass. It explains the indirect branch control mechanisms (IBRS, STIBP, IBPB), how they depend on privilege-based predictor modes and Hyper-Threading sharing, and how retpoline offers a software alternative. For bounds check bypass it recommends LFENCE or serializing instructions and gives a CMOV-based example, with further sections on speculative store bypass and CPUID/MSR enumeration. The page is a dense specification-style reference rather than a step-by-step tutorial.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86",
+   "Intel processors",
+   "IA32_SPEC_CTRL MSR",
+   "IA32_PRED_CMD MSR",
+   "IA32_ARCH_CAPABILITIES MSR",
+   "LFENCE",
+   "Intel Hyper-Threading Technology",
+   "Intel SGX",
+   "Intel MPX",
+   "retpoline"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9548,
+  "output": 1114
+ },
+ "generated": "2026-10-29"
+}

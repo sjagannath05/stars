@@ -1,0 +1,70 @@
+{
+ "id": "b5f46822b2f7b091",
+ "url": "https://www.uber.com/nl/en/blog/multitenancy-microservice-architecture",
+ "final_url": "https://www.uber.com/nl/en/blog/multitenancy-microservice-architecture/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Why We Leverage Multi-tenancy in Uber's Microservice Architecture",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Testing in production",
+   "entry": "Why We Leverage Multi-tenancy in Uber's Microservice Architecture"
+  }
+ ],
+ "summary": {
+  "title": "Why We Leverage Multi-tenancy in Uber's Microservice Architecture",
+  "one_liner": "Learn how Uber uses tenancy tags on requests and data to safely run integration tests in production, canary releases, and traffic replay in one microservice stack.",
+  "category": "distributed systems",
+  "keywords": [
+   "multi-tenancy",
+   "multi-tenant microservice architecture",
+   "testing in production",
+   "parallel testing",
+   "integration testing microservices",
+   "canary deployment",
+   "shadow traffic",
+   "traffic replay",
+   "record and replay traffic",
+   "tenancy context",
+   "context propagation",
+   "tenancy-based routing",
+   "sidecar routing",
+   "data isolation",
+   "opentracing",
+   "jaeger",
+   "envoy",
+   "istio",
+   "kafka tenancy headers",
+   "uber infrastructure"
+  ],
+  "takeaways": [
+   "Multi-tenancy tags requests with a tenancy context (e.g., test, canary, shadow) that is propagated through the whole call chain.",
+   "Testing in production needs two basics: routing traffic by tenancy and isolating data-at-rest and data-in-flight between test and production.",
+   "Parallel test stacks cost more, drift out of sync, and give unreliable results, which testing in production aims to avoid.",
+   "Tenancy-based routing can happen at egress via service discovery or at ingress via a sidecar, and service meshes like Envoy or Istio can help.",
+   "Storage, Kafka, logs, metrics, caches and config all need tenancy-aware isolation; gateways are the preferred choke point for enforcing it."
+  ],
+  "summary": "The article from Uber's Infrastructure team explains why they make their production microservice stack multi-tenant. It compares parallel staging stacks with testing in production, then describes the core requirements: tagging requests with a tenancy context, propagating it through calls, and isolating data in storage, queues, caches, logs and configuration. It also covers how routing can be done at ingress or egress, with sidecars or service meshes, and how multi-tenancy supports canaries, shadow traffic and replay. The piece is conceptual and describes Uber's approach without code or step-by-step setup.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Apache Kafka",
+   "OpenTracing",
+   "Jaeger",
+   "Envoy",
+   "Istio",
+   "MySQL",
+   "Apache Cassandra",
+   "AWS",
+   "Redis",
+   "Memcached"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6819,
+  "output": 941
+ },
+ "generated": "2026-10-29"
+}

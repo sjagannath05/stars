@@ -1,0 +1,63 @@
+{
+ "id": "de55008622904da1",
+ "url": "https://ieeexplore.ieee.org/document/134547",
+ "final_url": "https://ieeexplore.ieee.org/document/134547",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Improving direct-mapped cache performance by the addition of a small fully-associative cache and prefetch buffers",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "TLBs, page walks and prefetchers",
+   "entry": "Improving Direct-Mapped Cache Performance - The origin of the stream buffer that every vendor stream prefetcher descends from, and of the victim cache."
+  }
+ ],
+ "summary": {
+  "title": "Improving direct-mapped cache performance by the addition of a small fully-associative cache and prefetch buffers",
+  "one_liner": "Learn how miss caches, victim caches, and stream buffers (including multiway stream buffers) reduce direct-mapped cache conflict, capacity, and compulsory misses.",
+  "category": "cpu cache architecture",
+  "keywords": [
+   "miss cache",
+   "victim cache",
+   "stream buffer",
+   "multiway stream buffer",
+   "prefetch buffer",
+   "direct-mapped cache",
+   "fully-associative cache",
+   "conflict misses",
+   "capacity misses",
+   "compulsory misses",
+   "cache miss penalty",
+   "hardware cache optimization",
+   "hardware prefetcher origin",
+   "stream prefetcher",
+   "first-level cache performance",
+   "instruction cache conflict misses",
+   "how to reduce cache misses",
+   "small associative cache next to direct-mapped cache",
+   "cache refill path",
+   "jouppi cache paper"
+  ],
+  "takeaways": [
+   "A miss cache is a small fully-associative cache between a cache and its refill path, giving a 1-cycle miss penalty for misses that hit in it.",
+   "Small miss caches of 2 to 5 entries are shown to be very effective at removing mapping conflict misses in first-level direct-mapped caches.",
+   "A victim cache loads the small fully-associative cache with the victim of a miss rather than the requested line, and 1 to 5 entries removes conflict misses even better than miss caching.",
+   "Stream buffers prefetch lines starting at a miss address and place them in the buffer rather than the cache; they remove capacity and compulsory misses and some instruction cache conflict misses.",
+   "A multiway stream buffer is an extension of the basic stream buffer introduced in this paper."
+  ],
+  "summary": "This IEEE conference paper presents hardware techniques for improving first-level cache performance. It describes miss caching, where a small fully-associative cache sits between a cache and its refill path, and victim caching, which fills that small cache with evicted victims instead of requested lines. It also introduces stream buffers that prefetch sequential lines from a miss address into a separate buffer, plus an extension called the multiway stream buffer. The paper reports that small structures of a few entries are effective at removing conflict, capacity, and compulsory misses. The page text is the abstract only, so details of the evaluation are not available here.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "direct-mapped cache",
+   "fully-associative cache",
+   "hardware prefetching"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1845,
+  "output": 970
+ },
+ "generated": "2026-10-29"
+}

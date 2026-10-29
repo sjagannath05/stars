@@ -28,9 +28,15 @@ def entry_name_desc(entry):
     m = re.match(r"^(.{1,80}?)\s+[-–—:]\s+(.*)$", entry or "")
     return (m.group(1).strip(), m.group(2).strip()) if m else ((entry or "")[:60], entry or "")
 
+BLOCKED = re.compile(r"^(unknown|unclear)\b|could not be (read|loaded)|couldn't be read|was blocked|blocked (access|the request|by)|"
+                     r"security check|captcha|verify (you are|that you'?re) (a )?human|access denied|error page|"
+                     r"(cloudflare|bot) (block|check|protection|challenge)|content is (unknown|not known)", re.I)
+
 def load_pages():
     meta = {r["id"]: r for r in read_jsonl(DATA / "pages.jsonl")}
     done = [json.loads(p.read_text()) for p in sorted(PAGE_SUMS.glob("*.json"))] if PAGE_SUMS.exists() else []
+    # summaries of bot walls / error pages are not real summaries: show those as plain link cards instead
+    done = [d for d in done if not BLOCKED.search(d["summary"].get("one_liner", ""))]
     have = {d["id"] for d in done}
     unread = []
     for pid, m in meta.items():

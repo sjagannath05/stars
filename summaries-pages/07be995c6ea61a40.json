@@ -1,0 +1,67 @@
+{
+ "id": "07be995c6ea61a40",
+ "url": "https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html",
+ "final_url": "https://docs.riscv.org/reference/isa/v20260120/unpriv/v-st-ext.html",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to isa v20260120",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "ISA extensions without a shipped server part",
+   "entry": "RISC-V Vector Extension, Version 1.0 - The ratified vector ISA, shipped only as IP and chiplets, pending a socketed server part and a run against Arm or x86."
+  }
+ ],
+ "summary": {
+  "title": "30.1. \"V\" Standard Extension for Vector Operations, Version 1.0",
+  "one_liner": "The RISC-V \"V\" vector extension spec defines ELEN/VLEN parameters, vector registers, vtype/vl/vstart CSRs, LMUL grouping, and tail/mask agnostic policies.",
+  "category": "cpu instruction set architecture",
+  "keywords": [
+   "risc-v vector extension",
+   "risc-v v extension",
+   "rvv 1.0",
+   "risc-v vector spec",
+   "vector isa",
+   "data-parallel instructions",
+   "elen",
+   "vlen",
+   "vtype register",
+   "vl register",
+   "vstart csr",
+   "vlenb",
+   "lmul",
+   "sew selected element width",
+   "fractional lmul",
+   "vector register grouping",
+   "tail agnostic",
+   "mask agnostic",
+   "vsetvli",
+   "vill bit",
+   "mstatus vs field",
+   "vector context status",
+   "vector register length",
+   "scalable vector programming",
+   "arm sve comparison"
+  ],
+  "takeaways": [
+   "VLEN and ELEN are per-hart parameters; VLEN must be a power of 2 and at most 2^16.",
+   "vtype encodes SEW (vsew) and LMUL (vlmul), and only vset*vl* instructions can change it.",
+   "LMUL can be fractional (1/8 to 1/2), letting mixed-width data use all 32 vector registers.",
+   "Tail and inactive elements can be undisturbed or agnostic; vsetvli requires ta/tu and ma/mu flags.",
+   "Mismatched VLEN or ELEN between harts complicates migrating threads with active vector state."
+  ],
+  "summary": "This is the normative RISC-V \"V\" vector extension specification, version 1.0, from the RISC-V documentation site. The excerpt covers implementation-defined parameters (ELEN, VLEN), the programmer's model (32 vector registers and the vstart, vxsat, vxrm, vcsr, vtype, vl, and vlenb CSRs), and how mstatus/vsstatus VS fields track vector state. It then goes into vtype fields, SEW and LMUL encodings with VLMAX tables, and the tail-agnostic and mask-agnostic policies. The text is reference-style, with rationale notes explaining design choices. The page is a partial view and ends in the middle of the vxrm section.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "RISC-V",
+   "RISC-V Vector Extension (RVV)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10142,
+  "output": 963
+ },
+ "generated": "2026-10-29"
+}

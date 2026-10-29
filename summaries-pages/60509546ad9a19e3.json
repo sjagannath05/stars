@@ -1,0 +1,65 @@
+{
+ "id": "60509546ad9a19e3",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-variables",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/handling-variables/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/handling-variables",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 9: Handling variables"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger Part 9: Handling Variables",
+  "one_liner": "You learn how DWARF encodes variable locations (exprloc, location lists, DW_OP expressions) and how to evaluate them with libelfin and ptrace to read a variable's value in a C/C++ debugger.",
+  "category": "linux debugger development",
+  "keywords": [
+   "debugger variables",
+   "dwarf debug information",
+   "dw_at_location",
+   "exprloc",
+   "location lists",
+   "loclist",
+   "dwarf expressions",
+   "dw_op_fbreg",
+   "libelfin",
+   "ptrace",
+   "read variable value",
+   "debugger implementation in c++",
+   "dwarf types die",
+   "dw_tag_structure_type",
+   "stack frame base",
+   "registers and memory in debugger",
+   "write a linux debugger",
+   "how debuggers read local variables",
+   "composite location pieces"
+  ],
+  "takeaways": [
+   "DW_AT_location describes where a variable lives: a simple exprloc, a composite of pieces, or a location list that changes over its lifetime.",
+   "DWARF expressions are a stack-based language (for example DW_OP_fbreg, DW_OP_breg, DW_OP_deref) that libelfin can evaluate for you.",
+   "A ptrace-backed expr_context supplies registers, the program counter and memory dereferences needed to evaluate locations.",
+   "Reading a variable means evaluating its location, then reading either memory at the resulting address or the named register; the value is printed without type interpretation in this simplified version.",
+   "Only exprloc locations are supported in the tutorial; location lists require the author's libelfin fbreg branch."
+  ],
+  "summary": "This is part 9 of the Writing a Linux Debugger series by Sy Brand. It explains how DWARF 5 encodes variable locations (simple, composite and location-list forms), the DWARF expression operations used to compute them, and how DWARF describes types through DIEs. It then implements a simplified variable reader in C++: a ptrace-based expr_context, a read_variables function that iterates a function's variable DIEs, evaluates DW_AT_location with libelfin, and prints values from memory or registers. The post notes that it supports only exprloc locations and that the author's libelfin fbreg fork is needed for some features.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "DWARF",
+   "libelfin",
+   "ptrace",
+   "GCC",
+   "Linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5764,
+  "output": 942
+ },
+ "generated": "2026-10-29"
+}

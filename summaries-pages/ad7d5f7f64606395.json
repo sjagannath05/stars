@@ -1,0 +1,64 @@
+{
+ "id": "ad7d5f7f64606395",
+ "url": "http://omokute.blogspot.com.br/2012/06/emulation-basics-write-your-own-chip-8.html",
+ "final_url": "http://omokute.blogspot.com/2012/06/emulation-basics-write-your-own-chip-8.html",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Emulation Basics: Write your own Chip 8 Emulator/Interpreter",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Emulator / Virtual Machine",
+   "entry": "Python: _Emulation Basics: Write your own Chip 8 Emulator/Interpreter_"
+  }
+ ],
+ "summary": {
+  "title": "Emulation Basics: Write your own Chip 8 Emulator/Interpreter",
+  "one_liner": "You learn how a CHIP-8 interpreter is structured in Python (memory, registers, fetch-decode-execute cycle, opcode dispatch, sprite drawing, keyboard input, and BCD) by building one with pyglet.",
+  "category": "emulator development",
+  "keywords": [
+   "chip-8 emulator",
+   "chip8 interpreter",
+   "write an emulator",
+   "emulation basics",
+   "build a chip-8 emulator in python",
+   "chip-8 opcodes",
+   "chip-8 fetch decode execute cycle",
+   "cogwood chip-8 reference",
+   "pyglet emulator",
+   "python emulator tutorial",
+   "chip-8 sprite drawing xor",
+   "chip-8 registers and memory",
+   "opcode dispatch dictionary python",
+   "superchip",
+   "emulator main loop",
+   "chip-8 pong rom",
+   "raspberry pi emulation",
+   "chip-8 bcd fx33",
+   "virtual machine interpreter"
+  ],
+  "takeaways": [
+   "CHIP-8 is a small virtual machine with under 50 instructions, 4096 bytes of memory, 16 registers, a 64x32 display and a 16-key keypad, which makes it a good first emulation target.",
+   "An emulator main loop initializes state, loads a ROM at offset 0x200, then repeatedly dispatches events, runs a cycle that fetches and executes a 2-byte opcode, and draws the screen.",
+   "Python lacks switch statements, so the article dispatches opcodes through a dictionary mapping masked opcode values to handler methods, with a second level of extraction for the 0x0XXX group.",
+   "Drawing uses XOR onto a display buffer, with VF set on collision, and font sprites are stored in memory as 5 bytes per hex digit.",
+   "Carry and borrow flags in arithmetic opcodes are set in VF, and the article notes that FX33 BCD storage is left as an exercise."
+  ],
+  "summary": "The article is a hands-on walkthrough of writing a CHIP-8 emulator in Python 2 using pyglet for windowing, graphics, keyboard and sound. It explains the CHIP-8 hardware model (input keypad, 64x32 display, memory, registers, timers, stack), then shows the initialization, ROM loading, and cycle code. It then covers opcode dispatch via dictionaries and implements sample instructions such as CLS, RET, JUMP, skips, ADD/SUB with carry or borrow flags, sprite drawing, and keyboard checks. The author links to the Cogwood CHIP-8 reference and a GitHub repo, and says SuperChip instructions and FX33 BCD are left for the reader.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "pyglet",
+   "OpenGL",
+   "CHIP-8",
+   "SuperChip"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8718,
+  "output": 1109
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "0ee1c69cc9ba697b",
+ "url": "http://joebergeron.io/posts/post_two.html",
+ "final_url": "https://www.joe-bergeron.com/posts/Writing%20a%20Tiny%20x86%20Bootloader/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Writing a Tiny x86 Bootloader",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Operating System",
+   "entry": "Assembly: _Writing a Tiny x86 Bootloader_"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Tiny x86 Bootloader",
+  "one_liner": "You learn how the BIOS loads a 512-byte boot sector and how to write a small NASM real-mode bootloader that clears the screen, moves the cursor, and prints a string.",
+  "category": "low-level systems programming",
+  "keywords": [
+   "x86 bootloader",
+   "write a bootloader",
+   "boot sector",
+   "512 byte boot sector",
+   "boot signature 0xaa55",
+   "bios boot process",
+   "real mode",
+   "16-bit real mode",
+   "nasm assembly",
+   "x86 assembly tutorial",
+   "bios interrupt 0x10",
+   "video interrupt teletype output",
+   "bochs emulator",
+   "mbr master boot record",
+   "chain-loading",
+   "write to usb drive with dd",
+   "stack setup segment registers",
+   "calling convention assembly",
+   "bare metal programming",
+   "operating system from scratch"
+  ],
+  "takeaways": [
+   "The BIOS loads the first 512 bytes of a bootable medium to 0x7C00 if they end in the 0x55AA signature, then jumps there.",
+   "Real mode uses segment:offset addressing (physical = segment*0x10 + offset), so segment registers such as DS and SS must be set via a general register.",
+   "BIOS interrupts such as 0x10 provide screen clearing, cursor positioning, and character printing in real mode.",
+   "Subroutines follow a stack-based calling convention using push, call, and bp-relative argument access.",
+   "The code can be assembled with nasm -f bin, tested in Bochs, or written to a USB drive with dd."
+  ],
+  "summary": "The author walks through the boot process on an x86 PC, from the BIOS locating a boot sector to the code running at 0x7C00 in 16-bit real mode. The post then builds a minimal NASM bootloader step by step: setting up a stack, then writing subroutines for clearing the screen, moving the cursor, and printing a null-terminated string using BIOS video interrupts. It finishes with the padding and boot signature needed for a 512-byte sector, how to test in the Bochs emulator, and how to write the image to a USB drive with dd.</summary>\n<parameter name=\"format\">tutorial",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "x86 assembly",
+   "NASM",
+   "Bochs",
+   "BIOS",
+   "dd"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6541,
+  "output": 918
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,80 @@
+{
+ "id": "1edee5176f927088",
+ "url": "https://docs.openclaw.ai/security",
+ "final_url": "https://docs.openclaw.ai/gateway/security",
+ "kind": "tool",
+ "method": "browser",
+ "page_title": "Redirecting",
+ "sources": [
+  {
+   "list": "eudk/awesome-ai-tools",
+   "section": "Security",
+   "entry": "Security best practices — Hardening guide"
+  }
+ ],
+ "summary": {
+  "name": "OpenClaw Security Docs",
+  "one_liner": "A documentation hub covering OpenClaw's security trust model, audit tooling, and hardening guidance for running the Gateway.",
+  "category": "ai agent security docs",
+  "keywords": [
+   "openclaw security",
+   "openclaw hardening guide",
+   "openclaw security audit",
+   "openclaw gateway security",
+   "gateway loopback bind",
+   "dm pairing code",
+   "dm allowlist",
+   "mention gate group access",
+   "prompt injection defenses",
+   "threat model mitre atlas",
+   "tool permissions sandboxing",
+   "browser ssrf policy",
+   "network exposure firewall",
+   "reverse proxy trusted auth",
+   "tailscale serve identity",
+   "rate limiting gateway",
+   "incident response ai agent",
+   "secrets storage logs",
+   "secure file operations",
+   "dependency locking",
+   "security best practices ai agent",
+   "hardened baseline config",
+   "openclaw security cli",
+   "openclaw policy cli",
+   "ai agent trust model",
+   "security audit checks",
+   "gateway exposure runbook",
+   "awesome ai tools security"
+  ],
+  "use_cases": [
+   "Auditing an OpenClaw install for configuration drift",
+   "Hardening a self-hosted AI agent gateway",
+   "Deciding whether to expose the Gateway beyond loopback",
+   "Restricting agent tool and messaging permissions",
+   "Responding to a suspected compromise of an agent deployment"
+  ],
+  "what_it_does": "The page is an index of security documentation for OpenClaw. It states that regular host installs bind the Gateway to loopback, that most chat channels reply to unknown DM senders with a pairing code, and that group access is allowlisted behind a mention gate. It notes deliberate exceptions, such as container images defaulting to an exposed bind and some workspace channels trusting membership by default. It points to an audit command (openclaw security audit) that checks for drift from these defaults. Linked sub-pages cover the trust model, audit checks, hardened configuration baselines, access control, prompt injection, tool permissions, browser SSRF policy, network exposure, secrets handling, rate limits, and incident response.",
+  "pricing": "unknown",
+  "platforms": [
+   "Docker",
+   "CLI"
+  ],
+  "notable": [
+   "Built-in `openclaw security audit` command that checks for drift from safe defaults and can apply supported auto-fixes",
+   "Threat model mapped to MITRE ATLAS covering the OpenClaw platform and ClawHub",
+   "Copy/paste hardened baseline configs that keep the Gateway local, paired, and tool-restricted",
+   "Runbook for pre-flight and rollback checks before exposing the Gateway beyond loopback"
+  ],
+  "caveats": [
+   "Container images default to an exposed bind, so they must be paired with authentication",
+   "Some workspace channels such as ClickClack trust workspace membership by default",
+   "Agents with message-tool access can send across conversations and providers by default unless restricted"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2992,
+  "output": 1113
+ },
+ "generated": "2026-10-29"
+}

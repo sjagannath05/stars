@@ -1,0 +1,66 @@
+{
+ "id": "ba9d297929d1a400",
+ "url": "https://www.kernel.org/doc/Documentation/memory-barriers.txt",
+ "final_url": "https://www.kernel.org/doc/Documentation/memory-barriers.txt",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory models and atomics",
+   "entry": "Linux kernel memory-barriers.txt - States what the kernel assumes any CPU may reorder and what each barrier and access primitive guarantees."
+  }
+ ],
+ "summary": {
+  "title": "Linux Kernel Memory Barriers (memory-barriers.txt)",
+  "one_liner": "You learn what ordering guarantees CPUs and the compiler may break, which Linux memory barrier types exist (write, read, general, ACQUIRE/RELEASE), and when each is needed.",
+  "category": "memory models and atomics",
+  "keywords": [
+   "linux kernel memory barriers",
+   "memory-barriers.txt",
+   "memory ordering",
+   "cpu memory reordering",
+   "write barrier",
+   "read barrier",
+   "general memory barrier",
+   "smp_mb",
+   "acquire and release semantics",
+   "smp_load_acquire",
+   "smp_store_release",
+   "address dependency",
+   "control dependency",
+   "read_once",
+   "write_once",
+   "smp barrier pairing",
+   "compiler barrier",
+   "multicopy atomicity",
+   "dec alpha memory ordering",
+   "device mmio ordering",
+   "rcu_dereference",
+   "is a memory barrier needed in linux",
+   "why does cpu reorder loads and stores"
+  ],
+  "takeaways": [
+   "CPUs and compilers may reorder independent loads and stores, so barriers are needed for CPU-CPU or CPU-device interaction.",
+   "Linux defines write, address-dependency (historical), read, and general barriers, plus implicit ACQUIRE and RELEASE operations.",
+   "READ_ONCE() and WRITE_ONCE() prevent compiler mischief on shared memory accesses; barriers should normally be paired across CPUs.",
+   "Since v4.15 READ_ONCE() gives an implicit address-dependency barrier; control dependencies still need a full read barrier or stronger."
+  ],
+  "summary": "This is the Linux kernel's own guide to memory barriers, written by Howells, McKenney, Deacon and Zijlstra. It explains an abstract model in which CPUs and compilers may reorder memory operations, then gives the minimum guarantees the kernel relies on, with worked two-CPU examples. It defines the barrier varieties (write, address-dependency, read, general, ACQUIRE, RELEASE) and lists what barriers do not guarantee. The page is an excerpt; the text cuts off at the Control Dependencies section.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "C",
+   "DEC Alpha",
+   "RCU"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9698,
+  "output": 921
+ },
+ "generated": "2026-10-29"
+}

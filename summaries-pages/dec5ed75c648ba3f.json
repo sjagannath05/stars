@@ -1,0 +1,66 @@
+{
+ "id": "dec5ed75c648ba3f",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-unwinding",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/stack-unwinding/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/stack-unwinding",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 8: Stack unwinding"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger: Part 8 - Stack Unwinding",
+  "one_liner": "You learn how to implement a backtrace command on x86_64 by walking the frame-pointer linked list and mapping return addresses to functions via DWARF info.",
+  "category": "debugger implementation",
+  "keywords": [
+   "stack unwinding",
+   "backtrace",
+   "call stack",
+   "frame pointer",
+   "rbp register",
+   "x86_64 stack frame",
+   "return address",
+   "dwarf debug info",
+   "eh_frame",
+   "libunwind",
+   "print backtrace debugger",
+   "how to implement backtrace",
+   "walk the stack manually",
+   "-fno-omit-frame-pointer",
+   "lldb backtrace output",
+   "elf debugger tutorial",
+   "c++ debugger from scratch",
+   "frame pointer linked list"
+  ],
+  "takeaways": [
+   "A backtrace is the chain of function calls leading to the current program state, and it can be produced by walking saved frame pointers.",
+   "On x86_64, each stack frame stores the previous frame pointer, and the return address sits 8 bytes above it, so following this linked list unwinds the stack.",
+   "Return addresses are mapped to function names using DWARF info (get_function_from_pc), and the walk stops at main.",
+   "Compile with -fno-omit-frame-pointer so the compiler keeps the rbp-based frame layout this approach relies on.",
+   "The alternative is parsing .eh_frame or using libunwind, which the author considers more robust but more work."
+  ],
+  "summary": "This post is part 8 of a series on writing a Linux debugger in C++. It explains the purpose of a backtrace, then shows how to implement stack unwinding on x86_64 by assuming a standard frame layout and following the saved frame-pointer linked list. The author builds a print_backtrace function that prints each frame's function name and low PC using DWARF lookups, then exposes it as a backtrace command. It closes with testing advice and notes that the next post covers reading and writing variables.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "x86_64 assembly",
+   "DWARF",
+   "ELF",
+   "LLDB",
+   "GCC",
+   "Clang",
+   "libunwind"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3412,
+  "output": 864
+ },
+ "generated": "2026-10-29"
+}

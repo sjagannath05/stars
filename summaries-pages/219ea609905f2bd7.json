@@ -1,0 +1,69 @@
+{
+ "id": "219ea609905f2bd7",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-advanced-topics",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/advanced-topics/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/advanced-topics",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 10: Advanced topics"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger: Advanced Topics",
+  "one_liner": "A high-level overview of advanced debugger concepts (remote debugging, shared library tracking, expression evaluation, and multi-threaded support) that build on the earlier Linux debugger series.",
+  "category": "debugger internals",
+  "keywords": [
+   "debugger internals",
+   "remote debugging",
+   "gdb remote protocol",
+   "debug stub",
+   "ptrace",
+   "shared library support",
+   "dynamic loading",
+   "dlopen",
+   "rendezvous structure",
+   "r_debug",
+   "expression evaluation",
+   "jit compilation",
+   "llvm ir",
+   "multi-threaded debugging",
+   "pthread_create clone",
+   "ptrace_o_traceclone",
+   "libthread_db",
+   "building a debugger",
+   "linux debugger tutorial",
+   "gdb lldb internals",
+   "how does a debugger work"
+  ],
+  "takeaways": [
+   "Remote debuggers split the debugger front end from a debug stub on the target, which talks to the debuggee via ptrace and to the debugger via a remote protocol such as the GDB remote protocol.",
+   "Shared library tracking uses the dynamic linker's rendezvous structure, found via the .dynamic section, and a breakpoint on its update function to follow loaded libraries, including dlopen.",
+   "Expression evaluation can range from reading debug info for identifiers, to interpreting compiled IR, to JIT-compiling code into the debuggee's address space via mmap.",
+   "Multi-threaded support can start by tracing clone events with PTRACE_O_TRACECLONE and reading /proc/<pid>/task; modelling thread state is the hardest part."
+  ],
+  "summary": "The final post in the Writing a Linux Debugger series gives a high-level overview rather than step-by-step implementation. It covers remote debugging architecture and the GDB remote packet format, how a tracer follows shared libraries via the dynamic linker's rendezvous structure, and how expression evaluation can use debug info, IR interpretation, or JIT compilation. It closes with multi-threaded support, using ptrace clone-event tracing and procfs, and notes that the book Building a Debugger covers these topics in more depth.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "Linux",
+   "ptrace",
+   "ELF",
+   "GDB",
+   "LLDB",
+   "LLVM",
+   "Clang",
+   "pthreads"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3796,
+  "output": 932
+ },
+ "generated": "2026-10-29"
+}

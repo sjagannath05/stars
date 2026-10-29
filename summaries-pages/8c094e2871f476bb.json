@@ -1,0 +1,85 @@
+{
+ "id": "8c094e2871f476bb",
+ "url": "https://pub.towardsai.net/creating-a-mostly-autonomous-hr-assistant-with-chatgpt-and-langchains-agents-and-tools-1cdda0aa70ef",
+ "final_url": "https://pub.towardsai.net/creating-a-mostly-autonomous-hr-assistant-with-chatgpt-and-langchains-agents-and-tools-1cdda0aa70ef",
+ "kind": "tool",
+ "method": "browser",
+ "page_title": "Creating a (mostly) Autonomous HR Assistant with ChatGPT and LangChain’s Agents and Tools",
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "Medium: Creating a (mostly) Autonomous HR Assistant with ChatGPT and LangChain’s Agents and Tools"
+  }
+ ],
+ "summary": {
+  "name": "Autonomous HR Assistant (LangChain + ChatGPT)",
+  "one_liner": "A tutorial describing a prototype HR chatbot built with LangChain agents and tools on gpt-3.5-turbo that answers timekeeping-policy and employee-data questions and does calculations.",
+  "category": "llm agent tutorial",
+  "keywords": [
+   "langchain agents",
+   "langchain tools",
+   "hr chatbot",
+   "autonomous hr assistant",
+   "llm agent",
+   "react agent",
+   "react prompting",
+   "chain-of-thought prompting",
+   "mrkl system",
+   "gpt-3.5-turbo",
+   "chatgpt",
+   "pinecone vector database",
+   "vector search",
+   "cosine similarity search",
+   "text-embedding-ada-002",
+   "retrieval qa",
+   "pandas dataframe agent",
+   "python repl tool",
+   "llm calculator",
+   "numexpr",
+   "azure openai",
+   "streamlit chatbot",
+   "prompt injection guardrails",
+   "sap hr data pipeline",
+   "enterprise llm application",
+   "how to build an hr chatbot with llm",
+   "llm answer employee leave questions",
+   "llm tool use tutorial",
+   "zero shot react agent"
+  ],
+  "use_cases": [
+   "Answering employee questions about timekeeping policies",
+   "Looking up an employee's remaining leave balances from a dataframe",
+   "Calculating leave cash-out pay with an LLM calculator tool",
+   "Learning how to build tool-using LLM agents with LangChain",
+   "Prototyping an enterprise question-answering chatbot over internal documents"
+  ],
+  "what_it_does": "The page is a write-up of a prototype HR chatbot built on LangChain's agent and tool modules, powered by gpt-3.5-turbo. The agent uses the ReAct Thought/Action/Observation loop to split a question into steps and picks among three tools: a timekeeping policy retriever (a RetrievalQA chain over a policy document chunked and embedded into Pinecone), an employee data tool (a Python REPL running pandas operations on a dataframe loaded from CSV), and a calculator (LangChain's LLMMathChain). The author shows example conversations where the bot combines tools to compute leave payouts. Code snippets show the tool and agent setup, roughly 50 lines of Python according to the author. The post also explains embeddings, token limits, and prompt guardrails against injection.",
+  "pricing": "open source",
+  "platforms": [
+   "Python",
+   "Azure OpenAI",
+   "Pinecone",
+   "Streamlit",
+   "Azure Data Lake"
+  ],
+  "notable": [
+   "Combines ReAct-style agent reasoning with LangChain Tools, including a retrieval tool over a Pinecone index",
+   "Employee data tool runs pandas code against a CSV loaded from a data pipeline, with the LLM kept off the source HR system",
+   "Includes a calculator tool because the author notes ChatGPT is weak at arithmetic",
+   "Code is described as available on the author's GitHub"
+  ],
+  "caveats": [
+   "Describes a prototype that the author is still testing; not a production-ready product",
+   "Uses gpt-3.5-turbo with a 4097-token limit, which constrains prompt and document size",
+   "Relies on Azure OpenAI, Pinecone and Azure Data Lake setup with user-supplied keys and endpoints",
+   "Employee data tool allows the LLM to execute Python, so the author notes it can be risky if it had direct source-system access"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7843,
+  "output": 1274
+ },
+ "generated": "2026-10-29"
+}

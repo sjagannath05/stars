@@ -1,0 +1,66 @@
+{
+ "id": "4937c6859ef7b947",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-dwarf-step",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/source-level-stepping/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/source-level-stepping",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 6: Source-level stepping"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger: Part 6 - Source-level stepping",
+  "one_liner": "You learn how to implement step-in, step-over, and step-out in a C/C++ debugger on Linux by combining ptrace single-stepping, temporary breakpoints, and DWARF line table data.",
+  "category": "debugger development",
+  "keywords": [
+   "source-level stepping",
+   "step over",
+   "step in",
+   "step out",
+   "finish command",
+   "next command",
+   "stepi",
+   "ptrace single step",
+   "single stepping instructions",
+   "temporary breakpoints",
+   "dwarf line table",
+   "libelfin",
+   "return address breakpoint",
+   "frame pointer rbp",
+   "linux debugger tutorial",
+   "build a debugger in c++",
+   "gdb step over implementation",
+   "set breakpoint at every line in function",
+   "load address offset",
+   "debugger from scratch"
+  ],
+  "takeaways": [
+   "Single-step instruction support (stepi) is built from PTRACE_SINGLESTEP, with a wrapper that temporarily disables breakpoints at the current PC.",
+   "Step out is implemented by reading the return address at rbp+8 and running until a temporary breakpoint there is hit.",
+   "Step in is a loop of instruction single-steps until the DWARF line number changes.",
+   "Step over is a naive approach: place temporary breakpoints on every line-table entry in the current function (except the current line) plus the return address, then continue.",
+   "The author notes the approach is simplified: it may step over breakpoints accidentally, and stepping out of main or into dynamically linked libraries may break."
+  ],
+  "summary": "This post, part 6 of a series on writing a Linux debugger, adds source-level stepping on top of earlier work with DWARF line information. It first exposes instruction-level stepping (stepi) with a breakpoint-aware wrapper, then implements step_out by setting a temporary breakpoint at the return address, step_in by single-stepping until the source line changes, and step_over by placing temporary breakpoints on all line-table addresses within the current function. The author deliberately uses naive approaches, acknowledging limitations such as possible accidental breakpoint stepping, and suggests a test program with nested function calls to exercise the commands.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "Linux",
+   "ptrace",
+   "DWARF",
+   "libelfin",
+   "x86-64 assembly"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4439,
+  "output": 918
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,73 @@
+{
+ "id": "0045159dbf88aad6",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-setup",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/setup/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/setup",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C++: _Writing a Linux Debugger_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 1: Setup"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger: Part 1 - Setup",
+  "one_liner": "You learn how to launch a child process under ptrace with fork/exec and build a minimal command loop with linenoise to halt and continue it.",
+  "category": "debugger development",
+  "keywords": [
+   "linux debugger",
+   "write a debugger",
+   "ptrace",
+   "ptrace_traceme",
+   "fork exec",
+   "waitpid",
+   "linenoise",
+   "libelfin",
+   "libdwarf",
+   "dwarf debug information",
+   "minimal debugger in c++",
+   "debugger command loop",
+   "continue command",
+   "sigtrap",
+   "build your own debugger",
+   "gdb lldb alternative"
+  ],
+  "takeaways": [
+   "Launch a debuggee with fork() and execl(), with the child calling ptrace(PTRACE_TRACEME) first.",
+   "Use waitpid() in the parent to wait for the SIGTRAP sent when the traced process starts.",
+   "Build a simple REPL with linenoise for command input, history, and navigation.",
+   "Implement a continue command using PTRACE_CONT followed by waitpid().",
+   "Parse DWARF debug info with libelfin, which also provides a DWARF expression evaluator for reading variables."
+  ],
+  "summary": "This is the first part of a multi-part tutorial on writing a debugger for Linux programs, focused on C and C++. It explains the setup: using linenoise for command-line input and libelfin (preferred over libdwarf for its nicer interface and DWARF expression evaluator) for debug information. The main code walks through launching the target with the fork/exec pattern and ptrace, creating a debugger class with a run loop, and handling a simple continue command. The post is intentionally simplified, skipping robust error handling in favour of a working minimal debugger.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C++",
+   "C",
+   "Linux",
+   "ptrace",
+   "linenoise",
+   "libelfin",
+   "libdwarf",
+   "DWARF",
+   "CMake",
+   "WSL",
+   "gdb",
+   "lldb"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4201,
+  "output": 812
+ },
+ "generated": "2026-10-29"
+}

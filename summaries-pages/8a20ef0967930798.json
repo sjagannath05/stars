@@ -1,0 +1,69 @@
+{
+ "id": "8a20ef0967930798",
+ "url": "https://blog.tartanllama.xyz/writing-a-linux-debugger-elf-dwarf",
+ "final_url": "https://tartanllama.xyz/posts/writing-a-linux-debugger/elves-and-dwarves/",
+ "kind": "article",
+ "method": "browser",
+ "page_title": "Redirecting to: /posts/writing-a-linux-debugger/elves-and-dwarves",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 4: Elves and dwarves"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Linux Debugger Part 4: Elves and Dwarves",
+  "one_liner": "You learn how ELF sections and DWARF debug info (line tables and DIEs) map machine addresses to source lines, functions and variables, which a debugger needs for breakpoints and variable reads.",
+  "category": "C/C++ debugger internals",
+  "keywords": [
+   "elf format",
+   "dwarf debug information",
+   "dwarf line table",
+   "debug_line section",
+   "debug_info section",
+   "dwarf information entry",
+   "die",
+   "line number program",
+   "map address to source line",
+   "find function from program counter",
+   "set breakpoint on function",
+   "prologue end breakpoint",
+   "read variable contents dwarf",
+   "dw_at_location fbreg",
+   "frame base register",
+   "location lists",
+   "writing a debugger linux",
+   "dwarfdump output",
+   "gcc vs clang dwarf",
+   "system v x86_64 abi frame pointer"
+  ],
+  "takeaways": [
+   "ELF is the object file format that stores code, data, debug info and tells the loader how to load the binary.",
+   "DWARF's .debug_line table maps code addresses to file, line and column, and works in both directions for breakpoints and stack location.",
+   "DWARF .debug_info is a tree of DIEs (tags plus attributes) describing compile units, functions, variables and types.",
+   "Finding a function from a PC means checking compile unit and function low_pc/high_pc ranges; breakpoints can skip the prologue using the prologue-end line entry.",
+   "Variables are read by evaluating DW_AT_location relative to the frame base, then interpreting bytes using the type DIE."
+  ],
+  "summary": "This is part 4 of a series on writing a Linux debugger in C++. It explains ELF as the Linux object file format and DWARF as the debug information format that links ELF binaries to source code. The article walks through a small example program, showing dwarfdump output for the line table and the .debug_info DIE tree. It then applies this to practical tasks: finding the function containing a PC, setting a breakpoint on a function while skipping the prologue, and reading a variable using its location and frame base. It also notes GCC and Clang differences and says a library will be used in later parts.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "C++",
+   "ELF",
+   "DWARF",
+   "Clang",
+   "GCC",
+   "dwarfdump",
+   "x86-64 System V ABI",
+   "Linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6323,
+  "output": 931
+ },
+ "generated": "2026-10-29"
+}
