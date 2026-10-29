@@ -1,0 +1,59 @@
+{
+ "id": "f791e1c4f722c273",
+ "url": "https://www.pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python",
+ "final_url": "https://pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Text skew correction with OpenCV and Python - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Text Skew Correction Tutorial"
+  }
+ ],
+ "summary": {
+  "title": "Text skew correction with OpenCV and Python",
+  "one_liner": "You learn to deskew a rotated block of text in an image by thresholding it, computing a minimum-area rotated bounding box with cv2.minAreaRect, and applying an affine rotation with OpenCV.",
+  "category": "image processing",
+  "keywords": [
+   "text skew correction",
+   "deskew text",
+   "deskewing text opencv",
+   "opencv python deskew",
+   "minarearect",
+   "cv2.minarearect angle",
+   "rotated bounding box",
+   "otsu thresholding",
+   "affine transformation rotation",
+   "cv2.getrotationmatrix2d",
+   "cv2.warpaffine",
+   "document analysis preprocessing",
+   "correct rotated scanned document",
+   "ocr preprocessing",
+   "félix abecassis skew correction",
+   "image rotation correction python"
+  ],
+  "takeaways": [
+   "Invert and binarize the image with Otsu thresholding so text pixels are foreground.",
+   "Use cv2.minAreaRect on the foreground pixel coordinates to get the skew angle, adjusting for its [-90, 0) range.",
+   "Rotate the image with cv2.getRotationMatrix2D and cv2.warpAffine to correct the skew.",
+   "The method was tested on four images rotated between 4 and 41 degrees in both directions."
+  ],
+  "summary": "This PyImageSearch tutorial is a Python and OpenCV implementation of Félix Abecassis's text skew correction approach. The script converts an image to grayscale, inverts it, and applies Otsu thresholding, then computes a minimum rotated bounding box around the text pixels to estimate the angle. It then rotates the image with an affine transformation to deskew it. The author evaluates the code on a small dataset of four text images rotated between 4 and 41 degrees, clockwise and counter-clockwise, and notes its use in document digitization pipelines before OCR.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "NumPy",
+   "argparse"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5013,
+  "output": 816
+ },
+ "generated": "2026-10-29"
+}

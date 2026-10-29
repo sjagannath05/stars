@@ -1,0 +1,62 @@
+{
+ "id": "7ef1ef58b9a71da0",
+ "url": "https://thoughtbot.com/blog/rebuilding-git-in-ruby",
+ "final_url": "https://thoughtbot.com/blog/rebuilding-git-in-ruby",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Rebuilding Git in Ruby",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Ruby:",
+   "entry": "Rebuilding Git in Ruby"
+  }
+ ],
+ "summary": {
+  "title": "Rebuilding Git in Ruby",
+  "one_liner": "You learn how Git stores data internally by re-implementing its core commands (init, add, commit) as small Ruby scripts.",
+  "category": "version control internals",
+  "keywords": [
+   "rebuild git in ruby",
+   "git internals",
+   "how git works under the hood",
+   "git from scratch",
+   "reimplement git",
+   "rgit",
+   "git objects",
+   "git blob",
+   "git tree object",
+   "git commit object",
+   "git index staging area",
+   "git init .git directory",
+   "content addressed storage sha1",
+   "build a version control system",
+   "ruby git tutorial",
+   "unix small tools git subcommands",
+   "git plumbing commands",
+   "how does git add work",
+   "how does git commit work"
+  ],
+  "takeaways": [
+   "Git's top-level command dispatches to separate subcommand scripts, following the UNIX small-tools convention.",
+   "git init creates a .git directory with HEAD, objects, and refs; HEAD holds a symbolic ref to the current branch.",
+   "git add hashes file contents with SHA1, stores a zlib-compressed blob under objects/, and records the SHA and path in the index.",
+   "git commit builds nested tree objects from the index, writes a commit object pointing to the root tree, and updates the current branch ref."
+  ],
+  "summary": "The article walks through a simplified Git clone called RGit written in Ruby, built step by step. It covers a dispatcher script for subcommands, a git init that creates the .git directory layout, and a git add that hashes and compresses file contents into objects and writes a text index. It then shows a commit step that turns the index into tree and commit objects and updates the branch ref. The author simplifies the binary index format to a text one for clarity, and the full source is linked on GitHub.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Git",
+   "SHA1",
+   "zlib"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6318,
+  "output": 748
+ },
+ "generated": "2026-10-29"
+}

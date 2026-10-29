@@ -1,0 +1,63 @@
+{
+ "id": "1b53428f8023f1fd",
+ "url": "https://ishuah.com/2021/03/10/build-a-terminal-emulator-in-100-lines-of-go",
+ "final_url": "https://ishuah.com/2021/03/10/build-a-terminal-emulator-in-100-lines-of-go/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build A Simple Terminal Emulator In 100 Lines of Golang",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Go: _Build A Simple Terminal Emulator In 100 Lines of Golang_"
+  }
+ ],
+ "summary": {
+  "title": "Build A Simple Terminal Emulator In 100 Lines of Golang",
+  "one_liner": "You learn how a basic terminal emulator connects a Fyne GUI to a Unix pseudoterminal (pty master/slave) in Go, reading keyboard input, running bash, and buffering output.",
+  "category": "terminal emulator internals",
+  "keywords": [
+   "terminal emulator in go",
+   "golang terminal emulator tutorial",
+   "pseudoterminal",
+   "pty master and pty slave",
+   "unix pty package go",
+   "fyne ui toolkit",
+   "fyne keyboard input setontypedkey",
+   "setontypedrune",
+   "tty subsystem",
+   "tty driver kernel",
+   "bash process from go",
+   "output buffer rune slice",
+   "bufio readrune",
+   "build your own terminal emulator",
+   "how terminal emulators work",
+   "ansi escape codes next steps",
+   "terminal emulator series part 2",
+   "go goroutine reading pty output"
+  ],
+  "takeaways": [
+   "A terminal emulator pairs a GUI with a pseudoterminal: the pty master receives keystrokes and displays output, while the pty slave is attached to a shell such as bash.",
+   "The Go pty package can start bash and write commands like 'ls' to the pty master.",
+   "Fyne's SetOnTypedKey and SetOnTypedRune callbacks capture special keys and characters to forward to the pty.",
+   "Output is kept in a capped buffer of rune slices, read one rune at a time with bufio.Reader and redrawn every 100 ms.",
+   "Signals (Ctrl-C), ANSI escape codes, special keys and cursor handling are left for later articles."
+  ],
+  "summary": "The article is a short codelab, the second in a terminal emulator series, that builds a minimal terminal emulator in Go using the Fyne UI toolkit and the pty package for Unix pseudoterminals. It proceeds in steps: first a text grid UI, then starting bash through a pty master and sending commands, then forwarding keyboard input via Fyne's typed-key and typed-rune callbacks, and finally a rune-by-rune output buffer capped at 16 lines and redrawn every 100 ms. The author notes that there is no cursor, buffer management or signal handling yet, so Ctrl-C does not stop jobs, and says later articles will cover ANSI escape codes, special keys, signals and the cursor.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "Fyne",
+   "pty package",
+   "bash",
+   "Unix pseudoterminals"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2851,
+  "output": 988
+ },
+ "generated": "2026-10-29"
+}

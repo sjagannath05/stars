@@ -1,0 +1,73 @@
+{
+ "id": "8d02e525aa0d3960",
+ "url": "https://chipsandcheese.com/p/arms-neoverse-v2-in-awss-graviton-4",
+ "final_url": "https://chipsandcheese.com/p/arms-neoverse-v2-in-awss-graviton-4",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Arm’s Neoverse V2, in AWS’s Graviton 4",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Independent measurement across vendors",
+   "entry": "Arm's Neoverse V2, in AWS's Graviton 4 - Measures a sustained rename width below the stated one, cache latencies, mesh behaviour and cross-socket cost on V2."
+  }
+ ],
+ "summary": {
+  "title": "Arm's Neoverse V2, in AWS's Graviton 4",
+  "one_liner": "A detailed microarchitecture and measurement look at Arm's Neoverse V2 core and its 96-core, dual-socket implementation in AWS Graviton 4, covering latency, bandwidth, front end, renamer, backend and load/store behaviour compared with AMD Zen 4 and Intel Golden Cove.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "neoverse v2",
+   "graviton 4",
+   "aws graviton",
+   "arm server cpu",
+   "cortex x3",
+   "cmn-700 mesh",
+   "cross-socket latency",
+   "dram latency",
+   "tage branch predictor",
+   "btb",
+   "micro-op cache",
+   "rename width",
+   "move elimination",
+   "store forwarding",
+   "l1 data cache",
+   "l2 cache latency",
+   "zen 4 comparison",
+   "golden cove comparison",
+   "bergamo",
+   "chips and cheese cpu analysis",
+   "arm vs amd vs intel server cpu",
+   "how wide is neoverse v2 renamer",
+   "why is graviton 4 slower than zen 4",
+   "cpu microbenchmarking"
+  ],
+  "takeaways": [
+   "Graviton 4 pairs 96 Neoverse V2 cores on a CMN-700 mesh; dual-socket instances reach 192 cores, with cross-socket latency around 138.6 ns and cross-socket bandwidth just over 77 GB/s.",
+   "The author measured a sustained rename width of about 6 micro-ops per cycle, below Arm's stated 8, making V2 effectively a 6-wide core.",
+   "Neoverse V2 has a 64 KB L1D, a 2 MB L2 with 11-cycle latency, and an L3 hit near 25 ns, while running at low clocks (up to 2.8 GHz, 2.7 GHz dual socket).",
+   "In the author's tests, V2 had higher IPC than Zen 4 but lower overall performance in libx264 and 7-Zip because of lower clocks and no SMT advantage.",
+   "Store forwarding is limited on V2 (only halves of a 64-bit store forward to a 32-bit load), which the author compares to Neoverse N1 and says is weaker than Intel and AMD."
+  ],
+  "summary": "The article examines AWS Graviton 4, which uses 96 Arm Neoverse V2 cores, first covering system-level latency and bandwidth on the CMN-700 mesh, DRAM and dual-socket configurations. It then walks through the V2 core: branch prediction, front end and micro-op cache, rename, out-of-order scheduling, FP/vector pipes, load/store unit, TLBs and caches. The author uses microbenchmarks and performance counters, and compares results with AMD Zen 4, Bergamo, Genoa-X and Intel Golden Cove. The article ends with libx264 and 7-Zip runs against Zen 4 to show how the design choices play out in practice.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Arm Neoverse V2",
+   "Arm Cortex X3",
+   "AWS Graviton 4",
+   "CMN-700 mesh",
+   "AMD Zen 4",
+   "AMD Bergamo",
+   "Intel Golden Cove",
+   "libx264",
+   "7-Zip"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10284,
+  "output": 1237
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "0716d4485f817b28",
+ "url": "https://man7.org/linux/man-pages/man2/move_pages.2.html",
+ "final_url": "https://man7.org/linux/man-pages/man2/move_pages.2.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "move_pages(2) — Linux manual page",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Migration, balancing and measured effects",
+   "entry": "move_pages(2) - Defines per-page migration of a running process, and a query reporting each page's node, the direct test of first touch."
+  }
+ ],
+ "summary": {
+  "title": "move_pages(2) — Linux manual page",
+  "one_liner": "move_pages(2) explains how to move individual pages of a running process to a chosen NUMA node, or query which node each page currently resides on.",
+  "category": "linux memory management",
+  "keywords": [
+   "move_pages",
+   "move_pages system call",
+   "move_pages(2)",
+   "numa page migration",
+   "migrate pages to another node",
+   "query page node location",
+   "libnuma",
+   "numaif.h",
+   "mpol_mf_move",
+   "mpol_mf_move_all",
+   "status array page states",
+   "ptrace access mode permission",
+   "cap_sys_nice privilege",
+   "get_mempolicy",
+   "mbind",
+   "set_mempolicy",
+   "first touch memory placement",
+   "cpuset memory nodes",
+   "linux man page"
+  ],
+  "takeaways": [
+   "move_pages(pid, count, pages, nodes, status, flags) moves listed pages of a process to target NUMA nodes.",
+   "Passing nodes as NULL makes move_pages() report the node each page currently resides on in the status array, which is useful for checking placement.",
+   "Status values include node numbers and errors such as -EACCES, -EBUSY, -ENOENT and -ENOMEM.",
+   "MPOL_MF_MOVE moves only exclusively used pages; MPOL_MF_MOVE_ALL also moves shared pages but needs CAP_SYS_NICE.",
+   "Since Linux 4.13, moving pages of another process is governed by a PTRACE_MODE_READ_REALCREDS check."
+  ],
+  "summary": "This is the Linux man-pages reference page for the move_pages(2) system call, covering its signature, arguments, flags, and permission rules. It describes the two uses of the call: moving specified pages to target NUMA nodes, and querying each page's current node by passing a NULL nodes array. The page also lists per-page status codes, return values and errors, and notes on cpuset and memory policy interaction. It is a reference rather than a tutorial, and the listing frames it as a direct way to test first-touch placement.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "C",
+   "libnuma",
+   "NUMA"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3541,
+  "output": 866
+ },
+ "generated": "2026-10-29"
+}

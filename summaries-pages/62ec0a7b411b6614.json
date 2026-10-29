@@ -1,0 +1,63 @@
+{
+ "id": "62ec0a7b411b6614",
+ "url": "https://learnopengl.com/In-Practice/2D-Game/Collisions/Collision-detection",
+ "final_url": "https://learnopengl.com/In-Practice/2D-Game/Collisions/Collision-detection",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Collision detection",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenGL:",
+   "entry": "Collision detection"
+  }
+ ],
+ "summary": {
+  "title": "Collision detection",
+  "one_liner": "Learn how to detect collisions between axis-aligned bounding boxes and between a circle and a box, as used in a Breakout-style 2D game in OpenGL.",
+  "category": "2d game collisions",
+  "keywords": [
+   "collision detection",
+   "aabb",
+   "axis aligned bounding box",
+   "aabb collision",
+   "circle collision",
+   "aabb circle collision",
+   "bounding volume",
+   "bounding shape",
+   "bounding box overlap test",
+   "clamp vector closest point",
+   "glm clamp",
+   "breakout collision",
+   "2d game collision",
+   "opengl 2d game",
+   "brick destruction collision",
+   "circle rectangle intersection",
+   "collision shape approximation",
+   "learnopengl collision",
+   "game physics basics",
+   "c++ collision code"
+  ],
+  "takeaways": [
+   "Simple shapes such as AABBs and circles are used as approximations for collision tests instead of complex object geometry.",
+   "Two AABBs collide when their edges overlap on both the x and y axes.",
+   "A circle-AABB collision is found by clamping the difference vector between centers to the box extents to get the closest point, then comparing the distance to the radius.",
+   "Collision handling in the game loop checks each non-destroyed brick against the ball and destroys non-solid bricks on contact.",
+   "The page notes that bounding shapes can report collisions that do not occur with the real shape, and that ball response is covered in the next chapter."
+  ],
+  "summary": "The tutorial explains why simple shapes are used for collision detection instead of an object's real vertex data, and notes their approximation drawbacks. It first implements AABB-AABB overlap testing in C++ with glm-style vectors, then wires it into a DoCollisions function that destroys non-solid bricks. It then shows why a rectangle is a poor fit for the round ball and implements a more precise circle-versus-AABB test by clamping the center difference vector to the box half-extents. The page ends by noting that the ball does not yet respond to collisions, which is deferred to the next chapter.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "OpenGL",
+   "C++",
+   "GLM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3923,
+  "output": 843
+ },
+ "generated": "2026-10-29"
+}

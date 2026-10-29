@@ -1,0 +1,82 @@
+{
+ "id": "3ea93e5e8de0a3ca",
+ "url": "https://habr.com/en/post/438186",
+ "final_url": "https://habr.com/en/articles/438186/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Checklist: what had to be done before deploying microservices to production",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Checklists",
+   "entry": "Checklist: what had to be done before deploying microservices to production"
+  }
+ ],
+ "summary": {
+  "title": "Checklist: what had to be done before deploying microservices to production",
+  "one_liner": "A checklist of production-readiness criteria for microservices, covering logging, monitoring, alerting, configuration, graceful shutdown, queue handling and deployment automation.",
+  "category": "microservices production readiness",
+  "keywords": [
+   "microservices production checklist",
+   "production readiness checklist",
+   "deploy microservices to production",
+   "runbooks",
+   "structured logging json",
+   "log to stdout stderr",
+   "log level environment variable",
+   "liveness probe",
+   "readiness probe",
+   "graceful shutdown sigterm",
+   "dead letter queue",
+   "horizontal scaling",
+   "resource limits kubernetes",
+   "locked dependency versions",
+   "12 factor config environment variables",
+   "monitoring and alerting",
+   "user-agent header identify service",
+   "automated ci cd delivery",
+   "database connection health check",
+   "max tasks per instance restart memory leak",
+   "dockerfile docker-compose readme",
+   "kubernetes ecs deployment",
+   "reverse proxy ip whitelist",
+   "data inconsistency",
+   "dumb-init"
+  ],
+  "takeaways": [
+   "Every microservice should have a README description, monitoring metrics, and configured alerts before going to production",
+   "Logs should go to STDOUT/STDERR in JSON with agreed fields and a LOG_LEVEL environment variable",
+   "Services need liveness and readiness probes, graceful SIGTERM handling, and regular database connection checks",
+   "Queue consumers should use retries and dead letter queues, and non-scalable services must be clearly documented",
+   "Deployment must be fully automated through CI/CD, with configuration from environment variables and resource limits kept outside the git repo"
+  ],
+  "summary": "The author, drawing on experience fighting production incidents, presents a checklist of criteria a microservice should meet before being deployed to production. The items cover documentation (README, runbooks), observability (metrics, alerts, JSON logs to STDOUT, log levels), operational behaviour (liveness/readiness probes, graceful shutdown, DB reconnection, dead letter queues, horizontal scaling, self-restart after a message limit), and delivery concerns (locked dependencies, Docker, environment configuration, resource limits, automated CI/CD, identifiable User-agent, licensing and unsupported libraries). Examples are drawn from real incidents with Kubernetes, RabbitMQ, Logstash and Kafka consumers, and the author invites readers to extend the list.",
+  "format": "list",
+  "level": "intermediate",
+  "technologies": [
+   "Docker",
+   "Kubernetes",
+   "ECS",
+   "Prometheus",
+   "DataDog",
+   "New Relic",
+   "Elasticsearch",
+   "Logstash",
+   "RabbitMQ",
+   "Kafka",
+   "Ansible",
+   "Chef",
+   "Salt",
+   "Nginx",
+   "dumb-init",
+   "JSON",
+   "docker-compose"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5981,
+  "output": 1080
+ },
+ "generated": "2026-10-29"
+}

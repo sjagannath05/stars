@@ -1,0 +1,61 @@
+{
+ "id": "7cff957f7c3e3f96",
+ "url": "https://briancallahan.net/blog/20210826.html",
+ "final_url": "https://briancallahan.net/blog/20210826.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 8: Strings, forward references, and conclusion"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 8: Strings, forward references, and conclusion",
+  "one_liner": "You learn how to add Pascal-style string literals and forward procedure declarations to a PL/0 compiler written in C, finishing the compiler.",
+  "category": "compiler construction",
+  "keywords": [
+   "pl/0 compiler",
+   "compiler tutorial",
+   "string literals",
+   "pascal strings",
+   "forward declaration",
+   "forward references",
+   "mutually recursive procedures",
+   "lexer string token",
+   "recursive descent parser",
+   "code generator c output",
+   "symbol table",
+   "writestr statement",
+   "escape characters",
+   "self-hosting compiler",
+   "bootstrap compiler",
+   "build a compiler in c",
+   "single quote escaping",
+   "addsymbol duplicate symbol check"
+  ],
+  "takeaways": [
+   "Pascal string literals use single quotes, with '' for a literal quote; the lexer converts them to C string syntax, escaping double quotes.",
+   "Single-character strings are turned into C character literals to simplify code generation for writeChar-style output.",
+   "Forward declarations are added with a new forward token and stored in the symbol table, then accepted when the real procedure is defined.",
+   "symcheck is extended so that forward-declared names are treated as procedures, allowing mutually recursive procedures.",
+   "The compiler is considered complete at this point and the author moves on to a self-hosting compiler series."
+  ],
+  "summary": "The final part of a multi-part series building a PL/0 compiler in C. It adds string literal support: the lexer scans Pascal-style single-quoted strings, handles doubled quotes and C-style escapes, and emits the equivalent C string, while the parser and code generator are extended for writeStr. It then adds forward declarations, a new section in block() where a 'forward' keyword records procedure names in the symbol table, with addsymbol and symcheck adjusted so the later real definition is not flagged as a duplicate. The post closes by declaring the compiler finished and previewing a self-hosting compiler series.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "PL/0",
+   "Pascal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4986,
+  "output": 836
+ },
+ "generated": "2026-10-29"
+}

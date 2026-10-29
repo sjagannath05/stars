@@ -1,0 +1,64 @@
+{
+ "id": "91c880901eadf502",
+ "url": "https://docs.kernel.org/networking/iou-zcrx.html",
+ "final_url": "https://docs.kernel.org/networking/iou-zcrx.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "io_uring zero copy Rx",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Kernel paths and generated code",
+   "entry": "io_uring zero copy Rx - Lands payloads straight in user memory on header-splitting NICs, pending the implementer's epoll run naming every field."
+  }
+ ],
+ "summary": {
+  "title": "io_uring zero copy Rx",
+  "one_liner": "Learn how io_uring ZC Rx delivers packet payloads straight into userspace memory on header-split NICs, including the NIC setup with ethtool and the registration, receive, and buffer-recycling API steps.",
+  "category": "linux kernel networking",
+  "keywords": [
+   "io_uring zero copy rx",
+   "io_uring zcrx",
+   "zero copy receive",
+   "zero-copy network receive linux",
+   "ioring_op_recv_zc",
+   "header/data split",
+   "tcp-data-split ethtool",
+   "ethtool flow steering",
+   "rss queue steering",
+   "ethtool -x equal",
+   "ioring_setup_defer_taskrun",
+   "refill ring io_uring",
+   "io_uring_register_ifq",
+   "tcp_zerocopy_receive comparison",
+   "dpdk kernel bypass comparison",
+   "rx_buf_len area chunking",
+   "multishot receive io_uring",
+   "liburing zero copy"
+  ],
+  "takeaways": [
+   "ZC Rx requires a NIC with header/data split, flow steering, and RSS so payloads land in userspace while headers still go through the kernel TCP stack.",
+   "NIC configuration (ethtool -L, -G tcp-data-split, -X, -N) is done out of band and is not configured by the kernel API.",
+   "Setup needs an io_uring instance with SINGLE_ISSUER, DEFER_TASKRUN, and CQE32 or CQE_MIXED flags, plus an mmap'd memory area and refill ring.",
+   "Buffers are returned to the kernel by writing struct io_uring_zcrx_rqe entries to the refill ring and advancing the tail.",
+   "rx_buf_len can hint larger chunk sizes, falling back to zero (page size) if registration fails."
+  ],
+  "summary": "This kernel documentation page describes io_uring zero copy Rx (ZC Rx), which receives packet data directly into user memory without kernel-to-user copies, unlike TCP_ZEROCOPY_RECEIVE and kernel-bypass stacks such as DPDK. It lists the required NIC features (header/data split, flow steering, RSS) and gives the ethtool commands used to set them up. It then walks through the low-level io_uring API: creating the ring, mapping a memory area and refill ring, registering the interface queue, submitting multishot IORING_OP_RECV_ZC requests, processing CQEs, and recycling buffers. The page ends with notes on area chunking via rx_buf_len and a pointer to the kernel selftest.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "io_uring",
+   "Linux kernel",
+   "C",
+   "ethtool",
+   "liburing",
+   "mmap"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3953,
+  "output": 1060
+ },
+ "generated": "2026-10-29"
+}

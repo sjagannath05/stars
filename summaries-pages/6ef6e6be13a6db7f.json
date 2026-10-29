@@ -1,0 +1,65 @@
+{
+ "id": "6ef6e6be13a6db7f",
+ "url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-2-threads",
+ "final_url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-2-threads",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Concurrent Servers: Part 2 - Threads",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 2 - Threads"
+  }
+ ],
+ "summary": {
+  "title": "Concurrent Servers: Part 2 - Threads",
+  "one_liner": "Learn how one-thread-per-client and thread-pool designs handle concurrent network connections, with a pthreads C server and a ThreadPoolExecutor Python server.",
+  "category": "network programming",
+  "keywords": [
+   "concurrent network server",
+   "multithreaded server",
+   "thread per client",
+   "thread pool",
+   "pthreads",
+   "pthread_create",
+   "pthread_detach",
+   "threadpoolexecutor",
+   "concurrent.futures",
+   "python thread pool server",
+   "c socket server threads",
+   "accept loop",
+   "rate limiting concurrent clients",
+   "dos thread exhaustion",
+   "sequential server",
+   "event-driven servers",
+   "graceful degradation under load",
+   "context switching threads",
+   "how to handle many clients at once",
+   "blocking sockets threads"
+  ],
+  "takeaways": [
+   "One-thread-per-client servers serve connections concurrently but can exhaust memory and CPU and are vulnerable to DoS.",
+   "A thread pool bounds concurrency by design: extra clients wait in a queue until a worker is free.",
+   "The C version uses pthread_create and pthread_detach in the accept loop; the Python version uses ThreadPoolExecutor.submit.",
+   "Thread pool size should be chosen via benchmarking and the available hardware.",
+   "Threads are not the only option; the next part covers event-driven, asynchronous designs."
+  ],
+  "summary": "This is Part 2 of a series on concurrent network servers, building on a sequential baseline from Part 1. It explains the motivation for multithreading (CPU idle time while waiting on network I/O) and presents a one-thread-per-client server in C using pthreads, with thread detachment and a shared serve_connection function. It then discusses the resource and DoS problems of that design and introduces thread pools as a rate-limiting approach, with a Python server using ThreadPoolExecutor and a pool size of 2 to demonstrate queuing behavior via client logs. The post ends by noting threads are one option and previewing event-driven designs in the next part.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "pthreads",
+   "Python",
+   "ThreadPoolExecutor",
+   "sockets"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7243,
+  "output": 876
+ },
+ "generated": "2026-10-29"
+}

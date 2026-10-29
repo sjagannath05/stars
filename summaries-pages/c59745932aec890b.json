@@ -1,0 +1,67 @@
+{
+ "id": "c59745932aec890b",
+ "url": "https://docs.kernel.org/arch/x86/xstate.html",
+ "final_url": "https://docs.kernel.org/arch/x86/xstate.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The Linux Kernel documentation",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Matrix extensions",
+   "entry": "Using XSTATE features in user space applications - Defines the arch_prctl permission Linux requires for AMX tile data and the trap a tile instruction takes until granted."
+  }
+ ],
+ "summary": {
+  "title": "Using XSTATE features in user space applications",
+  "one_liner": "Learn how Linux user-space programs request permission via arch_prctl to use dynamically enabled CPU state such as AMX TILE_DATA, and what happens if they don't.",
+  "category": "linux kernel x86",
+  "keywords": [
+   "xstate",
+   "xsave",
+   "dynamic xstate features",
+   "arch_prctl",
+   "arch_req_xcomp_perm",
+   "arch_get_xcomp_supp",
+   "arch_get_xcomp_perm",
+   "amx tile_data",
+   "amx permission linux",
+   "intel amx user space",
+   "xcr0",
+   "cpuid xgetbv",
+   "sigaltstack size",
+   "minsigstksz",
+   "signal frame size",
+   "sigill amx",
+   "guest xstate permission",
+   "arch_req_xcomp_guest_perm",
+   "fork and exec permission inheritance",
+   "x86 floating point extensions",
+   "how to enable amx in linux",
+   "xstate_bv signal handler"
+  ],
+  "takeaways": [
+   "Features like AMX TILE_DATA are enabled in XCR0 but the first use traps, because large XSAVE buffers are not allocated by default.",
+   "Call arch_prctl(ARCH_REQ_XCOMP_PERM, feature_nr) to request permission; check availability first with ARCH_GET_XCOMP_SUPP.",
+   "Permission is per process, inherited across fork, and cleared on exec.",
+   "Alternate signal stacks must be large enough for the bigger signal frame once permission is granted; otherwise ARCH_REQ_XCOMP_PERM returns -ENOSUPP and sigaltstack returns -ENOMEM.",
+   "Without permission, using the feature sends SIGILL; VM guest permissions must be requested before the first VCPU is created."
+  ],
+  "summary": "This kernel documentation page explains how x86 user-space applications discover and request dynamically enabled XSTATE features, using AMX TILE_DATA as the main example. It describes the arch_prctl options (ARCH_GET_XCOMP_SUPP, ARCH_GET_XCOMP_PERM, ARCH_REQ_XCOMP_PERM), why signal alternate stacks must be sized for the larger XSAVE frame, and how the first trapped instruction is handled. A C code example shows checking AMX support and requesting tile data permission, and the page closes with signal frame behavior and guest VM permission variants.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Linux kernel",
+   "x86",
+   "Intel AMX",
+   "XSAVE"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3716,
+  "output": 1032
+ },
+ "generated": "2026-10-29"
+}

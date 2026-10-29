@@ -1,0 +1,61 @@
+{
+ "id": "ca152ead11554b34",
+ "url": "https://www.pyimagesearch.com/2015/05/04/target-acquired-finding-targets-in-drone-and-quadcopter-video-streams-using-python-and-opencv",
+ "final_url": "https://pyimagesearch.com/2015/05/04/target-acquired-finding-targets-in-drone-and-quadcopter-video-streams-using-python-and-opencv/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Target acquired: Finding targets in drone and quadcopter video streams using Python and OpenCV - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Automatic Target Detection Tutorial"
+  }
+ ],
+ "summary": {
+  "title": "Target acquired: Finding targets in drone and quadcopter video streams using Python and OpenCV",
+  "one_liner": "You learn to detect square targets in recorded quadcopter video using OpenCV contour properties (approximation, aspect ratio, solidity) instead of a trained machine learning model.",
+  "category": "computer vision target detection",
+  "keywords": [
+   "opencv target detection",
+   "drone video processing",
+   "quadcopter video python",
+   "detect squares in video",
+   "contour approximation",
+   "approxpolydp",
+   "ramer-douglas-peucker algorithm",
+   "aspect ratio contour filter",
+   "solidity convex hull",
+   "canny edge detection video",
+   "findcontours opencv",
+   "square detection without machine learning",
+   "hubsan x4 camera",
+   "python drone video analysis",
+   "rectangle detection opencv",
+   "cv2.boundingrect aspect ratio",
+   "post-process drone footage"
+  ],
+  "takeaways": [
+   "Convert each frame to grayscale, blur, run Canny edge detection, and find external contours with OpenCV.",
+   "Use contour approximation (approxPolyDP) to keep shapes with roughly 4 to 6 vertices as rectangle candidates.",
+   "Filter candidates by bounding box size (over 25 pixels), solidity (above 0.9), and aspect ratio (between 0.8 and 1.2) to identify square targets.",
+   "Draw the outline and crosshairs on detected targets; the author notes flicker from motion blur and suggests adaptive correlation filters as future work."
+  ],
+  "summary": "The author, a computer vision developer, describes building a script (drone.py) that detects PyImageSearch logo squares printed and placed around his apartment in video recorded by a Hubsan X4 quadcopter. The pipeline reads frames with OpenCV, converts to grayscale, blurs, applies Canny edges, and finds contours. Each contour is approximated and filtered by vertex count, bounding box size, solidity, and aspect ratio. The post explains the geometry behind each test and shows results on demo videos, noting flicker caused by motion blur as a limitation.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "imutils",
+   "NumPy",
+   "argparse"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7555,
+  "output": 884
+ },
+ "generated": "2026-10-29"
+}

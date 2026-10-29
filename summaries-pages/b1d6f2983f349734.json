@@ -1,0 +1,78 @@
+{
+ "id": "b1d6f2983f349734",
+ "url": "http://horicky.blogspot.nl/2009/11/nosql-patterns.html",
+ "final_url": "http://horicky.blogspot.com/2009/11/nosql-patterns.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "NOSQL Patterns",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "NoSQL",
+   "entry": "NOSQL Patterns"
+  }
+ ],
+ "summary": {
+  "title": "NOSQL Patterns",
+  "one_liner": "A design-patterns overview of large-scale NoSQL key-value stores covering consistent hashing, replication models, quorum reads/writes, vector clocks, gossip, and storage engine techniques.",
+  "category": "distributed systems",
+  "keywords": [
+   "nosql patterns",
+   "key value store",
+   "consistent hashing",
+   "virtual nodes",
+   "data replication",
+   "master slave replication",
+   "multi-master replication",
+   "quorum based 2pc",
+   "w + r > n quorum",
+   "vector clock",
+   "gossip protocol",
+   "state transfer vs operation transfer",
+   "eventual consistency",
+   "client consistency models",
+   "read your write consistency",
+   "monotonic read consistency",
+   "handling deletes tombstones",
+   "map reduce over key range",
+   "bigtable generations bloom filter",
+   "couchdb mvcc copy-on-write",
+   "cap theorem tradeoff",
+   "dynamo style storage",
+   "membership changes ring",
+   "how do nosql databases partition data"
+  ],
+  "takeaways": [
+   "Consistent hashing on a ring limits key redistribution when nodes join or crash, compared with key mod N partitioning.",
+   "Replication choices (single master vs multi-master) determine how updates propagate and how workload is spread.",
+   "Quorum settings with W + R > N give strict consistency; smaller values trade consistency for availability and performance.",
+   "Vector clocks and gossip let replicas reason about causal order and converge to the same state eventually.",
+   "Storage techniques like CouchDB's append-only copy-on-write and BigTable's memtable plus bloom filters support scalable writes and reads."
+  ],
+  "summary": "This long blog post, written in 2009, describes common design patterns behind large-scale NoSQL key-value stores such as Dynamo, Voldemort, Cassandra, Riak, BigTable, and CouchDB. It walks through the key/value API, partitioning with consistent hashing and virtual nodes, membership changes, and replication under master-slave and multi-master models. It then covers client consistency models, quorum-based reads and writes, vector clocks, gossip-based state and operation transfer, delete handling, and storage engine designs. The text is an informal set of notes rather than a tutorial with code.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "HBase",
+   "Hypertable",
+   "Amazon Dynamo",
+   "Voldemort",
+   "Cassandra",
+   "Riak",
+   "Redis",
+   "CouchDB",
+   "MongoDB",
+   "Google BigTable",
+   "MySQL",
+   "Berkeley DB",
+   "Paxos",
+   "MapReduce"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7459,
+  "output": 990
+ },
+ "generated": "2026-10-29"
+}

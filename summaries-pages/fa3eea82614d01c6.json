@@ -1,0 +1,65 @@
+{
+ "id": "fa3eea82614d01c6",
+ "url": "https://jilp.org/jwac-2/program/cbp3_07_seznec.pdf",
+ "final_url": "https://jilp.org/jwac-2/program/cbp3_07_seznec.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branch prediction and speculation",
+   "entry": "A 64-Kbytes ITTAGE indirect branch predictor - Carries the tagged geometric scheme to indirect jumps and calls, where interpreters and virtual dispatch stall."
+  }
+ ],
+ "summary": {
+  "title": "A 64-Kbytes ITTAGE indirect branch predictor",
+  "one_liner": "ITTAGE applies TAGE-style tagged, geometric-history prediction tables to indirect jump and call targets, with target-region compression and an immediate update mimicker to cut storage and late-update mispredictions.",
+  "category": "branch prediction and speculation",
+  "keywords": [
+   "ittage",
+   "indirect branch predictor",
+   "indirect target prediction",
+   "indirect jump target prediction",
+   "tage predictor",
+   "tagged geometric history length predictor",
+   "geometric history length",
+   "o-gehl predictor",
+   "ppm-like predictor",
+   "cascaded predictor",
+   "branch target prediction",
+   "path history vector",
+   "global branch history",
+   "target region compression",
+   "immediate update mimicker",
+   "ium",
+   "late update delayed update",
+   "useful bit reset",
+   "virtual dispatch prediction",
+   "cpu branch predictor storage budget",
+   "seznec jilp championship"
+  ],
+  "takeaways": [
+   "ITTAGE uses a tagless base table plus several partially tagged tables indexed by different geometric history lengths, and the longest matching tag hit provides the predicted target.",
+   "Using a path history made only of indirect branches and calls worked slightly better than mixing in all branch types on the distributed traces.",
+   "Target addresses are stored as a region pointer plus region offset, with a 128-entry target region table, saving 7 bits per entry.",
+   "The immediate update mimicker (IUM) recovers about 3/4 of mispredictions caused by delayed table updates at retire time, at a cost of 384 bytes.",
+   "The submitted predictor used 16 tables with history lengths {0, 0, 10, 16, 27, 44, 60, 96, 109, 219, 449, 487, 714, 1313, 2146, 3881} and about 65,392 bytes of total storage."
+  ],
+  "summary": "The paper describes the ITTAGE indirect target predictor, which carries the TAGE design (tagged tables indexed by geometric history lengths, confidence counters, useful bits) over to indirect jumps and calls. It then covers optimizations: a path-only global history of indirect branches and calls, target locality via region pointers, sharing storage between tables, and an immediate update mimicker for delayed updates. The author gives the table layout (16 tables, 506 Kbits), history lengths, and a total storage cost of about 65 KB, and notes which code options enable each feature in the submitted simulator.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "ITTAGE",
+   "TAGE",
+   "O-GEHL",
+   "C simulator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7400,
+  "output": 1007
+ },
+ "generated": "2026-10-29"
+}

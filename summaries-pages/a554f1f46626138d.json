@@ -1,0 +1,62 @@
+{
+ "id": "a554f1f46626138d",
+ "url": "https://www.aosabook.org/en/500L/a-python-interpreter-written-in-python.html",
+ "final_url": "https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "500 Lines or LessA Python Interpreter Written in Python",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "A Python implementation of a Python bytecode runner"
+  }
+ ],
+ "summary": {
+  "title": "A Python Interpreter Written in Python (500 Lines or Less)",
+  "one_liner": "You learn how the CPython bytecode interpreter works by building up a stack-based toy interpreter and then reading real Python bytecode with the dis module, as used in the Byterun project.",
+  "category": "python internals",
+  "keywords": [
+   "python interpreter in python",
+   "byterun",
+   "python bytecode interpreter",
+   "stack machine",
+   "data stack",
+   "block stack",
+   "call stack frames",
+   "bytecode disassembly dis module",
+   "dis.dis",
+   "code object",
+   "lexer parser compiler",
+   "cpython",
+   "load_const",
+   "pop_jump_if_false",
+   "how does the python interpreter work",
+   "virtual machine stack vs register machine",
+   "toy interpreter tutorial",
+   "how loops and if statements compile to bytecode",
+   "python 500 lines or less",
+   "ned batchelder"
+  ],
+  "takeaways": [
+   "The interpreter is the last step of execution: lexing, parsing and compiling produce code objects containing bytecode that the interpreter runs.",
+   "A stack-based interpreter can be built from a few instruction methods (LOAD_VALUE, ADD_TWO_VALUES, PRINT_ANSWER) dispatched via getattr.",
+   "Python's dis module disassembles bytecode, showing how if statements and while loops are implemented with conditional and absolute jumps.",
+   "Frames live on a call stack, each with its own data stack and block stack; RETURN_VALUE passes values between frames."
+  ],
+  "summary": "The chapter, written by Allison Kaptur for the 500 Lines or Less book, explains how the Python interpreter works by walking through Byterun, a Python interpreter implemented in Python. It starts with a minimal stack machine that handles three instructions, then adds variables with STORE_NAME and LOAD_NAME and uses getattr-based dispatch. It then switches to real CPython bytecode, using cond.__code__.co_code and the dis module to read how conditionals and loops become jump instructions. The text ends by introducing frames, the call stack, and the data and block stacks.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "CPython",
+   "Byterun"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9927,
+  "output": 878
+ },
+ "generated": "2026-10-29"
+}

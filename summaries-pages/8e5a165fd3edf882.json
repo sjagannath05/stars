@@ -1,0 +1,69 @@
+{
+ "id": "8e5a165fd3edf882",
+ "url": "https://mechanical-sympathy.blogspot.com/2011/09/single-writer-principle.html",
+ "final_url": "https://mechanical-sympathy.blogspot.com/2011/09/single-writer-principle.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Single Writer Principle",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Mechanical sympathy",
+   "entry": "Single Writer Principle - States the design rule that removes write contention outright, using a contended increment's cost as the argument."
+  }
+ ],
+ "summary": {
+  "title": "Single Writer Principle",
+  "one_liner": "Design each piece of mutable data to be owned and changed by only one execution context, which removes write contention and the locking or CAS overhead that comes with it.",
+  "category": "concurrency design",
+  "keywords": [
+   "single writer principle",
+   "write contention",
+   "mutual exclusion",
+   "locking vs lock-free",
+   "optimistic concurrency control",
+   "compare and swap",
+   "cas instructions",
+   "cache coherency",
+   "memory barriers x86",
+   "mechanical sympathy",
+   "shared mutable state",
+   "message passing design",
+   "actor pattern",
+   "lmax disruptor",
+   "scalability limits contention",
+   "little's law queuing latency",
+   "single owner data mutation",
+   "avoid locks in multithreaded code"
+  ],
+  "takeaways": [
+   "Contended writes force locks or CAS retries, and the cost of managing that contention can exceed the cost of the real work.",
+   "If each item of data has exactly one writer, no locks or CAS are needed for mutations, and throughput can scale until hardware saturates.",
+   "Single writer designs can avoid memory barriers on x86/x64 because of its memory ordering model, provided writers stick to the principle.",
+   "Multiple readers are fine: CPUs broadcast read-only copies through cache coherency.",
+   "The same principle applies at service level in SOA: only one service should write to its data store; queue-based messaging can break it."
+  ],
+  "summary": "The post argues that write contention is the main scalability limit in concurrent systems and compares mutual exclusion (locks, kernel arbitration) and optimistic concurrency (CAS retries) as costly ways to handle it. It uses a benchmark table of incrementing a 64-bit counter 500 million times on a 2.4GHz Westmere processor to show the overhead of locks and CAS, even uncontended. The author then proposes the Single Writer Principle, where each data item is mutated by only one execution context, and relates it to human models of the world, message passing, the LMAX Disruptor, and service design in SOA. It notes that locks and optimistic strategies remain useful for setup and configuration data.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86/x64",
+   "Intel Westmere",
+   "Sandybridge",
+   "Disruptor",
+   "Subversion",
+   "CVS",
+   "Node.js",
+   "Erlang",
+   "Occam",
+   "transputers",
+   "SEDA"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4414,
+  "output": 920
+ },
+ "generated": "2026-10-29"
+}

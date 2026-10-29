@@ -1,0 +1,61 @@
+{
+ "id": "7f923fa93b518846",
+ "url": "https://jeiwan.net/posts/building-blockchain-in-go-part-4",
+ "final_url": "https://jeiwan.net/posts/building-blockchain-in-go-part-4/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building Blockchain in Go. Part 4: Transactions 1 - Going the distance",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 4: Transactions 1"
+  }
+ ],
+ "summary": {
+  "title": "Building Blockchain in Go. Part 4: Transactions 1 - Going the distance",
+  "one_liner": "You learn how Bitcoin-style transactions work (inputs, outputs, coinbase, UTXOs) and how to implement them in a toy Go blockchain, including balance checks and sending coins.",
+  "category": "blockchain development",
+  "keywords": [
+   "bitcoin transactions in go",
+   "blockchain transactions tutorial",
+   "utxo",
+   "unspent transaction output",
+   "transaction inputs and outputs",
+   "coinbase transaction",
+   "txinput txoutput",
+   "scriptpubkey",
+   "scriptsig",
+   "bitcoin balance calculation",
+   "how bitcoin balance works without accounts",
+   "mining reward implementation",
+   "merkle tree transactions in block",
+   "mempool explained",
+   "go blockchain send coins",
+   "bolt db blockchain go",
+   "satoshi value unit",
+   "building blockchain in go part 4"
+  ],
+  "takeaways": [
+   "Bitcoin has no accounts or balances; a balance is the sum of unspent transaction outputs (UTXOs) locked to an address.",
+   "A transaction is made of inputs that reference previous outputs and outputs that lock values with a script (here simplified to an address string).",
+   "A coinbase transaction has no real input and creates the mining reward, which is how coins enter the system.",
+   "Sending coins means selecting enough UTXOs, creating inputs for them, and creating a receiver output plus a change output, then mining it into a block.",
+   "Known gaps in this version: no real key-based addresses, no UTXO set cache, no mempool, and one transaction per block."
+  ],
+  "summary": "The article is part 4 of a series building a Bitcoin-like blockchain in Go. It explains the transaction model (TXInput, TXOutput, coinbase transactions, indivisible outputs with change) and then implements it: storing transactions in blocks, hashing them for proof-of-work, finding unspent outputs by scanning the chain, and building send and getbalance commands. It demonstrates the code with CLI runs showing balances moving between users. The author lists what is still missing: real addresses, mining rewards, a UTXO set for speed, and a mempool.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "Bitcoin",
+   "BoltDB"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8575,
+  "output": 904
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "a2129a9d1fbabba8",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker-p5",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker-p5/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 5 - Topic abstraction"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch #5 - Topic abstraction",
+  "one_liner": "You learn how MQTT topics with / separators and # and + wildcards map onto a trie, and how to implement a trie in C using sorted linked-list children.",
+  "category": "network programming",
+  "keywords": [
+   "mqtt topic",
+   "mqtt wildcards",
+   "mqtt broker in c",
+   "trie data structure",
+   "trie in c",
+   "prefix tree",
+   "radix tree",
+   "compressed trie",
+   "adaptive trie",
+   "topic hierarchy",
+   "multilevel wildcard #",
+   "single level wildcard +",
+   "sorted linked list children",
+   "trie insert delete lookup complexity",
+   "prefix delete trie",
+   "message queue vs mqtt",
+   "hashtable vs trie",
+   "b-tree vs trie",
+   "build mqtt broker from scratch",
+   "pub sub topic filtering"
+  ],
+  "takeaways": [
+   "MQTT topics are UTF-8 strings up to 65535 bytes, split by '/', with '#' (multilevel) and '+' (single level) wildcards for subscriptions.",
+   "A trie stores keys by prefix, giving O(m) worst-case insert and lookup, where m is the key length, and enabling prefix range scans useful for wildcard matching.",
+   "A trie with a fixed array of ALPHABET_SIZE pointers per node wastes a lot of memory, since most pointers stay NULL.",
+   "Three alternatives to reduce waste are a single vector with child indexes, nodes sized by child count, and sorted singly-linked child lists (the approach chosen here).",
+   "The article provides a C implementation in trie.h and trie.c with insert, find, delete, prefix delete and prefix map functions."
+  ],
+  "summary": "The author recaps MQTT topic rules, including the / level separator and the # and + wildcards, and explains why a trie suits storing topics. The post walks through the memory cost of a fixed-array trie node, compares three mitigation strategies, and picks a sorted linked-list child structure. It then presents the C header and implementation (trie.h and trie.c) covering insertion, lookup, recursive deletion, prefix deletion and prefix mapping. The page closes with the planned project layout and points to Part 6 on server-side handlers.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "MQTT",
+   "Trie",
+   "Linked list"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7786,
+  "output": 926
+ },
+ "generated": "2026-10-29"
+}

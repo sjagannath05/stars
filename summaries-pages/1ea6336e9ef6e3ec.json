@@ -1,0 +1,79 @@
+{
+ "id": "1ea6336e9ef6e3ec",
+ "url": "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html",
+ "final_url": "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Docker Security Cheat Sheet¶",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Security",
+   "entry": "Docker Security"
+  }
+ ],
+ "summary": {
+  "title": "Docker Security Cheat Sheet",
+  "one_liner": "You learn a checklist of Docker container security rules, from not exposing the Docker socket and running as a non-root user to limiting capabilities, setting read-only filesystems, and using rootless mode.",
+  "category": "container security",
+  "keywords": [
+   "docker security",
+   "docker security best practices",
+   "container security checklist",
+   "docker.sock exposure",
+   "docker socket risk",
+   "run container as non-root user",
+   "docker cap-drop",
+   "docker privileged flag danger",
+   "no-new-privileges",
+   "seccomp apparmor selinux docker",
+   "read-only container filesystem",
+   "docker resource limits",
+   "docker published ports ufw bypass",
+   "docker rootless mode",
+   "docker secrets",
+   "podman alternative to docker",
+   "container image scanning ci/cd",
+   "kubernetes security context runasuser",
+   "owasp cheat sheet docker",
+   "userns-remap"
+  ],
+  "takeaways": [
+   "Never expose the Docker daemon socket or TCP API, and do not mount /var/run/docker.sock into containers, since socket access equals root on the host.",
+   "Run containers as an unprivileged user, drop all Linux capabilities and add only the ones needed, and avoid --privileged.",
+   "Use --security-opt=no-new-privileges, keep the root filesystem read-only with --read-only and --tmpfs, and set resource limits.",
+   "Publishing ports with -p can bypass UFW; bind published ports to 127.0.0.1 or use ufw-docker to enforce firewall rules.",
+   "Keep the host kernel and Docker Engine updated, scan images in CI/CD, and consider rootless mode or Podman for stronger isolation."
+  ],
+  "summary": "This OWASP cheat sheet gives a numbered list of rules (Rule #0 to #13) for securing Docker containers, each with short explanations and command or Kubernetes examples. It covers the daemon socket, user and capability settings, privilege escalation, networking and UFW port-publishing pitfalls, seccomp/AppArmor/SELinux profiles, resource limits, read-only filesystems, CI/CD scanning, logging level, rootless mode, secrets, and supply chain practices. It ends with a brief section on Podman as a daemonless, rootless alternative.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "Docker",
+   "Docker Compose",
+   "Kubernetes",
+   "Linux",
+   "iptables",
+   "UFW",
+   "seccomp",
+   "AppArmor",
+   "SELinux",
+   "Podman",
+   "Falco",
+   "Tetragon",
+   "Cilium",
+   "Snyk",
+   "Anchore",
+   "Docker Scout",
+   "Gitleaks",
+   "TruffleHog",
+   "ggshield"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7817,
+  "output": 1036
+ },
+ "generated": "2026-10-29"
+}

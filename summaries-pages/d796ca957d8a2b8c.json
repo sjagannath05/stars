@@ -1,0 +1,62 @@
+{
+ "id": "d796ca957d8a2b8c",
+ "url": "https://arxiv.org/abs/2502.12444",
+ "final_url": "https://arxiv.org/abs/2502.12444",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "SparAMX: Accelerating Compressed LLMs Token Generation on AMX-powered CPUs",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "When CPU beats GPU",
+   "entry": "SparAMX: Accelerating Compressed LLMs Token Generation on AMX-powered CPUs - Measures decode kernels on a Xeon as DRAM-bound, so AMX pays at batch one only once bytes per token shrink, with code."
+  }
+ ],
+ "summary": {
+  "title": "SparAMX: Accelerating Compressed LLMs Token Generation on AMX-powered CPUs",
+  "one_liner": "Learn how combining Intel AMX matrix units with unstructured sparsity speeds up memory-bound LLM token decoding on CPUs, with open-source sparse kernels for PyTorch.",
+  "category": "LLM inference on CPU",
+  "keywords": [
+   "sparamx",
+   "amx",
+   "intel advanced matrix extensions",
+   "unstructured sparsity",
+   "sparse kernels",
+   "llm token generation",
+   "llm decoding on cpu",
+   "memory-bound decoding",
+   "pytorch linear layers sparse",
+   "sparse attention computation",
+   "compressed llms",
+   "cpu inference acceleration",
+   "intel xeon llm inference",
+   "end-to-end latency reduction",
+   "reasoning model decoding speed",
+   "run llms on cpus faster",
+   "pruned model inference speedup",
+   "arxiv 2502.12444"
+  ],
+  "takeaways": [
+   "LLM token decoding is memory-bound, which makes CPUs with AMX a viable target for acceleration.",
+   "Applying unstructured sparsity to linear layers with AMX gives a reported 1.42x end-to-end latency reduction versus the current PyTorch implementation.",
+   "The authors release open-source sparse kernels that automatically replace all linear layers in any PyTorch model.",
+   "Unstructured sparsity in the attention computation is shown for the first time, with a reported 1.14x speedup without accuracy loss."
+  ],
+  "summary": "This arXiv paper (submitted February 2025) argues that CPUs are a practical platform for LLM inference, especially in the memory-bound decoding stage. The authors use Intel Advanced Matrix Extensions (AMX) on recent Xeon CPUs together with unstructured sparsity in model weights. They report a 1.42x end-to-end latency reduction over the current PyTorch implementation when applied to linear layers, and a 1.14x speedup from sparse attention computation without accuracy loss. The work ships open-source customized sparse kernels that can be swapped into any PyTorch model.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Intel AMX",
+   "PyTorch",
+   "C++",
+   "LLMs",
+   "unstructured sparsity"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2750,
+  "output": 914
+ },
+ "generated": "2026-10-29"
+}

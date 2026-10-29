@@ -1,0 +1,68 @@
+{
+ "id": "ab13b994d4a48ee8",
+ "url": "https://llvm.org/docs/Vectorizers.html",
+ "final_url": "https://llvm.org/docs/Vectorizers.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Auto-Vectorization in LLVM#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Data layout and loop transforms",
+   "entry": "Auto-Vectorization in LLVM - Where LLVM lists what its loop and SLP vectorisers accept: interleaving, reductions, if-conversion and runtime checks."
+  }
+ ],
+ "summary": {
+  "title": "Auto-Vectorization in LLVM",
+  "one_liner": "LLVM's Loop Vectorizer and SLP Vectorizer: what loop shapes they accept (runtime checks, reductions, if-conversion, induction variables, scatter/gather, math calls), how to force widths and unroll factors, and how to diagnose missed vectorization with optimization remarks.",
+  "category": "compiler auto-vectorization",
+  "keywords": [
+   "llvm auto-vectorization",
+   "loop vectorizer",
+   "slp vectorizer",
+   "superword-level parallelism",
+   "auto vectorization clang",
+   "fno-vectorize",
+   "fno-slp-vectorize",
+   "force-vector-width",
+   "force-vector-interleave",
+   "clang loop pragma vectorize",
+   "vectorize_width pragma",
+   "optimization remarks loop-vectorize",
+   "rpass-missed loop-vectorize",
+   "runtime pointer aliasing checks vectorization",
+   "reduction vectorization",
+   "floating point reduction fassociative-math",
+   "if conversion vectorization",
+   "induction variable vectorization",
+   "scatter gather vectorization",
+   "epilogue vectorization",
+   "partial unrolling interleaving",
+   "fveclib vector math library",
+   "fno-math-errno",
+   "sandbox vectorizer"
+  ],
+  "takeaways": [
+   "LLVM has two vectorizers, both enabled by default: the Loop Vectorizer (loops) and the SLP Vectorizer (merges similar scalar instructions).",
+   "Vector width and interleave/unroll factors can be forced with -force-vector-width and -force-vector-interleave, or hinted per loop with #pragma clang loop.",
+   "Use -Rpass=loop-vectorize, -Rpass-missed and -Rpass-analysis to find which loops were skipped and why (e.g. a switch statement).",
+   "Floating-point reductions are vectorized only under reassociation-permitting flags such as -fassociative-math -fno-signed-zeros -fno-trapping-math on most targets."
+  ],
+  "summary": "The page is the LLVM documentation on its auto-vectorizers. It explains the Loop Vectorizer and SLP Vectorizer, how to disable them, and how to force vector width and unroll factors via command-line flags or clang loop pragmas. It then lists supported loop features with small C examples: unknown trip counts, runtime pointer checks, reductions, inductions, if-conversion, pointer induction, reverse loops, scatter/gather, mixed types, and math intrinsics. It also covers diagnostics with optimization remarks, epilogue and early-exit vectorization, and a short performance note.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "LLVM",
+   "Clang",
+   "C",
+   "C++",
+   "opt"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6687,
+  "output": 1053
+ },
+ "generated": "2026-10-29"
+}

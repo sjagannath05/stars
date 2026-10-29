@@ -1,0 +1,65 @@
+{
+ "id": "75a3f178cc7561ba",
+ "url": "https://llvm.org/docs/CommandGuide/llvm-exegesis.html",
+ "final_url": "https://llvm.org/docs/CommandGuide/llvm-exegesis.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "llvm-exegesis - LLVM Machine Instruction Benchmark#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Reading emitted code",
+   "entry": "llvm-exegesis - Measures instruction latency and throughput with counters, so the model llvm-mca predicts from is checked, not trusted."
+  }
+ ],
+ "summary": {
+  "title": "llvm-exegesis - LLVM Machine Instruction Benchmark",
+  "one_liner": "llvm-exegesis is LLVM's tool for measuring host machine instruction latency, throughput, and uop decomposition with hardware performance counters, and for analyzing results against LLVM's scheduling models.",
+  "category": "performance benchmarking",
+  "keywords": [
+   "llvm-exegesis",
+   "instruction latency measurement",
+   "inverse throughput",
+   "uop decomposition",
+   "hardware performance counters",
+   "libpfm4",
+   "llvm scheduling model validation",
+   "tablegen sched model",
+   "llvm-mca comparison",
+   "benchmark code snippet",
+   "assembly snippet benchmarking",
+   "repetition mode loop duplicate",
+   "analysis clustering dbscan",
+   "x86 instruction benchmark",
+   "measure cpu instruction latency",
+   "how to benchmark a single instruction",
+   "snippet annotations livein defreg",
+   "rdtsc lbr latency"
+  ],
+  "takeaways": [
+   "Run llvm-exegesis with --mode=latency, uops, or inverse_throughput on an opcode name or a custom snippet file to get YAML measurements of the host CPU.",
+   "Snippet annotations such as LLVM-EXEGESIS-DEFREG, LIVEIN, MEM-DEF and MEM-MAP set up registers and memory so custom assembly can run.",
+   "The analysis mode clusters benchmark results and reports inconsistencies with LLVM's scheduling profiles, which checks the scheduling models.",
+   "Platform support is limited: X86 64-bit, AArch64, MIPS, PowerPC64LE and RISC-V on Linux, and building requires LLVM_ENABLE_LIBPFM."
+  ],
+  "summary": "This is the reference command guide for llvm-exegesis. It explains that the tool generates a serial or parallel code snippet for an LLVM opcode, runs it with hardware performance counters, and prints the results as YAML. The page covers supported platforms, snippet annotations for registers and memory setup, usage examples for benchmarking and analysis mode, and a full list of command-line options such as repetition modes, execution modes and clustering settings.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "LLVM",
+   "x86-64 assembly",
+   "libpfm4",
+   "YAML",
+   "AArch64",
+   "RISC-V",
+   "PowerPC",
+   "MIPS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8716,
+  "output": 943
+ },
+ "generated": "2026-10-29"
+}

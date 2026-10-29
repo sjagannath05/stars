@@ -1,0 +1,78 @@
+{
+ "id": "7b800660f9e221fd",
+ "url": "https://platform.openai.com/docs/guides/gpt/function-calling",
+ "final_url": "https://developers.openai.com/api/docs/guides/function-calling",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Function calling | OpenAI API",
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Description",
+   "entry": "Tool Usage: Language agents in the library can use any external tools via function-calling and developers can add customized tools/APIs here."
+  }
+ ],
+ "summary": {
+  "name": "OpenAI function calling",
+  "one_liner": "OpenAI API guide explaining how to let models call external functions and tools defined by JSON schema, with code examples for Responses and Chat Completions.",
+  "category": "llm api documentation",
+  "keywords": [
+   "function calling",
+   "tool calling",
+   "openai function calling",
+   "openai api",
+   "responses api",
+   "chat completions",
+   "json schema",
+   "strict mode",
+   "tool_choice",
+   "parallel function calling",
+   "streaming function calls",
+   "tool search",
+   "namespaces",
+   "custom tools",
+   "llm external data",
+   "connect llm to apis",
+   "model calls function",
+   "function_call_output",
+   "agents sdk",
+   "openai tools",
+   "llm tool use",
+   "structured outputs",
+   "deferred tools",
+   "allowed_tools",
+   "how to give chatgpt tools",
+   "api integration llm"
+  ],
+  "use_cases": [
+   "connect an LLM to your app's internal APIs",
+   "let a model look up live data such as weather",
+   "build a multi-step agent that runs tools in a loop",
+   "enforce strict JSON schema for function arguments",
+   "limit or force which tools a model calls",
+   "stream function call arguments to a UI"
+  ],
+  "what_it_does": "The page documents OpenAI's function calling (tool calling) flow: you declare tools with JSON schemas, the model returns function_call items with arguments, your code executes them, and you send results back for a final answer. It includes worked Python examples for the Chat Completions and Responses APIs. It covers function definitions, namespaces for grouping tools, and tool search for deferring large tool sets. It also explains tool_choice options, parallel calls, strict mode requirements, and streaming of tool call deltas.",
+  "pricing": "unknown",
+  "platforms": [
+   "web",
+   "Python"
+  ],
+  "notable": [
+   "Strict mode enforces JSON schema adherence, requiring additionalProperties false and all fields required",
+   "Tool search lets the model load deferred tools on demand, supported on gpt-5.4 and later",
+   "Covers custom tools that accept free-form text input and output"
+  ],
+  "caveats": [
+   "Tool search is only supported on gpt-5.4 and later models",
+   "Function definitions count against context limits and are billed as input tokens",
+   "Strict mode has schema limitations and fine-tuned model schemas are cached and not eligible for zero data retention"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9878,
+  "output": 899
+ },
+ "generated": "2026-10-29"
+}

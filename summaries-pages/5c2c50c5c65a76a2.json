@@ -1,0 +1,64 @@
+{
+ "id": "5c2c50c5c65a76a2",
+ "url": "https://lemire.me/blog/2021/07/14/faster-sorted-array-unions-by-reducing-branches",
+ "final_url": "https://lemire.me/blog/2021/07/14/faster-sorted-array-unions-by-reducing-branches/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Faster sorted array unions by reducing branches",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branchless code and bit manipulation",
+   "entry": "Faster sorted array unions by reducing branches - A worked branchless merge with code whose gain vanishes when the compiler emits no conditional move."
+  }
+ ],
+ "summary": {
+  "title": "Faster sorted array unions by reducing branches",
+  "one_liner": "A branchless merge of two sorted arrays using conditional moves can beat the branchy union on random data, but only when the compiler (e.g., LLVM) emits cmov instructions; GCC did not.",
+  "category": "performance engineering",
+  "keywords": [
+   "sorted array union",
+   "branchless merge",
+   "branch misprediction",
+   "conditional move",
+   "cmov",
+   "merge two sorted arrays",
+   "sorted set union",
+   "branchless code",
+   "llvm vs gcc performance",
+   "compiler codegen branchless",
+   "load latency",
+   "simd union alternative",
+   "roaring bitmaps",
+   "daniel lemire",
+   "ns per element benchmark",
+   "apple m1 benchmark",
+   "amd zen 2 benchmark",
+   "index and database set operations"
+  ],
+  "takeaways": [
+   "A conventional sorted-union loop has many data-dependent branches, which mispredict heavily on random data.",
+   "Rewriting the merge with conditional moves removes most branches, leaving only the while-loop branch.",
+   "The branchless version issues about twice as many loads, which is fine on processors that can sustain multiple loads per cycle.",
+   "On the author's benchmark, LLVM gave over 10% gain on Apple M1 and Zen 2, while GCC 10 was slower on Zen 2 (3.7 vs 3.4 ns).",
+   "Gains depend on compiler, processor and data; SIMD (Roaring Bitmaps paper, section 4.3) is the next step for higher speed."
+  ],
+  "summary": "Daniel Lemire walks through computing the union of two sorted arrays with a conventional branchy loop, then a branchless variant using conditional-move-friendly code. He explains the trade-off: fewer mispredicted branches versus twice as many loads. The benchmark on Apple M1 (LLVM 12), AMD Zen 2 with GCC 10 and with LLVM 11 reports nanoseconds per output element on random data. He concludes the branchless approach helps mainly with LLVM and when the baseline has many mispredictions, and points to SIMD unions in the Roaring Bitmaps paper for further speedups.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "LLVM/clang",
+   "GCC",
+   "x86-64 (AMD Zen 2)",
+   "ARM (Apple M1)",
+   "SIMD (mentioned)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3425,
+  "output": 944
+ },
+ "generated": "2026-10-29"
+}

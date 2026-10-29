@@ -1,0 +1,79 @@
+{
+ "id": "6b4b11dee62f0c73",
+ "url": "https://mingozacwu.github.io/datanexa-site",
+ "final_url": "https://mingozacwu.github.io/datanexa-site/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "DataNexa — 面向 AI Agent 的本地只读数据库 MCP 网关",
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "DataNexa - Open-source desktop database MCP gateway that aggregates multiple databases into a single access point with read-only enforcement and auditing for AI agents. [![Open-Source Software][OSS Icon]](https://github.com/MingoZacwu/DataNexa) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "name": "DataNexa",
+  "one_liner": "DataNexa is a locally run database MCP gateway that gives AI agents a single, read-only, audited access point to SQLite, MySQL, PostgreSQL and (via JDBC) other databases.",
+  "category": "ai database mcp gateway",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "database mcp",
+   "ai agent database access",
+   "read-only database",
+   "sql gateway",
+   "sqlite",
+   "mysql",
+   "postgresql",
+   "jdbc",
+   "sqlx",
+   "sql syntax tree validation",
+   "sqlparser",
+   "query audit log",
+   "bearer token",
+   "streamable http",
+   "json-rpc",
+   "local database gateway",
+   "let ai query my database",
+   "safe database access for llm",
+   "read-only sql guard",
+   "database connection manager",
+   "explain query plan",
+   "macos menu bar database tool",
+   "open source desktop app",
+   "connect ai assistant to database",
+   "awesome-mac"
+  ],
+  "use_cases": [
+   "Letting an AI agent query local or development databases safely",
+   "Exposing multiple databases through one MCP configuration",
+   "Connecting enterprise or legacy databases via JDBC drivers to an AI agent",
+   "Auditing which SQL an AI agent ran and when",
+   "Limiting AI query access to specific MCP tools"
+  ],
+  "what_it_does": "DataNexa runs locally as an MCP service that aggregates SQLite, MySQL and PostgreSQL connections into one endpoint for AI agents. It validates every SQL statement by syntax tree and rejects writes, DDL and side-effect functions, and it enforces row limits, query timeouts and connection pool caps. Database passwords are stored in the OS credential store, and all access is recorded in a local audit log with SQL literals optionally masked. It exposes seven read-only MCP tools (list connections, get schema, describe table, sample rows, execute read-only SQL, explain SQL, policy check) that can be toggled individually.",
+  "pricing": "open source",
+  "platforms": [
+   "macOS",
+   "Windows",
+   "Linux"
+  ],
+  "notable": [
+   "Single local MCP endpoint aggregating multiple databases, with per-tool on/off switches and an emergency kill switch",
+   "Syntax-tree (sqlparser AST) validation of every query plus read-only session enforcement per database",
+   "JDBC support for arbitrary JDBC-compatible databases, running drivers in a separate managed Java process",
+   "Local audit log recording SQL, timing and results, with literal masking and retention settings"
+  ],
+  "caveats": [
+   "The page states read-only enforcement is a guardrail, not absolute security; it recommends a least-privilege database account and backups.",
+   "Linux is not named on the page; platforms listed are macOS and Windows only as mentioned in the text (Linux appears only in the listing context if at all, so treat it as unconfirmed)."
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4381,
+  "output": 1083
+ },
+ "generated": "2026-10-29"
+}

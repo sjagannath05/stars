@@ -1,0 +1,81 @@
+{
+ "id": "c98d241b83d23f4a",
+ "url": "https://getfob.app",
+ "final_url": "https://getfob.app",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "fob — Secure Enclave SSH keys, gated by Touch ID",
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "fob - Menu bar SSH agent that keeps keys in the Secure Enclave and gates every use behind Touch ID. [![Open-Source Software][OSS Icon]](https://github.com/olivierzol/fob) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "name": "fob",
+  "one_liner": "A macOS menu bar SSH agent that keeps SSH and git-signing keys in the Secure Enclave and requires Touch ID for each use.",
+  "category": "macos ssh agent",
+  "keywords": [
+   "fob",
+   "ssh agent mac",
+   "secure enclave ssh",
+   "touch id ssh",
+   "ssh-agent",
+   "macos ssh keys",
+   "hardware ssh keys",
+   "non-exportable ssh key",
+   "git commit signing",
+   "verified commits github",
+   "ssh touch id authentication",
+   "menu bar ssh agent",
+   "secure enclave key",
+   "git push touch id",
+   "ssh key pinning",
+   "audit log ssh",
+   "ssh key hygiene",
+   "ssh known_hosts",
+   "apple watch ssh auth",
+   "brew ssh key tool",
+   "1password ssh agent alternative",
+   "gitlab verified commits",
+   "ssh reuse window",
+   "per-host ssh key",
+   "tamper-evident audit log",
+   "open source ssh agent",
+   "protect ssh private key macos",
+   "sign git commits with secure enclave"
+  ],
+  "use_cases": [
+   "Protect SSH access to servers with Touch ID",
+   "Authenticate git push to GitHub with hardware-backed keys",
+   "Sign git commits so GitHub or GitLab shows Verified",
+   "Bind an SSH key to a single host to prevent misdirected use",
+   "Audit and check ~/.ssh for weak keys or risky config",
+   "Migrate an existing SSH host to a Secure Enclave key without lockout"
+  ],
+  "what_it_does": "fob runs as a menu bar app and acts as an ssh-agent whose keys are generated inside the Secure Enclave and cannot be exported. Each fresh SSH or git signature requires Touch ID, Apple Watch, or the account password. Keys can be pinned to a specific host so they are refused for any other destination before a prompt appears. An optional reuse window lets one approval cover a few seconds of signatures, which remain pin-checked and audited. Decisions are appended to a SHA-256 hash-chained audit log that can be verified with a command, and a read-only checkup reports on ~/.ssh.",
+  "pricing": "open source",
+  "platforms": [
+   "macOS 13+",
+   "Homebrew"
+  ],
+  "notable": [
+   "Private key is generated in and never leaves the Secure Enclave",
+   "Keys pinned to a host are refused for any other destination before any Touch ID prompt",
+   "Tamper-evident SHA-256 hash-chained audit log of every decision",
+   "Open source under AGPL-3.0 with zero dependencies, installed via a single brew cask command"
+  ],
+  "caveats": [
+   "Tamper-evident audit log, not tamper-proof; the owner of the Mac is not protected against",
+   "Does not protect against code running as the logged-in user or a compromised remote host; agent-forwarding hijacks are a stated risk",
+   "Requires macOS 13 or later"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3188,
+  "output": 1106
+ },
+ "generated": "2026-10-29"
+}

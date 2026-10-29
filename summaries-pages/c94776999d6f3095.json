@@ -1,0 +1,67 @@
+{
+ "id": "c94776999d6f3095",
+ "url": "https://www.learnopencv.com/deep-learning-based-object-detection-and-instance-segmentation-using-mask-r-cnn-in-opencv-python-c",
+ "final_url": "https://learnopencv.com/deep-learning-based-object-detection-and-instance-segmentation-using-mask-rcnn-in-opencv-python-c/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Mask R-CNN in OpenCV: Detection and Segmentation",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Object Detection using Mask-R-CNN"
+  }
+ ],
+ "summary": {
+  "title": "Mask R-CNN in OpenCV: Detection and Segmentation",
+  "one_liner": "You learn how to run a pretrained Mask R-CNN (TensorFlow Inception V2, COCO) through OpenCV's DNN module in Python and C++ to get per-object binary masks, not just bounding boxes.",
+  "category": "computer vision",
+  "keywords": [
+   "mask r-cnn",
+   "mask rcnn opencv",
+   "instance segmentation",
+   "object detection opencv",
+   "instance segmentation vs semantic segmentation",
+   "opencv dnn module",
+   "readnetfromtensorflow",
+   "frozen_inference_graph.pb",
+   "inception v2 coco model",
+   "binary mask from object detector",
+   "region proposal network",
+   "faster r-cnn",
+   "non-maximum suppression",
+   "blobfromimage",
+   "detection_masks output layer",
+   "mscoco labels",
+   "python opencv segmentation tutorial",
+   "c++ opencv mask rcnn",
+   "mask threshold",
+   "yolov3 comparison"
+  ],
+  "takeaways": [
+   "Mask R-CNN adds a mask prediction branch to Faster R-CNN, so each detected object gets a greyscale mask that can be thresholded into a binary mask.",
+   "Load the TensorFlow frozen graph and its pbtxt text graph with cv.dnn.readNetFromTensorflow, then set the OpenCV backend and CPU target.",
+   "Preprocess each frame with blobFromImage (swapRB=True), run forward on 'detection_out_final' and 'detection_masks', then filter boxes by confidence and threshold masks.",
+   "Confidence threshold (0.5) filters boxes; mask threshold (0.3) controls mask size, with lower values giving larger masks."
+  ],
+  "summary": "The post explains instance segmentation and the evolution from R-CNN to Fast, Faster and Mask R-CNN, then walks through a Mask R-CNN pipeline in OpenCV. Steps cover downloading the TensorFlow Inception V2 COCO model, setting confidence and mask thresholds, loading the network and class/colour files, reading image, video or webcam input, and running a forward pass with blob preprocessing. It also shows the post-processing that filters boxes, resizes and thresholds masks, and draws boxes, coloured overlays and contours, with code given in both Python and C++. The author reports CPU inference of about 350 ms to 2 s per frame on a Mac with an Intel Core i7.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "OpenCV",
+   "OpenCV DNN",
+   "Python",
+   "C++",
+   "TensorFlow",
+   "Mask R-CNN",
+   "Faster R-CNN",
+   "NumPy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10201,
+  "output": 1041
+ },
+ "generated": "2026-10-29"
+}

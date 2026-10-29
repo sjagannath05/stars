@@ -1,0 +1,70 @@
+{
+ "id": "1d004d01a4c5a493",
+ "url": "https://www.datadoghq.com/blog/engineering/rethinking-reliability",
+ "final_url": "https://www.datadoghq.com/blog/engineering/rethinking-reliability/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Failure is inevitable: Learning from a large outage, and building for reliability in depth at Datadog | Datadog",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Resiliency",
+   "entry": "Failure is inevitable: learning from a large outage, and building for reliability in depth at Datadog"
+  }
+ ],
+ "summary": {
+  "title": "Failure is inevitable: Learning from a large outage, and building for reliability in depth at Datadog",
+  "one_liner": "Datadog's account of its March 2023 outage and how it re-architected systems for graceful degradation: persist data early, prioritize live data, make retries and recovery tooling safer, and avoid shared-fate dependencies.",
+  "category": "distributed systems reliability",
+  "keywords": [
+   "graceful degradation",
+   "square-wave failure",
+   "reliability engineering",
+   "incident postmortem",
+   "root cause analysis limits",
+   "datadog outage 2023",
+   "persistent intake storage",
+   "data durability pipeline",
+   "dead letter queue",
+   "retry backoff",
+   "backlog recovery throttling",
+   "kubernetes priorityclass",
+   "autoscaler prioritization",
+   "break-glass tooling",
+   "circular dependencies recovery",
+   "shared fate",
+   "chaos testing",
+   "partial results instead of nothing",
+   "stale data fallback",
+   "cassandra shared cache removal",
+   "never-fail architecture",
+   "cluster-local vault",
+   "fix your tools",
+   "how to handle large outage",
+   "resilient system design"
+  ],
+  "takeaways": [
+   "A binary never-fail design can turn a partial outage into a full one; prefer serving partial or slightly stale but accurate results.",
+   "Persist data to disk-based storage as early as possible in the pipeline so it can be replayed after node or store failures.",
+   "Prioritize live data over backlogs, use QoS and Kubernetes PriorityClass, and make retries use backoff and dead letter queues so recovery isn't slowed.",
+   "Avoid global control systems and non-local critical dependencies, and keep break-glass tooling so recovery tools don't depend on what they are recovering.",
+   "Chaos test against degradation conditions (e.g. insufficient capacity) rather than specific failure mechanisms."
+  ],
+  "summary": "Datadog describes a March 2023 incident in which an unsupervised global update removed connectivity to roughly 50-60% of production Kubernetes nodes, making the platform appear fully down because its systems prioritized accuracy over partial visibility. The post argues that root-cause fixes alone are insufficient and walks through product-by-product changes: disk-based persistence at intake, prioritizing live data, safer retry and recovery logic, removing a shared Cassandra cache from the metrics path, sharding Vault, and adding break-glass tooling. It closes with patterns the team learned and reports fewer significant incidents and faster mitigation in logs since the changes.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Kubernetes",
+   "Cassandra",
+   "Vault",
+   "Kafka",
+   "AWS EC2"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6397,
+  "output": 1019
+ },
+ "generated": "2026-10-29"
+}

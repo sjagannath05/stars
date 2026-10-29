@@ -1,0 +1,65 @@
+{
+ "id": "245f5db21ab673b5",
+ "url": "https://www.jaleels.org/ajaleel/publications/micro2010-tla.pdf",
+ "final_url": "https://www.jaleels.org/ajaleel/publications/micro2010-tla.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "TLA-MICRO-2010-Submit.fm",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Cache geometry, replacement and misses in flight",
+   "entry": "Achieving Non-Inclusive Cache Performance with Inclusive Caches - Names inclusion victims as the cost of an inclusive last-level cache, the case for non-inclusive and victim designs."
+  }
+ ],
+ "summary": {
+  "title": "Achieving Non-Inclusive Cache Performance with Inclusive Caches",
+  "one_liner": "Inclusive last-level caches lose performance mainly through inclusion victims, and Temporal Locality Aware policies (TLH, ECI, QBS) can close most of the gap to non-inclusive caches without extra hardware.",
+  "category": "cpu cache design",
+  "keywords": [
+   "inclusive cache",
+   "non-inclusive cache",
+   "exclusive cache",
+   "inclusion victim",
+   "last-level cache",
+   "llc replacement policy",
+   "temporal locality aware",
+   "temporal locality hints",
+   "tlh",
+   "early core invalidation",
+   "eci",
+   "query based selection",
+   "qbs",
+   "back-invalidation",
+   "snoop filter",
+   "core cache",
+   "cmp cache hierarchy",
+   "lru decay in llc",
+   "how to avoid inclusion victims",
+   "inclusive vs non-inclusive cache performance",
+   "intel core i7 inclusive llc",
+   "cache hierarchy coherence tradeoff"
+  ],
+  "takeaways": [
+   "Inclusion victims, lines evicted from core caches to maintain inclusion, cause most of the performance loss of inclusive LLCs, more than duplicated capacity.",
+   "The LLC replacement state goes stale because core-cache hits are hidden from it, so hot lines decay to LRU and get evicted.",
+   "Temporal Locality Hints send LLC updates on every core-cache hit: best results but high traffic, so it is used as a limit study.",
+   "Early Core Invalidation evicts the next LRU line from core caches early and relies on a re-request to learn it is hot; it is time sensitive.",
+   "Query Based Selection asks core caches whether a candidate victim is resident before evicting it; it performs similarly to a non-inclusive hierarchy without extra hardware structures."
+  ],
+  "summary": "The paper argues that the performance gap of inclusive last-level caches comes mainly from inclusion victims, caused by the LLC not seeing temporal locality in the core caches, rather than from duplicated capacity. It motivates the problem with a reference-pattern example and compares inclusive, non-inclusive and exclusive hierarchies across core-to-LLC size ratios. It then proposes three Temporal Locality Aware policies: TLH (hints on core hits), ECI (early invalidation of the next victim), and QBS (querying core caches before eviction). The evaluation on 2-, 4- and 8-core CMPs reports that all three improve inclusive performance and QBS approaches non-inclusive performance.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Intel Core i7",
+   "AMD Phenom II",
+   "x86 CMP cache hierarchy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10512,
+  "output": 1043
+ },
+ "generated": "2026-10-29"
+}

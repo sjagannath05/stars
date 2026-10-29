@@ -1,0 +1,66 @@
+{
+ "id": "0ce717284224e134",
+ "url": "https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems",
+ "final_url": "https://frankdejonge.nl/blog/the-different-types-of-events-in-event-driven-systems",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The different types of events in event-driven systems",
+ "sources": [
+  {
+   "list": "lutzh/awesome-event-driven-architecture",
+   "section": "Experience Reports And Practicalities",
+   "entry": "The different types of events in event-driven systems - By Frank de Jonge, February 2022. There are different approaches to classifying events - this is a very good one."
+  }
+ ],
+ "summary": {
+  "title": "The different types of events in event-driven systems",
+  "one_liner": "You learn three event archetypes (domain, trigger/signal, and RESTful \"fat\" events), their up-sides and down-sides, and how to choose between them.",
+  "category": "event-driven architecture",
+  "keywords": [
+   "event-driven architecture",
+   "types of events",
+   "domain event",
+   "trigger event",
+   "signal event",
+   "notification event",
+   "restful event",
+   "fat event",
+   "event carried state transfer",
+   "information-level coupling",
+   "anti-corruption layer",
+   "acl",
+   "event sourcing",
+   "read models",
+   "integration events",
+   "domain-driven design",
+   "event naming",
+   "orderwasshipped example",
+   "eventual consistency",
+   "eventsauce",
+   "when to use fat events vs thin events",
+   "event payload design",
+   "message-based design"
+  ],
+  "takeaways": [
+   "Domain events record past intent and change in business terms (e.g. OrderWasShipped) and are well suited to building read models, but they couple consumers to internal details, so treat them as private by default.",
+   "Trigger or signal events carry only an ID (and maybe a timestamp), which reduces coupling and protects sensitive data, but consumers must call an API, adding load and possible stale-state issues.",
+   "RESTful or fat events (Event Carried State Transfer) include the full resource representation, avoiding API round trips and suiting outside consumers, but they are big, convey less intent, and often need an anti-corruption layer.",
+   "Pick the event type based on context and use the three archetypes to frame design discussions about integrations.",
+   "Anti-corruption layers can filter and transform events at the producer or consumer side, and can be built as relays; the author mentions EventSauce tooling for this."
+  ],
+  "summary": "Frank de Jonge describes three event archetypes used in event-driven systems: domain events, trigger or signal events, and RESTful (\"fat\") events. For each, he gives a PHP example class, the up-sides and down-sides, and typical use cases such as read models, sensitive-data protection, and outside integrations. He closes by suggesting how to use these categories in technical discussions and briefly covers anti-corruption layers that translate events between systems.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PHP",
+   "EventSauce",
+   "RESTful APIs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4274,
+  "output": 879
+ },
+ "generated": "2026-10-29"
+}

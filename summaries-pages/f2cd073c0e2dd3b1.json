@@ -1,0 +1,66 @@
+{
+ "id": "f2cd073c0e2dd3b1",
+ "url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-5-redis-case-study",
+ "final_url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-5-redis-case-study",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Concurrent Servers: Part 5 - Redis case study",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 5 - Redis case study"
+  }
+ ],
+ "summary": {
+  "title": "Concurrent Servers: Part 5 - Redis case study",
+  "one_liner": "Learn how Redis uses its own small event library (ae) over epoll/kqueue to serve many clients from a single thread, and how it adds background threads for specific jobs.",
+  "category": "concurrent network servers",
+  "keywords": [
+   "redis case study",
+   "redis event loop",
+   "ae event library",
+   "aecreatefileevent",
+   "epoll",
+   "kqueue",
+   "file events",
+   "single-threaded server",
+   "non-blocking sockets",
+   "accepttcphandler",
+   "readqueryfromclient",
+   "beforesleep",
+   "handleclientswithpendingwrites",
+   "libuv comparison",
+   "why redis doesn't use libuv",
+   "bio background io threads",
+   "redis modules blocking commands",
+   "concurrent server design",
+   "event-driven server in c",
+   "in-memory database concurrency"
+  ],
+  "takeaways": [
+   "Redis's ae library wraps epoll, kqueue, or select and dispatches per-socket callbacks from one event loop.",
+   "Client connections are accepted and read through registered file-event callbacks, with sockets set to non-blocking mode.",
+   "Replies are written from a beforeSleep hook, which tries immediate writes and falls back to write-ready events.",
+   "Redis wrote its own event library (about 1300 lines) rather than use libuv (about 26K lines), since it only needed a small, tailored subset.",
+   "Redis added threads only for lazy freeing, background fsync journaling, and long-running module commands."
+  ],
+  "summary": "The post is part 5 of a series on concurrent network servers and examines Redis's C source as a real-world case study. It explains the ae event library, the aeCreateFileEvent API, and how Redis traces a client connection from accept through read callbacks to reply writing in beforeSleep. It then compares ae with libuv, quoting the creator's reasoning and line counts, and closes by describing Redis's limited use of threads for background I/O and module operations.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Redis",
+   "epoll",
+   "kqueue",
+   "libuv",
+   "select"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3859,
+  "output": 834
+ },
+ "generated": "2026-10-29"
+}

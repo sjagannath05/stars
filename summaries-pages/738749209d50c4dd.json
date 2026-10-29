@@ -1,0 +1,73 @@
+{
+ "id": "738749209d50c4dd",
+ "url": "https://fasterthanli.me/series/making-our-own-executable-packer/part-1",
+ "final_url": "https://fasterthanli.me/series/making-our-own-executable-packer/part-1",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "What's in a Linux executable?",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Low-level, assembly",
+   "entry": "What's in a Linux executable?"
+  }
+ ],
+ "summary": {
+  "title": "What's in a Linux executable?",
+  "one_liner": "You learn the layout of a 64-bit Linux ELF file by hand with xxd and GDB, then start parsing its header in Rust with nom.",
+  "category": "linux executables",
+  "keywords": [
+   "elf file format",
+   "linux executable format",
+   "elf header",
+   "64-bit elf",
+   "section header table",
+   "section names string table",
+   "entry point address",
+   "_start entry point",
+   "xxd hexdump",
+   "shell arithmetic hex offsets",
+   "gdb debugger",
+   "ugdb text ui",
+   "stepi",
+   "catchpoint syscall",
+   "starti gdb",
+   "nasm assembly hello world",
+   "intel syntax gdb disassembly",
+   "nom parser combinators in rust",
+   "derive-try-from-primitive enum",
+   "map_res nom error handling",
+   "parsing binary files in rust",
+   "gzip compressing executable",
+   "elf parser delf crate",
+   "nasm netwide assembler"
+  ],
+  "takeaways": [
+   "An ELF64 header holds fields such as the machine type, the entry point address, and the index of the section-names section.",
+   "You can inspect a binary by hand with xxd and shell arithmetic, following section header offsets to find section data.",
+   "Rust enums can be mapped to and from integer representations using #[repr] and the derive-try-from-primitive crate.",
+   "nom's map_res and map_err combinators let a parser turn failed conversions into contextual errors.",
+   "GDB with catchpoints, stepi, and starti can show where a program starts executing, and that the entry point does not always match what you expect."
+  ],
+  "summary": "The article is the first part of a series on Linux ELF executables, written for a 64-bit Linux focus. The author assembles a small nasm hello-world program, then manually inspects its bytes with xxd, following the section header table to find the section names. The main body builds a Rust parser: a delf library crate using nom for the ELF header, and an elk binary crate that prints the parsed result. It covers enum conversion, nom error handling, and the entry point, which is checked with GDB and ugdb.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "nom",
+   "NASM",
+   "GDB",
+   "ugdb",
+   "xxd",
+   "ELF",
+   "Linux",
+   "gzip"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7499,
+  "output": 885
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,67 @@
+{
+ "id": "37a321dbff4025b3",
+ "url": "https://syslab.cs.washington.edu/papers/latency-socc14.pdf",
+ "final_url": "https://syslab.cs.washington.edu/papers/latency-socc14.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Where jitter comes from",
+   "entry": "Tales of the Tail - Derives the queueing-ideal tail and attributes the excess to scheduling, interrupt placement, power saving and NUMA."
+  }
+ ],
+ "summary": {
+  "title": "Tales of the Tail: Hardware, OS, and Application-level Sources of Tail Latency",
+  "one_liner": "Queuing models give the best-achievable tail latency for a server, and measured excess tail latency on Linux comes from interference, scheduling, interrupt routing, power saving and NUMA effects, which can be systematically removed.",
+  "category": "server tail latency",
+  "keywords": [
+   "tail latency",
+   "long tail latency",
+   "99.9th percentile latency",
+   "queuing model",
+   "m/d/c queue",
+   "ideal latency distribution",
+   "memcached latency",
+   "nginx tail latency",
+   "linux interrupt routing",
+   "irq affinity",
+   "cpu power saving latency",
+   "numa effects on latency",
+   "thread scheduling latency",
+   "request reordering",
+   "open-loop poisson workload",
+   "null rpc server",
+   "predictable latency",
+   "latency variability sources",
+   "complementary cumulative distribution latency",
+   "socc 2014 paper"
+  ],
+  "takeaways": [
+   "Even with deterministic service times, bursty request arrivals create a queuing-induced latency tail that worsens with utilization.",
+   "Adding workers that pull from one shared FIFO queue shrinks the tail; per-worker queues do not help tail latency.",
+   "FIFO queuing gives the best tail latency, while LIFO and random disciplines can improve median at the cost of the tail.",
+   "Measured excess tail latency on Linux stems from background processes, scheduling, interrupt placement, CPU power saving and NUMA; eliminating them brought Memcached near the ideal distribution (median 11 µs, 99.9th 32 µs at 80% utilization on four cores)."
+  ],
+  "summary": "The paper models network servers as single-queue systems (Kendall A/S/c) to derive the best-achievable latency distribution, showing that arrival burstiness, utilization, worker count and queuing discipline all shape the tail. It then measures three Linux servers (a null RPC server, Memcached and Nginx) on a 12-core testbed under open-loop Poisson load, using kernel and application timestamps embedded in packets. The authors identify and remove sources of excess tail latency, including interference, scheduling, interrupt mapping, power saving and NUMA effects, and report the tradeoffs with throughput and energy.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "Memcached",
+   "Nginx",
+   "C",
+   "Mellanox ConnectX-3 NIC",
+   "epoll",
+   "TCP",
+   "UDP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9387,
+  "output": 966
+ },
+ "generated": "2026-10-29"
+}

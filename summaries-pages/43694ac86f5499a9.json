@@ -1,0 +1,63 @@
+{
+ "id": "43694ac86f5499a9",
+ "url": "https://norasandler.com/2018/02/25/Write-a-Compiler-6.html",
+ "final_url": "https://norasandler.com/2018/02/25/Write-a-Compiler-6.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a C Compiler, Part 6",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 6: Conditionals"
+  }
+ ],
+ "summary": {
+  "title": "Writing a C Compiler, Part 6: Conditionals",
+  "one_liner": "You learn how to add if statements and ternary conditional expressions to a C compiler, covering their AST, grammar precedence rules, lexing, and jump-based code generation.",
+  "category": "compiler construction",
+  "keywords": [
+   "writing a c compiler",
+   "c compiler tutorial",
+   "if statement compiler",
+   "ternary conditional expression",
+   "conditional operator parsing",
+   "c ternary operator grammar",
+   "right-associative ternary",
+   "recursive descent parser conditionals",
+   "ast for if statement",
+   "block item grammar",
+   "declaration vs statement c",
+   "conditional jump assembly",
+   "cmpl je jmp codegen",
+   "lexing new tokens if else",
+   "operator precedence grammar c11",
+   "dangling else c",
+   "compile if statements to assembly",
+   "nora sandler compiler series",
+   "c11 section 6.5.15 conditional"
+  ],
+  "takeaways": [
+   "if statements need an AST node with a condition, an if branch, and an optional else branch, and are parsed with a recursive but non-left-recursive grammar rule.",
+   "Declarations are not statements in C, so they should be split out into their own type and function bodies represented as lists of block items.",
+   "The ternary operator sits between logical OR and assignment in precedence and is right-associative; e1 must be a logical-or expression and e3 must be a conditional expression.",
+   "Conditional expressions and if statements must evaluate only the branch actually needed, which is done with a compare, a conditional jump, and an unconditional jump with unique labels."
+  ],
+  "summary": "This sixth part of Nora Sandler's C compiler series adds if statements and ternary conditional expressions. It walks through lexing the new keyword and operator tokens, extending the AST and grammar, and explains why the ternary rule must be written as it is, with the precedence and associativity reasoning behind it. It also covers the assembly pattern for conditional jumps and labels. The post is organized as a series of tasks for lexing, parsing, and code generation, with the reasoning shown in prose.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "OCaml",
+   "C++",
+   "x86 assembly",
+   "gcc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7364,
+  "output": 871
+ },
+ "generated": "2026-10-29"
+}

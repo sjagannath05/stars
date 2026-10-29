@@ -1,0 +1,60 @@
+{
+ "id": "56c213e76728e36b",
+ "url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-1-introduction",
+ "final_url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-1-introduction",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Concurrent Servers: Part 1 - Introduction",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 1 - Introduction"
+  }
+ ],
+ "summary": {
+  "title": "Concurrent Servers: Part 1 - Introduction",
+  "one_liner": "You learn why a sequential socket server cannot scale to multiple clients, using a simple stateful echo-increment protocol as the running example for comparing concurrency models.",
+  "category": "network programming",
+  "keywords": [
+   "concurrent servers",
+   "sequential server",
+   "socket programming",
+   "concurrency models",
+   "network server design",
+   "stateful protocol",
+   "state machine",
+   "accept loop",
+   "blocking recv send",
+   "multiple clients simultaneously",
+   "c sockets posix",
+   "mealy machine",
+   "server scalability",
+   "echo server tutorial",
+   "how to handle multiple clients in a server",
+   "why sequential server doesn't scale",
+   "python client simulation threads",
+   "event-driven server introduction"
+  ],
+  "takeaways": [
+   "A sequential server handles one client at a time, so other clients wait until the current one disconnects.",
+   "The example protocol uses ^ and $ delimiters and a processing state that must persist across recv() calls because message boundaries do not align with buffers.",
+   "Blocking I/O in a single accept loop wastes resources when clients are slow or the server waits on a database.",
+   "The series will compare threads, event-driven, libuv, callbacks/async, Rust and Go approaches on scalability and ease of implementation."
+  ],
+  "summary": "The post introduces a series on concurrent network servers and defines a simple stateful protocol: the server sends '*', ignores input until '^', echoes incremented bytes until '$', and treats client disconnect as the end. It then presents a C sequential server built on POSIX sockets, walks through its accept loop and state-machine serve_connection function, and explains why recv buffers can split messages. A Python multi-client simulation shows that clients are serviced one after another, with each connection blocking the server for about 2.2 seconds. The post closes by setting up the later parts of the series.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "POSIX sockets",
+   "Python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5069,
+  "output": 795
+ },
+ "generated": "2026-10-29"
+}

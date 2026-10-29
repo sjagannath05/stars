@@ -1,0 +1,68 @@
+{
+ "id": "2c81df0be8dc0cb6",
+ "url": "https://www.cs.rochester.edu/u/scott/papers/1991_TOCS_synch.pdf",
+ "final_url": "https://www.cs.rochester.edu/u/scott/papers/1991_TOCS_synch.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "Algorithms for scalable synchronization on shared-memory multiprocessors",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Locks, contention and allocators",
+   "entry": "Algorithms for Scalable Synchronization on Shared-Memory Multiprocessors - The origin of the queue lock, each waiter spinning on its own line, measured against ticket and test-and-set locks."
+  }
+ ],
+ "summary": {
+  "title": "Algorithms for Scalable Synchronization on Shared-Memory Multiprocessors",
+  "one_liner": "Mellor-Crummey and Scott's 1991 paper shows how to build spin locks and barriers that spin only on locally accessible flags, eliminating busy-wait memory and interconnect contention, and compares them on Sequent Symmetry and BBN Butterfly machines.",
+  "category": "parallel synchronization algorithms",
+  "keywords": [
+   "spin lock",
+   "scalable spin lock",
+   "queue lock",
+   "array-based queuing lock",
+   "ticket lock",
+   "test-and-set lock",
+   "test-and-test-and-set",
+   "exponential backoff",
+   "busy-wait synchronization",
+   "barrier synchronization",
+   "hot spot contention",
+   "shared-memory multiprocessor",
+   "local spinning",
+   "fetch-and-add",
+   "fetch-and-store swap",
+   "compare-and-swap",
+   "dance hall architecture",
+   "anderson queuing lock",
+   "graunke thakkar lock",
+   "mutual exclusion algorithm",
+   "cache coherent spinning",
+   "how to avoid lock contention on multiprocessors"
+  ],
+  "takeaways": [
+   "Busy-wait contention comes from many processors polling one shared location; spinning on separate locally accessible flags avoids it.",
+   "Test-and-set locks with exponential backoff and ticket locks with proportional backoff reduce polling traffic but still contend on a shared location.",
+   "Array-based queuing locks let each waiter spin on its own cache line, giving constant remote references per acquisition using only fetch-and-increment or fetch-and-store.",
+   "The paper also presents a scalable barrier needing O(1) remote references per processor and argues that software can rival special-purpose synchronization hardware."
+  ],
+  "summary": "The paper surveys busy-wait spin locks (test-and-set with backoff, ticket lock, Anderson's and Graunke-Thakkar's array-based queuing locks) and explains how each reduces memory and interconnect contention. It introduces a new scalable spin lock with O(1) remote references per acquisition that needs only a swap-with-memory instruction, and a new barrier with O(1) remote references per processor. Performance is measured on a Sequent Symmetry and a BBN Butterfly, with pseudo-code for each algorithm. The authors conclude that software synchronization can scale and that this weakens the case for costly hardware support and for dance-hall memory architectures.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Sequent Symmetry",
+   "BBN Butterfly",
+   "fetch-and-add",
+   "fetch-and-store",
+   "test-and-set",
+   "compare-and-swap",
+   "pseudo-code"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9749,
+  "output": 1033
+ },
+ "generated": "2026-10-29"
+}

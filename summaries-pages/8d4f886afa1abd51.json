@@ -1,0 +1,62 @@
+{
+ "id": "8d4f886afa1abd51",
+ "url": "https://www.codementor.io/@ziad-saab/let-s-code-a-web-server-from-scratch-with-nodejs-streams-h4uc9utji",
+ "final_url": "https://www.codementor.io/@ziad-saab/let-s-code-a-web-server-from-scratch-with-nodejs-streams-h4uc9utji",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's code a web server from scratch with NodeJS Streams! | Codementor",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Web Server",
+   "entry": "Node.js: _Let's code a web server from scratch with NodeJS Streams_"
+  }
+ ],
+ "summary": {
+  "title": "Let's code a web server from scratch with NodeJS Streams!",
+  "one_liner": "You learn how HTTP requests and responses are structured and how to build a rudimentary HTTP server on Node's low-level net module using Streams and Buffers.",
+  "category": "node.js http servers",
+  "keywords": [
+   "node.js web server from scratch",
+   "nodejs streams tutorial",
+   "build http server without http module",
+   "net module tcp server nodejs",
+   "http request structure",
+   "http response structure",
+   "parse http request nodejs",
+   "socket.unshift",
+   "readable stream read() nodejs",
+   "transfer-encoding chunked",
+   "content-length header",
+   "buffer concat nodejs",
+   "duplex stream socket",
+   "curl verbose request example",
+   "http status line and headers",
+   "createwebserver request handler",
+   "build your own web server",
+   "node http createserver hello world"
+  ],
+  "takeaways": [
+   "An HTTP request has a request line, headers ending with a blank \\r\\n line, then an optional body; responses follow the same pattern with a status line.",
+   "Node's net module emits a connection event with a Socket, which is a Duplex Stream that can be read from and written to.",
+   "Reading with socket.read() lets you stop at \\r\\n\\r\\n, then socket.unshift() pushes leftover body bytes back into the stream.",
+   "Use Transfer-Encoding: chunked when the response length is unknown in advance; otherwise set Content-Length.",
+   "The post notes this code is educational only and not meant for production use."
+  ],
+  "summary": "The article walks through Node's built-in http module, then dissects the raw text of HTTP requests and responses using sample messages. It then uses the net module to build a TCP server, first logging raw chunks received from curl and then reading the socket with readable events and read() to split headers from the body. The final section wraps this into a createWebServer(requestHandler) function that parses requests and exposes a res object with setHeader, setStatus, write, end and json, using chunked encoding when needed. The author states the code is for learning only and not for production.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Node.js",
+   "JavaScript",
+   "HTTP/1.1",
+   "curl"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6723,
+  "output": 848
+ },
+ "generated": "2026-10-29"
+}

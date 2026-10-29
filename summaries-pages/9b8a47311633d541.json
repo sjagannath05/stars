@@ -1,0 +1,73 @@
+{
+ "id": "9b8a47311633d541",
+ "url": "https://sigops.org/s/conferences/sosp/2013/papers/p33-david.pdf",
+ "final_url": "https://sigops.org/s/conferences/sosp/2013/papers/p33-david.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Store buffers, ordering and cache-line contention",
+   "entry": "Everything You Always Wanted to Know About Synchronization but Were Afraid to Ask - Measures line-transfer cost between cores by coherence state and distance, the figure behind every contention rule."
+  }
+ ],
+ "summary": {
+  "title": "Everything You Always Wanted to Know About Synchronization but Were Afraid to Ask",
+  "one_liner": "Learn how cache-coherence states, socket placement and lock design determine synchronization cost and scalability on modern many-core processors, based on measurements across four platforms.",
+  "category": "distributed systems",
+  "keywords": [
+   "synchronization scalability",
+   "cache coherence latency",
+   "mesi protocol",
+   "moesi protocol",
+   "cache line transfer cost",
+   "cross-socket communication",
+   "numa synchronization",
+   "ticket lock",
+   "spin lock",
+   "queue lock",
+   "mcs lock",
+   "clh lock",
+   "hierarchical locks",
+   "message passing over cache coherence",
+   "compare-and-swap cost",
+   "lock contention many-core",
+   "software transactional memory",
+   "ccbench",
+   "ssync benchmark suite",
+   "opteron xeon niagara tilera comparison",
+   "directory vs snooping coherence",
+   "false sharing",
+   "how expensive is locking on multicore"
+  ],
+  "takeaways": [
+   "Crossing sockets makes any operation on a cache line 2 to 7.5 times slower than intra-socket operations, even without contention.",
+   "Loads and stores are not significantly cheaper than atomic operations, since memory fences often accompany them.",
+   "No single locking scheme wins everywhere; a well-implemented ticket lock performs best in most low-contention workloads.",
+   "Message passing helps mainly when many threads contend for a few data items; under low contention locks usually do better.",
+   "Synchronization scalability is largely determined by hardware, so keeping synchronization within one socket is preferable."
+  ],
+  "summary": "The paper is a broad measurement study of synchronization across hardware and software layers. The authors use their ccbench tool to measure cache-line operation latencies by MESI-style state and core placement, then test locks, message passing, a hash table, Memcached and a software transactional memory via their SSYNC suite. The platforms are a 4-socket AMD Opteron, an 8-socket Intel Xeon, a Sun Niagara 2 and a Tilera TILE-Gx36. The findings argue that scalability of synchronization is mainly a property of the hardware.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "AMD Opteron",
+   "Intel Xeon",
+   "Sun Niagara 2",
+   "Tilera TILE-Gx36",
+   "Memcached",
+   "MESI",
+   "MOESI",
+   "HyperTransport",
+   "QPI"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10175,
+  "output": 960
+ },
+ "generated": "2026-10-29"
+}

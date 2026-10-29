@@ -1,0 +1,68 @@
+{
+ "id": "a0e74a0bbfae083d",
+ "url": "https://uxlfoundation.github.io/oneDNN/dev_guide_matmul.html",
+ "final_url": "https://uxlfoundation.github.io/oneDNN/dev_guide_matmul.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Matrix Multiplication",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "GEMM and BLAS",
+   "entry": "oneDNN Matrix Multiplication Primitive - Fixes the data-type table, packed weight format and fused post-ops a CPU GEMM must expose to an inference graph."
+  }
+ ],
+ "summary": {
+  "title": "Matrix Multiplication (oneDNN Developer Guide)",
+  "one_liner": "You learn how oneDNN's MatMul primitive defines shapes, broadcasting, supported data-type combinations, sparse and grouped GEMM encodings, attributes, and post-ops.",
+  "category": "CPU GEMM libraries",
+  "keywords": [
+   "onednn matmul",
+   "matrix multiplication primitive",
+   "gemm",
+   "batched matrix multiplication",
+   "broadcasting matmul",
+   "matmul data types",
+   "int8 matmul",
+   "bf16 matmul",
+   "f8 matmul",
+   "weight-only quantization",
+   "wo q int4 weights",
+   "sparse matmul csr",
+   "coo sparse matrix",
+   "packed sparse weights amx",
+   "grouped gemm",
+   "mixture of experts matmul",
+   "post-ops eltwise binary",
+   "matmul scales zero points",
+   "runtime dimensions matmul",
+   "dnnl memory format tag any",
+   "onednn primitive attributes",
+   "bias broadcasting",
+   "plain memory format matmul"
+  ],
+  "takeaways": [
+   "MatMul computes a 2D product with optional bias, and supports batched inputs up to 12D with implicit broadcasting of dimensions equal to 1.",
+   "The data-type table lists which source, weights, destination and bias combinations are supported, including f64, f32, bf16, f16, int8/uint8, sub-byte int4/int2/int3 and f8/f4 types.",
+   "Sparse support covers CSR and COO encodings on CPU (and COO on GPU) for one input, and PACKED sparse weights on CPU with Intel AMX and s8 weights only.",
+   "Grouped GEMM (experimental, build flag ONEDNN_EXPERIMENTAL_GROUPED_MEMORY=ON) handles variable M or K per group, as in MoE models, using grouped memory with offsets arrays.",
+   "Performance depends on known shapes and format_tag::any use; plain formats are optimized, and destination must have a contiguous n axis."
+  ],
+  "summary": "This is the oneDNN developer guide page for the Matrix Multiplication primitive. It defines tensor shapes for 2D and ND (batched) inputs, broadcasting and bias rules, and the execution argument indices. It then gives tables of supported data-type combinations, attributes (scales, zero points, dropout, precomputed reductions) and post-ops (eltwise, sum, binary, PReLU), along with CPU and GPU implementation limitations. The page also covers performance tips, sparse CSR/COO/PACKED encodings, an experimental grouped GEMM section with code snippets for MoE workloads, and the execution hint for maximum group size.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "oneDNN",
+   "C++",
+   "Intel AMX",
+   "CPU",
+   "Intel GPU"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10110,
+  "output": 1091
+ },
+ "generated": "2026-10-29"
+}

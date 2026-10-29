@@ -1,0 +1,64 @@
+{
+ "id": "c7a2fa8c23e29d7b",
+ "url": "https://www.pyimagesearch.com/2018/09/03/semantic-segmentation-with-opencv-and-deep-learning",
+ "final_url": "https://pyimagesearch.com/2018/09/03/semantic-segmentation-with-opencv-and-deep-learning/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Semantic segmentation with OpenCV and deep learning - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Semantic Segmentation with OpenCV and Deep Learning"
+  }
+ ],
+ "summary": {
+  "title": "Semantic segmentation with OpenCV and deep learning",
+  "one_liner": "You learn to run the pre-trained ENet semantic segmentation network with OpenCV's DNN module to label every pixel of road-scene images and video.",
+  "category": "computer vision",
+  "keywords": [
+   "semantic segmentation",
+   "opencv deep learning",
+   "enet architecture",
+   "pixel-wise classification",
+   "scene segmentation",
+   "cityscapes dataset",
+   "road scene segmentation",
+   "self-driving car segmentation",
+   "opencv dnn readnet",
+   "cv2.dnn.blobfromimage",
+   "video semantic segmentation python",
+   "argmax class map",
+   "transparent mask overlay",
+   "segmentation vs object detection",
+   "real-time segmentation cpu",
+   "python image segmentation tutorial",
+   "imutils resize",
+   "pretrained segmentation model"
+  ],
+  "takeaways": [
+   "Semantic segmentation assigns a class label to every pixel, unlike traditional segmentation that partitions an image without knowing what the parts are.",
+   "ENet is a fast segmentation network (about 3.2MB, reported up to 18x faster with 79x fewer parameters); the author measured about 0.2 seconds per CPU forward pass.",
+   "Load a model with cv2.dnn.readNet, build a 1024x512 blob, run a forward pass, take argmax over classes, and map class IDs to colors for an overlay.",
+   "Use nearest-neighbor interpolation when resizing the class mask so class IDs are preserved, then blend the mask with the original frame.",
+   "The same pipeline extends to video by looping over frames and writing the blended output to disk with cv2.VideoWriter."
+  ],
+  "summary": "The tutorial explains the ENet segmentation architecture, trained on the Cityscapes dataset with 20 road-scene classes, and why it suits real-time use. It then walks through segment.py, which loads the model, builds a class color legend, runs inference on a single image, and blends a colored class mask over the input. A second script, segment_video.py, applies the same steps frame by frame, writes an output video, and estimates total processing time. The author shows example outputs and notes where the model makes mistakes, such as labeling road as sidewalk.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "NumPy",
+   "imutils",
+   "ENet",
+   "Cityscapes dataset"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9796,
+  "output": 940
+ },
+ "generated": "2026-10-29"
+}

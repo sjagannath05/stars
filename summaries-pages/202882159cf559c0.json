@@ -1,0 +1,64 @@
+{
+ "id": "202882159cf559c0",
+ "url": "http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf",
+ "final_url": "http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "whymb.dvi",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "1. Start here",
+   "entry": "5. Memory Barriers: a Hardware View for Software Hackers - Explains why a second core makes loads and stores reorder and what a barrier drains."
+  }
+ ],
+ "summary": {
+  "title": "Memory Barriers: a Hardware View for Software Hackers",
+  "one_liner": "You learn why CPU caches, MESI coherence, and store buffers cause memory reordering on multiprocessors, and why memory barriers are needed to enforce ordering.",
+  "category": "cpu memory ordering",
+  "keywords": [
+   "memory barriers",
+   "memory ordering",
+   "memory reordering",
+   "cache coherence",
+   "mesi protocol",
+   "mesi states",
+   "cache line",
+   "cache miss",
+   "associativity miss",
+   "capacity miss",
+   "communication miss",
+   "store buffer",
+   "store forwarding",
+   "invalidate queue",
+   "read invalidate message",
+   "set-associative cache",
+   "smp memory model",
+   "multiprocessor synchronization",
+   "why do cpus reorder loads and stores",
+   "what does a memory barrier do",
+   "cache structure geometry",
+   "smp software design"
+  ],
+  "takeaways": [
+   "CPUs are much faster than memory, so multi-megabyte caches organized in fixed-size cache lines hide memory latency.",
+   "The four-state MESI protocol (modified, exclusive, shared, invalid) and its messages keep CPUs agreeing on each memory location.",
+   "Store buffers let a CPU continue past a write without stalling for cache-line ownership, but they create self-consistency and global ordering problems.",
+   "Store forwarding lets a CPU's loads see its own buffered stores, while memory barriers are needed to force ordering visible to other CPUs."
+  ],
+  "summary": "This paper by Paul McKenney explains the hardware reasons behind memory ordering on SMP systems. It starts with cache structure, including cache lines, sets and ways, and the types of cache misses. It then covers the MESI cache-coherence protocol, its messages, and a worked example of a cache line moving between CPUs. Finally it shows how store buffers and store forwarding speed up writes but cause reordering, which is why memory barriers are required. The text is a detailed, example-driven explanation aimed at software developers.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "MESI cache-coherence protocol",
+   "SMP hardware"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10283,
+  "output": 844
+ },
+ "generated": "2026-10-29"
+}

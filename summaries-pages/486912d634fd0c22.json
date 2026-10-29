@@ -1,0 +1,65 @@
+{
+ "id": "486912d634fd0c22",
+ "url": "http://www.saminiir.com/lets-code-tcp-ip-stack-3-tcp-handshake",
+ "final_url": "http://www.saminiir.com/lets-code-tcp-ip-stack-3-tcp-handshake/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's code a TCP/IP stack, 3: TCP Basics & Handshake",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 3: TCP Basics & Handshake"
+  }
+ ],
+ "summary": {
+  "title": "Let's code a TCP/IP stack, 3: TCP Basics & Handshake",
+  "one_liner": "You learn how TCP provides reliable, connection-oriented streaming over IP (sliding windows, sequence numbers, checksums, header fields and the SYN/SYN-ACK/ACK three-way handshake) and how to mock a handshake in a userspace stack.",
+  "category": "network programming",
+  "keywords": [
+   "tcp handshake",
+   "three-way handshake",
+   "syn ack",
+   "tcp header format",
+   "tcp sequence number",
+   "initial sequence number",
+   "isn",
+   "sliding window",
+   "flow control",
+   "congestion control",
+   "tcp checksum",
+   "simultaneous open",
+   "tcp options",
+   "selective acknowledgment sack",
+   "window scale",
+   "userspace tcp/ip stack",
+   "build tcp from scratch",
+   "nmap syn scan",
+   "tcp vs udp",
+   "packetization"
+  ],
+  "takeaways": [
+   "TCP is connection-oriented and streaming: it buffers data and reorders it before handing it to the application.",
+   "Sequence and acknowledgment numbers index the byte stream; the 20-byte header carries ports, flags, window size and checksum.",
+   "The handshake is SYN from client, SYN-ACK from server (ACK = seq + 1), then ACK from client; simultaneous open needs an extra exchange.",
+   "Initial sequence numbers must be hard to guess to prevent sequence number attacks; modern stacks generate them with more complex methods than a simple counter.",
+   "Options such as MSS, SACK, Window Scale and Timestamps extend the basic header."
+  ],
+  "summary": "The article is the third part of a series on building a userspace TCP/IP stack. It explains the reliability problems TCP solves, including sliding windows, flow and congestion control, and then covers TCP's basics such as streaming, packetization, checksums and full-duplex operation. It walks through the 20-byte TCP header and its flags, the three-way handshake with its open questions (ISN choice, simultaneous open, timeouts), and common TCP options. It ends by mocking a SYN-ACK response in the author's stack and testing it with nmap's SYN scan.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "TCP",
+   "IPv4",
+   "Ethernet",
+   "nmap",
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5544,
+  "output": 906
+ },
+ "generated": "2026-10-29"
+}

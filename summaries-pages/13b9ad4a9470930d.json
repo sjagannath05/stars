@@ -1,0 +1,68 @@
+{
+ "id": "13b9ad4a9470930d",
+ "url": "https://brennan.io/2016/11/14/kernel-dev-ep3",
+ "final_url": "https://brennan.io/2016/11/14/kernel-dev-ep3/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Tutorial - Write a System Call - Stephen Brennan",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C: _Write a System Call_"
+  }
+ ],
+ "summary": {
+  "title": "Tutorial - Write a System Call - Stephen Brennan",
+  "one_liner": "You learn what a Linux system call really is and how to add a custom one to the kernel (x86_64, kernel 4.7.1), build and boot it in a VM, and call it from C.",
+  "category": "linux kernel development",
+  "keywords": [
+   "system call",
+   "write a system call linux",
+   "custom system call",
+   "linux kernel source compile",
+   "syscall table syscall_64.tbl",
+   "syscall_define1",
+   "printk kernel log",
+   "strncpy_from_user",
+   "syscall() glibc function",
+   "dmesg kernel log",
+   "vdso system call",
+   "build custom kernel arch linux",
+   "virtualbox kernel development",
+   "kernel module vs system call",
+   "deploy.sh kernel build script",
+   "qemu alternative to virtualbox",
+   "kernel mode user mode switch",
+   "initramfs mkinitcpio",
+   "grub kernel boot",
+   "c library wrapper vs system call"
+  ],
+  "takeaways": [
+   "A system call is a request to the kernel to act on your behalf (devices, files, processes); library functions like qsort or strtok do not need one.",
+   "Adding a syscall means adding a row to the architecture's syscall table, defining the function with SYSCALL_DEFINEN, and rebuilding the kernel.",
+   "Copy user-space pointers with strncpy_from_user() rather than using them directly, to guard against kernel-memory and cross-process access.",
+   "Build and boot a custom kernel in a VM (Arch Linux in VirtualBox here), then call the new syscall number via glibc's syscall() and read the output with dmesg."
+  ],
+  "summary": "The article explains that a system call is a controlled request to the kernel, distinct from ordinary C library functions. It then walks through setting up an Arch Linux VM in VirtualBox, downloading a matching kernel source tarball, and reusing the existing config with a custom LOCALVERSION suffix. The author adds a syscall 329 entry to arch/x86/entry/syscalls/syscall_64.tbl, implements it in kernel/sys.c with SYSCALL_DEFINE1 and printk, then compiles, installs, and boots the kernel with a provided deploy.sh script. Finally, a small C program calls the syscall through glibc's syscall() and the output is checked with dmesg.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Linux kernel",
+   "bash",
+   "VirtualBox",
+   "Arch Linux",
+   "GRUB",
+   "mkinitcpio",
+   "glibc",
+   "qemu"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6611,
+  "output": 998
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,59 @@
+{
+ "id": "d5fdfa407c8b9261",
+ "url": "http://code.flickr.net/2009/12/02/flipping-out",
+ "final_url": "https://code.flickr.net/2009/12/02/flipping-out/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Flipping Out",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Feature flags",
+   "entry": "Flipping out, Flickr. One of the first articles about feature flags."
+  }
+ ],
+ "summary": {
+  "title": "Flipping Out",
+  "one_liner": "Flickr's account of using feature flags (per-environment) and feature flippers (per-user) to ship unbranched, continuously integrated code.",
+  "category": "feature flags",
+  "keywords": [
+   "feature flags",
+   "feature flippers",
+   "feature toggles",
+   "trunk-based development",
+   "continuous integration",
+   "no branches",
+   "single head commit",
+   "per environment flags",
+   "per user feature flags",
+   "flickr engineering",
+   "avoid merges",
+   "dark launch",
+   "feature launch without deploy",
+   "unbranched code repository",
+   "frequent deploys",
+   "removing old feature code",
+   "flag configuration per server"
+  ],
+  "takeaways": [
+   "Flickr keeps all code on a single head branch and deploys it to production several times a day.",
+   "Feature flags let the same codebase behave differently per environment, so a launch can be a config change from false to true.",
+   "Feature flippers enable unfinished features for individual users, so developers can test without affecting others.",
+   "Integrating all code as soon as it is committed removes merge work and leads to smaller, more frequent deploys with easier bug fixing.",
+   "Drawbacks: flagged code is restricted to the dev team, and old versions must be removed after launch."
+  ],
+  "summary": "The article explains how Flickr avoids long-lived branches by keeping all code on head and deploying it often. Feature flags are config values checked in code (for example, enable_unicorn_polo) that are set differently in each environment, so finished code can be turned on by flipping a single value. Feature flippers extend this to per-user control, letting developers test in-progress features in isolation. The author notes the tradeoffs: the approach is limited to the dev team because flagged code can cause serious harm, and old code paths must be cleaned up after launch.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PHP-style config syntax",
+   "Flickr internal feature flip tooling"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1938,
+  "output": 760
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,61 @@
+{
+ "id": "992f3c6bc0c7de20",
+ "url": "https://www.scottantipa.com/yagri",
+ "final_url": "https://www.scottantipa.com/yagri",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "YAGRI: You are gonna read it",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Design: database schema",
+   "entry": "YAGRI: You are gonna read it: store created_at, created_by etc."
+  }
+ ],
+ "summary": {
+  "title": "YAGRI: You are gonna read it",
+  "one_liner": "Store useful metadata like timestamps and \"who/how/why\" context in your database schema now, because you will likely need to read it later, even when the current spec doesn't ask for it.",
+  "category": "database schema design",
+  "keywords": [
+   "yagri",
+   "you are gonna read it",
+   "yagni",
+   "you aren't gonna need it",
+   "database schema design",
+   "store created_at",
+   "created_at updated_at",
+   "soft delete deleted_at",
+   "created_by audit fields",
+   "audit trail",
+   "audit columns",
+   "timestamps in database tables",
+   "store metadata in database",
+   "when to store extra data",
+   "over engineering vs under storing data",
+   "soft deletes vs hard deletes",
+   "permission used during crud",
+   "debugging with database history",
+   "data stewardship engineering",
+   "minimal schema versus useful schema"
+  ],
+  "takeaways": [
+   "YAGNI warns against overbuilding, but YAGRI says to store data you will probably read later, such as timestamps and context metadata.",
+   "When implementing deletes, record who deleted something, how (with what permission), when, and ideally why, rather than just removing the row.",
+   "Useful fields for most tables include created_at, updated_at, deleted_at for soft deletes, created_by, and the permission used during CRUD operations.",
+   "Extra fields are cheap insurance: one field that answers a later question can justify the cost of many unused ones.",
+   "Avoid going too far and logging everything, but extra timestamps are rarely a problem."
+  ],
+  "summary": "The article is a short opinion piece coining YAGRI (\"You are gonna read it\") as an exception to the YAGNI principle. It argues that engineers should store data they will likely read later, such as timestamps and contextual metadata, instead of only the fields a current UI design shows. It uses deleting a record as the main example, listing who deleted it, how, when, and why, and gives a list of common fields for most tables. The author concludes that such fields pay off during debugging or customer questions, while warning not to log everything.",
+  "format": "article",
+  "level": "beginner",
+  "technologies": [
+   "SQL databases"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1900,
+  "output": 828
+ },
+ "generated": "2026-10-29"
+}

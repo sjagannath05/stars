@@ -1,0 +1,73 @@
+{
+ "id": "04d9872a0961778d",
+ "url": "https://cturt.github.io/cinoop.html",
+ "final_url": "https://cturt.github.io/cinoop.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a Game Boy emulator, Cinoop",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Emulator / Virtual Machine",
+   "entry": "C: _Writing a Game Boy emulator, Cinoop_"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Game Boy emulator, Cinoop",
+  "one_liner": "You learn how one developer built a minimalist Game Boy interpreter in C, from CPU instruction dispatch and debugging against NO$GMB through to tile rendering and ports to DS, GameCube, 3DS, PSP and PS4.",
+  "category": "emulator development",
+  "keywords": [
+   "game boy emulator",
+   "cinoop",
+   "game boy emulator in c",
+   "write an emulator from scratch",
+   "game boy cpu emulation",
+   "z80 style register layout",
+   "c11 anonymous structs and unions registers",
+   "instruction table with disassembly",
+   "debugging emulator with no$gmb",
+   "bgb debugger",
+   "tile rendering emulator",
+   "oam sprites game boy",
+   "daa instruction",
+   "tetris emulation",
+   "emulator ports ds gamecube 3ds psp ps4",
+   "chip-8 alternative emulator project",
+   "interrupt handler vblank debugging",
+   "emulator memory regions terminology",
+   "dumping tiles to compare emulator output",
+   "game boy flags zero half carry carry"
+  ],
+  "takeaways": [
+   "Structure the CPU with an instruction table (disassembly, operand length, handler) so one routine can fetch operands and print unimplemented instructions.",
+   "Use C11 anonymous structs and unions to access 8-bit registers and their 16-bit pairs (AF, BC, DE, HL) directly.",
+   "Debug by matching against a reference emulator, dumping VRAM tiles and comparing them with the reference's memory, and using breakpoints on PC or memory access.",
+   "Porting to other consoles required per-platform workarounds, such as caching tileset writes in RAM and copying to VRAM during VBlank on the DS, and sending input over UDP on the PS4."
+  ],
+  "summary": "The author describes building Cinoop, a minimalist Game Boy interpreter in C without custom mapper or sound support, as a first emulator project. The article covers register layout with anonymous unions, an instruction table that drives disassembly and unimplemented-opcode reporting, and step-by-step debugging against NO$GMB using real-time debugger breakpoints. It then walks through tile and background rendering, Tetris-specific workarounds, and ports to DS, GameCube, 3DS, Linux, PSP, PS4, and OS X via XQuartz, with notes on why the PS2 port was abandoned.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "C11",
+   "Game Boy",
+   "NO$GMB",
+   "bgb",
+   "LDFS",
+   "OpenGL",
+   "libogc",
+   "devkitPPC",
+   "ctrulib",
+   "PSP SDK",
+   "PPSSPP",
+   "PS4-SDK",
+   "XQuartz"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9622,
+  "output": 1056
+ },
+ "generated": "2026-10-29"
+}

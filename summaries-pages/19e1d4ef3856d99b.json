@@ -1,0 +1,64 @@
+{
+ "id": "19e1d4ef3856d99b",
+ "url": "https://joemario.github.io/blog/2016/09/01/c2c-blog",
+ "final_url": "https://joemario.github.io/blog/2016/09/01/c2c-blog/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "C2C - False Sharing Detection in Linux Perf",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Store buffers, ordering and cache-line contention",
+   "entry": "C2C - False Sharing Detection in Linux Perf - The implementers' account of perf c2c, whose worked example reads contended lines, offsets and callers off the report."
+  }
+ ],
+ "summary": {
+  "title": "C2C - False Sharing Detection in Linux Perf",
+  "one_liner": "Learn how to use the Linux perf c2c tool to find false sharing cachelines and read its HITM, offset, and latency tables to locate contended data.",
+  "category": "performance profiling",
+  "keywords": [
+   "perf c2c",
+   "false sharing",
+   "linux perf",
+   "cache-2-cache",
+   "hitm",
+   "remote hitm",
+   "local hitm",
+   "cacheline contention",
+   "cache line false sharing detection",
+   "numa performance",
+   "perf c2c record",
+   "perf c2c report",
+   "shared cache line distribution pareto",
+   "llc misses remote cache",
+   "perf script load latency",
+   "how do i find false sharing in linux",
+   "ldlat",
+   "call graph perf c2c",
+   "shared memory cache contention",
+   "data alignment cache line"
+  ],
+  "takeaways": [
+   "perf c2c records load and store samples and reports cachelines with false sharing, including readers, writers, offsets, and source lines.",
+   "A high count of remote HITM (loads hitting a modified cache on another NUMA node) in the Trace Event and Pareto tables signals false sharing worth fixing.",
+   "Typical workflow: run 'perf c2c record -F 60000 -a --all-user sleep 5', then 'perf report -NN -c pid,iaddr --stdio'; add call graphs only after finding the problem.",
+   "Focus on the top one to three cachelines in the Pareto table; long average load latencies indicate heavy contention.",
+   "The c2c feature is available in upstream perf from Linux 4.2."
+  ],
+  "summary": "The article introduces 'perf c2c', a Linux perf feature from Red Hat for detecting false sharing in NUMA, multi-threaded, and shared-memory applications. It walks through a sample c2c output file, explaining the Trace Event summary (HITM counts), the Shared Data Cache Line table, and the Shared Cache Line Distribution Pareto table with offsets, latencies, and source lines. It then lists the author's common record and report flags, tips for handling excessive samples, and guidance on call graphs, sample rates, and using perf script on raw samples.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux perf",
+   "C",
+   "perf c2c",
+   "NUMA"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7837,
+  "output": 892
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,72 @@
+{
+ "id": "0154cb9cc5efd6b6",
+ "url": "https://blog.scottlogic.com/2017/05/22/gifbot-github-integration.html",
+ "final_url": "https://blog.scottlogic.com/2017/05/22/gifbot-github-integration.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "gifbot - Building a GitHub App",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Bot",
+   "entry": "Node.js: _gifbot - Building a GitHub App_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Node:",
+   "entry": "Building a GitHub App"
+  }
+ ],
+ "summary": {
+  "title": "gifbot - Building a GitHub App",
+  "one_liner": "You learn how a webhook-driven GitHub bot differs from a GitHub App and how to convert one, using installation access tokens from a signed JWT.",
+  "category": "github app development",
+  "keywords": [
+   "github app",
+   "github apps",
+   "github integrations",
+   "github bot",
+   "build github bot",
+   "webhook",
+   "github webhook",
+   "personal access token",
+   "installation access token",
+   "jwt authentication",
+   "json web token",
+   "rs256 signing",
+   "github api rate limit",
+   "giphy api",
+   "node.js github bot",
+   "convert bot to github app",
+   "gifbot",
+   "lambda github bot",
+   "bot accounts vs apps",
+   "github api permissions"
+  ],
+  "takeaways": [
+   "GitHub Apps have their own identity, avoid personal access tokens and bot accounts, and can be installed across many repos with one click.",
+   "Each App webhook event includes an installation ID, and rate limits apply per installation.",
+   "To act as an App, sign a JWT with the App ID and private key (RS256), then request an installation access token from the /installations/{id}/access_tokens endpoint.",
+   "The bot's comment logic stays largely the same; only the token used for API calls changes."
+  ],
+  "summary": "The post, written shortly after GitHub Apps left beta in 2017, walks through building gifbot, a Node.js bot that replies to comments containing [gifbot:search] with a Giphy GIF. It first shows the original webhook-plus-personal-access-token version and lists its limitations, such as acting under the owner's identity and per-repo manual setup. It then covers converting the bot into a GitHub App, using jsonwebtoken to sign a JWT and exchanging it for an installation token. The code samples are short and the author explains each step.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "Node.js",
+   "GitHub API",
+   "GitHub Apps",
+   "AWS Lambda",
+   "Giphy API",
+   "JSON Web Token",
+   "jsonwebtoken"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5148,
+  "output": 799
+ },
+ "generated": "2026-10-29"
+}

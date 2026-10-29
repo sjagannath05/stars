@@ -1,0 +1,65 @@
+{
+ "id": "7f6e3e9745675c5f",
+ "url": "https://www.pyimagesearch.com/2018/11/26/instance-segmentation-with-opencv",
+ "final_url": "https://pyimagesearch.com/2018/11/26/instance-segmentation-with-opencv/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Instance segmentation with OpenCV - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Instance Segmentation with OpenCV"
+  }
+ ],
+ "summary": {
+  "title": "Instance segmentation with OpenCV - PyImageSearch",
+  "one_liner": "You learn how to run Mask R-CNN instance segmentation with OpenCV's dnn module in Python to blur the background of a webcam video feed while keeping the detected person sharp.",
+  "category": "computer vision",
+  "keywords": [
+   "instance segmentation",
+   "instance segmentation opencv",
+   "mask r-cnn",
+   "mask rcnn opencv python",
+   "opencv dnn module",
+   "readnetfromtensorflow",
+   "background blur webcam",
+   "video call background blur",
+   "gaussian blur background",
+   "pixel-wise mask",
+   "object detection vs instance segmentation",
+   "coco pretrained model",
+   "imutils videostream",
+   "person segmentation python",
+   "blob forward pass deep learning",
+   "alpha blending mask",
+   "real-time segmentation opencv gpu",
+   "how to blur background in video call",
+   "semantic segmentation comparison",
+   "tensorflow frozen inference graph"
+  ],
+  "takeaways": [
+   "Instance segmentation returns a unique pixel-wise mask for each object, unlike object detection, which only gives bounding boxes and class labels.",
+   "A Mask R-CNN model loaded with cv2.dnn.readNetFromTensorflow can be run on webcam frames, filtering for the 'person' class and applying a confidence threshold.",
+   "Blurring the background with a Gaussian kernel and then compositing the masked person ROI back onto the frame produces a video-call privacy effect.",
+   "The approach ran only a few frames per second on CPU because OpenCV's dnn GPU support was limited at the time, and the post suggests mask smoothing and alpha blending as improvements."
+  ],
+  "summary": "The post builds a webcam background-blur feature modeled on Microsoft Office 365's video call blurring. It first explains instance segmentation versus object detection and semantic segmentation, then walks through a Python script that loads a COCO-trained Mask R-CNN with OpenCV's dnn module, selects the highest-confidence person, thresholds the mask, and blurs everything else when privacy mode is toggled. The author reports results from a demo and notes limitations: the pipeline was only a few frames per second on CPU, and the mask edges could be smoothed with morphological operations and alpha blending, which the author suggests but did not test. The page also contains PyImageSearch University course promotion, which is ignored here.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "Mask R-CNN",
+   "TensorFlow",
+   "NumPy",
+   "imutils"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8927,
+  "output": 992
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,85 @@
+{
+ "id": "ce41866a1f1c4cf0",
+ "url": "https://fly.io/blog/api-tokens-a-tedious-survey",
+ "final_url": "https://fly.io/blog/api-tokens-a-tedious-survey/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "API Tokens: A Tedious Survey",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Security",
+   "entry": "API Tokens: A Tedious Survey: don't use JWT."
+  }
+ ],
+ "summary": {
+  "title": "API Tokens: A Tedious Survey",
+  "one_liner": "A tour of API token designs (random tokens, platform tokens, OAuth 2.0, JWT, PASETO, protobuf tokens, authenticated requests, Macaroons, Biscuits) and their trade-offs for end-user API permissions.",
+  "category": "api security",
+  "keywords": [
+   "api tokens",
+   "api authentication",
+   "api security",
+   "bearer token",
+   "simple random tokens",
+   "platform tokens",
+   "stateless tokens",
+   "token revocation",
+   "oauth 2.0",
+   "refresh token",
+   "access token",
+   "jwt",
+   "json web token",
+   "jwt vulnerabilities",
+   "alg none",
+   "paseto",
+   "protobuf tokens",
+   "authenticated requests",
+   "hmac request signing",
+   "aws signature v4",
+   "facebook cats",
+   "macaroons",
+   "attenuation caveats",
+   "biscuits datalog",
+   "saml xml dsig",
+   "openid connect",
+   "fernet",
+   "iam api permissions",
+   "token versioning revocation"
+  ],
+  "takeaways": [
+   "Simple random tokens stored in a database are a strong default for API IAM because they are easy to revoke and expire.",
+   "Stateless platform tokens (signed or encrypted cookies-style data) avoid database hits but make revocation hard; token versioning with a cache is one workaround.",
+   "The author argues JWT is poorly designed (algorithm confusion, alg=none, many crypto options) and prefers PASETO or a strongly typed protobuf token.",
+   "Macaroons suit designs needing attenuation, confinement, and delegation; Biscuits extend the idea with public-key signatures and Datalog policies."
+  ],
+  "summary": "Written by the Fly.io team while designing a fine-grained permissions system for their API, this long essay surveys token and request-authentication schemes for end-user API access. Each section covers how a scheme works, its revocation and database-load trade-offs, and the author's opinion, with JWT, SAML and PASETO criticized in detail. It ends with Macaroons and Biscuits, where the author notes Macaroon tooling is weak and suits designs needing attenuation, confinement and delegation. The page text is cut off mid-discussion of Biscuits.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "JWT",
+   "PASETO",
+   "OAuth 2.0",
+   "OpenID Connect",
+   "SAML",
+   "Protocol Buffers",
+   "Macaroons",
+   "Biscuits",
+   "Datalog",
+   "HMAC",
+   "Fernet",
+   "Ed25519",
+   "AWS Signature Version 4",
+   "Rails MessageVerifier",
+   "Redis",
+   "Firecracker",
+   "Docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9474,
+  "output": 1009
+ },
+ "generated": "2026-10-29"
+}

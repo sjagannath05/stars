@@ -1,0 +1,69 @@
+{
+ "id": "34ef2c1f811420d0",
+ "url": "https://www.joelonsoftware.com/2001/12/11/back-to-basics",
+ "final_url": "https://www.joelonsoftware.com/2001/12/11/back-to-basics/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Back to Basics",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Low-level, assembly",
+   "entry": "Back to Basics, Joel Spolsky. Explains why learning low level programming is important."
+  }
+ ],
+ "summary": {
+  "title": "Back to Basics",
+  "one_liner": "Low-level fundamentals (C strings, malloc, and byte-level data layout) explain many high-level performance and architecture problems, such as quadratic string concatenation and why XML is slow to query.",
+  "category": "software fundamentals",
+  "keywords": [
+   "null-terminated strings",
+   "asciz strings",
+   "pascal strings",
+   "strcat performance",
+   "shlemiel the painter's algorithm",
+   "quadratic string concatenation",
+   "n-squared performance",
+   "malloc free chain",
+   "memory allocator performance",
+   "realloc doubling strategy",
+   "buffer overflow",
+   "c string length",
+   "fixed-length record layout",
+   "xml vs relational database performance",
+   "low-level programming importance",
+   "joel spolsky",
+   "byte-level thinking",
+   "cs education c vs java",
+   "mystrcat returning end pointer",
+   "garbage collection vs malloc"
+  ],
+  "takeaways": [
+   "C strings are null-terminated, so finding their length is a linear scan, and they cannot hold zero bytes.",
+   "Repeated strcat rescans the destination each time, giving n-squared 'Shlemiel the painter' behaviour; returning a pointer to the end of the string makes it linear.",
+   "Pascal length-prefixed strings give constant-time length lookup and can hold zeros, but are limited to 255 bytes.",
+   "Fixed-size records let a relational database step to the next row with one pointer addition, while XML requires parsing and scanning, which is much slower.",
+   "Understanding bytes, malloc and memory layout helps make better high-level architecture decisions."
+  ],
+  "summary": "Joel Spolsky argues that programmers should understand the lowest levels (CPU, bytes, C strings, malloc) because these details drive high-level performance and architecture decisions. He walks through C strcat, showing why repeated concatenation is quadratic and how returning an end pointer fixes it, then compares null-terminated and Pascal strings. He discusses malloc's free chain, power-of-two and doubling allocation strategies, and buffer overflows. The essay closes by contrasting fixed-offset relational records with XML parsing, and by arguing that CS education should start from C and the CPU.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Pascal",
+   "Perl",
+   "Java",
+   "XML",
+   "SQL",
+   "Excel",
+   "malloc",
+   "COM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7165,
+  "output": 929
+ },
+ "generated": "2026-10-29"
+}

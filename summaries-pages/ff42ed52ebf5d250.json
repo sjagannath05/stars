@@ -1,0 +1,64 @@
+{
+ "id": "ff42ed52ebf5d250",
+ "url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-3-using-a-web-framework",
+ "final_url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-3-using-a-web-framework",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "REST Servers in Go: Part 3 - using a web framework",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 3 - using a web framework"
+  }
+ ],
+ "summary": {
+  "title": "REST Servers in Go: Part 3 - using a web framework",
+  "one_liner": "Learn how to re-implement a Go REST task server using the Gin web framework, covering routing, handlers, parameter access, JSON binding, and the trade-offs of using a framework.",
+  "category": "go rest servers",
+  "keywords": [
+   "go rest server",
+   "gin web framework",
+   "gin golang",
+   "golang web framework",
+   "gin router",
+   "gin.default",
+   "gin.context",
+   "route parameters in go",
+   "gin shouldbindjson",
+   "json binding go",
+   "gin.h map",
+   "gin.wrapf standard handler",
+   "go http handler vs framework",
+   "framework limitations",
+   "gorilla mux",
+   "go regexp routes",
+   "building rest api in go",
+   "go web framework comparison",
+   "gin middleware logging recovery",
+   "rest api tutorial go"
+  ],
+  "takeaways": [
+   "Gin handlers take a *gin.Context instead of the standard http.Handler signature, and gin.WrapF/WrapH can bridge to standard handlers.",
+   "Route parameters like :id are read via Context.Params, and gin.Default() adds crash recovery and request logging middleware.",
+   "ShouldBindJSON parses request JSON into a Go struct, making create handlers much shorter than the standard library version.",
+   "Frameworks trade convenience for lock-in: swapping a router affects only routing config, while swapping a framework like Gin affects the whole application.",
+   "Gin lacks regexp route support, so complex route matching needs extra validation code."
+  ],
+  "summary": "The article is Part 3 of a seven-part series on writing REST servers in Go. It re-implements the earlier task server using the Gin web framework, walking through route registration with gin.Default(), and several handlers covering context-based responses, route parameter access, and JSON binding with ShouldBindJSON. The author then discusses the convenience of frameworks against their limitations, such as missing regexp route support and the higher cost of replacing a framework compared with a router package.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "Gin",
+   "Gorilla mux",
+   "BeeGo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3805,
+  "output": 842
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "eed9ccd30905953a",
+ "url": "https://www.akkadia.org/drepper/dsohowto.pdf",
+ "final_url": "https://www.akkadia.org/drepper/dsohowto.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "How To Write Shared Libraries",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Optimisation levels, inlining and link time",
+   "entry": "How To Write Shared Libraries - States what PLT calls and interposition cost, and the visibility controls a library needs to inline its own exports."
+  }
+ ],
+ "summary": {
+  "title": "How To Write Shared Libraries",
+  "one_liner": "Learn how ELF shared libraries (DSOs) are loaded and relocated at startup, why symbol lookup and PLT-style indirection cost run time, and how to write libraries that stay ABI-stable.",
+  "category": "systems programming",
+  "keywords": [
+   "shared libraries",
+   "dso",
+   "dynamic shared object",
+   "elf format",
+   "dynamic linker",
+   "ld.so",
+   "relocation",
+   "relative relocations",
+   "symbol relocation",
+   "plt",
+   "procedure linkage table",
+   "lazy binding",
+   "ld_bind_now",
+   "symbol lookup",
+   "abi stability",
+   "application binary interface",
+   "binary format",
+   "a.out",
+   "coff",
+   "position independent code",
+   "pie",
+   "df_textrel",
+   "startup cost",
+   "elf hash table",
+   "libtool",
+   "linux shared library design"
+  ],
+  "takeaways": [
+   "Shared libraries save memory by loading code once and mapping it into many processes, but relocations at startup add cost.",
+   "Symbol relocations are the most expensive part of dynamic linking, growing with the number of DSOs and symbols.",
+   "Lazy binding delays function-call relocations, and LD_BIND_NOW or -z now forces them at load time.",
+   "Text relocations (DF_TEXTREL) prevent page sharing, so libraries should avoid them.",
+   "The historical a.out stub-table design explains why ELF was adopted and why ABI stability matters."
+  ],
+  "summary": "This paper by Ulrich Drepper explains how shared libraries work on Linux, starting with the history from a.out fixed-address libraries and stub tables to ELF DSOs. It then walks through the ELF program header, the dynamic linker's startup phase, and the cost model for relative and symbol relocations, with example hash-table histograms from eu-readelf. The preview covers only the first sections; the abstract says the rest introduces writing good and optimized code and managing ABI stability.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "ELF",
+   "GNU ld",
+   "GNU Libtool",
+   "Linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9686,
+  "output": 841
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "90ba866f22776392",
+ "url": "https://sre.google/sre-book/monitoring-distributed-systems",
+ "final_url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Chapter 6 - Monitoring Distributed Systems",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Incident response (oncall, alerting, outages, firefighting, postmortem)",
+   "entry": "This classical article has now become a chapter in Google's SRE book."
+  }
+ ],
+ "summary": {
+  "title": "Chapter 6 - Monitoring Distributed Systems",
+  "one_liner": "Google SRE's principles for deciding what should page a human, how to choose metrics (the four golden signals), and how to keep monitoring simple and low-noise.",
+  "category": "site reliability engineering",
+  "keywords": [
+   "monitoring distributed systems",
+   "alerting best practices",
+   "paging a human",
+   "pager burnout",
+   "alert fatigue",
+   "four golden signals",
+   "latency traffic errors saturation",
+   "white-box monitoring",
+   "black-box monitoring",
+   "symptoms versus causes",
+   "dashboards",
+   "root cause definition",
+   "tail latency histogram",
+   "percentile latency monitoring",
+   "monitoring simplicity",
+   "service level objective alerting",
+   "bigtable over-alerting case study",
+   "gmail workqueue case study",
+   "sre monitoring philosophy",
+   "reduce noisy alerts"
+  ],
+  "takeaways": [
+   "Page a human only for urgent, actionable, user-visible problems; avoid alerting on something that merely seems weird.",
+   "Monitor the four golden signals (latency, traffic, errors, saturation) and distinguish successful from failed request latency.",
+   "Prefer symptom-based alerts over cause-based alerts, and use white-box monitoring for debugging and imminent problems.",
+   "Measure tail latency with histograms and percentiles rather than means, which can hide slow requests.",
+   "Keep alerting rules simple and robust; remove rarely used or unused signals to limit complexity."
+  ],
+  "summary": "This chapter from Google's SRE book sets out principles for monitoring and alerting: defining terms like monitoring, alerts, pages, and root cause, and explaining why each page costs human time and attention. It contrasts symptom-oriented black-box monitoring with cause-oriented white-box monitoring and introduces the four golden signals as a minimum set of user-facing metrics. It also covers measurement resolution, tail latency via histograms, and a checklist of questions for evaluating whether an alert is worth paging. Two case studies (Bigtable over-alerting and Gmail's scriptable responses) illustrate the trade-offs in practice.",
+  "format": "book",
+  "level": "intermediate",
+  "technologies": [
+   "Bigtable",
+   "Gmail",
+   "Workqueue",
+   "Java Virtual Machine Profiling Interface",
+   "HTTP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8766,
+  "output": 918
+ },
+ "generated": "2026-10-29"
+}

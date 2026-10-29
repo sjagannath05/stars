@@ -1,0 +1,68 @@
+{
+ "id": "6f35401b20215d8c",
+ "url": "http://aosabook.org/en/500L/a-pedometer-in-the-real-world.html",
+ "final_url": "https://aosabook.org/en/500L/a-pedometer-in-the-real-world.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "500 Lines or LessA Pedometer in the Real World",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Ruby: _A Pedometer in the Real World_"
+  }
+ ],
+ "summary": {
+  "title": "A Pedometer in the Real World",
+  "one_liner": "You learn how a smartphone accelerometer signal can be turned into a step count by separating gravity from user motion, filtering noise, and detecting peaks, then translating that design into Ruby.",
+  "category": "signal processing pedometer",
+  "keywords": [
+   "pedometer",
+   "step counting",
+   "accelerometer",
+   "accelerometer data processing",
+   "step detection algorithm",
+   "low-pass filter",
+   "high-pass filter",
+   "iir filter",
+   "infinite impulse response filter",
+   "gravitational acceleration",
+   "user acceleration",
+   "dot product",
+   "hysteresis",
+   "threshold crossing",
+   "separation of concerns",
+   "sampling rate",
+   "time series",
+   "ruby",
+   "how do phones count steps",
+   "signal filtering in ruby",
+   "noise removal from sensor data",
+   "combined and separated accelerometer formats",
+   "500 lines or less",
+   "g-force"
+  ],
+  "takeaways": [
+   "Gravity shows up in accelerometer data as a constant 0 Hz component, so a low-pass filter can separate it from user acceleration.",
+   "Projecting user acceleration onto the gravity direction (a dot product) yields a single 1-D signal in which steps appear as peaks.",
+   "Band-pass style cleanup (low-pass at 5 Hz, high-pass at 1 Hz), a minimum threshold, and hysteresis make step peaks countable.",
+   "Input data in different formats is normalized into one standard structure early, so the rest of the pipeline stays simple.",
+   "The chapter implements the Filter class in Ruby and frames the program as parse, process, and analyze stages."
+  ],
+  "summary": "This chapter from 500 Lines or Less builds a pedometer step by step. It first explains accelerometer signals, gravity, and why bounces in the gravity direction correspond to steps, then shows how to split total acceleration into user and gravitational components with an IIR low-pass filter. It uses the dot product to reduce the data to one dimension and cleans the signal with additional filters, a threshold, and hysteresis. The second half translates the design into Ruby, starting with a Filter class and a parser that normalizes two accelerometer input formats into one standard structure, as part of a pipeline design.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Ruby",
+   "digital signal processing",
+   "IIR filters",
+   "linear algebra"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9868,
+  "output": 924
+ },
+ "generated": "2026-10-29"
+}

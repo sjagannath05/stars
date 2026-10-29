@@ -1,0 +1,64 @@
+{
+ "id": "49535f583f4f82d3",
+ "url": "https://robots.thoughtbot.com/rebuilding-git-in-ruby",
+ "final_url": "https://thoughtbot.com/blog/rebuilding-git-in-ruby",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Rebuilding Git in Ruby",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Git",
+   "entry": "Ruby: _Rebuilding Git in Ruby_"
+  }
+ ],
+ "summary": {
+  "title": "Rebuilding Git in Ruby",
+  "one_liner": "You learn how Git's core internals work by re-implementing its init, add, and commit commands as a small Ruby tool called RGit.",
+  "category": "build your own git",
+  "keywords": [
+   "rebuild git in ruby",
+   "build your own git",
+   "git internals",
+   "how does git work under the hood",
+   "git object model",
+   "git blob tree commit",
+   "git index staging area",
+   "git init from scratch",
+   "ruby git implementation",
+   "rgit",
+   "sha1 content addressing",
+   "zlib compressed git objects",
+   "git add implementation",
+   "git commit implementation",
+   "git head and refs heads master",
+   "unix git subcommand proxy",
+   "reimplement git tutorial",
+   "rails developer git tutorial",
+   "git directory structure",
+   "version control internals"
+  ],
+  "takeaways": [
+   "Git's top-level command proxies to separate subcommand scripts, following the UNIX convention of small tools.",
+   "Running init creates a .git directory with HEAD, config, objects, and refs subdirectories; HEAD holds a ref to the master branch.",
+   "git add hashes file contents with SHA1, stores a zlib-compressed blob in objects/, and records the SHA and path in the index.",
+   "git commit builds nested tree objects from the index, creates a commit object pointing at the root tree, and updates the current branch ref.",
+   "The object graph (commit to tree to blob) is what lets Git move between points in history by changing pointers."
+  ],
+  "summary": "The article walks through re-implementing a simplified Git, called RGit, in Ruby. It covers a top-level rgit dispatcher script, then rgit-init to create the .rgit directory layout and HEAD file, and rgit-add to hash, compress, and store file contents as blobs while writing an index. It finishes with rgit-commit, which builds tree objects from the index, writes a commit object, updates the branch ref, and clears the index. The author uses a simplified text index instead of Git's binary format for clarity.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Git",
+   "SHA1",
+   "zlib"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6327,
+  "output": 831
+ },
+ "generated": "2026-10-29"
+}

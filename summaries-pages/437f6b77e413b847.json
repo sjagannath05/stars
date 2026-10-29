@@ -1,0 +1,69 @@
+{
+ "id": "437f6b77e413b847",
+ "url": "https://docs.kernel.org/RCU/whatisRCU.html",
+ "final_url": "https://docs.kernel.org/RCU/whatisRCU.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "What is RCU? -- “Read, Copy, Update”",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Lock-free structures and RCU",
+   "entry": "What is RCU? - The kernel's own statement of RCU as publish, wait for readers and keep old versions, with a free read side."
+  }
+ ],
+ "summary": {
+  "title": "What is RCU? -- \"Read, Copy, Update\"",
+  "one_liner": "Learn the Linux kernel's RCU (Read-Copy-Update) synchronization model: split updates into removal and deferred reclamation, and use the five core APIs (rcu_read_lock/unlock, synchronize_rcu, call_rcu, rcu_assign_pointer, rcu_dereference).",
+  "category": "linux kernel synchronization",
+  "keywords": [
+   "rcu",
+   "read-copy-update",
+   "read copy update",
+   "linux kernel rcu",
+   "rcu_read_lock",
+   "rcu_read_unlock",
+   "synchronize_rcu",
+   "call_rcu",
+   "rcu_assign_pointer",
+   "rcu_dereference",
+   "kfree_rcu",
+   "grace period",
+   "read-side critical section",
+   "deferred reclamation",
+   "lock-free reads",
+   "read-mostly data structures",
+   "reader-writer lock analogy",
+   "reference counting analogy",
+   "toy rcu implementation",
+   "how does rcu work",
+   "srcu",
+   "synchronization without locks for readers"
+  ],
+  "takeaways": [
+   "RCU splits an update into a removal phase (can run concurrently with readers) and a reclamation phase that waits until pre-existing readers finish.",
+   "The core API is small: rcu_read_lock(), rcu_read_unlock(), synchronize_rcu(), call_rcu(), rcu_assign_pointer() and rcu_dereference().",
+   "Readers use lightweight or no synchronization; updaters must still use locks to serialize concurrent writers.",
+   "Use synchronize_rcu() for simple blocking updates, or call_rcu()/kfree_rcu() when the updater cannot block.",
+   "A toy reader-writer-lock implementation of RCU illustrates the basic idea before the production kernel implementation in kernel/rcu/update.c."
+  ],
+  "summary": "This is the kernel's official RCU documentation, which explains the read-copy-update mechanism through several paths: a conceptual overview, an API walkthrough, example code protecting a global pointer, deferred updates with call_rcu(), toy implementations, and analogies to reader-writer locking and reference counting. It shows how readers enter and leave critical sections without heavy synchronization while updaters publish new versions and wait for a grace period before freeing old data. It also covers the rules for rcu_assign_pointer() and rcu_dereference() and notes the RCU flavors used in the kernel. The page links to the LWN series and other references for further reading.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Linux kernel",
+   "RCU",
+   "SRCU",
+   "RCU-Tasks",
+   "spinlocks",
+   "reader-writer locks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10014,
+  "output": 1035
+ },
+ "generated": "2026-10-29"
+}

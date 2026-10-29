@@ -1,0 +1,65 @@
+{
+ "id": "2b8a8d7c054c7291",
+ "url": "https://loggingsucks.com",
+ "final_url": "https://loggingsucks.com",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Logging Sucks - Your Logs Are Lying To You",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Logging",
+   "entry": "Logging Sucks - Your Logs Are Lying To You"
+  }
+ ],
+ "summary": {
+  "title": "Logging Sucks - Your Logs Are Lying To You",
+  "one_liner": "Traditional string-based logs fail at debugging distributed requests, and emitting one context-rich \"wide event\" per request with tail sampling fixes this.",
+  "category": "observability logging",
+  "keywords": [
+   "wide events",
+   "canonical log line",
+   "structured logging",
+   "high cardinality logging",
+   "high dimensionality",
+   "tail sampling",
+   "log sampling",
+   "observability",
+   "opentelemetry limitations",
+   "logging best practices",
+   "why logs are useless",
+   "grep logs debugging",
+   "distributed tracing vs wide events",
+   "per-request log event",
+   "log cardinality explained",
+   "how to debug production issues",
+   "columnar database for logs",
+   "clickhouse logs",
+   "request context logging",
+   "middleware wide event typescript"
+  ],
+  "takeaways": [
+   "Logs are optimized for writing, not querying, so string search across services misses context; emit one wide event per request per service instead.",
+   "Structured logging is necessary but not sufficient: a useful event needs high-cardinality and high-dimensional fields such as user ID, cart, payment and feature flags.",
+   "OpenTelemetry is a delivery protocol; you still must decide what to instrument and add business context yourself.",
+   "Use tail sampling: always keep errors, slow requests and key users, and randomly sample the remaining traffic (for example 1-5%)."
+  ],
+  "summary": "The article argues that conventional logging (console.log-style text lines, grep and string search) is ill-suited to modern multi-service systems. It proposes the wide event, or canonical log line: a single JSON record per request per service, built up through the request lifecycle with user, cart, payment, error and feature flag context, then emitted once at the end. It includes a TypeScript middleware and handler example, a tail sampling function that keeps errors, slow requests and important users while sampling the rest, and a section on common misconceptions about structured logs, OpenTelemetry, tracing and metrics. The author also promotes an agent skill for implementing these practices.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "TypeScript",
+   "OpenTelemetry",
+   "JSON",
+   "Stripe",
+   "ClickHouse",
+   "BigQuery"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5721,
+  "output": 871
+ },
+ "generated": "2026-10-29"
+}

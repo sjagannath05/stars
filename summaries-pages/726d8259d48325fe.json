@@ -1,0 +1,70 @@
+{
+ "id": "726d8259d48325fe",
+ "url": "https://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html",
+ "final_url": "https://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "What Every C Programmer Should Know About Undefined Behavior #1/3",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Reading emitted code",
+   "entry": "What Every C Programmer Should Know About Undefined Behavior - Explains how the signed-overflow and aliasing rules let a trip count be known and a store loop become memset."
+  }
+ ],
+ "summary": {
+  "title": "What Every C Programmer Should Know About Undefined Behavior #1/3",
+  "one_liner": "Learn how C's undefined behaviors (signed overflow, oversized shifts, NULL dereference, type-punning through pointer casts) let compilers produce faster code, and why that trades away safety.",
+  "category": "compilers undefined behavior",
+  "keywords": [
+   "undefined behavior in c",
+   "c undefined behavior",
+   "signed integer overflow",
+   "signed overflow optimization",
+   "-fwrapv",
+   "-fno-strict-aliasing",
+   "strict aliasing",
+   "type-based alias analysis",
+   "tbaa",
+   "oversized shift amount",
+   "null pointer dereference undefined",
+   "uninitialized variable c",
+   "loop induction variable int overflow",
+   "memset loop optimization",
+   "llvm clang optimizer",
+   "sigtrap ud2 __builtin_trap",
+   "why does clang optimize away my check",
+   "c is not a high level assembler",
+   "java safe language comparison",
+   "compiler optimizations enabled by undefined behavior"
+  ],
+  "takeaways": [
+   "Signed integer overflow is undefined in C, which lets compilers simplify expressions like X+1 > X and optimize <= loops; unsigned overflow wraps and is defined.",
+   "Clang and GCC both treat several standard-undefined behaviors as undefined by default, and -fwrapv makes signed overflow defined at a performance cost.",
+   "Oversized shifts, wild pointer and out-of-bounds accesses, and NULL dereferences are undefined because hardware and performance costs of defining them are high.",
+   "Type-based alias analysis lets Clang turn a float array store loop into memset, but pointer casts that violate type rules break this; -fno-strict-aliasing disables it.",
+   "This post is part 1 of 3; the series covers why undefined behavior is risky when performance is not the only goal, and how LLVM and Clang handle it."
+  ],
+  "summary": "Chris Lattner opens a three-part series by explaining that C's undefined behavior is a deliberate trade for performance, not just a bug source. He walks through concrete cases: uninitialized variables, signed integer overflow (with loop and expression optimizations), oversized shift amounts, wild and NULL pointer dereferences, and type-rule violations. For each he explains the optimization enabled or overhead avoided, and notes the cost of defining the behavior instead. The post uses small C examples, including Clang turning a float store loop into memset, and mentions -fwrapv and -fno-strict-aliasing as the relevant flags.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "C++",
+   "Objective-C",
+   "Java",
+   "LLVM",
+   "Clang",
+   "GCC",
+   "LLVM IR",
+   "x86",
+   "PowerPC"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4967,
+  "output": 1061
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,67 @@
+{
+ "id": "143575d77115dcee",
+ "url": "https://docs.kernel.org/admin-guide/pm/cpufreq.html",
+ "final_url": "https://docs.kernel.org/admin-guide/pm/cpufreq.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "CPU Performance Scaling",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scheduling, affinity and isolation",
+   "entry": "CPU Performance Scaling - Defines the governors, driver and boost switch that set a core's frequency, the sysfs state a measurement records."
+  }
+ ],
+ "summary": {
+  "title": "CPU Performance Scaling",
+  "one_liner": "Learn how the Linux CPUFreq subsystem (core, governors, scaling drivers) sets CPU frequency, and which sysfs policy attributes control it.",
+  "category": "cpu performance scaling",
+  "keywords": [
+   "cpufreq",
+   "cpu frequency scaling",
+   "cpu performance scaling",
+   "p-states",
+   "operating performance points",
+   "scaling governor",
+   "scaling driver",
+   "intel_pstate",
+   "sysfs cpufreq policy",
+   "scaling_governor",
+   "scaling_max_freq",
+   "schedutil",
+   "ondemand governor",
+   "powersave governor",
+   "performance governor",
+   "userspace governor",
+   "pelt utilization",
+   "how does linux change cpu frequency",
+   "cpu frequency governor explained",
+   "cpuinfo_cur_freq"
+  ],
+  "takeaways": [
+   "CPUFreq has three layers: the core, scaling governors (frequency selection algorithms) and scaling drivers (hardware access), and intel_pstate bypasses the governor layer.",
+   "Frequency policies (struct cpufreq_policy) group CPUs that share a hardware P-state control interface, and each has a sysfs directory under /sys/devices/system/cpu/cpufreq/policyX.",
+   "Key sysfs attributes include scaling_governor, scaling_min_freq, scaling_max_freq, scaling_cur_freq, cpuinfo_cur_freq and scaling_available_governors.",
+   "The performance, powersave, userspace, schedutil and ondemand governors differ in how they pick a frequency, e.g. schedutil uses scheduler PELT utilization with f = 1.25 * f_0 * util / max."
+  ],
+  "summary": "This kernel admin guide explains the concept of CPU performance scaling (P-states and the power/capacity tradeoff) and how Linux implements it through the CPUFreq subsystem. It walks through the core, scaling drivers and governors, the policy object model, CPU initialization, and the generic sysfs attributes under policyX. It then describes each generic governor (performance, powersave, userspace, schedutil, ondemand and related tunables) and how each selects frequencies. The text is a reference-style document written for kernel administrators rather than a step-by-step tutorial.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "Linux kernel",
+   "CPUFreq",
+   "ACPI",
+   "sysfs",
+   "intel_pstate",
+   "schedutil",
+   "ondemand",
+   "conservative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9142,
+  "output": 970
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "1072ff7b0d5cf355",
+ "url": "https://blog.sequin.io/events-not-webhooks",
+ "final_url": "https://blog.sequinstream.com/events-not-webhooks/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Give me /events, not webhooks",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "API design & development",
+   "entry": "Give me /events, not webhooks"
+  }
+ ],
+ "summary": {
+  "title": "Give me /events, not webhooks",
+  "one_liner": "Webhooks leave two systems prone to eventual inconsistency, so exposing a cursor-based /events endpoint that consumers poll (ideally with long-polling) gives stronger consistency guarantees.",
+  "category": "API design",
+  "keywords": [
+   "webhooks",
+   "webhook drawbacks",
+   "/events endpoint",
+   "polling vs webhooks",
+   "event polling api",
+   "cursor-based event feed",
+   "long-polling",
+   "eventual consistency between services",
+   "service-to-service notifications",
+   "stripe events endpoint",
+   "replication slots",
+   "change data capture",
+   "message bus kafka",
+   "hmac request signing",
+   "replay webhook events",
+   "append-only events table",
+   "api producer design",
+   "keeping two systems in sync",
+   "webhook retries",
+   "websockets alternative"
+  ],
+  "takeaways": [
+   "Webhooks alone cannot keep two systems consistent; their delivery guarantees are loose and events are ephemeral, so they are hard to replay after bugs or outages.",
+   "A /events endpoint with a locally stored cursor lets a consumer catch up at its own pace and rewind to replay events after a bug fix.",
+   "Postgres replication slots and Stripe's /events endpoint are used as models: a changelog plus a per-consumer cursor, with full entity payloads embedded in each event.",
+   "Polling /events is more work on the consumer side but avoids a message bus; long-polling could reduce the cost of frequent empty polls.",
+   "Webhooks remain fine for low-stakes notifications; polling /events is preferred when consistency matters."
+  ],
+  "summary": "The article argues that webhooks are a weak basis for keeping services in sync: they are ephemeral, hard to replay, and need extra infrastructure like message buses and HMAC signing, and they still require polling in practice. It proposes an /events endpoint modeled on Postgres replication slots and Stripe's events API, where the consumer keeps a cursor and polls for changes. The author lists benefits such as recovery at the consumer's pace, replay by rewinding the cursor, and reuse of existing API code, and suggests long-polling to reduce empty requests. It closes by advising when each approach fits and how producers can build events tables that also support webhooks.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Postgres",
+   "Stripe API",
+   "Kafka",
+   "HTTP",
+   "HMAC",
+   "SQS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4104,
+  "output": 940
+ },
+ "generated": "2026-10-29"
+}

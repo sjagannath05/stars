@@ -1,0 +1,71 @@
+{
+ "id": "da2c08243f62bf6e",
+ "url": "https://gcc.gnu.org/onlinedocs/gccint/LTO-Overview.html",
+ "final_url": "https://gcc.gnu.org/onlinedocs/gccint/LTO-Overview.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "LTO Overview (GNU Compiler Collection (GCC) Internals)",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Optimisation levels, inlining and link time",
+   "entry": "LTO Overview (GCC Internals) - Defines whole-program LTO against partitioned WHOPR, and the LGEN, WPA and LTRANS stages that run -flto in parallel."
+  }
+ ],
+ "summary": {
+  "title": "LTO Overview (GNU Compiler Collection (GCC) Internals)",
+  "one_liner": "You learn how GCC's link-time optimization works internally: the writer/reader split, whole-program LTO versus partitioned WHOPR mode, and the LGEN, WPA and LTRANS stages.",
+  "category": "compiler internals",
+  "keywords": [
+   "gcc link time optimization",
+   "lto",
+   "whopr",
+   "whole program optimizer",
+   "lgen",
+   "wpa",
+   "ltrans",
+   "slim objects",
+   "fat lto objects",
+   "ffat-lto-objects",
+   "gimple bytecode",
+   "lto1 reader",
+   "collect2",
+   "callgraph partitioning",
+   "whole program analysis",
+   "link time code generation",
+   "gcc internals",
+   "-flto flag",
+   "ipa passes",
+   "lto streamer",
+   "parallel link time compilation",
+   "ar and nm plugin",
+   "lto vs whopr"
+  ],
+  "takeaways": [
+   "LTO is a GCC front end over a GIMPLE bytecode stored in special sections of object files; the writer emits it at compile time and the reader lto1 consumes it at link time.",
+   "Slim objects contain only GIMPLE and need ar/nm plugin support; fat objects (-ffat-lto-objects) also contain normal object code, so they are larger but work without the plugin.",
+   "Whole-program LTO reads the entire program into one compiler run and optimizes it like a single translation unit.",
+   "WHOPR (WHOle Program optimizeR) partitions the global callgraph so LTRANS can run in parallel across CPUs; its three stages are LGEN (parallel), WPA (sequential), and LTRANS (parallel)."
+  ],
+  "summary": "This GCC internals page explains how link-time optimization is built as a GIMPLE bytecode front end. At compile time, the writer's IPA passes serialize declarations, types, the callgraph and function bodies into ELF sections, and at link time lto1 reads them back and aggregates the files into one translation unit. It describes slim versus fat object files and the two modes: whole-program LTO, and the partitioned WHOPR mode that splits work into parallel LGEN and LTRANS stages around a sequential WPA step. The page is a reference for compiler developers rather than a usage guide.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "GCC",
+   "GIMPLE",
+   "ELF",
+   "libtool",
+   "ar",
+   "nm",
+   "ld",
+   "collect2",
+   "lto1"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3072,
+  "output": 954
+ },
+ "generated": "2026-10-29"
+}

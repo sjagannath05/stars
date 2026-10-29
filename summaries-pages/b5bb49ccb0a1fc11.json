@@ -1,0 +1,61 @@
+{
+ "id": "b5bb49ccb0a1fc11",
+ "url": "http://www.codeslinger.co.uk/pages/projects/mastersystem/memory.html",
+ "final_url": "http://www.codeslinger.co.uk/pages/projects/mastersystem/memory.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "codeslinger.co.uk",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Emulator / Virtual Machine",
+   "entry": "C++: _Emulation tutorial (Master System emulator)_"
+  }
+ ],
+ "summary": {
+  "title": "Sega Master System Emulator: Memory Map and Paging",
+  "one_liner": "You learn how the Sega Master System address space, ROM/RAM bank mapping registers, and Codemasters mapper work, and how to structure Z80 memory read and write routines in an emulator.",
+  "category": "emulation programming",
+  "keywords": [
+   "sega master system emulator",
+   "sms memory map",
+   "z80 emulator memory",
+   "memory mapper",
+   "rom banking",
+   "ram banking",
+   "bank switching",
+   "memory paging",
+   "codemasters mapper",
+   "memory control register 0xfffc",
+   "mirrored ram",
+   "writememory readmemory",
+   "cartridge memory emulation",
+   "z80 address space",
+   "emulator build tutorial",
+   "how to emulate sega master system paging",
+   "c++ emulator memory handling",
+   "read only rom write protection"
+  ],
+  "takeaways": [
+   "The SMS address space is split into three 16 KB ROM slots, an optional RAM bank in slot 3, and 8 KB of mirrored work RAM.",
+   "Writes to the 0xFFFC-0xFFFF registers select ROM pages for each slot and control which of two RAM banks is mapped into slot 3.",
+   "The Codemasters mapper uses writes to 0x0, 0x4000 and 0x8000 instead, and has no RAM banking.",
+   "Storing a page index per slot and looking up cartridge data on read avoids slow memcpy on every bank switch.",
+   "All memory writes should go through one function so ROM protection, mirroring and paging can be handled in one place."
+  ],
+  "summary": "The page is a written tutorial by the author of a Sega Master System emulator, describing the SMS memory map and how the memory mapper registers at 0xFFFC-0xFFFF page ROM and RAM banks. It explains the Codemasters variant, then walks through C++ WriteMemory, DoMemPage, DoMemPageCM and ReadMemory functions. The author stores a current page number per slot and reads cartridge data directly instead of copying pages, which the author notes is to avoid slow memcpy calls.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "Z80",
+   "Sega Master System"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5069,
+  "output": 865
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,68 @@
+{
+ "id": "66a8ad81ddd5b615",
+ "url": "https://samwho.dev/hashing",
+ "final_url": "https://samwho.dev/hashing",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Hashing",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Algorithm and data structures",
+   "entry": "Hashing"
+  }
+ ],
+ "summary": {
+  "title": "Hashing",
+  "one_liner": "An interactive, visual introduction to hash functions: how to judge their quality with collisions, distribution grids and the avalanche effect, how hash maps use them, and why seeding defends against manufactured collisions (HashDoS).",
+  "category": "algorithms and data structures",
+  "keywords": [
+   "hash function",
+   "hashing",
+   "hash collision",
+   "collisions",
+   "uniform distribution",
+   "avalanche effect",
+   "bit flip",
+   "hash map",
+   "hash table",
+   "map data structure",
+   "murmur3",
+   "seed",
+   "salt",
+   "seeded hashing",
+   "hashdos",
+   "manufactured collisions",
+   "hash flooding",
+   "http headers hash map",
+   "modulo bucket index",
+   "non-cryptographic hashing",
+   "cryptographic vs non-cryptographic hash",
+   "smhasher",
+   "hyperloglog",
+   "gperf perfect hash",
+   "how do hash functions work",
+   "why are hash collisions bad"
+  ],
+  "takeaways": [
+   "A good hash function is deterministic, maps inputs to a bounded range, and spreads outputs uniformly so collisions are rare.",
+   "The avalanche effect measures how many output bits flip when one input bit changes; a good function flips about 50%.",
+   "A hash map uses a hash function to pick a bucket, then scans that bucket for the key; uniform hashes keep buckets short and operations fast.",
+   "Attackers can find many colliding inputs for weak hash functions (HashDoS), and a random seed makes collisions unpredictable."
+  ],
+  "summary": "The article starts by defining hash functions as deterministic functions from input (usually a string) to a number in a fixed range, then explains collisions. It evaluates hash functions visually by plotting outputs on grids of 10,000 random strings, sequential numbers and English words, contrasting a good function (TV-static look) with a deliberately bad one that shows striping. It then covers the avalanche effect via bit-flip histograms. Next it builds a simple HashMap class in JavaScript with buckets, set and get methods, and shows that poor distribution slows lookups. Finally it demonstrates manufactured collisions against murmur3, explains how a seed randomises output to mitigate HashDoS, and includes the murmur3 source and further reading.",
+  "format": "tutorial",
+  "level": "beginner",
+  "technologies": [
+   "JavaScript",
+   "murmur3",
+   "HTTP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6642,
+  "output": 924
+ },
+ "generated": "2026-10-29"
+}

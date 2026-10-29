@@ -1,0 +1,71 @@
+{
+ "id": "5b84cf7813221825",
+ "url": "https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html",
+ "final_url": "https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building and operating a pretty big storage system called S3",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Scalability",
+   "entry": "Building and operating a pretty big storage system called S3, All Things Distributed"
+  }
+ ],
+ "summary": {
+  "title": "Building and operating a pretty big storage system called S3",
+  "one_liner": "Learn how S3 handles scale through hard drive physics, heat management across millions of disks, erasure coding and replication, and human processes like durability reviews.",
+  "category": "distributed storage systems",
+  "keywords": [
+   "amazon s3",
+   "simple storage service",
+   "object storage",
+   "hard disk drives",
+   "hdd",
+   "heat management",
+   "hotspots",
+   "tail latency",
+   "erasure coding",
+   "reed-solomon",
+   "replication",
+   "data placement",
+   "durability reviews",
+   "threat model",
+   "shardstore",
+   "lightweight formal verification",
+   "seek times",
+   "ssd vs hdd",
+   "storage at scale",
+   "multitenancy workload isolation",
+   "conway's law amazon org chart",
+   "how does s3 work",
+   "hard drive history ramac",
+   "rust storage layer"
+  ],
+  "takeaways": [
+   "S3 is built from hundreds of microservices owned by independent teams, so its architecture mirrors its org chart and team interfaces are API contracts.",
+   "Hard drive capacity has grown enormously while random I/O stayed around 120 operations per second, so S3 must manage I/O heat carefully.",
+   "Aggregating millions of bursty workloads smooths demand, and spreading each customer's objects across many disks lets a single workload burst across very large numbers of drives.",
+   "Erasure coding and replication reduce capacity overhead and also give read flexibility to steer requests away from hotspots.",
+   "Durability reviews, modeled on security threat models, and coarse-grained guardrails are human processes used to protect durability."
+  ],
+  "summary": "This guest post by Andy Warfield, VP and distinguished engineer at AWS, adapts his FAST '23 keynote on the perspectives of scale needed to build and operate S3. It mixes personal background and early observations about S3 as a living service with technical discussion of hard drive physics, including a 747-over-grass analogy and the history of the IBM RAMAC. The technical sections cover heat management and hotspots, how aggregation smooths demand, and how replication and erasure coding (Reed-Solomon, k data plus m parity shards) are used for both durability and load balancing. The post closes with human factors such as durability reviews and the ShardStore rewrite in Rust with lightweight formal verification.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Amazon S3",
+   "Reed-Solomon erasure coding",
+   "Rust",
+   "hard disk drives",
+   "NVMe SSDs",
+   "AWS Lambda",
+   "Xen"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8579,
+  "output": 974
+ },
+ "generated": "2026-10-29"
+}

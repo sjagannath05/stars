@@ -1,0 +1,63 @@
+{
+ "id": "b9104a2deb1b7af4",
+ "url": "https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python",
+ "final_url": "https://pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Image Stitching with OpenCV and Python - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Image Stitching with OpenCV and Python"
+  }
+ ],
+ "summary": {
+  "title": "Image Stitching with OpenCV and Python - PyImageSearch",
+  "one_liner": "You learn to stitch multiple overlapping images into a panorama using OpenCV's built-in Stitcher (cv2.createStitcher / cv2.Stitcher_create), and to crop away the black warp regions with a contour-and-erosion hack.",
+  "category": "computer vision image stitching",
+  "keywords": [
+   "image stitching",
+   "panorama stitching",
+   "opencv stitcher",
+   "cv2.stitcher_create",
+   "cv2.createstitcher",
+   "stitch multiple images python",
+   "create panorama opencv",
+   "brown and lowe image stitching",
+   "homography ransac",
+   "crop black regions panorama",
+   "largest rectangular region panorama",
+   "contour extraction threshold",
+   "morphological erosion crop",
+   "imutils grab_contours",
+   "opencv 3 vs opencv 4 stitcher",
+   "opencv contrib nonfree install error",
+   "feature keypoint matching panorama",
+   "sift keypoints image stitching"
+  ],
+  "takeaways": [
+   "OpenCV's built-in Stitcher (cv2.createStitcher in OpenCV 3, cv2.Stitcher_create in OpenCV 4) stitches a list of images in one call and returns a status code.",
+   "Stitcher status codes: OK=0, ERR_NEED_MORE_IMGS=1, ERR_HOMOGRAPHY_EST_FAIL=2, ERR_CAMERA_PARAMS_ADJUST_FAIL=3.",
+   "A simple script can stitch a folder of images in under 50 lines; warping leaves black regions around the panorama.",
+   "To crop black borders, threshold the stitched image, take the largest contour, then repeatedly erode a bounding rectangle until it contains no background pixels, and extract that ROI.",
+   "The built-in stitcher hides homography matrices, which makes it hard to convert into a real-time panorama pipeline; errors often come from using the wrong OpenCV version function name or missing contrib/non-free modules."
+  ],
+  "summary": "The tutorial shows how to stitch several overlapping photos into a panorama with OpenCV's built-in stitching function, based on the Brown and Lowe (2007) approach that handles image ordering, orientation, and illumination changes. It provides a simple script (image_stitching_simple.py) that loads a directory of images and calls the stitcher, then a second script (image_stitching.py) with an optional --crop flag. The crop method thresholds the result, finds the largest contour, and erodes a rectangle until it fits inside the panorama, removing black warp regions. The post also covers limitations, such as the built-in method hiding homography matrices, and common version and install errors.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "imutils",
+   "NumPy",
+   "argparse"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9756,
+  "output": 1090
+ },
+ "generated": "2026-10-29"
+}

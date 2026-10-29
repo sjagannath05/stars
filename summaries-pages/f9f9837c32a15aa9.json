@@ -1,0 +1,60 @@
+{
+ "id": "f9f9837c32a15aa9",
+ "url": "https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/overview-rasterization-algorithm",
+ "final_url": "http://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/overview-rasterization-algorithm.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Rasterization",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own 3D Renderer",
+   "entry": "C++: _Rasterization: a Practical Implementation_"
+  }
+ ],
+ "summary": {
+  "title": "An Overview of the Rasterization Algorithm",
+  "one_liner": "Rasterization projects triangles onto the screen and fills covered pixels, using bounding boxes to speed up the loop and a z-buffer to resolve which triangle is visible.",
+  "category": "3D rendering",
+  "keywords": [
+   "rasterization algorithm",
+   "rasterization",
+   "3d rendering",
+   "rasterization vs ray tracing",
+   "visibility problem",
+   "hidden surface problem",
+   "z-buffer",
+   "depth buffer",
+   "frame buffer",
+   "image buffer",
+   "triangle rasterization",
+   "2d triangle bounding box",
+   "perspective projection",
+   "pixel inside triangle test",
+   "object-centric rendering",
+   "gpu rendering pipeline",
+   "ppm image output",
+   "newell algorithm",
+   "triangulation of geometry"
+  ],
+  "takeaways": [
+   "Rasterization is object-centric: it loops over triangles, projects their vertices to the screen, and fills the pixels they cover, whereas ray tracing loops over pixels and shoots rays.",
+   "Projecting vertices uses a perspective divide and a remap from image to raster space; the core test is whether a pixel lies inside a 2D triangle.",
+   "Restricting the pixel loop to the triangle's 2D bounding box, with coordinates clamped to the image, greatly reduces tests.",
+   "A frame buffer stores colors and a z-buffer stores the nearest distance per pixel, so the closest triangle wins when several overlap."
+  ],
+  "summary": "The lesson explains the rasterization approach to the visibility problem, contrasting its triangle-by-triangle, pixel-filling loop with the pixel-by-pixel loop of ray tracing, and presents pseudocode for each step. It then covers optimizing the pixel loop with 2D bounding boxes (including clamping and rounding to integer pixel coordinates), the role of the image/frame buffer, and how a z-buffer (depth buffer) resolves overlapping triangles. The text is a high-level overview that promises later chapters on camera-to-raster conversion, triangle rasterization, and z-buffer details, with a practical C++ example at the end. Its introduction notes it is the groundwork for a later ray-tracing comparison in the same program.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C++",
+   "PPM image format"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8742,
+  "output": 918
+ },
+ "generated": "2026-10-29"
+}

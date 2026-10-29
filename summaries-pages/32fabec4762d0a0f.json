@@ -1,0 +1,70 @@
+{
+ "id": "32fabec4762d0a0f",
+ "url": "https://rigtorp.se/ringbuffer",
+ "final_url": "https://rigtorp.se/ringbuffer/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Optimizing a ring buffer for throughput",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Mechanical sympathy",
+   "entry": "Optimizing a Ring Buffer for Throughput - Adds cached indices to a single-producer single-consumer ring and shows with counters the coherence traffic removed."
+  }
+ ],
+ "summary": {
+  "title": "Optimizing a ring buffer for throughput",
+  "one_liner": "Learn how caching the read and write indices in a single-producer single-consumer ring buffer cuts cache-coherency traffic and raises throughput from about 5.5M to 112M items/s.",
+  "category": "lock-free data structures",
+  "keywords": [
+   "ring buffer",
+   "circular buffer",
+   "spsc queue",
+   "single producer single consumer queue",
+   "lock-free queue",
+   "wait-free queue",
+   "cache line alignment",
+   "alignas(64)",
+   "false sharing",
+   "cache coherency traffic",
+   "mesi protocol",
+   "cached read index",
+   "cached write index",
+   "boost lockfree spsc",
+   "folly producerconsumerqueue",
+   "io_uring ring buffer",
+   "c++ concurrent queue throughput",
+   "how to make a ring buffer faster",
+   "batched push pop",
+   "huge pages tlb misses",
+   "perf stat cache misses",
+   "std::atomic memory_order acquire release"
+  ],
+  "takeaways": [
+   "A classic SPSC ring buffer with cache-line-aligned read and write indices reaches about 5.5M items/s in the author's benchmark on a Ryzen 9 3900X.",
+   "Each read/write pair can cause multiple cache line state transitions because the reader and writer keep touching each other's index cache lines.",
+   "Keeping a cached copy of the opposite index means the other thread's atomic is only reloaded when the cached value says the queue looks full or empty.",
+   "With cached indices the author measured 112M items/s and cache misses dropping from about 350M to 15M.",
+   "Further gains are possible with batched push/pop and huge pages to reduce TLB misses."
+  ],
+  "summary": "The article starts with a simple C++ SPSC ring buffer using std::atomic read and write indices, each aligned to a 64-byte cache line, and explains the acquire/release push and pop operations. It benchmarks 100M items through a 100k-slot buffer across two threads on different CCXs using perf counters, reaching about 5.5M ops/s with roughly 3 cache misses per item. The author then explains the MESI-related coherency traffic behind those misses and adds cached copies of the opposite index to the producer and consumer, which raises throughput to about 112M ops/s. It closes with notes on batching and huge pages as further options.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "C++20",
+   "std::atomic",
+   "perf",
+   "boost::lockfree::spsc",
+   "folly::ProducerConsumerQueue",
+   "io_uring",
+   "MESI cache coherency"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4328,
+  "output": 987
+ },
+ "generated": "2026-10-29"
+}

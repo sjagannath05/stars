@@ -1,0 +1,65 @@
+{
+ "id": "586b8ebd9516eb99",
+ "url": "https://www.cl.cam.ac.uk/~pes20/weakmemory/cacm.pdf",
+ "final_url": "https://www.cl.cam.ac.uk/~pes20/weakmemory/cacm.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "cacm.dvi",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Store buffers, ordering and cache-line contention",
+   "entry": "x86-TSO: A Rigorous and Usable Programmer's Model for x86 Multiprocessors - The store-buffer model of Intel and AMD ordering, tested on hardware, fixing which reorderings a fence pays for."
+  }
+ ],
+ "summary": {
+  "title": "x86-TSO: A Rigorous and Usable Programmer's Model for x86 Multiprocessors",
+  "one_liner": "You learn why informal Intel and AMD x86 memory-ordering specs are ambiguous or unsound, and how the x86-TSO store-buffer abstract machine gives a precise, testable programmer's model.",
+  "category": "x86 memory models",
+  "keywords": [
+   "x86-tso",
+   "x86 memory model",
+   "total store order",
+   "store buffer",
+   "relaxed memory model",
+   "weak memory model",
+   "memory ordering",
+   "sequential consistency",
+   "store buffering litmus test",
+   "sb litmus test",
+   "iriw litmus test",
+   "n6 litmus test",
+   "mfence",
+   "lock prefix atomic instructions",
+   "intel sdm memory ordering",
+   "amd64 programmer's manual memory model",
+   "x86-cc",
+   "spinlock memory ordering correctness",
+   "data-race-freedom x86",
+   "hol4 formalisation"
+  ],
+  "takeaways": [
+   "Store buffering lets two processors both read 0 in the SB test, so x86 is not sequentially consistent.",
+   "Early Intel and AMD x86 memory-ordering specifications were informal prose and contained ambiguities; some were unsound against real hardware (e.g. the n6 test).",
+   "x86-TSO models x86 as an abstract machine with FIFO store buffers per hardware thread, a global lock for LOCK'd instructions, and MFENCE flushing the buffer.",
+   "The model is formalised in HOL4 and proved equivalent to an axiomatic version, and it is used to reason about a Linux spinlock and data-race-freedom."
+  ],
+  "summary": "The paper reviews the Intel SDM and AMD64 manual memory-ordering specifications (pre-IWP, IWP/AMD3.14/x86-CC, Intel rev. 29-34, AMD3.15) using litmus tests such as SB, IRIW, n6, n5 and n4b, and shows that they are ambiguous, too weak, or unsound compared with real processors. It then presents x86-TSO, an operational abstract machine with per-thread FIFO store buffers, a global lock for LOCK'd instructions, and MFENCE flushing, with an equivalent axiomatic version; both are formalised in HOL4. The authors apply the model to correctness of a Linux spinlock and to a general theory of data-race-freedom for x86-TSO. The page is the CACM Research Highlights paper text.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "x86 assembly",
+   "HOL4",
+   "Intel 64 and IA-32 architecture",
+   "AMD64",
+   "SPARC TSO",
+   "Linux spinlocks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10480,
+  "output": 1045
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "8aac271d356bc94d",
+ "url": "https://rhaeguard.github.io/posts/regex",
+ "final_url": "https://rhaeguard.github.io/posts/regex/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to build a regex engine from scratch",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Regex Engine",
+   "entry": "Go: _How to build a regex engine from scratch_"
+  }
+ ],
+ "summary": {
+  "title": "How to build a regex engine from scratch",
+  "one_liner": "You learn how to build a small regex engine in Go by parsing a pattern into tokens and converting those tokens into an epsilon-NFA using Thompson's construction.",
+  "category": "build a regex engine",
+  "keywords": [
+   "regex engine from scratch",
+   "build regex engine",
+   "regular expression engine implementation",
+   "regex parser golang",
+   "regex tokenizer",
+   "parse regular expression into tokens",
+   "thompson's construction",
+   "epsilon nfa",
+   "nondeterministic finite automata regex",
+   "deterministic finite automata",
+   "finite state machine regex matching",
+   "bracket expression parsing",
+   "character class ranges",
+   "quantifier repetition min max",
+   "kleene star plus question mark",
+   "alternation or operator implementation",
+   "email validation regex example",
+   "golang regex implementation",
+   "regex to nfa conversion",
+   "how does regex work internally"
+  ],
+  "takeaways": [
+   "A regex string can be parsed into a structured token list by scanning for special characters like (), [], |, *, +, ? and {}.",
+   "Bracket expressions such as [a-z] are expanded into sets of literal characters, and quantifiers are stored as min/max bounds wrapping the previous token.",
+   "Thompson's construction converts each token into a small NFA and links them with epsilon transitions, and alternation and repetition get their own patterns.",
+   "Matching is done by walking the epsilon-NFA one input character at a time and checking whether the terminal state is reached."
+  ],
+  "summary": "The article builds a simplified regex engine in Go that validates email addresses using a sample pattern. It covers parsing the regex string into tokens (groups, brackets, alternation, literals, and repetition including {m,n}), with code for each parse function. It then explains finite automata (DFA vs NFA) and shows how to convert the tokens into an epsilon-NFA with Thompson's construction, handling literals, alternation, brackets, groups and repetition. The simplified engine does not handle escape characters or backreferences, and the page is cut off partway through the repetition section.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Go",
+   "regular expressions",
+   "finite automata",
+   "NFA"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10114,
+  "output": 863
+ },
+ "generated": "2026-10-29"
+}

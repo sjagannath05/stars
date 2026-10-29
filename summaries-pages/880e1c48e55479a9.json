@@ -1,0 +1,67 @@
+{
+ "id": "880e1c48e55479a9",
+ "url": "https://www.ben-morris.com/orchestration-vs-choreography-for-microservice-workflows",
+ "final_url": "https://www.ben-morris.com/orchestration-vs-choreography-for-microservice-workflows/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Orchestration vs choreography for microservice workflows",
+ "sources": [
+  {
+   "list": "lutzh/awesome-event-driven-architecture",
+   "section": "Foundational",
+   "entry": "Orchestration vs. Choreography - By Ben Morris, December 2021. Every non-trivial system involves workflows that span multiple services. There are opposing schools of thought on how to handle this. Ben Morris gives a short, balanced introduction."
+  }
+ ],
+ "summary": {
+  "title": "Orchestration vs choreography for microservice workflows",
+  "one_liner": "Orchestration and choreography are two ways to manage workflow control flow across services, and they can be combined rather than treated as mutually exclusive.",
+  "category": "distributed systems",
+  "keywords": [
+   "orchestration",
+   "choreography",
+   "microservice workflows",
+   "orchestrator",
+   "event-driven architecture",
+   "pub/sub",
+   "synchronous vs asynchronous messaging",
+   "coupling",
+   "enterprise service bus",
+   "esb",
+   "sagas",
+   "routing slips",
+   "correlation identifiers",
+   "apache airflow",
+   "aws step functions",
+   "azure logic apps",
+   "smart endpoints and dumb pipes",
+   "bounded context",
+   "service-oriented architecture",
+   "distributed workflow control flow",
+   "how to coordinate multiple microservices",
+   "centralised vs decentralised workflow"
+  ],
+  "takeaways": [
+   "Orchestration centralises workflow logic in an orchestrator service, which aids visibility and fault recovery but can become complex and a single point of failure.",
+   "Choreography distributes workflow logic across services, improving loose coupling but needing sagas, correlation IDs, and strong logging and monitoring to stay manageable.",
+   "The messaging medium (sync or async) is a red herring; the real question is where workflow logic should live.",
+   "Orchestration and choreography can complement each other; a common rule of thumb is orchestrating within a bounded context and using choreography between systems."
+  ],
+  "summary": "Ben Morris gives a short, balanced comparison of orchestration (a centralised coordinator service) and choreography (services managing their own interactions). He notes that orchestration often pairs with synchronous APIs and can add coupling or heavy infrastructure, while choreography is tied to event-driven pub/sub but still needs sagas and monitoring to avoid hard-to-debug logic. The article discusses lightweight orchestrators such as Apache Airflow, AWS Step Functions and Azure Logic Apps, and the history of the enterprise service bus. It closes by arguing the two styles can be combined, with orchestration suited to a bounded context and choreography to collaboration between systems.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Apache Airflow",
+   "AWS Step Functions",
+   "Azure Logic Apps",
+   "REST",
+   "gRPC",
+   "enterprise service bus"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3331,
+  "output": 929
+ },
+ "generated": "2026-10-29"
+}

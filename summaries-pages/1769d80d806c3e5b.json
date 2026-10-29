@@ -1,0 +1,62 @@
+{
+ "id": "1769d80d806c3e5b",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker-bonus",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker-bonus/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Bonus - Multithreading"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch: Refactoring & eventloop",
+  "one_liner": "Learn how a toy C MQTT broker was refactored to handle partial TCP reads/writes with a per-client state machine, a plain-or-TLS connection abstraction, and a portable epoll-style event loop.",
+  "category": "network programming",
+  "keywords": [
+   "mqtt broker",
+   "mqtt from scratch",
+   "c mqtt broker",
+   "tcp packet fragmentation",
+   "tcp stream segmentation",
+   "non-blocking socket reads",
+   "eagain handling",
+   "client state machine",
+   "epoll event loop",
+   "portable event loop",
+   "kqueue select epoll abstraction",
+   "tls plain connection abstraction",
+   "uthash hashtable",
+   "mqtt remaining length decoding",
+   "mqtt packet parsing c",
+   "event loop callbacks",
+   "refactoring network server c"
+  ],
+  "takeaways": [
+   "TCP is a stream protocol, so MQTT packets can arrive fragmented and must be read incrementally.",
+   "A per-client state machine (WAITING_HEADER, WAITING_LENGTH, WAITING_DATA, SENDING_DATA) lets non-blocking reads and writes resume after EAGAIN.",
+   "A connection struct with accept/send/recv/close callbacks lets the same code path serve plain and TLS clients.",
+   "A small ev abstraction hides the multiplexing backend (epoll now; select or kqueue could be plugged in) behind read/write callbacks."
+  ],
+  "summary": "The author revisits a toy MQTT broker written in C after six earlier parts and refactors it for structure and portability. The main fixes are handling TCP fragmentation with non-blocking reads and writes driven by a per-client state machine, and adding a connection abstraction so plain and TLS communication share one interface. The post also introduces a minimal event loop (ev) that wraps epoll behind a backend-neutral API, and swaps the hand-written hashtable for the uthash library. Code excerpts from the client struct, recv_packet, write_data, network.h and ev.h illustrate the design.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "MQTT",
+   "epoll",
+   "uthash",
+   "OpenSSL",
+   "POSIX sockets"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10740,
+  "output": 892
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "53d97791f5a71e78",
+ "url": "https://norasandler.com/2018/04/10/Write-a-Compiler-8.html",
+ "final_url": "https://norasandler.com/2018/04/10/Write-a-Compiler-8.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "C Compiler, Part 8: Loops",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 8: Loops"
+  }
+ ],
+ "summary": {
+  "title": "C Compiler, Part 8: Loops",
+  "one_liner": "You learn how to add for, while, do-while loops plus break, continue and null statements to a C compiler, covering lexing, parsing and code generation with jump labels.",
+  "category": "build a compiler",
+  "keywords": [
+   "c compiler loops",
+   "compile for loop",
+   "while loop code generation",
+   "do while loop compiler",
+   "break and continue implementation",
+   "null statement c",
+   "optional expression grammar",
+   "exp-option grammar rule",
+   "for loop scope shadowing",
+   "jump labels assembly",
+   "loop control flow compiler",
+   "ast for loop representation",
+   "c11 iteration statements",
+   "lexing keywords for while do break continue",
+   "write a compiler part 8",
+   "nora sandler compiler series",
+   "fizzbuzz compiler",
+   "ll parser lookahead empty production"
+  ],
+  "takeaways": [
+   "Loops are compiled by labeling the start and end points and emitting jump instructions, with for-loop init, condition and post-expression handled as separate steps.",
+   "Empty optional expressions (such as an empty for-loop controlling expression) are replaced with a constant nonzero value, and null statements emit no assembly.",
+   "break and continue jump to end-of-loop and loop-continuation labels, which must be passed through the compiler context and error when used outside a loop.",
+   "The grammar can use an <exp-option> rule, and the post suggests refactoring it to avoid lookahead-based parsing of empty expressions."
+  ],
+  "summary": "This post, part 8 of Nora Sandler's C compiler series, adds loop support: for loops (both declaration and expression initializer forms), while, do-while, break, continue, and null statements. It walks through lexing new keywords, updating the AST and grammar with optional expressions, and then code generation using labeled jumps and scope handling. The author describes the control flow for each loop type and how to pass break and continue labels through the compiler state.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "C11 standard",
+   "x86 assembly"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5010,
+  "output": 810
+ },
+ "generated": "2026-10-29"
+}

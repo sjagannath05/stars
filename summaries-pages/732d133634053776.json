@@ -1,0 +1,69 @@
+{
+ "id": "732d133634053776",
+ "url": "https://samnewman.io/patterns/architectural/bff",
+ "final_url": "https://samnewman.io/patterns/architectural/bff/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Sam Newman",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Architecture patterns",
+   "entry": "Backends For Frontends"
+  }
+ ],
+ "summary": {
+  "title": "Pattern: Backends For Frontends",
+  "one_liner": "You learn what a Backend For Frontend (BFF) is, why a general-purpose API backend struggles with multiple UIs, and how to decide how many BFFs to run and who should own them.",
+  "category": "software architecture patterns",
+  "keywords": [
+   "backends for frontends",
+   "bff pattern",
+   "backend for frontend",
+   "general-purpose api backend",
+   "edge service",
+   "api gateway alternative",
+   "microservices aggregation",
+   "mobile backend design",
+   "one bff per client type",
+   "one experience one bff",
+   "conway's law",
+   "team ownership of backend",
+   "shared library coupling",
+   "partial response degradation",
+   "service aggregation layer",
+   "server-side aggregation",
+   "phil calcado bff",
+   "sam newman microservices",
+   "per-client api",
+   "when to use bff",
+   "mobile api design",
+   "third-party edge api",
+   "service duplication vs coupling"
+  ],
+  "takeaways": [
+   "A general-purpose API backend shared by web, mobile and other UIs tends to become a bottleneck and accumulate mixed responsibilities.",
+   "A BFF is a single-purpose server-side component per user experience, typically owned by the same team as that UI.",
+   "Teams can choose one BFF per client type (the author's preference) or one per UI type shared by iOS and Android, depending on how similar the experiences are and how teams are organised.",
+   "In microservice systems, BFFs aggregate multiple downstream calls, running them in parallel and degrading gracefully when non-critical services fail.",
+   "The author is relaxed about duplication across services, prefers avoiding shared libraries because of coupling, and suggests BFFs make most sense once mobile or third-party needs arise."
+  ],
+  "summary": "Sam Newman describes the Backends For Frontends pattern as a response to the mobile era, when a single general-purpose API backend became hard to evolve for differing desktop, mobile and third-party needs. He explains the model with examples from REA and SoundCloud, discusses how many BFFs to run (one per client type versus one per UI type, and how team structure influences this), and covers aggregation across microservices, failure handling, and reuse versus duplication. The article also addresses BFFs for desktop web and external parties, team autonomy, perimeter concerns like authentication, and gives guidance on when to adopt the pattern. It is a conceptual essay with diagrams and no code.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "RxJava",
+   "Finagle",
+   "Nginx",
+   "Apache",
+   "Android",
+   "iOS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7078,
+  "output": 983
+ },
+ "generated": "2026-10-29"
+}

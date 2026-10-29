@@ -1,0 +1,59 @@
+{
+ "id": "3e735abfa7ecb98b",
+ "url": "https://learnopengl.com/In-Practice/2D-Game/Rendering-Sprites",
+ "final_url": "https://learnopengl.com/In-Practice/2D-Game/Rendering-Sprites",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Rendering Sprites",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenGL:",
+   "entry": "Rendering Sprites"
+  }
+ ],
+ "summary": {
+  "title": "Rendering Sprites",
+  "one_liner": "You learn how to set up a 2D orthographic projection and build a reusable SpriteRenderer class in modern OpenGL that draws textured, scaled, rotated and tinted quads.",
+  "category": "opengl 2d game rendering",
+  "keywords": [
+   "opengl sprite rendering",
+   "2d sprites opengl",
+   "orthographic projection 2d game",
+   "glm ortho screen coordinates",
+   "sprite renderer class",
+   "textured quad opengl",
+   "model matrix scale rotate translate order",
+   "rotate sprite around top-left corner",
+   "2d game rendering tutorial",
+   "learnopengl 2d game",
+   "vertex shader sprite texcoords",
+   "fragment shader sprite color tint",
+   "vao vbo quad sprite",
+   "draw sprite with texture opengl",
+   "modern opengl 3.3 tutorial",
+   "2d game engine abstraction renderer"
+  ],
+  "takeaways": [
+   "An orthographic projection built with glm::ortho(0, width, height, 0, -1, 1) lets vertex coordinates equal pixel coordinates, with (0,0) at the top-left.",
+   "A single quad VAO can be shared by all sprites; each sprite gets its own model matrix and uniforms for color and texture.",
+   "Apply transformations in the order scale, rotate, then translate by composing matrices in reverse, adjusting for the sprite's size to rotate around its center.",
+   "A SpriteRenderer class hides OpenGL details from gameplay code, so the game only calls DrawSprite with position, size, rotation and color."
+  ],
+  "summary": "The page is a chapter from LearnOpenGL's 2D game tutorial series. It explains why an orthographic projection matrix suits 2D games and how to set it so world coordinates match screen pixels. It then walks through a vertex and fragment shader for sprites, and a SpriteRenderer class that initializes one shared quad VAO and draws each sprite with a model matrix built from position, size, rotation and color. A short \"hello sprite\" example in the game's Init and Render functions shows the class in use with a textured, rotated, green-tinted face image.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "OpenGL 3.3",
+   "GLSL",
+   "C++",
+   "GLM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4732,
+  "output": 897
+ },
+ "generated": "2026-10-29"
+}

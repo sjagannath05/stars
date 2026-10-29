@@ -1,0 +1,72 @@
+{
+ "id": "c6fb515fa89592fe",
+ "url": "https://zachholman.com/talk/move-fast-break-nothing",
+ "final_url": "https://zachholman.com/talk/move-fast-break-nothing/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "move fast & break nothing",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Releasing & deploying",
+   "entry": "Move fast and break nothing, Zach Holman"
+  }
+ ],
+ "summary": {
+  "title": "move fast & break nothing",
+  "one_liner": "Learn how GitHub shipped risky changes safely using parallel control/candidate code paths (the Science library) and how to scale process laterally by automating checks in CI.",
+  "category": "deployment safety",
+  "keywords": [
+   "move fast and break things",
+   "safe deployment",
+   "parallel code paths",
+   "control and candidate experiment",
+   "science library",
+   "github dat-science",
+   "dat-analysis",
+   "refactoring safely in production",
+   "dual write",
+   "read-only experiment in production",
+   "mismatch graphs",
+   "graphite metrics",
+   "percentile latency comparison",
+   "incremental deploys",
+   "permissions code migration",
+   "continuous integration checks",
+   "css lint in ci",
+   "scss-lint",
+   "coffeelint",
+   "lateral process scaling",
+   "reduce layers of process",
+   "production behavior verification",
+   "zach holman",
+   "github engineering",
+   "rollback data changes"
+  ],
+  "takeaways": [
+   "Identify what must never break (billing, upgrades, data migrations) and treat those changes with extra caution.",
+   "Run old and new code side by side: serve the old result to users while comparing the new code's results and timing against it.",
+   "Use mismatch and latency graphs (Graphite) to gain evidence that new code matches production before a full rollout.",
+   "Scale process laterally by encoding checks such as style lint and CSS/class consistency into CI instead of stacking manual approval layers."
+  ],
+  "summary": "Zach Holman describes how GitHub upgraded its permissions code, which could not tolerate any production bugs, while still deploying many times a day. The main technique is running the existing code and new code in parallel with the Science Ruby library: the control result is returned to the user, the candidate is compared for mismatches and timing, and graphs guide the rollout. The second half argues for scaling process broadly rather than adding vertical layers of approvals, using CI checks such as CSS/HTML consistency, CDN image rules, and SCSS and CoffeeScript linting. The talk is conceptual, with examples from GitHub's practice rather than step-by-step instructions.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Science (github/dat-science)",
+   "dat-analysis",
+   "Graphite",
+   "SCSS-Lint",
+   "CoffeeScript",
+   "CoffeeLint",
+   "Continuous integration"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4108,
+  "output": 906
+ },
+ "generated": "2026-10-29"
+}

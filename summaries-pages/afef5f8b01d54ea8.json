@@ -1,0 +1,76 @@
+{
+ "id": "afef5f8b01d54ea8",
+ "url": "https://danidee10.github.io/2018/01/13/realtime-django-5.html",
+ "final_url": "https://danidee10.github.io/2018/01/13/realtime-django-5.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Realtime Django Part 5: Build a Chat application RabbitMQ and uWSGI websockets (uWSGI WebSockets)",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Web Applications:",
+   "entry": "Part 5"
+  }
+ ],
+ "summary": {
+  "title": "Realtime Django Part 5: Build a Chat application RabbitMQ and uWSGI websockets (uWSGI WebSockets)",
+  "one_liner": "You learn how to push Django chat messages to browsers in real time by routing notifications through RabbitMQ fanout exchanges and serving WebSockets from uWSGI, then scale it with gevent.",
+  "category": "realtime django websockets",
+  "keywords": [
+   "django websockets",
+   "realtime django chat",
+   "uwsgi websockets",
+   "rabbitmq fanout exchange",
+   "pub/sub with rabbitmq",
+   "django-channels alternative",
+   "asgi vs wsgi",
+   "django-notifs",
+   "pika python rabbitmq client",
+   "celery always eager setting",
+   "gevent uwsgi scaling",
+   "websocket heartbeat ping pong uwsgi",
+   "websocket_recv_nb",
+   "scale websockets horizontally",
+   "django chat application tutorial",
+   "how do i send realtime messages in django",
+   "rabbitmq queue binding python",
+   "uwsgi gevent greenlets concurrent users"
+  ],
+  "takeaways": [
+   "Django's WSGI request-response model cannot push messages, so WebSockets need a different server or protocol layer such as ASGI (django-channels) or uWSGI's built-in WebSocket support.",
+   "Notifications are published to a RabbitMQ fanout exchange named after the chat session URI, and per-client queues bound to that exchange receive every message (Pub/Sub).",
+   "uWSGI's websocket API uses websocket_handshake to upgrade the connection, websocket_recv_nb to receive while sending pong heartbeats, and websocket_send to deliver messages; failed sends kill the process so unacknowledged messages stay queued.",
+   "Concurrency is raised by using gevent with monkey.patch_all, where more gevent threads per process and more processes multiply the number of concurrent clients; the author notes this should be profiled first.",
+   "Scaling out is done by load balancing several uWSGI WebSocket servers behind Nginx, and RabbitMQ can be clustered separately."
+  ],
+  "summary": "The author explains why Django's request-response WSGI model struggles with WebSockets and compares approaches such as django-channels (ASGI, Daphne, Redis/RabbitMQ channel layers) with a lower-level design that reads RabbitMQ queues directly. The tutorial walks through installing django-notifs and RabbitMQ, writing a custom channel that publishes chat messages to a fanout exchange, and setting up Celery with CELERY_TASK_ALWAYS_EAGER. It then builds a websocket.py consumer that binds queues to the exchange and forwards messages to browsers through uWSGI's WebSocket API, with a Vue Chat component connecting to it. The final sections cover scaling with gevent greenlets and processes, and the post previews the next part on loading screens, auto-scroll, sounds and JSON tokens.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "Django",
+   "uWSGI",
+   "RabbitMQ",
+   "pika",
+   "Celery",
+   "django-notifs",
+   "django-channels",
+   "gevent",
+   "Vue",
+   "JavaScript",
+   "WebSockets",
+   "Redis",
+   "Nginx",
+   "gunicorn",
+   "Daphne",
+   "ASGI",
+   "WSGI"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7311,
+  "output": 1245
+ },
+ "generated": "2026-10-29"
+}

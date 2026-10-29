@@ -1,0 +1,80 @@
+{
+ "id": "ebb0fb2585e78ee9",
+ "url": "https://benhoyt.com/writings/count-words",
+ "final_url": "https://benhoyt.com/writings/count-words/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Performance comparison: counting words in Python, Go, C++, C, AWK, Forth, and Rust",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Performance",
+   "entry": "Performance comparison: counting words in Python, Go, C++, C, AWK, Forth, and Rust: a great way to learn about measuring performance."
+  }
+ ],
+ "summary": {
+  "title": "Performance comparison: counting words in Python, Go, C++, C, AWK, Forth, and Rust",
+  "one_liner": "You learn how to solve a word-frequency counting task in several languages and how profiling and buffering changes speed up idiomatic first attempts.",
+  "category": "performance optimization",
+  "keywords": [
+   "word frequency count",
+   "count words in a file",
+   "word count program",
+   "python counter performance",
+   "cprofile python profiling",
+   "go pprof profiling",
+   "gprof c++ profiling",
+   "valgrind callgrind",
+   "perf record perf report",
+   "hash table word counting",
+   "sort by frequency",
+   "64kb chunked reading",
+   "bufio.scanner scanwords",
+   "sync_with_stdio c++ speed",
+   "interview question word frequency",
+   "knuth literate programming vs mcilroy pipeline",
+   "unix shell word count tr sort uniq",
+   "idiomatic vs optimized code",
+   "map[string]*int go allocation trick",
+   "king james bible benchmark",
+   "c hsearch hash table",
+   "benchmark multiple languages",
+   "text processing performance",
+   "python",
+   "go",
+   "c",
+   "c++"
+  ],
+  "takeaways": [
+   "Idiomatic first solutions can be sped up a lot by profiling and reducing per-line or per-word overhead, such as processing input in 64KB chunks in Python.",
+   "Profiling tools differ by language: cProfile for Python, pprof for Go, gprof, Callgrind and perf for C/C++.",
+   "Go optimization example: use map[string]*int so only one allocation per unique word happens, and scan bytes directly instead of bufio.Scanner.",
+   "C++ std::cin can be nearly twice as fast with ios::sync_with_stdio(false) and compiling with -O2.",
+   "Stated constraints (lowercase, whitespace splitting, single thread, no custom hash tables outside C, stdlib only) keep the cross-language comparison fair."
+  ],
+  "summary": "The author describes a common interview problem: count unique word frequencies from stdin and print them sorted most-frequent first. He implements a simple idiomatic version and then an optimized one in Python, Go, C++ and C, using profilers (cProfile, pprof, gprof, Callgrind, perf) to guide changes. The page sets out explicit constraints (lowercase, whitespace splitting, single-threaded, stdlib only, 43MB King James Bible test input) to keep comparisons consistent. The page text provided is cut off before the AWK, Forth, Rust and results sections, so their details are not covered here.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "Go",
+   "C++",
+   "C",
+   "AWK",
+   "Forth",
+   "Rust",
+   "Unix shell",
+   "cProfile",
+   "pprof",
+   "gprof",
+   "Valgrind Callgrind",
+   "perf"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10769,
+  "output": 1065
+ },
+ "generated": "2026-10-29"
+}

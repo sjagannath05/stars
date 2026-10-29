@@ -1,0 +1,70 @@
+{
+ "id": "701d16abd2b721d3",
+ "url": "https://talks.golang.org/2012/splash.article",
+ "final_url": "https://go.dev/talks/2012/splash.article",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Go at Google: Language Design in the Service of Software Engineering",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Over-engineering",
+   "entry": "— Rob Pike, Go at Google: Language Design in the Service of Software Engineering"
+  }
+ ],
+ "summary": {
+  "title": "Go at Google: Language Design in the Service of Software Engineering",
+  "one_liner": "Rob Pike's SPLASH 2012 keynote explains how Go's design (explicit dependencies, no unused or circular imports, export data in object files, package paths) targets slow builds and large-scale software engineering at Google.",
+  "category": "programming language design",
+  "keywords": [
+   "go language design",
+   "go programming language",
+   "rob pike",
+   "software engineering at scale",
+   "slow compilation c++",
+   "c++ header file dependencies",
+   "include guards ifndef",
+   "plan 9 include approach",
+   "unused import compile error",
+   "circular imports",
+   "package path vs package name",
+   "go build dependencies",
+   "go get remote packages",
+   "object file export data",
+   "distributed build system",
+   "language design for software engineering",
+   "go vs c++ compile time",
+   "go syntax brace blocks",
+   "dependency hygiene",
+   "multicore concurrency language"
+  ],
+  "takeaways": [
+   "Go makes unused imports a compile-time error and forbids circular imports, so the dependency graph stays precise and minimal.",
+   "Compilers read one object file per import containing export data, rather than re-reading header files, which is why Go builds are much faster than C/C++.",
+   "C's #ifndef include guards scale poorly: a single header can be read dozens of times per compilation, and it is hard to know which includes are still needed.",
+   "Package paths must be unique while package names need not be, and remote packages are fetched by URL-based paths using go get.",
+   "Go's design favors clarity and tooling (small regular grammar, parseable without type info) over research novelty."
+  ],
+  "summary": "Rob Pike's modified keynote from SPLASH 2012 argues that Go was built to solve software engineering problems at Google, such as slow builds, uncontrolled C/C++ dependencies, and scale. He walks through how C's preprocessor include model and C++ headers cause massive redundant work, using measured examples like 8 GB of expanded input from 4.2 MB of source. He then shows how Go's explicit, checked imports, single-file export data, banned circular imports, path-based package naming, and regular syntax make compilation fast and tooling easier. The article is an essay with code snippets and concrete build-time measurements rather than a hands-on tutorial.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "C",
+   "C++",
+   "Python",
+   "Java",
+   "Plan 9",
+   "SWIG",
+   "Modula-2",
+   "Ada",
+   "Haskell"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8365,
+  "output": 945
+ },
+ "generated": "2026-10-29"
+}

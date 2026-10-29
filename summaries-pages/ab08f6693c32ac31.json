@@ -1,0 +1,68 @@
+{
+ "id": "ab08f6693c32ac31",
+ "url": "https://architecturenotes.co/redis",
+ "final_url": "https://architecturenotes.co/p/redis",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Redis Explained",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "NoSQL",
+   "entry": "Redis Explained"
+  }
+ ],
+ "summary": {
+  "title": "Redis Explained",
+  "one_liner": "Redis is a data structure server; this article explains its deployment topologies (single instance, HA replication, Sentinel, Cluster) and its persistence models (RDB, AOF) including how forking and copy-on-write make snapshots possible.",
+  "category": "distributed systems",
+  "keywords": [
+   "redis",
+   "redis architecture",
+   "redis sentinel",
+   "redis cluster",
+   "redis replication",
+   "redis high availability",
+   "redis persistence",
+   "rdb snapshots",
+   "aof append only file",
+   "fork copy-on-write",
+   "hash slots",
+   "sharding redis",
+   "quorum failover",
+   "memcached vs redis",
+   "in-memory data store",
+   "how does redis persist data to disk",
+   "how redis handles failover",
+   "horizontal vs vertical scaling",
+   "split brain",
+   "gossip protocol cluster"
+  ],
+  "takeaways": [
+   "Redis is an in-memory data structure server, commonly used as a cache in front of a primary database and sometimes as a primary database itself.",
+   "Redis deployment options are single instance, HA replication, Sentinel (quorum-based failover and discovery), and Cluster (sharding via 16K hash slots).",
+   "Replication is asynchronous; replication IDs and offsets determine partial versus full resynchronization, and failover can lose writes.",
+   "RDB gives compact point-in-time snapshots but can lose data between snapshots; AOF logs every write and is more durable but larger on disk; both can be combined, with AOF used on restart.",
+   "Persistence snapshots use fork plus copy-on-write so the parent keeps serving requests while the child writes a consistent snapshot."
+  ],
+  "summary": "The article is a deep technical overview of Redis, starting with what it is and how it compares to Memcached. It then walks through deployment architectures: single instance, replication-based HA, Redis Sentinel for monitoring and failover, and Redis Cluster for horizontal scaling with hash slots and gossip. It closes with persistence models (none, RDB, AOF, and combined) and explains how forking with copy-on-write produces snapshots efficiently.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Redis",
+   "Memcached",
+   "Redis Sentinel",
+   "Redis Cluster",
+   "MySQL",
+   "PostgreSQL",
+   "ZooKeeper",
+   "Consul"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8053,
+  "output": 910
+ },
+ "generated": "2026-10-29"
+}

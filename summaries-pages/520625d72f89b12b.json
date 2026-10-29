@@ -1,0 +1,71 @@
+{
+ "id": "520625d72f89b12b",
+ "url": "https://wyag.thb.lt",
+ "final_url": "https://wyag.thb.lt",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Write yourself a Git!",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Git",
+   "entry": "Python: _Write yourself a Git!_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "Write yourself a Git"
+  }
+ ],
+ "summary": {
+  "title": "Write yourself a Git!",
+  "one_liner": "You learn Git's internals by reimplementing its core commands (init, hash-object, cat-file, log, commit and more) in about 983 lines of Python as a program called wyag.",
+  "category": "build your own git",
+  "keywords": [
+   "write your own git",
+   "implement git from scratch",
+   "git internals",
+   "build git in python",
+   "wyag",
+   "git object store",
+   "content-addressed filesystem",
+   "sha-1 git objects",
+   "git hash-object",
+   "git cat-file",
+   "git init implementation",
+   "zlib compressed git objects",
+   "merkle dag",
+   "git plumbing commands",
+   "reimplement git tutorial",
+   "python git clone tutorial",
+   "git repository format",
+   "git index staging area",
+   "git refs and branches",
+   "how does git work under the hood"
+  ],
+  "takeaways": [
+   "Git's core is a content-addressed object store: object names are SHA-1 hashes of their contents, split into a two-character directory and the remaining filename.",
+   "Objects consist of a type header (blob, commit, tag, tree), a space, the ASCII size, a null byte and the contents, stored zlib-compressed.",
+   "A repository is a worktree plus a .git directory containing objects/, refs/, HEAD and config, and the tutorial builds init, repo_find and related helpers in Python.",
+   "Subcommands are wired through argparse with bridge functions named cmd_*, and the tutorial implements plumbing commands such as hash-object and cat-file first.",
+   "The code uses only the Python standard library (Python 3.10+) and the tutorial is organized into sections covering init, objects, log, checkout, refs, the index, and committing."
+  ],
+  "summary": "The article is a step-by-step tutorial that explains Git from the bottom up by reimplementing a simplified version of it, called wyag, in Python 3.10+ using only the standard library. It walks through a repository abstraction, the init command, a find-repo helper, and the content-addressed object model, including the SHA-1 storage format and zlib compression. The sections on hash-object and cat-file are partly shown in the page text, and the table of contents lists later chapters on log, checkout, refs, the index, and commits. The page notes it was last updated July 2026 and that it has a theoretical section on Merkle DAGs.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "Git",
+   "SHA-1",
+   "zlib",
+   "argparse",
+   "configparser"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9635,
+  "output": 935
+ },
+ "generated": "2026-10-29"
+}

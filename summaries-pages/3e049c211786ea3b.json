@@ -1,0 +1,64 @@
+{
+ "id": "3e049c211786ea3b",
+ "url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-3-event-driven",
+ "final_url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-3-event-driven",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Concurrent Servers: Part 3 - Event-driven",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 3 - Event-driven"
+  }
+ ],
+ "summary": {
+  "title": "Concurrent Servers: Part 3 - Event-driven",
+  "one_liner": "You learn how nonblocking I/O, polling and the select() system call enable a single-threaded, event-driven network server that handles many clients concurrently.",
+  "category": "network programming",
+  "keywords": [
+   "event-driven programming",
+   "asynchronous programming",
+   "nonblocking i/o",
+   "blocking vs nonblocking sockets",
+   "select system call",
+   "i/o multiplexing",
+   "concurrent network server",
+   "polling sockets",
+   "fd_set",
+   "fd_set fd_isset",
+   "callback-based server design",
+   "single-threaded concurrency",
+   "fd_setsize limit",
+   "select vs threads",
+   "how to handle many clients in c",
+   "event loop",
+   "synchronous vs asynchronous i/o",
+   "fcntl o_nonblock",
+   "recv eagain",
+   "c socket server tutorial"
+  ],
+  "takeaways": [
+   "Nonblocking recv returns immediately with EAGAIN/EWOULDBLOCK when no data is ready, but polling this way wastes CPU and scales poorly.",
+   "select() lets one thread watch many file descriptors for readiness, and the caller must keep master fd_sets because select overwrites them.",
+   "An event-driven server is built from callbacks invoked by a main loop; callbacks must never block and must keep partial-data state between calls.",
+   "select is synchronous as an API (it blocks), yet the server design it enables is asynchronous/callback-based.",
+   "select has limits: FD_SETSIZE is usually 1024 on modern systems and it performs poorly with very many descriptors."
+  ],
+  "summary": "The post is part 3 of a series on concurrent network servers. It starts by contrasting blocking and nonblocking recv with a pair of small C listener programs, showing that polling a nonblocking socket works but wastes CPU and scales badly. It then introduces select() for I/O multiplexing, walking through the fd_set contract and a complete single-threaded select-based server with read and send callbacks and a per-peer state machine. The post closes by clarifying the terminology (synchronous vs asynchronous, callback-based, event-driven) and listing select's limitations, such as the fixed FD_SETSIZE and poor performance at large descriptor counts.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "POSIX sockets",
+   "select",
+   "Python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10280,
+  "output": 930
+ },
+ "generated": "2026-10-29"
+}

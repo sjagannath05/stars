@@ -1,0 +1,59 @@
+{
+ "id": "7681f1ba82bf01a5",
+ "url": "https://groups.google.com/g/mechanical-sympathy/c/icNZJejUHfE",
+ "final_url": "https://groups.google.com/g/mechanical-sympathy/c/icNZJejUHfE",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Coordinated Omission",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Measuring the tail",
+   "entry": "Coordinated Omission - The original definition of the recording error, with arithmetic for how far a reported percentile sits from the truth."
+  }
+ ],
+ "summary": {
+  "title": "Coordinated Omission",
+  "one_liner": "Coordinated omission is a load-testing flaw where a tester that waits for slow responses silently drops the samples it would have taken, which makes reported high percentiles (such as 99.99%) far better than reality.",
+  "category": "performance measurement",
+  "keywords": [
+   "coordinated omission",
+   "load testing",
+   "latency percentiles",
+   "tail latency",
+   "99.99 percentile",
+   "benchmark measurement error",
+   "hdrhistogram",
+   "recordvalues expected interval",
+   "closed vs open system load testing",
+   "percentile misreporting",
+   "how to measure latency correctly",
+   "log4j2 async logging latency",
+   "lmax disruptor latency benchmark",
+   "load tester timing bias",
+   "gil tene",
+   "measurement methodology"
+  ],
+  "takeaways": [
+   "Coordinated omission happens when a test thread waits for a slow response and so skips the requests it would normally have sent during that stall, removing the worst samples from the data.",
+   "Omitted samples can be estimated: for a 1 msec interval and a 536 msec stall, roughly 535 missing observations ranging from 1 to 535 msec are implied, which pushes the 99.95th and 99.99th percentiles far higher than reported.",
+   "Percentiles from closed-loop load testers are misleading because readers assume they describe random, uncoordinated requests.",
+   "HdrHistogram's recordValues(value, expectedInterval) form corrects for coordinated omission by back-filling the missing measurements; comparing corrected and raw histograms shows the difference."
+  ],
+  "summary": "This Google Groups thread on the mechanical-sympathy list, started by Gil Tene in 2013, defines \"Coordinated Omission\" as a measurement error in load testers and walks through the arithmetic. Using the published log4j2 async logging graphs, Gil estimates how many observations were skipped during long logger-call stalls and shows that the reported 99.99th percentile is at least about 35,000 times too low. The thread also discusses whether the effect applies to closed systems (Vladimir Sitnikov), how the LMAX Disruptor latency tests were affected (Mike Barker, Martin Thompson), and how HdrHistogram can correct for it. The discussion is informal and mostly reasoning from examples, with no code.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Java",
+   "HdrHistogram",
+   "log4j2",
+   "LMAX Disruptor"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8917,
+  "output": 949
+ },
+ "generated": "2026-10-29"
+}

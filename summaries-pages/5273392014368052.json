@@ -1,0 +1,63 @@
+{
+ "id": "5273392014368052",
+ "url": "https://www.honeycomb.io/blog/lies-my-parents-told-me-about-logs",
+ "final_url": "https://www.honeycomb.io/blog/how-are-structured-logs-different-from-events",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How Are Structured Logs Different From Events?",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Logging",
+   "entry": "Lies My Parents Told Me (About Logs)"
+  }
+ ],
+ "summary": {
+  "title": "How Are Structured Logs Different From Events?",
+  "one_liner": "An event is a unit of work's full context (input, computed attributes, service conditions, and result), while a structured log is one possible format for recording it, and many logs are only fragments of an event.",
+  "category": "observability logging",
+  "keywords": [
+   "structured logs",
+   "events",
+   "event-based observability",
+   "structured logging",
+   "unit of work",
+   "observability",
+   "o11y",
+   "logs vs events",
+   "wide events",
+   "key value logs",
+   "json logs",
+   "access logs",
+   "request id tracing",
+   "line-delimited logs",
+   "printf debugging",
+   "instrumentation",
+   "honeycomb",
+   "http request logging",
+   "log fragments",
+   "event representation"
+  ],
+  "takeaways": [
+   "All events can be represented as structured logs, but not all structured logs are events.",
+   "An event is a conceptual abstraction: it captures what it took for a service to perform one unit of work, including inputs, discovered attributes, service conditions, and the result.",
+   "Unit of work is flexible; choose its size based on what the operator needs to understand, such as a launch attempt rather than a single retry message.",
+   "Many traditional logs are fragments spread across 5-30 lines that together describe one event, often with no request ID to reassemble them.",
+   "Web server access logs are a practical example of events written as structured logs with a fixed positional format."
+  ],
+  "summary": "The author, Ben Hartshorne of Honeycomb, defines a log as a collection of messages and a structured log as one whose content is key-value formatted, such as JSON or positional fields. He defines an event as information about what it took a service to perform a unit of work, and argues the unit's size depends on the observer's goals. Using examples like HTTP requests, launch daemon messages, and web access logs, he shows that events can be represented as structured logs, but many structured logs are only portions of an event. The post is conceptual, using illustrative examples rather than code or tooling details.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "JSON",
+   "Apache access logs",
+   "Honeycomb"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4019,
+  "output": 807
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "0f22e45bade0c9d7",
+ "url": "https://www.pyimagesearch.com/2018/08/13/opencv-people-counter",
+ "final_url": "https://pyimagesearch.com/2018/08/13/opencv-people-counter/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "OpenCV People Counter - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "People Counter using OpenCV"
+  }
+ ],
+ "summary": {
+  "title": "OpenCV People Counter - PyImageSearch",
+  "one_liner": "You learn how to build a people counter in Python that counts people moving \"in\" and \"out\" of a store by combining a MobileNet SSD detector, dlib correlation tracking, and centroid tracking.",
+  "category": "computer vision people counting",
+  "keywords": [
+   "people counter",
+   "people counting opencv",
+   "opencv python people counter",
+   "object detection vs object tracking",
+   "centroid tracking",
+   "centroid tracker algorithm",
+   "dlib correlation tracker",
+   "dlib correlation filter tracking",
+   "mobilenet ssd",
+   "caffe deep neural network opencv",
+   "cv2.dnn readnetfromcaffe",
+   "skip frames detection tracking",
+   "counting people entering and leaving store",
+   "trackable object class",
+   "real-time person counting video",
+   "hybrid detection and tracking pipeline"
+  ],
+  "takeaways": [
+   "Object detectors locate objects per frame but are slow; trackers are faster and follow objects across frames, so a hybrid approach runs the detector only every N frames.",
+   "Centroid tracking matches bounding-box centers between frames by minimum Euclidean distance, registers new objects, and deregisters objects unmatched for 40 consecutive frames.",
+   "A TrackableObject stores an object ID, its centroid history, and a counted flag, which lets the script determine movement direction and avoid double counting.",
+   "The people counter uses a Caffe MobileNet SSD from OpenCV's DNN module to detect only the 'person' class, with a confidence threshold of 0.4 by default.",
+   "dlib correlation trackers follow detected people between detection passes, controlled by the --skip-frames argument (default 30)."
+  ],
+  "summary": "The tutorial walks through building a real-time people counter that tallies people moving up or down (in or out of a department store) in a video stream or webcam feed. It explains the difference between object detection and object tracking, then describes a hybrid pipeline: a MobileNet SSD detector run every N frames, with dlib correlation trackers handling the frames in between. Centroid tracking, a lightweight algorithm that associates bounding-box centers across frames, assigns IDs and handles new or lost objects. The post then implements the project in Python with OpenCV, imutils, and dlib, covering command-line arguments, the TrackableObject class, and the main frame loop. The page text is cut off before the counting logic and results are shown.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "dlib",
+   "imutils",
+   "NumPy",
+   "Caffe",
+   "MobileNet SSD"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9391,
+  "output": 1006
+ },
+ "generated": "2026-10-29"
+}

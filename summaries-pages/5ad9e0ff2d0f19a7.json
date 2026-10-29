@@ -1,0 +1,63 @@
+{
+ "id": "5ad9e0ff2d0f19a7",
+ "url": "https://everythingisdata.wordpress.com/2009/10/17/numbers-everyone-should-know",
+ "final_url": "https://everythingisdata.wordpress.com/2009/10/17/numbers-everyone-should-know/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Numbers Everyone Should Know",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Performance",
+   "entry": "Numbers Everyone Should Know"
+  }
+ ],
+ "summary": {
+  "title": "Numbers Everyone Should Know",
+  "one_liner": "A reference table of approximate latencies for common computer operations (cache, memory, disk, network), useful for back-of-the-envelope performance design.",
+  "category": "performance engineering",
+  "keywords": [
+   "latency numbers",
+   "numbers every programmer should know",
+   "jeff dean latency table",
+   "back-of-the-envelope performance",
+   "back of the envelope estimation",
+   "l1 cache reference time",
+   "main memory reference latency",
+   "disk seek time",
+   "network roundtrip datacenter latency",
+   "system call overhead",
+   "context switch cost",
+   "fork cost",
+   "microbenchmarking",
+   "sequential vs random io cost",
+   "mutex lock cost",
+   "zippy compression latency",
+   "ramcloud roundtrip latency",
+   "performance bottleneck analysis"
+  ],
+  "takeaways": [
+   "Approximate costs range from about 0.5 ns for an L1 cache reference to about 150 ms for a packet sent from California to the Netherlands and back.",
+   "A disk seek (~10 ms) and reading 1 MB sequentially from disk (~20 ms) are far more expensive than memory reads (~100 ns for a main memory reference).",
+   "Back-of-the-envelope analysis lets you reject weak designs early; microbenchmarking the bottleneck operation sharpens that intuition.",
+   "Additional figures for system calls (~400 ns), context switches (~3 µs) and fork() (70–160 µs) come from a 2005 NetBSD/FreeBSD comparison.",
+   "A later update notes system call overhead near 60 ns on Linux and context switches around 30 µs when cache flushing is included."
+  ],
+  "summary": "The post reproduces Jeff Dean's LADIS 2009 table of approximate operation costs, from L1 cache references to cross-continental packet round trips, and explains why such intuition matters for designing performance-sensitive systems. It adds extra figures for system calls, context switches and fork() drawn from a 2005 comparison of NetBSD and FreeBSD. An update cites a newer analysis putting system call overhead near 60 ns and context switches near 30 µs, and it compares the 500 µs datacenter round trip with RAMCloud's 5–10 µs goal. The page is a short, numbers-focused reference rather than a tutorial.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "Linux",
+   "FreeBSD",
+   "NetBSD",
+   "RAMCloud",
+   "Zippy compression"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2423,
+  "output": 962
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,75 @@
+{
+ "id": "e91f785b6a1d5cf0",
+ "url": "https://blog.lizzie.io/linux-containers-in-500-loc.html",
+ "final_url": "https://blog.lizzie.io/linux-containers-in-500-loc.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Linux containers in 500 lines of code",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Docker",
+   "entry": "C: _Linux containers in 500 lines of code_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Linux Container in 500 Lines of Code"
+  }
+ ],
+ "summary": {
+  "title": "Linux containers in 500 lines of code",
+  "one_liner": "Learn how Linux containers are built from kernel primitives (namespaces, capabilities, cgroups, rlimits, seccomp) by reading a small annotated C program that runs untrusted code in a restricted process tree.",
+  "category": "linux containers",
+  "keywords": [
+   "linux containers",
+   "build containers from scratch",
+   "container internals",
+   "linux namespaces",
+   "clone flags clone_newns clone_newpid",
+   "user namespaces",
+   "linux capabilities",
+   "drop capabilities prctl",
+   "cgroups resource limits",
+   "setrlimit",
+   "seccomp syscall filtering",
+   "pivot_root mount namespace",
+   "chroot vs namespaces",
+   "minimal container runtime in c",
+   "docker internals explained",
+   "sandbox untrusted code linux",
+   "literate programming noweb c",
+   "cap_sys_admin risks",
+   "bounding set inheritable set",
+   "how does docker isolate processes"
+  ],
+  "takeaways": [
+   "Containers combine namespaces (mount, pid, ipc, net, uts, user), capabilities, cgroups, rlimits and seccomp; each is a separate kernel mechanism that overlaps with the others.",
+   "The author's program clones a child into new namespaces, sets up cgroups and a hostname, optionally maps uids via a user namespace, drops a list of risky capabilities, and filters syscalls before execve.",
+   "Dropping capabilities requires clearing the bounding and inheritable sets, because execve could otherwise restore them from file capabilities.",
+   "Some capabilities (e.g. CAP_SYS_ADMIN, CAP_SYS_RAWIO, CAP_DAC_READ_SEARCH, CAP_MKNOD) are dangerous inside containers because they are not namespaced; the article explains why each is dropped or kept.",
+   "The author stresses this is a minimal restriction set for running untrusted code, not a recommended production setup; real deployments should restrict everything possible."
+  ],
+  "summary": "Lizzie Dunham's literate-programming article walks through a roughly 500-line C program (contained.c) that runs a shell inside a restricted Linux container. It is written in noweb style, with code blocks assembled into the final source. The article explains each mechanism in turn: namespaces created via clone, a uid mapping through user namespaces, cgroups and setrlimit limits, seccomp syscall filtering, and a detailed justification for each capability dropped or retained. It is explicit that the restrictions are a minimal set for untrusted code rather than a complete hardening guide.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Linux namespaces",
+   "Linux capabilities",
+   "cgroups",
+   "seccomp",
+   "setrlimit",
+   "noweb",
+   "Org-mode",
+   "libcap",
+   "libseccomp"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11030,
+  "output": 1091
+ },
+ "generated": "2026-10-29"
+}

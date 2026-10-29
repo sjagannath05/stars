@@ -1,0 +1,65 @@
+{
+ "id": "847117b13ca26a03",
+ "url": "https://www.codetinkerer.com/2015/12/04/choosing-an-http-status-code.html",
+ "final_url": "https://www.codetinkerer.com/2015/12/04/choosing-an-http-status-code.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Choosing an HTTP Status Code — Stop Making It Hard",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "HTTP",
+   "entry": "Choosing an HTTP Status Code — Stop Making It Hard"
+  }
+ ],
+ "summary": {
+  "title": "Choosing an HTTP Status Code — Stop Making It Hard",
+  "one_liner": "A practical guide, built around a flowchart, for picking the right HTTP status code for a website or REST-style API, plus an argument for why specific codes still matter.",
+  "category": "web apis",
+  "keywords": [
+   "http status codes",
+   "choosing http status code",
+   "rest api status codes",
+   "200 vs 201 vs 204",
+   "201 created",
+   "204 no content",
+   "202 accepted",
+   "404 not found",
+   "405 method not allowed",
+   "301 vs 302 redirect",
+   "429 too many requests",
+   "502 bad gateway vs 500",
+   "503 service unavailable",
+   "rfc 7231",
+   "http/1.1 semantics",
+   "status code flowchart",
+   "response code decision tree",
+   "rest api design",
+   "http response classes 2xx 3xx 4xx 5xx",
+   "should api return only 200",
+   "http caching and status codes",
+   "retry after 429 backoff"
+  ],
+  "takeaways": [
+   "Pick a status code by first choosing its response class (2xx, 3xx, 4xx, 5xx); if you are choosing between codes in different classes, you are likely wrong.",
+   "Use 301 vs 302 deliberately: 301 has SEO implications and is implicitly cacheable, while 302 does not carry those implications.",
+   "Distinguish 404 from 405 Method Not Allowed, and 502 Bad Gateway (upstream failure) from 500 Internal Server Error.",
+   "Follow the emerging convention of returning 201 Created, 429 Too Many Requests and 503 Service Unavailable so clients can handle them meaningfully.",
+   "The author cites RFC 7231 as the current HTTP/1.1 semantics reference, not the older RFC 2616 or 2068."
+  ],
+  "summary": "The author argues that choosing HTTP status codes should be simple and offers a flowchart-based approach for websites and RESTish APIs, grouping codes into 2XX/3XX, 4XX and 5XX categories. He points to RFC 7231 as the authoritative reference and notes that the older RFC 2616 is superseded. A coda questions whether specific codes matter, citing an API that only returns 200, and then gives three reasons they still do: clients can handle codes with special behavior (such as 301 caching and 429 backoff), some codes deserve special handling, and a convention for codes like 201, 429 and 503 is emerging. The flowcharts themselves are images and are not described in the page text.",
+  "format": "article",
+  "level": "beginner",
+  "technologies": [
+   "HTTP",
+   "REST",
+   "RFC 7231"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3377,
+  "output": 987
+ },
+ "generated": "2026-10-29"
+}

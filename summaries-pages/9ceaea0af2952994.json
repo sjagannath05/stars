@@ -1,0 +1,60 @@
+{
+ "id": "9ceaea0af2952994",
+ "url": "https://www.pyimagesearch.com/2018/08/06/tracking-multiple-objects-with-opencv",
+ "final_url": "https://pyimagesearch.com/2018/08/06/tracking-multiple-objects-with-opencv/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Tracking multiple objects with OpenCV - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Tracking Multiple Objects with OpenCV"
+  }
+ ],
+ "summary": {
+  "title": "Tracking multiple objects with OpenCV",
+  "one_liner": "You learn to track several objects in video at once in Python by adding one OpenCV single-object tracker per object to a cv2.MultiTracker, and why this doesn't speed up the pipeline.",
+  "category": "computer vision",
+  "keywords": [
+   "multi-object tracking",
+   "multiple object tracking opencv",
+   "cv2.multitracker_create",
+   "opencv object tracker",
+   "single object tracker",
+   "kcf tracker",
+   "csrt tracker",
+   "mosse tracker",
+   "track multiple objects in video python",
+   "how to track many objects with opencv",
+   "selectroi bounding box selection",
+   "real-time object tracking webcam",
+   "imutils videostream",
+   "object tracking limitations",
+   "multiprocessing for object tracking",
+   "boosting mil tld medianflow trackers"
+  ],
+  "takeaways": [
+   "Create one OpenCV tracker instance per object and add each to a cv2.MultiTracker with its initial bounding box.",
+   "Select objects interactively with cv2.selectROI by pressing 's' in the loop; a detector would replace this in real systems.",
+   "KCF is fast and accurate, CSRT is more accurate but slower, and MOSSE is extremely fast but less accurate, per the author.",
+   "Each added tracker costs computation, so FPS drops roughly with the number of tracked objects; the MultiTracker class is a convenience, not a speedup.",
+   "The author notes only one CPU core is used and says parallel processing across cores is covered in a later post."
+  ],
+  "summary": "The tutorial builds a Python script that tracks multiple objects in a video or webcam feed using OpenCV 3.2+ and imutils. The user presses 's' to draw a bounding box around each object with cv2.selectROI, and each box gets its own single-object tracker added to a cv2.MultiTracker, which updates all boxes per frame. The author compares the available tracker types, then shows results on soccer, NASCAR and traffic clips. It closes by explaining that per-object trackers slow the pipeline and that the MultiTracker does not add speed, with multiprocessing deferred to a future post.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "imutils",
+   "argparse"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6231,
+  "output": 900
+ },
+ "generated": "2026-10-29"
+}

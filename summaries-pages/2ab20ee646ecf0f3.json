@@ -1,0 +1,69 @@
+{
+ "id": "2ab20ee646ecf0f3",
+ "url": "https://docs.kernel.org/scheduler/sched-ext.html",
+ "final_url": "https://docs.kernel.org/scheduler/sched-ext.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Extensible Scheduler Class",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Kernel paths and generated code",
+   "entry": "Extensible Scheduler Class - Lets a BPF program schedule at run time with safe fallback, once a run against the default scheduler states every field."
+  }
+ ],
+ "summary": {
+  "title": "Extensible Scheduler Class",
+  "one_liner": "You learn how sched_ext lets a BPF program implement a custom Linux CPU scheduler with dispatch queues, safe fallback to the default scheduler, and debugging/monitoring hooks.",
+  "category": "linux kernel scheduling",
+  "keywords": [
+   "sched_ext",
+   "extensible scheduler class",
+   "linux bpf scheduler",
+   "bpf scheduler",
+   "struct sched_ext_ops",
+   "custom cpu scheduler linux",
+   "dispatch queue",
+   "dsq",
+   "scx_dsq_local",
+   "scx_dsq_global",
+   "scx_bpf_dsq_insert",
+   "ops.enqueue",
+   "ops.dispatch",
+   "ops.select_cpu",
+   "sysrq-s scheduler abort",
+   "fair-class scheduler fallback",
+   "scx_simple example",
+   "sched_ext sysfs state",
+   "sched_ext events counters",
+   "sched_ext policy",
+   "scx_bpf_create_dsq",
+   "linux scheduler plugin with ebpf",
+   "sched_ext module parameters bypass mode"
+  ],
+  "takeaways": [
+   "sched_ext is a Linux scheduler class whose behavior is defined by BPF programs implementing struct sched_ext_ops, and only ops.name is mandatory.",
+   "The default scheduler is restored on error, on a stalled runnable task, or on SysRq-S, so system integrity is kept even if the BPF scheduler misbehaves.",
+   "Tasks are queued in dispatch queues (DSQs): a global FIFO, per-CPU local DSQs, and custom DSQs; a CPU runs from its local DSQ first.",
+   "Status can be checked via /sys/kernel/sched_ext/state, root/ops, enable_seq, per-scheduler events counters, and the drgn script scx_show_state.py."
+  ],
+  "summary": "This kernel documentation page describes sched_ext, a Linux scheduler class whose policy is written as BPF programs implementing struct sched_ext_ops. It covers how to enable it through kernel config options, how tasks are switched to it (including the SCX_OPS_SWITCH_PARTIAL flag), and how the scheduling cycle, dispatch queues, and ops.dequeue() custody rules work. It also walks through a minimal global FIFO example from scx_simple, lists the example schedulers under tools/sched_ext, and explains the sysfs/procfs status files, event counters, and bypass-mode module parameters. The page ends with a note that the APIs have no ABI stability guarantees.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "BPF",
+   "C",
+   "drgn",
+   "sysfs",
+   "SysRq",
+   "cgroups"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10545,
+  "output": 1067
+ },
+ "generated": "2026-10-29"
+}

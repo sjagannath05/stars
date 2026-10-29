@@ -1,0 +1,64 @@
+{
+ "id": "04493e588bda2b08",
+ "url": "https://henrikwarne.com/2020/03/22/secure-by-design",
+ "final_url": "https://henrikwarne.com/2020/03/22/secure-by-design/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Secure by Design",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Security",
+   "entry": "Secure by Design, a book review by Henrik Warne."
+  }
+ ],
+ "summary": {
+  "title": "Secure by Design",
+  "one_liner": "Learn how good software design, such as domain primitives, validated input, and well-guarded entities, makes code harder to exploit, as summarized from Henrik Warne's review of the book Secure by Design.",
+  "category": "secure software design",
+  "keywords": [
+   "secure by design",
+   "domain primitives",
+   "value objects",
+   "domain-driven design",
+   "ddd",
+   "entities",
+   "input validation",
+   "denial of service prevention",
+   "immutable objects",
+   "defensive copying",
+   "invariants",
+   "checkinvariants",
+   "builder pattern",
+   "three r's rotate repave repair",
+   "secret rotation",
+   "immutable value types",
+   "secure coding practices",
+   "book review",
+   "java secure coding",
+   "apache validate",
+   "parse don't validate",
+   "business logic validation",
+   "semantic validation",
+   "security-focused tests"
+  ],
+  "takeaways": [
+   "Replace primitive types like int and string with domain primitives (e.g. Quantity, UserName) that validate on creation, so invalid values cannot exist.",
+   "Validate external input in order: origin, size, lexical content, syntax, then semantics, so cheap checks reject bad data before expensive database lookups.",
+   "Design entities to be consistent at creation, expose only limited operations (e.g. markPaid rather than setPaid), and never leak references to mutable internal objects.",
+   "In cloud environments, rotate secrets and repave servers every few hours, and repair vulnerable software within hours of a patch."
+  ],
+  "summary": "Henrik Warne's review of Secure by Design argues that secure code overlaps heavily with good software design: strict, clear, focused code has fewer bugs and is less vulnerable to attack. The review highlights the book's main techniques: domain primitives that enforce validity on creation, a staged approach to validating external input, and entity design rules such as consistency at creation, limited operations, and not sharing mutable objects. It also covers the three R's (rotate, repave, repair) for automated cloud systems, and briefly mentions security tests, logging, and legacy refactoring. The examples in the book are in Java.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Java"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3490,
+  "output": 842
+ },
+ "generated": "2026-10-29"
+}

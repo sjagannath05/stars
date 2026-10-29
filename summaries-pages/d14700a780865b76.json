@@ -1,0 +1,71 @@
+{
+ "id": "d14700a780865b76",
+ "url": "https://navoshta.com/traffic-signs-classification",
+ "final_url": "https://navoshta.com/traffic-signs-classification/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Traffic signs classification with a convolutional network",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Neural Network",
+   "entry": "Python: _Traffic signs classification with a convolutional network_"
+  }
+ ],
+ "summary": {
+  "title": "Traffic signs classification with a convolutional network",
+  "one_liner": "You learn how to build a multi-scale CNN in TensorFlow that classifies German traffic signs (43 classes) at 99.33% test accuracy, using histogram equalization, flip and projection augmentation, and two-stage pre-training and fine-tuning.",
+  "category": "deep learning image classification",
+  "keywords": [
+   "traffic sign classification",
+   "german traffic sign dataset",
+   "gtsrb",
+   "convolutional neural network",
+   "cnn",
+   "tensorflow",
+   "multi-scale features",
+   "histogram equalization",
+   "clahe adaptive histogram equalization",
+   "data augmentation",
+   "flip augmentation",
+   "projection transform",
+   "rotation augmentation",
+   "dropout",
+   "l2 regularization",
+   "early stopping",
+   "pre-training and fine-tuning",
+   "adam optimizer",
+   "grayscale ycbcr preprocessing",
+   "xavier initializer",
+   "skip connections",
+   "image classification tutorial",
+   "how to classify traffic signs with deep learning",
+   "class imbalance balancing dataset",
+   "sermanet lecun paper"
+  ],
+  "takeaways": [
+   "Preprocess images by converting to grayscale (Y channel), scaling to [0, 1], and applying localized histogram equalization to handle varying contrast and brightness.",
+   "Extend a small, unbalanced dataset with flip-based augmentation (using which signs are horizontally, vertically or cross-flippable) plus random rotation and projection transforms.",
+   "Build a 3-conv-layer CNN whose intermediate outputs are max-pooled and concatenated into the fully connected classifier (multi-scale features), with dropout, L2 on FC weights, and early stopping on validation loss.",
+   "Train in two stages: pre-train on a 20x extended dataset with Adam at learning rate 0.001, then fine-tune on a class-balanced dataset at 0.0001, reaching 99.33% test accuracy."
+  ],
+  "summary": "The author walks through a traffic sign classifier on the German Traffic Sign Dataset (43 classes, 32x32 images) implemented in TensorFlow. It covers preprocessing (grayscale Y channel, scaling, localized histogram equalization), augmentation (flips based on sign symmetry, random rotation and projection warps), and a small CNN with multi-scale features feeding a fully connected classifier. Training uses dropout, L2 regularization, early stopping, and a two-stage pre-training and fine-tuning schedule, and the result is 99.33% test accuracy, with error analysis and a note on human-level performance (98.3% to 98.8%).",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "TensorFlow",
+   "NumPy",
+   "scikit-learn",
+   "scikit-image",
+   "matplotlib",
+   "Jupyter"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8595,
+  "output": 1085
+ },
+ "generated": "2026-10-29"
+}

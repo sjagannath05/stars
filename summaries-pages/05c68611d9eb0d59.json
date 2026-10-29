@@ -1,0 +1,62 @@
+{
+ "id": "05c68611d9eb0d59",
+ "url": "https://docs.kernel.org/virt/kvm/halt-polling.html",
+ "final_url": "https://docs.kernel.org/virt/kvm/halt-polling.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The KVM halt polling system",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Where jitter comes from",
+   "entry": "The KVM halt polling system - Defines the host-side polling after a vCPU halt that trades idle host CPU for guest wakeup time, unseen by the guest."
+  }
+ ],
+ "summary": {
+  "title": "The KVM halt polling system",
+  "one_liner": "KVM halt polling makes the host busy-poll for a short, adaptive interval after a guest vCPU halts, trading idle host CPU for lower wakeup latency.",
+  "category": "virtualization internals",
+  "keywords": [
+   "kvm halt polling",
+   "halt_poll_ns",
+   "kvm vcpu halt latency",
+   "host polling after guest halt",
+   "halt_poll_ns_grow",
+   "halt_poll_ns_shrink",
+   "halt_poll_ns_grow_start",
+   "kvm_cap_halt_poll",
+   "kvm_vcpu_block",
+   "grow_halt_poll_ns",
+   "shrink_halt_poll_ns",
+   "powerpc kvm-hv vcore polling",
+   "vcpu wakeup latency",
+   "kvm scheduler bypass",
+   "adaptive polling interval",
+   "kvm sysfs module parameters",
+   "cpu usage versus latency tradeoff",
+   "kernel virtual machine documentation"
+  ],
+  "takeaways": [
+   "After a vCPU halts, the host polls for wakeup conditions for up to halt_poll_ns before calling the scheduler, saving a few microseconds of scheduler trip.",
+   "The polling interval adapts per vCPU: it grows (multiplied by halt_poll_ns_grow) when wakeups arrive just beyond it and shrinks (divided by halt_poll_ns_shrink) when block time exceeds the global max.",
+   "Module parameters halt_poll_ns, halt_poll_ns_grow, halt_poll_ns_grow_start and halt_poll_ns_shrink are system-wide, set via /sys/module/kvm/parameters/, unless a VM uses KVM_CAP_HALT_POLL for per-VM override.",
+   "Large halt_poll_ns values can drive host CPU usage to 100% on otherwise idle machines, so it is a power-versus-latency trade-off.",
+   "Polling stops immediately if another task becomes runnable on that CPU, so a guest cannot starve the host CPU."
+  ],
+  "summary": "This kernel documentation page describes KVM's halt polling feature, where the host polls for a guest wakeup for a limited time after a vCPU cedes the CPU, instead of immediately invoking the scheduler. It explains the generic implementation in kvm_vcpu_block() and the powerpc kvm-hv variant, and how the per-vCPU polling interval is grown and shrunk adaptively. A table lists the four tunable module parameters and their defaults, and the page ends with notes on CPU-usage trade-offs and the KVM_CAP_HALT_POLL per-VM override.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux KVM",
+   "Linux kernel",
+   "C",
+   "powerpc kvm-hv"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3421,
+  "output": 1075
+ },
+ "generated": "2026-10-29"
+}

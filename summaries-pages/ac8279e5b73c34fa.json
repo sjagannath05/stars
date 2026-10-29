@@ -1,0 +1,70 @@
+{
+ "id": "ac8279e5b73c34fa",
+ "url": "https://docs.kernel.org/arch/arm64/mpam.html",
+ "final_url": "https://docs.kernel.org/arch/arm64/mpam.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "MPAM",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Cache and bandwidth partitioning",
+   "entry": "MPAM - Maps Arm's cache portion and bandwidth controls onto resctrl's schemata, and states which platform limits apply."
+  }
+ ],
+ "summary": {
+  "title": "MPAM",
+  "one_liner": "Learn what Arm MPAM (Memory Partitioning and Monitoring) is, which cache and bandwidth controls Linux exposes through resctrl, and the platform conditions that limit them.",
+  "category": "arm64 kernel resource control",
+  "keywords": [
+   "mpam",
+   "memory partitioning and monitoring",
+   "arm mpam",
+   "resctrl",
+   "resctrl schemata",
+   "schemata file",
+   "cache portion bitmap",
+   "cpor",
+   "memory bandwidth maximum controls",
+   "mbw_max",
+   "mb schema",
+   "cache storage usage",
+   "csu counters",
+   "llc_occupancy",
+   "memory bandwidth usage",
+   "mbwu",
+   "mbm_total_bytes",
+   "mbm_local_bytes",
+   "msc memory system component",
+   "noisy neighbours cache isolation",
+   "arm64 cache partitioning linux",
+   "l3 cache-id",
+   "acpi mpam table",
+   "dyndbg mpam_resctrl debugging",
+   "linux kernel arm64 documentation"
+  ],
+  "takeaways": [
+   "MPAM labels memory traffic by control or monitor group so that partitioning and monitoring can be applied per task via resctrl.",
+   "Cache portion bitmap (CPOR) controls at L2 or L3 require every CPU to have a matching cache supporting the feature; mismatched big/little platforms are unsupported.",
+   "The MB schema and mbm_total_bytes require the memory system component topology to match the L3 cache so cache-ids can be repainted; CPU-less NUMA nodes cannot expose them.",
+   "llc_occupancy needs at least one CSU monitor on each MSC in the L3 group, and mbm_local_bytes is not exposed because MPAM cannot distinguish local from global traffic.",
+   "Use dynamic debug (dyndbg for mpam_resctrl.c) with boot parameters to collect debug messages when expected counters or controls are missing."
+  ],
+  "summary": "This kernel documentation page describes Arm's MPAM feature, which labels memory traffic so cache and memory bandwidth can be partitioned and monitored, with the user interface provided through resctrl and its schemata file. It lists the supported features (CPOR cache controls, MBW_MAX bandwidth limits, CSU and MBWU monitors) and the platform requirements for each, such as firmware-described MSC MMIO regions and L3 cache-id topology. It also explains why some resctrl outputs are unavailable on certain platforms and how to report missing counters or controls with debug logging enabled.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Arm MPAM",
+   "Linux kernel",
+   "resctrl",
+   "ACPI",
+   "arm64"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2838,
+  "output": 1052
+ },
+ "generated": "2026-10-29"
+}

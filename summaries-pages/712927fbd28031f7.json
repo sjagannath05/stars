@@ -1,0 +1,69 @@
+{
+ "id": "712927fbd28031f7",
+ "url": "https://www.cs.utexas.edu/~flame/pubs/GotoTOMS_revision.pdf",
+ "final_url": "https://www.cs.utexas.edu/~flame/pubs/GotoTOMS_revision.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "article.dvi",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "GEMM and BLAS",
+   "entry": "Anatomy of High-Performance Matrix Multiplication - Derives the cache blocking every fast CPU GEMM still uses by refining a memory model until the packed kernel falls out."
+  }
+ ],
+ "summary": {
+  "title": "Anatomy of High-Performance Matrix Multiplication",
+  "one_liner": "You learn why fast GEMM implementations (as in GotoBLAS) layer matrix multiplication around a packed inner kernel, and how cache, TLB, and packing choices set the block sizes mc, kc, and nr.",
+  "category": "high-performance matrix multiplication",
+  "keywords": [
+   "gemm",
+   "matrix multiplication",
+   "dgemm",
+   "gotoblas",
+   "blas",
+   "cache blocking",
+   "cache blocking parameters mc kc",
+   "packing matrix into contiguous buffer",
+   "tlb translation look-aside buffer",
+   "tlb misses in matrix multiply",
+   "inner kernel gebp",
+   "gepp gemm decomposition",
+   "layered gemm approach",
+   "l2 cache blocking",
+   "register blocking nr",
+   "memory hierarchy model for linear algebra",
+   "atlas comparison",
+   "intel mkl comparison",
+   "level-3 blas",
+   "near-peak floating point performance",
+   "how to make matrix multiply fast on cpu"
+  ],
+  "takeaways": [
+   "GEMM can be decomposed into calls to panel-panel and block-panel kernels, with the gebp inner kernel doing most of the work.",
+   "Keeping the packed block of A in L2 cache (not L1) allows larger mc and kc, subject to a bound on nr relative to the flop and load rates.",
+   "TLB capacity, not just cache size, often limits the size of the packed block, so A is packed into a contiguous work array.",
+   "Packing B and A into contiguous buffers keeps data accessed consecutively and reduces TLB entries needed.",
+   "The paper reports implementations achieving near-peak performance on Pentium 4, Power 5 and Itanium2, compared against MKL, ESSL and ATLAS."
+  ],
+  "summary": "The paper explains the design of the dgemm routine in the GotoBLAS library by starting from a simple two-level memory model and successively refining it with realistic details such as multiple cache levels, TLB limits, and packing. It defines the special gemm shapes (gemm, gepp, gebp, etc.) and shows how gemm decomposes into a triple-nested loop around a gebp inner kernel. It then derives constraints on block sizes mc, kc and nr from cache bandwidth and TLB entry counts, and gives practical algorithms with packing. Performance is shown against MKL, ESSL and ATLAS on several architectures.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "GotoBLAS",
+   "BLAS",
+   "dgemm",
+   "ATLAS",
+   "Intel MKL",
+   "IBM ESSL",
+   "LAPACK",
+   "Fortran/C column-major matrices"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11376,
+  "output": 1033
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,68 @@
+{
+ "id": "3b5e931a44bc0579",
+ "url": "https://www.cs.rochester.edu/u/scott/papers/1996_PODC_queues.pdf",
+ "final_url": "https://www.cs.rochester.edu/u/scott/papers/1996_PODC_queues.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "main.dvi",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Lock-free structures and RCU",
+   "entry": "Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms - The lock-free queue later libraries copy, with the counted pointer against ABA and a two-lock queue beside it."
+  }
+ ],
+ "summary": {
+  "title": "Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms",
+  "one_liner": "A 1996 PODC paper by Michael and Scott presenting a lock-free compare-and-swap FIFO queue with modification counters against ABA, and a two-lock queue with separate head and tail locks, both benchmarked on a 12-node SGI Challenge.",
+  "category": "concurrent data structures",
+  "keywords": [
+   "lock-free queue",
+   "non-blocking queue",
+   "concurrent queue algorithm",
+   "michael scott queue",
+   "two-lock queue",
+   "compare and swap",
+   "cas",
+   "aba problem",
+   "modification counter",
+   "counted pointer",
+   "dummy node queue",
+   "linearizability",
+   "wait-free",
+   "load linked store conditional",
+   "test and set lock",
+   "multiprogramming performance",
+   "valois queue",
+   "prakash lee johnson queue",
+   "mellor-crummey queue",
+   "concurrent fifo queue in plain english",
+   "how to build a thread-safe queue without locks",
+   "treiber stack free list"
+  ],
+  "takeaways": [
+   "The non-blocking queue uses a singly-linked list with Head and Tail pointers and a dummy node, updated via compare-and-swap.",
+   "Modification counters paired with pointers are used to mitigate the ABA problem, which the paper notes makes it extremely unlikely rather than impossible.",
+   "The two-lock queue lets one enqueue and one dequeue proceed concurrently, with the dummy node preventing lock-ordering deadlock.",
+   "Experiments on a 12-processor SGI Challenge show the lock-free queue outperforming alternatives, and the two-lock queue beating a single lock under contention.",
+   "The paper reviews prior queue designs (Valois, Prakash et al., Stone, Mellor-Crummey) and their races, memory-reuse, or blocking problems."
+  ],
+  "summary": "The paper presents two concurrent FIFO queue algorithms: a non-blocking queue built on compare-and-swap with modification counters to handle ABA, and a two-lock queue with separate Head and Tail locks. Both are given as commented pseudo-code (Figures 1 and 2), followed by safety, linearizability, and liveness arguments. Section 4 benchmarks them on a 12-processor SGI Challenge against a single-lock queue and several prior algorithms, under both dedicated and multiprogrammed workloads. The related-work discussion is also a useful survey of earlier lock-free queue designs and their flaws.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C-like pseudo-code",
+   "compare-and-swap",
+   "load linked/store conditional",
+   "test-and-set",
+   "MIPS R4000",
+   "SGI Challenge"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10180,
+  "output": 1058
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "cd26b8e1c536213b",
+ "url": "http://www.dr-josiah.com/2010/07/building-search-engine-using-redis-and.html",
+ "final_url": "https://www.dr-josiah.com/2010/07/building-search-engine-using-redis-and.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building a search engine using Redis and redis-py",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Search Engine",
+   "entry": "Python: _Building a search engine using Redis and redis-py_"
+  }
+ ],
+ "summary": {
+  "title": "Building a search engine using Redis and redis-py",
+  "one_liner": "You learn how to build a working full-text search engine with Redis sorted sets and sets in Python, using TF-IDF scoring via ZUNIONSTORE.",
+  "category": "search engine internals",
+  "keywords": [
+   "redis search engine",
+   "full-text search redis",
+   "redis-py",
+   "python search engine",
+   "tf-idf",
+   "term frequency inverse document frequency",
+   "zunionstore",
+   "sorted sets search",
+   "redis sorted set index",
+   "stop words",
+   "porter stemmer",
+   "metaphone",
+   "double metaphone",
+   "stemming",
+   "inverse document frequency weighting",
+   "redis pipeline",
+   "inverted index",
+   "search query parsing",
+   "sdiff exclusion search",
+   "document indexing and removal",
+   "redis memory limits for search"
+  ],
+  "takeaways": [
+   "Redis sets, sorted sets, and ZUNIONSTORE are enough to build an inverted index with TF-IDF ranking.",
+   "Parsing (lowercasing, alphanumeric filtering, stop words, short-word removal) matters most for search quality.",
+   "Pipelines reduce network round-trips when indexing and searching; the same function can add or remove documents.",
+   "Replacing TF with a constant 1 allows plain sets instead of sorted sets, saving memory.",
+   "Redis keeps data in memory, so very large indexes need more machines and sharding brings its own latency trade-offs."
+  ],
+  "summary": "The post walks through a minimal search engine built on redis-py. It covers a simple tokenizer with a stop-word list, an indexing function that stores term frequencies in per-term sorted sets and document IDs in a set, and a search function that computes IDF from ZCARD counts and combines scores with ZUNIONSTORE. The author then lists improvements such as query operators, using SDIFF for exclusions, and memory trade-offs, and notes that Redis's in-memory design limits index size. It also mentions that stemming and metaphone are optional and not used in the code.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Redis",
+   "Python",
+   "redis-py",
+   "Porter Stemmer",
+   "Metaphone"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5139,
+  "output": 857
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,82 @@
+{
+ "id": "b143b120070bc3dc",
+ "url": "https://hidekazu-konishi.com/entry/claude_code_hooks_complete_guide.html",
+ "final_url": "https://hidekazu-konishi.com/entry/claude_code_hooks_complete_guide.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Claude Code Hooks Complete Guide - Deterministic Enforcement Across the Tool Lifecycle | hidekazu-konishi.com",
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Start Here",
+   "entry": "Claude Code Hooks: Complete Guide by Hidekazu Konishi - A thorough walkthrough of every hook event, when each fires, the two return channels, common anti-patterns, and copy-ready settings.json examples."
+  }
+ ],
+ "summary": {
+  "name": "Claude Code Hooks Complete Guide",
+  "one_liner": "A detailed reference guide to Claude Code hooks, covering the full event lifecycle, exit-code and JSON decision protocol, tool matchers, settings.json layering, worked examples, and security considerations.",
+  "category": "claude code hooks guide",
+  "keywords": [
+   "claude code hooks",
+   "claude code hook events",
+   "pretooluse hook",
+   "posttooluse hook",
+   "userpromptsubmit hook",
+   "stop hook",
+   "subagentstop",
+   "sessionstart hook",
+   "precompact hook",
+   "settings.json hooks",
+   "hook matchers",
+   "exit code 2 blocking",
+   "permissiondecision deny allow ask",
+   "deterministic enforcement ai agent",
+   "block dangerous bash commands",
+   "auto format on file write",
+   "audit logging agent tool calls",
+   "claude code guardrails",
+   "claude code security hooks",
+   "hook lifecycle",
+   "mcp tool matcher",
+   "context injection session start",
+   "claude code automation",
+   "ai coding agent guardrails",
+   "claude code tutorial",
+   "hook exit codes",
+   "prevent claude from editing secrets",
+   "claude code permissions"
+  ],
+  "use_cases": [
+   "Blocking dangerous shell commands in Claude Code",
+   "Auto-formatting files after Claude edits them",
+   "Protecting secret or credential files from edits",
+   "Logging every tool call for audit",
+   "Preventing Claude from stopping until tests pass",
+   "Injecting git state or policy context at session start"
+  ],
+  "what_it_does": "The guide walks through the Claude Code hook lifecycle, listing events such as PreToolUse, PostToolUse, UserPromptSubmit, Stop, SubagentStop, SessionStart and PreCompact, and when each fires. It explains the two return channels: exit codes (for example, exit 2 to block) and JSON output with allow, deny, ask and defer decisions. It covers tool matchers, including the regex rules and MCP tool name pitfalls, and where hook definitions live in the settings.json hierarchy. It also includes copy-ready examples for formatting, blocking, audit logging, turn guards and context injection, along with a discussion of the security model.",
+  "pricing": "unknown",
+  "platforms": [
+   "macOS",
+   "Linux",
+   "Windows"
+  ],
+  "notable": [
+   "Full table of roughly thirty hook events grouped by lifecycle phase, with matcher fields",
+   "Explains exit code 2 versus JSON decision shapes, including PreToolUse permissionDecision values",
+   "Notes that a PreToolUse deny is evaluated before permission-mode checks and hooks can only tighten access",
+   "Documents the regex trap when matching MCP tool names"
+  ],
+  "caveats": [
+   "The set of hook events changes over time; the official Claude Code hooks reference is stated to be authoritative",
+   "Hooks run as arbitrary commands with the user's shell privileges, so security review is needed",
+   "A Stop hook that always blocks can loop forever, according to the page"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10184,
+  "output": 1133
+ },
+ "generated": "2026-10-29"
+}

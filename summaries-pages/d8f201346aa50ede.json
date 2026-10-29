@@ -1,0 +1,65 @@
+{
+ "id": "d8f201346aa50ede",
+ "url": "https://engineering.salesforce.com/github-actions-security-best-practices-b8f9df5c75f5",
+ "final_url": "https://engineering.salesforce.com/github-actions-security-best-practices-b8f9df5c75f5/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Github Actions Security Best Practices - Salesforce Engineering Blog",
+ "sources": [
+  {
+   "list": "hahwul/DevSecOps",
+   "section": "Security of CICD",
+   "entry": "2. Github Actions Security Best Practices"
+  }
+ ],
+ "summary": {
+  "title": "Github Actions Security Best Practices",
+  "one_liner": "Learn the main security risks of GitHub Actions and the practical hardening steps Salesforce Heroku recommends for workflows, secrets, custom actions, and public repositories.",
+  "category": "devsecops ci/cd security",
+  "keywords": [
+   "github actions security",
+   "github actions best practices",
+   "ci/cd security",
+   "pin actions to commit hash",
+   "avoid @master tag",
+   "github secrets best practices",
+   "github actions secrets in logs",
+   "third party actions risk",
+   "self-hosted runner security",
+   "forked repository pull request workflows",
+   "github_token permissions",
+   "least privilege github workflows",
+   "github actions cache security",
+   "github actions artifacts retention",
+   "docker image version tag",
+   "custom github actions security",
+   "public repository actions settings",
+   "devsecops pipeline",
+   "salesforce heroku engineering",
+   "how to secure github actions"
+  ],
+  "takeaways": [
+   "Trust third-party actions only if they are GitHub-provided, from verified creators, or from trusted vendors; otherwise run a security review.",
+   "Pin actions to a stable version tag or commit hash and avoid @master; use official or certified docker images with version tags.",
+   "Store credentials in GitHub Secrets, never print them to logs, avoid using them directly on the command line, and rotate them regularly.",
+   "Restrict risk in repository settings: allow only needed actions, disable fork pull request workflows if not needed, and use read-only GITHUB_TOKEN permissions in public repos."
+  ],
+  "summary": "The article explains how GitHub Actions workflows are structured (workflows, jobs, steps, actions) using a Snyk scan and S3 upload example, then lists the security risks they add, such as untrusted third-party actions, leaked secrets, forked repositories, and self-hosted runner compromise. It gives concrete guidance organized by topic: which actions to trust, how to write secure workflows, how to handle secrets, which repository and organization settings to change, how to build custom actions, and how to lock down public repositories. It closes with links to GitHub's official security hardening documentation.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "GitHub Actions",
+   "GitHub Secrets",
+   "Docker",
+   "Snyk",
+   "Amazon S3",
+   "YAML"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5066,
+  "output": 892
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "4864f0bfa574e8a9",
+ "url": "https://learnopengl.com/In-Practice/2D-Game/Postprocessing",
+ "final_url": "https://learnopengl.com/In-Practice/2D-Game/Postprocessing",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Postprocessing",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenGL:",
+   "entry": "Postprocessing"
+  }
+ ],
+ "summary": {
+  "title": "Postprocessing",
+  "one_liner": "You learn how to add shake, confuse and chaos postprocessing effects to a 2D OpenGL game using a multisampled framebuffer, blit, and a convolution-kernel fragment shader.",
+  "category": "opengl game development",
+  "keywords": [
+   "opengl postprocessing",
+   "postprocessing effects",
+   "multisampled framebuffer",
+   "msaa renderbuffer",
+   "framebuffer blit",
+   "glblitframebuffer",
+   "screen shake effect",
+   "convolution kernel",
+   "edge detection kernel",
+   "blur kernel",
+   "invert colors shader",
+   "full-screen quad",
+   "breakout opengl",
+   "glsl vertex shader",
+   "glsl fragment shader",
+   "screen shake on collision",
+   "anti-aliasing framebuffer",
+   "learnopengl 2d game",
+   "how to add screen shake in opengl",
+   "uniform offsets texture sampling"
+  ],
+  "takeaways": [
+   "Render the game into a multisampled framebuffer, blit it into a texture-backed framebuffer, then draw that texture onto a full-screen quad.",
+   "Use vertex shader uniforms (chaos, confuse, shake) to offset positions or texture coordinates, and the fragment shader to apply blur or edge-detection kernels.",
+   "Precompute sample offsets and convolution kernels once and pass them as uniforms instead of recalculating per fragment.",
+   "Trigger a short screen shake by setting a timer on solid collisions and disabling the effect when the timer in Update reaches zero."
+  ],
+  "summary": "The article is part of LearnOpenGL's 2D Breakout project and explains how to add postprocessing effects to the game. The renderer draws into a multisampled framebuffer, blits the result to a texture-backed framebuffer, and then renders that texture on a full-screen quad. A postprocessor class exposes shake, confuse and chaos flags, which are handled by a vertex shader that moves coordinates and a fragment shader that applies sampling offsets and convolution kernels. As a practical example, the shake effect is enabled for 0.05 seconds whenever the ball hits a solid block.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "OpenGL",
+   "GLSL",
+   "C++",
+   "GLFW"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4145,
+  "output": 894
+ },
+ "generated": "2026-10-29"
+}

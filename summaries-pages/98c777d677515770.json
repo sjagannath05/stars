@@ -1,0 +1,67 @@
+{
+ "id": "98c777d677515770",
+ "url": "http://databasearchitects.blogspot.com/2021/06/what-every-programmer-should-know-about.html",
+ "final_url": "http://databasearchitects.blogspot.com/2021/06/what-every-programmer-should-know-about.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "What Every Programmer Should Know About SSDs",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Hardware",
+   "entry": "What Every Programmer Should Know About SSDs"
+  }
+ ],
+ "summary": {
+  "title": "What Every Programmer Should Know About SSDs",
+  "one_liner": "You learn why NAND flash SSDs behave differently from spinning disks (parallel flash chips, asymmetric read/write latency, out-of-place writes, garbage collection, write amplification, overprovisioning) and how to exploit them.",
+  "category": "storage systems",
+  "keywords": [
+   "ssd performance",
+   "flash ssd internals",
+   "nand flash",
+   "flash translation layer",
+   "ftl",
+   "garbage collection ssd",
+   "write amplification",
+   "overprovisioning",
+   "erase block",
+   "out-of-place writes",
+   "ssd vs hard disk",
+   "random vs sequential io ssd",
+   "parallel flash chips",
+   "io_uring",
+   "libaio asynchronous io",
+   "ssd write latency tail latency",
+   "why are ssds fast",
+   "how do ssds work",
+   "fill factor write amplification",
+   "hidden spare capacity ssd",
+   "optane vs nand flash",
+   "database storage hardware"
+  ],
+  "takeaways": [
+   "SSD random reads take about 100us versus about 10ms for a random disk access, and SSD writes are cached in RAM so their visible latency is lower than the actual flash write latency of about 1ms.",
+   "Flash SSDs reach high bandwidth by issuing many concurrent IO requests (via many threads or asynchronous interfaces like libaio or io_uring) to keep all flash chips busy.",
+   "NAND pages cannot be overwritten in place; updates go to new locations tracked by a flash translation layer mapping table, and garbage collection erases blocks later.",
+   "Write amplification is the ratio of physical to logical writes; worst-case is 1/(1-f) for fill factor f, so random writes on a nearly full SSD are very costly, which is why overprovisioning of about 10-20% helps."
+  ],
+  "summary": "The article explains how flash-based SSDs differ from magnetic disks from a programmer's point of view. It covers latency and parallelism, the asymmetry between cached writes and actual NAND write latency, and why out-of-place writes require a flash translation layer and garbage collection. It uses a toy example with erase blocks and pages to illustrate these mechanisms, then gives a table of worst-case write amplification by fill factor. It closes with hardware figures for a Samsung server SSD and pointers to further reading, including a CIDR 2020 paper on the Linux I/O stack.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "NAND flash",
+   "SSD",
+   "libaio",
+   "io_uring",
+   "Linux",
+   "Samsung PM1733"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3885,
+  "output": 986
+ },
+ "generated": "2026-10-29"
+}

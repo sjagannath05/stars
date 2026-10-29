@@ -1,0 +1,62 @@
+{
+ "id": "a123d5c5cc8d1e2a",
+ "url": "https://code.joejag.com/2016/anti-if-the-missing-patterns.html",
+ "final_url": "https://code.joejag.com/2016/anti-if-the-missing-patterns.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Anti-If: The missing patterns",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Design: patterns",
+   "entry": "Anti-If: The missing patterns"
+  }
+ ],
+ "summary": {
+  "title": "Anti-If: The missing patterns",
+  "one_liner": "Five refactoring patterns (boolean params, polymorphism, null objects/Optional, inlining conditionals into expressions, and coping strategies like Ruby's Hash#fetch) that replace duplicated if statements with cleaner code.",
+  "category": "software design patterns",
+  "keywords": [
+   "anti-if",
+   "avoid if statements",
+   "replace conditionals",
+   "refactoring if statements",
+   "boolean parameters refactoring",
+   "split method boolean flag",
+   "switch to polymorphism",
+   "replace switch statement with polymorphism",
+   "null object pattern",
+   "optional instead of null",
+   "avoid null checks",
+   "inline conditionals into expression",
+   "coping strategy",
+   "hash#fetch default value",
+   "duplicated if statements",
+   "code readability nested conditionals",
+   "defensive programming inside codebase",
+   "reduce coupling shared state",
+   "simplify nested if",
+   "empty collection instead of null"
+  ],
+  "takeaways": [
+   "Boolean parameters usually signal two methods bundled into one; split them into two named methods.",
+   "Switch statements on type are risky when repeated; polymorphism ensures new types get their behaviour.",
+   "Use Null Object, Optional, or an empty collection instead of passing null around.",
+   "Tolerance matters: a single unduplicated if is usually fine, and validation belongs at the edges of the system.",
+   "Push repeated 'no result' checks into one place by giving callers a coping strategy, such as Hash#fetch's default."
+  ],
+  "summary": "The article, by Joe Wright, argues that if statements, especially duplicated or nested ones, make code hard to read and change, because they hide domain concepts and force readers to simulate execution. It offers five patterns: Boolean Params, Switch to Polymorphism, NullObject/Optional over null passing, inlining statements into expressions, and giving a coping strategy. Each pattern has a context, problem, a tolerance level for when to use it, and a solution. The post stresses moderation: a single unduplicated if is usually fine, and validation belongs at system boundaries.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Java"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3105,
+  "output": 856
+ },
+ "generated": "2026-10-29"
+}

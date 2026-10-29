@@ -1,0 +1,68 @@
+{
+ "id": "dfe1dc903518a457",
+ "url": "https://john.e-wilkes.com/papers/2013-EuroSys-CPI2.pdf",
+ "final_url": "https://john.e-wilkes.com/papers/2013-EuroSys-CPI2.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Cache and bandwidth partitioning",
+   "entry": "CPI2: CPU performance isolation for shared compute clusters - Shows at fleet scale that cycles per instruction alone finds an interfering neighbour and the one to throttle."
+  }
+ ],
+ "summary": {
+  "title": "CPI2: CPU performance isolation for shared compute clusters",
+  "one_liner": "Learn how Google's CPI2 system uses per-job cycles-per-instruction statistics from hardware counters to detect victim tasks, identify the antagonist tasks causing CPU interference via passive correlation, and optionally throttle them.",
+  "category": "cloud performance isolation",
+  "keywords": [
+   "cpi2",
+   "cycles per instruction",
+   "cpi",
+   "performance isolation",
+   "cpu interference",
+   "noisy neighbor",
+   "antagonist detection",
+   "victim task",
+   "shared compute clusters",
+   "hardware performance counters",
+   "perf_event",
+   "cgroup",
+   "task throttling",
+   "cpi spec",
+   "cross-correlation antagonist",
+   "gev distribution outlier detection",
+   "tail latency",
+   "google borg cluster",
+   "linux cache and memory bus contention",
+   "how to find the noisy neighbour in a cluster",
+   "eurosys 2013 paper",
+   "latency-sensitive jobs interference",
+   "statistical outlier detection cpu",
+   "batch job throttling"
+  ],
+  "takeaways": [
+   "CPI (CPU_CLK_UNHALTED.REF / INSTRUCTIONS_RETIRED) per job and platform is a stable metric that correlates with application latency and throughput (correlation about 0.97 in the paper's examples).",
+   "Tasks whose CPI exceeds the 2-sigma point of the predicted job CPI distribution are flagged; a task is anomalous if flagged at least 3 times in 5 minutes.",
+   "Antagonists are found passively by correlating the victim's CPI spikes with each suspect's CPU usage over a window (about 10 minutes), with 0.35 as the threshold that works well in practice.",
+   "Counting is done per cgroup in counting mode for 10 seconds per minute, with total CPU overhead under 0.1%.",
+   "CPI2 covers only CPU interference; it does not detect network or disk interference and does not identify which shared resource is contended."
+  ],
+  "summary": "The paper describes CPI2, a system deployed across Google's shared compute clusters that uses cycles-per-instruction collected from hardware counters to find performance interference between tasks. It aggregates CPI per job and per CPU platform into a mean and standard deviation (a CPI spec), flags outlier victim tasks locally on each machine, and then ranks suspect antagonists by a passive correlation between victim CPI and suspect CPU usage. The authors justify CPI as a metric with correlation experiments against throughput and latency, and say CPI2 can optionally throttle antagonists. The page text excerpt ends mid-discussion of future work, so the evaluation and case studies are not included here.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Linux cgroups",
+   "perf_event",
+   "hardware performance counters",
+   "C++ (implied by systems context, not stated)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10107,
+  "output": 1093
+ },
+ "generated": "2026-10-29"
+}

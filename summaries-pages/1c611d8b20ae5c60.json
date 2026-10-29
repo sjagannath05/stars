@@ -1,0 +1,75 @@
+{
+ "id": "1c611d8b20ae5c60",
+ "url": "https://testdriven.io/blog/docker-best-practices",
+ "final_url": "https://testdriven.io/blog/docker-best-practices/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Docker Best Practices for Python Developers",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Docker",
+   "entry": "Docker Best Practices for Python Developers"
+  }
+ ],
+ "summary": {
+  "title": "Docker Best Practices for Python Developers",
+  "one_liner": "You learn a set of Dockerfile and image practices, with Python examples, for building smaller, faster, and more secure container images.",
+  "category": "docker containers",
+  "keywords": [
+   "docker best practices",
+   "dockerfile best practices",
+   "multi-stage build",
+   "docker multi-stage build python",
+   "layer caching",
+   "docker layer caching order",
+   "small base image",
+   "python slim image",
+   "alpine vs slim docker",
+   "non-root container",
+   "run docker as non-root user",
+   "copy vs add",
+   "pip cache docker",
+   "entrypoint vs cmd",
+   "exec form vs shell form",
+   "docker healthcheck",
+   "docker image tagging",
+   "avoid latest tag",
+   "secrets in docker images",
+   ".dockerignore file",
+   "one process per container",
+   "docker image size reduction",
+   "docker inspect environment variables",
+   "lint and scan dockerfiles",
+   "docker compose healthcheck"
+  ],
+  "takeaways": [
+   "Use multi-stage builds so build tools like gcc are left out of the final production image.",
+   "Order Dockerfile steps so frequently changing files come last, preserving layer cache.",
+   "Prefer slim base images, and avoid latest tags for base images; pin versions.",
+   "Run container processes as a non-root user, and keep secrets out of images and out of plaintext ENV lines.",
+   "Use exec-form CMD/ENTRYPOINT so signals like SIGTERM reach the application process, and use HEALTHCHECK to report real health."
+  ],
+  "summary": "This article walks through practical Docker best practices aimed mainly at Python developers, split into Dockerfile practices, image practices, and bonus tips. Each practice is explained with short Dockerfile examples, and size comparisons from docker images and docker history show the effect of multi-stage builds and different python base images. It also covers exec vs shell form for signal handling, ENTRYPOINT vs CMD, HEALTHCHECK, and why secrets should be injected at run time rather than baked in. The page is a guide with examples rather than a tool, and it does not list a formal set of steps beyond the practices themselves.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Docker",
+   "Dockerfile",
+   "Python",
+   "Gunicorn",
+   "Uvicorn",
+   "Docker Compose",
+   "Alpine Linux",
+   "Docker BuildKit",
+   "Kubernetes",
+   "Docker Swarm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10525,
+  "output": 945
+ },
+ "generated": "2026-10-29"
+}

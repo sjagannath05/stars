@@ -1,0 +1,69 @@
+{
+ "id": "b9d1a5281949aa65",
+ "url": "https://faculty.cc.gatech.edu/~hyesoon/lee_taco12.pdf",
+ "final_url": "https://faculty.cc.gatech.edu/~hyesoon/lee_taco12.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "When Prefetching Works, When It Doesn&rsquo;t, and Why",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Struct layout, software prefetch and page size",
+   "entry": "When Prefetching Works, When It Doesn't, and Why - Sorts software prefetch into the cases where it helps and hurts, and shows how it mistrains hardware prefetchers."
+  }
+ ],
+ "summary": {
+  "title": "When Prefetching Works, When It Doesn't, and Why",
+  "one_liner": "Software and hardware prefetching each help in specific access patterns, and software prefetches can interfere with hardware prefetcher training, so cooperative prefetching needs care.",
+  "category": "cpu cache prefetching",
+  "keywords": [
+   "software prefetching",
+   "hardware prefetching",
+   "cache miss latency",
+   "prefetch distance",
+   "stream prefetcher",
+   "stride prefetcher",
+   "ghb prefetcher",
+   "prefetch intrinsics",
+   "_mm_prefetch",
+   "negative training",
+   "prefetch timeliness",
+   "late prefetch",
+   "early prefetch",
+   "redundant prefetch",
+   "spec cpu 2006 prefetching",
+   "icc gcc prefetch",
+   "indirect memory prefetch",
+   "pointer chasing prefetch",
+   "hardware prefetcher training interference",
+   "cache pollution prefetch",
+   "cooperative hardware software prefetching",
+   "memory bandwidth prefetch",
+   "intel core 2 nehalem prefetch"
+  ],
+  "takeaways": [
+   "Software prefetching helps with many concurrent streams, short streams, irregular (indirect or pointer-based) accesses, and per-level cache insertion hints.",
+   "Software prefetch instructions add instruction count and overhead, and their distance and insertion are static, so they cannot adapt at runtime.",
+   "Software prefetches can slow hardware prefetcher training by covering parts of streams, and can trigger overly aggressive, early hardware prefetches.",
+   "Prefetches are classified as timely, late, early, redundant, or incorrect, and prefetch distance should be large enough to hide latency without evicting useful data."
+  ],
+  "summary": "The paper studies when hardware and software prefetching help or hurt, using source-level analysis of SPEC CPU 2006 benchmarks, simulation, and measurements on Intel Core 2 and Nehalem systems. It classifies prefetch outcomes (timely, late, early, redundant, incorrect), explains prefetch distance, and compares direct versus indirect indexing overhead. It then groups benchmarks into positive, neutral, and negative categories based on the combined software and hardware prefetching speedup, and examines synergistic and antagonistic effects. The authors conclude that compilers could prefetch more aggressively but risk interfering with hardware prefetcher training.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "x86 SSE prefetch intrinsics",
+   "Intel icc",
+   "GCC",
+   "SPEC CPU 2006",
+   "Intel Core 2",
+   "Intel Nehalem"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10330,
+  "output": 1015
+ },
+ "generated": "2026-10-29"
+}

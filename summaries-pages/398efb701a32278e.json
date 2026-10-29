@@ -1,0 +1,60 @@
+{
+ "id": "398efb701a32278e",
+ "url": "https://news.alvaroduran.com/p/engineers-do-not-get-to-make-startup",
+ "final_url": "https://news.alvaroduran.com/p/engineers-do-not-get-to-make-startup",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Engineers Do Not Get To Make Startup Mistakes When They Build Ledgers",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Accounting",
+   "entry": "Engineers Do Not Get To Make Startup Mistakes When They Build Ledgers"
+  }
+ ],
+ "summary": {
+  "title": "Engineers Do Not Get To Make Startup Mistakes When They Build Ledgers",
+  "one_liner": "Learn why single-entry bookkeeping breaks in fintech and how to design a double-entry ledger using Accounts, Entries, and Transactions with pending/posted states and normal balances.",
+  "category": "fintech ledger design",
+  "keywords": [
+   "double-entry ledger",
+   "double-entry accounting",
+   "single-entry ledger",
+   "ledger design",
+   "fintech engineering",
+   "payments engineering",
+   "accounts entries transactions",
+   "pending and posted entries",
+   "normal balance credit debit",
+   "saga pattern ledger",
+   "balance as property",
+   "dancing cents",
+   "reconciliation rounding errors",
+   "how to build a ledger",
+   "accounting for developers",
+   "money movement data model"
+  ],
+  "takeaways": [
+   "Single-entry ledgers can show money flows but not why they happened, which makes discrepancies like lost cents hard to debug.",
+   "A double-entry ledger is built from three entities: Accounts, Entries (always paired), and Transactions that enforce pairing.",
+   "Entries start as pending and can be discarded or posted; discarding keeps history cleaner than reversal entries.",
+   "Use normal credit/debit balances on accounts instead of signed amounts on entries.",
+   "Sagas trade atomicity for availability, which fits Transactions that may partially fail and need compensating entries."
+  ],
+  "summary": "The author recounts how a stock trading startup skipped double-entry accounting and ended up with unexplained few-cent discrepancies that users noticed and support had to fix manually. The article then explains the conceptual model of a double-entry ledger: the difference between balance-as-property and a separate ledger data model, the Accounts/Entries/Transactions entities, entry statuses (pending, discarded, posted), normal balances instead of negative numbers, and how Sagas fit partial failures. It closes with a list of external references on ledger engineering and a request for reader interest in a future book.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Double-entry accounting",
+   "Saga pattern",
+   "Python (referenced)",
+   "Django Hordak (referenced)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7097,
+  "output": 855
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "d8512d5882b5f0f0",
+ "url": "https://brennan.io/2015/01/16/write-a-shell-in-c",
+ "final_url": "https://brennan.io/2015/01/16/write-a-shell-in-c/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Tutorial - Write a Shell in C - Stephen Brennan",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Shell",
+   "entry": "C: _Tutorial - Write a Shell in C_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Write a Shell in C"
+  }
+ ],
+ "summary": {
+  "title": "Tutorial - Write a Shell in C",
+  "one_liner": "You learn how to build a simple Unix shell in C, covering the read-parse-execute loop, dynamic line reading, tokenizing, fork/exec process launching, and built-in commands like cd and exit.",
+  "category": "systems programming",
+  "keywords": [
+   "write a shell in c",
+   "unix shell tutorial",
+   "build your own shell",
+   "lsh shell",
+   "fork and exec",
+   "execvp",
+   "waitpid",
+   "read line from stdin in c",
+   "strtok tokenizing",
+   "shell builtins cd exit",
+   "chdir why cd is builtin",
+   "function pointer array dispatch",
+   "getline vs manual buffer",
+   "read eval loop shell",
+   "process creation unix",
+   "c dynamic buffer realloc",
+   "posix man pages"
+  ],
+  "takeaways": [
+   "A shell runs a loop of read, parse, and execute; the lsh_loop structure is shown step by step.",
+   "Reading input in C needs a growable buffer with realloc, and getline() can replace it on modern Unix.",
+   "Tokenizing uses strtok on whitespace, with no quoting, escaping, piping, or redirection.",
+   "Programs are launched with fork() in the parent and execvp() in the child, with waitpid() in the parent.",
+   "Builtins such as cd and exit must run inside the shell process itself, because a child process cannot change its parent's directory."
+  ],
+  "summary": "The author walks through a minimal Unix shell called lsh written in C, following the program's lifetime from initialization through the command loop to termination. Each stage is shown with code: reading a line with a growing buffer (and an alternative using getline), splitting it into arguments with strtok, and launching programs using fork, execvp, and waitpid. It explains why cd, help, and exit are built into the shell with a table of names and function pointers. The article closes by listing omissions such as quoting, piping, redirection, and globbing, and points to man pages and POSIX as references.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Unix",
+   "POSIX",
+   "GCC"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8944,
+  "output": 827
+ },
+ "generated": "2026-10-29"
+}

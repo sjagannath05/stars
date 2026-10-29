@@ -1,0 +1,67 @@
+{
+ "id": "4d9ac8e886703327",
+ "url": "https://atlarge-research.com/pdfs/2022-systor-apis.pdf",
+ "final_url": "https://atlarge-research.com/pdfs/2022-systor-apis.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "Understanding Modern Storage APIs:  A systematic study of libaio, SPDK, and io_uring",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Syscalls and asynchronous I/O",
+   "entry": "Understanding Modern Storage APIs: A systematic study of libaio, SPDK, and io_uring - Measures io_uring's polling modes against libaio and SPDK, and shows the kernel poller needs its own core."
+  }
+ ],
+ "summary": {
+  "title": "Understanding Modern Storage APIs: A systematic study of libaio, SPDK, and io_uring",
+  "one_liner": "io_uring's kernel-polling mode can approach SPDK's NVMe performance, but only with roughly twice as many CPU cores as drives, and it collapses when cores are scarce.",
+  "category": "storage systems performance",
+  "keywords": [
+   "io_uring",
+   "libaio",
+   "spdk",
+   "linux asynchronous io",
+   "storage api comparison",
+   "io_uring kernel polling",
+   "sqpoll",
+   "hipri polling",
+   "iou+k",
+   "nvme performance",
+   "user-space nvme driver",
+   "polling vs interrupts",
+   "system calls per io",
+   "fio benchmark",
+   "cpu-to-drive ratio",
+   "io scalability multiple drives",
+   "what is io_uring",
+   "is io_uring as fast as spdk",
+   "linux storage stack",
+   "systor 2022 paper"
+  ],
+  "takeaways": [
+   "io_uring with kernel submission polling can reach within about 10% of SPDK's IOPS, since it removes system calls from the I/O path, but it needs about two cores per drive.",
+   "With too few cores, io_uring kernel polling degrades sharply: on one core it delivered about 13 KIOPS, and with 5 drives and no extra cores its throughput fell below half of libaio's.",
+   "Polling design matters more than the API alone: io_uring's completion polling (iou+p) matches SPDK only at low-to-medium throughput because system call overhead limits it at high queue depths.",
+   "SPDK gives the best performance in every configuration tested, but it lacks file system integration and kernel services such as access control, QoS and scheduling.",
+   "The authors recommend a hybrid, scale-aware choice of API and parameters based on core count and drive count, as their benchmark used fio on 20 Intel DC P3600 NVMe SSDs."
+  ],
+  "summary": "The paper is a systematic SYSTOR '22 study comparing Linux libaio, SPDK and io_uring on NVMe SSDs using fio with random 4KiB unbuffered reads. It tests io_uring in three modes: default interrupt-driven completion, completion polling (hipri), and a kernel submission-polling thread (sqthread_poll). Experiments vary queue depth, CPU cores per drive, and the number of drives up to 20 on a 20-core machine. The authors conclude with design guidelines for I/O-intensive applications, centred on the trade-offs of polling and core provisioning.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "io_uring",
+   "libaio",
+   "SPDK",
+   "Linux kernel",
+   "NVMe",
+   "fio",
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10815,
+  "output": 1029
+ },
+ "generated": "2026-10-29"
+}

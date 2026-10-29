@@ -1,0 +1,63 @@
+{
+ "id": "3c3090d2a9c5411f",
+ "url": "https://briancallahan.net/blog/20210818.html",
+ "final_url": "https://briancallahan.net/blog/20210818.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 5: A code generator"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 5: A code generator",
+  "one_liner": "You learn how to make a PL/0 compiler emit correct C code by hooking code generator functions into a recursive-descent parser, with a symbol table tracking constants, variables and procedures by scope depth.",
+  "category": "compiler construction",
+  "keywords": [
+   "compiler code generator",
+   "pl/0 compiler",
+   "pl/0 to c",
+   "c code generation",
+   "source-to-source compiler",
+   "recursive descent parser",
+   "symbol table",
+   "linked list symbol table",
+   "symbol table scope depth",
+   "duplicate symbol detection",
+   "semantic analysis",
+   "syntax versus semantics",
+   "lexer parser code generator pipeline",
+   "cg_ prefix functions",
+   "variadic output function aout",
+   "write a compiler in c",
+   "how to write a compiler tutorial",
+   "clang-format generated c",
+   "shadowing variables in compiler",
+   "procedure nesting in c"
+  ],
+  "takeaways": [
+   "Emit C code from the parser by calling code generator functions at points where the output is unambiguous, checking the current token before consuming it.",
+   "Use a singly linked symbol table that records name, kind (const, var, procedure) and depth, and removes local constants and variables when a procedure exits.",
+   "Keep the main procedure as a sentinel entry so procedure names cannot clash with C's main and the table is never empty.",
+   "Separate syntax checking (grammar) from semantic checking (declared, unique names), since a compiler must enforce both."
+  ],
+  "summary": "The post is part 5 of a series on writing a PL/0 compiler in C. It explains how to add a C-generating back end: the parser calls cg_ prefixed functions that print C code through a single aout() output function, with checks placed before each token is consumed. It walks through generating C for constant, variable and procedure declarations, including a generated main() and per-procedure epilogues. It then introduces a singly linked symbol table with addsymbol() and destroysymbols() to enforce declaration and duplicate-name rules, with statement code generation left for later parts.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "PL/0",
+   "clang-format",
+   "clang"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9871,
+  "output": 858
+ },
+ "generated": "2026-10-29"
+}

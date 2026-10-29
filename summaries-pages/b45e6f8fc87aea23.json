@@ -1,0 +1,66 @@
+{
+ "id": "b45e6f8fc87aea23",
+ "url": "https://llvm.org/docs/CommandGuide/llvm-mca.html",
+ "final_url": "https://llvm.org/docs/CommandGuide/llvm-mca.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "llvm-mca - LLVM Machine Code Analyzer#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Reading emitted code",
+   "entry": "llvm-mca - Predicts loop throughput and port pressure from the scheduling model, and states it models neither front end nor caches."
+  }
+ ],
+ "summary": {
+  "title": "llvm-mca - LLVM Machine Code Analyzer",
+  "one_liner": "llvm-mca statically estimates throughput (IPC, Block RThroughput) and per-resource pressure for assembly code on a CPU whose LLVM scheduling model exists, and shows how to read its reports and timeline view.",
+  "category": "cpu performance analysis",
+  "keywords": [
+   "llvm-mca",
+   "llvm machine code analyzer",
+   "static performance analysis",
+   "throughput estimation",
+   "ipc estimate",
+   "instructions per cycle",
+   "block rthroughput",
+   "resource pressure",
+   "scheduling model",
+   "timeline view",
+   "uops per cycle",
+   "dispatch width",
+   "llvm-mca markers",
+   "llvm-mca-begin llvm-mca-end",
+   "instrument regions",
+   "machine code throughput analyzer",
+   "assembly loop performance prediction",
+   "iaca alternative",
+   "port pressure analysis",
+   "how to analyze assembly performance"
+  ],
+  "takeaways": [
+   "llvm-mca takes assembly (piped from clang or read from a file) and simulates it over a loop of iterations (default 100) to estimate IPC and resource usage for a chosen -mcpu.",
+   "The first report section gives IPC, uOps per cycle, DispatchWidth and Block RThroughput; lower Block RThroughput is better.",
+   "The resource pressure view shows how cycles are spread across processor resource units; pressure concentrated on a few resources signals a bottleneck.",
+   "The timeline view (-timeline) shows each instruction's dispatch, execute, and retire states per cycle, plus average wait times.",
+   "Code regions can be selected with LLVM-MCA-BEGIN/LLVM-MCA-END comments, and LLVM-MCA-LATENCY can override instruction latencies, e.g. to model cache misses."
+  ],
+  "summary": "The page is the official LLVM command guide for llvm-mca, a tool that statically measures machine code performance using LLVM scheduling models for a specific CPU. It documents usage examples (piping clang assembly output), the full option list (mcpu, iterations, timeline, resource-pressure, bottleneck-analysis, json and more), and region markers for analyzing specific code blocks. It explains how the tool works and walks through a dot-product example report, covering the summary metrics, instruction info, resource pressure, and timeline view. The accuracy of its results depends on the quality of the backend scheduling models.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "LLVM",
+   "llvm-mca",
+   "clang",
+   "x86-64 assembly",
+   "AMD btver2",
+   "RISC-V"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10633,
+  "output": 1011
+ },
+ "generated": "2026-10-29"
+}

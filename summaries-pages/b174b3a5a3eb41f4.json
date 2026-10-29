@@ -1,0 +1,62 @@
+{
+ "id": "b174b3a5a3eb41f4",
+ "url": "https://www.pyimagesearch.com/2018/10/29/multi-object-tracking-with-dlib",
+ "final_url": "https://pyimagesearch.com/2018/10/29/multi-object-tracking-with-dlib/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Multi-object tracking with dlib - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Multiple Object Tracker"
+  }
+ ],
+ "summary": {
+  "title": "Multi-object tracking with dlib - PyImageSearch",
+  "one_liner": "You learn how to track multiple objects in video with dlib correlation trackers, first with a simple sequential script and then with a faster multiprocessing version that spreads trackers across CPU cores.",
+  "category": "object tracking",
+  "keywords": [
+   "dlib multi-object tracking",
+   "multiple object tracking python",
+   "dlib correlation tracker",
+   "multiprocessing object tracking",
+   "track multiple objects in video",
+   "mobilenet ssd person detection",
+   "opencv dnn caffe model",
+   "frames per second tracking speed",
+   "python multiprocessing queue tracker",
+   "people tracking in video",
+   "start_track update get_position dlib",
+   "parallel object tracking cpu cores",
+   "naive vs fast tracker",
+   "race.mp4 person tracking example",
+   "imutils fps counter",
+   "single object tracking dlib"
+  ],
+  "takeaways": [
+   "A naive dlib multi-object tracker keeps a list of correlation trackers and updates each one sequentially on a single core, reaching about 13.87 FPS in the author's run.",
+   "Detection with a MobileNet SSD Caffe model seeds one dlib tracker per detected 'person' bounding box, and trackers are updated on later frames.",
+   "Distributing trackers across processes with Python multiprocessing and Queue objects (producer/consumer) improves FPS throughput, which the author says is over 45%.",
+   "Dlib expects RGB frames while OpenCV reads BGR, so the frame is converted before tracking."
+  ],
+  "summary": "The article builds a multi-object tracker in Python using dlib correlation trackers, with detections from a MobileNet SSD Caffe model (filtered to the 'person' class) used to initialize the trackers. The first script updates trackers sequentially on one core and reports about 13.87 FPS on the example race video. The second script spawns one daemon process per tracker, passing frames and bounding boxes through input and output Queues, to use multiple cores and raise FPS. The author notes tracking accuracy is imperfect and lists improvements to consider.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "dlib",
+   "OpenCV",
+   "imutils",
+   "Caffe",
+   "MobileNet SSD",
+   "multiprocessing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9670,
+  "output": 905
+ },
+ "generated": "2026-10-29"
+}

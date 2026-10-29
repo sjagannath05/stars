@@ -1,0 +1,80 @@
+{
+ "id": "714503e29559fb92",
+ "url": "https://docs.python.org/3/library/concurrent.futures.html",
+ "final_url": "https://docs.python.org/3/library/concurrent.futures.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "concurrent.futures — Launching parallel tasks",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Asynchronous Programming",
+   "entry": "concurrent.futures - (Python standard library) High-level asynchronous execution of callables."
+  }
+ ],
+ "summary": {
+  "name": "concurrent.futures",
+  "one_liner": "Python standard library module providing a high-level interface for running callables asynchronously in thread, interpreter, or process pools.",
+  "category": "python standard library",
+  "keywords": [
+   "concurrent.futures",
+   "python concurrent futures",
+   "parallel tasks python",
+   "threadpoolexecutor",
+   "processpoolexecutor",
+   "interpreterpoolexecutor",
+   "executor",
+   "future object",
+   "submit callable",
+   "map executor",
+   "thread pool python",
+   "process pool python",
+   "multiprocessing pool",
+   "asynchronous execution python",
+   "parallel execution python",
+   "run tasks in parallel",
+   "multi-core parallelism",
+   "python background tasks",
+   "as_completed",
+   "wait futures",
+   "pep 3148",
+   "executor.submit",
+   "python threading alternative",
+   "gil bypass processes",
+   "subinterpreters pool",
+   "asyncio future comparison"
+  ],
+  "use_cases": [
+   "running I/O-bound tasks such as fetching URLs concurrently",
+   "parallelizing CPU-bound work across processes",
+   "running isolated tasks across multiple interpreters",
+   "copying or processing many files concurrently",
+   "collecting results of background jobs as they finish"
+  ],
+  "what_it_does": "[\"Provides an abstract Executor interface with submit() and map() for scheduling callables asynchronously.\", \"ThreadPoolExecutor runs calls in a pool of threads, with a default worker count based on CPU count.\", \"ProcessPoolExecutor runs calls in separate processes via multiprocessing, sidestepping the GIL but requiring picklable functions and arguments.\", \"InterpreterPoolExecutor (added in 3.14) runs each worker in its own isolated interpreter for multi-core parallelism, with data passed by pickling.\", \"Future objects offer result(), exception(), cancel(), done() and add_done_callback(); wait() and as_completed() help coordinate many futures.\"]",
+  "pricing": "open source",
+  "platforms": [
+   "Python",
+   "Windows",
+   "POSIX",
+   "WebAssembly (not available)",
+   "WASI (not available)"
+  ],
+  "notable": [
+   "Same Executor interface across thread, interpreter, and process pools",
+   "ProcessPoolExecutor on Windows limits max_workers to 61",
+   "Documented deadlock pitfalls when a future waits on another future in the same single-worker pool"
+  ],
+  "caveats": [
+   "Not available on WASI or WebAssembly platforms",
+   "ProcessPoolExecutor cannot be used from the interactive interpreter and requires picklable callables",
+   "ThreadPoolExecutor threads are joined before interpreter exit, so it is not recommended for long-running tasks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9747,
+  "output": 1023
+ },
+ "generated": "2026-10-29"
+}

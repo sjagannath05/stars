@@ -1,0 +1,66 @@
+{
+ "id": "04e799fbbfca0e31",
+ "url": "http://markuseliasson.se/article/bittorrent-in-python",
+ "final_url": "https://markuseliasson.se/article/bittorrent-in-python",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A BitTorrent client in Python 3.5 - Markus Eliasson",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own BitTorrent Client",
+   "entry": "Python: _A BitTorrent client in Python 3.5_"
+  }
+ ],
+ "summary": {
+  "title": "A BitTorrent client in Python 3.5",
+  "one_liner": "You learn how the BitTorrent protocol works (torrent parsing, tracker announces, peer handshakes, pieces and blocks) and how a small asyncio-based client implements it in Python 3.5.",
+  "category": "peer-to-peer networking",
+  "keywords": [
+   "bittorrent client python",
+   "bittorrent protocol explained",
+   "build bittorrent client",
+   "python asyncio tutorial",
+   "asyncio open_connection peer connection",
+   "bencoding decoder python",
+   "bencode format",
+   "torrent tracker announce request",
+   "compact peer list format",
+   "bittorrent handshake messages",
+   "choke unchoke interested messages",
+   "bittorrent pieces and blocks",
+   "peer id azureus style",
+   "info_hash sha1 torrent",
+   "aiohttp tracker request",
+   "pieces client source code",
+   "peer-to-peer file sharing implementation",
+   "python struct big-endian message parsing",
+   "bittorrent bitfield have message",
+   "unofficial bittorrent specification"
+  ],
+  "takeaways": [
+   "A .torrent file is bencoded metadata; the pieces.bencoding module shows how to decode and encode its four data types in Python.",
+   "A tracker returns a compact binary list of peers (4-byte IP plus 2-byte port) in response to an HTTP announce request containing info_hash, peer_id and transfer stats.",
+   "Peers exchange length-prefixed messages (Handshake, BitField, Interested, Unchoke, Request, Piece, Have, KeepAlive) over TCP, parsed with struct and an async iterator.",
+   "Pieces are subdivided into blocks of 2^14 bytes, which are the units actually requested between peers; the last piece and block may be smaller.",
+   "Using asyncio lets a client wait on tracker HTTP calls and many peer connections concurrently without blocking."
+  ],
+  "summary": "The article walks through the BitTorrent protocol and the implementation of \"Pieces\", an open-source (Apache 2) BitTorrent client built on Python 3.5's asyncio. It covers parsing .torrent metadata with a bencoding decoder, building tracker announce requests and reading the compact peer list, and coordinating peer connections with a work queue and an announce loop. It then explains the peer wire protocol (handshake, bitfield, choke/unchoke, interested, request/piece, have, keepalive), how messages are framed and decoded with struct, and how pieces are split into 16 KiB blocks. The author recommends the Unofficial BitTorrent Specification as the main reference.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Python 3.5",
+   "asyncio",
+   "aiohttp",
+   "BitTorrent protocol",
+   "bencoding",
+   "struct"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10061,
+  "output": 1053
+ },
+ "generated": "2026-10-29"
+}

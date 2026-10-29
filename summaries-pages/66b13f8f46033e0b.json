@@ -1,0 +1,62 @@
+{
+ "id": "66b13f8f46033e0b",
+ "url": "https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2530r3.pdf",
+ "final_url": "https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2530r3.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "Why Hazard Pointers Should be in C++26",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Lock-free structures and RCU",
+   "entry": "Hazard Pointers for C++26 - The standard-track form of safe reclamation, fixing when a retired node may be freed while a reader still holds it."
+  }
+ ],
+ "summary": {
+  "title": "Hazard Pointers for C++26 (P2530R3)",
+  "one_liner": "You learn the proposed C++26 hazard pointer interface and wording for safe deferred memory reclamation, with its rationale and usage examples.",
+  "category": "lock-free concurrency",
+  "keywords": [
+   "hazard pointers",
+   "hazard pointers c++26",
+   "p2530r3",
+   "safe memory reclamation",
+   "safe deferred reclamation",
+   "deferred reclamation",
+   "lock-free data structures",
+   "c++ concurrency proposal",
+   "wg21 paper",
+   "hazard_pointer_obj_base",
+   "make_hazard_pointer",
+   "protect atomic pointer",
+   "retire object reclamation",
+   "folly hazard pointers",
+   "concurrency ts 2 hazard pointers",
+   "how to free memory safely while readers use it",
+   "rcu alternative",
+   "hazard pointer iteration",
+   "aba-free reader protection"
+  ],
+  "takeaways": [
+   "A hazard pointer is a single-writer multi-reader pointer; readers protect objects by setting it, and retired objects are reclaimed only when no hazard pointer points to them.",
+   "The proposal is a subset of the Concurrency TS 2 interface, omitting custom domains and global/cohort-based synchronous reclamation.",
+   "The interface centers on hazard_pointer_obj_base::retire, make_hazard_pointer, and hazard_pointer::protect/try_protect/reset_protection.",
+   "The reference implementation is Facebook's Folly library, reported in production use since 2017, with typical hazard_pointer construction/destruction around 4 ns."
+  ],
+  "summary": "This WG21 paper proposes adding hazard pointers, a safe deferred reclamation technique, to the C++26 standard, based on the Facebook Folly implementation used in production since 2017. It explains the rationale for a reduced subset of the Concurrency TS 2 interface, what was left out (custom domains, synchronous cohort reclamation) and why, and ABI-stability guidance. It walks through the protection and deferred reclamation mechanism, with read-mostly data, iterator, and singly-linked list examples comparing code with and without hazard pointers. The final section gives the proposed standard wording for the hazard_pointer_obj_base, hazard_pointer classes and their member functions.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "C++26",
+   "Folly",
+   "std::atomic"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10399,
+  "output": 948
+ },
+ "generated": "2026-10-29"
+}

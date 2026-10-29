@@ -1,0 +1,70 @@
+{
+ "id": "1575bab8156d4235",
+ "url": "https://httptoolkit.tech/blog/http-wtf",
+ "final_url": "https://httptoolkit.com/blog/http-wtf/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "HTTPWTF",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "HTTP",
+   "entry": "HTTPWTF"
+  }
+ ],
+ "summary": {
+  "title": "HTTPWTF",
+  "one_liner": "A tour of HTTP's odd corners: misleading Cache-Control combinations, trailers, 1XX interim status codes, the misspelled Referer header, the magic UUID in WebSocket handshakes, CORS gaps for WebSockets, and the pitfalls of X- prefixed headers.",
+  "category": "web protocols",
+  "keywords": [
+   "http headers",
+   "cache-control no-cache",
+   "no-cache vs no-store",
+   "private cache directive",
+   "http trailers",
+   "chunked transfer encoding trailers",
+   "server-timing trailer",
+   "http 100 continue",
+   "expect 100-continue",
+   "http 101 switching protocols",
+   "websocket upgrade handshake",
+   "http 102 processing",
+   "http 103 early hints",
+   "link preload early hints",
+   "referer misspelling",
+   "sec-websocket-accept",
+   "websocket magic uuid",
+   "websocket cors",
+   "websocket origin check",
+   "x- prefixed headers",
+   "x-forwarded-for",
+   "x-frame-options",
+   "http/2 server push removal"
+  ],
+  "takeaways": [
+   "Cache-Control: no-cache allows storing but requires revalidation; use no-store to prevent caching of sensitive data.",
+   "HTTP trailers let servers send metadata after the body, but need TE: trailers and a Trailer header, and HTTP/1.1 needs chunked encoding.",
+   "1XX codes (100, 101, 102, 103) are interim responses for continuing, protocol switching, processing, and early link hints.",
+   "WebSockets ignore CORS, so servers must check the Origin header and/or use CSRF tokens.",
+   "Avoid X- prefixed custom headers that may later become standard; pick unique names instead."
+  ],
+  "summary": "The author walks through a set of HTTP features and quirks, explaining each with examples and short caveats. Topics include how Cache-Control no-cache, private, and no-store actually behave, HTTP trailers, the 1XX interim status codes (100, 101, 102, 103), the misspelled Referer header, the Sec-WebSocket-Accept handshake, WebSockets bypassing CORS, and the X- header convention. It is an opinionated, example-driven explainer rather than a formal spec, and it points to RFCs and related articles for further reading.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "HTTP",
+   "HTTP/1.1",
+   "HTTP/2",
+   "WebSocket",
+   "CORS",
+   "gRPC",
+   "jQuery"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6370,
+  "output": 961
+ },
+ "generated": "2026-10-29"
+}

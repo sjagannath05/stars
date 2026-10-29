@@ -1,0 +1,65 @@
+{
+ "id": "0d9f18a1b52f13d7",
+ "url": "https://docs.kernel.org/admin-guide/mm/numaperf.html",
+ "final_url": "https://docs.kernel.org/admin-guide/mm/numaperf.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "NUMA Memory Performance",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Topology and interconnects",
+   "entry": "NUMA Memory Performance - Explains the firmware-rated latency and bandwidth per initiator and target, and memory-side caches, that rank nodes."
+  }
+ ],
+ "summary": {
+  "title": "NUMA Memory Performance",
+  "one_liner": "Learn how Linux describes NUMA memory nodes by initiator-target access classes, rated bandwidth and latency in sysfs, and memory-side caches.",
+  "category": "operating systems memory",
+  "keywords": [
+   "numa",
+   "non-uniform memory access",
+   "numa locality",
+   "memory initiator",
+   "memory target",
+   "access class",
+   "access0 initiators",
+   "sysfs numa attributes",
+   "read_bandwidth",
+   "read_latency",
+   "write_bandwidth",
+   "write_latency",
+   "memory-side cache",
+   "near memory",
+   "far memory",
+   "hmat",
+   "heterogeneous memory attribute table",
+   "memory only node",
+   "cpu and memory locality",
+   "linux kernel numa performance",
+   "how to check numa latency and bandwidth",
+   "node memory cache index"
+  ],
+  "takeaways": [
+   "Memory is grouped into NUMA nodes; initiators (CPUs or I/O devices) access memory targets, and each pair is ranked into access classes, with class 0 as the highest performing.",
+   "Kernel sysfs exports rated read/write bandwidth (MiB/s) and latency (ns) under nodeY/access0/initiators/, with access class 1 covering CPU-only initiators.",
+   "Memory-side caches are transparent to software; the kernel exposes their size, line size, indexing and write policy under memory_side_cache/ when firmware such as ACPI HMAT provides the data.",
+   "Near memory is the fastest cache level and far memory is the last-level memory the system addresses, which is numbered differently from CPU L1/L2/L3 caches."
+  ],
+  "summary": "This kernel documentation page explains NUMA memory performance in Linux. It covers how heterogeneous memory is grouped into nodes, how initiator-target pairs are ranked into access classes, and how the kernel exports rated bandwidth and latency through sysfs. It also describes memory-side caches, near and far memory terminology, and the cache attributes available under memory_side_cache, with ACPI HMAT cited as one discovery source.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "sysfs",
+   "NUMA",
+   "ACPI HMAT"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3629,
+  "output": 870
+ },
+ "generated": "2026-10-29"
+}

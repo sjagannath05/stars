@@ -1,0 +1,63 @@
+{
+ "id": "8043983f340ec6f3",
+ "url": "https://arslan.io/2019/07/03/how-to-write-idempotent-bash-scripts",
+ "final_url": "https://arslan.io/2019/07/03/how-to-write-idempotent-bash-scripts/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to write idempotent Bash scripts",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Shell (command line)",
+   "entry": "How to write idempotent Bash scripts"
+  }
+ ],
+ "summary": {
+  "title": "How to write idempotent Bash scripts",
+  "one_liner": "You learn common Bash idioms (mkdir -p, ln -sfn, rm -f, grep guards, test flags, blkid and mountpoint checks) that make shell scripts safe to re-run after a partial failure.",
+  "category": "shell scripting",
+  "keywords": [
+   "idempotent bash script",
+   "idempotent shell script",
+   "bash idempotency",
+   "rerun bash script safely",
+   "resilient bash scripts",
+   "mkdir -p",
+   "ln -sfn symbolic link idempotent",
+   "rm -f ignore missing file",
+   "grep -qf check before appending",
+   "test -f file exists check",
+   "command -v check binary installed",
+   "blkid before mkfs",
+   "mountpoint -q check mounted",
+   "idempotency in distributed systems",
+   "at-least-once delivery idempotent operations",
+   "bash provisioning script"
+  ],
+  "takeaways": [
+   "Use mkdir -p, touch, and rm -f so repeated runs do not fail on existing directories or files.",
+   "Use ln -sfn (with -n for directories) so re-creating a symlink replaces the target instead of nesting inside it.",
+   "Guard appends to files like /etc/fstab with grep -qF, and guard file creation or binary installs with test flags or command -v.",
+   "Check for existing filesystems with blkid and existing mounts with mountpoint -q before formatting or mounting."
+  ],
+  "summary": "The author explains that an idempotent script can be run repeatedly with the same result, which matters after a mid-run failure and in distributed systems with duplicate messages. The post walks through Bash idioms for creating files and directories, symlinks, removing files, appending lines, checking for existing files or binaries with test flags, formatting devices with blkid, and mounting with mountpoint. Each section shows a command or guard pattern and explains the flag's effect. It ends by noting these tricks were used in the author's bootstrap.sh for provisioning a remote development machine.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Bash",
+   "Linux shell",
+   "ln",
+   "mkdir",
+   "grep",
+   "blkid",
+   "mount",
+   "mountpoint"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3560,
+  "output": 852
+ },
+ "generated": "2026-10-29"
+}

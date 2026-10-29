@@ -1,0 +1,76 @@
+{
+ "id": "d44b84a60e742e02",
+ "url": "https://tersesystems.com/blog/2020/01/22/developing-in-production",
+ "final_url": "https://tersesystems.com/blog/2020/01/22/developing-in-production/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Developing in Production",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Testing in production",
+   "entry": "Developing in Production"
+  }
+ ],
+ "summary": {
+  "title": "Developing in Production",
+  "one_liner": "Developers can build and debug individual services safely inside production using traffic replay, isolated \"playground\" sandboxes, and stubbed dependencies, rather than trying to replicate a complex production environment locally or in staging.",
+  "category": "distributed systems",
+  "keywords": [
+   "developing in production",
+   "testing in production",
+   "developer experience distributed systems",
+   "staging environment drawbacks",
+   "production playground sandbox",
+   "traffic shadowing",
+   "traffic replay",
+   "goreplay",
+   "shadowreader",
+   "envoy traffic mirroring",
+   "service virtualization",
+   "synthetic transactions",
+   "datastore virtualization",
+   "change data capture materialization",
+   "woods theorem complexity",
+   "emergent behavior at scale",
+   "feature flags deployment vs release",
+   "stub dependencies microservices",
+   "remote development workspace",
+   "canary rollout",
+   "end to end testing microservices",
+   "consumer driven contracts",
+   "environment drag operational cost",
+   "developing against production traffic"
+  ],
+  "takeaways": [
+   "Staging and local replicas of complex distributed systems tend to be out of date and fail to reproduce emergent, scale-dependent behavior.",
+   "Separate deployments (artifacts) from releases (feature flags), and roll out gradually from one server to all servers.",
+   "Give each developer an ephemeral, isolated playground in production fed by a 'garden hose' of mirrored traffic, with limited read access and no write access to the wider system.",
+   "Handle dependencies with service virtualization, stubs, synthetic transactions, or datastore virtualization/materialization, and test one service at a time rather than end-to-end.",
+   "This approach only makes sense once you already have strong CI/CD, feature flags, observability and chaos engineering practices."
+  ],
+  "summary": "Will Sargent's essay argues that complex distributed systems exhibit emergent behavior that smaller staging or laptop replicas cannot reproduce, and that maintaining duplicate environments is costly and drifts out of date. He describes a testing-in-production workflow: feature flags, staged rollouts, and rollback, followed by a per-developer 'playground' service in production that receives replayed production traffic. The post surveys tools and patterns for this, including Goreplay, ShadowReader, Envoy traffic mirroring, and approaches for handling state and external dependencies. It also proposes a remote Linux workspace for developers, with the caveat that the model requires a mature operational setup.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "AWS",
+   "Kubernetes",
+   "Terraform",
+   "Envoy",
+   "Goreplay",
+   "Lambda",
+   "IntelliJ IDEA",
+   "gRPC",
+   "Protocol Buffers",
+   "Lagom",
+   "Telepresence",
+   "Docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8239,
+  "output": 1046
+ },
+ "generated": "2026-10-29"
+}

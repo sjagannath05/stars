@@ -1,0 +1,61 @@
+{
+ "id": "bc8dade4da7b06c0",
+ "url": "https://nickdrane.com/build-your-own-regex",
+ "final_url": "https://nickdrane.com/build-your-own-regex/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Nick Drane",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Regex Engine",
+   "entry": "JavaScript: _Build a Regex Engine in Less than 40 Lines of Code_"
+  }
+ ],
+ "summary": {
+  "title": "Build a Regex Engine in Less than 40 Lines of Code",
+  "one_liner": "You learn how a small recursive regex engine supporting literal characters, ., ^, $, ?, and * can be built in JavaScript in under 40 lines.",
+  "category": "regex engine implementation",
+  "keywords": [
+   "regex engine",
+   "build regex engine",
+   "regular expression implementation",
+   "javascript regex from scratch",
+   "recursive pattern matching",
+   "matchone function",
+   "match function recursion",
+   "regex question mark operator",
+   "regex star operator",
+   "anchor ^ and $ matching",
+   "wildcard dot matching",
+   "rob pike regex in c",
+   "peter norvig regex trick",
+   "search with pattern prepended .*",
+   "how do regular expressions work",
+   "minimal regex implementation",
+   "fuzz testing regex engine",
+   "javascript regex tutorial"
+  ],
+  "takeaways": [
+   "Matching a single character reduces to a function that handles empty pattern, empty text, the wildcard '.', and literal equality.",
+   "Recursion over pattern and text slices handles same-length matching, with '$' and '^' added as extra base cases or an entry point.",
+   "The '?' and '*' operators are implemented by checking pattern[1] and combining 'matched once and rest matches' with 'zero matches and rest matches' using boolean OR.",
+   "Unanchored search can be done by prepending '.*' to the pattern and calling match, a trick credited to Peter Norvig.",
+   "The author notes a small bug in the search function when the text is an empty string, which is left unfixed in a footnote."
+  ],
+  "summary": "The author, Nick Drane, adapts Rob Pike's C regex engine into JavaScript and builds it step by step with test specs in a companion GitHub repository. The tutorial starts with matchOne for single characters, then extends to same-length recursive matching, the $ and ^ anchors, and the ? and * quantifiers, each via a small helper function. It finishes by simplifying the search entry point using a prepended .* pattern and notes a known edge case with empty text.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "C",
+   "Node.js"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4745,
+  "output": 856
+ },
+ "generated": "2026-10-29"
+}

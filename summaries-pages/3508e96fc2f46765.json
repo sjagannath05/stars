@@ -1,0 +1,69 @@
+{
+ "id": "3508e96fc2f46765",
+ "url": "http://www.slideshare.net/justindorfman/stability-patterns-presentation",
+ "final_url": "https://www.slideshare.net/slideshow/stability-patterns-presentation/13497628",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Stability patterns presentation",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Reliability",
+   "entry": "I already mentioned the book Release it! above. There's also a presentation from the author."
+  }
+ ],
+ "summary": {
+  "title": "Stability patterns presentation",
+  "one_liner": "Learn the common stability antipatterns that bring systems down (integration points, blocked threads, cascading failures, self-denial attacks) and the patterns that contain them (circuit breakers, bulkheads, timeouts, test harnesses).",
+  "category": "system reliability",
+  "keywords": [
+   "stability patterns",
+   "stability antipatterns",
+   "circuit breaker pattern",
+   "bulkhead pattern",
+   "cascading failure",
+   "chain reaction failure",
+   "integration points failure",
+   "blocked threads",
+   "attacks of self-denial",
+   "unbalanced capacities",
+   "sla inversion",
+   "unbounded result sets",
+   "test harness for out-of-spec failures",
+   "use timeouts pattern",
+   "fail fast",
+   "decoupling middleware",
+   "release it book companion",
+   "michael nygard presentation",
+   "how to stop cascading failures",
+   "how to prevent system outages from remote calls",
+   "retry loop anti-pattern"
+  ],
+  "takeaways": [
+   "Every out-of-process call, including database calls, is an integration point that can eventually take the system down.",
+   "Retry loops against failing remote calls waste threads and multiply load; a circuit breaker (closed, open, half-open states) stops calls after repeated failures.",
+   "Bulkheads partition shared resources so one failing dependency does not drain capacity for everything else.",
+   "A test harness that simulates out-of-spec failures (hung connections, slow byte-by-byte reads, garbage data) exposes problems that normal integration tests miss.",
+   "Use timeouts, put limits on result sets and APIs, and monitor dependencies so SLAs and availability are measured by feature."
+  ],
+  "summary": "This is a slide deck (48 slides) by Michael Nygard, based on his book Release It!, covering stability antipatterns and patterns for software systems. It walks through antipatterns such as integration points, blocked threads, chain reaction and cascading failures, self-denial attacks, unbalanced capacities, SLA inversion, and unbounded result sets. It then presents patterns including circuit breaker, bulkheads, test harness, timeouts, decoupling middleware, and handshaking, with a \"remember this\" summary on most sections. The page text is slide text only, so examples and code snippets are shown but without full narration.",
+  "format": "talk",
+  "level": "intermediate",
+  "technologies": [
+   "Java",
+   "C#",
+   "HTTP",
+   "XML",
+   "TCP",
+   "SQL",
+   "ORM",
+   "SOA"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5660,
+  "output": 951
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,68 @@
+{
+ "id": "ae90c194226dac4d",
+ "url": "https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TM-548.pdf",
+ "final_url": "https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TM-548.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "cilk.dvi",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Thread pools and work stealing",
+   "entry": "Cilk: An Efficient Multithreaded Runtime System - Defines work and critical path, proves the work-stealing bound, and shows they alone predict a runtime's speedup."
+  }
+ ],
+ "summary": {
+  "title": "Cilk: An Efficient Multithreaded Runtime System",
+  "one_liner": "Learn how Cilk's work-stealing scheduler works and how the \"work\" and \"critical-path length\" of a multithreaded program predict its runtime.",
+  "category": "multithreaded runtime systems",
+  "keywords": [
+   "cilk",
+   "work stealing",
+   "work stealing scheduler",
+   "critical path length",
+   "work and span",
+   "multithreaded runtime system",
+   "fully strict programs",
+   "explicit continuation passing",
+   "spawn and send_argument",
+   "thread pool scheduling",
+   "randomized work stealing",
+   "parallel speedup prediction",
+   "closure data structure",
+   "ready pool",
+   "fib example cilk",
+   "c-based parallel programming",
+   "mit lcs 1995 paper",
+   "dynamic tree-like parallel computation",
+   "provably efficient scheduler",
+   "load balancing on the fly"
+  ],
+  "takeaways": [
+   "A Cilk computation is a dag of nonblocking threads; work T1 is the one-processor time and critical-path length T-infinity is the infinite-processor time.",
+   "Execution time with P processors is bounded below by T1/P and by T-infinity, and the work-stealing scheduler gets close to the sum of these bounds.",
+   "Thieves choose victims uniformly at random and steal the shallowest ready thread, which the paper proves keeps critical-path threads progressing.",
+   "Programs are written in explicit continuation-passing style: threads spawn children and successors and send values through continuations, so the C runtime stack stays simple.",
+   "The authors report that Cilk application performance, such as fib, queens, pfold and ray, is modeled accurately by work and critical-path length, and that fully strict programs get space, time and communication bounds within a constant factor of optimal."
+  ],
+  "summary": "The paper presents Cilk, a C-based multithreaded runtime whose work-stealing scheduler runs on the CM5, Paragon, Sparcstation SMP and Cilk-NOW. It explains the programming model (nonblocking threads, spawn, spawn next, send_argument, closures and continuations) and the scheduler's ready pools and random victim selection. Empirical sections test applications such as fib, queens, pfold and ray. The authors argue that work and critical-path length model performance accurately and prove space, time and communication bounds for fully strict programs.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Cilk",
+   "C",
+   "cilk2c preprocessor",
+   "Strata active-message library",
+   "Connection Machine CM5",
+   "Intel Paragon",
+   "Sun Sparcstation SMP",
+   "Cilk-NOW"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9550,
+  "output": 1004
+ },
+ "generated": "2026-10-29"
+}

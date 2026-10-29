@@ -1,0 +1,61 @@
+{
+ "id": "880ef087ab27e795",
+ "url": "http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector",
+ "final_url": "https://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Baby’s First Garbage Collector",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Programming Language",
+   "entry": "C: _Baby's First Garbage Collector_"
+  }
+ ],
+ "summary": {
+  "title": "Baby's First Garbage Collector",
+  "one_liner": "You learn how a basic mark-and-sweep garbage collector works and how to write one in about a hundred lines of C for a toy VM with int and pair objects.",
+  "category": "garbage collection",
+  "keywords": [
+   "garbage collection",
+   "mark and sweep",
+   "mark-sweep garbage collector",
+   "garbage collector in c",
+   "reachability graph",
+   "tagged union in c",
+   "virtual machine stack",
+   "object graph traversal",
+   "cycle handling in gc",
+   "linked list of allocated objects",
+   "gc threshold",
+   "heap growth after collection",
+   "how does garbage collection work",
+   "implement a garbage collector",
+   "john mccarthy mark-sweep",
+   "language implementation tutorial",
+   "stack-based vs register-based vm",
+   "memory reclamation",
+   "manual memory management alternative",
+   "build your own programming language"
+  ],
+  "takeaways": [
+   "An object is in use if a variable in scope references it, or an in-use object references it; everything else is garbage.",
+   "Mark-sweep works in two phases: mark all reachable objects from the VM stack roots, then walk a list of all allocations and free unmarked ones.",
+   "Marking must check for already-marked objects so cyclic pair references do not recurse forever.",
+   "The VM keeps its own linked list of every allocation so it can still find and free objects the program can no longer reach.",
+   "Triggering GC after a count of allocations, then setting the next threshold to twice the live object count, is a simple heuristic."
+  ],
+  "summary": "The author walks through building a mark-and-sweep garbage collector for a small dynamically typed language with ints and pairs, implemented in plain C. It starts with the reachability definition of garbage, then builds a tagged-union object type, a VM with an explicit stack, and the mark phase (with cycle protection). The sweep phase uses a linked list of all allocations to free unmarked objects. The post finishes with a simple allocation-count trigger and a heap threshold that doubles after each collection.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6119,
+  "output": 820
+ },
+ "generated": "2026-10-29"
+}

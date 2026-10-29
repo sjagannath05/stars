@@ -1,0 +1,66 @@
+{
+ "id": "cf4c3a395f4383bb",
+ "url": "https://www.uninformativ.de/blog/postings/2018-02-24/0/POSTING-en.html",
+ "final_url": "https://movq.de/blog/postings/2018-02-24/0/POSTING-en.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The very basics of a terminal emulator",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C: _The very basics of a terminal emulator_"
+  }
+ ],
+ "summary": {
+  "title": "The very basics of a terminal emulator",
+  "one_liner": "A terminal emulator is mostly a bridge between X11 key/window events and a pseudoterminal master device, with the real work of escape-sequence handling left to the emulator.",
+  "category": "terminal emulators",
+  "keywords": [
+   "terminal emulator",
+   "pseudoterminal",
+   "pty",
+   "pseudoterminal master slave",
+   "posix_openpt",
+   "grantpt",
+   "unlockpt",
+   "openpty",
+   "tiocsctty controlling terminal",
+   "setsid process group",
+   "escape sequences",
+   "vt100",
+   "xterm 256 colors",
+   "x11 key events to bytes",
+   "xlookupstring",
+   "ansi escape codes",
+   "how do terminal emulators work",
+   "build a terminal emulator",
+   "st suckless terminal",
+   "curses",
+   "cooked mode echo"
+  ],
+  "takeaways": [
+   "A pseudoterminal is created with posix_openpt, grantpt and unlockpt (or openpty on BSD), giving a master and slave file descriptor.",
+   "The child shell is forked, calls setsid and TIOCSCTTY, and has the slave dup'ed onto stdin, stdout and stderr so the kernel handles signals like ^C.",
+   "The emulator converts X11 key events into bytes written to the master, and displays bytes read from the master.",
+   "The pseudoterminal driver handles signals and terminal modes, but not escape sequences, so the emulator must interpret sequences such as colors, cursor keys, UTF-8 and line wrapping."
+  ],
+  "summary": "The author walks through writing a minimal Linux terminal emulator in C, starting from the pts/pseudoterminal concept seen in the output of the w command. It covers creating a master/slave pair with posix_openpt, grantpt and unlockpt, forking a shell with setsid, TIOCSCTTY and dup2, and explains process groups and sessions with ps examples. It then explains how the kernel pty driver handles signals and echo, while the emulator must still interpret escape sequences, cursor keys, newlines, wrapping and UTF-8. The post ends by advising readers to study st rather than write a full emulator, and notes reader-reported errors with fixes via openpty.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Linux",
+   "X11",
+   "POSIX pseudoterminals",
+   "bash",
+   "sh"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5034,
+  "output": 926
+ },
+ "generated": "2026-10-29"
+}

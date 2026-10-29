@@ -1,0 +1,60 @@
+{
+ "id": "4e11579eca09c966",
+ "url": "https://docs.kernel.org/scheduler/sched-eevdf.html",
+ "final_url": "https://docs.kernel.org/scheduler/sched-eevdf.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "EEVDF Scheduler",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scheduling, affinity and isolation",
+   "entry": "EEVDF Scheduler - Defines lag and virtual deadline, which the default class schedules by, and the slice request in sched_setattr."
+  }
+ ],
+ "summary": {
+  "title": "EEVDF Scheduler",
+  "one_liner": "EEVDF picks the runnable task with the earliest virtual deadline among those with non-negative lag, which favors short-slice, latency-sensitive tasks in the Linux scheduler.",
+  "category": "linux kernel scheduling",
+  "keywords": [
+   "eevdf",
+   "earliest eligible virtual deadline first",
+   "linux scheduler",
+   "linux kernel eevdf",
+   "cfs replacement",
+   "completely fair scheduler",
+   "virtual deadline",
+   "lag value scheduler",
+   "virtual run time",
+   "deferred dequeue",
+   "sched_setattr",
+   "time slice request",
+   "fair cpu time distribution",
+   "task preemption virtual deadline",
+   "linux 6.6 scheduler",
+   "peter zijlstra scheduler",
+   "latency-sensitive task scheduling"
+  ],
+  "takeaways": [
+   "EEVDF gives CPU time fairly among runnable tasks of equal priority by tracking lag per task.",
+   "Tasks with lag at or above zero are eligible, and the one with the earliest virtual deadline runs next.",
+   "Short time slices get prioritized, which improves responsiveness of latency-sensitive tasks.",
+   "Sleeping tasks stay queued with deferred dequeue, and their negative lag decays over virtual run time so sleeping cannot be used to reset lag.",
+   "Linux began moving to EEVDF in version 6.6, replacing CFS as the default class, and tasks can request slices via sched_setattr()."
+  ],
+  "summary": "This kernel documentation page describes the Earliest Eligible Virtual Deadline First (EEVDF) scheduler, introduced in a 1995 publication and adopted by Linux starting in version 6.6 in place of CFS. It explains the core algorithm: each task gets a virtual run time and a lag value, eligible tasks (lag at or above zero) are chosen by earliest virtual deadline, and tasks may preempt others with earlier deadlines. It also covers how lag decays for sleeping tasks via deferred dequeue, and how tasks can request time slices through sched_setattr(). The page is a short conceptual reference with a link to the LKML discussion.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "C",
+   "sched_setattr system call"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1994,
+  "output": 904
+ },
+ "generated": "2026-10-29"
+}

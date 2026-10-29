@@ -1,0 +1,63 @@
+{
+ "id": "b7065a81baa49b74",
+ "url": "https://nbaksalyar.github.io/2015/11/09/rust-in-detail-2.html",
+ "final_url": "https://nbaksalyar.github.io/2015/11/09/rust-in-detail-2.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Rust in Detail, Part 2",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Rust:",
+   "entry": "Part 2: Sending and Receiving Messages"
+  }
+ ],
+ "summary": {
+  "title": "Rust in Detail, Part 2",
+  "one_liner": "You learn how WebSocket frames are laid out and how to unpack their header bits, payload length and mask in Rust using bit masking and the byteorder crate.",
+  "category": "rust websocket programming",
+  "keywords": [
+   "rust websocket",
+   "websocket frame header",
+   "websocket frame parsing",
+   "bit masking rust",
+   "bitwise and shift operators",
+   "opcode enum rust",
+   "network byte order",
+   "big-endian vs little-endian",
+   "byteorder crate",
+   "read_u16 bigendian",
+   "websocket payload length 126 127",
+   "websocket masking key",
+   "rust try! macro",
+   "rust if let",
+   "rust adt enums state",
+   "chat service tutorial",
+   "rust io read trait generics",
+   "rust borrow checker self state",
+   "endianness explained",
+   "rust websocket tutorial part 2"
+  ],
+  "takeaways": [
+   "A WebSocket frame starts with a 2-byte header holding fin, rsv bits, opcode, mask flag and a 7-bit payload length.",
+   "Bit masks combined with & and >> extract individual header fields from the raw bytes.",
+   "Network data is big-endian, so the byteorder crate is used to read u16 and u64 lengths correctly.",
+   "Rust enums can carry state (such as parser state), and if let and ref control how that state is borrowed.",
+   "Payload lengths of 126 and 127 signal that the real length follows in 2 or 8 bytes."
+  ],
+  "summary": "This article continues a series building a real-time chat service in Rust. It explains the WebSocket data frame format (fin, rsv bits, opcode, mask and payload length) and the endianness concepts needed to decode it. It then refactors the client state machine so the HTTP parser lives inside an enum, and splits code into a frame.rs module. The core of the piece walks through parsing the header with bit masks, reading extended payload lengths, applying the masking key, and reading the payload with Rust's Read trait and try! macro.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "WebSocket",
+   "byteorder crate"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10596,
+  "output": 839
+ },
+ "generated": "2026-10-29"
+}

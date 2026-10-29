@@ -1,0 +1,64 @@
+{
+ "id": "60c87bbae19ee203",
+ "url": "https://samwho.dev/memory-allocation",
+ "final_url": "https://samwho.dev/memory-allocation",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Memory Allocation",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Low-level, assembly",
+   "entry": "Memory Allocation (an interactive article)"
+  }
+ ],
+ "summary": {
+  "title": "Memory Allocation",
+  "one_liner": "A visual, interactive walkthrough of how memory allocators handle malloc and free, from simple free lists to fragmentation, slab allocators and boundary-tag bookkeeping.",
+  "category": "low-level memory management",
+  "keywords": [
+   "memory allocation",
+   "memory allocator",
+   "malloc",
+   "free",
+   "malloc and free in c",
+   "free list",
+   "allocation list",
+   "coalescing",
+   "fragmentation",
+   "external fragmentation",
+   "internal fragmentation",
+   "over-allocation",
+   "slab allocator",
+   "boundary tag allocator",
+   "in-line bookkeeping",
+   "malloc(0) behaviour",
+   "buffer overrun",
+   "use after free",
+   "how does malloc work",
+   "how does memory allocation work",
+   "simple memory allocator implementation",
+   "allocator playground"
+  ],
+  "takeaways": [
+   "A simple allocator can track free and allocated blocks in lists; malloc searches the free list and free returns blocks to it.",
+   "Fragmentation happens when free memory is split into small pieces that cannot satisfy a larger request; coalescing adjacent free blocks helps.",
+   "Over-allocating or segmenting memory by size class (slab allocators) reduces fragmentation but costs wasted space.",
+   "Boundary tag allocators store size and state bookkeeping in-line next to each block so adjacent free blocks can be merged quickly.",
+   "Allocators rely on program correctness; magic values can help detect buffer overruns and use-after-free bugs, usually enabled only when debugging."
+  ],
+  "summary": "The article uses small visualisations to explain what a memory allocator does when a program calls malloc and free. It starts with a trivial bump-style allocator, then builds a general-purpose free-list allocator and shows how coalescing adjacent free blocks reduces fragmentation. It then covers over-allocation and size-segregated slab allocators as trade-offs, the malloc(0) edge case, and in-line bookkeeping (boundary tags) that allows coalescing. Examples are in JavaScript, with one short C snippet, and it links to an interactive playground for writing your own allocator.",
+  "format": "article",
+  "level": "beginner",
+  "technologies": [
+   "C",
+   "JavaScript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4278,
+  "output": 869
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,74 @@
+{
+ "id": "5cfc9d13ed7cd94a",
+ "url": "https://norasandler.com/2017/11/29/Write-a-Compiler.html",
+ "final_url": "https://norasandler.com/2017/11/29/Write-a-Compiler.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a C Compiler, Part 1",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Programming Language",
+   "entry": "OCaml: _Writing a C Compiler_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 1: Integers, Lexing and Code Generation"
+  }
+ ],
+ "summary": {
+  "title": "Writing a C Compiler, Part 1",
+  "one_liner": "You learn how to build the first stage of a C compiler by lexing, parsing into an AST, and generating x86 assembly for a program that returns an integer.",
+  "category": "compiler construction",
+  "keywords": [
+   "write a c compiler",
+   "c compiler tutorial",
+   "build a compiler",
+   "lexer tutorial",
+   "lexing",
+   "tokenizer",
+   "recursive descent parser",
+   "recursive descent parsing",
+   "abstract syntax tree",
+   "ast",
+   "bnf grammar",
+   "x86 assembly code generation",
+   "at&t assembly",
+   "gcc -s assembly output",
+   "return an integer from main",
+   "ghuloum incremental compiler approach",
+   "nqcc",
+   "compiler stages lexing parsing codegen",
+   "32-bit vs 64-bit assembly",
+   "compiler testing script",
+   "assembler and linker explained",
+   "c compiler in ocaml"
+  ],
+  "takeaways": [
+   "A compiler can be split into lexing, parsing into an AST, and code generation, each a small testable step.",
+   "Recursive descent parsing turns a token list into an AST by writing one function per grammar non-terminal.",
+   "A minimal program returning a constant compiles to a few x86 instructions: movl into %eax, then ret.",
+   "Using a language with sum types and pattern matching (OCaml, Haskell, Rust) makes AST handling easier.",
+   "The series targets 32-bit x86 (following Ghuloum's paper); 64-bit adaptation is left to the reader for now."
+  ],
+  "summary": "This is the first part of a series on writing a C compiler, adapted from Abdulaziz Ghuloum's incremental compiler paper. It covers the reasons to build a compiler, language and parser choices, and a week-one target: compiling a C program that returns a single decimal integer. The post walks through lexing (with token regexes), defining AST nodes and a BNF grammar, recursive descent parsing, and emitting AT&T x86 assembly, with gcc output used as a reference. It ends with a driver that invokes gcc -m32 and a reference to a test script; the author notes the series uses 32-bit output and that 64-bit examples were planned.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "x86 assembly",
+   "OCaml",
+   "Python",
+   "GCC",
+   "Haskell",
+   "Rust"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8982,
+  "output": 923
+ },
+ "generated": "2026-10-29"
+}

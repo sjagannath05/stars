@@ -1,0 +1,75 @@
+{
+ "id": "19fad77753db0b16",
+ "url": "https://keydrift.dev",
+ "final_url": "https://keydrift.dev",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "KeyDrift — find API keys leaking in your client bundle",
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "KeyDrift - Scans deployed HTML and JavaScript for exposed secrets while recognizing public browser credentials that should not be treated as leaks."
+  }
+ ],
+ "summary": {
+  "name": "KeyDrift",
+  "one_liner": "KeyDrift scans a deployed site's client-side JavaScript bundles for API keys and secrets (such as Supabase service_role, Stripe, OpenAI and AWS keys) that were accidentally shipped to browsers.",
+  "category": "api key leak scanner",
+  "keywords": [
+   "api key leak scanner",
+   "client bundle secret scanner",
+   "exposed api keys javascript",
+   "find leaked secrets in bundle",
+   "supabase service_role key detector",
+   "next_public env variable leak",
+   "vite_ env secret exposure",
+   "deployed javascript secret scan",
+   "stripe secret key in frontend",
+   "openai key in browser",
+   "aws key exposed client side",
+   "secret scanning web app",
+   "keydrift",
+   "public credential allowlist",
+   "publishable key false positive",
+   "anon key ignored",
+   "vercel netlify secret leak",
+   "lovable bolt cursor security",
+   "ai coding tool security",
+   "check what my app ships",
+   "browser javascript secret finder",
+   "repository scanner alternative",
+   "monitor deployed app secrets",
+   "devtools search for sk_ or eyj",
+   "secret detection bundle scan"
+  ],
+  "use_cases": [
+   "Check a deployed Next.js or Vite app for secret keys shipped in its JavaScript",
+   "Find a Supabase service_role key exposed to browsers",
+   "Verify that NEXT_PUBLIC_ or VITE_ variables do not leak private credentials",
+   "Audit an app built with Lovable, Bolt, Cursor, Replit or v0 for client-side keys",
+   "Set up continuous monitoring of client bundle secrets after each deploy"
+  ],
+  "what_it_does": "KeyDrift fetches the JavaScript a deployed app actually serves, rather than reading the source repository, and checks it for exposed secrets. It has 21 secret detectors and recognises three public credential formats (such as the Supabase anon key and publishable Stripe key) so they are not reported as leaks. Findings carry a masked prefix and fingerprint rather than the full key, and the page states live keys are never stored. The free tier runs a public scan with no account; paid Indie and Team plans add scheduled monitoring with email, Slack or webhook alerts. The page also lists fix guides for several AI app builders.",
+  "pricing": "freemium",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Scans deployed client-side JavaScript bundles rather than the repository, catching keys inlined by NEXT_PUBLIC_ or VITE_ at build time",
+   "Deliberately ignores public keys such as the Supabase anon key and Stripe publishable key, and uses that to flag a JWT as a service_role key",
+   "Stores no live keys; findings are masked and fingerprinted"
+  ],
+  "caveats": [
+   "Paid plans (Indie $29/month, Team $89/month, Growth from $249/month) are needed for continuous monitoring; the free tier is limited to 1 project, daily scans and 40 chunks per scan",
+   "Scans are reported as incomplete when the scanner cannot read all script files referenced by the page",
+   "Page lists 21 detectors and specific key formats; coverage beyond these is not described"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4918,
+  "output": 1196
+ },
+ "generated": "2026-10-29"
+}

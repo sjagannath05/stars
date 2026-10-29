@@ -1,0 +1,63 @@
+{
+ "id": "d435c030487c2a49",
+ "url": "https://docs.kernel.org/admin-guide/sysctl/kernel.html",
+ "final_url": "https://docs.kernel.org/admin-guide/sysctl/kernel.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Documentation for /proc/sys/kernel/",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Migration, balancing and measured effects",
+   "entry": "sysctl kernel numa_balancing - Defines the hinting-fault sampling behind automatic balancing and tiering, and warns the overhead may not pay off."
+  }
+ ],
+ "summary": {
+  "title": "Documentation for /proc/sys/kernel/",
+  "one_liner": "A reference for the Linux kernel's /proc/sys/kernel sysctl knobs, including what numa_balancing, core_pattern, panic and hung-task settings do and their allowed values.",
+  "category": "linux kernel administration",
+  "keywords": [
+   "proc sys kernel",
+   "sysctl kernel",
+   "linux sysctl reference",
+   "numa_balancing",
+   "automatic numa balancing",
+   "numa memory balancing",
+   "memory tiering sysctl",
+   "page fault based numa balancing",
+   "core_pattern",
+   "core dump filename pattern",
+   "panic sysctl",
+   "kernel panic reboot timeout",
+   "hung_task_timeout_secs",
+   "hung task detector",
+   "nmi_watchdog hard lockup detector",
+   "dmesg_restrict",
+   "kptr_restrict",
+   "io_uring_disabled",
+   "modprobe path sysctl",
+   "linux kernel tuning documentation"
+  ],
+  "takeaways": [
+   "numa_balancing is a bitmask: 0 disables it, 1 enables normal NUMA balancing, 2 enables memory tiering, and it works by unmapping pages and trapping page faults to sample accesses.",
+   "The page notes that the unmapping and fault overhead is not guaranteed to be offset by better locality, and that workloads already bound to NUMA nodes should disable it.",
+   "core_pattern supports format specifiers like %p, %e, %t and %h, and a leading '|' pipes core dumps to a user-space program.",
+   "Many kernel sysctls (dmesg_restrict, kptr_restrict, io_uring_disabled, hung_task_*) control security or detection behaviour and have documented default values."
+  ],
+  "summary": "This is the official kernel.org reference page for the sysctl files under /proc/sys/kernel. It describes each knob in alphabetical order, giving its purpose, accepted values and defaults, with tables for multi-value settings. The numa_balancing entry explains the page-fault-based sampling used for NUMA and memory tiering balancing and warns that the overhead is not universally repaid. The page is reference material rather than a tutorial, and the excerpt provided ends partway through the panic entry.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "sysctl",
+   "NUMA",
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10517,
+  "output": 916
+ },
+ "generated": "2026-10-29"
+}

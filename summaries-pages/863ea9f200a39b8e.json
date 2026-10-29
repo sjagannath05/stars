@@ -1,0 +1,63 @@
+{
+ "id": "863ea9f200a39b8e",
+ "url": "https://www.pyimagesearch.com/2018/10/22/object-tracking-with-dlib",
+ "final_url": "https://pyimagesearch.com/2018/10/22/object-tracking-with-dlib/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Object tracking with dlib - PyImageSearch",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Single Object Tracker"
+  }
+ ],
+ "summary": {
+  "title": "Object tracking with dlib",
+  "one_liner": "You learn how to run dlib's correlation tracker in Python and OpenCV so that a Caffe MobileNet SSD detector seeds one detection and the tracker follows the object across video frames without re-running the detector.",
+  "category": "computer vision object tracking",
+  "keywords": [
+   "dlib correlation tracker",
+   "object tracking dlib",
+   "python object tracking tutorial",
+   "single object tracking",
+   "correlation filter tracking",
+   "mosse tracker",
+   "scale pyramid tracking",
+   "track object in video python",
+   "opencv video tracking",
+   "mobilenet ssd detection",
+   "caffe model object detector",
+   "real-time object tracking",
+   "centroid tracking comparison",
+   "tracker losing object drawbacks",
+   "detect once then track video",
+   "dlib correlation_tracker start_track update get_position"
+  ],
+  "takeaways": [
+   "dlib's correlation tracker follows an object from a bounding box seeded by a detector, so the expensive detector need not run on every frame.",
+   "The tracker is based on Danelljan et al. (2014) scale estimation, which builds on the MOSSE tracker and handles scale changes as well as translation.",
+   "The tutorial's script detects the highest-confidence object with MobileNet SSD, starts a dlib tracker on it, and then calls update() on each frame.",
+   "dlib needs RGB input, while OpenCV reads frames as BGR, so the frame must be converted before tracking.",
+   "The tracker can lose the object after viewpoint changes or occlusion; the author suggests re-running the detector periodically to reseed it."
+  ],
+  "summary": "The post explains dlib's correlation-based tracker, which builds on the MOSSE tracker and adds scale estimation, and then walks through a single-object tracking script. The script uses a Caffe MobileNet SSD to detect one object (such as a person or cat) in the first frame, starts a dlib tracker on its bounding box, and updates the tracker on each following frame. Example runs report about 24 to 26 FPS on the author's demo videos. The author also covers drawbacks: the tracker can drift or lose the object, and periodic re-detection is recommended, with multi-object tracking deferred to a later post.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "dlib",
+   "OpenCV",
+   "imutils",
+   "Caffe",
+   "MobileNet SSD",
+   "NumPy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8473,
+  "output": 942
+ },
+ "generated": "2026-10-29"
+}

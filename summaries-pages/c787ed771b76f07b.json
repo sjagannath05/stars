@@ -1,0 +1,73 @@
+{
+ "id": "c787ed771b76f07b",
+ "url": "https://chipsandcheese.com/p/a-look-into-intel-xeon-6s-memory",
+ "final_url": "https://chipsandcheese.com/p/a-look-into-intel-xeon-6s-memory",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A Look into Intel Xeon 6’s Memory Subsystem",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Intel Xeon",
+   "entry": "A Look into Intel Xeon 6's Memory Subsystem - Measures per-die L3 under sub-NUMA clustering and the die-crossing cost on Granite Rapids beside Turin."
+  }
+ ],
+ "summary": {
+  "title": "A Look into Intel Xeon 6's Memory Subsystem",
+  "one_liner": "Intel Xeon 6's chiplet layout, SNC3 NUMA mode, L3 and DRAM latency and bandwidth, and cross-die costs, measured on AWS r8i instances and compared with Emerald Rapids and AMD Zen 5 Turin.",
+  "category": "cpu memory subsystem",
+  "keywords": [
+   "xeon 6 memory subsystem",
+   "intel xeon 6",
+   "granite rapids",
+   "sub-numa clustering",
+   "snc3 mode",
+   "numa node latency",
+   "l3 cache latency",
+   "cross-die latency",
+   "mesh interconnect",
+   "chiplet cache latency",
+   "dram bandwidth benchmark",
+   "amd turin comparison",
+   "emerald rapids comparison",
+   "core to core latency",
+   "aws r8i instance",
+   "redwood cove cores",
+   "emib packaging",
+   "memory controllers per die",
+   "consistent hashing cha slices",
+   "is intel xeon 6 faster than amd epyc memory"
+  ],
+  "takeaways": [
+   "Xeon 6 6985P-C on AWS r8i uses SNC3 mode (Intel's default), splitting the chip into three NUMA nodes, each backed by its die's DRAM controllers and L3.",
+   "Local L3 latency is about 33 ns, but each core can reach a 160 MB L3 pool on its tile; crossing one die boundary adds about 24 ns.",
+   "Local DRAM latency is higher than on AMD Turin's NPS1 setup, but remote-die DRAM accesses add about 26 ns per boundary crossed.",
+   "Aggregate DRAM bandwidth reached 691.62 GB/s, versus 323.45 GB/s on Emerald Rapids and 478.98 GB/s on EPYC 9355P in unified mode.",
+   "Intel's logically monolithic mesh gives a larger, more unified L3 and lower core-to-core latency than AMD's cluster-based design, at the cost of demanding cross-die performance."
+  ],
+  "summary": "The article examines Intel's Xeon 6 server chiplet design using the AWS r8i instance's Xeon 6 6985P-C, which has 96 Redwood Cove cores, three compute dies, two IO dies, and 480 MB of L3. The author measures cache and memory latency, single-core and chip-level bandwidth, NUMA and cross-die latency and bandwidth, and core-to-core latency under SNC3 mode. Results are compared with Emerald Rapids on AWS i7i and AMD EPYC Turin (9355P), with SPEC CPU2017 single-copy scores also compared against Graviton 4. The closing section discusses the tradeoffs of Intel's logically monolithic mesh versus AMD's two-level interconnect.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Intel Xeon 6",
+   "Redwood Cove",
+   "Intel 3 process",
+   "EMIB",
+   "AMD EPYC Turin",
+   "Zen 5",
+   "Emerald Rapids",
+   "AWS Graviton 4",
+   "AVX-512",
+   "AMX",
+   "DDR5",
+   "SPEC CPU2017",
+   "Arm Kunpeng 920"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7178,
+  "output": 1231
+ },
+ "generated": "2026-10-29"
+}

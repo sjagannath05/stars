@@ -1,0 +1,60 @@
+{
+ "id": "c2895f0f03f59ebf",
+ "url": "https://github.blog/2022-08-29-gits-database-internals-i-packed-object-store",
+ "final_url": "https://github.blog/open-source/git/gits-database-internals-i-packed-object-store/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Git's database internals I: packed object store",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Version control (Git)",
+   "entry": "Git's database internals I: packed object store: an insightful deep dive from Github"
+  }
+ ],
+ "summary": {
+  "title": "Git's database internals I: packed object store",
+  "one_liner": "You learn how Git stores objects in the .git/objects store and compresses them into packfiles using pack-indexes, delta compression, and repacking.",
+  "category": "git internals",
+  "keywords": [
+   "git packfile",
+   "git packed object store",
+   "git object store",
+   "git loose objects",
+   "pack-index idx file",
+   "multi-pack-index",
+   "delta compression git",
+   "offset delta",
+   "delta chain git",
+   "pack.depth config",
+   "git repack geometric",
+   "git maintenance incremental repack",
+   "content-addressable storage git",
+   "git cat-file",
+   "git blobs trees commits tags",
+   "why git does not use b-trees",
+   "how does git store data on disk",
+   "git gc repack explained"
+  ],
+  "takeaways": [
+   "Git's object store is a content-addressable store where objects (blobs, trees, commits, tags) are keyed by the hash of their contents.",
+   "Packfiles store objects compressed individually and against each other using offset deltas, while pack-index files enable fast binary-search lookups by object ID.",
+   "Tree objects change in small ways between commits, so delta compression stores them very compactly; this is why large binary files compress poorly in Git.",
+   "Delta chains trade a bit of read-time CPU for smaller storage; git pack.depth defaults to a limit of 50.",
+   "Git avoids B-trees because packfiles and indexes are static once written; repacking is done via git repack, git gc, geometric repack, or incremental maintenance."
+  ],
+  "summary": "The article is the first part of a five-part series on Git internals, framing Git as a distributed database and explaining its object model (blobs, trees, commits, tags) and reference store. It shows commands such as git cat-file, git hash-object and git log to query the object store. The main focus is packfiles: how pack and multi-pack indexes speed lookups, how delta compression exploits similarity between versions (especially tree objects), and the trade-offs of delta chain length. It closes with repacking strategies (git repack, geometric repack, incremental maintenance) and why Git does not use B-trees.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Git",
+   "Shell"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8750,
+  "output": 849
+ },
+ "generated": "2026-10-29"
+}

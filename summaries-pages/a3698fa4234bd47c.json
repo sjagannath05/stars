@@ -1,0 +1,70 @@
+{
+ "id": "a3698fa4234bd47c",
+ "url": "http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp",
+ "final_url": "http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's code a TCP/IP stack, 1: Ethernet & ARP",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Network Stack",
+   "entry": "C: _Let's code a TCP/IP stack_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 1: Ethernet & ARP"
+  }
+ ],
+ "summary": {
+  "title": "Let's code a TCP/IP stack, 1: Ethernet & ARP",
+  "one_liner": "You learn how to build a minimal userspace Ethernet and ARP layer on a Linux TAP device, parsing frames in C and answering ARP requests so the kernel populates its ARP cache.",
+  "category": "network programming",
+  "keywords": [
+   "tcp/ip stack from scratch",
+   "userspace tcp ip stack",
+   "linux tap device",
+   "tun/tap devices",
+   "ethernet frame format",
+   "ethernet frame parsing in c",
+   "address resolution protocol",
+   "arp implementation",
+   "arp reply",
+   "arp cache",
+   "mac address to ip address mapping",
+   "ethertype field",
+   "packed struct c parsing",
+   "iff_no_pi flag",
+   "build your own network stack",
+   "layer 2 networking tutorial",
+   "half-duplex csma/cd ethernet",
+   "ethernet ip stack tutorial"
+  ],
+  "takeaways": [
+   "A Linux TAP device lets a userspace program read and write raw layer 2 Ethernet frames, and IFF_NO_PI must be set to avoid extra packet info prepended to frames.",
+   "The Ethernet header has destination and source MAC addresses and a 2-octet ethertype; values of 1536 or more denote a payload type, smaller values denote a length.",
+   "ARP maps a protocol address (such as IPv4) to a 48-bit MAC address, with a header containing hardware type, protocol type, sizes, opcode and sender/target addresses.",
+   "An ARP translation table caches results so the host avoids sending redundant ARP requests.",
+   "Packed C structs cast over a buffer are a simple but compiler-dependent way to parse protocol headers; manual serialization is more portable."
+  ],
+  "summary": "The article is the first part of a series on writing a minimal userspace TCP/IP stack for Linux, aimed at learning network and system programming. It sets up a TAP device to intercept layer 2 traffic, then explains the Ethernet frame format and shows a C struct for parsing frames with a packed attribute. It then covers the ARP packet format and the address resolution algorithm, ending with the author's test where the Linux kernel accepts ARP replies from the custom stack. The source code is on GitHub and the next part covers ICMP echo and IPv4 parsing.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Linux",
+   "TAP/TUN",
+   "Ethernet",
+   "ARP",
+   "IPv4",
+   "TCP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4325,
+  "output": 970
+ },
+ "generated": "2026-10-29"
+}

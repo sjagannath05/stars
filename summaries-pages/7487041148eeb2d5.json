@@ -1,0 +1,65 @@
+{
+ "id": "7487041148eeb2d5",
+ "url": "https://olivernguyen.io/w/namespace.error",
+ "final_url": "https://olivernguyen.io/w/namespace.error/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Errors, Errors Everywhere: How We Centralized and Structured Error Handling",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Error/exception handling",
+   "entry": "Errors, Errors Everywhere: How We Centralized and Structured Error Handling (for Go, but useful for any languages)"
+  }
+ ],
+ "summary": {
+  "title": "Errors, Errors Everywhere: How We Centralized and Structured Error Handling",
+  "one_liner": "Learn how one team moved from ad hoc Go error messages to a centralized, namespace-coded error framework with wrapping trees, context tags, and mapping to Protobuf, HTTP and gRPC codes.",
+  "category": "error handling design",
+  "keywords": [
+   "go error handling",
+   "structured errors in go",
+   "namespace error codes",
+   "centralized error handling",
+   "error codes design",
+   "error wrapping go",
+   "fmt.errorf %w",
+   "errors.is errors.as",
+   "pkg/errors stacktrace",
+   "protobuf error model",
+   "error categorization monitoring",
+   "error tree wrapping",
+   "go error framework",
+   "error code mapping http grpc",
+   "structured logging error tags",
+   "how to organize errors in large codebase",
+   "pkg/errors",
+   "gorm error handling",
+   "error0 vlerror apierror types"
+  ],
+  "takeaways": [
+   "Go errors are plain values; without a convention, error messages and codes drift apart across packages and developers.",
+   "Use namespaced error codes (e.g. PRFL.USR.NOT_FOUND) declared in one place, and have each layer wrap dependency errors with its own code.",
+   "Build errors as a tree of wrapped codes, attach key/value tags and context, and expose only the top-level code across service boundaries.",
+   "Map internal codes automatically to Protobuf ErrorCode/ErrorType, HTTP and gRPC status, and logging/metric tags to keep external APIs backward compatible."
+  ],
+  "summary": "The author describes a team's journey from simple Go error wrapping with pkg/errors and exported error variables to a structured, centralized error framework. Problems included scattered error declarations, inconsistent log messages, lost context, and no categorization for monitoring. The proposed design uses namespace codes such as DEPS.PG.NOT_FOUND and PRFL.USR.NOT_FOUND, where each layer wraps lower-level errors with its own code, forming a tree. The article walks through the connectly.ai package layout, the Error interface with Error0, VlError and ApiError types, and example code for creating, wrapping, tagging and mapping errors.</summary>\n<parameter name=\"format\">article",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "Protobuf",
+   "gorm",
+   "PostgreSQL",
+   "gRPC",
+   "HTTP",
+   "pkg/errors"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11290,
+  "output": 954
+ },
+ "generated": "2026-10-29"
+}

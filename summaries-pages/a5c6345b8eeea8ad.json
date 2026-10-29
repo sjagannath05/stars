@@ -1,0 +1,62 @@
+{
+ "id": "a5c6345b8eeea8ad",
+ "url": "https://norasandler.com/2017/12/15/Write-a-Compiler-3.html",
+ "final_url": "https://norasandler.com/2017/12/15/Write-a-Compiler-3.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a C Compiler, Part 3",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 3: Binary Operators"
+  }
+ ],
+ "summary": {
+  "title": "Writing a C Compiler, Part 3: Binary Operators",
+  "one_liner": "You learn how to add binary arithmetic operators to a C compiler, handling operator precedence and left-associativity in a recursive descent parser and emitting x86 assembly for them using the stack.",
+  "category": "compiler construction",
+  "keywords": [
+   "c compiler tutorial",
+   "binary operators compiler",
+   "operator precedence parsing",
+   "left associativity grammar",
+   "recursive descent parser",
+   "left recursion elimination",
+   "ebnf repetition grammar",
+   "expression grammar term factor",
+   "precedence climbing",
+   "pratt parsing",
+   "x86 assembly code generation",
+   "push pop stack expression evaluation",
+   "idivl cdq division assembly",
+   "ast binary operation node",
+   "lexing arithmetic tokens",
+   "how to parse 2 + 3 * 4",
+   "how to handle minus as subtraction or negation",
+   "writing a compiler part 3"
+  ],
+  "takeaways": [
+   "Binary operators need a grammar that encodes precedence, typically with separate exp and term/factor levels.",
+   "Left recursion cannot be handled by a recursive descent parser, so use EBNF repetition ({ }) and build left-associative BinOp nodes in a loop.",
+   "Code generation for a binary op evaluates the first operand, pushes it on the stack, evaluates the second, then pops and combines.",
+   "Subtraction operand order matters with subl, and division requires moving the dividend into EAX and sign-extending with cdq before idivl."
+  ],
+  "summary": "This is part 3 of a series on writing a C compiler, where the author adds addition, subtraction, multiplication and division. It covers lexing (reusing the minus token), extending the AST with a BinOp node, and rewriting the grammar to fix precedence, associativity and left recursion using <term> and <factor> levels plus repetition. It includes pseudocode for parse_expression and parse_factor, then shows x86 code generation using push/pop on the stack, imul, subl, and idivl with cdq. It also gives GDB tips and further reading on precedence climbing and Pratt parsing.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "x86 assembly",
+   "GDB",
+   "LLDB",
+   "EBNF"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7910,
+  "output": 892
+ },
+ "generated": "2026-10-29"
+}

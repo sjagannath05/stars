@@ -1,0 +1,67 @@
+{
+ "id": "f0e2d8846b0c46e0",
+ "url": "https://jiangs.utasites.cloud/pubs/papers/atikoglu12-memcached.pdf",
+ "final_url": "https://jiangs.utasites.cloud/pubs/papers/atikoglu12-memcached.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "plots/iag_cdf_residual.eps",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Load generation and production workloads",
+   "entry": "Workload Analysis of a Large-Scale Key-Value Store - Measures the key, value and inter-arrival distributions of live key-value traffic, the shape load generators imitate."
+  }
+ ],
+ "summary": {
+  "title": "Workload Analysis of a Large-Scale Key-Value Store",
+  "one_liner": "Facebook's Memcached traces (284 billion requests across five pools) show how real key-value cache workloads differ in request mix, key/value sizes, temporal patterns and hit rates.",
+  "category": "distributed systems",
+  "keywords": [
+   "memcached workload analysis",
+   "key-value store workload",
+   "facebook memcached traces",
+   "cache workload characterization",
+   "key value size distribution",
+   "get set ratio",
+   "cache hit rate",
+   "diurnal traffic pattern",
+   "synthetic workload generation",
+   "load generator workload model",
+   "power-law value sizes",
+   "slab allocation",
+   "lru eviction memcached",
+   "mcap packet sniffer",
+   "consistent hashing",
+   "distributed hash table",
+   "sigmetrics 2012 paper",
+   "production cache traffic",
+   "kv store locality",
+   "workload modeling"
+  ],
+  "takeaways": [
+   "Facebook's Memcached traces capture over 284 billion requests from five pools over several days, collected with a low-overhead kernel-module packet sniffer (mcap).",
+   "The GET:UPDATE ratio in the ETC pool is about 30:1, higher than many synthetic workloads assume.",
+   "Key and value sizes are strongly modal and skewed toward small items; most cache space goes to values under about 500B, except in ETC which has some very large values.",
+   "Traffic follows a diurnal pattern with roughly 2x load variation, plus spikes that can double or triple peak rate and need capacity budgeting.",
+   "Hit rates range from about 81% (ETC) to 98.7% (SYS); the pool size was the best predictor of hit rate, and the paper proposes a simple model of the ETC trace for generating synthetic workloads."
+  ],
+  "summary": "The paper analyzes production request traces from five Facebook Memcached pools (USR, APP, ETC, VAR, SYS) collected with the mcap kernel-module sniffer and processed with Apache Hive. It examines request composition (GET, UPDATE, DELETE mix), key and value size distributions as CDFs, request rates over time, and cache hit rates. It ends with a simple analytical model of the most representative trace (ETC) intended for generating realistic synthetic workloads. The page text supplied is the PDF body; the page title is a figure filename, so the listing title was used.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Memcached",
+   "Apache Hive",
+   "Hadoop",
+   "MapReduce",
+   "HipHop",
+   "tcpdump",
+   "Linux kernel module"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10922,
+  "output": 992
+ },
+ "generated": "2026-10-29"
+}

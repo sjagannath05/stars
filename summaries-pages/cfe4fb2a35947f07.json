@@ -1,0 +1,76 @@
+{
+ "id": "cfe4fb2a35947f07",
+ "url": "https://travisdowns.github.io/blog/2019/06/11/speed-limits.html",
+ "final_url": "https://travisdowns.github.io/blog/2019/06/11/speed-limits.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Performance Speed Limits",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "What the manuals leave out",
+   "entry": "Performance Speed Limits - Sets the method for finding which hard bound binds a loop, testing its cycles against each in turn."
+  }
+ ],
+ "summary": {
+  "title": "Performance Speed Limits",
+  "one_liner": "You learn a method for finding which hard CPU bound (pipeline width, execution port, load/store throughput) limits a small loop, so you can estimate its best-case cycles per iteration.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "performance speed limits",
+   "cpu speed limit",
+   "loop performance bottleneck",
+   "pipeline width limit",
+   "fused uops per cycle",
+   "uop count estimate",
+   "execution port pressure",
+   "port bottleneck imul",
+   "load throughput limit",
+   "store throughput limit",
+   "split cache line loads",
+   "micro-fusion",
+   "vectorization speedup estimate",
+   "uarch-bench",
+   "perf uops_issued counter",
+   "how fast can my loop go",
+   "iaca",
+   "llvm-mca",
+   "osaca",
+   "intel top-down analysis",
+   "back-of-napkin cycle estimate",
+   "x86 assembly loop optimization",
+   "gather instruction load count"
+  ],
+  "takeaways": [
+   "The achieved speed of a loop is capped by its narrowest bottleneck; compute the cycle limit for each bound and take the lowest.",
+   "Pipeline width: divide fused-domain uop count by the CPU's per-cycle width (e.g., 14 uops / 4 per cycle = 3.5 cycles per iteration on Skylake).",
+   "Port limits: operations that only run on one port (like imul on p1) can bottleneck a loop even when total uop count is low.",
+   "Load and store limits: count memory accesses against per-cycle load/store throughput; split cache-line loads count as two.",
+   "Reduce the bottleneck by removing instructions, vectorizing, micro-fusing, or combining adjacent loads; use perf counters to confirm."
+  ],
+  "summary": "Travis Downs describes a method for estimating the maximum speed of a small code hotspot (roughly 1 to 50 lines) by listing hard CPU limits and checking each one in turn. The limits covered include pipeline width (fused uops per cycle for Intel, AMD and Apple), execution port pressure, load and store throughput, and split cache-line loads. Each limit is illustrated with a short loop and its x86 assembly, with uop counts, and checked against measurements from uarch-bench and perf counters. The post also lists remedies for each limit and tools such as IACA, OSACA and llvm-mca for port analysis. The page is cut off partway through the store throughput section.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86 assembly",
+   "C++",
+   "Intel Skylake",
+   "Intel Ice Lake",
+   "AMD Zen",
+   "Apple M1",
+   "perf",
+   "uarch-bench",
+   "IACA",
+   "OSACA",
+   "llvm-mca",
+   "gcc",
+   "clang"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10432,
+  "output": 1049
+ },
+ "generated": "2026-10-29"
+}

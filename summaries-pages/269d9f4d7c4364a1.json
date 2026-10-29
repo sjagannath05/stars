@@ -1,0 +1,73 @@
+{
+ "id": "269d9f4d7c4364a1",
+ "url": "https://blog.acolyer.org/2017/09/25/a-dirty-dozen-twelve-common-metric-interpretation-pitfalls-in-online-controlled-experiments",
+ "final_url": "https://blog.acolyer.org/2017/09/25/a-dirty-dozen-twelve-common-metric-interpretation-pitfalls-in-online-controlled-experiments/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A dirty dozen: twelve common metric interpretation pitfalls in online controlled experiments",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Data science/data engineering",
+   "entry": "A dirty dozen: twelve common metric interpretation pitfalls in online controlled experiments"
+  }
+ ],
+ "summary": {
+  "title": "A dirty dozen: twelve common metric interpretation pitfalls in online controlled experiments",
+  "one_liner": "Twelve ways misreading A/B test metrics leads to wrong ship decisions, with Microsoft examples and the checks that guard against each one.",
+  "category": "online controlled experiments",
+  "keywords": [
+   "a/b testing pitfalls",
+   "online controlled experiments",
+   "metric interpretation",
+   "sample ratio mismatch",
+   "srm",
+   "ratio metrics",
+   "denominator mismatch",
+   "telemetry loss bias",
+   "statistical power",
+   "power analysis",
+   "borderline p-value",
+   "fisher's method",
+   "early stopping",
+   "continuous monitoring",
+   "heterogeneous treatment effect",
+   "simpson's paradox",
+   "outliers in metrics",
+   "novelty effect",
+   "primacy effect",
+   "funnel metrics",
+   "twyman's law",
+   "guardrail metrics",
+   "overall evaluation criteria",
+   "oec metrics",
+   "a/a testing",
+   "dmitriev kdd 2017",
+   "microsoft experimentation",
+   "what is a sample ratio mismatch",
+   "why did my a/b test metric go down"
+  ],
+  "takeaways": [
+   "Check data quality first: a treatment-to-control user ratio mismatch means the metric values cannot be trusted.",
+   "Define count metrics for numerators and denominators of ratio metrics so denominator shifts are visible.",
+   "Run a power analysis before the experiment, aiming for at least 80% power on OEC and guardrail metrics, and do not treat non-significant results as no change.",
+   "Do not stop experiments early or extend them for significance; re-run borderline results and watch for novelty or primacy effects.",
+   "Treat surprising metric moves with skepticism (Twyman's law) and segment results over time and by group, watching for Simpson's paradox."
+  ],
+  "summary": "This blog post by Adrian Colyer summarises a KDD 2017 paper by Dmitriev et al. from Microsoft, which lists twelve common mistakes when interpreting metrics in A/B tests. It begins with the four metric classes Microsoft uses: data quality, overall evaluation criteria (OEC), guardrail, and local feature/diagnostic metrics. Each pitfall is then illustrated with a real experiment from MSN, Bing or Skype, such as a sample ratio mismatch that inflated page load time and a telemetry loss bias from push notifications. For each pitfall the post gives the recommended detection or prevention step, such as automated mismatch alerts, re-running borderline p-values, or funnel metrics using conditional and unconditional rates.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "A/B testing",
+   "online controlled experiments",
+   "Bayesian methods",
+   "Fisher's method"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6286,
+  "output": 1048
+ },
+ "generated": "2026-10-29"
+}

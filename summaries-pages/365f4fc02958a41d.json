@@ -1,0 +1,69 @@
+{
+ "id": "365f4fc02958a41d",
+ "url": "http://3zanders.co.uk/2017/10/13/writing-a-bootloader",
+ "final_url": "https://parkermakes.uk/2017/10/13/writing-a-bootloader/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a Bootloader Part 1",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Operating System",
+   "entry": "C++: _Writing a Bootloader_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Write a Bootloader in C"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Bootloader Part 1",
+  "one_liner": "You learn how to write a 512-byte x86 floppy boot sector in NASM assembly that prints \"Hello world!\" using the BIOS TTY interrupt, then boot it in QEMU.",
+  "category": "operating systems",
+  "keywords": [
+   "bootloader tutorial",
+   "write a bootloader",
+   "x86 bootloader",
+   "boot sector",
+   "512 byte boot sector",
+   "mbr boot sector",
+   "bios interrupt 0x10",
+   "int 0x10 teletype output",
+   "nasm assembly",
+   "16-bit real mode",
+   "hello world bootloader",
+   "qemu floppy boot",
+   "0xaa55 boot signature",
+   "0x7c00 load address",
+   "floppy disk bootloader",
+   "os kernel from scratch",
+   "lodsb string load",
+   "nasm -f bin",
+   "build your own operating system",
+   "part 2 protected mode"
+  ],
+  "takeaways": [
+   "The BIOS loads the first 512 bytes of a boot media to address 0x7C00 when the last two bytes are 0xAA55.",
+   "At boot the CPU runs in 16-bit real mode, so only 16-bit registers are available and code must fit under 512 bytes.",
+   "BIOS interrupt 0x10 with ah=0x0e prints a character in TTY mode; lodsb loads each string byte into al in a loop.",
+   "Assemble with nasm -f bin, pad to 510 bytes, append the 0xAA55 magic, and test with qemu-system-x86_64 -fda."
+  ],
+  "summary": "This is Part 1 of a series on writing a tiny 32-bit x86 operating system kernel. It explains the boot process: the BIOS loads the first 512-byte sector to 0x7C00 when it ends in 0xAA55, and the CPU starts in 16-bit mode. The author walks through a complete NASM program that loops over a string and prints it with BIOS interrupt 0x10, then shows how to assemble it, inspect it with hexdump, and run it in QEMU as a floppy image. The article uses a floppy disk to avoid file system complexity and points to Part 2 for protected mode.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "x86 assembly",
+   "NASM",
+   "QEMU",
+   "BIOS",
+   "C++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2629,
+  "output": 909
+ },
+ "generated": "2026-10-29"
+}

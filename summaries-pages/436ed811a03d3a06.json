@@ -1,0 +1,64 @@
+{
+ "id": "436ed811a03d3a06",
+ "url": "https://chipsandcheese.com/p/amds-turin-5th-gen-epyc-launched",
+ "final_url": "https://chipsandcheese.com/p/amds-turin-5th-gen-epyc-launched",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "AMD's Turin: 5th Gen EPYC Launched",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "AMD EPYC",
+   "entry": "AMD's Turin: 5th Gen EPYC Launched - Measures what wider die-to-IO links and faster DDR5 do for Turin bandwidth, and where latency rose over Genoa."
+  }
+ ],
+ "summary": {
+  "title": "AMD's Turin: 5th Gen EPYC Launched",
+  "one_liner": "Hands-on look at AMD's EPYC 9575F (Turin) showing how wider die-to-IO links and DDR5 speeds change memory bandwidth, and where latency rose compared with Genoa.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "amd epyc turin",
+   "5th gen epyc",
+   "epyc 9575f",
+   "zen 5 server cpu",
+   "memory bandwidth benchmark",
+   "memory latency",
+   "loaded latency test",
+   "unloaded latency",
+   "gmi3-w link",
+   "gmi link width",
+   "die-to-io bandwidth",
+   "ddr5-6400 support",
+   "ddr5 dimms per channel",
+   "genoa vs turin",
+   "bergamo socket to socket latency",
+   "core to core latency",
+   "chips and cheese review",
+   "server cpu clock speeds",
+   "infinity fabric links",
+   "cpu memory subsystem analysis"
+  ],
+  "takeaways": [
+   "The 9575F reaches about 52 GB/s single-thread read bandwidth, and nearly 99% of the 576 GB/s theoretical full-socket read bandwidth.",
+   "Turin's server CCDs use GMI3-W with two GMI links to the IO die (vs one on desktop Zen 5), and a 32B-per-link write path, which raises per-CCD bandwidth.",
+   "Memory speed depends on configuration: DDR5-6400 only on validated 1DPC systems, DDR5-6000 typical, 4400 MT/s at 2DPC.",
+   "Unloaded memory latency is similar to Genoa, but core-to-core latency rose, especially within a CCD (~45 ns intra-CCD, ~150 ns inter-CCD, ~260 ns socket-to-socket)."
+  ],
+  "summary": "Chips and Cheese tests AMD's EPYC 9575F, a Turin server CPU, focusing on memory subsystem changes rather than the Zen 5 core, which they had already covered. They measure single-thread and full-socket bandwidth for read, write and add operations, socket-to-socket bandwidth, and unloaded and loaded latency, using a loaded-latency test where 7 cores or CCDs run bandwidth load while the 8th measures latency. They also report clock speeds under single-thread, Cinebench 2024 and web-server workloads. The conclusion frames Turin as an evolutionary update similar to Milan to Genoa rather than a major step change.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "AMD EPYC",
+   "Zen 5",
+   "DDR5",
+   "Infinity Fabric GMI links",
+   "Cinebench 2024"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3431,
+  "output": 1035
+ },
+ "generated": "2026-10-29"
+}

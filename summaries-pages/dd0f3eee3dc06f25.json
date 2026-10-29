@@ -1,0 +1,57 @@
+{
+ "id": "dd0f3eee3dc06f25",
+ "url": "https://www.usenix.org/conference/osdi10/flexsc-flexible-system-call-scheduling-exception-less-system-calls",
+ "final_url": "https://www.usenix.org/conference/osdi10/flexsc-flexible-system-call-scheduling-exception-less-system-calls",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "{FlexSC}: Flexible System Call Scheduling with {Exception-Less} System Calls",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Syscalls and asynchronous I/O",
+   "entry": "FlexSC: Flexible System Call Scheduling with Exception-Less System Calls - Separates a syscall's trap cost from its cache and TLB pollution, and shows the pollution can dominate."
+  }
+ ],
+ "summary": {
+  "title": "FlexSC: Flexible System Call Scheduling with Exception-Less System Calls",
+  "one_liner": "FlexSC shows how batching system calls through shared memory without trapping into the kernel per call can cut the indirect cache and TLB pollution costs of syscalls.",
+  "category": "operating systems performance",
+  "keywords": [
+   "flexsc",
+   "exception-less system calls",
+   "syscall batching",
+   "asynchronous system calls",
+   "system call scheduling",
+   "syscall trap cost",
+   "cache pollution from syscalls",
+   "tlb pollution",
+   "kernel mode switch overhead",
+   "osdi 2010 paper",
+   "soares stumm",
+   "syscall asynchronous i/o",
+   "batch system calls shared memory",
+   "reduce context switch cost syscalls",
+   "how to make syscalls faster",
+   "kernel entry overhead"
+  ],
+  "takeaways": [
+   "Traditional synchronous syscalls pay a trap cost plus indirect costs from cache and TLB pollution in the kernel.",
+   "FlexSC proposes exception-less syscalls, where requests are placed in shared memory and processed by kernel threads without a trap per call.",
+   "The paper's framing is that the pollution cost can dominate the trap cost itself.",
+   "Published at OSDI 2010 in Vancouver by Livio Soares and Michael Stumm."
+  ],
+  "summary": "This is the OSDI 2010 paper page for FlexSC, by Livio Soares and Michael Stumm, with BibTeX, presentation audio, and a link to the HTML paper. The listing and the page text describe the core idea: separating a system call's trap cost from its cache and TLB pollution, which the authors argue can dominate. The page text itself is mostly publication metadata, so the technical details (design, implementation, and measurements) are only available in the linked paper, which I did not read. Format is a research paper, and the level is advanced.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1896,
+  "output": 788
+ },
+ "generated": "2026-10-29"
+}

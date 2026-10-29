@@ -1,0 +1,74 @@
+{
+ "id": "0607e47bf23e3247",
+ "url": "https://addyo.substack.com/p/how-modern-browsers-work",
+ "final_url": "https://addyo.substack.com/p/how-modern-browsers-work",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How modern browsers work",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Web development",
+   "entry": "How modern browsers work"
+  }
+ ],
+ "summary": {
+  "title": "How modern browsers work",
+  "one_liner": "You learn how a modern browser turns a URL into pixels, from networking and HTML/CSS/JS parsing through layout, painting and GPU compositing, with Chromium as the main example.",
+  "category": "web browser internals",
+  "keywords": [
+   "browser internals",
+   "how browsers work",
+   "chromium architecture",
+   "blink rendering engine",
+   "v8 javascript engine",
+   "critical rendering path",
+   "dom construction",
+   "cssom",
+   "layout tree",
+   "paint and compositing",
+   "rasterization gpu",
+   "preload scanner",
+   "http/2 and http/3 browser loading",
+   "script defer and async",
+   "speculation rules api",
+   "multi-process browser sandbox",
+   "browser networking stack",
+   "render-blocking css",
+   "gecko and webkit comparison",
+   "web developer browser guide"
+  ],
+  "takeaways": [
+   "Every navigation starts in the browser process, which hands network fetching to a separate network service and keeps renderers isolated for security.",
+   "HTML parsing builds the DOM incrementally, the preload scanner fetches sub-resources ahead of the parser, and parser-blocking scripts pause parsing unless marked async or defer.",
+   "Stylesheets are turned into a CSSOM and combined with the DOM to compute styles, which then drive layout and painting.",
+   "Painting records drawing commands that are split into layers and tiles, then rasterized on worker threads and composited on the GPU, so animations can avoid full repaints.",
+   "Developer advice such as using defer/async, minimizing forced layout, and using preload or Fetch Priority follows directly from these internals."
+  ],
+  "summary": "The article is a developer-oriented overview of browser internals, focused on Chromium (Blink, V8, Skia) with notes on how Gecko and WebKit differ. It walks through the pipeline in order: networking and resource loading (DNS, TLS, HTTP/2 and HTTP/3, redirects, MIME checks), then HTML/CSS/JS parsing into the DOM and CSSOM, then style, layout, painting, and compositing on the GPU. It explains practical implications for performance, such as render-blocking CSS, script blocking, speculative loading, and layout cost. The page text is cut off partway through the section on rasterization with Skia.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Chromium",
+   "Blink",
+   "V8",
+   "Skia",
+   "Firefox Gecko",
+   "Safari WebKit",
+   "HTML",
+   "CSS",
+   "JavaScript",
+   "HTTP/2",
+   "HTTP/3",
+   "QUIC",
+   "TLS",
+   "DNS over HTTPS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8697,
+  "output": 1002
+ },
+ "generated": "2026-10-29"
+}

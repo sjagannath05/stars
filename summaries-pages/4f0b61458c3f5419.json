@@ -1,0 +1,74 @@
+{
+ "id": "4f0b61458c3f5419",
+ "url": "https://sudhir.io/uuids-ulids",
+ "final_url": "https://sudhir.io/uuids-ulids",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Understanding UUIDs, ULIDs and String Representations",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Data formats",
+   "entry": "Understanding UUIDs, ULIDs and String Representations"
+  }
+ ],
+ "summary": {
+  "title": "Understanding UUIDs, ULIDs and String Representations",
+  "one_liner": "Learn why sequential numeric IDs have limits, how random UUIDs fix distribution but lose locality, how ULIDs add a timestamp prefix, and how to encode 128-bit IDs as shorter strings such as Base32 or Base62.",
+  "category": "distributed systems",
+  "keywords": [
+   "uuid",
+   "ulid",
+   "guid",
+   "universally unique identifier",
+   "sortable unique identifier",
+   "numeric primary key",
+   "bigserial",
+   "database sequence",
+   "primary key design",
+   "random uuid collision",
+   "birthday paradox uuid",
+   "uuid index locality",
+   "base32 crockford",
+   "base62 encoding",
+   "base64 id encoding",
+   "uuid to string encoding",
+   "hexadecimal uuid format",
+   "rfc 4122",
+   "time-ordered id",
+   "sharding id generation",
+   "uuid vs auto increment",
+   "timestamp prefix id",
+   "uuidv7 proposal",
+   "sortable ids nosql"
+  ],
+  "takeaways": [
+   "Numeric sequence IDs are simple but can overflow (32-bit), are coupled to their table, bottleneck on one generator, and complicate sharding.",
+   "Random 128-bit UUIDs allow distributed generation without coordination, with a tiny collision risk, but have no locality, which wastes B-tree index ordering.",
+   "ULIDs put a 48-bit millisecond Unix timestamp in the first bits and 80 random bits after, giving time-ordered, collision-resistant IDs.",
+   "A 128-bit ID is just a big number, so it can be written as hex UUID, Crockford Base32 (26 chars for ULID), or Base62, which sorts correctly when zero-padded."
+  ],
+  "summary": "The article explains why auto-incrementing numeric IDs (SERIAL/BIGSERIAL) run into size, coupling, scalability and sharding problems. It then covers random UUIDs, their distributed-generation benefits, and their collision and index-locality drawbacks. It proposes ULIDs, which use a 48-bit timestamp plus 80 random bits, and walks through converting a ULID's bits into bytes, hex UUID form, Crockford Base32, and Base62 with worked examples. The author also links Go and Ruby libraries for converting between formats.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "MySQL",
+   "SQL Server",
+   "Oracle",
+   "Go",
+   "Ruby",
+   "JSON",
+   "XML",
+   "base64",
+   "base32",
+   "base62"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7245,
+  "output": 987
+ },
+ "generated": "2026-10-29"
+}

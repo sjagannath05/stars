@@ -1,0 +1,67 @@
+{
+ "id": "62abfd19ab266c01",
+ "url": "https://swtch.com/~rsc/regexp/regexp1.html",
+ "final_url": "https://swtch.com/~rsc/regexp/regexp1.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Regex Engine",
+   "entry": "C: _Regular Expression Matching Can Be Simple And Fast_"
+  }
+ ],
+ "summary": {
+  "title": "Regular Expression Matching Can Be Simple And Fast",
+  "one_liner": "Learn how Thompson's NFA simulation matches regular expressions in linear time, avoiding the exponential blowup of backtracking engines like Perl's, with a small C implementation.",
+  "category": "regex engine internals",
+  "keywords": [
+   "regular expression matching",
+   "thompson nfa",
+   "thompson's algorithm",
+   "nfa simulation",
+   "backtracking regex",
+   "pathological regex",
+   "exponential backtracking",
+   "linear time regex matching",
+   "finite automata",
+   "nondeterministic finite automaton",
+   "deterministic finite automaton",
+   "regex to nfa conversion",
+   "postfix regex compilation",
+   "perl regex performance",
+   "build a regex engine in c",
+   "why is regex slow",
+   "backreferences regex",
+   "dfa from nfa subset construction"
+  ],
+  "takeaways": [
+   "Backtracking regex engines such as Perl, Python, PCRE and Ruby can take exponential time on patterns like a?^n a^n, while Thompson's NFA simulation stays polynomial (O(mn)).",
+   "Regular expressions map to NFAs with one state per literal or metacharacter, built by composing fragments with concatenation, alternation, and repetition constructions.",
+   "Simulating an NFA by tracking the set of reachable states at each step reads the input once and avoids trying every path.",
+   "The article gives a compact C implementation (under 400 lines) using postfix notation, a fragment stack, and state lists with a generation counter to avoid duplicates.",
+   "Backreferences make regex matching non-regular and costly; engines could use the faster algorithm for patterns without them."
+  ],
+  "summary": "Russ Cox walks through the theory of regular expressions, finite automata, and Ken Thompson's 1968 NFA-simulation algorithm. He explains how regexes compile to NFAs, contrasts backtracking with simultaneous state-set simulation, and presents a small portable ANSI C implementation. The article benchmarks that implementation against Perl, PCRE, Python, Ruby and others on the pathological pattern a?^n a^n, showing exponential slowdown in backtracking engines versus near-linear behavior in the NFA approach. It closes by noting how the NFA can be viewed as an on-the-fly DFA construction.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Perl",
+   "Python",
+   "Ruby",
+   "PHP",
+   "Java",
+   "PCRE",
+   "awk",
+   "grep"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9462,
+  "output": 964
+ },
+ "generated": "2026-10-29"
+}

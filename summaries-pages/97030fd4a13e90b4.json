@@ -1,0 +1,68 @@
+{
+ "id": "97030fd4a13e90b4",
+ "url": "https://norasandler.com/2018/06/27/Write-a-Compiler-9.html",
+ "final_url": "https://norasandler.com/2018/06/27/Write-a-Compiler-9.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "C Compiler, Part 9: Functions",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 9: Functions"
+  }
+ ],
+ "summary": {
+  "title": "C Compiler, Part 9: Functions",
+  "one_liner": "You learn how to add function definitions, parameters, forward declarations and calls to a C compiler, including cdecl calling conventions, stack frames and 16-byte stack alignment for calling libc functions like putchar.",
+  "category": "compilers",
+  "keywords": [
+   "c compiler tutorial",
+   "write a compiler",
+   "function calls in compiler",
+   "cdecl calling convention",
+   "x86 stack frame",
+   "function prologue epilogue",
+   "forward declaration",
+   "function prototype",
+   "stack alignment 16-byte osx",
+   "calling convention explained",
+   "putchar hello world assembly",
+   "function parameters offset ebp",
+   "name decoration underscore osx",
+   "compiler validation of function arguments",
+   "fibonacci compiler example",
+   "code generation for function calls",
+   "push arguments on stack",
+   "eax return value",
+   "nora sandler compiler series",
+   "project based learning compilers"
+  ],
+  "takeaways": [
+   "Function calls are parsed as factor-level expressions, and the grammar and AST are extended to allow multiple declarations and definitions.",
+   "Validation must reject duplicate definitions, mismatched parameter counts across declarations, and calls with the wrong number of arguments.",
+   "cdecl on 32-bit Unix: arguments pushed right to left, caller cleans the stack, return value in EAX, and the callee sets up EBP-based frames.",
+   "OS X needs 16-byte stack alignment at call time and a leading underscore on symbol names; the post shows how to pad the stack dynamically for nested expressions."
+  ],
+  "summary": "This post in Nora Sandler's C compiler series extends a toy compiler to support functions with int parameters, forward declarations, and function calls. It covers the parser and AST changes, the validation rules (duplicate definitions, arity mismatches), and the rationale for the cdecl calling convention, including step-by-step stack frame diagrams. Code generation follows, with parameter offsets from EBP, caller-side argument pushes, and a dynamic stack-alignment trick for OS X. It ends with Fibonacci and a Hello, World! program calling putchar.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "C11",
+   "x86 assembly",
+   "AT&T syntax",
+   "cdecl",
+   "GCC",
+   "clang",
+   "OS X",
+   "Linux ELF"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8677,
+  "output": 920
+ },
+ "generated": "2026-10-29"
+}

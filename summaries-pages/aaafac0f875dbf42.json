@@ -1,0 +1,62 @@
+{
+ "id": "aaafac0f875dbf42",
+ "url": "https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-3-short-link-generation",
+ "final_url": "https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-3-short-link-generation/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's build a URL shortener in Go - Part III : Short Link Generator",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 3 - Short Link Generator"
+  }
+ ],
+ "summary": {
+  "title": "Let's build a URL shortener in Go - Part III : Short Link Generator",
+  "one_liner": "Learn how to generate short, readable link codes by hashing the long URL plus a user ID with SHA-256 and encoding the resulting big integer in Base58, truncated to 8 characters.",
+  "category": "go url shortener",
+  "keywords": [
+   "go url shortener",
+   "url shortener golang",
+   "short link generation",
+   "sha256 hash go",
+   "base58 encoding",
+   "base58 vs base64",
+   "short url algorithm",
+   "url shortener algorithm",
+   "hash to short code",
+   "big integer from hash bytes",
+   "8 character short link",
+   "human readable short codes",
+   "avoid confusing characters",
+   "url shortener unit tests",
+   "golang built-in sha256",
+   "bitcoin base58 reasons",
+   "url shortener tutorial part 3",
+   "userid hash collision avoidance",
+   "shorturl generator go"
+  ],
+  "takeaways": [
+   "Hash the initial URL concatenated with a userId using SHA-256 so identical links from different users get different short codes.",
+   "Convert the hash bytes into a big integer, then encode it with Base58 and keep the first 8 characters.",
+   "Base58 is chosen over Base64 because it drops characters like 0, O, I, l and punctuation, which eases reading, selecting and line breaking.",
+   "Put the generator in a shortener package with unit tests in a matching _test.go file."
+  ],
+  "summary": "This is Part III of a Go URL shortener tutorial series, focused entirely on the algorithm that turns a long URL into a short code. It sets design goals: at most 8 characters, easy to read, and enough entropy to avoid collisions. The approach combines SHA-256 hashing (using Go's built-in implementation) with Base58 encoding, which the author argues is more user-friendly than Base64. The post walks through the project layout, the final algorithm, and unit tests for the generator, and previews the next part on the REST API and redirects. The page does not show the full code inline in the text provided.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "SHA-256",
+   "Base58",
+   "Redis"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2749,
+  "output": 841
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "852ef5b6f6f1b049",
+ "url": "https://www.barroso.org/publications/TheTailAtScale.pdf",
+ "final_url": "https://www.barroso.org/publications/TheTailAtScale.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "The tail at scale",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Measuring the tail",
+   "entry": "The Tail at Scale - Shows why fan-out makes a rare slow server a common slow request, and names the techniques that tolerate variance."
+  }
+ ],
+ "summary": {
+  "title": "The Tail at Scale",
+  "one_liner": "Learn why fan-out amplifies rare slow servers into slow user requests, and the tail-tolerant techniques (hedged requests, tied requests, micro-partitioning, latency-induced probation) that reduce it.",
+  "category": "distributed systems",
+  "keywords": [
+   "tail latency",
+   "tail at scale",
+   "fan-out latency",
+   "tail-tolerant systems",
+   "hedged requests",
+   "tied requests",
+   "99th percentile latency",
+   "latency variability",
+   "request fan-out amplification",
+   "micro-partitions",
+   "selective replication",
+   "latency-induced probation",
+   "head-of-line blocking",
+   "background activity synchronization",
+   "load balancing replicas",
+   "power of two choices",
+   "bigtable read latency",
+   "interactive web service responsiveness",
+   "how to reduce p99 latency",
+   "why slow servers make slow requests at scale",
+   "dean and barroso cacm 2013"
+  ],
+  "takeaways": [
+   "If each server has a rare slow response, fan-out to many servers makes a slow user request common (e.g., 1 in 100 servers slow at 1% means 63% of 100-server requests are slow).",
+   "Sources of latency variability include shared resources, daemons, global resource sharing, maintenance activities such as garbage collection and log compaction, queueing, and power and energy management.",
+   "Hedged requests send a secondary request after about the 95th-percentile latency, adding roughly 5% load while cutting the tail; tied requests enqueue on two servers that cancel each other to limit wasted work.",
+   "Micro-partitioning and selective replication let systems balance load in small increments and spread hot items across machines.",
+   "Rather than eliminating all variability, tail-tolerant software masks it, forming a predictable whole from less-predictable parts, analogous to fault tolerance."
+  ],
+  "summary": "The article by Jeffrey Dean and Luiz André Barroso (CACM, February 2013) explains how latency variability in individual components is amplified when a request fans out to many servers. It lists common causes of high-latency episodes, including shared resources, background daemons, maintenance activities, queueing, and hardware power and energy behaviour. It then describes ways to reduce component variability, such as differentiated service classes, reducing head-of-line blocking, and synchronizing background work. The core of the piece covers tail-tolerant techniques that work around variability, including hedged requests, tied requests, micro-partitioning, selective replication, and latency-induced probation, with measured results from Google services.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "BigTable",
+   "distributed file systems",
+   "Reed-Solomon coding"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9483,
+  "output": 1011
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,68 @@
+{
+ "id": "336f6cd656d14ac6",
+ "url": "https://blogit.michelin.io/moving-from-orchestration-to-choreography-part-3",
+ "final_url": "https://blogit.michelin.io/moving-from-orchestration-to-choreography-part-3/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Moving from orchestration to choreography - Part 3",
+ "sources": [
+  {
+   "list": "lutzh/awesome-event-driven-architecture",
+   "section": "Experience Reports And Practicalities",
+   "entry": "Moving from orchestration to choreography - By Olivier Jauze, March 2021. Michelin's journey from BPM orchestration to event-driven choreography. It's the first of a series and continues with part 2 and part 3."
+  }
+ ],
+ "summary": {
+  "title": "Moving from orchestration to choreography - Part 3",
+  "one_liner": "Michelin's final part of the series shares team perspectives (tech lead, software engineer, DevOps, team lead) on replacing a BPM orchestration system with a Kafka Streams event-driven microservice choreography, and the lessons learned.",
+  "category": "event-driven architecture",
+  "keywords": [
+   "event-driven architecture",
+   "choreography vs orchestration",
+   "kafka streams",
+   "microservices choreography",
+   "replacing bpm with event driven",
+   "business process management migration",
+   "kafka streams error handling dead letter queue",
+   "kafka streams health probes readiness liveness",
+   "kafka streams topology testing",
+   "topologytestdriver",
+   "kafka observability prometheus grafana",
+   "kafka event replay regression testing",
+   "kafka connect topic provisioning",
+   "springboot kubernetes kafka streams",
+   "michelin event driven case study",
+   "lessons learned event driven microservices",
+   "ubiquitous language topology diagrams",
+   "team building for kafka streams"
+  ],
+  "takeaways": [
+   "Event-driven choreography needs a mindset shift; topology concepts must be understood by non-technical team members too, and expect rework early on.",
+   "Build a CI/CD pipeline and automation from day one, with automated unit tests and code coverage standards for many microservices.",
+   "Use a shared error-handling framework and an abstraction layer (e.g., a base StreamInitializer) so Kafka Streams apps don't crash and new microservices ship quickly.",
+   "Expose observability early: Prometheus/Grafana metrics across Kafka, Kubernetes and Kafka Streams were needed to diagnose rebalances and stuck services.",
+   "Retaining events in Kafka lets you replay production traffic into test environments to compare new and old versions of a stream."
+  ],
+  "summary": "This final article in Michelin's series gives four team viewpoints: tech lead, software engineer, DevOps and team lead, on moving order orchestration from a BPM product to Kafka Streams microservices. The software engineer section includes code for a generic DLQ error-handling step, a StreamInitializer base class with health endpoints, and a topology test base class. The DevOps section covers monitoring, topic and Kafka Connect provisioning, and replicating production events to a test environment. The article ends with key takeaways on event-driven design, CI/CD, observability and roadmaps.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Apache Kafka",
+   "Kafka Streams",
+   "Java",
+   "Spring Boot",
+   "Kubernetes",
+   "GitLab CI",
+   "Avro",
+   "Kafka Connect",
+   "Prometheus",
+   "Grafana"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8976,
+  "output": 1024
+ },
+ "generated": "2026-10-29"
+}

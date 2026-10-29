@@ -1,0 +1,69 @@
+{
+ "id": "9fb40cb45748b8af",
+ "url": "https://llvm.org/docs/Benchmarking.html",
+ "final_url": "https://llvm.org/docs/Benchmarking.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Benchmarking tips#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Microbenchmarks that lie",
+   "entry": "Benchmarking tips (LLVM) - The compiler project's recipe for a quiet Linux host, governor, boost, SMT siblings, ASLR, a cpuset and tmpfs."
+  }
+ ],
+ "summary": {
+  "title": "Benchmarking tips",
+  "one_liner": "Learn the LLVM project's checklist for reducing measurement noise when benchmarking on Linux, including governor, Turbo Boost, SMT, ASLR, cpuset shielding and tmpfs.",
+  "category": "performance benchmarking",
+  "keywords": [
+   "benchmarking tips",
+   "reduce benchmark noise",
+   "llvm benchmarking",
+   "measurement noise",
+   "measurement bias",
+   "perf stat",
+   "perf under linux",
+   "cpu frequency scaling",
+   "scaling_governor performance",
+   "disable turbo boost",
+   "intel_pstate no_turbo",
+   "address space layout randomization",
+   "disable aslr linux",
+   "randomize_va_space",
+   "cpuset shield",
+   "cset shield cpu cores",
+   "disable smt sibling threads",
+   "thread_siblings_list",
+   "tmpfs benchmarking",
+   "static linking benchmark",
+   "stable benchmark results linux",
+   "isolate cpu cores for benchmark"
+  ],
+  "takeaways": [
+   "Use a high-resolution timer such as perf under Linux and run benchmarks multiple times to spot noise.",
+   "Disable frequency scaling, Turbo Boost, and address space randomization, and set the CPU governor to performance.",
+   "Use cset to shield CPU cores for the benchmarked program, leaving at least 2 cores when using perf, and disable the SMT siblings of the cores used.",
+   "Put programs, inputs, and outputs on tmpfs and consider static linking (-DLLVM_BUILD_STATIC=ON) to reduce storage and dynamic loading variation.",
+   "Low noise does not rule out measurement bias; the page cites Mytkowicz et al. (ASPLOS 2009) on this."
+  ],
+  "summary": "This LLVM documentation page gives practical advice for reducing noise when benchmarking a patch, starting with general steps like using a high-resolution timer, repeated runs, disabling background services, and static linking. It then provides OS-specific sections, with Linux commands for disabling address space randomization, setting the performance CPU governor, isolating cores with cset shield, disabling SMT sibling threads, and running under perf stat -r 10. A Linux Intel section covers disabling Turbo Boost via intel_pstate. The page states that with these settings perf variations below 0.1% can be expected, and it notes that low noise alone does not prevent measurement bias.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "Linux",
+   "perf",
+   "cset (cpuset)",
+   "CMake",
+   "LLVM",
+   "tmpfs",
+   "FreeBSD"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2192,
+  "output": 1002
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "1c14ef963d6c49a5",
+ "url": "http://stefan.saasen.me/articles/git-clone-in-haskell-from-the-bottom-up",
+ "final_url": "https://stefan.saasen.me/articles/git-clone-in-haskell-from-the-bottom-up/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Reimplementing “git clone” in Haskell from the bottom up",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Git",
+   "entry": "Haskell: _Reimplementing “git clone” in Haskell from the bottom up_"
+  }
+ ],
+ "summary": {
+  "title": "Reimplementing “git clone” in Haskell from the bottom up",
+  "one_liner": "You learn how git's native transport, pkt-line framing, ref advertisement and packfile negotiation fit together by building a minimal git clone client in Haskell.",
+  "category": "git internals",
+  "keywords": [
+   "git clone implementation",
+   "reimplement git clone",
+   "git protocol",
+   "git native protocol port 9418",
+   "pkt-line format",
+   "pack protocol",
+   "packfile negotiation",
+   "ref advertisement",
+   "reference discovery",
+   "git-upload-pack",
+   "git capabilities side-band",
+   "git_trace_packet",
+   "ngrep git traffic capture",
+   "haskell git client",
+   "build your own git",
+   "git object store",
+   "git index format",
+   "ls-remote implementation",
+   "flush packet 0000",
+   "peeled tag refs"
+  ],
+  "takeaways": [
+   "The git:// protocol: a client connects over TCP (port 9418), sends git-upload-pack with a repo path and host, and reads a ref advertisement.",
+   "pkt-line framing: each packet starts with a 4-byte hex length that includes the prefix, and 0000 is a flush packet.",
+   "Clone negotiation: the client sends want lines with capabilities (e.g. side-band-64k), a flush, and done, then receives the packfile.",
+   "Debugging tools such as GIT_TRACE_PACKET and ngrep help verify the wire-level exchange against a real git daemon."
+  ],
+  "summary": "The author re-implements a minimal git clone in Haskell without using git plumbing or existing git libraries, covering only the git:// transport and full clones. The article walks through the clone stages: parsing the URL, reference discovery and capability exchange, want/have negotiation, receiving the packfile, and building the local repository, index and working directory. It shows how to observe the protocol using git daemon, GIT_TRACE_PACKET, ngrep and ipfw, and includes Haskell code for the pkt-line encoder and a TCP client. The article is explicitly about going wide rather than deep, and the code is presented as condensed pseudo code for readers who do not know Haskell.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Haskell",
+   "git",
+   "git protocol",
+   "pack file format",
+   "TCP sockets",
+   "ngrep",
+   "ipfw"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10219,
+  "output": 907
+ },
+ "generated": "2026-10-29"
+}

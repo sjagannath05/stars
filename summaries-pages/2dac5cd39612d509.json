@@ -1,0 +1,65 @@
+{
+ "id": "2dac5cd39612d509",
+ "url": "https://arxiv.org/abs/1801.01203",
+ "final_url": "https://arxiv.org/abs/1801.01203",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Spectre Attacks: Exploiting Speculative Execution",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branch prediction and speculation",
+   "entry": "Spectre Attacks: Exploiting Speculative Execution - Establishes that predictor state is shared and trainable across contexts, the root of every mitigation and its cost."
+  }
+ ],
+ "summary": {
+  "title": "Spectre Attacks: Exploiting Speculative Execution",
+  "one_liner": "Learn how speculative execution and branch prediction in modern CPUs can be abused to leak a victim's confidential memory through side channels, and why fixing it requires changes to processor designs and ISAs.",
+  "category": "cpu security",
+  "keywords": [
+   "spectre attack",
+   "speculative execution",
+   "branch prediction",
+   "side channel attack",
+   "cache timing attack",
+   "speculative execution vulnerability",
+   "cpu security flaw",
+   "memory leak via side channel",
+   "fault attacks",
+   "return-oriented programming",
+   "process isolation bypass",
+   "jit compilation security",
+   "containerization security",
+   "static analysis limitations",
+   "instruction set architecture security",
+   "intel amd arm vulnerability",
+   "hardware side channel",
+   "how does spectre work",
+   "arxiv 1801.01203"
+  ],
+  "takeaways": [
+   "Speculative execution can run instructions on predicted paths that are later discarded, yet their side effects remain observable.",
+   "Spectre induces a victim to speculatively perform operations that leak confidential data to an attacker over a side channel.",
+   "The attacks combine side channel, fault attack and return-oriented programming methods to read arbitrary victim process memory.",
+   "Process separation, static analysis, containerization, JIT compilation and cache side-channel countermeasures all rely assumptions that speculative execution violates.",
+   "Sound fixes need processor design changes and ISA updates that define what CPU state may leak; processor-specific workarounds are only partial."
+  ],
+  "summary": "This arXiv paper (submitted January 2018) describes Spectre attacks, which induce a victim to speculatively execute operations that would not occur in correct execution and leak its secrets through a side channel. The authors combine techniques from side channel attacks, fault attacks, and return-oriented programming to read arbitrary memory from the victim's process. They argue that speculative execution breaks assumptions behind OS process separation, static analysis, containerization, JIT compilation, and cache timing countermeasures, and they cite vulnerable chips from Intel, AMD, and ARM. The abstract concludes that makeshift processor-specific fixes are only partial and that sound solutions need hardware and ISA changes.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "CPU speculative execution",
+   "branch prediction",
+   "return-oriented programming",
+   "Intel processors",
+   "AMD processors",
+   "ARM processors"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2830,
+  "output": 952
+ },
+ "generated": "2026-10-29"
+}

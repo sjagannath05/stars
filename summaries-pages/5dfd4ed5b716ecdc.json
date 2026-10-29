@@ -1,0 +1,66 @@
+{
+ "id": "5dfd4ed5b716ecdc",
+ "url": "https://cseweb.ucsd.edu/~calder/papers/MICRO-99-FDP.pdf",
+ "final_url": "https://cseweb.ucsd.edu/~calder/papers/MICRO-99-FDP.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Fetch and decode",
+   "entry": "Fetch Directed Instruction Prefetching - The origin of the decoupled front end, where the predictor runs ahead of fetch and drives instruction prefetch."
+  }
+ ],
+ "summary": {
+  "title": "Fetch Directed Instruction Prefetching",
+  "one_liner": "Fetch Directed Prefetching uses a decoupled branch predictor's fetch target queue to run ahead of fetch and drive instruction cache prefetches, filtered by idle cache ports.",
+  "category": "cpu front-end prefetching",
+  "keywords": [
+   "fetch directed prefetching",
+   "fdp",
+   "instruction prefetching",
+   "instruction cache prefetch",
+   "decoupled front end",
+   "decoupled branch predictor",
+   "fetch target queue",
+   "ftq",
+   "fetch target buffer",
+   "ftb",
+   "prefetch instruction queue",
+   "piq",
+   "cache probe filtering",
+   "cpf",
+   "idle cache ports",
+   "streaming buffer",
+   "next-line prefetching",
+   "l2 bus bandwidth",
+   "branch predictor run ahead of fetch",
+   "microarchitecture paper micro-32",
+   "front-end processor stalls",
+   "simplescalar simulation"
+  ],
+  "takeaways": [
+   "A decoupled branch predictor and instruction cache, bridged by a Fetch Target Queue, lets the predictor run ahead of fetch.",
+   "Fetch Directed Prefetching enqueues prefetch candidates from FTQ entries into a Prefetch Instruction Queue, continuing even while the I-cache is stalled.",
+   "Cache Probe Filtering uses idle I-cache tag ports to drop prefetches already in the cache, saving L2 bus bandwidth.",
+   "Filtering FTQ entries (starting at the second entry, up to 10) balances prefetch timeliness against wasted prefetches on mispredicted paths."
+  ],
+  "summary": "The paper (MICRO-32, 1999) by Reinman, Calder and Austin proposes Fetch Directed Prefetching, which follows the predicted instruction stream in a decoupled front end's Fetch Target Queue to issue instruction cache prefetches. It compares this against next-line prefetching and streaming buffers using a SimpleScalar/Alpha timing simulator with an aggressive 8-way out-of-order baseline and SPEC95 benchmarks plus groff. The authors also evaluate Cache Probe Filtering, which uses idle cache ports to skip redundant prefetches, and mention marking evicted FTB entries and cache-miss-based filtering. The text shown ends mid-section, so final results are not included in the page text.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "SimpleScalar",
+   "Alpha AXP",
+   "SPEC95",
+   "C",
+   "C++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10286,
+  "output": 995
+ },
+ "generated": "2026-10-29"
+}

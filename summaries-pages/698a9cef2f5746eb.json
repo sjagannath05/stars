@@ -1,0 +1,70 @@
+{
+ "id": "698a9cef2f5746eb",
+ "url": "https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html",
+ "final_url": "https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "NUMA Memory Policy",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "NUMA and Linux memory placement",
+   "entry": "NUMA Memory Policy - The normative statement of policy scopes, every mode including weighted interleave, and the cpuset intersection rule."
+  }
+ ],
+ "summary": {
+  "title": "NUMA Memory Policy",
+  "one_liner": "Linux kernel reference for how NUMA memory policies (scopes, modes including weighted interleave, flags, syscalls, and the cpuset intersection rule) decide which node pages are allocated from.",
+  "category": "linux memory management",
+  "keywords": [
+   "numa memory policy",
+   "linux numa",
+   "memory policy scopes",
+   "system default policy",
+   "task policy",
+   "vma policy",
+   "shared policy",
+   "mpol_bind",
+   "mpol_preferred",
+   "mpol_preferred_many",
+   "mpol_interleave",
+   "mpol_weighted_interleave",
+   "weighted interleave",
+   "mpol_f_static_nodes",
+   "mpol_f_relative_nodes",
+   "cpuset memory policy intersection",
+   "set_mempolicy",
+   "mbind syscall",
+   "get_mempolicy",
+   "numactl",
+   "how does linux choose which numa node to allocate memory from",
+   "page allocation node placement",
+   "numa_maps"
+  ],
+  "takeaways": [
+   "Memory policy has four scopes (system default, task/process, VMA, shared), and more specific scopes override more general ones; MPOL_DEFAULT falls back to the next scope.",
+   "Four modes exist: MPOL_BIND, MPOL_PREFERRED, MPOL_INTERLEAVE, and MPOL_PREFERRED_MANY, plus MPOL_WEIGHTED_INTERLEAVE, which uses weights from /sys/kernel/mm/mempolicy/weighted_interleave/.",
+   "MPOL_F_STATIC_NODES and MPOL_F_RELATIVE_NODES control how a policy's nodemask is remapped when the allowed node set changes; they cannot be combined.",
+   "When cpuset and memory policy both apply, the policy's nodes are intersected with the cpuset's allowed nodes; an empty result makes the policy invalid."
+  ],
+  "summary": "This kernel documentation page explains what Linux memory policy is and how it differs from cpusets, which restrict memory nodes administratively. It describes the policy scopes (system default, task, VMA, and shared) with their inheritance and reference-counting rules, then covers the components of a policy: the four behavioral modes (including weighted interleave) and the optional flags that control nodemask remapping. It closes with the four memory policy system calls, the numactl command-line tool, and the rule for how policies interact with cpuset constraints.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "NUMA",
+   "set_mempolicy",
+   "mbind",
+   "get_mempolicy",
+   "numactl",
+   "cpusets",
+   "hugetlbfs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9131,
+  "output": 1021
+ },
+ "generated": "2026-10-29"
+}

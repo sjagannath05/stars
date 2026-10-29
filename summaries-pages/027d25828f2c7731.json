@@ -1,0 +1,64 @@
+{
+ "id": "027d25828f2c7731",
+ "url": "https://hackernoon.com/learn-you-some-custom-react-renderers-aed7164a4199",
+ "final_url": "https://hackernoon.com/learn-you-some-custom-react-renderers-aed7164a4199",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Learn how React Reconciler package works by building your own lightweight React DOM | HackerNoon",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Front-end Framework / Library",
+   "entry": "JavaScript: _Learn how React Reconciler package works by building your own lightweight React DOM_"
+  }
+ ],
+ "summary": {
+  "title": "Learn how React Reconciler package works by building your own lightweight React DOM",
+  "one_liner": "You learn how react-reconciler drives a custom renderer by writing a small react-dom replacement that implements host config functions for creating, updating and committing DOM nodes.",
+  "category": "react internals",
+  "keywords": [
+   "react reconciler",
+   "react-reconciler",
+   "custom react renderer",
+   "build react dom from scratch",
+   "react host config",
+   "hostconfig functions",
+   "createinstance",
+   "createtextinstance",
+   "appendinitialchild",
+   "finalizeinitialchildren",
+   "prepareupdate",
+   "commitupdate",
+   "committextupdate",
+   "react fiber",
+   "how react diffing works",
+   "write own react-dom renderer",
+   "custom renderer react native alternative",
+   "react bundle size replace react-dom",
+   "updatecontainer",
+   "create-react-app custom renderer"
+  ],
+  "takeaways": [
+   "react-reconciler handles computation and scheduling, while the custom renderer (host config) decides how to create, update and append nodes in the host environment.",
+   "The host config needs functions such as getRootHostContext, shouldSetTextContent, createTextInstance, createInstance, appendInitialChild, finalizeInitialChildren and appendChildToContainer.",
+   "Diffing is defined by the renderer author: prepareUpdate computes changes and commitUpdate or commitTextUpdate applies them to the DOM.",
+   "Logging the arguments of each host config call is a practical way to learn what React passes to the renderer."
+  ],
+  "summary": "The article walks through building a tiny react-dom style renderer on top of the react-reconciler package, starting from a Create React App project. It inspects how ReactDOM's host config is structured, then implements each required hook step by step, logging arguments to understand what React passes in. It finishes by adding a prepareUpdate/commitUpdate diff so that prop and text changes update the DOM after clicks. The author notes this is a learning exercise that ignores performance concerns, and links to a GitHub repo with the complete renderer.js.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "JavaScript",
+   "React",
+   "react-reconciler",
+   "Create React App",
+   "DOM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5333,
+  "output": 865
+ },
+ "generated": "2026-10-29"
+}

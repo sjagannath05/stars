@@ -1,0 +1,60 @@
+{
+ "id": "0c5b3c148de8d9d7",
+ "url": "https://blog.stuffedcow.net/2014/01/x86-memory-disambiguation",
+ "final_url": "https://blog.stuffedcow.net/2014/01/x86-memory-disambiguation/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Store-to-Load Forwarding and Memory Disambiguation in x86 Processors",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory access and retire",
+   "entry": "Store-to-Load Forwarding and Memory Disambiguation in x86 Processors - Measures which store and load size and offset pairs forward or stall, and which cores predict memory dependences."
+  }
+ ],
+ "summary": {
+  "title": "Store-to-Load Forwarding and Memory Disambiguation in x86 Processors",
+  "one_liner": "Learn how x86 CPUs forward store data to dependent loads and predict memory dependences, with measured latencies and forwarding-success charts for nine Intel and AMD microarchitectures.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "store-to-load forwarding",
+   "memory disambiguation",
+   "memory dependence prediction",
+   "memory dependence speculation",
+   "store queue",
+   "store forwarding latency",
+   "x86 microarchitecture",
+   "load-store unit",
+   "cache line boundary penalty",
+   "16-byte boundary penalty",
+   "pipeline flush misprediction",
+   "microbenchmark store load",
+   "bulldozer piledriver memory dependence",
+   "intel sandy bridge haswell forwarding",
+   "store forwarding buffer",
+   "unaligned memory access forwarding",
+   "henry wong"
+  ],
+  "takeaways": [
+   "Store-to-load forwarding needs the CPU to match loads against uncommitted stores in the store queue, and fails for partial overlaps on most x86 designs.",
+   "Memory dependence speculation lets loads run before earlier store addresses are known, but mispredictions can be costly; Bulldozer and Piledriver appear to lack a dependence predictor.",
+   "Two microbenchmarks (fast address vs. fast data) separate forwarding latency from the cost of speculating on dependences.",
+   "Forwarding behaviour varies by offset and cache-line or 16-byte boundary crossings, which the author charts for all 64x64 offset pairs."
+  ],
+  "summary": "The article explains why store queues make load-store dependencies hard to track in out-of-order x86 CPUs, and describes store-to-load forwarding and memory dependence speculation. Henry Wong builds two microbenchmarks: a \"fast address\" version where store addresses resolve early, and a \"fast data\" version where late-resolving addresses force speculation. He measures results on nine Intel and AMD microarchitectures and plots forwarding latency across all 4,096 combinations of 8-byte store and 4-byte load offsets within 64-byte lines. The author concludes that recent Intel chips forward well but pay a high penalty for predicted-dependent loads, and that AMD Bulldozer and Piledriver likely mispredict every time, incurring roughly 30 to 50 cycle flushes.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86-64 assembly",
+   "Intel Core microarchitectures",
+   "AMD Bulldozer and Piledriver",
+   "C/assembly microbenchmarks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8536,
+  "output": 1019
+ },
+ "generated": "2026-10-29"
+}

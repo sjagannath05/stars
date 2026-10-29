@@ -1,0 +1,70 @@
+{
+ "id": "6c84239481e490e9",
+ "url": "https://blog.asrpo.com/making_a_low_level_debugger_part_2",
+ "final_url": "https://blog.asrpo.com/making_a_low_level_debugger_part_2",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Making a low level (Linux) debugger part 2: C",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "Part 2: C"
+  }
+ ],
+ "summary": {
+  "title": "Making a low level (Linux) debugger part 2: C",
+  "one_liner": "You learn how to read and write C variables in a ptraced process, catch segfaults with sigaction, run live C snippets via dlopen-loaded shared objects, map addresses to source lines with DWARF, and save/restore process state with fork.",
+  "category": "debugger internals",
+  "keywords": [
+   "linux debugger",
+   "build a debugger",
+   "ptrace",
+   "c repl",
+   "live c editing",
+   "dlopen",
+   "dynamic library loading",
+   "sigaction segfault handler",
+   "sigsegv backtrace",
+   "/proc/pid/maps",
+   "memory maps parsing",
+   "dwarf debug info",
+   "pyelftools",
+   "line number from address",
+   "fork process checkpoint",
+   "save and restore process state",
+   "read c variables from memory",
+   "sigchld ignore zombie",
+   "gcc -shared run code",
+   "python debugger"
+  ],
+  "takeaways": [
+   "C global variables can be read and written directly at their header-derived addresses, using their type to know the byte size.",
+   "Segfault handlers can be installed with sigaction to print a backtrace instead of the process just crashing.",
+   "Snippets of C can be compiled to a shared object with gcc, loaded with dlopen, and run from the debugger.",
+   "DWARF info (compiled with -gdwarf-2) maps addresses to function names and line numbers, and fork() can checkpoint a process for undo."
+  ],
+  "summary": "The post continues a Python-based Linux debugger built on ptrace, moving from assembly to C. It shows how to read and write typed C variables at addresses taken from the ELF header, install a SIGSEGV handler with sigaction, and parse /proc/<pid>/maps to locate memory regions. It then builds a C REPL by compiling each line into run_once.so with gcc and loading it via dlopen, and uses DWARF debug info to translate addresses into file, function, and line. The last sections cover saving and loading process state with fork and SIGSTOP, and handling SIGCHLD and zombie children, with a test loop as the demo. The author notes several known failures and open questions.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Python",
+   "Linux",
+   "ptrace",
+   "gcc",
+   "DWARF",
+   "ELF",
+   "pyelftools",
+   "dlopen",
+   "fork",
+   "sigaction"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7930,
+  "output": 910
+ },
+ "generated": "2026-10-29"
+}

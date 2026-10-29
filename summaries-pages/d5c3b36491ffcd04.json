@@ -1,0 +1,68 @@
+{
+ "id": "d5c3b36491ffcd04",
+ "url": "https://martinfowler.com/articles/codemods-api-refactoring.html",
+ "final_url": "https://martinfowler.com/articles/codemods-api-refactoring.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Refactoring with Codemods to Automate API Changes",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Refactoring",
+   "entry": "Refactoring with Codemods to Automate API Changes, martinfowler.com"
+  }
+ ],
+ "summary": {
+  "title": "Refactoring with Codemods to Automate API Changes",
+  "one_liner": "Learn how codemods use AST transformations (with jscodeshift) to automate large-scale breaking API changes, stale feature toggle removal, and component refactors.",
+  "category": "refactoring with codemods",
+  "keywords": [
+   "codemod",
+   "codemods",
+   "automated code transformation",
+   "abstract syntax tree",
+   "ast",
+   "jscodeshift",
+   "hypermod",
+   "codemod.com",
+   "ast explorer",
+   "breaking api changes",
+   "automate api migration",
+   "library migration tool",
+   "remove feature toggle",
+   "stale feature toggle cleanup",
+   "test-driven codemods",
+   "codemod composition",
+   "refactor react component",
+   "source graph",
+   "defineinlinetest",
+   "large-scale refactoring"
+  ],
+  "takeaways": [
+   "A codemod parses source into an AST, modifies the tree, and writes it back, letting you apply consistent changes across many files.",
+   "Write negative and positive tests first (e.g. with jscodeshift defineInlineTest) so the codemod changes only what it should.",
+   "Use jscodeshift's find/replaceWith API to remove stale feature toggles or refactor components such as an Avatar wrapped in a Tooltip.",
+   "Handle real-world edge cases like import aliases, assigned variables and negations, and leave TODO comments where automation isn't confident.",
+   "Break complex transformations into small composable codemods that can be tested and reused independently."
+  ],
+  "summary": "The article explains codemods as automated AST-based scripts for applying breaking API changes and cleanups across large or distributed codebases, with Facebook's jscodeshift as the main example tool (alongside hypermod.io and codemod.com). It walks through a stale feature toggle removal and an Avatar/Tooltip component refactor, showing test-first development with jscodeshift's defineInlineTest and the parse, transform, print workflow. It then covers pitfalls such as import aliases and varied toggle usage, suggesting source graph searches, linters, and TODO comments for uncertain cases. The piece closes by introducing codemod composition, splitting a large transform into smaller testable codemods.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "TypeScript",
+   "React",
+   "jscodeshift",
+   "AST Explorer",
+   "Hypermod",
+   "codemod.com",
+   "Jest"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9208,
+  "output": 924
+ },
+ "generated": "2026-10-29"
+}

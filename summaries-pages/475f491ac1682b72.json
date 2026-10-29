@@ -1,0 +1,65 @@
+{
+ "id": "475f491ac1682b72",
+ "url": "https://rsim.cs.illinois.edu/Pubs/08PLDI.pdf",
+ "final_url": "https://rsim.cs.illinois.edu/Pubs/08PLDI.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory models and atomics",
+   "entry": "Foundations of the C++ Concurrency Memory Model - Defines the data-race-free contract, sequential consistency for race-free programs and no meaning for a race."
+  }
+ ],
+ "summary": {
+  "title": "Foundations of the C++ Concurrency Memory Model",
+  "one_liner": "The C++ threads memory model guarantees sequential consistency only for data-race-free programs, gives no semantics to programs with data races, and weakens trylock so race-free reasoning still holds.",
+  "category": "memory models and atomics",
+  "keywords": [
+   "c++ memory model",
+   "c++ concurrency memory model",
+   "data-race-free",
+   "data race semantics",
+   "sequential consistency",
+   "sequentially consistent atomics",
+   "data-race-free-0",
+   "trylock",
+   "pthread_mutex_trylock",
+   "low-level atomics",
+   "relaxed memory model",
+   "memory consistency model",
+   "undefined behavior data race",
+   "lock and unlock reordering",
+   "bit-field data race",
+   "java memory model comparison",
+   "c++ atomics",
+   "compiler transformations threads",
+   "properly labeled models",
+   "race-free program guarantees"
+  ],
+  "takeaways": [
+   "C++ gives sequentially consistent behavior to programs with no data races, and undefined behavior to programs that have one.",
+   "The authors deliberately give no semantics to data races, arguing there are no benign C++ data races.",
+   "Sequentially consistent atomics are required by the model, but hardware cost led to a separate low-level atomics option.",
+   "Weaker trylock semantics let programmers reason with sequential consistency and a simple race definition, without costly fences."
+  ],
+  "summary": "This 2008 PLDI paper by Boehm and Adve describes the memory model being added to the C++ standard for multithreaded programs. It adapts the data-race-free-0 approach used by Java: race-free programs behave sequentially consistently, while programs with a data race have undefined behavior. The paper formalizes sequentially consistent executions and data races, then explains why atomics, trylock, and data races were treated the way they were. It also covers which reorderings the model allows and how trylock can be made efficient.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "Pthreads",
+   "Java memory model",
+   "gcc atomic intrinsics",
+   "Microsoft Interlocked operations",
+   "Linux kernel atomics"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9403,
+  "output": 842
+ },
+ "generated": "2026-10-29"
+}

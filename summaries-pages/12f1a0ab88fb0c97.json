@@ -1,0 +1,63 @@
+{
+ "id": "12f1a0ab88fb0c97",
+ "url": "https://blog.holbertonschool.com/hack-the-virtual-memory-c-strings-proc",
+ "final_url": "https://blog.holbertonschool.com/hack-the-virtual-memory-c-strings-proc/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Hack The Virtual Memory: C strings & /proc - Blog Holberton School",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Operating System",
+   "entry": "C: _Hack the virtual memory_"
+  }
+ ],
+ "summary": {
+  "title": "Hack The Virtual Memory: C strings & /proc",
+  "one_liner": "You learn how to find and overwrite a C string in the heap of a running Linux process by reading /proc/[pid]/maps and /proc/[pid]/mem.",
+  "category": "virtual memory hacking",
+  "keywords": [
+   "virtual memory",
+   "proc filesystem",
+   "/proc/pid/mem",
+   "/proc/pid/maps",
+   "heap memory",
+   "strdup",
+   "malloc",
+   "c strings",
+   "modify process memory",
+   "read process memory linux",
+   "overwrite string in running process",
+   "process memory layout",
+   "stack and heap addresses",
+   "ascii string in memory",
+   "python read write heap script",
+   "linux process virtual address space",
+   "ps aux find pid",
+   "root access to proc mem",
+   "chapter 0 hack the virtual memory"
+  ],
+  "takeaways": [
+   "Each process has its own virtual memory; the stack sits at high addresses and the heap at low addresses.",
+   "/proc/[pid]/maps lists mapped regions, including the [heap] range and its permissions.",
+   "/proc/[pid]/mem can be opened and seeked to read or write memory inside a running process (as root).",
+   "A short Python 3 script can locate a string in the heap and overwrite it with a string of the same or shorter length."
+  ],
+  "summary": "This first chapter of the Holberton \"Hack The Virtual Memory\" series explains virtual memory basics, including the high-address stack and low-address heap layout. It then uses a small C program that calls strdup, a loop program that prints the duplicated string, and the /proc filesystem to inspect the process. The author reads /proc/[pid]/maps to find the heap range, then uses a Python 3 script to search /proc/[pid]/mem and overwrite \"Holberton\" with \"Fun w vm!\" in the running process. The tested environment is Ubuntu 14.04 with gcc 4.8.4 and Python 3.4.3.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Python 3",
+   "Linux /proc filesystem",
+   "gcc",
+   "bash shell"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11335,
+  "output": 831
+ },
+ "generated": "2026-10-29"
+}

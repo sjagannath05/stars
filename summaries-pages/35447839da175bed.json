@@ -1,0 +1,65 @@
+{
+ "id": "35447839da175bed",
+ "url": "https://hakibenita.com/sql-anomaly-detection",
+ "final_url": "https://hakibenita.com/sql-anomaly-detection",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Simple Anomaly Detection Using Plain SQL",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Monitoring",
+   "entry": "Simple Anomaly Detection Using Plain SQL"
+  }
+ ],
+ "summary": {
+  "title": "Simple Anomaly Detection Using Plain SQL",
+  "one_liner": "You learn how to detect anomalies in time-series data such as server logs using only PostgreSQL SQL: mean, standard deviation, z-scores, sliding windows, and thresholds, with no extra dependencies.",
+  "category": "anomaly detection sql",
+  "keywords": [
+   "anomaly detection",
+   "anomaly detection sql",
+   "anomaly detection postgresql",
+   "z-score",
+   "standard score",
+   "standard deviation",
+   "mean and standard deviation outliers",
+   "outlier detection",
+   "sliding window standard deviation",
+   "window function sql",
+   "postgresql window functions",
+   "named window postgresql",
+   "generate_series time axis",
+   "fill gaps in time series sql",
+   "backtesting alert thresholds",
+   "server log monitoring",
+   "http status code spikes",
+   "alert on error spikes",
+   "repeating alerts suppression",
+   "plain sql monitoring without dependencies"
+  ],
+  "takeaways": [
+   "Define a reasonable value with the mean and a deviation with the standard deviation, then flag values outside a z-score threshold as anomalies.",
+   "Use generate_series and a VALUES list to build a complete time axis so zero-count periods are not missing from the data.",
+   "Compute a rolling mean and standard deviation per status code with a PostgreSQL window function over the previous 60 rows.",
+   "Backtest different z-score thresholds on past data, and add a minimum entries threshold to avoid alerts on single events.",
+   "Suppress repeated alerts so that one anomaly triggers only one notification rather than one per minute."
+  ],
+  "summary": "The article builds a simple anomaly detector using only SQL in PostgreSQL, without external tools or statistical libraries. It starts with a small numeric series, computing the mean, standard deviation, and z-score to flag outliers, then applies the same approach to a server log summary table of HTTP status codes per minute. It shows how to fill gaps with a generated time axis, compute the last-value z-score for alerts, and run backtests with a sliding 60-row window to tune the threshold. It finishes by adding a minimum-entries threshold to reduce noise and discusses avoiding repeated alerts for the same ongoing anomaly.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "SQL",
+   "PostgreSQL",
+   "nginx",
+   "Apache",
+   "IIS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 12566,
+  "output": 924
+ },
+ "generated": "2026-10-29"
+}

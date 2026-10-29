@@ -1,0 +1,62 @@
+{
+ "id": "6a2a2e14d10c4079",
+ "url": "https://tutorialedge.net/projects/chat-system-in-go-and-react/part-4-handling-multiple-clients",
+ "final_url": "https://tutorialedge.net/projects/chat-system-in-go-and-react/part-4-handling-multiple-clients/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Part 4 - Handling Multiple Clients | TutorialEdge",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 4: Handling Multiple Clients"
+  }
+ ],
+ "summary": {
+  "title": "Part 4 - Handling Multiple Clients",
+  "one_liner": "You learn how to handle multiple WebSocket clients in Go by using a connection Pool with channels to register, unregister and broadcast messages to every connected client.",
+  "category": "go websocket chat",
+  "keywords": [
+   "go websocket multiple clients",
+   "golang websocket broadcast",
+   "connection pool go",
+   "go channels broadcast messages",
+   "gorilla websocket pool",
+   "websocket chat server go",
+   "broadcast message to all connected clients",
+   "go goroutine per connection",
+   "thread-safe websocket writes",
+   "channels vs sync.mutex go",
+   "register unregister clients go",
+   "pkg websocket project layout",
+   "go project layout pkg directory",
+   "react chat app with go backend",
+   "notify clients when user joins or leaves",
+   "tutorialedge chat series part 4"
+  ],
+  "takeaways": [
+   "Split WebSocket code into a pkg/websocket sub-package and keep main.go minimal, exporting functions by capitalizing their names.",
+   "Define a Client struct (ID, Conn, Pool) whose Read() method forwards incoming messages to the pool's Broadcast channel.",
+   "Use a Pool struct with Register, Unregister, Broadcast channels and a map of clients, run by a Start() loop so only one goroutine writes to sockets.",
+   "Channels were chosen over sync.Mutex to safely coordinate the concurrent goroutines that each serve a connection.",
+   "Pool notifies existing clients when someone joins or leaves, and the result is verified by opening multiple browser tabs."
+  ],
+  "summary": "The post is part 4 of a series building a Go and ReactJS chat app. It first refactors the WebSocket code into a pkg/websocket package following the golang-standards project layout. It then introduces a Client struct with a Read() loop and a Pool struct whose Start() method handles register, unregister and broadcast events over channels. The author explains the choice of channels over sync.Mutex for thread safety, and the final main.go creates a client per connection and registers it with a shared pool. The test step is to run the backend and open several browser tabs to confirm messages reach all clients.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "ReactJS",
+   "WebSocket",
+   "gorilla/websocket",
+   "goroutines",
+   "channels"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5798,
+  "output": 912
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,68 @@
+{
+ "id": "277de99dc32e284a",
+ "url": "https://www.chinedufn.com/3d-webgl-basic-water-tutorial",
+ "final_url": "https://www.chinedufn.com/3d-webgl-basic-water-tutorial/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "WebGL + Rust: Basic Water Tutorial",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Rust: _WebGL + Rust: Basic Water Tutorial_"
+  }
+ ],
+ "summary": {
+  "title": "WebGL + Rust: Basic Water Tutorial",
+  "one_liner": "You learn how a basic real-time water surface is rendered in WebGL using reflection and refraction framebuffers, du/dv distortion, normal maps and Fresnel blending, with a walkthrough of a Rust/WebAssembly demo.",
+  "category": "webgl water rendering",
+  "keywords": [
+   "webgl water rendering",
+   "real-time water shader",
+   "webgl water tutorial",
+   "rust webgl",
+   "rust webassembly graphics",
+   "wasm-bindgen",
+   "reflection and refraction framebuffer",
+   "planar reflection",
+   "refraction texture",
+   "reflection texture",
+   "du/dv map",
+   "dudv distortion",
+   "normal map water",
+   "fresnel effect water",
+   "specular highlights water",
+   "projective texture mapping",
+   "clip plane webgl discard",
+   "water depth texture",
+   "opengl water shader",
+   "how to render water in games"
+  ],
+  "takeaways": [
+   "Water can be approximated by blending a refraction texture (scene below the water) and a reflection texture (scene mirrored above the water) on a flat quad.",
+   "A du/dv map offsets texture sampling each frame to make the water appear to move, and a normal map adds surface detail for specular highlights.",
+   "The Fresnel effect mixes reflection and refraction based on viewing angle: viewing from above shows more refraction, from the side more reflection.",
+   "WebGL has no gl_ClipDistance, so the tutorial clips fragments against a plane in the fragment shader and discards those on the wrong side.",
+   "The demo builds Rust to wasm32 with cargo and wasm-bindgen, and exports Blender scenery via a build script."
+  ],
+  "summary": "The tutorial explains the core ideas of rendering water: render the scene below the surface into a refraction framebuffer, mirror the camera across the water plane to render a reflection framebuffer, then blend both on a quad using du/dv distortion, a normal map, depth-based darkening, Fresnel weighting and a specular highlight. It then walks through the demo's Rust and WebAssembly code, including the build script, the index.html render loop, the water vertex and fragment shaders, the clip-plane discard approach, and the uniform setup in the water tile renderer. It is a reference implementation intended as a starting point for more advanced water techniques.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "WebGL",
+   "WebAssembly",
+   "wasm-bindgen",
+   "GLSL",
+   "Blender",
+   "JavaScript",
+   "OpenGL"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10530,
+  "output": 986
+ },
+ "generated": "2026-10-29"
+}

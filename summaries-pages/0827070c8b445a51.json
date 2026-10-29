@@ -1,0 +1,68 @@
+{
+ "id": "0827070c8b445a51",
+ "url": "https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44271.pdf",
+ "final_url": "https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44271.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Methodology and what suites miss",
+   "entry": "Profiling a warehouse-scale computer - Fleet counter profile showing services stall on instruction fetch and burn cycles in shared routines, which SPEC lacks."
+  }
+ ],
+ "summary": {
+  "title": "Profiling a warehouse-scale computer",
+  "one_liner": "Learn how a longitudinal, fleet-wide hardware-counter study of Google's live datacenter jobs shows diverse workloads, a large \"datacenter tax\" of shared low-level routines, and front-end and cache bottlenecks that SPEC-style benchmarks miss.",
+  "category": "computer architecture performance",
+  "keywords": [
+   "warehouse-scale computer",
+   "wsc profiling",
+   "datacenter profiling",
+   "fleet profiling",
+   "google-wide-profiling",
+   "gwp",
+   "datacenter tax",
+   "protocol buffers serialization",
+   "rpc overhead",
+   "instruction cache bottleneck",
+   "front-end stalls",
+   "top-down analysis",
+   "cpi stack",
+   "performance counters",
+   "spec benchmarks comparison",
+   "cloud server microarchitecture",
+   "workload diversity",
+   "hardware specialization accelerators",
+   "smt latency hiding",
+   "memory latency vs bandwidth",
+   "how do datacenter workloads stall the cpu",
+   "why spec does not represent servers"
+  ],
+  "takeaways": [
+   "Production datacenter workloads are very diverse, with no single application dominating cycles; the hottest binary accounts for about 10% and about 50 binaries cover roughly 60%.",
+   "Roughly 22-27% of cycles go to 'datacenter tax' (protobufs, RPC, hashing, compression, allocation, memmove), making these shared routines candidates for hardware acceleration.",
+   "Front-end stalls account for 15-30% of pipeline slots and instruction-cache pressure is a major bottleneck, while memory latency matters more than bandwidth.",
+   "The study uses random sampling via GWP and Intel Ivy Bridge performance counters with Top-Down cycle accounting over about 20,000 machines and three years."
+  ],
+  "summary": "The paper presents a microarchitectural profile of live jobs on more than 20,000 Google machines over about three years, collected with low-overhead random sampling (GWP) and Intel Ivy Bridge performance counters. It analyzes workload diversity across binaries and leaf functions, then identifies a 'datacenter tax' of common low-level routines such as protobufs, RPC, hashing, compression, allocation, and memmove. Using the Top-Down method to measure stall cycles, it reports front-end and instruction-cache bottlenecks, data-cache-dominated stalls, latency over bandwidth, and limited SMT benefits. It is a research paper (ISCA 2015) rather than a tutorial.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "Protocol Buffers",
+   "Intel Ivy Bridge",
+   "perf",
+   "Dremel",
+   "SPEC",
+   "CloudSuite"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9659,
+  "output": 1067
+ },
+ "generated": "2026-10-29"
+}

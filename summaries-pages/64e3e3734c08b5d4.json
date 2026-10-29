@@ -1,0 +1,63 @@
+{
+ "id": "64e3e3734c08b5d4",
+ "url": "https://lmax-exchange.github.io/disruptor/disruptor.html",
+ "final_url": "https://lmax-exchange.github.io/disruptor/disruptor.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "LMAX Disruptor: High performance alternative to bounded queues for exchanging data between concurrent threads",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Mechanical sympathy",
+   "entry": "LMAX Disruptor - Applies the single writer rule and cache-line padding to a ring buffer, with the queue comparison that motivated it."
+  }
+ ],
+ "summary": {
+  "title": "LMAX Disruptor: High performance alternative to bounded queues for exchanging data between concurrent threads",
+  "one_liner": "Learn why queues are costly for concurrent pipelines and how the LMAX Disruptor uses a pre-allocated ring buffer, sequence counters, and single-writer ownership to avoid contention.",
+  "category": "concurrent programming",
+  "keywords": [
+   "lmax disruptor",
+   "ring buffer",
+   "bounded queue alternative",
+   "concurrent threads data exchange",
+   "single writer principle",
+   "false sharing",
+   "cache line",
+   "memory barriers",
+   "compare and swap",
+   "cas operations",
+   "lock contention cost",
+   "lock-free queue",
+   "producer consumer pattern",
+   "sequencing in concurrent systems",
+   "garbage collection low latency",
+   "pipeline dependency graph",
+   "mechanical sympathy",
+   "java concurrency performance",
+   "why queues are slow",
+   "batching consumers latency"
+  ],
+  "takeaways": [
+   "Locks and contended writes are expensive because they involve kernel arbitration and cache coherency costs; CAS avoids kernel context switches but still has a cost.",
+   "Cache lines (typically 64 bytes) cause false sharing when independent variables written by different threads share one, so such variables should be separated.",
+   "The Disruptor uses a pre-allocated, bounded ring buffer with power-of-2 size and separates producer claiming, storage, and consumer notification.",
+   "With a single producer, the Disruptor needs no locks or CAS; coordination uses only memory barriers on sequence counters.",
+   "Consumers that lag can batch-process up to the current cursor, which the author reports keeps latency close to constant under load."
+  ],
+  "summary": "The LMAX team explains why standard queues dominated the cost of their financial exchange pipelines, covering locks, CAS, memory barriers, cache lines, and garbage collection. They then describe the Disruptor design: a pre-allocated bounded ring buffer where producers claim sequence slots, commit via a cursor, and consumers track their own sequences. The page includes a small benchmark table comparing lock and CAS costs against a single-thread baseline. It is a conceptual design write-up with a few code snippets, not a usage tutorial.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Java",
+   "x86 CAS (lock cmpxchg)",
+   "java.util.concurrent.atomic"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8359,
+  "output": 931
+ },
+ "generated": "2026-10-29"
+}

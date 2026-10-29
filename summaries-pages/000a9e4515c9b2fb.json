@@ -1,0 +1,60 @@
+{
+ "id": "000a9e4515c9b2fb",
+ "url": "https://www.joshmcguigan.com/blog/build-your-own-shell-rust",
+ "final_url": "https://www.joshmcguigan.com/blog/build-your-own-shell-rust/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Your Own Shell using Rust",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Shell",
+   "entry": "Rust: _Build Your Own Shell using Rust_"
+  }
+ ],
+ "summary": {
+  "title": "Build Your Own Shell using Rust",
+  "one_liner": "You learn how a shell works by incrementally building a small one in Rust, from reading a single command to supporting arguments, built-ins like cd and exit, and pipes.",
+  "category": "build a shell",
+  "keywords": [
+   "build your own shell",
+   "rust shell tutorial",
+   "write a shell in rust",
+   "rust command spawn",
+   "std::process::command",
+   "shell built-in commands",
+   "cd built-in",
+   "exit built-in",
+   "pipes in shell",
+   "pipe ls into grep rust",
+   "read_line stdin prompt loop",
+   "terminal emulator vs shell",
+   "how does a shell work",
+   "build-your-own-x",
+   "unix shell implementation",
+   "stdio piped inherit",
+   "argument splitting whitespace",
+   "rush rust shell"
+  ],
+  "takeaways": [
+   "A shell reads a line from stdin, splits it into a command and arguments, and spawns the program as a child process.",
+   "Wrapping the read-spawn-wait steps in a loop lets the shell accept multiple commands, and calling wait keeps the prompt from appearing too early.",
+   "Some commands such as cd must be built into the shell because they change state inside the shell process itself.",
+   "Pipes are implemented by connecting one child's stdout to the next child's stdin using Stdio::piped and Stdio::from."
+  ],
+  "summary": "The author walks through writing a shell in Rust in small, incremental steps, with each step shown as a code listing. The steps cover reading input with stdin().read_line, running commands with Command::new, adding a prompt loop and waiting on child processes, and splitting input on whitespace to pass arguments. Later sections add the cd and exit built-ins, graceful handling of unknown commands, and basic pipe support. The post is a learning project, and the author notes that simplicity was favored over robustness; the full code is on GitHub.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "Unix shell",
+   "bash"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4291,
+  "output": 792
+ },
+ "generated": "2026-10-29"
+}

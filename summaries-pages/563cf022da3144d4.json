@@ -1,0 +1,81 @@
+{
+ "id": "563cf022da3144d4",
+ "url": "https://docs.python.org/3/library/pathlib.html",
+ "final_url": "https://docs.python.org/3/library/pathlib.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "pathlib — Object-oriented filesystem paths",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "pathlib - (Python standard library) A cross-platform, object-oriented path library."
+  }
+ ],
+ "summary": {
+  "name": "pathlib",
+  "one_liner": "pathlib is Python's standard library module for object-oriented filesystem paths, with pure path classes for string-only manipulation and concrete Path classes that also perform filesystem I/O.",
+  "category": "python standard library module",
+  "keywords": [
+   "pathlib",
+   "python pathlib",
+   "object-oriented paths",
+   "filesystem paths python",
+   "path library python",
+   "cross-platform path library",
+   "pure path",
+   "concrete path",
+   "purepath",
+   "pureposixpath",
+   "purewindowspath",
+   "path class python",
+   "posixpath",
+   "windowspath",
+   "os.path alternative",
+   "glob python",
+   "iterdir",
+   "path joining python",
+   "file extension python",
+   "file uri python",
+   "path.resolve",
+   "python file paths windows unix",
+   "list files in directory python",
+   "get file suffix python",
+   "python path manipulation",
+   "os.path comparison",
+   "pathlib tutorial"
+  ],
+  "use_cases": [
+   "Manipulating Windows paths on a Unix machine or vice versa",
+   "Listing subdirectories and glob-matching source files",
+   "Joining and navigating filesystem paths in Python code",
+   "Changing file names, stems or suffixes",
+   "Converting between paths and file:// URIs",
+   "Expanding home directories and resolving symlinks"
+  ],
+  "what_it_does": "[\"Provides classes representing filesystem paths with semantics suited to different operating systems. Pure path classes (PurePath, PurePosixPath, PureWindowsPath) do string-only operations without touching the OS.\", \"Concrete Path, PosixPath and WindowsPath subclasses add system-call methods such as exists(), is_dir(), iterdir(), glob(), open() and resolve().\", \"Supports path navigation with the / operator, and properties such as parts, parent, name, stem, suffix and suffixes.\", \"Offers pattern matching with full_match() and match(), plus relative_to(), with_name(), with_stem() and with_suffix() for deriving new paths.\", \"Can create and parse 'file' URIs (RFC 8089) through as_uri() and Path.from_uri().\"]",
+  "pricing": "open source",
+  "platforms": [
+   "Windows",
+   "Unix",
+   "macOS",
+   "Linux"
+  ],
+  "notable": [
+   "Pure path classes can manipulate Windows paths on Unix and vice versa without touching the filesystem",
+   "Path.from_uri() and as_uri() convert between paths and file:// URIs",
+   "Part of the Python standard library, added in version 3.4"
+  ],
+  "caveats": [
+   "Instantiating WindowsPath on Unix (or PosixPath on Windows) raises an UnsupportedOperation error, so only the matching concrete flavour can be used",
+   "Calling as_uri() from PurePath rather than Path is deprecated and will be removed in version 3.19",
+   "Some concrete path methods can raise OSError if a system call fails, such as when a path does not exist"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11575,
+  "output": 1099
+ },
+ "generated": "2026-10-29"
+}

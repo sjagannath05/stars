@@ -1,0 +1,81 @@
+{
+ "id": "42516bb950518fef",
+ "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+ "final_url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Effective context engineering for AI agents",
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "From Anthropic",
+   "entry": "Effective Context Engineering for AI Agents by Anthropic - Anthropic's guide to curating the context window — compaction, just-in-time retrieval, and note-taking — the discipline underlying effective long-horizon agent use."
+  }
+ ],
+ "summary": {
+  "name": "Effective context engineering for AI agents",
+  "one_liner": "An Anthropic engineering guide arguing that building capable LLM agents depends on curating the limited context window, covering compaction, structured note-taking, sub-agent architectures and just-in-time retrieval.",
+  "category": "llm agent engineering guide",
+  "keywords": [
+   "context engineering",
+   "prompt engineering",
+   "llm context window",
+   "context rot",
+   "attention budget",
+   "compaction",
+   "context compaction",
+   "structured note-taking",
+   "agentic memory",
+   "sub-agent architecture",
+   "multi-agent architecture",
+   "just in time retrieval",
+   "agentic search",
+   "progressive disclosure",
+   "long-horizon tasks",
+   "tool result clearing",
+   "few-shot prompting",
+   "system prompt design",
+   "needle in a haystack",
+   "claude code",
+   "anthropic memory tool",
+   "model context protocol",
+   "claude.md",
+   "ai agent context management",
+   "how to manage llm context",
+   "llm memory across sessions",
+   "agent running in a loop",
+   "token efficiency",
+   "embedding retrieval vs agentic retrieval",
+   "claude developer platform"
+  ],
+  "use_cases": [
+   "Keeping a long-running coding agent coherent across hours of work",
+   "Deciding what to keep when summarizing an agent's conversation",
+   "Designing token-efficient tools for an AI agent",
+   "Letting an agent retrieve files or data on demand instead of preloading them",
+   "Giving an agent persistent notes or memory outside the context window",
+   "Structuring system prompts and few-shot examples for agents"
+  ],
+  "what_it_does": "The page is an essay, not a software product, explaining context engineering as the successor to prompt engineering: curating every token that reaches a model during inference, including system prompts, tools, examples, message history and external data. It describes context rot, where recall degrades as the token count grows, and frames context as a finite attention budget. It recommends a minimal set of high-signal tokens, tools with little overlap, and a small set of diverse examples instead of long lists of edge-case rules. For long-horizon work it describes three techniques: compaction (summarizing a near-full context and restarting), structured note-taking written to external memory, and sub-agents that return condensed summaries. It also covers just-in-time retrieval using lightweight references, with Claude Code's CLAUDE.md and glob/grep used as examples of a hybrid approach.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Defines context rot: recall accuracy falls as the context window fills, and this holds across models",
+   "Describes compaction, structured note-taking and multi-agent sub-agents as the three techniques for long-horizon tasks",
+   "Explains Claude Code's hybrid approach: CLAUDE.md loaded up front, with glob and grep for just-in-time file retrieval"
+  ],
+  "caveats": [
+   "Describes Anthropic's own products and approaches (Claude Code, Claude Developer Platform memory tool), so examples are vendor-specific",
+   "Runtime exploration is slower than pre-computed retrieval and needs careful tool and heuristic design",
+   "Advice is general guidance rather than measured benchmarks, and it says it will change as models improve"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7304,
+  "output": 1189
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "7d7b77ae65d8ff55",
+ "url": "https://briancallahan.net/blog/20210817.html",
+ "final_url": "https://briancallahan.net/blog/20210817.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 4: Testing"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 4: Testing",
+  "one_liner": "You learn how to add a minimal Makefile and a shell-script test harness that automatically runs numbered PL/0 test programs against a C compiler via make test.",
+  "category": "compiler testing",
+  "keywords": [
+   "makefile for c compiler",
+   "make test",
+   "shell script test runner",
+   "pl/0 compiler",
+   "compiler test suite",
+   "automated testing compiler",
+   "test.sh",
+   "numbered test files",
+   "expected-pass tests",
+   "expected-fail tests",
+   "front end testing",
+   "accept and reject tests",
+   "build a compiler tutorial",
+   "makefile clean target",
+   "bash test harness",
+   "write compiler tests",
+   "pl0 test programs",
+   "regression testing compiler"
+  ],
+  "takeaways": [
+   "A small Makefile with CC, CFLAGS, OBJS and test/clean targets is enough for a single-file C compiler.",
+   "A shell loop over *.pl0 files in a tests/ directory lets new tests be added without changing the runner.",
+   "Tests numbered with four digits give up to 10,000 tests, and %.5s allows 100,000.",
+   "Each test is a PL/0 program with a comment giving its number and purpose; the empty program '.' is the smallest legal test.",
+   "Expected-fail tests could be separated by number range, though the post only uses expected-pass tests."
+  ],
+  "summary": "The author adds build and test infrastructure to a PL/0 compiler written in C. A minimal Makefile compiles pl0c and provides make test and make clean targets. A tests/ directory holds a test.sh script that loops over *.pl0 files, runs the compiler on each, and reports ok or fail based on the exit status. The post walks through initial tests, starting with the empty program '.' and a comment-decorated variant, and it notes the guidelines for contributed tests about open source licensing. It ends by saying the next step is the code generator.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "PL/0",
+   "GNU Make",
+   "POSIX shell",
+   "Makefile"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2618,
+  "output": 821
+ },
+ "generated": "2026-10-29"
+}

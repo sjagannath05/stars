@@ -1,0 +1,68 @@
+{
+ "id": "d0ccffbcb1cfc7db",
+ "url": "https://martinfowler.com/articles/evodb.html",
+ "final_url": "https://martinfowler.com/articles/evodb.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Evolutionary Database Design",
+ "sources": [
+  {
+   "list": "kuchin/awesome-cto",
+   "section": "Data",
+   "entry": "Evolutionary Database Design *(Martin Fowler)*"
+  }
+ ],
+ "summary": {
+  "title": "Evolutionary Database Design",
+  "one_liner": "Learn how to change a production database's schema and data safely over time by treating every change as a small, version-controlled migration script applied through CI.",
+  "category": "database migrations",
+  "keywords": [
+   "evolutionary database design",
+   "database migrations",
+   "schema migration",
+   "schema evolution",
+   "database refactoring",
+   "version control for database",
+   "continuous integration database",
+   "migration scripts",
+   "numbered migration files",
+   "changelog table",
+   "flyway",
+   "dbdeploy",
+   "mybatis",
+   "per-developer database instance",
+   "dba collaboration agile",
+   "evolve production database schema",
+   "agile database development",
+   "phoenix database environments",
+   "split a column into multiple columns example",
+   "martin fowler database article"
+  ],
+  "takeaways": [
+   "Represent every schema and data change as a small, sequentially numbered migration script stored in version control with application code.",
+   "Give each developer a private database instance (schema or local VM) so experiments do not disturb shared work, and rebuild them regularly.",
+   "Integrate database changes into mainline frequently (at least daily) so CI runs migrations and tests against a copy of the database.",
+   "Never alter schemas with GUI tools or ad hoc DDL; track applied migrations with a changelog table, as tools like Flyway do.",
+   "Work closely with DBAs, who review migrations and help with significant schema changes."
+  ],
+  "summary": "The article, by Martin Fowler and Thoughtworks colleagues, describes techniques for evolving a database's schema and contents alongside agile application development. It walks through a worked example where a developer splits an inventory code column into three new columns using a migration script, updating application code, views and indexes together. It then lays out core practices: close DBA collaboration, putting all database artifacts in version control, treating every change as a numbered migration tracked by a changelog table, giving each developer a private database, and integrating through continuous integration and a deployment pipeline. The page also notes limitations, such as heavily customized multi-schema deployments.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "SQL",
+   "Oracle",
+   "Flyway",
+   "dbdeploy",
+   "MyBatis",
+   "Ant",
+   "Vagrant",
+   "Continuous Integration servers (GoCD, Jenkins, Bamboo, Travis CI, Snap CI)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8516,
+  "output": 895
+ },
+ "generated": "2026-10-29"
+}

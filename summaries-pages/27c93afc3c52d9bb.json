@@ -1,0 +1,65 @@
+{
+ "id": "27c93afc3c52d9bb",
+ "url": "https://docs.openvino.ai/2026/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device/performance-hint-and-thread-scheduling.html",
+ "final_url": "https://docs.openvino.ai/2026/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device/performance-hint-and-thread-scheduling.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Performance Hints and Thread Scheduling#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Threading for inference",
+   "entry": "Performance Hints and Thread Scheduling - States the vendor defaults, one thread per core, SMT siblings off, core type by precision and one socket for latency."
+  }
+ ],
+ "summary": {
+  "title": "Performance Hints and Thread Scheduling",
+  "one_liner": "OpenVINO's CPU plugin picks thread, core-type and pinning defaults from a LATENCY or THROUGHPUT performance hint, and this page explains those defaults and how to override them.",
+  "category": "cpu inference performance",
+  "keywords": [
+   "openvino performance hints",
+   "openvino latency hint",
+   "openvino throughput hint",
+   "cpu thread scheduling",
+   "inference_num_threads",
+   "num_streams",
+   "scheduling_core_type",
+   "p-cores and e-cores",
+   "hybrid cpu inference",
+   "hyper-threading inference",
+   "enable_hyper_threading",
+   "cpu pinning inference",
+   "sub-numa clustering",
+   "onetbb worker_wait",
+   "openmp busy-wait omp_wait_policy",
+   "multi-stream execution",
+   "intel cpu inference tuning",
+   "how to set thread count for openvino"
+  ],
+  "takeaways": [
+   "Use the LATENCY or THROUGHPUT performance hint for portable CPU tuning instead of setting low-level properties by hand.",
+   "With the latency hint, the default core type depends on model precision (INT8 vs FP32) and the ratio of E-cores to P-cores; hyper-threading is set to No and a single socket is used by default.",
+   "With the throughput hint, threads per stream depend on the model's memory pressure (low, medium, high), and num_streams is derived from inference_num_threads divided by that value.",
+   "Properties such as inference_num_threads, scheduling_core_type, enable_hyper_threading and enable_cpu_pinning can limit CPU resources, with Python and C++ examples given.",
+   "When mixing oneTBB and OpenMP in one pipeline, busy-waiting can waste cores; options include using oneTBB everywhere, rebuilding with OpenMP, or setting OMP_WAIT_POLICY to PASSIVE."
+  ],
+  "summary": "The page documents how OpenVINO's CPU plugin uses the LATENCY and THROUGHPUT performance hints to set low-level threading properties such as inference_num_threads, num_streams, scheduling_core_type, hyper-threading and CPU pinning. It gives tables of default P-core and E-core choices by model precision and core ratio for the latency hint, and threads-per-stream choices by memory pressure for the throughput hint, with separate Windows and Linux defaults. It also includes Python and C++ snippets for limiting CPU resources, notes that scheduling_core_type and enable_hyper_threading only apply to x86-64 on Linux and Windows, and discusses oneTBB versus OpenMP busy-wait overhead.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "OpenVINO",
+   "C++",
+   "Python",
+   "oneTBB",
+   "OpenMP",
+   "Intel Core processors",
+   "Intel Xeon processors"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4498,
+  "output": 1100
+ },
+ "generated": "2026-10-29"
+}

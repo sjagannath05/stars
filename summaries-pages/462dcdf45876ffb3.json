@@ -1,0 +1,77 @@
+{
+ "id": "462dcdf45876ffb3",
+ "url": "https://en.wikipedia.org/wiki/Reverse_proxy",
+ "final_url": "https://en.wikipedia.org/wiki/Reverse_proxy",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Reverse proxy - Wikipedia",
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Web Servers",
+   "entry": "Web Servers and Reverse Proxies. A web server is a piece of software and underlying hardware that accepts requests via HTTP (the network protocol created to distribute web content) or its secure variant HTTPS. A Reverse Proxy is a proxy server that appears to any client to be an ordinary web server, but in reality merely acts as an intermediary that forwards requests to one or more ordinary web se"
+  }
+ ],
+ "summary": {
+  "name": "Reverse proxy",
+  "one_liner": "A Wikipedia article explaining the reverse proxy concept: a server that appears to clients as an ordinary web server while forwarding their requests to one or more back-end servers.",
+  "category": "web infrastructure concept",
+  "keywords": [
+   "reverse proxy",
+   "surrogate server",
+   "web server proxy",
+   "forward proxy comparison",
+   "load balancing",
+   "web acceleration",
+   "caching static content",
+   "tls termination",
+   "tls termination proxy",
+   "ssl offloading",
+   "web application firewall",
+   "ddos protection",
+   "url rewriting",
+   "spoon-feeding",
+   "a/b testing proxy",
+   "hide origin server",
+   "single public ip multiple servers",
+   "compression proxy",
+   "access authentication proxy",
+   "reverse proxy security risks",
+   "nginx reverse proxy",
+   "haproxy",
+   "caddy forward_auth",
+   "content delivery network",
+   "how does a reverse proxy work",
+   "proxy server explained"
+  ],
+  "use_cases": [
+   "Load balancing traffic across internal web servers",
+   "Exposing several web apps behind one public IP address",
+   "Caching static and dynamic content to reduce origin load",
+   "Terminating TLS in front of backend servers",
+   "Adding authentication to a web server that lacks it",
+   "Running A/B tests without changing application code"
+  ],
+  "what_it_does": "The page defines a reverse proxy as an intermediary that forwards client requests to one or more ordinary web servers, so the back ends can sit behind a firewall with only the proxy exposed. It lists uses including load balancing, caching, compression, TLS encryption or offloading, routing by URL or HTTP headers, and web application firewall features against DoS and DDoS attacks. It also covers risks: the proxy must decrypt traffic to inspect it, holds private keys, and is a single point of failure. The article cites a 2020 Cloudflare outage as an example.",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Explains the security trade-offs of reverse proxies, including TLS key exposure and single point of failure",
+   "Describes spoon-feeding, where the proxy delivers a generated page to the client so the origin server can release resources",
+   "Notes that reverse proxies can hide origin servers, which affects takedowns and legal action"
+  ],
+  "caveats": [
+   "Reverse proxies can read and modify non-encrypted traffic, and a compromised proxy exposes internal networks.",
+   "Giving a third-party proxy access to private keys places confidentiality, integrity and availability in that party's hands.",
+   "The proxy is a single point of failure for the back-end services it fronts."
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3942,
+  "output": 1009
+ },
+ "generated": "2026-10-29"
+}

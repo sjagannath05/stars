@@ -1,0 +1,65 @@
+{
+ "id": "d01e97d696721be9",
+ "url": "http://maplant.com/gc.html",
+ "final_url": "https://maplant.com/2020-04-25-Writing-a-Simple-Garbage-Collector-in-C.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a Simple Garbage Collector in C",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Programming Language",
+   "entry": "C: _Writing a Simple Garbage Collector in C_"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Simple Garbage Collector in C",
+  "one_liner": "You learn how a simple stop-the-world mark-and-sweep garbage collector can be built in C on top of a first-fit malloc, using sbrk, tagged pointers, and /proc/self/stat to find the stack.",
+  "category": "garbage collection in C",
+  "keywords": [
+   "garbage collector in c",
+   "mark and sweep garbage collector",
+   "write your own garbage collector",
+   "simple gc implementation",
+   "first fit malloc",
+   "custom malloc implementation",
+   "sbrk heap allocation",
+   "tagged pointers",
+   "conservative garbage collection",
+   "precise garbage collection",
+   "stop the world gc",
+   "boehm gc",
+   "scan stack for pointers",
+   "free list and used list allocator",
+   "/proc/self/stat stack bottom",
+   "gc_malloc",
+   "garbage collection tutorial",
+   "how does garbage collection work"
+  ],
+  "takeaways": [
+   "A basic malloc can be built with a free list of headers, first-fit allocation, and sbrk to request memory from the kernel in page-sized chunks.",
+   "A mark-and-sweep collector scans the BSS, data segments, and stack for words that point into used blocks, then frees unmarked blocks.",
+   "Tagged pointers store a mark bit in the low bit of the next pointer so the header stays two words.",
+   "The stack bottom is found by reading the 28th field of /proc/self/stat on Linux, and the segment bounds come from the linker symbols etext and end.",
+   "The article's code is conservative and not production-ready; it has limitations with mmap, reentrancy, threads, and registers."
+  ],
+  "summary": "The article walks through writing a minimal garbage collector in C in three steps: a first-fit malloc built on a free list and sbrk, a naive stop-the-world mark-and-sweep collector, and the tricks needed to find roots such as the data segments and stack. It explains why C pointers make conservative scanning possible, how the heap's used list is scanned, and how tagged next pointers record marks. The author closes by listing limitations of the approach (conservative collection, reentrancy, parallelism, registers) and noting that the code is not meant for production use.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Linux",
+   "sbrk",
+   "mmap",
+   "i386 assembly",
+   "Boehm GC",
+   "Go"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8584,
+  "output": 917
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,70 @@
+{
+ "id": "a38dd741aae2fa21",
+ "url": "https://www.bitsxpages.com/p/sorted-string-tables-sst-from-first",
+ "final_url": "https://www.bitsxpages.com/p/sorted-string-tables-sst-from-first",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "sorted string tables (SST) from first principles",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Internals",
+   "entry": "sorted string tables (SST) from first principles"
+  }
+ ],
+ "summary": {
+  "title": "Sorted string tables (SST) from first principles",
+  "one_liner": "Learn why SSDs favor immutable, block-aligned, sorted files and how SSTs are built from data blocks, indexes, Bloom filters and metadata, plus how to model data as sorted keys.",
+  "category": "database internals",
+  "keywords": [
+   "sorted string table",
+   "sst",
+   "sstable",
+   "lsm tree precursor",
+   "ssd page size",
+   "read amplification",
+   "write amplification",
+   "spatial locality",
+   "temporal locality",
+   "data block",
+   "index block",
+   "bloom filter",
+   "min max filter",
+   "metadata block",
+   "prefix bloom filter",
+   "composite keys",
+   "secondary index",
+   "rocksdb",
+   "slatedb",
+   "immutable storage format",
+   "key-value storage layout",
+   "how do databases store data on disk"
+  ],
+  "takeaways": [
+   "SSDs read and erase in fixed units (pages around 4KB, blocks around 128-256KB), so immutable, batch-written, block-aligned formats fit them well.",
+   "An SST stores key-value records sorted by key in data blocks, with a small in-memory index of first keys and offsets, enabling binary search and limited reads.",
+   "Min/max and Bloom filters let a reader skip SSTs that cannot contain a key; a larger block size shrinks the index but increases read amplification.",
+   "Sorted keys with namespacing, composite keys, and secondary-index entries let you map many data models onto SSTs using prefix and range scans."
+  ],
+  "summary": "The article explains how data is laid out on SSDs, covering pages, blocks, read and write amplification, and locality, then argues that immutable sorted files suit SSD hardware. It walks through the design of a basic Sorted String Table: sorted data blocks with a simple encoding, a main index, min/max and Bloom filters, and a metadata block at the end of the file. It includes a RocksDB experiment showing how block size trades index memory against read throughput. It closes by showing how to encode access patterns such as namespaces, composite keys, wide columns, and secondary indexes into SST keys, and lists real systems that use SSTs.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Rust",
+   "RocksDB",
+   "SlateDB",
+   "SSD",
+   "Bloom filter",
+   "Cassandra",
+   "ScyllaDB",
+   "Kafka",
+   "BitCask"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9209,
+  "output": 912
+ },
+ "generated": "2026-10-29"
+}

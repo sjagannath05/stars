@@ -1,0 +1,73 @@
+{
+ "id": "60c5800418d3141b",
+ "url": "http://www.saminiir.com/lets-code-tcp-ip-stack-4-tcp-data-flow-socket-api",
+ "final_url": "http://www.saminiir.com/lets-code-tcp-ip-stack-4-tcp-data-flow-socket-api/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's code a TCP/IP stack, 4: TCP Data Flow & Socket API",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 4: TCP Data Flow & Socket API"
+  }
+ ],
+ "summary": {
+  "title": "Let's code a TCP/IP stack, 4: TCP Data Flow & Socket API",
+  "one_liner": "You learn how TCP tracks sent and acknowledged data with sequence-number variables, how connections close with FIN and RST, and how the BSD Socket API exposes TCP to applications.",
+  "category": "network programming",
+  "keywords": [
+   "tcp data flow",
+   "transmission control block",
+   "tcb",
+   "tcp sequence numbers",
+   "snd.nxt",
+   "rcv.nxt",
+   "snd.una",
+   "tcp acknowledgment",
+   "tcp connection termination",
+   "fin segment",
+   "rst segment",
+   "tcp half-close",
+   "tcp_fin_timeout",
+   "bsd socket api",
+   "socket api tutorial",
+   "socket connect send recv",
+   "strace curl system calls",
+   "tcpdump tcp capture",
+   "build tcp ip stack",
+   "minimal http get client",
+   "tcp three-way handshake",
+   "tcp four-way close",
+   "how does tcp send data",
+   "network programming tutorial"
+  ],
+  "takeaways": [
+   "TCP keeps a Transmission Control Block per connection, tracking SND.NXT, RCV.NXT and SND.UNA to manage sequence numbers and ACKs.",
+   "Data transfer advances sequence variables by the segment's payload length, and the receiver acknowledges it.",
+   "Closing a connection normally takes four segments (FIN, ACK, FIN, ACK), and RST aborts it abruptly.",
+   "The BSD Socket API (socket, connect, write/sendto, read/recvfrom) hides TCP internals such as retransmission and reassembly from applications.",
+   "Tracing curl with strace shows the socket calls behind a simple HTTP GET, which can be reproduced in a minimal client."
+  ],
+  "summary": "This part of a series building a TCP/IP stack explains the Transmission Control Block and the sequence and acknowledgment variables that drive TCP data transfer. It walks through a tcpdump example of a data segment being acknowledged, then covers connection termination with FIN, half-close, and RST. The post then introduces the BSD Socket API as the application interface, traces the system calls of curl with strace, and builds a minimal HTTP GET client on top of the stack. The next installment is said to cover window management and retransmission timeouts.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "TCP",
+   "IPv4",
+   "BSD Socket API",
+   "Linux",
+   "tcpdump",
+   "strace",
+   "curl",
+   "HTTP",
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4208,
+  "output": 967
+ },
+ "generated": "2026-10-29"
+}

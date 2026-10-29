@@ -1,0 +1,72 @@
+{
+ "id": "947edb991a5b454e",
+ "url": "https://docs.nvidia.com/dccpu/grace-perf-tuning-guide/index.html",
+ "final_url": "https://docs.nvidia.com/dccpu/grace-perf-tuning-guide/index.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Grace Performance Tuning Guide#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Arm Neoverse server parts",
+   "entry": "NVIDIA Grace Performance Tuning Guide - States the coherency fabric, LPDDR5X fit and MPAM cache and memory partitioning on Grace."
+  }
+ ],
+ "summary": {
+  "title": "Grace Performance Tuning Guide",
+  "one_liner": "NVIDIA's Grace CPU architecture reference covering its Neoverse V2 cores, Scalable Coherency Fabric, LPDDR5X memory, MPAM partitioning, NVLink-C2C and SVE2/atomics details relevant to tuning.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "nvidia grace cpu",
+   "grace performance tuning",
+   "arm neoverse v2",
+   "scalable coherency fabric",
+   "scf cache",
+   "lpddr5x memory",
+   "lpddr5x vs ddr5",
+   "mpam memory partitioning",
+   "memory partitioning and monitoring",
+   "cache partitioning arm",
+   "nvlink-c2c",
+   "numa topology grace",
+   "sve2 vectorization",
+   "neon advanced simd",
+   "large system extensions lse atomics",
+   "armv9 architecture",
+   "grace hopper superchip",
+   "grace blackwell superchip",
+   "pcie gen 5 lanes",
+   "unified memory grace hopper",
+   "ecc memory lpddr5x"
+  ],
+  "takeaways": [
+   "Grace has 72 Neoverse V2 cores per CPU, with the Superchip giving 144 cores and up to 960GB LPDDR5X.",
+   "The Scalable Coherency Fabric is a mesh with distributed cache, providing over 3.2 TB/s bisection bandwidth; MPAM lets it partition cache, I/O and memory bandwidth.",
+   "Grace has two NUMA nodes per Superchip, and NVLink-C2C links CPU and GPU memory in Grace Hopper and Grace Blackwell systems.",
+   "Use LSE atomics rather than Load/Store Exclusives, which the page says do not guarantee forward progress in large systems.",
+   "Binaries built for Armv8 up to 8.5-A run on Grace, but NVIDIA HPC compilers produce code that is not binary compatible with Graviton."
+  ],
+  "summary": "The guide introduces NVIDIA's Grace CPU and its CPU Superchip, C1 and Grace Hopper/Blackwell variants, with spec tables for cores, cache, LPDDR5X capacity and bandwidth, and NVLink-C2C. It then explains the architecture: the Scalable Coherency Fabric mesh, MPAM-based cache and bandwidth partitioning, the LPDDR5X memory subsystem with ECC, PCIe Gen 5 I/O, and Neoverse V2 core support for SVE2, NEON, LSE atomics and Armv9 features. It is mostly architectural description rather than step-by-step tuning, and it points to other NVIDIA guides for Hopper and Blackwell tuning and to compiler docs for flags.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "NVIDIA Grace CPU",
+   "Arm Neoverse V2",
+   "Armv9",
+   "SVE2",
+   "NEON",
+   "LPDDR5X",
+   "NVLink-C2C",
+   "CUDA Unified Memory",
+   "MPAM",
+   "PCIe Gen 5",
+   "NVIDIA HPC Compilers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5846,
+  "output": 1190
+ },
+ "generated": "2026-10-29"
+}

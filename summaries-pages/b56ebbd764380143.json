@@ -1,0 +1,71 @@
+{
+ "id": "b56ebbd764380143",
+ "url": "https://docs.kernel.org/mm/numa.html",
+ "final_url": "https://docs.kernel.org/mm/numa.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "What is NUMA?",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "NUMA and Linux memory placement",
+   "entry": "What is NUMA? - Defines nodes, zonelists and the distance-ordered fallback that places an allocation once local memory runs out."
+  }
+ ],
+ "summary": {
+  "title": "What is NUMA?",
+  "one_liner": "NUMA explained from the hardware and Linux software views: cells, nodes, zonelists, and how local allocation falls back to remote nodes when local memory runs out.",
+  "category": "linux memory management",
+  "keywords": [
+   "numa",
+   "non-uniform memory access",
+   "ccnuma",
+   "cache coherent numa",
+   "numa node",
+   "numa cell",
+   "zonelist",
+   "memory zones",
+   "dma32 zone",
+   "local allocation",
+   "allocation fallback",
+   "overflow fallback",
+   "numa distance",
+   "memoryless node",
+   "numa_node_id",
+   "numa_mem_id",
+   "numa emulation",
+   "cpusets",
+   "taskset",
+   "numactl",
+   "sched_setaffinity",
+   "numa memory policy",
+   "linux scheduler numa",
+   "how does linux allocate memory on numa systems",
+   "why does memory access time vary between cpus"
+  ],
+  "takeaways": [
+   "A NUMA system is made of cells (CPUs, local memory, IO buses); Linux maps these onto software nodes.",
+   "Each node with memory gets its own memory management subsystem, and each zone gets an ordered zonelist used for fallback.",
+   "By default Linux performs local allocation from the CPU's node, then falls back to other zones on the same node before remote nodes ordered by NUMA distance.",
+   "Subsystems needing per-CPU memory can use numa_node_id()/numa_mem_id() to request memory from a specific node and handle failure themselves.",
+   "Affinity tools (taskset, numactl, sched_setaffinity) and NUMA memory policy can be used to improve locality."
+  ],
+  "summary": "This Linux kernel documentation page explains NUMA first from the hardware perspective (cells made of CPUs, memory and IO connected by an interconnect, mainly ccNUMA systems) and then from the Linux software view (nodes, memory zones, and zonelists). It describes how default local allocation works, how allocations overflow to other zones and nodes ordered by distance, and how the scheduler, affinity tools, cpusets and NUMA memory policy affect locality. It ends with guidance on allocating from a specific node or using numa_mem_id() on memoryless-node architectures.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "NUMA",
+   "ccNUMA",
+   "numactl",
+   "taskset",
+   "cpusets"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4015,
+  "output": 944
+ },
+ "generated": "2026-10-29"
+}

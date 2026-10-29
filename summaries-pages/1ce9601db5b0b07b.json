@@ -1,0 +1,72 @@
+{
+ "id": "1ce9601db5b0b07b",
+ "url": "https://faultlore.com/blah/text-hates-you",
+ "final_url": "https://faultlore.com/blah/text-hates-you/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Text Rendering Hates You - Faultlore",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Graphics",
+   "entry": "Text Rendering Hates You"
+  }
+ ],
+ "summary": {
+  "title": "Text Rendering Hates You",
+  "one_liner": "Text rendering is full of unavoidable trade-offs: shaping, font fallback, ligatures, emoji colors, anti-aliasing, and selection all interact, so no system renders text perfectly.",
+  "category": "text rendering",
+  "keywords": [
+   "text rendering",
+   "text shaping",
+   "harfbuzz",
+   "font fallback",
+   "font cascade",
+   "ligatures",
+   "grapheme clusters",
+   "unicode scalar",
+   "emoji rendering",
+   "color emoji",
+   "greyscale anti-aliasing",
+   "subpixel anti-aliasing",
+   "cleartype",
+   "glyph cache",
+   "subpixel offset",
+   "synthetic bold",
+   "synthetic italics",
+   "tofu missing glyph",
+   "bidirectional text selection",
+   "firefox text rendering",
+   "webrender component alpha",
+   "why is text rendering hard",
+   "rendering pipeline layout shaping rasterization",
+   "core text directwrite freetype"
+  ],
+  "takeaways": [
+   "The text pipeline (styling, layout, shaping, rasterization, composition) has circular dependencies, so layout and shaping cannot be cleanly separated.",
+   "Use a shaping library such as HarfBuzz; characters cannot be drawn one by one because glyph shape depends on neighbours.",
+   "Subpixel anti-aliasing gains horizontal detail but breaks under transparency, transforms and animation, so browsers often fall back to greyscale AA.",
+   "Emoji and color glyphs ignore text color and style, and need special compositing and handling; there is no single ideal behaviour, so systems should be configurable."
+  ],
+  "summary": "The author, drawing on years of work on rendering in Firefox, explains why displaying arbitrary rich text with custom fonts, wrapping and selection is very hard. The article walks through the rendering pipeline and its interdependencies, then covers concrete problems: font fallback for missing scripts, ligatures and partial ligatures, emoji colour and style, greyscale versus subpixel anti-aliasing with glyph cache snapping, SVG in fonts, oversized glyphs, bidirectional selection, tofu missing-glyph indicators, and synthetic styles. It is illustrated with screenshots comparing Safari, Chrome and Firefox, and ends with a argument for configurable, platform-native rendering.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "HarfBuzz",
+   "Unicode",
+   "Core Text",
+   "DirectWrite",
+   "FreeType",
+   "WebRender",
+   "Firefox",
+   "SVG",
+   "CSS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9044,
+  "output": 998
+ },
+ "generated": "2026-10-29"
+}

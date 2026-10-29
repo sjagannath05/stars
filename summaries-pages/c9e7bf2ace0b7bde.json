@@ -1,0 +1,65 @@
+{
+ "id": "c9e7bf2ace0b7bde",
+ "url": "https://blog.scottlogic.com/2019/05/17/webassembly-compiler.html",
+ "final_url": "https://blog.scottlogic.com/2019/05/17/webassembly-compiler.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build your own WebAssembly Compiler",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Programming Language",
+   "entry": "TypeScript: _Build your own WebAssembly Compiler_"
+  }
+ ],
+ "summary": {
+  "title": "Build your own WebAssembly Compiler",
+  "one_liner": "You learn how to build a small compiler in TypeScript that emits WebAssembly binary modules, covering tokenizing, parsing to an AST, and emitting wasm opcodes for expressions, variables, loops and linear-memory graphics.",
+  "category": "compilers and webassembly",
+  "keywords": [
+   "webassembly compiler",
+   "build a compiler",
+   "write your own compiler",
+   "wasm binary module",
+   "wasm emitter",
+   "tokenizer",
+   "parser",
+   "abstract syntax tree",
+   "ast",
+   "stack machine",
+   "wat text format",
+   "wat2wasm",
+   "linear memory",
+   "while loop wasm",
+   "binary expression code generation",
+   "typescript compiler",
+   "mandelbrot webassembly",
+   "chasm language",
+   "depth-first post-order traversal",
+   "compiler architecture"
+  ],
+  "takeaways": [
+   "A minimal valid wasm module is just the magic header \\0asm plus a version number; functions are added through type, function and code sections.",
+   "A compiler can be split into a tokenizer (regex matchers), a parser producing an AST, and an emitter that outputs wasm opcodes.",
+   "WebAssembly is a stack machine, so expression operands are emitted before operators, using a depth-first post-order traversal.",
+   "Variables map to wasm locals via a symbol table, and while loops are built from block, loop, br_if and br instructions.",
+   "Graphics are handled by writing to wasm linear memory, which the JavaScript host copies to an HTML canvas."
+  ],
+  "summary": "The author walks through building a toy language called chasm that compiles to WebAssembly, written in TypeScript and running in the browser. The post starts with a hand-built minimal wasm module and a small add function, then builds a compiler in three stages: tokenizer, parser producing an AST, and emitter generating wasm binary. It extends the language step by step with arithmetic expressions, variables, while loops, and finally pixel output through linear memory to render a Mandelbrot set. Code snippets are shown throughout, with a GitHub commit per step and an online playground.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "WebAssembly",
+   "TypeScript",
+   "JavaScript",
+   "WAT",
+   "HTML canvas"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9662,
+  "output": 894
+ },
+ "generated": "2026-10-29"
+}

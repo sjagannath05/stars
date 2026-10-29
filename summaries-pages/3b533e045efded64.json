@@ -1,0 +1,67 @@
+{
+ "id": "3b533e045efded64",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker-p2",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker-p2/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 2 - Networking"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch #2 - Networking",
+  "one_liner": "You learn how to write MQTT packet packing functions in C (CONNACK, SUBACK, PUBLISH, ack packets) and build a single-threaded epoll-based TCP server with a callback-driven event loop.",
+  "category": "network programming",
+  "keywords": [
+   "mqtt broker in c",
+   "mqtt packet serialization",
+   "mqtt connack packet",
+   "mqtt suback packet",
+   "mqtt publish packet packing",
+   "pack mqtt packet to bytes",
+   "mqtt v3.1.1 implementation",
+   "epoll event loop in c",
+   "epoll edge-triggered",
+   "epoll oneshot",
+   "level-triggered vs edge-triggered",
+   "single-threaded tcp server",
+   "non-blocking sockets",
+   "send_bytes recv_bytes eagain",
+   "tcp nodelay nagle algorithm",
+   "epoll_data union callback",
+   "closure callback event loop",
+   "timerfd periodic task",
+   "kqueue alternative to epoll",
+   "thundering herd problem"
+  ],
+  "takeaways": [
+   "Packing functions mirror unpacking: they build a byte array from structs and unions, ready to be written to a socket.",
+   "A dispatch array indexed by packet type routes each packet to its pack handler; PINGREQ, PINGRESP and DISCONNECT use only a fixed header.",
+   "Static-buffer return values are fine single-threaded but will conflict in a multithreaded design, so malloc is suggested for later refactoring.",
+   "epoll is registered with EPOLLET and EPOLLONESHOT, and descriptors must be manually re-armed after each event, which keeps control over event handling.",
+   "Storing a closure pointer (callback, fd, args) in epoll_data.ptr lets each event call its own registered function; periodic tasks use timerfd."
+  ],
+  "summary": "The article continues a series on writing an MQTT v3.1.1 broker in C. It adds packet builder functions and packing handlers, using a function-pointer table indexed by packet type to serialize CONNACK, SUBACK, PUBLISH and ack-style packets into byte arrays. The second half sets up a single-threaded non-blocking TCP server on Linux epoll, with helper functions for socket creation, sending and receiving bytes. It finishes with an event loop abstraction that stores callbacks in epoll_data and supports periodic tasks via timerfd.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "MQTT v3.1.1",
+   "epoll",
+   "timerfd",
+   "POSIX sockets",
+   "TCP",
+   "kqueue"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11707,
+  "output": 1012
+ },
+ "generated": "2026-10-29"
+}

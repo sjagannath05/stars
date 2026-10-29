@@ -1,0 +1,68 @@
+{
+ "id": "4c67261e861a0716",
+ "url": "https://jeiwan.net/posts/building-blockchain-in-go-part-6",
+ "final_url": "https://jeiwan.net/posts/building-blockchain-in-go-part-6/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building Blockchain in Go. Part 6: Transactions 2 - Going the distance",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 6: Transactions 2"
+  }
+ ],
+ "summary": {
+  "title": "Building Blockchain in Go. Part 6: Transactions 2 - Going the distance",
+  "one_liner": "You learn how to add mining rewards via coinbase transactions, speed up balance and spending lookups with a UTXO set cache, build a Merkle tree over block transactions, and how Bitcoin's P2PKH script locks and unlocks outputs.",
+  "category": "blockchain development in go",
+  "keywords": [
+   "blockchain in go",
+   "utxo set",
+   "unspent transaction outputs",
+   "utxo cache",
+   "chainstate database",
+   "bitcoin coinbase transaction",
+   "mining reward",
+   "merkle tree",
+   "merkle root",
+   "merkle path",
+   "simplified payment verification",
+   "spv",
+   "p2pkh",
+   "pay to public key hash",
+   "bitcoin script",
+   "op_checksig",
+   "boltdb",
+   "bitcoin balance lookup",
+   "how to build a blockchain",
+   "bitcoin full node storage size",
+   "merkle tree go implementation",
+   "transaction hashing in blocks",
+   "bitcoin script stack execution"
+  ],
+  "takeaways": [
+   "Mining rewards are implemented as a coinbase transaction prepended to the block's transactions, paying the miner's public key hash.",
+   "A UTXO set stores only unspent outputs in a separate bucket, so balance and spendable-output queries avoid scanning every block; it is rebuilt with Reindex and updated per block with Update.",
+   "A Merkle tree over serialized transactions yields a root hash that lets a node verify a transaction's membership without downloading the whole block.",
+   "Bitcoin's P2PKH script splits locking (in the output's ScriptPubKey) and unlocking data (in the input's ScriptSig), and is executed on a stack."
+  ],
+  "summary": "This sixth part of the Go blockchain series extends the earlier code with three mechanisms: mining rewards as coinbase transactions, a UTXO set cache kept in a separate BoltDB bucket, and a Merkle tree used to compute block transaction hashes. The author explains why scanning all blocks is costly, shows the Reindex and Update methods, and demonstrates sends and balance checks from the CLI. The post closes with a conceptual walkthrough of Bitcoin's Script language and the P2PKH payment script. The article notes that the code changes are large and refers to a page listing all changes since the last part.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "BoltDB",
+   "Bitcoin",
+   "SHA-256",
+   "RIPEMD-160",
+   "encoding/gob"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9600,
+  "output": 982
+ },
+ "generated": "2026-10-29"
+}

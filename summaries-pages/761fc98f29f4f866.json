@@ -1,0 +1,62 @@
+{
+ "id": "761fc98f29f4f866",
+ "url": "https://people.ece.ubc.ca/sasha/papers/eurosys16-final29.pdf",
+ "final_url": "https://people.ece.ubc.ca/sasha/papers/eurosys16-final29.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scheduling, affinity and isolation",
+   "entry": "The Linux Scheduler: a Decade of Wasted Cores - Proves cores sit idle while runnable threads queue, and gives the invariant checker that found the load-balancer bugs."
+  }
+ ],
+ "summary": {
+  "title": "The Linux Scheduler: a Decade of Wasted Cores",
+  "one_liner": "Linux's CFS load balancer can leave cores idle while runnable threads wait in runqueues, and the paper introduces a sanity checker and trace visualizer that found these bugs.",
+  "category": "operating systems scheduling",
+  "keywords": [
+   "linux scheduler",
+   "wasted cores",
+   "idle cores while threads wait",
+   "work-conserving scheduler",
+   "cfs completely fair scheduler",
+   "load balancing bug",
+   "per-core runqueues",
+   "scheduling domains",
+   "numa load balancing",
+   "group imbalance bug",
+   "nohz balancer",
+   "sanity checker invariant",
+   "scheduler visualization tool",
+   "multicore scheduler bugs",
+   "eurosys 2016 paper",
+   "linux kernel performance bugs",
+   "tpc-h database slowdown",
+   "cgroup autogroup fairness"
+  ],
+  "takeaways": [
+   "Linux's scheduler is meant to be work-conserving, yet cores can stay idle for seconds while runnable threads wait in runqueues.",
+   "Per-core runqueues and load balancing are needed for scalability, but the balancing rules (hierarchical scheduling domains, tickless idle, load metric) make the code complex and bug-prone.",
+   "The paper reports four bugs with 13-24% typical slowdowns and up to 138x in corner cases, with fixes improving performance.",
+   "A simple online sanity checker that tests the 'no idle core while work waits' invariant can catch these bugs with negligible overhead, and a trace visualizer helps debug them."
+  ],
+  "summary": "The paper is a EuroSys 2016 study by Lozi, Lepers, Funston, Gaud, Quéma and Fedorova. It first explains how CFS works on a single CPU, then how multicore load balancing uses per-core runqueues, a load metric combining weight and utilization, hierarchical scheduling domains, and optimizations such as tickless idle and NOHZ balancing. It then describes bugs in which cores stay idle while threads wait, such as the Group Imbalance bug, with performance impacts on scientific, kernel make and TPC-H workloads. The authors built a sanity checker that periodically tests the invariant online and a visualization tool for scheduling traces. The fixes and tools are evaluated across Linux 3.17 to 4.3.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "CFS",
+   "C",
+   "TPC-H",
+   "R"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9673,
+  "output": 969
+ },
+ "generated": "2026-10-29"
+}

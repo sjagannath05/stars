@@ -1,0 +1,63 @@
+{
+ "id": "315be8f91d43004d",
+ "url": "https://www.brunton-spall.co.uk/post/2014/05/06/database-migrations-done-right",
+ "final_url": "https://www.brunton-spall.co.uk/post/2014/05/06/database-migrations-done-right/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Database migrations done right",
+ "sources": [
+  {
+   "list": "kuchin/awesome-cto",
+   "section": "Data",
+   "entry": "Database Migrations Done Right"
+  }
+ ],
+ "summary": {
+  "title": "Database migrations done right",
+  "one_liner": "Decouple database schema changes from application deploys by breaking changes into small, backward-compatible steps that can each be released separately.",
+  "category": "database migrations",
+  "keywords": [
+   "database migrations",
+   "schema migration",
+   "database refactoring",
+   "backward compatible schema change",
+   "decouple database and application deploys",
+   "zero downtime deployment",
+   "rolling deployment",
+   "add non-nullable column",
+   "expand and contract migration",
+   "nullable column data migration",
+   "refactoring databases",
+   "scott ambler",
+   "dbdeploy",
+   "database migration tool",
+   "orm schema coupling",
+   "small incremental releases",
+   "continuous deployment database",
+   "deploy time complexity",
+   "greenfield project migrations",
+   "how to change a database schema safely"
+  ],
+  "takeaways": [
+   "Never tie database migrations to application deploys; minimise dependencies between them so releases are faster and cleaner.",
+   "Make every change backward compatible with the rest of the system, so each step can be released on its own.",
+   "Adding a non-null column can be done in steps: add nullable column, update code to write and handle nulls, backfill data, add the not-null constraint, then remove the null-handling code.",
+   "Use a database migration tool (the author mentions DBDeploy) to run change scripts reliably and repeatably, and avoid ORMs that inseparably combine schema and code.",
+   "Start working this way early in a project's lifecycle, since the throughput benefits pay off early."
+  ],
+  "summary": "The author argues that database schema changes should never be tied to application deploys, and explains how to achieve this. The approach is to split work into small tasks and release each one quickly, following the rule that every change must be backward compatible with the rest of the system. He walks through the add non-nullable column example, showing how Scott Ambler's Refactoring Databases patterns map onto a sequence of separate deployments. The post also covers using a migration tool and avoiding ORMs that couple schema and code, and it ends with a note that the approach is worth adopting early in a project.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "DBDeploy",
+   "SQL",
+   "ORM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2891,
+  "output": 839
+ },
+ "generated": "2026-10-29"
+}

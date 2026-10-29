@@ -1,0 +1,61 @@
+{
+ "id": "d2ea3b9be92d870b",
+ "url": "http://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index",
+ "final_url": "https://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to Implement a Search Engine Part 2: Query Index",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "Part 2"
+  }
+ ],
+ "summary": {
+  "title": "How to Implement a Search Engine Part 2: Query Index",
+  "one_liner": "You learn how to load an inverted index from disk and answer one-word, free-text, and phrase queries using postings lists and positional intersection.",
+  "category": "search engine implementation",
+  "keywords": [
+   "inverted index",
+   "query index",
+   "search engine implementation",
+   "one word query",
+   "free text query",
+   "phrase query",
+   "postings list",
+   "positional index",
+   "position list intersection",
+   "document id postings",
+   "phrase matching in search engine",
+   "how to answer search queries",
+   "python search engine tutorial",
+   "index file parsing",
+   "union and intersection of postings",
+   "stemming and stopword removal",
+   "unranked search results",
+   "boolean retrieval",
+   "text search basics",
+   "information retrieval tutorial"
+  ],
+  "takeaways": [
+   "Load the index file line by line, splitting on '|', ';', ':' and ',' to rebuild the in-memory dictionary of postings.",
+   "One-word queries return the document IDs from the term's postings list, or an empty list if the term is absent.",
+   "Free-text queries take the union of the document lists for each query term.",
+   "Phrase queries intersect document lists, then subtract i-1 from the i-th term's positions and intersect the position lists to check word order.",
+   "Query terms get the same normalization (lowercasing, stopword removal, punctuation removal, stemming) as the indexed collection; results are unranked."
+  ],
+  "summary": "This is the second part of a project series on building a search engine. It assumes an inverted index was previously created and saved to disk, then explains how a query program reads that file back into memory. The post defines three query types (one-word, free-text, and phrase) and gives the algorithm and Python-style pseudocode for each, using a three-document worked example. The phrase query section walks through the positional check in detail, and source code is provided for download.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4410,
+  "output": 758
+ },
+ "generated": "2026-10-29"
+}

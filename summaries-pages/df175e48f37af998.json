@@ -1,0 +1,78 @@
+{
+ "id": "df175e48f37af998",
+ "url": "https://softwarebits.substack.com/p/old-pattern-powering-modern-tech",
+ "final_url": "https://softwarebits.substack.com/p/old-pattern-powering-modern-tech",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Old pattern powering modern tech.",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Low-level, assembly",
+   "entry": "Old pattern powering modern tech"
+  }
+ ],
+ "summary": {
+  "title": "Old pattern powering modern tech",
+  "one_liner": "Append-only design, rooted in magnetic tape, explains why modern storage, CPUs, and databases favor sequential access, and how to exploit it.",
+  "category": "low-level performance",
+  "keywords": [
+   "append-only data structure",
+   "sequential access pattern",
+   "write amplification",
+   "ssd block structure",
+   "hdd vs ssd random access",
+   "mechanical sympathy",
+   "data prefetching",
+   "cpu instruction fetch alignment",
+   "ring buffer",
+   "lock-free data structure",
+   "log structured merge tree",
+   "lsm tree vs b+ tree",
+   "copy-on-write b-tree",
+   "cqrs",
+   "zero-copy io",
+   "io_uring",
+   "disruptor",
+   "double entry accounting",
+   "cbuffer bip-buffer",
+   "delta encoding compression"
+  ],
+  "takeaways": [
+   "Sequential, append-only layouts remain fast on modern hardware because of SSD block/page erase rules, caches, and prefetchers.",
+   "Ignoring block structure causes write/read amplification; design data layout with the hardware in mind (mechanical sympathy).",
+   "Ring buffers, single-writer designs, and atomic increments enable lock-free, zero-copy data transfer (e.g., io_uring, Disruptor, Aeron).",
+   "LSM trees trade read performance for better write performance, while B+ trees favor reads; append-only B-trees give MVCC for free.",
+   "Practical tips: prefetch-friendly layouts, compress data, avoid locks, and make branches predictable."
+  ],
+  "summary": "The article argues that append-only design, dating back to early writing and magnetic tape, still underpins modern technology. It explains that SSDs erase in fixed blocks and write in pages, so random writes cause write amplification, and that CPU fetch, caches, prefetchers, and TLBs also favor sequential layouts. It then surveys append-only structures such as ring buffers, LSM trees, append-only B-trees, and CQRS, and closes with a benefits list and performance takeaways. The post is a conference-talk write-up with code benchmarks and diagrams referenced.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "SSD",
+   "HDD",
+   "NVMe",
+   "CPU caches",
+   "io_uring",
+   "Disruptor",
+   "Aeron",
+   "Kafka",
+   "Cassandra",
+   "RocksDB",
+   "LevelDB",
+   "HBase",
+   "Bigtable",
+   "InfluxDB",
+   "cbuffer",
+   "Bip-buffer",
+   "JVM",
+   "Go benchmarks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4656,
+  "output": 984
+ },
+ "generated": "2026-10-29"
+}

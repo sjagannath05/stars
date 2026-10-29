@@ -1,0 +1,64 @@
+{
+ "id": "4610881b3c7315bd",
+ "url": "https://ftp.cs.wisc.edu/sohi/papers/1997/isca.complexity.pdf",
+ "final_url": "https://ftp.cs.wisc.edu/sohi/papers/1997/isca.complexity.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Limits of ILP and SMT",
+   "entry": "Complexity-Effective Superscalar Processors - Puts circuit delay on wakeup, select and bypass, capping issue width and window size before ILP runs out."
+  }
+ ],
+ "summary": {
+  "title": "Complexity-Effective Superscalar Processors",
+  "one_liner": "Learn how circuit delays in register rename, issue-window wakeup/select and operand bypass limit superscalar issue width and window size, and how a dependence-based queue design keeps the clock fast.",
+  "category": "computer architecture",
+  "keywords": [
+   "superscalar processor complexity",
+   "complexity-effective microarchitecture",
+   "issue width limits",
+   "instruction window size",
+   "wakeup logic delay",
+   "selection logic delay",
+   "bypass logic delay",
+   "register rename delay",
+   "register rename ram scheme",
+   "register rename cam scheme",
+   "dependence-based microarchitecture",
+   "clock cycle critical path",
+   "hspice circuit simulation",
+   "brainiacs vs speed demons",
+   "instructions per cycle ipc tradeoff",
+   "wire delay feature size scaling",
+   "out-of-order issue queue design"
+  ],
+  "takeaways": [
+   "Clock cycle is set by the longest critical path through pipeline logic; the paper measures complexity as circuit delay rather than transistor count or area.",
+   "Register rename delay grows roughly linearly with issue width, and wire delay makes this worse at smaller feature sizes.",
+   "Issue window wakeup and selection logic, plus operand bypass logic, are likely the most critical structures for future wide-issue designs.",
+   "A dependence-based design queues dependent instruction chains and issues from queue heads, so only heads need wakeup and selection, allowing a faster clock with little IPC loss in simulation."
+  ],
+  "summary": "The paper defines a generic superscalar pipeline and analyzes four structures: register rename, instruction window wakeup, selection logic, and operand bypass. Each is modeled analytically as a function of issue width and window size, then simulated in Hspice for three feature sizes using circuits based on published designs. It concludes that wakeup, selection and bypass logic will be the most critical limits on clock speed. The authors then propose a dependence-based microarchitecture that groups dependent instructions into queues and issues from queue heads, and report simulation results showing little IPC loss versus a fully flexible window and a faster clock overall.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Hspice",
+   "CMOS",
+   "MIPS R10000",
+   "DEC 21264",
+   "Intel Pentium Pro",
+   "HP PA-8000",
+   "PowerPC 604",
+   "HAL SPARC64"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9387,
+  "output": 941
+ },
+ "generated": "2026-10-29"
+}

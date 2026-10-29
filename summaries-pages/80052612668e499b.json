@@ -1,0 +1,67 @@
+{
+ "id": "80052612668e499b",
+ "url": "https://travisdowns.github.io/blog/2020/05/13/intel-zero-opt.html",
+ "final_url": "https://travisdowns.github.io/blog/2020/05/13/intel-zero-opt.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Hardware Store Elimination",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "What the manuals leave out",
+   "entry": "Hardware Store Elimination - Finds an undocumented optimisation by its counter signature and bandwidth, and sets the method for what manuals omit."
+  }
+ ],
+ "summary": {
+  "title": "Hardware Store Elimination",
+  "one_liner": "Writing zeros over zero-filled cache lines on Skylake client Intel CPUs can be partly eliminated in hardware, cutting L3 and memory writes and speeding up large fills compared with writing ones.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "hardware store elimination",
+   "redundant store elimination",
+   "zero store optimization",
+   "intel undocumented optimization",
+   "skylake zero writes",
+   "l2_lines_out.silent",
+   "l2_lines_out.non_silent",
+   "silent cache line eviction",
+   "memory fill benchmark",
+   "memset zero vs one performance",
+   "avx2 store bandwidth",
+   "cache line writeback",
+   "unc_arb_trk_requests.writes",
+   "mesi silent eviction",
+   "data-dependent store performance",
+   "fill throughput l3",
+   "undocumented cpu behavior",
+   "redundant write elimination",
+   "travis downs blog",
+   "amd zen2 write bandwidth"
+  ],
+  "takeaways": [
+   "On an Intel Skylake client chip, storing zeros over lines that are already zero was about 17-18% faster than storing ones in the L3 and RAM regions, with identical machine code.",
+   "Performance counters show that many zero-over-zero writes are evicted silently from L2 and never written back, roughly halving writes to L3 and memory.",
+   "The elimination only applied to about 40-60% of redundant lines and did not apply to alternating zero/one lines, so the exact mechanism remains unknown.",
+   "The effect was not observed on other Intel (Haswell, Skylake-X), AMD Zen2, POWER9 or Graviton 2 hardware tested, so it may be Skylake client specific."
+  ],
+  "summary": "The author benchmarks a simple AVX2 fill function on gcc 9.2.1 and finds that filling buffers with zero is consistently about 17-18% faster than filling with one once the data exceeds L2, even though the machine code is identical. Using Intel L2 eviction events (l2_lines_out.silent and non_silent) and uncore write counters, they show that zero-over-zero lines are often dropped silently, so about half as many writes reach L3 and memory. The post then tests predictor-based theories with an alternating zero/one variant and surveys other Intel, AMD, POWER9 and ARM chips, where the effect was not seen. The author labels the mechanism speculative and leaves its exact trigger unresolved.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "C++",
+   "x86-64 assembly",
+   "AVX2",
+   "Intel Skylake",
+   "gcc",
+   "MESI cache coherence",
+   "perf performance counters"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9317,
+  "output": 1024
+ },
+ "generated": "2026-10-29"
+}

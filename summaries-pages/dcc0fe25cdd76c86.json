@@ -1,0 +1,71 @@
+{
+ "id": "dcc0fe25cdd76c86",
+ "url": "https://gcc.gnu.org/onlinedocs/gcc/Function-Multiversioning.html",
+ "final_url": "https://gcc.gnu.org/onlinedocs/gcc/Function-Multiversioning.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Function Multiversioning (Using the GNU Compiler Collection (GCC))",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Target flags and auto-vectorisation",
+   "entry": "Function Multiversioning (GCC) - Defines target_clones, one function per ISA behind a resolver the dynamic linker runs, so a generic build ships AVX-512."
+  }
+ ],
+ "summary": {
+  "title": "Function Multiversioning (Using the GNU Compiler Collection (GCC))",
+  "one_liner": "GCC's function multiversioning compiles several versions of one function specialized for different architecture extensions and uses a runtime resolver to pick the right one.",
+  "category": "compilers and cpu targeting",
+  "keywords": [
+   "function multiversioning",
+   "fmv",
+   "target_clones attribute",
+   "target_version attribute",
+   "target attribute gcc",
+   "ifunc indirect function",
+   "elf indirect function extension",
+   "runtime cpu dispatch",
+   "dynamic linker resolver",
+   "gcc multiversioning x86",
+   "aarch64 function multiversioning",
+   "acle version strings",
+   "sse4.2 function version",
+   "per-cpu function dispatch",
+   "how to compile multiple versions of a function gcc",
+   "choose function version at runtime",
+   "glibc ifunc requirements",
+   "binutils version requirement",
+   "default function version",
+   "loongarch risc-v multiversioning"
+  ],
+  "takeaways": [
+   "Function multiversioning builds several versions of a function, each targeting different architecture extensions, plus a resolver that selects one at runtime.",
+   "It depends on the ELF indirect function (ifunc) extension, requiring Binutils 2.20.1 or higher and GNU C Library 2.11.1 or higher.",
+   "On AArch64, LoongArch and RISC-V, versions are declared with target_version and target_clones attributes, which can span translation units in C or C++.",
+   "On x86, versions are declared with the target attribute (multiple definitions in C++) or a single definition using target_clones.",
+   "A version with target \"default\" is used when no other version qualifies on the running platform; callers just call the function or take its address."
+  ],
+  "summary": "The GCC manual page explains function multiversioning, where the compiler generates multiple specialized versions of a function plus a resolver that the dynamic linker uses to choose one at runtime. It states the requirements (Binutils 2.20.1+, glibc 2.11.1+) and describes two versions of the feature: the target_version/target_clones attributes for AArch64, LoongArch and RISC-V (with a C/C++ multi-file example), and the target attribute for x86. The x86 example shows a default version plus variants for sse4.2, arch=atom and arch=amdfam10, with callers invoking foo normally. The page points to the GCC wiki for further details.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "GCC",
+   "C",
+   "C++",
+   "ELF",
+   "GNU IFUNC",
+   "Binutils",
+   "glibc",
+   "x86",
+   "AArch64",
+   "LoongArch",
+   "RISC-V"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2412,
+  "output": 1009
+ },
+ "generated": "2026-10-29"
+}

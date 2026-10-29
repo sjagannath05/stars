@@ -1,0 +1,65 @@
+{
+ "id": "fab988803dfd9971",
+ "url": "https://fgiesen.wordpress.com/2022/09/05/entropy-decoding-in-oodle-data-x86-64-3-stream-huffman-decoders",
+ "final_url": "https://fgiesen.wordpress.com/2022/09/05/entropy-decoding-in-oodle-data-x86-64-3-stream-huffman-decoders/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Entropy decoding in Oodle Data: x86-64 3-stream Huffman decoders",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Execute",
+   "entry": "Entropy Decoding in Oodle Data: x86-64 3-Stream Huffman Decoders - Predicts a real decoder loop's cycle count from its carried chain and issue slots, then measures the prediction."
+  }
+ ],
+ "summary": {
+  "title": "Entropy decoding in Oodle Data: x86-64 3-stream Huffman decoders",
+  "one_liner": "You learn how a generic x86-64 3-stream Huffman decoder loop is built (table lookup, refill, register pressure) and how its cycle count is predicted from the latency critical path and issue slots on Skylake, then compared with measurement.",
+  "category": "compression performance engineering",
+  "keywords": [
+   "huffman decoding",
+   "x86-64 assembly",
+   "multi-stream huffman decoder",
+   "3-stream huffman",
+   "entropy decoding",
+   "oodle data",
+   "bit reader refill",
+   "table lookup decoder",
+   "critical path latency",
+   "instruction-level parallelism",
+   "skylake performance analysis",
+   "uop count estimate",
+   "shlx",
+   "bmi2",
+   "mov elimination",
+   "variable shift shl cl flags",
+   "register pressure decoder loop",
+   "cycles per byte",
+   "latency-bound vs throughput-bound",
+   "bit buffer refill",
+   "fgiesen blog"
+  ],
+  "takeaways": [
+   "A generic x86-64 decoder step is about 6-7 instructions: mask the peek bits, load a table entry, shift out consumed bits, and store the emitted byte.",
+   "Loading the immediate mask before AND avoids putting a register move on the critical path when MOV elimination is unavailable.",
+   "Keeping a separate remaining-bit count per stream lets the refill load run independently of the bit count, keeping it off the critical path.",
+   "On Skylake the author estimates a 38-cycle latency per 5-symbol round, giving about 2.53 cycles/byte as a lower bound; measured was about 2.79 cycles/byte.",
+   "Three streams are not enough for wide cores, and register pressure (3 GPRs of state per stream) limits adding more, motivating a different 6-stream design."
+  ],
+  "summary": "The post covers the third part of a series on Oodle's Huffman decoders, this time for generic 64-bit x86 rather than the AMD Jaguar consoles. It walks from the basic decode step to micro-optimizations (byte-register stores, load-immediate-then-AND, SHLX when BMI2 is available), then a refill strategy with explicit remaining-bit counts. The analysis models Skylake as a proxy, estimating a 38-cycle critical path per 5 symbols across 3 streams and comparing issue-slot use against it. The measured result of about 41.8 cycles per 15 bytes is roughly 10% above that lower bound, and the post concludes that more streams are needed but register pressure makes that hard.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86-64 assembly",
+   "BMI2",
+   "Skylake",
+   "Oodle Data"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9439,
+  "output": 1039
+ },
+ "generated": "2026-10-29"
+}

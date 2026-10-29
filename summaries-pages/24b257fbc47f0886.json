@@ -1,0 +1,61 @@
+{
+ "id": "24b257fbc47f0886",
+ "url": "https://www.cl.cam.ac.uk/~pes20/armv8-mca",
+ "final_url": "https://www.cl.cam.ac.uk/~pes20/armv8-mca/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Simplifying ARM Concurrency: Multicopy-atomic Axiomatic and Operational Models for ARMv8",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Store buffers, ordering and cache-line contention",
+   "entry": "Simplifying ARM Concurrency: Multicopy-Atomic Axiomatic and Operational Models for ARMv8 - The formal model Arm adopted into its architecture, and the record of why the non-multicopy-atomic option was dropped."
+  }
+ ],
+ "summary": {
+  "title": "Simplifying ARM Concurrency: Multicopy-atomic Axiomatic and Operational Models for ARMv8",
+  "one_liner": "Learn why ARMv8 dropped non-multicopy-atomic memory visibility in favour of a simpler multicopy-atomic model, and how its axiomatic and operational formalisations were proven equivalent.",
+  "category": "memory models",
+  "keywords": [
+   "arm memory model",
+   "armv8 concurrency",
+   "multicopy-atomic",
+   "non-multicopy-atomic",
+   "relaxed memory model",
+   "axiomatic memory model",
+   "operational memory model",
+   "flat operational model",
+   "flowing model",
+   "herd tool",
+   "litmus tests",
+   "herd",
+   "armv8 dependencies",
+   "speculation bug linux kernel lock",
+   "weak memory ordering",
+   "formal semantics arm",
+   "popl 2018 paper",
+   "store visibility across threads",
+   "mixed-size accesses"
+  ],
+  "takeaways": [
+   "ARMv8 was revised from a non-multicopy-atomic model to a multicopy-atomic one, because the non-multicopy-atomic behaviour was not exploited in production and complicated other features.",
+   "The paper defines two formal concurrency models, an operational one (a simplification of the Flowing model) and the axiomatic model of the revised ARMv8 specification, and proves them equivalent.",
+   "The operational model is integrated into an executable exploration tool with a web interface, used to exhaustively check litmus tests.",
+   "The tool was demonstrated on a loop-unrolled Linux kernel lock implementation, a known speculation bug, and a fixed version."
+  ],
+  "summary": "This POPL 2018 paper by Pulte, Flur, Deacon, French, Sarkar and Sewell explains why ARMv8's relaxed memory model was simplified to be multicopy-atomic and gives the reasoning behind dropping the earlier non-multicopy-atomic option. It also includes more straightforward notions of dependency and a formal concurrency model in the architecture. The authors define an operational model (a simplified Flowing/Flat model) and the revised axiomatic model, and prove they are equivalent. The operational model is implemented in an executable exploration tool with a web interface, which is used to check a loop-unrolled Linux kernel lock, a known speculation bug, and a fixed version. The page also links to the Herd model, litmus tests and the equivalence proof.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "ARMv8",
+   "Herd",
+   "Linux kernel"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2391,
+  "output": 978
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "059103bdf670d634",
+ "url": "https://blog.frost.kiwi/analytical-anti-aliasing",
+ "final_url": "https://blog.frost.kiwi/analytical-anti-aliasing/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "AAA - Analytical Anti-Aliasing",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Graphics",
+   "entry": "AAA - Analytical Anti-Aliasing"
+  }
+ ],
+ "summary": {
+  "title": "AAA - Analytical Anti-Aliasing",
+  "one_liner": "You learn why shader-drawn circles alias (pixel crawling, flat-part plateaus), how SSAA and MSAA work and where they fall short, and the case for an analytical anti-aliasing approach.",
+  "category": "graphics rendering",
+  "keywords": [
+   "anti-aliasing",
+   "analytical anti-aliasing",
+   "aliasing",
+   "jaggies",
+   "rasterization artifacts",
+   "pixel crawling",
+   "ssaa",
+   "supersampling anti-aliasing",
+   "msaa",
+   "multisample anti-aliasing",
+   "smaa",
+   "dlaa",
+   "signed distance field",
+   "length(uv) circle shader",
+   "alpha testing",
+   "webgl circle",
+   "glsl fragment shader",
+   "webgl 2 msaa",
+   "how to remove jagged edges in graphics",
+   "why do circles look jagged on screen",
+   "sgssaa",
+   "three-mesh-ui text rendering"
+  ],
+  "takeaways": [
+   "A naive alpha-tested circle (discard if length(uv) >= 1) shows blockiness and pixel crawling, worst at low resolutions and on axis-aligned flat parts.",
+   "SSAA renders at higher resolution and downsamples, but sampling the already-quantized result gives fewer transparency steps than expected, and costs extra memory and compute.",
+   "MSAA applies supersampling only at geometry silhouettes and is implemented in GPU hardware, so supported levels depend on the hardware and driver; WebGL 1 lacks it, WebGL 2 has it.",
+   "The article's thesis is that an analytical approach, working from the shape's distance field rather than discrete samples, can produce the cleanest edges."
+  ],
+  "summary": "The article walks through anti-aliasing using interactive WebGL canvases that draw a moving circle. It starts with a naive alpha-tested circle built from a GLSL length(uv) check and shows its pixel crawling and plateau artifacts. It then covers SSAA, implemented by rendering at 2x and downsampling with linear filtering, and explains why it gives only partial improvement. The MSAA section describes hardware-based multisampling at silhouettes and its per-vendor limits. The page sets up a promised analytical anti-aliasing method, but the text provided ends before that method is presented.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "WebGL",
+   "WebGL 2",
+   "GLSL",
+   "JavaScript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11954,
+  "output": 962
+ },
+ "generated": "2026-10-29"
+}

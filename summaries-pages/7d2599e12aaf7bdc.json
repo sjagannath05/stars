@@ -1,0 +1,65 @@
+{
+ "id": "7d2599e12aaf7bdc",
+ "url": "https://users.elis.ugent.be/~leeckhou/papers/tocs09.pdf",
+ "final_url": "https://users.elis.ugent.be/~leeckhou/papers/tocs09.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "TOCS2702-03.tex",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Limits of ILP and SMT",
+   "entry": "A Mechanistic Performance Model for Superscalar Out-of-Order Processors - Turns window size, issue width and miss events into cycles lost, making an ILP limit a cycle count."
+  }
+ ],
+ "summary": {
+  "title": "A Mechanistic Performance Model for Superscalar Out-of-Order Processors",
+  "one_liner": "You learn how interval analysis turns miss events such as branch mispredictions and cache misses into cycle penalties, giving a mechanistic performance model of out-of-order processors.",
+  "category": "computer architecture performance modeling",
+  "keywords": [
+   "mechanistic performance model",
+   "interval analysis",
+   "superscalar out-of-order processor",
+   "analytical performance modeling",
+   "miss events",
+   "branch misprediction penalty",
+   "cache miss penalty",
+   "instruction cache miss interval",
+   "dispatch width",
+   "issue width",
+   "reorder buffer window size",
+   "ilp limit",
+   "instruction-level parallelism",
+   "balanced processor design",
+   "pipeline depth scaling",
+   "pipeline width scaling",
+   "resource scaling",
+   "overprovisioned processor",
+   "detailed simulation comparison",
+   "spec cpu2000 integer",
+   "cycle count model",
+   "how to predict processor execution time",
+   "rob size versus width quadratic"
+  ],
+  "takeaways": [
+   "Execution time can be divided into intervals separated by disruptive miss events such as branch mispredictions and cache misses.",
+   "An interval of N instructions takes about ceil(N/D) cycles to dispatch at dispatch width D, plus a penalty that depends on the miss event type.",
+   "For an L1 I-cache miss the interval time is ceil(N/D) plus the miss delay; L2 and I-TLB misses are handled the same way with their own delays.",
+   "A balanced design has enough window and back-end resources to sustain D IPC without miss events; the window and issue buffers scale roughly quadratically with width.",
+   "For optimal designs, pipeline depth times the square root of width is nearly constant, and the model differs from detailed simulation of a 4-wide processor by about 7% on average."
+  ],
+  "summary": "The paper proposes interval analysis, a mechanistic model for out-of-order superscalar processors that splits execution time into intervals between disruptive miss events such as branch mispredictions and cache misses. Each interval is timed from its length in instructions plus a penalty specific to its miss type, and total time is the sum over intervals. The authors build the model from internal processor structure rather than fitting it to simulation, then validate it against detailed simulation, reporting about 7% average difference for a 4-wide design on SPEC CPU2000 integer benchmarks. The model is then used to study how window size, widths, and pipeline depth should scale in balanced designs, and when overprovisioned dispatch widths can help.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "superscalar out-of-order processors",
+   "SPEC CPU2000"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9808,
+  "output": 1026
+ },
+ "generated": "2026-10-29"
+}

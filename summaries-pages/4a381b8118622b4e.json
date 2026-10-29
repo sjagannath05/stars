@@ -1,0 +1,67 @@
+{
+ "id": "4a381b8118622b4e",
+ "url": "https://mechanical-sympathy.blogspot.com/2011/08/inter-thread-latency.html",
+ "final_url": "https://mechanical-sympathy.blogspot.com/2011/08/inter-thread-latency.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Inter Thread Latency",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Mechanical sympathy",
+   "entry": "Inter Thread Latency - Measures with code the floor for handing a cache line between cores, which every queue and lock is built on."
+  }
+ ],
+ "summary": {
+  "title": "Inter Thread Latency",
+  "one_liner": "You learn how to measure the cost of passing a cache line between two CPU cores using a ping-pong test in Java and C++, which comes out to about 45–50ns per exchange on the author's Sandy Bridge machine.",
+  "category": "concurrency performance",
+  "keywords": [
+   "inter-thread latency",
+   "cache line transfer between cores",
+   "ping-pong benchmark",
+   "cross-core latency",
+   "memory barrier cost",
+   "lock instruction latency",
+   "volatile counter benchmark",
+   "gnu atomic builtins",
+   "__sync_add_and_fetch",
+   "busy spin thread signalling",
+   "java vs c++ latency",
+   "lmax disruptor",
+   "sequencebarrier batching",
+   "store buffer drain",
+   "cache coherency traffic",
+   "message rate between threads",
+   "mechanical sympathy",
+   "taskset cpu pinning",
+   "measuring latency vs throughput",
+   "sandy bridge latency"
+  ],
+  "takeaways": [
+   "A serial ping-pong test between two busy-spinning threads measures the cost of exchanging a cache line between cores.",
+   "On the author's 2.2 GHz Sandy Bridge laptop, Java took about 50ns per op and C++ about 45ns per op (roughly 20–22 million exchanges per second).",
+   "The cost comes mainly from the lock instruction enforcing total order, draining store buffers, and resulting cache coherency traffic.",
+   "Latency is not throughput: the measured 1.4 GB/s is far below the ring bus bandwidth, and batching data between barriers can carry more per exchange.",
+   "The Disruptor's batching via SequenceBarrier.waitFor avoids a memory barrier per event, which explains its higher throughput."
+  ],
+  "summary": "The author compares Java (volatile counters) and C++ (GNU atomic builtins) in a two-thread ping-pong benchmark that exchanges a counter between cores hundreds of millions of times, pinned with taskset. The results show about 50ns per operation in Java and 45ns in C++ on an Intel Sandy Bridge laptop, which the author attributes to the lock instruction and cache coherency traffic. The article then relates this floor to the LMAX Disruptor, arguing Java's latency is already close to C++'s (about 10% difference) and that the Disruptor's throughput comes from batching without memory barriers.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Java",
+   "C++",
+   "GNU atomic builtins",
+   "pthreads",
+   "LMAX Disruptor",
+   "taskset",
+   "HotSpot JVM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3464,
+  "output": 1003
+ },
+ "generated": "2026-10-29"
+}

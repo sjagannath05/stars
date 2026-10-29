@@ -1,0 +1,63 @@
+{
+ "id": "1bae33b957da4b8c",
+ "url": "https://research.cs.wisc.edu/multifacet/papers/ieeecomputer08_amdahl_multicore.pdf",
+ "final_url": "https://research.cs.wisc.edu/multifacet/papers/ieeecomputer08_amdahl_multicore.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scaling laws",
+   "entry": "Amdahl's Law in the Multicore Era - Extends the bound to chips of unequal cores under a fixed area budget, the arithmetic behind big and little cores."
+  }
+ ],
+ "summary": {
+  "title": "Amdahl's Law in the Multicore Era",
+  "one_liner": "You learn how Amdahl's law extends to multicore chips under a fixed resource budget, comparing symmetric, asymmetric (big and little cores), and dynamic core designs with speedup equations.",
+  "category": "computer architecture performance",
+  "keywords": [
+   "amdahl's law",
+   "multicore amdahl's law",
+   "chip multiprocessor",
+   "multicore chip design",
+   "symmetric multicore",
+   "asymmetric multicore",
+   "heterogeneous multicore",
+   "dynamic multicore",
+   "big and little cores",
+   "base core equivalent",
+   "bce",
+   "parallel fraction",
+   "speedup equation multicore",
+   "core count versus core size tradeoff",
+   "sequential performance vs parallel performance",
+   "perf(r) = sqrt(r)",
+   "gustafson's law comparison",
+   "thread-level speculation",
+   "how many cores should a chip have",
+   "multicore performance model"
+  ],
+  "takeaways": [
+   "Amdahl's law applies to multicore chips: best speedups need a parallel fraction f close to 1, so finding parallelism remains critical.",
+   "Under a fixed budget of n base core equivalents, a chip can use n/r symmetric cores of r BCEs each, and the optimal core size depends on f and n.",
+   "Asymmetric chips with one large core and many small cores can reach much higher speedups than symmetric chips (e.g. 125.0 vs 51.2 for f=0.975, n=256).",
+   "Dynamic chips that gang cores for sequential work are never worse than asymmetric ones under the same assumptions, and represent an upper bound on these designs.",
+   "The models are simplistic: they ignore power, memory systems, interconnects, software overhead and scheduling, so the authors present the results as insight rather than precise predictions."
+  ],
+  "summary": "The article by Mark Hill and Michael Marty (IEEE Computer, 2008) extends Amdahl's law with a cost model for multicore chips. It assumes a chip has a budget of n base core equivalents (BCEs) and that a core built from r BCEs has sequential performance perf(r), using perf(r) = sqrt(r) for most graphs. It then writes speedup equations for symmetric, asymmetric, and dynamic multicore chips and plots them for n = 16 and n = 256 across several parallel fractions. The authors close by noting the models ignore power, memory, interconnect, and software overhead, and they urge researchers to improve both parallelism and sequential core performance.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "multicore processors",
+   "chip multiprocessors",
+   "Amdahl's law"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10541,
+  "output": 1014
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,72 @@
+{
+ "id": "ec82a4fdf4b5eb3e",
+ "url": "https://danluu.com/malloc-tutorial",
+ "final_url": "http://danluu.com/malloc-tutorial/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Operating System",
+   "entry": "C: _Malloc tutorial_"
+  }
+ ],
+ "summary": {
+  "title": "Malloc tutorial",
+  "one_liner": "You learn how to build a simple malloc/free/realloc/calloc on top of sbrk using a linked list of block metadata, then load it into real programs with LD_PRELOAD and debug it with gdb.",
+  "category": "build a memory allocator",
+  "keywords": [
+   "malloc tutorial",
+   "write your own malloc",
+   "implement malloc in c",
+   "custom memory allocator",
+   "sbrk",
+   "heap allocation",
+   "block_meta struct",
+   "linked list free list",
+   "free implementation",
+   "realloc implementation",
+   "calloc implementation",
+   "ld_preload malloc",
+   "dyld_insert_libraries",
+   "dynamic library malloc replacement",
+   "gdb debugging malloc",
+   "struct padding sizeof bug",
+   "malloc alignment",
+   "block splitting",
+   "block coalescing",
+   "c memory management",
+   "how does malloc work",
+   "dlmalloc",
+   "tcmalloc",
+   "jemalloc",
+   "addresssanitizer"
+  ],
+  "takeaways": [
+   "How malloc can use sbrk to grow the heap and reuse freed blocks found by walking a linked list of block metadata stored just before each returned pointer.",
+   "How to implement free (marking blocks free, with asserts for NULL and double free), and realloc/calloc on top of malloc.",
+   "How to compile the allocator as a shared library and use it with existing binaries via LD_PRELOAD (Linux) or DYLD_INSERT_LIBRARIES (macOS).",
+   "Debugging techniques with gdb: a NULL free crash, and a struct padding bug where sizeof differs from the offset of the last member."
+  ],
+  "summary": "The post walks through writing a minimal malloc in C, starting with a naive sbrk-only version and then adding a metadata header per block, a linked list of blocks, and a first-fit search for free blocks. It then adds free, realloc, and calloc, noting where the simple version is incomplete (no overflow checks, no splitting or merging). It shows how to build the code as a shared object and preload it into existing programs, then demonstrates debugging two bugs with gdb. It closes with exercises on alignment, block splitting, coalescing, and bug hunting, plus links to dlmalloc, tcmalloc, jemalloc, and sanitizers.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "sbrk",
+   "gdb",
+   "lldb",
+   "clang",
+   "LD_PRELOAD",
+   "AddressSanitizer",
+   "ThreadSanitizer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7973,
+  "output": 979
+ },
+ "generated": "2026-10-29"
+}

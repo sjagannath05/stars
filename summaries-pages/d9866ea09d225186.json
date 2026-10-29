@@ -1,0 +1,78 @@
+{
+ "id": "d9866ea09d225186",
+ "url": "https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html",
+ "final_url": "https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Making Your Data Ready for Agentic AI",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Data semantics",
+   "entry": "Making Your Data Ready for Agentic AI, martinfowler.com"
+  }
+ ],
+ "summary": {
+  "title": "Making Your Data Ready for Agentic AI",
+  "one_liner": "Agents act on bad data with confidence, so you need trusted, contextual, traceable, governed, and operational data built in through contracts, quarantine gates, a medallion-style tiering, agentic lineage, and staged autonomy.",
+  "category": "data engineering for AI",
+  "keywords": [
+   "agentic ai data readiness",
+   "ai-ready data",
+   "data contracts",
+   "open data contract standard",
+   "data quality for agents",
+   "freshness sla",
+   "quarantine pattern",
+   "dead letter queue",
+   "medallion architecture",
+   "bronze silver gold tiers",
+   "adaptive gold",
+   "context layer",
+   "semantic layer for agents",
+   "agentic lineage",
+   "audit trail for ai agents",
+   "traceability of agent decisions",
+   "eu ai act article 12 logging",
+   "confidence threshold routing",
+   "staged autonomy",
+   "rag data quality",
+   "vector index freshness",
+   "opentelemetry for ai",
+   "langfuse",
+   "arize phoenix",
+   "data governance for autonomous agents"
+  ],
+  "takeaways": [
+   "Agents accept whatever data they are given, so trust (accuracy, freshness, validation) must be enforced by the data architecture before the agent sees it.",
+   "Use data contracts (e.g. Open Data Contract Standard with Data Contract CLI) with schema, quality rules and freshness SLAs, enforced in CI/CD.",
+   "Quarantine data that fails contract checks into a dead-letter queue so agents only read certified Gold-tier data.",
+   "Capture agentic lineage as traces and spans recording why an agent acted, to answer audit questions such as EU AI Act Article 12 logging.",
+   "Roll out autonomy in stages (shadow, supervised, guardrailed, full) and route low-confidence or data-violating cases to humans."
+  ],
+  "summary": "The article argues that data systems built for human analysts must be re-engineered for autonomous agents, which lack the judgment to notice bad or stale data. It structures the answer around five attributes (trusted, contextual, traceable, governed, operational) and walks through data contracts with freshness SLAs, quarantine gating, a medallion architecture extended with an agent-curated Adaptive Gold tier, and confidence-threshold routing. Later sections cover agentic lineage using traces and spans, EU AI Act logging obligations, and a staged autonomy model. The page includes YAML contract examples and concrete scenarios such as a stale-price pricing agent and a trade-finance audit.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Open Data Contract Standard",
+   "Data Contract CLI",
+   "YAML",
+   "SQL",
+   "medallion architecture",
+   "Databricks",
+   "RAG",
+   "vector store",
+   "OpenTelemetry",
+   "Langfuse",
+   "Arize Phoenix",
+   "Jaeger",
+   "Zipkin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9068,
+  "output": 1102
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "895ccd037d0f4d61",
+ "url": "https://briancallahan.net/blog/20210816.html",
+ "final_url": "https://briancallahan.net/blog/20210816.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 3: A parser"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 3: A parser",
+  "one_liner": "You learn how to write a hand-crafted recursive-descent parser for the PL/0 grammar in C, turning a lexer into a working PL/0 syntax validator.",
+  "category": "compiler construction",
+  "keywords": [
+   "recursive descent parser",
+   "recursive-descent parsing",
+   "top-down parser",
+   "pl/0 compiler",
+   "pl/0 grammar",
+   "ebnf grammar",
+   "parser in c",
+   "hand-written parser",
+   "lexer and parser",
+   "yacc alternative",
+   "flex alternative",
+   "syntax validator",
+   "expect function parser",
+   "nested procedure depth check",
+   "switch statement grammar",
+   "compiler front end",
+   "write a compiler tutorial",
+   "how to parse ebnf by hand",
+   "wirth pl/0",
+   "pl0c"
+  ],
+  "takeaways": [
+   "Each EBNF rule maps to one C function; '|' alternatives become switch statements or if/else on the first token, and [ ] becomes if while { } becomes while.",
+   "Helper functions next() and expect(token) drive the lexer and enforce expected syntax, reporting errors on mismatch.",
+   "The parser enforces a no-nested-procedures rule using a depth counter in block() instead of changing the grammar.",
+   "With the lexer and parser done, the program acts as a PL/0 validator that accepts valid code and rejects invalid code.",
+   "Write test programs to verify the front end as later code generation work changes the parser."
+  ],
+  "summary": "The author continues a series on building a PL/0 compiler in C by writing a hand-crafted recursive-descent parser instead of using yacc. He explains how to read the EBNF grammar embedded in the source and walks through implementing the program, block, statement, condition, expression, term and factor rules as functions, with code for each. A depth counter is added to forbid nested procedures without altering the grammar. The post ends with the complete lexer and parser source and notes that testing should be used to verify correctness.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "PL/0",
+   "EBNF",
+   "flex",
+   "yacc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9500,
+  "output": 841
+ },
+ "generated": "2026-10-29"
+}

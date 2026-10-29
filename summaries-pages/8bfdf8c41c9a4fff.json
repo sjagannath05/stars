@@ -1,0 +1,69 @@
+{
+ "id": "8bfdf8c41c9a4fff",
+ "url": "https://docs.kernel.org/networking/af_xdp.html",
+ "final_url": "https://docs.kernel.org/networking/af_xdp.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "AF_XDP",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Interrupts and kernel bypass",
+   "entry": "AF_XDP - Defines the socket and UMEM rings handing XDP frames to user space, and the zero-copy and need-wakeup modes."
+  }
+ ],
+ "summary": {
+  "title": "AF_XDP",
+  "one_liner": "Learn how AF_XDP sockets move packets from an XDP program into user space using UMEM memory and FILL, COMPLETION, RX and TX rings, plus the zero-copy, copy and need-wakeup modes.",
+  "category": "linux kernel networking",
+  "keywords": [
+   "af_xdp",
+   "xdp socket",
+   "xsk",
+   "af_xdp socket",
+   "umem",
+   "xdp_umem_reg",
+   "fill ring",
+   "completion ring",
+   "rx ring",
+   "tx ring",
+   "xskmap",
+   "bpf_map_type_xskmap",
+   "zero-copy mode",
+   "copy mode",
+   "xdp_use_need_wakeup",
+   "need_wakeup flag",
+   "xdp_shared_umem",
+   "multi-buffer af_xdp",
+   "kernel bypass packet processing",
+   "how does af_xdp work",
+   "xdp_redirect to user space",
+   "libbpf xsk helpers",
+   "xdp_drv vs xdp_skb mode",
+   "high performance packet processing linux"
+  ],
+  "takeaways": [
+   "AF_XDP sockets receive and send frames via RX and TX rings that point into a shared UMEM memory region, with FILL and COMPLETION rings transferring frame ownership between kernel and user space.",
+   "An XDP program redirects packets to a socket through an XSKMAP using bpf_redirect_map(); packets are dropped if the map entry is empty or the socket does not match the device and queue.",
+   "XDP_ZEROCOPY and XDP_COPY bind flags force a mode, and XDP_USE_NEED_WAKEUP reduces syscalls by signalling when poll() or sendto() is needed.",
+   "Multi-buffer support (XDP_USE_SG, XDP_PKT_CONTD) lets a packet span several frames in both copy and zero-copy modes."
+  ],
+  "summary": "This is the Linux kernel documentation page for AF_XDP, an address family for high-performance packet processing. It explains the socket setup: the UMEM registration, the four rings (FILL, COMPLETION, RX, TX), binding to a device and queue, and the XSKMAP used by the XDP program to redirect frames. It then documents configuration flags and socket options such as XDP_COPY, XDP_ZEROCOPY, need_wakeup, XDP_SHARED_UMEM, and XDP_STATISTICS, followed by multi-buffer support with pseudo-code for RX and TX paths. The reader is assumed to know BPF and XDP already.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "XDP",
+   "eBPF",
+   "C",
+   "libbpf",
+   "libxdp"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10285,
+  "output": 1067
+ },
+ "generated": "2026-10-29"
+}

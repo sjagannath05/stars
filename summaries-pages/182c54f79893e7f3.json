@@ -1,0 +1,69 @@
+{
+ "id": "182c54f79893e7f3",
+ "url": "https://blog.asrpo.com/making_a_low_level_debugger",
+ "final_url": "https://blog.asrpo.com/making_a_low_level_debugger",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Making a low level (Linux) debugger",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "Part 1"
+  }
+ ],
+ "summary": {
+  "title": "Making a low level (Linux) debugger",
+  "one_liner": "You learn how to build a basic interactive Linux x86_64 debugger in Python using ptrace, pyelftools and distorm3 to read registers, single-step, set breakpoints, call functions in a child process, and disassemble code.",
+  "category": "low-level debugging",
+  "keywords": [
+   "build a debugger",
+   "write your own debugger",
+   "ptrace system call",
+   "python-ptrace",
+   "pyelftools",
+   "distorm3 disassembler",
+   "single step instructions",
+   "software breakpoint int 3",
+   "0xcc breakpoint",
+   "call function in child process",
+   "mmap syscall injection",
+   "read process registers",
+   "read process memory",
+   "disassemble next instructions",
+   "elf symbol table lookup",
+   "/proc/pid/maps memory regions",
+   "gdb alternative",
+   "lldb alternative",
+   "debugger internals",
+   "how does a debugger work",
+   "linux x86_64 debugging in python",
+   "interactive debugger tutorial"
+  ],
+  "takeaways": [
+   "Attach to a child process with ptrace (via python-ptrace) and read or write its registers and memory.",
+   "Single-step and set software breakpoints by overwriting an instruction with the int 3 byte 0xCC, then restoring it.",
+   "Call functions inside the debuggee by faking a call instruction, and use a reserved mmap region with call rax to avoid the 5-byte call range limit.",
+   "Find function and variable addresses from the ELF symbol table with pyelftools, and disassemble upcoming instructions with distorm3."
+  ],
+  "summary": "The author builds a small interactive debugger in Python for a Linux x86_64 binary, deliberately favouring simplicity over the completeness of gdb or lldb. Each step is a runnable snippet: launching a child with ptrace, reading registers and memory, single-stepping, injecting int 3 breakpoints, and calling functions by overwriting code. The post then covers the limits of that approach (call distance, clobbered bytes) and the fix of reserving memory with an mmap syscall. It ends with a disassembly helper using distorm3, and notes that memory maps and shared libraries are left for a follow-up post.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "ptrace",
+   "python-ptrace",
+   "pyelftools",
+   "distorm3",
+   "x86_64 assembly",
+   "Linux",
+   "ELF"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6150,
+  "output": 929
+ },
+ "generated": "2026-10-29"
+}

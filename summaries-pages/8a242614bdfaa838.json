@@ -1,0 +1,76 @@
+{
+ "id": "8a242614bdfaa838",
+ "url": "https://aboudjem.github.io/Sleepless",
+ "final_url": "https://aboudjem.github.io/Sleepless/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Sleepless: keep your Mac awake with the lid closed",
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Website: https://aboudjem.github.io/Sleepless/"
+  }
+ ],
+ "summary": {
+  "name": "Sleepless",
+  "one_liner": "Sleepless is an open-source (MIT) native macOS menu-bar app that keeps a MacBook awake with the lid closed, on battery, without an external display, by toggling pmset disablesleep.",
+  "category": "macos keep-awake app",
+  "keywords": [
+   "keep mac awake lid closed",
+   "macos keep awake",
+   "menu bar keep awake",
+   "lid closed macbook awake",
+   "clamshell mode without monitor",
+   "pmset disablesleep",
+   "sleepdisabled flag",
+   "caffeinate alternative",
+   "amphetamine alternative",
+   "keepingyouawake alternative",
+   "prevent macbook sleep on battery",
+   "no dummy hdmi plug",
+   "auto-off timer",
+   "battery floor cutoff",
+   "low power mode sleep",
+   "sudoers nopasswd pmset",
+   "sigstore attestation",
+   "sha-256 checksums release",
+   "menu bar app",
+   "open source mac utility",
+   "macbook stay awake downloads",
+   "run build unattended lid closed",
+   "coffee cup menu bar",
+   "appkit swift app",
+   "mac keep awake homebrew"
+  ],
+  "use_cases": [
+   "Keep a MacBook awake with the lid closed for downloads or syncs",
+   "Run an unattended build, render, or training job with the lid shut",
+   "Share a hotspot from a closed MacBook on battery",
+   "Stop a keep-awake session automatically before battery runs flat",
+   "Replace caffeinate-based keep-awake apps for lid-closed use"
+  ],
+  "what_it_does": "Sleepless adds a menu-bar switch that toggles pmset disablesleep, which overrides lid-close sleep, and reads the flag back so the icon reflects the real state. It offers a 1 or 2 hour auto-off timer with a live countdown, and a battery floor from 5 to 50% (default 15%) that turns it off before the battery runs flat. If Low Power Mode is on while on battery, it releases the setting and lets the Mac sleep. The installer adds a sudoers rule permitting exactly two pmset commands so no password prompt is needed. Releases include SHA-256 sums and a Sigstore build-provenance attestation.",
+  "pricing": "open source",
+  "platforms": [
+   "macOS"
+  ],
+  "notable": [
+   "Uses pmset disablesleep, the lower-level setting that can override lid-close sleep, unlike power-assertion tools",
+   "Single AppKit file with no daemon, kernel extension, or dependencies; no telemetry or network calls",
+   "Releases signed with Sigstore build provenance and SHA-256 checksums; scoped sudoers grant limited to two exact commands",
+   "Battery floor cutoff and Low Power Mode awareness"
+  ],
+  "caveats": [
+   "Apple does not officially document pmset disablesleep, and behavior depends on hardware and macOS version",
+   "Heavy sustained load with the lid closed reduces airflow; the page advises judgement",
+   "Requires a one-time sudo grant via the installer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3733,
+  "output": 1136
+ },
+ "generated": "2026-10-29"
+}

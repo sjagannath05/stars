@@ -1,0 +1,64 @@
+{
+ "id": "f4046cc0ee99c391",
+ "url": "https://www.cs.rice.edu/CS/Architecture/docs/barr-isca10.pdf",
+ "final_url": "https://www.cs.rice.edu/CS/Architecture/docs/barr-isca10.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "isca029-barr.dvi",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "TLBs, page walks and prefetchers",
+   "entry": "Translation Caching: Skip, Don't Walk (the Page Table) - Defines the page-walk cache design space and shows why cached partial translations let a walk skip page-table levels."
+  }
+ ],
+ "summary": {
+  "title": "Translation Caching: Skip, Don't Walk (the Page Table)",
+  "one_liner": "Learn how MMU caches holding partial translations let x86-64 page-table walks skip upper levels of the radix tree after a TLB miss, and how five cache designs compare.",
+  "category": "computer architecture",
+  "keywords": [
+   "translation caching",
+   "page walk cache",
+   "mmu cache",
+   "page table walk",
+   "tlb miss",
+   "radix tree page table",
+   "x86-64 address translation",
+   "paging-structure caches",
+   "intel paging structure cache",
+   "amd page walk cache",
+   "unified page table cache",
+   "split translation cache",
+   "unified translation cache",
+   "translation-path cache",
+   "inverted page table comparison",
+   "hashed page table",
+   "virtual memory design space",
+   "large pages tlb coverage",
+   "skip page table levels",
+   "four-level page table 48-bit virtual address"
+  ],
+  "takeaways": [
+   "Upper-level page table entries have strong temporal locality, so caching them in MMU-private caches avoids repeated memory accesses during TLB-miss walks.",
+   "Page table caches are tagged by physical address (like a data cache), while translation caches are tagged by virtual address indices (like a TLB) and can skip levels of the walk.",
+   "The paper defines five MMU cache organizations, including three new designs, and compares them quantitatively; translation cache variants perform best in many cases.",
+   "Radix tables with MMU caching cause far fewer DRAM accesses than inverted (hash-based) page tables, challenging earlier conclusions that hashing was better."
+  ],
+  "summary": "The paper (ISCA 2010, Barr, Cox, and Rixner) explores the design space of MMU caches that speed up page table walks after TLB misses in radix-tree page table architectures such as x86-64. It explains x86-64 address decomposition into four 9-bit indices and walks through how cached upper-level entries can be tagged by physical address (page table caches) or by virtual address indices (translation caches). It describes existing AMD Page Walk Cache and Intel Paging-Structure Caches alongside three new structures, then compares all five quantitatively in simulation. It also compares radix tables with MMU caches against inverted and hash-based page tables.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "x86-64",
+   "AMD Opteron page walk cache",
+   "Intel paging-structure caches",
+   "TLB",
+   "radix tree page tables"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9809,
+  "output": 938
+ },
+ "generated": "2026-10-29"
+}

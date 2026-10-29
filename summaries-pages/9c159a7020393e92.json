@@ -1,0 +1,70 @@
+{
+ "id": "9c159a7020393e92",
+ "url": "https://planetscale.com/blog/btrees-and-database-indexes",
+ "final_url": "https://planetscale.com/blog/btrees-and-database-indexes",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "B-trees and database indexes — PlanetScale",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Algorithm and data structures",
+   "entry": "B-trees and database indexes"
+  }
+ ],
+ "summary": {
+  "title": "B-trees and database indexes — PlanetScale",
+  "one_liner": "You learn how B-trees and B+trees work, why databases like InnoDB use them for indexes, and why random keys such as UUIDv4 primary keys hurt insert and range-query performance compared with sequential integers.",
+  "category": "database internals",
+  "keywords": [
+   "b-tree",
+   "b+tree",
+   "database index",
+   "btree index",
+   "primary key choice",
+   "uuid primary key performance",
+   "uuidv4 vs auto increment",
+   "auto_increment primary key",
+   "innodb",
+   "mysql indexes",
+   "secondary index",
+   "index page split",
+   "disk block size",
+   "buffer pool",
+   "tree depth lookup",
+   "sequential vs random insert",
+   "range query index",
+   "uuidv7",
+   "bigint primary key",
+   "how do database indexes work",
+   "why does uuid slow down inserts",
+   "why use b-tree for database",
+   "clustered index primary key",
+   "postgres mongodb b-tree"
+  ],
+  "takeaways": [
+   "A B-tree stores sorted keys in nodes sized to match disk blocks, so lookups visit one node per level and shallow trees are fast.",
+   "B+trees keep values only in leaves and link leaves together, letting inner nodes hold more keys and range scans stay in order.",
+   "InnoDB stores each table as a B+tree keyed by the primary key, and secondary indexes store the primary key as their value.",
+   "Random keys like UUIDv4 scatter inserts across the tree and hurt range queries; sequential integers keep inserts on the right-most path.",
+   "Smaller keys such as BIGINT fit more entries per node than 16-byte UUIDs, producing shallower trees."
+  ],
+  "summary": "This interactive PlanetScale article explains B-trees and B+trees, the structures behind indexes in MySQL, Postgres, MongoDB and others. It walks through node ordering, search by levels, block-sized nodes, and how InnoDB stores table data and secondary indexes in B+trees. Embedded visualizations let readers add keys, adjust node sizes and split percentages, and watch insert patterns. It then compares random UUIDv4 keys with sequential auto-increment keys on insert cost, range-query locality, and key size.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "MySQL",
+   "InnoDB",
+   "Postgres",
+   "MongoDB",
+   "SQL",
+   "UUID"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6764,
+  "output": 890
+ },
+ "generated": "2026-10-29"
+}

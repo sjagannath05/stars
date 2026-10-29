@@ -1,0 +1,64 @@
+{
+ "id": "d652ede456224ad3",
+ "url": "https://overreacted.io/the-bug-o-notation",
+ "final_url": "https://overreacted.io/the-bug-o-notation/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The “Bug-O” Notation — overreacted",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Design (OO modeling, architecture, patterns, anti-patterns, etc.)",
+   "entry": "The “Bug-O” Notation, Dan Abramov"
+  }
+ ],
+ "summary": {
+  "title": "The \"Bug-O\" Notation",
+  "one_liner": "A way to judge an API by how its debugging effort scales with codebase size, using a \"Bug-O\" metric modeled on Big-O notation.",
+  "category": "software design principles",
+  "keywords": [
+   "bug-o notation",
+   "big-o notation",
+   "api design",
+   "debugging complexity",
+   "debugging effort scaling",
+   "algorithmic complexity analogy",
+   "imperative dom manipulation",
+   "state management",
+   "race conditions",
+   "resetting state before updates",
+   "component boundaries",
+   "react component tree debugging",
+   "combinatorial explosion of code paths",
+   "factorial complexity of code orderings",
+   "dan abramov essay",
+   "how to make code easier to debug",
+   "why api design matters for bugs",
+   "declarative ui",
+   "redux",
+   "inheritance debugging"
+  ],
+  "takeaways": [
+   "Big-O measures how algorithm cost grows with input; Bug-O measures how much an API slows debugging as the codebase grows.",
+   "Imperative DOM updates with no structure can create factorial-many possible orderings, making bugs hard to locate (roughly 🐞(n!)).",
+   "Limiting possible states, such as resetting state before each update, reduces the number of code paths to inspect (roughly 🐞(n)).",
+   "Componentization sets boundaries so that tracing a rendered value is proportional to component tree height, as in React."
+  ],
+  "summary": "The post is an essay by Dan Abramov that borrows Big-O notation to describe how much an API or code structure slows debugging as a codebase grows, which he calls Bug-O. He illustrates it with an unstructured imperative DOM example, estimating its ordering combinations as factorial, then shows how enforcing structure, such as clearing form state before each update, reduces the search space. He then notes that React-style components give similar benefits by enforcing boundaries, and ends by suggesting readers evaluate other APIs such as Redux, CSS, and inheritance with the same lens. The text is informal and explicitly non-scientific, and it contains code samples that were not included in the page text provided.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "React",
+   "Redux",
+   "CSS",
+   "DOM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2952,
+  "output": 863
+ },
+ "generated": "2026-10-29"
+}

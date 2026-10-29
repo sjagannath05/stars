@@ -1,0 +1,64 @@
+{
+ "id": "fc18b4e93ecdc76d",
+ "url": "https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html",
+ "final_url": "https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Optimize Options (Using the GNU Compiler Collection (GCC))",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Optimisation levels, inlining and link time",
+   "entry": "Options That Control Optimization (GCC) - Lists what each -O level turns on, the inlining limits, and that -Ofast admits transforms invalid for conforming code."
+  }
+ ],
+ "summary": {
+  "title": "Optimize Options (Using the GNU Compiler Collection)",
+  "one_liner": "You learn which optimization flags each GCC -O level (-O0, -O1, -O2, -O3, -Os, -Ofast, -Og, -Oz) enables, plus fine-grained flags like -finline-limit and -fno-inline.",
+  "category": "compiler optimization flags",
+  "keywords": [
+   "gcc optimization levels",
+   "gcc -o2 vs -o3",
+   "what does -o2 enable",
+   "what does -o3 enable",
+   "gcc -os optimize for size",
+   "gcc -ofast",
+   "gcc -og debugging",
+   "gcc -oz",
+   "gcc -o0 default",
+   "-finline-limit",
+   "-finline-functions",
+   "-fno-inline",
+   "-fomit-frame-pointer",
+   "-ffast-math",
+   "-q --help=optimizers",
+   "gcc inlining control",
+   "compiler optimization flags",
+   "fine-tune gcc optimizations",
+   "gcc -ffp-contract",
+   "gcc -foptimize-crc"
+  ],
+  "takeaways": [
+   "-O0 is the default and disables most optimization passes; -Og is suited to the edit-compile-debug cycle.",
+   "-O1 enables a base set of flags; -O2 adds nearly all non-space-speed-tradeoff passes; -O3 adds loop transforms and more cloning and unswitching.",
+   "-Os is -O2 minus flags that often grow code, plus size-focused tuning; -Oz is more aggressive about size.",
+   "-Ofast enables all -O3 optimizations plus ffast-math and other transforms that are invalid for some standard-compliant programs.",
+   "Use -Q --help=optimizers to see the exact set of optimizations enabled at each level on your target; the last -O option on the command line wins."
+  ],
+  "summary": "This GCC manual page lists the optimization flags turned on by each -O level and explains the trade-offs between compile time, code size, speed, and debuggability. It then documents individual fine-tuning flags such as -fomit-frame-pointer, -foptimize-crc, -ffp-contract, and the inlining controls (-finline-small-functions, -finline-functions, -finline-limit=n, -fno-inline). It is reference material rather than a tutorial, organized by level with per-flag descriptions.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "GCC",
+   "C",
+   "C++",
+   "Fortran"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9875,
+  "output": 947
+ },
+ "generated": "2026-10-29"
+}

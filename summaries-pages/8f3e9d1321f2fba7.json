@@ -1,0 +1,61 @@
+{
+ "id": "8f3e9d1321f2fba7",
+ "url": "http://dpk.io/dregs/toydregs",
+ "final_url": "https://dpk.land/io/dregs/toydregs",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Regular Expressions",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Regex Engine",
+   "entry": "JavaScript: _How to implement regular expressions in functional javascript using derivatives_"
+  }
+ ],
+ "summary": {
+  "title": "Regular Expressions (Toy Regex Engine in JavaScript)",
+  "one_liner": "You learn how a regular expression engine can match strings using Brzozowski-style derivatives, implemented as a small purely functional JavaScript toy.",
+  "category": "regular expression engines",
+  "keywords": [
+   "regular expression engine",
+   "regex implementation",
+   "how regular expressions work",
+   "regex derivatives",
+   "brzozowski derivatives",
+   "derivative of a regular expression",
+   "build a regex engine",
+   "implement regular expressions in javascript",
+   "functional regex matcher",
+   "alternation node",
+   "repetition node",
+   "kleene star implementation",
+   "star-free language",
+   "toy regex engine",
+   "regex matching algorithm",
+   "posix regular expressions",
+   "pcre backreferences",
+   "linked list regex representation",
+   "finite automata alternative",
+   "how to write a regexp matcher"
+  ],
+  "takeaways": [
+   "Regex matching can be done by repeatedly computing the derivative of a regex with respect to each input character, stopping on a match, a dead end, or the end of input.",
+   "Regex nodes can be represented as a linked list with alternation nodes, where a character node's derivative is its next node if the character matches, and NeverMatches otherwise.",
+   "Repetition is represented by a cyclic node that points back to its head, which requires side-effects to construct.",
+   "Naive full-match checking fails for regexes ending in a repetition, so the design adds matchEnd and canMatchMore methods to nodes to decide when a match is complete."
+  ],
+  "summary": "The article explains the theory behind one way to implement regular expressions: computing derivatives of a regex with respect to each input character. It then builds a toy engine in JavaScript in a mostly functional style, starting from the bottom layer of node classes (character, alternation, any-character, repetition) and working up to a friendlier API with Or, ZeroOrMore and Any, plus a compiler and an RE wrapper class. It walks through worked examples and a bug in the initial match function, which is fixed by adding matchEnd and canMatchMore methods. The toy supports grouping, alternation, repetition and literal/wildcard matching, with features like zero-width assertions, submatch extraction and substring search left as exercises.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "JavaScript",
+   "regular expressions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9678,
+  "output": 905
+ },
+ "generated": "2026-10-29"
+}

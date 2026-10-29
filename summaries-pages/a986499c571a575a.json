@@ -1,0 +1,63 @@
+{
+ "id": "a986499c571a575a",
+ "url": "https://xmonader.github.io/nimdays/day12_resp.html",
+ "final_url": "https://xmonader.github.io/nimdays/day12_resp.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Nim Days",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Nim: _Writing a Redis Protocol Parser_"
+  }
+ ],
+ "summary": {
+  "title": "Day 12: Implementing Redis Protocol",
+  "one_liner": "You learn how to encode and decode the Redis Serialization Protocol (RESP) in Nim using a variant type for its five value kinds.",
+  "category": "redis protocol parsing",
+  "keywords": [
+   "redis protocol",
+   "resp",
+   "redis serialization protocol",
+   "nim redis parser",
+   "parse resp in nim",
+   "encode redis values",
+   "decode redis responses",
+   "bulk strings",
+   "simple strings",
+   "redis error replies",
+   "redis integer reply",
+   "redis array encoding",
+   "crlf protocol parsing",
+   "variant object nim",
+   "nim-resp",
+   "how to write a redis client",
+   "bencode parsing",
+   "pipelining redis",
+   "redis null bulk string",
+   "prepare redis command"
+  ],
+  "takeaways": [
+   "RESP has five types: simple strings, errors, integers, bulk strings, and arrays, each marked by a leading byte and terminated by CRLF.",
+   "Redis clients send commands as arrays of bulk strings, e.g. GET USER becomes *2 followed by $3GET and $4USER.",
+   "A Nim variant object (RedisValue with a kind enum) can represent all RESP types, and encode/decode dispatch on the kind or first character.",
+   "Decoders return the parsed value plus the number of characters consumed, so arrays can be decoded recursively.",
+   "Null bulk strings use a length of -1 and are represented here with a placeholder value."
+  ],
+  "summary": "This is Day 12 of a Nim tutorial series that implements RESP, the Redis client-server protocol. The article explains the five RESP types and shows the expected encode and decode input/output examples. It then builds a RedisValue variant type in Nim, with encoder procedures for each type and a decoder that dispatches on the first character and recurses for arrays. It ends by showing how a command is turned into an array of bulk strings, and points to the nim-resp project it is based on.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Nim",
+   "Redis",
+   "RESP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6055,
+  "output": 820
+ },
+ "generated": "2026-10-29"
+}

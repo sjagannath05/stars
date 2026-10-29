@@ -1,0 +1,69 @@
+{
+ "id": "8d30a9a453c54441",
+ "url": "https://blog.jse.li/posts/torrent",
+ "final_url": "https://blog.jse.li/posts/torrent/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building a BitTorrent client from the ground up in Go | Jesse Li",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own BitTorrent Client",
+   "entry": "Go: _Building a BitTorrent client from the ground up in Go_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Building a BitTorrent client from the ground up in Go"
+  }
+ ],
+ "summary": {
+  "title": "Building a BitTorrent client from the ground up in Go",
+  "one_liner": "You learn how the BitTorrent protocol (original 2001 spec) works end to end, from parsing .torrent files and bencode to finding peers, handshaking, exchanging pieces and verifying them with SHA-1, by building a Go client that downloads a Debian ISO.",
+  "category": "distributed systems",
+  "keywords": [
+   "bittorrent client",
+   "build bittorrent in go",
+   "bittorrent protocol explained",
+   "peer-to-peer file sharing",
+   "bencode parser",
+   "bencode format",
+   "torrent file parsing",
+   "infohash",
+   "sha-1 piece hash verification",
+   "bittorrent tracker announce",
+   "tracker response compact peers",
+   "bittorrent handshake",
+   "bittorrent bitfield",
+   "pipelining block requests",
+   "go channels worker pool",
+   "debian torrent download",
+   "how does torrenting work",
+   "dht pex magnet links",
+   "bittorrent choke unchoke"
+  ],
+  "takeaways": [
+   "A .torrent file is bencoded and holds the tracker URL, file name, length, piece length, and SHA-1 hashes of each piece; the infohash identifies the file.",
+   "The tracker is queried with an HTTP GET; its compact response packs peer IPs and ports into 6-byte groups.",
+   "Peers connect over TCP, complete a handshake containing the infohash and peer ID, and exchange length-prefixed messages such as choke, unchoke, request and piece.",
+   "Pieces are split into 16KB blocks and requested with a pipeline of about five outstanding requests; each piece is checked against its hash before being saved.",
+   "Go goroutines and channels are used as a work queue and results collector to download from several peers concurrently."
+  ],
+  "summary": "The author walks through building a BitTorrent client in Go, implementing the original 2001 spec, and uses a 350MB Debian ISO as the test file. Each stage is covered with code snippets: parsing bencoded .torrent files, querying the tracker and decoding compact peer lists, performing the peer handshake, and handling binary message and bitfield formats. The post then shows concurrency with channels as work queues, per-peer state tracking, and request pipelining. The full source code is linked from the post, and the snippets are intentionally partial.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "BitTorrent protocol",
+   "Bencode",
+   "TCP",
+   "HTTP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10635,
+  "output": 950
+ },
+ "generated": "2026-10-29"
+}

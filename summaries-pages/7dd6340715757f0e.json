@@ -1,0 +1,63 @@
+{
+ "id": "7dd6340715757f0e",
+ "url": "https://guides.rubyonrails.org/security.html",
+ "final_url": "https://guides.rubyonrails.org/security.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Securing Rails Applications — Ruby on Rails Guides",
+ "sources": [
+  {
+   "list": "hahwul/DevSecOps",
+   "section": "2. Develop",
+   "entry": "5. Securing Rails Applications"
+  }
+ ],
+ "summary": {
+  "title": "Securing Rails Applications",
+  "one_liner": "You learn how Rails handles authentication, session storage and hijacking, session fixation, and CSRF, plus the countermeasures for each.",
+  "category": "web application security",
+  "keywords": [
+   "rails security guide",
+   "ruby on rails security",
+   "rails authentication generator",
+   "bin/rails generate authentication",
+   "has_secure_password",
+   "authenticate_by",
+   "bcrypt password hashing",
+   "session hijacking",
+   "session fixation",
+   "reset_session",
+   "cookie store session security",
+   "replay attack cookie session",
+   "session expiry sweep",
+   "csrf countermeasures",
+   "cross-site request forgery rails",
+   "secret_key_base",
+   "encrypted cookies rails"
+  ],
+  "takeaways": [
+   "Rails 8.0+ ships an authentication generator that adds sessions, password reset, and bcrypt-hashed passwords, but you must still build sign-up yourself.",
+   "Session hijacking is countered by forcing SSL (config.force_ssl = true), offering a prominent log-out button, and keeping secrets long and random.",
+   "CookieStore sessions are encrypted but can be replayed; keep sensitive or changing data like credits in the database instead of the session.",
+   "Call reset_session after a successful login to defeat session fixation, and expire sessions server-side with a timestamp sweep.",
+   "CSRF happens when a crafted link or image triggers requests with the victim's cookie; use GET and POST correctly and add security tokens to non-GET requests."
+  ],
+  "summary": "This Rails Guides chapter covers web application security with a focus on Rails. It starts with the authentication generator introduced in Rails 8.0, showing the files it creates, how has_secure_password and authenticate_by work, and how session management is structured. It then explains sessions, including session hijacking, CookieStore storage limits, replay attacks, session fixation with its countermeasures, and server-side session expiry. The page ends with an introduction to cross-site request forgery (CSRF) and the start of its countermeasures; the text is cut off before the CSRF countermeasure details are complete. The guide is example-driven, with code snippets, shell output, and attack walkthroughs.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby on Rails",
+   "Ruby",
+   "bcrypt",
+   "SQL",
+   "HTML",
+   "JavaScript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8828,
+  "output": 919
+ },
+ "generated": "2026-10-29"
+}

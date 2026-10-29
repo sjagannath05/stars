@@ -1,0 +1,72 @@
+{
+ "id": "97bbb8993c4c437e",
+ "url": "https://www.infoq.com/articles/event-driven-banking-architecture",
+ "final_url": "https://www.infoq.com/articles/event-driven-banking-architecture/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Event-Driven Patterns for Cloud-Native Banking: Lessons from What Works and What Hurts",
+ "sources": [
+  {
+   "list": "lutzh/awesome-event-driven-architecture",
+   "section": "Experience Reports And Practicalities",
+   "entry": "Event-Driven Patterns for Cloud-Native Banking: Lessons from What Works and What Hurts - By Chris Tacey-Green, March 2026. Based on production experience at Investec, the article covers both the benefits and the costs of running EDA in a regulated environment."
+  }
+ ],
+ "summary": {
+  "title": "Event-Driven Patterns for Cloud-Native Banking: Lessons from What Works and What Hurts",
+  "one_liner": "Learn where event-driven architecture adds value in regulated banking and which reliability patterns (outbox/inbox, stable event contracts, explicit ordering) keep it safe in production.",
+  "category": "event-driven architecture",
+  "keywords": [
+   "event-driven architecture",
+   "eda banking",
+   "cloud-native banking",
+   "outbox pattern",
+   "inbox pattern",
+   "transactional outbox",
+   "idempotent consumer",
+   "at-least-once delivery",
+   "duplicate events",
+   "lost events",
+   "domain events vs integration events",
+   "event contracts",
+   "event versioning",
+   "event ordering",
+   "event sourcing vs event-driven",
+   "commands vs events",
+   "fan-out messaging",
+   "dead-lettering",
+   "decoupling payments and monitoring",
+   "eventual consistency",
+   "regulated industry architecture",
+   "audit trail from events",
+   "investec",
+   "paved path developer platform"
+  ],
+  "takeaways": [
+   "Events are statements of fact, while commands are requests for action; blurring them creates tight coupling.",
+   "Use outbox to avoid lost events and inbox with idempotent consumers to handle duplicates, since eventing systems often guarantee only at-least-once delivery.",
+   "Treat event schemas as permanent public APIs; version breaking changes and keep integration events stable while domain events can evolve.",
+   "Decide ordering explicitly: either use sequence numbers enforced by inbox logic, or let the domain enforce valid state transitions.",
+   "Event-driven adoption is an organisational investment too: developer platforms, templates, and hands-on training matter as much as the technology."
+  ],
+  "summary": "The article, based on a talk at InfoQ Dev Summit Munich 2025, is written by Chris Tacey-Green from production experience at Investec. It first defines events, commands, event-driven architecture, event sourcing and cloud-native practice, then explains the benefits in banking: decoupling (e.g., payments versus transaction monitoring), fan-out, audit trails, fault tolerance, and plug-and-play features. It then covers the costs: the mindset shift, reliability via outbox and inbox patterns, event contracts as permanent APIs, and event ordering trade-offs. It closes with the role of a shared developer platform, training, and the view that the approach fits regulatory constraints.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "event-driven architecture",
+   "cloud-native",
+   "microservices",
+   "outbox pattern",
+   "inbox pattern",
+   "event sourcing",
+   "DevOps",
+   "infrastructure as code"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6584,
+  "output": 1010
+ },
+ "generated": "2026-10-29"
+}

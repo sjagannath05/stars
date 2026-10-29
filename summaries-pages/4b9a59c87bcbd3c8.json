@@ -1,0 +1,67 @@
+{
+ "id": "4b9a59c87bcbd3c8",
+ "url": "https://nakabonne.dev/posts/write-tsdb-from-scratch",
+ "final_url": "https://nakabonne.dev/posts/write-tsdb-from-scratch/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Write a time-series database engine from scratch",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Exercises",
+   "entry": "Write a time-series database engine from scratch"
+  }
+ ],
+ "summary": {
+  "title": "Write a time-series database engine from scratch",
+  "one_liner": "You learn how a lightweight time-series storage engine can be built in Go using time-partitioned memory and disk segments, a WAL, mmap-ed files, and Gorilla-style delta-of-delta and XOR compression.",
+  "category": "time-series storage engines",
+  "keywords": [
+   "time-series database",
+   "tsdb from scratch",
+   "storage engine design",
+   "build a time series database in go",
+   "tstorage",
+   "write ahead log wal",
+   "memory-mapped files mmap",
+   "mmap database files",
+   "gorilla compression paper",
+   "delta-of-delta encoding",
+   "xor float encoding",
+   "delta encoding timestamps",
+   "time partitioned storage",
+   "lsm tree vs time series storage",
+   "leveldb time series",
+   "varint encoding",
+   "prometheus tsdb layout",
+   "append-only data storage",
+   "high cardinality metrics",
+   "time series compression explained"
+  ],
+  "takeaways": [
+   "Time-series data is append-only, ordered by time, read in bulk over time ranges, and often high-cardinality, which shapes storage design.",
+   "Partitioning data by time lets memory partitions take writes (with a WAL for durability) while older partitions become read-only files on disk.",
+   "Storing each partition in one mmap-ed file grouped by metric improves locality and avoids one file per metric.",
+   "Gorilla-style encoding compresses timestamps with delta-of-delta (zeros for regular intervals) and floats with XOR, which works best when data is written at regular intervals.",
+   "The author notes drawbacks: per-metric index metadata stays on the heap, so heap use grows linearly with the number of metrics in a partition."
+  ],
+  "summary": "The author describes writing tstorage, a lightweight pure-Go time-series storage engine for local disks, motivated by a load testing tool whose heap usage grew over time. The post explains time-series characteristics (append-only, time-ordered, bulk reads, high cardinality) and why LevelDB/LSM designs were considered. It then covers the time-partitioned data model, memory partitions with WAL and out-of-order handling, disk partitions with a single mmap-ed data file and JSON metadata index, and Gorilla-based encoding using delta-of-delta for timestamps and XOR for values, with worked examples. It closes with the drawbacks of keeping index metadata on the heap.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Go",
+   "LevelDB",
+   "Prometheus TSDB",
+   "Gorilla",
+   "mmap",
+   "Varint encoding",
+   "JSON"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8602,
+  "output": 986
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,70 @@
+{
+ "id": "2bec28c051da4457",
+ "url": "https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes",
+ "final_url": "https://pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to Build a Kick-Ass Mobile Document Scanner in Just 5 Minutes - PyImageSearch",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Python: _How to Build a Kick-Ass Mobile Document Scanner in Just 5 Minutes_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Build A Document Scanner"
+  }
+ ],
+ "summary": {
+  "title": "How to Build a Kick-Ass Mobile Document Scanner in Just 5 Minutes",
+  "one_liner": "You learn to build a basic document scanner in Python and OpenCV by detecting edges, finding the four-point paper contour, and applying a perspective transform with adaptive thresholding.",
+  "category": "computer vision",
+  "keywords": [
+   "document scanner",
+   "opencv document scanner",
+   "python document scanner",
+   "perspective transform",
+   "four point transform",
+   "edge detection",
+   "canny edge detection",
+   "contour detection",
+   "find document contour",
+   "approxpolydp",
+   "adaptive thresholding",
+   "threshold_local",
+   "black and white scan effect",
+   "birds eye view image",
+   "top-down view of paper",
+   "scan receipt with python",
+   "imutils",
+   "scikit-image",
+   "gaussian blur preprocessing",
+   "build mobile scanner app"
+  ],
+  "takeaways": [
+   "Document scanning reduces to three steps: Canny edge detection, finding the largest four-point contour, and applying a perspective transform.",
+   "The largest contour with exactly four approximated points is assumed to be the sheet of paper.",
+   "Edge detection and contour search run on a 500-pixel-high resized image, and the contour is scaled by the resize ratio so the warp uses the original image.",
+   "Adaptive thresholding via skimage's threshold_local gives a clean black-and-white scan look.",
+   "The code runs on Python 2.7/3 and OpenCV 2.4/3+, and the post notes the approach works on receipts and printed book pages."
+  ],
+  "summary": "The post walks through a short scan.py script that loads an image, resizes it to height 500, converts to grayscale, applies Gaussian blur, and runs Canny edge detection. It then finds contours, keeps the five largest, and treats the first one that approximates to four points as the document outline. Finally, it warps the original image with a four-point perspective transform and applies local adaptive thresholding for a black-and-white result. The author demonstrates it on a receipt and a printed book page, and the page notes that the code relies on the author's transform.py helper from a previous post. The rest of the page is mostly promotion for a paid course and a book.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "NumPy",
+   "scikit-image",
+   "imutils"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6405,
+  "output": 901
+ },
+ "generated": "2026-10-29"
+}

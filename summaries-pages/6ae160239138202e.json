@@ -1,0 +1,71 @@
+{
+ "id": "6ae160239138202e",
+ "url": "https://clang.llvm.org/docs/ThinLTO.html",
+ "final_url": "https://clang.llvm.org/docs/ThinLTO.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "ThinLTO#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Optimisation levels, inlining and link time",
+   "entry": "ThinLTO - Defines the thin link, summaries analysed whole-program then parallel backends, and the cache for incremental rebuilds."
+  }
+ ],
+ "summary": {
+  "title": "ThinLTO",
+  "one_liner": "ThinLTO is a scalable, incremental form of link-time optimization in which the link reads only module summaries for whole-program analysis, then runs parallel backends, and a cache speeds up rebuilds.",
+  "category": "compiler optimisation",
+  "keywords": [
+   "thinlto",
+   "thin lto",
+   "link time optimization",
+   "lto",
+   "clang -flto=thin",
+   "whole-program optimization",
+   "cross-module optimization",
+   "function importing",
+   "combined summary index",
+   "thin link",
+   "parallel backends",
+   "incremental link cache",
+   "cache pruning policy",
+   "cache_size policy",
+   "gold plugin",
+   "ld64",
+   "lld",
+   "lld-link",
+   "backend parallelism jobs",
+   "dtlto distributed thinlto",
+   "clang bootstrap llvm thinlto",
+   "monolithic lto vs thinlto"
+  ],
+  "takeaways": [
+   "ThinLTO embeds a compact summary in each bitcode module; the link step merges only summaries, then backends optimize modules in parallel, including function importing.",
+   "Enable it with -flto=thin at compile and link (with lld-link, only at compile step), and it works with gold, ld64, and lld.",
+   "Control backend thread count with linker-specific options such as jobs=N, -threads=N, or --thinlto-jobs=N.",
+   "Incremental builds rely on a linker-specific cache directory option, and cache size and expiry can be limited with a cache policy string."
+  ],
+  "summary": "This LLVM/Clang documentation page introduces ThinLTO, explaining how it differs from monolithic LTO: the compile step emits bitcode with summaries, the link step merges only those summaries into a combined index, and the optimizing backends run in parallel. It gives usage commands for clang and lld-link, lists supported linkers (gold, ld64, lld) with the versions that added support, and documents how to set backend parallelism and enable a build cache. It also covers cache pruning policy options (size, file count, expiry, interval), bootstrapping clang with ThinLTO via CMake, and Integrated Distributed ThinLTO (DTLTO) with its command-line options.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "LLVM",
+   "Clang",
+   "LLVM bitcode",
+   "gold",
+   "ld64",
+   "lld",
+   "lld-link",
+   "CMake",
+   "C",
+   "C++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5194,
+  "output": 921
+ },
+ "generated": "2026-10-29"
+}

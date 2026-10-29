@@ -1,0 +1,65 @@
+{
+ "id": "c208bb5340d825c0",
+ "url": "https://blog.gitbutler.com/how-git-core-devs-configure-git",
+ "final_url": "https://blog.gitbutler.com/how-git-core-devs-configure-git",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How Core Git Developers Configure Git",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Version control (Git)",
+   "entry": "How Core Git Developers Configure Git"
+  }
+ ],
+ "summary": {
+  "title": "How Core Git Developers Configure Git",
+  "one_liner": "You learn a curated set of non-default git config settings (branch/tag sorting, diff algorithm, push/fetch behavior, rebase and rerere options) that Git core developers use, and why each is useful.",
+  "category": "version control",
+  "keywords": [
+   "git config",
+   "git configuration settings",
+   "global gitconfig",
+   "git diff algorithm histogram",
+   "myers diff",
+   "diff.colormoved",
+   "diff.mnemonicprefix",
+   "git branch sort committerdate",
+   "column.ui auto",
+   "tag.sort version:refname",
+   "init.defaultbranch main",
+   "push.autosetupremote",
+   "push.followtags",
+   "fetch.prune",
+   "help.autocorrect prompt",
+   "commit.verbose",
+   "rerere enabled autoupdate",
+   "core.excludesfile global gitignore",
+   "rebase.autosquash autostash updaterefs",
+   "merge.conflictstyle zdiff3",
+   "pull.rebase true",
+   "core.fsmonitor untrackedcache",
+   "spring cleaning git config thread",
+   "how to set up git defaults"
+  ],
+  "takeaways": [
+   "Set branch.sort to -committerdate and tag.sort to version:refname so lists show recent branches first and version tags in numeric order.",
+   "Use diff.algorithm histogram instead of the default myers algorithm, and enable colorMoved for clearer code-movement diffs.",
+   "Enable push.autoSetupRemote and push.followTags, and fetch.prune/pruneTags, to avoid upstream errors and keep remote refs in sync.",
+   "Enable rebase.autoSquash, autoStash and updateRefs, plus rerere, to simplify fixup-based and repeated conflict-resolution rebases.",
+   "Some options are opinion-based (merge.conflictstyle zdiff3, pull.rebase, core.fsmonitor); zdiff3 needs Git 2.35 or later, and fsmonitor runs a process per repository."
+  ],
+  "summary": "The article by Scott Chacon lists global git config settings he uses, drawn partly from a mailing-list \"Spring Cleaning\" thread where core Git developers tried stock Git. The settings are grouped into three categories: changes that clearly improve Git (sorting, diff, push, fetch, rebase), harmless-but-helpful options (autocorrect prompt, commit verbose, rerere, global ignore file), and matters of taste (zdiff3 conflict style, pull.rebase, fsmonitor). Each setting is explained with its purpose, examples of output, and caveats such as version requirements. A full copy-paste ~/.gitconfig block is provided at the top.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Git"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7258,
+  "output": 1053
+ },
+ "generated": "2026-10-29"
+}

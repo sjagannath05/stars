@@ -1,0 +1,63 @@
+{
+ "id": "a13d7c234fa79abf",
+ "url": "https://onnxruntime.ai/docs/performance/tune-performance/threading.html",
+ "final_url": "https://onnxruntime.ai/docs/performance/tune-performance/threading.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Thread management",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Threading for inference",
+   "entry": "Thread management - Sets the physical-core default, the affinity it implies and the spin-wait controls that trade idle CPU for latency."
+  }
+ ],
+ "summary": {
+  "title": "Thread management",
+  "one_liner": "Learn how to tune ONNX Runtime CPU threading: intra-op and inter-op thread counts, thread affinity, spin-wait controls, NUMA placement, and custom thread callbacks.",
+  "category": "performance tuning",
+  "keywords": [
+   "onnx runtime threading",
+   "intra_op_num_threads",
+   "inter_op_num_threads",
+   "intra-op thread pool",
+   "inter-op thread pool",
+   "thread affinity onnx runtime",
+   "thread spinning",
+   "allow_spinning",
+   "spin_duration_us",
+   "spin_backoff_max",
+   "numa onnx runtime",
+   "sequential vs parallel execution mode",
+   "custom threading callbacks",
+   "global thread pool",
+   "onnx runtime cpu inference performance",
+   "how many threads for onnx inference",
+   "pin threads to cores",
+   "reduce cpu usage of idle threads"
+  ],
+  "takeaways": [
+   "By default intra_op_num_threads is 0, which sets the intra-op thread count to the number of physical cores and enables some affinitization.",
+   "Setting intra_op_num_threads explicitly disables affinity for the created threads; affinities can be set with session.intra_op_thread_affinities.",
+   "Spinning (allow_spinning) gives faster inference at the cost of CPU cycles and power; spin_duration_us and spin_backoff_max bound and reduce that cost.",
+   "ORT_PARALLEL execution mode with inter_op_num_threads helps models with many branches but may hurt models without them.",
+   "On NUMA systems, test several thread settings; the page reports nearly 20% improvement when affinities are limited to one NUMA node in its test."
+  ],
+  "summary": "This ONNX Runtime docs page explains the CPU execution provider's threading knobs, starting with defaults in Python (intra_op_num_threads=0, ORT_SEQUENTIAL, ORT_ENABLE_ALL). It covers intra-op threads (parallelism within an operator), inter-op threads (parallelism across operators, used only in parallel mode), and how thread affinity is set by default and by session config keys. It then describes spin-wait controls (allow_spinning, spin_duration_us, spin_backoff_max), NUMA considerations, C++ custom thread creation and join callbacks for session and global pools, and use of the intra-op pool from custom ops. Code examples are given in Python and C++.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "ONNX Runtime",
+   "Python",
+   "C++",
+   "C#",
+   "NUMA"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5830,
+  "output": 983
+ },
+ "generated": "2026-10-29"
+}

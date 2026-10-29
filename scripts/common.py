@@ -22,7 +22,7 @@ def load_env():
     env = {}
     p = ROOT / ".env"
     if p.exists():
-        for line in p.read_text().splitlines():
+        for line in p.read_text().split("\n"):
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.split("=", 1)
@@ -36,7 +36,7 @@ def slug(repo):
 
 def read_jsonl(p):
     p = Path(p)
-    return [json.loads(l) for l in p.read_text().splitlines() if l.strip()] if p.exists() else []
+    return [json.loads(l) for l in p.read_text().split("\n") if l.strip()] if p.exists() else []
 
 def write_jsonl(p, rows):
     Path(p).write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))

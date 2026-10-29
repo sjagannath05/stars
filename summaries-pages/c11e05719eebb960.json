@@ -1,0 +1,64 @@
+{
+ "id": "c11e05719eebb960",
+ "url": "https://jeiwan.net/posts/building-blockchain-in-go-part-2",
+ "final_url": "https://jeiwan.net/posts/building-blockchain-in-go-part-2/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building Blockchain in Go. Part 2: Proof-of-Work - Going the distance",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 2: Proof of Work"
+  }
+ ],
+ "summary": {
+  "title": "Building Blockchain in Go. Part 2: Proof-of-Work",
+  "one_liner": "You learn how proof-of-work (Hashcash-style hashing with a nonce and a difficulty target) makes adding blocks costly, and how to implement mining and validation in Go.",
+  "category": "blockchain development in go",
+  "keywords": [
+   "proof-of-work",
+   "pow",
+   "proof of work explained",
+   "hashcash",
+   "nonce",
+   "mining a block",
+   "difficulty target",
+   "target bits",
+   "sha-256",
+   "hashing vs encryption",
+   "blockchain in go",
+   "go big.int comparison",
+   "block hash chaining",
+   "validate proof of work",
+   "bitcoin mining algorithm",
+   "brute force hash counter",
+   "build a blockchain tutorial",
+   "go blockchain part 2",
+   "genesis block",
+   "hash checksum consistency"
+  ],
+  "takeaways": [
+   "Proof-of-work makes adding blocks expensive: a miner must find a nonce whose SHA-256 hash, over block data plus nonce, falls below a target.",
+   "Hashcash is a brute-force algorithm: increment a counter, hash the combined data, and check the result against a requirement until it is met.",
+   "The target is 1 shifted left by 256 minus targetBits; a hash is valid when, read as a big integer, it is less than the target.",
+   "Verifying a proof is cheap: recompute one hash using the stored nonce and compare it with the target.",
+   "The article leaves persistence, wallets, transactions and consensus for later parts."
+  ],
+  "summary": "The article is the second part of a series building a toy blockchain in Go. It explains hashing properties, the Hashcash proof-of-work scheme used by Bitcoin, and why the difficulty target is needed. It then implements a ProofOfWork struct with a target, data preparation, a mining loop over nonces with SHA-256, and a Validate method, and shows sample output where each block hash begins with three zero bytes. It ends by noting that persistence, wallets, transactions and consensus are left for future articles.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "SHA-256",
+   "math/big",
+   "Bitcoin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5742,
+  "output": 853
+ },
+ "generated": "2026-10-29"
+}

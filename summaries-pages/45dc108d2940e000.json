@@ -1,0 +1,62 @@
+{
+ "id": "45dc108d2940e000",
+ "url": "https://briancallahan.net/blog/20210819.html",
+ "final_url": "https://briancallahan.net/blog/20210819.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 6: Input and output"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 6: Input and output",
+  "one_liner": "You learn how to add simple console I/O (writeInt, writeChar, readInt, readChar) to a PL/0-to-C compiler by extending the lexer, parser, and C code generator.",
+  "category": "compiler construction",
+  "keywords": [
+   "compiler construction",
+   "pl/0 compiler",
+   "pl0c",
+   "input and output",
+   "writeint statement",
+   "writechar statement",
+   "readint statement",
+   "readchar statement",
+   "read integer from stdin in c",
+   "print number in compiled language",
+   "lexer token keywords",
+   "recursive descent parser",
+   "code generator emitting c",
+   "fprintf code generation",
+   "fgets and strtonum",
+   "strtonum openbsd",
+   "hello world in pl/0",
+   "pascal style compiler tutorial"
+  ],
+  "takeaways": [
+   "Add reserved words and token types for writeInt, writeChar, readInt, readChar and the optional 'into' keyword to the lexer.",
+   "Extend the parser's statement() function to check identifiers as right-hand side (writes) or left-hand side (reads) and report clear errors.",
+   "Generate C with fprintf for output and fgetc/fgets with strtonum for input, using a static buffer set up in cg_init().",
+   "Writing a number requires a buffer sized for LONG_MIN, and reads must validate conversion and exit on invalid input.",
+   "Hello world can be written in PL/0 by printing characters by their numeric codes, with writeChar 10 for a newline."
+  ],
+  "summary": "The post is part 6 of a series building a PL/0 compiler (pl0c) that emits C. It adds basic console I/O: writeInt and writeChar for output, and readInt and readChar for input, with an optional 'into' keyword. The author walks through new token definitions, lexer keyword recognition, parser cases in statement(), and the corresponding code generator functions using fprintf, fgetc, fgets, and strtonum, plus a cg_init() change to emit headers and a static input buffer. The full compiler source as of this part is included, along with a Hello world example in PL/0. Strings are deferred to a later episode.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "PL/0",
+   "Pascal",
+   "OpenBSD strtonum"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10995,
+  "output": 901
+ },
+ "generated": "2026-10-29"
+}

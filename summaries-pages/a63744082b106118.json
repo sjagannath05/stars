@@ -1,0 +1,63 @@
+{
+ "id": "a63744082b106118",
+ "url": "https://briancallahan.net/blog/20210822.html",
+ "final_url": "https://briancallahan.net/blog/20210822.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 7: Arrays"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 7: Arrays",
+  "one_liner": "Learn how to add array declarations, array references, and a writeStr statement to a PL/0 compiler by extending the lexer, parser, semantic checks, and C code generator.",
+  "category": "build a compiler",
+  "keywords": [
+   "compiler arrays",
+   "pl/0 arrays",
+   "pl/0 compiler tutorial",
+   "array declaration syntax",
+   "array semantic checking",
+   "symbol table size member",
+   "lexer tokens for arrays",
+   "recursive descent parser arrays",
+   "c code generator",
+   "writestr statement",
+   "arraysize function",
+   "arraycheck function",
+   "cg_array",
+   "oberon-0 arrays",
+   "zero-based vs one-based indexing",
+   "compiler construction tutorial",
+   "bounds-checked array output",
+   "self-hosting compiler",
+   "how to add arrays to a toy language",
+   "pascal array syntax comparison"
+  ],
+  "takeaways": [
+   "Arrays are declared with 'var name size N' and referenced with name[expr], using zero-based indexing.",
+   "The lexer gains TOK_SIZE, TOK_LBRACK, and TOK_RBRACK tokens; the parser handles declarations in block() and references in statement() and factor().",
+   "A size member in the symbol table entry records array length, with 0 meaning a non-array; arraysize() and arraycheck() perform semantic checks.",
+   "Code generation wraps the declared size in brackets and emits C for array references; a writeStr statement prints arrays as C-style strings bounded by their size."
+  ],
+  "summary": "The post is part 7 of a series building a PL/0-based compiler that emits C. It designs array syntax (var a size 10, using a[0] through a[9] with C-style zero-based indexing), then walks through the required changes: new lexer tokens, parser updates in block(), statement(), and factor(), and a long size field added to the symbol table. It adds semantic checks (arraysize() and arraycheck()) and code generation (cg_array() and cg_writestr()), the latter printing array contents up to a NUL byte while bounding output by the declared size.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "PL/0",
+   "Oberon-0",
+   "Pascal"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5139,
+  "output": 884
+ },
+ "generated": "2026-10-29"
+}

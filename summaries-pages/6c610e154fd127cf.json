@@ -1,0 +1,66 @@
+{
+ "id": "6c610e154fd127cf",
+ "url": "http://www.saminiir.com/lets-code-tcp-ip-stack-5-tcp-retransmission",
+ "final_url": "http://www.saminiir.com/lets-code-tcp-ip-stack-5-tcp-retransmission/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's code a TCP/IP stack, 5: TCP Retransmission",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 5: TCP Retransmission"
+  }
+ ],
+ "summary": {
+  "title": "Let's code a TCP/IP stack, 5: TCP Retransmission",
+  "one_liner": "You learn how TCP retransmission works, including ARQ, the RFC 6298 retransmission timeout (RTO) calculation, Karn's algorithm, RTO timer management, and duplicate ACKs, and how to observe them on the wire in a hand-built TCP/IP stack.",
+  "category": "network programming",
+  "keywords": [
+   "tcp retransmission",
+   "automatic repeat request",
+   "arq",
+   "retransmission timeout",
+   "rto calculation",
+   "srtt",
+   "rttvar",
+   "smoothed round trip time",
+   "karn's algorithm",
+   "rto timer backoff",
+   "duplicate acknowledgment",
+   "selective acknowledgment",
+   "sack",
+   "tcp reliability",
+   "how does tcp retransmit lost packets",
+   "tcp/ip stack from scratch",
+   "rfc 6298",
+   "tcp timestamp option",
+   "tcp congestion control",
+   "firewall packet drop tcp test"
+  ],
+  "takeaways": [
+   "TCP achieves reliability through ARQ: the sender keeps unacknowledged data in a retransmission queue and resends it when its timer expires.",
+   "RFC 6298 computes RTO from smoothed RTT (srtt) and RTT variation (rttvar), starting at 1000 ms, with a minimum of 1 second in the spec.",
+   "Karn's algorithm skips RTT samples from retransmitted segments, since their ACKs are ambiguous.",
+   "On RTO expiry, retransmit the earliest unacknowledged segment, double the RTO, and restart the timer; three duplicate ACKs trigger fast retransmit."
+  ],
+  "summary": "The article is part 5 of a series on building a TCP/IP stack from scratch and focuses on reliability through retransmission. It explains Automatic Repeat reQuest (ARQ), the RFC 6298 smoothed RTT and RTO formulas, Karn's algorithm for RTT sampling, and how the RTO timer is started, stopped, and backed off. It also covers duplicate ACKs and mentions SACK as a later topic. The author then tests the implementation by using firewall rules to drop packets, observing retransmission backoff with tcpdump and checking how the RTO recovers.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "TCP",
+   "IP",
+   "tcpdump",
+   "HTTP",
+   "cURL",
+   "Firefox",
+   "Linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4166,
+  "output": 955
+ },
+ "generated": "2026-10-29"
+}

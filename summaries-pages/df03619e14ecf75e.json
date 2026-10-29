@@ -1,0 +1,66 @@
+{
+ "id": "df03619e14ecf75e",
+ "url": "https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/white-papers/AMD_IBS_paper_EN.pdf",
+ "final_url": "https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/white-papers/AMD_IBS_paper_EN.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "1",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Counters, events and precise sampling",
+   "entry": "Instruction-Based Sampling: A New Performance Analysis Technique - Defines skid, why a sample lands after the culprit, and how tagging one op through the pipeline removes it."
+  }
+ ],
+ "summary": {
+  "title": "Instruction-Based Sampling: A New Performance Analysis Technique for AMD Family 10h Processors",
+  "one_liner": "Learn why classic performance-counter sampling misattributes events to nearby instructions (skid) and how AMD's Instruction-Based Sampling tags one op or fetch to pinpoint the true culprit instruction.",
+  "category": "cpu performance profiling",
+  "keywords": [
+   "instruction-based sampling",
+   "ibs",
+   "amd ibs",
+   "skid",
+   "performance counter sampling",
+   "pmc sampling",
+   "profiling skid",
+   "precise event attribution",
+   "amd codeanalyst",
+   "amd family 10h",
+   "barcelona opteron profiling",
+   "op sampling",
+   "fetch sampling",
+   "dtlb misses",
+   "data cache misses",
+   "matrix multiplication cache performance",
+   "sampling profiler accuracy",
+   "which instruction caused cache miss",
+   "out-of-order execution profiling",
+   "performance counter multiplexing",
+   "hardware performance monitoring counters",
+   "numa data-centric analysis"
+  ],
+  "takeaways": [
+   "Performance counter samples report an instruction pointer that can be many instructions (up to 72) away from the culprit, because of skid from out-of-order execution and in-order retirement.",
+   "IBS tags a selected fetch or op and follows it through the pipeline, so events are attributed to the instruction that caused them.",
+   "IBS op sampling reports per-op data such as branch misprediction, cache and TLB misses, miss latency, and local vs remote memory access in a single run.",
+   "In the matrix multiplication example, IBS pinpointed the cache and DTLB misses to the fmul at 0x4011C2, which PMC sampling had spread across neighboring instructions."
+  ],
+  "summary": "This 2007 AMD technical note by Paul Drongowski introduces Instruction-Based Sampling (IBS) for AMD Family 10h (Barcelona) processors. It first shows how conventional performance counter sampling suffers from skid, using a textbook matrix multiplication program (simple_classic) as a worked example. It then explains IBS fetch sampling and op sampling, which tag one operation and monitor it through the pipeline, and compares the resulting per-instruction tables with the PMC results. It closes with notes on data-centric NUMA analysis and profile-directed compiler optimization, and points to AMD CodeAnalyst and the Family 10h optimization guide.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "AMD Family 10h",
+   "AMD64",
+   "AMD CodeAnalyst",
+   "x86 assembly",
+   "C++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11069,
+  "output": 1012
+ },
+ "generated": "2026-10-29"
+}

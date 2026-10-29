@@ -1,0 +1,70 @@
+{
+ "id": "b72413e359e27b7b",
+ "url": "https://sobolevn.me/2020/03/do-not-log",
+ "final_url": "https://sobolevn.me/2020/03/do-not-log",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Do not log",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Logging",
+   "entry": "Do not log (2020) lists on some logging antipatterns."
+  }
+ ],
+ "summary": {
+  "title": "Do not log",
+  "one_liner": "Logging is often overused: before adding it, ask whether the failure matters, and prefer error tracking, business monitoring, or explicit result types, with logging treated as a costly subsystem.",
+  "category": "software logging practices",
+  "keywords": [
+   "logging antipatterns",
+   "overlogging",
+   "when not to log",
+   "error tracking vs logging",
+   "sentry error monitoring",
+   "business monitoring",
+   "result monad",
+   "logging as side effect",
+   "pure functions logging",
+   "structured logging",
+   "structlog",
+   "elk stack complexity",
+   "log levels policy",
+   "dry-python stories",
+   "logging gdpr security",
+   "exception handling alternatives",
+   "mypy type safety",
+   "logging infrastructure cost",
+   "what to log in production",
+   "dependency injection logger"
+  ],
+  "takeaways": [
+   "Ask whether a failure matters before logging it; if it does, use error tracking with stack traces and alerts instead of plain logs.",
+   "Logging is a side effect that makes functions impure, changes return types, and needs testing and explicit architecture.",
+   "Logging infrastructure (storage, search, dashboards, security, maintenance) is a complex subsystem with real operational cost.",
+   "If logs are used, make them structured, enforce a level policy, lint for consistency, and avoid logging sensitive data.",
+   "Logging is worthwhile for on-premise software or early-stage apps, but the author argues it is unnecessary for most regular web apps."
+  ],
+  "summary": "The author argues against the common logging culture, using a try/except example to ask whether a failure matters at all. He recommends error tracking such as Sentry for important failures, business metrics monitoring for functional problems, and Result types for expected failures. He then explains that logging is a side effect that complicates pure functions and architecture, and describes the operational burden of log subsystems like an ELK stack. The post closes with advice on structured logging, level policies, consistent linting, business-oriented context (such as dry-python/stories), and data protection, while acknowledging logging's value for on-premise software and early development.</summary>\n<parameter name=\"format\">article",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "Sentry",
+   "mypy",
+   "structlog",
+   "ELK stack",
+   "Elasticsearch",
+   "Logstash",
+   "Kibana",
+   "dry-python stories",
+   "Docker Compose"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4904,
+  "output": 910
+ },
+ "generated": "2026-10-29"
+}

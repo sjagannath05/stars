@@ -1,0 +1,62 @@
+{
+ "id": "4e22e4d2f48e1b07",
+ "url": "https://sre.google/workbook/alerting-on-slos",
+ "final_url": "https://sre.google/workbook/alerting-on-slos/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Chapter 5 - Alerting on SLOs",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Monitoring",
+   "entry": "Alerting on SLOs"
+  }
+ ],
+ "summary": {
+  "title": "Chapter 5 - Alerting on SLOs",
+  "one_liner": "You learn how to turn SLOs into actionable alerts using error-budget burn rates, progressing from naive error-rate thresholds to multiwindow, multi-burn-rate Prometheus alert rules.",
+  "category": "site reliability engineering",
+  "keywords": [
+   "alerting on slos",
+   "slo alerting",
+   "burn rate alert",
+   "burn rate",
+   "error budget alerting",
+   "multiwindow multi-burn-rate alerts",
+   "multi-window alerts",
+   "prometheus alerting rules",
+   "precision and recall alerts",
+   "detection time",
+   "reset time",
+   "error budget consumption",
+   "low-traffic service alerting",
+   "alert on error rate threshold",
+   "how to alert on slo violations",
+   "paging versus ticket alerts",
+   "synthetic traffic for monitoring",
+   "alerting at scale",
+   "time to exhaustion error budget",
+   "sre workbook"
+  ],
+  "takeaways": [
+   "Alerting on a simple error-rate threshold has good detection time but poor precision, because it fires on events that barely dent the error budget.",
+   "Adding a duration (for: clause) to alerts hurts recall and detection time, so the chapter recommends against it for SLO alerts.",
+   "Burn rate (how fast the error budget is consumed relative to the SLO) lets you alert on a fixed share of budget, such as 2% in one hour at a 14.4x burn rate.",
+   "Pairing a long window with a short window (about 1/12 the length) gives good precision, recall and reset time; the recommended starting setup pages at 14.4x over 1h/5m and 6x over 6h/30m, and tickets at 1x over 3d/6h.",
+   "Low-traffic services and very high or low availability targets need special handling, such as synthetic traffic, combining services, or adjusting the SLO or window."
+  ],
+  "summary": "This chapter from the Google SRE Workbook explains how to build alerts from SLIs and error budgets, and defines precision, recall, detection time and reset time as evaluation criteria. It walks through six approaches in increasing fidelity: a plain error-rate threshold, longer windows, alert durations, single burn-rate alerts, multiple burn-rate alerts, and finally multiwindow, multi-burn-rate alerts, which the authors most highly recommend. The examples use Prometheus rule syntax on a request-driven service, with tables comparing pros and cons at each step. It also covers low-traffic services, extreme availability targets, and managing alerting at scale.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Prometheus",
+   "PromQL"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9224,
+  "output": 1009
+ },
+ "generated": "2026-10-29"
+}

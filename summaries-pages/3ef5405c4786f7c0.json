@@ -1,0 +1,65 @@
+{
+ "id": "3ef5405c4786f7c0",
+ "url": "https://betterdev.blog/minimal-safe-bash-script-template",
+ "final_url": "https://betterdev.blog/minimal-safe-bash-script-template/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Minimal safe Bash script template",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Shell (command line)",
+   "entry": "Minimal safe Bash script template"
+  }
+ ],
+ "summary": {
+  "title": "Minimal safe Bash script template",
+  "one_liner": "A short Bash script template that adds safety basics (strict set options, script-relative paths, cleanup trap, usage help, stderr logging, and unknown-option errors) to scripts.",
+  "category": "shell scripting",
+  "keywords": [
+   "bash script template",
+   "safe bash script",
+   "bash strict mode",
+   "set -eeuo pipefail",
+   "fail fast bash",
+   "bash trap cleanup",
+   "bash script location directory",
+   "bash usage function",
+   "bash argument parsing",
+   "parse_params bash",
+   "bash stderr logging",
+   "bash colors terminal",
+   "shellcheck",
+   "bash error handling",
+   "getopts vs getopt",
+   "how to write safer shell scripts",
+   "bash script best practices",
+   "12 factor cli apps",
+   "portable bash shebang",
+   "bash vs alpine ash"
+  ],
+  "takeaways": [
+   "Start Bash scripts with a shebang using /usr/bin/env bash and 'set -Eeuo pipefail' so failures stop execution early.",
+   "Resolve the script's own directory and cd into it so relative paths work regardless of where the script is run from.",
+   "Use a trap-based cleanup() function to remove temporary files on normal exit, errors, or signals.",
+   "Send logs and messages to stderr via a msg() helper, keep stdout for output, and disable colors when stderr is not a terminal.",
+   "Parse parameters with a while loop that errors on unknown options; getopt and getopts are discussed as alternatives with drawbacks."
+  ],
+  "summary": "The author presents a minimal Bash script template meant to make scripts safer without growing to hundreds of lines. It walks through each part: the shebang, set options for fail-fast behavior, changing to the script's directory, a trap-based cleanup function, a usage() help function, a msg() function that prints to stderr with optional colors, and a parse_params() loop that rejects unknown options. The template was tested on macOS Bash 3.2 and several Linux Docker images, but not on Alpine's ash shell. The post also lists further reading on CLI guidelines and recommends ShellCheck.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Bash",
+   "ShellCheck",
+   "Docker",
+   "macOS",
+   "Linux"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4479,
+  "output": 884
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "5b39342be1e996b5",
+ "url": "https://www.microsoft.com/en-us/research/publication/cache-conscious-structure-definition-2",
+ "final_url": "https://www.microsoft.com/en-us/research/publication/cache-conscious-structure-definition-2/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Cache-Conscious Structure Definition - Microsoft Research",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Struct layout, software prefetch and page size",
+   "entry": "Cache-Conscious Structure Definition - Introduces and measures structure splitting and field reordering on real programs, the origin of hot-cold layout rules."
+  }
+ ],
+ "summary": {
+  "title": "Cache-Conscious Structure Definition",
+  "one_liner": "Structure splitting and field reordering can improve cache performance of data structures larger than a cache block, by grouping hot or temporally related fields.",
+  "category": "cache-conscious data layout",
+  "keywords": [
+   "cache-conscious structure definition",
+   "structure splitting",
+   "field reordering",
+   "hot-cold layout",
+   "hot fields",
+   "cache block",
+   "cache miss rate",
+   "reference locality",
+   "temporal affinity",
+   "data layout optimization",
+   "struct field reordering c",
+   "bbcache",
+   "pointer-based data structures cache performance",
+   "java cache miss reduction",
+   "microsoft sql server cache optimization",
+   "how to improve cache performance of structs",
+   "cache line utilization",
+   "pldi 1999 paper"
+  ],
+  "takeaways": [
+   "Splitting a structure into hot and cold parts lets more hot fields fit in one cache block.",
+   "Fields with high temporal affinity should be placed in the same cache block when a structure spans many blocks.",
+   "In five Java programs, structure splitting cut cache miss rates 10–27% and improved performance 6–18% beyond earlier reorganization techniques.",
+   "bbcache is a tool that recommends field reorderings for C structures; reordering fields in 5 active SQL Server 7.0 structures improved performance 2–3% in preliminary measurements."
+  ],
+  "summary": "This ACM SIGPLAN'99 PLDI paper by Chilimbi, Davidson, and Larus extends earlier cache-conscious data reorganization, which focused on placing instances together, to the internal field layout of structures. It describes two techniques, structure splitting and field reordering, aimed at structures comparable to or larger than a cache block. The authors report miss-rate and performance results from five Java programs and describe bbcache, a tool that recommends C structure field reorderings, with preliminary measurements on Microsoft SQL Server 7.0. The listing describes it as the origin of hot-cold layout rules.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "Java",
+   "Microsoft SQL Server 7.0"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1908,
+  "output": 846
+ },
+ "generated": "2026-10-29"
+}

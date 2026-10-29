@@ -1,0 +1,65 @@
+{
+ "id": "0e6653348e23cd2d",
+ "url": "https://www.kernel.dk/io_uring.pdf",
+ "final_url": "https://www.kernel.dk/io_uring.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Syscalls and asynchronous I/O",
+   "entry": "Efficient IO with io_uring - States the goals aio failed, and which io_uring features remove a syscall and which remove a copy."
+  }
+ ],
+ "summary": {
+  "title": "Efficient IO with io_uring",
+  "one_liner": "Learn why Linux's old aio interface fell short and how io_uring's shared submission and completion rings, and its SQE/CQE structures, avoid extra copies and syscalls.",
+  "category": "linux kernel io",
+  "keywords": [
+   "io_uring",
+   "linux asynchronous io",
+   "io_uring tutorial",
+   "linux aio limitations",
+   "native aio o_direct",
+   "submission queue sq",
+   "completion queue cq",
+   "sqe submission queue entry",
+   "cqe completion queue event",
+   "shared ring buffer kernel application",
+   "mmap io_uring rings",
+   "io_uring_setup syscall",
+   "reduce system calls for io",
+   "avoid memory copy async io",
+   "posix aio_read comparison",
+   "io_submit io_getevents",
+   "jens axboe io_uring design",
+   "async file io linux",
+   "memory barriers ring buffer",
+   "zero copy io interface"
+  ],
+  "takeaways": [
+   "Linux native aio only truly works for O_DIRECT IO, and submission can still block on metadata lookups or full device slots, so applications often offload to thread pools.",
+   "The old aio interface copied 64+8 bytes per submission and 32 bytes per completion, and needed at least two syscalls (submit and wait), which io_uring targets.",
+   "io_uring avoids copies and syscalls by sharing SQ and CQ ring buffers, plus the SQE and CQE arrays, between the application and the kernel, using memory barriers instead of locks.",
+   "The article describes the io_uring_setup call, the mmap offsets for the rings, and the io_uring_sqe and io_uring_cqe structures, with the design goals of ease of use, extensibility, features, efficiency and scalability."
+  ],
+  "summary": "The article, written by the io_uring author, starts by explaining the limits of POSIX aio and Linux native aio, including the O_DIRECT-only restriction, blocking submission, copy overhead, and the two-syscall cost per IO. It then lists the design goals for a replacement and explains why the effort moved from extending aio to a new interface. The core sections cover the shared submission and completion ring buffers, the io_uring_sqe and io_uring_cqe data structures, and how indexing and memory barriers work. The page is cut off partway through the setup code (mmap of the rings), so the later sections on the syscall interface and advanced features are not included in the text provided.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "io_uring",
+   "C",
+   "aio",
+   "POSIX aio",
+   "mmap"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9504,
+  "output": 999
+ },
+ "generated": "2026-10-29"
+}

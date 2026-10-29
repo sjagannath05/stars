@@ -1,0 +1,66 @@
+{
+ "id": "70e7d083bf419cee",
+ "url": "https://perfwiki.github.io/main/tutorial",
+ "final_url": "https://perfwiki.github.io/main/tutorial/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Linux kernel profiling with perf¶",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "CPU profilers and flame graphs",
+   "entry": "Linux perf wiki: Tutorial - The maintainers' walk from perf stat to perf record to perf annotate, with the sample fields each flag sets."
+  }
+ ],
+ "summary": {
+  "title": "Linux kernel profiling with perf",
+  "one_liner": "You learn how to use the Linux perf tool to count events with perf stat, choose PMU, software and tracepoint events, and apply event modifiers and multiplexing.",
+  "category": "cpu profiling",
+  "keywords": [
+   "linux perf",
+   "perf tool",
+   "perf_events",
+   "perf stat",
+   "perf list",
+   "perf record",
+   "perf report",
+   "hardware performance counters",
+   "pmu events",
+   "software events",
+   "tracepoint events",
+   "event modifiers",
+   "perf event multiplexing",
+   "scaling counters time_enabled time_running",
+   "count cpu cycles and instructions on linux",
+   "how to measure cache misses with perf",
+   "perf annotate",
+   "libpfm4",
+   "ftrace",
+   "perf stat -e cycles:u user only",
+   "top-down microarchitecture analysis perf"
+  ],
+  "takeaways": [
+   "perf stat runs a command and prints aggregated event counts at the end, e.g. perf stat -B dd ...",
+   "Events come from three sources: software events (e.g. context-switches), PMU hardware events (vendor-specific, e.g. cycles), and tracepoints from ftrace",
+   "Modifiers such as :u, :k, :uk restrict counting to user, kernel, or both privilege levels",
+   "When there are more events than hardware counters, the kernel multiplexes them and scales counts by time_enabled/time_running, which is an estimate"
+  ],
+  "summary": "This tutorial walks through the perf profiler on Linux using worked examples from an Ubuntu 11.04 system with kernel 2.6.38 on an Intel Core2 CPU. It lists the perf subcommands (stat, record, report, annotate and others) and the options for perf stat. It then explains the categories of measurable events and how to list them with perf list. Finally it covers counting with perf stat, event modifiers, raw hardware event codes, and how the kernel multiplexes and scales counts when there are more events than counters. The page text ends before covering perf record or perf annotate, which the listing mentions.",
+  "format": "tutorial",
+  "level": "beginner",
+  "technologies": [
+   "Linux perf",
+   "perf_events",
+   "ftrace",
+   "libpfm4",
+   "Linux kernel",
+   "Intel PMU"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11871,
+  "output": 876
+ },
+ "generated": "2026-10-29"
+}

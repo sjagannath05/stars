@@ -1,0 +1,69 @@
+{
+ "id": "719c03d31254408e",
+ "url": "https://dougallj.wordpress.com/2022/08/20/faster-zlib-deflate-decompression-on-the-apple-m1-and-x86",
+ "final_url": "https://dougallj.wordpress.com/2022/08/20/faster-zlib-deflate-decompression-on-the-apple-m1-and-x86/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Faster zlib/DEFLATE decompression on the Apple M1 (and x86)",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Execute",
+   "entry": "Faster zlib/DEFLATE decompression on the Apple M1 (and x86) - Predicts a decoder's refill chain from Arm core latencies, fits extra work under it, and measures the gain."
+  }
+ ],
+ "summary": {
+  "title": "Faster zlib/DEFLATE decompression on the Apple M1 (and x86)",
+  "one_liner": "Learn how a zlib inflate decoder was sped up on Apple M1 by shortening bit-reading latency, enlarging root tables, and reducing branch mispredicts, with measured gains per change.",
+  "category": "performance engineering",
+  "keywords": [
+   "zlib decompression",
+   "deflate decoder optimization",
+   "inflate speedup",
+   "apple m1 performance",
+   "arm64 assembly latency",
+   "huffman decoding speed",
+   "root table size huffman",
+   "bit reading latency",
+   "branch mispredict penalty",
+   "adler32 neon udot",
+   "dotprod instruction",
+   "zlib-cloudflare",
+   "zlib-ng",
+   "libdeflate",
+   "intel isa-l",
+   "zstd alternative",
+   "fast path literals",
+   "chunkcopy optimisation",
+   "variant 4 bit buffer refill",
+   "fabian giesen huffman posts"
+  ],
+  "takeaways": [
+   "Zlib-madler and Apple's system zlib are much slower than optimised forks such as zlib-cloudflare, zlib-ng, Chromium's zlib, and libdeflate.",
+   "Larger Huffman root tables reduce costly subtable lookups and branch mispredicts, giving about a 7% decompression speedup.",
+   "Latency, not instruction throughput, dominates the decode loop, so the work focuses on shortening the bit-refill dependency chain (e.g. 32-bit shifted loads, combined shifts for extra bits).",
+   "A fast path decoding two literals without refilling, and overlapping table lookup with chunkcopy mispredicts, each contributed several percent.",
+   "Individual speedup numbers depend on the order of changes, and the author notes the code is under-tested, so it should be used with caution."
+  ],
+  "summary": "The author profiles and optimises zlib's inflate (DEFLATE decompression) loop for Apple M1, starting from zlib-cloudflare, and reports about 1.51x over zlib-cloudflare and 2.1x over Apple's system zlib on M1. The post walks through each change: bigger root tables, a NEON/UDOT adler32, a bit-reading loop designed around eight-cycle load-to-use latency (following Fabian Giesen's Huffman posts), combined shifts for extra bits, a literal fast path, overlapping mispredict latency with chunkcopy, and table-building tweaks. It also compares results on x86 against zlib-cloudflare, libdeflate and Intel ISA-L, and recommends zstd or optimised zlib forks where appropriate.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "ARM64 assembly",
+   "NEON",
+   "zlib",
+   "DEFLATE",
+   "Apple M1",
+   "x86",
+   "clang",
+   "gcc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5531,
+  "output": 1089
+ },
+ "generated": "2026-10-29"
+}

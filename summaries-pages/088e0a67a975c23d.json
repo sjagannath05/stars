@@ -1,0 +1,65 @@
+{
+ "id": "088e0a67a975c23d",
+ "url": "https://arxiv.org/abs/1611.07612",
+ "final_url": "https://arxiv.org/abs/1611.07612",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Faster Population Counts Using AVX2 Instructions",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branchless code and bit manipulation",
+   "entry": "Faster Population Counts Using AVX2 Instructions - Shows a carry-save adder tree in vector registers beating the dedicated instruction, timed as the minimum of many runs."
+  }
+ ],
+ "summary": {
+  "title": "Faster Population Counts Using AVX2 Instructions",
+  "one_liner": "A vectorized AVX2 approach to counting set bits can be about twice as fast as the dedicated popcnt instruction on recent Intel processors, and it gains more when combined with Boolean operations such as the Jaccard index.",
+  "category": "performance engineering",
+  "keywords": [
+   "population count",
+   "popcount",
+   "popcnt instruction",
+   "count set bits",
+   "count ones in binary stream",
+   "avx2",
+   "simd popcount",
+   "vectorized bit counting",
+   "x64 popcnt",
+   "jaccard index bit operations",
+   "similarity measure bitwise",
+   "carry-save adder",
+   "harley-seal popcount",
+   "llvm clang popcount",
+   "intel processor performance",
+   "faster bit counting",
+   "daniel lemire",
+   "bit manipulation performance",
+   "information retrieval bitset counting",
+   "vector registers bit counting"
+  ],
+  "takeaways": [
+   "Counting ones with SIMD (AVX2) vector instructions can outperform the dedicated scalar popcnt instruction by about 2x on recent Intel processors, according to the abstract.",
+   "The advantage grows for workloads like the Jaccard index that need extra Boolean operations alongside the bit count.",
+   "The technique was adopted by LLVM and is used by the clang C compiler.",
+   "Population counts matter in database, information-retrieval, cryptographic and machine-learning code."
+  ],
+  "summary": "This arXiv paper (Daniel Lemire, first submitted November 2016, revised through v9 in 2018) presents a method for counting set bits in a binary stream using SIMD AVX2 instructions rather than the scalar popcnt instruction. The abstract claims the vectorized approach can be twice as fast on recent Intel processors, with larger gains for similarity measures such as the Jaccard index that need additional Boolean operations. The page itself is only the abstract and metadata; the method details are in the full PDF/HTML, which this summary does not cover. The paper's approach has been adopted by LLVM for clang.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "AVX2",
+   "SIMD",
+   "x64 popcnt",
+   "LLVM",
+   "clang",
+   "C"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2587,
+  "output": 879
+ },
+ "generated": "2026-10-29"
+}

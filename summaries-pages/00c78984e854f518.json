@@ -1,0 +1,68 @@
+{
+ "id": "00c78984e854f518",
+ "url": "https://docs.kernel.org/admin-guide/mm/transhuge.html",
+ "final_url": "https://docs.kernel.org/admin-guide/mm/transhuge.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Transparent Hugepage Support",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Struct layout, software prefetch and page size",
+   "entry": "Transparent Hugepage Support - The kernel's statement of THP: the enabled and defrag knobs, khugepaged, and the counters showing what was obtained."
+  }
+ ],
+ "summary": {
+  "title": "Transparent Hugepage Support",
+  "one_liner": "Learn how the Linux kernel's Transparent Hugepage (THP) feature works, and how to control it via sysfs, prctl, madvise, boot parameters, khugepaged, and /proc counters.",
+  "category": "linux kernel memory management",
+  "keywords": [
+   "transparent hugepage support",
+   "thp",
+   "linux transparent huge pages",
+   "hugepages",
+   "huge pages vs hugetlbfs",
+   "mthp multi-size thp",
+   "large folios",
+   "khugepaged",
+   "enabled always madvise never",
+   "defrag setting",
+   "madvise madv_hugepage",
+   "madvise madv_collapse",
+   "prctl pr_set_thp_disable",
+   "anonhugepages meminfo",
+   "vmstat thp_fault_alloc",
+   "tlb misses huge pages",
+   "shmem tmpfs huge pages",
+   "use_zero_page huge zero page",
+   "how to enable transparent huge pages linux",
+   "reduce tlb misses with larger pages"
+  ],
+  "takeaways": [
+   "THP automatically backs anonymous memory and tmpfs/shmem with huge pages, without the reservation model of hugetlbfs, and can be restricted system-wide, per task, or per memory range.",
+   "Global controls in /sys/kernel/mm/transparent_hugepage/ (enabled and defrag, plus per-size hugepages-<size>kB settings) choose always, madvise, never, or defer behaviour.",
+   "khugepaged collapses runs of base pages into huge pages; its knobs (pages_to_scan, scan_sleep_millisecs, max_ptes_none, max_ptes_swap, max_ptes_shared) tune how aggressive it is.",
+   "Monitor THP usage via AnonHugePages and ShmemHugePages in /proc/meminfo, per-process smaps, and /proc/vmstat counters such as thp_fault_alloc and thp_fault_fallback."
+  ],
+  "summary": "This is the official Linux kernel admin guide page describing Transparent Hugepage Support. It explains the performance rationale (fewer page faults and fewer TLB misses), the newer multi-size THP (mTHP) feature, and the trade-off that huge pages can waste memory for sparsely touched regions. It then documents the sysfs controls for enabled, defrag, use_zero_page and shrink_underused, the khugepaged tuning knobs, process-level prctl controls, boot parameters for anon, shmem and tmpfs policies, and the meminfo and vmstat counters used for monitoring.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "sysfs",
+   "madvise",
+   "prctl",
+   "khugepaged",
+   "tmpfs",
+   "shmem",
+   "hugetlbfs",
+   "procfs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10264,
+  "output": 1081
+ },
+ "generated": "2026-10-29"
+}

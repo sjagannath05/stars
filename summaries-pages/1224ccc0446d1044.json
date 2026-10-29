@@ -1,0 +1,66 @@
+{
+ "id": "1224ccc0446d1044",
+ "url": "https://allenkim67.github.io/programming/2016/05/04/how-to-make-your-own-bittorrent-client.html",
+ "final_url": "https://allenkim67.github.io/programming/2016/05/04/how-to-make-your-own-bittorrent-client.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to make your own bittorrent client",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own BitTorrent Client",
+   "entry": "Node.js: _Write your own bittorrent client_"
+  }
+ ],
+ "summary": {
+  "title": "How to make your own bittorrent client",
+  "one_liner": "You learn how the BitTorrent protocol works by building a simple command-line BitTorrent client from scratch in Node.js, covering torrent parsing, UDP tracker communication, and peer downloads.",
+  "category": "distributed systems",
+  "keywords": [
+   "bittorrent client",
+   "build bittorrent client",
+   "node.js bittorrent",
+   "bittorrent protocol tutorial",
+   "torrent file parsing",
+   "bencode",
+   "bencode node library",
+   "udp tracker protocol",
+   "bittorrent tracker announce request",
+   "connect request udp tracker",
+   "info hash sha1",
+   "peer id bittorrent",
+   "buffers in node.js",
+   "dgram udp socket node",
+   "tcp peer connection downloading",
+   "bep 15 udp tracker",
+   "how does bittorrent work",
+   "write torrent client in javascript",
+   "exponential backoff udp retries",
+   "bignum 64-bit integer node"
+  ],
+  "takeaways": [
+   "A torrent client first gets a peer list by talking to a UDP tracker through a connect request followed by an announce request.",
+   "Torrent files are bencoded; the info dictionary is SHA1-hashed to produce the info hash that identifies the torrent.",
+   "Node.js buffers and writeUInt32BE/copy are used to build binary protocol messages byte by byte, with 64-bit values split into two 32-bit writes.",
+   "UDP suits tracker messages because they are small, while TCP is used for peer-to-peer file transfer; lost UDP messages are retried with exponential backoff."
+  ],
+  "summary": "This step-by-step tutorial builds a simple BitTorrent client in Node.js that can download the contents of a torrent file from the command line. It starts by reading and bencode-decoding a .torrent file, then covers the UDP tracker protocol, including building and parsing connect and announce messages with Node's dgram and Buffer APIs. The guide is organized as commits on a GitHub project, and the final section begins on downloading pieces from peers over TCP. It is aimed at JavaScript developers who want to learn backend networking and binary data handling.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Node.js",
+   "JavaScript",
+   "BitTorrent protocol",
+   "UDP",
+   "TCP",
+   "bencode",
+   "bignum"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9601,
+  "output": 906
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,61 @@
+{
+ "id": "46059ce0e81bdbcc",
+ "url": "https://solarianprogrammer.com/2018/01/12/writing-minimal-x86-64-jit-compiler-cpp-part-2",
+ "final_url": "https://solarianprogrammer.com/2018/01/12/writing-minimal-x86-64-jit-compiler-cpp-part-2/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Solarian Programmer",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 2"
+  }
+ ],
+ "summary": {
+  "title": "Writing a minimal x86-64 JIT compiler in C++ - Part 2",
+  "one_liner": "You learn how to wrap executable memory in a small C++ helper class and have JIT-generated x86-64 machine code call an existing C++ function.",
+  "category": "jit compilers",
+  "keywords": [
+   "jit compiler c++",
+   "x86-64 jit",
+   "runtime machine code generation",
+   "executable memory page",
+   "mmap executable memory",
+   "call c++ function from generated code",
+   "function pointer cast jit",
+   "memcpy function address machine code",
+   "x86-64 prologue epilogue",
+   "memory pages class c++",
+   "mremap",
+   "little-endian byte order",
+   "minimal jit tutorial",
+   "generate machine code at runtime",
+   "mini forth interpreter jit",
+   "linux macos jit example"
+  ],
+  "takeaways": [
+   "Wrap executable memory pages in a C++ class that allocates, pushes bytes and releases memory.",
+   "Use memcpy to write multi-byte values such as function addresses into generated machine code.",
+   "Call a C++ function with no arguments from JIT-generated code by embedding its address.",
+   "Use the standard function prologue and epilogue bytes when building generated functions.",
+   "Cast the generated code address to a function pointer and invoke it, observing side effects on globals."
+  ],
+  "summary": "The article is Part 2 of a series on building a minimal x86-64 JIT compiler in C++ for Linux or macOS. It introduces a MemoryPages struct that requests executable memory from the OS in its constructor, releases it in its destructor, and provides push functions for single bytes, multi-byte values via memcpy, and byte vectors, plus a bounds check. The author then builds a generated function that calls a C++ function test() which prints a message and modifies a global variable, using prologue and epilogue byte sequences. The program dumps the generated machine code, casts the address to a function pointer, and calls it. The full source is on a GitHub repo referenced by the article.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "x86-64 assembly",
+   "mmap",
+   "memcpy",
+   "mremap"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3033,
+  "output": 839
+ },
+ "generated": "2026-10-29"
+}

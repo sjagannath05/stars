@@ -1,0 +1,69 @@
+{
+ "id": "74859b9eac98ef27",
+ "url": "https://docs.openvino.ai/2026/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device.html",
+ "final_url": "https://docs.openvino.ai/2026/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "CPU Device#",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Runtimes",
+   "entry": "OpenVINO CPU Device - States precision defaults per ISA, the int8 path through oneDNN and the streams model that turns cores into throughput."
+  }
+ ],
+ "summary": {
+  "title": "CPU Device",
+  "one_liner": "The OpenVINO CPU plugin's supported precisions, half-precision and execution-mode hints, streams, caching, denormal and sparse-weight options for Intel x86-64 and Arm CPUs.",
+  "category": "cpu inference optimization",
+  "keywords": [
+   "openvino cpu plugin",
+   "openvino cpu device",
+   "cpu inference",
+   "inference_precision",
+   "bf16 inference",
+   "fp16 inference",
+   "execution mode hint",
+   "performance mode",
+   "multi-stream execution",
+   "num_streams",
+   "model caching",
+   "cache_dir",
+   "denormals optimization",
+   "flush to zero",
+   "sparse weights decompression",
+   "int8 quantized inference",
+   "amx bfloat16",
+   "onednn",
+   "dynamic shapes cpu",
+   "compile_model cpu",
+   "arm cpu inference",
+   "intel x86 inference",
+   "auto device selection cpu gpu"
+  ],
+  "takeaways": [
+   "Pass \"CPU\" as the device name to compile_model; multi-socket systems appear as a single CPU device.",
+   "Half-precision (bf16/f16) is used automatically in PERFORMANCE execution mode on supporting hardware; set inference_precision to f32 or use ACCURACY mode to avoid accuracy loss.",
+   "Multi-stream execution (num_streams > 1 or THROUGHPUT hint) gives each stream its own thread and group of NUMA-aligned physical cores.",
+   "Model caching via cache_dir reduces compile time and first-inference latency; sparse weights decompression needs int8 models, AMX, and channel counts that are multiples of 64."
+  ],
+  "summary": "This page is the reference for the OpenVINO CPU plugin, covering Intel x86-64 and Arm CPUs. It lists supported precisions (FP32, BF16, FP16, MXFP4, INT32, and quantized u8/i8/u1 on x86), explains how half-precision is chosen by default and how to override it with inference_precision or execution_mode hints. It also describes features such as automatic device selection, multi-stream execution, dynamic shapes, model caching, denormal handling, and sparse weights decompression, with code examples in Python and C++.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "OpenVINO",
+   "Python",
+   "C++",
+   "oneDNN",
+   "Compute Library",
+   "Intel AMX",
+   "AVX-512"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7504,
+  "output": 938
+ },
+ "generated": "2026-10-29"
+}

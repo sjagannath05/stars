@@ -1,0 +1,72 @@
+{
+ "id": "d99b4872250b255b",
+ "url": "https://hackernoon.com/building-a-gas-pump-scanner-with-opencv-python-ios-116fe6c9ae8b",
+ "final_url": "https://hackernoon.com/building-a-gas-pump-scanner-with-opencv-python-ios-116fe6c9ae8b",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building a Gas Pump Scanner with OpenCV/Python/iOS | HackerNoon",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "Building a Gas Pump Scanner with OpenCV/Python/iOS"
+  }
+ ],
+ "summary": {
+  "title": "Building a Gas Pump Scanner with OpenCV/Python/iOS",
+  "one_liner": "You learn how one developer used OpenCV adaptive thresholding, contour filtering and k-NN digit classification in Python, then ported the pipeline to Objective-C++ for an iOS app that reads fuel pump digits from the camera.",
+  "category": "computer vision ocr",
+  "keywords": [
+   "gas pump scanner",
+   "opencv",
+   "opencv python",
+   "ocr digit recognition",
+   "seven segment lcd digit reading",
+   "adaptive thresholding",
+   "cv2.adaptivethreshold",
+   "image thresholding",
+   "findcontours",
+   "contour filtering",
+   "erosion to connect digits",
+   "k-nearest neighbor",
+   "k-nn digit classification",
+   "ios computer vision",
+   "objective-c++ opencv",
+   "avfoundation camera processing",
+   "how to read digits from an image",
+   "digit classification with machine learning",
+   "cross-platform opencv filestorage json",
+   "image preprocessing for ocr",
+   "glare on lcd display",
+   "mat serialization",
+   "fuelmate"
+  ],
+  "takeaways": [
+   "Adaptive thresholding plus erosion and contour detection can isolate LCD digits from a photo of a gas pump, with aspect-ratio and alignment filters to discard non-digits.",
+   "Decimal points are found by checking small square contours within the span of the digits and the lower half of that span.",
+   "k-NN classification trained on labeled digit crops (folders 0-9) can be used with OpenCV, and the training data can be serialized to JSON for reuse on iOS.",
+   "Parameters were tuned manually with trackbars and then automatically by searching combinations over a labeled test set (about 7 hours of runtime).",
+   "Glare on the pump display and phone angle are the main failure cases; smoothing predictions over time reduces jitter when tapping a button."
+  ],
+  "summary": "The author describes building a prototype in Python with OpenCV to read digits from a gas pump image before porting it to an iOS app (FuelMate). The pipeline covers exposure adjustment, grayscale conversion, mild blur, adaptive Gaussian thresholding, erosion to close gaps in 7-segment digits, inverting colors, and findContours, followed by filtering contours by aspect ratio (about 0.6 for digits, 0.3 for '1') and height/vertical alignment. Digits are classified with OpenCV's k-NN, with training data exported to JSON for the C++ side, and parameters are tuned both manually and by automated search. The article is a high-level write-up that links to the GitHub code and does not provide a line-by-line code review.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "NumPy",
+   "Objective-C++",
+   "C++",
+   "iOS",
+   "AVFoundation",
+   "Swift",
+   "Apple Watch"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6402,
+  "output": 1083
+ },
+ "generated": "2026-10-29"
+}

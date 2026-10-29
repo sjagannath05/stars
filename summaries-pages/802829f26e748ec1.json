@@ -1,0 +1,62 @@
+{
+ "id": "802829f26e748ec1",
+ "url": "https://jeiwan.net/posts/building-blockchain-in-go-part-3",
+ "final_url": "https://jeiwan.net/posts/building-blockchain-in-go-part-3/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building Blockchain in Go. Part 3: Persistence and CLI - Going the distance",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 3: Persistence and CLI"
+  }
+ ],
+ "summary": {
+  "title": "Building Blockchain in Go. Part 3: Persistence and CLI",
+  "one_liner": "You learn how to persist a Go blockchain in BoltDB using gob serialization, iterate stored blocks, and expose addblock and printchain commands through a small CLI.",
+  "category": "blockchain development in Go",
+  "keywords": [
+   "blockchain in go",
+   "boltdb tutorial",
+   "bolt key value store go",
+   "go blockchain persistence",
+   "store blocks in database go",
+   "gob serialization go",
+   "encoding/gob struct to bytes",
+   "go flag package subcommands",
+   "command line interface go blockchain",
+   "blockchain iterator go",
+   "bitcoin core database layout",
+   "leveldb bitcoin core",
+   "key value store vs sql",
+   "addblock printchain cli",
+   "proof of work blockchain series part 3",
+   "read-only vs read-write bolt transaction",
+   "go blockchain from scratch"
+  ],
+  "takeaways": [
+   "BoltDB is a simple pure-Go key/value store where keys and values are byte arrays, organized in buckets, with no server required.",
+   "Blocks are serialized with encoding/gob before being stored, and deserialized when read back.",
+   "The blockchain is persisted by storing blocks keyed by hash plus an 'l' key pointing to the last block hash (tip); reopening the DB resumes the chain.",
+   "A BlockchainIterator walks blocks from tip to genesis one at a time, avoiding loading the whole chain into memory.",
+   "A minimal CLI built on the standard flag package provides addblock -data and printchain subcommands."
+  ],
+  "summary": "The article is Part 3 of a series building a blockchain in Go. It explains why BoltDB was chosen over alternatives, how Bitcoin Core lays out its LevelDB buckets, and then implements a simplified schema with a single blocks bucket. The author walks through gob-based Serialize/DeserializeBlock, rewrites NewBlockchain and AddBlock to use read-write and read-only BoltDB transactions, and adds a BlockchainIterator. It closes with a CLI using Go's flag package, with sample terminal output showing the genesis block and added blocks.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "BoltDB",
+   "encoding/gob",
+   "flag package",
+   "LevelDB"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7672,
+  "output": 909
+ },
+ "generated": "2026-10-29"
+}

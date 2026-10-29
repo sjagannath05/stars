@@ -1,0 +1,61 @@
+{
+ "id": "55d0b69bbb744ff9",
+ "url": "https://www.dzombak.com/blog/2025/07/use-your-type-system",
+ "final_url": "https://www.dzombak.com/blog/2025/07/use-your-type-system/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Use Your Type System",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Type system",
+   "entry": "Use Your Type System"
+  }
+ ],
+ "summary": {
+  "title": "Use Your Type System",
+  "one_liner": "Learn to define distinct named types (such as AccountID vs UserID, or TempF vs TempC) so the compiler catches mix-ups that plain int, string, or UUID values allow.",
+  "category": "type systems design",
+  "keywords": [
+   "type system",
+   "strong typing",
+   "distinct types",
+   "newtype pattern",
+   "type alias vs defined type",
+   "typed ids",
+   "typed identifiers",
+   "avoid primitive obsession",
+   "primitive obsession",
+   "compile-time type safety",
+   "mixing up function arguments",
+   "uuid type confusion",
+   "go defined types",
+   "unit types in code",
+   "libwx",
+   "weather calculation library go",
+   "type-safe ids",
+   "catch bugs at compile time",
+   "strongly typed units of measure",
+   "wrapping primitive values in types"
+  ],
+  "takeaways": [
+   "Plain values like int, string, or UUID lose context about what they represent, which leads to bugs such as using a user ID as an account ID.",
+   "Define a separate type per concept (e.g. type AccountID uuid.UUID, type UserID uuid.UUID) so the compiler rejects mismatched uses.",
+   "The author's libwx Go library gives each measurement its own type (TempF, TempC, RelHumidity, Km) with conversion methods, preventing unit mix-ups in dew point calculations.",
+   "Public and private functions should often avoid taking bare floats or integers, and models should each have their own ID type."
+  ],
+  "summary": "The author argues that generic built-in types like integers, strings, and UUIDs cause bugs when different concepts share the same type, such as user IDs and account IDs or argument order in multi-integer functions. He shows Go examples where distinct named types (AccountID, UserID) make the compiler reject mismatched calls. He then points to his libwx weather library, which defines a type for each measurement with conversion methods, so passing Fahrenheit where Celsius is expected fails to compile. The post concludes that models should have their own ID types and functions should avoid bare numeric arguments.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "libwx"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2418,
+  "output": 838
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,80 @@
+{
+ "id": "d7d33ffd6c166bcb",
+ "url": "https://docs.python.org/3/library/zoneinfo.html",
+ "final_url": "https://docs.python.org/3/library/zoneinfo.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "zoneinfo — IANA time zone support",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Date and Time",
+   "entry": "zoneinfo - (Python standard library) IANA time zone support. Brings the tz database into Python."
+  }
+ ],
+ "summary": {
+  "name": "zoneinfo",
+  "one_liner": "Python standard library module (added in 3.9) that provides IANA time zone support for datetime objects, backed by the system tz database or the tzdata PyPI package.",
+  "category": "python standard library module",
+  "keywords": [
+   "zoneinfo",
+   "python zoneinfo",
+   "iana time zone",
+   "iana tz database",
+   "tz database python",
+   "tzinfo implementation",
+   "zoneinfo.zoneinfo",
+   "datetime time zone",
+   "timezone aware datetime python",
+   "daylight saving time python",
+   "dst handling",
+   "pep 615",
+   "pep 495 fold",
+   "tzdata",
+   "pytz alternative",
+   "dateutil tz alternative",
+   "python time zone library",
+   "convert datetime to timezone",
+   "astimezone python",
+   "zone name lookup",
+   "available_timezones",
+   "pythontzpath",
+   "fold attribute",
+   "windows time zone python",
+   "python standard library timezone"
+  ],
+  "use_cases": [
+   "attach a named time zone to a Python datetime",
+   "handle daylight saving time transitions in datetime arithmetic",
+   "convert UTC timestamps to local time zones",
+   "list available IANA time zone names",
+   "ship cross-platform time zone data with tzdata dependency"
+  ],
+  "what_it_does": "The module provides ZoneInfo, a concrete datetime.tzinfo implementation that represents an IANA time zone by key such as America/Los_Angeles. Datetimes attached to it handle DST transitions during arithmetic, and the fold attribute (PEP 495) disambiguates ambiguous local times. Time zone data is read from the system database, with a fallback to the first-party tzdata package on PyPI. The page also documents configuring the search path via compile-time TZPATH, the PYTHONTZPATH environment variable, and reset_tzpath(), plus pickling behavior and helper functions such as available_timezones().",
+  "pricing": "open source",
+  "platforms": [
+   "Python",
+   "POSIX",
+   "Windows",
+   "WebAssembly (not available)"
+  ],
+  "notable": [
+   "Standard library since Python 3.9, implements PEP 615",
+   "Caches ZoneInfo instances so the same key returns the same object",
+   "Falls back to the tzdata PyPI package when no system tz data exists",
+   "Supports the fold attribute from PEP 495 for ambiguous times"
+  ],
+  "caveats": [
+   "Not available on WebAssembly (not WASI)",
+   "Windows systems lack an IANA database, so cross-platform projects should depend on tzdata",
+   "Objects built from a file via from_file() cannot be pickled",
+   "If neither system data nor tzdata is present, ZoneInfo calls raise ZoneInfoNotFoundError"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6289,
+  "output": 1029
+ },
+ "generated": "2026-10-29"
+}

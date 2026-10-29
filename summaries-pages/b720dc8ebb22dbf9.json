@@ -1,0 +1,61 @@
+{
+ "id": "b720dc8ebb22dbf9",
+ "url": "http://www.johngustafson.net/pubs/pub13/amdahl.htm",
+ "final_url": "http://www.johngustafson.net/pubs/pub13/amdahl.htm",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Reevaluating Amdahl's Law",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scaling laws",
+   "entry": "Reevaluating Amdahl's Law - Defines scaled speedup, the bound that holds when the problem grows with the processor count instead of staying fixed."
+  }
+ ],
+ "summary": {
+  "title": "Reevaluating Amdahl's Law",
+  "one_liner": "Gustafson's short essay argues that Amdahl's fixed-size speedup bound is misleading for massively parallel machines, because the parallel part of real programs grows with the problem size, giving a scaled speedup formula instead.",
+  "category": "parallel computing performance",
+  "keywords": [
+   "amdahl's law",
+   "gustafson's law",
+   "scaled speedup",
+   "scaled-size speedup",
+   "fixed-size speedup",
+   "parallel speedup limit",
+   "serial fraction",
+   "massively parallel computing",
+   "hypercube speedup",
+   "sandia national laboratories",
+   "conjugate gradients",
+   "flux-corrected transport",
+   "barsis formula",
+   "how does problem size affect parallel speedup",
+   "why amdahl's law predicts poor scaling",
+   "parallel efficiency with many processors",
+   "weak scaling",
+   "1024-processor hypercube"
+  ],
+  "takeaways": [
+   "Amdahl's law with a fixed problem size gives a steep speedup curve, so a small serial fraction caps speedup sharply at large N.",
+   "In practice the parallel portion of many programs scales with problem size, while serial parts such as startup, I/O and bottlenecks do not grow.",
+   "Scaled speedup is modeled as s' + p' x N, which simplifies to N + (1 - N) x s', a line with a much gentler slope of 1 - N.",
+   "Reported results on a 1024-processor hypercube reached speedups of about 1016 to 1021 for three Sandia applications with serial fractions of 0.4 to 0.8 percent."
+  ],
+  "summary": "The author, John Gustafson, explains why Amdahl's law seems to forbid high speedups on large processor counts, then shows that the law assumes a fixed problem size. He reports measured speedups near 1024 on a 1024-processor hypercube for three Sandia applications, where the serial fraction was 0.4 to 0.8 percent. He argues the parallel work grows roughly linearly with processor count as the problem is scaled, and gives a scaled-size alternative to Amdahl's formula, attributed to E. Barsis, that is a line with slope 1 - N. The piece is a brief argument with a few formulas and references rather than a step-by-step tutorial.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "hypercube multiprocessor",
+   "conjugate gradient",
+   "finite differences",
+   "flux-corrected transport"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2403,
+  "output": 947
+ },
+ "generated": "2026-10-29"
+}

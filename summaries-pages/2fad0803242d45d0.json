@@ -1,0 +1,74 @@
+{
+ "id": "2fad0803242d45d0",
+ "url": "https://www.humanlayer.dev/blog/writing-a-good-claude-md",
+ "final_url": "https://www.humanlayer.dev/blog/writing-a-good-claude-md",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Writing a good CLAUDE.md",
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "Start Here",
+   "entry": "Writing a Good CLAUDE.md by HumanLayer - An essay on CLAUDE.md craft: instruction-budget reasoning, progressive disclosure, and the test of whether Claude would err without a given line."
+  }
+ ],
+ "summary": {
+  "name": "Writing a good CLAUDE.md",
+  "one_liner": "An essay by HumanLayer's Kyle giving practical guidance on writing CLAUDE.md (and AGENTS.md) files that onboard coding agents like Claude Code to a codebase.",
+  "category": "ai coding agent guide",
+  "keywords": [
+   "claude.md",
+   "claude code",
+   "agents.md",
+   "claude code configuration",
+   "coding agent memory",
+   "context engineering",
+   "instruction budget",
+   "progressive disclosure",
+   "system prompt instructions",
+   "llm instruction following",
+   "agent onboarding file",
+   "monorepo agent context",
+   "claude code best practices",
+   "claude code hooks",
+   "linter vs llm",
+   "avoid /init",
+   "agents md opencode cursor codex",
+   "biome linter",
+   "how to write claude.md",
+   "ai coding assistant instructions",
+   "stateless llm context",
+   "prompt length limits",
+   "agent_docs folder",
+   "awesome claude code"
+  ],
+  "use_cases": [
+   "Writing a CLAUDE.md file for a new repository",
+   "Reducing instructions that coding agents ignore",
+   "Structuring agent docs for a monorepo",
+   "Deciding whether to use linters or hooks instead of agent instructions",
+   "Setting up progressive disclosure for agent context"
+  ],
+  "what_it_does": "The essay explains that LLM coding agents are stateless and only know what is in the context, so CLAUDE.md (loaded into every session) should cover WHAT (stack and project map), WHY (purpose of parts of the project), and HOW (commands, tests, verification). It argues for keeping instructions few and universally applicable, citing rough research on instruction-following decay and a claim about Claude Code's system prompt containing about 50 instructions. It recommends progressive disclosure: keep task-specific docs in separate markdown files and point to them with file:line references instead of code snippets. It also advises against using the agent as a linter, suggesting deterministic tools and Stop hooks, and against auto-generating CLAUDE.md with /init.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Progressive disclosure approach using separate agent_docs markdown files referenced from CLAUDE.md",
+   "Argues that Claude may ignore CLAUDE.md because Claude Code wraps it with a 'may or may not be relevant' system reminder",
+   "Recommends delegating formatting and style checks to linters and Stop hooks rather than instructions",
+   "Says HumanLayer's root CLAUDE.md is under sixty lines"
+  ],
+  "caveats": [
+   "Guidance is based on the author's reasoning and limited research; the page itself says mileage may vary and the topic is not rigorously investigated",
+   "Page states Anthropic gives no official length recommendation; the under-300-lines figure is described as general consensus"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5141,
+  "output": 1072
+ },
+ "generated": "2026-10-29"
+}

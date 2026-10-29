@@ -1,0 +1,62 @@
+{
+ "id": "535ee304d7463fe8",
+ "url": "https://www.timescale.com/blog/how-percentile-approximation-works-and-why-its-more-useful-than-averages",
+ "final_url": "https://www.tigerdata.com/blog/how-percentiles-work-and-why-theyre-better-than-averages",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How Percentiles Work",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Monitoring",
+   "entry": "How percentile approximation works (and why it's more useful than averages)"
+  }
+ ],
+ "summary": {
+  "title": "How Percentiles Work",
+  "one_liner": "Percentiles describe long-tailed data better than averages, and TimescaleDB percentile approximation hyperfunctions compute them cheaply on large time-series data.",
+  "category": "database percentiles",
+  "keywords": [
+   "percentile approximation",
+   "approximate percentile",
+   "percentile_disc",
+   "percentile_agg",
+   "approx_percentile",
+   "timescaledb hyperfunctions",
+   "timescaledb toolkit",
+   "postgresql percentiles",
+   "ordered-set aggregate",
+   "median vs average",
+   "long-tail distribution",
+   "api response time monitoring",
+   "p90 p99 latency",
+   "continuous aggregates",
+   "time-series percentiles",
+   "why averages mislead",
+   "exact vs approximate percentile",
+   "two-step aggregation",
+   "histogram percentile approximation",
+   "postgresql aggregate memory footprint"
+  ],
+  "takeaways": [
+   "Averages are pulled by outliers in long-tailed distributions, while percentiles depend on ordering and are more robust for alerting on user-facing impact.",
+   "Exact percentiles in PostgreSQL (percentile_disc, an ordered-set aggregate) must keep all values, which limits memory, parallelism, and continuous aggregate use.",
+   "Percentile approximation hyperfunctions use fixed-size, histogram-like partial states that can be parallelized and re-aggregated in continuous aggregates.",
+   "The usage pattern is percentile_agg(column) inside a query, with approx_percentile(p, ...) pulling out the desired percentile."
+  ],
+  "summary": "The article explains what averages, medians and percentiles measure, using normal and long-tailed API response time distributions to show why averages can produce false alarms. It then shows exact percentiles in PostgreSQL with percentile_disc and explains why they are expensive for large time-series data. Finally it introduces TimescaleDB's percentile approximation hyperfunctions (percentile_agg with approx_percentile), which use fixed-size partial states that work with parallelism and continuous aggregates. The page is mostly conceptual with a few SQL examples.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "TimescaleDB",
+   "SQL"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8516,
+  "output": 889
+ },
+ "generated": "2026-10-29"
+}

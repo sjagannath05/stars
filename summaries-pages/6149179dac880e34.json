@@ -1,0 +1,68 @@
+{
+ "id": "6149179dac880e34",
+ "url": "https://jvns.ca/blog/2016/03/16/tcpdump-is-amazing",
+ "final_url": "https://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "tcpdump is amazing",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Debugging",
+   "entry": "tcpdump is amazing, Julia Evans"
+  }
+ ],
+ "summary": {
+  "title": "tcpdump is amazing",
+  "one_liner": "Learn how to use tcpdump to capture network traffic with pcap filters, analyze recordings in Wireshark, and use tshark to read protocol fields like HTTP and MongoDB.",
+  "category": "network debugging",
+  "keywords": [
+   "tcpdump",
+   "tcpdump tutorial",
+   "pcap",
+   "pcap files",
+   "pcap filter",
+   "pcap filter rules",
+   "wireshark",
+   "tshark",
+   "capture network traffic",
+   "packet capture",
+   "sniff network traffic on linux",
+   "filter packets by port",
+   "filter packets by ip address",
+   "tcpdump -n flag",
+   "tcpdump overhead production",
+   "analyze http request duration",
+   "tshark http.request.method",
+   "tshark mongo collection names",
+   "reverse dns lookup tcpdump",
+   "capture traffic on any interface",
+   "tcp sessions conversations wireshark",
+   "network debugging for slow http requests"
+  ],
+  "takeaways": [
+   "Record traffic with tcpdump using -w to save a pcap file, then analyze it later in Wireshark (Statistics > Conversations shows TCP session durations).",
+   "Use pcap filter rules such as 'src port 80 or dst port 80' or 'ip src ADDRESS' to capture only the traffic you care about.",
+   "Use -n to print IP addresses instead of doing reverse DNS lookups, and check overhead with tools like dstat before capturing on busy machines.",
+   "tshark, the command-line companion to Wireshark, understands application protocols like HTTP and MongoDB and can print specific fields with -Y and -T fields -e."
+  ],
+  "summary": "The author, Julia Evans, walks through tcpdump as a beginner-friendly way to debug network issues. She records port 80 traffic with a pcap filter and -w, opens the file in Wireshark to measure TCP session durations for slow HTTP requests, and explains why pcap files are useful across tools. She covers basic filters for ports and IPs, the -n flag, and a rough discussion of overhead on production machines. The post ends with tshark, which decodes application protocols such as HTTP GET requests and MongoDB collection names. The post does not give specific overhead numbers beyond the author's impressions.",
+  "format": "article",
+  "level": "beginner",
+  "technologies": [
+   "tcpdump",
+   "Wireshark",
+   "tshark",
+   "pcap",
+   "HTTP",
+   "TCP",
+   "MongoDB"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4520,
+  "output": 938
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,67 @@
+{
+ "id": "4a072f8b4cc65a47",
+ "url": "https://maciejwalkowiak.com/blog/postgres-uuid-primary-key",
+ "final_url": "https://maciejwalkowiak.com/blog/postgres-uuid-primary-key/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "PostgreSQL and UUID as primary key",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Postgres",
+   "entry": "PostgreSQL and UUID as primary key"
+  }
+ ],
+ "summary": {
+  "title": "PostgreSQL and UUID as primary key",
+  "one_liner": "Learn why the native uuid type beats text for Postgres primary keys, and how time-sorted UUID v7 values insert about twice as fast as random UUID v4 values in a B-tree index.",
+  "category": "database performance",
+  "keywords": [
+   "postgres uuid primary key",
+   "postgresql uuid vs text",
+   "uuid v7",
+   "uuid v4",
+   "time-sorted uuid",
+   "b-tree index",
+   "random uuid index performance",
+   "postgres index size",
+   "uuid primary key performance",
+   "insert performance uuid",
+   "java-uuid-generator",
+   "timebasedepochgenerator",
+   "postgres uuid data type 16 bytes",
+   "pg_relation_size index size",
+   "tsid primary key",
+   "uuid as database key",
+   "distributed system ids",
+   "postgres 17 uuid v7"
+  ],
+  "takeaways": [
+   "Store UUIDs in Postgres's uuid type rather than text: it is 16 bytes, while text adds overhead plus the string itself.",
+   "In the author's test with 10 million rows, the text table was about 54% larger and its index about 85% larger than the uuid table.",
+   "Random UUID v4 values scatter across a B-tree index, which hurts it; time-sorted UUID v7 values append more predictably.",
+   "In the author's 10 rounds of 10,000 inserts, UUID v7 inserts took roughly half the time of UUID v4 inserts.",
+   "The author concludes UUIDs are still not the best primary key choice and suggests TSID as an alternative, with the optimizations mattering mainly for large datasets."
+  ],
+  "summary": "The author compares storing UUID primary keys as text versus the native uuid type in PostgreSQL, inserting 10 million rows into each table and measuring table and index sizes with pg_relation_size and pg_class. Next, the article explains why random UUID v4 values fit B-tree indexes poorly and introduces UUID v7, which is time-sorted, generated via the java-uuid-generator library. A timed insert benchmark (10 rounds of 10,000 rows) shows UUID v7 inserts running about twice as fast as UUID v4 inserts. The post closes by noting that UUIDs remain a large key and recommends TSID as an alternative.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "Java",
+   "Spring JdbcTemplate",
+   "JdbcClient",
+   "java-uuid-generator",
+   "B-tree index",
+   "UUID v4",
+   "UUID v7",
+   "TSID"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4040,
+  "output": 959
+ },
+ "generated": "2026-10-29"
+}

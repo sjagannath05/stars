@@ -1,0 +1,72 @@
+{
+ "id": "a6a0e3e485f821bc",
+ "url": "https://builder.aws.com/content/3EuxPBdIiiUhB5IK47p3O3fxhy7/instrumenting-distributed-systems-for-operational-visibility",
+ "final_url": "https://builder.aws.com/content/3EuxPBdIiiUhB5IK47p3O3fxhy7/instrumenting-distributed-systems-for-operational-visibility",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Instrumenting distributed systems for operational visibility | AWS Builder Center",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Logging",
+   "entry": "Instrumenting distributed systems for operational visibility, AWS Builder Center"
+  }
+ ],
+ "summary": {
+  "title": "Instrumenting distributed systems for operational visibility",
+  "one_liner": "Learn how Amazon instruments distributed services with structured per-request logs, dependency metrics, and trace IDs so teams can move from dashboards and alarms down to root-cause debugging.",
+  "category": "distributed systems observability",
+  "keywords": [
+   "instrumentation",
+   "operational visibility",
+   "observability",
+   "distributed systems monitoring",
+   "structured request logs",
+   "log first produce metrics later",
+   "one log entry per unit of work",
+   "high percentile latency",
+   "p99.9 latency",
+   "availability metric emit 0 and 1",
+   "dependency latency logging",
+   "trace id propagation",
+   "aws x-ray",
+   "cloudwatch logs",
+   "cloudwatch alarms",
+   "log sanitization",
+   "disk full logging",
+   "clock synchronization logs",
+   "service owner operational culture",
+   "amazon instrumentation practices",
+   "how to instrument a service",
+   "request log vs debug log",
+   "log verbosity knob"
+  ],
+  "takeaways": [
+   "Amazon logs one structured entry per unit of work (usually a request or queue message) and computes aggregate metrics afterward from those logs.",
+   "Track high percentile latency (p99.9, p99.99), since reducing it often also reduces median latency and slow outliers hurt many requests.",
+   "Log availability and latency of every dependency, broken out per call, resource, and status code, to explain why a request was slow or failed.",
+   "Propagate a trace ID across services and plan for log sanitization, log verbosity controls, disk-full behavior, and clock sync."
+  ],
+  "summary": "The article is an Amazon Builder Center piece written by an Amazon engineer about why and how teams instrument distributed services. It explains the operational culture behind instrumentation: dashboards and alarms for detection, and detailed logs for diagnosis, with a focus on high percentile latency. It walks through a Java product-lookup example (local cache, remote cache, database) to show the questions instrumentation must answer. The core practice is \"log first, produce aggregate metrics later,\" with concrete best practices for request logs and dependency and error metrics.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Java",
+   "Amazon CloudWatch",
+   "CloudWatch Logs",
+   "AWS X-Ray",
+   "Amazon DynamoDB",
+   "Log4j",
+   "Amazon Ion",
+   "Chrony",
+   "ntpd",
+   "Amazon Time Sync Service"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8322,
+  "output": 945
+ },
+ "generated": "2026-10-29"
+}

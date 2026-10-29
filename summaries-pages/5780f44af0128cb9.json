@@ -1,0 +1,78 @@
+{
+ "id": "5780f44af0128cb9",
+ "url": "https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more",
+ "final_url": "https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Steering Claude Code: when to use CLAUDE.md, skills, hooks, and subagents",
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "From Anthropic",
+   "entry": "Steering Claude Code: Skills, Hooks, Rules, Subagents and More by Anthropic - A framework for choosing which extension mechanism to reach for, organized around deterministic-versus-probabilistic control and context isolation."
+  }
+ ],
+ "summary": {
+  "name": "Steering Claude Code",
+  "one_liner": "An Anthropic blog post giving a decision framework for choosing among seven ways to instruct Claude Code (CLAUDE.md files, rules, skills, subagents, hooks, output styles, and system-prompt appends) based on context cost, compaction behavior, and authority.",
+  "category": "claude code customization guide",
+  "keywords": [
+   "claude code",
+   "claude.md",
+   "claude code customization",
+   "claude code skills",
+   "claude code hooks",
+   "claude code subagents",
+   "claude code rules",
+   "claude code output styles",
+   "append-system-prompt",
+   "path-scoped rules",
+   "paths frontmatter",
+   ".claude/rules",
+   ".claude/skills",
+   ".claude/agents",
+   "skill.md",
+   "pretooluse hook",
+   "precompact hook",
+   "context window",
+   "context cost",
+   "compaction",
+   "deterministic automation",
+   "managed settings",
+   "instruction hierarchy",
+   "how to customize claude code",
+   "when to use hooks vs claude.md",
+   "ai coding agent configuration",
+   "settings.json hooks",
+   "agent loops"
+  ],
+  "use_cases": [
+   "Deciding where to put team coding conventions",
+   "Setting up deterministic automation like linters after edits",
+   "Blocking dangerous commands in a coding agent",
+   "Offloading deep search or log analysis to isolated subagents",
+   "Packaging deploy or review procedures as reusable skills",
+   "Scoping API-specific rules to certain directories"
+  ],
+  "what_it_does": "The page compares seven methods for instructing Claude Code and summarizes when each loads into context, how it survives compaction, and its context cost. CLAUDE.md files load at session start and stay for the whole session, while subdirectory files load on demand. Rules can be path-scoped with a paths field so they load only for matching files. Skills expose only name and description until invoked, and subagents run in isolated context windows returning just a final summary. Hooks fire on lifecycle events such as PreToolUse and can deterministically block or automate actions, and the post also explains that output styles and appended system prompts change instructions at different authority levels.",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Table comparing load timing, compaction behavior, and context cost for each method",
+   "Guidance that deterministic guardrails need hooks or managed settings, not CLAUDE.md instructions",
+   "Warns that custom output styles can remove Claude Code's default software-engineering instructions"
+  ],
+  "caveats": [
+   "Advice that output styles and long appended prompts carry adherence trade-offs and should be used sparingly",
+   "Managed settings for organization-wide enforcement are described as admin-deployed, so individual users cannot override them"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6741,
+  "output": 1035
+ },
+ "generated": "2026-10-29"
+}

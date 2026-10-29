@@ -1,0 +1,61 @@
+{
+ "id": "82df7b4821d6384b",
+ "url": "https://www.usenix.org/conference/nsdi19/presentation/wang-xiang",
+ "final_url": "https://www.usenix.org/conference/nsdi19/presentation/wang-xiang",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Hyperscan: A Fast Multi-pattern Regex Matcher for Modern {CPUs}",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "SIMD libraries and measured kernels",
+   "entry": "Hyperscan: A Fast Multi-pattern Regex Matcher for Modern CPUs - Decomposes regexes into string and automaton pieces so both run on SIMD, the design inside the matcher Snort embeds."
+  }
+ ],
+ "summary": {
+  "title": "Hyperscan: A Fast Multi-pattern Regex Matcher for Modern CPUs",
+  "one_liner": "Hyperscan speeds up regex matching by decomposing patterns into string and automaton pieces and running both with SIMD on commodity CPUs.",
+  "category": "regex matching performance",
+  "keywords": [
+   "hyperscan",
+   "regex matcher",
+   "regular expression matching",
+   "multi-pattern matching",
+   "simd regex",
+   "graph decomposition",
+   "string matching",
+   "finite automata",
+   "dfa matching",
+   "snort performance",
+   "network intrusion detection",
+   "deep packet inspection",
+   "packet payload scanning",
+   "commodity server regex",
+   "nsdi 2019",
+   "intel hyperscan paper",
+   "fast regex engine",
+   "multi-pattern string matching"
+  ],
+  "takeaways": [
+   "Regex matching can be split into string-matching and finite-automaton-matching components, so string matching is shared rather than duplicated.",
+   "Decomposed components are smaller than the original patterns, which raises the chance that DFA matching stays fast.",
+   "Both string and automaton matching are accelerated with SIMD operations on commodity server CPUs.",
+   "The authors report Hyperscan improves Snort performance by a factor of 8.7 on a real traffic trace."
+  ],
+  "summary": "This NSDI '19 paper presents Hyperscan, a high-performance regular expression matcher for commodity server machines, motivated by the cost of scanning every byte of packet payload in network security applications. Its first technique is graph decomposition, which turns a regex into a series of string matches and finite automata matches so that string matching becomes part of regex matching. Its second technique applies SIMD operations to both the string and automaton stages. The evaluation reports an 8.7x performance improvement for Snort on a real traffic trace. The page text is the abstract and citation metadata only, so implementation details are not included here.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "SIMD",
+   "Snort",
+   "finite automata (DFA)",
+   "regular expressions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2144,
+  "output": 811
+ },
+ "generated": "2026-10-29"
+}

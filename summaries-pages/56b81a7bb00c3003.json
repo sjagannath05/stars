@@ -1,0 +1,73 @@
+{
+ "id": "56b81a7bb00c3003",
+ "url": "https://docs.python.org/3/library/tomllib.html",
+ "final_url": "https://docs.python.org/3/library/tomllib.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "tomllib — Parse TOML files",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Format Processing",
+   "entry": "tomllib - (Python standard library) Parse TOML files."
+  }
+ ],
+ "summary": {
+  "name": "tomllib",
+  "one_liner": "tomllib is Python's standard-library module for parsing TOML 1.1.0 documents into Python dicts, but it cannot write TOML.",
+  "category": "python standard library module",
+  "keywords": [
+   "tomllib",
+   "toml parser",
+   "python toml parser",
+   "parse toml",
+   "read toml file",
+   "toml python",
+   "toml 1.1.0",
+   "tomllib.load",
+   "tomllib.loads",
+   "tomli",
+   "tomli-w",
+   "toml writer",
+   "toml kit",
+   "load toml from string",
+   "python pyproject.toml reader",
+   "standard library toml",
+   "toml decoder",
+   "tomldecodeerror",
+   "parse_float",
+   "config file parsing python",
+   "toml to dict",
+   "marshal pickle style api",
+   "ini yaml alternative toml"
+  ],
+  "use_cases": [
+   "Reading pyproject.toml in Python code",
+   "Loading TOML configuration files",
+   "Parsing TOML strings into Python dicts",
+   "Converting TOML floats to Decimal with parse_float",
+   "Validating TOML documents and locating syntax errors"
+  ],
+  "what_it_does": "The module provides tomllib.load() for reading a binary file object and tomllib.loads() for parsing a str, both returning a dict. It converts TOML types to Python types according to a published conversion table, such as datetimes to datetime objects and arrays to lists. Invalid documents raise TOMLDecodeError, a ValueError subclass that reports msg, doc, pos, lineno and colno. The parse_float argument lets callers substitute another float parser such as decimal.Decimal.",
+  "pricing": "open source",
+  "platforms": [
+   "Python 3.11+"
+  ],
+  "notable": [
+   "Part of the Python standard library since 3.11; TOML 1.1.0 support added in 3.15",
+   "Read-only: pair with Tomli-W for writing or TOML Kit for style-preserving edits",
+   "parse_float hook for custom float types"
+  ],
+  "caveats": [
+   "Does not support writing TOML",
+   "Untrusted input can consume large CPU and memory; limiting input size is recommended",
+   "Some behaviors such as key ordering and integer digit limits are CPython implementation details that may change"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3069,
+  "output": 866
+ },
+ "generated": "2026-10-29"
+}

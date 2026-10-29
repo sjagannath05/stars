@@ -1,0 +1,65 @@
+{
+ "id": "31c5604aaa6dad59",
+ "url": "https://indradhanush.github.io/blog/writing-a-unix-shell-part-1",
+ "final_url": "https://igupta.in/blog/writing-a-unix-shell-part-1/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a Unix Shell - Part I",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Shell",
+   "entry": "C: _Writing a UNIX Shell_"
+  }
+ ],
+ "summary": {
+  "title": "Writing a Unix Shell - Part I",
+  "one_liner": "You learn how the fork() system call creates a child process, why it returns twice, and how sleep() and waitpid() control the order of parent and child execution.",
+  "category": "unix shell programming",
+  "keywords": [
+   "unix shell",
+   "write a shell",
+   "build your own shell",
+   "fork system call",
+   "fork() c example",
+   "child process",
+   "parent process",
+   "getpid",
+   "process id pid",
+   "sleep system call",
+   "waitpid",
+   "wait system call",
+   "blocking wait for child process",
+   "process scheduling order",
+   "fork returns twice",
+   "shell workflow parse and execute",
+   "process isolation fault tolerance",
+   "linux process management",
+   "c programming processes",
+   "wuntraced waitpid option"
+  ],
+  "takeaways": [
+   "A shell loops through: start up, wait for input, parse the command, execute it, and repeat; commands should run in child processes so errors do not kill the shell.",
+   "fork() duplicates the current process; it returns the child's PID to the parent and 0 to the child, which is how the two branches are told apart.",
+   "Parent and child run concurrently, and the order they run in is decided by the OS scheduler.",
+   "sleep() gives fragile timing, while waitpid() lets the parent block until a specific child finishes."
+  ],
+  "summary": "The author, learning as they go, opens a series on writing a UNIX shell by explaining the shell's read-parse-execute loop and why commands should run outside the main process. The post then walks through small C programs that call fork(), explaining that the call returns twice (0 in the child, the child's PID in the parent) and that execution order is not deterministic. It uses sleep(1) to demonstrate ordering effects, then replaces it with waitpid() to make the parent wait for the child. Code examples are included inline.",
+  "format": "tutorial",
+  "level": "beginner",
+  "technologies": [
+   "C",
+   "POSIX system calls",
+   "fork",
+   "waitpid",
+   "sleep",
+   "gcc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4267,
+  "output": 775
+ },
+ "generated": "2026-10-29"
+}

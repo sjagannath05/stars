@@ -1,0 +1,62 @@
+{
+ "id": "8bda5349240781ac",
+ "url": "http://bits.citrusbyte.com/how-to-write-a-template-library",
+ "final_url": "https://www.monkstechservices.com/insights/how-to-write-a-template-library?utm_source=redirect&redirect_source=bits.citrusbyte.com",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to Write a Template Engine in Less Than 30 Lines of Code | Monks Technology Services",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Template Engine",
+   "entry": "Ruby: _How to write a template engine in less than 30 lines of code_"
+  }
+ ],
+ "summary": {
+  "title": "How to Write a Template Engine in Less Than 30 Lines of Code",
+  "one_liner": "You learn how a minimal Ruby template engine works by translating template lines into a Proc body string and evaluating it, in under 30 lines of code.",
+  "category": "template engines",
+  "keywords": [
+   "template engine",
+   "template engine in ruby",
+   "build a template engine",
+   "how do template engines work",
+   "templating library internals",
+   "ruby templating",
+   "mote template library",
+   "eval ruby template",
+   "proc code generation",
+   "line by line template translation",
+   "string interpolation template",
+   "{{ }} interpolation",
+   "erb alternative",
+   "separate presentation from logic",
+   "minimal template engine",
+   "ruby eval",
+   "parse template into ruby code"
+  ],
+  "takeaways": [
+   "Templating can be reduced to two rules: lines starting with % are Ruby code, and {{ ... }} interpolates Ruby inside a line.",
+   "Start by writing the output as a plain Ruby render method, then generate an equivalent method dynamically from the template.",
+   "Build a string of Ruby code line by line: escape double quotes, strip the leading % for code lines, prefix other lines with output <<, and convert {{ }} to #{ }.",
+   "Evaluate the generated Proc string, passing variable names in so it can reference data; the mote library is the inspiration and is used in production."
+  ],
+  "summary": "The article explains how templating works by building a small Ruby template engine. It defines two rules (% lines run as Ruby, {{ }} interpolates Ruby), shows a hand-written render method as an intermediate step, then a method generated from the template via a string. The parse function splits the template by line, applies the translation rules, and evals the resulting Proc. It is based on the mote templating library, which the author says is used in production.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "ERB",
+   "Erubis",
+   "Slim",
+   "mote",
+   "PHP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4857,
+  "output": 768
+ },
+ "generated": "2026-10-29"
+}

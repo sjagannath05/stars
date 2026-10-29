@@ -1,0 +1,70 @@
+{
+ "id": "a72aefd0bf922f50",
+ "url": "https://davidwall.info/papers/WRL-TR-93.6.pdf",
+ "final_url": "https://davidwall.info/papers/WRL-TR-93.6.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Limits of ILP and SMT",
+   "entry": "Limits of Instruction-Level Parallelism (WRL Research Report 93/6) - Separates perfect from realistic prediction, renaming and aliasing, and shows how little ILP survives the real ones."
+  }
+ ],
+ "summary": {
+  "title": "Limits of Instruction-Level Parallelism (WRL Research Report 93/6)",
+  "one_liner": "Wall's 1993 trace-driven simulation study shows how much instruction-level parallelism real programs expose once realistic limits on register renaming, alias analysis, and branch prediction are applied.",
+  "category": "computer architecture performance",
+  "keywords": [
+   "instruction-level parallelism",
+   "ilp limits",
+   "ilp study",
+   "multiple-issue machines",
+   "superscalar",
+   "superpipelined",
+   "vliw",
+   "register renaming",
+   "perfect vs finite renaming",
+   "alias analysis",
+   "memory aliasing",
+   "branch prediction",
+   "two-bit saturating counter",
+   "speculative execution",
+   "trace-driven simulation",
+   "oracle scheduling",
+   "true vs false dependencies",
+   "anti-dependency",
+   "output dependency",
+   "how much parallelism do programs have",
+   "why is instruction-level parallelism limited",
+   "spec92 benchmarks",
+   "decstation r3000 simulation"
+  ],
+  "takeaways": [
+   "Basic-block parallelism rarely exceeds 3 or 4, while idealized omniscient-scheduler studies reach far higher values.",
+   "Parallelism is multi-dimensional: the payoff of one technique depends on the other techniques present.",
+   "Register renaming (perfect, finite, none) and alias analysis levels (perfect, by compiler, by inspection, none) are modelled separately.",
+   "A two-bit saturating counter branch predictor levels off in prediction success around 512 entries for most programs.",
+   "The author stresses the negative results as important and says the numbers are guideposts, not mandates for new architectures."
+  ],
+  "summary": "Wall simulates 18 programs (12 SPEC92, 3 utilities, 3 WRL CAD tools) on a DECStation 5000 MIPS R3000 binary using an oracle-driven, trace-based greedy scheduler. The oracle is configured with different levels of expertise for register renaming, alias analysis, and branch prediction, ranging from none to perfect, yielding hundreds of models. The paper explains true, anti, output, and control dependencies, then shows how realistic hardware and compiler limits sharply reduce the parallelism available compared with perfect prediction. The full numeric results are in an appendix.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "MIPS R3000",
+   "DECstation 5000",
+   "SPEC92",
+   "superscalar",
+   "VLIW",
+   "superpipelined machines",
+   "MIPS compilers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9398,
+  "output": 975
+ },
+ "generated": "2026-10-29"
+}

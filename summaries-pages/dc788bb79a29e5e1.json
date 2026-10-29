@@ -1,0 +1,62 @@
+{
+ "id": "dc788bb79a29e5e1",
+ "url": "https://go.dev/doc/gc-guide",
+ "final_url": "https://go.dev/doc/gc-guide",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A Guide to the Go Garbage Collector",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Garbage collection",
+   "entry": "A Guide to the Go Garbage Collector: a very insightful guide about Go's GC"
+  }
+ ],
+ "summary": {
+  "title": "A Guide to the Go Garbage Collector",
+  "one_liner": "Learn how Go's mark-sweep tracing garbage collector works, how GOGC and the memory limit trade CPU time against memory, and how to reason about GC costs.",
+  "category": "go garbage collection",
+  "keywords": [
+   "go garbage collector",
+   "golang gc",
+   "tracing garbage collection",
+   "mark-sweep",
+   "mark and sweep phases",
+   "gc cycle",
+   "gogc",
+   "gogc environment variable",
+   "setgcpercent",
+   "gomemlimit",
+   "memory limit",
+   "setmemorylimit",
+   "gc cpu overhead",
+   "live heap",
+   "stack allocation vs heap allocation",
+   "escape analysis",
+   "gc thrashing",
+   "non-moving garbage collector",
+   "reference counting alternative",
+   "heap target size",
+   "go runtime memory management"
+  ],
+  "takeaways": [
+   "Go uses a non-moving, tracing mark-sweep GC that walks the object graph from roots and then sweeps unmarked heap memory.",
+   "GC cost model: memory cost is roughly live heap from the previous cycle plus new heap; CPU cost is a fixed per-cycle cost plus a cost proportional to live heap.",
+   "GOGC sets the trade-off between GC CPU and memory: doubling GOGC roughly doubles heap overhead and halves GC CPU cost.",
+   "The memory limit (GOMEMLIMIT / SetMemoryLimit, Go 1.19+) is a soft cap; the GC limits itself to about 50% CPU to avoid thrashing.",
+   "Values that escape to the heap are dynamically allocated and managed by the GC, while non-escaping values use stack allocation."
+  ],
+  "summary": "This guide explains the Go garbage collector for developers who know Go but not GC theory. It defines tracing garbage collection, objects, pointers, roots and the mark-sweep cycle, and contrasts Go's non-moving collector with moving collectors. It then builds a simple cost model for GC CPU and memory using steady-state examples, and explains how GOGC and the Go 1.19 memory limit tune that trade-off. Interactive visualizations on the page illustrate the effects, and it closes with thrashing and advice on using the memory limit.",
+  "format": "guide",
+  "level": "intermediate",
+  "technologies": [
+   "Go"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8808,
+  "output": 919
+ },
+ "generated": "2026-10-29"
+}

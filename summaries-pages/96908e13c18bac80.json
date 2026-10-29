@@ -1,0 +1,64 @@
+{
+ "id": "96908e13c18bac80",
+ "url": "https://rohitpaulk.com/articles/redis-4",
+ "final_url": "https://rohitpaulk.com/articles/redis-4",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Redis: ECHO",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Ruby:",
+   "entry": "Part 4: ECHO"
+  }
+ ],
+ "summary": {
+  "title": "Build Your Own Redis: ECHO [4/4]",
+  "one_liner": "You learn how to write an incremental RESP decoder in Ruby that handles incomplete TCP input, then use it to implement the ECHO command in a toy Redis server.",
+  "category": "build a redis clone",
+  "keywords": [
+   "redis clone",
+   "build your own redis",
+   "ruby redis server",
+   "echo command",
+   "resp decoder",
+   "redis serialization protocol",
+   "resp parsing",
+   "incomplete resp exception",
+   "bulk string parsing",
+   "simple string parsing",
+   "array parsing resp",
+   "tcp partial reads",
+   "event loop io select",
+   "client buffer ruby",
+   "minitest integrated test",
+   "ping command",
+   "redis-cli echo",
+   "toy redis implementation",
+   "parse redis commands",
+   "decode bulk strings ruby"
+  ],
+  "takeaways": [
+   "RESP arrays of bulk strings are how clients send commands, e.g. *2\\r\\n$4\\r\\nECHO\\r\\n$3\\r\\nhey\\r\\n.",
+   "Because TCP can deliver data in pieces, a decoder must buffer input and signal incomplete RESP (IncompleteRESP) instead of failing.",
+   "A decoder can be built incrementally: simple strings, then bulk strings, then arrays that recurse into the same decode function.",
+   "Wrapping socket state in a Client class with a read buffer lets the server parse commands per client inside an IO.select event loop."
+  ],
+  "summary": "This is the fourth article in a series building a toy Redis clone in Ruby. It starts with an integrated minitest test for ECHO, then writes a RESPDecoder test-first that handles simple strings, bulk strings and arrays, raising IncompleteRESP when input is partial. The author refactors the server to introduce a Client class holding a read buffer, then parses commands from that buffer to implement PING and ECHO. The article ends with the test suite passing and notes that GET and SET are the next topic.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Redis",
+   "RESP",
+   "Minitest",
+   "TCP sockets"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7536,
+  "output": 847
+ },
+ "generated": "2026-10-29"
+}

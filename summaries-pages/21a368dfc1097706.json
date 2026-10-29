@@ -1,0 +1,61 @@
+{
+ "id": "21a368dfc1097706",
+ "url": "http://aosabook.org/en/500L/an-archaeology-inspired-database.html",
+ "final_url": "https://aosabook.org/en/500L/an-archaeology-inspired-database.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "500 Lines or LessAn Archaeology-Inspired Database",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Database",
+   "entry": "Clojure: _An Archaeology-Inspired Database_"
+  }
+ ],
+ "summary": {
+  "title": "An Archaeology-Inspired Database",
+  "one_liner": "Learn how to build an append-only, \"functional\" database in Clojure where updates add layers instead of overwriting data, so full history stays queryable.",
+  "category": "database design",
+  "keywords": [
+   "functional database",
+   "append-only database",
+   "immutable database",
+   "temporal database",
+   "time travel queries",
+   "database history",
+   "datom",
+   "eavt index",
+   "avet index",
+   "vaet index",
+   "veat index",
+   "database indexes in clojure",
+   "build a database from scratch",
+   "clojure database tutorial",
+   "in-memory database implementation",
+   "entity attribute value model",
+   "versioned data storage",
+   "layered database snapshots",
+   "how to keep old data in a database",
+   "place-oriented programming alternative",
+   "rdbms indexes comparison"
+  ],
+  "takeaways": [
+   "Updates, additions and removals are modeled as new layers on top of old data, so earlier states can be revealed again.",
+   "Facts are stored as datoms (entity-id, attribute-name, attribute-value) and organized in four indexes: EAVT, AVET, VEAT and VAET.",
+   "Clojure features such as immutable collections, atoms, protocols, records and metadata are used to build the in-memory store.",
+   "An evolution-of function walks the prev-ts chain to show how an attribute's value changed over time."
+  ],
+  "summary": "The chapter argues that conventional databases overwrite data in place, which loses history, and proposes an archaeology-inspired alternative where data is buried in layers rather than deleted. It then builds this \"functional database\" in Clojure step by step: records for databases, layers, entities and attributes, a storage protocol with an in-memory implementation, and four permutation indexes over datoms. Lifecycle operations (add, remove, update) are implemented by appending new layers, with reference cleanup handled through the VAET index. The code is shown inline with explanations of Clojure idioms such as destructuring, metadata and design-by-contract preconditions.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Clojure"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9960,
+  "output": 812
+ },
+ "generated": "2026-10-29"
+}

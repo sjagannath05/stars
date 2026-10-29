@@ -1,0 +1,67 @@
+{
+ "id": "62d6acbeefb5f1b4",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C: _Sol - An MQTT broker from scratch_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 1 - The protocol"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch #1 - The protocol",
+  "one_liner": "You learn how to model MQTT 3.1.1 control packets (fixed header, CONNECT, PUBLISH, SUBSCRIBE and ACKs) as C structs and unions, and how to pack and unpack them from bytes.",
+  "category": "network programming",
+  "keywords": [
+   "mqtt broker",
+   "mqtt protocol",
+   "mqtt 3.1.1",
+   "build mqtt broker in c",
+   "mqtt packet structure",
+   "mqtt fixed header",
+   "mqtt remaining length encoding",
+   "mqtt connect packet",
+   "mqtt publish packet",
+   "mqtt subscribe packet",
+   "c bitfields union",
+   "network byte order serialization",
+   "binary protocol parsing c",
+   "iot messaging broker",
+   "sol mqtt broker",
+   "mosquitto alternative",
+   "mqtt qos levels"
+  ],
+  "takeaways": [
+   "MQTT packets consist of a fixed header, an optional variable header and an optional payload.",
+   "The Remaining Length field uses a variable-length encoding with a continuation bit, at most four bytes.",
+   "C unions with bitfields can map individual bits of the MQTT header byte (type, flags, QoS, retain).",
+   "Pack and unpack helpers use network byte order (htons/ntohs) to serialize big-endian fields.",
+   "The series builds a minimal single-threaded, epoll-based MQTT 3.1.1 broker in C for Linux."
+  ],
+  "summary": "This first post of the 'Sol' series designs the protocol layer of a minimal MQTT 3.1.1 broker written in C for Linux. It explains the MQTT fixed header, the remaining-length encoding, and the CONNECT, PUBLISH and SUBSCRIBE packet layouts, then shows the corresponding C header and implementation code (mqtt.h, mqtt.c, pack.h, pack.c). The author describes the planned series of six parts plus a multithreading bonus, with the broker intended as an MVP and a learning project.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "MQTT",
+   "CMake",
+   "epoll",
+   "TCP sockets"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11322,
+  "output": 869
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "f459bc96eefc1a8f",
+ "url": "http://aosabook.org/en/500L/a-python-interpreter-written-in-python.html",
+ "final_url": "https://aosabook.org/en/500L/a-python-interpreter-written-in-python.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "500 Lines or LessA Python Interpreter Written in Python",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Programming Language",
+   "entry": "Python: _A Python Interpreter Written in Python_"
+  }
+ ],
+ "summary": {
+  "title": "A Python Interpreter Written in Python",
+  "one_liner": "Learn how the CPython interpreter executes bytecode by building a toy stack-machine interpreter and then reading real Python bytecode with the dis module.",
+  "category": "python interpreters internals",
+  "keywords": [
+   "python interpreter",
+   "byterun",
+   "python bytecode",
+   "stack machine",
+   "virtual machine",
+   "cpython",
+   "bytecode interpreter",
+   "dis module",
+   "disassembler",
+   "code object",
+   "data stack",
+   "block stack",
+   "call stack",
+   "frames",
+   "lexer parser compiler",
+   "pop_jump_if_false",
+   "jump targets",
+   "how does python run code",
+   "write an interpreter in python",
+   "toy interpreter",
+   "register machine vs stack machine",
+   "python loops bytecode",
+   "500 lines or less"
+  ],
+  "takeaways": [
+   "The interpreter is the final stage of execution, after lexing, parsing, and compiling produce code objects of bytecode.",
+   "Python's interpreter is a stack machine; a toy interpreter with LOAD_VALUE, ADD_TWO_VALUES and PRINT_ANSWER shows the basic pattern.",
+   "Instructions dispatch to methods named after them, so getattr can replace a long if/elif chain.",
+   "The dis module disassembles real bytecode, and jump instructions implement if statements and loops.",
+   "Frames live on a call stack, each with its own data stack and block stack; RETURN_VALUE passes values between frames."
+  ],
+  "summary": "The chapter introduces Byterun, a Python interpreter written in Python that mirrors CPython's structure and fits in about 500 lines. It first separates the interpreter from the lexer, parser and compiler, then builds a minimal stack-based interpreter with a toy instruction set that adds numbers and stores variables. It then moves to real CPython bytecode, using cond.__code__.co_code and the dis module to explain arguments, jump targets for conditionals and loops. The chapter ends by describing frames, the call stack, data stacks and block stacks.",
+  "format": "book",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "CPython",
+   "Byterun"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9929,
+  "output": 848
+ },
+ "generated": "2026-10-29"
+}

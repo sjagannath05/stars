@@ -1,0 +1,77 @@
+{
+ "id": "e770b4247f31f3c8",
+ "url": "https://docs.python.org/3/library/mimetypes.html",
+ "final_url": "https://docs.python.org/3/library/mimetypes.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "mimetypes — Map filenames to MIME types",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "mimetypes - (Python standard library) Map filenames to MIME types."
+  }
+ ],
+ "summary": {
+  "name": "mimetypes",
+  "one_liner": "Python standard library module that maps filenames or URLs to MIME types and MIME types back to filename extensions.",
+  "category": "python standard library module",
+  "keywords": [
+   "python mimetypes",
+   "mimetypes module",
+   "filename to mime type",
+   "mime type lookup",
+   "guess mime type python",
+   "guess content type from extension",
+   "file extension to mime type",
+   "mime type to extension",
+   "content-type header python",
+   "mime.types file",
+   "guess_type",
+   "guess_file_type",
+   "guess_extension",
+   "iana media types",
+   "content-encoding gzip detection",
+   "python file type detection",
+   "map file extension python",
+   "mime database python",
+   "strict mime types",
+   "python -m mimetypes command line",
+   "awesome-python file manipulation",
+   "mimetypes.mimetypes class",
+   "lenient mime types"
+  ],
+  "use_cases": [
+   "Setting Content-Type headers for files served over HTTP",
+   "Guessing the MIME type of an uploaded or stored file from its name",
+   "Finding a likely file extension for a given MIME type",
+   "Detecting compressed encodings such as gzip from a filename",
+   "Loading extra mime.types files into a custom MIME database"
+  ],
+  "what_it_does": "The module's guess_type and guess_file_type functions return a (type, encoding) tuple based on a filename, path, or URL extension, with type None when unknown. guess_extension and guess_all_extensions go the other direction, returning extensions for a MIME type. Lookup tables can be extended by reading mime.types-style files or calling add_type, and the MimeTypes class lets an application keep its own separate database. Results depend partly on the operating system, and on Windows the registry settings are loaded. The module also includes a command-line interface via python -m mimetypes.",
+  "pricing": "free",
+  "platforms": [
+   "Python",
+   "Windows",
+   "Linux",
+   "macOS"
+  ],
+  "notable": [
+   "Strict mode limits results to IANA-registered types; non-strict mode also recognizes common non-standard types",
+   "guess_file_type added in Python 3.13 accepts paths, replacing URL-based guess_type for file paths",
+   "Command-line tool with --extension and --lenient options"
+  ],
+  "caveats": [
+   "Guessing is based only on extensions; the encoding and type are not guaranteed to match the actual file data",
+   "Only types known to the OS or the built-in table can be identified; unknown extensions return None",
+   "Passing a file path to guess_type is soft deprecated since Python 3.13 in favor of guess_file_type",
+   "Invalid undotted extensions in MimeTypes.add_type are deprecated and will raise ValueError in Python 3.16"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5428,
+  "output": 1009
+ },
+ "generated": "2026-10-29"
+}

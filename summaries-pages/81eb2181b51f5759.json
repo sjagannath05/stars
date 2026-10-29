@@ -1,0 +1,80 @@
+{
+ "id": "81eb2181b51f5759",
+ "url": "https://docs.python.org/3/library/functools.html",
+ "final_url": "https://docs.python.org/3/library/functools.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "functools — Higher-order functions and operations on callable objects",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Functional Programming",
+   "entry": "functools - (Python standard library) Higher-order functions and operations on callable objects."
+  }
+ ],
+ "summary": {
+  "name": "functools",
+  "one_liner": "Python standard library module providing higher-order function tools such as caching decorators, partial application, single-dispatch generics, and comparison helpers.",
+  "category": "python standard library",
+  "keywords": [
+   "functools",
+   "python functools",
+   "lru_cache",
+   "memoize python",
+   "python memoization",
+   "cache decorator",
+   "functools.cache",
+   "cached_property",
+   "partial function python",
+   "functools.partial",
+   "singledispatch",
+   "single dispatch generic function",
+   "total_ordering",
+   "cmp_to_key",
+   "reduce python",
+   "higher-order functions",
+   "callable objects",
+   "python decorator",
+   "update_wrapper",
+   "partialmethod",
+   "python 2 comparison function to key",
+   "sorting key python",
+   "fibonacci memoization",
+   "python standard library",
+   "python stdlib",
+   "dynamic programming cache",
+   "function caching",
+   "method caching"
+  ],
+  "use_cases": [
+   "Caching results of expensive or recursive functions",
+   "Pre-filling some arguments of a function with partial application",
+   "Dispatching function implementations by argument type",
+   "Generating comparison methods for a class from one or two ordering methods",
+   "Converting old-style comparison functions into sort keys",
+   "Caching a computed instance property once per object"
+  ],
+  "what_it_does": "The module provides decorators and helpers for functions that operate on other functions. cache and lru_cache memoize results keyed on arguments, with lru_cache supporting a maxsize limit and cache_info/cache_clear helpers. cached_property computes a value once per instance and stores it as a normal attribute. partial and partialmethod freeze some arguments of a callable, and Placeholder reserves positional slots. singledispatch and singledispatchmethod route calls to different implementations based on the type of the first argument, while total_ordering fills in missing rich comparison methods. It also includes reduce, cmp_to_key for sort keys, and update_wrapper for writing decorators.",
+  "pricing": "free",
+  "platforms": [
+   "Python"
+  ],
+  "notable": [
+   "lru_cache and cache memoize function results, with thread-safe caches",
+   "singledispatch dispatches on argument type with support for type annotations and typing.Union",
+   "partial supports Placeholder sentinels to fill arguments in any position (Python 3.14+)",
+   "cached_property is a per-instance cached property that can be cleared by deleting the attribute"
+  ],
+  "caveats": [
+   "cache requires Python 3.9+, cached_property requires 3.8+, and Placeholder requires 3.14+",
+   "Caches keep references to arguments and return values until evicted or cleared; arguments must be hashable for lru_cache",
+   "cached_property does not prevent multiple getter runs under threading and does not work with classes lacking a mutable __dict__"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9755,
+  "output": 1038
+ },
+ "generated": "2026-10-29"
+}

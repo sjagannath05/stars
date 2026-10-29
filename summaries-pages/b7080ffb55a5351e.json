@@ -1,0 +1,75 @@
+{
+ "id": "b7080ffb55a5351e",
+ "url": "https://en.wikibooks.org/wiki/Web_Application_Security_Guide/Checklist",
+ "final_url": "https://en.wikibooks.org/wiki/Web_Application_Security_Guide/Checklist",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Web Application Security Guide/Checklist - Wikibooks, open books for an open world",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Security",
+   "entry": "Web Application Security Guide/Checklist"
+  }
+ ],
+ "summary": {
+  "title": "Web Application Security Guide/Checklist",
+  "one_liner": "A checklist of common web application security pitfalls and the defenses to apply against each, covering injection, XSS, CSRF, uploads, sessions, TLS and password storage.",
+  "category": "web application security",
+  "keywords": [
+   "web application security checklist",
+   "owasp style checklist",
+   "sql injection prevention",
+   "prepared statements",
+   "cross-site scripting xss prevention",
+   "xss escaping context",
+   "csrf token",
+   "cross-site request forgery defense",
+   "clickjacking x-frame-options",
+   "file upload vulnerabilities",
+   "directory traversal prevention",
+   "session fixation",
+   "session stealing httponly",
+   "password hashing argon2 bcrypt scrypt",
+   "per-user salt password storage",
+   "strict comparison php",
+   "hsts strict-transport-security",
+   "tls certificate verification",
+   "content security policy",
+   "xml external entity xxe",
+   "php suhosin hardening",
+   "x-content-type-options nosniff",
+   "truncation attacks input length",
+   "robots.txt crossdomain.xml security"
+  ],
+  "takeaways": [
+   "Validate all input server side, treating POST/GET data, cookies, headers and the request URL as untrusted.",
+   "Prevent SQL injection with prepared statements or stored procedures and give the DB account minimal rights.",
+   "Escape output for its specific context (HTML, attribute, JavaScript, CSS, headers) as close to output as possible, and use a CSRF token plus X-Frame-Options against CSRF and clickjacking.",
+   "Harden sessions and passwords: regenerate session IDs at login, set HttpOnly and secure cookies, store passwords only as salted, slow hashes such as Argon2, scrypt or bcrypt."
+  ],
+  "summary": "This Wikibooks page is a flat checklist rather than a tutorial, organized by vulnerability class: file inclusion, file upload, SQL injection, XSS, XML and API security, CSRF, clickjacking, insecure transport, session fixation and stealing, truncation, password storage, comparison pitfalls, and PHP-specific hardening. Each section lists short imperative rules with brief rationale, sometimes naming specific headers, libraries or PHP settings. It includes a few dated recommendations (for example, a 2048-bit key length described as usual in 2013), so some specifics may be outdated. It is useful as a quick review list rather than a step-by-step guide.",
+  "format": "list",
+  "level": "mixed",
+  "technologies": [
+   "PHP",
+   "SQL",
+   "HTML",
+   "JavaScript",
+   "XML",
+   "JSON",
+   "nginx",
+   "Suhosin",
+   "SSL/TLS",
+   "Argon2",
+   "bcrypt",
+   "scrypt"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5208,
+  "output": 1028
+ },
+ "generated": "2026-10-29"
+}

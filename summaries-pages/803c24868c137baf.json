@@ -1,0 +1,62 @@
+{
+ "id": "803c24868c137baf",
+ "url": "https://users.elis.ugent.be/~leeckhou/papers/ispass06-eyerman.pdf",
+ "final_url": "https://users.elis.ugent.be/~leeckhou/papers/ispass06-eyerman.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branch prediction and speculation",
+   "entry": "Characterizing the Branch Misprediction Penalty - Defines the penalty as pipeline refill plus window drain, so it exceeds pipeline depth and is not constant."
+  }
+ ],
+ "summary": {
+  "title": "Characterizing the Branch Misprediction Penalty",
+  "one_liner": "Branch misprediction penalty is window drain time plus pipeline refill time, so it can be several times the front-end pipeline length and varies with program behavior.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "branch misprediction penalty",
+   "branch misprediction",
+   "pipeline refill time",
+   "window drain time",
+   "front-end pipeline length",
+   "interval analysis",
+   "superscalar processor performance",
+   "out-of-order processor",
+   "instruction window",
+   "reorder buffer drain",
+   "critical dependence path",
+   "instruction level parallelism",
+   "ilp",
+   "miss events",
+   "burst of branch mispredictions",
+   "long d-cache miss",
+   "spec cpu2000 integer benchmarks",
+   "simplescalar",
+   "gap analysis",
+   "branch prediction performance penalty"
+  ],
+  "takeaways": [
+   "The branch misprediction penalty is roughly the window drain time plus the front-end pipeline refill time, so it can exceed the pipeline length.",
+   "Penalty depends on the number of instructions since the last miss event; bursts of mispredictions have shorter penalties than isolated ones.",
+   "Average critical dependence path and ILP affect drain time, which increases the penalty for low-ILP programs.",
+   "Interval analysis divides execution into intervals between miss events and is used to isolate mispredicted-branch behavior.",
+   "Measured on SPEC CPU2000 integer benchmarks in a SimpleScalar model with a 5-stage front end and 64-entry ROB."
+  ],
+  "summary": "The paper studies why the branch misprediction penalty in superscalar processors is often much larger than the front-end pipeline length. It identifies five contributors: front-end pipeline length, instructions since the last miss event, inherent ILP, functional unit latencies, and short L1 data cache misses. It uses interval analysis, which models performance as a sequence of intervals between miss events, and validates the analysis with simulations of SPEC CPU2000 integer benchmarks on a modeled 4-wide processor with a 64-entry ROB and a 5-stage front end. It also examines interactions with I-cache misses and long D-cache misses.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "SimpleScalar/Alpha",
+   "SPEC CPU2000"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9876,
+  "output": 915
+ },
+ "generated": "2026-10-29"
+}

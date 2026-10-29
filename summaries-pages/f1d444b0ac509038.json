@@ -1,0 +1,59 @@
+{
+ "id": "f1d444b0ac509038",
+ "url": "https://robertgreiner.com/cap-theorem-revisited",
+ "final_url": "https://robertgreiner.com/cap-theorem-revisited",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "CAP Theorem: Revisited",
+ "sources": [
+  {
+   "list": "kuchin/awesome-cto",
+   "section": "Technologies",
+   "entry": "CAP Theorem: Revisited"
+  }
+ ],
+ "summary": {
+  "title": "CAP Theorem: Revisited",
+  "one_liner": "Partition tolerance is not optional in distributed systems, so the real choice during a network partition is between consistency (CP) and availability (AP).",
+  "category": "distributed systems",
+  "keywords": [
+   "cap theorem",
+   "cap theorem revisited",
+   "consistency vs availability",
+   "cp vs ap systems",
+   "partition tolerance",
+   "network partition",
+   "distributed systems trade-offs",
+   "consistency availability partition tolerance",
+   "linearizability",
+   "eventual consistency",
+   "stale reads",
+   "distributed computing fallacies",
+   "network reliability",
+   "scaling out commodity hardware",
+   "cp system",
+   "ap system",
+   "write read guarantees",
+   "distributed system design"
+  ],
+  "takeaways": [
+   "CAP says that in a distributed system you can only fully guarantee two of consistency, availability, and partition tolerance, and partitions cannot be avoided in practice.",
+   "Because networks are unreliable, you must tolerate partitions, so the actual decision is between consistency (CP) and availability (AP) when a partition happens.",
+   "CP systems wait for the partitioned node, possibly timing out or returning an error, and suit workloads needing atomic reads and writes.",
+   "AP systems return the latest local data, which may be stale, and accept writes to process after the partition resolves; they suit flexible sync needs such as shopping carts.",
+   "Object-oriented assumptions about shared memory break down across networked nodes, so the trade-off must be chosen deliberately early on."
+  ],
+  "summary": "This 2014 post, which the author revisits and marks as partly outdated, explains the CAP theorem for distributed systems. It defines consistency, availability, and partition tolerance, then argues that partitions must be tolerated because networks fail unpredictably. The remaining choice is between CP (wait or error, favoring consistency) and AP (return possibly stale data and sync later, favoring availability). The piece is short, conceptual, and uses no code or benchmarks.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "distributed systems"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2476,
+  "output": 822
+ },
+ "generated": "2026-10-29"
+}

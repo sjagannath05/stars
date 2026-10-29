@@ -1,0 +1,60 @@
+{
+ "id": "f779967babeeac2a",
+ "url": "https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html",
+ "final_url": "https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "[Note] Learning KVM - implement your own kernel",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Learning KVM - Implement Your Own Linux Kernel"
+  }
+ ],
+ "summary": {
+  "title": "[Note] Learning KVM - implement your own kernel",
+  "one_liner": "You learn how to drive KVM directly via ioctl to run guest machine code, switch to 64-bit long mode with page tables, and build a tiny kernel with syscalls and hypercalls.",
+  "category": "kvm hypervisor programming",
+  "keywords": [
+   "kvm tutorial",
+   "kvm hypervisor",
+   "linux kvm api",
+   "ioctl kvm",
+   "kvm_run exit reason",
+   "kvm_create_vm",
+   "kvm_run vcpu",
+   "build your own kernel",
+   "write a simple kernel under kvm",
+   "long mode x86-64 page tables",
+   "pae page tables pml4",
+   "syscall msr lstar star",
+   "hypercall via out/in instruction",
+   "run elf in kvm guest",
+   "libvirt qemu alternative",
+   "kvm-kernel-example repository"
+  ],
+  "takeaways": [
+   "KVM is driven through ioctl calls on /dev/kvm: create VM, set user memory region, create vCPU, mmap kvm_run, then loop on KVM_RUN handling exit reasons.",
+   "vCPUs start in real mode; switching to 64-bit long mode requires setting up PML4/PDPT/PDT page tables, control registers (cr0, cr3, cr4, efer) and segment registers.",
+   "Syscalls are enabled by setting EFER.SCE and registering handlers via MSRs (LSTAR, STAR, SYSCALL_MASK); the mask must be set to avoid inheriting user rflags.",
+   "Guest-to-host communication (hypercalls) can be done with out/in instructions using the port number as the hypercall ID and eax as the argument."
+  ],
+  "summary": "The post is a hands-on walkthrough of using the Linux KVM API directly rather than through libvirt or QEMU. It shows, with code fragments, the seven-step setup (open /dev/kvm, create VM and vCPU, map guest memory, configure registers, run and handle KVM_EXIT_HLT/KVM_EXIT_IO), then extends the guest to 64-bit long mode with page tables and segment setup. The second half covers building a minimal kernel: syscall/sysret MSR configuration, a syscall entry stub, out/in-based hypercalls to the hypervisor (e.g. a hypercall open handler), and notes on ELF loading, memory allocation, paging and user-pointer checks. The author notes the code is simplified and points to the linked kvm-kernel-example repository for working code.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "x86-64 assembly",
+   "Linux KVM",
+   "ioctl",
+   "Intel syntax assembly"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10118,
+  "output": 1046
+ },
+ "generated": "2026-10-29"
+}

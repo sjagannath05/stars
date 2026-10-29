@@ -1,0 +1,65 @@
+{
+ "id": "b8dd2ef92a5624aa",
+ "url": "https://benhoyt.com/writings/pygit",
+ "final_url": "https://benhoyt.com/writings/pygit/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "pygit: Just enough of a Git client to create a repo, commit, and push itself to GitHub",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Git",
+   "entry": "Python: _Just enough of a Git client to create a repo, commit, and push itself to GitHub_"
+  }
+ ],
+ "summary": {
+  "title": "pygit: Just enough of a Git client to create a repo, commit, and push itself to GitHub",
+  "one_liner": "You learn how Git's object database, binary index, tree and commit objects, and smart HTTP push protocol work by walking through a ~500-line Python implementation that pushes itself to GitHub.",
+  "category": "git internals",
+  "keywords": [
+   "git internals",
+   "implement git in python",
+   "build your own git",
+   "git client from scratch",
+   "git object model",
+   "git blob tree commit objects",
+   "git index format",
+   ".git/index binary format",
+   "pkt-line format",
+   "git smart http protocol",
+   "git receive-pack push",
+   "pack file format",
+   "push to github without git",
+   "zlib compressed git objects",
+   "sha-1 hash git objects",
+   "gitlet comparison",
+   "mary rose cook gitlet",
+   "python standard library git client",
+   "git cat-file implementation",
+   "how does git store commits"
+  ],
+  "takeaways": [
+   "Git's local object database is plain zlib-compressed files under .git/objects, addressed by SHA-1 of a header plus content.",
+   "Trees list mode, name and binary hash of entries recursively, and commits point to a tree and parent commit, so each commit is a full directory snapshot.",
+   "The .git/index file is a custom binary format with a 12-byte header, 62-byte fixed entry fields plus padded path, and a trailing SHA-1 checksum.",
+   "Pushing over GitHub's smart HTTP protocol requires pkt-line framing and sending a PACK file of the objects the remote lacks, which the author built with only the Python standard library."
+  ],
+  "summary": "The author describes pygit, about 500 lines of Python 3.5+ using only the standard library, that implements init, add, commit, and push plus status, diff, cat-file, ls-files, and hash-object. The article walks through each part of the code: hashing and storing objects, reading and writing the binary index, building tree and commit objects, the pkt-line format, a urllib-based authenticated HTTPS request, computing missing objects, and creating an undeltified pack file for git-receive-pack. It contrasts the project with Mary Rose Cook's gitlet, noting that pygit pushes to a real remote server and uses the binary index format so output can be checked against git.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "Git",
+   "GitHub",
+   "zlib",
+   "SHA-1",
+   "HTTP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9532,
+  "output": 923
+ },
+ "generated": "2026-10-29"
+}

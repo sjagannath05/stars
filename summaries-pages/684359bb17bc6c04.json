@@ -1,0 +1,63 @@
+{
+ "id": "684359bb17bc6c04",
+ "url": "https://learnopengl.com/In-Practice/2D-Game/Collisions/Collision-resolution",
+ "final_url": "https://learnopengl.com/In-Practice/2D-Game/Collisions/Collision-resolution",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Collision resolution",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenGL:",
+   "entry": "Collision resolution"
+  }
+ ],
+ "summary": {
+  "title": "Collision resolution",
+  "one_liner": "Learn how to reposition a ball out of a brick or paddle after a collision and reverse or redirect its velocity using a dot-product direction test, as the final step of a Breakout clone.",
+  "category": "game collision handling",
+  "keywords": [
+   "collision resolution",
+   "ball bounce",
+   "aabb circle collision",
+   "breakout collision",
+   "penetration vector",
+   "collision direction",
+   "dot product direction",
+   "vectordirection function",
+   "reverse velocity",
+   "paddle collision",
+   "sticky paddle",
+   "2d game physics",
+   "opengl breakout tutorial",
+   "learnopengl collision",
+   "ball repositioning after collision",
+   "per-frame collision detection limitations",
+   "tunneling fast objects",
+   "box2d",
+   "glm dot product compass",
+   "level reset when ball hits bottom"
+  ],
+  "takeaways": [
+   "Resolve an AABB-circle collision by pushing the ball out by the penetration depth (radius minus the length of the closest-point difference vector).",
+   "Determine the hit side by comparing the collision vector against four compass directions with a dot product, then reverse the matching velocity component.",
+   "Adjust paddle bounces by hit position and normalize the velocity to keep speed constant; force the y velocity positive to avoid the sticky paddle bug.",
+   "Per-frame collision checks can miss fast objects, multi-hits, and corner hits, so physics engines like Box2D are better for complex needs."
+  ],
+  "summary": "This LearnOpenGL chapter extends the Breakout collision detection from the previous chapter so the ball actually bounces. It explains how to compute the penetration vector to move the ball back out of an AABB, and how to pick the hit direction (up, down, left, right) using dot products with four compass vectors. The code uses a tuple to pass collision data and shows the brick and paddle resolution logic, including a velocity-based paddle bounce and a sticky paddle fix. It closes with a discussion of the limitations of per-frame collision checks and a pointer to Box2D.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C++",
+   "OpenGL",
+   "GLM",
+   "Box2D"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5566,
+  "output": 855
+ },
+ "generated": "2026-10-29"
+}

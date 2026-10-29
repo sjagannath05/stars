@@ -1,0 +1,75 @@
+{
+ "id": "97a850df1f9122f6",
+ "url": "https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale",
+ "final_url": "https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How Figma's Databases Team Lived to Tell the Scale | Figma Blog",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Databases",
+   "entry": "How Figma's Databases Team Lived to Tell the Scale: interesting story about sharding"
+  }
+ ],
+ "summary": {
+  "title": "How Figma's Databases Team Lived to Tell the Scale",
+  "one_liner": "Figma's nine-month account of horizontally sharding its Postgres stack, using vertical partitioning as a stepping stone, logical sharding via views, and a custom DBProxy query engine.",
+  "category": "distributed systems",
+  "keywords": [
+   "database sharding",
+   "horizontal sharding",
+   "horizontal partitioning",
+   "vertical partitioning",
+   "postgres sharding",
+   "sharding postgres at scale",
+   "figma database scaling",
+   "logical sharding",
+   "physical sharding",
+   "shard key selection",
+   "hash-based sharding",
+   "colocation colos",
+   "dbproxy",
+   "scatter-gather queries",
+   "sharded views postgres",
+   "pgbouncer",
+   "rds postgres limits",
+   "postgres vacuum transaction id wraparound",
+   "cross-shard transactions",
+   "partial commit failures",
+   "shard split failover",
+   "cockroachdb vs postgres sharding",
+   "vitess tidb spanner comparison",
+   "scaling a relational database",
+   "how to shard a database without downtime"
+  ],
+  "takeaways": [
+   "Vertical partitioning (grouping related tables into separate databases) bought runway, but a single table can't be split that way, so horizontal sharding was needed.",
+   "Sharding splits a table's rows across physical databases, which costs atomic cross-shard transactions, foreign keys, and globally unique indexes, and requires application changes for routing.",
+   "Figma separated logical sharding (sharded Postgres views on unsharded hosts, rolled out behind feature flags) from the riskier physical shard split, keeping rollback cheap.",
+   "Hashing the shard key instead of using auto-increment or Snowflake IDs gave an even data distribution, at the cost of less efficient range scans.",
+   "A custom query engine (DBProxy) parses SQL, plans logical and physical shards, and handles scatter-gather queries; the team chose a limited SQL subset to avoid worst-case complexity."
+  ],
+  "summary": "The post describes how Figma's databases team scaled its Postgres stack from a single large instance in 2020 to a distributed setup, then horizontally sharded it over roughly nine months, shipping the first sharded table in September 2023. It explains the goals (minimal developer impact, no costly backfills, rollback capability, strong consistency), and why they rejected alternatives like CockroachDB, TiDB, Spanner, Vitess and NoSQL. Technical sections cover the colocation (\"colos\") abstraction, the choice of hashed sharding keys, the logical-then-physical sharding split implemented with views, the DBProxy Go service with its parser, planner and scatter-gather logic, and the shadow-planning framework used to pick the supported query subset.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "PostgreSQL",
+   "AWS RDS",
+   "PgBouncer",
+   "Golang",
+   "Snowflake",
+   "CockroachDB",
+   "TiDB",
+   "Spanner",
+   "Vitess",
+   "MySQL"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8393,
+  "output": 1140
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "943d9efb5a7ffa4b",
+ "url": "https://www.cs.virginia.edu/~mccalpin/papers/balance",
+ "final_url": "https://www.cs.virginia.edu/~mccalpin/papers/balance/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A Survey of Memory Bandwidth and Machine Balance in Current High Performance Computers",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Microbenchmark suites",
+   "entry": "Memory Bandwidth and Machine Balance in Current High Performance Computers - Defines sustainable bandwidth as what unit-stride loops get, not bus peak, and machine balance as flops per access."
+  }
+ ],
+ "summary": {
+  "title": "A Survey of Memory Bandwidth and Machine Balance in Current High Performance Computers",
+  "one_liner": "Machine balance defined as peak floating-point ops per cycle divided by sustained (uncached, unit-stride) memory ops per cycle, with a STREAM-based survey showing most hierarchical-memory machines sustain only a small fraction of their peak bandwidth.",
+  "category": "computer architecture performance",
+  "keywords": [
+   "machine balance",
+   "sustainable memory bandwidth",
+   "stream benchmark",
+   "stream triad",
+   "memory bandwidth survey",
+   "unit-stride bandwidth",
+   "hierarchical memory",
+   "cache miss latency",
+   "vector processors vs cached machines",
+   "shared-memory machines",
+   "distributed memory machines",
+   "super-streaming",
+   "memory-bandwidth bound code",
+   "specfp92 vs memory bandwidth",
+   "cache line size tradeoff",
+   "memory wall",
+   "fortran 90 array temporaries",
+   "1990s workstation performance"
+  ],
+  "takeaways": [
+   "Machine balance here is defined using sustained unit-stride memory bandwidth rather than peak memory ops, to avoid bias from cache miss penalties.",
+   "The STREAM benchmark (four long vector operations in Fortran 77) was used to measure sustainable bandwidth, which vendors rarely published.",
+   "Hierarchical-memory shared-memory systems typically sustained only 5-10% of the memory bandwidth needed to keep floating-point pipelines busy.",
+   "Vector machines had low balance (about one load or store per flop) and were more cost-effective on STREAM TRIAD performance than cached systems.",
+   "Codes slower than STREAM TRIAD are likely memory-bandwidth bound; faster ones (super-streaming) are likely CPU-bound."
+  ],
+  "summary": "McCalpin surveys sustainable memory bandwidth and machine balance across uniprocessor, vector, shared-memory and distributed-memory computers of the mid-1990s. He defines balance as peak floating-point ops per cycle over sustained memory ops per cycle, measured with the STREAM benchmark on unit-stride vector operations. Results are grouped by memory system type and plotted against STREAM TRIAD MFLOPS, with trend data for DEC, HP, IBM, SGI and Cray machines and a case study on a 2D ocean model. The paper concludes that hierarchical-memory designs need architectural changes such as prefetch and cache bypass to tolerate latency.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Fortran 77",
+   "STREAM benchmark",
+   "LINPACK",
+   "SPECfp92"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8081,
+  "output": 1038
+ },
+ "generated": "2026-10-29"
+}

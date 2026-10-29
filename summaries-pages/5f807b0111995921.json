@@ -1,0 +1,70 @@
+{
+ "id": "5f807b0111995921",
+ "url": "https://chipsandcheese.com/p/a-peek-at-sapphire-rapids",
+ "final_url": "https://chipsandcheese.com/p/a-peek-at-sapphire-rapids",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Sapphire Rapids: Golden Cove Hits Servers",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Intel Xeon",
+   "entry": "Sapphire Rapids: Golden Cove Hits Servers - Measures L3 and memory latency across the tiled mesh and the slow clock ramp the vendor overview omits."
+  }
+ ],
+ "summary": {
+  "title": "Sapphire Rapids: Golden Cove Hits Servers",
+  "one_liner": "Intel's Sapphire Rapids server chip has strong AVX-512/AMX vector hardware, but its tiled mesh gives it very high L3 latency and weak instruction fetch from L3 compared with AMD's Milan.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "sapphire rapids",
+   "intel xeon sapphire rapids",
+   "golden cove server",
+   "sapphire rapids l3 latency",
+   "intel mesh interconnect",
+   "emib links",
+   "avx-512 fma units",
+   "amx matrix extensions",
+   "zen 3 comparison",
+   "epyc milan comparison",
+   "amd v-cache l3",
+   "cache hierarchy latency",
+   "store forwarding latency",
+   "clock ramp behavior",
+   "intel devcloud testing",
+   "google cloud sapphire rapids",
+   "dram latency comparison",
+   "chipsandcheese cpu analysis",
+   "minecraft server benchmark",
+   "l2 tlb translation latency"
+  ],
+  "takeaways": [
+   "Sapphire Rapids keeps two 512-bit FMA units and drops the fixed AVX-512 clock penalty seen on early chips, though clocks vary with turbo.",
+   "Its L2 grows to 2 MB with a 16-cycle latency, trading latency for capacity, as Intel tends to do.",
+   "L3 latency is very high (about 33 ns) because a large mesh connects 56 cores and 56 L3 slices across die boundaries, and it regressed about 33% from Ice Lake SP.",
+   "Per-core L3 bandwidth is similar to Ice Lake, and instruction fetch from L3 falls below 1 IPC, which may bottleneck large code footprints.",
+   "AMD's clustered L3 design and V-Cache offer better L3 performance, so Sapphire Rapids' advantages look narrow in the server market."
+  ],
+  "summary": "This Chips and Cheese article benchmarks Sapphire Rapids (Xeon Platinum 8480) on Intel DevCloud and Google Cloud, covering clock ramp, AVX-512 execution, register renaming, the cache hierarchy, and load/store behavior. It compares results against Golden Cove, Ice Lake SP, Zen 3, Milan EPYC parts, and Graviton 3 using latency and bandwidth tests. It also includes Minecraft server benchmarks run by a guest contributor. The author concludes that the large unified mesh gives Intel flexibility but high L3 latency, and that AMD's design has the stronger server advantage.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Intel Sapphire Rapids",
+   "Golden Cove",
+   "AVX-512",
+   "AMX",
+   "AMD Zen 3",
+   "AMD EPYC Milan",
+   "Intel Ice Lake SP",
+   "Google Cloud Platform",
+   "Intel DevCloud",
+   "Minecraft"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9885,
+  "output": 1123
+ },
+ "generated": "2026-10-29"
+}

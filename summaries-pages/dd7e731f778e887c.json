@@ -1,0 +1,66 @@
+{
+ "id": "dd7e731f778e887c",
+ "url": "https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza",
+ "final_url": "https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Turning the database inside-out with Apache Samza | Confluent",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "System architecture",
+   "entry": "Turning the database outside-out with Apache Samza"
+  }
+ ],
+ "summary": {
+  "title": "Turning the database inside-out with Apache Samza",
+  "one_liner": "Databases are shared mutable state, and replication, secondary indexes, caches and materialized views are all derived data, so you can rebuild the database architecture around immutable event logs and stream processing with Apache Samza and Kafka.",
+  "category": "system architecture",
+  "keywords": [
+   "apache samza",
+   "stream processing",
+   "turning the database inside out",
+   "event sourcing",
+   "immutable event log",
+   "apache kafka",
+   "commit log",
+   "distributed stream processing",
+   "logical log replication",
+   "secondary index",
+   "materialized view",
+   "application cache invalidation",
+   "derived data",
+   "stateful stream architecture",
+   "martin kleppmann",
+   "shared mutable state database",
+   "cache cold start",
+   "change data capture",
+   "how to avoid cache invalidation problems",
+   "database architecture talk"
+  ],
+  "takeaways": [
+   "Databases act as global shared mutable state, and replication logs can be seen as streams of immutable facts.",
+   "Secondary indexes and materialized views are derived data built by transformations, and the database maintains them automatically.",
+   "Application-managed caches suffer from invalidation, race condition and cold-start problems because they lack that automatic maintenance.",
+   "Apache Samza is a distributed stream processing framework built on a Kafka commit log, aimed at turning the database inside out."
+  ],
+  "summary": "This is an edited transcript of Martin Kleppmann's Strange Loop 2014 talk about database architecture. He argues that databases are global mutable state and that replication logs are effectively streams of immutable events. He then compares four database features (replication, secondary indexing, application caching, and materialized views) and shows that each produces derived data. The talk closes by proposing that stream processing with Apache Samza over a Kafka log could make that derivation systematic. The page text ends mid-recap, so the conclusion is incomplete.",
+  "format": "talk",
+  "level": "advanced",
+  "technologies": [
+   "Apache Samza",
+   "Apache Kafka",
+   "PostgreSQL",
+   "memcached",
+   "Redis",
+   "SQL",
+   "JavaScript"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8024,
+  "output": 821
+ },
+ "generated": "2026-10-29"
+}

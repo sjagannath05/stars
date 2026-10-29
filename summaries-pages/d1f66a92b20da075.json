@@ -1,0 +1,67 @@
+{
+ "id": "d1f66a92b20da075",
+ "url": "https://blog.pragmaticengineer.com/operating-a-high-scale-distributed-system",
+ "final_url": "https://blog.pragmaticengineer.com/operating-a-high-scale-distributed-system/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Operating a Large, Distributed System in a Reliable Way: Practices I Learned",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Reliability",
+   "entry": "Operating a Large, Distributed System in a Reliable Way: Practices I Learned, Gergely Orosz."
+  }
+ ],
+ "summary": {
+  "title": "Operating a Large, Distributed System in a Reliable Way: Practices I Learned",
+  "one_liner": "A practical tour of how Uber's payments team operates a large distributed system reliably, covering monitoring, on-call, incident handling, postmortems, failover drills, SLOs and SRE team structure.",
+  "category": "distributed systems operations",
+  "keywords": [
+   "site reliability engineering",
+   "sre practices",
+   "distributed system operations",
+   "monitoring and alerting",
+   "p99 latency",
+   "tail latency percentiles",
+   "four golden signals",
+   "business metrics monitoring",
+   "on-call rotation",
+   "alert fatigue",
+   "runbooks",
+   "incident management",
+   "mitigate first before root cause",
+   "blameless postmortem",
+   "5 whys analysis",
+   "data center failover drill",
+   "capacity planning",
+   "black-box testing",
+   "service level objective",
+   "service level agreement",
+   "uber payments system",
+   "chaos planned downtime",
+   "reliability engineering",
+   "incident review process"
+  ],
+  "takeaways": [
+   "Monitor traffic, errors, latency (use p95/p99/p999, not averages) and saturation, plus business-level metrics that show whether key user flows actually work.",
+   "Make service teams own their on-call, use runbooks attached to alerts, and track alert signal-to-noise to avoid burnout.",
+   "During an outage, mitigate first (e.g., roll back) and defer root-cause investigation until later; use blameless postmortems with 5 Whys to find systemic fixes.",
+   "Run regular data center failover drills and black-box tests, since failover can overload the target DC and cause cascading failures.",
+   "Define service-level SLOs (capacity, latency, accuracy, availability) and roll them up into SLAs; a dedicated SRE team usually becomes necessary as reliability work grows."
+  ],
+  "summary": "The author, who has worked on Uber's payments system for several years, shares practices learned from operating a large distributed system with frequent deploys and global traffic. The post walks through monitoring (infrastructure, service health, latency percentiles, business metrics), on-call and alerting, outage handling, postmortems and incident reviews, failover drills, planned downtime, black-box testing, and capacity planning. It then covers SLOs versus SLAs, the role of an SRE team, and reliability as ongoing investment, with concrete examples such as a 5 Whys walkthrough and an example SLO table. The author notes the practices may be overkill for smaller or less critical systems.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Uber payments platform",
+   "Google SRE book",
+   "distributed systems observability"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8592,
+  "output": 994
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,67 @@
+{
+ "id": "46ab745435227cbc",
+ "url": "https://www.infoq.com/articles/build-a-container-golang",
+ "final_url": "https://www.infoq.com/articles/build-a-container-golang/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Your Own Container Using Less than 100 Lines of Go",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Docker",
+   "entry": "Go: _Build Your Own Container Using Less than 100 Lines of Go_"
+  }
+ ],
+ "summary": {
+  "title": "Build Your Own Container Using Less than 100 Lines of Go",
+  "one_liner": "You learn how Linux containers are built from namespaces, cgroups and a pivot_root'ed root filesystem by writing a toy container runtime in under 100 lines of Go.",
+  "category": "linux containers",
+  "keywords": [
+   "build a container from scratch",
+   "linux namespaces",
+   "pid namespace",
+   "mount namespace",
+   "uts namespace",
+   "network namespace",
+   "user namespace",
+   "ipc namespace",
+   "cgroups",
+   "control groups resource limits",
+   "layered filesystem",
+   "pivot_root",
+   "chroot jail comparison",
+   "golang container runtime",
+   "docker alternative explained",
+   "how does docker work under the hood",
+   "container vs virtual machine",
+   "proc self exe re-exec",
+   "copy on write filesystem btrfs aufs",
+   "cloud foundry garden"
+  ],
+  "takeaways": [
+   "Containers are built mainly from namespaces (isolation), cgroups (resource limits) and layered filesystems (efficient root filesystem images).",
+   "A minimal container can be made in Go by re-executing /proc/self/exe with the child argument and setting Cloneflags for UTS, PID and mount namespaces.",
+   "Swapping the root filesystem uses a bind mount of the rootfs onto itself followed by syscall.PivotRoot and chdir to /.",
+   "The article notes that the toy version skips cgroups, networking, uid switching and capability dropping, and is not for production use.",
+   "Containers are a technology rather than a user experience; PaaS platforms such as Cloud Foundry hide them behind code-based workflows."
+  ],
+  "summary": "The InfoQ article by Julian Friedman, an engineering lead on Cloud Foundry's Garden, explains what a container actually is by separating the analogy from the underlying Linux mechanisms. It describes six namespaces (PID, MNT, NET, UTS, IPC, USER), cgroups for resource sharing, and layered filesystems, using a simple copy for the root filesystem. It then walks through five code steps that build a basic Go program which re-runs itself, adds namespace flags, and pivot_roots into a rootfs. The author closes by arguing that containers are a technology to build developer experiences on, citing PaaS offerings as examples.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "Linux namespaces",
+   "cgroups",
+   "Docker",
+   "Cloud Foundry",
+   "Btrfs",
+   "AUFS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7719,
+  "output": 965
+ },
+ "generated": "2026-10-29"
+}

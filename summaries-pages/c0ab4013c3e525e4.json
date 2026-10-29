@@ -1,0 +1,62 @@
+{
+ "id": "c0ab4013c3e525e4",
+ "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/1993/Archive/CSD-93-767.pdf",
+ "final_url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/1993/Archive/CSD-93-767.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Cache geometry, replacement and misses in flight",
+   "entry": "Measuring Cache and TLB Performance and Their Effect on Benchmark Run Times - The origin of the strided-loop method that recovers cache and TLB size, line size, associativity and miss cost."
+  }
+ ],
+ "summary": {
+  "title": "Measuring Cache and TLB Performance and Their Effect on Benchmark Run Times",
+  "one_liner": "Learn how a strided-array micro-benchmark (Saavedra and Smith, 1993) recovers cache and TLB size, line size, associativity and miss penalty, and how those numbers feed into run-time prediction.",
+  "category": "computer architecture performance",
+  "keywords": [
+   "cache size measurement",
+   "tlb size measurement",
+   "strided loop benchmark",
+   "cache line size",
+   "cache associativity measurement",
+   "cache miss penalty",
+   "tlb miss penalty",
+   "micro benchmark",
+   "narrow spectrum benchmarking",
+   "abstract machine model",
+   "memory hierarchy characterization",
+   "run time prediction",
+   "locality and benchmark run time",
+   "lru cache replacement",
+   "write buffer effect",
+   "saavedra smith cache tlb",
+   "how to measure cache parameters",
+   "spec benchmark cache misses",
+   "cache miss regimes",
+   "tlb page size measurement"
+  ],
+  "takeaways": [
+   "Cache and TLB parameters (size, line or page size, associativity, miss penalty) can be measured with timing loops over arrays of varying size N and stride s.",
+   "Miss behaviour falls into four regimes depending on whether the array fits in the cache and how the stride maps elements to lines and sets.",
+   "The linear abstract machine model can be extended with a term for misses (Fi,A times Di,M) to improve run-time predictions.",
+   "Timing loops that fit in cache underestimate run times for high-miss-ratio workloads, which motivates adding a locality term."
+  ],
+  "summary": "The paper extends the authors' abstract machine performance model with cache and TLB effects. It introduces a set of micro-benchmarks that read and write elements of an array of size N with stride s, and uses the resulting miss patterns across four regimes to derive cache size, line size, associativity, and miss penalty, with TLB parameters obtained similarly. The authors then add a miss term to their linear prediction equation, using published SPEC miss ratios, and check whether prediction errors drop. They also characterize the cache and TLB of ten machines and compare four processors from the same family.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Fortran",
+   "SPEC benchmarks",
+   "Perfect Club benchmarks"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9964,
+  "output": 906
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,61 @@
+{
+ "id": "5a6c7bd9bde1d326",
+ "url": "https://arxiv.org/abs/1509.05053",
+ "final_url": "https://arxiv.org/abs/1509.05053",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Array Layouts for Comparison-Based Searching",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Branchless code and bit manipulation",
+   "entry": "Array Layouts for Comparison-Based Searching - Measures branch-free search over sorted, Eytzinger and B-tree layouts, the winner changing with size and prefetch."
+  }
+ ],
+ "summary": {
+  "title": "Array Layouts for Comparison-Based Searching",
+  "one_liner": "Sorted order with binary search wins for small arrays, while the Eytzinger (BFS) layout is usually fastest for large arrays, contrary to earlier published results.",
+  "category": "data structures and algorithms",
+  "keywords": [
+   "array layout",
+   "comparison-based searching",
+   "eytzinger layout",
+   "bfs layout",
+   "breadth-first heap layout",
+   "implicit b-tree layout",
+   "van emde boas layout",
+   "veb layout",
+   "cache-oblivious layout",
+   "binary search",
+   "sorted array search",
+   "lower bound query",
+   "smallest value greater than or equal to x",
+   "branchless binary search",
+   "conditional moves",
+   "prefetching",
+   "cache latency",
+   "branch misprediction",
+   "in-ram search performance",
+   "brodal fagerberg jacob 2003",
+   "search layout benchmark"
+  ],
+  "takeaways": [
+   "For small n, a sorted array with a well-implemented binary search is the best choice.",
+   "For large n, the Eytzinger (BFS) layout is usually the fastest in the authors' experiments, contrary to Brodal, Fagerberg, and Jacob (SODA 2003).",
+   "Eytzinger, implicit B-tree, and van Emde Boas layouts are compared against sorted order for finding the smallest value >= x.",
+   "The fastest C++ implementations use conditional moves to avoid branch mispredictions and prefetching to reduce cache latency."
+  ],
+  "summary": "This arXiv paper (Morin et al., v2 2017) studies how to order n comparable items in an array so that queries for the smallest value greater than or equal to x are fast when the array fits in RAM. It compares sorted order with binary search against the Eytzinger (BFS) layout, an implicit B-tree layout generalizing Eytzinger, and the van Emde Boas layout. The authors report extensive testing on varied modern hardware. They find sorted order best for small n and Eytzinger usually fastest for large n, and note their fastest C++ code uses conditional moves and prefetching.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2847,
+  "output": 847
+ },
+ "generated": "2026-10-29"
+}

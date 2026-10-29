@@ -1,0 +1,61 @@
+{
+ "id": "a71e01304b1743ee",
+ "url": "https://flaviocopes.com/go-git-contributions",
+ "final_url": "https://flaviocopes.com/go-git-contributions/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Visualize your local Git contributions with Go",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Command-Line Tool",
+   "entry": "Go: _Visualize your local git contributions with Go_"
+  }
+ ],
+ "summary": {
+  "title": "Visualize your local Git contributions with Go",
+  "one_liner": "You learn how to build a Go command-line tool that scans local Git repositories and prints a GitHub-style contributions graph in the terminal, using the go-git library.",
+  "category": "build a command-line tool",
+  "keywords": [
+   "go git contributions graph",
+   "local git stats",
+   "github contributions graph in terminal",
+   "go-git library",
+   "go-git v5",
+   "git commit heatmap cli",
+   "scan folders for git repositories",
+   "recursive directory scan go",
+   "go flag parsing",
+   "command line flags go",
+   "terminal ansi color graph",
+   "dotfile storing repository paths",
+   "count commits by day go",
+   "gogitlocalstats",
+   "go cli tool tutorial",
+   "alternative to github contributions graph for local repos",
+   "how to visualize git commits per day",
+   "electron app comparison"
+  ],
+  "takeaways": [
+   "Use the go-git v5 library (git.PlainOpen, repo.Log) to read commit history from local repositories and filter by author email.",
+   "Recursively scan a folder with f.Readdir while skipping vendor, node_modules and descending into .git-containing repos, then store the paths in a dotfile in the home directory.",
+   "Map commits to days over the last 6 months, then arrange them into week columns and print colored ANSI cells with month and weekday labels.",
+   "Combine a single CLI with a -add flag for adding folders and no flags for generating the graph, using the standard flag package."
+  ],
+  "summary": "The author rebuilds an earlier Electron app as a Go console tool that scans local Git repositories and draws a GitHub-style contributions graph. The program has two parts: a scan step that recursively finds repositories under a folder and saves their paths to a ~/.gogitlocalstats file, and a stats step that reads those repos with the go-git v5 library, counts commits by the given email over the last 183 days, and prints colored terminal cells by week and weekday. The code is shown in Go with helper functions for file handling, date offsets, sorting and ANSI output, and the full source is linked as a Gist.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "go-git",
+   "Git",
+   "ANSI escape codes"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8651,
+  "output": 863
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,67 @@
+{
+ "id": "4970f2dabf522c48",
+ "url": "https://wiki.postgresql.org/wiki/Don't_Do_This",
+ "final_url": "https://wiki.postgresql.org/wiki/Don't_Do_This",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Don't Do This",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Postgres",
+   "entry": "Postgres: don't Do This"
+  }
+ ],
+ "summary": {
+  "title": "Don't Do This",
+  "one_liner": "A PostgreSQL wiki checklist of common mistakes to avoid, with the reasons why and the rare cases where each practice is acceptable.",
+  "category": "postgresql best practices",
+  "keywords": [
+   "postgresql mistakes",
+   "postgres pitfalls",
+   "postgresql anti-patterns",
+   "don't use not in",
+   "not in vs not exists",
+   "null handling in not in",
+   "timestamp vs timestamptz",
+   "timestamp without time zone",
+   "timestamptz best practice",
+   "char(n) vs text",
+   "varchar(n) vs text",
+   "serial vs identity column",
+   "trust authentication pg_hba",
+   "scram-sha-256",
+   "postgres rules vs triggers",
+   "table inheritance vs partitioning",
+   "between timestamp pitfall",
+   "sql_ascii encoding",
+   "money data type problems",
+   "identifier case folding postgres",
+   "schemalint",
+   "postgres schema review checklist"
+  ],
+  "takeaways": [
+   "Avoid NOT IN with possible NULLs and prefer NOT EXISTS, which also plans better as an anti-join.",
+   "Store points in time as timestamptz, and avoid timestamp(0), timetz, and CURRENT_TIME.",
+   "Use text with a CHECK constraint instead of char(n), and prefer text or varchar over varchar(n) by default.",
+   "Never use trust authentication over TCP/IP in production; use scram-sha-256 or peer auth instead.",
+   "Use triggers rather than rules, native partitioning rather than table inheritance, and identity columns rather than serial on PostgreSQL 10+."
+  ],
+  "summary": "This wiki page lists common PostgreSQL mistakes across encoding, tooling, SQL constructs, date/time types, text types, other data types, and authentication. Each entry follows the same pattern: the recommendation, a \"Why not?\" explanation, and a \"When should you?\" section describing the rare exceptions. It cites examples and manual passages, such as NULL behavior in NOT IN, BETWEEN's closed interval, and the padding behavior of char(n). It also mentions the schemalint tool for checking a schema against these recommendations.",
+  "format": "list",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "SQL",
+   "psql",
+   "pg_hba.conf",
+   "schemalint"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7843,
+  "output": 931
+ },
+ "generated": "2026-10-29"
+}

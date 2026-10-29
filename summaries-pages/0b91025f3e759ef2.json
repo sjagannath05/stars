@@ -1,0 +1,59 @@
+{
+ "id": "0b91025f3e759ef2",
+ "url": "http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-2b",
+ "final_url": "http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-2b/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A Simple Web App in Rust, Part 2b",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Rust:",
+   "entry": "Part 2b"
+  }
+ ],
+ "summary": {
+  "title": "A Simple Web App in Rust, Part 2b",
+  "one_liner": "You learn how to format and append a timestamp to a log file in early-2015 Rust using the chrono crate, OpenOptions, and the borrow-checker fixes that came up along the way.",
+  "category": "rust programming",
+  "keywords": [
+   "rust chrono date formatting",
+   "rust datetime local now",
+   "chrono crate",
+   "rust strftime format date",
+   "rust write bytes to file",
+   "rust append to file openoptions",
+   "rust file create vs append",
+   "rust as_bytes borrowed value does not live long enough",
+   "rust let binding temporary lifetime",
+   "rust unterminated character constant single quotes",
+   "rust try! macro io::result",
+   "rust log file timestamp",
+   "rust write_all",
+   "rust bad file descriptor error",
+   "beginner rust diary series web app",
+   "simple web app in rust series"
+  ],
+  "takeaways": [
+   "Add the chrono crate with extern crate and use DateTime<Local> and Local::now() to print a local timestamp.",
+   "Use the format method with strftime specifiers such as %a, %b, %d, %Y, %I, %M, %S, %p to produce a readable time string.",
+   "Use OpenOptions with append(true), write(true) and create(true) to add entries to a log file instead of overwriting it with File::create.",
+   "Store temporaries in a let binding when calling as_bytes on a String returned from a function, to avoid borrow errors."
+  ],
+  "summary": "The author, a Rust newcomer, builds a small file logger in part 2b of a series on writing a simple web app. They try the chrono crate (version 0.2 at the time) to print the local time, then combine it with file writing and iterate through several compiler errors about types, byte slices, and temporary lifetimes. The post ends with a version that appends a formatted timestamp to log.txt using OpenOptions, noting that write(true) was needed alongside append(true).",
+  "format": "article",
+  "level": "beginner",
+  "technologies": [
+   "Rust",
+   "chrono",
+   "nickel.rs",
+   "Cargo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10862,
+  "output": 811
+ },
+ "generated": "2026-10-29"
+}

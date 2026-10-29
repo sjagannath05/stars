@@ -1,0 +1,62 @@
+{
+ "id": "745cec1ed3c8aa13",
+ "url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv",
+ "final_url": "https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Concurrent Servers: Part 4 - libuv",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 4 - libuv"
+  }
+ ],
+ "summary": {
+  "title": "Concurrent Servers: Part 4 - libuv",
+  "one_liner": "Learn how libuv wraps an event loop for concurrent C servers, how to offload blocking work to its thread pool, and how it makes file-system calls asynchronous.",
+  "category": "network programming",
+  "keywords": [
+   "libuv",
+   "event loop in c",
+   "uv_run",
+   "uv_tcp_t",
+   "uv_listen",
+   "uv_read_start",
+   "uv_write",
+   "libuv thread pool",
+   "uv_queue_work",
+   "blocking call in event loop",
+   "offload blocking work to thread",
+   "asynchronous file system api",
+   "uv_fs_read",
+   "event-driven server",
+   "concurrent network server c",
+   "epoll vs select abstraction",
+   "node.js libuv",
+   "callback data pointer c",
+   "primality test server example",
+   "non-blocking file read"
+  ],
+  "takeaways": [
+   "libuv hides platform-specific event loops (epoll, etc.) behind a portable API where you register callbacks and run the loop.",
+   "Long-running work in a callback blocks the whole event loop; moving it to the libuv thread pool via uv_queue_work keeps the loop responsive.",
+   "Pass custom state into libuv callbacks through the handle's data field, and manage heap memory carefully because callbacks run on different stack frames.",
+   "libuv's file-system functions are asynchronous because they submit blocking POSIX calls as work items to the thread pool when a callback is given."
+  ],
+  "summary": "This is part 4 of a series on writing concurrent network servers in C. The post rewrites the protocol server using libuv, showing TCP setup, uv_listen, uv_accept, uv_write and uv_read_start callbacks, and the data-field idiom for passing state. It demonstrates how a blocking callback stalls the event loop and how uv_queue_work moves that work to a thread pool. It also walks through libuv's source (src/unix/fs.c) to show how uv_fs_read uses INIT/POST macros to run blocking file I/O on the work queue. The post ends with a primality-testing server and two exercises on blocking versus non-blocking modes and thread-pool size.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "libuv",
+   "Node.js"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9438,
+  "output": 878
+ },
+ "generated": "2026-10-29"
+}

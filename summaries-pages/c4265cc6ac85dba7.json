@@ -1,0 +1,73 @@
+{
+ "id": "c4265cc6ac85dba7",
+ "url": "https://www.tigerdata.com/blog/its-2026-just-use-postgres",
+ "final_url": "https://www.tigerdata.com/blog/its-2026-just-use-postgres",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "It’s 2026, Just Use Postgres | Tiger Data",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Postgres",
+   "entry": "It’s 2026, Just Use Postgres"
+  }
+ ],
+ "summary": {
+  "title": "It's 2026, Just Use Postgres",
+  "one_liner": "Postgres extensions (pg_textsearch, pgvectorscale, TimescaleDB, JSONB, UNLOGGED tables, PostGIS) can replace several specialized databases, and the article argues you should test that before adding another system.",
+  "category": "database architecture",
+  "keywords": [
+   "postgres vs elasticsearch",
+   "postgres instead of pinecone",
+   "postgres as redis replacement",
+   "postgres vs mongodb jsonb",
+   "postgres vs influxdb",
+   "pgvector",
+   "pgvectorscale",
+   "pg_textsearch bm25",
+   "timescaledb",
+   "unlogged tables caching",
+   "database consolidation",
+   "single database architecture",
+   "polyglot persistence tradeoffs",
+   "postgis geospatial",
+   "postgres extensions list",
+   "fork database for testing",
+   "sync pipeline between databases",
+   "hnsw vector search postgres",
+   "bm25 full text search postgres",
+   "one database vs many databases"
+  ],
+  "takeaways": [
+   "Many specialized databases (Elasticsearch, Pinecone, Redis, MongoDB, InfluxDB) share core algorithms with Postgres extensions such as BM25, HNSW/DiskANN, time partitioning, JSONB and UNLOGGED tables.",
+   "Running one database instead of seven lowers cognitive load, avoids sync pipelines between systems, and reduces compounded SLA downtime.",
+   "Specialized tools still make sense for cases like Kibana-scale search, billions of vectors, pub/sub or sorted-set heavy caching, and large multi-datacenter event streaming.",
+   "A single database is easier for AI agents and CI pipelines to fork, test, and tear down than a set of coordinated systems.",
+   "Test whether Postgres handles your workload before adopting a specialized database."
+  ],
+  "summary": "This is an opinion piece from Tiger Data arguing that Postgres with the right extensions can cover search, vectors, time-series, documents, caching, queues and geospatial workloads in place of multiple specialized databases. It includes a table mapping each specialized tool to its Postgres equivalent, the algorithm they share, and the cases where the specialist is still needed. It cites vendor benchmarks (pgvectorscale vs Pinecone, TimescaleDB vs InfluxDB) and customer cost savings, and points to a companion cheat sheet for hands-on SQL setup. Because it is vendor marketing, the performance and cost claims are the vendor's own and are not independently verified here.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "pgvector",
+   "pgvectorscale",
+   "pg_textsearch",
+   "TimescaleDB",
+   "PostGIS",
+   "JSONB",
+   "Elasticsearch",
+   "Pinecone",
+   "Redis",
+   "MongoDB",
+   "Kafka",
+   "InfluxDB"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4395,
+  "output": 1102
+ },
+ "generated": "2026-10-29"
+}

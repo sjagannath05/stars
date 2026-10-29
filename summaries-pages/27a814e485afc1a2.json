@@ -1,0 +1,63 @@
+{
+ "id": "27a814e485afc1a2",
+ "url": "https://codewords.recurse.com/issues/two/git-from-the-inside-out",
+ "final_url": "https://codewords.recurse.com/issues/two/git-from-the-inside-out",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Git from the inside out",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Version control (Git)",
+   "entry": "Git from the inside out"
+  }
+ ],
+ "summary": {
+  "title": "Git from the inside out",
+  "one_liner": "Git's behavior follows from the properties of its underlying graph of blobs, trees, commits and refs, which this essay walks through using a worked command-line example.",
+  "category": "version control internals",
+  "keywords": [
+   "git internals",
+   "git object model",
+   "git graph structure",
+   "blob tree commit",
+   "git index staging area",
+   "git refs head branch",
+   "detached head state",
+   "git merge base commit",
+   "fast-forward merge",
+   "three-way merge",
+   "merge conflict internals",
+   "git commit parent",
+   "content-addressed storage",
+   "how does git store history",
+   "how git works under the hood",
+   "git checkout working copy",
+   "git branches lightweight",
+   "immutable git objects",
+   "git from the inside out",
+   "git hash object"
+  ],
+  "takeaways": [
+   "Git stores file content as blobs and directories as trees, both named by hashes of their content, while commits point at a root tree and at parent commits.",
+   "The index is a plain file mapping tracked paths to blob hashes, and git add updates both the object store and the index.",
+   "Branches and HEAD are just small ref files pointing at commits, which is why branches are lightweight and why detached HEAD commits are easy to lose.",
+   "Merges use the most recent common ancestor (base commit) and a diff of changes from base to each side, so only truly conflicting changes need manual resolution.",
+   "Understanding these graph properties lets you predict what checkout, merge and fast-forward will do rather than relying on trial and error."
+  ],
+  "summary": "The essay explains Git by walking through a series of real commands on a small sample project, pausing at intervals to point out properties of the underlying object graph. It covers how git init, git add and git commit create blobs, trees, commit objects and refs, and how checkout, detached HEAD, branching, fast-forward merges and three-way merges with conflicts follow from that structure. The author also links to a heavily annotated JavaScript implementation of Git for readers who want to go deeper. It assumes prior day-to-day Git use.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Git",
+   "JavaScript",
+   "shell"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9561,
+  "output": 829
+ },
+ "generated": "2026-10-29"
+}

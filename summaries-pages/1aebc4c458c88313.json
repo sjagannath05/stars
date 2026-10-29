@@ -1,0 +1,69 @@
+{
+ "id": "1aebc4c458c88313",
+ "url": "https://www.usenix.org/system/files/login/articles/login_winter19_10_gud.pdf",
+ "final_url": "https://www.usenix.org/system/files/login/articles/login_winter19_10_gud.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Testing in production",
+   "entry": "Multi-Tenancy in a Microservice Architecture"
+  }
+ ],
+ "summary": {
+  "title": "Multi-Tenancy in a Microservice Architecture",
+  "one_liner": "Multi-tenancy lets test, canary, shadow and product-line traffic share one microservice stack, using tenancy context for routing and data isolation.",
+  "category": "microservice architecture",
+  "keywords": [
+   "multi-tenancy",
+   "multi-tenant microservices",
+   "testing in production",
+   "parallel testing stack",
+   "staging environment",
+   "integration testing microservices",
+   "canary deployment",
+   "shadow traffic",
+   "traffic replay",
+   "tenancy context",
+   "request routing by tenant",
+   "data isolation",
+   "service mesh routing",
+   "envoy sidecar",
+   "istio",
+   "opentracing context propagation",
+   "jaeger",
+   "kafka tenancy isolation",
+   "sidecar tenancy routing",
+   "capacity planning testing"
+  ],
+  "takeaways": [
+   "A parallel staging stack for integration testing is costly and drifts out of sync with production, and failures in other services make tests unreliable.",
+   "Testing in production on a multi-tenant stack needs two basics: routing traffic by tenancy and isolating data-at-rest and data-in-flight.",
+   "Tenancy context (e.g. product/tenancy-id/tags) attached at the edge gateway and propagated through every call enables canaries, shadow traffic and replay.",
+   "Tenancy-based routing can happen at ingress or egress, with sidecars or service meshes like Envoy or Istio; isolation is best applied at a central choke point such as the edge gateway."
+  ],
+  "summary": "The article argues that a microservice architecture can host multiple tenants (tests, canaries, shadow traffic, or separate product lines) on the same production stack. It compares a parallel test stack, with its cost, sync and unreliability problems, against testing in production. It then describes a tenancy-oriented design: a tenancy context carried with requests, propagated through services, Kafka and data stores, used for routing via sidecars or service meshes, and used to isolate logs, metrics, storage, caches and config. The piece is a conceptual architecture overview with examples and figures, not a hands-on tutorial.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Envoy",
+   "Istio",
+   "OpenTracing",
+   "Jaeger",
+   "Kafka",
+   "MySQL",
+   "Cassandra",
+   "Redis",
+   "Memcached",
+   "AWS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8274,
+  "output": 918
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "cf435065f5ea27a3",
+ "url": "https://samwho.dev/load-balancing",
+ "final_url": "https://samwho.dev/load-balancing",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Load Balancing",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Architecture patterns",
+   "entry": "Load Balancing: a visual exploration of load balancing algos"
+  }
+ ],
+ "summary": {
+  "title": "Load Balancing",
+  "one_liner": "You learn how HTTP load balancing algorithms (round robin, weighted and dynamic weighted round robin, least connections, PEWMA) distribute requests and how they compare on median and tail latency, through interactive simulations.",
+  "category": "distributed systems",
+  "keywords": [
+   "load balancing",
+   "http load balancer",
+   "load balancing algorithms",
+   "round robin",
+   "weighted round robin",
+   "dynamic weighted round robin",
+   "least connections",
+   "pewma",
+   "peak exponentially weighted moving average",
+   "ewma",
+   "exponentially weighted moving average",
+   "latency percentiles",
+   "median latency",
+   "95th percentile",
+   "99th percentile",
+   "tail latency",
+   "server queues",
+   "visual explanation of load balancing",
+   "how do load balancers distribute requests",
+   "load balancing with variance in server performance",
+   "interactive simulation",
+   "backend server scaling"
+  ],
+  "takeaways": [
+   "Round robin is simple but performs poorly when request times or server speeds vary, leading to queue buildup on slow servers.",
+   "Weighted and dynamic weighted round robin adjust for differing server capacity, the latter adapting to performance changes over time without manual weights.",
+   "Least connections routes to the server with the fewest active requests and handles variance well, at the cost of slightly higher tail latency than PEWMA in some tests.",
+   "Round robin can have a good median latency yet poor 95th and 99th percentiles, so look at tail percentiles, not just the median.",
+   "PEWMA uses latency EWMAs scaled by queue length to pick servers; it gives the best latency in the author's simulations but adds tuning complexity, and the author notes it can perform worse than least connections over time."
+  ],
+  "summary": "The author builds up load balancing from a single server, using animated simulations to show how requests pile up under different algorithms. It covers round robin, weighted and dynamic weighted round robin, least connections, and peak exponentially weighted moving average (PEWMA), comparing median, 95th and 99th percentile latency across 60-second simulations. The post notes its simulations ignore real constraints such as slow start and network latency, so they are illustrative rather than benchmarks.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "PixiJS",
+   "Lit",
+   "SVG"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3626,
+  "output": 900
+ },
+ "generated": "2026-10-29"
+}

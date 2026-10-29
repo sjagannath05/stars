@@ -1,0 +1,68 @@
+{
+ "id": "d572dc63fc82dbd5",
+ "url": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate",
+ "final_url": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Parse, don’t validate",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Functional programming (FP)",
+   "entry": "Parse, don’t validate"
+  }
+ ],
+ "summary": {
+  "title": "Parse, don’t validate",
+  "one_liner": "Learn to make illegal states unrepresentable by parsing unstructured input into precise types at the system boundary instead of scattering validation checks, illustrated with Haskell's head function and NonEmpty.",
+  "category": "type-driven design",
+  "keywords": [
+   "parse don't validate",
+   "type-driven design",
+   "parsing vs validation",
+   "total functions",
+   "partial functions",
+   "make illegal states unrepresentable",
+   "shotgun parsing",
+   "nonempty list",
+   "haskell head function",
+   "maybe type",
+   "smart constructor",
+   "abstract datatypes",
+   "strengthen argument type",
+   "weaken return type",
+   "langsec",
+   "parser boundary",
+   "algebraic data types",
+   "type safety",
+   "matt parson type safety back and forth",
+   "ghosts of departed proofs"
+  ],
+  "takeaways": [
+   "Partial functions can be made total either by weakening the return type (Maybe) or strengthening the argument type (NonEmpty); the latter is superior because it removes redundant checks.",
+   "A parser is a function that consumes less-structured input and produces more-structured output, while validators discard the information they check.",
+   "Validating ad hoc and scattering checks through code leads to shotgun parsing, making program state hard to predict.",
+   "Parse all input up front at the system boundary, and choose data structures that rule out illegal states, such as Map instead of a list of tuples."
+  ],
+  "summary": "The author explains type-driven design through the slogan \"parse, don't validate\", using Haskell examples. He starts with the partial function head :: [a] -> a and shows two fixes: returning Maybe, which pushes checks onto callers, and using NonEmpty as the argument type, which lets the check happen once at the boundary and be enforced by the compiler. He then contrasts validateNonEmpty (returns ()) with parseNonEmpty (returns NonEmpty a) and argues that the latter preserves information, and that ad hoc validation causes shotgun parsing. The post closes with practical advice on designing datatypes, pushing proof burden upward, and related reading.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Haskell",
+   "GHC",
+   "NonEmpty",
+   "Maybe",
+   "aeson",
+   "optparse-applicative",
+   "persistent",
+   "postgresql-simple",
+   "servant"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8946,
+  "output": 906
+ },
+ "generated": "2026-10-29"
+}

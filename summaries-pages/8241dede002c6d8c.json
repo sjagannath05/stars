@@ -1,0 +1,68 @@
+{
+ "id": "8241dede002c6d8c",
+ "url": "https://csl.stanford.edu/~christos/publications/2015.heracles.isca.pdf",
+ "final_url": "https://csl.stanford.edu/~christos/publications/2015.heracles.isca.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "CMSY8",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Cache and bandwidth partitioning",
+   "entry": "Heracles: Improving Resource Efficiency at Scale - Shows cache ways, cores, bandwidth and power must be partitioned together, or batch work reaches the tail."
+  }
+ ],
+ "summary": {
+  "title": "Heracles: Improving Resource Efficiency at Scale",
+  "one_liner": "Heracles is a feedback-based controller that coordinates hardware and software isolation (cache partitioning, per-core power, core scheduling, network traffic control) so best-effort batch tasks can safely colocate with latency-critical services like websearch.",
+  "category": "datacenter resource management",
+  "keywords": [
+   "heracles",
+   "resource efficiency at scale",
+   "latency-critical colocation",
+   "best-effort batch colocation",
+   "server utilization datacenter",
+   "tail latency slo interference",
+   "cache allocation technology cat",
+   "llc cache partitioning",
+   "way partitioning last-level cache",
+   "dynamic voltage frequency scaling colocation",
+   "turbo boost power interference",
+   "network traffic control colocation",
+   "dram bandwidth isolation",
+   "websearch colocation",
+   "ml_cluster memkeyval",
+   "cgroups cpuset static partitioning",
+   "linux cfs scheduling latency spikes",
+   "feedback controller datacenter",
+   "google production workloads paper",
+   "isca 2015 paper"
+  ],
+  "takeaways": [
+   "Low average server utilization (10% to 50%) in datacenters is largely due to latency-critical services with diurnal load, and colocating batch work can recover that capacity.",
+   "Interference on shared LLC, DRAM bandwidth, cores/HyperThreads, network and power is workload-dependent, so static partitioning is insufficient.",
+   "Heracles coordinates CAT cache partitioning, per-core frequency control, core scheduling and network traffic control in a local real-time feedback controller.",
+   "Reported results: about 90% effective machine utilization across colocation mixes and loads without SLO violations, and 15% to 300% throughput/TCO improvement on production Google servers.",
+   "The paper argues hardware support for DRAM bandwidth monitoring and isolation is needed, since none existed in commodity chips at the time."
+  ],
+  "summary": "The paper (ISCA 2015, Lo, Cheng, Govindaraju, Ranganathan and Kozyrakis) argues that latency-critical services leave servers underutilized, and that colocating best-effort batch tasks is blocked by interference on shared resources. It characterizes interference on production Google workloads (websearch, ml_cluster, memkeyval) using microbenchmarks that stress cores, LLC, DRAM bandwidth, network and power. It then presents Heracles, a real-time feedback controller that separates interference into subproblems and uses existing isolation mechanisms such as Intel CAT, per-core DVFS and traffic control. The evaluation on production servers reports about 90% utilization while meeting latency SLOs.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Intel Cache Allocation Technology (CAT)",
+   "Linux CFS",
+   "cgroups cpuset",
+   "Intel Turbo Boost",
+   "Haswell Xeon",
+   "iperf",
+   "memcached",
+   "numactl"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9620,
+  "output": 1133
+ },
+ "generated": "2026-10-29"
+}

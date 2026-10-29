@@ -1,0 +1,80 @@
+{
+ "id": "423371f849f6d793",
+ "url": "https://nickjanetakis.com/blog/best-practices-around-production-ready-web-apps-with-docker-compose",
+ "final_url": "https://nickjanetakis.com/blog/best-practices-around-production-ready-web-apps-with-docker-compose",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Best Practices Around Production Ready Web Apps with Docker Compose — Nick Janetakis",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Docker",
+   "entry": "Best Practices Around Production Ready Web Apps with Docker Compose"
+  }
+ ],
+ "summary": {
+  "title": "Best Practices Around Production Ready Web Apps with Docker Compose",
+  "one_liner": "Learn practical Docker Compose, env var, app server, and Dockerfile patterns for running the same web app in development and production.",
+  "category": "docker compose deployment",
+  "keywords": [
+   "docker compose",
+   "docker compose override file",
+   "docker-compose.override.yml",
+   "docker compose profiles",
+   "yaml anchors and aliases",
+   "docker compose extension fields",
+   "docker healthcheck in compose",
+   "environment variables docker compose",
+   ".env file",
+   "dev prod parity",
+   "docker restart policy",
+   "docker compose resource limits",
+   "gunicorn configuration",
+   "health check endpoint",
+   "multi-stage docker build",
+   "run docker container as non-root user",
+   "docker publish port localhost",
+   "log to stdout docker",
+   "database_url configuration",
+   "flask docker example"
+  ],
+  "takeaways": [
+   "Use a docker-compose.override.yml (or profiles) to run dev-only services without maintaining separate dev and prod compose files.",
+   "Drive per-environment behavior like health checks, restart policies, bind mounts and port exposure with environment variables and defaults set for production.",
+   "Reduce duplication in compose files with YAML anchors, aliases and extension fields, and define health checks in compose rather than the Dockerfile.",
+   "Configure the app server to bind 0.0.0.0, log to stdout, accept PORT and DATABASE_URL, and expose a lightweight /up health check endpoint.",
+   "Use multi-stage Dockerfile builds to copy built assets into the final image and run containers as a non-root user."
+  ],
+  "summary": "Nick Janetakis presents a DockerCon 2021 talk in written form, covering patterns he has used for years in freelance and client web projects. It is built around a multi-service Flask example app (with PostgreSQL, Redis, Webpack and a worker) and references other example repos for Django, Rails, Phoenix, Node and Play. The post walks through Docker Compose patterns (override files, profiles, anchors, health checks, env-var driven settings, port binding, restart policies, bind mounts, resource limits), then app server configuration (gunicorn bind, workers, reload, logging, database config, health endpoint), and finally Dockerfile practices such as multi-stage builds and non-root users. The author notes these are personal opinions.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Docker",
+   "Docker Compose",
+   "Dockerfile",
+   "Flask",
+   "Python",
+   "gunicorn",
+   "PostgreSQL",
+   "Redis",
+   "Webpack",
+   "Node.js",
+   "nginx",
+   "Kubernetes",
+   "Heroku",
+   "Celery",
+   "Django",
+   "Rails",
+   "Phoenix",
+   "Elixir",
+   "Play Framework",
+   "Scala"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9507,
+  "output": 1055
+ },
+ "generated": "2026-10-29"
+}

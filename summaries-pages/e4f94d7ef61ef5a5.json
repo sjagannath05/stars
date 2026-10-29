@@ -1,0 +1,66 @@
+{
+ "id": "e4f94d7ef61ef5a5",
+ "url": "https://jeiwan.net/posts/building-blockchain-in-go-part-5",
+ "final_url": "https://jeiwan.net/posts/building-blockchain-in-go-part-5/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building Blockchain in Go. Part 5: Addresses - Going the distance",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 5: Address"
+  }
+ ],
+ "summary": {
+  "title": "Building Blockchain in Go. Part 5: Addresses",
+  "one_liner": "You learn how Bitcoin-style addresses are derived from ECDSA public keys (SHA256, RIPEMD160, checksum, Base58) and how transactions are signed and verified in a toy Go blockchain.",
+  "category": "blockchain development in go",
+  "keywords": [
+   "bitcoin address generation",
+   "bitcoin address in go",
+   "base58 encoding",
+   "base58check",
+   "public key hash",
+   "ripemd160 sha256 public key",
+   "ecdsa signing transactions",
+   "ecdsa verify transaction",
+   "elliptic curve cryptography bitcoin",
+   "p256 curve go",
+   "digital signatures blockchain",
+   "transaction signing go",
+   "trimmed transaction copy",
+   "how do bitcoin addresses work",
+   "wallet key pair go",
+   "utxo transaction signing",
+   "build blockchain in go tutorial",
+   "public key vs private key bitcoin",
+   "address checksum",
+   "blockchain tutorial part 5"
+  ],
+  "takeaways": [
+   "A Bitcoin address is a Base58 encoding of version + RIPEMD160(SHA256(PubKey)) + a 4-byte double-SHA256 checksum.",
+   "Wallets are ECDSA key pairs on the P-256 curve; the public key is the concatenated X and Y coordinates.",
+   "Transaction signatures cover a trimmed copy of the transaction: referenced output public key hashes, new output hashes and values, not the input public keys.",
+   "Inputs store raw public keys and signatures; outputs store only the public key hash, and verification checks both the hash match and the signature."
+  ],
+  "summary": "The article explains why Bitcoin uses addresses instead of user accounts, covering public-key cryptography, digital signatures, elliptic curves (ECDSA) and Base58 encoding. It then implements these in Go: a Wallet type that generates key pairs, an address function that hashes and checksums the public key, and output locking and input unlocking helpers that replace the earlier arbitrary-string addresses. Finally it shows how transactions are signed over a trimmed copy and verified against previous outputs before mining, with command-line examples of creating wallets and sending coins.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Go",
+   "ECDSA",
+   "elliptic curve P-256",
+   "SHA-256",
+   "RIPEMD-160",
+   "Base58",
+   "Bitcoin"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11233,
+  "output": 947
+ },
+ "generated": "2026-10-29"
+}

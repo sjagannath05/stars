@@ -1,0 +1,66 @@
+{
+ "id": "e818df1808775b6a",
+ "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+ "final_url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Circuit Breaker Pattern - Azure Architecture Center",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Integration patterns (dependency management)",
+   "entry": "Design Pattern: Circuit Breaker, Microsoft Azure"
+  }
+ ],
+ "summary": {
+  "title": "Circuit Breaker Pattern - Azure Architecture Center",
+  "one_liner": "The Circuit Breaker pattern stops an application from repeatedly calling a failing remote service by failing fast through Closed, Open and Half-Open states, letting the dependency recover.",
+  "category": "distributed systems",
+  "keywords": [
+   "circuit breaker pattern",
+   "circuit breaker",
+   "fail fast",
+   "cascading failures",
+   "transient faults",
+   "retry pattern vs circuit breaker",
+   "closed open half-open states",
+   "failure threshold",
+   "time-out timer",
+   "half-open state",
+   "resilience pattern",
+   "stop retrying failing service",
+   "graceful degradation",
+   "service mesh circuit breaking",
+   "distributed tracing",
+   "azure cosmos db 429 throttling",
+   "health endpoint monitoring",
+   "dead letter queue",
+   "load shedding",
+   "remote service fault handling"
+  ],
+  "takeaways": [
+   "A circuit breaker proxies calls to a failing operation and moves between Closed, Open and Half-Open states based on recent failures.",
+   "Open state returns failures immediately, avoiding wasted threads, connections and CPU on a likely-to-fail call.",
+   "Half-Open state lets a limited number of trial requests through, which prevents a recovering service from being flooded.",
+   "Combine with the Retry pattern carefully: retries should stop when the circuit breaker reports a non-transient fault.",
+   "Consider exception types, monitoring, manual override, and service mesh implementations when designing one."
+  ],
+  "summary": "The Azure Architecture Center article describes the Circuit Breaker pattern for handling faults in remote services or resources that may take varying time to recover from. It explains the problem of cascading failures and blocked resources caused by repeated retries or long time-outs, then defines the Closed, Open and Half-Open state machine with failure and success counters. The page also covers design considerations such as exception handling, recoverability, manual override, concurrency, multiregion use and service mesh implementations, plus when to avoid the pattern. An Azure Cosmos DB example shows a circuit breaker reacting to HTTP 429 responses with Azure Monitor alerts.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Azure",
+   "Azure Cosmos DB",
+   "Azure App Service",
+   "Azure Monitor",
+   "Service mesh",
+   "HTTP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7668,
+  "output": 920
+ },
+ "generated": "2026-10-29"
+}

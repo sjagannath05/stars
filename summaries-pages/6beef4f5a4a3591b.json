@@ -1,0 +1,64 @@
+{
+ "id": "6beef4f5a4a3591b",
+ "url": "https://learnopengl.com/In-Practice/2D-Game/Particles",
+ "final_url": "https://learnopengl.com/In-Practice/2D-Game/Particles",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Particles",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenGL:",
+   "entry": "Particles"
+  }
+ ],
+ "summary": {
+  "title": "Particles",
+  "one_liner": "You learn how to build a simple 2D particle system in OpenGL, with particle structs, respawning dead particles, additive blending, and a particle generator that trails the ball in Breakout.",
+  "category": "opengl particle systems",
+  "keywords": [
+   "particle system",
+   "2d particles",
+   "particle generator",
+   "opengl particles",
+   "learnopengl breakout particles",
+   "particle life",
+   "respawn dead particles",
+   "first unused particle search",
+   "additive blending",
+   "gl_one blend mode",
+   "gl_src_alpha",
+   "instanced quad rendering",
+   "particle emitter",
+   "fire effect particles",
+   "ball trail effect",
+   "game particle effects",
+   "glm vec4 color",
+   "fade alpha over time",
+   "particle shader vertex fragment",
+   "how to make particle trail in opengl"
+  ],
+  "takeaways": [
+   "Store particles in a fixed-size pool with a life value, and respawn the first dead particle instead of growing the list.",
+   "Use a search that starts from the last used index to find a dead particle quickly, with a linear fallback.",
+   "Update each particle by decreasing its life by delta time, moving it, and fading its alpha while it is alive.",
+   "Render particles as textured quads with an offset and color uniform, using additive blending (GL_SRC_ALPHA, GL_ONE) for a glowing look.",
+   "Wrap the logic in a ParticleGenerator class and draw particles before the ball so they appear behind it in Breakout."
+  ],
+  "summary": "The tutorial explains how particle systems work and builds one for the Breakout game from the LearnOpenGL 2D game series. It shows a Particle struct with position, velocity, color and life, then walks through spawning new particles each frame, reusing dead particles via a first-unused search, and updating and fading them. Rendering uses a simple vertex and fragment shader pair with per-particle offset and color uniforms, drawn with additive blending. The page ends by wrapping this in a ParticleGenerator class that follows the ball.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "OpenGL 3.3",
+   "GLSL",
+   "C++",
+   "GLM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4393,
+  "output": 851
+ },
+ "generated": "2026-10-29"
+}

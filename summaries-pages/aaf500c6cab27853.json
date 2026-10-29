@@ -1,0 +1,64 @@
+{
+ "id": "aaf500c6cab27853",
+ "url": "https://rohitpaulk.com/articles/redis-2",
+ "final_url": "https://rohitpaulk.com/articles/redis-2",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Redis: Ping <-> Pong",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Ruby:",
+   "entry": "Part 2: PING PONG"
+  }
+ ],
+ "summary": {
+  "title": "Build Your Own Redis: Ping <-> Pong [2/4]",
+  "one_liner": "You learn the basics of the Redis Protocol (RESP) and how to make a toy Ruby TCP server answer a PING command with PONG, verified by an integration test using redis-rb.",
+  "category": "build a redis clone",
+  "keywords": [
+   "redis protocol",
+   "resp",
+   "redis serialization format",
+   "redis ping pong",
+   "ping command",
+   "echo command",
+   "simple strings",
+   "bulk strings",
+   "resp arrays",
+   "ruby tcp server",
+   "build your own redis",
+   "toy redis clone in ruby",
+   "redis-rb integration test",
+   "minitest integration test",
+   "test driven development redis",
+   "redis-cli example",
+   "binary-safe strings",
+   "crlf delimiter",
+   "tcpserver ruby",
+   "how does redis client server communication work"
+  ],
+  "takeaways": [
+   "RESP encodes data by a leading type byte: + for simple strings, $ for bulk strings, * for arrays.",
+   "Bulk strings are binary-safe because the byte length is sent upfront, so embedded \\r\\n is allowed.",
+   "Redis commands are sent from clients as arrays of bulk strings, e.g. PING is *1 with $4 PING.",
+   "A minimal server can pass a PING integration test by always writing +PONG\\r\\n, but it cheats by ignoring the actual command."
+  ],
+  "summary": "This second article in a four-part series builds a toy Redis clone in Ruby. It explains the Redis Protocol (RESP) with examples of simple strings, bulk strings, and arrays, and shows how redis-cli commands are encoded on the wire. It then writes an integration test using redis-rb against the official Redis and the custom server on port 6380, and makes the test pass by having the server always reply +PONG. The author notes this cheats, since ECHO also gets PONG, and defers proper command handling to later articles.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Redis",
+   "RESP",
+   "redis-rb",
+   "Minitest"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3983,
+  "output": 826
+ },
+ "generated": "2026-10-29"
+}

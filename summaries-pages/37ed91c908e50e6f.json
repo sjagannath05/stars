@@ -1,0 +1,82 @@
+{
+ "id": "37ed91c908e50e6f",
+ "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+ "final_url": "https://www.anthropic.com/research/multi-agent-research-system",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "How we built our multi-agent research system",
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "From Anthropic",
+   "entry": "How We Built Our Multi-Agent Research System by Anthropic - A practical account of orchestrator and subagent coordination, prompt design, and evaluation that maps directly to Claude Code's subagents and agent teams."
+  }
+ ],
+ "summary": {
+  "name": "How we built our multi-agent research system",
+  "one_liner": "An Anthropic engineering post describing the orchestrator-worker architecture, prompt design, evaluation methods, and production challenges behind Claude's multi-agent Research feature.",
+  "category": "ai agent engineering article",
+  "keywords": [
+   "multi-agent system",
+   "multi-agent research system",
+   "orchestrator-worker pattern",
+   "lead agent",
+   "subagents",
+   "claude research feature",
+   "agent architecture",
+   "agent prompt engineering",
+   "agent evaluation",
+   "llm as judge",
+   "rainbow deployment",
+   "parallel tool calling",
+   "browsecomp evaluation",
+   "agent observability",
+   "stateful agents",
+   "retrieval augmented generation comparison",
+   "rag vs agentic search",
+   "claude opus 4 lead agent",
+   "claude sonnet 4 subagents",
+   "tool description optimization",
+   "mcp tools",
+   "agent token usage",
+   "agent checkpointing",
+   "agent error handling",
+   "claude code subagents",
+   "anthropic engineering blog",
+   "how to build ai research agent",
+   "deep research ai architecture",
+   "context window management",
+   "agent memory and summarization",
+   "asynchronous subagents"
+  ],
+  "use_cases": [
+   "designing a multi-agent research workflow",
+   "writing prompts that coordinate subagents",
+   "evaluating LLM agents with rubrics and small test sets",
+   "reducing agent tool-call errors through better tool descriptions",
+   "deploying stateful agents without disrupting running sessions"
+  ],
+  "what_it_does": "The post explains how Anthropic's Research feature uses a lead agent that plans a query and spawns parallel subagents with separate context windows, which search and return condensed findings for a final answer. It reports internal results, including a 90.2% improvement over single-agent Claude Opus 4 on an internal research eval, and that token usage explained most of the performance variance on BrowseComp. It lists prompting principles such as detailed task delegation, scaling effort to query complexity, and start-wide-then-narrow search. It also covers evaluation with an LLM judge using a rubric, human testing, production concerns like resumable execution and rainbow deployments, and the limits of synchronous subagent execution.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Orchestrator-worker design where a lead Claude Opus 4 agent coordinates Claude Sonnet 4 subagents, reported to beat single-agent Opus 4 by 90.2% on an internal eval",
+   "Tool-testing agent that rewrote flawed MCP tool descriptions, reportedly cutting task completion time by 40%",
+   "Explains rainbow deployments for updating stateful agents without interrupting running ones",
+   "Includes an appendix on end-state evaluation, long-horizon context management, and filesystem-based subagent outputs"
+  ],
+  "caveats": [
+   "Multi-agent systems use about 15x more tokens than chats, so they only suit high-value tasks",
+   "Less suited to tasks needing shared context or many dependencies, such as most coding tasks, per the post",
+   "Subagents currently run synchronously, creating bottlenecks; asynchronous execution is described as future work"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8364,
+  "output": 1191
+ },
+ "generated": "2026-10-29"
+}

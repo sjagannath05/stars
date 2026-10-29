@@ -1,0 +1,62 @@
+{
+ "id": "28a71ea21edc06d7",
+ "url": "http://aosabook.org/en/500L/a-continuous-integration-system.html",
+ "final_url": "https://aosabook.org/en/500L/a-continuous-integration-system.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "500 Lines or LessA Continuous Integration System",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Python: _Continuous Integration System_"
+  }
+ ],
+ "summary": {
+  "title": "A Continuous Integration System (500 Lines or Less)",
+  "one_liner": "You learn how a small distributed continuous integration system is built from an observer, a job dispatcher, and test runners that talk over sockets, using Git and Python.",
+  "category": "distributed systems",
+  "keywords": [
+   "continuous integration",
+   "ci system",
+   "build a ci system",
+   "distributed continuous integration",
+   "repository observer",
+   "test job dispatcher",
+   "test runner",
+   "polling git repository",
+   "socket communication python",
+   "threadingtcpserver",
+   "socketserver python",
+   "git clone polling for new commits",
+   "fault tolerant test runners",
+   "parallel test execution",
+   "500 lines or less project",
+   "python ci tutorial",
+   "how does continuous integration work",
+   "dispatcher heartbeat ping runners"
+  ],
+  "takeaways": [
+   "A CI system is split into three processes: an observer that polls the repo, a dispatcher that assigns commits, and runners that execute tests.",
+   "The observer polls a local Git clone with update_repo.sh and writes a .commit_id file when the latest commit changes, then notifies the dispatcher.",
+   "The dispatcher uses a threaded TCP socket server to handle simultaneous connections, tracks runners, and pings them to detect failures.",
+   "Commits that were assigned to a failed runner go into a pending list and are redistributed to another available runner."
+  ],
+  "summary": "This article from the 500 Lines or Less book walks through a bare-bones distributed continuous integration system written in Python. It explains the three components (repository observer, test job dispatcher, and test runner), which run as separate processes communicating over sockets, and shows the code for each. It also covers the Bash scripts used to poll a Git repository for new commits, and how the dispatcher handles registration, dispatching, runner health checks, and redistribution of work. The author simplifies several parts, such as only testing the latest commit and not providing auto-recovery.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "Bash",
+   "Git",
+   "TCP sockets",
+   "SocketServer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8988,
+  "output": 819
+ },
+ "generated": "2026-10-29"
+}

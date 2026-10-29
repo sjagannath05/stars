@@ -1,0 +1,66 @@
+{
+ "id": "e583018a7194a862",
+ "url": "https://eli.thegreenplace.net/2018/concurrent-servers-part-6-callbacks-promises-and-asyncawait",
+ "final_url": "https://eli.thegreenplace.net/2018/concurrent-servers-part-6-callbacks-promises-and-asyncawait",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Concurrent Servers: Part 6 - Callbacks, Promises and async/await",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 6 - Callbacks, Promises and async/await"
+  }
+ ],
+ "summary": {
+  "title": "Concurrent Servers: Part 6 - Callbacks, Promises and async/await",
+  "one_liner": "Learn how a Node.js primality-testing server evolves from nested callbacks to promises to async/await, and why each step eases asynchronous code.",
+  "category": "concurrent network servers",
+  "keywords": [
+   "callbacks",
+   "callback hell",
+   "promises",
+   "async/await",
+   "asynchronous programming",
+   "event-driven programming",
+   "node.js",
+   "javascript async",
+   "continuation passing style",
+   "error-first callbacks",
+   "promisify",
+   "child_process fork",
+   "redis cache",
+   "primality testing server",
+   "concurrent network server",
+   "event loop",
+   "libuv",
+   "await keyword",
+   "promise chain catch",
+   "nested closures"
+  ],
+  "takeaways": [
+   "Node.js is single-threaded, so CPU-heavy work is offloaded to child processes via child_process.fork and handled with message callbacks.",
+   "Nested callbacks (callback hell) make data flow harder to follow and make error handling awkward because exceptions do not cross callback stack frames.",
+   "Promises flatten nested callbacks into a then chain and allow a single catch at the end for errors; util.promisify wraps callback APIs.",
+   "async/await lets asynchronous code read like straight-line blocking code while still registering callbacks and yielding to the event loop."
+  ],
+  "summary": "The article is part 6 of a series on writing concurrent network servers. It revisits the primality-testing server from part 4 (originally in C with libuv), rebuilding it in Node.js with a child process per computation and a Redis cache. Each version of onConnData is shown in turn: plain nested callbacks, promise chains with promisify, and finally async/await. The author discusses the downsides of callback nesting and continuation-passing style, including error handling, before concluding with the question of whether this model beats threads for high-load concurrency.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "Node.js",
+   "Redis",
+   "C",
+   "libuv",
+   "Python",
+   "Haskell"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7680,
+  "output": 809
+ },
+ "generated": "2026-10-29"
+}

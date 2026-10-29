@@ -1,0 +1,62 @@
+{
+ "id": "3427e34645c02016",
+ "url": "https://blog.aha.io/text-editor",
+ "final_url": "https://www.aha.io/blog/text-editor",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "This Is How to Build a Collaborative Text Editor Using Rails",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Text Editor",
+   "entry": "Ruby: _Build a Collaborative Text Editor Using Rails_"
+  }
+ ],
+ "summary": {
+  "title": "This Is How to Build a Collaborative Text Editor Using Rails",
+  "one_liner": "You learn the core ideas of operational transformation (OT) for real-time collaborative text editing, including transform functions, the TP1 property, and server-based version control, with Ruby examples.",
+  "category": "collaborative editing",
+  "keywords": [
+   "collaborative text editor",
+   "operational transformation",
+   "ot algorithm",
+   "real-time collaborative editing",
+   "transform function",
+   "tp1 property",
+   "transformation properties",
+   "concurrent edits",
+   "conflict resolution in text editing",
+   "merge concurrent changes",
+   "document version number",
+   "client server sync",
+   "ruby collaborative editor",
+   "rails real-time editing",
+   "insert operation transform",
+   "tiebreaker for simultaneous inserts",
+   "control algorithm",
+   "how to make google docs style editor",
+   "crdt alternative",
+   "diff vs operations"
+  ],
+  "takeaways": [
+   "Model edits as operations (for example insert character at position) rather than diffs or full-state changes, so user intent is preserved.",
+   "Use a transform function to adjust concurrent operations so that applying them in either order yields the same document (the TP1 property).",
+   "Break ties consistently, for example by letting the server win or by comparing random client IDs.",
+   "A central server with document version numbers simplifies concurrency to two-dimensional transform squares per client connection.",
+   "Keep data linear (arrays of characters) and operations rich but few, since more operation types mean more transform functions to write and test."
+  ],
+  "summary": "The article, from the Aha! engineering blog, explains how collaborative text editing works using operational transformation. It walks through why naive insert operations produce inconsistent results like \"crat\", then shows how to write a Ruby transform_operation function with tiebreakers and test it with TP1 diagrams. It extends the approach to multiple operations per client and a central server that tracks document versions, and closes with design advice on thinking in operations, keeping data linear, and making data transformable. The page is cut off before the final sync details.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Ruby",
+   "Rails"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8375,
+  "output": 831
+ },
+ "generated": "2026-10-29"
+}

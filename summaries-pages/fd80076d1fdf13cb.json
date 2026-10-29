@@ -1,0 +1,61 @@
+{
+ "id": "fd80076d1fdf13cb",
+ "url": "https://flaviocopes.com/go-tutorial-fortune",
+ "final_url": "https://flaviocopes.com/go-tutorial-fortune/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Go CLI tutorial: fortune clone",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Command-Line Tool",
+   "entry": "Go: _Go CLI tutorial: fortune clone_"
+  }
+ ],
+ "summary": {
+  "title": "Go CLI tutorial: fortune clone",
+  "one_liner": "You learn to build a basic fortune-style random quote CLI in Go by locating the fortunes directory via `fortune -f`, walking it with filepath.Walk, and splitting quote files on %.",
+  "category": "command-line tools",
+  "keywords": [
+   "go fortune clone",
+   "random quote generator go",
+   "golang cli tutorial",
+   "filepath.walk example",
+   "exec.command stderr pipe",
+   "fortune -f fortunes directory",
+   "read fortune files go",
+   "split quotes on percent sign",
+   "math/rand random int golang",
+   "build command line tool go",
+   "gofortune",
+   "unix fortune command",
+   "gocowsay gololcat pipeline",
+   "bufio scanner first line",
+   "go install binary tutorial",
+   "random fortune cookie program"
+  ],
+  "takeaways": [
+   "Ask the system `fortune -f` for the fortunes directory path, reading it from stderr via StderrPipe.",
+   "Use filepath.Walk to collect fortune files recursively while skipping .dat binaries and the /off/ offensive folder.",
+   "Pick a random quote by splitting a file's contents on lines containing % and choosing one with math/rand.",
+   "Since Go 1.20 math/rand seeds itself, so no rand.Seed call is needed."
+  ],
+  "summary": "The article builds a simplified clone of the Unix fortune command in Go, as the last part of a series alongside gocowsay and gololcat. It shells out to `fortune -f` to find the fortunes directory, reading the first line of stderr with a bufio scanner and trimming it to a path. It then walks the tree with filepath.Walk, skipping .dat files, directories, and the /off/ folder, and collects file names. Finally it picks a random file and a random quote separated by % lines, progressively refactoring the code into a final version. The author notes the approach is not efficient and misses many features of the original.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "fortune (Unix command)",
+   "filepath.Walk",
+   "os/exec",
+   "math/rand",
+   "bufio"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4990,
+  "output": 835
+ },
+ "generated": "2026-10-29"
+}

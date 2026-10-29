@@ -1,0 +1,85 @@
+{
+ "id": "12363d364d02e2df",
+ "url": "https://offsend.io",
+ "final_url": "https://offsend.io",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Offsend — One file defines your AI context boundary",
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (157)",
+   "entry": "Website: https://offsend.io"
+  }
+ ],
+ "summary": {
+  "name": "Offsend",
+  "one_liner": "Offsend is an open-source, local-first boundary layer that controls what AI coding agents can see, using a committed .offsend.yml file, local secret sealing, and runtime hooks for Cursor, Claude Code, Windsurf, and Codex.",
+  "category": "ai context security cli",
+  "keywords": [
+   "offsend",
+   "ai context boundary",
+   "ai coding agent security",
+   "coding agent secrets",
+   "secret sealing",
+   "seal secrets for ai",
+   "ai ignore files",
+   "offsend.yml",
+   "cursor hooks",
+   "claude code hooks",
+   "windsurf hooks",
+   "codex hooks",
+   "mcp response seal",
+   "runtime gates",
+   "ai agent guardrails",
+   "keep secrets out of ai prompts",
+   "stop ai reading secrets",
+   "pre-commit secret check",
+   "github action secret scan",
+   "content scanning cli",
+   "gitleaks alternative",
+   "trufflehog alternative",
+   "gitguardian comparison",
+   "aider ignore file",
+   "cline ignore file",
+   "copilot ignore file",
+   "local-first cli",
+   "macos menubar app",
+   "ai context policy"
+  ],
+  "use_cases": [
+   "keep secrets out of AI coding agent context",
+   "enforce AI ignore rules across a repository",
+   "gate prompts, file reads and shell commands for coding agents",
+   "scan staged diffs for keys and tokens in CI",
+   "restore sealed secrets in agent replies"
+  ],
+  "what_it_does": "Offsend is a local CLI that defines an AI context boundary for a repository. A committed .offsend.yml holds team policy, and offsend sync generates AI ignore files and installs supported editor hooks. Runtime gates check prompts, file reads, writes, shell commands and MCP arguments on editors that expose those hooks. On Cursor and Claude Code it can seal secret values in MCP responses into reversible tokens, which offsend unseal restores locally. It also includes offsend check for scanning files, staged diffs and stdin for secret-like patterns, and a CI mode (check --policy) for a GitHub Action.",
+  "pricing": "unknown",
+  "platforms": [
+   "macOS",
+   "Windows",
+   "Linux",
+   "CLI",
+   "browser extension",
+   "GitHub Action"
+  ],
+  "notable": [
+   "Seals secrets into reversible tokens so the agent keeps working without plaintext",
+   "Per-editor gate coverage: Cursor and Claude Code full, Windsurf without MCP response seal, Codex prompt-only",
+   "Three layers: machine-level hooks, repo .offsend.yml, and CI check --policy",
+   "Local-first; CLI checks run locally and no cloud scanning is required"
+  ],
+  "caveats": [
+   "Defense-in-depth only, not a guarantee that an agent cannot read a file",
+   "Codex has no file or MCP gates yet; Windsurf cannot seal MCP responses; cloud agent sessions are outside local hooks",
+   "Not a full git-history secret scanner; use alongside Gitleaks, TruffleHog or GitHub secret scanning for deep history coverage"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3607,
+  "output": 1158
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,69 @@
+{
+ "id": "7fd3514c36f38b22",
+ "url": "https://docs.kernel.org/admin-guide/cpu-isolation.html",
+ "final_url": "https://docs.kernel.org/admin-guide/cpu-isolation.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "CPU Isolation",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scheduling, affinity and isolation",
+   "entry": "CPU Isolation - Ties isolcpus, nohz_full, IRQ affinity, RCU offload and cpusets into one recipe, and lists the jitter it leaves."
+  }
+ ],
+ "summary": {
+  "title": "CPU Isolation",
+  "one_liner": "Learn how to dedicate a CPU to a workload by combining scheduler domain isolation, IRQ affinity, nohz_full, cpusets and boot parameters, and how to trace the remaining kernel noise.",
+  "category": "linux kernel cpu isolation",
+  "keywords": [
+   "cpu isolation",
+   "isolcpus",
+   "nohz_full",
+   "full dynticks",
+   "irq affinity",
+   "smp_affinity",
+   "irqaffinity",
+   "managed_irq",
+   "cpuset isolated partition",
+   "cgroup v2 cpuset",
+   "rcu offload",
+   "rcu_nocbs",
+   "housekeeping cpu",
+   "kernel noise jitter",
+   "reduce timer tick interrupts on isolated cpu",
+   "how to isolate a cpu for low latency",
+   "nosmt disable hyperthreading",
+   "ftrace sched_switch noise tracing",
+   "rtla osnoise",
+   "dynticks-testing",
+   "linux real-time latency tuning",
+   "dpdk kernel bypass cpu isolation"
+  ],
+  "takeaways": [
+   "Isolating a CPU means moving or shutting down kernel housekeeping work (unbound workqueues, kthreads, timers, IRQs, RCU callbacks) away from it.",
+   "Scheduler domain isolation uses cgroup v2 cpuset isolated partitions (CONFIG_CPUSETS=y) or isolcpus with the domain flag; cpusets are recommended because they are runtime-tunable.",
+   "nohz_full (CONFIG_NO_HZ_FULL=y) stops the tick on a CPU running a single task, but forbids kernel entry from that CPU and requires a stable clocksource; housekeeping CPUs run a 1Hz residual tick.",
+   "A worked example isolates CPU 7 of 8 using nohz_full=7, irqaffinity=0-6, isolcpus=managed_irq,7 and nosmt, then verifies with ftrace sched_switch and irq_vectors events.",
+   "Remaining jitter can come from page faults (use mlock), SMT siblings, cpufreq changes, deep C-states and firmware SMIs; rtla osnoise and dynticks-testing help analyze noise."
+  ],
+  "summary": "The kernel documentation page defines CPU isolation as keeping a CPU free of kernel noise from asynchronous events (interrupts, timers, workqueues, kthreads) and synchronous events (syscalls, page faults). It explains housekeeping work and covers isolation features in turn: scheduler domain isolation, IRQ isolation, and full dynticks (nohz_full), each with requirements, constraints and tradeoffs. A full example isolates CPU 7 via kernel boot parameters and a cgroup v2 cpuset, runs a userspace loop, and traces sched_switch and IRQ vector events with ftrace. It closes with a checklist of other jitter sources and debugging tools such as rtla-osnoise and dynticks-testing.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "cgroup v2 cpuset",
+   "ftrace",
+   "C",
+   "rtla",
+   "dynticks-testing",
+   "DPDK"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5323,
+  "output": 1209
+ },
+ "generated": "2026-10-29"
+}

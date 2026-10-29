@@ -1,0 +1,72 @@
+{
+ "id": "2f025b8995c430ac",
+ "url": "https://csl.stanford.edu/~christos/publications/2014.mutilate.eurosys.pdf",
+ "final_url": "https://csl.stanford.edu/~christos/publications/2014.mutilate.eurosys.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "CMSY10",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Load generation and production workloads",
+   "entry": "Reconciling High Server Utilization and Sub-millisecond Quality-of-Service - Shows the tail, not throughput, caps a latency-critical server's utilisation, and how far co-located work lowers it."
+  }
+ ],
+ "summary": {
+  "title": "Reconciling High Server Utilization and Sub-millisecond Quality-of-Service",
+  "one_liner": "Co-locating batch work with a latency-critical memcached server can raise utilization without breaking sub-millisecond QoS, if queuing, scheduling and load-imbalance interference are addressed.",
+  "category": "datacenter performance and utilization",
+  "keywords": [
+   "server utilization",
+   "workload co-location",
+   "tail latency",
+   "quality of service",
+   "qos latency-critical services",
+   "memcached",
+   "sub-millisecond latency",
+   "queuing delay",
+   "scheduling delay",
+   "load imbalance",
+   "linux cfs scheduler",
+   "bvt scheduler",
+   "interference-aware provisioning",
+   "datacenter tco",
+   "throughput per tco dollar",
+   "cluster utilization",
+   "p95 latency",
+   "m/m/1 queuing model",
+   "mutilate load generator",
+   "irq affinity",
+   "eurosys 2014 paper",
+   "how to run batch jobs on latency-sensitive servers",
+   "why are datacenter servers underutilized"
+  ],
+  "takeaways": [
+   "Low tail latency, not raw throughput, is what limits how far a latency-critical server can be utilised.",
+   "Co-location causes QoS violations through three channels: queuing delay from shared-resource interference, scheduling delay from timesharing cores, and thread load imbalance.",
+   "Interference-aware provisioning turns interference into a predictable throughput reduction rather than latency spikes.",
+   "A modern BVT scheduler gives more predictable latency and fair CPU sharing than Linux CFS in the paper's co-location tests.",
+   "Thread pinning and NIC flow-affinity interrupt routing reduce memcached's sensitivity to load imbalance; the paper reports up to 52% higher throughput per TCO dollar from co-location."
+  ],
+  "summary": "The paper studies whether latency-critical services with sub-millisecond QoS can share servers with other workloads without losing good tail latency. It uses memcached as a representative service, measuring its request pipeline on a dual-socket Xeon server under Linux 3.5 with the mutilate load generator. It breaks co-location interference into queuing delay, scheduling delay and thread load imbalance, and proposes mitigations such as interference-aware provisioning, a BVT-style scheduler, and thread pinning with IRQ affinity. The authors estimate co-location could improve datacenter throughput per TCO dollar by up to 52%.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "memcached",
+   "Linux",
+   "Linux CFS scheduler",
+   "BVT scheduler",
+   "mutilate",
+   "libevent",
+   "epoll",
+   "Intel Xeon",
+   "Intel X520 10GbE NIC"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9743,
+  "output": 1048
+ },
+ "generated": "2026-10-29"
+}

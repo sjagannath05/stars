@@ -1,0 +1,59 @@
+{
+ "id": "c43d625d6a168b78",
+ "url": "https://www.mauriciopoppe.com/notes/computer-science/computation/promises",
+ "final_url": "https://www.mauriciopoppe.com/notes/computer-science/computation/promises/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Implementing an A+ Conformant Promise Library in JavaScript the TDD Way",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "JavaScript: _Implementing promises from scratch (TDD way)_"
+  }
+ ],
+ "summary": {
+  "title": "Implementing an A+ Conformant Promise Library in JavaScript the TDD Way",
+  "one_liner": "You learn how Promises/A+ work internally by building a conformant promise class in JavaScript, one Jest test at a time.",
+  "category": "javascript promises",
+  "keywords": [
+   "promises/a+ spec",
+   "a+ promise implementation",
+   "implement promise from scratch",
+   "build your own promise javascript",
+   "tdd promise library",
+   "jest promise tests",
+   "then method implementation",
+   "promise state pending fulfilled rejected",
+   "thenable",
+   "promise chaining internals",
+   "async handlers promise adoption",
+   "event loop promise handlers setimmediate",
+   "then/promise library",
+   "promise resolution with itself typeerror",
+   "how do promises work under the hood",
+   "futures and promises",
+   "promise executor fulfill reject"
+  ],
+  "takeaways": [
+   "A promise is a state machine (PENDING, FULFILLED, REJECTED) that can transition only once.",
+   "The then method queues handlers while pending and returns a new promise whose state depends on the handler's result or error.",
+   "Handlers returning promises or thenables must be unwrapped, and handlers must run after the event loop to be consistent.",
+   "Compliance edge cases include invalid handlers, self-resolution (TypeError), and rejecting with a promise, all verified against the A+ compliance suite (872 tests passing)."
+  ],
+  "summary": "The author builds a Promises/A+ conformant promise class in JavaScript using a test-driven workflow with Jest. Each section introduces a spec requirement, shows the tests first, then the implementation: the executor and state transitions, the then method with handler queues, promise chaining, adoption of nested promises and thenables, invalid handlers, asynchronous handler execution, and self-resolution errors. The final implementation passed all 872 tests of the A+ compliance suite. The article closes with possible improvements such as a task queue, Promise.all and Promise.race, and performance work.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "JavaScript",
+   "Jest",
+   "Promises/A+"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10215,
+  "output": 828
+ },
+ "generated": "2026-10-29"
+}

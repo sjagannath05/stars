@@ -1,0 +1,69 @@
+{
+ "id": "c9cac0e0a420fa47",
+ "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+ "final_url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Control Group v2",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Scheduling, affinity and isolation",
+   "entry": "Control Group v2 - Defines cpu.max throttling, cpu.weight and the cpusets that bound affinity, the controls behind every container limit."
+  }
+ ],
+ "summary": {
+  "title": "Control Group v2",
+  "one_liner": "Learn how cgroup v2 organizes processes into a single hierarchy, how controllers are enabled and delegated, and how weight- and limit-based resource distribution works.",
+  "category": "linux kernel cgroups",
+  "keywords": [
+   "cgroup v2",
+   "control group v2",
+   "linux cgroups",
+   "cgroup hierarchy",
+   "cgroup.procs",
+   "cgroup.subtree_control",
+   "cgroup.controllers",
+   "enable controllers linux",
+   "no internal process constraint",
+   "delegation cgroup namespace",
+   "nsdelegate mount option",
+   "threaded cgroup",
+   "cgroup.type threaded",
+   "cpu controller",
+   "cpuset",
+   "resource distribution weights",
+   "cgroup v1 vs v2",
+   "cgroup_no_v1 kernel parameter",
+   "process migration between cgroups",
+   "memory controller mount options",
+   "populated notification cgroup.events",
+   "how do containers limit cpu linux"
+  ],
+  "takeaways": [
+   "cgroup v2 uses a single unified hierarchy, mounted with mount -t cgroup2, and every process belongs to exactly one cgroup.",
+   "Controllers such as cpu and memory are enabled per cgroup via cgroup.subtree_control, and only distribute resources to child cgroups.",
+   "The no internal process constraint means domain controllers need processes to live only in leaf cgroups.",
+   "Delegation lets less privileged users manage sub-hierarchies, with containment enforced on process migration.",
+   "Threaded mode lets threads of a process spread across a subtree, with cpu, cpuset, perf_event and pids as threaded controllers."
+  ],
+  "summary": "This is the kernel's authoritative documentation for control group v2, written by Tejun Heo in 2015. It covers the core concepts of cgroups as a hierarchy of processes, the mounting and mount options, and how processes and threads are organized and migrated. It then explains how controllers are enabled and disabled, the top-down constraint, the no internal process constraint, and delegation rules. The page ends by introducing resource distribution models such as weight-based distribution; the excerpt cuts off in that section.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "cgroup v2",
+   "cgroup v1",
+   "cpu controller",
+   "cpuset",
+   "memory controller",
+   "HugeTLB"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9151,
+  "output": 926
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,69 @@
+{
+ "id": "fb95cf25407c247d",
+ "url": "https://man7.org/linux/man-pages/man2/perf_event_open.2.html",
+ "final_url": "https://man7.org/linux/man-pages/man2/perf_event_open.2.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "perf_event_open(2) — Linux manual page",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Counters, events and precise sampling",
+   "entry": "perf_event_open(2) - Defines the counting and sampling modes every Linux profiler uses, and the sample record fields, branch stack included."
+  }
+ ],
+ "summary": {
+  "title": "perf_event_open(2) — Linux manual page",
+  "one_liner": "You learn how the Linux perf_event_open system call sets up counting and sampling events, how pid/cpu/group arguments select what is measured, and what the perf_event_attr fields (type, config, sample_type, read_format, branch_sample_type) control.",
+  "category": "linux performance profiling",
+  "keywords": [
+   "perf_event_open",
+   "perf_event_open syscall",
+   "perf_event_attr",
+   "linux perf events",
+   "linux performance counters",
+   "hardware performance counters linux",
+   "counting vs sampling events",
+   "sampling profiler linux",
+   "perf_sample_branch_stack",
+   "branch stack sampling",
+   "branch_sample_type",
+   "sample_type fields",
+   "event groups linux perf",
+   "read_format perf_format_group",
+   "mmap ring buffer perf sampling",
+   "perf_type_hardware",
+   "perf_type_raw raw pmu event",
+   "libpfm4 raw event encoding",
+   "how do i count cache misses on linux",
+   "how to set up perf sampling in c",
+   "cap_perfmon perf permissions",
+   "perf_event_paranoid",
+   "precise_ip precise sampling",
+   "dynamic pmu type sysfs"
+  ],
+  "takeaways": [
+   "perf_event_open returns a file descriptor per event; events can be grouped so the group is scheduled onto the CPU as a unit and values can be compared as ratios.",
+   "The pid and cpu arguments choose the scope: calling thread, specific process, a specific CPU, or system-wide per CPU (which needs CAP_PERFMON/CAP_SYS_ADMIN or a suitable perf_event_paranoid setting).",
+   "Counting events are read with read(2); sampling events (sample_period or sample_freq > 0) write records to an mmap ring buffer, with contents chosen by sample_type.",
+   "The type and config fields select the event: generalized hardware events, software events, tracepoints, hardware cache events, raw CPU-specific events (libpfm4 helps translate names), breakpoints, or dynamic PMUs such as kprobe/uprobe.",
+   "PERF_SAMPLE_BRANCH_STACK records recent branches from CPU branch sampling hardware (e.g. Intel LBR) when supported, filtered via branch_sample_type."
+  ],
+  "summary": "This is the Linux man page for the perf_event_open(2) system call, which has no glibc wrapper and is invoked via syscall(2). It explains the difference between counting events (read with read(2)) and sampling events (written to an mmap buffer), and how the pid, cpu, group_fd and flags arguments scope and group events. The bulk of the page documents the struct perf_event_attr fields in detail: type, size, config, sample_period/sample_freq, sample_type, read_format, and the bitfield flags, followed by the list of supported event constants. The text shown is the first portion of the page; the remaining sections (branch_sample_type, MMAP layout, return values, errors, examples) were not included in the provided text.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "C",
+   "perf",
+   "syscall(2)",
+   "libpfm4"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10751,
+  "output": 1214
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "8081b85ee7f4c226",
+ "url": "https://docs.kernel.org/admin-guide/numastat.html",
+ "final_url": "https://docs.kernel.org/admin-guide/numastat.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Numa policy hit/miss statistics",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "NUMA and Linux memory placement",
+   "entry": "Numa policy hit/miss statistics - Defines numa_hit, numa_miss and numa_foreign, the counters that show whether a policy put pages where it said."
+  }
+ ],
+ "summary": {
+  "title": "Numa policy hit/miss statistics",
+  "one_liner": "You learn what the per-node numa_hit, numa_miss, numa_foreign, local_node, other_node and interleave_hit counters in /sys/devices/system/node/node*/numastat mean and how to read them.",
+  "category": "linux memory management",
+  "keywords": [
+   "numa_hit",
+   "numa_miss",
+   "numa_foreign",
+   "local_node",
+   "other_node",
+   "interleave_hit",
+   "numastat",
+   "numastat sysfs file",
+   "numa memory allocation statistics",
+   "numa policy hit miss",
+   "linux numa allocation counters",
+   "sys devices system node numastat",
+   "numa local vs remote memory allocation",
+   "mempolicy allocation statistics",
+   "memoryless numa nodes",
+   "numactl numastat utility",
+   "hugepages numa counters",
+   "preferred node allocation",
+   "interleave policy statistics",
+   "linux kernel numa stats explained",
+   "how to check numa memory placement",
+   "is numa allocation local or remote"
+  ],
+  "takeaways": [
+   "numa_hit and numa_miss count whether an allocation landed on the node the process preferred; numa_foreign is the preferred-node counterpart of a miss.",
+   "local_node and other_node instead track whether the allocating CPU is on the same node as the memory, which is the usual default preference.",
+   "interleave_hit records successful allocations from the node under an interleave policy.",
+   "Counters are in pages, and hugepages have separate counters.",
+   "On systems with memoryless nodes (CPUs but no memory), the hit/miss/foreign numbers can be skewed for the nearest node with memory."
+  ],
+  "summary": "This kernel admin guide page documents the NUMA allocation counters exposed per node under /sys/devices/system/node/node*/numastat. It defines numa_hit, numa_miss and numa_foreign relative to a process's preferred node, and local_node and other_node relative to the CPU's local node, with a table describing each counter. It also suggests the numastat utility from numactl for easier reading, notes it works best on machines with few CPUs, and warns that memoryless nodes can skew the statistics.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "sysfs",
+   "numactl",
+   "numastat"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2035,
+  "output": 882
+ },
+ "generated": "2026-10-29"
+}

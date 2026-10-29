@@ -1,0 +1,68 @@
+{
+ "id": "026575e271756b2d",
+ "url": "http://rexegg.com/regex-best-trick.html",
+ "final_url": "https://www.rexegg.com/regex-best-trick.php",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The Greatest Regex Trick Ever",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Regex",
+   "entry": "The Best Regex Trick"
+  }
+ ],
+ "summary": {
+  "title": "The Greatest Regex Trick Ever",
+  "one_liner": "Learn the \"bad cop, good cop\" regex technique: put unwanted contexts as alternations on the left so they are consumed, then capture the wanted text in Group 1 and ignore the overall match.",
+  "category": "regex techniques",
+  "keywords": [
+   "regex trick",
+   "match word unless in quotes",
+   "exclude context regex",
+   "regex exclude pattern except in quotes",
+   "negative lookbehind alternative",
+   "capture group 1 regex technique",
+   "alternation skip pattern regex",
+   "match except inside tags",
+   "regex ignore bold content",
+   "regex blacklist words",
+   "variable-width lookbehind",
+   "\\k regex operator",
+   "\\k match reset",
+   "parity check regex quotes",
+   "two-step replace then match regex",
+   "bad cop good cop regex",
+   "regex trash bin matches",
+   "lookahead lookbehind regex comparison",
+   "regex match outside curly braces",
+   "regex negative lookbehind limitations"
+  ],
+  "takeaways": [
+   "Put the contexts to exclude as alternations on the left side (e.g. \"Tarzan\"|(Tarzan)) so the engine consumes them without capturing.",
+   "Ignore the overall match and read Group 1 only; that is where the wanted text appears.",
+   "New exclusions are added as extra alternations on the left, which keeps the regex easy to extend.",
+   "The technique needs code to inspect captures, so it does not work in grep or editors like Notepad++ for search-and-replace.",
+   "Other options compared: lookarounds, parity checks, replace-then-match, and \\K; each is harder to maintain or flavor-limited."
+  ],
+  "summary": "The article argues that a specific regex pattern structure is more useful than individual syntax features like lazy quantifiers or lookarounds. It walks through the simple case of matching Tarzan except inside double quotes, comparing lookbehind/lookahead variants, parity checks, a replace-then-match approach, and the \\K operator. It then presents the main technique: list unwanted contexts as left-side alternations, then capture the desired text in parentheses on the right, and read only Group 1 in code. The author also notes its limits, including memory use on very large files and the need for a programming language that exposes capture groups.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "regex",
+   "Perl",
+   "PCRE",
+   "Python",
+   "Ruby",
+   ".NET",
+   "Java",
+   "PHP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9305,
+  "output": 940
+ },
+ "generated": "2026-10-29"
+}

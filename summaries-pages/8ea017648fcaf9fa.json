@@ -1,0 +1,80 @@
+{
+ "id": "8ea017648fcaf9fa",
+ "url": "https://w.pitula.me/fintech-engineering-handbook",
+ "final_url": "https://w.pitula.me/fintech-engineering-handbook/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Fintech Engineering Handbook",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Accounting",
+   "entry": "Fintech Engineering Handbook"
+  }
+ ],
+ "summary": {
+  "title": "Fintech Engineering Handbook",
+  "one_liner": "Learn the software patterns for handling money safely: representing amounts, double-entry ledgers, audit trails, immutability, and reliable money flows.",
+  "category": "fintech engineering",
+  "keywords": [
+   "fintech engineering",
+   "money handling software",
+   "money representation",
+   "floating point money problem",
+   "minor units",
+   "iso 4217",
+   "arbitrary precision decimal",
+   "bigdecimal",
+   "rounding strategies",
+   "rounding breaks sums",
+   "currency handling",
+   "multi-currency",
+   "fx rates",
+   "reference rate",
+   "transactional rate",
+   "double-entry bookkeeping",
+   "ledger design",
+   "value time vs booking time",
+   "settlement time t+2",
+   "audit trail",
+   "event sourcing",
+   "immutable ledger",
+   "reversals and corrections",
+   "gdpr erasure vs immutable ledger",
+   "crypto-shredding",
+   "funds reservation",
+   "hold and release",
+   "available balance",
+   "overdraft handling",
+   "invariants",
+   "reconciliation",
+   "idempotency",
+   "pii separation"
+  ],
+  "takeaways": [
+   "Never represent money with floating-point; store integer minor units or use arbitrary-precision decimals, and send amounts as strings or integers in JSON.",
+   "Round explicitly and as late as possible, and track residuals so that rounding never creates or destroys money.",
+   "Use double-entry bookkeeping with immutable postings, derived balances, and linked compensating entries for corrections.",
+   "Track value time, booking time, and settlement time separately, and keep audit trails of what happened, when, who triggered it, and why.",
+   "Use funds reservation (hold-and-release) with strongly consistent available-balance checks to prevent double spending during external interactions."
+  ],
+  "summary": "This handbook describes patterns for software where money is the primary concern, organized around three principles: no invented data, no lost data, and no trust. It covers representing money (floating point vs. arbitrary precision vs. minor units vs. rationals), rounding, currency and FX rate handling, and double-entry ledgers with value, booking, and settlement timestamps. Later sections address audit trails, event sourcing, immutability, reversals, GDPR erasure versus immutable records, and executing money flows through invariants, funds reservation, and overdraft handling. Each section states its trade-offs and the principles it upholds, without prescribing a single implementation.",
+  "format": "book",
+  "level": "intermediate",
+  "technologies": [
+   "Java",
+   "BigDecimal",
+   "JSON",
+   "ERC-20",
+   "DMN",
+   "Drools",
+   "Decisions4s"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8583,
+  "output": 981
+ },
+ "generated": "2026-10-29"
+}

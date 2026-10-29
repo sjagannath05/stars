@@ -1,0 +1,66 @@
+{
+ "id": "4f6f1c198795429e",
+ "url": "https://eel.is/c++draft/atomics",
+ "final_url": "https://eel.is/c++draft/atomics",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "32 Concurrency support library [thread]",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory models and atomics",
+   "entry": "Atomic operations, C++ working draft - The normative wording for every memory order, fence and read-modify-write, the text a compiler is checked against."
+  }
+ ],
+ "summary": {
+  "title": "32 Concurrency support library [thread]",
+  "one_liner": "The C++ working draft's normative wording for std::atomic, memory_order, lock-free queries, atomic wait/notify, and fences, as a reference for what compilers must implement.",
+  "category": "c++ concurrency",
+  "keywords": [
+   "c++ atomics",
+   "std::atomic",
+   "c++ working draft",
+   "memory_order",
+   "memory_order_relaxed",
+   "memory_order_acquire",
+   "memory_order_release",
+   "memory_order_seq_cst",
+   "memory_order_acq_rel",
+   "sequential consistency",
+   "lock-free property",
+   "is_lock_free",
+   "atomic_ref",
+   "atomic fences",
+   "atomic_thread_fence",
+   "atomic_signal_fence",
+   "atomic wait and notify",
+   "read-modify-write operation",
+   "out-of-thin-air values",
+   "c++ memory model",
+   "synchronizes-with release acquire",
+   "atomic_flag",
+   "compare exchange c++",
+   "is the atomic type lock-free",
+   "what does memory_order_seq_cst guarantee"
+  ],
+  "takeaways": [
+   "memory_order defines release, acquire, acq_rel, seq_cst and relaxed semantics; a release store synchronizes with an acquire load that reads its value.",
+   "seq_cst operations and fences form a single total order S, but this only gives sequential consistency for data-race-free programs using exclusively seq_cst operations.",
+   "ATOMIC_*_LOCK_FREE macros report 0, 1 or 2 for never, sometimes, or always lock-free, and the result is the same for all atomic objects of a given type.",
+   "atomic wait and notify operations let a thread block until an atomic value changes, instead of polling.",
+   "The draft also specifies out-of-thin-air value restrictions with worked examples (Notes 5 and 6)."
+  ],
+  "summary": "This page is a section of the C++ working draft (the [thread] clause, atomics part) rendered on eel.is. It lists the synopsis of the atomics library: memory_order, the ATOMIC_*_LOCK_FREE macros, std::atomic and its partial specialization for pointers, non-member atomic functions, atomic_flag, atomic_ref, and fences. It then gives the normative semantics: release/acquire synchronization, coherence ordering, the single total order for seq_cst operations, and guidance against out-of-thin-air values. The text is dense specification wording rather than a tutorial, and it is truncated partway through the atomic_ref section.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "C++"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11620,
+  "output": 985
+ },
+ "generated": "2026-10-29"
+}

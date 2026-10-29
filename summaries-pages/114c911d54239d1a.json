@@ -1,0 +1,64 @@
+{
+ "id": "114c911d54239d1a",
+ "url": "https://rohitpaulk.com/articles/redis-3",
+ "final_url": "https://rohitpaulk.com/articles/redis-3",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Redis: Concurrent Clients [3/5]",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Ruby:",
+   "entry": "Part 3: Concurrent Clients"
+  }
+ ],
+ "summary": {
+  "title": "Build Redis: Concurrent Clients [3/5]",
+  "one_liner": "You learn why a naive Ruby TCP server fails on repeated commands, how threads fix it, and how an IO.select-based event loop serves many clients on one thread.",
+  "category": "build a redis clone",
+  "keywords": [
+   "redis clone ruby",
+   "toy redis server",
+   "concurrent clients tcp server",
+   "multiple clients single thread",
+   "event loop",
+   "event loop tutorial",
+   "non-blocking io",
+   "blocking vs non-blocking calls",
+   "io select ruby",
+   "io.select",
+   "tcpserver accept blocking",
+   "ruby threads for tcp clients",
+   "readpartial non-blocking read",
+   "never block the event loop",
+   "resp redis protocol",
+   "ping pong redis server",
+   "select syscall",
+   "handle multiple socket connections",
+   "project-based learning redis"
+  ],
+  "takeaways": [
+   "A server that stops listening to a client after one reply cannot handle a second command from that client.",
+   "Spawning a thread per client lets one server accept new clients while serving existing ones, at the cost of thread overhead.",
+   "An event loop serves many clients on one thread, but any blocking call inside it stalls every client.",
+   "IO.select can watch the server socket and client sockets together, so accept and read calls are only made when data is ready.",
+   "Replacing gets with readpartial makes the read non-blocking, though command parsing is deferred to the next article."
+  ],
+  "summary": "This is the third part of a series building a toy Redis clone in Ruby that answers PING. It first shows a bug where the server drops a client after one reply, then fixes it by serving each client in its own thread. The article then explains event loops with a bartender analogy, defines blocking and non-blocking calls, and introduces IO.select to watch the server and client sockets together. The final implementation uses a single-threaded select loop with readpartial, and the minitest integration tests pass against it.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Redis",
+   "RESP",
+   "TCP sockets",
+   "minitest"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5522,
+  "output": 818
+ },
+ "generated": "2026-10-29"
+}

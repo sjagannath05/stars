@@ -1,0 +1,60 @@
+{
+ "id": "7d1140b8413ac460",
+ "url": "https://perl.plover.com/Regex/article.html",
+ "final_url": "https://perl.plover.com/Regex/article.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How Regexes Work",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Regex Engine",
+   "entry": "Perl: _How Regexes Work_"
+  }
+ ],
+ "summary": {
+  "title": "How Regexes Work",
+  "one_liner": "Learn how a regex engine can be built from scratch by turning a regex into a finite \"penny-moving\" machine (an NFA) and simulating it, and how Perl's backtracking differs from that approach.",
+  "category": "regex engine internals",
+  "keywords": [
+   "regex engine",
+   "how regular expressions work",
+   "build a regex engine",
+   "regex from scratch",
+   "nfa",
+   "nondeterministic finite automaton",
+   "thompson construction",
+   "ken thompson regex 1968",
+   "finite state machine regex",
+   "regex matching algorithm",
+   "backtracking vs nfa simulation",
+   "catastrophic backtracking",
+   "perl regex internals",
+   "backreferences implementation",
+   "regex to state machine",
+   "perl regex /o flag compile once",
+   "regex.pm perl module"
+  ],
+  "takeaways": [
+   "A regex can be compiled into a machine of circles and arrows (an NFA) that says yes exactly for strings the regex matches.",
+   "Unlabeled (epsilon) arrows and penny cloning let the machine track all possible match states at once, as in Ken Thompson's 1968 construction.",
+   "Concatenation, alternation, and repetition (P|Q, PQ, P+, P*) can each be built by combining smaller machines; classes, ?, and {n} reduce to these.",
+   "Perl instead moves one penny at a time and backtracks, which enables backreferences and greedy/non-greedy matching but can cause exponential slowdowns on patterns like /^(\\d+)*$/.",
+   "Compiling a regex is costly, so reusing compiled patterns (e.g. Perl's /o flag) avoids rebuilding the machine on every input line."
+  ],
+  "summary": "The article, reprinted from The Perl Journal (1998), explains how to implement regular expressions from nothing by modeling them as nondeterministic machines of circles and arrows, with a \"penny\" simulation that tracks active states while reading input. It walks through building machines for literals, alternation, concatenation, and the repetition operators, then sketches how character classes and other features reduce to these basics. The author also covers how Perl's real engine differs: it moves one penny at a time with backtracking, which supports backreferences and greedy matching but can blow up on certain patterns. Practical notes on regex compilation cost and the /o flag close the piece, and the author includes a Perl module (Regex.pm) as a demo.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Perl",
+   "C",
+   "Regex.pm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9104,
+  "output": 968
+ },
+ "generated": "2026-10-29"
+}

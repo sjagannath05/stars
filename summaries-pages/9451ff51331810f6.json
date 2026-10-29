@@ -1,0 +1,64 @@
+{
+ "id": "9451ff51331810f6",
+ "url": "https://man7.org/linux/man-pages/man2/clock_gettime.2.html",
+ "final_url": "https://man7.org/linux/man-pages/man2/clock_gettime.2.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "clock_getres(2) — Linux manual page",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Microbenchmarks that lie",
+   "entry": "clock_gettime(2) - Defines what each clock counts, NTP-slewed or raw monotonic time, or CPU time, and the resolution call."
+  }
+ ],
+ "summary": {
+  "title": "clock_getres(2) — Linux manual page",
+  "one_liner": "Learn what each Linux clock ID (CLOCK_REALTIME, CLOCK_MONOTONIC, CLOCK_BOOTTIME, CPU-time clocks, dynamic PTP clocks) measures and how clock_gettime(), clock_settime() and clock_getres() work with them.",
+  "category": "linux system calls",
+  "keywords": [
+   "clock_gettime",
+   "clock_getres",
+   "clock_settime",
+   "clock_gettime linux",
+   "clock_realtime",
+   "clock_monotonic",
+   "clock_monotonic_raw",
+   "clock_boottime",
+   "clock_tai",
+   "clock_process_cputime_id",
+   "clock_thread_cputime_id",
+   "clock_realtime_coarse",
+   "wall-clock vs monotonic time",
+   "ntp slewing clock",
+   "dynamic posix clock",
+   "clock resolution linux",
+   "timespec",
+   "vdso clock_gettime",
+   "linux man page clock",
+   "how to get monotonic time in c"
+  ],
+  "takeaways": [
+   "CLOCK_REALTIME is the settable wall-clock time since the Epoch, affected by NTP frequency adjustments and manual jumps.",
+   "CLOCK_MONOTONIC never goes backwards and ignores clock jumps but is affected by frequency adjustments; it does not count suspended time.",
+   "CLOCK_BOOTTIME is like CLOCK_MONOTONIC but also includes time the system is suspended.",
+   "CLOCK_PROCESS_CPUTIME_ID and CLOCK_THREAD_CPUTIME_ID measure CPU time for a process or thread and are not settable on Linux.",
+   "clock_getres() reports a clock's resolution, which depends on the implementation and cannot be set by a process."
+  ],
+  "summary": "This is the Linux man-pages reference for clock_getres(2), clock_gettime(2) and clock_settime(2). It defines the system-wide and per-process clock IDs supported by glibc and the Linux kernel, including REALTIME, MONOTONIC, MONOTONIC_RAW, BOOTTIME, TAI, and the CPU-time clocks, and explains how each is affected by NTP adjustments, clock changes and system suspend. It also covers dynamic clocks opened from character devices, the error codes, POSIX behavior notes, and a sample program that prints several clocks and their resolutions.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Linux",
+   "glibc",
+   "POSIX"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7584,
+  "output": 1046
+ },
+ "generated": "2026-10-29"
+}

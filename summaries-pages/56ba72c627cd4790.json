@@ -1,0 +1,69 @@
+{
+ "id": "56ba72c627cd4790",
+ "url": "https://man7.org/linux/man-pages/man7/vdso.7.html",
+ "final_url": "https://man7.org/linux/man-pages/man7/vdso.7.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "vdso(7) — Linux manual page",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Syscalls and asynchronous I/O",
+   "entry": "vdso(7) - Defines the calls the kernel answers without a mode switch, and the clocksource condition for skipping the trap."
+  }
+ ],
+ "summary": {
+  "title": "vdso(7) — Linux manual page",
+  "one_liner": "The vDSO is a small kernel-mapped shared library that lets user programs call functions like gettimeofday and clock_gettime without a full system call, and this man page explains how to locate it, read its symbols, and see per-architecture exports.",
+  "category": "linux kernel internals",
+  "keywords": [
+   "vdso",
+   "virtual dynamic shared object",
+   "vsyscall",
+   "linux vdso",
+   "gettimeofday without syscall",
+   "clock_gettime vdso",
+   "at_sysinfo_ehdr",
+   "getauxval",
+   "auxiliary vector",
+   "linux-vdso.so.1",
+   "__vdso_gettimeofday",
+   "__kernel_vsyscall",
+   "elf symbol versioning",
+   "system call overhead",
+   "strace vdso",
+   "seccomp vdso",
+   "man7 vdso",
+   "linux man pages"
+  ],
+  "takeaways": [
+   "The kernel maps the vDSO into every process; C libraries call its functions so common calls like gettimeofday become plain function calls with memory reads.",
+   "The vDSO base address is found via getauxval(AT_SYSINFO_EHDR) and is randomized, so it must not be assumed at a fixed address.",
+   "vDSO symbols are ELF-versioned and usually prefixed __vdso_ or __kernel_; the exact exported set differs per architecture.",
+   "Calls served by the vDSO do not appear in strace output and are not visible to seccomp filters."
+  ],
+  "summary": "The page is the Linux man-pages entry for the vDSO, a small ELF shared object the kernel maps into user address spaces. It explains why it exists (avoiding the cost of mode switches for frequent calls such as time queries), how to find it through the auxiliary vector, and how symbols are named and versioned. It then gives per-architecture tables of exported symbols for ARM, aarch64, MIPS, ia64, parisc, PowerPC, RISC-V, s390, SuperH, i386, x86-64 and x86/x32, plus notes on the removed Blackfin port and on strace and seccomp behaviour. It is aimed at C library writers and curious readers rather than general application developers.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "C",
+   "ELF",
+   "glibc",
+   "x86-64",
+   "aarch64",
+   "ARM",
+   "PowerPC",
+   "RISC-V",
+   "s390",
+   "strace",
+   "seccomp"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7130,
+  "output": 947
+ },
+ "generated": "2026-10-29"
+}

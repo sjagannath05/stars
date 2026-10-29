@@ -1,0 +1,62 @@
+{
+ "id": "f7c77e2fb13e69c8",
+ "url": "http://aosabook.org/en/500L/dbdb-dog-bed-database.html",
+ "final_url": "https://aosabook.org/en/500L/dbdb-dog-bed-database.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "500 Lines or LessDBDB: Dog Bed Database",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Database",
+   "entry": "Python: _DBDB: Dog Bed Database_"
+  }
+ ],
+ "summary": {
+  "title": "500 Lines or Less: DBDB (Dog Bed Database)",
+  "one_liner": "Learn how a small Python key/value database works internally, covering immutable binary trees, copy-on-write updates, file locking, and atomic, durable commits.",
+  "category": "database internals",
+  "keywords": [
+   "key value database",
+   "build a database python",
+   "dbdb",
+   "dog bed database",
+   "immutable binary tree",
+   "copy on write btree",
+   "atomic commit",
+   "durable writes fsync",
+   "database file locking",
+   "portalocker",
+   "logical and physical layer",
+   "append-only storage",
+   "acid durability atomicity",
+   "database compaction",
+   "vacuuming compaction couchdb",
+   "b+ tree vs binary tree",
+   "pickle serialization nodes",
+   "lazy node loading noderef",
+   "dirty read",
+   "how do databases handle crashes"
+  ],
+  "takeaways": [
+   "How DBDB separates the physical storage layer, logical tree layer, and public dictionary-style API.",
+   "Why an immutable binary tree lets updates build a new root that shares unchanged subtrees, making commits atomic.",
+   "How commits flush data to disk before atomically writing the root address, giving durability.",
+   "Why locking, dirty reads, and lack of compaction or isolation are trade-offs, and how B+ trees would improve I/O."
+  ],
+  "summary": "The author walks through DBDB, a small Python key/value store that persists to disk and avoids loading all data into RAM. The chapter tours the project's modules from the user-facing tool and interface down to the physical storage layer, then traces a get and a set-plus-commit through the code. It explains how immutable binary tree nodes enable copy-on-write updates, how a lockfile serializes writers, and how flushing data before atomically updating the root address provides atomicity and durability. It closes with limitations (no isolation, no compaction) and exercises on B+ trees and compaction.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Python",
+   "portalocker",
+   "pickle"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9493,
+  "output": 795
+ },
+ "generated": "2026-10-29"
+}

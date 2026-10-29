@@ -1,0 +1,72 @@
+{
+ "id": "46ba091cd888939a",
+ "url": "https://fasterthanli.me/articles/the-http-crash-course-nobody-asked-for",
+ "final_url": "https://fasterthanli.me/articles/the-http-crash-course-nobody-asked-for",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The HTTP crash course nobody asked for",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "HTTP",
+   "entry": "The HTTP crash course nobody asked for"
+  }
+ ],
+ "summary": {
+  "title": "The HTTP crash course nobody asked for",
+  "one_liner": "Learn how HTTP/1.1 works at the TCP level, why writing a proxy is hard, and how to make raw HTTP and HTTPS requests from Rust with reqwest, hyper, rustls and plain sockets.",
+  "category": "HTTP fundamentals",
+  "keywords": [
+   "http/1.1",
+   "http protocol explained",
+   "tcp connection http",
+   "crlf line endings",
+   "http request headers",
+   "content-length",
+   "chunked transfer encoding",
+   "http proxy design",
+   "cdn edge proxy",
+   "slowloris attack",
+   "tls handshake",
+   "openssl s_client",
+   "nc netcat http request",
+   "reqwest rust http client",
+   "hyper rust http",
+   "rustls",
+   "wireshark tls decrypt sslkeylogfile",
+   "tcpdump http capture",
+   "http request smuggling and validation",
+   "rust async http tutorial"
+  ],
+  "takeaways": [
+   "HTTP/1.1 is plain text over a TCP socket: a request line, headers terminated by CRLF, then an optional body sized by Content-Length or chunked encoding.",
+   "Writing an HTTP proxy means making many opinionated choices about header validation, body buffering, compression and transfer encoding, and guarding against resource exhaustion attacks like Slowloris.",
+   "You can send raw HTTP with nc and HTTPS with openssl s_client, and inspect traffic with tcpdump and Wireshark.",
+   "The article builds up from high-level reqwest to hyper to hand-rolled HTTP/1.1 over rustls, showing what each layer does."
+  ],
+  "summary": "The author, who maintains an HTTP/S/2 proxy at work, explains HTTP/1.1 from the ground up: TCP connections, request and response headers, Host, Connection, content length, HEAD/GET/POST methods, and chunked encoding. He then discusses the many design decisions and attack surfaces involved in proxying HTTP/1.1 for a CDN. The hands-on part sends raw requests with nc and openssl s_client, and then builds up Rust clients from reqwest to hyper to a manual implementation over rustls, verifying the traffic with tcpdump and Wireshark. The page was last updated about four years ago and is cut off before the manual implementation is finished.</summary>\n<parameter name=\"format\">tutorial",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "HTTP/1.1",
+   "TCP",
+   "TLS",
+   "Rust",
+   "reqwest",
+   "hyper",
+   "rustls",
+   "OpenSSL",
+   "tokio",
+   "Wireshark",
+   "tcpdump",
+   "netcat",
+   "curl"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9754,
+  "output": 1026
+ },
+ "generated": "2026-10-29"
+}

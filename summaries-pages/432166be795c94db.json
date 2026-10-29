@@ -1,0 +1,62 @@
+{
+ "id": "432166be795c94db",
+ "url": "https://norasandler.com/2018/03/14/Write-a-Compiler-7.html",
+ "final_url": "https://norasandler.com/2018/03/14/Write-a-Compiler-7.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a C Compiler, Part 7",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 7: Compound Statements"
+  }
+ ],
+ "summary": {
+  "title": "Writing a C Compiler, Part 7",
+  "one_liner": "You learn how to add compound statements (curly-brace blocks) to a C compiler, including lexical scoping, variable shadowing, and stack deallocation when a block ends.",
+  "category": "build a compiler",
+  "keywords": [
+   "compound statement",
+   "block statement",
+   "c compiler tutorial",
+   "writing a c compiler",
+   "lexical scoping",
+   "variable shadowing",
+   "scope in compilers",
+   "variable map",
+   "symbol table scope",
+   "block scope code generation",
+   "stack deallocation",
+   "stack pointer esp ebp",
+   "nested blocks parsing",
+   "grammar for blocks",
+   "shadowed variable",
+   "x86 assembly compiler",
+   "block_item ast",
+   "syntax error parsing",
+   "how do compilers handle nested scopes",
+   "how to compile curly braces blocks"
+  ],
+  "takeaways": [
+   "A compound statement is a list of statements and declarations in curly braces, and its grammar rule is \"{\" { <block-item> } \"}\".",
+   "Each block gets its own copy of the variable map, so inner declarations do not affect the enclosing scope.",
+   "Track a current_scope set to distinguish redeclaration errors in the same scope from legal shadowing in an inner scope.",
+   "Pop the variables declared in a block off the stack at the end of the block (addl bytes to %esp) so stack_index stays in sync."
+  ],
+  "summary": "This post is part 7 of Nora Sandler's series on writing a C compiler. It adds compound statements, explaining C's lexical scoping rules with examples of inner and outer variables and shadowing. It then covers the parsing changes (adding Compound to the AST and a grammar rule for blocks) and the code generation approach: maintaining a separate variable map per block, tracking the current scope to detect duplicate declarations, and deallocating block variables from the stack. An update note reports that the original post had forgotten to deallocate local variables, which was added later.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "x86 assembly",
+   "AT&T assembly"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5699,
+  "output": 827
+ },
+ "generated": "2026-10-29"
+}

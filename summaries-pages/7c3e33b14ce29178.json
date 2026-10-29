@@ -1,0 +1,69 @@
+{
+ "id": "7c3e33b14ce29178",
+ "url": "https://www.akkadia.org/drepper/futex.pdf",
+ "final_url": "https://www.akkadia.org/drepper/futex.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "Futexes Are Tricky",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Locks, contention and allocators",
+   "entry": "Futexes Are Tricky - Derives a correct user-space mutex from futex and shows the lost wakeups and extra kernel entries naive versions pay."
+  }
+ ],
+ "summary": {
+  "title": "Futexes Are Tricky",
+  "one_liner": "Learn how the Linux futex system call works and why naive user-space mutexes built on it suffer lost wakeups and unnecessary kernel entries, using a step-by-step mutex design.",
+  "category": "locks and synchronization",
+  "keywords": [
+   "futex",
+   "linux futex",
+   "futex_wait",
+   "futex_wake",
+   "futex_requeue",
+   "futex_wake_op",
+   "user-space mutex",
+   "mutex implementation",
+   "lost wakeup",
+   "spurious wakeup",
+   "atomic increment mutex",
+   "condition variable futex",
+   "linux kernel synchronization",
+   "nptl threads",
+   "futex system call",
+   "ulrich drepper futexes",
+   "how to build a mutex with futex",
+   "why does my futex mutex sleep too often",
+   "cache line contention locks",
+   "futex_cmp_requeue",
+   "futex_fd",
+   "event signalling with futex",
+   "inter-process synchronization linux",
+   "barrier and mutex primitives"
+  ],
+  "takeaways": [
+   "A futex is a 4-byte integer in user memory; the kernel's futex_wait and futex_wake operate on it, and the kernel only gets involved when waiting or waking is needed.",
+   "FUTEX_WAIT checks the futex value atomically before sleeping and returns EWOULDBLOCK if it has changed, which is the key to avoiding lost wakeups.",
+   "A simple atomic-increment mutex has two problems: it makes a system call on every unlock even when uncontended, and a race between the atomic check and entering the wait queue can cause endless retry loops.",
+   "FUTEX_WAKE_OP, FUTEX_CMP_REQUEUE and the obsolete FUTEX_REQUEUE cover cases such as condition variables, where waking and requeuing need more than one futex."
+  ],
+  "summary": "The article introduces the Linux futex kernel interface (FUTEX_WAIT, FUTEX_WAKE, FUTEX_WAKE_OP, FUTEX_CMP_REQUEUE, and others), explaining the atomicity guarantees the kernel provides around the futex value and its wait queue. It then builds a simple event object and a first mutex from atomic increment and futex calls, and verifies its correctness with thread-interleaving diagrams. The text then identifies the flaws: unnecessary unlock system calls under no contention and a race that can cause repeated EWOULDBLOCK retries, the latter costing heavy cache-line transfers. The rest of the document, beyond this excerpt, is said to fix these problems in a second version.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "futex",
+   "C",
+   "C++",
+   "POSIX threads",
+   "NPTL"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9773,
+  "output": 1050
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "b5329e4ade9719fc",
+ "url": "https://pwy.io/en/posts/learning-to-fly-pt3",
+ "final_url": "https://pwy.io/posts/learning-to-fly-pt3/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Learning to Fly: Let's simulate evolution in Rust (pt 3)",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Rust:",
+   "entry": "Part 3"
+  }
+ ],
+ "summary": {
+  "title": "Learning to Fly: Let's simulate evolution in Rust (pt 3)",
+  "one_liner": "You learn how to build a generic genetic algorithm library in Rust, covering selection (roulette wheel), uniform crossover, and how to test randomized code using seeded RNGs and histograms.",
+  "category": "genetic algorithms in rust",
+  "keywords": [
+   "genetic algorithm",
+   "genetic algorithm rust",
+   "evolutionary computation",
+   "selection method",
+   "fitness proportionate selection",
+   "roulette wheel selection",
+   "choose_weighted",
+   "uniform crossover",
+   "crossover method",
+   "chromosome",
+   "genotype",
+   "individual and population",
+   "fitness function",
+   "rust traits",
+   "generic library rust",
+   "testing randomness rust",
+   "seeded rng chacha8",
+   "mocking in rust",
+   "neural network weights evolution",
+   "learning to fly series",
+   "shorelark",
+   "rand crate",
+   "evolve simulation in rust",
+   "how does a genetic algorithm work"
+  ],
+  "takeaways": [
+   "A genetic algorithm evolves a population by selecting parents by fitness, recombining their chromosomes with crossover, and mutating the results.",
+   "Roulette wheel (fitness proportionate) selection can be implemented with rand's choose_weighted, giving higher-fitness individuals more chances to be picked.",
+   "Uniform crossover mixes genes from two parent chromosomes at equal probability; the author checks this with a seeded RNG and counting differing genes.",
+   "Rust traits (SelectionMethod, CrossoverMethod, Individual) keep the library generic, and Index, FromIterator and IntoIterator make Chromosome easy to use."
+  ],
+  "summary": "This third part of the Learning to Fly series builds a generic genetic algorithm library in Rust, intended to evolve the weights of the neural network from the previous post. The author walks through the design decisions step by step: passing fitness as a trait method versus a closure, using a SelectionMethod trait, and implementing roulette wheel selection via rand's choose_weighted. Testing is handled with a hand-written TestIndividual struct and histograms over many seeded (ChaCha8) random draws, rather than mocks. The post then introduces a Chromosome type of f32 genes and a CrossoverMethod trait with a uniform crossover implementation, verified by checking that the child takes roughly 50/50 of its genes from each parent.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "rand crate",
+   "rand_chacha"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10738,
+  "output": 974
+ },
+ "generated": "2026-10-29"
+}

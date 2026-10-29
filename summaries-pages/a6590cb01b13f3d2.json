@@ -1,0 +1,67 @@
+{
+ "id": "a6590cb01b13f3d2",
+ "url": "https://bernat.tech/posts/version-numbers",
+ "final_url": "https://bernat.tech/posts/version-numbers/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Version numbers: how to use them?",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Versioning",
+   "entry": "Version numbers: how to use them?"
+  }
+ ],
+ "summary": {
+  "title": "Version numbers: how to use them?",
+  "one_liner": "Semantic versioning often fails small-maintainer libraries by pinning users out of fixes and causing version conflicts, so the author argues for CalVer plus time-window deprecation warnings.",
+  "category": "software versioning",
+  "keywords": [
+   "semantic versioning",
+   "semver",
+   "calendar versioning",
+   "calver",
+   "zerover",
+   "version pinning",
+   "dependency version conflicts",
+   "transitive dependency",
+   "major version bump",
+   "breaking changes",
+   "deprecation policy",
+   "deprecation warnings",
+   "hyrum's law",
+   "library maintenance",
+   "dependency resolver",
+   "minimum version constraints",
+   "lock file",
+   "python packaging",
+   "api evolution",
+   "what version number should i use for my library"
+  ],
+  "takeaways": [
+   "Semantic versioning (MAJOR.MINOR.PATCH) signals compatibility, but with few maintainers, only the latest release is effectively supported, so pinning to a major version blocks fixes.",
+   "Major version pins cause transitive dependency conflicts in Python, where only one version of a library can be installed at a time.",
+   "CalVer (YEAR.MONTH.sequence) makes release age explicit and fits the single-supported-version reality better.",
+   "Pair API changes with a time-window deprecation policy (e.g. one year of warnings) instead of major bumps.",
+   "Libraries should declare minimum versions only; applications should add a lock file with exact pins."
+  ],
+  "summary": "The article explains why version numbers matter for both library producers and consumers, then reviews semantic versioning and ZeroVer. It argues that semver breaks down for under-resourced maintainers: only the latest release gets fixes, major-version pins hold back security and bug fixes, and transitive dependencies create conflicts, illustrated with a tenacity example. It presents CalVer as an alternative and proposes Hynek Schlawack's approach of deprecation windows with warnings, ending with a summary of trade-offs and recommendations like minimum-only constraints and lock files for applications.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "pip",
+   "tox",
+   "virtualenv",
+   "pytest",
+   "tenacity",
+   "Django"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6223,
+  "output": 866
+ },
+ "generated": "2026-10-29"
+}

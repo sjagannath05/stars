@@ -1,0 +1,63 @@
+{
+ "id": "9c9dddf3fa61ba6a",
+ "url": "https://defn.io/2018/02/25/web-app-from-scratch-01",
+ "final_url": "https://defn.io/2018/02/25/web-app-from-scratch-01/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Web application from scratch, Part I",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Web Server",
+   "entry": "Python: _Web application from scratch_"
+  }
+ ],
+ "summary": {
+  "title": "Web application from scratch, Part I",
+  "one_liner": "You learn how HTTP requests and responses are structured on the wire and how to build a basic Python socket web server that parses requests and serves files from disk using only the standard library.",
+  "category": "python web server",
+  "keywords": [
+   "python http server from scratch",
+   "build web server python",
+   "http request format",
+   "http response format",
+   "raw sockets python",
+   "socket bind listen accept",
+   "python socket server tutorial",
+   "iter_lines socket generator",
+   "parse http request python",
+   "400 bad request response",
+   "404 not found response",
+   "405 method not allowed",
+   "serve static files python",
+   "sendfile file server",
+   "mimetypes content type",
+   "path traversal check serve_file",
+   "standard library web server",
+   "wsgi alternative",
+   "rfc2616 http basics",
+   "crlf line parsing"
+  ],
+  "takeaways": [
+   "HTTP requests are CRLF-separated lines: a request line (method, path, version), headers, a blank line, then an optional body; responses mirror this with a status line.",
+   "A minimal server can be built with socket.socket, bind, listen, and accept, then sendall a fixed response.",
+   "Parsing requests can be done with a generator that reads from the socket and yields lines, wrapped in a Request class with from_socket.",
+   "Malformed requests should get a 400 response rather than crashing the server; unsupported methods get 405 and missing files get 404.",
+   "serve_file maps URL paths to files under a root directory, checks the resolved path stays inside it, and uses sendfile to stream the file."
+  ],
+  "summary": "This is Part I of a series that builds a Python web application and its HTTP server using only the standard library, deliberately ignoring WSGI. It first explains the HTTP request and response wire format, then incrementally builds a server: a socket that returns a fixed response, a looping accept, a line-reading generator, and a Request class. It adds 400, 404 and 405 error responses and finishes with a serve_file function that serves files from a www directory. Part II is said to cover Server and Response abstractions and concurrency.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "sockets",
+   "HTTP/1.1"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7766,
+  "output": 846
+ },
+ "generated": "2026-10-29"
+}

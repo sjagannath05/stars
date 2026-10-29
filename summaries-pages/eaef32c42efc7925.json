@@ -1,0 +1,69 @@
+{
+ "id": "eaef32c42efc7925",
+ "url": "https://peteris.rocks/blog/htop",
+ "final_url": "https://peteris.rocks/blog/htop/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "htop explained",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Dev environment & tools",
+   "entry": "htop explained (all in one page)"
+  }
+ ],
+ "summary": {
+  "title": "htop explained",
+  "one_liner": "You learn what the uptime, load average, task count, PID, process tree, user, and process state columns in htop mean, and how Linux exposes them through /proc.",
+  "category": "linux process monitoring",
+  "keywords": [
+   "htop explained",
+   "htop meaning",
+   "what does htop show",
+   "load average meaning",
+   "linux load average",
+   "uptime command",
+   "/proc/uptime",
+   "/proc/loadavg",
+   "process state",
+   "zombie process",
+   "uninterruptible sleep",
+   "process id pid",
+   "process tree",
+   "setuid",
+   "signals kill sigint sigkill",
+   "top command",
+   "mpstat cpu utilization",
+   "procfs",
+   "linux process states r s d z",
+   "why does load average exceed cpu count"
+  ],
+  "takeaways": [
+   "Load average is an exponentially damped moving average of running and uninterruptible processes, not a direct CPU percentage.",
+   "uptime and load averages come from /proc/uptime and /proc/loadavg, and each process's details live under /proc/<pid>/.",
+   "Process states R, S, D, Z, and T differ in whether a process is running, waiting for an event, waiting on I/O, or a zombie awaiting reaping.",
+   "Signals such as SIGINT, SIGTERM, and SIGKILL can be sent from htop or kill, and SIGKILL cannot be caught by the process.",
+   "Process tree, owner UID, and setuid bits explain how processes are launched and which user they run as."
+  ],
+  "summary": "The article walks through the htop screen section by section, using a Ubuntu server as the example. For each part it shows the shell commands involved (uptime, cat /proc/loadavg, ps, pstree, id, strace) and explains where the data comes from in the procfs filesystem. It covers load average, tasks and threads, PID, process tree, process owner and setuid, and the process state letters, with small experiments such as running sleep and cat /dev/urandom, sending signals, triggering an NFS D-state process, and building a C program that creates a zombie.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Linux",
+   "htop",
+   "bash",
+   "procfs",
+   "strace",
+   "C",
+   "GCC",
+   "mpstat",
+   "sysstat"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10768,
+  "output": 867
+ },
+ "generated": "2026-10-29"
+}

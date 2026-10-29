@@ -1,0 +1,62 @@
+{
+ "id": "73a23209cd9d2ceb",
+ "url": "https://briancallahan.net/blog/20210815.html",
+ "final_url": "https://briancallahan.net/blog/20210815.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Brian Robert Callahan",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 2: A lexer"
+  }
+ ],
+ "summary": {
+  "title": "Let's write a compiler, part 2: A lexer",
+  "one_liner": "You learn how to write a hand-coded lexer in C for the PL/0 language, covering token types, whitespace and comment skipping, identifiers versus reserved words, and number validation.",
+  "category": "build a compiler",
+  "keywords": [
+   "lexer",
+   "lexical analysis",
+   "tokenizer",
+   "pl/0 compiler",
+   "write a lexer in c",
+   "tokenize source code",
+   "token type",
+   "reserved words vs identifiers",
+   "strtonum validation",
+   "skip whitespace and comments",
+   "line counting for error messages",
+   "compiler front end",
+   "parser calls lexer",
+   "underscore digit separators",
+   "pl/0 grammar tokens",
+   "code formatter from tokens",
+   "how do i write a compiler",
+   "pascal-like language compiler tutorial"
+  ],
+  "takeaways": [
+   "Tokens are defined as integer or character token types; symbols use their ASCII character as the type, and identifiers, numbers and reserved words get their own types.",
+   "The lexer is a switch on the current character, skipping whitespace first, then dispatching to ident(), number(), comment handling, or symbol handling.",
+   "Identifiers and reserved words are read together and then checked against the reserved word list; numbers are validated with OpenBSD strtonum(3).",
+   "The lexer tracks line numbers because it is the only stage that reads newlines in the free-form source, and it errors out on the first problem.",
+   "The lexer can be extended into a code formatter once tokens are available, and the parser comes in the next part."
+  ],
+  "summary": "This post, part 2 of a compiler series, implements the lexer for the PL/0 language in C. It starts from the PL/0 grammar to list reserved words, symbols, identifiers and numbers, then defines a TOK_ constant for each token type. The lex() function is a switch over the current character that skips whitespace and comments, while ident() and number() read longer tokens. The author adds underscore digit separators for numbers and a debugging parse() function that prints each token with its line number.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "PL/0",
+   "OpenBSD strtonum(3)",
+   "Make"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10117,
+  "output": 861
+ },
+ "generated": "2026-10-29"
+}

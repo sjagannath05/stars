@@ -1,0 +1,73 @@
+{
+ "id": "b68f71ebbecfc6a8",
+ "url": "https://greenvitriol.com/posts/sync-engine-for-everyone",
+ "final_url": "https://greenvitriol.com/posts/sync-engine-for-everyone",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Green Vitriol - A synchronization engine for everyone",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Node.js: _Build a Synchronization Engine with Node.js and Y.js_"
+  }
+ ],
+ "summary": {
+  "title": "A synchronization engine for everyone",
+  "one_liner": "You learn how to build a minimal backend sync engine for Y.js documents using two REST endpoints that exchange state vectors and binary diffs.",
+  "category": "local-first sync engine",
+  "keywords": [
+   "synchronization engine",
+   "y.js sync",
+   "yjs",
+   "crdt",
+   "conflict-free replicated data type",
+   "local-first software",
+   "state vector",
+   "binary diff",
+   "y.encodestateasupdate",
+   "y.diffupdate",
+   "y.mergeupdates",
+   "y.encodestatevectorfromupdate",
+   "requestdiff endpoint",
+   "senddiff endpoint",
+   "express rest sync server",
+   "node.js document sync",
+   "offline-first data sync",
+   "indexeddb provider",
+   "how to sync documents between clients and server",
+   "horizontal scaling sync server",
+   "websockets vs rest sync"
+  ],
+  "takeaways": [
+   "Y.js documents can be stored as compressed binary state and synced using state vectors, diffs, and merges without loading them into memory.",
+   "A sync algorithm where the client sends its state vector, the server replies with its state vector and a diff, and the client sends back its diff.",
+   "Two Express endpoints (requestDiff and sendDiff) are enough to implement a server-side sync engine for Y.js documents.",
+   "Because merging is idempotent, the server does not need transactions or strict concurrency control; scaling options include caching, sticky sessions, and If-Match headers on S3-like storage."
+  ],
+  "summary": "The author argues for client-side data storage and local-first software, then explains that a sync engine can be built on CRDTs, specifically Y.js. The post describes three Y.js binary operations (encodeStateVectorFromUpdate, diffUpdate, mergeUpdates) that work directly on stored state buffers, and lays out a six-step client-server sync algorithm. It then shows TypeScript/Express code for the two endpoints, requestDiff and sendDiff, backed by an abstract Storage class. The conclusion covers scaling concerns such as caching, throttled writes, a WebSocket alternative, and optimistic concurrency with If-Match headers.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Y.js",
+   "JavaScript",
+   "TypeScript",
+   "Node.js",
+   "Express",
+   "CRDT",
+   "IndexedDB",
+   "WebRTC",
+   "Rust",
+   "SQLite",
+   "REST",
+   "WebSockets",
+   "S3"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4341,
+  "output": 960
+ },
+ "generated": "2026-10-29"
+}

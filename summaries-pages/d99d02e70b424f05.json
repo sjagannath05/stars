@@ -1,0 +1,66 @@
+{
+ "id": "d99d02e70b424f05",
+ "url": "https://www.granola.ai/blog/dont-animate-height",
+ "final_url": "https://www.granola.ai/blog/dont-animate-height",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Don't animate height!",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Web development",
+   "entry": "Don't animate height!"
+  }
+ ],
+ "summary": {
+  "title": "Don't animate height!",
+  "one_liner": "Animating CSS height forces layout, paint and composite work every frame, so replacing it with transform-based animations (such as paired translated rectangles) can cut CPU and GPU use sharply.",
+  "category": "web performance",
+  "keywords": [
+   "css animation performance",
+   "animate height cpu usage",
+   "css transform vs height",
+   "browser rendering pipeline",
+   "layout paint composite",
+   "layout property",
+   "paint property",
+   "composite property",
+   "transform animation",
+   "opacity animation",
+   "chrome devtools performance profiling",
+   "paint flashing",
+   "layer panel chrome devtools",
+   "layout shift regions",
+   "electron app high cpu",
+   "scaley distortion rounded corners",
+   "gpu usage css animation",
+   "avoid layout thrashing",
+   "why is my css animation slow",
+   "chrome about tracing",
+   "granola audio visualizer"
+  ],
+  "takeaways": [
+   "Changing height triggers layout, paint and compositing, making it one of the most expensive properties to animate.",
+   "Paint properties (e.g. SVG fill and stroke) skip layout but still repaint; transform and opacity only trigger compositing and are cheapest.",
+   "Chrome DevTools' Performance, Layers and Rendering tabs (paint flashing, layout shift regions) help locate costly animations.",
+   "A transform: scaleY() swap removes layout and paint but distorts rounded corners, so the author used two translated rounded rectangles instead.",
+   "In the author's Electron app on an M2 MacBook, renderer CPU dropped from 15% to 6% and GPU from 25% to 6%."
+  ],
+  "summary": "The author, a founding engineer at Granola, traces high CPU and GPU usage in an Electron note-taking app to a CSS height transition on an audio visualizer. Using Chrome DevTools (Performance, Layers and Rendering tabs), they find that the animation triggers layout and repainting every frame. They explain the browser rendering pipeline (layout, paint, composite) and rank CSS properties by cost. They try scaleY() as a fix, reject it for distorting corners, and instead use two translated rounded rectangles animated with transform, which reduced CPU and GPU load substantially. The post ends by previewing a follow-up on about:tracing.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "CSS",
+   "Chrome DevTools",
+   "Electron",
+   "JavaScript",
+   "SVG"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2837,
+  "output": 940
+ },
+ "generated": "2026-10-29"
+}

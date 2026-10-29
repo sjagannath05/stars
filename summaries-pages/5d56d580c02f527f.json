@@ -1,0 +1,61 @@
+{
+ "id": "5d56d580c02f527f",
+ "url": "http://station.clancats.com/writing-a-webserver-in-pure-php",
+ "final_url": "https://station.clancats.com/writing-a-webserver-in-pure-php/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a webserver in pure PHP - Tutorial",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Web Server",
+   "entry": "PHP: _Writing a webserver in pure PHP_"
+  }
+ ],
+ "summary": {
+  "title": "Writing a webserver in pure PHP",
+  "one_liner": "You learn how a basic HTTP server works by building a minimal socket-based server in PHP, with Request and Response classes, while the author warns it is not suitable for production.",
+  "category": "build a web server",
+  "keywords": [
+   "php web server",
+   "webserver in php",
+   "build a web server from scratch",
+   "php socket server",
+   "socket_create php",
+   "socket_bind socket_listen socket_accept",
+   "tcp socket server tutorial",
+   "http request parsing php",
+   "http response header string",
+   "psr-4 autoloading composer",
+   "php cli server script",
+   "http status codes array",
+   "how does a web server work",
+   "long running php process",
+   "blocking socket accept loop",
+   "php pthreads multithreading"
+  ],
+  "takeaways": [
+   "A web server loops over listen, accept, read the request, run a callback, write a response, and close the connection.",
+   "PHP's socket_create, socket_bind, socket_listen and socket_accept functions can bind to 127.0.0.1 and serve HTTP.",
+   "HTTP requests are parsed from the first line (method and URI) followed by header lines; query parameters are split with parse_str.",
+   "Responses are built as a status line, headers and a body, combined in __toString and written to the client socket.",
+   "The author states PHP is not designed for long-running servers and that this approach should not be used in production."
+  ],
+  "summary": "The tutorial walks through building a minimal HTTP server in PHP using the socket functions. It sets up Composer PSR-4 autoloading, a CLI script that takes a port argument, and a Server class that creates, binds and listens on a TCP socket in an infinite loop. Request and Response classes parse incoming header strings and build outgoing HTTP responses, including a status code table. The author repeatedly says this is an educational example and that PHP is a poor fit for production web servers.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "PHP",
+   "Composer",
+   "PSR-4 autoloading",
+   "sockets (AF_INET, SOCK_STREAM)",
+   "HTTP/1.1"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6646,
+  "output": 817
+ },
+ "generated": "2026-10-29"
+}

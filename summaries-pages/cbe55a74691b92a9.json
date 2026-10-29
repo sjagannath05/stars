@@ -1,0 +1,74 @@
+{
+ "id": "cbe55a74691b92a9",
+ "url": "https://joeduffyblog.com/2016/02/07/the-error-model",
+ "final_url": "https://joeduffyblog.com/2016/02/07/the-error-model/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Joe Duffy's Blog",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Error/exception handling",
+   "entry": "The Error Model, Joe Duffy, 2016. A quite comprehensive treatment of how to model errors at the programming language level."
+  }
+ ],
+ "summary": {
+  "title": "The Error Model (Joe Duffy, Midori)",
+  "one_liner": "Learn how the Midori OS team separated fail-fast abandonment for bugs from statically checked exceptions for recoverable errors, and how error codes, monads and exceptions compare on performance, safety and usability.",
+  "category": "programming language design",
+  "keywords": [
+   "error model",
+   "error handling",
+   "error codes",
+   "return codes",
+   "exceptions",
+   "checked exceptions",
+   "unchecked exceptions",
+   "fail-fast",
+   "abandonment",
+   "bugs vs recoverable errors",
+   "result type",
+   "option type",
+   "monads for errors",
+   "go error handling",
+   "rust try macro",
+   "haskell error handling",
+   "midori operating system",
+   "hresult",
+   "errno",
+   "defer and finally cleanup",
+   "reliability in operating systems",
+   "ignoring return values",
+   "statically checked exceptions"
+  ],
+  "takeaways": [
+   "Bugs such as null dereferences should be treated differently from recoverable errors like network failures; Midori used fail-fast abandonment for bugs.",
+   "Error codes are simple and need no runtime support, but they add performance cost and are easy to forget to check.",
+   "Monad-style Result/Option types and Rust's try! macro make error propagation explicit and harder to ignore.",
+   "Unchecked exceptions hide where control may transfer, which makes reasoning about reliability hard; statically checked exceptions address this."
+  ],
+  "summary": "This is the first in a series of posts by Joe Duffy about the error model of Midori, a research operating system written in a type-safe C#-based language. The article sets out design requirements (usable, reliable, performant, concurrent, diagnosable, composable) and compares error codes (C, Win32 HRESULT, Go), monadic return types (Haskell, Rust, Scala), and unchecked exceptions (C#, Java, .NET). It explains the drawbacks of each, such as performance overhead, forgotten checks, and non-local control flow, and introduces the two-pronged design that pairs fail-fast abandonment for bugs with statically checked exceptions for recoverable errors. The page text ends before the full description of the Midori mechanisms, so later sections are not covered.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Midori",
+   "C#",
+   "C",
+   "Go",
+   "Rust",
+   "Haskell",
+   "Scala",
+   "Java",
+   "D",
+   "C++",
+   "Swift",
+   "Win32 HRESULT"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8912,
+  "output": 932
+ },
+ "generated": "2026-10-29"
+}

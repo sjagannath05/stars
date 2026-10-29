@@ -1,0 +1,67 @@
+{
+ "id": "36706306b2d1d713",
+ "url": "https://www.cl.cam.ac.uk/~pes20/cpp/cpp0xmappings.html",
+ "final_url": "https://www.cl.cam.ac.uk/~pes20/cpp/cpp0xmappings.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "C/C++11 mappings to processors",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory models and atomics",
+   "entry": "C/C++11 mappings to processors - The table that turns each memory order into x86 and Arm instructions, so what an order costs is read off the page."
+  }
+ ],
+ "summary": {
+  "title": "C/C++11 mappings to processors",
+  "one_liner": "A reference table showing the x86, Power, ARMv7, ARMv8 (AArch32/AArch64) and Itanium instruction sequences that each C/C++11 atomic memory order compiles to.",
+  "category": "memory models and atomics",
+  "keywords": [
+   "c++11 atomics mapping",
+   "memory order to assembly",
+   "c/c++11 memory model compilation",
+   "seq_cst x86 instructions",
+   "x86 mfence seq_cst store",
+   "xchg seq_cst store",
+   "power hwsync lwsync mapping",
+   "arm dmb ish atomic mapping",
+   "armv8 ldar stlr acquire release",
+   "aarch64 atomic load store instructions",
+   "itanium ld.acq st.rel mapping",
+   "load acquire store release instructions",
+   "memory fence mapping table",
+   "compare-and-swap ll/sc loop arm power",
+   "consume acquire release seq_cst comparison",
+   "how much does memory order cost",
+   "atomic operation cost per architecture",
+   "lock-free programming hardware barriers"
+  ],
+  "takeaways": [
+   "Each C/C++11 operation (relaxed, consume, acquire, release, seq_cst, fences, compare-exchange) is mapped to a concrete instruction sequence per architecture.",
+   "On x86, plain MOVs implement most orders; seq_cst stores need a LOCK XCHG or MOV plus MFENCE, and seq_cst fences use MFENCE.",
+   "ARMv8 LDAR/STLR can implement seq_cst operations directly, while ARMv7 and Power rely on dmb ish or hwsync/lwsync barriers around accesses.",
+   "The page warns that compilers must agree on one SC mapping (read-fencing vs write-fencing on x86, or the two ARM variants), otherwise linked code may be incorrect.",
+   "The mappings are per-operation, not optimised; redundant barriers between adjacent operations could be removed by an optimisation pass."
+  ],
+  "summary": "The page is a collection of known mappings from C/C++11 atomic operations to x86, PowerPC, ARMv7, ARMv8 (AArch32 and AArch64) and Itanium instruction sequences, offered for discussion rather than as a definitive source. Each architecture gets a table listing the instructions for loads, stores, compare-exchange and fences under each memory order. The author notes that the per-operation approach is simpler than barrier-between-operations tables (such as Doug Lea's JVM cookbook) and that no optimisations are covered. Sources cited include the Batty et al. POPL 2011/2012 papers and ARM barrier litmus test material.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "C++11",
+   "C11",
+   "x86",
+   "PowerPC",
+   "ARMv7",
+   "ARMv8",
+   "AArch64",
+   "Itanium",
+   "Linux kernel"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6766,
+  "output": 1111
+ },
+ "generated": "2026-10-29"
+}

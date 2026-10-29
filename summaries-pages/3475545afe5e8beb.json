@@ -1,0 +1,61 @@
+{
+ "id": "3475545afe5e8beb",
+ "url": "https://nicholastsmith.wordpress.com/2016/02/18/eigenfaces-versus-fisherfaces-on-the-faces94-database-with-scikit-learn",
+ "final_url": "https://nicholastsmith.wordpress.com/2016/02/18/eigenfaces-versus-fisherfaces-on-the-faces94-database-with-scikit-learn/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Eigenfaces versus Fisherfaces on the Faces94 Database with Scikit-Learn",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Deep Learning:",
+   "entry": "Use EigenFaces and FisherFaces on Faces94 dataset"
+  }
+ ],
+ "summary": {
+  "title": "Eigenfaces versus Fisherfaces on the Faces94 Database with Scikit-Learn",
+  "one_liner": "You learn how to compare PCA-based Eigenfaces and LDA-based Fisherfaces for face classification on the Faces94 dataset using scikit-learn, and why LDA applied directly to the pixel matrix can outperform the PCA-then-LDA pipeline.",
+  "category": "facial recognition",
+  "keywords": [
+   "eigenfaces",
+   "fisherfaces",
+   "facial recognition",
+   "face recognition python",
+   "faces94 database",
+   "pca face recognition",
+   "linear discriminant analysis",
+   "lda classification",
+   "scikit-learn",
+   "principal component analysis",
+   "eigenface vs fisherface",
+   "within-class scatter matrix",
+   "singular matrix lda",
+   "k nearest neighbors faces",
+   "cross validation kfold",
+   "grayscale image flattening"
+  ],
+  "takeaways": [
+   "Eigenfaces are the principal components of flattened grayscale face images, and a few of them can reduce dimensionality for classification.",
+   "Fisherfaces apply LDA to face data, which accounts for class labels, unlike PCA which only maximizes overall variance.",
+   "Fisherfaces traditionally run PCA first to avoid a singular within-class scatter matrix, since pixels far outnumber samples.",
+   "Scikit-learn's LDA can be applied directly to the pixel matrix, which simplified the code and gave near-perfect accuracy on 12 subjects.",
+   "Reported 3-fold cross-validation accuracies were 1.0, 0.9875 and 1.0 on the 12-subject subset."
+  ],
+  "summary": "The post compares Eigenfaces (PCA) and Fisherfaces (LDA) for classifying 12 subjects with 20 grayscale images each from the Faces94 database, images at 180x200 pixels flattened into vectors. It walks through Python code for loading the data, computing and plotting the first four eigenfaces and fisherfaces, approximating images with increasing numbers of eigenfaces, and visualizing PCA-reduced data in 2D. It evaluates classification with 3-fold cross-validation, first using PCA followed by LDA and then LDA applied directly to the input matrix. The author concludes that the direct LDA approach is preferable because it simplifies the code and typically gives perfect accuracy on this dataset.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "scikit-learn",
+   "NumPy",
+   "matplotlib",
+   "scikit-image"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4009,
+  "output": 988
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,58 @@
+{
+ "id": "2141332769193690",
+ "url": "https://xmonader.github.io/nimdays/day06_nistow.html",
+ "final_url": "https://xmonader.github.io/nimdays/day06_nistow.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Nim Days",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Command-Line Tool",
+   "entry": "Nim: _Writing a stow alternative to manage dotfiles_"
+  }
+ ],
+ "summary": {
+  "title": "Day 6: Manage your dotfiles easily with nistow",
+  "one_liner": "You learn how to build a GNU Stow-style dotfile manager in Nim that symlinks config files from an app directory into a destination (home by default) using command-line parsing and directory walking.",
+  "category": "command-line tools",
+  "keywords": [
+   "nim dotfiles manager",
+   "nistow",
+   "stow alternative",
+   "gnu stow",
+   "symlink dotfiles",
+   "manage dotfiles",
+   "dotfiles symlinks",
+   "create symbolic links nim",
+   "nim command line parsing getopt",
+   "walkdirrec nim",
+   "createsymlink nim",
+   "dry run simulate symlinks",
+   "force override symlinks",
+   "dotfiles directory layout .config",
+   "build command-line tool nim",
+   "nim tutorial cli application",
+   "i3 config symlink",
+   "nim stow implementation"
+  ],
+  "takeaways": [
+   "Dotfiles are organized as <app>/.config/<app>/file, and stow links each file relative to a destination directory such as the home directory.",
+   "getopt is used to parse long and short options like --app, -a, --dest, --verbose, --simulate and --force.",
+   "walkDirRec with yieldFilter={pcFile} collects every regular file under the app directory, and the path prefix is replaced with the destination.",
+   "The stow procedure creates parent directories and symlinks each file, with simulate, verbose and force modes controlling behavior."
+  ],
+  "summary": "This Nim Days post (Day 6) builds a small stow clone called nistow for managing dotfiles. It defines the expected directory layout (an app folder containing .config/<app>/ files), then walks through a CLI entry point that parses options with getopt, defaults the destination to the home directory, and reports errors. The core logic uses walkDirRec to map each source file to a destination path, and a stow proc that creates directories and symlinks, honoring simulate, verbose and force flags. Full source is linked on GitHub.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Nim"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3708,
+  "output": 813
+ },
+ "generated": "2026-10-29"
+}

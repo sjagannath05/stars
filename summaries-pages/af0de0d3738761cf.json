@@ -1,0 +1,67 @@
+{
+ "id": "af0de0d3738761cf",
+ "url": "https://uxlfoundation.github.io/oneDNN/dev_guide_int8_computations.html",
+ "final_url": "https://uxlfoundation.github.io/oneDNN/dev_guide_int8_computations.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Nuances of int8 Computations",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Quantization",
+   "entry": "Nuances of int8 Computations - States where int8 saturates on pre-VNNI x86, the compensation that makes signed by signed work, and what VNNI removes."
+  }
+ ],
+ "summary": {
+  "title": "Nuances of int8 Computations",
+  "one_liner": "You learn why int8 arithmetic in oneDNN can saturate on AVX2/AVX-512 CPUs, how u8/s8 and s8/s8 inputs are handled, and how Intel DL Boost (VPDPBUSD) removes the intermediate overflow.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "int8 computation",
+   "int8 saturation",
+   "u8s8 gemm",
+   "s8s8 gemm",
+   "s8 compensation",
+   "vpmaddubsw overflow",
+   "vpdpbusd",
+   "intel dl boost",
+   "vnni",
+   "avx2 int8 overflow",
+   "avx-512 int8",
+   "onednn quantization",
+   "s32 accumulator",
+   "u7 s7 quantization range",
+   "int8 matrix multiply",
+   "why int8 overflows on x86",
+   "signed int8 multiplication",
+   "quantized convolution",
+   "onednn int8 rnn",
+   "int8 inference accuracy"
+  ],
+  "takeaways": [
+   "On AVX2 and AVX-512 without DL Boost, VPMADDUBSW saturates intermediate s16 sums, so u8/s8 dot products can give wrong results unless inputs are restricted (e.g., u7 or s7 ranges).",
+   "s8/s8 products are computed by adding 128 to one input to make it u8, then subtracting a compensation of 128 times the other input's sum.",
+   "The s8/s8 compensation trick can also overflow on AVX2/AVX-512, producing much larger errors than the u8/s8 case.",
+   "Intel DL Boost's VPDPBUSD computes the four-product sum exactly with no intermediate saturation, so no special tricks are needed.",
+   "Different oneDNN primitives handle overflow differently: convolution uses shifted source and weights scaled by 0.5, while s8/s8 GEMM leaves it to the user and RNN does not support s8/s8."
+  ],
+  "summary": "This oneDNN developer guide explains how int8 operations are computed on CPUs and where overflow can occur. It walks through the VPMADDUBSW, VPMADDWD, VPADDD instruction sequence with pseudo-code and worked examples showing saturation on AVX2 and AVX-512. It then contrasts this with VPDPBUSD on Intel DL Boost hardware and describes the +128 shift and compensation used for s8/s8 inputs. It closes with how convolution, GEMM, inner product and RNN primitives each handle the issue; the GPU section just points to another page.</summary>\n<parameter name=\"format\">reference",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "oneDNN",
+   "C++",
+   "Intel AVX2",
+   "Intel AVX-512",
+   "Intel DL Boost",
+   "VNNI",
+   "x86 SIMD"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5902,
+  "output": 1087
+ },
+ "generated": "2026-10-29"
+}

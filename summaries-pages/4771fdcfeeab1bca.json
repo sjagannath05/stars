@@ -1,0 +1,76 @@
+{
+ "id": "4771fdcfeeab1bca",
+ "url": "https://www.paepper.com/blog/posts/intelligent-agents-guided-by-llms",
+ "final_url": "https://www.paepper.com/blog/posts/intelligent-agents-guided-by-llms/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Intelligent agents guided by LLMs",
+ "sources": [
+  {
+   "list": "e2b-dev/awesome-ai-agents",
+   "section": "Links",
+   "entry": "Blog"
+  }
+ ],
+ "summary": {
+  "name": "Intelligent agents guided by LLMs",
+  "one_liner": "A blog post presenting a small from-scratch Python library for building LLM-controlled agents that reason in a Thought/Action/Observation loop, inspired by langchain.",
+  "category": "llm agent tutorial",
+  "keywords": [
+   "llm agent",
+   "ai agent",
+   "langchain alternative",
+   "minimal agent library",
+   "react agent",
+   "thought action observation",
+   "tool-using agent",
+   "python repl agent",
+   "google search tool",
+   "hacker news search tool",
+   "serpapi",
+   "openai stop sequence",
+   "prompt template agent",
+   "agent loop",
+   "hallucination avoidance",
+   "build ai agent from scratch",
+   "small langchain-inspired library",
+   "llm tool calling",
+   "python code execution agent",
+   "agent tutorial python",
+   "openai api agent",
+   "autonomous agent python",
+   "llm reasoning loop",
+   "agent prompt engineering"
+  ],
+  "use_cases": [
+   "Learning how an LLM agent works internally",
+   "Building a simple agent that searches Google",
+   "Creating an agent that executes Python code in a REPL",
+   "Searching Hacker News with an LLM agent",
+   "Understanding the ReAct-style prompt loop"
+  ],
+  "what_it_does": "The post describes a small library for building agents controlled by LLMs, written to be easier to understand than langchain. The agent runs a loop of Thought, Action, Observation, where the Thought and Action come from the LLM and the Observation comes from a tool. Tools are small Python classes with a name, a description, and a use(input_text) method. The author has implemented tools for Python REPL execution, Google search, and Hacker News search. The loop stops when the agent produces a Final Answer. To prevent the LLM from hallucinating observations, the author passes a stop pattern on \"Observation:\" so the real tool output is inserted instead.",
+  "pricing": "open source",
+  "platforms": [
+   "Python",
+   "GitHub"
+  ],
+  "notable": [
+   "Deliberately minimal, built from scratch to be understood in few lines of code",
+   "Uses a stop pattern on 'Observation:' so real tool results replace hallucinated ones",
+   "Tools are simple Python classes implementing use(input_text) -> str",
+   "Injects today's date into the prompt to stop the LLM rejecting recent information"
+  ],
+  "caveats": [
+   "The author states the agent is far from perfect and fails a lot",
+   "Google search relies on SerpAPI as shown in the example tool code",
+   "Relies on an LLM API such as OpenAI for generation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3559,
+  "output": 971
+ },
+ "generated": "2026-10-29"
+}

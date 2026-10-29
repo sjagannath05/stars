@@ -1,0 +1,67 @@
+{
+ "id": "1302d764e6290c55",
+ "url": "https://people.cs.umass.edu/~emery/pubs/berger-asplos2000.pdf",
+ "final_url": "https://people.cs.umass.edu/~emery/pubs/berger-asplos2000.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Locks, contention and allocators",
+   "entry": "Hoard: A Scalable Memory Allocator for Multithreaded Applications - Defines blowup and allocator-induced false sharing, which per-processor heaps under a bounded global heap avoid."
+  }
+ ],
+ "summary": {
+  "title": "Hoard: A Scalable Memory Allocator for Multithreaded Applications",
+  "one_liner": "Learn how Hoard's per-processor heaps, a bounded global heap, and superblock transfers keep multithreaded malloc/free scalable while limiting blowup and allocator-induced false sharing.",
+  "category": "memory allocators",
+  "keywords": [
+   "hoard allocator",
+   "scalable memory allocator",
+   "multithreaded malloc",
+   "allocator-induced false sharing",
+   "active false sharing",
+   "passive false sharing",
+   "blowup",
+   "memory blowup producer-consumer",
+   "per-processor heaps",
+   "global heap",
+   "superblocks",
+   "emptiness threshold",
+   "fragmentation",
+   "cache line false sharing",
+   "concurrent memory allocator",
+   "cilk allocator",
+   "stl allocator",
+   "ptmalloc",
+   "lkmalloc",
+   "solaris allocator",
+   "malloc and free scalability",
+   "paper asplos 2000",
+   "how to avoid false sharing in malloc",
+   "why does malloc slow down on multiple cores"
+  ],
+  "takeaways": [
+   "Blowup is memory consumption growth from a concurrent allocator failing to reuse freed memory; producer-consumer patterns can trigger it, from a factor of P up to unbounded.",
+   "Allocator-induced false sharing happens actively when one cache line is split among threads' allocations, and passively when frees let threads reuse pieces of shared lines.",
+   "Hoard uses per-processor heaps plus one global heap; superblocks move to the global heap when a per-processor heap becomes more than f empty, bounding blowup to a constant factor.",
+   "Each superblock is owned by one heap at a time, so simultaneous allocations come from different superblocks, and frees return blocks to their superblock, avoiding most false sharing.",
+   "The paper reports Hoard improving on the Solaris allocator by up to 60x on 14 processors and up to 18x over the next best allocator tested."
+  ],
+  "summary": "The paper introduces Hoard, a multithreaded memory allocator for C and C++ programs that aims for speed, scalability, false sharing avoidance, and low fragmentation. It defines blowup and explains how both active and passive allocator-induced false sharing arise. Hoard combines per-processor heaps with a global heap and manages fixed-size superblocks, transferring a superblock to the global heap when a per-processor heap crosses an emptiness threshold. The authors sketch proofs bounding blowup and synchronization costs, and report empirical results on eleven programs against serial and concurrent allocators.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "C++",
+   "Solaris"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9975,
+  "output": 1025
+ },
+ "generated": "2026-10-29"
+}

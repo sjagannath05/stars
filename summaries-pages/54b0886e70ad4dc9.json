@@ -1,0 +1,67 @@
+{
+ "id": "54b0886e70ad4dc9",
+ "url": "https://travisdowns.github.io/blog/2020/01/17/avxfreq1.html",
+ "final_url": "https://travisdowns.github.io/blog/2020/01/17/avxfreq1.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Gathering Intel on Intel AVX-512 Transitions",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "What the manuals leave out",
+   "entry": "Gathering Intel on Intel AVX-512 Transitions - Measures what the vendor leaves untimed in an AVX-512 licence change, a throttled phase then a frequency step."
+  }
+ ],
+ "summary": {
+  "title": "Gathering Intel on Intel AVX-512 Transitions",
+  "one_liner": "Wide AVX/AVX-512 instructions on Intel SKX-era CPUs trigger a voltage-only throttling phase (about 4x slower dispatch, roughly 8-20 μs) and sometimes a frequency change with a halt, measured with microbenchmarks.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "avx-512 frequency transition",
+   "avx-512 downclocking",
+   "intel avx-512 throttling",
+   "simd frequency scaling",
+   "avx license levels l0 l1 l2",
+   "voltage-only transition",
+   "vpor latency slowdown",
+   "ipc measurement avx-512",
+   "skylake-sp turbo license",
+   "wide simd power throttling",
+   "avx warmup period",
+   "rdtsc microbenchmark",
+   "intel avx 256-bit throttling",
+   "instructions per cycle throttled",
+   "cpu voltage msr_perf_status",
+   "freq-bench",
+   "why avx-512 slows down cpu",
+   "is avx-512 slower than avx2",
+   "travis downs avx"
+  ],
+  "takeaways": [
+   "After about 680 μs without using AVX upper bits, the first wide instruction triggers a voltage transition during which dispatch runs about 4x slower.",
+   "The throttling is fine-grained and applies only while wide instructions are in flight; nearby scalar adds are also slowed, but spaced-out ones run at full speed.",
+   "On the tested W-2104-class SKX chip, 512-bit instructions drop the frequency from 3.2 GHz (L0) to 2.8 GHz (L1), with an ~11 μs halt and a ~650 μs low-frequency period.",
+   "Light 256-bit instructions show the same voltage-only slowdown but no frequency change, and 128-bit instructions show no effect."
+  ],
+  "summary": "The author builds a microbenchmark framework (freq-bench) that runs a payload at periodic duty cycles while sampling frequency and IPC at 1 μs intervals, then uses it to examine AVX-512 and AVX transitions on a W-series Skylake-SP CPU. Tests with 256-bit and 512-bit vpor and vpord, mixed with scalar add instructions, reveal a ~9-10 μs voltage-only throttle with about 4x slowdown, followed for 512-bit by a halt and frequency step from L0 to L1. Voltage readings from MSR_PERF_STATUS on a mobile i7-6700HQ are used to support the idea that throttling waits for a voltage increase. The post also tests attenuation and lists untested areas such as heavy instructions and frequency dependence.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Intel AVX-512",
+   "AVX/AVX2 256-bit SIMD",
+   "x86-64 assembly",
+   "rdtsc",
+   "MSR_PERF_STATUS",
+   "Linux",
+   "Python",
+   "Skylake-SP",
+   "Skylake client i7-6700HQ"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9769,
+  "output": 1141
+ },
+ "generated": "2026-10-29"
+}

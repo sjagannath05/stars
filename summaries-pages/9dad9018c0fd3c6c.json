@@ -1,0 +1,64 @@
+{
+ "id": "9dad9018c0fd3c6c",
+ "url": "https://arxiv.org/abs/2407.00088",
+ "final_url": "https://arxiv.org/abs/2407.00088",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "T-MAC: CPU Renaissance via Table Lookup for Low-Bit LLM Deployment on Edge",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Quantization",
+   "entry": "T-MAC: CPU Renaissance via Table Lookup for Low-Bit LLM Deployment on Edge - Replaces unpacking and multiplying low-bit weights with bit-sliced lookups, so a narrower weight costs less to apply."
+  }
+ ],
+ "summary": {
+  "title": "T-MAC: CPU Renaissance via Table Lookup for Low-Bit LLM Deployment on Edge",
+  "one_liner": "T-MAC runs low-bit weight-quantized LLMs on CPUs by replacing dequantization and multiplication with bit-wise lookup-table kernels, reaching up to 4x throughput over llama.cpp.",
+  "category": "low-bit llm inference",
+  "keywords": [
+   "t-mac",
+   "table lookup llm inference",
+   "lut-based matrix multiplication",
+   "mpgemm",
+   "mixed precision gemm",
+   "low-bit llm",
+   "weight quantization cpu",
+   "bitnet b1.58",
+   "llama.cpp comparison",
+   "edge llm deployment",
+   "on-device llm",
+   "bit-wise table lookup",
+   "dequantization overhead",
+   "raspberry pi llm inference",
+   "cpu llm inference",
+   "quantized llm kernels",
+   "energy efficient llm inference",
+   "microsoft t-mac github"
+  ],
+  "takeaways": [
+   "Dequantizing low-bit weights before matmul adds large overhead; T-MAC performs mixed-precision GEMM directly via lookup tables.",
+   "T-MAC turns data-type-centric multiplication into bit-wise table lookups, removing multiplications and reducing additions.",
+   "Its LUT-based kernels scale linearly with weight bit-width.",
+   "Reported results: up to 4x throughput and 70% lower energy vs llama.cpp on low-bit Llama and BitNet models.",
+   "BitNet-b1.58-3B reaches about 30 tokens/s on one M2-Ultra core, 71 tokens/s on eight cores, and 11 tokens/s on Raspberry Pi 5; code is open source on GitHub."
+  ],
+  "summary": "The paper introduces T-MAC, a lookup-table-based method for efficient inference of weight-quantized (low-bit) LLMs on CPUs. It argues that existing systems lack native mixed-precision matrix multiplication and instead dequantize weights, which causes overhead; T-MAC performs mpGEMM directly through bit-wise table lookups. The authors evaluate on low-bit Llama and BitNet models, comparing against llama.cpp and reporting throughput and energy gains plus token rates on M2-Ultra and Raspberry Pi 5. The system is open-sourced by Microsoft.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "llama.cpp",
+   "BitNet",
+   "Llama",
+   "CPU SIMD kernels",
+   "Raspberry Pi 5",
+   "Apple M2-Ultra"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3236,
+  "output": 1006
+ },
+ "generated": "2026-10-29"
+}

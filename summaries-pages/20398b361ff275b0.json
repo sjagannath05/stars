@@ -1,0 +1,65 @@
+{
+ "id": "20398b361ff275b0",
+ "url": "https://danishpraka.sh/posts/write-a-shell",
+ "final_url": "https://danishpraka.sh/posts/write-a-shell/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Write a shell in C — Danish Prakash",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Shell",
+   "entry": "C: Write a shell in C"
+  }
+ ],
+ "summary": {
+  "title": "Write a shell in C",
+  "one_liner": "You learn how a basic Unix shell works by building a read-eval loop in C that reads input, tokenizes it with strtok, and runs commands via fork and execvp.",
+  "category": "build a shell in C",
+  "keywords": [
+   "write a shell in c",
+   "build a shell",
+   "shell implementation c",
+   "unix shell tutorial",
+   "custom shell c programming",
+   "read_line dynamic allocation",
+   "realloc input buffer",
+   "strtok tokenizing",
+   "split command into tokens",
+   "fork execvp",
+   "waitpid child process",
+   "exit builtin shell",
+   "read eval loop",
+   "command not found error",
+   "how does a terminal shell work",
+   "linux shell internals",
+   "gcc c shell example",
+   "process creation fork",
+   "c memory management malloc free"
+  ],
+  "takeaways": [
+   "A shell is a loop that prints a prompt, reads a line, splits it into tokens, and executes them.",
+   "Dynamic input reading uses malloc and realloc, doubling the buffer as needed, since command length is unknown in advance.",
+   "strtok splits the line on delimiters; the first call takes the string and later calls pass NULL.",
+   "fork creates a child process; the child calls execvp to replace itself with the command, and the parent waits with waitpid.",
+   "The exit builtin is handled in code by returning 0 to end the loop, since it cannot be run as an external program."
+  ],
+  "summary": "The article walks through writing a minimal shell named \"dash\" in C. It covers the main loop with a > prompt, reading input with a growing buffer using malloc and realloc, and tokenizing with strtok. Command execution uses fork, execvp, and waitpid, and exit is handled as a special builtin that ends the loop. The full source code for the basic shell is included, and the author notes it is a learning exercise rather than a production tool.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "gcc",
+   "POSIX fork",
+   "execvp",
+   "waitpid",
+   "strtok"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5254,
+  "output": 793
+ },
+ "generated": "2026-10-29"
+}

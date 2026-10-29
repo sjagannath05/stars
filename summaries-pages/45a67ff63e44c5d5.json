@@ -1,0 +1,65 @@
+{
+ "id": "45a67ff63e44c5d5",
+ "url": "https://johannesgaessler.github.io/llamacpp_performance",
+ "final_url": "https://johannesgaessler.github.io/llamacpp_performance",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "llama.cpp Performance Testing",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "When CPU beats GPU",
+   "entry": "llama.cpp Performance Testing - Holds the memory clock sweep with all else fixed, the token rate following it and flattening after a few threads."
+  }
+ ],
+ "summary": {
+  "title": "llama.cpp Performance Testing",
+  "one_liner": "LLaMA inference benchmarks from a llama.cpp developer showing that memory bandwidth, not CPU or GPU type, mainly limits token generation speed, plus VRAM figures for different model sizes.",
+  "category": "llm inference performance",
+  "keywords": [
+   "llama.cpp performance",
+   "llama inference benchmark",
+   "tokens per second",
+   "memory bandwidth bottleneck",
+   "cpu vs gpu llm inference",
+   "memory frequency vs token rate",
+   "thread count llama.cpp",
+   "physical cores threads performance",
+   "dual channel vs quad channel memory",
+   "q4_0 quantization",
+   "gpu vram usage llama 7b 13b 33b 65b",
+   "hybrid cpu gpu inference",
+   "hardware purchase for local llm",
+   "integer intrinsics pascal nvidia",
+   "llama.cpp developer benchmarks",
+   "rtx 3090 llama benchmark",
+   "p40 gtx 1070 llm speed",
+   "ryzen 3700x llm inference",
+   "xeon e5-2683 llm inference",
+   "local llm hardware sizing"
+  ],
+  "takeaways": [
+   "For CPU inference, token generation speed is roughly proportional to RAM frequency and channel count, so memory bandwidth matters more than CPU model.",
+   "Using more threads than physical cores can reduce performance; the page shows a drop at 9 threads on an 8-core Ryzen and above 16 threads on a 16-core Xeon.",
+   "On GPUs, model must fit in VRAM or speed drops significantly; the page lists VRAM usage for 7b (6618 MiB), 13b (10910 MiB), 33b (23176 MiB) and an estimated 65b (43000 MiB) at q4_0 and 2048 context.",
+   "NVIDIA GPUs need Pascal or later for the integer intrinsics that llama.cpp uses for quantized data."
+  ],
+  "summary": "The page is a running collection of llama.cpp performance numbers for LLaMA inference, meant to guide hardware purchases and software configuration. Tests generate 128 tokens with an empty prompt and 2048 context, mostly using q4_0 quantization. It compares two machines (a Ryzen 3700X with RTX 3090, and a Xeon E5-2683 v4 with P40 and GTX 1070) and includes charts of token rate versus memory frequency and thread count, which the summary text describes but the charts themselves are not in the captured text. It also gives VRAM usage for 7b, 13b, 33b and an estimated 65b model.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "llama.cpp",
+   "LLaMA",
+   "C++",
+   "CUDA",
+   "NVIDIA GPUs",
+   "q4_0 quantization"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2432,
+  "output": 1070
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "041421350dec8378",
+ "url": "https://boyter.org/2013/01/code-for-a-search-engine-in-php-part-1",
+ "final_url": "https://boyter.org/2013/01/code-for-a-search-engine-in-php-part-1/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Code a Search Engine in PHP Part 1",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "PHP: _Code a Web Search Engine in PHP_"
+  }
+ ],
+ "summary": {
+  "title": "Code a Search Engine in PHP Part 1",
+  "one_liner": "You learn how to build the crawler, inverted record-level index, document store and naive indexer of a small PHP search engine, using test-driven development.",
+  "category": "search engine internals",
+  "keywords": [
+   "php search engine",
+   "build a search engine from scratch",
+   "inverted index",
+   "record level index",
+   "concordance",
+   "web crawler php",
+   "quantcast top million list",
+   "dmoz url list",
+   "parallel crawler xargs",
+   "hashing urls md5 directory sharding",
+   "binary index file pack unpack",
+   "document store serialize",
+   "naive indexer",
+   "test driven development php",
+   "interface design search components",
+   "indexing a million documents",
+   "crawler parse urls",
+   "ranker search query parsing"
+  ],
+  "takeaways": [
+   "Seed a crawler from a URL list such as the Quantcast top million or DMOZ, and parse it with a short PHP or Python script.",
+   "Download pages in parallel with xargs -P and spread files across directories using an MD5 hash of the URL.",
+   "Design a record-level inverted index that stores 3 integers (doc id, count, pre-rank) per document in binary files, about 12 bytes per document.",
+   "Separate the index, document store, indexer, search and ranker behind interfaces so each can be unit tested and swapped later."
+  ],
+  "summary": "The author, writing in 2013, sets out to build a small search engine in PHP that can index about a million documents, and splits it into crawler, index, document store, indexer, search and ranker components defined by interfaces. The crawler section covers building a seed URL list from the Quantcast top million (and DMOZ as an alternative), then downloading pages with a simple file_get_contents loop parallelised via xargs and hashed into directories. The index section chooses a record-level inverted index stored as packed binary integers, with validation, store, get and clear methods, and estimates its size at about 6 GB for a million documents. The article ends with a naive indexer that builds word concordances and feeds the index and document store, and the code is shown inline throughout.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "PHP",
+   "Python",
+   "Bash",
+   "xargs",
+   "MD5"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9470,
+  "output": 854
+ },
+ "generated": "2026-10-29"
+}

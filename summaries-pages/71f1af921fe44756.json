@@ -1,0 +1,70 @@
+{
+ "id": "71f1af921fe44756",
+ "url": "https://rigtorp.se/virtual-memory",
+ "final_url": "https://rigtorp.se/virtual-memory/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Latency implications of virtual memory",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Where jitter comes from",
+   "entry": "Latency Implications of Virtual Memory - Measures with code the page-fault, TLB-shootdown and writeback stalls that memory mapping hides from the caller."
+  }
+ ],
+ "summary": {
+  "title": "Latency implications of virtual memory",
+  "one_liner": "Virtual memory causes hidden latency spikes from page faults, TLB misses, TLB shootdowns, page cache writeback, THP, KSM and NUMA balancing, and this guide explains how to measure and avoid each on Linux x86-64.",
+  "category": "low-latency systems",
+  "keywords": [
+   "virtual memory latency",
+   "page faults",
+   "major page fault",
+   "minor page fault",
+   "tlb misses",
+   "tlb shootdown",
+   "translation lookaside buffer",
+   "huge pages",
+   "transparent huge pages",
+   "thp disable",
+   "kernel samepage merging",
+   "ksm",
+   "numa balancing",
+   "page cache writeback",
+   "mlock",
+   "mmap map_populate",
+   "pre-faulting memory",
+   "perf stat tlb",
+   "munmap tlb shootdown",
+   "file backed writable mapping latency",
+   "linux low latency memory",
+   "jitter sources linux",
+   "hft memory latency",
+   "disable swap",
+   "khugepaged compaction"
+  ],
+  "takeaways": [
+   "Pre-fault, lock (mlock or MAP_LOCKED/MAP_POPULATE) and pre-allocate memory, and disable swap, to avoid page-fault stalls.",
+   "Avoid TLB shootdowns by mapping memory at startup and not changing page tables afterward; munmap and mprotect trigger them.",
+   "Avoid file-backed writable mappings, since page cache writeback forces read-only page table updates and stalls writers.",
+   "Disable THP, KSM and automatic NUMA balancing, and monitor faults with ps, perf stat and /proc/interrupts."
+  ],
+  "summary": "The guide is aimed at engineers building low-latency systems such as realtime audio, control and HFT, and is written from the Linux kernel on AMD64 perspective. It explains page faults (major and minor), TLB misses and huge pages, TLB shootdowns, page cache writeback, transparent huge pages, kernel samepage merging and NUMA balancing. Each section gives the mechanism, the latency cost, the sysctl or command to disable or avoid it, and a perf or /proc command to observe it. The author includes a small tlbshootdown test and a writeback jitter measurement on a Ryzen 3900X system.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "C",
+   "C++",
+   "x86-64 / AMD64",
+   "perf",
+   "mimalloc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6747,
+  "output": 950
+ },
+ "generated": "2026-10-29"
+}

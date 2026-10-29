@@ -1,0 +1,64 @@
+{
+ "id": "5bb6afa5add9acee",
+ "url": "https://jvns.ca/blog/2023/02/08/why-does-0-1-plus-0-2-equal-0-30000000000000004",
+ "final_url": "https://jvns.ca/blog/2023/02/08/why-does-0-1-plus-0-2-equal-0-30000000000000004/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Why does 0.1 + 0.2 = 0.30000000000000004?",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Low-level, assembly",
+   "entry": "Why does 0.1 + 0.2 = 0.30000000000000004?, Julia Evans (about floating point)"
+  }
+ ],
+ "summary": {
+  "title": "Why does 0.1 + 0.2 = 0.30000000000000004?",
+  "one_liner": "Learn why 0.1 + 0.2 gives 0.30000000000000004 in 64-bit floats, by working through exact values, round-half-to-even rounding, and the exponent and significand arithmetic.",
+  "category": "floating point arithmetic",
+  "keywords": [
+   "floating point",
+   "0.1 + 0.2",
+   "0.30000000000000004",
+   "64-bit float",
+   "double precision",
+   "ieee 754",
+   "round to nearest even",
+   "significand",
+   "mantissa",
+   "exponent",
+   "float addition",
+   "binary floating point",
+   "why floating point is inexact",
+   "float printing shortest representation",
+   "struct.pack float bytes",
+   "math.nextafter",
+   "python float precision",
+   "php float display",
+   "floating point rounding error",
+   "how computers add decimals",
+   "julia evans"
+  ],
+  "takeaways": [
+   "Floating point addition computes the exact sum, then rounds to the nearest representable 64-bit float.",
+   "0.1 + 0.2 lands exactly halfway between two neighbouring floats, so round-half-to-even picks 0.30000000000000004 because its significand is even.",
+   "A 64-bit float is sign, exponent and significand; the exponent must be aligned before adding significands, which can force a rounding step.",
+   "Python prints the shortest decimal that rounds to the same float, which is why 0.3 displays as 0.3 even though its exact value differs.",
+   "PHP shows 0.3 for 0.1 + 0.2 because its display algorithm is less precise, while the underlying arithmetic is the same."
+  ],
+  "summary": "The author works through why 0.1 + 0.2 equals 0.30000000000000004 in Python, using exact decimal expansions of the floats. They first show the sum is exactly halfway between the two nearest floats, then explain the tie is broken by round-to-even on the significand. A second section redoes the addition in binary, by hand-computing exponents and significands with struct.pack and Python integer math. The post closes with notes on how float printing picks the shortest round-tripping decimal and a comparison with PHP output.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "PHP",
+   "IEEE 754 floating point"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5810,
+  "output": 885
+ },
+ "generated": "2026-10-29"
+}

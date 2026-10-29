@@ -1,0 +1,67 @@
+{
+ "id": "29ea72164cbf982a",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker-p6",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker-p6/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 6 - Handlers"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch # 6 - Handlers",
+  "one_liner": "You learn how to write MQTT packet handlers in C (CONNECT, DISCONNECT, SUBSCRIBE, UNSUBSCRIBE, PUBLISH, ACK handlers, PINGREQ) dispatched from an array indexed by packet type, plus the start of a key-value configuration module.",
+  "category": "network programming",
+  "keywords": [
+   "mqtt broker",
+   "mqtt broker in c",
+   "mqtt handlers",
+   "mqtt packet handling",
+   "connect handler",
+   "subscribe handler",
+   "publish handler",
+   "pingreq handler",
+   "mqtt connack",
+   "mqtt suback",
+   "trie topic subscription",
+   "wildcard topic subscription",
+   "epoll on_read on_write callback",
+   "rearm read write callback",
+   "c configuration file parser",
+   "key value config file linux",
+   "mqtt qos 1 qos 2 ack",
+   "build mqtt broker from scratch",
+   "sol mqtt broker",
+   "mosquitto_sub paho-mqtt testing"
+  ],
+  "takeaways": [
+   "Handlers are mapped one-to-one to MQTT command types in an array indexed by packet type, so dispatch is a direct call.",
+   "Each handler fills an optional payload for the client and returns REARM_W, REARM_R, or -REARM_W (disconnect) to tell the event loop what to do next.",
+   "SUBSCRIBE walks the topic trie and recursively subscribes a client to all children when the topic ends with '/#'.",
+   "PUBLISH creates the topic if missing, forwards the message to subscribers with QoS downgraded to each subscriber's QoS, and replies with PUBACK or PUBREC depending on QoS.",
+   "A key-value configuration file (sol.conf) and a config module are added to control listening address, port, log level, and memory and request limits."
+  ],
+  "summary": "The post continues a C implementation of an MQTT broker called Sol by writing the packet handlers that run in the on_read callback. It first adds core data structures (topic, session, client, subscriber) and helper functions in core.c, then implements connect, disconnect, subscribe, unsubscribe, publish, the ACK handlers (PUBACK, PUBREC, PUBREL, PUBCOMP) and PINGREQ, each packing a response into the callback payload. The author notes known gaps marked as TODOs, such as clean session handling and removing clients from topics on disconnect. It ends by introducing a sol.conf key-value configuration file and a config.h/config.c module with defaults and memory/time parsing helpers.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "MQTT",
+   "epoll",
+   "Linux sockets",
+   "trie",
+   "Mosquitto",
+   "Python paho-mqtt"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11867,
+  "output": 1069
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,61 @@
+{
+ "id": "21cc065a769e87a9",
+ "url": "http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-2a",
+ "final_url": "http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-2a/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "A Simple Web App in Rust, Part 2a",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Rust:",
+   "entry": "Part 2a"
+  }
+ ],
+ "summary": {
+  "title": "A Simple Web App in Rust, Part 2a",
+  "one_liner": "You learn how to fix common Rust type errors in early code, especially around try! and Result, by reading compiler output and expanding macros with rustc.",
+  "category": "rust error handling",
+  "keywords": [
+   "rust",
+   "rust try macro",
+   "try! macro error",
+   "rust result type",
+   "io::result",
+   "rust mismatched types error",
+   "expand macros rustc",
+   "rustc pretty expanded",
+   "rust file create",
+   "std::fs::file create",
+   "rust write_all",
+   "rust unwrap vs try",
+   "rust main return type unit",
+   "rust match ok err",
+   "rust type checker fighting",
+   "beginner rust file writing",
+   "rust log file example",
+   "rust compiler error messages",
+   "simple-log project"
+  ],
+  "takeaways": [
+   "try! returns early with Err, so it cannot be used in a main that returns unit (()).",
+   "rustc --pretty=expanded shows macro-expanded code, which makes errors caused by macros easier to debug.",
+   "A function writing to a file can return io::Result<()> and end with Ok(()) to satisfy the type checker.",
+   "Using unwrap() is simpler but throws errors away; the author considers the try!/Result approach more idiomatic."
+  ],
+  "summary": "The author, continuing a series on building a simple Rust log app, tries to create and write a file and runs into a string of compiler type errors. They walk through each error, including match arm mismatches, unused-variable warnings, and the problem with try! inside a function returning unit. They use rustc's expanded-macro output to see that try! returns early with Err, then fix the signature to io::Result<()> and end with Ok(()). The post is a candid, beginner-level account of learning Rust's type system through trial and error, and it ends with a working log_something function.",
+  "format": "tutorial",
+  "level": "beginner",
+  "technologies": [
+   "Rust",
+   "cargo",
+   "rustc"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8951,
+  "output": 763
+ },
+ "generated": "2026-10-29"
+}

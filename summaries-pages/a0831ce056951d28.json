@@ -1,0 +1,78 @@
+{
+ "id": "a0831ce056951d28",
+ "url": "https://docs.python.org/3/library/multiprocessing.html",
+ "final_url": "https://docs.python.org/3/library/multiprocessing.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "multiprocessing — Process-based parallelism",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Asynchronous Programming",
+   "entry": "multiprocessing - (Python standard library) Process-based parallelism."
+  }
+ ],
+ "summary": {
+  "name": "multiprocessing",
+  "one_liner": "Python standard library package for process-based parallelism, spawning subprocesses with an API similar to the threading module.",
+  "category": "python standard library",
+  "keywords": [
+   "python multiprocessing",
+   "process-based parallelism",
+   "python parallel processing",
+   "python subprocesses",
+   "multiprocessing.process",
+   "multiprocessing.pool",
+   "process pool",
+   "worker pool python",
+   "data parallelism",
+   "global interpreter lock workaround",
+   "gil bypass",
+   "threading alternative",
+   "spawn start method",
+   "forkserver",
+   "fork start method",
+   "multiprocessing queue",
+   "multiprocessing pipe",
+   "inter-process communication",
+   "process synchronization lock",
+   "concurrent.futures processpoolexecutor",
+   "run function in parallel python",
+   "use multiple cpu cores python",
+   "multiprocessing.manager",
+   "sharedmemory",
+   "python concurrency"
+  ],
+  "use_cases": [
+   "Parallelizing a function across many input values",
+   "Using multiple CPU cores from Python",
+   "Running background worker processes",
+   "Sharing data between processes via queues or pipes",
+   "Synchronizing output between processes with locks"
+  ],
+  "what_it_does": "The module spawns processes using an API similar to threading, side-stepping the GIL by using subprocesses instead of threads. It provides a Process class (start, join, terminate, kill, interrupt, exitcode, daemon) and a Pool class for distributing function calls over input data. It offers Queue and Pipe for message passing between processes, and locks and other synchronization primitives equivalent to those in threading. It supports three start methods (spawn, fork, forkserver) selectable via set_start_method or get_context.",
+  "pricing": "open source",
+  "platforms": [
+   "POSIX",
+   "Windows",
+   "macOS",
+   "Linux"
+  ],
+  "notable": [
+   "Pool object for data parallelism with map, imap_unordered, and apply_async",
+   "Multiple start methods: spawn, fork, forkserver, with context objects",
+   "Process API that mirrors threading.Thread, plus terminate, kill and interrupt"
+  ],
+  "caveats": [
+   "Not supported on Android, iOS, WASI or WebAssembly platforms",
+   "spawn and forkserver start methods generally cannot be used with frozen executables (PyInstaller, cx_Freeze) on POSIX",
+   "Code using Pool or Process needs an importable __main__ module, so examples may fail in the interactive interpreter"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9657,
+  "output": 957
+ },
+ "generated": "2026-10-29"
+}

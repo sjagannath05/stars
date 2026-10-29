@@ -1,0 +1,66 @@
+{
+ "id": "97999ccab2fd8d3e",
+ "url": "https://blog.seekerror.org/the-plumbers-approach-to-distributed-systems",
+ "final_url": "https://blog.seekerror.org/the-plumbers-approach-to-distributed-systems",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The Plumber's Approach to Distributed Systems",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "System architecture",
+   "entry": "The Plumber's Approach to Distributed Systems by the same author argues for considering stateful services:"
+  }
+ ],
+ "summary": {
+  "title": "The Plumber's Approach to Distributed Systems",
+  "one_liner": "Learn how to route each request to a single instance that owns a business-domain partition (such as a customer), so its in-memory state can be handled single-threaded for lower latency and fewer correctness problems than stateless microservices.",
+  "category": "distributed systems",
+  "keywords": [
+   "plumber's approach",
+   "partitioned ownership",
+   "sharding by business domain",
+   "stateful services",
+   "stateless microservices alternative",
+   "request routing",
+   "routing table",
+   "interval map",
+   "lease or distributed lock",
+   "etcd",
+   "service discovery for sharded services",
+   "work handler",
+   "single-threaded handler",
+   "lightweight threads fibers",
+   "in-memory state cache validity",
+   "low latency distributed systems",
+   "dispatcher for requests",
+   "ownership change disruption",
+   "write-through cache source of truth",
+   "partitioning by customer id",
+   "async i/o in single-threaded handler",
+   "how to avoid race conditions without locks",
+   "when not to use stateful design"
+  ],
+  "takeaways": [
+   "Partition work by a business domain (e.g., customer) so one instance exclusively handles all requests for each unit, avoiding contention resolved only via database transactions.",
+   "Use a routing table (ideally a compact interval map) held in memory by each instance, kept in sync by a coordination service such as etcd, with exclusive, long-lived ownership enforced by leases or locks.",
+   "Run one lightweight handler per domain unit that processes requests sequentially, which makes caching and atomicity simpler, and allows periodic or timer-driven actions.",
+   "The in-memory state is not durable: writes must still reach the database, and ownership changes or crashes lose handler state.",
+   "The approach suits low-latency systems with substantial in-memory state; if a stateless design works well, it is simpler and preferable."
+  ],
+  "summary": "The article argues that many distributed systems built as request-driven stateless microservices sacrifice correctness and latency at scale. It proposes a \"plumber's approach\" where each request is routed to one instance that owns a partition of a business domain, such as customers, and that instance processes that partition's requests in a single-threaded handler. It uses a pizza-ordering example to walk through choosing a partition key, routing via DNS, hardcoded config, or a coordination service, and dispatching to per-customer handlers. The post closes with the tradeoffs: in-memory state is not the durable source of truth, partitioning fits some domains better than others, and blocking or slow I/O can limit handler scope.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "etcd",
+   "Splitter",
+   "DNS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5719,
+  "output": 996
+ },
+ "generated": "2026-10-29"
+}

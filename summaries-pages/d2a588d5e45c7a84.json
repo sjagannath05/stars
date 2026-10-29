@@ -1,0 +1,61 @@
+{
+ "id": "d2a588d5e45c7a84",
+ "url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-1-standard-library",
+ "final_url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-1-standard-library",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "REST Servers in Go: Part 1 - standard library",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 1 - standard library"
+  }
+ ],
+ "summary": {
+  "title": "REST Servers in Go: Part 1 - standard library",
+  "one_liner": "You learn how to build a simple JSON REST server for a task-management API in Go using only the net/http standard library, including Go 1.22 method-and-path routing and path values.",
+  "category": "go rest servers",
+  "keywords": [
+   "go rest server",
+   "golang rest api",
+   "net/http standard library",
+   "http.servemux",
+   "go 1.22 routing",
+   "method and path pattern routing",
+   "http.request pathvalue",
+   "path parameters golang",
+   "go json api handlers",
+   "json.marshal http response",
+   "golang without framework",
+   "go web framework comparison",
+   "task management rest api example",
+   "taskstore in-memory map go",
+   "renderjson helper go",
+   "go http handler tutorial",
+   "rest api design example",
+   "go stdlib vs router package"
+  ],
+  "takeaways": [
+   "Build a REST server in Go using only net/http, registering routes with method and path patterns such as \"GET /task/{id}/\".",
+   "Read path parameters with req.PathValue and return JSON responses with the correct Content-Type header.",
+   "Refactor repetitive JSON marshalling into a renderJSON helper to make handlers shorter.",
+   "Structure the server with a separate data layer (taskstore) backed by a map, wrapped by a taskServer type that is safe for concurrent access.",
+   "Part 2 of the series compares third-party router packages against the standard library."
+  ],
+  "summary": "The post is the first in a multi-part series that implements the same simple task-management REST API in several different Go approaches, starting with the standard library. It defines the API endpoints (create, get, list, delete tasks, plus lookup by tag and due date) and a taskstore package backed by a map[int]Task. The server is wired up with http.NewServeMux and handlers that use req.PathValue to read parameters, then the author refactors repeated JSON response code into a renderJSON helper. The series' code is a dependency-free Go module the reader can run locally.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "net/http",
+   "encoding/json"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4813,
+  "output": 820
+ },
+ "generated": "2026-10-29"
+}

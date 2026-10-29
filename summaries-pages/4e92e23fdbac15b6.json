@@ -1,0 +1,62 @@
+{
+ "id": "4e92e23fdbac15b6",
+ "url": "https://xmonader.github.io/nimdays/day11_buildsystem.html",
+ "final_url": "https://xmonader.github.io/nimdays/day11_buildsystem.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Nim Days",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Nim: _Writing a Build system_"
+  }
+ ],
+ "summary": {
+  "title": "Nim Days: Day 11 - Bake applications (writing a build system)",
+  "one_liner": "You learn how to build a small Makefile-like build tool in Nim that orders task dependencies with a topological run and detects cycles using DFS with graph coloring.",
+  "category": "build systems",
+  "keywords": [
+   "build system",
+   "write a build system in nim",
+   "nim build tool",
+   "makefile alternative",
+   "task dependency resolution",
+   "dependency graph",
+   "adjacency list",
+   "cycle detection",
+   "circular dependency detection",
+   "depth first search",
+   "dfs cycle detection",
+   "graph coloring",
+   "white gray black vertex coloring",
+   "topological ordering of tasks",
+   "run tasks in dependency order",
+   "bake nim",
+   "nim",
+   "makefile",
+   "ansible-like recipes",
+   "dependency tracking"
+  ],
+  "takeaways": [
+   "A Makefile is made of variables, targets, and dependencies; a target runs only after its dependencies.",
+   "Tasks and their dependencies can be stored as an adjacency list (Table of name to required task names) plus a table mapping names to task objects.",
+   "Running a task means recursively walking its dependencies, skipping already-seen tasks, and echoing actions in dependency order.",
+   "Cycles are detected with DFS and three vertex colors (white, gray, black); reaching a gray vertex means a back edge and a cycle."
+  ],
+  "summary": "This is Day 11 of a Nim blog series in which the author builds a small task runner called Bake, similar to a Makefile. The post covers the basic model of variables, targets and dependencies, then shows example API usage for adding tasks and running them, including a circular dependency example. The implementation section explains using an adjacency list for the task graph, a recursive helper that produces an ordered list of tasks while skipping seen ones, and a DFS-based cycle check that uses white, gray and black node colors. The post ends with listed next steps such as variable support, YAML recipes, and Ansible-like modules.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Nim",
+   "Makefile",
+   "Bash"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3742,
+  "output": 822
+ },
+ "generated": "2026-10-29"
+}

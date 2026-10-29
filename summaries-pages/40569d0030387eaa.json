@@ -1,0 +1,62 @@
+{
+ "id": "40569d0030387eaa",
+ "url": "http://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index",
+ "final_url": "https://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to Implement a Search Engine Part 1: Create Index",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Miscellaneous:",
+   "entry": "Part 1"
+  }
+ ],
+ "summary": {
+  "title": "How to Implement a Search Engine Part 1: Create Index",
+  "one_liner": "You learn how to build an inverted index with positional postings over a Wikipedia article collection in Python, including tokenizing, stop-word filtering, Porter stemming, and saving the index to a text file.",
+  "category": "search engine implementation",
+  "keywords": [
+   "inverted index",
+   "build inverted index",
+   "search engine from scratch",
+   "positional index",
+   "postings list",
+   "stop words",
+   "porter stemmer",
+   "stemming",
+   "tokenization",
+   "term frequency",
+   "document frequency",
+   "phrase queries",
+   "wikipedia corpus indexing",
+   "python dictionary index",
+   "index file format",
+   "zipf's law",
+   "text parsing regular expressions",
+   "create index program",
+   "information retrieval basics",
+   "how does a search engine index documents"
+  ],
+  "takeaways": [
+   "An inverted index maps each term to a postings list of documents, and for phrase queries each posting also stores term positions.",
+   "Parsing steps: concatenate title and text, lowercase, tokenize on [a-z0-9], remove stop words, then stem with Porter Stemmer.",
+   "Build a per-page index and merge it into the main in-memory dictionary, appending postings for each term.",
+   "The index is saved as text lines in the form term|docID:pos,pos;docID:pos, so a separate query program can read it.",
+   "Stemming made indexing about five times slower in the author's tests, and term frequencies roughly follow Zipf's Law."
+  ],
+  "summary": "The article is the first part of a series building a search engine over roughly 40,000 to 50,000 Wikipedia articles, using a prebuilt XML-like file. It explains the corpus structure and the three query types it will support: one-word, free text, and phrase queries. It then walks through the parsing pipeline and builds a worked example of a positional inverted index on three small documents, showing how per-page indexes are merged into the main dictionary. The post also defines the text file format used to save the index and reports timing, size, and term statistics for a 5,000-document test collection and a full collection. The code is in Python, and the author links a downloadable workspace.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "Porter Stemmer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5636,
+  "output": 866
+ },
+ "generated": "2026-10-29"
+}

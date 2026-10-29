@@ -1,0 +1,67 @@
+{
+ "id": "a53489181e2dc0de",
+ "url": "https://hakibenita.com/sql-for-data-analysis",
+ "final_url": "https://hakibenita.com/sql-for-data-analysis",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Practical SQL for Data Analysis",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "SQL",
+   "entry": "Practical SQL for Data Analysis"
+  }
+ ],
+ "summary": {
+  "title": "Practical SQL for Data Analysis",
+  "one_liner": "Learn how doing aggregation, sampling, random data generation and train/test splits inside PostgreSQL can cut memory use and runtime compared with pandas.",
+  "category": "sql data analysis",
+  "keywords": [
+   "sql for data analysis",
+   "pandas vs sql",
+   "pandas memory usage",
+   "memory-profiler",
+   "psycopg2",
+   "postgresql aggregation",
+   "groupby in database",
+   "postgresql generate_series",
+   "random sampling postgresql",
+   "tablesample system bernoulli",
+   "train test split sql",
+   "common table expressions",
+   "postgresql random integer generation",
+   "round vs ceil random distribution",
+   "percentile_cont descriptive statistics",
+   "exploratory data analysis sql",
+   "unnest array postgresql",
+   "with ordinality",
+   "postgresql performance benchmark",
+   "fetch less data python"
+  ],
+  "takeaways": [
+   "Aggregating in PostgreSQL and fetching only the results uses far less memory and time than loading a full table into pandas (347 MB and 1.101s down to 2.3 MB and 0.114s in the author's benchmark).",
+   "Use generate_series, VALUES, UNNEST and random() with ceil (not round) to generate test data and uniform random integers.",
+   "TABLESAMPLE SYSTEM is much faster than ORDER BY random() for sampling large tables, at the cost of some accuracy; BERNOULLI is a row-level compromise.",
+   "A train/test split can be done in SQL with CREATE TABLE ... AS TABLE ... WITH NO DATA and a WITH ... INSERT ... RETURNING CTE.",
+   "Pandas and SQL work best together: push heavy aggregation to the database and use pandas for the rest."
+  ],
+  "summary": "The article argues that many data analysis tasks can be done inside a SQL database rather than by loading everything into pandas. The author benchmarks a counting task on a 1M-row PostgreSQL table using memory-profiler and psycopg2, comparing pandas variants against aggregation in the database and a plain Python version. It then covers SQL basics for analysis: CTEs, generating data (UNION ALL, VALUES, UNNEST, generate_series), random number and sampling techniques, a train/test split example, and descriptive statistics such as percentile_cont. The page ends mid-explanation of ordered-set aggregate functions.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "SQL",
+   "PostgreSQL",
+   "Python",
+   "pandas",
+   "psycopg2",
+   "memory-profiler",
+   "NumPy"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11195,
+  "output": 999
+ },
+ "generated": "2026-10-29"
+}

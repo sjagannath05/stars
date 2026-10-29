@@ -1,0 +1,62 @@
+{
+ "id": "b5b00afa51682a09",
+ "url": "https://travisdowns.github.io/blog/2019/08/20/interrupts.html",
+ "final_url": "https://travisdowns.github.io/blog/2019/08/20/interrupts.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Where Do Interrupts Happen?",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory access and retire",
+   "entry": "Where Do Interrupts Happen? - Measures that an interrupt lands on the oldest unretired instruction, which decides what a sampling profiler blames."
+  }
+ ],
+ "summary": {
+  "title": "Where Do Interrupts Happen?",
+  "one_liner": "Interrupt samples on Skylake tend to land on the instruction after the oldest unretired instruction, so sampling profilers blame instructions that hold up retirement rather than those that merely execute slowly.",
+  "category": "cpu performance engineering",
+  "keywords": [
+   "interrupt skid",
+   "sampling profiler accuracy",
+   "perf record task-clock",
+   "oldest unretired instruction",
+   "instruction retirement",
+   "out-of-order execution",
+   "reorder buffer retirement",
+   "skylake retirement",
+   "perf annotate",
+   "interrupt sample attribution",
+   "lock add atomic retire",
+   "retire-time latency measurement",
+   "instruction latency in situ",
+   "x86 assembly microbenchmark",
+   "where does perf blame",
+   "out-of-order cpu profiling",
+   "perf sampling bias",
+   "critical dependency chain sampling"
+  ],
+  "takeaways": [
+   "Interrupts on an out-of-order CPU are delivered at the oldest unretired instruction, and the sampled instruction is the one following it.",
+   "Long-latency instructions and retirement-throughput patterns (e.g. 4 retires per cycle) determine which instructions get sampled, not just which are slow.",
+   "Critical-path instructions can go unsampled if retirement timing hides them; moving an add changed whether it was sampled.",
+   "lock-prefixed instructions execute at retirement and are sampled heavily even when they add no runtime cost.",
+   "Sample counts can be used to estimate in-situ instruction retirement latency, as long as retirement behavior is accounted for."
+  ],
+  "summary": "The author investigates where externally triggered interrupts land in the instruction stream on an Intel Skylake i7-6700HQ, using small hand-written x86 assembly tests profiled with perf record and perf annotate. Through mov, add, load, nop and lock-prefixed instruction blocks, he builds a model in which the interrupt selects the oldest unretired instruction and the following instruction is recorded. He supports this with cycle-by-cycle scheduling, ready, complete and retire tables. The post ends by suggesting the method can measure instruction retirement latency in situ, and lists unexplored topics.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86 assembly",
+   "Intel Skylake",
+   "Linux perf",
+   "NASM"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11418,
+  "output": 920
+ },
+ "generated": "2026-10-29"
+}

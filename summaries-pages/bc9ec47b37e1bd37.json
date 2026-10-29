@@ -1,0 +1,63 @@
+{
+ "id": "bc9ec47b37e1bd37",
+ "url": "http://buildnewgames.com/broad-phase-collision-detection",
+ "final_url": "http://buildnewgames.com/broad-phase-collision-detection/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Broad Phase Collision Detection Using Spatial Partitioning",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Physics Engine",
+   "entry": "JavaScript: _Broad Phase Collision Detection Using Spatial Partitioning_"
+  }
+ ],
+ "summary": {
+  "title": "Broad Phase Collision Detection Using Spatial Partitioning",
+  "one_liner": "You learn how broad-phase collision detection works by comparing brute-force pair testing with a simple spatial grid that buckets AABBs into square cells and tests only entities that share a cell.",
+  "category": "game physics collision detection",
+  "keywords": [
+   "broad phase collision detection",
+   "narrow phase collision detection",
+   "spatial partitioning",
+   "spatial grid",
+   "simple spatial grid",
+   "bins collision detection",
+   "brute force collision detection",
+   "axis-aligned bounding box",
+   "aabb overlap test",
+   "aabb",
+   "cell size tuning",
+   "collision pair caching",
+   "quadtree",
+   "sweep and prune",
+   "separating axis theorem",
+   "how to detect collisions between many game objects",
+   "how to speed up collision detection in games",
+   "grid-based collision detection javascript",
+   "verlet integration",
+   "game engine collision checks"
+  ],
+  "takeaways": [
+   "Broad phase quickly finds object pairs that might collide; narrow phase then checks exact collisions.",
+   "Brute force pair testing is simple but its cost grows quadratically with entity count.",
+   "A spatial grid maps AABBs to square cells, rebuilt each update, and only tests entities sharing a cell.",
+   "Cell size must be tuned to entity size; mixed-size entities make a simple grid degrade toward brute force.",
+   "Caching checked pairs by unique entity IDs avoids duplicate tests."
+  ],
+  "summary": "The article explains broad-phase collision detection in game development and compares two approaches: a brute-force nested loop over entity pairs, and a simple spatial grid. It uses JavaScript demos built on a custom engine (the ro namespace) with axis-aligned bounding boxes defined by min and max points, and it sandboxes demos in JSFiddle. The grid section covers cell mapping formulas, cell-size trade-offs, grid population each step, and querying pairs with an ID-based cache to avoid duplicate tests. It closes with limitations for entities of varying size and ideas for extensions, plus a worked example comparing collision check counts.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "HTML5 Canvas",
+   "JSFiddle"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7196,
+  "output": 887
+ },
+ "generated": "2026-10-29"
+}

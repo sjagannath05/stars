@@ -1,0 +1,67 @@
+{
+ "id": "6305045802238105",
+ "url": "http://stevelosh.com/blog/2016/12/chip8-cpu",
+ "final_url": "https://stevelosh.com/blog/2016/12/chip8-cpu/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "CHIP-8 in Common Lisp: The CPU",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Emulator / Virtual Machine",
+   "entry": "Common Lisp: _CHIP-8 in Common Lisp_"
+  }
+ ],
+ "summary": {
+  "title": "CHIP-8 in Common Lisp: The CPU",
+  "one_liner": "Learn how to structure a CHIP-8 emulator's CPU state, main loop, instruction dispatch, and a define-instruction macro for decoding opcodes in Common Lisp.",
+  "category": "emulator development",
+  "keywords": [
+   "chip-8 emulator",
+   "chip-8 cpu",
+   "common lisp emulator",
+   "common lisp chip-8",
+   "emulator cpu design",
+   "defstruct cpu state",
+   "with-accessors macro",
+   "define-with-macro",
+   "instruction dispatch",
+   "case dispatch opcodes",
+   "opcode decoding bitmask",
+   "define-instruction macro",
+   "cycle emulation loop",
+   "rnd instruction random number",
+   "game boy emulator",
+   "retro console emulation tutorial",
+   "zapf",
+   "iterate loop driver"
+  ],
+  "takeaways": [
+   "Model the CHIP-8 state (registers, index, program counter, stack, memory) as a Lisp struct with type declarations for speed and runtime checks.",
+   "Run the emulator in a loop that executes a batch of cycles then sleeps, targeting about 500 cycles per second.",
+   "Each cycle reads a 2-byte big-endian instruction, advances the program counter, and dispatches via a case on nibble masks, since CHIP-8 opcodes don't map cleanly to a function table.",
+   "Write a define-instruction macro that parses an argument list like (_ r (mask 2)) into ldb bindings so instruction definitions read like the reference docs."
+  ],
+  "summary": "The author walks through a CHIP-8 emulator written in Common Lisp, starting with the main chip struct, registers, stack, memory, and the flag register accessor. It covers reset and ROM loading, a run-cpu loop that batches cycles with sleeps, and emulate-cycle which fetches and dispatches instructions. The post finishes by building a define-instruction macro that generates argument bindings from a descriptive argument list, illustrated with the RND instruction. The article is the first in a series, with graphics, input, sound, and debugging covered in later posts.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Common Lisp",
+   "SBCL",
+   "CHIP-8",
+   "Qt",
+   "qtools",
+   "iterate",
+   "cl-losh",
+   "bordeaux-threads",
+   "Alexandria",
+   "quickutil"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10740,
+  "output": 928
+ },
+ "generated": "2026-10-29"
+}

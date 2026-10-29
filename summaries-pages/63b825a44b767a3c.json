@@ -1,0 +1,74 @@
+{
+ "id": "63b825a44b767a3c",
+ "url": "https://docs.kernel.org/networking/napi.html",
+ "final_url": "https://docs.kernel.org/networking/napi.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "NAPI",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Interrupts and kernel bypass",
+   "entry": "NAPI - Defines the polling, software coalescing, busy polling and IRQ suspension knobs that trade interrupts against latency."
+  }
+ ],
+ "summary": {
+  "title": "NAPI",
+  "one_liner": "NAPI is the Linux networking stack's hybrid interrupt/polling event mechanism, and this kernel doc explains its driver API, scheduling rules, and the software coalescing, busy polling, and IRQ suspension knobs that trade interrupts against latency.",
+  "category": "linux kernel networking",
+  "keywords": [
+   "napi",
+   "linux napi",
+   "new api linux networking",
+   "napi poll method",
+   "napi_schedule",
+   "napi_complete_done",
+   "napi_struct",
+   "napi budget",
+   "busy polling",
+   "so_busy_poll",
+   "net.core.busy_poll",
+   "epoll busy poll",
+   "epiocsparams",
+   "irq suspension",
+   "irq-suspend-timeout",
+   "gro_flush_timeout",
+   "napi_defer_hard_irqs",
+   "software irq coalescing",
+   "threaded napi",
+   "threaded busy polling",
+   "so_prefer_busy_poll",
+   "af_xdp irq mitigation",
+   "netdev netlink napi-set",
+   "how does linux network driver interrupt polling work",
+   "reduce network interrupt latency tradeoff"
+  ],
+  "takeaways": [
+   "NAPI combines device interrupts with polling: an interrupt schedules a NAPI instance whose poll method processes Rx and Tx work within a budget.",
+   "Drivers must call napi_complete_done() only when work is finished, and must follow the budget rules (return budget or budget - 1) to avoid lost wakeups.",
+   "Software coalescing is controlled by gro_flush_timeout and napi_defer_hard_irqs; busy polling via SO_BUSY_POLL or epoll trades CPU for lower latency.",
+   "IRQ suspension (irq-suspend-timeout with SO_PREFER_BUSY_POLL) keeps device IRQs masked while epoll retrieves events, and works best combined with gro_flush_timeout and napi_defer_hard_irqs."
+  ],
+  "summary": "The page is the Linux kernel documentation for NAPI, the event handling mechanism of the networking stack. It describes the driver API (struct napi_struct and the poll method), the control API (netif_napi_add, napi_enable/disable), and the datapath rules for scheduling, IRQ masking, budgets, and completion. It then covers user-facing configuration: queue-to-NAPI mapping, persistent NAPI config, netlink-based tuning, software IRQ coalescing, busy polling (sysctl, socket option, and epoll ioctl), IRQ suspension, and threaded NAPI and threaded busy polling. Examples use the tools/net/ynl cli.py script and ynl netlink commands.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "C",
+   "netlink",
+   "epoll",
+   "io_uring",
+   "AF_XDP",
+   "XDP",
+   "sysctl",
+   "sysfs",
+   "ethtool"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8286,
+  "output": 1115
+ },
+ "generated": "2026-10-29"
+}

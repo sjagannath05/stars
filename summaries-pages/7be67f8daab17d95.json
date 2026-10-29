@@ -1,0 +1,65 @@
+{
+ "id": "7be67f8daab17d95",
+ "url": "https://www.nature.com/articles/s41586-023-06004-9",
+ "final_url": "https://www.nature.com/articles/s41586-023-06004-9",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Faster sorting algorithms discovered using deep reinforcement learning - Nature",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Kernel paths and generated code",
+   "entry": "Faster sorting algorithms discovered using deep reinforcement learning - Generated small sorts shipped in libc++, timed by CPU family with no model, compiler or flags stated, pending those."
+  }
+ ],
+ "summary": {
+  "title": "Faster sorting algorithms discovered using deep reinforcement learning",
+  "one_liner": "AlphaDev, a deep reinforcement learning agent, found new small sorting routines at the x86 assembly level that beat human benchmarks and were merged into LLVM libc++.",
+  "category": "reinforcement learning for code optimization",
+  "keywords": [
+   "alphadev",
+   "deep reinforcement learning sorting",
+   "assembly game",
+   "ai discovered sorting algorithm",
+   "sort 3 sort 4 sort 5",
+   "sorting networks",
+   "variable sort",
+   "libc++ sort patch",
+   "llvm standard c++ library",
+   "alphazero for program synthesis",
+   "monte carlo tree search program optimization",
+   "x86 assembly optimization",
+   "branchless sort",
+   "varint deserialization",
+   "stochastic superoptimization",
+   "ai program synthesis latency",
+   "machine learning compiler optimization",
+   "faster sort algorithm ai"
+  ],
+  "takeaways": [
+   "Sorting and similar routines can be framed as a single-player game where an agent appends CPU assembly instructions and is rewarded for correctness and measured latency.",
+   "AlphaDev, an AlphaZero-based agent with a transformer representation and a dual value head for latency, found sort 3, sort 4 and sort 5 routines that are shorter or match human sorting networks.",
+   "Variable sort algorithms gained more from latency optimization, measured as the fifth percentile across 100 machines.",
+   "Discovered sequences (AlphaDev swap move and copy move) cut one instruction each from sorting-network-based code.",
+   "The sort 3/4/5 routines were reverse engineered into C++ and merged into LLVM libc++, with reported gains of up to 70% for length-five sequences and about 1.7% for very large inputs."
+  ],
+  "summary": "The Nature article presents AlphaDev, a deep reinforcement learning agent that treats sorting-routine design as the AssemblyGame, where it builds x86 assembly programs scored on correctness and latency. The agent is an extension of AlphaZero using Monte Carlo tree search, a transformer-based instruction encoder and a CPU state encoder. Results cover fixed sorts (3, 4, 5), variable sorts, a protobuf VarInt routine and comparisons against a stochastic superoptimization baseline. The authors report that sort 3/4/5 routines were reverse engineered into C++ and merged into LLVM libc++, with improvements measured on ARMv8, Intel Skylake and AMD Zen 2 CPUs.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "x86 assembly",
+   "LLVM libc++",
+   "AlphaZero",
+   "Transformers",
+   "Monte Carlo tree search",
+   "Protocol Buffers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 8977,
+  "output": 1063
+ },
+ "generated": "2026-10-29"
+}

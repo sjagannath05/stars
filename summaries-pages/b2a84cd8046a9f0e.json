@@ -1,0 +1,66 @@
+{
+ "id": "b2a84cd8046a9f0e",
+ "url": "https://people.ece.ubc.ca/sasha/papers/asplos284-dashti.pdf",
+ "final_url": "https://people.ece.ubc.ca/sasha/papers/asplos284-dashti.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Migration, balancing and measured effects",
+   "entry": "Traffic Management: A Holistic Approach to Memory Placement on NUMA Systems - Proves against the kernel balancer that controller and link congestion, not remote latency, is what placement manages."
+  }
+ ],
+ "summary": {
+  "title": "Traffic Management: A Holistic Approach to Memory Placement on NUMA Systems",
+  "one_liner": "Modern NUMA performance is limited by memory controller and interconnect congestion rather than remote access latency, so placement must manage traffic using a mix of interleaving, replication, and co-location (the Carrefour algorithm).",
+  "category": "operating systems numa",
+  "keywords": [
+   "numa memory placement",
+   "carrefour algorithm",
+   "memory controller congestion",
+   "interconnect congestion",
+   "traffic management numa",
+   "page interleaving",
+   "page replication",
+   "page co-location",
+   "first-touch policy",
+   "linux numa balancing",
+   "remote memory access latency",
+   "local access ratio",
+   "thread clustering",
+   "instruction-based sampling",
+   "memory controller imbalance",
+   "asplos 2013 paper",
+   "numa-aware scheduling",
+   "data-intensive applications memory latency",
+   "kernel memory placement policy",
+   "numa hardware performance"
+  ],
+  "takeaways": [
+   "On modern NUMA hardware, remote wire delay adds at most about 30% to memory access cost, so congestion on memory controllers and interconnects matters more for performance.",
+   "Better locality does not always improve performance: interleaving reduced local access ratio for PCA yet improved its performance, because it cut memory latency via lower congestion.",
+   "Carrefour combines page co-location, interleaving, replication and thread clustering, chosen per application from global traffic statistics and per-page sampled access patterns.",
+   "Carrefour's decision thresholds in the paper include MAPTU above 50, replication only with a 95% memory read ratio and enough free RAM, interleaving when controller imbalance exceeds 35%, and co-location when local access ratio is below 80%.",
+   "Reported results: up to 3.6x speedup over the default Linux kernel, and no more than 4% slowdown when placement cannot be improved."
+  ],
+  "summary": "The paper argues that on modern NUMA systems, congestion in memory controllers and interconnect links, driven by data-intensive applications, hurts performance far more than remote access latency. The authors measure this with local versus remote single-thread runs and with first-touch versus interleaving policies on multi-threaded benchmarks from NAS, PARSEC and Metis, backed by hardware counter data on latency, imbalance and IPC. They then present Carrefour, a Linux algorithm with measurement, global decision and page-local decision components that enables interleaving, replication and co-location based on defined thresholds. The paper reports up to 3.6x speedup over the default kernel and a worst-case slowdown of about 4%, and it is written for an academic systems audience.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "NUMA hardware",
+   "instruction-based sampling (IBS)",
+   "NAS Parallel Benchmarks",
+   "PARSEC",
+   "Metis map/reduce"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9835,
+  "output": 1096
+ },
+ "generated": "2026-10-29"
+}

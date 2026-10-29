@@ -1,0 +1,65 @@
+{
+ "id": "42132e58cb70a483",
+ "url": "https://blog.stuffedcow.net/2013/05/measuring-rob-capacity",
+ "final_url": "https://blog.stuffedcow.net/2013/05/measuring-rob-capacity/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Measuring Reorder Buffer Capacity",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Rename and issue",
+   "entry": "Measuring Reorder Buffer Capacity - Sets the user-space method that measures the window and register files, and which idioms take no physical register."
+  }
+ ],
+ "summary": {
+  "title": "Measuring Reorder Buffer Capacity",
+  "one_liner": "You learn how to measure a CPU's reorder buffer and speculative physical register file size with a pointer-chasing microbenchmark that serializes two cache misses, and how to detect zeroing idioms and MOV elimination.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "reorder buffer size",
+   "rob capacity measurement",
+   "instruction window size",
+   "reorder buffer microbenchmark",
+   "physical register file size",
+   "speculative physical registers",
+   "rename registers",
+   "memory-level parallelism",
+   "pointer chasing cache miss",
+   "nop filler instruction",
+   "hyper-threading rob partitioning",
+   "zeroing idiom xor register",
+   "move elimination mov ivy bridge",
+   "out of order execution window",
+   "register renaming",
+   "sandy bridge ivy bridge pentium 4 northwood",
+   "how many instructions ahead can a cpu look",
+   "x86 microarchitecture measurement"
+  ],
+  "takeaways": [
+   "Two cache-missing loads separated by filler instructions overlap only if the second load fits inside the instruction window; this reveals the ROB size.",
+   "Using ADD instead of NOP as filler measures the speculative portion of the physical register file, since ADD consumes destination registers.",
+   "On Lynnfield and Ivy Bridge the measured ROB sizes (128 and 168) match published numbers; ROB capacity is statically halved when both Hyper-Threading contexts are active.",
+   "XOR reg,reg zeroing idioms on Sandy Bridge and Ivy Bridge consume no destination registers, and register-to-register MOV elimination is new in Ivy Bridge.",
+   "Sandy Bridge showed an unexplained shared limit of about 147 instructions for mixed integer and SSE/AVX code, which the author could not explain."
+  ],
+  "summary": "Henry Wong describes a microbenchmark that uses two pointer-chasing cache misses separated by filler instructions. If the second miss falls outside the reorder buffer window, the misses serialize and execution time steps up, revealing the window size. He reports results for several Intel microarchitectures (Pentium 4 Northwood, Nehalem-class Lynnfield, Sandy Bridge, Ivy Bridge). The same method, with ADD or SSE/AVX instructions as filler, measures speculative physical register file size, and variants test the XOR zeroing idiom and MOV elimination. The article closes with an unresolved puzzle about a shared register limit on Sandy Bridge.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "x86 assembly",
+   "Intel Pentium 4 Northwood",
+   "Intel Lynnfield (Nehalem)",
+   "Intel Sandy Bridge",
+   "Intel Ivy Bridge",
+   "SSE",
+   "AVX"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5205,
+  "output": 1088
+ },
+ "generated": "2026-10-29"
+}

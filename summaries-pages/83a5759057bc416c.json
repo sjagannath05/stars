@@ -1,0 +1,66 @@
+{
+ "id": "83a5759057bc416c",
+ "url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-6-authentication",
+ "final_url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-6-authentication",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "REST Servers in Go: Part 6 - authentication",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 6 - authentication"
+  }
+ ],
+ "summary": {
+  "title": "REST Servers in Go: Part 6 - authentication",
+  "one_liner": "You learn how to add HTTPS and HTTP basic authentication to a Go REST server, including bcrypt password verification and per-path auth middleware.",
+  "category": "go rest api security",
+  "keywords": [
+   "go http basic auth",
+   "basic authentication golang",
+   "rest api authentication go",
+   "https tls go server",
+   "bcrypt password hashing go",
+   "golang authentication middleware",
+   "per-path middleware gorilla mux",
+   "authn vs authz",
+   "authentication vs authorization",
+   "www-authenticate 401 header",
+   "request.basicauth go",
+   "setbasicauth client go",
+   "how to secure a rest api in go",
+   "stateless rest authentication tokens",
+   "gin basicauth comparison",
+   "x/crypto bcrypt",
+   "generate self-signed cert go localhost",
+   "rest server go part 6 series"
+  ],
+  "takeaways": [
+   "Use TLS/HTTPS as the foundation; HTTP basic auth is considered safe only over HTTPS.",
+   "Go's net/http provides Request.BasicAuth; respond with 401 and a WWW-Authenticate header when verification fails.",
+   "Store only bcrypt hashes of passwords, never plaintext; bcrypt adds salting, timing-attack resistance and deliberate slowness.",
+   "Apply authentication middleware to specific Gorilla mux routes, such as only the POST /task/ path, rather than all paths."
+  ],
+  "summary": "The post explains the difference between authentication and authorization, then argues that TLS should underpin any auth scheme. It builds a small Go HTTPS server that protects a path with HTTP basic auth, verifying passwords against bcrypt hashes, and tests it with curl and a Go client. It then retrofits the task store server from earlier parts with a BasicAuth middleware applied to a single route. The author closes with trade-offs, noting tokens and OAuth as alternatives and recommending a security expert for critical systems.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "net/http",
+   "crypto/tls",
+   "bcrypt (golang.org/x/crypto)",
+   "Gorilla mux",
+   "curl",
+   "HTTP basic authentication",
+   "HTTPS/TLS",
+   "OpenAPI"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7416,
+  "output": 904
+ },
+ "generated": "2026-10-29"
+}

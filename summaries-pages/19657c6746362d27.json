@@ -1,0 +1,61 @@
+{
+ "id": "19657c6746362d27",
+ "url": "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/kwon",
+ "final_url": "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/kwon",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Coordinated and Efficient Huge Page Management with Ingens",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Struct layout, software prefetch and page size",
+   "entry": "Coordinated and Efficient Huge Page Management with Ingens - Measures the fault latency, memory bloat and unfairness that eager THP promotion causes, and shows what removes them."
+  }
+ ],
+ "summary": {
+  "title": "Coordinated and Efficient Huge Page Management with Ingens",
+  "one_liner": "Ingens shows how an OS can manage transparent huge pages in a coordinated way, treating contiguity as a first-class resource, to cut fairness problems, tail latency and memory bloat.",
+  "category": "operating systems memory",
+  "keywords": [
+   "ingens",
+   "transparent huge pages",
+   "thp",
+   "huge page management",
+   "huge pages",
+   "large pages",
+   "tlb misses",
+   "address translation overhead",
+   "memory bloat",
+   "memory fragmentation",
+   "contiguity",
+   "fairness between processes",
+   "tail latency",
+   "redis memory usage",
+   "cloudstone benchmark",
+   "os memory management",
+   "eager thp promotion",
+   "osdi 2016 paper"
+  ],
+  "takeaways": [
+   "Eager transparent huge page promotion causes fault latency, memory bloat and unfairness between applications.",
+   "Ingens treats physical contiguity as a first-class resource and tracks memory utilization and access frequency to decide huge page allocation.",
+   "Reported results from the prototype include up to 18% performance gain, up to 41% tail-latency reduction, and memory bloat reduced from 69% to under 1% for Redis and Cloudstone.",
+   "The design relies on a small set of basic primitives coordinated across the OS rather than best-effort spot fixes."
+  ],
+  "summary": "The paper argues that current OS and hypervisor huge page support is a set of best-effort algorithms that cause fairness and performance pathologies. It presents Ingens, a framework that provides transparent huge page support using a few basic primitives, managing contiguity as a first-class resource and tracking page utilization and access frequency. The authors evaluate a prototype on Web services (Cloudstone) and the Redis key-value store, reporting fairness gains, up to 18% performance improvement, up to 41% tail-latency reduction, and memory bloat reduced from 69% to under 1%. The page is the USENIX OSDI 2016 paper listing with abstract and BibTeX.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "transparent huge pages",
+   "Redis",
+   "Cloudstone"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2104,
+  "output": 863
+ },
+ "generated": "2026-10-29"
+}

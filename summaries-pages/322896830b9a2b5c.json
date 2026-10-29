@@ -1,0 +1,65 @@
+{
+ "id": "322896830b9a2b5c",
+ "url": "https://www.cs.virginia.edu/stream/ref.html",
+ "final_url": "https://www.cs.virginia.edu/stream/ref.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "FAQ's",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Microbenchmark suites",
+   "entry": "STREAM Benchmark Reference Information - Sets the array size rule, timing over repeated trials, and counting bytes a loop asks for, not what the cache moved."
+  }
+ ],
+ "summary": {
+  "title": "STREAM Benchmark FAQ (University of Virginia)",
+  "one_liner": "Learn how the STREAM memory-bandwidth benchmark sizes its arrays, runs in parallel, counts bytes moved, and should be compiled and reported under its run rules.",
+  "category": "microbenchmark suites",
+  "keywords": [
+   "stream benchmark",
+   "memory bandwidth benchmark",
+   "sustainable memory bandwidth",
+   "stream faq",
+   "array size rule for stream",
+   "out-of-cache memory benchmark",
+   "stream run rules",
+   "bcopy vs stream byte counting",
+   "stream copy scale add triad",
+   "openmp stream benchmark",
+   "compile stream.c gcc",
+   "wall clock vs cpu timer benchmark",
+   "machine balance memory bandwidth",
+   "write allocate cache line bandwidth",
+   "stream benchmark mpi version",
+   "how to measure memory bandwidth",
+   "cache-defeating benchmark array size",
+   "cpu performance engineering microbenchmark"
+  ],
+  "takeaways": [
+   "Arrays must be at least 4x the total last-level cache used in the run, or 1 million elements, whichever is larger, so the test is out of cache.",
+   "Parallel runs use OpenMP (e.g., gcc -fopenmp with OMP_NUM_THREADS), with MPI and pthreads as alternatives; the author prefers wall-clock timers over CPU timers.",
+   "STREAM counts only the bytes the program asked to load and store (Copy 16 bytes/iter, Scale 16, Add 24, Triad 24), so it is not the same as bcopy or actual hardware traffic including write-allocate.",
+   "Results that deviate from the STREAM run rules or use modified code must be labelled, e.g. 'tuned STREAM benchmark results'."
+  ],
+  "summary": "This is the FAQ for the STREAM memory bandwidth benchmark, maintained by John McCalpin at the University of Virginia. It explains the purpose (measuring sustainable bandwidth with datasets far larger than cache), the array-size rule, how to compile the C or Fortran source and enable OpenMP, and why the page recommends wall-clock timers. It also covers byte-counting conventions (bcopy, STREAM, hardware) with a table of bytes and FLOPs per kernel iteration, plus licensing terms and citation formats.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Fortran",
+   "OpenMP",
+   "MPI",
+   "pthreads",
+   "gcc",
+   "g77",
+   "IBM XL compilers"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6121,
+  "output": 1011
+ },
+ "generated": "2026-10-29"
+}

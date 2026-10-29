@@ -1,0 +1,63 @@
+{
+ "id": "32a9ec0fadb48de0",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker-p4",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker-p4/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 4 - Data structures"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch #4 - Data structures",
+  "one_liner": "You learn how to implement a generic hashtable (with CRC32 hashing, linear probing and rehashing) and a singly-linked list with O(1) head and tail insertion in C, as building blocks for an MQTT broker.",
+  "category": "system programming in C",
+  "keywords": [
+   "hashtable in c",
+   "hash table implementation",
+   "linear probing",
+   "collision handling hash table",
+   "rehashing",
+   "crc32 hash function",
+   "knuth multiplicative hashing",
+   "robert jenkins mix function",
+   "singly linked list c",
+   "linked list head and tail pointers",
+   "o(1) insertion list",
+   "generic data structures c",
+   "mqtt broker",
+   "mqtt broker from scratch",
+   "trie for topics",
+   "data structures for servers",
+   "dynamic array buckets",
+   "murmur3 hash alternative",
+   "vector vs linked list",
+   "c container library"
+  ],
+  "takeaways": [
+   "A hashtable maps string keys to indexes via a hash function, using linear probing to resolve collisions and doubling its size when half full.",
+   "The hash function here is CRC32 of the key, mixed with Robert Jenkins' mix function and Knuth's multiplicative method, with the author noting Murmur3 as another option.",
+   "A singly-linked list with head and tail pointers gives O(1) insertion at both ends, which the author judged sufficient over a vector.",
+   "Structures store void pointers with optional destructors so that the containers stay generic.",
+   "Part 5 of the series covers a tree to manage hierarchical topics; a trie is mentioned as key for topic management."
+  ],
+  "summary": "The author continues a series on writing an MQTT broker in C by implementing common data structures needed by the server. The post presents a generic hashtable (buckets array, CRC32 hash, Knuth multiplicative method, linear probing with a maximum chain length, and rehashing to double size) with full C source for the header and implementation. It then shows a generic singly-linked list with head and tail pointers for O(1) insertion at either end, including push, remove, sort-insert and bisect helpers. A trie is mentioned as planned for topic management, to be covered in Part 5.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "MQTT",
+   "Unix system programming"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 12106,
+  "output": 904
+ },
+ "generated": "2026-10-29"
+}

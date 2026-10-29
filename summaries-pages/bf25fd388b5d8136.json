@@ -1,0 +1,59 @@
+{
+ "id": "bf25fd388b5d8136",
+ "url": "https://mbuffett.com/posts/compressing-chess-moves",
+ "final_url": "https://mbuffett.com/posts/compressing-chess-moves",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Compressing Chess Moves for Fun and Profit",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Chess",
+   "entry": "Compressing chess moves"
+  }
+ ],
+ "summary": {
+  "title": "Compressing Chess Moves for Fun and Profit",
+  "one_liner": "You learn how to pack Standard Algebraic Notation chess moves into a few bits each using piece, square, capture, and special-move encodings, shrinking a 759-byte PGN to about 195 bytes.",
+  "category": "data compression",
+  "keywords": [
+   "chess move compression",
+   "compress chess notation",
+   "standard algebraic notation encoding",
+   "san encoding",
+   "pgn compression",
+   "chess database storage",
+   "bit packing chess moves",
+   "encode chess moves in bits",
+   "bitvec rust",
+   "disambiguation encoding chess",
+   "pawn capture encoding",
+   "promotion encoding bits",
+   "how many bits does a chess move need",
+   "chess pgn size reduction",
+   "qxf7 encoding",
+   "epd compression"
+  ],
+  "takeaways": [
+   "A chess move's information content is far below its text size: piece (3 bits), capture flag, and destination (6 bits) give about 10 bits for Qxf7 versus 32 bits as text.",
+   "Unused bit patterns can be reused, e.g. the two spare piece codes encode short and long castling.",
+   "Pawn moves need fewer destination bits, since the file is implied, and a 'special' flag lets regular moves use fewer bits.",
+   "Encoding a full PGN without separators reduced a 759-byte game to 195 bytes (74% savings), and encoding/decoding 1000 moves took about 0.6 ms in Rust with bitvec."
+  ],
+  "summary": "The author argues that SAN moves such as Qxf7 waste space and works out the real information content per move. They then build a bit-level encoding step by step: 3 bits for the piece with spare codes reused for castling, a destination square of 6 bits (fewer for pawn captures), a one-bit 'special' flag, and compact promotion and disambiguation codes. Results are tabulated for sample moves (savings of 37.5% to 71.43%), and the full PGN compresses by 74%. The post closes with a performance note using Rust and the bitvec crate, and it says the change was not yet deployed.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "bitvec",
+   "PGN",
+   "Standard Algebraic Notation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5628,
+  "output": 882
+ },
+ "generated": "2026-10-29"
+}

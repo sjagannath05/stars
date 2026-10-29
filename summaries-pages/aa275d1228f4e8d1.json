@@ -1,0 +1,66 @@
+{
+ "id": "aa275d1228f4e8d1",
+ "url": "https://martinfowler.com/bliki/CircuitBreaker.html",
+ "final_url": "https://martinfowler.com/bliki/CircuitBreaker.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "bliki: Circuit Breaker",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Integration patterns (dependency management)",
+   "entry": "Circuit Breaker (mentioned in the Release it! book)"
+  }
+ ],
+ "summary": {
+  "title": "bliki: Circuit Breaker",
+  "one_liner": "A circuit breaker wraps remote calls, trips after repeated failures so calls fail fast without reaching the struggling supplier, and can self-reset via a half-open trial call.",
+  "category": "distributed systems",
+  "keywords": [
+   "circuit breaker pattern",
+   "circuit breaker",
+   "fail fast",
+   "cascading failures",
+   "remote call failure handling",
+   "timeout protection",
+   "half-open state",
+   "closed open half-open states",
+   "failure threshold",
+   "self-resetting circuit breaker",
+   "release it",
+   "michael nygard",
+   "hystrix",
+   "thread pool bulkhead",
+   "asynchronous queue circuit breaker",
+   "fault tolerance microservices",
+   "monitoring circuit breaker state",
+   "how to stop calling a failing service",
+   "ruby circuit breaker example",
+   "martin fowler bliki"
+  ],
+  "takeaways": [
+   "Wrap remote calls in a breaker that counts failures and trips open past a threshold, returning an error without calling the supplier.",
+   "Add a half-open state with a reset timeout so the breaker makes a trial call and closes again if the supplier recovers.",
+   "Use a per-call timeout and run calls on a thread pool so the circuit trips when the pool is exhausted.",
+   "Log and monitor breaker state changes, and let operations staff trip or reset breakers.",
+   "Decide per operation how to handle a broken circuit, such as queuing the request or showing stale data."
+  ],
+  "summary": "Martin Fowler explains the Circuit Breaker pattern, popularized by Michael Nygard's Release It!, for protecting systems from slow or failing remote calls that can cascade across services. He builds a simple Ruby breaker that counts timeouts and opens after a threshold, then extends it with a self-resetting half-open state that sends a trial call after a reset timeout. The article also covers thread pool and asynchronous queue variants, failure-rate thresholds, monitoring, and fallback handling, and ends with pointers to Netflix's Hystrix and other open-source implementations.</isummary>\n<parameter name=\"format\">article",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Hystrix",
+   "Java",
+   "C#",
+   "AspectJ",
+   "Scala"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3736,
+  "output": 899
+ },
+ "generated": "2026-10-29"
+}

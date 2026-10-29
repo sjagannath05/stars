@@ -1,0 +1,63 @@
+{
+ "id": "1fbb2351988ecfcc",
+ "url": "https://solarianprogrammer.com/2018/01/10/writing-minimal-x86-64-jit-compiler-cpp",
+ "final_url": "https://solarianprogrammer.com/2018/01/10/writing-minimal-x86-64-jit-compiler-cpp/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Solarian Programmer",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 1"
+  }
+ ],
+ "summary": {
+  "title": "Writing a minimal x86-64 JIT compiler in C++ - Part 1",
+  "one_liner": "You learn how to hand-assemble x86-64 machine code into a byte vector in C++, copy it into mmap'd executable memory, and call it as a function at runtime.",
+  "category": "C++ JIT compilation",
+  "keywords": [
+   "jit compiler c++",
+   "x86-64 jit",
+   "runtime code generation",
+   "generate machine code at runtime",
+   "mmap executable memory",
+   "mmap prot_exec",
+   "x86-64 assembly",
+   "objdump disassemble chunk.s",
+   "write system call assembly",
+   "linux syscall x86-64",
+   "macos syscall x86-64",
+   "function pointer cast jit",
+   "ahead of time vs just in time compilation",
+   "minimal jit tutorial",
+   "wsl jit compiler",
+   "hello world machine code generation",
+   "ray seyfarth assembly book",
+   "bjarne stroustrup a tour of c++"
+  ],
+  "takeaways": [
+   "JIT compilation means generating machine code at runtime, unlike AOT-compiled C++ which cannot change after compilation.",
+   "Machine code is specific to both the processor (x86-64 here) and the operating system, so syscall numbers differ between Linux and macOS.",
+   "Assemble a small x86-64 function, disassemble it with objdump to get the exact bytes, and store those bytes in a std::vector of uint8_t.",
+   "Allocate pages with mmap in a multiple of the page size, copy the code in, and cast the pointer to a function pointer to call it."
+  ],
+  "summary": "The article is Part 1 of a series on building a minimal x86-64 JIT compiler in C++ that targets Linux and macOS, with WSL as a possible route on Windows. The author builds a simple program that asks for a name and generates a greeting() function at runtime. The workflow is: write the function in x86-64 assembly, assemble and disassemble it with objdump to get the bytes, store those bytes in a vector of uint8_t (with the message length and text patched in), then copy them into mmap-allocated executable memory and call through a function pointer. Code was tested with GCC 5.4 on Linux and Apple Clang 9.0.0 and GCC 7.2 on macOS. Part 2 covers calling a C++ function from generated code.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "x86-64 assembly",
+   "objdump",
+   "mmap",
+   "GCC",
+   "Clang"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2903,
+  "output": 964
+ },
+ "generated": "2026-10-29"
+}

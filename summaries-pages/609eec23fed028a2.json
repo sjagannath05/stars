@@ -1,0 +1,65 @@
+{
+ "id": "609eec23fed028a2",
+ "url": "https://cseweb.ucsd.edu/~tullsen/isca95.pdf",
+ "final_url": "https://cseweb.ucsd.edu/~tullsen/isca95.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Limits of ILP and SMT",
+   "entry": "Simultaneous Multithreading: Maximizing On-Chip Parallelism - The origin of SMT, where another thread fills one thread's idle issue slots at a cost to both."
+  }
+ ],
+ "summary": {
+  "title": "Simultaneous Multithreading: Maximizing On-Chip Parallelism",
+  "one_liner": "Simultaneous multithreading lets several threads issue instructions to a superscalar's functional units in the same cycle, recovering both horizontal and vertical wasted issue slots that single-thread and fine-grain multithreaded designs leave unused.",
+  "category": "computer architecture",
+  "keywords": [
+   "simultaneous multithreading",
+   "smt",
+   "hyperthreading origin",
+   "superscalar processor",
+   "wide-issue processor",
+   "issue slot utilization",
+   "horizontal waste",
+   "vertical waste",
+   "fine-grain multithreading",
+   "single-chip multiprocessor",
+   "chip multiprocessor comparison",
+   "functional unit utilization",
+   "spec92 workload",
+   "multiflow trace scheduling",
+   "cache design for smt",
+   "instruction-level parallelism limits",
+   "how does smt work",
+   "why do idle cpu issue slots happen",
+   "latency hiding multithreading",
+   "isca 1995 paper"
+  ],
+  "takeaways": [
+   "Single-thread superscalar execution is limited: the simulated 8-issue machine averaged under 1.5 instructions per cycle, with only 19% issue utilization.",
+   "Empty issue slots are classed as vertical waste (whole idle cycles) or horizontal waste (unused slots in a busy cycle).",
+   "Fine-grain multithreading hides latency (vertical waste) but issues from only one thread per cycle, so it recovers only part of the waste.",
+   "SMT issues from several threads in one cycle, so it can attack both horizontal and vertical waste; the paper reports up to 4x superscalar throughput and double fine-grain multithreading.",
+   "The results are an upper bound because the pipeline and shared-cache access times were speculated, not implemented."
+  ],
+  "summary": "The paper evaluates simultaneous multithreading (SMT), where several independent threads issue instructions to a superscalar's multiple functional units in one cycle. The authors simulate a base machine derived from the Alpha 21164, extended to 8-issue, running SPEC92 programs assigned one per thread under the Multiflow trace scheduling compiler. They first measure why a single-thread wide superscalar wastes issue slots, then compare several SMT models against superscalar, fine-grain multithreaded, and single-chip multiprocessor designs, and also study cache configurations. The authors note the pipeline and cache timing are optimistic, so the reported gains are an upper bound.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Alpha 21164",
+   "Multiflow trace scheduling compiler",
+   "SPEC92",
+   "Tango",
+   "g88 simulator"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9517,
+  "output": 1035
+ },
+ "generated": "2026-10-29"
+}

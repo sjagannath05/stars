@@ -1,0 +1,71 @@
+{
+ "id": "7806c2536c5d45e6",
+ "url": "https://docs.kernel.org/filesystems/resctrl.html",
+ "final_url": "https://docs.kernel.org/filesystems/resctrl.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "User Interface for Resource Control feature (resctrl)",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Cache and bandwidth partitioning",
+   "entry": "User Interface for Resource Control feature (resctrl) - Defines the filesystem through which Linux exposes Intel, AMD and Arm partitioning, and the schemata format."
+  }
+ ],
+ "summary": {
+  "title": "User Interface for Resource Control feature (resctrl)",
+  "one_liner": "Learn how the Linux resctrl filesystem exposes Intel RDT and AMD QoS cache and memory bandwidth allocation and monitoring, including mount options, info files, and resource groups.",
+  "category": "linux kernel resource control",
+  "keywords": [
+   "resctrl",
+   "linux resctrl filesystem",
+   "intel rdt",
+   "intel resource director technology",
+   "amd platform qos",
+   "amd qos",
+   "cache allocation technology",
+   "cat",
+   "cache allocation cbm",
+   "code and data prioritization",
+   "cdp",
+   "memory bandwidth allocation",
+   "mba",
+   "memory bandwidth monitoring",
+   "mbm",
+   "cache qos monitoring",
+   "cqm",
+   "schemata file",
+   "closid",
+   "rmid",
+   "io_alloc",
+   "mbm_event assignable counters",
+   "cache pseudo-locking",
+   "how to partition cache in linux",
+   "mount resctrl filesystem"
+  ],
+  "takeaways": [
+   "resctrl is mounted as a filesystem at /sys/fs/resctrl and exposes Intel RDT and AMD QoS allocation and monitoring features.",
+   "The info directory describes each resource (L3, L2, MB, L3_MON) with read-only files such as num_closids, cbm_mask, and min_bandwidth.",
+   "Resource groups are directories; CTRL_MON groups hold a schemata file for allocations and MON groups monitor subsets of tasks.",
+   "Mount options such as cdp, cdpl2, mba_MBps and debug enable code/data prioritization, MBA software controller and debug files.",
+   "Monitoring events like mbm_total_bytes can be configured or assigned counters via mbm_assign_mode, and last_cmd_status reports errors."
+  ],
+  "summary": "This kernel documentation page describes the resctrl user interface in Linux, which exposes Intel Resource Director Technology (RDT) and AMD Platform QoS features for cache and memory bandwidth control and monitoring. It lists the CPU flags that enable each feature, the mount command and its options, and the contents of the info directory for L3, L2, memory bandwidth, and monitoring resources. It also explains resource alloc and monitor groups, the tasks, cpus, schemata, and mode files, and includes command examples such as writing masks and reading last_cmd_status.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "resctrl",
+   "Intel RDT",
+   "AMD QoS",
+   "Arm MPAM",
+   "bash"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10476,
+  "output": 987
+ },
+ "generated": "2026-10-29"
+}

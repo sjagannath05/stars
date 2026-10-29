@@ -1,0 +1,66 @@
+{
+ "id": "cfb136009d1482fd",
+ "url": "http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter",
+ "final_url": "https://multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How to write an emulator (CHIP-8 interpreter) – Multigesture.net",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Emulator / Virtual Machine",
+   "entry": "C++: _How to write an emulator (CHIP-8 interpreter)_"
+  }
+ ],
+ "summary": {
+  "title": "How to write an emulator (CHIP-8 interpreter)",
+  "one_liner": "You learn what an emulator is and how to build a basic CHIP-8 interpreter in C/C++, covering memory, registers, the fetch-decode-execute cycle, opcode examples, graphics drawing and keypad input.",
+  "category": "emulator development",
+  "keywords": [
+   "chip-8 emulator",
+   "chip8 interpreter",
+   "how to write an emulator",
+   "build an emulator from scratch",
+   "emulation tutorial",
+   "emulator vs simulator",
+   "virtual machine interpreter",
+   "fetch decode execute cycle",
+   "chip-8 opcodes",
+   "chip-8 memory map",
+   "chip-8 fontset",
+   "chip-8 draw sprite dxyn xor",
+   "chip-8 keypad mapping",
+   "bitwise operations opcode decoding",
+   "chip-8 timers 60 hz",
+   "emulator stack and program counter",
+   "c++ emulator tutorial",
+   "super chip-8",
+   "cowgod chip-8 technical reference",
+   "beginner emulator project"
+  ],
+  "takeaways": [
+   "An emulator mimics another system's internal design so it can run that system's original machine code, unlike a clone or simulation that re-implements the behaviour.",
+   "CHIP-8 is a virtual machine from the 1970s with 35 two-byte opcodes, 4K memory, 16 8-bit registers, a 64x32 monochrome display, a 16-key hex keypad and two 60 Hz timers.",
+   "Each emulation cycle fetches a 2-byte opcode from memory at the program counter, decodes it with switch statements and bitmasks, executes it, and updates the timers.",
+   "Sprite drawing (0xDXYN) uses XOR onto a pixel array and sets VF on collision; subroutine calls (0x2NNN) push the program counter onto a stack.",
+   "The guide's author recommends Cowgod's Chip-8 Technical Reference as the best resource and links to the author's own full C++ implementation as a reference."
+  ],
+  "summary": "The author, a multitouch and HCI researcher with a history of working on console emulators, explains what emulation is and why CHIP-8 is a good first project: it has few opcodes and can be finished in days. The guide walks through the core state to model (opcode, 4K memory, registers, index register, program counter, stack, graphics buffer, keypad, timers) and the memory layout with the font set at the start of memory and programs loaded at 0x200. It then shows the main loop and the emulateCycle fetch, decode and execute steps with C/C++ code snippets for several opcodes, including 0x2NNN, 0x8XY4, 0xFX33 and 0xDXYN. It finishes with keypad mapping, the font set, suggested extensions and a list of reference materials.",
+  "format": "tutorial",
+  "level": "beginner",
+  "technologies": [
+   "C",
+   "C++",
+   "CHIP-8",
+   "GLUT",
+   "SDL",
+   "DirectX"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10900,
+  "output": 1120
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "733e4a6db8c21496",
+ "url": "https://jeiwan.net/posts/building-blockchain-in-go-part-7",
+ "final_url": "https://jeiwan.net/posts/building-blockchain-in-go-part-7/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building Blockchain in Go. Part 7: Network - Going the distance",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 7: Network"
+  }
+ ],
+ "summary": {
+  "title": "Building Blockchain in Go. Part 7: Network - Going the distance",
+  "one_liner": "You learn how a simplified blockchain network works in Go: nodes with roles (miner, full node, SPV), a version/inv/getdata/block/tx message protocol over TCP, and a multi-node scenario run on one machine using port-based node IDs.",
+  "category": "blockchain development in go",
+  "keywords": [
+   "blockchain network in go",
+   "p2p blockchain tutorial",
+   "bitcoin network protocol simplified",
+   "blockchain node roles",
+   "miner node",
+   "full node",
+   "spv simplified payment verification",
+   "version message handshake",
+   "inv message",
+   "getdata message",
+   "getblocks message",
+   "mempool",
+   "node id environment variable",
+   "tcp server go blockchain",
+   "blockchain sync between nodes",
+   "bitcoin core dns seeds",
+   "how do blockchain nodes communicate",
+   "gob encoding messages go",
+   "multi-node blockchain on one machine",
+   "addr message peer discovery"
+  ],
+  "takeaways": [
+   "Blockchain nodes are both clients and servers; roles include miners, full nodes (validate blocks and transactions) and SPV nodes (verify a subset of transactions).",
+   "Messages are byte sequences with a 12-byte command name followed by a gob-encoded payload; version, getblocks, inv, getdata, block and tx form the core protocol.",
+   "Nodes are simulated on one machine by using ports as node IDs (localhost:3000, 3001, 3002) with separate database and wallet files per node.",
+   "A new node sends version to a hardcoded central node; if chain heights differ, blocks are requested via inv/getdata, and miners mine blocks from mempool transactions and broadcast inv for the new block.",
+   "The article is a simplified demo, not a real P2P network; it has known gaps such as no block validation and no check that requested data exists."
+  ],
+  "summary": "This final part of the series extends the Go blockchain into a networked system. It explains node roles (miner, full node, SPV), simplifies the setup by using localhost ports as node IDs, and describes the Bitcoin-like message types (version, getblocks, inv, getdata, block, tx) with Go code snippets for their handlers. It ends with a step-by-step command-line scenario where a central node, a wallet node and a miner node exchange transactions and blocks. The author notes the implementation is not a real P2P network and lists TODOs such as block validation and UTXO updates.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Go",
+   "gob encoding",
+   "TCP networking",
+   "Bitcoin protocol"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9629,
+  "output": 997
+ },
+ "generated": "2026-10-29"
+}

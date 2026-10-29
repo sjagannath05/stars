@@ -1,0 +1,60 @@
+{
+ "id": "e3b2a9a6260d53fa",
+ "url": "https://norasandler.com/2017/12/05/Write-a-Compiler-2.html",
+ "final_url": "https://norasandler.com/2017/12/05/Write-a-Compiler-2.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a C Compiler, Part 2",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 2: Unary Operators"
+  }
+ ],
+ "summary": {
+  "title": "Writing a C Compiler, Part 2",
+  "one_liner": "You learn how to extend a small C compiler to handle unary operators (negation, bitwise complement, logical negation) across the lexer, parser, and x86 code generator.",
+  "category": "compiler construction",
+  "keywords": [
+   "c compiler tutorial",
+   "unary operators",
+   "negation compiler",
+   "bitwise complement",
+   "logical negation",
+   "lexer tokens",
+   "recursive descent expression parsing",
+   "ast unary operation node",
+   "x86 assembly neg instruction",
+   "not instruction assembly",
+   "cmpl sete logical not",
+   "two's complement",
+   "flags register zero flag",
+   "writing a compiler part 2",
+   "build a compiler in c",
+   "code generation for expressions",
+   "parse_expression pseudocode",
+   "at&t assembly movl suffix"
+  ],
+  "takeaways": [
+   "Unary operators -, ~ and ! are added as new lexer tokens processed like other single-character tokens.",
+   "Expressions become recursive: UnOp(operator, exp) or Constant(int), parsed by a recursive function.",
+   "Negation and bitwise complement map directly to the neg and not x86 instructions.",
+   "Logical negation is implemented with cmpl $0, movl $0 and sete %al, since the zero flag records equality."
+  ],
+  "summary": "This is week two of a series on writing a C compiler that returns integers. It adds three unary operators (negation, bitwise complement, logical negation) and walks through each stage: updating the lexer token list, changing the AST and grammar so expressions are recursive, and writing the parser pseudocode. The code generation section explains how neg and not map to single x86 instructions, and how logical negation is built from cmpl, movl and sete, including the FLAGS/zero-flag reasoning. Each stage ends with a task to update the code against the provided test suite.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "x86 assembly",
+   "AT&T syntax"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4496,
+  "output": 792
+ },
+ "generated": "2026-10-29"
+}

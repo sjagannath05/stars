@@ -1,0 +1,66 @@
+{
+ "id": "cd5848ba43d6d03f",
+ "url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-5-middleware",
+ "final_url": "https://eli.thegreenplace.net/2021/rest-servers-in-go-part-5-middleware",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "REST Servers in Go: Part 5 - middleware",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 5 - middleware"
+  }
+ ],
+ "summary": {
+  "title": "REST Servers in Go: Part 5 - middleware",
+  "one_liner": "You learn how to add global and per-route middleware (logging, panic recovery) to a Go REST server using net/http, gorilla/mux, and Gin, and how execution order matters.",
+  "category": "go rest servers",
+  "keywords": [
+   "go middleware",
+   "http middleware golang",
+   "net/http middleware",
+   "logging middleware go",
+   "panic recovery middleware",
+   "recover panic http handler go",
+   "global middleware",
+   "per-route middleware",
+   "middleware execution order",
+   "gorilla/mux middleware",
+   "gorilla handlers logginghandler",
+   "gin middleware",
+   "gin.default vs gin.new",
+   "alice middleware chain",
+   "middleware chaining go",
+   "rest server go tutorial",
+   "http.handler wrapping",
+   "router groups gin per-path middleware",
+   "how to log request duration in go",
+   "go stdlib http server"
+  ],
+  "takeaways": [
+   "Middleware in Go is a function that takes an http.Handler and returns a wrapped http.Handler, enabling logging and timing around handlers.",
+   "Middleware can be installed globally (wrapping the mux) or per-route, and the two placements produce different execution orders.",
+   "A custom panic-recovery middleware can return a 500 response and log the stack trace instead of the default net/http behavior of closing the connection.",
+   "gorilla/mux offers Use() for global middleware and gorilla/handlers provides ready-made logging and recovery; Gin uses gin.Logger and gin.Recovery and needs an adapter for standard middleware.",
+   "Keep middleware defined in one place and avoid dynamically attaching it, since this makes request flow harder to debug."
+  ],
+  "summary": "The post is Part 5 of a series on writing REST servers in Go and extends the earlier task server with middleware. It builds a simple logging middleware that times handlers, and a panic-recovery middleware that returns HTTP 500 and logs the stack trace. It shows how to chain these globally or per route on the standard library mux, then repeats the setup with gorilla/mux (including gorilla/handlers) and Gin. The author closes with a caution against overusing middleware because it complicates request flow.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "net/http",
+   "gorilla/mux",
+   "gorilla/handlers",
+   "Gin",
+   "alice"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5546,
+  "output": 924
+ },
+ "generated": "2026-10-29"
+}

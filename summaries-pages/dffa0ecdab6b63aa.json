@@ -1,0 +1,62 @@
+{
+ "id": "dffa0ecdab6b63aa",
+ "url": "https://cs.uwaterloo.ca/~mkarsten/papers/sigmetrics2024.html",
+ "final_url": "https://cs.uwaterloo.ca/~mkarsten/papers/sigmetrics2024.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Kernel vs. User-Level Networking: Don't Throw Out the Stack with the Interrupts",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Interrupts and kernel bypass",
+   "entry": "Kernel vs. User-Level Networking: Don't Throw Out the Stack with the Interrupts - Separates direct and indirect NIC interrupt cost, measures the stack against bypass, and is where IRQ suspension began."
+  }
+ ],
+ "summary": {
+  "title": "Kernel vs. User-Level Networking: Don't Throw Out the Stack with the Interrupts",
+  "one_liner": "Learn how asynchronous hardware interrupt (IRQ) overhead limits kernel networking performance, and how a small Linux modification can close much of the gap with kernel-bypass stacks.",
+  "category": "operating systems networking",
+  "keywords": [
+   "kernel bypass",
+   "user-level networking",
+   "hardware interrupt overhead",
+   "irq cost",
+   "interrupt request suspension",
+   "irq suspension",
+   "linux network stack performance",
+   "kernel networking throughput",
+   "tail latency",
+   "web server performance",
+   "memcached performance",
+   "direct vs indirect interrupt cost",
+   "processor pipeline efficiency",
+   "network stack processing",
+   "sigmetrics 2024 paper",
+   "reduce interrupt overhead linux",
+   "kernel vs dpdk comparison",
+   "communication-heavy server applications"
+  ],
+  "takeaways": [
+   "Asynchronous NIC hardware interrupts (IRQs) are a major source of networking overhead, both direct and indirect (pipeline effects).",
+   "Kernel-bypass gains are partly explained by avoiding IRQ costs, not only by avoiding the stack itself.",
+   "The authors use preliminary IRQ-reduction experiments as an indirect way to measure IRQ overhead under demanding workloads.",
+   "A small modification to vanilla Linux yields up to 45% higher throughput without compromising tail latency.",
+   "With this change, kernel-based stacks can perform comparably to user-level networking for web servers and Memcached with similar functionality."
+  ],
+  "summary": "The paper examines why kernel-bypass and user-level networking outperform the kernel for communication-heavy server applications, arguing that prior work did not explain where the gains come from. The authors identify and quantify the direct and indirect costs of asynchronous hardware IRQs, measuring them indirectly by building preliminary approaches that reduce IRQ impact. Based on these findings they devise a small modification to vanilla Linux that improves kernel networking efficiency and throughput by up to 45% without hurting tail latency. For web servers and Memcached, the modified kernel stack reportedly performs comparably to kernel-bypass stacks with similar functionality. This is an ACM SIGMETRICS 2024 paper (POMACS, Dec 2023 preprint).",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Linux",
+   "Memcached",
+   "kernel-bypass networking",
+   "NIC interrupts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 1973,
+  "output": 987
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "80de3a0f0e567592",
+ "url": "https://www.metabase.com/learn/building-analytics/sql-templates/sql-best-practices",
+ "final_url": "https://www.metabase.com/learn/sql/working-with-sql/sql-best-practices",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Best practices for writing SQL queries | Metabase Learn",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "SQL",
+   "entry": "Best practices for writing SQL queries"
+  }
+ ],
+ "summary": {
+  "title": "Best practices for writing SQL queries",
+  "one_liner": "You learn practical SQL habits for correctness, readability and performance, such as explicit JOINs, filtering early, avoiding functions on indexed columns, using CTEs, and reading EXPLAIN ANALYZE output.",
+  "category": "SQL query writing",
+  "keywords": [
+   "sql best practices",
+   "sql query optimization",
+   "write better sql queries",
+   "explicit join vs implicit join",
+   "filter with where before having",
+   "non-sargable query",
+   "avoid functions on indexed columns",
+   "leading wildcard like full table scan",
+   "exists vs in sql",
+   "union all vs union",
+   "select columns instead of star",
+   "order of sql query execution",
+   "composite index",
+   "partial index",
+   "explain analyze postgresql",
+   "common table expression cte",
+   "with clause sql",
+   "group by cardinality ordering",
+   "sql readability comments",
+   "metabase sql editor",
+   "btree index",
+   "premature optimization sql"
+  ],
+  "takeaways": [
+   "Get the query correct and readable first, and optimize only when the query is slow or runs often.",
+   "Eliminate rows early: filter in WHERE before aggregating, and use HAVING only for aggregate filters.",
+   "Avoid functions on indexed columns in WHERE and avoid leading % wildcards in LIKE so indexes can be used.",
+   "Use explicit JOIN ... ON with table aliases, prefer UNION ALL when duplicates are fine, and select named columns instead of *.",
+   "Use CTEs (WITH) to organize logic, and use EXPLAIN ANALYZE (PostgreSQL) to find bottlenecks and add indexes where they help."
+  ],
+  "summary": "This Metabase Learn article gives a brief guide to writing better SQL, aimed at data analysts and data scientists. It argues for prioritizing correctness and readability before performance, and walks through a typical query development workflow and the general order of query execution. Tips are grouped by clause (FROM, WHERE, GROUP BY, HAVING, SELECT, UNION, ORDER BY), followed by sections on indexing, reading EXPLAIN ANALYZE output in PostgreSQL, and using Common Table Expressions. It includes short before-and-after code examples and briefly notes Metabase features such as the data reference tab, Snippets and the Query Builder.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "SQL",
+   "PostgreSQL",
+   "Metabase"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6712,
+  "output": 945
+ },
+ "generated": "2026-10-29"
+}

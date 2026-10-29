@@ -1,0 +1,63 @@
+{
+ "id": "ff431fe685a97eff",
+ "url": "https://people.csail.mit.edu/emer/media/papers/1990s/1998/1998.06.isca.storesets.pdf",
+ "final_url": "https://people.csail.mit.edu/emer/media/papers/1990s/1998/1998.06.isca.storesets.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "Microsoft Word - storesets.format7.doc",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Memory access and retire",
+   "entry": "Memory Dependence Prediction using Store Sets - The origin of memory dependence prediction, which lets a load pass older stores and flushes on a wrong guess."
+  }
+ ],
+ "summary": {
+  "title": "Memory Dependence Prediction using Store Sets",
+  "one_liner": "Store sets track which earlier stores each load has conflicted with, letting out-of-order processors issue loads early while avoiding most memory-order violations and false dependencies.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "memory dependence prediction",
+   "store sets",
+   "memory-order violation",
+   "out-of-order processor",
+   "load speculation",
+   "naive speculation",
+   "no speculation",
+   "false memory dependency",
+   "instruction scheduler",
+   "superscalar processor",
+   "store-load dependency",
+   "store barrier cache",
+   "memory trap penalty",
+   "spec95 benchmarks",
+   "chrysos emer 1998",
+   "load issue ordering",
+   "perfect memory dependence predictor",
+   "common tag implementation",
+   "wide issue processor design",
+   "how cpus handle load store ordering"
+  ],
+  "takeaways": [
+   "Conservative load scheduling avoids memory-order violations but creates many false dependencies that can slow some benchmarks by a factor of two or more.",
+   "A load's store set is the set of stores it has ever depended on, learned from past memory-order violations.",
+   "Store-set prediction makes loads wait only for stores in their set, approaching the performance of a perfect predictor in the paper's simulations.",
+   "Limiting a store set to one store or restricting a store to one set hurts performance; allowing multiple stores per load matters."
+  ],
+  "summary": "The paper motivates memory dependence prediction for wide out-of-order processors, where loads must issue early but must not read stale data from earlier stores. The authors compare no speculation and naive speculation against a perfect predictor using an eight-wide simulated Alpha-like CPU running SPEC95 benchmarks. They define store sets, built from observed memory-order violations, and evaluate idealized configurations for violations and false dependencies. The later sections propose a low-cost, direct-mapped implementation that is evaluated for near-optimal performance.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Alpha 21264",
+   "SPEC95",
+   "Digital Unix",
+   "superscalar out-of-order processors"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9114,
+  "output": 842
+ },
+ "generated": "2026-10-29"
+}

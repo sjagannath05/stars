@@ -1,0 +1,62 @@
+{
+ "id": "9ecf15fc495ed21b",
+ "url": "https://norasandler.com/2017/12/28/Write-a-Compiler-4.html",
+ "final_url": "https://norasandler.com/2017/12/28/Write-a-Compiler-4.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Writing a C Compiler, Part 4",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "C/C++:",
+   "entry": "Part 4: Even More Binary Operators"
+  }
+ ],
+ "summary": {
+  "title": "Writing a C Compiler, Part 4",
+  "one_liner": "You learn how to add relational, equality, and short-circuit logical operators to a C compiler's parser and x86 code generator, using conditional set and jump instructions.",
+  "category": "compiler construction",
+  "keywords": [
+   "write a c compiler",
+   "c compiler tutorial part 4",
+   "relational operators compiler",
+   "logical and short circuit codegen",
+   "logical or short circuit assembly",
+   "equality operator assembly",
+   "recursive descent precedence levels",
+   "parse_relational_exp",
+   "operator precedence grammar",
+   "conditional jump je jne",
+   "conditional set sete setl",
+   "x86 cmpl assembly",
+   "zero flag sign flag",
+   "unique label generation",
+   "nqcc compiler",
+   "lexing new tokens",
+   "binary operators code generation",
+   "short-circuit evaluation c11",
+   "beginner compiler tutorial",
+   "nora sandler compiler series"
+  ],
+  "takeaways": [
+   "Extend the grammar with one production rule per precedence level, e.g. logical-or, logical-and, equality, relational, additive.",
+   "Implement == and other relational operators by comparing two evaluated operands with cmpl and a conditional set instruction such as sete or setl.",
+   "Use the sign flag (SF) via setl-style instructions to determine ordering, since the zero flag only tests equality.",
+   "Implement && and || with short-circuit evaluation by emitting conditional jumps (je, jne) and jmp to unique labels."
+  ],
+  "summary": "This fourth part of Nora Sandler's series on writing a C compiler adds the logical operators && and || and the relational operators ==, !=, <, <=, >, and >=. It walks through updating the lexer with new tokens, extending the recursive-descent grammar with one rule per precedence level, and building the AST. Code generation covers emitting cmpl with conditional set instructions for comparisons, and conditional and unconditional jumps for short-circuit evaluation, with unique label generation. The article is a weekly assignment with accompanying tests and suggests optional extras such as modulo and bitwise operators.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "x86 assembly",
+   "AT&T assembly syntax"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6042,
+  "output": 879
+ },
+ "generated": "2026-10-29"
+}

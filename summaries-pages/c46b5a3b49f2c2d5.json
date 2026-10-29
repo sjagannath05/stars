@@ -1,0 +1,63 @@
+{
+ "id": "c46b5a3b49f2c2d5",
+ "url": "https://blog.seekerror.org/the-next-700-stateless-services",
+ "final_url": "https://blog.seekerror.org/the-next-700-stateless-services",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "The Next 700 Stateless Services",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "System architecture",
+   "entry": "The Next 700 Stateless Services, Henning Rohde. This article is part of a series of four articles that challenge the stateless microservice approach. A very refreshing take, very well written."
+  }
+ ],
+ "summary": {
+  "title": "The Next 700 Stateless Services",
+  "one_liner": "Stateless services are not as simple or scalable as they look: the strict design trades latency for simplicity, and its costs show up in scope, database scale, background work and the wider system.",
+  "category": "system architecture",
+  "keywords": [
+   "stateless services",
+   "stateless microservice",
+   "strict stateless design",
+   "loose stateless design",
+   "database wrapper service",
+   "crud service",
+   "stateless vs stateful",
+   "microservice tradeoffs",
+   "atomicity in microservices",
+   "transactional operations",
+   "horizontal scalability",
+   "latency in stateless services",
+   "caching in microservices",
+   "background processing in services",
+   "overuse of microservices",
+   "coordination service",
+   "distributed systems design critique",
+   "frontend business database layers",
+   "is statelessness meaningful",
+   "service design tradeoffs"
+  ],
+  "takeaways": [
+   "A standard stateless service is request-driven, has no node-to-node communication, and is split into frontend, business and database layers.",
+   "The strict flavor runs each request as one transaction, which makes it simple and scalable but adds latency from database round trips.",
+   "Splitting work into strict stateless services can create atomicity and correctness problems across services, so the whole system must be judged, not each service alone.",
+   "Scale, background processing and latency each add complexity; caching is tempting but can turn loose services into incorrect ones."
+  ],
+  "summary": "The article argues that statelessness has become a near-universal label that says little, since most services still manage state through an external database or broker. It describes the standard three-layer stateless service and two variants, strict (one transaction per request, like CRUD wrappers) and loose (multiple transactions or non-transactional state such as caches). It then examines the tradeoffs of the strict design: latency, scope that pushes toward microservices, database scaling demands, and the lack of support for background work. A worked example, a fictional pizza ordering system split across three services, shows how cross-service atomicity problems emerge even when each service looks clean. The author is critical of uncritical overuse of this design, and suggests weighing the actual tradeoffs instead.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "SQL databases",
+   "message brokers",
+   "microservices",
+   "caching"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3947,
+  "output": 862
+ },
+ "generated": "2026-10-29"
+}

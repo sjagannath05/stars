@@ -1,0 +1,76 @@
+{
+ "id": "3ebfdd38996dcd4d",
+ "url": "https://web.eece.maine.edu/~vweaver/projects/deterministic/ispass2013_deterministic.pdf",
+ "final_url": "https://web.eece.maine.edu/~vweaver/projects/deterministic/ispass2013_deterministic.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Microbenchmarks that lie",
+   "entry": "Non-Determinism and Overcount on Modern Hardware Performance Counter Implementations - Traces run-to-run variation in x86 retired-instruction counts to one extra count per interrupt and per fault."
+  }
+ ],
+ "summary": {
+  "title": "Non-Determinism and Overcount on Modern Hardware Performance Counter Implementations",
+  "one_liner": "Retired-instruction performance counters on x86-64 CPUs are not fully deterministic: they vary run to run and overcount due to interrupts, page faults, FPU quirks and PMU errata.",
+  "category": "performance counters",
+  "keywords": [
+   "hardware performance counters",
+   "retired instructions",
+   "x86-64 pmu",
+   "performance monitoring unit",
+   "deterministic events",
+   "non-determinism",
+   "overcount",
+   "run-to-run variation",
+   "hardware interrupts counted",
+   "page fault instruction count",
+   "deterministic replay",
+   "deterministic threading",
+   "perf_events",
+   "perfmon2",
+   "libpfm4",
+   "pin binary instrumentation",
+   "microbenchmark instruction count",
+   "x87 fninit overcount",
+   "pentium d retired instructions",
+   "amd branch counter bug",
+   "intel nehalem conditional branches",
+   "arm ia64 power sparc counters",
+   "counter validation",
+   "is hardware counter accurate"
+  ],
+  "takeaways": [
+   "Retired-instruction counts on x86-64 can vary run to run, mainly because each hardware interrupt adds an extra count, and first-touch page faults add counts too.",
+   "Several x86-64 sources of overcount exist, including x87/SSE exceptions, lazy FP state handling by Linux, and instructions counted twice or micro-ops counted instead of instructions.",
+   "Only a few events were deterministic enough for deterministic execution without adjustment; conditional branches on some Intel chips (e.g. SandyBridge, Westmere, Nehalem) were noted as deterministic.",
+   "The authors used a large hand-written x86-64 assembly microbenchmark (over 200 million dynamic instructions) and Pin to find the expected counts, avoiding OS and compiler variation."
+  ],
+  "summary": "The paper examines whether x86-64 hardware performance counters for retired instructions, branches, loads, stores and FP/SSE operations are deterministic and exact. The authors run a hand-written assembly microbenchmark ten times on eleven x86-64 machines (Intel Atom through IvyBridge, AMD Phenom, Istanbul and Bobcat) and compare totals against counts from code inspection and Pin instrumentation. They find run-to-run variation from hardware interrupts and page faults, plus systematic overcount from FPU exceptions, lazy FP handling, microcode and miscounted instructions, and summarize which events are usable for deterministic execution. The paper ends by noting other architectures (ARM, IA64, POWER, SPARC) appear to have more deterministic counters.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "x86-64",
+   "Linux perf_events",
+   "perfmon2",
+   "libpfm4",
+   "pfmon",
+   "Pin",
+   "x87",
+   "SSE",
+   "MMX",
+   "ARM",
+   "IA64",
+   "POWER",
+   "SPARC"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11302,
+  "output": 1128
+ },
+ "generated": "2026-10-29"
+}

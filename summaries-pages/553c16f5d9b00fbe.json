@@ -1,0 +1,66 @@
+{
+ "id": "553c16f5d9b00fbe",
+ "url": "https://www.eecg.toronto.edu/~stumm/Papers/Ren-sosp-19.pdf",
+ "final_url": "https://www.eecg.toronto.edu/~stumm/Papers/Ren-sosp-19.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "An Analysis of Performance Evolution of Linux's Core Operations",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Syscalls and asynchronous I/O",
+   "entry": "An Analysis of Performance Evolution of Linux's Core Operations - Measures syscall and context switch cost across kernel releases and traces each slowdown to a named mitigation."
+  }
+ ],
+ "summary": {
+  "title": "An Analysis of Performance Evolution of Linux's Core Operations",
+  "one_liner": "Linux core kernel operations (syscalls, context switches, page faults, fork) got slower across versions 3.0 to 4.20, and most slowdowns trace to 11 identified changes, 8 of which can be avoided by reconfiguring the kernel.",
+  "category": "operating systems performance",
+  "keywords": [
+   "linux kernel performance regression",
+   "system call latency across kernel versions",
+   "context switch cost linux",
+   "lebench microbenchmark",
+   "kpti meltdown mitigation overhead",
+   "spectre v2 indirect branch overhead",
+   "slab freelist randomization cost",
+   "hardened usercopy overhead",
+   "fault around page fault",
+   "transparent huge pages disabled slowdown",
+   "cgroup memory controller overhead",
+   "kernel mitigation performance tradeoff",
+   "select poll epoll slowdown",
+   "linux kernel configuration tuning",
+   "longitudinal kernel performance study",
+   "sosp 2019 paper",
+   "meltdown spectre performance impact",
+   "lmbench alternative"
+  ],
+  "takeaways": [
+   "Most core kernel operations on Linux 3.0 to 4.20 got slower, with many tests slowing by 50% or more; select was about 100% slower than two years earlier.",
+   "Most slowdowns come from 11 root causes: security enhancements (e.g., KPTI, Spectre v2 mitigation, hardened usercopy), new features (e.g., fault-around, cgroup memory controller), and configuration changes.",
+   "8 of the 11 root causes can be avoided by reconfiguring the kernel; 3 can be disabled with simple patches.",
+   "Disabling the 11 changes sped up Redis by up to 56%, Apache by up to 33%, and Nginx by up to 34% in the paper's tests."
+  ],
+  "summary": "The paper measures how Linux's core kernel operations (system calls, context switching, page faults, thread creation, fork, select/poll/epoll, send/recv) changed across 36 kernel releases from 3.0 to 4.20. It introduces LEBench, a microbenchmark suite of 13 operations chosen from strace data on Redis, PostgreSQL, Spark, Chromium, and kernel builds, run on an Intel Xeon server on Ubuntu kernels. The authors trace significant slowdowns to 11 specific changes, describe each one's mechanism and impact, and show that patching two security enhancements removes most of their overhead. The findings are backed by application benchmarks on Redis, Apache, and Nginx.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "C",
+   "LEBench",
+   "Redis",
+   "Apache",
+   "Nginx",
+   "PostgreSQL",
+   "Apache Spark",
+   "Ubuntu"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11250,
+  "output": 1075
+ },
+ "generated": "2026-10-29"
+}

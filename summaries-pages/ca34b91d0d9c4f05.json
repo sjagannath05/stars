@@ -1,0 +1,69 @@
+{
+ "id": "ca34b91d0d9c4f05",
+ "url": "https://spiral.ece.cmu.edu/pub-spiral/pubfile/ispass-2013_177.pdf",
+ "final_url": "https://spiral.ece.cmu.edu/pub-spiral/pubfile/ispass-2013_177.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Roofline and the execution-cache-memory model",
+   "entry": "Applying the Roofline Model - States the counter set and method that put a measured point on the plot in place of a hand-counted intensity."
+  }
+ ],
+ "summary": {
+  "title": "Applying the Roofline Model",
+  "one_liner": "Learn how to place measured (not hand-counted) kernels on a roofline plot by counting flops with Intel PMU events and memory traffic with uncore memory-controller counters.",
+  "category": "performance measurement",
+  "keywords": [
+   "roofline model",
+   "roofline plot",
+   "operational intensity",
+   "arithmetic intensity",
+   "flops per byte",
+   "hardware performance counters",
+   "intel pmu",
+   "intel performance counter monitor",
+   "pcm",
+   "uncore counters",
+   "memory controller traffic",
+   "measured memory traffic q",
+   "flop count from counters",
+   "cold cache measurement",
+   "warm cache measurement",
+   "peak performance and memory bandwidth bounds",
+   "memory bound vs compute bound",
+   "blas daxpy dgemv dgemm intensity",
+   "fft roofline",
+   "avx flop counting",
+   "turbo boost measurement caveats",
+   "how to measure roofline data",
+   "eth zurich spiral"
+  ],
+  "takeaways": [
+   "Work W is measured by summing floating point arithmetic/comparison counters, multiplying packed SSE double counts by 2 and AVX double counts by 4 (Sandy Bridge).",
+   "Memory traffic Q is better measured from raw memory-controller (uncore) read and write cache-line counters than from LLC miss counts, because of write-allocate, prefetching, and streaming effects.",
+   "Runtime T is taken from the time stamp counter; turbo boost and frequency scaling were disabled in BIOS for the experiments.",
+   "Cold cache runs are produced by changing the working data set each iteration (not flushing) and warm runs reuse data; the outer loop uses 20 repeats and reports the median with quartiles."
+  ],
+  "summary": "The paper explains how to produce roofline plots from measured data rather than back-of-the-envelope estimates, on recent Intel platforms. It defines operational intensity as flops divided by memory traffic, and measures work W with floating point counters, memory traffic Q with uncore memory-controller read/write cache-line counters (via an extended Intel PCM library), and runtime T with the time stamp counter. A nested-loop measurement strategy with median and quartile reporting is used, along with separate cold-cache and warm-cache procedures and a validation step on BLAS functions. The authors then apply these measurements to BLAS and FFT kernels across several Intel machines.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Intel PMU",
+   "Intel Performance Counter Monitor (PCM)",
+   "C++",
+   "x86 SSE",
+   "AVX",
+   "BLAS",
+   "FFT"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10274,
+  "output": 1019
+ },
+ "generated": "2026-10-29"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "5715f260667c142f",
+ "url": "https://arxiv.org/abs/1608.03676",
+ "final_url": "https://arxiv.org/abs/1608.03676",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Coz: Finding Code that Counts with Causal Profiling",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "CPU profilers and flame graphs",
+   "entry": "Coz: Finding Code that Counts with Causal Profiling - Proves a hot function need not be worth optimising, by measuring what speeding up a line does to end-to-end time."
+  }
+ ],
+ "summary": {
+  "title": "Coz: Finding Code that Counts with Causal Profiling",
+  "one_liner": "Causal profiling estimates the real performance payoff of optimizing a line of code by virtually speeding it up, using the Coz profiler on Memcached, SQLite and PARSEC.",
+  "category": "performance profiling",
+  "keywords": [
+   "causal profiling",
+   "coz profiler",
+   "causal profiler",
+   "software profiler",
+   "performance profiling",
+   "optimization opportunities",
+   "virtual speedup",
+   "finding code that counts",
+   "where to optimize code",
+   "hot function not worth optimizing",
+   "traditional profilers time spent",
+   "memcached optimization",
+   "sqlite optimization",
+   "parsec benchmark",
+   "concurrent program performance experiments",
+   "pausing concurrent threads to simulate speedup",
+   "profiler wasted developer time",
+   "arxiv 1608.03676"
+  ],
+  "takeaways": [
+   "Traditional profilers show where time is spent, which may not reflect where optimization changes end-to-end performance.",
+   "Causal profiling runs performance experiments during execution, inserting pauses in other concurrently running code to virtually speed up a target line.",
+   "The slowdown of other code has the same relative effect as making the target line faster, which lets the profiler quantify potential impact.",
+   "The Coz causal profiler was evaluated on Memcached (9% improvement), SQLite (25%), and six PARSEC applications (up to 68%).",
+   "Most of the optimizations guided by Coz involved modifying fewer than 10 lines of code."
+  ],
+  "summary": "This arXiv paper (submitted August 2016) introduces causal profiling, a technique that tells developers where optimization would actually matter rather than just where time is spent. The method runs performance experiments during execution, inserting pauses into concurrently running code so that a chosen line appears virtually sped up. The authors implement this as the Coz profiler and evaluate it on Memcached, SQLite and the PARSEC benchmark suite. The page reports the resulting speedups and that most fixes touched under 10 lines; implementation details are in the full PDF, which was not included in the page text.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "Coz",
+   "Memcached",
+   "SQLite",
+   "PARSEC"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2678,
+  "output": 882
+ },
+ "generated": "2026-10-29"
+}

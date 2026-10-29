@@ -1,0 +1,73 @@
+{
+ "id": "038cc5d40738d68c",
+ "url": "https://lists.llvm.org/pipermail/llvm-dev/2019-September/135393.html",
+ "final_url": "https://lists.llvm.org/pipermail/llvm-dev/2019-September/135393.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "[llvm-dev] [RFC] Propeller: A frame work for Post Link Optimizations",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Profile-guided and post-link optimisation",
+   "entry": "RFC: Propeller: A frame work for Post Link Optimizations - States the design, not a result: basic-block sections and a relink, no binary rewrite, so layout needs no disassembly."
+  }
+ ],
+ "summary": {
+  "title": "[RFC] Propeller: A frame work for Post Link Optimizations",
+  "one_liner": "Google's llvm-dev RFC proposing Propeller, a scalable, distributed-build-friendly post-link optimizer that does whole-program basic block layout at link time using basic block sections and sampled profiles, instead of rewriting the binary like BOLT.",
+  "category": "compiler post-link optimization",
+  "keywords": [
+   "propeller",
+   "post link optimization",
+   "plo",
+   "basic block sections",
+   "basic block layout",
+   "code layout",
+   "bolt comparison",
+   "bolt",
+   "thinlto",
+   "pgo",
+   "profile guided optimization",
+   "llvm linker",
+   "lld",
+   "ex-tsp algorithm",
+   "function splitting",
+   "function reordering",
+   "lbr profiling",
+   "perf record branch sampling",
+   "link time optimization",
+   "cfi discontiguous ranges",
+   "scalable binary optimization",
+   "llvm-dev rfc",
+   "how to optimize binary layout after linking",
+   "fpropeller flags"
+  ],
+  "takeaways": [
+   "Propeller performs whole-program basic block layout at link time by giving each basic block its own section, letting the linker reorder blocks, split functions, and reorder functions.",
+   "Its design avoids BOLT's monolithic disassemble-and-rewrite approach, so it works with distributed builds and has lower memory and time overhead.",
+   "The workflow is: build with -fpropeller-label, profile with perf LBR samples, convert the profile with create_llvm_prof, then rebuild with -fpropeller-optimize=<profile>.",
+   "The linker uses the Ex-TSP block ordering algorithm and needs linker relaxations for jumps; CFI bloat from lack of discontiguous address range support is an open issue."
+  ],
+  "summary": "This mailing-list RFC from Google introduces Propeller, a post-link optimization system for LLVM. Google reports that BOLT improved already ThinLTO+PGO-optimized benchmarks by 2% to 6%, but BOLT's monolithic design had high memory use (about 70G for a ~300M text binary) and long rewrite times. Propeller instead uses basic block sections so the linker can reorder blocks at link time, guided by perf LBR profiles and the Ex-TSP algorithm. The post includes a quick-start with clang and lld commands, and it reports that Propeller matches BOLT's gains with about 20% of its memory and time overhead on large benchmarks and SPEC 2017. A linked design document contains the detailed experiments. The page states the design and its experiments, but it does not report a final shipped result.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "LLVM",
+   "Clang",
+   "lld",
+   "C++",
+   "BOLT",
+   "perf",
+   "ThinLTO",
+   "PGO",
+   "Ninja",
+   "CMake"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3723,
+  "output": 1075
+ },
+ "generated": "2026-10-29"
+}

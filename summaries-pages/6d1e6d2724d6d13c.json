@@ -1,0 +1,68 @@
+{
+ "id": "6d1e6d2724d6d13c",
+ "url": "https://about.gitlab.com/2017/02/01/gitlab-dot-com-database-incident",
+ "final_url": "https://about.gitlab.com/blog/gitlab-dot-com-database-incident/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "GitLab.com database incident",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Postmortem",
+   "entry": "A great example of a postmortem from Gitlab (01/31/2017) for an outage during which an engineer's action caused the irremediable loss of 6 hours of data."
+  }
+ ],
+ "summary": {
+  "title": "GitLab.com database incident",
+  "one_liner": "A GitLab.com postmortem-style incident report on how spam load, replication failures and an accidental production data deletion led to six hours of lost database data, and how multiple backup methods had silently failed.",
+  "category": "postmortem incident review",
+  "keywords": [
+   "gitlab.com database incident",
+   "database data loss",
+   "postgresql replication lag",
+   "pg_basebackup",
+   "pg_dump silent failure",
+   "postgresql 9.2 vs 9.6 binaries",
+   "max_wal_senders",
+   "lvm snapshots",
+   "backup failure",
+   "restore from six-hour-old backup",
+   "accidental production deletion",
+   "postmortem",
+   "incident review",
+   "write lockup spam snippets",
+   "wal replication",
+   "backup verification",
+   "disaster recovery lessons",
+   "omnibus gitlab",
+   "s3 backup empty bucket",
+   "what went wrong database outage"
+  ],
+  "takeaways": [
+   "An engineer ran a removal command on the wrong server (db1 instead of db2), deleting about 300 GB of production data down to about 4.5 GB.",
+   "Spam snippet creation and a user using a repository as a CDN overloaded the database, causing write lockups and replication lag.",
+   "Five backup and replication mechanisms were in place, but none worked reliably: LVM snapshots and regular backups ran only daily, pg_dump failed silently, S3 backups were empty, and DB servers lacked disk snapshots.",
+   "Recovery relied on a six-hour-old backup, so data written between 5:20pm and 11:25pm UTC on 31 January 2017 was lost.",
+   "Backups must be tested regularly; a backup process that fails silently provides no protection."
+  ],
+  "summary": "GitLab's post describes a database incident on 31 January 2017 in which spam load and replication failures led engineers into a series of manual fixes. One engineer accidentally deleted the data directory on the primary database server, and the team found that most of their backup methods had been failing silently. They restored from a six-hour-old backup and temporarily used staging data, losing roughly six hours of production data. The page is a timeline with bulleted lists of contributing causes and an update that GitLab.com was back online.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "pg_basebackup",
+   "pg_dump",
+   "LVM",
+   "Azure disk snapshots",
+   "S3",
+   "GitLab Omnibus",
+   "NFS"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3788,
+  "output": 944
+ },
+ "generated": "2026-10-29"
+}

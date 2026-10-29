@@ -1,0 +1,66 @@
+{
+ "id": "076570246a30078f",
+ "url": "https://blog.frankdejonge.nl/reliable-event-dispatching-using-a-transactional-outbox",
+ "final_url": "https://frankdejonge.nl/blog/reliable-event-dispatching-using-a-transactional-outbox",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Reliable event dispatching using a transactional outbox",
+ "sources": [
+  {
+   "list": "lutzh/awesome-event-driven-architecture",
+   "section": "Experience Reports And Practicalities",
+   "entry": "Reliable event dispatching using a transactional outbox - By Frank de Jonge, February 2022. Transactional outbox is a crucial pattern for services basing their persistence on CRUD/RDBMS."
+  }
+ ],
+ "summary": {
+  "title": "Reliable event dispatching using a transactional outbox",
+  "one_liner": "You learn why dispatching events directly to a queue alongside a database write can lose or desync data, and how a transactional outbox table plus a relay makes event publishing atomic with state changes.",
+  "category": "distributed systems",
+  "keywords": [
+   "transactional outbox",
+   "outbox pattern",
+   "reliable event dispatching",
+   "dual write problem",
+   "event-driven architecture",
+   "message relay",
+   "debezium",
+   "buffer table",
+   "database as queue",
+   "at-least-once delivery",
+   "idempotent consumers",
+   "rabbitmq",
+   "kafka",
+   "eventsauce",
+   "event sourcing consistency",
+   "how to publish events reliably with a database write",
+   "outbox table sharding",
+   "outbox cleanup",
+   "disaster recovery event redispatch",
+   "postgresql transactions"
+  ],
+  "takeaways": [
+   "Dispatching events directly to a queue alongside a database write cannot be atomic, so one side can succeed while the other fails.",
+   "A transactional outbox stores events in a buffer table within the same database transaction as the application state, so both commit or roll back together.",
+   "A relay process reads the outbox and forwards messages to a real queue, which keeps delivery and routing features in dedicated infrastructure.",
+   "Practical concerns include locking to avoid duplicate relays, keeping the relay dumb and in-order, per-process outboxes for throughput, and cleaning up old rows."
+  ],
+  "summary": "The article explains the dual-write problem: publishing events to a queue in the same operation as a database write cannot be made atomic, so either order can leave the outside world inconsistent with internal state. It proposes a transactional outbox, where events are inserted into a buffer table inside the same database transaction as the state changes, and a relay forwards them to a queue. The author covers the required parts (a transactional database, a buffer table, a relay such as a custom daemon or Debezium, and a queue), plus implementation notes on exclusive reads, in-order relaying, limited outbox throughput and sharding, cleanup, and reuse for disaster recovery. A pseudo-code transaction example illustrates the workflow.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "PostgreSQL",
+   "MySQL",
+   "MariaDB",
+   "Debezium",
+   "RabbitMQ",
+   "Kafka",
+   "EventSauce"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3998,
+  "output": 915
+ },
+ "generated": "2026-10-29"
+}

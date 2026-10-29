@@ -8,8 +8,7 @@
 
   // Pre-lowercase searchable fields once.
   for (const d of D) {
-    const [owner, name] = d.n.split("/");
-    d._name = name.toLowerCase(); d._owner = owner.toLowerCase();
+    d._name = d.n.toLowerCase(); d._owner = (d.d || "").toLowerCase();
     d._cat = (d.c || "").toLowerCase();
     d._kw = d.k.map(k => k.toLowerCase());
     d._kwj = " " + d._kw.join(" | ") + " ";
@@ -48,7 +47,9 @@
   }
 
   function filtered() {
-    return D.filter(d => (state.src === "all" || (state.src === "mine" ? d.m : !d.m))
+    const ok = { all: () => true, mine: d => d.t === "r" && d.m, awesome: d => d.t === "r" && !d.m,
+                 tool: d => d.t === "w", article: d => d.t === "a" }[state.src] || (() => true);
+    return D.filter(d => ok(d)
       && (!state.list || (d.g || []).includes(state.list))
       && (!state.cat || d._cat === state.cat));
   }
@@ -60,7 +61,8 @@
     if (ts.length) {
       rows = rows.map(d => [d, score(d, ts, phrase)]).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]).map(x => x[0]);
     } else {
-      rows = rows.slice().sort((a, b) => (b.m - a.m) || ((b.s || 0) - (a.s || 0)) || a.n.localeCompare(b.n));
+      const rank = d => (d.m ? 3 : d.t === "r" ? 2 : d.x ? 0 : 1);
+      rows = rows.slice().sort((a, b) => (rank(b) - rank(a)) || ((b.s || 0) - (a.s || 0)) || a.n.localeCompare(b.n));
     }
     return { rows, ts };
   }
@@ -71,12 +73,18 @@
     return out;
   }
 
+  const TYPE = { w: "Tool / site", a: "Article" };
   function card(d, ts) {
-    const [owner, name] = d.n.split("/");
     const hits = ts.length ? d.k.filter(k => ts.some(t => k.toLowerCase().includes(t))).slice(0, 4) : [];
     const via = !d.m && d.v ? `<span class="via">via ${esc(d.v)}</span>` : "";
-    return `<li><a class="card" href="r/${d.id}.html"><div>
-      <span class="name"><span class="owner">${esc(owner)}/</span>${hl(name, ts)}</span>${d.c ? `<span class="cat">${esc(d.c)}</span>` : ""}
+    const href = d.t === "r" ? `r/${d.id}.html` : (d.x || `p/${d.id}.html`);
+    const ext = d.x ? ` target="_blank" rel="noopener"` : "";
+    const title = d.t === "r"
+      ? `<span class="name"><span class="owner">${esc(d.d)}/</span>${hl(d.n, ts)}</span>`
+      : `<span class="name page">${hl(d.n, ts)}</span><span class="dom">${esc(d.d)}${d.x ? " ↗" : ""}</span>`;
+    return `<li><a class="card${d.t !== "r" ? " is-page" : ""}" href="${esc(href)}"${ext}><div>
+      ${d.t !== "r" ? `<span class="type">${TYPE[d.t]}${d.x ? " · not summarized" : ""}</span>` : ""}
+      ${title}${d.c ? `<span class="cat">${esc(d.c)}</span>` : ""}
       <p class="one">${hl(d.o || "", ts)}</p>
       <div class="meta">${(d.g || []).map(g => `<span class="tag-list">${esc(g)}</span>`).join("")}${d.l ? `<span>${esc(d.l)}</span>` : ""}${via}
       ${hits.length ? `<span class="hits">${hits.map(h => `<span>${esc(h)}</span>`).join("")}</span>` : ""}</div>
@@ -87,7 +95,7 @@
     const { rows, ts } = run();
     const total = rows.length;
     $("#count").textContent = state.q || state.list || state.cat || state.src !== "all"
-      ? `${total.toLocaleString()} match${total === 1 ? "" : "es"}` : `${D.length.toLocaleString()} repositories`;
+      ? `${total.toLocaleString()} match${total === 1 ? "" : "es"}` : `${D.length.toLocaleString()} repos, tools and articles`;
     $("#clear").hidden = !(state.q || state.list || state.cat || state.src !== "all");
     $("#results").innerHTML = rows.slice(0, state.shown).map(d => card(d, ts)).join("") ||
       `<li class="empty">Nothing matched. Try fewer or plainer words, like “file sharing” or “terminal”.</li>`;
@@ -125,8 +133,9 @@
   for (const d of D) for (const g of d.g || []) listCounts[g] = (listCounts[g] || 0) + 1;
   $("#list").innerHTML = `<option value="">All my lists</option>` +
     Object.entries(listCounts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<option value="${esc(g)}">${esc(g)} (${n})</option>`).join("");
-  const mine = D.filter(d => d.m).length;
-  $("#n-all").textContent = D.length.toLocaleString(); $("#n-mine").textContent = mine; $("#n-aw").textContent = (D.length - mine).toLocaleString();
+  const cnt = f => D.filter(f).length.toLocaleString();
+  $("#n-all").textContent = D.length.toLocaleString(); $("#n-mine").textContent = cnt(d => d.t === "r" && d.m);
+  $("#n-aw").textContent = cnt(d => d.t === "r" && !d.m); $("#n-tool").textContent = cnt(d => d.t === "w"); $("#n-art").textContent = cnt(d => d.t === "a");
 
   let timer;
   $("#q").addEventListener("input", e => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; state.shown = 40; state.cat = ""; render(); }, 90); });

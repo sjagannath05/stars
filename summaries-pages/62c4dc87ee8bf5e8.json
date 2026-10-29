@@ -1,0 +1,62 @@
+{
+ "id": "62c4dc87ee8bf5e8",
+ "url": "https://www.pyimagesearch.com/wp-content/uploads/2014/11/opencv_crash_course_camshift.pdf",
+ "final_url": "https://www.pyimagesearch.com/wp-content/uploads/2014/11/opencv_crash_course_camshift.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "Untitled",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "OpenCV:",
+   "entry": "Object Tracking with Camshift"
+  }
+ ],
+ "summary": {
+  "title": "Tutorial: Using CamShift to Track Objects in Video",
+  "one_liner": "You learn to track a user-selected object in video with OpenCV's CamShift, using a hue-histogram back projection and a four-point bounding box selected with the mouse.",
+  "category": "computer vision object tracking",
+  "keywords": [
+   "camshift",
+   "cv2.camshift",
+   "object tracking in video",
+   "opencv python tutorial",
+   "histogram back projection",
+   "hue histogram tracking",
+   "mean shift tracking",
+   "hsv color space",
+   "region of interest selection",
+   "mouse callback opencv",
+   "track object across frames",
+   "camshift vs keypoint tracking",
+   "sift and dog keypoints",
+   "homography feature matching",
+   "calchist back projection",
+   "pyimagesearch tutorial",
+   "video object tracking python",
+   "color histogram tracking"
+  ],
+  "takeaways": [
+   "CamShift tracks an object by back-projecting a reference hue histogram onto each HSV frame and iterating to find the object's new position.",
+   "The ROI is picked by clicking four points with the mouse, then pressing 'i' to enter selection mode; the code derives a top-left and bottom-right box from them.",
+   "The termination criteria cap CamShift at 10 iterations or a one-pixel centroid change to keep the tracker near real-time.",
+   "Limitations: only the Hue channel is used, histogram bin count needs tuning, and OpenCV (at the time) did not support 3D histograms in back projection.",
+   "For more robust tracking with texture and local features, the author suggests keypoint detection, SIFT/DoG descriptors and homographies."
+  ],
+  "summary": "Adrian Rosebrock's PyImageSearch tutorial walks through a Python script (track.py) that uses OpenCV's cv2.CamShift to track an object in a webcam or video file. The user selects four points around the object with the mouse, the script builds a 16-bin hue histogram from that region, and then back-projects it onto each HSV frame to follow the object. The post explains each code block line by line and discusses limitations such as hue-only tracking and bin tuning, and points to keypoint-based methods as a more robust alternative.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "OpenCV",
+   "NumPy",
+   "argparse"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7145,
+  "output": 895
+ },
+ "generated": "2026-10-29"
+}

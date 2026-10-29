@@ -1,0 +1,65 @@
+{
+ "id": "67e8396b708975f0",
+ "url": "https://docs.kernel.org/trace/osnoise-tracer.html",
+ "final_url": "https://docs.kernel.org/trace/osnoise-tracer.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "OSNOISE Tracer",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Where jitter comes from",
+   "entry": "osnoise tracer - Counts the noise a spinning thread suffers and attributes each event to NMI, IRQ, softirq, thread or hardware."
+  }
+ ],
+ "summary": {
+  "title": "OSNOISE Tracer",
+  "one_liner": "The Linux osnoise tracer measures how much OS and hardware interference a spinning thread suffers and attributes each noise event to NMI, IRQ, SoftIRQ, thread, or hardware sources.",
+  "category": "linux kernel tracing",
+  "keywords": [
+   "osnoise tracer",
+   "operating system noise",
+   "linux osnoise",
+   "hwlat_detector",
+   "hardware latency detector",
+   "nmi noise",
+   "irq noise",
+   "softirq noise",
+   "thread noise",
+   "hardware noise",
+   "system noise measurement",
+   "hpc jitter",
+   "ftrace tracer",
+   "current_tracer tracefs",
+   "sample_threshold tracepoint",
+   "interference counters",
+   "cpu jitter analysis",
+   "kernel latency measurement",
+   "smi noise",
+   "osnoise period_us runtime_us"
+  ],
+  "takeaways": [
+   "osnoise runs a loop with preemption, SoftIRQs and IRQs enabled and counts interference from NMI, IRQ, SoftIRQ and thread sources per CPU.",
+   "Noise not attributed to any OS-level source is counted as hardware noise, which is how VM host interference shows up.",
+   "Enable it by writing 'osnoise' to current_tracer in the tracefs directory (usually /sys/kernel/tracing) and read the trace file.",
+   "Tune behavior with osnoise/cpus, period_us, runtime_us, stop_tracing_us, and options such as OSNOISE_WORKLOAD and OSNOISE_IRQ_DISABLE.",
+   "Tracepoints osnoise:nmi_noise, irq_noise, softirq_noise, thread_noise and sample_threshold give per-event durations, with nested noise subtracted to avoid double counting."
+  ],
+  "summary": "This kernel documentation page explains the osnoise tracer, which builds on the hwlat_detector approach to measure operating system noise seen by a thread in high-performance computing contexts. The tracer runs a loop with interrupts, SoftIRQs and preemption enabled, and records entry and exit of each interference source, reporting total noise, maximum single noise, CPU availability and per-source counters at the end of each period. The page covers usage through tracefs, a sample trace output with field definitions, configuration files, tracer options, and tracepoints with an example trace. It also notes that tracepoint durations are net values and that the tracer can run without its workload to measure arbitrary Linux tasks.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Linux kernel",
+   "ftrace",
+   "tracefs",
+   "hwlat_detector",
+   "osnoise tracer"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4476,
+  "output": 1023
+ },
+ "generated": "2026-10-29"
+}

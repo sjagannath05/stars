@@ -1,0 +1,61 @@
+{
+ "id": "ed4683562a5b0240",
+ "url": "http://martinfowler.com/bliki/BlueGreenDeployment.html",
+ "final_url": "https://martinfowler.com/bliki/BlueGreenDeployment.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "bliki: Blue Green Deployment",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Releasing & deploying",
+   "entry": "BlueGreenDeployment, Martin Fowler"
+  }
+ ],
+ "summary": {
+  "title": "Blue Green Deployment",
+  "one_liner": "Blue-green deployment releases software without downtime by running two identical production environments and switching the router between them.",
+  "category": "release engineering",
+  "keywords": [
+   "blue-green deployment",
+   "blue green deployment",
+   "zero downtime deployment",
+   "zero downtime release",
+   "router cut-over",
+   "production environment switch",
+   "rollback deployment",
+   "hot standby",
+   "disaster recovery testing",
+   "continuous delivery",
+   "database schema changes during deployment",
+   "expand and contract database migration",
+   "read-only mode cutover",
+   "deployment automation",
+   "martin fowler deployment",
+   "parallel production environments",
+   "staging environment reuse",
+   "upgrade production without downtime"
+  ],
+  "takeaways": [
+   "Keep two near-identical production environments (blue and green); one is live while the other is used for final testing of the next release.",
+   "Cut over by switching the router (or bouncing the web server) to send traffic to the newly tested environment.",
+   "Rollback is fast: switch the router back to the previous environment, which stays intact as a backup.",
+   "Separate database schema changes from application upgrades, deploying a schema that supports both old and new versions first."
+  ],
+  "summary": "Martin Fowler's short bliki post, written in 2010, describes blue-green deployment as a way to automate cut-over to production with minimal downtime. Two as-identical-as-possible environments exist, one live and one used for final testing; traffic is switched between them via the router. The article covers rollback, handling missed transactions with read-only mode, the same mechanism doubling as hot-standby disaster recovery testing, and a database approach that separates schema changes from application upgrades. A 2015 update adds the database paragraph and further reading references to the Continuous Delivery book.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "load balancer / router",
+   "web server",
+   "virtual machines",
+   "relational database schema migration"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2588,
+  "output": 760
+ },
+ "generated": "2026-10-29"
+}

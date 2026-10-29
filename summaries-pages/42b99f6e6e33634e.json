@@ -1,0 +1,63 @@
+{
+ "id": "42b99f6e6e33634e",
+ "url": "https://codepr.github.io/posts/sol-mqtt-broker-p3",
+ "final_url": "https://codepr.github.io/posts/sol-mqtt-broker-p3/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Init 1",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Network programming",
+   "entry": "Part 3 - Server"
+  }
+ ],
+ "summary": {
+  "title": "MQTT broker from scratch # 3 - Server",
+  "one_liner": "You learn how to build the server layer of a C MQTT 3.1.1 broker using epoll, with accept/read/write callbacks, packet framing, and a logging utility.",
+  "category": "network programming",
+  "keywords": [
+   "mqtt broker in c",
+   "mqtt server from scratch",
+   "mqtt 3.1.1 broker implementation",
+   "epoll event loop server",
+   "c tcp server epoll",
+   "event-driven socket server c",
+   "accept read write callbacks",
+   "closure callback c",
+   "mqtt packet framing recv",
+   "remaining length decoding mqtt",
+   "command handler dispatch table c",
+   "bytestring buffer c",
+   "logging utility c sol_log",
+   "publish message to subscribers mqtt",
+   "periodic stats task epoll",
+   "sol broker tutorial",
+   "build a message broker in c",
+   "non-blocking socket server in c"
+  ],
+  "takeaways": [
+   "The server exposes a minimal start_server(addr, port) entry point and uses epoll with configurable max events and timeout.",
+   "Three I/O callbacks (on_accept, on_read, on_write) re-arm the socket for reading or writing based on handler return codes.",
+   "recv_packet reads the MQTT fixed header byte by byte, decodes the remaining length, and reads the full packet before dispatch.",
+   "Command handlers are mapped in a table indexed by MQTT packet type, with NULL entries for unsupported types.",
+   "Outgoing PUBLISH packets are sent to each subscriber of a topic, with QoS adjusted to each subscriber's level."
+  ],
+  "summary": "This part of the series implements the server side of a MQTT 3.1.1 broker in C. It defines a small server header exposing start_server, then adds accept, read, and write callbacks driven by an epoll loop, with re-arming of sockets depending on handler return codes. It also covers packet reception with remaining-length decoding, a bytestring helper, generic utilities including logging, and a periodic stats-publishing task that sends PUBLISH packets to subscribers. The page is code-heavy and the text ends mid-sentence, so some details (such as publish_stats itself) are not shown.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C",
+   "epoll",
+   "MQTT 3.1.1",
+   "POSIX sockets",
+   "uuid"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11247,
+  "output": 922
+ },
+ "generated": "2026-10-29"
+}

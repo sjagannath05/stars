@@ -1,0 +1,66 @@
+{
+ "id": "e9cf751ff8844ddd",
+ "url": "https://kasvith.me/posts/lets-create-a-simple-lb-go",
+ "final_url": "https://kasvith.me/posts/lets-create-a-simple-lb-go/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's Create a Simple Load Balancer With Go",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Go: _Let's Create a Simple Load Balancer_"
+  }
+ ],
+ "summary": {
+  "title": "Let's Create a Simple Load Balancer With Go",
+  "one_liner": "You learn how to build a basic round-robin HTTP load balancer in Go using httputil.ReverseProxy, atomic counters, mutex-guarded health state, retries, and periodic TCP health checks.",
+  "category": "go load balancing",
+  "keywords": [
+   "load balancer",
+   "golang load balancer",
+   "round robin load balancing",
+   "go reverse proxy",
+   "httputil reverseproxy",
+   "newsinglehostreverseproxy",
+   "health check",
+   "active health check",
+   "passive health check",
+   "tcp health check",
+   "atomic counter go",
+   "sync.rwmutex backend",
+   "retry backend on failure",
+   "context value go",
+   "go select ticker",
+   "build a load balancer in go",
+   "weighted round robin",
+   "least connections",
+   "nginx alternative",
+   "distributing requests across servers"
+  ],
+  "takeaways": [
+   "Round robin can be implemented with an atomically incremented counter modded by the backend count, skipping backends marked dead.",
+   "httputil.NewSingleHostReverseProxy relays requests to a backend and returns responses to the client, avoiding reinventing proxying.",
+   "Backend alive state is guarded with sync.RWMutex because reads greatly outnumber writes.",
+   "Failures are detected actively via ReverseProxy's ErrorHandler (with retries and attempt counting through context), and passively via periodic TCP dial health checks run in a goroutine with a ticker."
+  ],
+  "summary": "The author walks through building a simple Go load balancer that uses round-robin selection. It defines Backend and ServerPool structs, wraps each backend in httputil.ReverseProxy, and uses atomic operations to advance the counter and skip dead backends safely. Health tracking is covered two ways: active detection in the ReverseProxy ErrorHandler with retries and request attempt counts stored in context, and passive checks that dial each backend over TCP every 20 seconds. The article closes with a list of possible improvements such as weighted round robin, least connections, and config file support.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "net/http",
+   "httputil",
+   "sync",
+   "sync/atomic",
+   "context",
+   "NGINX"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6136,
+  "output": 872
+ },
+ "generated": "2026-10-29"
+}

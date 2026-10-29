@@ -1,0 +1,69 @@
+{
+ "id": "d79b9e59fd62931c",
+ "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+ "final_url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Quantize ONNX models",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Quantization",
+   "entry": "Quantize ONNX models - Defines the QDQ form against QOperator and dynamic against static, and which sign choices are safe on which CPUs."
+  }
+ ],
+ "summary": {
+  "title": "Quantize ONNX models",
+  "one_liner": "Learn how ONNX Runtime quantizes models to int8 or int4, choosing between QDQ and QOperator formats, dynamic and static quantization, and signed or unsigned weight and activation types for CPU and GPU.",
+  "category": "model quantization",
+  "keywords": [
+   "onnx runtime quantization",
+   "int8 quantization",
+   "uint8 quantization",
+   "int4 quantization",
+   "qdq format",
+   "qoperator format",
+   "quantize_dynamic",
+   "quantize_static",
+   "dynamic vs static quantization",
+   "post-training quantization",
+   "calibration data",
+   "minmax entropy percentile calibration",
+   "s8s8 u8s8 u8u8 data types",
+   "reduce_range",
+   "per-channel quantization",
+   "vpmaddubsw saturation",
+   "quantization debugging",
+   "matmul4bits weight-only quantization",
+   "quantize onnx model on cpu",
+   "why is quantized model not faster",
+   "transformer model quantization",
+   "opset 10 quantization requirement"
+  ],
+  "takeaways": [
+   "QDQ (QuantizeLinear/DeQuantizeLinear) is the tensor-oriented format and QOperator uses dedicated quantized operators; S8S8 with QDQ is the recommended default on CPU.",
+   "Dynamic quantization computes activation scale and zero point at runtime (more accurate, extra cost), while static quantization precomputes them with calibration data (common for CNNs).",
+   "On x86-64 AVX2/AVX512 CPUs, U8S8 can hit saturation in VPMADDUBSW; reduce_range or U8U8 helps, and S8S8 with QOperator is slow on x86-64.",
+   "Run model pre-processing (shape inference, optimization) before quantizing, and avoid optimization during quantization to keep quantization debugging tractable.",
+   "Int4/UInt4 block-wise weight-only quantization is available for MatMul and Gather ops, and models need opset 10 or higher to be quantized."
+  ],
+  "summary": "This ONNX Runtime documentation page explains 8-bit linear quantization of ONNX models, including the scale and zero-point formulas and the two representation formats (QOperator and QDQ). It covers pre-processing, dynamic versus static quantization with calibration methods, and a debugging API for comparing float32 and quantized tensors. It then gives guidance on data type selection (U8U8, U8S8, S8S8) for CPUs, notes on GPU support via TensorRT, and block-wise Int4/UInt4 weight-only quantization with a code example. The FAQ addresses missing speedups, reduce-range, per-channel quantization, and opset requirements.",
+  "format": "reference",
+  "level": "intermediate",
+  "technologies": [
+   "ONNX",
+   "ONNX Runtime",
+   "Python",
+   "TensorRT",
+   "Transformer Model Optimization Tool",
+   "x86-64 AVX2/AVX512/VNNI",
+   "Arm"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6828,
+  "output": 1129
+ },
+ "generated": "2026-10-29"
+}

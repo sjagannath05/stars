@@ -1,0 +1,67 @@
+{
+ "id": "e7beced223a5dac0",
+ "url": "https://blog.acolyer.org/2020/02/26/meaningful-availability",
+ "final_url": "https://blog.acolyer.org/2020/02/26/meaningful-availability/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Meaningful availability",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Metrics",
+   "entry": "Meaningful availability"
+  }
+ ],
+ "summary": {
+  "title": "Meaningful availability",
+  "one_liner": "Windowed user-uptime is a service availability metric built from individual users' request outcomes, which Google found more meaningful, proportional, and actionable than time-based or success-ratio metrics.",
+  "category": "service availability metrics",
+  "keywords": [
+   "availability metric",
+   "windowed user-uptime",
+   "minimal cumulative ratio",
+   "mcr",
+   "user-uptime",
+   "number of nines",
+   "uptime downtime ratio",
+   "mttf mttr availability",
+   "success ratio availability",
+   "count-based availability",
+   "time-based availability",
+   "probe requests",
+   "cutoff duration interarrival time",
+   "google g suite reliability",
+   "measuring service availability",
+   "how to measure availability of cloud service",
+   "availability window analysis",
+   "actionable availability metric",
+   "nsdi 2020 paper",
+   "hauer et al availability",
+   "gmail drive hangouts availability",
+   "distributed system uptime measurement",
+   "knee of the curve outage duration"
+  ],
+  "takeaways": [
+   "Time-based and success-ratio availability metrics fail to be meaningful, proportional, and actionable for distributed systems.",
+   "Windowed user-uptime computes uptime per user from real requests, assuming the system stays up or down until the user sees evidence otherwise.",
+   "A cutoff duration (99th percentile of interarrival time, 30 minutes for Gmail) marks inactive periods so they do not count as downtime.",
+   "The minimal cumulative ratio (MCR) takes the worst availability across all windows of each size, and the knee of the curve reveals relevant outage durations.",
+   "Storing data at the finest window granularity allows slicing availability across dimensions."
+  ],
+  "summary": "This blog post reviews Hauer et al.'s NSDI 2020 paper on the Google G Suite team's search for a meaningful availability metric. It explains why time-based metrics (uptime/(uptime+downtime)) and count-based success ratios fall short, then introduces user-uptime, which measures each user's experience from real requests with a cutoff for inactive periods. Windowed user-uptime extends this by computing the minimal cumulative ratio across window sizes, so engineers can identify outage durations that drive unavailability. The post also shows production examples from Gmail, Drive and Hangouts.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Google G Suite",
+   "Gmail",
+   "Google Drive",
+   "Hangouts"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3627,
+  "output": 943
+ },
+ "generated": "2026-10-29"
+}

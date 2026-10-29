@@ -1,0 +1,63 @@
+{
+ "id": "6793cdce8f23181d",
+ "url": "https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-iv-forwarding",
+ "final_url": "https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-iv-forwarding/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Let's build a URL shortener in Go - Final Part : Forwarding",
+ "sources": [
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Go:",
+   "entry": "Part 4 - Forwarding"
+  }
+ ],
+ "summary": {
+  "title": "Let's build a URL shortener in Go - Final Part : Forwarding",
+  "one_liner": "You learn how to wire up the create-short-url and short-link redirect handlers in Go (with gin and Redis) so a shortened URL forwards to its original long URL.",
+  "category": "go url shortener",
+  "keywords": [
+   "go url shortener",
+   "golang url shortener tutorial",
+   "url shortener in go",
+   "gin handlers",
+   "gin-gonic redirect",
+   "http redirect golang",
+   "short url redirection",
+   "create-short-url endpoint",
+   "path parameter short url",
+   "redis url mapping",
+   "store.saveurlmapping",
+   "shortener.generateshortlink",
+   "url forwarding in go",
+   "part 4 url shortener",
+   "how to redirect short link to long url",
+   "build url shortener api",
+   "short hash generation go",
+   "gin router main.go"
+  ],
+  "takeaways": [
+   "Define two handlers: CreateShortUrl to generate and store a short link, and HandleShortUrlRedirect to look up and redirect.",
+   "CreateShortUrl parses the request body for the long URL and userId, generates a hash, and saves the mapping via the store layer.",
+   "The redirect handler reads the short URL from the path parameter, retrieves the original URL from the store, and issues an HTTP redirect.",
+   "The service runs on localhost:9808 and can be tested with any REST client by posting a URL and visiting the returned short link."
+  ],
+  "summary": "This final part of the series connects the components built earlier (short link generation and the Redis storage layer) into a working API. It creates a handler package with stubs for CreateShortUrl and HandleShortUrlRedirect, registers the endpoints /create-short-url and /:short-url in main.go, and then implements each handler step by step. The author then walks through testing: starting the server on port 9808, posting a create request, and visiting the returned short link to confirm it redirects. The page closes with links to the full GitHub repository and optional next steps such as Dockerizing, adding a SQL backup store, and building a front end.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Go",
+   "Gin",
+   "Redis",
+   "Postgres",
+   "MySQL",
+   "Docker"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2861,
+  "output": 861
+ },
+ "generated": "2026-10-29"
+}

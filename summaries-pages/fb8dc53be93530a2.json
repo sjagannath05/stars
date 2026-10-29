@@ -1,0 +1,87 @@
+{
+ "id": "fb8dc53be93530a2",
+ "url": "https://code.claude.com/docs/en/best-practices",
+ "final_url": "https://code.claude.com/docs/en/best-practices",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Best practices for Claude Code - Claude Code Docs",
+ "sources": [
+  {
+   "list": "hesreallyhim/awesome-claude-code",
+   "section": "From Anthropic",
+   "entry": "Claude Code Best Practices by Anthropic - Anthropic's canonical guide to working effectively with Claude Code: the agentic-loop mental model, CLAUDE.md guidance, and workflow patterns."
+  }
+ ],
+ "summary": {
+  "name": "Claude Code Best Practices",
+  "one_liner": "Anthropic's official guide to working effectively with Claude Code, covering CLAUDE.md, verification checks, hooks, permissions, model/effort settings, and subagent and cost management.",
+  "category": "ai coding agent guide",
+  "keywords": [
+   "claude code best practices",
+   "claude code guide",
+   "claude code docs",
+   "claude.md",
+   "claude md file",
+   "claude code hooks",
+   "stop hook",
+   "posttooluse hook",
+   "permission rules",
+   "deny rules",
+   "claude code sandbox",
+   "auto mode",
+   "permission modes",
+   "subagents",
+   "custom subagents",
+   "skills",
+   "claude code skills",
+   "slash commands",
+   "effort level",
+   "prompt caching",
+   "context compaction",
+   "claude code cost",
+   "managed settings",
+   "mcp servers",
+   "agentic coding workflow",
+   "anthropic claude code tips",
+   "how to use claude code",
+   "ai coding assistant best practices",
+   "verification loop",
+   "code review agent"
+  ],
+  "use_cases": [
+   "writing a concise CLAUDE.md for a repository",
+   "enforcing project rules with hooks instead of prompts",
+   "blocking Claude from reading secret files like .env",
+   "controlling token cost and context size in long sessions",
+   "setting up verification checks so Claude can test its own work",
+   "choosing permission modes and model effort levels"
+  ],
+  "what_it_does": "The page is a documentation guide on using Claude Code well. It explains the difference between non-deterministic instructions (prompts, CLAUDE.md, skills) that the model interprets and deterministic controls (hooks, deny rules, managed settings) that the harness always applies. It advises keeping CLAUDE.md short, scoping rules with paths filters, putting team procedures in skills, and giving Claude a test or check to run so it can verify its own work. It also covers permission rules and the sandbox, auto mode and permission modes, effort levels, subagent usage, and cost controls such as /clear, /compact, and /usage.",
+  "pricing": "free",
+  "platforms": [
+   "macOS",
+   "Linux",
+   "Windows",
+   "WSL2",
+   "VS Code",
+   "web"
+  ],
+  "notable": [
+   "Separates instructions the model may ignore (CLAUDE.md, prompts) from hooks and deny rules that Claude Code enforces every time",
+   "Stop hook can block Claude from finishing until a typecheck or test passes",
+   "Covers cost controls like prompt cache timing, /usage breakdowns, and subagent model choice",
+   "Lists the Anthropic-recommended approach to permissions, sandboxing, and auto mode"
+  ],
+  "caveats": [
+   "Some features depend on plan or provider, such as /usage breakdowns and prompt cache duration",
+   "Permission deny rules match tool calls rather than intent, so a WebFetch deny does not block curl unless the sandbox is on",
+   "Auto mode is a model classifier and is not deterministic; deny rules are needed for guarantees"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9315,
+  "output": 1109
+ },
+ "generated": "2026-10-29"
+}

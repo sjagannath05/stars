@@ -1,0 +1,66 @@
+{
+ "id": "c2d940ce404471e2",
+ "url": "https://pharr.org/matt/assets/ispc.pdf",
+ "final_url": "https://pharr.org/matt/assets/ispc.pdf",
+ "kind": "article",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Data layout and loop transforms",
+   "entry": "ispc: A SPMD Compiler for High-Performance CPU Programming - Measures one kernel in both layouts and traces the gain to the gathers the array-of-structures form forces."
+  }
+ ],
+ "summary": {
+  "title": "ispc: A SPMD Compiler for High-Performance CPU Programming",
+  "one_liner": "ispc is a C-based SPMD compiler that maps program instances onto CPU SIMD lanes, and the paper explains its design goals, execution model, control-flow masking, and why gathers and scatters hurt CPU performance.",
+  "category": "cpu simd programming",
+  "keywords": [
+   "ispc",
+   "spmd compiler",
+   "spmd on simd",
+   "single program multiple data cpu",
+   "simd vectorization",
+   "auto-vectorization",
+   "gather and scatter",
+   "coherent gather",
+   "structure of arrays",
+   "sse and avx",
+   "program instances gang",
+   "execution mask predication",
+   "blend select instructions",
+   "cuda and opencl comparison",
+   "multi-core simd parallelism",
+   "intrinsics alternative",
+   "how to write simd code on cpu",
+   "array of structures vs structure of arrays",
+   "ispc paper pharr mark"
+  ],
+  "takeaways": [
+   "ispc runs SPMD program instances across SIMD lanes, so code that looks scalar is vectorized by design rather than by heuristic.",
+   "Divergent control flow is handled by the compiler through masks and blend/select instructions, especially hard on SSE due to limited write-masks.",
+   "Non-contiguous array indexing becomes gathers and scatters, which CURRENT CPU hardware (SSE/AVX) implements as slower scalar instruction series.",
+   "Gang size is typically up to twice the SIMD width and is fixed at compile time, and the paper reports speedups up to 35x on 4 cores and 240x on 40 cores versus serial C++."
+  ],
+  "summary": "The paper presents ispc, an Intel compiler that extends a C-like language with SPMD constructs so each program instance maps to one SIMD lane on x86 CPUs using SSE or AVX. It sets out design goals (performance transparency, productivity, C/C++ interoperability), contrasts the approach with auto-vectorization and intrinsics, and explains how divergent control flow is converted to masked data flow. It also covers why gathers and scatters from non-contiguous memory access are costly on CPUs, which motivates ispc's layout and gather-minimization techniques. The excerpt ends before the detailed evaluation and layout sections, so the array-of-structures versus structure-of-arrays measurement is not visible in the provided text.",
+  "format": "paper",
+  "level": "advanced",
+  "technologies": [
+   "ispc",
+   "C",
+   "C++",
+   "SSE",
+   "AVX",
+   "OpenCL",
+   "CUDA",
+   "OpenMP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9580,
+  "output": 1005
+ },
+ "generated": "2026-10-29"
+}

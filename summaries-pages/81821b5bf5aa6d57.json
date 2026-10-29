@@ -1,0 +1,65 @@
+{
+ "id": "81821b5bf5aa6d57",
+ "url": "https://smudge.ai/blog/ratelimit-algorithms",
+ "final_url": "https://smudge.ai/blog/ratelimit-algorithms",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Visualizing algorithms for rate limiting",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "Integration patterns (dependency management)",
+   "entry": "Rate limiter algorithms (and their implementation)"
+  }
+ ],
+ "summary": {
+  "title": "Visualizing algorithms for rate limiting",
+  "one_liner": "You learn how fixed window, sliding window (approximated floating window), and token bucket rate limiters work, their trade-offs, and practical rules for implementing them.",
+  "category": "rate limiting algorithms",
+  "keywords": [
+   "rate limiting",
+   "rate limiter algorithms",
+   "fixed window rate limiter",
+   "sliding window rate limiter",
+   "floating window approximation",
+   "token bucket",
+   "token bucket algorithm",
+   "burst traffic",
+   "throttling",
+   "api rate limit",
+   "429 status code",
+   "x-ratelimit headers",
+   "redis rate limiting",
+   "fail open",
+   "per-user rate limit keys",
+   "time zone fixed window reset",
+   "fixed window user-defined start",
+   "github api rate limit",
+   "stripe token bucket",
+   "cloudflare rate limiter",
+   "upstash rate limiter",
+   "how to choose rate limiting algorithm"
+  ],
+  "takeaways": [
+   "A fixed window limiter counts requests per reset window and is simple and predictable, but can allow bursts up to 2x the limit around window boundaries.",
+   "A sliding window refills capacity one request at a time; an approximated (floating) window avoids storing every timestamp while staying close to the true average.",
+   "A token bucket separates burst capacity (bucket size) from long-term average rate (refill interval), so it allows bursts while enforcing an average rate.",
+   "Production concerns include a persisted store such as Redis, failing open when the store is unreachable, choosing sensible keys, and returning 429 with x-ratelimit headers."
+  ],
+  "summary": "The article explains why rate limiting matters, using a Twitch chat spam example and API endpoint limits, then walks through three algorithms: fixed windows (with a note on time zone and DST pitfalls and a user-defined start variant), sliding windows (including an efficient floating-window approximation used by Upstash and Cloudflare), and token buckets (with Stripe and OpenAI examples). Each section lists pros, cons, and real-world examples, with interactive visualizations. It closes with practical advice on persistence, fail-open behavior, keying, and error responses, and a short guide to choosing an algorithm.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "Redis",
+   "HTTP",
+   "Chrome extension",
+   "ChatGPT API"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4719,
+  "output": 918
+ },
+ "generated": "2026-10-29"
+}

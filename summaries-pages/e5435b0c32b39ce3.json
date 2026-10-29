@@ -1,0 +1,65 @@
+{
+ "id": "e5435b0c32b39ce3",
+ "url": "https://tanelpoder.com/posts/reasons-why-select-star-is-bad-for-sql-performance",
+ "final_url": "https://tanelpoder.com/posts/reasons-why-select-star-is-bad-for-sql-performance/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Reasons why SELECT * is bad for SQL performance - Tanel Poder Blog",
+ "sources": [
+  {
+   "list": "charlax/professional-programming",
+   "section": "SQL",
+   "entry": "Reasons why SELECT * is bad for SQL performance"
+  }
+ ],
+ "summary": {
+  "title": "Reasons why SELECT * is bad for SQL performance",
+  "one_liner": "Selecting only the columns you need, instead of SELECT *, reduces network traffic, client and server CPU, sort/hash memory, and hard-parse cost, and can enable index-only scans and join elimination.",
+  "category": "SQL performance tuning",
+  "keywords": [
+   "select star",
+   "select * performance",
+   "sql projection",
+   "explicit column list",
+   "avoid select star",
+   "sql network traffic",
+   "oracle arraysize",
+   "sqlplus elapsed time",
+   "index fast full scan",
+   "covering index",
+   "join elimination oracle",
+   "hard parse cost",
+   "sort memory usage wide rows",
+   "oracle sqlnet roundtrips",
+   "wide table performance",
+   "oracle sqlplus -fast option",
+   "client side cpu fetch rows",
+   "why not select star in production"
+  ],
+  "takeaways": [
+   "SELECT * sends more bytes over the network and costs more client-side CPU; the author's test with 3 of 16 columns ran over 2x faster (43s vs 95s).",
+   "Wide rows increase server-side sort and hash memory (232 MB vs 67 MB for a sort in one example) and CPU for datatype and character set conversion.",
+   "Naming only needed columns can allow index-only (index fast full) scans and Oracle join elimination, which SELECT * blocks.",
+   "Wide tables make hard parsing slower; a 1000-column SELECT * took about 78 ms of hard parse time in the author's test.",
+   "Explicit column lists also protect application code from breaking when columns are added or reordered."
+  ],
+  "summary": "The author lists reasons SELECT * hurts SQL performance when an application does not need every column, using Oracle examples measured with sqlplus, pSnapper, and Session Snapper. Each section compares a SELECT * query with a narrower column list and shows elapsed times, SQL*Net roundtrips, plan output, and memory use. Topics include network traffic, client and server CPU, optimizer transformations like index-only scans and join elimination, sort memory, and hard-parse overhead on wide tables. The article also mentions the sqlplus -fast and CSV options added in Oracle 12.2 for faster unloads.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "Oracle Database",
+   "SQL",
+   "SQL*Plus",
+   "SQL*Net",
+   "Linux",
+   "pSnapper",
+   "Session Snapper"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 10134,
+  "output": 940
+ },
+ "generated": "2026-10-29"
+}

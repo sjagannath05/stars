@@ -1,0 +1,59 @@
+{
+ "id": "c701ff46437d47e7",
+ "url": "https://dineshgowda.com/posts/build-your-own-persistent-kv-store",
+ "final_url": "https://dineshgowda.com/posts/build-your-own-persistent-kv-store/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Your Own Fast, Persistent KV Store",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Database",
+   "entry": "Ruby: _Build your own fast, persistent KV store in Ruby_"
+  }
+ ],
+ "summary": {
+  "title": "Build Your Own Fast, Persistent KV Store",
+  "one_liner": "Learn how to design a simple persistent key-value store in Ruby using the Bitcask log-structured format, covering binary record layout, CRC checks, and an append-only DiskStore.",
+  "category": "database internals",
+  "keywords": [
+   "key-value store",
+   "kv store",
+   "bitcask",
+   "bitcask paper",
+   "persistent key value store",
+   "build a database",
+   "log-structured storage",
+   "append-only log",
+   "binary serialization",
+   "array pack ruby",
+   "crc checksum",
+   "little endian encoding",
+   "record format key value size",
+   "diskstore",
+   "hobby database implementation",
+   "ruby database tutorial",
+   "how to store variable length keys and values",
+   "bitcask-rb"
+  ],
+  "takeaways": [
+   "Bitcask stores key/value records in an append-only file, with one writer process and file rotation at a size threshold.",
+   "A record needs key and value sizes plus type info, CRC and timestamp so variable-length data can be read back correctly.",
+   "Storing integers as binary (e.g. 4-byte little-endian via Ruby Array.pack) is more compact than writing them as text.",
+   "Use fixed-size headers and CRC validation on reads to detect corrupt data; the DiskStore uses an in-memory lookup table to seek to values."
+  ],
+  "summary": "The post walks through building a Bitcask-style persistent key-value store, starting from the Bitcask paper's goals such as low latency, high write throughput, and crash friendliness. It explains the on-disk record format step by step: a 20-byte header with CRC, timestamp, key and value sizes, and type tags, followed by the key and value bytes. It then covers binary encoding with Ruby's Array.pack directives, a Serializer module for serialize and deserialize with CRC checks, and a DiskStore class with get and put operations backed by a lookup table. The author leaves out loading an existing data file, pointing to the bitcask-rb GitHub repository for the full code and benchmarks.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Ruby",
+   "Bitcask"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3460,
+  "output": 835
+ },
+ "generated": "2026-10-29"
+}

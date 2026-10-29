@@ -1,0 +1,64 @@
+{
+ "id": "e1da70642c3f0b90",
+ "url": "https://dougallj.github.io/applecpu/firestorm.html",
+ "final_url": "https://dougallj.github.io/applecpu/firestorm.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Firestorm Pipeline Overview",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Vendor estimates and measured tables",
+   "entry": "applecpu: Firestorm Overview - Measured per-instruction tables for an Apple AArch64 core, each entry linked to the counter experiment behind it."
+  }
+ ],
+ "summary": {
+  "title": "Firestorm Pipeline Overview",
+  "one_liner": "Dougall Johnson's black-box reverse-engineered overview of the Apple M1 P-core (Firestorm) pipeline: uop and issue counts, execution units, fusion and renaming rules, and retire-queue sizes.",
+  "category": "cpu microarchitecture",
+  "keywords": [
+   "firestorm microarchitecture",
+   "apple m1 p-core",
+   "apple a14 performance core",
+   "apple m1 cpu pipeline",
+   "apple aarch64 microarchitecture",
+   "uops per cycle",
+   "reorder buffer size m1",
+   "coalesced retire queue",
+   "rename retire queue",
+   "instruction fusion arm64",
+   "move elimination apple m1",
+   "execution units issue ports",
+   "scheduler issue limits",
+   "load store queue size m1",
+   "icestorm efficiency core",
+   "reverse engineered cpu documentation",
+   "instruction latency tables apple silicon",
+   "physical register file size m1",
+   "dougall johnson apple cpu",
+   "retire group size"
+  ],
+  "takeaways": [
+   "Firestorm is 8 uops per cycle wide, with uops counted via RETIRE_UOP and issues via SCHEDULE_UOP.",
+   "Firestorm has about 11 integer and SIMD/FP execution units, each issuing at most one uop per cycle, plus load/store units.",
+   "Some instruction pairs fuse into one uop (e.g. adds+b.cc, aese+aesmc) and some moves/zeroing idioms are eliminated at rename, so they never issue.",
+   "The reorder buffer is unconventional: a ~330-entry coalesced retire queue of retire groups plus a ~623-entry rename retire queue.",
+   "Instruction table entries link to the counter experiments behind them, so the measurements can be verified; the author warns the data may contain errors."
+  ],
+  "summary": "This page is Dougall Johnson's reverse-engineering overview of the Firestorm (M1/A14 P-core) microarchitecture. It explains how instructions become uops, dispatch to schedulers, and retire, and it lists the integer and SIMD/FP execution units, fusion rules, and renaming-based eliminations. It also gives buffer sizes such as the retire queues, physical register files, and in-flight load/store limits. The data comes from black-box measurements using performance counters, with per-instruction tables linked to their experiments; the author notes the work may contain mistakes.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "AArch64 assembly",
+   "Apple M1",
+   "Apple A14",
+   "ARM64"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4180,
+  "output": 996
+ },
+ "generated": "2026-10-29"
+}

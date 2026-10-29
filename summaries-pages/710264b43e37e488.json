@@ -1,0 +1,66 @@
+{
+ "id": "710264b43e37e488",
+ "url": "https://google.github.io/tcmalloc/design.html",
+ "final_url": "https://google.github.io/tcmalloc/design.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "TCMalloc : Thread-Caching Malloc",
+ "sources": [
+  {
+   "list": "usamahz/cpu-performance-engineering",
+   "section": "Locks, contention and allocators",
+   "entry": "TCMalloc: Thread-Caching Malloc - The design statement for per-CPU caches built on restartable sequences and a hugepage-aware back end for TLB reach."
+  }
+ ],
+ "summary": {
+  "title": "TCMalloc : Thread-Caching Malloc",
+  "one_liner": "TCMalloc's design explained: a three-tier allocator (front-end caches, middle-end transfer cache and central free list, back-end pageheap) with per-CPU or per-thread caching, spans and pagemap, and hugepage-aware memory management.",
+  "category": "memory allocators",
+  "keywords": [
+   "tcmalloc",
+   "thread-caching malloc",
+   "memory allocator design",
+   "per-cpu cache",
+   "per-thread cache",
+   "restartable sequences",
+   "rseq",
+   "size classes",
+   "transfer cache",
+   "central free list",
+   "pageheap",
+   "hugepage aware allocator",
+   "span and pagemap",
+   "tlb misses hugepages",
+   "malloc contention",
+   "multi-threaded allocation performance",
+   "front-end middle-end back-end allocator",
+   "sampling memory profiling",
+   "returning memory to the os",
+   "alternative to system malloc",
+   "google allocator internals",
+   "how does a malloc work"
+  ],
+  "takeaways": [
+   "TCMalloc has three layers: a lock-free front-end cache, a middle-end (transfer cache and central free list, mutex-protected per size-class) that refills it, and a back-end pageheap that talks to the OS.",
+   "Per-CPU mode gives each logical CPU its own cache and uses restartable sequences to avoid locks; per-thread mode was the original design but its memory scaled with thread count.",
+   "Small allocations are rounded to one of 60-80 size-classes, while large objects bypass the caches and go straight to the pageheap.",
+   "The hugepage-aware back-end manages memory in 2MiB chunks on x86 to reduce TLB misses, using filler, region and hugepage caches."
+  ],
+  "summary": "The page is the design document for TCMalloc, Google's alternative to the system malloc. It describes the allocator as three components: a front-end cache providing fast, mostly lock-free allocation (per-CPU or per-thread), a middle-end (transfer cache and central free list) that refills the front-end, and a back-end pageheap (legacy or hugepage-aware) that fetches and returns memory from the OS. It also explains size-classes, spans and the pagemap, restartable sequences used for per-CPU caches, and memory overhead and VSS/RSS behavior.",
+  "format": "reference",
+  "level": "advanced",
+  "technologies": [
+   "C++",
+   "Bazel",
+   "restartable sequences (rseq)",
+   "x86",
+   "mmap"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7796,
+  "output": 951
+ },
+ "generated": "2026-10-29"
+}

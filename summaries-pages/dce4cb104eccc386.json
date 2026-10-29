@@ -1,0 +1,70 @@
+{
+ "id": "dce4cb104eccc386",
+ "url": "https://nbaksalyar.github.io/2015/07/10/writing-chat-in-rust.html",
+ "final_url": "https://nbaksalyar.github.io/2015/07/10/writing-chat-in-rust.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Rust in Detail: Writing Scalable Chat Service from Scratch",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "Rust: _Writing Scalable Chat Service from Scratch_"
+  },
+  {
+   "list": "practical-tutorials/project-based-learning",
+   "section": "Rust:",
+   "entry": "Part 1: Implementing WebSocket. Introduction."
+  }
+ ],
+ "summary": {
+  "title": "Rust in Detail: Writing Scalable Chat Service from Scratch",
+  "one_liner": "You learn how to set up a Rust project with cargo, run a mio-based event loop, and begin building a bare-bones WebSocket server by accepting TCP connections and handling the HTTP handshake.",
+  "category": "systems programming in rust",
+  "keywords": [
+   "rust websocket server",
+   "websocket from scratch",
+   "mio event loop",
+   "epoll kqueue",
+   "rust tcp listener",
+   "non-blocking io rust",
+   "event loop tutorial",
+   "cargo new project",
+   "rust ownership and borrowing",
+   "rust match and unwrap",
+   "rust chat server",
+   "scalable chat service",
+   "websocket handshake http upgrade",
+   "level-triggered vs edge-triggered",
+   "thread per connection vs event loop",
+   "rust result and option types",
+   "rust systems programming tutorial"
+  ],
+  "takeaways": [
+   "Event loops with epoll (Linux) or kqueue (BSD/macOS), via the mio library, scale to many idle WebSocket connections better than one thread per client.",
+   "Cargo projects are created with 'cargo new --bin' and dependencies are declared in Cargo.toml; this article uses mio from git (v0.5 pre-release at the time).",
+   "Rust's ownership and borrowing rules (single owner, &mut borrows) give memory safety without a garbage collector.",
+   "Handling errors with Result and Option: unwrap() crashes on error, so the accept loop logs errors instead to keep the service up.",
+   "A WebSocket connection starts with an HTTP/1.1 Upgrade handshake, so the server must parse a minimal subset of HTTP before switching protocols."
+  ],
+  "summary": "The article is Part 1 of a series building a scalable anonymous chat service in Rust. It explains why Rust's ownership model suits systems programming, contrasts thread-per-connection with an event loop based on epoll/kqueue, and sets up a cargo project using the mio library. The code grows step by step: a minimal event loop, a TCP listener on port 10000, and a stateful server that accepts client sockets and registers them for readable events. The text stops before the HTTP parsing and WebSocket handshake are fully written, which the outline lists as the next sections. The text is long and low-level, and it assumes some familiarity with POSIX sockets or C/C++.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Rust",
+   "mio",
+   "Cargo",
+   "WebSocket",
+   "HTTP/1.1",
+   "epoll",
+   "kqueue",
+   "TCP"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9357,
+  "output": 990
+ },
+ "generated": "2026-10-29"
+}

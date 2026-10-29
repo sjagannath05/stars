@@ -1,0 +1,82 @@
+{
+ "id": "96a37b670782b87e",
+ "url": "https://craigjbass.github.io/clearancekit",
+ "final_url": "https://craigjbass.github.io/clearancekit/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "ClearanceKit",
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "ClearanceKit - Policy-based file access control tool for protected paths. [![Open-Source Software][OSS Icon]](https://github.com/craigjbass/clearancekit) ![Native App][Native Icon]"
+  },
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🔒 Security (20)",
+   "entry": "Website: https://craigjbass.github.io/clearancekit"
+  }
+ ],
+ "summary": {
+  "name": "ClearanceKit",
+  "one_liner": "A macOS kernel-level file access control tool that restricts which file paths each process may open or modify, based on the process's code-signing identity.",
+  "category": "macos file access control",
+  "keywords": [
+   "macos file access control",
+   "endpoint security",
+   "endpoint security framework",
+   "code signing policy",
+   "team id",
+   "signing id",
+   "per-process file access",
+   "file access policy",
+   "macos security tool",
+   "jail rules",
+   "process sandbox macos",
+   "file system firewall macos",
+   "protect ssh keys macos",
+   "credential protection",
+   "mdm configuration profile",
+   "configuration profile payload",
+   "swiftui",
+   "opfilter",
+   "auth_open",
+   "postinstall script protection",
+   "supply chain attack defense",
+   "open source mac app",
+   "awesome-mac",
+   "lateral movement prevention",
+   "block process file access",
+   "mit license"
+  ],
+  "use_cases": [
+   "Stop a compromised package install script from reading SSH, cloud, or git credentials",
+   "Restrict which paths a specific app or process can read or write",
+   "Review denied file access events on a Mac",
+   "Deploy file access policies across a managed fleet via MDM",
+   "Confine a process to an explicit set of allowed path prefixes"
+  ],
+  "what_it_does": "ClearanceKit is a macOS tool that enforces file access policies at the kernel level using Endpoint Security AUTH events. When a process calls open, rename, unlink, or another file-system syscall, the request is forwarded to its opfilter component, which checks the caller's code-signing identity against policies and returns ALLOW or DENY. Policies match on Team ID and Signing ID rather than path or hash, so they persist across software updates from the same signer. It also supports jail rules that confine a process to listed path prefixes (inherited by children) and rules requiring a trusted parent process. A native SwiftUI interface shows denied events, a live throughput graph, and lets users build policy without config files. Policies can also be delivered through standard Apple Configuration Profile payloads for MDM.",
+  "pricing": "open source",
+  "platforms": [
+   "macOS"
+  ],
+  "notable": [
+   "Policies bound to Team ID and Signing ID, so they survive software updates",
+   "Jail rules confine processes to explicit path prefixes, inherited by child processes",
+   "Zero network calls and no third-party dependencies; built on Apple frameworks",
+   "MDM fleet management via standard Apple Configuration Profile payloads"
+  ],
+  "caveats": [
+   "No auto-update; new versions must be checked and installed manually from the releases page",
+   "Requires granting Full Disk Access and activating a system extension during install",
+   "macOS only"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2777,
+  "output": 1005
+ },
+ "generated": "2026-10-29"
+}
