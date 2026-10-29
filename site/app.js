@@ -82,7 +82,8 @@
     const title = d.t === "r"
       ? `<span class="name"><span class="owner">${esc(d.d)}/</span>${hl(d.n, ts)}</span>`
       : `<span class="name page">${hl(d.n, ts)}</span><span class="dom">${esc(d.d)}${d.x ? " ↗" : ""}</span>`;
-    return `<li><a class="card${d.t !== "r" ? " is-page" : ""}" href="${esc(href)}"${ext}><div>
+    const ICON = { r: d.m ? "★" : "◆", w: "⚙", a: "¶" };
+    return `<li><a class="card t-${d.t}${d.m ? " mine" : ""}" href="${esc(href)}"${ext}><span class="ico" aria-hidden="true">${ICON[d.t]}</span><div>
       ${d.t !== "r" ? `<span class="type">${TYPE[d.t]}${d.x ? " · not summarized" : ""}</span>` : ""}
       ${title}${d.c ? `<span class="cat">${esc(d.c)}</span>` : ""}
       <p class="one">${hl(d.o || "", ts)}</p>
@@ -100,12 +101,21 @@
     $("#results").innerHTML = rows.slice(0, state.shown).map(d => card(d, ts)).join("") ||
       `<li class="empty">Nothing matched. Try fewer or plainer words, like “file sharing” or “terminal”.</li>`;
     $("#more").hidden = total <= state.shown;
+    const browsing = !state.q && !state.list && !state.cat;
+    $("#browse").hidden = !browsing;
+    if (browsing) {
+      const cc = {};
+      const GENERIC = /^(links?|misc(ellaneous)?|other|others|resources?|writing|general|tools?|apps?|external links|related|contents?|table of contents|about|license|contributing|reading|articles?|books?|videos?|talks?)$/;
+      for (const d of filtered()) if (d._cat && !d.x && !GENERIC.test(d._cat)) cc[d._cat] = (cc[d._cat] || 0) + 1;
+      $("#catgrid").innerHTML = Object.entries(cc).sort((x, y) => y[1] - x[1]).slice(0, 24)
+        .map(([c, n]) => `<button type="button" class="cat-tile" data-cat="${esc(c)}"><span>${esc(c)}</span><small>${n}</small></button>`).join("");
+    }
     $("#more").textContent = `Show more (${(total - state.shown).toLocaleString()} left)`;
     // Category refine chips from the current result set
     const cats = {};
     for (const d of rows.slice(0, ts.length ? 60 : 400)) if (d._cat) cats[d._cat] = (cats[d._cat] || 0) + 1;
     const top = Object.entries(cats).sort((a, b) => b[1] - a[1]).slice(0, 14);
-    $("#refine").innerHTML = top.length > 1 || state.cat ? `<span class="label">Refine</span>` +
+    $("#refine").innerHTML = (state.q || state.cat || state.list) && (top.length > 1 || state.cat) ? `<span class="label">Refine</span>` +
       (state.cat ? `<button class="chip" aria-pressed="true" data-cat="">${esc(state.cat)} ✕</button>` : "") +
       top.filter(([c]) => c !== state.cat).map(([c, n]) => `<button class="chip" data-cat="${esc(c)}">${esc(c)}<small>${n}</small></button>`).join("") : "";
     for (const b of document.querySelectorAll(".seg button")) b.setAttribute("aria-pressed", String(b.dataset.src === state.src));
@@ -143,6 +153,7 @@
   $("#list").onchange = e => { state.list = e.target.value; if (state.list) state.src = "mine"; state.shown = 40; render(); };
   $("#refine").onclick = e => { const b = e.target.closest("[data-cat]"); if (!b) return; state.cat = b.dataset.cat; state.shown = 40; render(); };
   $("#more").onclick = () => { state.shown += 60; render(); };
+  $("#catgrid").onclick = e => { const b = e.target.closest("[data-cat]"); if (!b) return; state.cat = b.dataset.cat; state.shown = 40; render(); $("#refine").scrollIntoView({ behavior: "smooth", block: "start" }); };
   $("#clear").onclick = () => { Object.assign(state, { q: "", src: "all", list: "", cat: "", shown: 40 }); $("#q").value = ""; render(); $("#q").focus(); };
   document.querySelectorAll(".try").forEach(b => b.onclick = () => { $("#q").value = state.q = b.textContent; state.cat = ""; state.shown = 40; render(); });
   document.addEventListener("keydown", e => {

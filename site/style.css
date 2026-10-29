@@ -155,3 +155,115 @@ span.chip{white-space:normal}
 .card .dom{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:8px;white-space:nowrap}
 .repo-head h1.title{font-family:var(--display);font-weight:700;letter-spacing:-.02em}
 @media (max-width:640px){.card .dom{display:block;margin-left:0}}
+/* header: one link per GitHub account; stays on one line on phones */
+.bar nav{flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:520px){.bar nav .iconbtn{padding:5px 9px;font-size:12px}.brand{font-size:18px}}
+@media (max-width:520px){.bar nav .tl{display:none}}
+@media (max-width:520px){.bar{gap:8px}.bar nav{gap:4px}.bar nav .iconbtn{padding:5px 8px}.brand .mark{width:24px;height:24px;font-size:14px}}
+
+/* ===================== visual refresh ===================== */
+:root{
+  --t-r:#a86b00; --t-r-soft:#fdf2db; --t-w:#0f7a74; --t-w-soft:#dff4f2; --t-a:#6b4fbf; --t-a-soft:#ece7fb;
+  --sky-dot:rgba(19,24,35,.13); --glow:rgba(242,177,52,.18); --band:#fbf6ea;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --t-r:#f2c14e; --t-r-soft:#2b2412; --t-w:#5fd0c6; --t-w-soft:#11282a; --t-a:#b7a3f5; --t-a-soft:#211b36;
+  --sky-dot:rgba(255,255,255,.22); --glow:rgba(242,193,78,.12); --band:#151b26 }}
+:root[data-theme="dark"]{
+  --t-r:#f2c14e; --t-r-soft:#2b2412; --t-w:#5fd0c6; --t-w-soft:#11282a; --t-a:#b7a3f5; --t-a-soft:#211b36;
+  --sky-dot:rgba(255,255,255,.22); --glow:rgba(242,193,78,.12); --band:#151b26 }
+
+/* header menu */
+.bar{position:relative;z-index:5}
+.bar nav{flex-wrap:nowrap;gap:6px}
+.gh{position:relative}
+.gh summary{list-style:none;cursor:pointer;user-select:none}
+.gh summary::-webkit-details-marker{display:none}
+.gh[open] summary{color:var(--ink);border-color:var(--faint)}
+.gh .menu{position:absolute;right:0;top:calc(100% + 6px);min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column}
+.gh .menu a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:14px}
+.gh .menu a:hover{background:var(--chip)}
+.gh .menu small{color:var(--faint);font-family:var(--mono);font-size:12px}
+.brand .mark{background:linear-gradient(140deg,#f7d27a,#d99a1e);color:#fff;box-shadow:0 2px 8px var(--glow)}
+
+/* hero: quiet star field + soft glow */
+.hero{position:relative;isolation:isolate}
+.hero .sky{position:absolute;inset:-28px -18px auto;height:300px;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(1.2px 1.2px at 12% 22%,var(--sky-dot) 99%,transparent),radial-gradient(1px 1px at 28% 68%,var(--sky-dot) 99%,transparent),
+    radial-gradient(1.4px 1.4px at 46% 14%,var(--sky-dot) 99%,transparent),radial-gradient(1px 1px at 63% 44%,var(--sky-dot) 99%,transparent),
+    radial-gradient(1.6px 1.6px at 78% 18%,var(--sky-dot) 99%,transparent),radial-gradient(1px 1px at 88% 62%,var(--sky-dot) 99%,transparent),
+    radial-gradient(1.2px 1.2px at 94% 30%,var(--sky-dot) 99%,transparent),radial-gradient(1px 1px at 6% 78%,var(--sky-dot) 99%,transparent),
+    radial-gradient(1px 1px at 54% 82%,var(--sky-dot) 99%,transparent),radial-gradient(1.3px 1.3px at 36% 40%,var(--sky-dot) 99%,transparent),
+    radial-gradient(600px 220px at 80% 10%,var(--glow),transparent 70%);
+  -webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+.searchbox input{border-radius:18px;padding-block:18px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;margin:22px 0 0;font-variant-numeric:tabular-nums}
+.stat{display:flex;align-items:baseline;gap:8px;margin:0}
+.stat dt{order:2;font-size:13px;color:var(--muted)}
+.stat dd{margin:0;font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em}
+.stat.t-r dd{color:var(--t-r)} .stat.t-r2 dd{color:var(--ink)} .stat.t-w dd{color:var(--t-w)} .stat.t-a dd{color:var(--t-a)}
+
+/* browse grid */
+.browse{padding-block:18px 6px}
+.browse h2{font-family:var(--display);font-size:18px;margin:0 0 10px;letter-spacing:-.01em}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.cat-tile{font:inherit;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;color:var(--ink);transition:border-color .12s,transform .12s}
+.cat-tile:hover{border-color:var(--accent-strong);transform:translateY(-1px)}
+.cat-tile span{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cat-tile small{font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+/* result cards with a typed icon tile */
+.card{grid-template-columns:36px minmax(0,1fr) auto;align-items:start;padding:16px 18px;border-radius:16px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.card .ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:16px;line-height:1;margin-top:1px}
+.card.t-r .ico{background:var(--chip);color:var(--muted)}
+.card.t-r.mine .ico{background:var(--t-r-soft);color:var(--t-r)}
+.card.t-w .ico{background:var(--t-w-soft);color:var(--t-w)}
+.card.t-a .ico{background:var(--t-a-soft);color:var(--t-a)}
+.card.t-w .cat{color:var(--t-w);background:var(--t-w-soft)}
+.card.t-a .cat{color:var(--t-a);background:var(--t-a-soft)}
+.card .type{display:none}
+.card.t-w .dom::before{content:"Tool · ";font-family:var(--body)}
+.card.t-a .dom::before{content:"Article · ";font-family:var(--body)}
+
+/* detail pages: tinted header band + sticky facts */
+.repo-head{margin-top:14px;padding:26px 26px 24px;border:1px solid var(--line);border-radius:20px;border-bottom:1px solid var(--line);
+  background:radial-gradient(500px 180px at 100% 0%,var(--glow),transparent 70%),var(--band)}
+.repo-head.t-w{background:radial-gradient(500px 180px at 100% 0%,var(--t-w-soft),transparent 70%),var(--surface)}
+.repo-head.t-a{background:radial-gradient(500px 180px at 100% 0%,var(--t-a-soft),transparent 70%),var(--surface)}
+.repo-head.t-w .eyebrow{color:var(--t-w)} .repo-head.t-a .eyebrow{color:var(--t-a)}
+.rail{position:sticky;top:16px;align-self:start}
+.facts{border-radius:16px;padding:16px 18px}
+section h2{font-size:19px}
+.kw a{border:1px solid transparent}
+.kw a:hover{border-color:var(--accent-strong)}
+.similar a{border-radius:14px;transition:border-color .12s,transform .12s}
+.similar a:hover{transform:translateY(-1px)}
+
+@media (max-width:820px){.rail{position:static}}
+@media (max-width:640px){
+  .card{grid-template-columns:32px minmax(0,1fr);gap:4px 12px;padding:14px}
+  .card .ico{width:32px;height:32px;font-size:14px}
+  .card .stars{grid-column:2;order:0;justify-self:start}
+  .repo-head{padding:20px 18px;border-radius:16px}
+  .stats{gap:6px 16px}.stat dd{font-size:19px}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:520px){.bar nav .tl{display:none}}
+@media (prefers-reduced-motion:reduce){.card:hover,.cat-tile:hover,.similar a:hover{transform:none}}
+/* refresh fixes: soft-edged glow, round theme button on phones, fewer example searches on phones */
+.hero .sky{inset:-60px -40px auto;height:360px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 65% 30%,#000 35%,transparent 80%);
+          mask-image:radial-gradient(ellipse 70% 60% at 65% 30%,#000 35%,transparent 80%)}
+main.wrap{overflow-x:clip}
+@media (max-width:520px){
+  #theme{width:32px;height:32px;padding:0;display:inline-grid;place-items:center;font-size:15px}
+  .gh summary{padding:5px 10px}
+  .tries .try:nth-of-type(n+5){display:none}
+}
+.hero .sky{inset:-60px 0 auto;-webkit-mask-image:radial-gradient(ellipse 50% 60% at 62% 30%,#000 30%,transparent 78%);mask-image:radial-gradient(ellipse 50% 60% at 62% 30%,#000 30%,transparent 78%)}
+.hero h1{max-width:18ch}
+.brand{letter-spacing:-.015em}
+.hero h1{max-width:24ch}
+.hero .sky{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 62% 50%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 50% 50% at 62% 50%,#000 25%,transparent 75%)}
