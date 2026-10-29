@@ -3,7 +3,8 @@
 Run on a machine with normal internet access (your Mac):  bash scripts/run_fetch_pages.sh
 Resumable: pages already in cache/pages/ are skipped. Safe to stop and rerun.
 """
-import io, json, sys, threading, time
+import io, json, os, sys, threading, time
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlparse
 import httpx
@@ -81,7 +82,12 @@ def main():
     rows = read_jsonl(DATA / "pages.jsonl")
     if len(sys.argv) > 1 and sys.argv[1].isdigit():
         rows = rows[:int(sys.argv[1])]
-    todo = [r for r in rows if not (OUT / f"{r['id']}.json").exists()]
+    only = set(Path(os.environ["STARS_ONLY_IDS"]).read_text().split()) if os.environ.get("STARS_ONLY_IDS") else None
+    if only is not None:
+        rows = [r for r in rows if r["id"] in only]
+        todo = rows  # forced refetch of exactly these pages
+    else:
+        todo = [r for r in rows if not (OUT / f"{r['id']}.json").exists()]
     print(f"{time.strftime('%H:%M')}  {len(rows)} pages, {len(rows) - len(todo)} already fetched, {len(todo)} to go", flush=True)
     t0, done, readable, wayback = time.time(), 0, 0, 0
     limits = httpx.Limits(max_connections=WORKERS * 2, max_keepalive_connections=WORKERS)

@@ -12,6 +12,38 @@ if os.environ.get("GITHUB_TOKEN"):
     H["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
 c = httpx.Client(headers=H, timeout=30, follow_redirects=True)
 
+# --- GitHub Lists (no API for these; read the public HTML pages) ------------------
+def scrape_lists():
+    """Refresh data/lists.txt from github.com/stars/<user>/lists/*. Keeps the old file if scraping fails."""
+    web = httpx.Client(timeout=30, follow_redirects=True, headers={"User-Agent": "stars-index"})
+    out = []
+    for acct in ACCOUNTS:
+        r = web.get(f"https://github.com/{acct}", params={"tab": "stars"})
+        if r.status_code != 200: return False
+        slugs = sorted(set(re.findall(rf'href="/stars/{acct}/lists/([A-Za-z0-9_.-]+)"', r.text)))
+        for sl in slugs:
+            repos = []
+            for page in range(1, 11):
+                pr = web.get(f"https://github.com/stars/{acct}/lists/{sl}", params={"page": page})
+                if pr.status_code != 200: break
+                body = pr.text.split('id="user-list-repositories"', 1)[-1]
+                found = re.findall(r'<h[23][^>]*>\s*<a[^>]*href="/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)"', body)
+                new = [x for x in found if x not in repos]
+                if not new: break
+                repos += new
+            out.append(f"{acct}|{sl.replace('-', ' ').lower()}|{' '.join(repos)}")
+    members = sum(len(l.split("|")[2].split()) for l in out)
+    if not out or members == 0: return False  # never replace good data with an empty scrape
+    (DATA / "lists.txt").write_text("\n".join(out) + "\n")
+    print(f"lists: {len(out)} lists, {sum(len(l.split('|')[2].split()) for l in out)} memberships")
+    return True
+
+if "--no-lists" not in sys.argv:
+    try:
+        if not scrape_lists(): print("lists: scrape failed, keeping previous data/lists.txt")
+    except Exception as ex:
+        print("lists: scrape error, keeping previous data/lists.txt:", ex)
+
 # --- stars ---------------------------------------------------------------
 lists = {}
 lp = DATA / "lists.txt"

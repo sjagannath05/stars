@@ -11,6 +11,9 @@ from common import *
 
 PAGES = CACHE / "pages"
 CONC, THIN, MAX_TEXT = 4, 400, 40000
+import os
+from pathlib import Path
+ONLY = set(Path(os.environ["STARS_ONLY_IDS"]).read_text().split()) if os.environ.get("STARS_ONLY_IDS") else None
 RETRY_STATUS = {200, 202, 403, 406, 429, 503, 520, 521, 522, 523}
 
 def wants(rec):
@@ -53,7 +56,7 @@ async def main():
     todo = []
     for p in PAGES.glob("*.json"):
         rec = json.loads(p.read_text())
-        if wants(rec): todo.append((p, rec))
+        if wants(rec) and (ONLY is None or rec["id"] in ONLY): todo.append((p, rec))
     if len(sys.argv) > 1 and sys.argv[1].isdigit(): todo = todo[:int(sys.argv[1])]
     stats = {"done": 0, "total": len(todo), "recovered": 0, "still_thin": 0, "error": 0}
     print(f"{time.strftime('%H:%M')}  {len(todo)} pages to render", flush=True)

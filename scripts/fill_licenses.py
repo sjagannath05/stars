@@ -2,7 +2,7 @@
 
 No GitHub token needed (uses raw.githubusercontent.com). Updates summaries/*.json in place.
 """
-import asyncio, json, re
+import asyncio, json, re, time
 import httpx
 from common import *
 
@@ -42,6 +42,10 @@ def detect(text):
 def unknown(lic):
     return not lic or lic.strip().lower() in ("unknown", "noassertion", "other", "none", "")
 
+def mark(path, rec):
+    rec["license_checked"] = time.strftime("%Y-%m-%d")
+    path.write_text(json.dumps(rec, ensure_ascii=False, indent=1))
+
 async def one(client, sem, path):
     rec = json.loads(path.read_text())
     async with sem:
@@ -57,11 +61,15 @@ async def one(client, sem, path):
                     rec["license_source"] = n
                     path.write_text(json.dumps(rec, ensure_ascii=False, indent=1))
                     return spdx
-                return "unrecognized"
-    return "no license file"
+                mark(path, rec); return "unrecognized"
+    mark(path, rec); return "no license file"
 
 async def main():
-    todo = [p for p in SUMS.glob("*.json") if unknown(json.loads(p.read_text())["summary"].get("license"))]
+    todo = []
+    for p in SUMS.glob("*.json"):
+        r = json.loads(p.read_text())
+        if unknown(r["summary"].get("license")) and not r.get("license_checked"):
+            todo.append(p)
     print("repos with unknown license:", len(todo))
     sem = asyncio.Semaphore(24)
     async with httpx.AsyncClient(timeout=20, follow_redirects=True) as c:

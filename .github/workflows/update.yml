@@ -1,0 +1,51 @@
+name: Weekly update
+
+on:
+  schedule:
+    - cron: "37 21 * * 6"   # every Sunday 03:07 IST (Saturday 21:37 UTC)
+  workflow_dispatch: {}      # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stars-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-update.txt
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements-update.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Update index and rebuild site
+        working-directory: scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python update.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "stars-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed this week."
+          else
+            git commit -m "weekly update: $(cat data/last_update.txt)"
+            git push
+          fi

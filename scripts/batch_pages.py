@@ -50,6 +50,22 @@ Rules:
 - keywords: technical terms, synonyms, alternatives it is compared with (only if named), and plain-English phrases a person would type.
   Do not start more than 4 keywords with the same word."""
 
+def page_params(rec, m):
+    kind = rec["kind"]
+    schema = ARTICLE_SCHEMA if kind == "article" else TOOL_SCHEMA
+    lines = [f"URL: {rec['url']}"]
+    if rec.get("title"): lines.append(f"Page title: {rec['title']}")
+    if rec.get("description"): lines.append(f"Meta description: {rec['description']}")
+    for s in (m.get("sources") or [])[:2]:
+        lines.append(f"Listed in {s['list']} under '{s['section']}': {s['entry']}")
+    if rec.get("method") == "wayback": lines.append("(Text comes from an archived copy of the page.)")
+    what = "article / tutorial / reading material" if kind == "article" else "tool / product / project page"
+    user = "\n".join(lines) + f"\n\nThis is a {what}.\n\nPAGE TEXT:\n\"\"\"\n{rec['text'][:TEXT_CAP]}\n\"\"\"\n\nCall save_summary with the summary."
+    return {"model": batch.MODEL, "max_tokens": 2500, "system": SYSTEM,
+            "tools": [{"name": "save_summary", "description": "Save the page summary. Fill every field.", "input_schema": schema, "strict": True}],
+            "tool_choice": {"type": "tool", "name": "save_summary"},
+            "messages": [{"role": "user", "content": user}]}
+
 def build(args):
     st = batch.load_state()
     st.setdefault("id_map", {}); st.setdefault("batches", [])

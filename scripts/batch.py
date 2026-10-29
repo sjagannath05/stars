@@ -64,6 +64,13 @@ def build_user(it):
     note = "\n(README truncated for length.)" if truncated else ""
     return "\n".join(meta) + f"\n\nREADME:\n\"\"\"\n{body}\n\"\"\"{note}\n\nCall save_summary with the summary.", truncated
 
+def repo_params(it):
+    user, _ = build_user(it)
+    return {"model": MODEL, "max_tokens": 3000, "system": SYSTEM,
+            "tools": [{"name": "save_summary", "description": "Save the repository summary. Fill every field.", "input_schema": SCHEMA, "strict": True}],
+            "tool_choice": {"type": "tool", "name": "save_summary"},
+            "messages": [{"role": "user", "content": user}]}
+
 def load_state():
     return json.loads(STATE.read_text()) if STATE.exists() else {"batches": [], "id_map": {}}
 
