@@ -1,0 +1,110 @@
+{
+ "id": "arkime/arkime",
+ "repo": "arkime/arkime",
+ "kind": "star",
+ "description": "Arkime is an open source, large scale, full packet capturing, indexing, and database system.",
+ "topics": [
+  "big-data",
+  "c",
+  "javascript",
+  "network-monitoring",
+  "nsm",
+  "packet-capture",
+  "pcap",
+  "security"
+ ],
+ "language": "C",
+ "stars": 7553,
+ "license": "Apache-2.0",
+ "homepage": "https://arkime.com",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Arkime is an open-source, large-scale network analysis system that captures full packets to standard PCAP files, indexes session metadata into OpenSearch/Elasticsearch, and provides a web interface and API for searching and exporting traffic.",
+  "category": "network packet capture",
+  "keywords": [
+   "arkime",
+   "full packet capture",
+   "pcap",
+   "packet capture system",
+   "network traffic analysis",
+   "network monitoring",
+   "network security monitoring",
+   "nsm",
+   "session metadata",
+   "spi data",
+   "packet indexing",
+   "opensearch",
+   "elasticsearch",
+   "pcap search",
+   "pcap export",
+   "wireshark pcap",
+   "network forensics",
+   "traffic retention",
+   "packet capture web interface",
+   "capture sensor",
+   "threat intelligence enrichment",
+   "wiseservice",
+   "cont3xt",
+   "full packet recording",
+   "security analyst tools",
+   "investigate network traffic",
+   "search network sessions",
+   "store network traffic",
+   "tcpdump alternative",
+   "commercial full packet capture alternative",
+   "pcap api"
+  ],
+  "what_it_does": "Arkime is a C capture application that monitors network traffic, writes packets to PCAP files on local disk, and parses them into session metadata sent to OpenSearch or Elasticsearch. A Node.js viewer runs per capture machine and serves a web interface for browsing, searching, and exporting sessions and packets. The Sessions page lists individual sessions that can be expanded to show metadata and packet details, and the SPI View page shows all unique values for each recognized field. Arkime exposes APIs to download PCAP data and JSON session data, and exports standard PCAP so tools like Wireshark can be used. The README describes optional components: cont3xt for contextual intelligence gathering, esProxy for security between capture and the database, Parliament for fronting multiple clusters, and wiseService for threat intelligence integration.",
+  "use_cases": [
+   "capture and store full network traffic for later investigation",
+   "search indexed network sessions by metadata",
+   "export PCAP files for analysis in Wireshark",
+   "retain long-term packet history on sensors",
+   "enrich network sessions with threat intelligence",
+   "manage multiple capture clusters from one front door"
+  ],
+  "how_to_run": [
+   "Install from prebuilt binaries (Downloads page) or official containers (Docker instructions)",
+   "Building from source (advanced): ensure node (22.x) is in PATH and clone the repository",
+   "Run ./easybutton-build.sh [easybutton options] --install to build and install",
+   "Run make config for initial configuration",
+   "Edit /opt/arkime/etc/config.ini for settings; then open the web interface in a browser"
+  ],
+  "stack": [
+   "C",
+   "Node.js",
+   "JavaScript",
+   "OpenSearch",
+   "Elasticsearch"
+  ],
+  "notable": [
+   "Stores and exports all packets in standard PCAP format, compatible with tools like Wireshark",
+   "Threaded C capture component separate from a per-machine Node.js viewer",
+   "Scales to tens of gigabits per second per README; PCAP retention limited by sensor disk space",
+   "Optional companion apps: cont3xt, esProxy, Parliament, wiseService",
+   "Supports TLS for the viewer and reverse-proxy authentication for multi-user setups"
+  ],
+  "caveats": [
+   "Requires OpenSearch/Elasticsearch cluster for metadata; retention depends on cluster scale",
+   "Building from source is recommended only for advanced users or contributors",
+   "README recommends TLS, locked-down machines, and protecting the shared-secret config file",
+   "Arkime is not meant to replace an IDS; it works alongside one"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3511,
+  "output": 1348
+ },
+ "generated": "2026-10-29"
+}
