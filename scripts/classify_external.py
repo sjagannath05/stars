@@ -26,7 +26,9 @@ c = httpx.Client(timeout=30, follow_redirects=True)
 E = {e["url"]: e for e in read_jsonl(DATA / "external.jsonl")}
 repo_ids = {it["id"] for it in read_jsonl(DATA / "items.jsonl")}
 line_repo, anchor = {}, {}
-for src in AWESOME:
+used = DATA / "awesome_lists_used.txt"   # written by collect.py (auto-detected lists + base list)
+LISTS = [l for l in used.read_text().split() if l] if used.exists() else AWESOME
+for src in LISTS:
     text = ""
     for f in README_NAMES:
         r = c.get(f"https://raw.githubusercontent.com/{src}/HEAD/{f}")

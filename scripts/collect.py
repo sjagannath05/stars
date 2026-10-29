@@ -99,9 +99,29 @@ def entry_text(line):
     t = re.sub(r"^\s*[-*+|]\s*", "", t)
     return re.sub(r"\s+", " ", t).strip(" |-")[:400]
 
+# --- which starred repos are link lists? (auto-detected each run, plus the fixed base list) ----------
+from concurrent.futures import ThreadPoolExecutor
+LIST_ITEM = re.compile(r"^\s*([-*+]|\d+\.)\s+.*\[[^\]]+\]\(https?://|^\s*\|.*\[[^\]]+\]\(https?://")
+
+def looks_like_list(it):
+    text = raw_readme(it["repo"])
+    lines = [l for l in text.splitlines() if l.strip()]
+    entries = sum(1 for l in lines if LIST_ITEM.match(l))
+    named = "awesome" in it["repo"].lower() or any("awesome" in t for t in it.get("topics", []))
+    return (entries >= 150 and entries / max(len(lines), 1) >= 0.35) or (named and entries >= 15)
+
+overrides = json.loads((DATA / "awesome_lists.json").read_text()) if (DATA / "awesome_lists.json").exists() else {}
+stars_now = [it for it in items.values() if it["kind"] == "star"]
+with ThreadPoolExecutor(16) as pool:
+    detected = {it["repo"] for it, yes in zip(stars_now, pool.map(looks_like_list, stars_now)) if yes}
+base = {r for r in AWESOME if r.lower() in items}  # fixed base list, only while still starred
+lists_to_expand = sorted((detected | base | set(overrides.get("include", []))) - set(overrides.get("exclude", [])), key=str.lower)
+(DATA / "awesome_lists_used.txt").write_text("\n".join(lists_to_expand) + "\n")
+print(f"awesome lists: {len(lists_to_expand)} ({len(detected)} auto-detected, {len(base)} in base list)")
+
 external = {}
 per_list = {}
-for src in AWESOME:
+for src in lists_to_expand:
     text = raw_readme(src)
     section, n_gh, n_ext = "", 0, 0
     for line in text.splitlines():

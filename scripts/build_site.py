@@ -116,7 +116,7 @@ def asset_version(name):
     """Short content hash of site/<name> (or the built index.js), used as ?v= to bust browser caches."""
     if name not in ASSET_V:
         import hashlib
-        p = (DOCS / "assets" / name) if name in ("index.js", "index.json") else (SITE_SRC / name)
+        p = (DOCS / "assets" / name) if name.startswith("index") else (SITE_SRC / name)
         ASSET_V[name] = hashlib.sha1(p.read_bytes()).hexdigest()[:8] if p.exists() else "0"
     return ASSET_V[name]
 
@@ -233,6 +233,7 @@ def sim_card(x, depth):
 
 STATS = []
 INLINE = [""]
+PART_SUMMARY = [""]
 
 def index_page(n_all, n_mine, gen):
     tries = ["self-host a file share", "scrape a protected site", "mac clipboard manager", "kubernetes log viewer",
@@ -296,27 +297,35 @@ def main():
         idx.append({"id": u["id"], "t": "a" if u["kind"] == "article" else "w", "n": u["name"], "d": domain(u["url"]),
                     "o": u["desc"], "c": u["section"].lower()[:40], "k": [], "u": [], "g": [], "m": 0, "s": 0, "l": "",
                     "v": via_of(u.get("sources", [])), "x": u["url"]})
-    full = json.dumps(idx, ensure_ascii=False, separators=(",", ":"))
-    (DOCS / "assets" / "index.json").write_text(full)
+    dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"))
+    full = dump(idx)
+    part_defs = [("index-repos.json", "repos", [x for x in idx if x["t"] == "r"]),
+                 ("index-more.json", "tools and articles", [x for x in idx if x["t"] != "r"])]
+    parts = []
+    for fname, label, rows in part_defs:
+        body = dump(rows)
+        (DOCS / "assets" / fname).write_text(body)
+        parts.append({"url": f"assets/{fname}?v={asset_version(fname)}", "bytes": len(body.encode()), "label": label})
     old_js = DOCS / "assets" / "index.js"
     if old_js.exists(): old_js.write_text("window.STARS=null;")  # retired; kept tiny for old cached pages
     mine = [x for x in idx if x["t"] == "r" and x["m"]]
     generic = re.compile(r"^(links?|misc(ellaneous)?|other|others|resources?|writing|general|tools?|apps?|external links|related|contents?|"
                          r"table of contents|about|license|contributing|reading|articles?|books?|videos?|talks?)$")
     cats = collections.Counter(x["c"].lower() for x in idx if x.get("c") and not x.get("x") and not generic.match(x["c"].lower()))
-    meta = {"url": f"assets/index.json?v={asset_version('index.json')}", "bytes": len(full.encode()), "total": len(idx),
+    meta = {"parts": parts, "total": len(idx),
             "counts": {"mine": len(mine), "awesome": sum(1 for x in idx if x["t"] == "r" and not x["m"]),
                        "tool": sum(1 for x in idx if x["t"] == "w"), "article": sum(1 for x in idx if x["t"] == "a")},
             "browse": cats.most_common(24)}
     js = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     INLINE[0] = f"window.STARS_MINE={js(mine)};window.STARS_META={js(meta)};"
-    PRELOAD[0] = f'<link rel="preload" href="{meta["url"]}" as="fetch" crossorigin>'
+    PART_SUMMARY[0] = ", ".join("%s %.1f MB" % (p_["label"], p_["bytes"] / 1e6) for p_ in parts)
+    PRELOAD[0] = f'<link rel="preload" href="{parts[0]["url"]}" as="fetch" crossorigin>'  # first part only, so it gets all the bandwidth
     n_mine = sum(1 for r in recs if r["kind"] == "star")
     (DOCS / "index.html").write_text(index_page(len(idx), n_mine, gen))
     (DOCS / ".nojekyll").write_text("")
     size = sum(p.stat().st_size for p in DOCS.rglob("*") if p.is_file())
     print(f"built {len(recs)} repo pages, {len(pages)} tool/article pages, {len(unread)} link-only cards "
-          f"into {DOCS.name}/ ({size/1e6:.1f} MB, index.json {(DOCS/'assets'/'index.json').stat().st_size/1e6:.1f} MB, "
+          f"into {DOCS.name}/ ({size/1e6:.1f} MB, index parts {PART_SUMMARY[0]}, "
           f"inline stars {len(INLINE[0])/1e3:.0f} KB)")
 
 if __name__ == "__main__":

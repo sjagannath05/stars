@@ -137,6 +137,8 @@ for s, it in items.items():
             changed.append(s)
         if any(old_meta.get(it["id"], {}).get(k) != it.get(k) for k in META_KEYS if k in it):
             meta_updates += 1
+_used = DATA / "awesome_lists_used.txt"
+report["awesome_lists"] = [l for l in _used.read_text().split() if l] if _used.exists() else []
 report.update({"repos_total": len(items), "repos_new": len(new), "repos_changed": len(changed),
                "repos_removed": len(removed), "repos_metadata_refreshed": meta_updates})
 

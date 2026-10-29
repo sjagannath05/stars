@@ -5,6 +5,7 @@
   const META = window.STARS_META || { counts: {}, browse: [], total: 0 };
   let D = window.STARS_MINE || window.STARS || [];
   let ready = !!window.STARS;
+  let pending = "";   // label of an index part still loading after the first one
   const $ = s => document.querySelector(s);
   const STOP = new Set("a an and are as at be by for from how i in into is it me my of on or that the this to tool tools want with need app apps something some".split(" "));
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -101,7 +102,7 @@
     const { rows, ts } = run();
     const total = rows.length;
     $("#count").textContent = state.q || state.list || state.cat || state.src !== "all"
-      ? `${total.toLocaleString()} match${total === 1 ? "" : "es"}${ready ? "" : " in your stars so far · the full index is still loading"}`
+      ? `${total.toLocaleString()} match${total === 1 ? "" : "es"}${!ready ? " in your stars so far · the full index is still loading" : pending ? ` · ${pending} still loading` : ""}`
       : `${(META.total || D.length).toLocaleString()} repos, tools and articles`;
     $("#clear").hidden = !(state.q || state.list || state.cat || state.src !== "all");
     $("#results").innerHTML = rows.slice(0, state.shown).map(d => card(d, ts)).join("") ||
@@ -109,7 +110,7 @@
     $("#more").hidden = total <= state.shown;
     const browsing = !state.q && !state.list && !state.cat;
     $("#browse").hidden = !browsing;
-    if (browsing && !ready && state.src === "all" && META.browse.length) {
+    if (browsing && (!ready || pending) && state.src === "all" && META.browse.length) {
       $("#catgrid").innerHTML = META.browse.map(([c, n]) => `<button type="button" class="cat-tile" data-cat="${esc(c)}"><span>${esc(c)}</span><small>${n}</small></button>`).join("");
     } else if (browsing) {
       const cc = {};
@@ -152,8 +153,9 @@
   $("#list").innerHTML = `<option value="">All my lists</option>` +
     Object.entries(listCounts).sort((a, b) => b[1] - a[1]).map(([g, n]) => `<option value="${esc(g)}">${esc(g)} (${n})</option>`).join("");
   const setCounts = () => {
-    const c = META.counts || {}, n = (k, f) => (ready ? D.filter(f).length : (c[k] || 0)).toLocaleString();
-    $("#n-all").textContent = (ready ? D.length : (META.total || D.length)).toLocaleString();
+    const full = ready && !pending;
+    const c = META.counts || {}, n = (k, f) => (full ? D.filter(f).length : (c[k] || 0)).toLocaleString();
+    $("#n-all").textContent = (full ? D.length : (META.total || D.length)).toLocaleString();
     $("#n-mine").textContent = n("mine", d => d.t === "r" && d.m); $("#n-aw").textContent = n("awesome", d => d.t === "r" && !d.m);
     $("#n-tool").textContent = n("tool", d => d.t === "w"); $("#n-art").textContent = n("article", d => d.t === "a");
   };
@@ -175,31 +177,39 @@
   window.addEventListener("hashchange", () => { readHash(); render(); });
   readHash(); render();
 
-  // Stream the full index with a progress bar, then swap it in.
+  // Stream the index parts (repos first, then tools and articles) with one progress bar.
+  async function fetchPart(part, done, total, show) {
+    const r = await fetch(part.url);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    if (!(r.body && r.body.getReader)) return JSON.parse(await r.text());
+    const reader = r.body.getReader(), chunks = []; let got = 0;
+    for (;;) { const { done: end, value } = await reader.read(); if (end) break; chunks.push(value); got += value.length; show((done + got) / total, part.label); }
+    const buf = new Uint8Array(got); let off = 0; for (const c of chunks) { buf.set(c, off); off += c.length; }
+    return JSON.parse(new TextDecoder().decode(buf));
+  }
   async function loadFull() {
     const bar = $("#loadbar"), fill = $("#loadfill"), text = $("#loadtext");
-    if (ready || !META.url || !bar) { if (bar) bar.hidden = true; return; }
+    const parts = META.parts || [];
+    if (ready || !parts.length || !bar) { if (bar) bar.hidden = true; return; }
     bar.hidden = false;
-    const show = f => { const pct = Math.max(2, Math.min(99, Math.round(f * 100))); fill.style.width = pct + "%"; text.textContent = `Loading the full index… ${pct}%`; };
+    const total = parts.reduce((s, p) => s + (p.bytes || 0), 0) || 1;
+    const show = (f, label) => { const pct = Math.max(2, Math.min(99, Math.round(f * 100))); fill.style.width = pct + "%"; text.textContent = `Loading ${label}… ${pct}%`; };
+    let done = 0, loaded = [];
     try {
-      const r = await fetch(META.url);
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      let raw;
-      if (r.body && r.body.getReader && META.bytes) {
-        const reader = r.body.getReader(), parts = []; let got = 0;
-        for (;;) { const { done, value } = await reader.read(); if (done) break; parts.push(value); got += value.length; show(got / META.bytes); }
-        const buf = new Uint8Array(got); let off = 0; for (const p of parts) { buf.set(p, off); off += p.length; }
-        raw = new TextDecoder().decode(buf);
-      } else raw = await r.text();
-      text.textContent = "Preparing search…"; fill.style.width = "100%";
-      await new Promise(res => setTimeout(res, 0));
-      D = prep(JSON.parse(raw)); window.STARS = D; ready = true;
-      setCounts(); render();
-      text.textContent = `Ready: ${D.length.toLocaleString()} entries`;
+      for (const [i, part] of parts.entries()) {
+        const rows = prep(await fetchPart(part, done, total, show));
+        done += part.bytes || 0;
+        loaded = loaded.concat(rows);
+        D = loaded; window.STARS = D;
+        ready = true; pending = i < parts.length - 1 ? parts[i + 1].label : "";
+        setCounts(); render();
+      }
+      text.textContent = `Ready: ${D.length.toLocaleString()} entries`; fill.style.width = "100%";
       bar.classList.add("done"); setTimeout(() => (bar.hidden = true), 1200);
     } catch (e) {
       bar.classList.add("failed");
-      text.textContent = "Couldn't load the full index, so search covers your stars only. Reload to try again.";
+      text.textContent = ready ? "Couldn't load everything, so some results may be missing. Reload to try again."
+                               : "Couldn't load the full index, so search covers your stars only. Reload to try again.";
     }
   }
   loadFull();
