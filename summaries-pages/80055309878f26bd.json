@@ -1,0 +1,77 @@
+{
+ "id": "80055309878f26bd",
+ "url": "https://cloudplatform.googleblog.com/2016/12/using-load-shedding-to-survive-a-success-disaster-CRE-life-lessons.html",
+ "final_url": "https://cloud.google.com/blog/products/gcp/using-load-shedding-to-survive-a-success-disaster-cre-life-lessons/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SRE at Google: Using load shedding to survive a success disaster | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Using load shedding to survive a success disaster - CRE life lessons"
+  }
+ ],
+ "summary": {
+  "name": "Google SRE load shedding guide",
+  "one_liner": "A Google Cloud Blog article from the CRE life lessons series explaining how to use load shedding, dropping less valuable requests under overload, to keep a service available during traffic surges.",
+  "category": "sre reliability article",
+  "keywords": [
+   "load shedding",
+   "load shedding sre",
+   "success disaster",
+   "traffic overload",
+   "request throttling",
+   "criticality buckets",
+   "soft quota",
+   "hard quota",
+   "optimistic throttling",
+   "pessimistic throttling",
+   "work conservation",
+   "quality of service qos",
+   "graceful degradation",
+   "overload protection",
+   "request prioritization",
+   "retry with backoff",
+   "procrustean load shedding",
+   "site reliability engineering",
+   "google sre",
+   "cre life lessons",
+   "fair throttling",
+   "opportunity cost",
+   "deadline based shedding",
+   "backend capacity planning",
+   "how to handle traffic spikes",
+   "keep service available under heavy traffic",
+   "prioritize requests when overloaded"
+  ],
+  "use_cases": [
+   "Designing a service to stay available during unexpected traffic spikes",
+   "Deciding which requests to drop first when a system is overloaded",
+   "Setting per-client quotas that allow unused capacity to be used",
+   "Classifying background versus user-facing requests for throttling",
+   "Evaluating whether throttling signals a need for more capacity"
+  ],
+  "what_it_does": "The article describes load shedding as serving nominal capacity regardless of incoming traffic by rejecting some requests and having clients retry. It covers a simple threshold-based approach that drops a fraction of traffic when CPU, memory or queue length exceed a load-tested safe level, and explains why ranking requests by criticality is better. It discusses measuring direct and opportunity costs, bucketing requests by criticality (via fields, hostname, URL path or user group), and dropping requests that exceed their deadlines. It also compares soft and hard quotas, optimistic versus pessimistic throttling, and includes a case study of a mobile upload service that survived a client bug.",
+  "pricing": "unknown",
+  "platforms": [
+   "Google Cloud"
+  ],
+  "notable": [
+   "Case study of a Google mobile upload service that shed nearly half of background requests during a client bug",
+   "Explains soft versus hard quotas and work conservation",
+   "Compares optimistic and pessimistic throttling trade-offs"
+  ],
+  "caveats": [
+   "Describes general techniques and Google's internal practices; it is not a tool or product with an install or API",
+   "The Python example and simulation are described in the article but the code itself is not reproduced in the page text",
+   "Advice is presented as experience-based and may not fit every system"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6753,
+  "output": 1012
+ },
+ "generated": "2026-11-01"
+}

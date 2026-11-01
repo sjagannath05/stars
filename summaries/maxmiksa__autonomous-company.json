@@ -1,0 +1,122 @@
+{
+ "id": "maxmiksa/autonomous-company",
+ "repo": "MaxMiksa/Autonomous-Company",
+ "kind": "star",
+ "description": "An autonomous company working 24/7 on your own PC - Windows/Linux/macOS.",
+ "topics": [
+  "agentic-workflows",
+  "ai-agents",
+  "autonomous-agents",
+  "claude-code",
+  "codex",
+  "dashboard",
+  "llm",
+  "multi-agent",
+  "self-hosted",
+  "workflow-automation"
+ ],
+ "language": "Python",
+ "stars": 3179,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-30",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Python framework that runs a continuous loop of AI CLI calls (Claude Code or Codex CLI) where 14 expert-persona agent roles plan, build, and operate a virtual company on your own PC.",
+  "category": "autonomous agent framework",
+  "keywords": [
+   "autonomous agents",
+   "multi-agent system",
+   "ai agents",
+   "agentic workflows",
+   "claude code",
+   "codex cli",
+   "llm loop",
+   "self-hosted agents",
+   "ai company simulation",
+   "role-based agents",
+   "persona prompts",
+   "dashboard",
+   "launchd daemon",
+   "systemd user service",
+   "wsl",
+   "budget tracking",
+   "circuit breaker",
+   "workflow automation",
+   "continuous ai work",
+   "run ai agents 24/7",
+   "ai team on my pc",
+   "automate product research",
+   "autonomous coding assistant",
+   "agent team builder",
+   "consensus memory file",
+   "cursor adapter",
+   "openai compatible adapter",
+   "alternative to autonomous agent runners",
+   "multi-agent orchestration",
+   "bash loop automation",
+   "product center",
+   "scheduled llm calls"
+  ],
+  "what_it_does": "The project runs a loop (scripts/core/auto-loop.sh) that repeatedly calls an LLM CLI, by default Claude Code, with Codex CLI also supported. Each cycle reads a shared work summary in memories/consensus.md and a per-cycle prompt, then the agent decides what to do, may form a team of 2-5 of the 14 role definitions in .claude/agents/, and updates the summary before the next cycle. The 14 roles (CEO, CTO, QA, Marketing, CFO and others) are persona prompts modeled on named industry figures. The repo also includes 30+ reusable skills in .claude/skills/. A local dashboard shows cycle reports, status, usage, budgets, and logs, and a Product Center catalogs connected product runs. Failure handling includes rate-limit waits, a circuit breaker after consecutive errors, and consensus rollback. Daemon mode uses launchd on macOS and systemd --user inside WSL on Windows.",
+  "use_cases": [
+   "run an autonomous AI team on a personal computer",
+   "automate product research and idea validation",
+   "continuous coding loop with Claude Code or Codex",
+   "monitor AI agent cycles and usage budgets via a local dashboard",
+   "steer a long-running agent by editing a markdown summary",
+   "generate small apps and landing pages unattended"
+  ],
+  "how_to_run": [
+   "git clone <repo-url> && cd Autonomous-Company",
+   "make start  (foreground run, default engine Claude Code)",
+   "ENGINE=codex make start  (use Codex CLI instead)",
+   "make install  (install background daemon on macOS or WSL)",
+   "make dashboard  (open local status dashboard)",
+   "make pause / make resume  (pause or resume daemon)"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Bash",
+   "Claude Code CLI",
+   "Codex CLI",
+   "Make",
+   "git",
+   "launchd (macOS)",
+   "systemd --user (WSL)",
+   "PowerShell",
+   "Node.js (for npm-installed CLIs)",
+   "shadcn/ui (dashboard components)"
+  ],
+  "notable": [
+   "14 expert-persona agent roles (e.g., Bezos, Munger, DHH) defined as prompts in .claude/agents/",
+   "Daemon auto-restart via launchd on macOS and systemd --user in WSL",
+   "Local dashboard with cycle reports, usage, budgets and logs; Product Center for connecting and browsing product runs",
+   "File-based steering: edit memories/consensus.md between runs to change direction",
+   "Configurable via environment variables for engine, model, loop interval, timeout and circuit-breaker threshold"
+  ],
+  "caveats": [
+   "Experimental project; stability not guaranteed, per the README",
+   "Each cycle consumes model quota, so it costs money",
+   "Default engine settings allow broad local actions (bypassPermissions); no OS-level sandbox, and prompt rules are not enforced isolation",
+   "Windows requires WSL2 (Ubuntu); PowerShell is only the control layer",
+   "Deployment and marketing depend on available tools and authorization; no guarantee a product is completed or deployed"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11373,
+  "output": 1549
+ },
+ "generated": "2026-11-01"
+}

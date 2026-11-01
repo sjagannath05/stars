@@ -1,0 +1,77 @@
+{
+ "id": "0269e4747ddd9d43",
+ "url": "https://cloudplatform.googleblog.com/2017/03/reliable-releases-and-rollbacks-CRE-life-lessons.html",
+ "final_url": "https://cloud.google.com/blog/products/gcp/reliable-releases-and-rollbacks-cre-life-lessons/",
+ "kind": "tool",
+ "method": "browser",
+ "page_title": "SRE at Google: Reliable releases and rollbacks | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Reliable releases and rollbacks - CRE life lessons"
+  }
+ ],
+ "summary": {
+  "name": "Reliable releases and rollbacks (CRE life lessons)",
+  "one_liner": "A Google Cloud Blog article by Google SRE engineer Adrian Hilton on detecting bad releases, rolling back safely, and planning releases so rollbacks stay low-risk.",
+  "category": "sre release engineering guide",
+  "keywords": [
+   "site reliability engineering",
+   "sre",
+   "software release rollback",
+   "rollback strategy",
+   "roll forward",
+   "canary release",
+   "canarying",
+   "bad release detection",
+   "feature-free release",
+   "schema change rollback",
+   "deployment safety",
+   "release engineering",
+   "outage prevention",
+   "error rate monitoring",
+   "latency monitoring by release version",
+   "google sre",
+   "customer reliability engineer",
+   "cherry-pick hotfix",
+   "load balancer rolling upgrade",
+   "stackdriver monitoring",
+   "reliability best practices",
+   "production bug detection",
+   "dependency rollback planning",
+   "known-good release",
+   "google cloud blog article",
+   "release rollout plan",
+   "service reliability lessons"
+  ],
+  "use_cases": [
+   "Planning a rollback procedure before shipping a new binary",
+   "Detecting when a new service release is causing errors",
+   "Deciding between rolling back and rolling forward during an outage",
+   "Designing database schema changes that stay compatible with rollbacks",
+   "Testing that rollbacks still work before they are needed",
+   "Structuring staged releases to limit user exposure to bugs"
+  ],
+  "what_it_does": "The article argues that most outages come from new binary releases and that teams should assume every release may contain bugs. It describes three reliability tasks: detecting a broken release, moving users safely off it, and limiting exposure via canarying. It recommends breaking down error and latency metrics by release version to catch subtle failures. It advocates rolling back first rather than rushing a roll-forward fix, and suggests periodically testing rollbacks. For schema changes, it proposes a feature-free intermediate release (v+1) so binaries and schema can be rolled back independently. The piece ends by promising a follow-up on canarying.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Recommends a feature-free release (v+1) before a schema change so rollbacks don't require reverting the schema",
+   "Advises testing rollbacks periodically when things are healthy, and treating a rollback as the default response to suspected bugs",
+   "Mentions Stackdriver monitoring and nginx load balancing as examples of its assumed setup"
+  ],
+  "caveats": [
+   "Covers general principles only; it does not describe specific tools beyond nginx and Stackdriver",
+   "Part 2 on canarying is referenced but not included on this page"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3779,
+  "output": 1021
+ },
+ "generated": "2026-11-01"
+}

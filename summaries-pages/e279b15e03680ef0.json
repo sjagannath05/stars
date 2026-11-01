@@ -1,0 +1,75 @@
+{
+ "id": "e279b15e03680ef0",
+ "url": "https://jvns.ca/blog/2016/03/20/how-do-you-do-capacity-planning",
+ "final_url": "https://jvns.ca/blog/2016/03/20/how-do-you-do-capacity-planning/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "How do you do capacity planning?",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Capacity Planning",
+   "entry": "How do you do Capacity Planning"
+  }
+ ],
+ "summary": {
+  "name": "How do you do capacity planning?",
+  "one_liner": "A personal blog post by Julia Evans musing about capacity planning for a ticket-sales website, covering resources, measurement, locks, and load balancing.",
+  "category": "capacity planning essay",
+  "keywords": [
+   "capacity planning",
+   "performance planning",
+   "server capacity",
+   "load balancing",
+   "random load balancing",
+   "power of two choices",
+   "pick two random servers",
+   "utilization",
+   "cpu bound",
+   "disk io",
+   "network bandwidth",
+   "database load testing",
+   "load testing",
+   "locks synchronization",
+   "autoscaling",
+   "how many servers do i need",
+   "server sizing",
+   "ticket sale traffic spike",
+   "dstat",
+   "iftop",
+   "clock_gettime",
+   "scaling web application",
+   "resource bottleneck",
+   "blog post",
+   "jvns"
+  ],
+  "use_cases": [
+   "Estimating how many servers a web app needs before a traffic spike",
+   "Finding which resource (CPU, disk, network, database) limits an application",
+   "Comparing random versus smarter load balancing across database servers",
+   "Measuring average CPU, network, and disk usage over time",
+   "Deciding when to add machines versus optimizing code"
+  ],
+  "what_it_does": "The post walks through the reasoning behind capacity planning using a concert ticket website as an example. It lists the resources an application uses (disk I/O, network, CPU, databases, locks) and suggests finding the most limiting one, then measuring its usage. It mentions tools such as dstat, iftop and the clock_gettime system call for measurement. It includes a small simulation table showing that random load balancing across 7 database servers distributes 100 queries unevenly, and it cites a paper on the pick-two-random-machines strategy. The author says they do not have definitive answers and asks readers for resources.",
+  "pricing": "free",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Simulated 100 queries across 7 database servers to show uneven random load balancing",
+   "Discusses the pick-two-random-servers load balancing strategy",
+   "Treats locks (e.g. preventing overselling tickets) as a non-scalable resource"
+  ],
+  "caveats": [
+   "Informal personal exploration; the author states they are not an expert and gives no definitive method",
+   "Does not answer how much extra capacity random balancing costs or how to handle variable request sizes",
+   "Database capacity estimation is described as time-intensive load testing"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3169,
+  "output": 931
+ },
+ "generated": "2026-11-01"
+}

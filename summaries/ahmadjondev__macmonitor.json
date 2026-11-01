@@ -1,0 +1,100 @@
+{
+ "id": "ahmadjondev/macmonitor",
+ "repo": "Ahmadjondev/MacMonitor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "Mac Monitor - Lightweight menu bar monitor for RAM, CPU, network and disk, focused on memory pressure. [![Open-Source Software][OSS Icon]](https://github.com/Ahmadjondev/MacMonitor) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mac Monitor is a lightweight macOS menu-bar system monitor showing live RAM, CPU, network and disk stats, with a focus on memory pressure and optional pressure-aware memory cleaning.",
+  "category": "macos system monitor",
+  "keywords": [
+   "macos menu bar monitor",
+   "system monitor",
+   "memory pressure",
+   "ram monitor",
+   "cpu monitor",
+   "network speed menu bar",
+   "disk usage",
+   "activity monitor alternative",
+   "stats alternative",
+   "istat menus alternative",
+   "purge memory",
+   "memory cleaner",
+   "swift",
+   "swiftui",
+   "appkit",
+   "menu bar app",
+   "battery health",
+   "gpu utilization",
+   "insights history charts",
+   "launch at login",
+   "homebrew cask",
+   "dmg installer",
+   "open source mac app",
+   "free mac utility",
+   "lightweight monitor",
+   "see mac memory usage",
+   "check if mac is out of memory",
+   "universal binary apple silicon intel",
+   "top memory apps",
+   "local network speed monitor"
+  ],
+  "what_it_does": "Mac Monitor shows one live number in the macOS menu bar: network speed by default, or RAM % or CPU %. Clicking it opens a dashboard with memory (used, pressure level, composition, swap, pressure graph), processor (total and per-core CPU), network (speeds, totals, local IPv4), and startup-volume storage with disk throughput. The full window adds CPU breakdown, load average, process and thread counts, packet and per-interface network stats, battery details, and GPU utilization where exposed. An Insights view shows RAM and CPU history charts for the last 24 hours, saved as 1-minute aggregates. Memory cleaning runs macOS's purge on demand, or automatically only when memory pressure is critical, and it can send a notification when pressure turns critical. The app reads local macOS APIs and states that it makes no network connections.",
+  "use_cases": [
+   "watch memory pressure on a Mac",
+   "see live network speed in the menu bar",
+   "monitor CPU and RAM usage at a glance",
+   "check whether a Mac is actually out of memory",
+   "free inactive memory on macOS when needed",
+   "review battery health and cycle count",
+   "find which apps use the most memory"
+  ],
+  "how_to_run": [
+   "Download MacMonitor.dmg from the latest release and drag Mac Monitor to Applications",
+   "Approve the unsigned app on first launch (System Settings > Privacy & Security > Open Anyway, or xattr -dr com.apple.quarantine)",
+   "brew tap ahmadjondev/macmonitor",
+   "brew install --cask mac-monitor",
+   "git clone the repository, cd MacMonitor, then run ./build.sh",
+   "open \"/Applications/Mac Monitor.app\""
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "Mach host_statistics APIs",
+   "IOKit",
+   "libproc",
+   "lipo",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Fixed-width menu bar item so neighbouring icons do not jitter",
+   "Cleans memory based on memory pressure rather than a blind timer; auto-clean only at critical pressure and off by default",
+   "No third-party dependencies and states it makes no network connections",
+   "Three interface languages (English, Russian, Uzbek) switchable live",
+   "Optional narrowly scoped sudoers rule allows passwordless purge of /usr/sbin/purge only"
+  ],
+  "caveats": [
+   "Release is ad-hoc signed and not notarized, so macOS blocks the first launch and requires manual approval",
+   "Requires macOS 13 Ventura or later",
+   "Silent memory cleaning needs an optional sudoers rule; without it, Clean now asks for an administrator password and auto-clean is skipped",
+   "Not distributed on the Mac App Store because the sandbox blocks its purge, ps and LaunchAgent features",
+   "Narrower hardware sensor coverage than Stats or iStat Menus (no fan speeds or many sensors)"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6771,
+  "output": 1469
+ },
+ "generated": "2026-11-01"
+}

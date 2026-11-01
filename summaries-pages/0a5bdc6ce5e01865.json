@@ -1,0 +1,80 @@
+{
+ "id": "0a5bdc6ce5e01865",
+ "url": "https://grafana.com/blog/2019/11/27/kubecon-recap-how-to-include-latency-in-slo-based-alerting",
+ "final_url": "https://grafana.com/blog/kubecon-recap-how-to-include-latency-in-slo-based-alerting/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "\\[KubeCon Recap\\] How to Include Latency in SLO-Based Alerting | Grafana Labs",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "How to Include Latency in SLO-Based Alerting"
+  }
+ ],
+ "summary": {
+  "name": "How to Include Latency in SLO-Based Alerting",
+  "one_liner": "A Grafana Labs blog recap of Björn Rabenstein's KubeCon talk on defining latency-based SLOs and building multi-window error-budget alerts that count slow requests as errors.",
+  "category": "sre slo alerting guide",
+  "keywords": [
+   "slo-based alerting",
+   "latency slo",
+   "service level objective",
+   "error budget",
+   "error budget burn rate",
+   "multi-window alerting",
+   "symptom-based alerting",
+   "prometheus recording rules",
+   "prometheus histogram",
+   "sli",
+   "sla",
+   "jsonnet",
+   "slo libsonnet",
+   "google sre book",
+   "sre workbook",
+   "kubecon talk recap",
+   "grafana cortex",
+   "error rate alert",
+   "slow requests as errors",
+   "99.9% availability",
+   "burn rate alert",
+   "pagerduty alert fatigue",
+   "monitoring latency",
+   "alert reset quickly",
+   "rule generation",
+   "percentile latency target",
+   "sre alerting best practices"
+  ],
+  "use_cases": [
+   "Designing latency-aware SLOs for a service",
+   "Setting up multi-window burn-rate alerts in Prometheus",
+   "Generating Prometheus recording and alerting rules with Jsonnet",
+   "Deciding whether slow requests should count as errors",
+   "Measuring latency at the edge with histogram buckets",
+   "Turning internal SLOs into customer SLAs"
+  ],
+  "what_it_does": "The page is a blog recap of a KubeCon talk by Björn Rabenstein of Grafana Labs. It explains how to alert on error budget burn using a long window (for example one hour) combined with a short window (for example five minutes) so alerts fire quickly and reset quickly after an outage. It proposes treating slow requests as errors, for example counting a request as failed if it is a 500 or slower than a threshold, so there is one error budget instead of two. It describes how Grafana Labs measured this at the gateway with Prometheus histograms bucketed at 1s and 2.5s, and how it generates the rules with Jsonnet.",
+  "pricing": "unknown",
+  "platforms": [
+   "Prometheus",
+   "Kubernetes"
+  ],
+  "notable": [
+   "Combines a long and short window in each alert so it pages fast and stops firing soon after the outage is fixed",
+   "Counts slow responses and 5xx errors together as one error ratio",
+   "Uses Jsonnet to generate Prometheus recording and alerting rules from a table",
+   "Grafana Labs example with 99.9% of writes under 1s and 99.5% of reads under 2.5s"
+  ],
+  "caveats": [
+   "Describes a talk and approach rather than a downloadable tool; the Jsonnet SLO code was said to be open-sourced only later, and its availability is not confirmed on this page",
+   "Rabenstein notes that histograms with many partitions are expensive in Prometheus",
+   "The Grafana Labs SLOs are described as SLOs, not contractual SLAs"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6812,
+  "output": 1125
+ },
+ "generated": "2026-11-01"
+}

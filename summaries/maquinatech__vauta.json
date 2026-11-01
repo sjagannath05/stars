@@ -1,0 +1,98 @@
+{
+ "id": "maquinatech/vauta",
+ "repo": "MaquinaTech/Vauta",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (72)",
+   "entry": "Vauta - Meeting notes that stay on your Mac: transcribes any call on device and writes cited minutes, decisions and tasks."
+  }
+ ],
+ "summary": {
+  "one_liner": "Vauta is a macOS menu-bar app that records your mic and the call audio, transcribes them on your Mac with Apple's speech recognizer, and writes cited minutes, decisions and tasks using Apple's on-device model or a model server you run yourself.",
+  "category": "meeting notes and transcription",
+  "keywords": [
+   "meeting notes",
+   "meeting transcription",
+   "on-device transcription",
+   "private meeting notes",
+   "macos meeting recorder",
+   "menu bar app",
+   "meeting minutes",
+   "action items",
+   "meeting summary",
+   "ask my meetings",
+   "local llm",
+   "ollama",
+   "lm studio",
+   "apple speech recognition",
+   "speaker diarization",
+   "encrypted meeting store",
+   "no bot meeting recorder",
+   "record zoom calls",
+   "record teams calls",
+   "transcribe calls offline",
+   "live translation captions",
+   "swift swiftui app",
+   "mlx",
+   "meeting follow up reminders",
+   "export meeting markdown",
+   "share notes with team",
+   "keep meetings private",
+   "otter alternative",
+   "fireflies alternative",
+   "local meeting assistant"
+  ],
+  "what_it_does": "Vauta runs as a menu-bar app on macOS and records two channels: the user's microphone (labelled Me) and the call audio from a chosen app or all system audio (labelled Others), without joining as a bot. Audio is transcribed in memory with Apple's speech recognizer and discarded; only text is stored in an AES-256-GCM encrypted store whose key lives in the Keychain. Minutes, decisions and tasks are written by Apple's on-device model or by an OpenAI-compatible model server on this Mac or the local network, with every claim cited to the transcript. Users can ask questions across meetings or documents with citations that open the transcript at that moment, and can export meetings as Markdown, PDF, SRT, WebVTT or JSON. The README also describes optional features such as live translation captions, a pre-meeting brief, speaker separation, and follow-up actions that create reminders or calendar events only after the user confirms them.",
+  "use_cases": [
+   "take minutes for a video call without a bot",
+   "transcribe meetings privately on a Mac",
+   "find decisions and tasks from past meetings",
+   "ask questions across recorded meetings",
+   "export meeting transcripts as subtitles or PDF",
+   "turn open tasks into reminders after a call"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd Vauta",
+   "./scripts/setup-signing.sh (recommended, once)",
+   "./scripts/install.sh",
+   "VAUTA_ALLOW_ADHOC=1 ./scripts/install.sh (alternative ad-hoc signature)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Apple Speech framework",
+   "Apple Translation framework",
+   "system SQLite",
+   "MLX (MIT)",
+   "Core Audio process tap",
+   "Keychain",
+   "OpenAI-compatible model server (optional)"
+  ],
+  "notable": [
+   "No bot and no account: it hears what the Mac hears, and audio is never saved to disk",
+   "Works with any meeting app or browser through a Core Audio process tap, with Auto source selection",
+   "Every minutes claim, decision and task cites the transcript, and citations open the exact moment",
+   "Network Activity panel logs every connection Vauta makes, and a test blocks any other code from opening connections",
+   "Optional on-device search model and integrated Gemma 4 E4B model, both downloaded only on explicit click"
+  ],
+  "caveats": [
+   "Requires an Apple silicon Mac running macOS 26 or later; no download or installer, so you must build from source with Command Line Tools (macOS 27 SDK, Swift 6.4) and about 8 GB of disk",
+   "Minutes need Apple Intelligence or a model server; without one you only get transcripts",
+   "Several README features are marked unverified or off by default, including live answers (not offered with Apple Intelligence), the follow-up email draft (not available), and linking tasks across meetings (off); the README reports low measured accuracy for some of these"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 14959,
+  "output": 1482
+ },
+ "generated": "2026-11-01",
+ "license_source": "LICENSE"
+}

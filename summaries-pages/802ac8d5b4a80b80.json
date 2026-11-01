@@ -1,0 +1,76 @@
+{
+ "id": "802ac8d5b4a80b80",
+ "url": "https://opensource.com/article/19/7/measure-operational-performance",
+ "final_url": "https://opensource.com/article/19/7/measure-operational-performance",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "MTTR is dead, long live CIRT",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "On-Call",
+   "entry": "MTTR is dead, long live CIRT"
+  }
+ ],
+ "summary": {
+  "name": "CIRT",
+  "one_liner": "An opinion article proposing Critical Incident Response Time (CIRT), a metric for IT operations performance that filters to business-impacting incidents, as a replacement for mean time to resolve (MTTR).",
+  "category": "ops performance metrics",
+  "keywords": [
+   "critical incident response time",
+   "cirt metric",
+   "mttr",
+   "mean time to resolve",
+   "mean time to repair",
+   "incident response metrics",
+   "it operations metrics",
+   "ops performance measurement",
+   "sre metrics",
+   "site reliability engineering",
+   "on-call metrics",
+   "incident management",
+   "mtta",
+   "mean time to acknowledge",
+   "alert noise reduction",
+   "business-impacting incidents",
+   "incident resolution time",
+   "average resolution time",
+   "auto-resolved incidents",
+   "alert grouping",
+   "incident deduplication",
+   "ops kpis",
+   "it operations kpi",
+   "measuring devops performance",
+   "why mttr is misleading",
+   "percentage of incidents resolved",
+   "opensource.com article"
+  ],
+  "use_cases": [
+   "Choosing ops performance metrics for an on-call team",
+   "Filtering noisy alerts before measuring response time",
+   "Explaining why average resolution time can mislead",
+   "Setting up incident response KPIs",
+   "Validating whether MTTR or CIRT figures are reliable"
+  ],
+  "what_it_does": "The article argues that MTTR averages all incidents together, mixing high- and low-urgency, manual and auto-resolved, and very short transient alerts, which skews the result. It proposes CIRT, which keeps only incidents likely to affect business: it drops low-urgency incidents, incidents not resolved by a human, incidents resolved within 120 seconds, and incidents left unacknowledged for an unusually long time. It also groups separate alerts into simulated incidents using a conservative threshold such as two minutes. The author recommends tracking the percentage of incidents acknowledged and resolved alongside CIRT to check whether the metric is meaningful.",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Filters incidents by urgency, human resolution, duration and grouping before computing response time",
+   "Suggests a statistically derived, customer-specific threshold for ignored incidents (e.g., two standard deviations above the mean)",
+   "Pairs the metric with the share of incidents acknowledged and resolved as a sanity check"
+  ],
+  "caveats": [
+   "Describes a measurement method rather than a software tool; no implementation or product is named",
+   "Thresholds such as 120 seconds and two minutes are given as examples and would need tuning per organization"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 2962,
+  "output": 1004
+ },
+ "generated": "2026-11-01"
+}

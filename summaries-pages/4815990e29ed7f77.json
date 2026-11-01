@@ -1,0 +1,77 @@
+{
+ "id": "4815990e29ed7f77",
+ "url": "https://developers.soundcloud.com/blog/alerting-on-slos",
+ "final_url": "https://developers.soundcloud.com/blog/alerting-on-slos/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Alerting on SLOs like Pros",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Monitoring & Observability & Alerting",
+   "entry": "Alerting on SLOs like Pros"
+  }
+ ],
+ "summary": {
+  "name": "Alerting on SLOs like Pros",
+  "one_liner": "A SoundCloud engineering blog post describing how they implemented multiwindow, multi-burn-rate SLO alerts in Prometheus using HAProxy 5xx error rates.",
+  "category": "sre slo alerting",
+  "keywords": [
+   "slo alerting",
+   "error budget burn rate",
+   "multiwindow multi-burn-rate alerts",
+   "prometheus alerting rules",
+   "promql",
+   "haproxy 5xx error rate",
+   "haproxy exporter",
+   "alertmanager routing",
+   "symptom-based alerting",
+   "white-box monitoring",
+   "black-box monitoring",
+   "service level objective",
+   "sre alerting",
+   "on-call paging",
+   "signal to noise alerts",
+   "error budget",
+   "sre workbook chapter 5",
+   "soundcloud sre",
+   "burn rate factor",
+   "reduce alert fatigue",
+   "page vs ticket alerts",
+   "catchpoint probes",
+   "recording rules prometheus",
+   "availability slo three nines",
+   "for clause prometheus"
+  ],
+  "use_cases": [
+   "Setting up paging alerts that fire when an error budget burns quickly",
+   "Reducing on-call alert noise by alerting on user-facing symptoms",
+   "Configuring per-backend SLO error rate thresholds in Prometheus",
+   "Routing alerts to owning teams via Alertmanager labels",
+   "Creating ticket-level alerts for slow error budget burn"
+  ],
+  "what_it_does": "The post explains how SoundCloud implemented SLO-based alerting using the error rate seen at its HAProxy edge layer, measured via the Prometheus HAProxy exporter. It sets a per-backend SLO error target through PromQL recording rules and computes 5xx error ratios over windows from 5m to 3d. Four multiwindow, multi-burn-rate alerts combine a long and short window with burn rate factors: two page-level alerts and two ticket-level alerts. The author also covers symptom vs. cause alerting, the use of a for clause to filter statistical outliers, and routing alerts to owning teams via a system label.",
+  "pricing": "unknown",
+  "platforms": [
+   "Prometheus",
+   "HAProxy",
+   "Alertmanager"
+  ],
+  "notable": [
+   "Four alerts pairing long and short windows with burn rate factors (14.4, 6, 3, 1) to page on fast burn and ticket on slow burn",
+   "Per-backend SLO targets configured as PromQL recording rules",
+   "Uses a for clause despite the SRE Workbook advising against it, to guard against cold-start error spikes",
+   "Routes alerts to owning on-call teams via a system label generated from a team registry"
+  ],
+  "caveats": [
+   "Describes SoundCloud's internal setup; the exact alert rules are examples tailored to their HAProxy metrics and conventions",
+   "Relies on Prometheus and HAProxy exporter; HAProxy versions used were not yet natively instrumented for Prometheus at the time"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7850,
+  "output": 1126
+ },
+ "generated": "2026-11-01"
+}

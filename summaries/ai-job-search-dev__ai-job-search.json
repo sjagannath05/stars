@@ -1,0 +1,117 @@
+{
+ "id": "ai-job-search-dev/ai-job-search",
+ "repo": "ai-job-search-dev/ai-job-search",
+ "kind": "star",
+ "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+ "topics": [
+  "ai",
+  "ai-agents",
+  "career",
+  "claude-code",
+  "cover-letter",
+  "cv",
+  "interview-preparation",
+  "job-application",
+  "job-hunting",
+  "job-search",
+  "latex",
+  "resume"
+ ],
+ "language": "Python",
+ "stars": 68454,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-31",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Claude Code-based job application framework that evaluates postings, tailors LaTeX CVs and cover letters, and preps interview packs, run locally from your own fork.",
+  "category": "job application automation",
+  "keywords": [
+   "job search",
+   "job application",
+   "cv builder",
+   "resume tailoring",
+   "cover letter generator",
+   "interview preparation",
+   "claude code",
+   "ai agents",
+   "latex resume",
+   "moderncv",
+   "ats check",
+   "job fit evaluation",
+   "job scraper",
+   "job board scraper",
+   "application tracker",
+   "career tools",
+   "fork and customize",
+   "self-hosted job search",
+   "lualatex",
+   "xelatex",
+   "mock interview",
+   "salary benchmarking",
+   "skill gap analysis",
+   "linkedin job search",
+   "write my resume with ai",
+   "tailor resume to job posting",
+   "apply for jobs faster",
+   "track job applications",
+   "ai resume writer",
+   "job hunting assistant"
+  ],
+  "what_it_does": "The repository is a set of Claude Code commands and skills that run a job search from a forked copy on the user's machine. /setup builds a profile from a documents folder, a pasted CV, or an interview. /scrape searches job portals through CLI skills, and /rank batch-scores results into a shortlist. /apply evaluates fit, drafts a CV and cover letter in LaTeX, has a second agent review them, compiles the PDFs, and checks the CV text layer for ATS parseability. /interview builds stage-specific prep packs and mock interviews, while /outcome, /gmail-sync, /notion-sync and /html-report track results. The shipped portal skills target Danish job boards, and two country-agnostic ones are included: linkedin-search and freehire-search.",
+  "use_cases": [
+   "Tailoring a CV and cover letter to a specific job posting",
+   "Scoring many scraped job postings for fit and ranking them",
+   "Preparing for a scheduled job interview with a mock interview",
+   "Tracking application outcomes and drafting follow-up emails",
+   "Searching job boards from the command line",
+   "Mapping skill gaps against target job postings"
+  ],
+  "how_to_run": [
+   "gh repo fork ai-job-search-dev/ai-job-search --clone",
+   "cd ai-job-search",
+   "python3 tools/install_portal_clis.py",
+   "claude",
+   "/setup",
+   "/scrape"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Bun",
+   "Claude Code",
+   "LaTeX (lualatex, xelatex, moderncv, custom cover.cls)",
+   "pypdf (optional)",
+   "pdftotext/Poppler (optional fallback)",
+   "Notion MCP server (optional)",
+   "Gmail connector (optional)"
+  ],
+  "notable": [
+   "Drafter-reviewer workflow: a second Claude agent with fresh context critiques the drafts before revision",
+   "Compile-and-inspect loop renders the PDFs and iterates on LaTeX until page layout is clean",
+   "Deterministic integrity gate strips hidden text and flags injection-shaped lines in job postings before evaluation",
+   "Portal skills are auto-discovered folders with a common CLI contract, so new job boards can be added or borrowed",
+   "Honesty rule: the system does not invent skills or experience and lists keyword gaps instead of stuffing them"
+  ],
+  "caveats": [
+   "Claude Code requires a paid Claude subscription or API credits; there is no free tier",
+   "A fork is public by default, and the README advises a private repo for personal data",
+   "Built-in portal skills are for the Danish market; other markets need /add-portal or a borrowed skill, and LinkedIn use is against its ToS",
+   "Requires a LaTeX distribution with lualatex and xelatex installed"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12990,
+  "output": 1360
+ },
+ "generated": "2026-11-01"
+}

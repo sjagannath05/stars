@@ -1,0 +1,113 @@
+{
+ "id": "nmaroulis/protolink",
+ "repo": "nMaroulis/protolink",
+ "kind": "star",
+ "description": "Build autonomous Python agents with native Agent-to-Agent (A2A) communication",
+ "topics": [
+  "ai",
+  "ai-agents",
+  "generative-ai",
+  "pypi-package",
+  "python"
+ ],
+ "language": "Python",
+ "stars": 87,
+ "license": "MIT",
+ "homepage": "https://nmaroulis.github.io/protolink/",
+ "pushed_at": "2026-10-26",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "ProtoLink is a lightweight, A2A-first Python framework for building pluggable, LLM-agnostic agents that communicate through A2A-style cards, tasks, messages, parts and artifacts.",
+  "category": "agent framework",
+  "keywords": [
+   "python agent framework",
+   "ai agents",
+   "multi-agent systems",
+   "agent-to-agent communication",
+   "a2a protocol",
+   "a2a",
+   "agent card",
+   "agent mesh",
+   "multi-agent orchestration",
+   "langchain alternative",
+   "llm agnostic",
+   "local llm",
+   "ollama",
+   "llama.cpp",
+   "vllm",
+   "lm studio",
+   "mcp tools",
+   "model context protocol",
+   "rag",
+   "retrieval augmented generation",
+   "function calling tools",
+   "agent registry discovery",
+   "durable agent execution",
+   "structured flows pipeline",
+   "agent telemetry tracing",
+   "build agents in python",
+   "connect agents over http",
+   "run local llm agent",
+   "json tool calling fallback"
+  ],
+  "what_it_does": "ProtoLink lets you build an Agent from a name and optional pieces: typed Python functions as tools, an LLM from several providers or a mock backend, knowledge for retrieval, MCP tool servers, storage, and transports such as HTTP, SSE JSON-RPC, WebSocket or gRPC. Tools registered from ordinary typed functions can be called directly without a model or network. The agent runs an infer loop in which the model proposes one action at a time (tool call, agent delegation or final answer), with validation and a JSON fallback for smaller local models. Agents can register with a Registry, discover each other and exchange tasks. The framework also offers deterministic Pipeline, Parallel, Router and Graph flows, plus optional features such as local subagents, durable run storage, policy and approvals, cancellation, local tracing, run reports and replay. An optional a2a=True flag serves and calls standard A2A 1.0 JSON-RPC endpoints. A dashboard CLI and a visual Studio builder that generates Python are also described.",
+  "use_cases": [
+   "build a single agent with typed Python tools",
+   "run a multi-agent system across processes or machines",
+   "connect a local Ollama or llama.cpp model to an agent",
+   "let agents delegate tasks to each other over HTTP",
+   "answer questions over private documents with citations",
+   "wire MCP server tools into an agent",
+   "pause an agent for approval and resume it later",
+   "trace and replay agent runs for debugging"
+  ],
+  "how_to_run": [
+   "uv add protolink",
+   "uv add \"protolink[http]\"",
+   "uv add \"protolink[gemini]\"",
+   "uv add \"protolink[http,mcp]\"",
+   "python examples/generic_tools.py",
+   "python -m benchmarks.infer_loop --provider ollama --model gemma4:e4b --suite smoke"
+  ],
+  "stack": [
+   "Python",
+   "Pydantic (sole base runtime dependency)",
+   "optional HTTP server extra",
+   "optional gRPC",
+   "optional MCP integration",
+   "optional Gemini and other hosted model SDKs",
+   "SQLite (state, storage and run store)",
+   "Chroma, Pinecone, Qdrant (optional vector stores)",
+   "Langfuse, LangSmith (optional telemetry)",
+   "httpx2 (for Ollama and HTTP streaming)"
+  ],
+  "notable": [
+   "A2A-first design: AgentCard, Task, Message, Part and Artifact are core runtime primitives, with a2a=True translating to canonical A2A 1.0 JSON-RPC",
+   "Progressive control: the same constructor accepts names, aliases or fully configured objects, and every module is optional and replaceable",
+   "Infer loop with one action at a time, schema validation and a strict JSON action fallback for smaller self-hosted models",
+   "Deterministic structured flows (Pipeline, Parallel, Router, Graph) on the same Task-to-Task contract",
+   "Dependency-free local tracing, run reports and normalized report diffing for regression testing"
+  ],
+  "caveats": [
+   "Local command execution runs on the host and is explicitly not a sandbox",
+   "Some integrations need extras or API keys: Gemini requires an API key and extra install, Brave web search requires BRAVE_SEARCH_API_KEY, Google and Microsoft calendar/email adapters need the integrations extra",
+   "Remote streaming subscriptions require the peer to advertise streaming support; Ollama streaming requires httpx2"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11501,
+  "output": 1616
+ },
+ "generated": "2026-11-01"
+}

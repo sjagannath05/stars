@@ -1,0 +1,105 @@
+{
+ "id": "addy999/omniparser-api",
+ "repo": "addy999/omniparser-api",
+ "kind": "star",
+ "description": "Self-hosted version of Microsoft's OmniParser Image-to-text model",
+ "topics": [
+  "ai",
+  "api",
+  "fastapi",
+  "flyio",
+  "img2text",
+  "llm",
+  "python",
+  "rest",
+  "self-hosted"
+ ],
+ "language": "Python",
+ "stars": 89,
+ "license": "",
+ "homepage": "",
+ "pushed_at": "2025-05-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A self-hosted FastAPI server that wraps Microsoft's OmniParser model to convert UI screenshots into structured element lists with bounding boxes.",
+  "category": "ui screenshot parsing",
+  "keywords": [
+   "omniparser",
+   "omniparser api",
+   "screen parsing",
+   "ui screenshot parsing",
+   "gui element detection",
+   "icon detection",
+   "image to text",
+   "img2text",
+   "screenshot to structured data",
+   "ui agent",
+   "llm ui agent",
+   "fastapi",
+   "rest api",
+   "self-hosted api",
+   "docker",
+   "fly.io",
+   "bounding boxes",
+   "interactable element detection",
+   "vision model api",
+   "microsoft omniparser",
+   "gradio alternative",
+   "huggingface demo alternative",
+   "parse screenshots",
+   "computer use agent",
+   "web ui element extraction",
+   "self-host ai model"
+  ],
+  "what_it_does": "The repository packages Microsoft's OmniParser image-to-text model as a self-hosted service. Its Dockerfile starts from the Hugging Face demo image to get model weights and utility functions, then adds a FastAPI server in main.py to serve the model directly. The API has a single route, /process_image, which takes a UI screenshot. It returns three things: the image with bounding boxes drawn on it (base64-encoded), a list of parsed elements with text descriptions, and the bounding box coordinates of each element. The README says the author chose direct serving over Gradio because it is faster and avoids Hugging Face rate limits. The README also points to fly.toml for Fly.io deployment.",
+  "use_cases": [
+   "parse UI screenshots into structured elements for an LLM agent",
+   "detect clickable icons and buttons in a screenshot",
+   "get bounding box coordinates of UI elements",
+   "host an OmniParser endpoint on my own server",
+   "deploy a screen parsing API to fly.io",
+   "avoid Hugging Face Gradio rate limits for screen parsing"
+  ],
+  "how_to_run": [
+   "Clone the repository",
+   "Build the docker image: docker build -t omni-parser-app .",
+   "Run the docker container: docker run -p 7860:7860 omni-parser-app",
+   "Optionally deploy to fly.io by running: fly launch and following the prompts"
+  ],
+  "stack": [
+   "Python",
+   "FastAPI",
+   "Docker",
+   "Fly.io",
+   "OmniParser (Microsoft model, weights from Hugging Face demo image)"
+  ],
+  "notable": [
+   "Serves the OmniParser model directly through FastAPI instead of Gradio, which the author says is faster",
+   "Single /process_image route returns annotated image, parsed elements, and bounding boxes",
+   "Includes fly.toml and README instructions for one-command Fly.io deployment",
+   "Builds on the Hugging Face demo image to reuse its weights and utility functions"
+  ],
+  "caveats": [
+   "Requires a GPU and about 16 GB of RAM (swap recommended), per the README",
+   "The README's API docs link is truncated, so the docs location is not clear",
+   "Related-projects section mentions OneQuery, but the README gives no other usage details"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2097,
+  "output": 1162
+ },
+ "generated": "2026-11-01",
+ "license_checked": "2026-11-01"
+}

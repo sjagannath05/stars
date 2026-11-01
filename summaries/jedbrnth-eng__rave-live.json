@@ -1,0 +1,99 @@
+{
+ "id": "jedbrnth-eng/rave-live",
+ "repo": "jedbrnth-eng/rave-live",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Audio and Video Tools",
+   "entry": "RAVE LIVE - Festival light show that locks to the beat of whatever your Mac is playing, with stage lights, lasers and MilkDrop presets. [![Open-Source Software][OSS Icon]](https://github.com/jedbrnth-eng/rave-live) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "RAVE LIVE is a free, open-source macOS app that turns whatever your Mac is playing into a beat-locked light show with Stage, Classic Visuals, AURORA and MilkDrop modes.",
+  "category": "music visualizer for mac",
+  "keywords": [
+   "music visualizer",
+   "audio visualizer",
+   "beat-synced visuals",
+   "light show",
+   "festival light show",
+   "stage lights",
+   "laser show",
+   "milkdrop",
+   "projectm",
+   "milkdrop presets",
+   "vj software",
+   "vjing",
+   "syphon output",
+   "resolume alternative",
+   "system audio capture",
+   "screenshot audio visualizer",
+   "metal shaders",
+   "swift metal app",
+   "tempo detection",
+   "beat tracking",
+   "midi clock sync",
+   "synced lyrics",
+   "karaoke lyrics display",
+   "fluid simulation",
+   "shader lab",
+   "projector output",
+   "play music visuals on mac",
+   "visuals for dj set",
+   "free mac visualizer",
+   "gpl v3 mac app"
+  ],
+  "what_it_does": "RAVE LIVE captures the audio your Mac is playing (via ScreenCaptureKit, or a microphone or input device) and analyses its tempo, beat and bar line in real time. It drives four modes: a procedural club Stage with LED walls, moving heads and lasers; Classic Visuals with 48 presets and a Shader Lab for custom .metal files; AURORA, a GPU fluid simulation with particles that can react to the mouse or camera; and MILKDROP, which plays MilkDrop presets through projectM with changes locked to the beat. A SHOW mode cycles between these scenes on bar lines. The app includes VJ features such as Syphon output, a fullscreen projector output, MIDI Learn and MIDI clock sync, and an optional synced-lyrics display with a Now Playing card (lyrics are off by default because they query lrclib.net). The README also describes a strobe limit of 3 flashes per second by default, and a demo mode that runs with no music playing.",
+  "use_cases": [
+   "visuals that sync to music playing on a Mac",
+   "light show for a party or festival on a laptop",
+   "VJ visuals fed into Resolume, VDMX, OBS or MadMapper via Syphon",
+   "MilkDrop preset viewing on macOS",
+   "writing custom Metal fragment shaders as visuals",
+   "displaying synced lyrics over a music visualizer"
+  ],
+  "how_to_run": [
+   "Download RAVE-LIVE.dmg from the latest release, drag RAVE LIVE to Applications, and open it (approve it under System Settings → Privacy & Security, since it is not notarized).",
+   "Grant Screen & System Audio Recording permission, then quit and reopen the app.",
+   "Or run the one-line installer: curl -fsSL <url> | bash (the README gives the command without a full URL).",
+   "From source: git clone the repo, cd rave-live, swift test, scripts/make_app.sh, open \"build/RAVE LIVE.app\".",
+   "Try without music: open -n \"build/RAVE LIVE.app\" --args --demo"
+  ],
+  "stack": [
+   "Swift",
+   "Metal",
+   "ScreenCaptureKit",
+   "CoreAudio",
+   "Vision framework",
+   "projectM (libprojectM, LGPL-2.1)",
+   "Syphon",
+   "Python sidecar (optional Beat This! referee, PyTorch)",
+   "mediaremote-adapter",
+   "CMake"
+  ],
+  "notable": [
+   "Beat-locked scheduling: cues, transitions and MilkDrop preset changes land on a real-time beat and bar grid",
+   "Optional Beat This! (CPJKU, ISMIR 2024) Python referee corrects beat phase and tempo in the background",
+   "149 MilkDrop presets built in, with about 9,800 more downloadable on demand",
+   "Shader Lab hot-reloads .metal files dropped into a folder",
+   "No account, analytics or telemetry; network use only for the optional preset pack and lyrics"
+  ],
+  "caveats": [
+   "Mac only; Linux and Windows versions are planned with no date",
+   "System audio capture requires macOS 13 Ventura or later; macOS 12 needs a mic, interface or loopback driver such as BlackHole",
+   "Pre-release (0.6.0) with rough edges; the app is not notarized by Apple",
+   "Flashing lights and strobes can trigger photosensitive seizures; a photosensitivity warning is shown"
+  ],
+  "license": "GNU GPL v3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9330,
+  "output": 1628
+ },
+ "generated": "2026-11-01"
+}

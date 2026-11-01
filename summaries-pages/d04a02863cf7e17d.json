@@ -1,0 +1,72 @@
+{
+ "id": "d04a02863cf7e17d",
+ "url": "https://billduncan.org/the-tail-at-scale",
+ "final_url": "https://billduncan.org/the-tail-at-scale/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "The Tail at Scale | bill duncan's blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "The Tail at Scale"
+  }
+ ],
+ "summary": {
+  "name": "The Tail at Scale (SLO math)",
+  "one_liner": "A blog post working through the probability math for setting back end latency SLOs when a request fans out to many back end systems, building on the \"Tail at Scale\" paper.",
+  "category": "sre latency slo article",
+  "keywords": [
+   "tail at scale",
+   "tail latency",
+   "latency slo",
+   "back end slo",
+   "fanout latency",
+   "service level objective",
+   "service level agreement",
+   "nines availability",
+   "error budget",
+   "probability of success",
+   "independent events probability",
+   "hedged requests",
+   "deferred requests",
+   "bc -l calculation",
+   "dean barroso paper",
+   "lucene index latency",
+   "long tail latency",
+   "slo budget",
+   "p95 latency",
+   "scatter gather latency",
+   "sre blog",
+   "bill duncan blog"
+  ],
+  "use_cases": [
+   "derive back end SLO targets from a user-facing SLO",
+   "estimate required nines for a large service fanout",
+   "reason about tail latency in distributed systems",
+   "decide whether to send hedged or deferred replica requests",
+   "calculate combined success probability with bc"
+  ],
+  "what_it_does": "The post explains how to derive back end latency objectives from a user-facing SLO when a request fans out to N back end systems. It gives the formula SLA = SLO^N for independent systems and shows worked examples: a 95% target across 50 systems needs about 3 nines (0.9990) per back end, and across 500 systems about 4 nines (0.99990), with the calculation done in bc -l. It includes a short probability refresher on union and intersection of failure events. A real Lucene index case study describes using deferred secondary requests to handle outliers, since most responses arrived within half the budget. The author notes that hedged requests would double traffic.",
+  "pricing": "free",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Worked example deriving required per-backend nines from a 95% user SLO at 50 and 500 fanout",
+   "Real case study with thousands of Lucene index back end apps and a 20-second query SLO",
+   "Discusses deferring secondary requests to replicas instead of hedging to avoid doubling traffic"
+  ],
+  "caveats": [
+   "Explicitly does not cover user-level SLOs or SLAs",
+   "Assumes back end systems are independent and equal, which the author admits is rarely true",
+   "Presents the math as a rough estimate; the author concludes with 'Probably.'"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3108,
+  "output": 926
+ },
+ "generated": "2026-11-01"
+}

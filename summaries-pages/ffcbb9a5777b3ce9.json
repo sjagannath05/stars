@@ -1,0 +1,87 @@
+{
+ "id": "ffcbb9a5777b3ce9",
+ "url": "https://webextract.dev",
+ "final_url": "https://webextract.dev",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "WebExtract — web page to structured JSON: product, tables, metadata",
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "WebExtract - Turns one web page into Markdown or structured JSON, as a REST API or a remote MCP server (https://api.webextract.dev/mcp); the first 20 calls a day per IP are free, then pay per call in USDC over x402 or with prepaid credits. #freemium #api #mcp"
+  }
+ ],
+ "summary": {
+  "name": "WebExtract",
+  "one_liner": "A REST API and remote MCP server that turns any web page into clean Markdown plus fixed-schema JSON (product/price, tables, metadata) for AI agents and RAG pipelines.",
+  "category": "web extraction api",
+  "keywords": [
+   "web page to json",
+   "url to markdown",
+   "web scraping api",
+   "html to markdown",
+   "structured data extraction",
+   "web content extraction",
+   "rag data ingestion",
+   "ai agent web reader",
+   "mcp server",
+   "model context protocol",
+   "remote mcp server",
+   "product price extraction",
+   "html table extraction",
+   "article metadata extraction",
+   "page metadata api",
+   "gfm markdown tables",
+   "x402 payments",
+   "usdc micropayments",
+   "pay per call api",
+   "stripe credits",
+   "free web scraping api",
+   "langchain tools",
+   "vercel ai sdk tools",
+   "llms.txt",
+   "json from url",
+   "scrape web page for llm",
+   "readability markdown converter",
+   "webextract",
+   "webextractbot",
+   "robots.txt compliant scraper"
+  ],
+  "use_cases": [
+   "Feed clean page content into a RAG pipeline",
+   "Let an AI agent read a URL via MCP",
+   "Extract product name and price from a product page",
+   "Pull HTML tables into structured rows",
+   "Get article title, author and publish date from a page",
+   "Convert a web page to Markdown for LLM prompts"
+  ],
+  "what_it_does": "WebExtract fetches a URL and returns the main content as Markdown, with navigation, ads and scripts stripped and tables converted to GFM tables. The /v1/extract endpoint also returns a fixed-schema JSON with product fields (name, brand, SKU/GTIN, price, currency, availability, rating), tables with row and column counts, and metadata such as title, authors, dates, canonical URL and language. /v1/markdown returns only Markdown, title and word count at a lower price. It is available as a REST API, a remote streamable-HTTP MCP server with extract_url and page_markdown tools, and SDKs for Python and npm, plus LangChain and Vercel AI SDK helpers. Pages are fetched as raw HTML without running JavaScript, and the crawler respects robots.txt and does not bypass CAPTCHAs.",
+  "pricing": "freemium",
+  "platforms": [
+   "web",
+   "REST API",
+   "MCP",
+   "Python",
+   "npm",
+   "Docker"
+  ],
+  "notable": [
+   "Fixed JSON schema across sites, with price_detail that reports unresolved prices with a reason instead of 0",
+   "Pay-per-call in USDC via x402 with no account, plus prepaid Stripe credits that never expire",
+   "Remote MCP server listed in the official MCP Registry",
+   "No charge for failed fetches (404, timeout, blocked, robots.txt disallowed)"
+  ],
+  "caveats": [
+   "Does not run JavaScript yet, so client-rendered pages may return thin content",
+   "Free tier limited to 20 calls per day per IP; beyond that, paid prepaid credits or x402 USDC are needed",
+   "x402 payments are not on Ethereum mainnet and the sandbox only uses Base Sepolia test USDC"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4406,
+  "output": 1180
+ },
+ "generated": "2026-11-01"
+}

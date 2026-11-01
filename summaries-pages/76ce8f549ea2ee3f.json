@@ -1,0 +1,78 @@
+{
+ "id": "76ce8f549ea2ee3f",
+ "url": "http://highscalability.com/blog/2014/2/3/how-google-backs-up-the-internet-along-with-exabytes-of-othe.html",
+ "final_url": "https://highscalability.com/how-google-backs-up-the-internet-along-with-exabytes-of-othe/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "How Google Backs Up the Internet Along With Exabytes of Other Data - High Scalability -",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "How Google Backs Up The Internet Along With Exabytes Of Other Data"
+  }
+ ],
+ "summary": {
+  "name": "How Google Backs Up the Internet",
+  "one_liner": "A High Scalability write-up of Google SRE Raymond Blum's talk on how Google backs up exabytes of data, covering restore-focused design, tape redundancy, and automation.",
+  "category": "data backup architecture talk",
+  "keywords": [
+   "google backup",
+   "google data backup",
+   "site reliability engineering",
+   "sre",
+   "raymond blum",
+   "exabyte backup",
+   "large scale backup",
+   "restore testing",
+   "disaster recovery testing",
+   "tape backup",
+   "raid on tape",
+   "xor parity tape",
+   "gmail outage 2011",
+   "google file system",
+   "gfs",
+   "colossus",
+   "bigtable",
+   "mapreduce",
+   "automated backup",
+   "backup vs restore",
+   "distributed storage redundancy",
+   "data durability",
+   "high scalability blog",
+   "backup architecture",
+   "continuous restore verification",
+   "data loss prevention",
+   "location diversity"
+  ],
+  "use_cases": [
+   "Designing backup systems that scale to very large data volumes",
+   "Learning how to verify backups with continuous restore tests",
+   "Planning disaster recovery testing and site redundancy",
+   "Understanding tape-based backup with parity across tapes",
+   "Studying how to automate operations to avoid linear staffing growth"
+  ],
+  "what_it_does": "The page summarizes a talk by Google SRE Raymond Blum on how Google backs up its data at exabyte scale. The main theme is that restores matter more than backups, so the system is designed to make restores fast and simple while backups can be complex. It describes writing data to tape with parity across tapes (4 data tapes plus 1 XOR code tape), running continuous restore tests on random samples of backups, and checksum-based comparisons. It also covers automation of scheduling, tape failure handling, and machine failure handling so humans are not involved in steady-state operations. The GMail 2011 outage is discussed as a case study in recovering data from overlapping layers of the stack.",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Restore-first design: backups are treated as a tax paid for fast, simple restores",
+   "RAID-like parity across tapes (4 data tapes plus 1 XOR tape) with continuous restore sampling",
+   "Explicit rule that scaling effort must not be linear with data growth, enforced by automation",
+   "GMail 2011 outage recovery explained as overlap across tape, replication, front-ends and logs"
+  ],
+  "caveats": [
+   "Secondhand summary of a talk; Google did not disclose its total data size or many implementation details",
+   "Some details, such as the encryption-key deletion approach, were not explained by the speaker",
+   "Describes Google systems as of 2014 (GFS replaced around a year before by Colossus)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7857,
+  "output": 1048
+ },
+ "generated": "2026-11-01"
+}

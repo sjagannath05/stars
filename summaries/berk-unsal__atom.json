@@ -1,0 +1,115 @@
+{
+ "id": "berk-unsal/atom",
+ "repo": "Berk-Unsal/atom",
+ "kind": "star",
+ "description": "Open-source cellular RF planning workspace for real-map propagation, interference analysis, and bounded network optimization.",
+ "topics": [
+  "5g",
+  "cellular-network",
+  "geospatial",
+  "golang",
+  "network-planning",
+  "openstreetmap",
+  "ran",
+  "react",
+  "rf",
+  "telecommunications"
+ ],
+ "language": "Go",
+ "stars": 39,
+ "license": "MIT",
+ "homepage": "https://atom.berkunsal.com/",
+ "pushed_at": "2026-10-30",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A.T.O.M is an open-source, planning-grade cellular RF planning workspace that models 4G/5G (and an experimental 6G profile) coverage, interference, and bounded azimuth optimization on OpenStreetMap-based data for Ankara, Turkey.",
+  "category": "cellular rf planning",
+  "keywords": [
+   "rf planning",
+   "cellular network planning",
+   "ran planning",
+   "5g planning",
+   "4g lte",
+   "6g research",
+   "ray tracing",
+   "propagation model",
+   "path loss",
+   "interference analysis",
+   "sinr",
+   "rsrp",
+   "azimuth optimization",
+   "antenna tilt and azimuth",
+   "network optimization",
+   "coverage analysis",
+   "openstreetmap",
+   "osmnx",
+   "opencellid",
+   "geospatial",
+   "r-tree spatial index",
+   "golang",
+   "react leaflet",
+   "telecom simulation",
+   "candidate cell recommendation",
+   "measurement validation",
+   "dataset pack",
+   "docker self-hosted",
+   "mobile network coverage map",
+   "help me place cell towers",
+   "simulate cell site coverage"
+  ],
+  "what_it_does": "The app lets users place two to eight cells on a map of a dataset region (the bundled dataset is Ankara) and evaluate baseline coverage using deterministic RF estimation from OSM and OpenCellID-derived data. It produces received-power surfaces and colored diagnostic rays, plus 4G/5G interference metrics such as RSRP, SINR, RSRQ and RSSI. It runs bounded azimuth optimization scored on POI and residential demand, propagation reach and overlap, and includes per-cell explanations and feasible Pareto solutions. Additional tools cover a coverage gap finder, building-entry estimates, candidate cell recommendations from existing records, and validation of up to 5,000 RSRP samples. Results are exported as local Markdown/HTML reports and project/ZIP files, and the Dataset Pack Studio builds packs for other geographies. The README states these are planning estimates, not measured propagation accuracy.",
+  "use_cases": [
+   "Compare azimuth options for a small urban cell plan",
+   "Visualize 4G/5G coverage and interference on a real map",
+   "Find underserved buildings within a sector beam",
+   "Evaluate candidate sites among existing cells in a search area",
+   "Validate model predictions against drive-test RSRP samples",
+   "Build and export reproducible RF planning reports for review"
+  ],
+  "how_to_run": [
+   "git lfs install",
+   "git clone the repository, cd atom, and run git lfs pull",
+   "docker compose up --build -d atom",
+   "Open the app in a browser and check readiness with curl",
+   "cd backend-go && go run ./cmd/validate-dataset ../data-pipeline (optional, validates bundled dataset pack)"
+  ],
+  "stack": [
+   "Go",
+   "React",
+   "Vite",
+   "Leaflet",
+   "Python",
+   "OSMnx",
+   "Docker",
+   "Git LFS"
+  ],
+  "notable": [
+   "Deterministic ray tracing with bounded Go worker pools and an in-memory R-tree spatial index, with no database required",
+   "Explicit model-provenance labeling: urban LOS/NLOS path loss kept separate from legacy wall-event loss, and research profiles (6G 140 GHz, sub-THz, reflection) isolated from canonical RF",
+   "Map-first four-stage workflow (Plan, Simulate, Analyze, Review) with local autosaved projects, scenario versions and run history",
+   "Optional 5G Core Lab overlay showing Xn, N2 and N3 communication paths with a separate adapter sidecar",
+   "Dataset Pack Studio and validated dataset switching for arbitrary regions via schema-v2 packs"
+  ],
+  "caveats": [
+   "Results are planning estimates from static OSM and OpenCellID data; the README states measured real-world propagation accuracy is not yet established and they are not drive-test or PHY measurements",
+   "Sector engine does not model reflection-heavy multipath, fading, multiple-edge diffraction, or MIMO scheduling; interference is limited to 4G/5G and the 6G profile is experimental",
+   "The bundled Ankara building dataset is 111 MB via Git LFS, and heavier workloads depend on hardware; the README qualifies capacity only for a specific 2 CPU / 4 GiB profile"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7792,
+  "output": 1582
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,75 @@
+{
+ "id": "bc341ca8f999c90a",
+ "url": "https://auth0.com/blog/progressive-service-architecture-at-auth0",
+ "final_url": "https://auth0.com/blog/progressive-service-architecture-at-auth0/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Progressive Service Architecture Eng. and Feature Flags at Auth0",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Progressive Service Architecture At Auth0"
+  }
+ ],
+ "summary": {
+  "name": "Progressive Service Architecture at Auth0",
+  "one_liner": "A blog post describing how Auth0's SRE team built a feature flags router service and SDK by progressively adding a secondary store, Redis cache, and circuit-breaking for high availability.",
+  "category": "service architecture case study",
+  "keywords": [
+   "feature flags",
+   "feature toggles",
+   "feature flags router",
+   "feature flag sdk",
+   "circuit breaker",
+   "circuit breaking pattern",
+   "fallback store",
+   "high availability architecture",
+   "self-healing service",
+   "redis cache",
+   "mongodb fallback",
+   "disyuntor",
+   "hapijs",
+   "grpc",
+   "auth0 sre",
+   "service topology",
+   "caching layer",
+   "cache ttl invalidation",
+   "failover design",
+   "resilient service design",
+   "read-only feature flag client",
+   "reliability engineering",
+   "launchdarkly alternative",
+   "capacity planning fallback",
+   "progressive architecture",
+   "site reliability engineering"
+  ],
+  "use_cases": [
+   "Designing a highly available feature flag service",
+   "Adding fallback between primary and secondary databases",
+   "Implementing circuit breakers around database or API calls",
+   "Planning capacity for failover stores",
+   "Learning progressive service architecture for reliability"
+  ],
+  "what_it_does": "The post walks through four stages of a feature flags service: a client connecting directly to a database, adding a primary and secondary store with fallback, adding a Redis cache in front of the stores, and wrapping calls in circuit breakers. Each stage lists pros and cons, such as failover benefits versus added infrastructure cost and capacity-planning difficulty. It describes Auth0's disyuntor circuit-breaking library, with settings like 4 max failures, a 15-second cooldown, and 5-second REST or 1-second gRPC timeouts. It also covers a disaster scenario table and planned next steps, including circuit breaking at the cache layer and request memoization.",
+  "pricing": "unknown",
+  "platforms": [
+   "Node.js"
+  ],
+  "notable": [
+   "Layered topology: direct database, primary/secondary stores with fallback, then Redis cache plus circuit breaking",
+   "Uses the disyuntor circuit-breaking library with transient-error filtering",
+   "Auth0 chose to build its own feature flags service rather than use LaunchDarkly"
+  ],
+  "caveats": [
+   "Describes Auth0's internal system; the disyuntor library and feature flags service are not presented as publicly available products",
+   "The author notes the design may be open sourced in the future, but this is not confirmed"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7584,
+  "output": 976
+ },
+ "generated": "2026-11-01"
+}

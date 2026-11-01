@@ -1,0 +1,97 @@
+{
+ "id": "kernel-hunter/mudroom",
+ "repo": "Kernel-Hunter/mudroom",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Mudroom - Open-source app and CLI that runs coding agents like Claude Code and Codex in a Linux micro-VM on a copy-on-write clone of your project, then lets you review and apply their changes like a pull request. [![Open-Source Software][OSS Icon]](https://github.com/Kernel-Hunter/mudroom) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Mudroom is a free, MIT-licensed app and CLI that runs coding agents (Claude Code, Codex, Gemini CLI, opencode, Aider, or any command) on a copy-on-write clone of your project inside a Linux micro-VM or container, with allowlisted network access, and lets you review and selectively apply their changes.",
+  "category": "ai agent sandboxing",
+  "keywords": [
+   "coding agent sandbox",
+   "ai coding agent",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "opencode",
+   "aider",
+   "micro-vm",
+   "linux vm",
+   "copy-on-write clone",
+   "apfs clone",
+   "reflink",
+   "network allowlist",
+   "egress proxy",
+   "sandbox review diff",
+   "review agent changes",
+   "apply hunks",
+   "selective apply",
+   "undo changes",
+   "docker sandbox alternative",
+   "cloud sandbox alternative",
+   "run ai agent safely",
+   "keep secrets away from agent",
+   "share files with my team",
+   "local ai agent",
+   "podman",
+   "apple container",
+   "git diff review",
+   "snapshots",
+   "mac app",
+   "swift cli"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Run Claude Code or Codex on a project without letting it touch your real folder",
+   "Review and selectively apply AI agent edits file by file or hunk by hunk",
+   "Restrict which hosts an AI agent can reach and log its connections",
+   "Keep .env files and keys out of an agent's working copy",
+   "Run local models via Ollama or LM Studio inside a sandboxed agent session",
+   "Undo changes an agent made to a project"
+  ],
+  "how_to_run": [
+   "brew install --cask kernel-hunter/tap/mudroom",
+   "mudroom setup",
+   "mudroom run ~/code/myapp -- claude --dangerously-skip-permissions",
+   "mudroom review last",
+   "mudroom network log last",
+   "mudroom undo last"
+  ],
+  "stack": [
+   "Swift 6.2+",
+   "Apple container CLI",
+   "Docker",
+   "Podman",
+   "Sparkle (Mac app updater)",
+   "nftables",
+   "Node LTS (in agent image)"
+  ],
+  "notable": [
+   "Your project folder is never mounted; the agent edits a copy-on-write clone and changes apply only when you choose",
+   "Locked-by-default network allowlist via a local proxy that logs every connection and the program that opened it",
+   "Per-file and per-hunk review with undo for each apply, and your own concurrent edits are never overwritten",
+   "Keeps .env, *.pem, SSH keys and .netrc out of the agent's copy by default, configurable with .gitignore-style patterns",
+   "Works as a macOS app and a CLI on macOS, Linux and Windows (review app is macOS only)"
+  ],
+  "caveats": [
+   "Early prototype; expect rough edges and breaking changes",
+   "The Mac review app requires Apple silicon and macOS 26; Linux, Windows and Intel Macs get CLI only, using Docker or Podman",
+   "Mac app is ad-hoc signed, not notarized, so Gatekeeper needs manual approval when downloaded in a browser"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17155,
+  "output": 1177
+ },
+ "generated": "2026-11-01"
+}

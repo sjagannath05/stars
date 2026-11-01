@@ -1,0 +1,74 @@
+{
+ "id": "e43f5b33389c7417",
+ "url": "https://ervinbarta.com/2021/10/19/slo-alerting-for-mortals",
+ "final_url": "https://ervinbarta.com/2021/10/19/slo-alerting-for-mortals/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SLO Alerting for Mortals",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "SLO Alerting for Mortals"
+  }
+ ],
+ "summary": {
+  "name": "SLO Alerting for Mortals",
+  "one_liner": "A step-by-step blog post explaining SLO alerting concepts such as error budgets, burn rate, and multi-window alerts, using worked examples.",
+  "category": "sre reading material",
+  "keywords": [
+   "slo alerting",
+   "service level objective",
+   "service level indicator",
+   "sli",
+   "error budget",
+   "burn rate",
+   "multi-window alerts",
+   "multi-window burn rate",
+   "prometheus alerting",
+   "http error rate",
+   "error rate alert",
+   "99.9% slo",
+   "downtime budget",
+   "sre alerting",
+   "site reliability engineering",
+   "awesome-sre",
+   "scrape interval",
+   "alert fatigue",
+   "slo math",
+   "monitoring alerts explained",
+   "how to set slo alert",
+   "promql http_error_rate",
+   "google slo alerting",
+   "time window alerting",
+   "beginner sre guide"
+  ],
+  "use_cases": [
+   "Learning how SLO-based alerts are derived",
+   "Understanding error budget consumption",
+   "Designing short and long window alert conditions",
+   "Converting SLO percentages into downtime minutes",
+   "Reducing long-running or noisy alerts"
+  ],
+  "what_it_does": "The post introduces SLOs and SLIs and explains how a 99.9% monthly SLO leaves a 0.1% error budget, roughly 43 minutes of full downtime per month. It defines burn rate as how fast the error budget is consumed and shows how to compute a burn-rate multiplier (for example 2% of budget per hour gives about 14.3). It walks through a simulated scenario with 10% errors over 10 minutes to show why a single one-hour window keeps an alert firing too long. It then shows how adding a 5-minute window alongside the 1-hour window, with a shared threshold of 1.4%, ends the alert shortly after errors stop. The post is explanatory, not a tool, and points to Google's SLO alerting documentation for multi-burn-rate alerts.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Step-by-step explanation with illustrated and occasionally animated examples",
+   "Worked simulation of a 10% error rate showing why long windows keep alerts active",
+   "Explains multi-window alerts combining a 5-minute and 1-hour window"
+  ],
+  "caveats": [
+   "Covers basic multi-window alerts only; multi-level, multi-burn-rate alerting is left out and referred to Google's documentation",
+   "Simulation uses 5-minute snapshots for simplicity; real setups often use 30s or 1-minute intervals"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5203,
+  "output": 990
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,116 @@
+{
+ "id": "nicolaka/netshoot",
+ "repo": "nicolaka/netshoot",
+ "kind": "star",
+ "description": "a Docker + Kubernetes network trouble-shooting swiss-army container",
+ "topics": [
+  "containers",
+  "docker",
+  "kubernetes",
+  "network",
+  "network-namespace",
+  "troubleshooting"
+ ],
+ "language": "Shell",
+ "stars": 11067,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-09-22",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "netshoot is a Docker and Kubernetes network troubleshooting container packed with networking, DNS, performance, and packet-capture tools that you run inside another container's or host's network namespace.",
+  "category": "network troubleshooting container",
+  "keywords": [
+   "network troubleshooting",
+   "debug container",
+   "docker network debug",
+   "kubernetes network debug",
+   "kubectl debug",
+   "ephemeral container",
+   "network namespace",
+   "nsenter",
+   "tcpdump",
+   "packet capture",
+   "tshark",
+   "wireshark alternative",
+   "traceroute",
+   "mtr",
+   "iperf3",
+   "dns debugging",
+   "drill",
+   "dig",
+   "nmap",
+   "port scan",
+   "grpcurl",
+   "fortio load test",
+   "swaks smtp test",
+   "ctop",
+   "sidecar debug",
+   "throwaway pod",
+   "swiss army knife container",
+   "network diagnostics",
+   "check port open",
+   "debug pod networking",
+   "test dns resolution",
+   "measure throughput between pods"
+  ],
+  "what_it_does": "netshoot is a container image bundling many network diagnostics tools. It can be attached to another container's network namespace (docker run --net container:, or Docker Compose network_mode: service:), to the host's namespace, or to a Bridge network namespace via nsenter. In Kubernetes it can be used as an ephemeral container with kubectl debug, a throwaway pod, a host-network pod, or a sidecar in a Deployment. The README's troubleshooting scenarios cover DNS resolution (drill, resolv.conf), latency and throughput (mtr, trippy, iperf3, fping), reachability and port checks (nc, nmap, tcptraceroute, nping, ss), packet capture and inspection (tcpdump, ngrep, termshark, tshark), gRPC and HTTP testing (grpcurl, httpie, fortio, openssl), and SMTP testing (swaks). The included tools table also lists calicoctl, bird, strace, ipvsadm, and iptables. A kubectl-netshoot plugin wraps common run and debug commands.",
+  "use_cases": [
+   "debug a container's networking without installing tools into its image",
+   "diagnose DNS failures inside a Kubernetes cluster",
+   "capture packets from a pod or container to a pcap file",
+   "test whether a service port is reachable between pods",
+   "measure latency, packet loss, and throughput between nodes or pods",
+   "validate a gRPC endpoint or SMTP relay with TLS and AUTH"
+  ],
+  "how_to_run": [
+   "docker run -it --net container: nicolaka/netshoot",
+   "docker run -it --net host nicolaka/netshoot",
+   "kubectl debug -it --image=nicolaka/netshoot",
+   "kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot"
+  ],
+  "stack": [
+   "Shell",
+   "Docker",
+   "Kubernetes",
+   "kubectl",
+   "Calico (calicoctl)",
+   "tcpdump",
+   "tshark",
+   "drill",
+   "nmap",
+   "iperf3",
+   "fortio",
+   "grpcurl",
+   "swaks"
+  ],
+  "notable": [
+   "Attaches to another container's or host's network namespace, so tools need not be installed in the target image",
+   "Works as a Kubernetes ephemeral container, throwaway pod, host-network pod, or sidecar",
+   "Broad bundled toolset spanning DNS, packet capture, performance, scanning, gRPC/HTTP, and SMTP",
+   "Ships a kubectl-netshoot plugin with run, debug, and node debug subcommands",
+   "README includes task-oriented troubleshooting scenarios with example commands"
+  ],
+  "caveats": [
+   "Packet capture and nsenter into Docker bridge namespaces require --privileged or host namespace access, which is a security consideration",
+   "Several examples use placeholder values (e.g. <host>, <ip>) that must be filled in before use",
+   "README does not state supported platforms beyond the contribution note about linux/amd64 and linux/arm64 for multi-platform tools"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5195,
+  "output": 1473
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,101 @@
+{
+ "id": "herval/littleguys",
+ "repo": "herval/littleguys",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "💬 Chat (27)",
+   "entry": "littleguys - WhatsApp-style app for talking to your AI agents (OpenClaw, Hermes, Claude Code, Codex and any ACP agent)."
+  }
+ ],
+ "summary": {
+  "one_liner": "littleguys is a free, open-source macOS app that gives your AI agents (OpenClaw, Hermes, Claude Code, Codex and other ACP agents) WhatsApp-style chat threads, with a menu-bar sprite that shows which agent needs you.",
+  "category": "macos ai agent chat",
+  "keywords": [
+   "ai agent client",
+   "macos chat app",
+   "menu bar app",
+   "openclaw",
+   "hermes agent",
+   "claude code",
+   "codex",
+   "acp client",
+   "agent client protocol",
+   "gemini cli",
+   "goose",
+   "opencode",
+   "chat with ai agents",
+   "manage multiple ai agents",
+   "whatsapp-style interface",
+   "cron routines",
+   "scheduled agent tasks",
+   "approve agent commands",
+   "tauri app",
+   "rust react app",
+   "openclaw gateway",
+   "tailscale",
+   "bonjour discovery",
+   "iphone companion app",
+   "homebrew cask",
+   "self-hosted agent ui",
+   "agent approval prompts",
+   "run ai agents on my mac",
+   "talk to my coding agent from phone"
+  ],
+  "what_it_does": "littleguys is a macOS app (macOS 13 or later, Apple silicon and Intel) that presents each AI agent as a contact with its own chat threads. The sidebar lists agents as cards, with streaming replies, tool-call chips, attachments, and approve/deny controls for commands. A menu-bar sprite and a popover show each agent's status (idle, working, new reply, needs you, offline) with a last-message preview and quick reply. The Routines feature runs cron-style jobs with friendly schedules, run-now and run history, with results landing in a thread. It can connect to several OpenClaw gateways at once, discovered on the Tailscale tailnet or LAN, and to Hermes Agent, Claude Code sessions on the Mac, and ACP agents started locally or reached over WebSocket. The README also describes a companion iPhone app that pairs with the Mac via QR code and end-to-end encryption.",
+  "use_cases": [
+   "chat with several AI coding agents in one window",
+   "see which AI agent is waiting for my approval from the menu bar",
+   "follow and reply to Claude Code sessions running in my terminal",
+   "schedule recurring agent tasks with cron-style routines",
+   "manage OpenClaw gateways on my Mac, tailnet, or LAN",
+   "reach my local AI agents from an iPhone"
+  ],
+  "how_to_run": [
+   "brew install herval/tap/littleguys",
+   "Or download the .dmg from the Releases page on GitHub",
+   "Building from source: curl -fsSL <install script URL> | bash (the URL is blank in the README)",
+   "make install",
+   "make run",
+   "make build"
+  ],
+  "stack": [
+   "Rust (Tauri core)",
+   "React",
+   "Tailwind CSS",
+   "zustand",
+   "WebSocket protocol v4 (OpenClaw gateway)",
+   "Agent Client Protocol (ACP)",
+   "Hermes Agent JSON-RPC",
+   "Noise IK encryption (phone bridge)",
+   "Ed25519 device keys",
+   "Bonjour / Tailscale discovery",
+   "Node 22+ and pnpm (build)"
+  ],
+  "notable": [
+   "Unified chat for OpenClaw, Hermes, Claude Code and any ACP agent, each agent shown as a contact",
+   "Menu-bar sprite and popover show live status of every agent across gateways",
+   "Follows Claude Code sessions already running in the terminal via a littleguys plugin",
+   "Connects to multiple OpenClaw gateways at once, discovered over Tailscale and Bonjour",
+   "iPhone companion pairs by QR code with end-to-end encrypted sessions"
+  ],
+  "caveats": [
+   "macOS only; requires macOS 13 or later",
+   "Notifications do not jump to the thread when clicked (known gap)",
+   "Codex and other ACP agents running in a terminal do not appear; littleguys only sees sessions it starts itself, unlike Claude Code",
+   "Per-agent browser isolation is soft: a managed Chrome profile plus an AGENTS.md instruction, since OpenClaw has no per-agent browser binding",
+   "Phone notifications go through littleguys-relay, a separate service"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6334,
+  "output": 1537
+ },
+ "generated": "2026-11-01"
+}

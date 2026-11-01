@@ -1,0 +1,89 @@
+{
+ "id": "getguruhat/ai-meter",
+ "repo": "getguruhat/ai-meter",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "AI Meter - Shows your remaining Claude Code or Codex usage and reset time in the menu bar. [![Open-Source Software][OSS Icon]](https://github.com/getguruhat/ai-meter) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A free, open-source menu bar (macOS) and taskbar (Windows) app that shows how much of your Claude Code or Codex usage window is left and when it resets.",
+  "category": "usage monitoring menu bar",
+  "keywords": [
+   "claude code usage",
+   "codex usage",
+   "ai usage meter",
+   "menu bar app",
+   "macos menu bar",
+   "windows taskbar",
+   "swift package",
+   "swift",
+   "usage limit tracker",
+   "rate limit monitor",
+   "token allowance",
+   "remaining quota",
+   "reset time",
+   "claude code limit",
+   "chatgpt codex limit",
+   "status bar utility",
+   "launchd agent",
+   "homebrew cask",
+   "keychain credentials",
+   "curl usage endpoint",
+   "open source menu bar tool",
+   "plan refactor around limits",
+   "avoid hitting usage cap",
+   "ai allowance widget",
+   "microsoft store app"
+  ],
+  "what_it_does": "Displays the remaining allowance for either Codex or Claude, selectable from the menu, along with the time the usage window resets. For Codex it reads the ChatGPT session in ~/.codex/auth.json; for Claude it reads the five-hour window from the Claude Code sign-in stored in the macOS Keychain, falling back to ~/.claude/.credentials.json. It refreshes every five minutes and makes requests to the provider's usage endpoint through the system curl command. When a Claude sign-in has expired, it runs \"claude doctor\" in the background (at most every 10 minutes) so the CLI renews the token without sending a prompt. The README states there is no account, no analytics, and no server of its own. The macOS app is a menu-bar-only application; the Windows version is in a separate repository.",
+  "use_cases": [
+   "check how much Claude Code usage is left before a big task",
+   "see when the Codex usage window resets",
+   "avoid being cut off mid-refactor by a usage limit",
+   "keep an AI usage gauge visible in the Mac menu bar",
+   "monitor AI coding allowance on Windows taskbar",
+   "build and run a Swift menu bar app from source"
+  ],
+  "how_to_run": [
+   "brew install --cask getguruhat/tap/ai-meter",
+   "swift build -c release",
+   "swift run -c release",
+   "./build-app.sh"
+  ],
+  "stack": [
+   "Swift 5.9+",
+   "Swift Package Manager",
+   "macOS Keychain",
+   "system curl",
+   "launchd",
+   "Windows (separate repo getguruhat/ai-meter-windows)"
+  ],
+  "notable": [
+   "Reads existing local Claude Code and Codex sign-ins; no separate account needed",
+   "Automatically triggers 'claude doctor' to renew expired Claude sign-ins without using allowance",
+   "Ships as a Homebrew cask, DMG installer, and Microsoft Store listing",
+   "Optional launchd agent for starting at login",
+   "Mac and Windows versions both listed in the same project page"
+  ],
+  "caveats": [
+   "macOS version requires macOS 13+ on Apple silicon; the DMG build is not notarized, so it needs manual approval in Privacy & Security",
+   "If a provider changes its usage endpoint, the display shows 'AI —' until the app is updated",
+   "Relies on undocumented local credential files and Keychain entries of Claude Code and Codex",
+   "The launchd plist hardcodes the path /Users/andre/Applications/AI Meter.app and must be edited for other users"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3511,
+  "output": 1261
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,78 @@
+{
+ "id": "beb64d841dae9e5c",
+ "url": "https://engineering.fb.com/2021/12/13/production-engineering/slick",
+ "final_url": "https://engineering.fb.com/2021/12/13/production-engineering/slick/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SLICK: Adopting SLOs for improved reliability",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "SLICK: Adopting SLOs for improved reliability"
+  }
+ ],
+ "summary": {
+  "name": "SLICK",
+  "one_liner": "SLICK is Meta's internal dedicated SLO store for centralizing service-level indicator and objective definitions, storing long-term metric data, and generating dashboards and reports.",
+  "category": "internal slo platform",
+  "keywords": [
+   "slick",
+   "slo store",
+   "service level objective",
+   "service level indicator",
+   "sli",
+   "slo",
+   "slos",
+   "reliability monitoring",
+   "metrics retention",
+   "meta engineering",
+   "facebook engineering",
+   "reliability reporting",
+   "service reliability dashboard",
+   "slo dashboard",
+   "sre tooling",
+   "production engineering",
+   "slo configuration dsl",
+   "reliability review",
+   "monitoring data pipeline",
+   "sharded mysql metrics store",
+   "service reliability index",
+   "track service uptime goals",
+   "long-term reliability trends",
+   "slo cli",
+   "error budget tooling",
+   "logdevice",
+   "incident criteria slo"
+  ],
+  "use_cases": [
+   "Centralizing SLO definitions across many services",
+   "Finding a team's reliability status quickly",
+   "Spotting long-term reliability regressions",
+   "Generating periodic SLO performance reports for reliability reviews",
+   "Backfilling metric data and testing config changes via CLI"
+  ],
+  "what_it_does": "SLICK lets service owners define SLIs and SLOs in a unified way, either through an editing UI or a config file written in a DSL. Hourly data pipelines pull SLI time series at one-minute granularity from monitoring datasets and store them in a sharded MySQL database with up to two years of retention. It generates per-service dashboards and a searchable index of onboarded services. It also posts periodic SLO performance reports to internal groups and provides a CLI for backfilling data, generating reports, and testing config changes.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Per-minute metric granularity with up to two years of retention",
+   "Hourly data pipelines with data quality checks using deterministic test time series",
+   "Over 1,000 services onboarded by 2021",
+   "Integrates SLOs into on-call tooling and incident declaration criteria"
+  ],
+  "caveats": [
+   "Internal Meta tool; not publicly available as a product",
+   "Page describes Meta's internal system and does not document external installation or licensing",
+   "Planned future work (dependency-aware SLOs, improvement suggestions, scaling) is not yet delivered per the page"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4521,
+  "output": 932
+ },
+ "generated": "2026-11-01"
+}

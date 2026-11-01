@@ -1,0 +1,73 @@
+{
+ "id": "ac5293a608fd30ff",
+ "url": "https://cloudplatform.googleblog.com/2018/01/an-example-escalation-policy-CRE-life-lessons.html",
+ "final_url": "https://cloud.google.com/blog/products/gcp/an-example-escalation-policy-cre-life-lessons",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SRE at Google: An example escalation policy | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "An example escalation policy — CRE life lessons"
+  }
+ ],
+ "summary": {
+  "name": "SRE escalation policy example (Google Cloud Blog)",
+  "one_liner": "A Google Cloud Blog post presenting a lightly edited example SLO escalation policy from a Google SRE team, with the reasoning behind each threshold.",
+  "category": "sre reliability practices",
+  "keywords": [
+   "sre escalation policy",
+   "slo escalation policy",
+   "error budget policy",
+   "service level objective",
+   "slo violation",
+   "error budget burn rate",
+   "escalation thresholds",
+   "release freeze",
+   "blocking releases",
+   "revoking slo support",
+   "site reliability engineering",
+   "reliability vs feature velocity",
+   "postmortem",
+   "follow-the-sun on-call",
+   "customer reliability engineer",
+   "google sre example",
+   "cre life lessons",
+   "alerting on error budget burn",
+   "dev team escalation",
+   "incident response policy",
+   "sre best practices",
+   "availability targets",
+   "error budget exhausted",
+   "release velocity tradeoff"
+  ],
+  "use_cases": [
+   "Drafting an SLO escalation policy for an SRE team",
+   "Deciding when to freeze feature releases after an SLO breach",
+   "Understanding trade-offs between reliability work and feature velocity",
+   "Setting error-budget-based alerting thresholds",
+   "Defining when SRE can hand a service back to developers"
+  ],
+  "what_it_does": "The post walks through an example SLO escalation policy used by a Google SRE team that supports about ten high-traffic services and a dozen smaller ones, split across European and American shards for follow-the-sun on-call. It describes four escalation thresholds: SRE notification, escalation to developers, pausing feature releases to focus on reliability, and escalating to executives or revoking SLO support. It also explains the reasoning for blocking releases while error budget is spent, and says a fix must address the class of issue rather than only the symptom. Alerting is tied to error-budget burn, paging at nine hours of budget burned within an hour and filing a ticket at one week of budget burned over a week.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Four-threshold escalation ladder from SRE-only response up to revoking SLO support",
+   "Explains why blocking releases lowers steady-state error-budget burn and aligns SRE and dev incentives",
+   "Explicitly notes the example is probably a poor fit for services with 99.99% or higher availability targets"
+  ],
+  "caveats": [
+   "Explicitly described as an example policy, not a universal standard; it may be a poor fit for services targeting 99.99% or higher availability",
+   "Written for a highly competitive industry where feature speed matters more than maximum availability"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4408,
+  "output": 1006
+ },
+ "generated": "2026-11-01"
+}

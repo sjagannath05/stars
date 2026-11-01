@@ -1,0 +1,77 @@
+{
+ "id": "2e75e61945c77d17",
+ "url": "http://www.susanjfowler.com/blog/2016/11/2/the-irreproducibility-of-bugs-in-large-scale-production-systems",
+ "final_url": "https://www.susanjfowler.com/blog/2016/11/2/the-irreproducibility-of-bugs-in-large-scale-production-systems",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "The Irreproducibility of Bugs in Large-Scale Production Systems — Susan Fowler",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Culture",
+   "entry": "The Irreproducibility Of Bugs In Large-Scale Production Systems"
+  }
+ ],
+ "summary": {
+  "name": "The Irreproducibility of Bugs in Large-Scale Production Systems",
+  "one_liner": "A blog essay by Susan Fowler arguing that bugs in large microservice production systems often cannot be reproduced because the system's state is constantly changing, so engineers should instead design logging that captures system state.",
+  "category": "software engineering essay",
+  "keywords": [
+   "irreproducible bugs",
+   "bug reproducibility",
+   "production systems",
+   "large-scale production",
+   "microservices",
+   "microservice architecture",
+   "observability",
+   "logging design",
+   "incident response",
+   "root cause analysis",
+   "debugging production",
+   "site reliability engineering",
+   "sre culture",
+   "system state",
+   "postmortem",
+   "outage debugging",
+   "distributed systems",
+   "service versioning",
+   "state of the system",
+   "reproduce bugs in production",
+   "why bugs can't be reproduced",
+   "production-ready microservices",
+   "uber engineering",
+   "susan fowler",
+   "logging best practices",
+   "monitoring",
+   "deployment frequency"
+  ],
+  "use_cases": [
+   "Understanding why bugs are hard to reproduce in production",
+   "Designing logs that capture system state at event time",
+   "Debugging outages in microservice ecosystems",
+   "Deciding whether to version microservices or endpoints",
+   "Learning SRE culture and incident response thinking"
+  ],
+  "what_it_does": "The essay describes a thought experiment with hundreds of interdependent microservices deployed daily, showing how constant change in code, configuration and infrastructure makes it impossible to recreate the exact system state needed to reproduce a bug. It argues that the track-down, reproduce, and fix cycle breaks down at the reproduction step, while locating and deploying fixes remains feasible with good monitoring and observability. The author's recommended workaround is to design logging so that the state of the system at the time of each logged event can be determined from the logs alone. She advises against versioning microservices or endpoints as a way to solve this, because it leads to clients pinning to outdated versions. The post is based on her experience at Uber and her book Production-Ready Microservices.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Frames irreproducibility as a problem of changing system state rather than of bugs themselves",
+   "Recommends logging designed to capture system state at event time instead of adding logs after each failure",
+   "Advises against microservice versioning as a workaround because clients end up pinned to old versions",
+   "Written from the author's experience at Uber, with a 1000-to-1500 microservice ecosystem"
+  ],
+  "caveats": [
+   "The essay gives no comprehensive list of what to log; it offers only a rule of thumb",
+   "Reproducibility advice is framed for large microservice systems and may not apply to small, self-contained systems"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3853,
+  "output": 1038
+ },
+ "generated": "2026-11-01"
+}

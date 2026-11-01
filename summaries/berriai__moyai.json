@@ -1,0 +1,111 @@
+{
+ "id": "berriai/moyai",
+ "repo": "BerriAI/moyai",
+ "kind": "star",
+ "description": "A self-hosted coding agent for background work - works with Claude Code, Codex, OpenCode & 100+ providers",
+ "topics": [],
+ "language": "Python",
+ "stars": 312,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-31",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Moyai is a self-hosted shared AI workspace where an agent performs coding and connected-service tasks in durable cloud computers (Modal or AWS Lambda MicroVMs), with chat, files, and history kept per deployment.",
+  "category": "self-hosted coding agent",
+  "keywords": [
+   "coding agent",
+   "self-hosted ai agent",
+   "background coding agent",
+   "ai workspace",
+   "pydantic ai",
+   "temporal",
+   "durable execution",
+   "modal",
+   "aws lambda microvm",
+   "litellm",
+   "claude code",
+   "codex",
+   "opencode",
+   "llm gateway",
+   "react frontend",
+   "python",
+   "docker",
+   "self-hosted",
+   "team ai workspace",
+   "run code in sandbox",
+   "agent computer",
+   "swarms",
+   "multi-agent",
+   "slack integration",
+   "postgresql",
+   "s3 storage",
+   "run agent in background",
+   "share ai agent with team",
+   "chat with coding agent",
+   "sandboxed code execution"
+  ],
+  "what_it_does": "Moyai provides a shared web workspace where users chat with an AI agent that carries out coding and connected-service tasks. The agent runs its work in a Modal or AWS Lambda MicroVM computer, so users can inspect the machine, steer the agent, answer its questions, and keep the resulting files and conversation history. Pydantic AI and Harness supply the agent, Temporal provides durable execution, and LiteLLM is used for model access. The README describes a local Docker quickstart that manages SQLite, encrypted file storage and a local Temporal dev server, plus a team deployment option using PostgreSQL, S3-compatible storage and an HTTPS origin. Other documented areas include Swarms (persistent teams of agents with independent computers), Slack integration, approvals and recovery.",
+  "use_cases": [
+   "run a coding agent in the background on a task",
+   "give a team a shared AI coding workspace",
+   "let an agent run and test code in an isolated computer",
+   "self-host an AI agent that keeps files and history",
+   "deploy a multi-agent team with durable pause and resume",
+   "route model calls through a LiteLLM gateway"
+  ],
+  "how_to_run": [
+   "Option 1 (Docker): create moyai.env with WORKSPACE_PASSWORD, LITELLM_API_KEY, AGENT_MODEL, MODAL_TOKEN_ID and MODAL_TOKEN_SECRET, then run the ghcr.io/berriai/moyai:quickstart image with --env-file and -p 127.0.0.1:8787:8787",
+   "Option 2 (team deployment): from the deployment directory with required settings exported, run: sh moyai.sh up",
+   "Option 3 (source): git clone the repo, cd moyai, run: uv sync --frozen, then cp .env.example .env and chmod 600 .env",
+   "Edit .env with workspace password, model gateway/model and Modal token pair, then run: uv run --frozen moyai dev --port 8787",
+   "Sign in as admin at the local URL with the workspace password"
+  ],
+  "stack": [
+   "Python 3.13",
+   "Node.js 22",
+   "Rust (AgentChat build)",
+   "uv",
+   "React",
+   "Pydantic AI",
+   "Harness",
+   "Temporal",
+   "Modal",
+   "AWS Lambda MicroVMs",
+   "LiteLLM",
+   "PostgreSQL",
+   "S3-compatible storage",
+   "Docker",
+   "SQLite",
+   "Playwright"
+  ],
+  "notable": [
+   "Agents run inside Modal computers or AWS Lambda MicroVMs rather than on the Moyai host",
+   "Temporal provides durable execution; the bundled or external Temporal modes are selectable",
+   "Docker deployment offers standalone or split topology (API, coordinator, broker, worker)",
+   "Swarms feature for persistent agent teams with independent member computers and Pause/Resume controls",
+   "Keeps users, permissions, sessions and credentials of an existing deployment through shared services"
+  ],
+  "caveats": [
+   "Model and computer usage are billed by the model and Modal providers",
+   "Local Docker quickstart is a trial; team use requires PostgreSQL, private S3-compatible storage and an HTTPS origin, and local data is not auto-migrated to the team deployment",
+   "Quickstart image may not yet be publicly available; the README offers a checkout build fallback",
+   "Requires Modal credentials or AWS Lambda setup and a Responses-capable model through the gateway"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4100,
+  "output": 1601
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,75 @@
+{
+ "id": "480f678a66470341",
+ "url": "https://cloudplatform.googleblog.com/2017/08/CRE-life-lessons-what-is-a-dark-launch-and-what-does-it-do-for-me.html",
+ "final_url": "https://cloud.google.com/blog/products/gcp/cre-life-lessons-what-is-a-dark-launch-and-what-does-it-do-for-me/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Dark launches: What they are and how to do them | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "CRE life lessons: What is a dark launch, and what does it do for me?"
+  }
+ ],
+ "summary": {
+  "name": "Dark launches (Google Cloud Blog)",
+  "one_liner": "A Google Cloud Blog article from an SRE explaining dark launches, where a copy of live user traffic is sent to a new service and its results are discarded before reaching users.",
+  "category": "sre release practices",
+  "keywords": [
+   "dark launch",
+   "dark launching",
+   "traffic forking",
+   "traffic mirroring",
+   "shadow traffic",
+   "shadow launch",
+   "feature toggles",
+   "canary release",
+   "load testing with live traffic",
+   "response diffing",
+   "diff error budget",
+   "regression testing new service",
+   "sre launch practices",
+   "migrating frontend",
+   "async backend calls",
+   "timeouts for new backend",
+   "logging old and new responses",
+   "going live from dark launch",
+   "customer reliability engineering",
+   "google sre",
+   "reliability engineering blog",
+   "production traffic testing",
+   "launch risk reduction",
+   "protocol buffer diffing"
+  ],
+  "use_cases": [
+   "Verifying a new service handles real user requests the same as the old one",
+   "Load testing a new service with live production traffic",
+   "Planning a frontend or backend migration with low user risk",
+   "Comparing old and new service responses to find regressions",
+   "Deciding where to fork traffic (frontend, proxy, or client)",
+   "Deciding when a new service is ready to replace the old one"
+  ],
+  "what_it_does": "This is an article rather than a software tool. It describes the dark launch technique: copying real user traffic to a new backend, discarding its responses, and ramping from a small percentage to 100% of traffic. It compares forking traffic in the application frontend versus a proxy or the client, and recommends logging response codes and latency from both backends. It advises running new backend calls asynchronously or with a short timeout, and diffing responses (optionally with an error budget such as 1%). It also covers measuring load over at least one day and cutting over by returning the new response, while keeping the old service running for weeks.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Recommends forking traffic in the application frontend as the lowest-friction option",
+   "Suggests a diff error budget (e.g. accept up to 1% differing responses) for complex responses",
+   "Advises making new-backend calls asynchronous so live latency is not affected"
+  ],
+  "caveats": [
+   "Describes Google's internal practices; it is not a product and has no installable tooling",
+   "Client-side forking risks include needing mobile app releases to change traffic and doubling mobile data use",
+   "Mutating requests generally cannot be diffed because the same mutation cannot be safely applied twice in parallel"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4864,
+  "output": 988
+ },
+ "generated": "2026-11-01"
+}

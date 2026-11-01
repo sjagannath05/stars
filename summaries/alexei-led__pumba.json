@@ -1,0 +1,121 @@
+{
+ "id": "alexei-led/pumba",
+ "repo": "alexei-led/pumba",
+ "kind": "star",
+ "description": "Chaos testing, network emulation, and stress testing tool for containers",
+ "topics": [
+  "chaos",
+  "chaos-engineering",
+  "chaos-monkey",
+  "chaos-testing",
+  "containerd",
+  "docker",
+  "fault-injection",
+  "golang",
+  "kubernetes",
+  "network-emulator",
+  "podman",
+  "podman-container",
+  "site-reliability-engineering",
+  "stress-ng",
+  "stress-testing",
+  "testing",
+  "testing-tools"
+ ],
+ "language": "Go",
+ "stars": 3182,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-10-31",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "dckr k8s"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Pumba is a chaos testing and network emulation CLI for Docker, containerd, and Podman containers that can kill, stop, pause, or remove containers, inject network faults, and stress container resources.",
+  "category": "container chaos testing",
+  "keywords": [
+   "chaos testing",
+   "chaos engineering",
+   "fault injection",
+   "chaos monkey",
+   "docker",
+   "containerd",
+   "podman",
+   "container chaos",
+   "network emulation",
+   "netem",
+   "tc qdisc",
+   "packet loss",
+   "network latency injection",
+   "iptables",
+   "stress testing",
+   "stress-ng",
+   "cpu stress",
+   "memory stress",
+   "kill container",
+   "pause container",
+   "random container kill",
+   "regex container targeting",
+   "label filter containers",
+   "kubernetes chaos",
+   "site reliability engineering",
+   "resilience testing",
+   "golang cli",
+   "test container failures",
+   "simulate network delay between containers",
+   "break containers on purpose"
+  ],
+  "what_it_does": "Pumba is a Go command-line tool for injecting faults into running containers. It can kill, stop, pause, remove, or restart containers, and run commands inside them via exec. Its netem subcommands add egress latency, packet loss, duplication, corruption, and rate limits, and can combine several effects in one qdisc. The iptables subcommand drops packets, including ingress. The stress subcommand applies CPU, memory, and I/O load through stress-ng. Targets can be chosen by name, regex (re2:), label, or at random, and actions can recur on an interval. A status command finds leftover iptables rules, qdiscs, and sidecars from a crashed run, and ndjson output is available for scripts.",
+  "use_cases": [
+   "Test how a service behaves when its container is killed or restarted",
+   "Simulate network latency or packet loss between containers",
+   "Verify application resilience under CPU or memory pressure",
+   "Run recurring random chaos experiments against a staging cluster",
+   "Inject faults into containers from CI pipelines",
+   "Clean up leftover network faults after an interrupted chaos run"
+  ],
+  "how_to_run": [
+   "curl -sL -o pumba (download the release binary for your platform), then chmod +x pumba",
+   "docker pull ghcr.io/alexei-led/pumba:latest",
+   "pumba --interval=30s --random kill \"re2:^test\"",
+   "pumba netem --duration 5m delay --time 3000 mydb",
+   "pumba iptables --duration 2m loss --probability 0.1 myapp",
+   "docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/alexei-led/pumba --interval=10s --random kill \"re2:^test\""
+  ],
+  "stack": [
+   "Go",
+   "Docker API",
+   "containerd API",
+   "Podman Docker-compatible API",
+   "tc (traffic control)",
+   "iptables",
+   "stress-ng"
+  ],
+  "notable": [
+   "Supports Docker, containerd, and Podman through one CLI, with runtime-specific notes on socket paths and namespaces",
+   "netem combine applies delay, loss, and other effects in a single owned qdisc",
+   "Result events in ndjson format plus a status --check command that reports leftover faults and exits 0 only when clean",
+   "Includes --dry-run, --max-targets safety cap, and --max-duration time budget",
+   "Runs as a Docker image built natively for amd64 and arm64"
+  ],
+  "caveats": [
+   "Linux only: Windows is explicitly unsupported and not planned; macOS is for driving remote VMs, and Podman on macOS requires running pumba inside podman machine",
+   "netem, iptables, and stress need root or rootful Podman; containerd needs root for sidecar mounts",
+   "Network chaos needs tc or iptables in the target container, or a --tc-image sidecar",
+   "Docker Hub image is deprecated; ghcr.io is the primary registry"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6209,
+  "output": 1419
+ },
+ "generated": "2026-11-01"
+}

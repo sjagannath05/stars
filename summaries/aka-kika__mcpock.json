@@ -1,0 +1,93 @@
+{
+ "id": "aka-kika/mcpock",
+ "repo": "aka-kika/mcpock",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (62)",
+   "entry": "mcpock - Menu bar app that checks every MCP server your AI agents use and shows which are broken, slow, waiting for a sign-in, or set up differently."
+  }
+ ],
+ "summary": {
+  "one_liner": "A small macOS menu bar app that checks every MCP server your AI agents use (Claude Code, Cursor, Codex and others) and flags which are broken, slow, waiting for sign-in, or set up differently between agents.",
+  "category": "mac menu bar app",
+  "keywords": [
+   "mcp",
+   "model context protocol",
+   "mcp server monitor",
+   "mcp health check",
+   "ai agent tools",
+   "claude code",
+   "cursor",
+   "codex",
+   "menu bar app",
+   "macos",
+   "mcp config",
+   "config drift",
+   "server status",
+   "tool list",
+   "handshake check",
+   "sparkle updates",
+   "mcp-mcp helper",
+   "read-only mcp server",
+   "agent config audit",
+   "broken mcp server",
+   "debug mcp",
+   "monitor ai agents",
+   "check my mcp servers",
+   "why is my agent tool failing",
+   "compare agent configs",
+   "status.json",
+   "menu bar status icon"
+  ],
+  "what_it_does": "It scans the config files of known AI agents (Claude Code, Claude Desktop, Cursor, Codex, Goose, VS Code and others) plus usual config folders for MCP server definitions, and merges the same server across agents into one row. It starts each local server the way the agent would, or calls remote servers over HTTP, performs the MCP handshake, requests the tool list, then shuts it down. Checks run every 15 minutes by default, can be set from 1 minute to 4 hours, or run manually, and a saved config change triggers a re-check of the affected server. Each server is shown as healthy, slow, needing sign-in, still checking, broken, or paused, and a detail card gives the full error and suggested next step. It flags servers configured differently between agents and can show per-agent call counts from agents' own history on the Mac. It also ships a read-only MCP helper so an agent can query the status file.",
+  "use_cases": [
+   "diagnose why an MCP tool stopped working in one agent",
+   "see which MCP servers are broken or slow across all agents",
+   "find MCP servers configured differently between Claude Code and Cursor",
+   "monitor MCP server health from the menu bar",
+   "let an AI agent check the status of your MCP servers",
+   "export MCP server errors as Markdown or JSON"
+  ],
+  "how_to_run": [
+   "Download mcpock.dmg from the Releases page",
+   "Drag mcpock to Applications and launch it",
+   "Click the menu bar icon to view servers and agents",
+   "Developers: install XcodeGen (brew install xcodegen)",
+   "Developers: run xcodegen generate",
+   "Developers: run xcodebuild -scheme mcpock -configuration Debug -derivedDataPath build -destination 'platform=macOS,arch=arm64' build"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "XcodeGen",
+   "SwiftUI MenuBarExtra",
+   "Sparkle (in-app updates)",
+   "MCP JSON-RPC over stdio and streamable HTTP/SSE",
+   "TOML and YAML built-in parsers"
+  ],
+  "notable": [
+   "Never edits agent config files; read-only by design",
+   "Secrets (env values, API keys in command lines and errors) are masked",
+   "Bundled read-only mcpock-mcp helper lets agents ask mcpock for status",
+   "Flags 'set up differently' across agents, with a Compare view and a Mark as intended option",
+   "Detects servers lost inside an open Claude Code session from its own logs"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later on Apple Silicon",
+   "Not distributed through the App Store because the sandbox would block starting servers and reading configs",
+   "Usage counts and session-loss detection read agent history and logs, and are off by default for usage counts"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11434,
+  "output": 1354
+ },
+ "generated": "2026-11-01"
+}

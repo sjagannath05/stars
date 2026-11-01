@@ -1,0 +1,81 @@
+{
+ "id": "a4d0cbb8fa30e2e0",
+ "url": "https://www.vividcortex.com/blog/why-percentiles-dont-work-the-way-you-think",
+ "final_url": "https://www.solarwinds.com/blog/why-percentiles-dont-work-the-way-you-think",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Why Percentiles Don’t Work the Way You Think",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Monitoring & Observability & Alerting",
+   "entry": "Why Percentiles Don’t Work the Way you Think"
+  }
+ ],
+ "summary": {
+  "name": "Why Percentiles Don't Work the Way You Think",
+  "one_liner": "A VividCortex blog post explaining why averaging percentile metrics (such as StatsD/Graphite upper_99) is mathematically flawed, and how banded metrics, histograms and heatmaps can give more accurate latency views.",
+  "category": "monitoring metrics essay",
+  "keywords": [
+   "percentiles",
+   "p99",
+   "99th percentile",
+   "averaging percentiles",
+   "quantiles",
+   "histograms",
+   "banded metrics",
+   "heatmaps",
+   "statsd",
+   "graphite",
+   "upper_99",
+   "time series database",
+   "latency monitoring",
+   "averages vs percentiles",
+   "metric resampling",
+   "approximate percentiles",
+   "sketches",
+   "distribution of latencies",
+   "circonus",
+   "database performance monitoring",
+   "long tail latency",
+   "p99 latency",
+   "downsampling metrics",
+   "monitoring outliers",
+   "tail latency",
+   "percentile metrics",
+   "average response time",
+   "how to compute p99",
+   "statsd percentiles",
+   "vividcortex dpm"
+  ],
+  "use_cases": [
+   "Deciding whether to store p99 metrics in a time series database",
+   "Understanding why averages hide outliers in monitoring",
+   "Designing banded or histogram-based latency metrics",
+   "Choosing between percentiles, histograms and heatmaps for latency dashboards",
+   "Evaluating StatsD percentile metrics in Graphite"
+  ],
+  "what_it_does": "The post argues that percentiles cannot be correctly averaged or resampled, because computing them requires the original population of events, while time series databases typically store and average aggregated values over time. It reviews the problems with averages in monitoring and explains what a percentile represents. It describes alternatives: histograms, approximate sketches, and banded metrics that store counts per value range from which percentiles can be computed. It also covers heatmaps as a way to visualize full latency distributions. The author states that VividCortex's DPM does not currently store percentile metrics and plans to store banded metrics at one-second granularity, downsampled to one-minute histograms.",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Explains why averaging p99 values over time is mathematically meaningless",
+   "Covers banded metrics as a way to compute percentiles that survive resampling",
+   "Describes VividCortex DPM's planned per-second banded metrics and one-minute downsampling",
+   "References Graphite, StatsD, Circonus, and Phusion Passenger examples"
+  ],
+  "caveats": [
+   "The DPM histogram and percentile features were planned future work at the time of writing, with no release date promised",
+   "Banded metric approach depends on whether the time series database query language supports the needed calculations",
+   "Percentiles from stored or resampled metrics are approximations and can be misleading if misunderstood"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6420,
+  "output": 1071
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "gwenn-ha-dev/siliconed",
+ "repo": "gwenn-ha-dev/Siliconed",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎨 Graphics (21)",
+   "entry": "Siliconed - Local AI image generation and instruction-based image editing on Apple silicon, with Civitai LoRAs."
+  }
+ ],
+ "summary": {
+  "one_liner": "Siliconed is a free, open-source macOS app that runs recent open-weight diffusion models locally on Apple silicon Macs for text-to-image generation and instruction-based image editing, with Civitai and Hugging Face LoRA import.",
+  "category": "local ai image generation",
+  "keywords": [
+   "text-to-image",
+   "image editing",
+   "instruction-based editing",
+   "local image generation",
+   "apple silicon",
+   "mac app",
+   "macos",
+   "metal",
+   "swift",
+   "diffusion models",
+   "stable diffusion alternative",
+   "offline ai art",
+   "lora",
+   "civitai",
+   "hugging face",
+   "z-image turbo",
+   "qwen-image",
+   "krea",
+   "draw things alternative",
+   "run ai image model on mac",
+   "generate images without cloud",
+   "private image generator",
+   "edit photo with a sentence",
+   "neural engine",
+   "quantized weights",
+   "silicontrol",
+   "mac mini remote rendering",
+   "fine-tune import"
+  ],
+  "what_it_does": "Siliconed generates images from text prompts and edits existing images from a written instruction, using recent open-weight models such as Krea 2 Turbo, Z-Image Turbo, Qwen-Image-2.1 Turbo, Anima Turbo and MOSS-Image (beta). It is written natively in Swift and Metal and runs without Python, a server, or the cloud, and works offline once a model is installed. Models install from inside the app, and the user chooses which ones. The app can import LoRAs and fine-tunes from Civitai or Hugging Face. It includes an explore grid of quick low-cost previews across seeds, steps, LoRA strengths or models before a full render. It can also render on another paired Mac over an encrypted connection, and a terminal tool called silicontrol drives the running app for scripts. The README states that it caps memory use to a fixed budget so large models can run on a 16 GB Mac by reading weights from disk as needed.",
+  "use_cases": [
+   "generate images from text on a Mac offline",
+   "edit a photo by describing the change",
+   "explore image variations before a final render",
+   "run large diffusion models on a 16 GB Mac",
+   "use Civitai LoRAs with a local image model",
+   "render on a second Mac on the same network"
+  ],
+  "how_to_run": [
+   "Download the .dmg from the Releases page",
+   "Requires macOS 26 or later and Apple silicon",
+   "Install models from inside the app, choosing which ones you want",
+   "To build from source, see docs/ENGINE.md (Build from source)"
+  ],
+  "stack": [
+   "Swift",
+   "Metal",
+   "diffusers and transformers (used as reference implementations for checks)"
+  ],
+  "notable": [
+   "Runs natively in Swift and Metal with no Python, server, or cloud dependency",
+   "Memory budget capped at three quarters of Mac memory minus 2 GB, with weights streamed from disk",
+   "Checks each stage channel by channel against reference implementations in fp32",
+   "Auto-tunes kernels on the user's chip before the first render",
+   "Optional remote rendering from a MacBook to a paired Mac mini with an encrypted link"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later and Apple silicon (M1 or later)",
+   "Model weights are not included; each is downloaded separately under its own license",
+   "MOSS-Image support is labeled beta",
+   "Performance figures in the README are from specific hardware such as an M1 Pro with 16 GB"
+  ],
+  "license": "Apache License 2.0 for the code; model weights are under their publishers' own licenses"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3114,
+  "output": 1289
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "emgeorrk/pulse",
+ "repo": "emgeorrk/pulse",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "Pulse - Menu bar system monitor with live CPU, memory, temperature, fan, network, disk, power, and battery stats. [![Open-Source Software][OSS Icon]](https://github.com/emgeorrk/pulse) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Pulse is a free, native macOS menu bar app that shows live CPU, memory, temperature, fan, network, disk, GPU, power, and battery stats.",
+  "category": "macos menu bar monitor",
+  "keywords": [
+   "system monitor",
+   "menu bar",
+   "macos",
+   "menu bar system monitor",
+   "cpu usage",
+   "memory usage",
+   "temperature monitor",
+   "fan speed",
+   "network speed",
+   "disk usage",
+   "battery health",
+   "power usage",
+   "apple silicon",
+   "intel mac",
+   "sparkline",
+   "gnome vitals",
+   "vitals alternative",
+   "iostat",
+   "activity monitor alternative",
+   "see what my mac is doing",
+   "monitor mac temperature",
+   "check battery cycles",
+   "show cpu in menu bar",
+   "homebrew cask",
+   "golang",
+   "cgo",
+   "iokit",
+   "smc sensors",
+   "open source mac utility",
+   "free mac monitoring app"
+  ],
+  "what_it_does": "Pulse places live system metrics in the macOS menu bar, and each metric can be pinned there individually. The dropdown lists groups for CPU (overall and per core, with an optional sparkline graph), memory and swap, temperature, fan speed, network upload/download and totals, disk free space and read/write speeds, GPU load, power draw for CPU/GPU/Neural Engine, and battery charge, health, cycles, temperature and time remaining. Sections for sensors a Mac lacks are hidden. Settings in the dropdown cover refresh interval (1, 2, 3, or 5 seconds), °C or °F, GB or GiB, sparkline visibility, launch at login, and update notifications. The README says it reads sensors from user space without sudo or powermetrics, and it has no Dock icon or window.",
+  "use_cases": [
+   "monitor CPU and memory from the menu bar",
+   "check Mac temperature and fan speed",
+   "watch network and disk throughput",
+   "check battery health and cycle count",
+   "see power draw of CPU, GPU and Neural Engine",
+   "lightweight alternative to Activity Monitor"
+  ],
+  "how_to_run": [
+   "brew install emgeorrk/tap/pulse",
+   "ditto \"$(brew --prefix)/opt/pulse/Pulse.app\" /Applications/Pulse.app",
+   "open /Applications/Pulse.app",
+   "git clone https://github.com/emgeorrk/pulse && cd pulse (build from source, needs macOS 13+, Xcode CLT, Go 1.26)",
+   "make run",
+   "make once"
+  ],
+  "stack": [
+   "Go",
+   "CGO",
+   "IOKit",
+   "SMC",
+   "HID",
+   "IOReport",
+   "Homebrew"
+  ],
+  "notable": [
+   "Reads Apple sensors directly with no sudo, no powermetrics, and no password prompts",
+   "Menu bar items can be pinned individually, with no Dock icon or floating window",
+   "Hides sensor sections that a particular Mac does not have",
+   "Inspired by the GNOME Vitals extension, rebuilt for macOS",
+   "Homebrew build runs on the user's machine, so macOS shows no unsigned-app warning"
+  ],
+  "caveats": [
+   "Pre-built download is for Apple Silicon only; Intel Macs need Homebrew or a source build",
+   "The downloaded app is not signed by Apple, so Gatekeeper must be bypassed with xattr",
+   "Intel temperature and fan readings are untested on real Intel hardware",
+   "Building from source requires macOS 13+, Xcode command line tools, and Go 1.26"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3165,
+  "output": 1309
+ },
+ "generated": "2026-11-01"
+}

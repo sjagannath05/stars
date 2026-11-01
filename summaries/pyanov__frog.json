@@ -1,0 +1,116 @@
+{
+ "id": "pyanov/frog",
+ "repo": "Pyanov/frog",
+ "kind": "star",
+ "description": "A frog that lives on your Mac desktop and types what you say. On-device dictation, meeting notes, memory, and a voice.",
+ "topics": [],
+ "language": "Swift",
+ "stars": 48,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-09",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Frog is an open-source, on-device Mac desktop pet that dictates what you say into any app, takes meeting notes, and chats back using local models.",
+  "category": "on-device dictation app",
+  "keywords": [
+   "dictation",
+   "speech to text",
+   "voice typing",
+   "on-device transcription",
+   "mac dictation",
+   "desktop pet",
+   "meeting notes",
+   "meeting transcription",
+   "speaker diarization",
+   "speaker labels",
+   "local llm",
+   "llama.cpp",
+   "gemma",
+   "offline assistant",
+   "push to talk",
+   "fn key dictation",
+   "coding agent prompts",
+   "claude code",
+   "codex",
+   "text to speech",
+   "reminders",
+   "personal memory",
+   "custom vocabulary",
+   "swift",
+   "appkit",
+   "three.js",
+   "wispr flow alternative",
+   "granola alternative",
+   "dictate into any app",
+   "take notes during a call",
+   "private voice assistant",
+   "parakeet",
+   "fluidaudio"
+  ],
+  "what_it_does": "Frog runs as a macOS app with a three.js animated frog on the desktop. Holding the fn key records speech and types the transcription at the cursor in whatever app is focused. Starting a meeting session from the frog's menu records both the user and other participants, transcribes them, labels speakers, and writes a summary. Holding right Option opens a voice conversation where the frog answers aloud, stores facts the user tells it, and sets reminders that it speaks when due. A vocabulary feature suggests and learns names and jargon, and correcting a dictation teaches it. Speech recognition, speaker labels, and the language model run locally, with models downloaded on first use. The README says an optional Claude API key can be used for meeting summaries instead of the on-device model; that is the only optional path that sends data off the Mac.",
+  "use_cases": [
+   "dictate prompts to a coding agent",
+   "type by voice into any Mac app",
+   "record and summarize meetings privately",
+   "keep a local voice assistant with memory",
+   "set spoken reminders on a Mac",
+   "private alternative to cloud dictation tools"
+  ],
+  "how_to_run": [
+   "Download Frog.zip from the latest release, unzip, and drag VoicePet.app to Applications",
+   "On first launch, open System Settings > Privacy & Security and click Open Anyway",
+   "Grant Microphone, Speech Recognition, and Accessibility permissions",
+   "Set System Settings > Keyboard > 'Press 🌐 key to' to Do Nothing",
+   "To build from source: git clone, cd frog, (cd web && npm ci), ./build.sh, then ditto build/VoicePet.app ~/Applications/VoicePet.app and open it"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "SwiftPM",
+   "Node.js",
+   "three.js",
+   "WKWebView",
+   "llama.cpp",
+   "LLM.swift",
+   "Gemma 4 (Unsloth GGUF)",
+   "Qwen2.5",
+   "Apple SpeechAnalyzer",
+   "NVIDIA Parakeet TDT v3 (Core ML)",
+   "FluidAudio",
+   "Apple Foundation Models",
+   "AVSpeechSynthesizer",
+   "Playwright"
+  ],
+  "notable": [
+   "Fully on-device pipeline for speech, speaker labels, and LLM; nothing sent off the Mac unless a Claude API key is added for summaries",
+   "Hold fn to dictate into any focused app, aimed at coding agent prompts",
+   "Meeting notes capture both sides of a call, label speakers, and write a summary",
+   "Memory and spoken reminders, with a Mind tab showing what it knows",
+   "Brain model chosen by RAM size, from a 1 GB Qwen option up to a 26B-A4B Gemma model"
+  ],
+  "caveats": [
+   "Prebuilt release requires macOS 26 on Apple Silicon and is arm64-only",
+   "Building from source requires macOS 26, Xcode Command Line Tools, and Node 20.19+ or 22.12+; first build can take several minutes",
+   "Intel source builds omit Parakeet transcription and speaker diarization",
+   "Speaker diarization is Apple Silicon only",
+   "Models download on first use; larger brain models need up to 17 GB"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3446,
+  "output": 1521
+ },
+ "generated": "2026-11-01"
+}

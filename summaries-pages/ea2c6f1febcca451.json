@@ -1,0 +1,77 @@
+{
+ "id": "ea2c6f1febcca451",
+ "url": "https://cloud.google.com/blog/products/gcp/defining-slos-for-services-with-dependencies-cre-life-lessons",
+ "final_url": "https://cloud.google.com/blog/products/devops-sre/defining-slos-for-services-with-dependencies-cre-life-lessons",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SRE at Google: Defining SLOs for services with dependencies | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "Defining SLOs for services with dependencies"
+  }
+ ],
+ "summary": {
+  "name": "Defining SLOs for services with dependencies (CRE Life Lessons)",
+  "one_liner": "A Google Cloud Blog article from the CRE Life Lessons series on how to define and manage service level objectives (SLOs) for services that depend on other services, each of which may have its own SLOs.",
+  "category": "sre reading material",
+  "keywords": [
+   "slo",
+   "service level objective",
+   "slo dependencies",
+   "service dependencies",
+   "error budget",
+   "site reliability engineering",
+   "sre",
+   "cre life lessons",
+   "google cloud blog",
+   "hard dependency",
+   "soft dependency",
+   "risk modeling",
+   "retries",
+   "rpc timeout",
+   "graceful degradation",
+   "caching fallback",
+   "availability calculation",
+   "dependency risk",
+   "top-down slo",
+   "sre book",
+   "reliability engineering",
+   "downtime estimation",
+   "service availability math",
+   "the calculus of service availability",
+   "srecon18",
+   "matt brown risk spreadsheet",
+   "error budget policy",
+   "failover"
+  ],
+  "use_cases": [
+   "Choosing an SLO for a service that has many upstream dependencies",
+   "Estimating how dependency outages affect your error budget",
+   "Prioritizing reliability risks using a risk analysis spreadsheet",
+   "Deciding which dependency risks to mitigate",
+   "Setting consequences for SLO violations caused by dependencies"
+  ],
+  "what_it_does": "The article explains that services have direct, indirect and structurally implicit dependencies, and that hard, soft and degraded dependencies affect a service differently. It describes complications in combining dependency SLOs, such as correlation between failures, RPC timeouts that differ from dependency SLOs, and retry effectiveness. It recommends setting the SLO top-down from customer needs rather than bottom-up from dependency availability. It then lists mitigation options for dependency risk, such as retries, caching, failover, sharding and graceful degradation, and argues that SLO violations caused by dependencies should still trigger consequences.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Recommends a top-down approach: set the SLO from what customers need, not from what dependencies allow",
+   "Distinguishes hard, soft and degraded dependencies and explains why combining dependency SLOs depends on failure correlation",
+   "Mentions a risk analysis spreadsheet from an SRECon18 talk by Matt Brown for prioritizing error budget risks"
+  ],
+  "caveats": [
+   "Gives estimation guidance only; the article states estimates are for prioritization and do not guarantee results",
+   "Using published SLOs to model risk tends to overestimate actual risk, as SLOs are usually conservative"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3915,
+  "output": 1020
+ },
+ "generated": "2026-11-01"
+}

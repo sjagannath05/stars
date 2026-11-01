@@ -1,0 +1,124 @@
+{
+ "id": "deveshctl/layerx",
+ "repo": "deveshctl/layerx",
+ "kind": "star",
+ "description": "LayerX Image Inspector - open-source terminal explorer for container images. Browse layers, spot wasted bytes, and gate CI on image efficiency. Works with Docker, Podman, and OCI archives from a single static binary.",
+ "topics": [
+  "ci-cd",
+  "cli",
+  "container",
+  "container-image",
+  "dive-alternative",
+  "docker",
+  "docker-image",
+  "docker-image-inspector",
+  "dockerfile",
+  "go",
+  "golang",
+  "image-inspector",
+  "image-layers",
+  "image-optimization",
+  "image-size",
+  "inspector",
+  "oci",
+  "oci-image",
+  "podman",
+  "tui"
+ ],
+ "language": "Go",
+ "stars": 136,
+ "license": "MIT",
+ "homepage": "https://github.com/deveshctl/layerx",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "dckr k8s"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "LayerX Image Inspector is an open-source terminal tool (Go) for browsing container image layers, finding wasted bytes, comparing two images, and gating CI on image efficiency, with support for Docker, Podman, and OCI/docker-save archives.",
+  "category": "container image inspection",
+  "keywords": [
+   "container image inspector",
+   "docker image layers",
+   "dive alternative",
+   "image layer explorer",
+   "wasted bytes",
+   "image efficiency",
+   "docker image size",
+   "ci image size check",
+   "ci gate image efficiency",
+   "compare docker images",
+   "oci archive viewer",
+   "docker save tar",
+   "podman images",
+   "tui",
+   "terminal ui",
+   "go cli",
+   "bubbletea",
+   "image-optimization",
+   "inspect dockerfile layers",
+   "which layer added file",
+   "docker history alternative",
+   "layer diff",
+   "image regression check",
+   "sbom",
+   "cosign verify",
+   "container image tar browser",
+   "view docker image files"
+  ],
+  "what_it_does": "LayerX opens a container image in an interactive TUI and shows a per-layer file tree with added, modified, and removed files colour-coded. It lets you view file contents, extract files from any layer, sort and filter by size or name, and jump to the layer responsible for the most wasted bytes. It reads live images via the Docker or Podman API, or reads docker save, podman save, and OCI-layout archives directly from disk without a daemon. The `layerx ci` subcommand checks efficiency, wasted-byte, and path rules from flags or a .layerx.yaml file and returns pass/fail exit codes. The `layerx compare` subcommand reports size, efficiency, and file deltas between two images in text, JSON, or Markdown, and `--json` exports the full analysis. The README also describes a set of colour themes and a local analysis cache.",
+  "use_cases": [
+   "debug a bloated Docker image and find the RUN step responsible",
+   "gate a CI build on image efficiency or wasted bytes",
+   "compare two image releases for size and file changes",
+   "inspect an image tarball on an airgapped machine without a daemon",
+   "browse and extract files from a container image layer",
+   "review a Dockerfile change's filesystem impact before shipping"
+  ],
+  "how_to_run": [
+   "brew install --cask deveshctl/tap/layerx",
+   "scoop bucket add layerx",
+   "scoop install layerx",
+   "layerx nginx:latest",
+   "layerx ./build/app.tar",
+   "go install github.com/deveshctl/layerx@latest"
+  ],
+  "stack": [
+   "Go 1.27.3+",
+   "cobra",
+   "bubbletea v2",
+   "lipgloss v2",
+   "bubbles v2",
+   "moby/moby client",
+   "goccy/go-yaml",
+   "testify",
+   "cosign",
+   "SPDX SBOM",
+   "SLSA provenance"
+  ],
+  "notable": [
+   "Works with live Docker and Podman engines and with docker save / OCI-layout archives read directly from disk, with no daemon needed",
+   "layerx ci exits 0/1/2 for pass, rule failure, and operational error, so it can gate a pipeline",
+   "layerx compare reports size, efficiency, and file deltas between two images, with text, JSON, or Markdown output",
+   "Signed releases with SPDX SBOMs and SLSA Build Level 3 provenance; a Container image is also published to GHCR",
+   "Eight built-in TUI colour themes and a --platform flag for selecting a specific image variant"
+  ],
+  "caveats": [
+   "Live image inspection needs a running Docker or Podman engine; archive mode is the daemon-free alternative",
+   "The container image needs the host engine socket bind-mounted and, on Linux with Docker, a group-add step for the root:docker socket",
+   "The README lists macOS 13 Ventura or later as the supported macOS version and says Go 1.27.3+ is required to build from source"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12333,
+  "output": 1402
+ },
+ "generated": "2026-11-01"
+}

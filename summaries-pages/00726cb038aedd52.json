@@ -1,0 +1,80 @@
+{
+ "id": "00726cb038aedd52",
+ "url": "https://mattermost.com/blog/sloth-for-slo-monitoring-and-alerting-with-prometheus",
+ "final_url": "https://mattermost.com/blog/sloth-for-slo-monitoring-and-alerting-with-prometheus/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "How We Use Sloth to do SLO Monitoring and Alerting with Prometheus - Mattermost",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "How We Use Sloth to do SLO Monitoring and Alerting with Prometheus"
+  }
+ ],
+ "summary": {
+  "name": "Sloth",
+  "one_liner": "Sloth is a tool/library that standardizes generating SLOs for Prometheus, described here through Mattermost's account of using it for SLI monitoring and multi-window, multi-burn-rate SLO alerting.",
+  "category": "slo monitoring tool",
+  "keywords": [
+   "sloth",
+   "sloth slo",
+   "slo monitoring",
+   "slo alerting",
+   "service level objective",
+   "service level indicator",
+   "sli monitoring",
+   "prometheus slo",
+   "prometheus rules",
+   "prometheusrule",
+   "multi-window multi-burn-rate",
+   "burn rate alerts",
+   "error budget",
+   "error rate sli",
+   "thanos ruler",
+   "alertmanager",
+   "site reliability engineering",
+   "sre",
+   "availability sli",
+   "opsgenie",
+   "grafana",
+   "argocd",
+   "mattermost slo",
+   "slo framework",
+   "reliability monitoring",
+   "sre workbook alerts"
+  ],
+  "use_cases": [
+   "Generating SLO recording and alert rules for Prometheus",
+   "Monitoring availability of customer-facing services",
+   "Setting up burn-rate based paging and warning alerts",
+   "Automating SLIs/SLOs per tenant or workspace from a provisioner",
+   "Aligning alerting with reliability goals"
+  ],
+  "what_it_does": "Sloth is a tool/library that standardizes and simplifies generating SLOs for Prometheus. In Mattermost's deployment it was integrated as a library into their cloud provisioner so that SLIs and SLOs are created when a workspace is created or woken, and the related PrometheusRule is removed when a workspace is hibernated or deleted. Mattermost used an error-rate availability SLI built from Prometheus request counters. Sloth's built-in alert generation was disabled in favor of centralized catchall alerts in Thanos ruler, which send to Alertmanager, Grafana, and OpsGenie. The team followed the multi-window, multi-burn-rate alerting approach from the Google SRE Workbook.",
+  "pricing": "unknown",
+  "platforms": [
+   "Prometheus",
+   "Kubernetes",
+   "Thanos",
+   "Alertmanager",
+   "Grafana",
+   "ArgoCD"
+  ],
+  "notable": [
+   "Generates SLO rules for Prometheus; used by Mattermost as a library inside its cloud provisioner",
+   "Multi-window, multi-burn-rate alerts: pages on fast budget burn, notifications on slow burn",
+   "Mattermost disabled Sloth's default alert generation in favor of centralized Thanos ruler catchall alerts"
+  ],
+  "caveats": [
+   "The page is a case study from Mattermost and does not give Sloth's own feature list, license, or pricing",
+   "Latency SLIs were described as future work and not yet in place"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4526,
+  "output": 1058
+ },
+ "generated": "2026-11-01"
+}

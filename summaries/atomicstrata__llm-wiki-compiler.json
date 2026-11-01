@@ -1,0 +1,118 @@
+{
+ "id": "atomicstrata/llm-wiki-compiler",
+ "repo": "atomicstrata/llm-wiki-compiler",
+ "kind": "star",
+ "description": "The knowledge compiler. Raw sources in, interlinked wiki out. Inspired by Karpathy's LLM Wiki pattern.",
+ "topics": [
+  "agent-skills",
+  "ai-agents",
+  "cli",
+  "compiler",
+  "context-engineering",
+  "karpathy",
+  "knowledge-base",
+  "knowledge-compilation",
+  "llm",
+  "markdown",
+  "mcp",
+  "mcp-server",
+  "obsidian",
+  "wiki"
+ ],
+ "language": "TypeScript",
+ "stars": 2229,
+ "license": "MIT",
+ "homepage": "https://llmwiki.atomicstrata.ai",
+ "pushed_at": "2026-10-30",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "llmwiki is a TypeScript CLI, MCP server and SDK that compiles raw source files (papers, notes, web pages, PDFs and more) into an interlinked, citation-traceable markdown wiki.",
+  "category": "llm knowledge base compiler",
+  "keywords": [
+   "llm wiki",
+   "knowledge compiler",
+   "knowledge base",
+   "markdown wiki",
+   "wikilinks",
+   "karpathy llm wiki",
+   "raw sources to wiki",
+   "citation traceable",
+   "obsidian",
+   "mcp server",
+   "model context protocol",
+   "agent context pack",
+   "rag alternative",
+   "compile notes into wiki",
+   "bm25 reranking",
+   "semantic chunk search",
+   "embeddings",
+   "lint wiki",
+   "llms.txt",
+   "graphml export",
+   "json-ld export",
+   "open knowledge format",
+   "typed wiki pages",
+   "review queue",
+   "cli",
+   "sdk",
+   "personal knowledge management",
+   "research notes organizer"
+  ],
+  "what_it_does": "Ingests URLs and local files into a sources folder, then runs a two-phase LLM pipeline that extracts concepts and generates typed markdown pages (concept, entity, comparison, overview) with YAML frontmatter and source citations. Compilation is incremental, so unchanged sources are skipped. Queries use hybrid retrieval (chunk embeddings, BM25 reranking and wikilink graph expansion) and can save answers back into the wiki. The local viewer provides search, graph exploration and freshness badges, while lint, eval and refresh commands check links, citations and stale pages. The project also includes an MCP server, a TypeScript SDK, optional lifecycle profiles with domain templates (autosci, newsroom), and export/import in OKF, JSON, JSON-LD, GraphML, Marp and llms.txt formats.",
+  "use_cases": [
+   "turn a folder of research papers or notes into a browsable wiki",
+   "give coding agents a citation-aware evidence pack over project docs",
+   "ask grounded questions over a curated document set",
+   "keep generated knowledge auditable with review and freshness checks",
+   "export compiled knowledge to other tools as JSON, GraphML or Marp slides",
+   "run a typed research or editorial project from a template"
+  ],
+  "how_to_run": [
+   "npm install -g llm-wiki-compiler",
+   "export ANTHROPIC_API_KEY=sk-...",
+   "llmwiki quickstart ./notes.md",
+   "llmwiki query \"what are the key ideas?\"",
+   "llmwiki view --open"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 24+",
+   "Model Context Protocol (MCP)",
+   "Anthropic API",
+   "OpenAI-compatible APIs",
+   "Ollama",
+   "Claude Agent SDK",
+   "OpenAI Codex CLI",
+   "GitHub Copilot provider",
+   "Converse-compatible gateways",
+   "Mintlify (docs)"
+  ],
+  "notable": [
+   "Compiles sources once into durable pages, so queries and agents read the compiled wiki instead of re-retrieving raw chunks each time",
+   "Configurable Lifecycle Profiles via .llmwiki/profile.json define typed entities, relations, lifecycle gates and workflows enforced by the write path",
+   "Review-first safety: risky generated pages can be held as candidates, and external OKF imports are staged for review by default",
+   "Many provider options including Anthropic, OpenAI-compatible servers, Ollama, Copilot and local CLI logins",
+   "Signed template distribution with Ed25519 signing and trusted taps"
+  ],
+  "caveats": [
+   "Requires Node.js 24 or newer and an LLM provider; most compile and query features need API access or local login",
+   "README describes the project as early software, and the sweet spot is a durable project wiki rather than high-churn logs",
+   "Windows path confinement and native Windows CI are not yet verified; the README recommends Linux for untrusted projects"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13087,
+  "output": 1446
+ },
+ "generated": "2026-11-01"
+}

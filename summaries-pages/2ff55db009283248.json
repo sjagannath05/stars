@@ -1,0 +1,72 @@
+{
+ "id": "2ff55db009283248",
+ "url": "https://www.backblaze.com/blog/cloud-storage-durability",
+ "final_url": "https://www.backblaze.com/blog/cloud-storage-durability/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Cloud Storage Durability: What Do All Those 9s Mean?",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "Backblaze Durability is 99.999999999% — And Why It Doesn’t Matter"
+  }
+ ],
+ "summary": {
+  "name": "Backblaze Cloud Storage Durability Calculation",
+  "one_liner": "A Backblaze blog post explaining how the company calculates its claimed 11 nines (99.999999999%) data durability for B2 cloud storage, using Poisson and binomial models, and arguing why the figure matters less than system design.",
+  "category": "cloud storage durability",
+  "keywords": [
+   "backblaze durability",
+   "11 nines durability",
+   "99.999999999%",
+   "cloud storage durability",
+   "data durability calculation",
+   "erasure coding",
+   "reed-solomon erasure code",
+   "poisson distribution",
+   "binomial distribution",
+   "b2 cloud storage",
+   "object storage durability",
+   "hard drive failure rate",
+   "annualized failure rate",
+   "rebuild time",
+   "how durable is cloud storage",
+   "how is data durability calculated",
+   "nines of durability meaning",
+   "data loss probability",
+   "shards and parity",
+   "drivesavers data recovery",
+   "s3 durability comparison",
+   "backblaze b2 reliability"
+  ],
+  "use_cases": [
+   "Understanding what cloud storage durability percentages mean",
+   "Evaluating a cloud storage provider's durability claims",
+   "Learning how erasure coding protects stored data",
+   "Estimating data loss risk from drive failure rates and rebuild times",
+   "Comparing durability calculation methodologies"
+  ],
+  "what_it_does": "The post presents Backblaze's calculation for B2 object durability, stating it is 11 nines, meaning storing 1 million objects for 10 million years would likely lose one file. Files are split into 20 shards and can be reconstructed from any 17, with shards spread across drives in a 'tome' of 20 drives, so losing a file requires four drives to fail before a rebuild completes. It gives inputs such as a 6.5-day average rebuild time, a 0.41% effective annual drive failure rate after assuming 50% recovery via data recovery services, and computes results with both Poisson and binomial models. The author notes a Poisson internal result of 12 nines, but publishes the more conservative 11. The post also argues that beyond roughly eight nines, risks like regional disasters or account deletion for non-payment dominate.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Publishes full durability math, including a Python notebook on GitHub for the binomial model",
+   "Uses 20 shards with reconstruction from any 17, a 'tome' of 20 drives",
+   "Argues durability figures beyond about eight nines are largely academic compared with disasters or billing-related deletion"
+  ],
+  "caveats": [
+   "Assumes independent drive failures and uses simplified models; the post itself says system design and reality can diverge",
+   "Assumes a 50% chance of full recovery from drives sent to a data recovery service, which is an estimate",
+   "Durability figure is a calculated estimate, not a guarantee against account deletion or other loss"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5888,
+  "output": 1095
+ },
+ "generated": "2026-11-01"
+}

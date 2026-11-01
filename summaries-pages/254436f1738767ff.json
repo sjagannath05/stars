@@ -1,0 +1,77 @@
+{
+ "id": "254436f1738767ff",
+ "url": "https://billduncan.org/the-tail-at-scale-revisited",
+ "final_url": "https://billduncan.org/the-tail-at-scale-revisited/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "The Tail at Scale Revisited | bill duncan's blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "The Tail at Scale Revisited"
+  }
+ ],
+ "summary": {
+  "name": "The Tail at Scale Revisited",
+  "one_liner": "A blog article presenting a chart and worked example for relating backend service-level objectives to end-user experience in systems with many fan-out services, plus replica-based mitigation techniques.",
+  "category": "sre reliability article",
+  "keywords": [
+   "service level objective",
+   "slo",
+   "sli",
+   "service level indicator",
+   "sla",
+   "backend slo",
+   "tail latency",
+   "the tail at scale",
+   "fan-out latency",
+   "error budget",
+   "availability math",
+   "replica requests",
+   "hedged requests",
+   "deferred requests",
+   "latency time budget",
+   "nines availability",
+   "probability of failure",
+   "success rate calculation",
+   "what-if slo chart",
+   "dependency failure probability",
+   "customer experience reliability",
+   "distributed systems reliability",
+   "backend latency",
+   "sre blog",
+   "failure rate reciprocal",
+   "customer slo planning"
+  ],
+  "use_cases": [
+   "Setting backend latency budgets for a fan-out service",
+   "Working out what backend SLO is needed to hit a customer SLO",
+   "Explaining SLO trade-offs to engineering and support",
+   "Estimating benefit of sending requests to replicas",
+   "Planning SLOs as the number of backend systems grows"
+  ],
+  "what_it_does": "The article explains a chart that links three variables: backend service level, number of backend services, and the resulting customer-facing service level. The reader picks two and looks up the third, and the author says the same math can be done programmatically. It works through an example in which 500 backend services at 99.9% each yield roughly 61% customer success, so a 95% customer objective would need about 99.99% per backend service. It then shows that sending requests to both replicas, or deferring the second request until about half the time budget, sharply raises the result. The author says the model is SLI-agnostic and applies to availability and error rates as well as latency.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Chart relating backend SLO, number of services, and customer SLO, with a PDF version",
+   "Worked example using 500 backend services and replica-based mitigation",
+   "Deferred replica requests sent only to about 5% of calls after half the time budget",
+   "Refers to the original 'Tail at Scale' paper and Google SRE book chapters"
+  ],
+  "caveats": [
+   "Calculations assume many independent, roughly identical backend responses, which the author admits is never entirely true",
+   "Results are rough ballpark guidance; dependencies and other interactions in real systems may change outcomes",
+   "Replica-based mitigation adds duplicate load on backend systems"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3300,
+  "output": 977
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,111 @@
+{
+ "id": "dietrichgebert/ponytail",
+ "repo": "DietrichGebert/ponytail",
+ "kind": "star",
+ "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+ "topics": [
+  "agent-skills",
+  "ai-agents",
+  "claude",
+  "claude-code",
+  "claude-code-plugin",
+  "cursor-rules",
+  "developer-tools",
+  "llm",
+  "prompt-engineering",
+  "yagni"
+ ],
+ "language": "JavaScript",
+ "stars": 181517,
+ "license": "MIT",
+ "homepage": "https://ponytail.dev",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Ponytail is a prompt-based skill that makes AI coding agents write the minimal code a task needs, with commands for reviewing diffs, auditing repos, and tracking deferred shortcuts.",
+  "category": "ai agent skills",
+  "keywords": [
+   "ai coding agent",
+   "claude code plugin",
+   "agent skill",
+   "cursor rules",
+   "agents.md",
+   "codex plugin",
+   "yagni",
+   "minimal code",
+   "less code",
+   "code review",
+   "codebase audit",
+   "prompt engineering",
+   "llm prompt",
+   "technical debt tracking",
+   "shortcut comments",
+   "over-engineering prevention",
+   "reduce token cost",
+   "lazy developer",
+   "simplicity",
+   "senior dev review",
+   "code audit command",
+   "security review",
+   "test coverage for risky logic",
+   "claude code band",
+   "benchmark agent code",
+   "gemini agent",
+   "copilot instructions",
+   "windsurf rules",
+   "cline rules",
+   "developer productivity",
+   "avoid overengineering"
+  ],
+  "what_it_does": "The repo ships one prompt, skills/ponytail/SKILL.md, plus a compact AGENTS.md for agents that read rules files, and adapters that load this prompt into different agents. The prompt tells the agent to understand the problem and read the code a change touches first, then choose the smallest solution that still handles validation, error handling, security and accessibility. In Claude Code and Codex it adds slash commands: /ponytail to set an intensity level, /ponytail-review to review the current diff or a PR, /ponytail-audit to check the whole repo, /ponytail-debt to collect deferred shortcut comments into a ledger, /ponytail-gain to show benchmark results, and /ponytail-help. In Claude Code, a band above the prompt shows per-task cost, tokens, agent time, reuse of existing code and test status, and a local Board page stores session history under ~/.config/ponytail/band/. The README reports its own benchmark (39 tasks, Opus 5.5, 5 runs each) claiming about 53% less code and 41% less time than the same agent without the skill; these figures are the author's and are documented in a linked results file.",
+  "use_cases": [
+   "Keep an AI coding agent from over-engineering small features",
+   "Review a diff or PR for bugs, security and missing tests",
+   "Audit a whole repository and rank what to fix first",
+   "Track deliberate shortcuts left as comments",
+   "Reduce token cost and agent time of coding sessions",
+   "Add a lightweight rules file to Cursor, Copilot, Windsurf or Cline"
+  ],
+  "how_to_run": [
+   "/plugin marketplace add DietrichGebert/ponytail",
+   "/plugin install ponytail@ponytail",
+   "codex plugin marketplace add DietrichGebert/ponytail",
+   "codex plugin add ponytail@ponytail",
+   "Copy AGENTS.md into your project (any other agent), or ask your agent to install skills/ponytail/SKILL.md as a skill; see INSTALL.md"
+  ],
+  "stack": [
+   "JavaScript",
+   "Markdown prompt files (SKILL.md, AGENTS.md)",
+   "Claude Code plugin system",
+   "Codex plugin system",
+   "npm package @dietrichgebert/ponytail"
+  ],
+  "notable": [
+   "Single prompt file (skills/ponytail/SKILL.md) reused across many agent hosts via adapters",
+   "Review and audit commands that trace the code a change touches, not just the diff, and explain what goes wrong and what happens if unfixed",
+   "Shortcut comments tracked into a ledger with /ponytail-debt",
+   "Claude Code band and local Board page showing per-task cost, tokens and test status",
+   "Explicit rule that security, validation, error handling and accessibility are never cut"
+  ],
+  "caveats": [
+   "The band requires Claude Code 2.1.290 or later and does not show in the VS Code chat panel, cloud sessions or claude -p",
+   "Slash commands need a skill-capable host; Cursor rule files, Windsurf, Cline, Copilot and Kiro get only the always-on ruleset without commands",
+   "Benchmark numbers are self-reported by the author on a specific setup (Opus 5.5, 39 tasks)"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4316,
+  "output": 1535
+ },
+ "generated": "2026-11-01"
+}

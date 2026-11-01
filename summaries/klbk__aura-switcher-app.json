@@ -1,0 +1,95 @@
+{
+ "id": "klbk/aura-switcher-app",
+ "repo": "klbk/aura-switcher-app",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⌨️ Keyboard (19)",
+   "entry": "AURA Switcher - Fixes text typed in the wrong keyboard layout right after Space; double Shift converts the last word. A Punto Switcher alternative."
+  }
+ ],
+ "summary": {
+  "one_liner": "A menu-bar app for macOS and Windows that fixes text typed in the wrong keyboard layout (e.g. \"ghbdsn\" → \"привіт\") and converts text with a double Shift tap.",
+  "category": "keyboard layout switcher",
+  "keywords": [
+   "keyboard layout switcher",
+   "wrong layout fix",
+   "punto switcher alternative",
+   "punto switcher",
+   "auto-correction",
+   "layout converter",
+   "text conversion",
+   "double shift",
+   "keyboard layout correction",
+   "cyrillic latin layout",
+   "ukrainian keyboard",
+   "russian keyboard",
+   "menu bar app",
+   "system tray app",
+   "spell checker",
+   "nsspellchecker",
+   "cgeventtap",
+   "swift",
+   "c++ win32",
+   "macos",
+   "windows",
+   "autocorrect typos",
+   "typed wrong language",
+   "fix text typed in wrong language",
+   "ghbdsn to привіт",
+   "switch keyboard layout automatically",
+   "per-app keyboard language",
+   "open source keyboard tool",
+   "gpl-3.0"
+  ],
+  "what_it_does": "AURA Switcher runs in the menu bar (macOS) or system tray (Windows) and starts at login. When you type a word in the wrong layout and press Space, it erases the word, retypes it in the correct layout, and switches the layout; word checking uses the system spell checker. Double-tapping Shift converts selected text to the next layout, or the last typed word if nothing is selected, or just switches the layout. Users can set app exclusions, per-app layout bindings, word exceptions, and automatic pausing in games. The README says AURA uses every layout enabled in macOS and that Windows support is in beta, with a separate C++ build. Updates are checked only when the user opens the check page in the browser, since the app itself makes no network requests.",
+  "use_cases": [
+   "fix text typed in the wrong keyboard layout",
+   "switch between Ukrainian, Russian and English typing",
+   "convert selected text to another layout",
+   "exclude certain apps from auto-correction",
+   "keep a keyboard layout per application",
+   "correct slang or custom words with exceptions"
+  ],
+  "how_to_run": [
+   "./build.sh",
+   "Grant access: System Settings → Privacy & Security → Accessibility → enable AURA Switcher",
+   "Windows: download AURA-Switcher-windows-x64.zip from the release and run AURA Switcher.exe (no installer)",
+   "Build Windows version on a Mac: windows/build.sh (needs Zig)"
+  ],
+  "stack": [
+   "Swift (single main.swift file, swiftc)",
+   "C++ / Win32 (windows/aura.cpp)",
+   "Zig (Windows build on Mac)",
+   "CGEventTap",
+   "NSSpellChecker",
+   "UCKeyTranslate",
+   "Accessibility API",
+   "UserDefaults"
+  ],
+  "notable": [
+   "Listen-only CGEventTap, so it cannot freeze keyboard or mouse input",
+   "Character tables are built from the macOS layouts themselves, so any installed layout works without manual setup",
+   "Windows build is a single C++/Win32 file with no installer; ARM64 build listed as untested",
+   "Makes no network requests; update check is a browser page opened on demand",
+   "Available in 21 menu languages"
+  ],
+  "caveats": [
+   "macOS 13+ and Windows 10/11 only; iPhone/iPad/Android only as a separate keyboard with little practical value",
+   "Windows support is beta, tested on x64 only; ARM64 not yet tested; SmartScreen warns about unknown publisher; cannot see keystrokes in administrator apps",
+   "Auto-correction only sees continuous typing; mouse clicks, arrow keys or ⌘/⌥/⌃ shortcuts reset the current word; password fields and some apps may behave differently",
+   "Chinese and Japanese input not supported; auto-correction skipped between similar Latin layouts (EN/DE/FR)"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4536,
+  "output": 1440
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,77 @@
+{
+ "id": "3dbd55272c7fb083",
+ "url": "https://speakerdeck.com/ianschenck/operability-in-go",
+ "final_url": "https://speakerdeck.com/ianschenck/operability-in-go",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Operability in Go",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Programming",
+   "entry": "Operability in Go"
+  }
+ ],
+ "summary": {
+  "name": "Operability in Go",
+  "one_liner": "A GopherCon 2017 talk slide deck by Ian Schenck on writing Go programs that are easier to operate, covering panics, errors, logging, expvar status endpoints, and naming.",
+  "category": "go operability talk",
+  "keywords": [
+   "go operability",
+   "operable go programs",
+   "golang sre",
+   "gophercon 2017",
+   "gophercon talk",
+   "go panic recover",
+   "go error wrapping",
+   "errors.wrap",
+   "structured logging go",
+   "logrus",
+   "expvar",
+   "go expvar debug vars",
+   "/debug/vars",
+   "runtime.stack",
+   "go status endpoint",
+   "prometheus metrics go",
+   "go environment variables redaction",
+   "go flags naming",
+   "root cause analysis",
+   "five whys",
+   "site reliability engineering go",
+   "failing well go",
+   "go shutdown handlers",
+   "go debug endpoint",
+   "slide deck",
+   "logstash elk go logs"
+  ],
+  "use_cases": [
+   "making Go services easier to debug in production",
+   "deciding when to panic versus return errors",
+   "adding context to Go error messages and logs",
+   "exposing internal Go program state via expvar",
+   "designing status and admin HTTP endpoints for Go services",
+   "consistent naming of flags and environment variables"
+  ],
+  "what_it_does": "The deck is a set of slides from a GopherCon 2017 talk on operability, meaning how easy a Go program is to run, fix, and diagnose. It covers failing well: limiting panics to the smallest execution unit and using deferred recover(), and adding context to errors and logs, with an example using logrus fields and errors.Wrap. It explains using Go's standard expvar package to expose state such as cmdline and memstats at /debug/vars, with redaction of environment variables and flags and a goroutine stack dump example. It also suggests an internal status HTTP endpoint for admin handlers, shutdown handlers, and Prometheus metrics, and recommends clear, specific naming for flags and environment variables.",
+  "pricing": "free",
+  "platforms": [
+   "Go"
+  ],
+  "notable": [
+   "Covers expvar usage with redaction of sensitive environment variables and flags",
+   "Recommends an internal status HTTP endpoint that can also serve Prometheus metrics",
+   "Explains panic scope using deferred recover() in HTTP handlers",
+   "Uses root-cause (five whys) framing for diagnosing failures"
+  ],
+  "caveats": [
+   "Slide deck only; the page text lacks the spoken explanation behind many slides",
+   "Code examples are fragmentary and may not be complete or current for newer Go versions"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3502,
+  "output": 995
+ },
+ "generated": "2026-11-01"
+}

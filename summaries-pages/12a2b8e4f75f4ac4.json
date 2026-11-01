@@ -1,0 +1,75 @@
+{
+ "id": "12a2b8e4f75f4ac4",
+ "url": "https://www.usenix.org/system/files/login/articles/login_aug15_06_roth.pdf",
+ "final_url": "https://www.usenix.org/system/files/login/articles/login_aug15_06_roth.pdf",
+ "kind": "tool",
+ "method": "pdf",
+ "page_title": "",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Service Level Agreement",
+   "entry": "(Un)Reliability Budgets - Finding Balance between Innovation and Reliability"
+  }
+ ],
+ "summary": {
+  "name": "(Un)Reliability Budgets",
+  "one_liner": "A 2015 USENIX ;login: article by Google SRE Mark Roth describing the \"unreliability budget,\" a metric-based method for balancing feature velocity against service reliability.",
+  "category": "sre reliability practice",
+  "keywords": [
+   "unreliability budget",
+   "error budget",
+   "slo",
+   "service level objective",
+   "site reliability engineering",
+   "sre",
+   "google sre",
+   "innovation vs reliability",
+   "release velocity",
+   "canary release",
+   "canary duration",
+   "push frequency",
+   "deployment risk",
+   "quarterly uptime goal",
+   "reliability tradeoff",
+   "usenix login",
+   "mark roth",
+   "hope is not a strategy",
+   "balance innovation and reliability",
+   "how to decide release frequency",
+   "product development vs sre tension",
+   "software testing amount",
+   "revert bad push",
+   "service uptime budget",
+   "data-driven reliability decisions"
+  ],
+  "use_cases": [
+   "Deciding how often to push releases to production",
+   "Negotiating risk between product developers and SRE teams",
+   "Setting a quarterly reliability target for a service",
+   "Deciding canary size and duration",
+   "Choosing between quick fixes and full testing after a rollback"
+  ],
+  "what_it_does": "The article explains the structural tension between Product Development (measured on velocity) and SRE (measured on reliability) and lists recurring disputes over testing, push frequency, canary duration and size, and retry after reverted pushes. It proposes a quarterly unreliability budget, derived from an SLO set by Product Management and measured by Google's monitoring system. The budget is the allowed gap between target and actual uptime; releases pause once it is spent, except critical fixes. A hypothetical example shows 0.0002% of failures consuming 20% of a 0.001% budget. The author argues the budget makes teams self-policing and highlights that over-exceeding an SLO signals too little risk-taking.",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Quarterly unreliability budget derived from SLO, measured by an independent monitoring system",
+   "Worked example: 0.0002% failure against 0.001% budget equals 20% consumed",
+   "Freezes non-critical pushes once the budget is spent",
+   "Frames over-exceeding an SLO as a sign of over-provisioning or insufficient risk-taking"
+  ],
+  "caveats": [
+   "Describes Google's internal practice; the article gives no tooling or implementation details",
+   "Actual SLOs at Google may be more complex, involving latency and data freshness"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6548,
+  "output": 985
+ },
+ "generated": "2026-11-01"
+}

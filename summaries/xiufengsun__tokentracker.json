@@ -1,0 +1,97 @@
+{
+ "id": "xiufengsun/tokentracker",
+ "repo": "xiufengsun/TokenTracker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "👨‍💻 Development (62)",
+   "entry": "TokenTracker - Local-first menu bar app and CLI that tracks AI token usage and estimated cost across Claude Code, Codex, Cursor, Gemini, Copilot and more without reading prompts."
+  }
+ ],
+ "summary": {
+  "one_liner": "A local-first token usage and cost dashboard that parses logs from 47 AI coding tools on your machine, with a CLI, native desktop apps, and desktop widgets.",
+  "category": "ai token usage tracking",
+  "keywords": [
+   "ai token tracker",
+   "token usage dashboard",
+   "llm cost tracking",
+   "ai coding cost",
+   "claude code usage",
+   "codex cli usage",
+   "cursor token usage",
+   "gemini cli usage",
+   "copilot usage stats",
+   "local-first analytics",
+   "menu bar app",
+   "macos menu bar",
+   "windows system tray",
+   "linux appimage",
+   "desktop widgets",
+   "desktop pet",
+   "usage limits tracker",
+   "rate limit monitor",
+   "litellm pricing",
+   "model cost estimate",
+   "token counter",
+   "ccusage alternative",
+   "tokscale alternative",
+   "npx cli dashboard",
+   "privacy first telemetry",
+   "parse local logs",
+   "achievements badges",
+   "skills manager",
+   "leaderboard",
+   "track ai spend",
+   "share usage across devices"
+  ],
+  "what_it_does": "Tracks token counts and estimated USD cost from local session logs, databases, and telemetry files written by many AI coding tools (Claude Code, Codex CLI, Cursor, Gemini CLI, GitHub Copilot, Kiro, OpenCode, Cline, and others). It installs hooks or notify entries into supported tools where needed, and reads other tools' files passively. Data is aggregated into 30-minute UTC buckets in a local SQLite store, and a web dashboard at localhost:7680 shows trends, model breakdowns, cost analysis, and an activity heatmap. A CLI provides status, sync, doctor, and JSON output commands. The README also describes per-provider quota checks, a cost engine using LiteLLM pricing with a bundled offline snapshot, optional cloud sync and leaderboard (opt-in), and a Skills tab for syncing public skills across tools.",
+  "use_cases": [
+   "track how many tokens and dollars my AI coding tools use",
+   "compare usage across Claude Code, Codex, Cursor and Gemini",
+   "see which models cost the most",
+   "check remaining rate limits for AI coding providers",
+   "view a usage dashboard from the macOS menu bar",
+   "merge usage from laptop and desktop via an offline transfer file"
+  ],
+  "how_to_run": [
+   "npx tokentracker-cli",
+   "npm i -g tokentracker-cli",
+   "tokentracker",
+   "tokentracker status",
+   "tokentracker doctor",
+   "brew install --cask xiufengsun/tokentracker/tokentracker"
+  ],
+  "stack": [
+   "Node.js 20+",
+   "SQLite (system sqlite3 CLI or node:sqlite)",
+   "LiteLLM pricing data",
+   "Swift / WKWebView (macOS app)",
+   "WebView2 (Windows app)",
+   "WebKitGTK (Linux app)",
+   "dashboard web UI (npm build)"
+  ],
+  "notable": [
+   "Passive readers for 47 tools; many require no hook installation and only read files the tools already produce",
+   "Privacy design: parses only token counts, timestamps, and model names; prompts and code are not stored or uploaded",
+   "Native desktop apps for macOS menu bar, Windows system tray, and Linux tray, plus four desktop widgets",
+   "Cost engine covers 2,200+ models with a 24h disk cache and bundled offline pricing snapshot",
+   "Offline usage transfer lets you export a JSON snapshot from one computer and merge it into another"
+  ],
+  "caveats": [
+   "Cloud sync, leaderboard, and TokenTracker Cloud are optional; cloud plans are paid (USD 4.99/month or 39.99/year), and the self-hosted install is described as a technical preview",
+   "Some providers need explicit opt-in or extra setup (e.g. TRAE Work CN requires TOKENTRACKER_TRAE_CN_USAGE=1; Antigravity quota needs credentials and Linux keyring setup); some models have no pricing and show $0",
+   "macOS app is ad-hoc signed, so Gatekeeper requires manual approval; Linux tray behavior depends on GNOME AppIndicator and the .deb does not install on Debian 12"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 18348,
+  "output": 1549
+ },
+ "generated": "2026-11-01"
+}

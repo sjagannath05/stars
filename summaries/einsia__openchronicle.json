@@ -1,0 +1,103 @@
+{
+ "id": "einsia/openchronicle",
+ "repo": "Einsia/OpenChronicle",
+ "kind": "star",
+ "description": "",
+ "topics": [],
+ "language": "Python",
+ "stars": 2788,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-05-09",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "OpenChronicle is an open-source, local-first memory layer that captures macOS accessibility-tree context and turns it into Markdown and SQLite memory that any tool-capable LLM agent can query.",
+  "category": "local ai memory",
+  "keywords": [
+   "ai memory",
+   "agent memory",
+   "local-first",
+   "macos accessibility",
+   "ax tree",
+   "accessibility api",
+   "screen context",
+   "mcp server",
+   "model context protocol",
+   "markdown memory",
+   "sqlite fts5",
+   "full text search",
+   "personal knowledge base",
+   "openai chronicle alternative",
+   "ollama",
+   "lm studio",
+   "litellm",
+   "claude code",
+   "claude desktop",
+   "codex",
+   "session summarization",
+   "durable facts",
+   "supersede history",
+   "tool-calling agent",
+   "memory layer",
+   "daily event log",
+   "remember my work context",
+   "give ai assistant memory of my work",
+   "self-hosted agent memory",
+   "mac desktop activity tracker"
+  ],
+  "what_it_does": "OpenChronicle runs on macOS and watches accessibility events from the active apps. It parses focused elements, visible text and URLs into a capture buffer, then normalizes them into timeline blocks. A session manager groups activity into sessions using idle and app-switch rules, and a reducer and classifier turn those sessions into Markdown files such as user-, project-, tool-, topic-, person-, org- and daily event- notes. The Markdown is indexed in local SQLite with FTS5. The daemon exposes an MCP endpoint so agents can query this memory through tools. The README says the model can be local or cloud, via Ollama, LM Studio, OpenAI, Anthropic or any LiteLLM-compatible provider.",
+  "use_cases": [
+   "give a coding agent memory of what I was working on",
+   "recall past decisions and context across sessions",
+   "track which tools, projects and people I work with",
+   "query my recent screen activity from an AI assistant",
+   "keep private AI memory on my own Mac",
+   "build custom memory parsers for apps like browsers or editors"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd openchronicle",
+   "bash install.sh",
+   "openchronicle start",
+   "openchronicle status",
+   "uv sync --all-extras",
+   "uv run pytest"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "SQLite FTS5",
+   "Markdown",
+   "MCP (Model Context Protocol)",
+   "LiteLLM",
+   "macOS Accessibility (AX Tree)",
+   "mac-ax-watcher"
+  ],
+  "notable": [
+   "AX-tree-first capture, with screenshots planned as a secondary signal, to keep memory compact and cheap to process",
+   "Memory stored as human-readable Markdown on disk plus a local SQLite index",
+   "Supersede-not-delete history for memory files",
+   "Session-aware writing that groups activity into sessions instead of per-snapshot logs",
+   "Model-agnostic: local or cloud LLM providers, with MCP as the best-supported agent interface today"
+  ],
+  "caveats": [
+   "macOS only (requires macOS 13+ and Xcode Command Line Tools), and the README calls it early alpha at v0.1.0",
+   "MCP is the best-supported integration path today; other agent integrations are described more loosely",
+   "The MCP endpoint URL is blank in the README, so the exact address must be found in docs/mcp.md"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3870,
+  "output": 1249
+ },
+ "generated": "2026-11-01"
+}

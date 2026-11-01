@@ -1,0 +1,74 @@
+{
+ "id": "fe3240d8dcdc809d",
+ "url": "https://cloud.google.com/blog/products/management-tools/sre-keeps-digging-to-prevent-problems",
+ "final_url": "https://cloud.google.com/blog/products/management-tools/sre-keeps-digging-to-prevent-problems",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SRE keeps digging to prevent problems | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Finding a problem at the bottom of the Google stack"
+  }
+ ],
+ "summary": {
+  "name": "SRE keeps digging to prevent problems",
+  "one_liner": "A Google Cloud blog post walking through a real SRE incident in which GFE machine errors were traced down to failed rack casters causing CPU throttling.",
+  "category": "sre incident case study",
+  "keywords": [
+   "site reliability engineering",
+   "sre",
+   "incident response",
+   "root cause analysis",
+   "postmortem",
+   "google sre",
+   "google front end",
+   "gfe",
+   "bgp flapping",
+   "cpu throttling",
+   "thermal throttling",
+   "packet loss",
+   "rack hardware failure",
+   "data center cooling",
+   "error budget",
+   "drain machines",
+   "on-call",
+   "blameless postmortem",
+   "all incidents should be novel",
+   "google cloud blog",
+   "hardware operations",
+   "infrastructure troubleshooting",
+   "monitoring and alerting",
+   "hybrid cloud sre",
+   "multi-cloud sre"
+  ],
+  "use_cases": [
+   "Learning how SREs trace a production incident down to hardware",
+   "Understanding incident mitigation by draining traffic before root cause",
+   "Studying cross-team incident investigation between SRE and hardware ops",
+   "Preparing an example for an SRE training or talk",
+   "Seeing how to file a hardware repair bug with clear symptoms"
+  ],
+  "what_it_does": "The post describes a real Google incident in which GFE (Google front end) machines in the edge network produced abnormal errors. The on-call SRE drained the affected machines to stop customer impact, then found packet loss isolated to one rack and correlated BGP flapping. Kernel logs showed CPU throttling from package temperature thresholds, and a monitored CPU spike in the BGP process matched the errors. Neighboring racks were unaffected. The hardware team found that failed rack casters let the loaded rack tilt, disrupting liquid coolant flow. The post then covers the caster repair and the systematic replacement of other racks with the same issue.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Traces a software symptom (GFE errors, BGP flapping) down to a physical cause (failed rack casters)",
+   "Shows drain-first mitigation followed by root-cause investigation",
+   "Describes how a hardware bug ticket was written with clear symptoms and actions taken"
+  ],
+  "caveats": [
+   "This is a narrative blog post, not a software tool or product, so there is nothing to install or use",
+   "Describes internal Google infrastructure practices; specifics may not apply directly to other environments"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3658,
+  "output": 960
+ },
+ "generated": "2026-11-01"
+}

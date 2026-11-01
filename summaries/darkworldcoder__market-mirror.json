@@ -1,0 +1,100 @@
+{
+ "id": "darkworldcoder/market-mirror",
+ "repo": "DarkWorldCoder/market-mirror",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Marketing",
+   "entry": "MarketMirror - Tests ads, prices, emails and sales pitches on simulated buyers and returns a go / iterate / no-go report; runs locally from coding agents as an MCP server. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "MarketMirror is a self-hosted, open-source tool that tests ads, prices, emails, website journeys and sales pitches on LLM-simulated buyer personas and returns a go / iterate / no-go report, runnable from AI coding agents via MCP.",
+  "category": "market research simulation",
+  "keywords": [
+   "market research",
+   "marketing simulation",
+   "synthetic buyers",
+   "simulated personas",
+   "ad testing",
+   "ad creative testing",
+   "price testing",
+   "sales pitch rehearsal",
+   "email subject line testing",
+   "landing page testing",
+   "go no-go report",
+   "mcp server",
+   "model context protocol",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "cursor",
+   "llm agents",
+   "agent-based simulation",
+   "oasis social simulation",
+   "mirofish",
+   "survey simulation",
+   "split testing",
+   "a/b test simulation",
+   "pre-launch validation",
+   "test ideas before spending on ads",
+   "try pricing with fake customers",
+   "customer research",
+   "offline html dashboard",
+   "self-hosted",
+   "open source",
+   "uv",
+   "python"
+  ],
+  "what_it_does": "MarketMirror generates AI-written buyer personas from an audience spec, each with a background, budget, phone and data situation, trust concerns and a decision card. It places ads among organic posts in simulated Facebook, Instagram, Reddit, TikTok, LinkedIn and X feeds and records actions such as clicks, hides and comments. It surveys the personas with free-text answers converted to 1-5 ratings, runs split tests of messages, asks Van Westendorp price questions, and rehearses a sales pitch with objections and rebuttals. It can also send simulated visitors through a website, test emails without sending them, and run optional social rounds on OASIS. Results are written to a self-contained HTML dashboard with exports to Markdown, JSON, CSV and PDF. The README also describes optional calibration against real campaign exports and backtests.",
+  "use_cases": [
+   "pre-test ads before spending on a live campaign",
+   "rehearse a sales pitch and objection handling",
+   "compare pricing or trial offers with simulated buyers",
+   "test subject lines and email sequences",
+   "find where website visitors drop off",
+   "pick which audience or country to start with"
+  ],
+  "how_to_run": [
+   "git clone <repo> && cd market-mirror",
+   "bash install.sh --configure",
+   "./mm start",
+   "./mm cli quickstart --out scenarios/acme",
+   "claude mcp add market-mirror -- uvx marketmirror (or any MCP client: command uvx, args [\"marketmirror\"])"
+  ],
+  "stack": [
+   "Python 3.12",
+   "uv",
+   "MiroFish",
+   "CAMEL-AI OASIS",
+   "SQLite",
+   "local embeddings",
+   "MCP (Model Context Protocol)",
+   "LLM providers of the user's choice (including Claude, Codex, Gemini)"
+  ],
+  "notable": [
+   "Runs from coding agents (Claude Code, Codex, Gemini CLI, Cursor) as an MCP server, and is listed in the official MCP Registry",
+   "Survey answers are rated with semantic similarity rating using local embeddings, avoiding extra model calls",
+   "Buyers keep memory across tests in the same run, so an earlier ad reaction carries into the later pitch",
+   "Mixed-provider markets let different LLM providers write and play their own share of the personas, with dashboard comparison",
+   "Dashboard is one offline HTML file with a table behind every chart; the README shows a worked example with simulated results"
+  ],
+  "caveats": [
+   "The buyers are AI-generated; the README states results describe simulated cohorts and are not forecasts of real demand or proof of predictive accuracy.",
+   "Requires Linux, macOS or WSL, plus Git, uv and Python 3.12; quick start makes paid-or-quota model calls on the chosen provider.",
+   "Large runs can hit provider usage limits; the README's 3,000-person run took hours and needed a switch to API keys mid-run."
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 15791,
+  "output": 1458
+ },
+ "generated": "2026-11-01",
+ "license_source": "LICENSE"
+}

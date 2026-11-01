@@ -1,0 +1,101 @@
+{
+ "id": "pragyaangaur/minecraft-bedrock-macos",
+ "repo": "pragyaangaur/Minecraft-Bedrock-macOS",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Gaming Software",
+   "entry": "Bedrock Launcher - Play your own copy of Minecraft Bedrock Edition for Windows on Apple Silicon, fully offline, through a locally built WineGDK with DXMT. [![Open-Source Software][OSS Icon] ![Freeware][Freeware Icon]](https://github.com/pragyaangaur/Minecraft-Bedrock-macOS)"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS port toolkit that runs your own copy of Minecraft Bedrock Edition for Windows on Apple silicon Macs, offline, using a locally built WineGDK and DXMT.",
+  "category": "game emulation tooling",
+  "keywords": [
+   "minecraft bedrock",
+   "minecraft macos",
+   "apple silicon",
+   "m1 mac",
+   "wine",
+   "winegdk",
+   "dxmt",
+   "run windows games on mac",
+   "windows emulation mac",
+   "offline minecraft",
+   "bedrock launcher",
+   "rosetta 2",
+   "metal translation",
+   "memory dump",
+   "executable reconstruction",
+   "game port",
+   "fmod",
+   "gnutls",
+   "freetype",
+   "local game play",
+   "play minecraft on mac",
+   "run windows program on macos",
+   "game compatibility layer",
+   "dmg installer",
+   "hobby game port",
+   "reverse engineering",
+   "lan minecraft alternative",
+   "windows game on apple silicon",
+   "minecraft windows on mac"
+  ],
+  "what_it_does": "The project runs the Windows edition of Minecraft Bedrock that you already own on a Mac with an M1 chip or newer, and the README says it is the real game rather than a remake. It ships a launcher app (Bedrock Launcher) packaged as a disk image, but the download contains no game files: you copy the game folder and a memory dump of the running game from a Windows PC, and the app prepares the game on first launch. Tools in the repo rebuild the encrypted executable from the dump, restore its import table, and undo start-up state captured in the dump. Patches add to WineGDK (Xbox GDK runtime parts, a heap overrun fix, GameInput mouse support) and DXMT, and small stand-in DLLs replace the HTTP library so the game runs offline. Developers can run setup.sh to build GnuTLS, FreeType, WineGDK, LLVM 15 and DXMT from source and create a Wine prefix. The README reports survival, creative, the Nether and the End work, and that an M4 Mac runs it at about 100 fps.",
+  "use_cases": [
+   "play my own Windows copy of Minecraft Bedrock on a Mac",
+   "run Minecraft offline on Apple silicon",
+   "build a Wine and DXMT game runtime from source",
+   "experiment with reverse engineering a Windows game binary for macOS",
+   "study WineGDK and DXMT patches for Xbox GDK games",
+   "launch a Windows game on macOS without a Windows install"
+  ],
+  "how_to_run": [
+   "Download Bedrock-Launcher.dmg, drag Bedrock Launcher into Applications, and allow it in System Settings > Privacy & Security (the app is not signed by Apple).",
+   "Copy the game folder and a memory dump of the running game (Minecraft for Windows 1.26.52) from a Windows PC, then open the app and point it at both.",
+   "Build from source: install Xcode with the Metal toolchain and the Homebrew packages listed in the README, then run ./setup.sh --game \"/path/to/game/folder\" --dump \"/path/to/dump.dmp\" (about 30 GB and 1-2 hours on first build).",
+   "Start the game with tools/play_minecraft.sh or by double-clicking Play Minecraft.command.",
+   "Optional: run scripts/build-app.sh to build the app and dist/Bedrock-Launcher.dmg."
+  ],
+  "stack": [
+   "Wine",
+   "WineGDK",
+   "DXMT",
+   "LLVM 15",
+   "Python",
+   "GnuTLS",
+   "Nettle",
+   "GMP",
+   "FreeType",
+   "FMOD",
+   "mingw-w64",
+   "Homebrew",
+   "Xcode / Metal toolchain",
+   "Rosetta 2"
+  ],
+  "notable": [
+   "Runs the real Windows Bedrock game on Apple silicon without shipping any game files; the user supplies their own copy and a memory dump.",
+   "Rebuilds the encrypted game executable from a full memory dump, restoring its import table.",
+   "Includes an offline stand-in replacement for the game's HTTP library, which is how online features are disabled.",
+   "Launcher app packaged as a DMG, with setup.sh that builds the whole stack from source and skips completed steps on rerun.",
+   "Documents a reverse-engineering workflow in which AI agents traced and fixed each crash, according to the README."
+  ],
+  "caveats": [
+   "Online features are unavailable: sign-in, Realms, Marketplace and multiplayer servers do not work.",
+   "Only Minecraft for Windows version 1.26.52 has been tested, and the tools' addresses match only that version; it requires Apple silicon and was tested on macOS 27.",
+   "Requires a legally owned Windows copy plus a memory dump, a large build (about 30 GB, 1-2 hours) for source builds, and the app is not signed by Apple so macOS blocks it on first launch."
+  ],
+  "license": "MIT for the scripts, tools and stubs (per LICENSE); patches in patches/wine-gdk fall under LGPL 2.1 and patches in patches/dxmt under MIT. The app bundles Wine, GnuTLS, Nettle, GMP, FreeType, DXMT and Python under their own licences."
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4040,
+  "output": 1851
+ },
+ "generated": "2026-11-01"
+}

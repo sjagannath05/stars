@@ -1,0 +1,75 @@
+{
+ "id": "88d8716ccb25a75a",
+ "url": "https://honeycomb.io/blog/2017/01/instrumentation-worst-case-performance-matters",
+ "final_url": "https://www.honeycomb.io/blog/high-cardinality-instrumentation-wide-events-frontend-apps",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Implementing High-Cardinality Instrumentation in Frontend Apps",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Monitoring & Observability & Alerting",
+   "entry": "Instrumentation: Worst case performance matters"
+  }
+ ],
+ "summary": {
+  "name": "Honeycomb for Frontend Observability",
+  "one_liner": "A blog post by Honeycomb's product manager explaining how to add high-cardinality \"wide event\" instrumentation to frontend web apps using Honeycomb's OpenTelemetry-based Web SDK.",
+  "category": "frontend observability guide",
+  "keywords": [
+   "high-cardinality instrumentation",
+   "wide events",
+   "frontend observability",
+   "honeycomb",
+   "honeycomb web sdk",
+   "opentelemetry",
+   "opentelemetry web sdk",
+   "otel span processor",
+   "resource attributes",
+   "span attributes",
+   "observability 2.0",
+   "real user monitoring",
+   "rum",
+   "core web vitals",
+   "inp",
+   "interaction to next paint",
+   "ttfb",
+   "frontend performance monitoring",
+   "browser telemetry",
+   "distributed tracing",
+   "instrument web app",
+   "custom span attributes",
+   "metrics vs wide events",
+   "front end error monitoring",
+   "applycustomattributesonspan",
+   "document load instrumentation"
+  ],
+  "use_cases": [
+   "Instrumenting a browser app to answer per-customer performance questions",
+   "Finding which page or script causes poor INP scores",
+   "Attaching user plan or team info to frontend traces",
+   "Tracking product funnel conditions such as login or cart adds",
+   "Comparing performance across browsers, devices, or releases"
+  ],
+  "what_it_does": "The post contrasts aggregate metrics (such as P70 Core Web Vitals or average TTFB) with wide events that can answer detailed questions, such as which page had the worst INP and which customers are affected. It explains three ways to attach attributes to spans: session-level resource attributes set when the SDK is instantiated, dynamic attributes added via OpenTelemetry span processors as conditions are met, and span-specific attributes added through options like applyCustomAttributesOnSpan in instrumentation libraries. It states that Honeycomb's Web SDK collects wide events with little setup and that it supports up to 2000 attributes per span.",
+  "pricing": "unknown",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Charges the same per event regardless of attribute count, and every attribute is queryable without pre-indexing",
+   "Built on OpenTelemetry, with span processors for attaching dynamic data during a session",
+   "Up to 2000 attributes per span"
+  ],
+  "caveats": [
+   "Page does not give pricing; it only says to talk to the team for a custom demo or plan help",
+   "Describes Honeycomb's own SDK, so it is tied to that vendor's product"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3940,
+  "output": 986
+ },
+ "generated": "2026-11-01"
+}

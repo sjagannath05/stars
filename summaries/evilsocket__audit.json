@@ -1,0 +1,101 @@
+{
+ "id": "evilsocket/audit",
+ "repo": "evilsocket/audit",
+ "kind": "star",
+ "description": "An 8-stage vulnerability-discovery agent.",
+ "topics": [],
+ "language": "Python",
+ "stars": 882,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-06-10",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "programming"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A Python agent that runs an 8-stage vulnerability-discovery pipeline against a codebase, using many narrow Claude-driven agents, adversarial validation, and a reachability trace gate.",
+  "category": "ai security auditing",
+  "keywords": [
+   "vulnerability discovery",
+   "security audit agent",
+   "code audit",
+   "bug hunting",
+   "llm security scanner",
+   "claude agent sdk",
+   "claude code",
+   "claude pro subscription",
+   "claude max",
+   "multi-agent pipeline",
+   "adversarial validation",
+   "reachability analysis",
+   "taint tracing",
+   "source to sink",
+   "proof of concept generation",
+   "poc exploit",
+   "vulnerability report generator",
+   "sqlite state store",
+   "dedupe findings",
+   "git history security patches",
+   "variant analysis",
+   "openrouter gateway",
+   "anthropic api proxy",
+   "live target testing",
+   "command injection finder",
+   "static code analysis with llm",
+   "find security bugs in my repo",
+   "audit my codebase for vulnerabilities",
+   "cost cap for llm runs"
+  ],
+  "what_it_does": "The tool runs a fixed pipeline of eight stages (Recon, Hunt, Validate, Gapfill, Dedupe, Trace, Feedback, Report) over a target repository. Recon maps the repo and emits narrowly scoped Hunt tasks, and Hunt agents each examine one attack class, optionally compiling or running PoCs in per-task scratch directories. A separate Validate stage, on a different model, tries to disprove findings, and Trace checks whether attacker-controlled input can reach the flagged sink. Reachable traces feed Feedback, which seeds new hunts for similar patterns. Each stage uses a markdown prompt and a JSON Schema, with a repair turn when output fails validation. Results are stored in SQLite and JSONL, and the Report stage produces a structured report, exported with the audit report command. Options include a cost cap, concurrency limits, scope-notes files, and an optional live-target mode that reproduces findings over HTTP against a given URL.",
+  "use_cases": [
+   "audit a codebase for security vulnerabilities",
+   "find command injection or auth bugs in source code",
+   "triage likely-exploitable findings and drop unreachable ones",
+   "reproduce vulnerabilities against a running test deployment",
+   "find unpatched sibling code similar to past security fixes",
+   "generate a structured vulnerability report for a repo"
+  ],
+  "how_to_run": [
+   "python -m venv .venv && source .venv/bin/activate",
+   "pip install -e .",
+   "claude setup-token  (optional, for headless auth; or use existing claude login)",
+   "audit auth-check",
+   "audit run --repo /path/to/target --run-id my-run",
+   "audit report --run-id my-run --format md > report.md"
+  ],
+  "stack": [
+   "Python",
+   "Claude Code Agent SDK",
+   "Anthropic Messages API",
+   "SQLite",
+   "JSON Schema",
+   "YAML config"
+  ],
+  "notable": [
+   "Eight-stage pipeline where a second model tries to disprove each finding before it is accepted",
+   "Reachability trace gate requires attacker-controlled input to reach the sink",
+   "Recon mines git history for past security patches and seeds hunts at unpatched sibling files",
+   "Works with Claude subscription login, a headless OAuth token, or an LLM gateway such as OpenRouter",
+   "Optional live-target mode reproduces findings over real HTTP with network egress limited to the target host and 127.0.0.1"
+  ],
+  "caveats": [
+   "Hunt agents have Bash access and are not sandboxed at the OS level; the README recommends running in a disposable VM or container",
+   "Agents read everything passed via --add-dir, including .env and secrets directories, and outputs are not scrubbed of those reads",
+   "Costs can grow quickly on large repos; a --max-cost-usd cap is available but must be set by the user",
+   "Non-Claude models through a gateway may not produce schema-compliant output as reliably"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5447,
+  "output": 1458
+ },
+ "generated": "2026-11-01"
+}

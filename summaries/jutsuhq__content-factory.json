@@ -1,0 +1,106 @@
+{
+ "id": "jutsuhq/content-factory",
+ "repo": "jutsuhq/content-factory",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎬 Video (30)",
+   "entry": "Content Factory - Faceless video generator for TikTok, YouTube Shorts and Reels: a script becomes a vertical video with AI frames, voiceover and subtitles."
+  }
+ ],
+ "summary": {
+  "one_liner": "Content Factory is an open-source, local-first Mac app and engine that turns a script into a finished vertical faceless video for TikTok, YouTube Shorts and Instagram Reels, with AI-generated frames, voiceover, word-by-word subtitles and music.",
+  "category": "ai video generation",
+  "keywords": [
+   "faceless video generator",
+   "tiktok video generator",
+   "youtube shorts generator",
+   "instagram reels generator",
+   "ai video pipeline",
+   "script to video",
+   "text to video",
+   "depth parallax",
+   "frame interpolation",
+   "rife",
+   "depth anything",
+   "kokoro tts",
+   "vosk",
+   "whisper subtitles",
+   "remotion",
+   "mcp server",
+   "claude mcp",
+   "model context protocol",
+   "tauri app",
+   "macos video tool",
+   "apple silicon",
+   "local video generation",
+   "open source higgsfield alternative",
+   "higgsfield content factory alternative",
+   "moneyprinterturbo alternative",
+   "short-video-maker alternative",
+   "make short videos automatically",
+   "share videos without subscription",
+   "generate vertical video from script",
+   "what if video format"
+  ],
+  "what_it_does": "Content Factory takes a script, which you write or an MCP agent such as Claude writes, and produces a vertical short video. Each beat gets an AI-generated still image from a chosen provider (OpenAI, Google Gemini or fal.ai); depth parallax, frame interpolation (RIFE) and camera moves give motion without a video model. Narration is generated locally with Kokoro (English) or Vosk (Russian), subtitles are aligned word by word with Whisper, and CC0 music is ducked under the voice. A quality check covers length, black frames, loudness, speech clarity, text length and music license. Formats are folders of data (schema, guide, prompts, styles, Remotion template), with the bundled format being \"What if\". A drawn mode produces SVG scenes via Claude without image generation. The app, a `factory` command line tool, an HTTP API and an MCP server all share one job queue.",
+  "use_cases": [
+   "make a faceless TikTok or Shorts video from a script",
+   "turn a What if story into a narrated vertical video",
+   "generate AI images and animate them into a short video on a Mac",
+   "let Claude write and render short-form videos through MCP",
+   "keep a consistent cast and style across a channel's videos",
+   "make free watermark-free short videos without a subscription"
+  ],
+  "how_to_run": [
+   "brew install uv node ffmpeg",
+   "git clone && cd content-factory",
+   "cd app && npm install && npx tauri build --bundles app",
+   "open \"src-tauri/target/release/bundle/macos/Content Factory.app\"",
+   "cd engine && uv sync && uv run factory doctor && uv run factory setup all",
+   "claude mcp add -s user content-factory -- uv run --project /path/to/content-factory/engine factory mcp"
+  ],
+  "stack": [
+   "Python",
+   "uv",
+   "Node.js 20+",
+   "Rust",
+   "Tauri",
+   "React",
+   "Remotion",
+   "FFmpeg",
+   "Kokoro via MLX-Audio",
+   "Vosk",
+   "Whisper",
+   "RIFE ncnn Vulkan",
+   "Depth Anything V2",
+   "MCP",
+   "YAML",
+   "JSON"
+  ],
+  "notable": [
+   "No video model: motion comes from a handful of AI stills via depth parallax and frame interpolation, so a one-minute video needs about eight images",
+   "Formats are data: a folder per format that the engine, app and MCP server read, so new formats can be added without changing the engine",
+   "Incremental rebuilds: each stage is cached by input hash, so editing one line re-voices only one beat",
+   "Human approval gate: nothing is posted automatically; the user accepts each video",
+   "Local-first: voice, alignment, depth, interpolation and rendering run on the machine; only image prompts go to the chosen provider"
+  ],
+  "caveats": [
+   "macOS on Apple silicon only today; Windows and Linux are planned and the voice back end there is unfinished",
+   "Early-stage project with no signed builds, so the app must be built from source",
+   "Requires an image provider API key for AI-frames videos (drawn mode needs no key); Remotion is about 1 GB and has its own license that may require a company license for some teams",
+   "Drawn mode is labeled a prototype"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7325,
+  "output": 1551
+ },
+ "generated": "2026-11-01"
+}

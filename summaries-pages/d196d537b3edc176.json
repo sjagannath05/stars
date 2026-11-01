@@ -1,0 +1,77 @@
+{
+ "id": "d196d537b3edc176",
+ "url": "https://www.oreilly.com/content/generic-mitigations",
+ "final_url": "https://www.oreilly.com/content/generic-mitigations/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Generic mitigations",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Generic mitigations"
+  }
+ ],
+ "summary": {
+  "name": "Generic mitigations",
+  "one_liner": "An O'Reilly essay arguing that services should have ready-made, broadly applicable outage mitigations (such as rollbacks, degrade, drain, and quarantine) so on-call engineers can restore service before fully diagnosing the problem.",
+  "category": "sre incident mitigation essay",
+  "keywords": [
+   "generic mitigations",
+   "outage mitigation",
+   "time to mitigate",
+   "incident management",
+   "site reliability engineering",
+   "sre",
+   "rollback",
+   "data rollback",
+   "degrade mode",
+   "graceful degradation",
+   "upsize",
+   "block list",
+   "drain traffic",
+   "quarantine",
+   "bad instance",
+   "query of death",
+   "hotfix",
+   "production readiness review",
+   "oncall runbook",
+   "emergency panic button",
+   "duct tape fix",
+   "reduce outage impact",
+   "time to fix vs time to mitigate",
+   "multi-homed service failover",
+   "on-call best practices",
+   "binary rollback",
+   "disaster recovery drill"
+  ],
+  "use_cases": [
+   "Deciding which emergency mitigations a service needs",
+   "Reducing user-visible downtime during incidents",
+   "Planning production readiness reviews",
+   "Designing rollback or traffic-drain controls",
+   "Training on-call engineers to use mitigations safely"
+  ],
+  "what_it_does": "The essay defines a mitigation as any action that reduces the impact of a production breakage, and a generic mitigation as one useful across many outages. It lists common patterns: rollback, data rollback, degrade, upsize, block list, drain, and quarantine. It argues that generic mitigations let responders act without fully understanding the problem, so the goal is to minimize time to mitigate rather than time to fix. It also notes that these patterns need tailoring per service and diagnosis, and that teams should practice using mitigations through drills, tests, or access checklists.",
+  "pricing": "free",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Frames incident success as time to mitigate rather than time to fix",
+   "Catalogues seven generic mitigation patterns with caveats on when each applies",
+   "Recommends regularly exercising mitigations so their side effects are known before a real outage"
+  ],
+  "caveats": [
+   "Generic mitigations are hard to build well and must be tailored to each service",
+   "Some patterns, such as draining, do not suit services whose users are pinned to one zone",
+   "Mitigations only help if the team has practiced using them"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 3668,
+  "output": 938
+ },
+ "generated": "2026-11-01"
+}

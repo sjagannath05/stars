@@ -1,0 +1,129 @@
+{
+ "id": "autoshiftops/querytuner",
+ "repo": "AutoShiftOps/querytuner",
+ "kind": "star",
+ "description": "AI-powered SQL query diagnostics across PostgreSQL, MySQL, Oracle, SQL Server and SQLite. No database connection required.",
+ "topics": [
+  "developer-tools",
+  "devops",
+  "fastapi",
+  "langchain",
+  "llm",
+  "mysql",
+  "oracle",
+  "postgresql",
+  "query-optimization",
+  "sql",
+  "sqlite",
+  "sqlserver"
+ ],
+ "language": "Python",
+ "stars": 40,
+ "license": "MIT",
+ "homepage": "https://querytuner.com",
+ "pushed_at": "2026-10-28",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "QueryTuner is a web app and REST API that analyzes pasted SQL queries for performance problems across PostgreSQL, MySQL, Oracle, SQL Server and SQLite, with no database connection required.",
+  "category": "sql query optimization",
+  "keywords": [
+   "sql query optimization",
+   "sql performance",
+   "query tuner",
+   "sql diagnostics",
+   "slow query analysis",
+   "index recommendations",
+   "create index suggestions",
+   "explain plan",
+   "postgresql",
+   "mysql",
+   "oracle",
+   "sql server",
+   "sqlite",
+   "fastapi",
+   "langchain",
+   "llm",
+   "anthropic claude",
+   "openai",
+   "heuristic rules",
+   "anti-pattern detection",
+   "leading wildcard",
+   "select star",
+   "sql rewrite",
+   "cte rewrite",
+   "batch query analysis",
+   "schema-aware analysis",
+   "query readability score",
+   "sql injection detection",
+   "analyze sql without database",
+   "paste sql query review",
+   "ci cd sql checks",
+   "query anti patterns"
+  ],
+  "what_it_does": "QueryTuner takes SQL query text, plus optionally CREATE TABLE DDL, and reports performance issues. A deterministic heuristic engine always runs and flags patterns such as missing indexes, leading wildcards, functions in WHERE clauses, SELECT *, and unbounded ORDER BY, with findings ranked from Critical to Low. An optional AI layer, using Anthropic Claude by default or OpenAI, adds plain-English diagnosis, CREATE INDEX suggestions, and rewrites. Large or multi-statement queries get per-fix before/after suggestions instead of one full rewrite. A separate deterministic annotator adds inline comments without restructuring the query. The README also describes a readability score, basic SQL injection pattern detection, a client-side sanitizer that swaps table and column names for dummy values, shareable report URLs, and a batch page that splits a pasted workload into queries. The REST API is documented at /docs.",
+  "use_cases": [
+   "review a slow SQL query without access to the database",
+   "get index suggestions for a query",
+   "check SQL in code review or CI pipelines",
+   "analyze a batch of queries from a workload",
+   "rewrite a query with CTEs and explanations",
+   "share a SQL analysis report with a teammate",
+   "scrub proprietary table and column names before analysis"
+  ],
+  "how_to_run": [
+   "cd backend",
+   "python -m venv .venv && source .venv/bin/activate",
+   "pip install -r requirements.txt",
+   "cp .env.example .env  (add ANTHROPIC_API_KEY for AI features)",
+   "uvicorn app.main:app --reload --port 8000",
+   "cd frontend && npm install && npm run dev"
+  ],
+  "stack": [
+   "Python",
+   "FastAPI",
+   "Pydantic",
+   "sqlparse",
+   "LangChain",
+   "React",
+   "Tailwind CSS",
+   "Axios",
+   "Vite",
+   "Anthropic Messages API",
+   "OpenAI API",
+   "Supabase",
+   "Clerk",
+   "Render",
+   "Vercel"
+  ],
+  "notable": [
+   "Dialect-specific index DDL, such as CREATE INDEX CONCURRENTLY for PostgreSQL and WITH (ONLINE=ON) for SQL Server",
+   "Schema-aware mode: pasting CREATE TABLE DDL upgrades index suggestions from estimated to confirmed",
+   "Client-side sanitizer keeps proprietary schema names in the browser, with an in-memory substitution map",
+   "Heuristic analysis works offline with no API key; AI output is optional",
+   "Deterministic annotated query pass that never restructures SQL"
+  ],
+  "caveats": [
+   "No live database connection; analysis works only from pasted text",
+   "AI insights depend on Anthropic or OpenAI APIs being reachable and on an API key",
+   "LATERAL join correlated-column detection is not yet supported, per the README",
+   "Live DB connection mode and the GitHub Action are listed as planned, not built",
+   "Stripe checkout is disabled by default; the README says Pro is granted on request instead"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7479,
+  "output": 1481
+ },
+ "generated": "2026-11-01"
+}

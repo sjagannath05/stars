@@ -1,0 +1,75 @@
+{
+ "id": "86787c87348af786",
+ "url": "https://www.oreilly.com/content/rethinking-task-size-in-sre",
+ "final_url": "https://www.oreilly.com/content/rethinking-task-size-in-sre/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Rethinking Task Size in SRE",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Rethinking Task Size in SRE"
+  }
+ ],
+ "summary": {
+  "name": "Rethinking Task Size in SRE",
+  "one_liner": "A Google SRE article arguing that running fewer, bigger tasks (vertical scaling) can cut fixed per-replica costs and improve service efficiency in shared computing environments.",
+  "category": "sre efficiency article",
+  "keywords": [
+   "task size",
+   "vertical scaling",
+   "horizontal scaling",
+   "replica sizing",
+   "job reshaping",
+   "fixed costs per replica",
+   "sre efficiency",
+   "site reliability engineering",
+   "queries per second per core",
+   "qps/cpu",
+   "resource efficiency",
+   "bin packing",
+   "cluster scheduler",
+   "tail latency",
+   "headroom utilization",
+   "shared production environment",
+   "capacity planning",
+   "fewer bigger tasks",
+   "service productivity metric",
+   "google sre",
+   "oreilly article",
+   "reduce cloud costs",
+   "server right-sizing",
+   "cpu and ram provisioning",
+   "load balancing"
+  ],
+  "use_cases": [
+   "Deciding how many replicas to run versus how much CPU and RAM each gets",
+   "Reducing fixed overhead such as logging and monitoring across many tasks",
+   "Planning an iterative resizing experiment for a production job",
+   "Weighing efficiency gains against latency and scheduler risks",
+   "Reclaiming unused memory and CPU from over-provisioned services"
+  ],
+  "what_it_does": "The article explains why consolidating a job into fewer, larger tasks can reduce per-replica fixed costs such as binary size, monitoring, logging and open connections, and free headroom for other jobs. It proposes an iterative reshaping process: monitor SLO and efficiency metrics, test on a subset of tasks, resize exponentially or linearly, evaluate, then roll out region by region. It recommends efficiency metrics like QPS per CPU or service productivity, and watching for regressions in tail latency, mutex contention, and thread pool queuing during peak load. A Google case study reports a video statistics job going from 26,000 tasks of 1.9 cores to 13,000 tasks of 3.8 cores, improving efficiency about 25% (200 to 250 QPS per core).",
+  "pricing": "unknown",
+  "platforms": [
+   "unknown"
+  ],
+  "notable": [
+   "Case study: 26,000 tasks of 1.9 cores reshaped to 13,000 tasks of 3.8 cores, with about 25% efficiency gain",
+   "Describes memory reclaim of about two thirds of job capacity after resizing",
+   "Discusses risks of bigger tasks: contention, memory and network bandwidth saturation, and scheduler bin-packing delays"
+  ],
+  "caveats": [
+   "Bigger tasks can increase contention and tail latency and reduce scheduler packing flexibility",
+   "Trades some client-perceived latency for resource savings",
+   "Written from Google's production experience; results may not transfer to other environments"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4860,
+  "output": 1088
+ },
+ "generated": "2026-11-01"
+}

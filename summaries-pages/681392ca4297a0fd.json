@@ -1,0 +1,78 @@
+{
+ "id": "681392ca4297a0fd",
+ "url": "http://highscalability.com/blog/2018/4/16/google-a-collection-of-best-practices-for-production-service.html",
+ "final_url": "https://highscalability.com/google-a-collection-of-best-practices-for-production-service/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "Google: A Collection of Best Practices for Production Services - High Scalability -",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "Google: A Collection Of Best Practices For Production Services"
+  }
+ ],
+ "summary": {
+  "name": "Google SRE Production Services Best Practices",
+  "one_liner": "A free excerpt (Appendix B) from Google's Site Reliability Engineering book listing best practices for running production services, covering failure handling, rollouts, SLOs, error budgets, monitoring, postmortems, capacity planning, overload, and on-call staffing.",
+  "category": "sre reliability best practices",
+  "keywords": [
+   "google sre book appendix b",
+   "site reliability engineering",
+   "sre best practices",
+   "production services best practices",
+   "production readiness",
+   "error budget",
+   "error budgets sre",
+   "service level objective",
+   "slo",
+   "slo best practices",
+   "progressive rollout",
+   "staged rollout",
+   "canary rollout",
+   "blameless postmortem",
+   "postmortem culture",
+   "monitoring alerts pages tickets logging",
+   "capacity planning n+2",
+   "load shedding",
+   "graceful degradation",
+   "exponential backoff with jitter",
+   "retry storms cascading failures",
+   "fail sanely configuration validation",
+   "on-call rotation sizing",
+   "toil reduction 50 percent",
+   "reliability engineering guidelines",
+   "high availability practices",
+   "google gmail availability slo"
+  ],
+  "use_cases": [
+   "Designing alerting so only actionable issues page on-call engineers",
+   "Planning staged rollouts of config or binary changes",
+   "Setting SLOs and error budgets for a service",
+   "Handling overload with load shedding and backoff",
+   "Running blameless postmortems after incidents",
+   "Sizing on-call teams and limiting operational toil"
+  ],
+  "what_it_does": "The page is an excerpt from Google's free SRE book covering a collection of operating principles for production services. It recommends validating configuration inputs and keeping the previous state when new input looks wrong, rolling out changes in stages across traffic fractions and geographies, and measuring availability from the end user's perspective. It describes error budgets as 1 minus the SLO, with a freeze on launches when the budget is spent. It also covers monitoring output types (pages, tickets, logging), blameless postmortems, N+2 capacity planning, graceful overload handling with exponential backoff, and on-call team sizing with a 50% toil limit. Examples include a 2005 DNS empty-file outage and a 2009 malware-flagging incident.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Excerpt from Google's free Site Reliability Engineering book",
+   "Includes real incident examples such as the 2005 DNS empty-file outage and 2009 malware-flagging config error",
+   "Describes error budgets and SLOs measured at the client rather than the server",
+   "Recommends N+2 capacity provisioning and minimum on-call team sizes"
+  ],
+  "caveats": [
+   "Describes general practices rather than a software tool; no product features or downloads",
+   "Recommendations reflect Google's scale and may not fit smaller teams without adaptation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4518,
+  "output": 1092
+ },
+ "generated": "2026-11-01"
+}

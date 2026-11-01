@@ -1,0 +1,102 @@
+{
+ "id": "znat/parrotflow",
+ "repo": "znat/parrotflow",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎵 Audio (72)",
+   "entry": "ParrotFlow - Scriptable local dictation that uses the text on your screen to fix names, and your rules to format numbers, dates, and links."
+  }
+ ],
+ "summary": {
+  "one_liner": "ParrotFlow is a local, scriptable dictation app for macOS that fixes recognized text with your own rules, scripts, and optional prompts.",
+  "category": "macos dictation",
+  "keywords": [
+   "macos dictation",
+   "offline speech to text",
+   "local voice typing",
+   "voice typing mac",
+   "speech to text",
+   "dictation app",
+   "scriptable dictation",
+   "programmable dictation",
+   "custom transforms",
+   "regex replacement",
+   "vocabulary correction",
+   "context spelling",
+   "github pr links",
+   "slack mentions",
+   "number formatting",
+   "date formatting",
+   "money formatting",
+   "disfluency removal",
+   "ollama",
+   "gemma",
+   "openai",
+   "parakeet",
+   "wispr flow alternative",
+   "privacy-first transcription",
+   "dictate into coding agent",
+   "share dictation rules",
+   "homebrew install mac app",
+   "yaml config",
+   "python transform scripts",
+   "fix names in dictation",
+   "local llm grammar fix",
+   "voice to text for developers"
+  ],
+  "what_it_does": "ParrotFlow is a local dictation app for macOS, configured through a YAML file (config.yaml). Its pipeline runs steps on the transcribed text, such as built-in number, date, money, filler and disfluency handling, and user-defined transforms. A transform can be a regex replacement, a Python or shell script that reads stdin, or a prompt sent to a language model. The README's examples include turning PR numbers into GitHub links, adding Slack mentions, and converting spoken prices into digits. A context feature reads the on-screen text of the window being dictated into so names and identifiers like \"CaretAnchor\" are spelled correctly, with an exclusion list for password managers and similar apps. A vocabulary feature learns corrections the user accepts from the pill overlay. Transforms can also be triggered on demand by a button on the pill, a key press, or a spoken phrase. Language models are optional: built-in steps do not need one, and prompt steps can use a local model through Ollama or a remote API such as OpenAI. The README also describes a ParrotFlow skill for coding agents that writes and checks config rules.",
+  "use_cases": [
+   "dictate code and identifiers into a terminal or editor",
+   "turn spoken numbers, prices and dates into digits",
+   "auto-link GitHub PR numbers while dictating",
+   "add Slack mentions to dictated messages",
+   "fix recurring misheard names or jargon",
+   "clean up filler words and false starts in dictation",
+   "run a grammar fix on dictated text with a local model"
+  ],
+  "how_to_run": [
+   "brew install znat/tap/parrotflow",
+   "curl -fsSL | sh (the README's install script URL is missing; use Homebrew if unsure)",
+   "npx skills add znat/parrotflow --skill parrotflow (optional, for coding agents)",
+   "ParrotFlow --check-config (validates config.yaml)"
+  ],
+  "stack": [
+   "macOS",
+   "Apple silicon",
+   "YAML configuration",
+   "Python (example transform scripts)",
+   "Ollama (optional local models)",
+   "OpenAI API (optional remote model)",
+   "mmBERT",
+   "Qwen3 0.6B",
+   "spaCy",
+   "Parakeet (speech recognition, named in keywords context)"
+  ],
+  "notable": [
+   "Custom transforms written as regex replacements, scripts, or prompts, wired into a configurable pipeline",
+   "Reads the on-screen text of the dictated window to correct names and terms, with app exclusions",
+   "Learns vocabulary corrections from accepted suggestions on the pill overlay",
+   "Built-in steps keep the user's wording and do not need a cloud key",
+   "Includes a skill for coding agents to write and validate config rules"
+  ],
+  "caveats": [
+   "Requires Apple silicon and macOS 15 or later",
+   "Uses about 2 GB of disk and 1 GB of memory",
+   "Context reading needs the Accessibility permission",
+   "The install script's URL is missing from the README text",
+   "Prompt transforms that rewrite text depend on a chosen model, local or cloud"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4875,
+  "output": 1472
+ },
+ "generated": "2026-11-01"
+}

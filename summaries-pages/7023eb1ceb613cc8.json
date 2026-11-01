@@ -1,0 +1,69 @@
+{
+ "id": "7023eb1ceb613cc8",
+ "url": "https://cloud.google.com/blog/products/management-tools/sre-error-budgets-and-maintenance-windows",
+ "final_url": "https://cloud.google.com/blog/products/management-tools/sre-error-budgets-and-maintenance-windows",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "SRE error budgets and maintenance windows | Google Cloud Blog",
+ "sources": [
+  {
+   "list": "dastergon/awesome-sre",
+   "section": "Reliability",
+   "entry": "How maintenance windows affect your error budget"
+  }
+ ],
+ "summary": {
+  "name": "SRE error budgets and maintenance windows",
+  "one_liner": "A Google Cloud blog article explaining how planned maintenance windows should count (or not count) against an SRE error budget, with scenarios and strategies.",
+  "category": "sre reading material",
+  "keywords": [
+   "error budget",
+   "sre error budget",
+   "maintenance windows",
+   "service level objective",
+   "slo",
+   "service level indicator",
+   "sli",
+   "site reliability engineering",
+   "downtime planning",
+   "scheduled downtime",
+   "availability target",
+   "rolling window error budget",
+   "traffic projection",
+   "multi-region failover",
+   "error budget policy",
+   "google cloud blog",
+   "reliability engineering",
+   "planned outage accounting",
+   "silver bullet exceptions",
+   "awesome-sre"
+  ],
+  "use_cases": [
+   "deciding whether scheduled downtime should count against an SLO",
+   "planning maintenance windows for a low-traffic period",
+   "calculating remaining error budget after an outage",
+   "designing multi-region services to avoid maintenance downtime",
+   "writing an error budget policy"
+  ],
+  "what_it_does": "The article walks through how maintenance windows interact with error budgets, defined as the allowed error remainder under an SLO. It covers scenarios such as trading-hours services, localized services with daily traffic valleys, and global services with flat traffic. It describes two approaches for localized services: traffic projection using past data and a captive portal, and treating maintenance time as downtime against the budget, with a worked example of a 99% SLO over 28 days. It also discusses edge cases like emergency \"silver bullet\" exceptions and argues that maintenance windows should only be excluded from the budget if they are accepted as a fixed risk with clear communication and rollback plans.",
+  "pricing": "free",
+  "platforms": [
+   "web"
+  ],
+  "notable": [
+   "Worked example: a 99% availability SLO over 28 days allows about 7 hours 20 minutes of downtime, so a 2-hour window uses 27% of the budget",
+   "Argues that excluding maintenance from the error budget implicitly accepts recurring burn with no plan to eliminate windows",
+   "Recommends multi-region designs that disconnect regions for maintenance instead of scheduled global downtime"
+  ],
+  "caveats": [
+   "Opinion and guidance article, not a software tool; it describes practices rather than a product",
+   "Recommendations depend on business agreements and traffic patterns, and the article says no single approach fits all services"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5718,
+  "output": 939
+ },
+ "generated": "2026-11-01"
+}

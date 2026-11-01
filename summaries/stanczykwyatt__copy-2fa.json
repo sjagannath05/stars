@@ -1,0 +1,94 @@
+{
+ "id": "stanczykwyatt/copy-2fa",
+ "repo": "stanczykwyatt/copy-2fa",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "📊 Menubar (177)",
+   "entry": "Copy 2FA - Copies the newest 2FA code from Mail or Messages with one shortcut, and includes a Touch ID authenticator for TOTP and HOTP codes."
+  }
+ ],
+ "summary": {
+  "one_liner": "Copy 2FA is a free, open-source macOS menu bar app that copies the newest verification code from Apple Mail or Messages with one keyboard shortcut and includes a Touch ID-protected authenticator for TOTP and HOTP codes.",
+  "category": "macos menu bar app",
+  "keywords": [
+   "2fa",
+   "two-factor authentication",
+   "verification code",
+   "otp",
+   "totp",
+   "hotp",
+   "authenticator app",
+   "copy 2fa code",
+   "apple mail",
+   "imessage codes",
+   "menu bar app",
+   "macos",
+   "keyboard shortcut",
+   "clipboard",
+   "touch id",
+   "keychain",
+   "sandboxed",
+   "no internet",
+   "open source",
+   "swift",
+   "google authenticator alternative",
+   "rsc/2fa alternative",
+   "import 2fa accounts",
+   "otpauth",
+   "qr code import",
+   "sms code",
+   "email verification code"
+  ],
+  "what_it_does": "Pressing the global shortcut (default ⌃⇧C) finds the most recent verification code in Apple Mail or Messages and copies it to the clipboard, and it can show the last five codes from the past 10 minutes to choose from. A separate shortcut (⌃⇧A) opens a built-in authenticator that generates time-based (TOTP) and counter-based (HOTP) codes, with secrets stored in the keychain behind Touch ID. Accounts can be imported from several authenticator and password apps, from rsc/2fa, or from QR code screenshots. Each copied code shows its source, such as the sender and whether it came from Mail or Messages. The README says the app runs in the macOS App Sandbox without network access, reads only when a shortcut is pressed, and does not save what it reads.",
+  "use_cases": [
+   "Copy a 2FA code from email to paste into a login page",
+   "Grab a texted bank or Duo verification code quickly",
+   "Generate TOTP or HOTP codes without a phone app",
+   "Migrate accounts from Google Authenticator, 1Password or Bitwarden",
+   "Pick an older verification code from recent messages",
+   "Avoid searching through email and texts for login codes"
+  ],
+  "how_to_run": [
+   "Download Copy-2FA.zip from the project's releases, unzip it, and move Copy 2FA to Applications",
+   "Open the app and allow Mail access when asked",
+   "Press ⌃⇧C when a code arrives to copy it",
+   "Build from source: git clone the repository and cd into copy-2fa",
+   "Run scripts/build-app.sh (requires macOS 14+ and Swift 6)",
+   "Run open \"build/Copy 2FA.app\""
+  ],
+  "stack": [
+   "Swift 6",
+   "macOS 14+",
+   "Xcode 16 or Command Line Tools",
+   "Apple Mail",
+   "Apple Messages database",
+   "macOS App Sandbox",
+   "Touch ID / keychain"
+  ],
+  "notable": [
+   "Reads Apple Mail and Messages on a shortcut press, with no network entitlement enforced by the sandbox",
+   "Built-in authenticator supports TOTP and HOTP with Touch ID-protected keychain storage",
+   "Imports accounts from Google Authenticator, Apple Passwords, 1Password, Bitwarden, Aegis, 2FAS, andOTP, rsc/2fa and QR screenshots",
+   "Recent Codes menu lists the last five codes with their source",
+   "Has a Windows preview that reads Outlook and Thunderbird, per the README"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; Messages access needs Full Disk Access turned on manually",
+   "Not notarized, so macOS shows a security warning on first launch and users must allow it in System Settings",
+   "Authy does not allow exports, so those accounts must be set up again; Duo push approvals cannot be read",
+   "Windows version is only a preview"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5278,
+  "output": 1405
+ },
+ "generated": "2026-11-01"
+}

@@ -1,0 +1,94 @@
+{
+ "id": "skriptoff/ghbdtn",
+ "repo": "skriptoff/Ghbdtn",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "⌨️ Keyboard (19)",
+   "entry": "Ghbdtn - Menu bar app that fixes text typed in the wrong keyboard layout (English/Russian) with an Option+Command tap: converts the selection or the last word and switches the layout."
+  }
+ ],
+ "summary": {
+  "one_liner": "Ghbdtn is a free, open-source macOS menu bar app that fixes text typed in the wrong English/Russian keyboard layout when you tap Option+Command.",
+  "category": "keyboard layout fixer",
+  "keywords": [
+   "keyboard layout converter",
+   "wrong layout fixer",
+   "english russian layout",
+   "russian keyboard mac",
+   "punto switcher alternative",
+   "caramba switcher alternative",
+   "text layout converter",
+   "menu bar app",
+   "macos menu bar",
+   "option command hotkey",
+   "fix mistyped text",
+   "transliteration fix",
+   "layout switcher",
+   "input source switch",
+   "cyrillic latin converter",
+   "ghbdtn",
+   "accessibility api",
+   "uckeytranslate",
+   "swift macos app",
+   "open source mac utility",
+   "free mac utility",
+   "retype text in other layout",
+   "fix text typed in wrong language",
+   "convert selection layout",
+   "homebrew cask",
+   "clipboard restore",
+   "mixed script text fix"
+  ],
+  "what_it_does": "Ghbdtn runs as a menu bar app and listens for a clean Option+Command tap. If text is selected, it converts the selection; otherwise it converts the last word before the cursor, including symbols (for example \"nj;t\" becomes \"тоже\"). Conversion is per letter, so mixed-layout text is handled and letter case is preserved. After replacing text, it switches the system keyboard layout to match the script of the last converted letter. The key map is built from the layouts enabled in macOS via UCKeyTranslate, and the clipboard is restored after each conversion. When ⌘C/⌘V are unavailable, it falls back to reading and writing the text field through the Accessibility API. The README describes it as event-driven with no polling, and the menu offers Launch at login and Quit.",
+  "use_cases": [
+   "fix text typed in the wrong keyboard layout on a Mac",
+   "convert a selected English-typed phrase into Russian",
+   "switch between English and Russian layouts without retyping",
+   "replace Punto Switcher on macOS",
+   "correct a mistyped last word before the cursor",
+   "fix mixed English and Russian text in one line"
+  ],
+  "how_to_run": [
+   "brew tap achubnet/tap",
+   "brew trust --cask achubnet/tap/ghbdtn",
+   "brew install --cask ghbdtn",
+   "git clone git@github.com:achubnet/Ghbdtn.git && cd Ghbdtn",
+   "./build.sh --install",
+   "swift test"
+  ],
+  "stack": [
+   "Swift",
+   "macOS NSEvent monitor",
+   "UCKeyTranslate",
+   "Accessibility API",
+   "Text Input Sources",
+   "Swift Package Manager (LayoutCore library)",
+   "Xcode actool"
+  ],
+  "notable": [
+   "Option+Command tap converts either the selection or the last word before the cursor",
+   "Per-letter conversion so mixed-script text is fixed, with case preserved",
+   "Key map built from the user's real enabled macOS layouts (ABC/U.S. and Russian/Russian – PC)",
+   "Verifies the selection with a second copy before replacing text, leaving text alone on mismatch",
+   "Restores the clipboard after each conversion"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later, one Latin and one Cyrillic layout enabled, and Accessibility permission",
+   "Not notarized by Apple yet, so macOS blocks the first launch and needs manual approval in Privacy & Security",
+   "With ad-hoc signing (no Apple Development certificate), Accessibility permission must be granted again after each build",
+   "Only English and Russian layouts are described as supported"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3479,
+  "output": 1335
+ },
+ "generated": "2026-11-01"
+}

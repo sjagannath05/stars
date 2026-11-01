@@ -1,0 +1,104 @@
+{
+ "id": "ucsb-ai/gea",
+ "repo": "UCSB-AI/GEA",
+ "kind": "star",
+ "description": "Group Evolving Agents: Open-Ended Self-Improvement via Experience Sharing",
+ "topics": [
+  "code-generation",
+  "group-evolving-agents",
+  "open-ended-evolution",
+  "open-endedness",
+  "research-agents",
+  "self-evolving-agents"
+ ],
+ "language": "Python",
+ "stars": 137,
+ "license": "Apache-2.0",
+ "homepage": "https://group-evolving-agents.github.io",
+ "pushed_at": "2026-04-07",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Research code for Group Evolving Agents (GEA), a method where a group of coding agents is the evolutionary unit and agents share experience with each other during open-ended self-improvement.",
+  "category": "self-evolving coding agents",
+  "keywords": [
+   "group evolving agents",
+   "open-ended self-improvement",
+   "experience sharing",
+   "self-evolving agents",
+   "open-endedness",
+   "coding agent evolution",
+   "evolutionary agents",
+   "research agents",
+   "code generation",
+   "swe-bench",
+   "polyglot benchmark",
+   "darwin godel machine",
+   "dgm alternative",
+   "agent population evolution",
+   "multi-agent evolution",
+   "docker sandboxed evaluation",
+   "llm coding agent",
+   "gpt and claude agents",
+   "anthropic openai api",
+   "software engineering agent benchmark",
+   "evolve agents with shared memory",
+   "self-improving ai research",
+   "reproduce gea paper",
+   "arxiv 2602.04837",
+   "automated agent improvement",
+   "agent code self-modification"
+  ],
+  "what_it_does": "The repository implements the Group Evolving Agents algorithm, where a group of agents rather than a single agent is treated as the unit of evolution, with experience shared and reused within the group across generations. The entry point is GEA_outer.py, and the initial coding agent is defined in coding_agent.py. Foundation model prompts and tools live in prompts/ and tools/. Evaluation is run on SWE-bench (a clone of the SWE-bench repo at a pinned commit is required) and on the Polyglot benchmark, which is prepared via a provided module. The README also includes analysis scripts for plotting and graphs, and it ships logs and performance records for the initial agent on both benchmarks. The codebase is stated to build on the Darwin Gödel Machine code.",
+  "use_cases": [
+   "Reproducing the Group Evolving Agents experiments",
+   "Running self-improving coding agent evolution on SWE-bench",
+   "Evaluating evolved agents on the Polyglot benchmark",
+   "Studying open-ended agent evolution and experience sharing",
+   "Plotting and analyzing agent evolution results"
+  ],
+  "how_to_run": [
+   "Export OPENAI_API_KEY and ANTHROPIC_API_KEY in your shell profile",
+   "Verify Docker works with `docker run hello-world` (add user to docker group if needed)",
+   "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
+   "Clone SWE-bench into swe_bench/, checkout commit dc4c087c2b9e4cefebf2e3d201d27e36, and run pip install -e .",
+   "Prepare the Polyglot dataset with `python -m polyglot.prepare_polyglot_dataset`",
+   "Run the algorithm with `python GEA_outer.py`"
+  ],
+  "stack": [
+   "Python",
+   "Docker",
+   "OpenAI API",
+   "Anthropic API",
+   "SWE-bench",
+   "polyglot-benchmark",
+   "Graphviz (optional, for analysis)"
+  ],
+  "notable": [
+   "Treats a group of agents as the evolutionary unit, with explicit experience sharing and reuse inside the group",
+   "Built on the Darwin Gödel Machine (DGM) codebase, as acknowledged in the README",
+   "Evaluates on both SWE-bench and the Polyglot benchmark",
+   "Ships logs and performance records for the initial agent on both benchmarks"
+  ],
+  "caveats": [
+   "Requires paid API keys for OpenAI and Anthropic models",
+   "Requires Docker to be installed and configured, and the setup involves several manual steps",
+   "The README's SWE-bench clone command has no repository URL filled in, so the setup step is incomplete as written",
+   "Analysis scripts need extra system packages (graphviz) and a separate requirements_dev.txt"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2422,
+  "output": 1413
+ },
+ "generated": "2026-11-01"
+}

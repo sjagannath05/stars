@@ -1,0 +1,112 @@
+{
+ "id": "saxy/tellstone",
+ "repo": "Saxy/Tellstone",
+ "kind": "star",
+ "description": "Tellstone is a high-performance in-memory database and drop-in replacement for Redis; Join https://discord.gg/kEf78DUFX",
+ "topics": [
+  "databases",
+  "db",
+  "memory",
+  "memory-database",
+  "memory-db"
+ ],
+ "language": "Go",
+ "stars": 232,
+ "license": "Apache-2.0",
+ "homepage": "https://tellstone.io",
+ "pushed_at": "2026-10-31",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "awesome",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Tellstone is an in-memory key/value store written in Go that serves a custom binary protocol and a Redis-compatible (RESP2) listener from a shared-nothing sharded engine.",
+  "category": "in-memory database",
+  "keywords": [
+   "in-memory database",
+   "in-memory key value store",
+   "redis alternative",
+   "redis compatible server",
+   "resp2",
+   "redis protocol",
+   "go database",
+   "golang key value store",
+   "shared-nothing",
+   "sharded map",
+   "ttl eviction",
+   "timing wheel",
+   "write-ahead log",
+   "wal persistence",
+   "chacha20-poly1305",
+   "at-rest encryption",
+   "prometheus metrics",
+   "opentelemetry tracing",
+   "audit logging",
+   "rbac",
+   "oauth oidc",
+   "mtls tls",
+   "binary protocol",
+   "memtier benchmark",
+   "redis-cli",
+   "cache server",
+   "session store",
+   "low latency cache",
+   "kubernetes database",
+   "valkey dragonfly comparison",
+   "fnv-1a hashing"
+  ],
+  "what_it_does": "Tellstone stores keys and values in memory across N shards, each holding a map and a read-write lock, with keys assigned to shards by FNV-1a hash. It exposes a native binary protocol on port 9988 with a bundled Go client, and an optional RESP2 listener (port 6379) that supports PING, GET, SET (with EX/PX), DEL, AUTH, COMMAND, ROLE and ACL commands. Expired keys are evicted actively by a timing wheel and lazily on read. Optional features include ChaCha20-Poly1305 at-rest encryption, per-shard write-ahead log persistence with snapshots, TLS with certificate rotation, password or RBAC-based authentication, and OAuth/OIDC token login. It also provides a Prometheus metrics exporter, optional OpenTelemetry tracing, and structured JSON audit logging.",
+  "use_cases": [
+   "replace Redis as a drop-in cache for existing clients",
+   "low-latency key/value caching in microservices",
+   "session or token storage in memory",
+   "benchmarking in-memory stores against Redis, Valkey or Dragonfly",
+   "short-lived data with TTL expiry",
+   "running a small in-memory store on Kubernetes"
+  ],
+  "how_to_run": [
+   "task build",
+   "task run:resp",
+   "./bin/tellstone --addr 127.0.0.1:9988 --enable-resp --resp-addr 127.0.0.1:6379",
+   "redis-cli -p 6379 SET foo bar",
+   "redis-cli -p 6379 GET foo"
+  ],
+  "stack": [
+   "Go 1.26+",
+   "Task (go-task)",
+   "ChaCha20-Poly1305",
+   "Prometheus",
+   "OpenTelemetry (OTLP/gRPC)",
+   "RESP2",
+   "memtier_benchmark",
+   "redis-cli"
+  ],
+  "notable": [
+   "Serves both a custom binary protocol and a Redis-compatible RESP2 listener on the same engine",
+   "Shared-nothing sharded design with per-shard locks and FNV-1a dispatch",
+   "Per-shard append-only WAL with tombstone deletes, disabled by default",
+   "Automatic TLS certificate rotation via directory watching, plus optional STARTTLS on the RESP listener",
+   "RBAC policy file with bcrypt passwords, hot-reloaded on SIGHUP, and OAuth/OIDC federated login"
+  ],
+  "caveats": [
+   "Supported Redis commands are limited to PING, GET, SET, DEL, AUTH, COMMAND, ROLE and ACL; the README says replication and broader RESP coverage are still contribution areas",
+   "Benchmark numbers are self-reported by the project and depend heavily on hardware and network setup; the README notes results are environment-specific",
+   "Requires Go 1.26+ to build from source; the README does not list other platform constraints beyond Linux, macOS and Windows binaries",
+   "Encryption key must be supplied explicitly when encryption is enabled, and rotating it requires a restart"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 13739,
+  "output": 1489
+ },
+ "generated": "2026-11-01"
+}

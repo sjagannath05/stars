@@ -1,0 +1,107 @@
+{
+ "id": "fedorchenko-juli/job_search_tool",
+ "repo": "fedorchenko-juli/job_search_tool",
+ "kind": "star",
+ "description": "Automated job search pipeline: fetches roles from company ATS APIs and aggregators, filters and dedupes them, optionally scores fit with Claude, and reviews results in a local web board.",
+ "topics": [
+  "job-search",
+  "job-search-automation",
+  "job-search-tools"
+ ],
+ "language": "Python",
+ "stars": 146,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-09-19",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A local Python pipeline that fetches engineering job postings from company ATS APIs and aggregators, filters and dedupes them into SQLite, optionally scores fit with Claude, and lets you review them in a Next.js web board.",
+  "category": "job search automation",
+  "keywords": [
+   "job search",
+   "job search automation",
+   "job board scraper",
+   "ats api",
+   "greenhouse",
+   "ashby",
+   "workable",
+   "lever",
+   "smartrecruiters",
+   "adzuna",
+   "remotive",
+   "job aggregator",
+   "dedupe job postings",
+   "sqlite",
+   "claude",
+   "anthropic",
+   "ai job fit scoring",
+   "resume fit score",
+   "job review dashboard",
+   "next.js",
+   "yaml config",
+   "job filter",
+   "title filter",
+   "location filter",
+   "tech stack filter",
+   "find software engineering jobs",
+   "track job applications",
+   "automate job hunting",
+   "local job tracker",
+   "python job scraper"
+  ],
+  "what_it_does": "The pipeline fetches open roles from companies listed in companies.yaml via their ATS APIs (Greenhouse, Ashby, Workable, Lever, SmartRecruiters) and from aggregators configured in aggregators.yaml (Adzuna, Remotive). It filters postings by engineering-style title, allowed location patterns, and stack dealbreaker/core keywords defined in filters.yaml. Fetched jobs are stored in a local SQLite database and deduplicated by URL and normalized company+title, so re-runs surface only new postings. Writes candidates to a CSV. An optional stage sends each candidate and your profile.yaml to Claude, which returns a 0-100 fit score, gaps, strengths, risks, and an apply/consider/skip recommendation. A local Next.js board reads the same database to browse results and track your status and notes.",
+  "use_cases": [
+   "automate a targeted job search across company career pages",
+   "pull new engineering roles from Greenhouse or Lever boards",
+   "filter out irrelevant or wrong-location job postings",
+   "score job postings against my resume with an AI",
+   "review and track applied, interview, and rejected jobs locally",
+   "keep a local record of seen job postings to avoid duplicates"
+  ],
+  "how_to_run": [
+   "pip install -r requirements.txt",
+   "cp .env.example .env",
+   "cp profile.example.yaml profile.yaml",
+   "python -m app.main",
+   "python -m app.ai_evaluate --dry-run",
+   "cd web && npm install && cd .. && make web"
+  ],
+  "stack": [
+   "Python",
+   "SQLite",
+   "Next.js",
+   "Node.js (npm)",
+   "Anthropic Claude API",
+   "YAML config",
+   "pytest",
+   "Make"
+  ],
+  "notable": [
+   "Two-stage design: free fetch and filter, then optional paid AI fit scoring that caches results so jobs are not re-scored",
+   "Config-driven: companies, aggregator searches, and filter rules live in YAML files with no code changes needed",
+   "Local-first: all state stored in a SQLite file, with a local web review board reading it directly",
+   "Supports direct ATS queries for five platforms plus two job aggregators"
+  ],
+  "caveats": [
+   "Shipped pre-configured for the original author's Alberta/Canada, Python/JS search; location patterns, stack rules, and company list must be edited before a first run or results may be empty",
+   "AI evaluation step costs money through the Anthropic API and needs ANTHROPIC_API_KEY",
+   "SmartRecruiters support is based on documentation and third-party corroboration only, and the README advises verifying each company before trusting it",
+   "Adzuna needs a free API key, and Remotive only covers remote roles"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4929,
+  "output": 1336
+ },
+ "generated": "2026-11-01"
+}

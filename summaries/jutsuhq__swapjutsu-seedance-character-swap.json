@@ -1,0 +1,104 @@
+{
+ "id": "jutsuhq/swapjutsu-seedance-character-swap",
+ "repo": "jutsuhq/swapjutsu-seedance-character-swap",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "serhii-londar/open-source-mac-os-apps",
+   "section": "🎬 Video (30)",
+   "entry": "Swapjutsu - Character swap for videos with Seedance 2.5 or Wan 2.2 Animate, with on-device preparation on Apple silicon."
+  }
+ ],
+ "summary": {
+  "one_liner": "A free, open-source Mac app that swaps a character into an existing video, doing the preparation on-device on Apple silicon and rendering through Comfy's API or a self-hosted ComfyUI.",
+  "category": "video character swap",
+  "keywords": [
+   "character swap",
+   "video character replacement",
+   "swap person in video",
+   "ai video editing",
+   "mac app",
+   "apple silicon",
+   "on-device video processing",
+   "seedance",
+   "seedance 2.5",
+   "wan 2.2 animate",
+   "wan 3.0",
+   "comfyui",
+   "comfy api",
+   "video masking",
+   "person segmentation",
+   "edgetam",
+   "core ml",
+   "neural engine",
+   "depth anything",
+   "mcp server",
+   "claude code",
+   "open source higgsfield",
+   "higgsfield alternative",
+   "genjutsu alternative",
+   "replace person in clip",
+   "swap character in video",
+   "local ai video prep",
+   "mlx",
+   "qwen3-vl"
+  ],
+  "what_it_does": "Swapjutsu takes a short clip (trimmed to 4–30 s), finds shot cuts, and builds a separate mask for each person, tracking them across cuts with EdgeTAM in Core ML. It estimates depth per shot and builds a control video, all on the Mac. A local vision model can write the prompt and name the motion, and you assign a reference image to each character and optionally a background. The render step sends the control video and images to Seedance 2.5 or Wan 3.0 via Comfy's Partner Nodes API, Seedance via Comfy Cloud, or Wan 2.2 Animate on your own ComfyUI server. Drafts are rendered first, and you can finalize at 1080p within 7 days. The app also includes an MCP server so agents can prepare and render clips within a daily budget you set.",
+  "use_cases": [
+   "swap a character into an existing video clip",
+   "replace a person in a video with another character",
+   "prepare video masks and depth on a Mac for AI rendering",
+   "draft AI character swaps at low cost before finalizing",
+   "run Wan 2.2 Animate on a self-hosted ComfyUI",
+   "let an AI agent render video swaps through MCP"
+  ],
+  "how_to_run": [
+   "Download Swapjutsu-.dmg from the latest release and drag the app to Applications",
+   "Verify the download with shasum -a 256 -c Swapjutsu-.dmg.sha256",
+   "Add a Comfy API key in Settings › Comfy",
+   "In Create, drop a clip, trim it, choose who to replace and click Prepare Clip",
+   "Drop character images and click Generate Draft",
+   "Build from source: scripts/fetch-models.sh then swift build --product Swapjutsu && .build/debug/Swapjutsu"
+  ],
+  "stack": [
+   "Swift",
+   "Swift 6.4",
+   "Xcode 27",
+   "Core ML",
+   "Apple Vision",
+   "Neural Engine",
+   "EdgeTAM",
+   "Depth Anything V2",
+   "MLX",
+   "Qwen3-VL 8B",
+   "ComfyUI API",
+   "Seedance 2.5",
+   "Wan 2.2 Animate",
+   "Wan 3.0",
+   "MCP"
+  ],
+  "notable": [
+   "Runs prep (shot detection, per-person masks, tracking, depth, control video) fully on the Mac, offline, with the render step optional",
+   "Shows the price before a Generate Draft request is sent, with a cheaper 480p draft followed by a 1080p finalize",
+   "Ships an MCP server so Claude Code or other MCP clients can prepare and render, limited by a user-set daily budget",
+   "Models are pinned to commits or releases and checked against SHA-256 before use",
+   "Comfy key is stored in the macOS Keychain; no account and no telemetry"
+  ],
+  "caveats": [
+   "Requires macOS 15+ on Apple Silicon and Xcode 27 / Swift 6.4 to build from source",
+   "Rendering needs Comfy credits, a Comfy Cloud subscription, or a ComfyUI server with a capable GPU; prompt writer needs 16 GB memory",
+   "Seedance and Wan 3.0 renders are paid through Comfy; only Wan 2.2 Animate on your own ComfyUI is free",
+   "Unofficial, community-built project, not affiliated with Higgsfield, ByteDance or Comfy Org"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5021,
+  "output": 1557
+ },
+ "generated": "2026-11-01"
+}

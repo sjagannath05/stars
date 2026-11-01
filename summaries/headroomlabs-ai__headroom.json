@@ -1,0 +1,129 @@
+{
+ "id": "headroomlabs-ai/headroom",
+ "repo": "headroomlabs-ai/headroom",
+ "kind": "star",
+ "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+ "topics": [
+  "agent",
+  "ai",
+  "anthropic",
+  "claude-code",
+  "compression",
+  "context-engineering",
+  "context-window",
+  "cursor",
+  "fastapi",
+  "langchain",
+  "llm",
+  "mcp",
+  "openai",
+  "prompt-engineering",
+  "proxy",
+  "python",
+  "rag",
+  "token-optimization",
+  "tokens",
+  "typescript"
+ ],
+ "language": "Python",
+ "stars": 78474,
+ "license": "Apache-2.0",
+ "homepage": "https://docs.headroomlabs.ai/docs",
+ "pushed_at": "2026-10-30",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "awesome",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Headroom is a local compression layer that shrinks tool outputs, logs, files, RAG chunks and conversation history before they reach an LLM, offered as a Python/TypeScript library, an OpenAI/Anthropic-compatible proxy, and an MCP server.",
+  "category": "llm context compression",
+  "keywords": [
+   "llm context compression",
+   "token optimization",
+   "reduce llm tokens",
+   "prompt compression",
+   "context window",
+   "context engineering",
+   "coding agent tokens",
+   "claude code",
+   "cursor",
+   "codex",
+   "mcp server",
+   "llm proxy",
+   "openai proxy",
+   "anthropic proxy",
+   "json compression",
+   "log compression",
+   "rag chunk compression",
+   "reversible compression",
+   "ccr",
+   "token savings",
+   "lower api costs",
+   "tool output compression",
+   "conversation history compression",
+   "kv cache prefix",
+   "langchain",
+   "litellm",
+   "shared agent memory",
+   "cut llm costs",
+   "compress prompts before sending",
+   "agent wrapper"
+  ],
+  "what_it_does": "Headroom sits between an agent or app and the LLM provider and compresses content by type: SmartCrusher for JSON, CodeCompressor for source code via AST handling for several languages, and a Kompress-v2-base model for prose. A ContentRouter picks the compressor, and CacheAligner flags volatile content that would break a provider KV-cache prefix without rewriting prompts. Originals are cached locally under CCR so the model can call headroom_retrieve for full text. It can be used as an inline compress(messages) call in Python or TypeScript, as a drop-in proxy on a local port, or via headroom wrap for supported coding agents. The README also describes cross-agent memory, a headroom learn command that writes corrections into agent instruction files, and optional output-token reduction through a system-prompt verbosity note. Benchmarks in the README show 21% to 57% savings on four MCP-style scenarios and a 0.21 ms p50 compression time on a 10K-token JSON result.",
+  "use_cases": [
+   "reduce token usage for coding agents like Claude Code or Cursor",
+   "compress large JSON tool results before sending to an LLM",
+   "shrink log output in agent sessions",
+   "lower API costs on long conversations",
+   "add compression to a LangChain or LiteLLM app",
+   "run a local OpenAI-compatible proxy that trims prompts",
+   "share memory across several coding agents"
+  ],
+  "how_to_run": [
+   "uv tool install --python 3.13 \"headroom-ai[all]\"",
+   "pip install \"headroom-ai[all]\"",
+   "headroom proxy --port 8787",
+   "headroom wrap claude",
+   "headroom doctor",
+   "from headroom import compress; result = compress(messages, model=\"gpt-4o\")"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "TypeScript (npm headroom-ai SDK)",
+   "Rust core (built with maturin)",
+   "ONNX Runtime",
+   "HuggingFace Kompress-v2-base model",
+   "FastAPI/ASGI middleware",
+   "MCP",
+   "uv / pip / pipx",
+   "Docker"
+  ],
+  "notable": [
+   "Runs locally; the README states no prompt or file content is sent to a third party for compression",
+   "Reversible compression (CCR): originals are cached locally and retrievable on demand via headroom_retrieve",
+   "Wraps many agents (Claude Code, Codex, Cursor, Aider, Cline, Goose and others) with one command and an unwrap to undo it",
+   "Live-zone design keeps the frozen prompt prefix byte-identical so provider prompt caching still hits",
+   "Ships a Python library, a TypeScript SDK, a proxy, an MCP server and Docker image from one project"
+  ],
+  "caveats": [
+   "Savings depend heavily on the payload; the README says prose and already-dense output compress very little, and the 20% headline is for coding agents",
+   "Telemetry beacon is on by default (can be disabled with HEADROOM_BEACON=off, HEADROOM_TELEMETRY=off, DO_NOT_TRACK=1 or HEADROOM_OFFLINE=1)",
+   "Some platform limits: native wheels cover macOS Apple Silicon and Linux; Intel macOS needs a manual ONNX Runtime setup; x86 without AVX2 falls back to non-ONNX paths; Copilot Windows login requires a separate command"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12902,
+  "output": 1602
+ },
+ "generated": "2026-11-01"
+}
