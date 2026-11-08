@@ -1,0 +1,109 @@
+{
+ "id": "edge0-ai/edge0",
+ "repo": "Edge0-AI/Edge0",
+ "kind": "star",
+ "description": "Run 35B MoE models in ~2.5 GB of RAM. Weights stream from SSD; a trained router predicts loads a step ahead. Mac, iPhone, Android, Windows supported",
+ "topics": [],
+ "language": "Python",
+ "stars": 9131,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-11-06",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "edge0 is an open-source streaming MoE inference framework that runs large sparse-MoE models (35B and 8B tiers) on consumer hardware by streaming expert weights from SSD and using a trained router to prefetch them.",
+  "category": "local llm inference",
+  "keywords": [
+   "mixture of experts",
+   "moe inference",
+   "sparse moe",
+   "ssd offload",
+   "expert offload",
+   "streaming inference",
+   "low memory llm",
+   "run llm on laptop",
+   "run large model low ram",
+   "prerouter",
+   "routing prediction",
+   "lora adapters",
+   "recover-lora",
+   "int4 quantization",
+   "4-bit llm",
+   "mlx",
+   "apple silicon llm",
+   "mac llm inference",
+   "iphone llm",
+   "android llm",
+   "windows vulkan llm",
+   "on-device llm",
+   "openai compatible server",
+   "chat completions api",
+   "qwen3.6",
+   "edge inference",
+   "local ai",
+   "safetensors",
+   "llm serving",
+   "run 35b model locally",
+   "llama alternative for mac"
+  ],
+  "what_it_does": "The framework loads sparse-MoE checkpoints in 4-bit and streams expert weights from storage on demand, so peak memory is bounded by the active expert set rather than the total parameter count. A trained prerouter head predicts expert routing one step ahead so expert loads overlap the forward pass; the README reports up to +59% decode throughput. LoRA adapters (Recover-LoRA) are trained by distillation against the fp16 teacher and kept unmerged, so one read-only base can serve several adapter sets. The Python framework runs on macOS with Apple Silicon via MLX and provides a CLI (demo, serve, chat) and an OpenAI-compatible /v1/chat/completions endpoint, plus a Python API via AutoEngine. Separate platform engines for macOS (Rust), iOS (Swift + MLX Swift), Android (Kotlin + native engine) and Windows (C++ + Vulkan) are in subdirectories, each with its own README. The README includes OpenCompass benchmarks showing an average loss of 3.9 points (edge0-35b) and 2.8 points (edge0-8b) versus the fp16 base models.",
+  "use_cases": [
+   "run a large mixture-of-experts model on a laptop with limited RAM",
+   "serve a local OpenAI-compatible chat endpoint on Apple Silicon",
+   "run a quantized LLM on an iPhone or Android device",
+   "benchmark streaming expert offload versus fully loaded models",
+   "experiment with LoRA adapters on a frozen 4-bit base",
+   "research on expert routing prediction and SSD-backed inference"
+  ],
+  "how_to_run": [
+   "cd python",
+   "python3.12 -m venv .venv && .venv/bin/pip install -e '.[dev,fetch]'",
+   ".venv/bin/huggingface-cli download Edge0/Edge0-8B-A1B-preview --local-dir models/edge0-8b",
+   "export EDGE0_8B_MODEL=$PWD/models/edge0-8b",
+   "edge0 demo edge0-8b",
+   "edge0 serve edge0-8b"
+  ],
+  "stack": [
+   "Python",
+   "MLX",
+   "mlx-lm",
+   "Swift",
+   "MLX Swift",
+   "Kotlin",
+   "Rust",
+   "C++",
+   "Vulkan",
+   "safetensors",
+   "Hugging Face",
+   "ModelScope"
+  ],
+  "notable": [
+   "SSD expert offload: expert weights are mmapped and read on demand, so peak MLX memory is ~2.9 GiB for the 35B tier",
+   "Trained prerouter predicts expert routing one step ahead to overlap loads with compute",
+   "Recover-LoRA adapters stay unmerged; a single read-only base can serve multiple adapter sets",
+   "Platform engines for macOS, iOS, Android and Windows are open-sourced in subdirectories",
+   "Adapters and checkpoint live in one model directory and load automatically"
+  ],
+  "caveats": [
+   "The Python framework supports only macOS on Apple Silicon for now; CUDA backend is roadmap only",
+   "Checkpoints are large (~23 GB for edge0-35b, ~4.2 GB for edge0-8b) and both LoRA and prerouter adapters are required for the full pipeline",
+   "Benchmarks show cold-start prefill and decode speeds that are modest (e.g. 14.9-17.7 tok/s decode for 35b on a Mac mini M4 Pro), and the unified cross-platform framework is not yet released (planned Q4 2026)",
+   "Models are labeled preview releases"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8053,
+  "output": 1668
+ },
+ "generated": "2026-11-08"
+}

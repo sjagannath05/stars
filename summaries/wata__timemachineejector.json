@@ -1,0 +1,88 @@
+{
+ "id": "wata/timemachineejector",
+ "repo": "wata/TimeMachineEjector",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "TimeMachineEjector - Menu bar app that ejects your Time Machine backup disk when a backup finishes and mounts it again when a scheduled backup is due. [![Open-Source Software][OSS Icon]](https://github.com/wata/TimeMachineEjector) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that ejects a Time Machine backup disk after each backup finishes and remounts it when the next scheduled backup is due.",
+  "category": "macos menu bar utility",
+  "keywords": [
+   "time machine",
+   "backup disk",
+   "eject disk",
+   "unmount backup drive",
+   "macos",
+   "menu bar app",
+   "mac utility",
+   "external drive",
+   "auto eject",
+   "safe unplug",
+   "backup scheduler",
+   "launch at login",
+   "homebrew cask",
+   "swift",
+   "disk management",
+   "back up now",
+   "unplug external drive",
+   "finder eject alternative",
+   "time machine badge",
+   "backup status",
+   "mac backup tool",
+   "disk mount",
+   "automatic updates",
+   "macos 13",
+   "notarized app",
+   "keep drive disconnected",
+   "remove backup drive safely"
+  ],
+  "what_it_does": "Watches Time Machine and unmounts the backup disk once a backup and its cleanup are finished, so the disk can be unplugged at any time. When a scheduled backup is due, it mounts the disk again, following the frequency set in Time Machine settings, and does nothing if automatic backups are off. The menu bar icon shows a Time Machine badge while a backup runs, and the menu reports whether the disk is connected, ejected, or backing up, with progress and the time of the latest backup. Users can start a backup manually with Back Up Now, disable the behavior to keep the disk mounted, and enable Launch at Login. The app is distributed as a signed and notarized build with automatic updates, and can be installed from Releases or via Homebrew.",
+  "use_cases": [
+   "Unplug an external Time Machine drive without ejecting it manually in Finder",
+   "Keep a backup disk disconnected between backups",
+   "Start an immediate Time Machine backup from the menu bar",
+   "Check whether a backup is still running before unplugging the drive",
+   "Let scheduled Time Machine backups keep working with an ejected disk"
+  ],
+  "how_to_run": [
+   "brew install --cask wata/tap/timemachineejector",
+   "Or download the latest pre-built application from the Releases page and move it to /Applications",
+   "Open the app once and turn on Launch at Login from the menu bar icon",
+   "Development: ./scripts/install.sh builds a Release build and replaces /Applications/TimeMachineEjector.app (use --no-launch to skip launching)",
+   "Development: ./scripts/release.sh [--notes] bumps the version, builds a zip, updates appcast.xml, and publishes a GitHub Release (--no-publish stops before committing)"
+  ],
+  "stack": [
+   "macOS",
+   "Time Machine",
+   "Homebrew cask",
+   "appcast.xml (automatic updates)"
+  ],
+  "notable": [
+   "Waits until Time Machine reports the backup is no longer running before ejecting, so post-copy cleanup is not interrupted",
+   "Mounts the ejected disk when a scheduled backup is due, following Time Machine's own schedule",
+   "Menu bar icon shows a Time Machine badge during a backup as a cue not to unplug",
+   "Unmounts other volumes on the same disk too, like ejecting in Finder; the disk is unmounted, not powered off",
+   "Signed and notarized, with automatic updates"
+  ],
+  "caveats": [
+   "Requires macOS 13 or later",
+   "Only the disk's volumes are unmounted; the disk is not powered off",
+   "Does nothing when automatic Time Machine backups are turned off"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2479,
+  "output": 1276
+ },
+ "generated": "2026-11-08"
+}

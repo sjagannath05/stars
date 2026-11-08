@@ -1,0 +1,113 @@
+{
+ "id": "abi/screenshot-to-code",
+ "repo": "abi/screenshot-to-code",
+ "kind": "star",
+ "description": "Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)",
+ "topics": [],
+ "language": "Python",
+ "stars": 81080,
+ "license": "MIT",
+ "homepage": "https://screenshottocode.com",
+ "pushed_at": "2026-11-05",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "programming",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A tool that converts screenshots, mockups, Figma designs, and screen recordings into functional front-end code using AI models.",
+  "category": "ai code generation",
+  "keywords": [
+   "screenshot to code",
+   "screenshot to html",
+   "design to code",
+   "mockup to code",
+   "figma to code",
+   "image to code",
+   "ui to code",
+   "html generation",
+   "tailwind",
+   "react",
+   "vue",
+   "bootstrap",
+   "ionic",
+   "css generation",
+   "screen recording to prototype",
+   "video to code",
+   "gemini",
+   "claude",
+   "openai",
+   "gpt",
+   "replicate",
+   "fastapi",
+   "vite",
+   "self-hosted",
+   "multimodal llm",
+   "prototype generator",
+   "front-end code generator",
+   "convert design to website",
+   "turn mockup into website",
+   "generate html from picture",
+   "ai frontend developer tool",
+   "pix2code alternative"
+  ],
+  "what_it_does": "Takes a screenshot, mockup, Figma design, or screen recording and generates code for it using AI models. Supported output stacks named in the README are HTML + Tailwind, HTML + CSS, React + Tailwind, Vue + Tailwind, Bootstrap, and Ionic + Tailwind. It can turn a recording of a website in action into a functional prototype. Model choices include Gemini, GPT, and Claude models, with Replicate used for image generation, background removal, and image editing. When a Gemini key is set, the README says it extracts real logos and images from the screenshot for reuse. The project has a React/Vite frontend and a FastAPI backend, and can be run locally or via Docker Compose. The README also describes a hosted version at screenshottocode.com.",
+  "use_cases": [
+   "Turn a website screenshot into HTML/Tailwind code",
+   "Convert a Figma mockup into React or Vue components",
+   "Prototype a site from a screen recording",
+   "Rebuild an existing page layout as Bootstrap or Ionic code",
+   "Generate starting-point front-end code from design comps",
+   "Self-host an AI screenshot-to-code app"
+  ],
+  "how_to_run": [
+   "cd backend",
+   "Create backend/.env with OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, and REPLICATE_API_KEY (at least one model provider key is required)",
+   "poetry install && poetry run playwright install chromium && poetry run uvicorn main:app --reload --port 7001",
+   "cd frontend && pnpm install && pnpm dev",
+   "Alternatively, from the repo root: echo \"OPENAI_API_KEY=sk-your-key\" > .env && docker-compose up -d --build"
+  ],
+  "stack": [
+   "Python",
+   "FastAPI",
+   "Poetry",
+   "Playwright (Chromium)",
+   "React",
+   "Vite",
+   "pnpm",
+   "Tailwind CSS",
+   "Docker Compose",
+   "OpenAI API",
+   "Anthropic API",
+   "Google Gemini API",
+   "Replicate"
+  ],
+  "notable": [
+   "Supports multiple output stacks: HTML/Tailwind, HTML/CSS, React, Vue, Bootstrap, and Ionic",
+   "Accepts screen recordings as input, not just static images",
+   "Gemini-based asset extraction reuses real logos and images from the screenshot",
+   "Can compare multiple models per generation when several provider keys are configured",
+   "Optional screenshot preview lets the agent render its output in headless Chromium and check its work"
+  ],
+  "caveats": [
+   "Requires API keys from one or more paid model providers; Replicate is needed for image editing and background removal",
+   "Running locally needs both a backend and frontend setup; Docker setup does not support live development since file changes do not trigger rebuilds",
+   "Ollama open-source model support is described as not recommended due to poor-quality results",
+   "Screenshot preview is optional and requires Chromium to be installed"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3576,
+  "output": 1406
+ },
+ "generated": "2026-11-08"
+}

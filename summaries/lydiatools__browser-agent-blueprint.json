@@ -1,0 +1,95 @@
+{
+ "id": "lydiatools/browser-agent-blueprint",
+ "repo": "LydiaTools/browser-agent-blueprint",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Browser Agent Blueprint - Open-source browser agent prompt modules and synthetic recovery examples for uncertain actions. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "A set of original, copyable browser-agent prompt modules and a local synthetic demo that teach agents to verify saved state and avoid duplicate writes after a lost response.",
+  "category": "browser agent prompts",
+  "keywords": [
+   "browser agent",
+   "ai agent prompts",
+   "prompt modules",
+   "retry safety",
+   "idempotent writes",
+   "duplicate submission",
+   "lost response",
+   "write-ahead log",
+   "action ledger",
+   "checkpoint resume",
+   "task resume",
+   "readback verification",
+   "postcondition check",
+   "playwright",
+   "agent-browser",
+   "chrome devtools mcp",
+   "synthetic demo",
+   "agent skill",
+   "codex skill",
+   "prompt assembler",
+   "task profile",
+   "human review gate",
+   "pending review",
+   "browser automation",
+   "save once",
+   "did my click save",
+   "agent guardrails",
+   "llm agent reliability",
+   "mit license"
+  ],
+  "what_it_does": "The repository provides 12 plain-text prompt modules covering core execution, authority boundaries, browser pre-call checks, risk levels, retry classes, external memory, lifecycle, evidence, content entry, and social operations. A small Node assembler (no npm dependencies) combines them into six profiles such as minimal, long, content, validation, social, and full, and reports bytes and hash. A browser-only task-profile builder and an interactive lost-reply simulation are also offered. The demo runs a real local browser against a synthetic page and checks save counts, checkpoint resume across processes, and recovery after killed workers or browsers. It also includes a checkpoint-publication kill test and a write-ahead runner that marks uncertain writes as PENDING_REVIEW. Optional Codex-oriented installation of a browser-task-recovery skill is described. The README states the demos are deterministic host-side tests, not LLM behavior benchmarks.",
+  "use_cases": [
+   "prevent a browser agent from clicking Save twice after a timeout",
+   "verify a saved draft by reading back persisted state",
+   "resume a long browser task from a checkpoint in a new process",
+   "assemble a task-specific prompt profile for a browser agent",
+   "test how a browser agent recovers from a killed worker or browser",
+   "review uncertain writes before any replay"
+  ],
+  "how_to_run": [
+   "npm install",
+   "npx playwright install chromium",
+   "npm test",
+   "npm run test:browser",
+   "npm run demo",
+   "npm run assemble -- content"
+  ],
+  "stack": [
+   "JavaScript / Node.js 20+",
+   "Playwright (Chromium)",
+   "agent-browser (experiment comparison)",
+   "Chrome DevTools MCP (experiment)",
+   "Plain-text prompt modules",
+   "Codex Agent Skill (optional installer via npx skills)"
+  ],
+  "notable": [
+   "Lost-reply experiment: with agent-browser 0.38.2 five clicks were sent after a dropped reply, versus one click and an outcome_unknown report on 0.41.0 (local, fictional page)",
+   "Write-ahead runner persists uncertain observations as PENDING_REVIEW and blocks new writes until a recorded review",
+   "Local allowlist rejects an evaluate action before its executor runs (example controller only)",
+   "Assembler reports bytes and SHA-256 rather than claiming token savings",
+   "Interactive browser-only simulation and task-profile builder need no installation"
+  ],
+  "caveats": [
+   "The README states this is not a security sandbox or production safety guarantee; local controller is small and fixture-specific",
+   "No server-side idempotency or exactly-once delivery; demos use synthetic pages only and need host-side controls for real use",
+   "Demos are macOS/Linux oriented for some kill experiments; live-model and vendor integrations (Muse, Grok, Codex) are marked not live-tested",
+   "Optional skill installer needs Node 22.20+; the README says the browser-only pages need no setup but the full demos need Node and Playwright"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7729,
+  "output": 1429
+ },
+ "generated": "2026-11-08"
+}

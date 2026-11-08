@@ -1,0 +1,102 @@
+{
+ "id": "afreidah/s3-orchestrator",
+ "repo": "afreidah/s3-orchestrator",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Object Storage & File Servers",
+   "entry": "s3-orchestrator - Storage orchestration layer presenting many cloud providers as a single S3 endpoint, keeping N copies across them with read failover, plus optional per-backend byte, request, ingress and egress limits, zstd compression and envelope encryption. (Source Code) MIT Go/Docker/deb/K8S"
+  }
+ ],
+ "summary": {
+  "one_liner": "s3-orchestrator is a Go service that presents several S3-compatible storage backends (OCI, Backblaze B2, AWS S3, MinIO, Wasabi, Cloudflare R2, etc.) as one S3 endpoint, tracking object locations in its own database.",
+  "category": "s3 storage orchestration",
+  "keywords": [
+   "s3 gateway",
+   "s3 proxy",
+   "multi-cloud storage",
+   "multi-backend s3",
+   "object storage aggregation",
+   "storage orchestration",
+   "s3-compatible",
+   "minio",
+   "backblaze b2",
+   "cloudflare r2",
+   "wasabi",
+   "aws s3",
+   "oci object storage",
+   "replication factor",
+   "read failover",
+   "per-backend quota",
+   "free-tier storage",
+   "envelope encryption",
+   "aes-256-gcm",
+   "zstd compression",
+   "object tagging",
+   "sigv4",
+   "presigned urls",
+   "sqlite",
+   "postgresql",
+   "redis",
+   "terraform provider",
+   "cloud backup",
+   "provider independence",
+   "rclone union alternative",
+   "share files with my team",
+   "combine free tier storage",
+   "back up minio to cloud"
+  ],
+  "what_it_does": "Puts a single S3 endpoint in front of multiple S3-compatible backends and exposes them as one or more virtual buckets. It records where each object lives in its own metadata store (embedded SQLite or PostgreSQL, with Redis-backed shared counters for multi-instance deployments). It enforces per-backend byte quotas with overflow to the next backend, and optional monthly request, ingress and egress caps. It can keep N copies of each object across distinct backends, fail reads over to a surviving copy, and run a scrubber that checks stored bytes against recorded hashes. Operators can cordon and drain backends, rebalance, import an existing bucket, and use a web dashboard, admin API and hot config reload.",
+  "use_cases": [
+   "Combine free-tier allocations from several providers into one bucket",
+   "Add automatic cloud redundancy to a local MinIO instance",
+   "Keep multiple replicas of objects across different cloud providers",
+   "Migrate from one S3 provider to another without downtime",
+   "Encrypt and compress objects at rest across cloud backends",
+   "Manage buckets, users and grants with Terraform"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd s3-orchestrator",
+   "make run",
+   "aws --endpoint-url <orchestrator endpoint> s3 cp /etc/hostname s3://photos/test.txt (after make run, endpoint at localhost:9000)"
+  ],
+  "stack": [
+   "Go (1.27+)",
+   "Docker / Docker Compose",
+   "SQLite (embedded)",
+   "PostgreSQL 14+",
+   "Redis",
+   "zstd",
+   "AES-256-GCM",
+   "HashiCorp Vault Transit (optional)",
+   "Helm",
+   "Terraform / OpenTofu provider",
+   "cosign (release signing)"
+  ],
+  "notable": [
+   "Replication via parallel_copies: writes upload to all targets at once and answer on the first committed copy, reducing replicator GETs and source egress",
+   "Per-backend byte, request, ingress and egress limits that let several small free-tier allocations act as one larger bucket",
+   "Backends see only plain S3 calls, so no changes are needed on the provider side",
+   "Envelope encryption with keys inline, in a file, or in Vault Transit; compression runs before encryption",
+   "Online backend drain and over-replication trimming for moving providers without downtime"
+  ],
+  "caveats": [
+   "Multi-instance deployments require PostgreSQL; SQLite is for single-instance use",
+   "Quickstart requires Go 1.27+, Docker and Make",
+   "The README's comparison table notes MinIO Gateway is deprecated and that rclone union works client-side, so this is a server-side design choice rather than a drop-in for every use",
+   "Flexify.IO is a commercial alternative mentioned by the README; this project is MIT-licensed"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5272,
+  "output": 1459
+ },
+ "generated": "2026-11-08"
+}

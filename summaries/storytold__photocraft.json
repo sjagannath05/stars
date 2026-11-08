@@ -1,0 +1,113 @@
+{
+ "id": "storytold/photocraft",
+ "repo": "storytold/photocraft",
+ "kind": "star",
+ "description": "PhotoCraft: An open-source, photo editor written by scratch in pure Rust",
+ "topics": [
+  "art",
+  "image-editing",
+  "image-editing-software",
+  "image-editor",
+  "images",
+  "photo-editing",
+  "rust"
+ ],
+ "language": "Rust",
+ "stars": 77741,
+ "license": "Apache-2.0",
+ "homepage": "https://getartcraft.com/apps/photocraft",
+ "pushed_at": "2026-11-08",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "PhotoCraft is an open-source, clean-room photo editor written from scratch in pure Rust, aiming to cover much of Photoshop's workflow (layers, masks, adjustments, type, vectors, PSD files) in a native offline app.",
+  "category": "image editing software",
+  "keywords": [
+   "photo editor",
+   "image editor",
+   "photoshop alternative",
+   "open source photoshop",
+   "rust image editor",
+   "photo editing software",
+   "layers and masks",
+   "adjustment layers",
+   "curves levels",
+   "layer styles",
+   "psd editor",
+   "open psd files",
+   "psd support",
+   "psb",
+   "vector shapes",
+   "pen tool",
+   "text on canvas",
+   "icc color management",
+   "cmyk editing",
+   "wgpu compositor",
+   "gpu image processing",
+   "batch image processing",
+   "command line image editing",
+   "mcp server",
+   "offline photo editing",
+   "clean room reimplementation",
+   "affinity file reader",
+   "openraster",
+   "gimp xcf",
+   "raw photo editing",
+   "retouch photos",
+   "photo retouching",
+   "edit photos without subscription",
+   "edit psd without photoshop",
+   "brush engine",
+   "wasm image editor"
+  ],
+  "what_it_does": "PhotoCraft is a desktop image editor (with a WebAssembly web build) that supports layers, groups, clipping and pixel or vector masks, adjustment layers, and layer styles such as drop shadow and glow. It offers selection tools, a brush engine, a paint and retouch toolset, shape and pen vector tools, and point and paragraph type with character and paragraph controls. It reads and writes layered Photoshop PSD and PSB files through its own PSD crate, and also reads or writes several other formats such as OpenRaster, Paint.NET PDN3, GIMP XCF, and Krita .kra. Every menu item and tool runs a command from one registry, which the UI, a CLI (photocraft-cli, including batch mode), a JSON control channel, and an MCP server all share. The README says the project is in early alpha and not yet a replacement for professional Photoshop use.",
+  "use_cases": [
+   "edit layered photoshop files without photoshop",
+   "batch apply adjustments to a folder of images",
+   "retouch and grade photos offline",
+   "scripted image edits from the command line",
+   "drive image edits with an AI agent over MCP",
+   "design text and shape badges on photos"
+  ],
+  "how_to_run": [
+   "git clone <repo URL>",
+   "cd photocraft",
+   "cargo run --release -p photocraft -- image.psd",
+   "cargo test --workspace"
+  ],
+  "stack": [
+   "Rust",
+   "wgpu",
+   "egui",
+   "WebAssembly",
+   "Cargo"
+  ],
+  "notable": [
+   "Every menu item, tool and dialog runs a command from one registry of 500+ commands, shared by UI, CLI, JSON control channel and MCP server",
+   "Standalone PSD crate written from Adobe's public spec, with 307 of 309 psd-tools test files rendering the same after re-save",
+   "Dual CPU and wgpu compositors tested against each other, with copy-on-write 256-pixel tiles",
+   "Real ICC colour management, and RGB, Grayscale, CMYK and Lab documents at 8, 16 and 32 bits per channel",
+   "Runs headless in the CLI, and the whole engine and UI also compile to WebAssembly"
+  ],
+  "caveats": [
+   "README states it is in early alpha and not yet a Photoshop replacement for daily professional work; AI/generative features are missing",
+   "Files dropped on a Wayland window do not open yet because of a winit limitation; XWayland workaround needed for drag and drop",
+   "HEIC is read-only and needs an optional build feature in source builds; AVIF is write-only with a feature flag; JPEG XL is unavailable; Affinity files are read-only",
+   "Japanese UI fonts come from an optional craft-fonts build input; without it system CJK fonts are used"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11103,
+  "output": 1464
+ },
+ "generated": "2026-11-08"
+}

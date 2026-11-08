@@ -1,0 +1,108 @@
+{
+ "id": "xiaomi-research/xiaomi-ocr-0",
+ "repo": "xiaomi-research/Xiaomi-OCR-0",
+ "kind": "star",
+ "description": "Xiaomi-OCR-0",
+ "topics": [],
+ "language": "Python",
+ "stars": 980,
+ "license": "Apache-2.0",
+ "homepage": "https://huggingface.co/spaces/SeerRay-Lab/Xiaomi-OCR-0",
+ "pushed_at": "2026-10-29",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Xiaomi-OCR-0 is a unified 0.8B vision-language model, built on Qwen3.5-0.8B, for document parsing, key information extraction, and OCR-centric visual question answering.",
+  "category": "document ocr model",
+  "keywords": [
+   "ocr",
+   "document parsing",
+   "vision-language model",
+   "vlm",
+   "document to markdown",
+   "pdf parsing",
+   "key information extraction",
+   "kie",
+   "visual question answering",
+   "docvqa",
+   "table recognition",
+   "formula recognition",
+   "latex",
+   "html tables",
+   "handwriting recognition",
+   "calligraphy ocr",
+   "omnidocbench",
+   "qwen3.5",
+   "sglang",
+   "vllm",
+   "ollama",
+   "gguf",
+   "mcp server",
+   "agent skill",
+   "layout detection",
+   "paddlex",
+   "pp-doclayoutv3",
+   "text extraction from images",
+   "read scanned documents",
+   "extract fields from invoices as json",
+   "local ocr model"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "convert scanned document pages to Markdown",
+   "extract requested fields from documents as JSON",
+   "answer questions about text in document images",
+   "parse tables and formulas from PDFs",
+   "run OCR locally on a GPU or Ollama",
+   "OCR historical or handwritten pages"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd Xiaomi-OCR-0",
+   "python -m sglang.launch_server --model-path SeerRay-Lab/Xiaomi-OCR-0 --host 127.0.0.1 --port 8000 --context-length 16384  (or: vllm serve SeerRay-Lab/Xiaomi-OCR-0 --host 127.0.0.1 --port 8000 --max-model-len 16384)",
+   "python3 -m venv .venv && source .venv/bin/activate && python -m pip install -r requirements.txt",
+   "python demo/server.py --port 8787",
+   "Optional region mode: python -m pip install -r requirements-paddlex.txt"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "Qwen3.5-0.8B base model",
+   "SGLang or vLLM inference server",
+   "Ollama (experimental)",
+   "GGUF / llama.cpp community conversions",
+   "PaddlePaddle, PaddleX, PP-DocLayoutV3 (optional region mode)",
+   "MCP service",
+   "Pillow",
+   "pypdfium2"
+  ],
+  "notable": [
+   "Two parsing modes: whole-page parsing and optional region parsing that detects layout regions and processes them concurrently",
+   "Outputs structured Markdown with OTSL tables converted to HTML and formulas in LaTeX",
+   "Ships an Agent Skill and MCP service that can be installed by an AI agent",
+   "Reported 95.24 on Real5-OmniDocBench and 96.83 on OmniDocBench v1.6 (self-reported, two-stage method)",
+   "Community GGUF and NInfer BF16 conversions are listed, not evaluated by the authors"
+  ],
+  "caveats": [
+   "Region mode is recommended only for printed, regular documents; scene text, handwriting, calligraphy and irregular layouts should use whole-page parsing",
+   "Ollama support is experimental; validation was limited to Apple Silicon with Ollama 0.35.0 and does not establish benchmark parity",
+   "Requires a compatible GPU driver and runtime for SGLang or vLLM; macOS and non-NVIDIA hardware need platform-specific checks",
+   "Agent-driven setup may download large model and layout weights and create environments"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6229,
+  "output": 1336
+ },
+ "generated": "2026-11-08"
+}

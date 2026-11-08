@@ -1,0 +1,104 @@
+{
+ "id": "tinyhumansai/openscion",
+ "repo": "tinyhumansai/openscion",
+ "kind": "star",
+ "description": "OpenScion is an open-source, server-centric source control system for very large monorepos where most clients are AI agents and CI jobs rather than people on laptops. Based on Anthropic's Scion",
+ "topics": [],
+ "language": "Rust",
+ "stars": 142,
+ "license": "GPL-3.0",
+ "homepage": "https://www.anthropic.com/engineering/redesigning-source-control",
+ "pushed_at": "2026-10-27",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "OpenScion is a Rust, server-centric source control system for very large monorepos, designed for AI agent and CI clients, modelled on Anthropic's Scion design.",
+  "category": "source control system",
+  "keywords": [
+   "source control",
+   "version control",
+   "monorepo",
+   "large monorepo",
+   "git alternative",
+   "scion",
+   "rust",
+   "content addressing",
+   "blake3",
+   "changesets",
+   "sparse checkout",
+   "partial clone",
+   "ci checkouts",
+   "ai agents",
+   "server-side git operations",
+   "compare-and-swap refs",
+   "rebase",
+   "blame",
+   "bisect",
+   "fetch only needed trees",
+   "cli client",
+   "opnscn",
+   "http api",
+   "version control api",
+   "self-hosted source control",
+   "clone one directory",
+   "rpc source control",
+   "git mirrors",
+   "gpl-3.0",
+   "nextjs web gui",
+   "sqlite object store"
+  ],
+  "what_it_does": "OpenScion provides a server-side source control engine with an HTTP API, a command-line client called opnscn, and a daemon and cache tier for regional and node-level caching. Operations such as log, diff, blame, ancestry, rebase, revert, and land are exposed as RPCs so CI and bisect pipelines can run without a checkout. Blobs, trees, and changesets are named by BLAKE3 hash, and a changeset records only the files changed relative to its first parent. Clients fetch specific trees and blobs by name instead of negotiating packfiles. The README says the reference storage implementations are in-memory and local (filesystem, SQLite), so a single node runs without cloud services. A web GUI built with Next.js and shadcn/ui is also included.",
+  "use_cases": [
+   "hosting a very large monorepo for many agents and CI jobs",
+   "fetching only one directory of a huge repository",
+   "running CI or bisect against history without checking out files",
+   "self-hosting a single-node source control server",
+   "importing a directory tree and committing changes from the command line",
+   "comparing performance of a source control system against git"
+  ],
+  "how_to_run": [
+   "cargo run -p openscion-server",
+   "cargo run -p openscion -- import ./tree",
+   "cargo run -p openscion -- commit -m \"edit\" --dir ./tree",
+   "cargo run -p openscion -- clone ./copy",
+   "cd apps/web && pnpm install && pnpm dev",
+   "cargo install openscion"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo workspace",
+   "Next.js",
+   "shadcn/ui",
+   "pnpm",
+   "BLAKE3",
+   "SQLite",
+   "cargo-deny",
+   "cargo-llvm-cov"
+  ],
+  "notable": [
+   "Follows the design Anthropic described for its internal Scion system",
+   "Changesets store only changed files, so creating one costs the size of the change rather than the repository",
+   "Landing uses server-side rebase plus a compare-and-swap ref update, with no global merge lock",
+   "Storage sits behind ObjectStore and MetadataStore ports with local reference implementations",
+   "Protocol crate openscion-proto has no transport or runtime, so other tools can speak the API"
+  ],
+  "caveats": [
+   "Purpose-built for large monorepos with mostly agent and CI traffic; not presented as a general git replacement",
+   "Benchmarks are on synthetic repositories of 4 KiB files, per the README",
+   "Development workflow requires 90% per-file line coverage and several extra CI checks",
+   "Releasing requires a CARGO_REGISTRY_TOKEN secret for crates.io publishing"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3896,
+  "output": 1300
+ },
+ "generated": "2026-11-08"
+}

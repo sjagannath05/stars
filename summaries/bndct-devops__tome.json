@@ -1,0 +1,99 @@
+{
+ "id": "bndct-devops/tome",
+ "repo": "bndct-devops/tome",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Document Management - E-books",
+   "entry": "Tome - Ebook and manga library server with web reader, OPDS and metadata fetching. A KOReader plugin records every reading session and syncs positions both ways, powering streaks, pace, heatmaps and per-book stats. (Source Code, Clients) AGPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tome is a self-hosted ebook and manga library server with a built-in web reader, OPDS feed, metadata fetching, and a custom KOReader plugin that records reading sessions and syncs positions.",
+  "category": "ebook library server",
+  "keywords": [
+   "ebook library",
+   "ebook server",
+   "manga server",
+   "comic reader",
+   "koreader",
+   "koreader plugin",
+   "kosync",
+   "opds",
+   "opds feed",
+   "epub reader",
+   "cbz",
+   "cbr",
+   "pdf viewer",
+   "reading statistics",
+   "reading streaks",
+   "reading heatmap",
+   "reading pace",
+   "fastapi",
+   "react",
+   "sqlite",
+   "docker",
+   "self-hosted",
+   "calibre-web alternative",
+   "komga alternative",
+   "kavita alternative",
+   "hardcover sync",
+   "goodreads alternative",
+   "oidc sso",
+   "share my ebook collection",
+   "track reading sessions",
+   "sync reading position between device and browser"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Host a personal ebook and manga library and read it in the browser",
+   "Track reading sessions, streaks and pace from an e-reader",
+   "Sync reading position between KOReader and a web reader",
+   "Serve an OPDS catalog to e-reader apps",
+   "Fetch and compare book metadata from Hardcover, Google Books and OpenLibrary",
+   "Push ratings and progress to a Hardcover profile"
+  ],
+  "how_to_run": [
+   "docker run -d --name tome --restart unless-stopped -p 8080:8080 -v ./data:/data -v ./books:/books -v ./bindery:/bindery ghcr.io/bndct-devops/tome:latest",
+   "Open the web UI in a browser and follow the setup wizard to create an admin account",
+   "Or clone the repo and run docker compose up -d using the canonical docker-compose.yml"
+  ],
+  "stack": [
+   "Python 3.12+",
+   "FastAPI",
+   "React 19",
+   "Vite",
+   "TypeScript",
+   "Tailwind CSS 4",
+   "SQLite (WAL)",
+   "SQLAlchemy 2.0",
+   "JWT (python-jose)",
+   "foliate-js",
+   "Docker"
+  ],
+  "notable": [
+   "Custom KOReader plugin (TomeSync) records reading sessions and syncs positions both ways, including offline",
+   "Reading stats such as streaks, time-of-day heatmaps, pace and per-book breakdowns built from real session data",
+   "Built-in reader for EPUB, CBZ/CBR and PDF with two-page spread, RTL and webtoon modes",
+   "Bindery inbox for incoming books with metadata review before import",
+   "Optional OIDC single sign-on with group-to-role mapping"
+  ],
+  "caveats": [
+   "Full sync and stats features require TomeSync plugin on a current KOReader release (v2024.07 or newer)",
+   "README recommends running on an always-on host rather than a laptop for KOReader sync and OPDS",
+   "Telemetry is opt-in and update checks contact upgrades.bndct.dev daily unless disabled",
+   "Tome Reader iPhone app is closed source, in free beta until 31 December 2026, and optional"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6188,
+  "output": 1194
+ },
+ "generated": "2026-11-08"
+}

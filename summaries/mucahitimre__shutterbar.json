@@ -1,0 +1,97 @@
+{
+ "id": "mucahitimre/shutterbar",
+ "repo": "mucahitimre/Shutterbar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Screenshot Tools",
+   "entry": "Shutterbar - ShareX-style screenshots with ⌘C-to-clipboard, after-capture tasks, last-region recapture and scrolling capture. [![Open-Source Software][OSS Icon]](https://github.com/mucahitimre/Shutterbar) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Shutterbar is a macOS screenshot app inspired by ShareX that copies a selected region to the clipboard with ⌘C, runs configurable after-capture tasks, and recaptures the last region with a shortcut.",
+  "category": "macos screenshot tool",
+  "keywords": [
+   "macos screenshot",
+   "screenshot tool",
+   "screen capture",
+   "screenshot to clipboard",
+   "sharex alternative",
+   "scrolling screenshot",
+   "scrolling capture",
+   "annotate screenshot",
+   "screen region capture",
+   "screencapturekit",
+   "appkit",
+   "swift",
+   "menu bar app",
+   "after capture tasks",
+   "last region recapture",
+   "frozen screen",
+   "window capture",
+   "pixelate screenshot",
+   "homebrew cask",
+   "mac screenshot annotation",
+   "copy screenshot to clipboard",
+   "capture long web page",
+   "screenshot editor",
+   "open source mac app",
+   "mit license",
+   "grab part of screen"
+  ],
+  "what_it_does": "Shutterbar lets you select a screen region, a window, or a whole screen and capture it with a frozen-screen overlay so menus and hover states stay put. Pressing ⌘C copies the selection to the clipboard only, while Enter runs a chosen pipeline of tasks: annotate, save to file, copy, show in Finder, and notify, with each failure isolated. The last selected region is remembered across relaunches, and ⌥⇧5 recaptures it without opening the overlay. Scrolling capture stitches frames of long content into one image, either automatically (GitHub build, with Accessibility permission) or manually. The built-in annotation editor offers arrows, rectangles, text, pixelation and numbered steps with undo/redo. The README states that everything stays local with no account or cloud.",
+  "use_cases": [
+   "capture a region and paste it into chat or email",
+   "take a long scrolling screenshot of a web page",
+   "save and annotate screenshots for bug reports",
+   "repeat a before/after screenshot of the same area",
+   "replace ShareX-style workflows on a Mac",
+   "capture a window with its shadow-free bounds",
+   "quickly annotate a screenshot with arrows and text"
+  ],
+  "how_to_run": [
+   "brew install --cask mucahitimre/tap/shutterbar",
+   "Or download Shutterbar-x.y.z.dmg from GitHub Releases and drag it to Applications",
+   "Build from source: brew install xcodegen",
+   "cp Config/Local.xcconfig.example Config/Local.xcconfig (set your Team ID and bundle id prefix)",
+   "xcodegen generate",
+   "xcodebuild -project Shutterbar.xcodeproj -scheme Shutterbar -derivedDataPath build/DD build"
+  ],
+  "stack": [
+   "Swift 6",
+   "Xcode 16+",
+   "ScreenCaptureKit",
+   "AppKit",
+   "CoreGraphics",
+   "CoreText",
+   "XcodeGen",
+   "SMAppService",
+   "KeyboardShortcuts",
+   "Carbon"
+  ],
+  "notable": [
+   "⌘C copies a selection straight to the clipboard with no file or dialog",
+   "Frozen-screen overlay captures all displays before selection, so menus and tooltips stay visible",
+   "Last region is remembered across relaunches and can be recaptured via ⌥⇧5 without the overlay",
+   "Scrolling capture with optional automatic scrolling that never moves the pointer and stops at the end of content",
+   "Two builds: a GitHub build (non-sandboxed, Developer ID, notarized) and a planned sandboxed App Store build with manual scrolling only"
+  ],
+  "caveats": [
+   "Requires macOS 14.0 or later and Screen Recording permission",
+   "Automatic scrolling needs Accessibility permission and is only in the GitHub (non-sandboxed) build; App Store build is still on the roadmap",
+   "No selection spanning multiple screens; selection is clamped to the starting screen",
+   "Drawn annotations cannot be individually selected, moved or deleted; use undo"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7693,
+  "output": 1466
+ },
+ "generated": "2026-11-08"
+}

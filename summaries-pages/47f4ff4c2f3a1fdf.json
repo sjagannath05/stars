@@ -1,0 +1,77 @@
+{
+ "id": "47f4ff4c2f3a1fdf",
+ "url": "https://alphaosint.com/sources/linkedin-company-employees-api",
+ "final_url": "https://alphaosint.com/sources/linkedin-company-employees-api/",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "LinkedIn Company Employees API",
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Sales",
+   "entry": "AlphaOSINT LinkedIn Company Employees - Lists the people who work at a company on LinkedIn, with titles and profile links, as an MCP tool for prospecting. #mcp #paid"
+  }
+ ],
+ "summary": {
+  "name": "LinkedIn Company Employees API",
+  "one_liner": "A hosted Apify actor that lists people who work at a given company on LinkedIn, with names, titles, locations and public profile URLs, optionally checking each profile for a current role.",
+  "category": "linkedin prospecting api",
+  "keywords": [
+   "linkedin employee scraper",
+   "linkedin company employees",
+   "list company employees linkedin",
+   "linkedin people search api",
+   "linkedin company staff list",
+   "account mapping",
+   "sales prospecting tool",
+   "lead sourcing linkedin",
+   "talent mapping",
+   "decision maker finder",
+   "contact enrichment",
+   "crm hygiene",
+   "apify actor",
+   "mcp tool",
+   "linkedin profile scraper",
+   "job title search linkedin",
+   "headcount list",
+   "verify current employee",
+   "competitor team mapping",
+   "apify api",
+   "linkedin public profiles",
+   "employee list by title and city",
+   "b2b prospecting",
+   "ai agent linkedin data"
+  ],
+  "use_cases": [
+   "Account mapping for sales teams",
+   "Talent mapping a competitor's team by title and city",
+   "Confirming which CRM contacts still work at an account",
+   "Checking founders and senior hires before an investor call",
+   "Feeding structured people data to an AI agent over MCP"
+  ],
+  "what_it_does": "Takes a list of company LinkedIn URLs or company names and returns one row per person found in public search results. By default it opens each public profile and keeps only people whose profile shows a current role at the company, dropping those who have moved on. Optional filters narrow results by job title keywords and locations, and a cap sets the maximum number of people per company. Turning profile verification off gives a faster list built from search results alone, which may include people who have left. Each row includes name, title, location, profile URL, and a match reason and search query for auditing.",
+  "pricing": "paid",
+  "platforms": [
+   "web",
+   "Apify API",
+   "MCP"
+  ],
+  "notable": [
+   "Checks each public profile for a current role at the company by default, so former employees are dropped",
+   "Needs no LinkedIn login or cookie; uses public profiles and search results",
+   "Titles and locations can be used as filters, with each title keyword run as its own search",
+   "Structured output with verification flag, match reason, and fetch timestamp for deduplication across runs"
+  ],
+  "caveats": [
+   "Lists are partial: in testing roughly 10 to 45% of a small company, 7 to 19% of a mid-size one, and under 1% of a very large one",
+   "Billing is per person returned; company input count and max results per company drive cost",
+   "A fresh run with profile checks takes about 3 to 10 minutes per company"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4891,
+  "output": 997
+ },
+ "generated": "2026-11-08"
+}

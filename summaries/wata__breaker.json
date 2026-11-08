@@ -1,0 +1,92 @@
+{
+ "id": "wata/breaker",
+ "repo": "wata/Breaker",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "Breaker - Watches the launchd jobs, cron jobs, Folder Actions, and SwiftBar plugins you set up yourself and notifies you when one breaks. [![Open-Source Software][OSS Icon]](https://github.com/wata/Breaker) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Breaker is a macOS app that watches the launchd jobs, cron jobs, Folder Actions, and SwiftBar plugins you set up yourself and notifies you when one fails.",
+  "category": "mac automation monitoring",
+  "keywords": [
+   "launchd monitor",
+   "cron job monitor",
+   "cron failure alert",
+   "launchd agents",
+   "crontab",
+   "folder actions",
+   "automator",
+   "applescript",
+   "swiftbar plugins",
+   "scheduled script failures",
+   "silent job failures",
+   "job failure notifications",
+   "macos notifications",
+   "dock badge",
+   "launch agent manager",
+   "scheduled task monitor",
+   "watch my scripts",
+   "know when my cron breaks",
+   "automation dashboard mac",
+   "menu bar scheduler",
+   "cronitor alternative",
+   "launchctl gui",
+   "log error highlighting",
+   "run stop launchd jobs",
+   "edit launchd schedule",
+   "homebrew cask breaker",
+   "macos menu bar app",
+   "self-made automation health",
+   "swiftbar"
+  ],
+  "what_it_does": "Breaker is a native Mac app that gathers the automations you built into one list: launchd agents in ~/Library/LaunchAgents, your crontab, Folder Actions (AppleScript and Automator), SwiftBar plugins, and any apps you choose to keep running. It flags problems that exit codes alone would miss, such as a job that is not loaded, missed a scheduled run, points to a missing script or interpreter, or wrote an error to its log. When something breaks it sends a notification and shows a Dock badge, and it keeps checking every 60 seconds after its window is closed. For launchd jobs you can run, stop, and resume them, edit their schedules, and read stdout and stderr with error lines highlighted. Agents and daemons in /Library can be shown in view-only mode, and jobs installed by other apps are hidden by default.",
+  "use_cases": [
+   "find out when a scheduled script silently stops working",
+   "monitor cron jobs on a Mac",
+   "debug a failing launchd agent",
+   "check Folder Actions and SwiftBar plugins for errors",
+   "get notified of broken personal automations",
+   "edit launchd job schedules without hand-editing plists"
+  ],
+  "how_to_run": [
+   "Download the latest pre-built application from the Releases page and move it to /Applications",
+   "brew install --cask wata/tap/breaker",
+   "./scripts/install.sh (developers: builds a Release build and replaces /Applications/Breaker.app)",
+   "xcodebuild test -project Breaker.xcodeproj -scheme Breaker -destination 'platform=macOS' -derivedDataPath build/test (run tests)"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "macOS launchd",
+   "cron",
+   "AppleScript / System Events",
+   "SwiftBar"
+  ],
+  "notable": [
+   "Catches silent failures such as missed runs, missing scripts, and error lines in logs, not just non-zero exit codes",
+   "Signed and notarized builds with automatic updates",
+   "Runs checks every 60 seconds even after the window is closed",
+   "Launchd jobs can be run, stopped, resumed, and have schedules edited in place",
+   "Includes a sample-data mode for taking screenshots without touching real settings"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later",
+   "Needs permission to send notifications and control System Events on first launch",
+   "Building from source requires changing the signing Team to your own"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2405,
+  "output": 1275
+ },
+ "generated": "2026-11-08"
+}

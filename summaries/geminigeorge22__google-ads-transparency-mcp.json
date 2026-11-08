@@ -1,0 +1,91 @@
+{
+ "id": "geminigeorge22/google-ads-transparency-mcp",
+ "repo": "GeminiGeorge22/google-ads-transparency-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Marketing",
+   "entry": "Google Ads Transparency MCP - MCP server that gives AI assistants a competitor's Google ads from the Google Ads Transparency Center: new, running or stopped, with first and last shown dates; runs on your own Apify token. #opensource #mcp"
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server that lets AI assistants pull a competitor's Google ads from the Google Ads Transparency Center, showing which are new, running or stopped, via a hosted Apify Actor.",
+  "category": "ad intelligence mcp",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "google ads transparency",
+   "competitor ads",
+   "ad intelligence",
+   "ad library",
+   "competitor ad monitoring",
+   "ads transparency center",
+   "apify",
+   "apify actor",
+   "streamable http",
+   "claude connector",
+   "cursor mcp",
+   "vs code mcp",
+   "stdio server",
+   "npx",
+   "uvx",
+   "python mcp",
+   "track competitor ads",
+   "see what ads a competitor runs",
+   "find new ads from a rival",
+   "ads that stopped running",
+   "advertiser ad history",
+   "ad shown dates",
+   "competitor research",
+   "marketing research tool",
+   "domain ad lookup",
+   "ad creative links"
+  ],
+  "what_it_does": "The server takes a website domain, a Google advertiser ID, an Ads Transparency Center link, or an exact advertiser name and returns the ads Google lists for that advertiser. Each ad is labeled new, still running, or stopped within a configurable look-back window, with first and last shown dates, days shown, and a link to the ad. Results can be filtered by country or left set to anywhere. The tool returns one row per ad with advertiser, ad ID, format (text, image, or video), status, and target domain. The README says the data comes from the public Google Ads Transparency Center via the Apify Actor Google Ads Transparency Scraper, and no Google login or proxy setup is needed. The repo also includes a local stdio server (Node.js) and a Python version that forward tool calls to the hosted endpoint using the user's own Apify token.",
+  "use_cases": [
+   "Check which Google ads a competitor started running recently",
+   "Compare live ads between two or more brands",
+   "Review ads a rival stopped running this month",
+   "Monitor competitor ad activity from an AI assistant",
+   "Pull ad links and shown dates for competitive research"
+  ],
+  "how_to_run": [
+   "Claude Code: claude mcp add --transport http google-ads-transparency \"<MCP endpoint URL>\"",
+   "Claude Desktop / claude.ai: Settings → Connectors → Add custom connector, paste the MCP endpoint URL",
+   "Cursor: add the endpoint URL under mcpServers in ~/.cursor/mcp.json",
+   "Local stdio: npx -y github:GeminiGeorge22/google-ads-transparency-mcp with env APIFY_TOKEN set",
+   "Python: uvx google-ads-transparency-mcp-server (or pip install google-ads-transparency-mcp-server), with APIFY_TOKEN set"
+  ],
+  "stack": [
+   "Apify Actor (Google Ads Transparency Scraper)",
+   "Model Context Protocol (MCP)",
+   "Streamable HTTP transport",
+   "Node.js 18+",
+   "Python 3.10+",
+   "official mcp Python SDK"
+  ],
+  "notable": [
+   "Accepts a domain, advertiser ID, Transparency Center link, or exact advertiser name as input",
+   "Classifies ads as new, running, or stopped within a look-back window with first and last shown dates",
+   "Runs on the user's own Apify token; OAuth or Bearer token auth on the hosted endpoint",
+   "Local stdio server answers tool listing from a bundled tools.json without any token"
+  ],
+  "caveats": [
+   "Requires an Apify account and API token; tool calls are not run without one",
+   "Data comes from the Google Ads Transparency Center via a third-party Actor, so coverage depends on what Google lists",
+   "The author states they maintain the Actor (disclosure in README)"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3431,
+  "output": 1381
+ },
+ "generated": "2026-11-08",
+ "license_source": "LICENSE"
+}

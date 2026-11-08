@@ -1,0 +1,92 @@
+{
+ "id": "tonyantony300/dashbeam",
+ "repo": "tonyantony300/dashbeam",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Peer-to-peer Filesharing",
+   "entry": "DashBeam - File transfer tool with peer-to-peer networking, letting you transfer any file with any size. (Demo, Source Code) AGPL-3.0 deb/Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "DashBeam is a free, open-source file transfer app that sends files and folders directly between devices using peer-to-peer QUIC networking (via Iroh) without storing them on cloud servers.",
+  "category": "peer-to-peer file transfer",
+  "keywords": [
+   "peer-to-peer file transfer",
+   "p2p file sharing",
+   "direct file transfer",
+   "send large files",
+   "transfer large files",
+   "iroh",
+   "quic",
+   "blake3",
+   "blobs",
+   "magic wormhole alternative",
+   "localsend alternative",
+   "pairdrop alternative",
+   "wetransfer alternative",
+   "share files with my team",
+   "send files without cloud",
+   "end-to-end encrypted file transfer",
+   "lan file sharing",
+   "mdns device discovery",
+   "resumable file transfer",
+   "file transfer tool",
+   "self-hosted relay",
+   "wormhole",
+   "send folder to another computer",
+   "tauri desktop app",
+   "android file sharing",
+   "qr code file transfer",
+   "agpl file transfer"
+  ],
+  "what_it_does": "DashBeam transfers files and folders directly between devices rather than uploading them to a server. It offers desktop, Android, CLI and browser clients, and the receiver can use the browser or app without installing anything. Transfers are published as BLAKE3-hashed blobs, so each chunk is verified and interrupted transfers can resume from where they stopped. Devices can be found on the local network via mDNS (Nearby) or paired once with a code and then send without copying tickets. Shares can be sent as a one-time ticket, link or QR code, and the README says transfers survive switching networks mid-transfer. Relays are used when a direct connection is not possible, and the README describes how to self-host one.",
+  "use_cases": [
+   "send large files to someone without uploading to cloud storage",
+   "share a folder directly with a colleague",
+   "transfer files between my own phone and computer",
+   "send files to a receiver who has no app installed",
+   "replace WeTransfer or Google Drive for one-off transfers",
+   "move files across the local network without internet"
+  ],
+  "how_to_run": [
+   "Download the installer for your platform from GitHub Releases or the Downloads page (Windows Setup.exe, macOS DMG, Linux .deb/.rpm/AppImage, Android APK, or CLI)",
+   "Or use the web app at app.dashbeam.net (limited throughput)",
+   "Development setup: see CONTRIBUTING.md for prerequisites and build instructions"
+  ],
+  "stack": [
+   "Iroh (peer-to-peer networking stack)",
+   "QUIC",
+   "TLS 1.3",
+   "iroh-blobs",
+   "BLAKE3",
+   "Ed25519",
+   "mDNS",
+   "Pkarr"
+  ],
+  "notable": [
+   "Direct device-to-device transfer with relay fallback; the README says relays only see ciphertext",
+   "Resumable transfers verified chunk by chunk with BLAKE3",
+   "Pair once with a code, then send to paired devices without tickets",
+   "Roaming: a connection is bound to the device key, so switching Wi-Fi to cellular keeps the transfer going",
+   "Self-hostable iroh relay and discovery server (documented in infra/)"
+  ],
+  "caveats": [
+   "The README's comparison table describes the project as 'WIP' in its own 'catch' row",
+   "LAN discovery uses mDNS, which the README says is often blocked on guest Wi-Fi and VPNs",
+   "The web app has limited throughput; large files are better in the native app",
+   "Roughly one transfer in ten reportedly never gets a direct path and relies on a relay, which can be throttled on public relays"
+  ],
+  "license": "AGPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6587,
+  "output": 1326
+ },
+ "generated": "2026-11-08"
+}

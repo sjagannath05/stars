@@ -1,0 +1,93 @@
+{
+ "id": "oakcoderx/solopup-memory",
+ "repo": "OakcoderX/solopup-memory",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "SoloPup Memory - Native DeepSeek Harness text-memory beta with source references, project scope and correction history; requires Node >=24.9 and DSH >=0.2.1-rc.0 <0.3.0, and configured model APIs may charge. #opensource #memory"
+  }
+ ],
+ "summary": {
+  "one_liner": "SoloPup Memory is a beta text-memory plugin for the DeepSeek Harness (DSH) that saves user-stated preferences, project decisions and source-linked notes, then retrieves them in later conversations by project and conditions.",
+  "category": "ai memory plugin",
+  "keywords": [
+   "ai memory",
+   "text memory",
+   "conversation memory",
+   "deepseek harness",
+   "dsh plugin",
+   "persistent memory",
+   "long-term memory",
+   "project memory",
+   "source references",
+   "correction history",
+   "memory search",
+   "memory backup",
+   "memory restore",
+   "npm beta",
+   "esm",
+   "markdown memory",
+   "sqlite control store",
+   "remember preferences",
+   "remember project decisions",
+   "keep track of changes",
+   "recall past conversations",
+   "private data filter",
+   "memory revocation",
+   "chatbot memory",
+   "llm memory plugin",
+   "node.js",
+   "mit license"
+  ],
+  "what_it_does": "It is a public beta, text-only memory plugin for DeepSeek Harness. It proposes candidate memories from the user's own messages, binds them to quoted source text, and checks them through a separate review step before they become active memory. Active memory is stored as Markdown index and topic files plus local ledgers for sources, candidates, history and call records, with a separate SQLite control database for identity, revocation and coordination state. Later conversations receive a budget-limited index, and memory_search queries both the current project and global store while labeling ownership. Sensitive categories such as birthday, health and private contact details are kept out of the automatic index and hidden from normal search unless includePrivate is set. The README also describes backup, verify and restore scripts, and a revision model where superseded values keep their original scope, conditions and sources.",
+  "use_cases": [
+   "give an AI assistant long-term memory of user preferences",
+   "record project decisions and recall them later",
+   "keep source-quoted notes across chat sessions",
+   "back up and restore an assistant's memory store",
+   "separate per-project memory from global memory",
+   "review or revoke remembered items"
+  ],
+  "how_to_run": [
+   "dsh plugin --profile desktop add solopup-memory@beta --ignore-scripts",
+   "dsh plugin --profile desktop add solopup-memory@0.21.0-beta.3 --ignore-scripts (pin a specific version from the releases page)",
+   "Restart the DSH profile host, then run memory_status to check the plugin version and capture diagnostics",
+   "node /absolute/plugin/scripts/backup.mjs create --root /absolute/memory --to /absolute/new-backup",
+   "node /absolute/plugin/scripts/backup.mjs verify --snapshot /absolute/new-backup",
+   "dsh plugin --profile desktop remove solopup-memory"
+  ],
+  "stack": [
+   "Node.js >=24.9",
+   "DeepSeek Harness (DSH) >=0.2.1-rc.0 <0.3.0",
+   "ESM JavaScript",
+   "Markdown files",
+   "SQLite",
+   "npm"
+  ],
+  "notable": [
+   "Source-bound candidates: each memory links back to the user's exact quoted message, with a separate review check before publication",
+   "Project scope with global and per-project stores; search results show which store they came from",
+   "Sensitive personal data (birthday, health, relationships, contact details) excluded from the default index and search",
+   "Revision model: supersedes links an old value to its replacement while keeping the original scope, conditions and sources",
+   "Backup and restore scripts with preview-by-default restore and revocation state preserved"
+  ],
+  "caveats": [
+   "Beta, text-only, and not yet through stable acceptance; README points to RELEASE.md for verified scope and known issues",
+   "Search uses exact token matching with no vector retrieval, so cross-language or synonym recall is not guaranteed; the model may also miss or misstate memories",
+   "Requires DSH and Node >=24.9; the README says verification so far covers macOS with DSH host Node 24. Model API calls may incur charges; a user message beyond 2000 characters is not fully captured",
+   "Deleting via memory_forget only stops using index entries; it does not erase personal data from raw files, logs, caches or backups"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4776,
+  "output": 1496
+ },
+ "generated": "2026-11-08"
+}

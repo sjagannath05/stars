@@ -1,0 +1,95 @@
+{
+ "id": "tekkiech/jdsp4mac",
+ "repo": "Tekkiech/jdsp4mac",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Audio Record and Process",
+   "entry": "jdsp4mac - Menu bar app that runs JamesDSP audio effects, including EQ, AutoEQ, convolver, crossfeed and ViPER-DDC, on all system audio. [![Open-Source Software][OSS Icon]](https://github.com/Tekkiech/jdsp4mac) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that runs the JamesDSP audio effects engine (EQ, AutoEQ, convolver, crossfeed, ViPER-DDC) on all system audio using a Core Audio process tap, with no kernel extension or virtual driver.",
+  "category": "macos audio effects",
+  "keywords": [
+   "jamesdsp",
+   "libjamesdsp",
+   "macos equalizer",
+   "menu bar audio app",
+   "system-wide equalizer",
+   "core audio process tap",
+   "audio effects mac",
+   "parametric eq",
+   "fir equalizer",
+   "iir equalizer",
+   "autoeq",
+   "headphone eq",
+   "convolver",
+   "impulse response",
+   "crossfeed",
+   "bs2b",
+   "hrtf crossfeed",
+   "viper-ddc",
+   "stereo width",
+   "reverb",
+   "compander",
+   "bass boost",
+   "jdspctl",
+   "command line audio control",
+   "audio presets",
+   "per-app audio bypass",
+   "eq for headphones on mac",
+   "improve sound quality on mac",
+   "jdsp4linux",
+   "rootlessjamesdsp",
+   "shortcuts audio control"
+  ],
+  "what_it_does": "The app sits in the menu bar and processes everything the Mac plays through the libjamesdsp engine, using a Core Audio process tap rather than a driver. Effects include bass boost, FIR and IIR equalizers with 18 built-in presets, AutoEQ, compander, reverb, convolver with impulse responses, BS2B and HRTF crossfeed, stereo width, ViPER-DDC, vacuum tube and liveprog EEL2 scripts. Presets use the JamesDSP for Linux audio.conf format, can be imported from Linux, RootlessJamesDSP and JamesDSP for Android files, and can be tied to a specific output device. AutoEQ can search AutoEq headphone profiles or import GraphicEQ and ParametricEQ files. Selected apps can be excluded from effects. The jdspctl command-line tool controls the app and works even when the app is not running.",
+  "use_cases": [
+   "apply an equalizer to all audio on a Mac",
+   "correct headphone frequency response with AutoEQ",
+   "exclude FaceTime or Safari from audio effects",
+   "script audio settings from Terminal or Shortcuts",
+   "use room or headphone impulse responses on a Mac",
+   "switch audio presets automatically per output device"
+  ],
+  "how_to_run": [
+   "Download jdsp4mac-<version>-arm64.zip from Releases, unzip it and move jdsp4mac.app to Applications.",
+   "Open the app, click Done on the 'Not Opened' warning, then allow it under System Settings > Privacy & Security > Open Anyway.",
+   "Click the menu bar icon, switch the power on and click Allow for system audio recording.",
+   "Optional: sudo mkdir -p /usr/local/bin && sudo ln -sf /Applications/jdsp4mac.app/Contents/MacOS/jdspctl /usr/local/bin/jdspctl",
+   "Build from source: brew install xcodegen, then run: xcodegen && xcodebuild -scheme jdsp4mac -configuration Debug build"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "XcodeGen",
+   "Core Audio process taps",
+   "libjamesdsp (from JDSP4Linux)",
+   "AutoEq profiles"
+  ],
+  "notable": [
+   "No kernel extension or virtual audio driver; audio is captured through a Core Audio process tap",
+   "Uses the JamesDSP for Linux audio.conf preset format and imports presets from Linux, RootlessJamesDSP and Android",
+   "Automatic headroom lowers output by the EQ's highest boost, up to 15 dB, to avoid limiter overload",
+   "In-app updates check that the new build is signed with the same certificate",
+   "jdspctl command-line tool shares the app's config files and works while the app is closed"
+  ],
+  "caveats": [
+   "Requires macOS 14.4 or later on Apple silicon; the author has only tested on macOS 27.0.1 with an M1 Pro.",
+   "Stereo only: on outputs with more than two channels, only the first two channels play, and this is untested on real surround hardware.",
+   "Not notarised by Apple, so macOS requires a manual Open Anyway step on first launch; versions 0.1.2 and earlier need a manual reinstall to get in-app updates."
+  ],
+  "license": "GPL-3.0-or-later"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5091,
+  "output": 1610
+ },
+ "generated": "2026-11-08"
+}

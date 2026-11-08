@@ -1,0 +1,102 @@
+{
+ "id": "justvugg/colibri",
+ "repo": "JustVugg/colibri",
+ "kind": "star",
+ "description": "A hierarchical inference engine for frontier MoE models: hot experts on the GPU (CUDA, Vulkan), warm ones in RAM, cold ones streamed from NVMe. Written in C, runs on the hardware you already own.",
+ "topics": [],
+ "language": "C",
+ "stars": 48745,
+ "license": "Apache-2.0",
+ "homepage": "https://justvugg.github.io/colibri",
+ "pushed_at": "2026-11-08",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [],
+ "sources": [],
+ "summary": {
+  "one_liner": "colibri is a pure-C inference engine that runs very large mixture-of-experts language models (and a few image and decision models) on ordinary hardware by keeping hot experts on GPU or RAM and streaming cold experts from disk.",
+  "category": "local llm inference engine",
+  "keywords": [
+   "mixture of experts",
+   "moe inference",
+   "llm inference",
+   "c inference engine",
+   "run large models locally",
+   "expert streaming",
+   "nvme offload",
+   "ssd offload",
+   "cpu inference",
+   "vulkan gpu",
+   "cuda inference",
+   "gguf loader",
+   "openai compatible api",
+   "anthropic compatible api",
+   "llama.cpp alternative",
+   "run huge model on small ram",
+   "glm-5.2",
+   "deepseek v4",
+   "qwen3.6",
+   "kimi k3",
+   "tool calling server",
+   "mcp server",
+   "local chat server",
+   "expert cache",
+   "speculative decoding",
+   "mtp head",
+   "apple metal",
+   "system one decisions",
+   "text to image local",
+   "run llm on laptop",
+   "self-hosted llm api"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "run a very large open MoE model on a PC with limited RAM",
+   "serve a local OpenAI or Anthropic compatible API for coding tools",
+   "chat with a local model in the terminal or a browser dashboard",
+   "answer yes/no or multiple-choice decisions from a document with probabilities",
+   "run GGUF model files from Hugging Face without converting them",
+   "benchmark and tune LLM inference across CPU, Vulkan and CUDA",
+   "generate pictures locally with Qwen-Image-2.1"
+  ],
+  "how_to_run": [
+   "Windows: download the ZIP and double-click START-HERE.bat",
+   "sudo apt install git python3 build-essential",
+   "git clone the repository, cd colibri, ./start-here.sh",
+   "macOS: xcode-select --install; brew install libomp git python; then ./start-here.sh",
+   "Manual: cd colibri/c && ./setup.sh && make qwen36 VK=1",
+   "./coli chat --model /path/to/model"
+  ],
+  "stack": [
+   "C",
+   "OpenMP",
+   "Python (launcher, setup, converters, API gateway)",
+   "Vulkan",
+   "CUDA",
+   "Metal"
+  ],
+  "notable": [
+   "Hierarchical placement: hot experts in VRAM, warm in RAM, cold streamed from disk, with a learned usage cache",
+   "Runs GGUF files as published (IQ1_S to Q8_0, F16, BF16, MXFP4) via coli import",
+   "System One endpoint returns probabilities over allowed options instead of free text",
+   "OpenAI-compatible, Anthropic-compatible and Jev-compatible APIs from one server",
+   "Guided one-step setup that detects hardware, recommends a model and builds for the GPU"
+  ],
+  "caveats": [
+   "Very large models run slowly when experts stream from disk (for example 0.05-0.1 tok/s for GLM-5.2 on a 25 GB laptop)",
+   "Needs substantial disk space: 22 GB for the smallest model, up to 1.56 TB for Kimi K3",
+   "Some models need a manual conversion or preparation step, and some GPU paths depend on the CUDA toolkit version or card generation",
+   "Qwen-Image-2.1 is under a non-commercial licence, and Muse Spark Open is under Meta's licence agreement"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 19092,
+  "output": 1278
+ },
+ "generated": "2026-11-08"
+}

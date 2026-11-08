@@ -1,0 +1,95 @@
+{
+ "id": "geminigeorge22/etsy-sales-mcp",
+ "repo": "GeminiGeorge22/etsy-sales-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "E-Commerce",
+   "entry": "Etsy Search & Shop Sales MCP - MCP server that gives AI assistants Etsy search results by keyword, marketplace and category plus daily sales counts and growth for any Etsy shop; runs on your own Apify token. #opensource #mcp"
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server and client config that gives AI assistants Etsy search listing results and Etsy shop sales counters by running the publicrecords Apify Actors with the user's own Apify token.",
+  "category": "etsy scraper mcp",
+  "keywords": [
+   "etsy scraper",
+   "etsy mcp",
+   "mcp server",
+   "model context protocol",
+   "etsy search",
+   "etsy shop sales",
+   "etsy sales tracker",
+   "etsy listings",
+   "apify",
+   "apify actors",
+   "apify mcp",
+   "ai assistant",
+   "claude desktop",
+   "cursor mcp",
+   "stdio proxy",
+   "keyword research",
+   "marketplace research",
+   "ecommerce research",
+   "shop sales velocity",
+   "daily sales counts",
+   "listing rank",
+   "product research",
+   "etsy competitor analysis",
+   "crm data",
+   "dashboard data",
+   "pull etsy data into spreadsheet",
+   "track etsy shop sales",
+   "search etsy listings by keyword",
+   "npx mcp server",
+   "uvx python mcp"
+  ],
+  "what_it_does": "The repo holds MCP and client configuration for two Apify Actors maintained by the publicrecords publisher: Etsy Search Scraper, which returns live listing rows (title, price, shop, badges, rank) for a keyword, marketplace or category, and Etsy Shop Sales Tracker, which returns daily sales and velocity rows for named shops, including counters and history fields. It can be used through Apify's hosted MCP endpoint in Claude Desktop or Cursor, or by calling the Store Actors directly through Apify Console or API. It also ships a small open-source stdio proxy in src/ (Node) and a Python port on the official mcp SDK; both answer tool listing locally and forward tool calls to the hosted endpoint using the user's APIFY_TOKEN. The README includes measured example runs, such as 36 listing rows for \"ceramic mug\" over 3 pages and sales counts for two shops. Runs are billed per event on the user's Apify account.",
+  "use_cases": [
+   "Pull Etsy search results for a keyword into an AI assistant",
+   "Track daily sales counts for named Etsy shops",
+   "Research competing Etsy listings and prices by category",
+   "Feed Etsy listing data into a CRM or dashboard",
+   "Compare shop sales velocity over time",
+   "Run Etsy scraping from Claude Desktop or Cursor"
+  ],
+  "how_to_run": [
+   "Add the etsy-sales server to claude_desktop_config.json with command npx, args -y @apify/actors-mcp-server --actors publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper, and your APIFY_TOKEN in env",
+   "Or in Cursor, add the Apify MCP URL to .cursor/mcp.json and sign in with Apify when prompted",
+   "Local stdio option: add to MCP config with command npx, args -y github:GeminiGeorge22/etsy-sales-mcp, and APIFY_TOKEN in env",
+   "Or clone the repo, run npm install, then APIFY_TOKEN=YOUR_APIFY_TOKEN node src/server.js",
+   "Python option: uvx etsy-sales-mcp with APIFY_TOKEN in env, or pip install etsy-sales-mcp then run etsy-sales-mcp"
+  ],
+  "stack": [
+   "Node.js 18+",
+   "Python 3.10+",
+   "Model Context Protocol (MCP)",
+   "official mcp Python SDK",
+   "Apify platform and hosted MCP endpoint",
+   "Apify Actors: publicrecords/etsy-search-scraper, publicrecords/etsy-shop-velocity",
+   "npx / uvx packaging"
+  ],
+  "notable": [
+   "Lists both Actor tools plus Apify helper tools (run info, dataset items, key-value records, abort run) through the hosted MCP endpoint",
+   "Local stdio server answers tool listing without a token; only tool calls need APIFY_TOKEN",
+   "Pay-per-event pricing, with a stated example of about 3 cents for 10 shops on the Free plan",
+   "Tool schemas are generated from each Actor's public input schema and checked for drift in CI",
+   "Available in both Node and Python versions with matching tools"
+  ],
+  "caveats": [
+   "Requires an Apify account and token; every run is billed to the user's Apify account, and the search Actor relies on Apify residential proxy by default",
+   "Pricing is stated as of Oct 28, 2026 and the README points to Apify Store pages as the live source",
+   "The author maintains the Actors, which the README discloses; it is not affiliated with Etsy, Inc., and the repo holds config and proxy code, not Actor source"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4990,
+  "output": 1700
+ },
+ "generated": "2026-11-08"
+}

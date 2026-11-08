@@ -1,0 +1,100 @@
+{
+ "id": "tonydzi/sqlite-graph-memory",
+ "repo": "tonydzi/sqlite-graph-memory",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "sqlite-graph-memory - MCP server and CLI that gives coding agents recall over a folder of markdown notes, following [[wikilinks]] as a graph in one SQLite file. #opensource #free #mcp"
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server and CLI that lets coding agents (Claude Code, Cursor, Codex, VS Code) recall from a folder of markdown notes by combining vector search with a graph built from [[wikilinks]] stored in one SQLite file.",
+  "category": "agent memory retrieval",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "markdown notes",
+   "obsidian vault",
+   "wikilinks",
+   "graph rag",
+   "vector search",
+   "sqlite",
+   "persistent memory",
+   "coding agent memory",
+   "claude code",
+   "cursor",
+   "codex",
+   "vs code mcp",
+   "cross-encoder rerank",
+   "embeddings",
+   "sentence embeddings",
+   "e5 embeddings",
+   "semantic search over notes",
+   "search my notes",
+   "recall from my notes",
+   "give my agent memory",
+   "knowledge base search",
+   "personal wiki search",
+   "python cli",
+   "uvx",
+   "pagerank wikilink graph",
+   "retrieval evaluation",
+   "ndcg eval",
+   "llm wiki",
+   "onnx runtime",
+   "local search without server"
+  ],
+  "what_it_does": "It builds an index over any folder of markdown files (Obsidian vaults included) using sgm-index, embedding notes with a multilingual E5 model and storing vectors and wikilink structure in a single SQLite file. The sgm-mcp server and sgm-ask CLI then answer queries by first retrieving entry points via vector search, expanding one hop along [[wikilinks]], and reranking with a cross-encoder. Re-indexing only re-embeds new or changed notes, tracked by a manifest, unless --full is passed. The README also describes an optional PageRank lane (off by default, enabled with SGM_PPR=1 or --ppr) and an evaluation harness (eval/run_eval.py, eval/run_ablation.py) that scores vector-only versus vector+graph retrieval per query class. The search layer is read-only over the notes. The README states there is no telemetry.",
+  "use_cases": [
+   "give Claude Code, Cursor or Codex persistent memory of my own notes",
+   "search an Obsidian vault semantically from an AI agent",
+   "find notes linked to a note via wikilinks",
+   "build a local recall index over a markdown folder",
+   "evaluate whether graph expansion improves note retrieval",
+   "run a private, offline-style note search without a graph database"
+  ],
+  "how_to_run": [
+   "BRAIN_INDEX_DIR=$HOME/.sgm-index uvx --python 3.12 --from 'sqlite-graph-memory[lite]' sgm-index ~/notes",
+   "claude mcp add sqlite-graph-memory -e BRAIN_INDEX_DIR=$HOME/.sgm-index -- uvx --python 3.12 --with 'sqlite-graph-memory[lite]' sqlite-graph-memory",
+   "pip install 'sqlite-graph-memory[lite]'",
+   "sgm-index ./notes",
+   "sgm-ask --ab \"In which programming language is the tool behind Project Ouzel written?\"",
+   "Add an mcpServers entry (Cursor, Claude Desktop, Zed, Windsurf) or [mcp_servers] block (Codex) that runs uvx with --with 'sqlite-graph-memory[lite]' sqlite-graph-memory and sets BRAIN_INDEX_DIR to an absolute path"
+  ],
+  "stack": [
+   "Python 3.12",
+   "SQLite",
+   "MCP (Model Context Protocol)",
+   "numpy",
+   "ONNX Runtime (lite backend)",
+   "torch (optional [embeddings] backend)",
+   "intfloat/multilingual-e5-base embeddings",
+   "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1 reranker",
+   "uv / uvx"
+  ],
+  "notable": [
+   "Graph retrieval without graph extraction: uses existing [[wikilinks]] as the graph inside one SQLite file, with no graph database or ETL step",
+   "Built-in evaluation harness that scores title, body, bridge and temporal query classes in vector-only and vector+graph modes against a frozen gold set",
+   "Optional personalized PageRank lane over the wikilink graph, fused with the reranker by RRF, off by default",
+   "[lite] extra runs on ONNX Runtime without torch (about 155 MB installed per the README's Windows measurement)",
+   "Index built by either backend (ONNX or torch) is searchable by the other"
+  ],
+  "caveats": [
+   "Heavier installs use torch: the [embeddings] extra is about 879 MB on an x86_64 Mac per the README; Intel Mac and older macOS users must pin Python 3.12 or get an older release without [lite]",
+   "On Windows, the first MCP recall can take a long time (89 s in one clean-install example), and the default MCP deadline is 180 s in 0.3.5+ and a fixed 60 s on 0.3.3 and earlier; the MCP client's own tool timeout must also allow the call",
+   "The PageRank lane is off by default and the README says its published bridge numbers were not re-run from the published package; the README calls the project a working pilot with the graph benefit measured mainly on the maintainer's own vault"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10352,
+  "output": 1866
+ },
+ "generated": "2026-11-08"
+}

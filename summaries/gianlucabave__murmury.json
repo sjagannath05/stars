@@ -1,0 +1,96 @@
+{
+ "id": "gianlucabave/murmury",
+ "repo": "GianlucaBave/murmury",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Murmury - Floating window that answers questions from your own documents during video calls, hidden from screen sharing, with on-device speech recognition. [![Open-Source Software][OSS Icon]](https://github.com/GianlucaBave/murmury) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Murmury is an open-source Mac app that shows live answers from your own documents in a floating window during video calls, hidden from screen sharing.",
+  "category": "ai call assistant",
+  "keywords": [
+   "cluely alternative",
+   "mac call assistant",
+   "live answers during calls",
+   "zoom meet teams helper",
+   "floating window",
+   "hidden from screen sharing",
+   "screencapture excluded window",
+   "nswindowsharingnone",
+   "scretcapturekit",
+   "whisper speech recognition",
+   "on-device transcription",
+   "mlx-whisper",
+   "ollama",
+   "lm studio",
+   "local llm",
+   "rag over documents",
+   "pdf excel word powerpoint",
+   "claude api",
+   "openai api",
+   "gemini groq mistral openrouter",
+   "meeting notes assistant",
+   "interview prep helper",
+   "answer questions from my documents",
+   "private ai on mac",
+   "gpl-3.0 open source",
+   "swift and python app",
+   "pyinstaller macos app"
+  ],
+  "what_it_does": "Murmury listens to the Mac's system audio through ScreenCaptureKit, transcribes speech locally with Whisper, and treats only the other side's questions as triggers. It sends the question text, together with the documents you chose (PDF, Excel, Word, PowerPoint, notes), to an AI service you select or to a local model via Ollama or LM Studio. Answers appear as cards in a small always-on-top window that is excluded from screen capture, and each bullet is meant to name its source such as page, sheet or cell. If the documents do not contain the answer, the window says so. The app can also prepare answers for expected questions before a call when using Anthropic, and the README includes a setup screen for call documents, answer format, length and tone. A command-line test bench (evals/run.py) checks answer quality. The README reports latency and cost measurements taken on the author's Mac.",
+  "use_cases": [
+   "get live answers from my documents during a sales or investor call",
+   "answer customer questions from a product spec during a demo",
+   "keep a contract or business plan handy during a negotiation",
+   "run a private AI assistant on my Mac with a local model",
+   "prepare talking points from slides and spreadsheets before a meeting",
+   "transcribe a call locally without a bot joining"
+  ],
+  "how_to_run": [
+   "Download Murmury.dmg from the project, drag it to Applications (Apple Silicon, macOS 13+), then open it via System Settings > Privacy & Security > Open Anyway",
+   "Grant Screen & System Audio Recording permission",
+   "From source: swiftc -O audiotap/main.swift -o audiotap/audiotap -framework ScreenCaptureKit -framework AVFoundation -framework CoreMedia",
+   "From source: uv sync",
+   "From source: uv run python -m copilot.app",
+   "Optional: uv run python -m copilot.app --docs plan.pdf model.xlsx --situation \"a seed pitch to an investor\" --provider anthropic"
+  ],
+  "stack": [
+   "Swift (audiotap, ScreenCaptureKit)",
+   "Python (uv)",
+   "mlx-whisper (whisper-large-v3-turbo)",
+   "Anthropic SDK (Claude)",
+   "OpenAI-format chat clients (OpenAI, Gemini, xAI, Groq, Mistral, OpenRouter)",
+   "Ollama and LM Studio (local models)",
+   "PyInstaller",
+   "macOS Keychain"
+  ],
+  "notable": [
+   "Hidden from screen sharing via NSWindowSharingNone, with a included check script (scripts/check_hidden.py) that tests against ScreenCaptureKit, screencapture and CGWindowListCreateImage",
+   "No bot joins the call; audio is read inside macOS rather than through a meeting integration",
+   "Answers cite their source (page, sheet, cell) and refuse to guess when documents are silent",
+   "Works with many AI providers, including fully local models through Ollama or LM Studio where nothing leaves the Mac",
+   "Includes a demo script (docs/demo/ask.sh) and an eval bench for answer quality"
+  ],
+  "caveats": [
+   "Apple Silicon Macs only, macOS 13 or later; the README lists Windows only as a roadmap item",
+   "Build is not notarized; macOS blocks the first launch and needs manual approval",
+   "Speech model download is about 1.6 GB, and the packaged app is about 350 MB",
+   "Free tiers of some providers (Gemini, OpenRouter free models) may use submitted text for training; the README warns about legal recording-consent issues and says not to use it in exams or job interviews",
+   "Using Claude Code instead of an API key was removed from the app because of Anthropic's terms"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7089,
+  "output": 1681
+ },
+ "generated": "2026-11-08"
+}
