@@ -1,0 +1,92 @@
+{
+ "id": "8thlyr/fan-curve",
+ "repo": "8thlyr/fan-curve",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "Fan Curve - Open-source fan curve controller for Apple Silicon Macs that sets fan speed from CPU temperature. [![Open-Source Software][OSS Icon]](https://github.com/8thlyr/fan-curve) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Fan Curve is an open-source macOS menu-bar app that sets fan speed from CPU temperature using a user-defined curve, with a privileged helper that handles the actual fan changes on Apple Silicon and Intel Macs.",
+  "category": "macos fan control",
+  "keywords": [
+   "fan control",
+   "fan curve",
+   "macos fan control",
+   "apple silicon fan control",
+   "menu bar app",
+   "cpu temperature fan speed",
+   "smc",
+   "iokit smc",
+   "fan speed controller",
+   "temperature to fan percentage",
+   "laptop cooling",
+   "macbook fan noise",
+   "quiet fan mode",
+   "homebrew cask",
+   "swift",
+   "swiftpm",
+   "launchd helper",
+   "privileged helper",
+   "thermal throttling",
+   "heat pressure",
+   "control recorder",
+   "jsonl log",
+   "apple m5",
+   "intel mac fan",
+   "stats smc",
+   "fan speed manual control",
+   "keep macbook cool",
+   "reduce fan noise"
+  ],
+  "what_it_does": "Fan Curve is a macOS menu-bar app that polls CPU temperature and maps it to a fan speed percentage along a user-editable curve. Curves can be set by dragging points or entering exact values, copied as JSON, and organized into named Balanced, Quiet, and Cooling scenes, each with its own curve and optional fan ceiling. An opt-in mode switches scenes based on power source. The app shows CPU temperature, current and target fan speed, fan mode, and recent temperature and fan output on one chart. A separate root launchd helper applies the fan changes after verifying bounds and heartbeat, and it restores automatic control on quit, sleep, lost heartbeat, or serious thermal pressure. A command-line tool, fan-curve-curve, evaluates a curve and prints the requested speed at each temperature, and it builds on Linux as well as macOS.",
+  "use_cases": [
+   "keep a MacBook quieter at idle while ramping fans under load",
+   "set a custom temperature-to-fan-speed curve",
+   "switch fan profiles when on battery versus AC power",
+   "test and validate fan curve math from the command line",
+   "collect a local log of fan control failures for a bug report"
+  ],
+  "how_to_run": [
+   "brew install --cask jonathancostin/tap/fan-curve",
+   "fan-curve-helper install",
+   "open -a \"Fan Curve\"",
+   "git clone --recurse-submodules <repo-url> && cd fan-curve",
+   "./scripts/build.sh && open build/FanCurve.app && ./scripts/install-helper.sh",
+   "swift build -c release --product fan-curve-curve"
+  ],
+  "stack": [
+   "Swift 6.1",
+   "SwiftPM",
+   "macOS 13+",
+   "IOKit SMC access (Stats code vendored as Git submodule)",
+   "AppKit",
+   "launchd",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Privilege separation: the GUI app never touches SMC hardware; a root launchd helper verifies requests and acts on them",
+   "Curve engine (fan-curve-curve) runs without a Mac or GUI and rejects invalid curves with exit code 2",
+   "Control recorder writes a local JSONL log of control losses with heartbeat, fan modes, targets, and thermal state; no data leaves the machine",
+   "Helper restores automatic fan control on its own if the heartbeat goes stale"
+  ],
+  "caveats": [
+   "Fully tested only on the two-fan Apple M5 Pro MacBook Pro (Mac17,9); other Macs may show Known keys only until device tests are completed",
+   "Only works on Macs with physical fans; Intel Macs with more than two fans are not supported",
+   "Requires an administrator password to install the helper, and the helper must be reinstalled after each app update"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5183,
+  "output": 1388
+ },
+ "generated": "2026-11-15"
+}

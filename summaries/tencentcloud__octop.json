@@ -1,0 +1,125 @@
+{
+ "id": "tencentcloud/octop",
+ "repo": "TencentCloud/Octop",
+ "kind": "star",
+ "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+ "topics": [
+  "agent",
+  "agentic-ai",
+  "ai",
+  "ai-agent",
+  "ai-agents",
+  "local-first",
+  "long-term-memory"
+ ],
+ "language": "Python",
+ "stars": 12045,
+ "license": "MIT",
+ "homepage": "https://octop.cloud",
+ "pushed_at": "2026-11-14",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "ai llm",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "Octop is a self-hosted, multi-user AI assistant platform that runs multiple specialized agents (\"experts\") in one process, reachable through a web dashboard, CLI, IM channels, and an HTTP/SSE/WebSocket API.",
+  "category": "self-hosted ai assistant",
+  "keywords": [
+   "self-hosted ai assistant",
+   "multi-agent",
+   "multi-user ai",
+   "ai agents",
+   "agentic ai",
+   "local-first ai",
+   "long-term memory",
+   "rag",
+   "knowledge base",
+   "mcp",
+   "mcp gateway",
+   "agent client protocol",
+   "acp",
+   "feishu bot",
+   "dingtalk bot",
+   "wecom bot",
+   "telegram bot",
+   "discord bot",
+   "cron agent",
+   "scheduled tasks",
+   "llm dashboard",
+   "claude code delegation",
+   "opencode",
+   "browser automation",
+   "remote desktop ai",
+   "personal assistant",
+   "family ai assistant",
+   "team ai helper",
+   "python fastapi agent",
+   "sqlite agent",
+   "postgresql agent memory",
+   "run ai locally",
+   "share files with my team",
+   "chatbot for im groups"
+  ],
+  "what_it_does": "Octop runs as a single process that serves a React web dashboard, a CLI (octop run, octop chats, octop acp, and others), IM channel integrations (Feishu, DingTalk, QQ, WeChat, Telegram, Discord, WeCom, and more), and APScheduler-based cron jobs. Each user can have multiple experts with their own workspace, providers, channels, and cron, and the README describes MBTI persona templates and a bundled expert library. It supports a knowledge base with RAG over documents, plugins, and connectors (OAuth and MCP) including Tencent Docs and Tencent Meeting. It can delegate coding tasks to external runners such as OpenCode, Claude Code, and Codex via ACP, and offers browser automation via Playwright/Chromium and a remote desktop view. Control-plane state lives under ~/.octop/ in SQLite by default, with PostgreSQL optional. The README notes the project is in active development with AgentTeams and mobile client still in beta or closed beta.",
+  "use_cases": [
+   "Run a private AI assistant for a household or small team",
+   "Route AI chat and tasks into Feishu, DingTalk, WeCom, or Telegram groups",
+   "Delegate coding tasks to Claude Code or OpenCode from an IDE",
+   "Schedule recurring AI jobs with cron",
+   "Ask questions over your own documents via a knowledge base",
+   "Automate web browsing and screenshots with a headless browser"
+  ],
+  "how_to_run": [
+   "curl -fsSL <installer URL from README> | bash  (macOS/Linux; Windows uses irm ... | iex)",
+   "octop init",
+   "octop run",
+   "docker compose -f docker/docker-compose.yml up -d",
+   "pip install octop"
+  ],
+  "stack": [
+   "Python 3.12+",
+   "FastAPI",
+   "uvicorn",
+   "React 18",
+   "TypeScript",
+   "Vite",
+   "Ant Design",
+   "SQLite",
+   "PostgreSQL (optional)",
+   "APScheduler",
+   "agent-client-protocol",
+   "Playwright Chromium",
+   "Docker",
+   "hatchling",
+   "ruff",
+   "mypy",
+   "pytest"
+  ],
+  "notable": [
+   "Single-process design: dashboard, CLI, IM channels, and cron share one in-process processor and one control-plane database",
+   "ACP works in both directions: other IDEs can use a local Octop agent, and Octop can delegate to external coding agents with permission gates",
+   "Connector ecosystem with OAuth and MCP gateway support, plus a Tencent-focused catalog",
+   "Workspace storage can be local disk, Docker sandbox, PostgreSQL, or COS/S3, separate from the control-plane DB",
+   "Desktop installers and FnOS NAS packages in addition to pip and Docker installs"
+  ],
+  "caveats": [
+   "Several headline features are marked Beta or closed beta (AgentTeams, mobile client), and several roadmap items are planned, not shipped",
+   "Requires Python 3.12+ (the installer provisions it via uv) and a few GB of RAM plus model and embedding caches",
+   "Some features need extra setup: browser automation needs Chromium, local embedding needs an optional extra, and channels need their own app credentials",
+   "Desktop control, OCR, and local embedding are only in the Docker :-full image tag, per the README"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11470,
+  "output": 1617
+ },
+ "generated": "2026-11-15"
+}

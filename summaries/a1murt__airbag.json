@@ -1,0 +1,94 @@
+{
+ "id": "a1murt/airbag",
+ "repo": "a1murt/airbag",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Airbag - Open-source menu bar app that snapshots a project before each shell command an AI coding agent runs that can change files, so deleted files and a wiped .env can be restored in one click. [![Open-Source Software][OSS Icon]](https://github.com/a1murt/airbag) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Airbag is a free, MIT-licensed macOS menu bar app that snapshots your project before each file-changing shell command an AI coding agent runs, so deleted files or a wiped .env can be restored with one click.",
+  "category": "ai agent safety tools",
+  "keywords": [
+   "undo ai agent changes",
+   "ai coding agent safety",
+   "menu bar app",
+   "macos",
+   "mac menu bar",
+   "project snapshot",
+   "file restore",
+   "undo rm -rf",
+   "restore deleted files",
+   "git reset --hard recovery",
+   "apfs clones",
+   "claude code",
+   "codex",
+   "cursor",
+   "gemini cli",
+   "copilot cli",
+   "shell command guard",
+   "command blocker",
+   "dev server port monitor",
+   "yolo mode safety",
+   "bypass permissions",
+   "recover .env file",
+   "backup before command",
+   "time machine alternative",
+   "agent checkpoints alternative",
+   "undo shell commands",
+   "homebrew cask",
+   "claude code hooks",
+   "local snapshots",
+   "restore project folder"
+  ],
+  "what_it_does": "Airbag runs as a menu bar app and a companion `airbag` CLI. Agent hooks for Claude Code, Codex, Cursor, Gemini CLI and GitHub Copilot CLI call the CLI before each shell command, which takes a snapshot of the project when the command can change files (using APFS clones, so unchanged files take almost no extra space). The menu bar shows a timeline of commands with what each one deleted, changed or added, and offers one-click Undo and whole-project or single-file Restore. Guard classifies commands as allow, risky or block: it blocks catastrophic ones such as deleting the home folder or wiping a disk, and flags risky ones such as force pushes or database drops. Radar lists listening dev servers on ports and the agent session that started them. Snapshots are stored locally and old ones are pruned by age and count limits.",
+  "use_cases": [
+   "undo an AI agent deleting files",
+   "recover a file wiped by a shell script",
+   "restore uncommitted work after git reset --hard",
+   "run coding agents in full-auto mode with a safety net",
+   "block dangerous rm commands from an agent",
+   "find and stop dev servers left running by an agent"
+  ],
+  "how_to_run": [
+   "brew install --cask a1murt/airbag/airbag",
+   "Open Airbag from Applications and connect your agents in the welcome window",
+   "/plugin install airbag --marketplace a1murt/airbag (optional Claude Code plugin)",
+   "git clone && cd airbag && make app (build from source; needs Xcode Command Line Tools with Swift 6.1+)"
+  ],
+  "stack": [
+   "Swift",
+   "macOS APFS clonefile",
+   "FSEvents",
+   "Unix domain socket",
+   "Homebrew cask",
+   "Claude Code plugin"
+  ],
+  "notable": [
+   "Snapshots before shell commands, so it covers rm, mv and cleanup scripts that agent-native checkpoints miss",
+   "Works with bypass permissions and --yolo modes",
+   "Snapshots include .env and git-ignored files",
+   "Guard blocks catastrophic commands and flags risky ones, with a CLI `airbag check` dry run",
+   "Runs without an account, telemetry or network access"
+  ],
+  "caveats": [
+   "macOS 14+ only, on Apple silicon or Intel; no Linux or Windows, and agents in containers or VMs are not covered by the hook",
+   "Releases are not notarized yet, so macOS asks for manual approval on first launch",
+   "Snapshots skip version-control history, dependency and build folders, files over 100 MiB, and projects over 400,000 files, whose snapshots never complete",
+   "Guard reads command text only, so scripts or runtime-computed paths can get past it; the README says it catches mistakes rather than deliberate evasion"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10786,
+  "output": 1394
+ },
+ "generated": "2026-11-15"
+}

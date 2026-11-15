@@ -1,0 +1,80 @@
+{
+ "id": "ionelmc/pytest-benchmark",
+ "repo": "ionelmc/pytest-benchmark",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Testing",
+   "entry": "pytest-benchmark - A pytest fixture for benchmarking code."
+  }
+ ],
+ "summary": {
+  "one_liner": "A pytest plugin that provides a `benchmark` fixture for timing Python functions inside pytest tests, grouping runs into calibrated rounds.",
+  "category": "python benchmarking",
+  "keywords": [
+   "pytest",
+   "pytest plugin",
+   "pytest fixture",
+   "benchmark",
+   "benchmarking",
+   "performance testing",
+   "microbenchmark",
+   "timing",
+   "code timing",
+   "function timing",
+   "calibration",
+   "rounds",
+   "pedantic mode",
+   "benchmark comparison",
+   "histogram",
+   "regression detection",
+   "measure function speed",
+   "how fast is my code",
+   "python performance",
+   "compare benchmark results",
+   "timer",
+   "test performance of a function",
+   "setup function benchmark",
+   "parametrized benchmark",
+   "pytest-benchmark"
+  ],
+  "what_it_does": "The plugin adds a `benchmark` fixture to pytest. Calling benchmark(func, *args, **kwargs) times the function and returns its result, so tests can still assert on the output. Runs are grouped into rounds that are calibrated to the chosen timer. A pedantic mode (benchmark.pedantic) gives explicit control over setup, args, kwargs, iterations and rounds. Running pytest produces a results table, and the README mentions options for comparing against saved runs (--benchmark-compare), a histogram (--benchmark-histogram), and a pytest-benchmark compare --between command. The README says it benchmarks functions only; timing a block of code requires wrapping it in a function.",
+  "use_cases": [
+   "time a Python function within a pytest test suite",
+   "compare performance between code changes",
+   "detect performance regressions in CI",
+   "generate benchmark histograms",
+   "benchmark functions with setup code and fixed iteration counts",
+   "verify results while benchmarking"
+  ],
+  "how_to_run": [
+   "pip install pytest-benchmark"
+  ],
+  "stack": [
+   "Python",
+   "pytest"
+  ],
+  "notable": [
+   "Provides a benchmark fixture that is called like a function and still returns the result, so correctness can be asserted in the same test",
+   "pedantic mode for explicit setup, args, kwargs, iterations and rounds",
+   "Comparison mode and histogram output for benchmark results, per the README screenshots",
+   "Timing code and ideas are credited from another project in the README"
+  ],
+  "caveats": [
+   "Benchmarks only functions; timing arbitrary blocks or whole programs needs a wrapper function",
+   "Each test can benchmark only one function; multiple functions need extra tests or parametrization",
+   "The README does not describe platform limits or maintenance status"
+  ],
+  "license": "BSD 2-Clause License"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3144,
+  "output": 999
+ },
+ "generated": "2026-11-15"
+}

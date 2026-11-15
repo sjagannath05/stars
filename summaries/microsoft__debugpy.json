@@ -1,0 +1,85 @@
+{
+ "id": "microsoft/debugpy",
+ "repo": "microsoft/debugpy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Debugging Tools",
+   "entry": "debugpy - A Debug Adapter Protocol debugger for Python, used by VS Code for remote debugging."
+  }
+ ],
+ "summary": {
+  "one_liner": "debugpy is Microsoft's Debug Adapter Protocol implementation for Python 3, used to debug scripts and modules remotely or attach to running processes.",
+  "category": "python debugging",
+  "keywords": [
+   "python debugger",
+   "debug adapter protocol",
+   "dap",
+   "remote debugging",
+   "vs code debugger",
+   "python debugging",
+   "attach debugger to process",
+   "pdb alternative",
+   "breakpoint",
+   "post-mortem debugging",
+   "debug python script",
+   "debug python module",
+   "listen port debugger",
+   "wait for client attach",
+   "subprocess debugging",
+   "debugpy cli",
+   "debugpy api",
+   "debug logging",
+   "launch.json",
+   "stop all threads",
+   "exception breakpoint",
+   "pid attach",
+   "microsoft debugger",
+   "debug python remotely",
+   "debugger logs",
+   "inject debugger into process"
+  ],
+  "what_it_does": "x",
+  "use_cases": [
+   "Debugging a Python script from VS Code or another DAP client",
+   "Remote debugging a Python program over a network port",
+   "Attaching a debugger to an already running Python process by PID",
+   "Pausing a program at breakpoint() or on a caught exception",
+   "Collecting debugger logs for troubleshooting"
+  ],
+  "how_to_run": [
+   "-m debugpy --listen localhost:5678 myfile.py",
+   "-m debugpy --listen localhost:5678 --wait-for-client myfile.py",
+   "-m debugpy --listen localhost:5678 -m mymodule",
+   "-m debugpy --listen localhost:5678 --pid 12345"
+  ],
+  "stack": [
+   "Python 3",
+   "Debug Adapter Protocol"
+  ],
+  "notable": [
+   "Runs as a DAP server so any DAP-compatible client can connect, with VS Code as the named example",
+   "Command-line mode can launch a script or module with debugging enabled, or inject into a running process by PID",
+   "Python API offers listen(), wait_for_client(), breakpoint(), and trigger_exception_handler() for in-code control",
+   "Thread behavior is configurable per launch via stopAllThreadsOnSuspend and steppingResumesAllThreads",
+   "Logs go to debugpy*.log files via --log-to or DEBUGPY_LOG_DIR"
+  ],
+  "caveats": [
+   "Listening on 0.0.0.0 lets anyone who can reach the port execute arbitrary code in the debugged process; the README says use only on secure networks",
+   "Thread-suspension settings apply only to client launch/attach requests, not to the CLI switches or debugpy.configure()",
+   "Coverage table lists Windows, Linux and Mac but the cells are empty, so platform support is not stated in the README"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3881,
+  "output": 1029
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

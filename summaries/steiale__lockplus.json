@@ -1,0 +1,99 @@
+{
+ "id": "steiale/lockplus",
+ "repo": "steiale/lockplus",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Proxy and VPN Tools",
+   "entry": "LockPlus - WireGuard and OpenVPN client with a kill switch that macOS itself enforces. [![Open-Source Software][OSS Icon]](https://github.com/steiale/lockplus) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "LockPlus is a native macOS menu-bar VPN client for WireGuard and OpenVPN whose kill switch is enforced by macOS itself (includeAllNetworks), running tunnels in a system extension with no root helper.",
+  "category": "macos vpn client",
+  "keywords": [
+   "vpn client",
+   "macos vpn",
+   "wireguard client",
+   "openvpn client",
+   "kill switch",
+   "network extension",
+   "packet tunnel provider",
+   "system extension",
+   "includeallnetworks",
+   "wireguard-go",
+   "openvpn 3",
+   "one-time code vpn",
+   "challenge response vpn",
+   "auto-connect vpn",
+   "untrusted wifi vpn",
+   "split tunnel",
+   "dns leak check",
+   "swiftui vpn app",
+   "menu bar vpn",
+   "wireguide fork",
+   "lockplus",
+   "block traffic outside vpn",
+   "vpn without admin password",
+   "import wireguard conf",
+   "import ovpn file",
+   "stop internet leaks when vpn drops",
+   "tunnel for mac",
+   "wireguard mac app",
+   "openvpn mac app"
+  ],
+  "what_it_does": "LockPlus imports WireGuard (.conf) and OpenVPN (.ovpn, zip) profiles, with a report checking each OpenVPN directive before saving. It connects using wireguard-go for WireGuard and OpenVPN 3 for OpenVPN, both inside a macOS system extension. OpenVPN supports password, static challenge, and dynamic challenge/response (CRV1) sign-in, including a new code on reconnect. The kill switch blocks traffic outside the tunnel, including during reconnects, with an optional \"Allow local network\" exception; split-tunnel profiles get route protection instead. It can auto-connect on untrusted Wi-Fi or Ethernet via macOS on-demand rules, pause protection for a set time, and verify DNS through the tunnel. The README also describes diagnostics and logs with secrets removed, and migration of profiles and settings from LockPlus 1.x.",
+  "use_cases": [
+   "keep all Mac traffic inside a WireGuard or OpenVPN tunnel",
+   "connect to a work OpenVPN server that uses one-time codes",
+   "auto-connect VPN on untrusted Wi-Fi networks",
+   "stop traffic leaking when the VPN drops",
+   "import an existing WireGuard or OpenVPN config into a Mac app",
+   "pause VPN for a captive-portal hotel or café login"
+  ],
+  "how_to_run": [
+   "Download LockPlus.dmg from the releases and drag LockPlus to Applications",
+   "On first launch, approve the LockPlus system extension and VPN configuration in System Settings",
+   "Import a .conf, .ovpn or zip profile",
+   "Build from source: native/Tools/bootstrap/vendor.sh and openssl.sh fetch and build pinned dependencies",
+   "Run native/Tools/dev/build.sh to build a development version"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "AppKit",
+   "Network Extension (packet tunnel provider)",
+   "wireguard-go",
+   "WireGuardKit",
+   "OpenVPN 3 (release/3.11.8)",
+   "OpenSSL 3.5",
+   "Sparkle 2.10",
+   "ZIPFoundation",
+   "Xcode 27.2"
+  ],
+  "notable": [
+   "Kill switch enforced by macOS via includeAllNetworks rather than pf firewall rules",
+   "No root helper or administrator prompt to connect; tunnel runs in a system extension approved once",
+   "OpenVPN dynamic challenge/response (CRV1) and one-time-code sign-in",
+   "Import report that marks each OpenVPN directive as supported, not needed, not applied, or not supported",
+   "Built with AI coding agents; two separate AI review engines reviewed security changes, with reports published in docs/reviews/"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later and Apple silicon; Intel is not supported",
+   "One active tunnel at a time; profile switching leaves a brief unprotected moment",
+   "OpenVPN: no TAP, plugins, or SSO sign-in; BF-CBC, DES, 3DES and auth MD5 unsupported",
+   "Kill switch has a brief under-2-second gap if the tunnel process crashes; no independent human security audit yet"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8575,
+  "output": 1584
+ },
+ "generated": "2026-11-15"
+}

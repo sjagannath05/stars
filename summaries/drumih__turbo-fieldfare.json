@@ -1,0 +1,98 @@
+{
+ "id": "drumih/turbo-fieldfare",
+ "repo": "drumih/turbo-fieldfare",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "TurboFieldfare - Native ChatGPT-like Mac app running Google’s Gemma AI (26B-A4B MoE) privately on your device, even on low-end 8 GB M-series Macs. [![Open-Source Software][OSS Icon]](https://github.com/drumih/turbo-fieldfare) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "TurboFieldfare is a native Swift and Metal runtime and Mac app that runs the instruction-tuned Gemma 4 26B-A4B model on Apple Silicon Macs by streaming expert weights from SSD, keeping memory use to about 2 GB.",
+  "category": "on-device llm inference",
+  "keywords": [
+   "local llm",
+   "run llm on mac",
+   "apple silicon inference",
+   "metal kernels",
+   "swift runtime",
+   "gemma 4",
+   "gemma 26b-a4b",
+   "mixture of experts",
+   "moe inference",
+   "expert streaming",
+   "ssd streaming weights",
+   "low memory inference",
+   "8 gb mac",
+   "offline chatbot",
+   "chatgpt-like mac app",
+   "private ai on device",
+   "native mac chat app",
+   "openai-compatible server",
+   "local openai api",
+   "chat completions server",
+   "function tool calling",
+   "mlx alternative",
+   "llama.cpp alternative",
+   "gturbo model format",
+   "4-bit quantization",
+   "kv cache",
+   "prefill chunking",
+   "vision image input mac",
+   "command line chat cli",
+   "swiftui app",
+   "run ai locally without internet"
+  ],
+  "what_it_does": "TurboFieldfare runs Gemma 4 26B-A4B without loading the full 14.3 GB model into memory. It keeps the shared core and FP16 KV cache resident and streams only the routed experts needed for each token from SSD, with a 16-slot LFU expert cache. The project includes a streaming installer that downloads a pinned Hugging Face checkpoint and repacks it into its own .gturbo format while validating hashes. It ships a SwiftUI/AppKit Mac app with saved local chat history, a CLI for instruction chat and raw completion, and an experimental loopback OpenAI-compatible Chat Completions server with streaming and function tool declarations. Optional image input is available through a separately installed 1.1 GB vision pack on M2 or newer Macs. The README states the model is not wrapped around MLX or llama.cpp.",
+  "use_cases": [
+   "run a 26B language model on an 8 GB Mac",
+   "private offline chat with a local model",
+   "benchmark local LLM decode speed on Apple Silicon",
+   "serve a local OpenAI-compatible endpoint for coding tools",
+   "ask questions about a photo with a local model on a Mac",
+   "study Metal kernel and MoE expert streaming design"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd turbo-fieldfare",
+   "swift build -c release",
+   ".build/release/TurboFieldfareMac",
+   "In the app, choose Download Model (about 15 GB) and then Load Model",
+   "swift build -c release --product TurboFieldfareServer, then run .build/release/TurboFieldfareServer --model scratch/gemma4.gturbo",
+   "Scripts/test.sh runs the public test suite serially"
+  ],
+  "stack": [
+   "Swift 6.2",
+   "Metal 4",
+   "SwiftUI",
+   "AppKit",
+   "Swift Package Manager",
+   "Hugging Face (model source)",
+   "MLX affine 4-bit weight format (checkpoint quantization)"
+  ],
+  "notable": [
+   "Streams routed MoE experts from SSD with a bounded expert cache, so a 26B model fits in roughly 2 GB of RAM",
+   "Streaming installer repacks remote Hugging Face byte ranges directly into .gturbo without a full local checkpoint",
+   "Model-specific engine written in Swift and Metal rather than a wrapper around MLX or llama.cpp",
+   "Includes a native Mac app, CLI, and loopback OpenAI-compatible server sharing one model directory",
+   "Optional vision tower companion pack for image input, with the app built by a script using ad-hoc signing"
+  ],
+  "caveats": [
+   "Requires an arm64 Apple Silicon Mac running macOS 26 with Metal 4 and Swift 6.2+; older macOS and Metal are not supported",
+   "Image input requires an M2 or newer Mac; M1 is text-only",
+   "Server is experimental, has no remote authentication or TLS, and must stay on loopback; audio and video are not supported",
+   "Initial install transfers about 15 GB and needs about 14.3 GB free storage; measured decode is about 5.5–6.8 tok/s on an 8 GB M2 Air and 35–39 tok/s on a 24 GB M5 Pro"
+  ],
+  "license": "Apache License 2.0 (source and documentation); model weights are governed by their own Hugging Face source terms"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7706,
+  "output": 1632
+ },
+ "generated": "2026-11-15"
+}

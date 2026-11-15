@@ -1,0 +1,111 @@
+{
+ "id": "tauricresearch/tradingagents",
+ "repo": "TauricResearch/TradingAgents",
+ "kind": "star",
+ "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+ "topics": [
+  "agent",
+  "finance",
+  "llm",
+  "multiagent",
+  "trading"
+ ],
+ "language": "Python",
+ "stars": 122599,
+ "license": "Apache-2.0",
+ "homepage": "https://tauric.ai",
+ "pushed_at": "2026-11-04",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "programming",
+  "to try"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "TradingAgents is a Python multi-agent framework that uses LLM-driven analyst, researcher, trader and risk roles to analyze a stock ticker on a given date and produce a trading decision, intended for research.",
+  "category": "llm trading research",
+  "keywords": [
+   "multi-agent",
+   "llm agents",
+   "financial trading",
+   "trading framework",
+   "langgraph",
+   "stock analysis",
+   "algorithmic trading research",
+   "backtesting",
+   "agent simulation",
+   "fundamental analysis",
+   "technical analysis",
+   "sentiment analysis",
+   "sec edgar",
+   "yahoo finance",
+   "ollama",
+   "openai api",
+   "anthropic claude",
+   "gemini",
+   "local llm",
+   "trading decisions",
+   "portfolio manager agent",
+   "memory log",
+   "checkpoint resume",
+   "docker",
+   "analyze stocks with ai",
+   "ai stock picker",
+   "llm for stock research",
+   "crypto trading analysis",
+   "multi-market stocks"
+  ],
+  "what_it_does": "It runs a team of LLM agents modeled on a trading firm: analysts (fundamentals, sentiment, news, technical) work in parallel, then bullish and bearish researchers debate, a trader proposes a transaction, and risk managers and a portfolio manager approve or reject it. A run is started per ticker and date, via a CLI or Python API (TradingAgentsGraph.propagate), and returns a decision. Reports can be saved, including a single HTML page. The framework also includes a backtest over a grid of tickers and dates scored by alpha against a regional benchmark, a persistent decision memory log that settles past decisions, and opt-in checkpoint resume. It supports many LLM providers and Yahoo Finance-covered markets, and uses SEC EDGAR for US fundamentals as filed. The README says it is for research and not financial advice.",
+  "use_cases": [
+   "research multi-agent LLM trading decisions",
+   "analyze a stock ticker on a past date",
+   "backtest an LLM trading pipeline",
+   "generate analyst-style reports on equities or crypto",
+   "run scheduled LLM stock analysis from scripts",
+   "study agent debate for investment strategy"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd TradingAgents",
+   "conda create -n tradingagents python=3.13 && conda activate tradingagents (or uv venv --python 3.13)",
+   "pip install .",
+   "export OPENAI_API_KEY=... (or another provider key), then run: tradingagents",
+   "Or with Docker: cp .env.example .env && docker compose run --rm tradingagents"
+  ],
+  "stack": [
+   "Python 3.11+",
+   "LangGraph",
+   "Docker",
+   "Ollama (optional local models)",
+   "SEC EDGAR",
+   "Yahoo Finance",
+   "FRED",
+   "Alpha Vantage",
+   "OpenAI, Google, Anthropic, xAI, DeepSeek, Qwen, GLM, MiniMax, OpenRouter, Mistral, Kimi, Groq, NVIDIA NIM, AWS Bedrock, Azure OpenAI APIs"
+  ],
+  "notable": [
+   "Mirrors a trading firm with separate analyst, researcher, trader, risk and portfolio manager agents that debate before deciding",
+   "Point-in-time data handling: SEC EDGAR filings read as they stood on the run date, to limit look-ahead bias",
+   "Built-in backtest over ticker and date grids, scored on alpha versus a regional benchmark",
+   "Persistent memory log: past decisions are settled later and fed back to the portfolio manager",
+   "Supports many LLM providers, including a ChatGPT Plus/Pro subscription login and local Ollama or OpenAI-compatible servers, with different models per tier"
+  ],
+  "caveats": [
+   "Explicitly for research; the README says it is not financial, investment, or trading advice and results may vary widely",
+   "Outputs depend on the LLM, temperature and live data, so runs are not reproducible; reasoning models largely ignore temperature",
+   "Requires API keys or a paid LLM plan, or local model setup; some data sources (Yahoo statements for past dates, insider trades) are withheld for historical runs",
+   "Non-US fundamentals are not from SEC EDGAR and are limited for past dates"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10720,
+  "output": 1564
+ },
+ "generated": "2026-11-15"
+}

@@ -1,0 +1,101 @@
+{
+ "id": "getguruhat/serverhat-macos",
+ "repo": "getguruhat/serverhat-macos",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "ServerHat - Free menu-bar app that runs your local dev servers. Claude Code and Codex can start, stop and read logs through its MCP server and local API, with your approval. [![Open-Source Software][OSS Icon]](https://github.com/getguruhat/serverhat-macos) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "ServerHat is a free, open-source macOS menu-bar app that starts, stops, restarts and monitors local dev servers, and exposes a local API and MCP server so Claude Code and Codex can control them with your approval.",
+  "category": "macos developer utilities",
+  "keywords": [
+   "menu bar app",
+   "local dev server manager",
+   "macos menu bar",
+   "run local servers",
+   "npm run dev manager",
+   "localhost server launcher",
+   "process manager",
+   "mcp server",
+   "model context protocol",
+   "claude code integration",
+   "codex integration",
+   "local api",
+   "dev server monitoring",
+   "port conflict detection",
+   "server crash notification",
+   "server logs viewer",
+   "procfile import",
+   "docker compose import",
+   "package.json import",
+   "launch.json import",
+   "auto restart on crash",
+   "exponential backoff restart",
+   "approval workflow",
+   "json config file",
+   "homebrew cask",
+   "apple silicon app",
+   "stop dev servers",
+   "keep terminal tabs closed",
+   "manage servers without terminal",
+   "let ai agent start server",
+   "swift app",
+   "pm2 alternative",
+   "foreman alternative",
+   "open source menu bar tool"
+  ],
+  "what_it_does": "ServerHat runs commands such as npm run dev, python3 -m http.server or a Node script as named servers listed in a menu-bar menu, with Start, Stop, Restart, Open in browser and View logs actions. It shows each server's state (starting, ready, unhealthy, stopped, crashed, port in use) and notifies on crashes and port conflicts. Servers are defined in a readable servers.json file that is reloaded on edit, and can be imported from Claude Code's launch.json, a package.json, a Procfile or Docker Compose. Optional automatic retry after a crash uses exponential backoff with a configurable limit. A local HTTP API and built-in MCP server let Claude Code or Codex add and control servers, and any new or changed server command must be allowed by the user before it runs.",
+  "use_cases": [
+   "run and stop local dev servers from the menu bar",
+   "let Claude Code or Codex start and read logs of a dev server",
+   "replace leaving Terminal tabs open for web servers",
+   "import a project's dev command into a managed server",
+   "monitor local servers for crashes and port conflicts",
+   "script local server control through a localhost API"
+  ],
+  "how_to_run": [
+   "brew install --cask getguruhat/tap/serverhat",
+   "Or download ServerHat-<version>-Installer.dmg from the latest release and drag ServerHat.app to Applications",
+   "Build from source: ./build-app.sh (requires macOS 13+ and Swift 5.9+)",
+   "Optional for AI agents: claude mcp add --scope user serverhat -- /Applications/ServerHat.app/Contents/MacOS/ServerHat --mcp",
+   "Optional for AI agents: codex mcp add serverhat -- /Applications/ServerHat.app/Contents/MacOS/ServerHat --mcp",
+   "Run swift test to run the test suite"
+  ],
+  "stack": [
+   "Swift",
+   "macOS menu bar app (AppKit-style menu UI)",
+   "Homebrew cask",
+   "MCP (Model Context Protocol) server",
+   "Local HTTP JSON API",
+   "Claude Code CLI",
+   "Codex CLI"
+  ],
+  "notable": [
+   "Built-in MCP server lets Claude Code and Codex start, stop, restart and read logs of servers as tools",
+   "Approval gate: servers added via API/MCP or whose command, args, cwd or env change must be allowed before they run",
+   "Each server runs in its own process group so Stop also ends child processes",
+   "Imports servers from .claude/launch.json, package.json scripts, Procfile web entries and Docker Compose files",
+   "No account and no analytics; API bound to localhost with token, Host and Origin checks"
+  ],
+  "caveats": [
+   "Apple silicon only, macOS 13 or later; the README lists no Intel support",
+   "The app is not notarized by Apple, so the first launch must be allowed manually in System Settings",
+   "Commands run directly without a shell, so pipes and && are not supported in command fields",
+   "MCP integration requires separately installing the Claude Code or Codex CLI"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7212,
+  "output": 1515
+ },
+ "generated": "2026-11-15"
+}

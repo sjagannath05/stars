@@ -1,0 +1,96 @@
+{
+ "id": "piskvorky/smart_open",
+ "repo": "piskvorky/smart_open",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "smart-open - Stream files from S3, GCS, Azure, HDFS, and HTTP as a drop-in replacement for open()."
+  }
+ ],
+ "summary": {
+  "one_liner": "smart_open is a Python library that streams large files from remote storage (S3, GCS, Azure, HDFS, HTTP and more) and local disk through a drop-in replacement for the built-in open().",
+  "category": "python file streaming",
+  "keywords": [
+   "smart_open",
+   "open() replacement",
+   "drop-in open",
+   "stream large files",
+   "streaming file io",
+   "s3 streaming",
+   "read s3 file python",
+   "gcs",
+   "google cloud storage",
+   "azure blob storage",
+   "hdfs",
+   "webhdfs",
+   "http streaming",
+   "sftp",
+   "scp",
+   "ssh file access",
+   "transparent decompression",
+   "gzip",
+   "bz2",
+   "xz",
+   "zstd",
+   "lz4",
+   "compression handling",
+   "boto3",
+   "pathlib open",
+   "patch_pathlib",
+   "iter_bucket",
+   "remote file access",
+   "local filesystem",
+   "read compressed files python",
+   "s3 compatible storage",
+   "digital ocean spaces"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "stream a large S3 object line by line without downloading it",
+   "read gzip or bz2 files transparently in Python",
+   "write output directly to a cloud bucket from Python code",
+   "read files over SFTP or HTTP with the same open() call",
+   "iterate over keys in an S3 bucket in parallel",
+   "use Path.open to read compressed text files"
+  ],
+  "how_to_run": [
+   "pip install 'smart_open[s3,gcs,azure,http,webhdfs,ssh,zst,lz4]'",
+   "pip install 'smart_open[all]'",
+   "from smart_open import open"
+  ],
+  "stack": [
+   "Python 3",
+   "boto3",
+   "google-cloud-storage",
+   "azure-storage-blob",
+   "paramiko",
+   "requests",
+   "Hadoop hdfs CLI (for hdfs:// transport)"
+  ],
+  "notable": [
+   "Drop-in replacement for open() with the same API across many storage backends",
+   "Transparent (de)compression inferred from file extension, with register_compressor for custom formats",
+   "transport_params and client_kwargs let you pass your own boto3, GCS or Azure clients",
+   "iter_bucket processes S3 bucket keys in parallel with multithreading",
+   "patch_pathlib swaps Path.open for smart_open.open"
+  ],
+  "caveats": [
+   "Optional dependencies are not installed by default; each backend needs its own extra",
+   "Kerberos auth needs extra packages (requests-kerberos, paramiko[gssapi]) installed separately",
+   "hdfs:// and viewfs:// shell out to the Hadoop hdfs command-line client, which must be on PATH",
+   "HTTP and HTTPS transports are read-only"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 8944,
+  "output": 1026
+ },
+ "generated": "2026-11-15"
+}

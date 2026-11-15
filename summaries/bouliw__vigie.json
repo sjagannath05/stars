@@ -1,0 +1,96 @@
+{
+ "id": "bouliw/vigie",
+ "repo": "Bouliw/vigie",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Security Tools",
+   "entry": "Vigie - Open-source blue team tool that runs Sigma detection rules on the macOS unified log, Windows event logs and Linux auth.log, live or on collected files, and writes a report mapped to MITRE ATT&CK. [![Open-Source Software][OSS Icon]](https://github.com/Bouliw/vigie) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Vigie is an open-source blue team tool that runs Sigma detection rules over Windows, Linux and macOS logs (and AI agent/LLM activity logs), live or on collected files, and writes reports mapped to MITRE ATT&CK.",
+  "category": "security log analysis",
+  "keywords": [
+   "sigma rules",
+   "sigma detection",
+   "blue team",
+   "threat detection",
+   "log analysis",
+   "mitre att&ck",
+   "mitre attack mapping",
+   "mitre atlas",
+   "owasp llm top 10",
+   "evtx parser",
+   "windows event logs",
+   "sysmon logs",
+   "linux auth.log",
+   "macos unified log",
+   "journalctl",
+   "journald",
+   "live log monitoring",
+   "tail logs alerts",
+   "threat hunting",
+   "incident response",
+   "forensic timeline",
+   "detection report html",
+   "brute force detection",
+   "password spraying detection",
+   "prompt injection detection",
+   "ai agent security monitoring",
+   "mcp tool poisoning",
+   "hayabusa alternative",
+   "chainsaw alternative",
+   "find security alerts in logs",
+   "scan logs for attacks",
+   "open source siem-like tool"
+  ],
+  "what_it_does": "Vigie reads Windows event logs (.evtx and OTRF-style JSON), Linux auth.log/secure files, the macOS unified log, and JSON Lines logs from AI agents and LLM applications. It evaluates 53 Sigma rules with its own engine, including Sigma v2 correlation rules for brute force, password spraying and similar multi-event patterns. Each alert is mapped offline to MITRE ATT&CK, and AI-related alerts are mapped to MITRE ATLAS and the OWASP Top 10 for LLM and agentic applications. It can analyze collected files with a command such as analyze, or follow logs live with watch, including the local macOS, Windows and systemd journal logs. Output is a self-contained HTML report, plus Markdown and JSON, with alerts ranked by severity, evidence, a timeline, and a list of what was read or skipped. It also offers a local desktop-style app served on 127.0.0.1 and a demo command that uses bundled sample logs.",
+  "use_cases": [
+   "analyze collected Windows event logs for attacks",
+   "check a Linux server auth.log for brute force",
+   "monitor a Mac's unified log for suspicious launch agents",
+   "live-watch logs and get desktop alerts",
+   "map detections to MITRE ATT&CK for a report",
+   "audit AI agent logs for prompt injection and data leaks"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd vigie",
+   "python3 -m venv .venv",
+   ". .venv/bin/activate",
+   "pip install .",
+   "vigie demo"
+  ],
+  "stack": [
+   "Python 3.10+",
+   "evtx (Rust wheels)",
+   "PyYAML",
+   "Jinja2"
+  ],
+  "notable": [
+   "Single tool covering Windows, Linux and macOS logs plus AI agent/LLM activity logs",
+   "Sigma rules with correlation support, evaluated by its own engine",
+   "Offline MITRE ATT&CK and OWASP mapping; self-contained HTML report",
+   "Live watch mode uses native tools (log stream, wevtutil, journalctl) without admin rights on macOS",
+   "Desktop app for Windows and Apple silicon Macs, no Python needed"
+  ],
+  "caveats": [
+   "Apps are unsigned, so Windows and macOS show a first-launch confirmation; Mac app is Apple silicon only, Intel Macs need the Python installer",
+   "Reading the Windows Security log live needs an administrator terminal; journald access needs sudo or group membership",
+   "The README says the macOS log show command returned nothing without sudo on the tested macOS 27 machine"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 17520,
+  "output": 1392
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

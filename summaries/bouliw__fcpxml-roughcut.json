@@ -1,0 +1,97 @@
+{
+ "id": "bouliw/fcpxml-roughcut",
+ "repo": "Bouliw/fcpxml-roughcut",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Audio and Video Tools",
+   "entry": "Roughcut - Turns a folder of talking-head footage into a rough cut in Final Cut Pro, with on-device Whisper transcription and cuts chosen by a local or cloud AI model. [![Open-Source Software][OSS Icon]](https://github.com/Bouliw/fcpxml-roughcut) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS command-line and app toolkit that turns a folder of talking-head footage into a frame-accurate rough cut in Final Cut Pro, using on-device Whisper transcription and AI-chosen cuts.",
+  "category": "video editing automation",
+  "keywords": [
+   "fcpxml",
+   "final cut pro",
+   "rough cut",
+   "talking head video",
+   "whisper.cpp",
+   "whisper transcription",
+   "word timestamps",
+   "edl",
+   "edit decision list",
+   "subtitles srt",
+   "loudness normalization",
+   "ebu r128",
+   "jump cut zoom",
+   "j cut l cut",
+   "b-roll",
+   "vertical shorts",
+   "youtube chapters",
+   "auto edit footage",
+   "local transcription",
+   "macos video tools",
+   "apple silicon",
+   "ffmpeg",
+   "vlog editing",
+   "remove pauses and ums",
+   "claude code",
+   "lm studio",
+   "ollama",
+   "edit footage from the finder",
+   "shorts captions"
+  ],
+  "what_it_does": "The tool transcribes each clip word by word with whisper.cpp on the Mac, then either a person or an AI model (Claude Code, a local OpenAI-compatible server, or an API key) writes the chosen cuts into an edl.json file. Scripts convert that file into a frame-accurate FCPXML timeline validated against Final Cut Pro's DTD, SRT subtitles, and a loudness-normalized 1080p preview. Optional steps cover dialogue level matching, punch-in zooms on jump cuts, J and L split edits, B-roll and music placement, and vertical Shorts with face-following framing and animated captions. A separate Roughcut macOS app wraps the scripts with a drop-folder interface, and a Finder Quick Action runs the whole pipeline on a selected folder. The README describes footage analysis (sharpness, shake, exposure, faces via Apple Vision) that proposes rejected ranges and B-roll candidates.",
+  "use_cases": [
+   "rough-cut a talking-head video before finishing it in Final Cut Pro",
+   "remove pauses, ums and false starts from a recorded take",
+   "generate YouTube subtitles and chapters from footage",
+   "make vertical Shorts with animated captions from long videos",
+   "transcribe interview or vlog footage locally without uploading",
+   "batch-edit a folder of camera clips from the Finder"
+  ],
+  "how_to_run": [
+   "brew install ffmpeg whisper-cpp",
+   "scripts/check_env.sh",
+   "scripts/transcribe.sh clip.mp4 transcripts en",
+   "python3 scripts/words.py transcripts/clip.json",
+   "python3 scripts/make_fcpxml.py edl.json -o demo/demo.fcpxml --open",
+   "python3 scripts/make_srt.py edl.json -o demo/demo.srt --transcripts transcripts"
+  ],
+  "stack": [
+   "Python 3 (standard library for core scripts; numpy and pyobjc-framework-Vision optional for analysis)",
+   "whisper.cpp",
+   "ffmpeg and ffprobe",
+   "Homebrew",
+   "xmllint (FCPXML DTD validation)",
+   "libass (captions)",
+   "Apple Vision (via PyObjC, optional)",
+   "librosa or fcp-mcp-server via uvx (music tempo, optional)",
+   "Anthropic SDK / Claude Code, LM Studio or Ollama, OpenAI-compatible API (brain options)"
+  ],
+  "notable": [
+   "Frame-accurate rational time math, handling 29.97 and 59.94 fps, with camera timecode preserved",
+   "Every generated FCPXML is validated against the DTD inside the installed Final Cut Pro before use",
+   "Transcription runs locally with whisper.cpp; the README states no footage is uploaded",
+   "Optional macOS app (Roughcut) with a drop-folder interface and a Finder Quick Action built on the same engine",
+   "Experimental B-roll finder skill for Claude Code is included but off by default"
+  ],
+  "caveats": [
+   "Requires macOS with Apple silicon, Final Cut Pro, and about 3 GB of free space for the app's tools and model; the README states the app was tested on macOS 26.5 only and not yet on macOS 14 or 15.",
+   "The Roughcut app is ad hoc signed and not notarized yet, so macOS requires an Open Anyway step on first launch unless a Developer ID is used to build it.",
+   "The Claude brain sends transcripts to Anthropic; only the local brain keeps everything on the Mac. The B-roll finder module is described as experimental and not yet tried on a real edit."
+  ],
+  "license": "MIT (for the app and scripts, per the README; bundled tools keep their own licenses)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16500,
+  "output": 1692
+ },
+ "generated": "2026-11-15"
+}

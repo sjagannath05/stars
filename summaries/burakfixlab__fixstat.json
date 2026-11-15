@@ -1,0 +1,97 @@
+{
+ "id": "burakfixlab/fixstat",
+ "repo": "BurakFixLab/fixstat",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "FixStat - Menu bar monitor and diagnostics for Mac repair: per-model sensor names, battery cell data, SSD SMART including USB drives, panic history and guided hardware tests. [![Open-Source Software][OSS Icon]](https://github.com/BurakFixLab/fixstat) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "FixStat is a free, open-source macOS menu bar monitor for board-level Mac repair, showing battery, temperature, fan and SSD data with per-model sensor names and diagnostic tests.",
+  "category": "mac hardware diagnostics",
+  "keywords": [
+   "mac repair",
+   "board-level repair",
+   "menu bar monitor",
+   "macos system monitor",
+   "battery health",
+   "battery cycle count",
+   "smc sensors",
+   "temperature monitor",
+   "fan speed",
+   "ssd smart",
+   "nvme health",
+   "smart drive check",
+   "kernel panic history",
+   "hardware diagnostics",
+   "stress test",
+   "apple silicon sensors",
+   "intel mac sensors",
+   "hid sensors",
+   "sensordump",
+   "power rail monitor",
+   "live monitor",
+   "csv export",
+   "pdf report",
+   "battery originality check",
+   "sleep wake analysis",
+   "usb port test",
+   "stats alternative",
+   "istat menus alternative",
+   "check mac hardware before buying",
+   "diagnose overheating mac",
+   "swift macos app",
+   "free mac battery monitor"
+  ],
+  "what_it_does": "FixStat displays battery, temperature, fan and system data in the macOS menu bar, using sensor names mapped per Mac model where verified and marked as estimated otherwise. A technician mode exposes raw battery gauge values (design and raw max capacity, cycle count, cell voltages, current) and every sensor with its raw SMC or HID key, grouped by component. Diagnostics include SSD health (NVMe and AHCI/SATA SMART, including SATA drives in USB enclosures), a memory test, kernel panic and shutdown history, a battery capacity discharge test, sleep/wake battery drain analysis, and a live monitor that charts up to six SMC values with CSV recording. A guided hardware check covers keyboard, trackpad, display, speakers, microphone, camera, fans under load, temperature sensors, Wi-Fi, Bluetooth and USB ports. Results can be exported as PDF, CSV or JSON, with serial numbers masked by default. The README states the app is read-only with respect to the SMC and needs no administrator rights, except for an optional full SSD surface scan.",
+  "use_cases": [
+   "diagnose a Mac with overheating or fan problems",
+   "check battery health and cycle count on a MacBook",
+   "verify SSD health of an internal or USB drive",
+   "run a post-repair stress test on a Mac",
+   "find out why a Mac kept panicking or shutting down",
+   "inspect a used Mac before buying it"
+  ],
+  "how_to_run": [
+   "Download FixStat.dmg from the Releases page at github.com/Lapsely/fixstat and drag FixStat to Applications",
+   "Open the app once, then approve it under System Settings > Privacy & Security (Open Anyway), or run: xattr -dr com.apple.quarantine /Applications/FixStat.app",
+   "To build from source (macOS 14+, Xcode 16+): git clone the repo, cd fixstat, run scripts/build-app.sh",
+   "open build/FixStat.app",
+   "Command line: swift build -c release, then .build/release/sensordump"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI (macOS 14+)",
+   "AppKit (older macOS)",
+   "AppleSMC user client",
+   "IOHIDEventSystemClient",
+   "C layer for SMC access"
+  ],
+  "notable": [
+   "Per-model verified sensor map: sensor names checked by load tests on a specific Mac model, with verified and estimated labels shown in the UI",
+   "Technician mode with raw battery gauge data, cell voltage imbalance warning, and raw SMC/HID keys for each sensor",
+   "Read-only design: no SMC write, no fan control, no root; the README describes the write command as not implemented",
+   "Runs on Intel Macs from macOS 10.13 and Apple Silicon from macOS 11, as one universal app",
+   "Battery history from the last hour up to 30 days plus a daily health log kept indefinitely"
+  ],
+  "caveats": [
+   "Not notarized by Apple, so the first launch needs a manual approval step or a quarantine-removal command",
+   "Apple Silicon temperatures rely on IOHIDEventSystemClient, a private API, so the app is not on the App Store",
+   "Intel sensor names are still estimated per the README, and many Macs show only estimated (not verified) sensor names",
+   "Full SSD surface scan requires the user's password and Full Disk Access"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5964,
+  "output": 1614
+ },
+ "generated": "2026-11-15"
+}

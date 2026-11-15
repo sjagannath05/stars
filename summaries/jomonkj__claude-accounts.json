@@ -1,0 +1,93 @@
+{
+ "id": "jomonkj/claude-accounts",
+ "repo": "jomonkj/claude-accounts",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "Claude Accounts - Switches the Claude desktop app between your accounts with one click, without losing sessions. [![Open-Source Software][OSS Icon]](https://github.com/jomonkj/claude-accounts) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "An unofficial macOS menu bar app that saves each Claude desktop app login and switches between your accounts with one click, without re-signing in.",
+  "category": "macos menu bar tools",
+  "keywords": [
+   "claude accounts",
+   "claude desktop",
+   "account switcher",
+   "multiple accounts",
+   "menu bar app",
+   "macos menu bar",
+   "switch accounts",
+   "multi-account",
+   "session sync",
+   "anthropic claude",
+   "saved logins",
+   "claude-switch",
+   "claude-accounts",
+   "usage limit",
+   "live usage",
+   "switch claude account",
+   "two claude accounts",
+   "keep sessions",
+   "work and personal account",
+   "swift",
+   "swiftui",
+   "python engine",
+   "keyboard shortcut switch",
+   "backup sessions",
+   "restore backup",
+   "sign in again",
+   "unofficial claude tool"
+  ],
+  "what_it_does": "The app saves the login files of each Claude desktop app account and loads them back when you switch, so you do not have to sign out and sign in again. A switch quits Claude, saves the current login, loads the chosen one, reopens Claude, and checks that the login works. It can sync session lists between accounts you mark as yours, with a preview and a backup first, and never deletes sessions. It lists sessions that stopped on a usage limit with the reset time, and an optional live usage view (off by default) reads per-limit percentages from claude.ai. Logins are saved with daily backups, a restore option, and a journal that recovers an interrupted switch. A command-line pair (claude-accounts and claude-switch) gives the same actions from a terminal.",
+  "use_cases": [
+   "switch between work and personal Claude accounts",
+   "keep Claude desktop sessions across several logins",
+   "sync chat sessions between my own accounts",
+   "see which account hit the usage limit and when it resets",
+   "back up and restore Claude desktop login state",
+   "check live 5-hour and weekly usage per account"
+  ],
+  "how_to_run": [
+   "curl -fsSL | bash (one-command install, script URL is blank in the README)",
+   "Or download Claude-Accounts .zip from the latest release, move Claude Accounts to Applications, and right-click → Open the first time",
+   "scripts/install.sh (build from source: runs all tests, builds for this Mac, installs)",
+   "scripts/build.sh (universal build into ./build; ARCHS=arm64 for a fast one)",
+   "claude-switch switch aaaa1111 (switch by account ID or first 8 characters)",
+   "claude-switch help (list all commands)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "Python (engine)",
+   "macOS Keychain (Claude Safe Storage key, used only for live usage)",
+   "macOS Vision framework (screenshot OCR check)",
+   "GitHub Releases API (update check)"
+  ],
+  "notable": [
+   "Copies login files as they are, without decrypting cookies or reading the Keychain for normal switching",
+   "Journal-based switch with a recover command that rolls back or finishes an interrupted switch",
+   "Two-way session sync between accounts marked as yours, never deletes, and never touches accounts not marked as yours",
+   "Optional live usage per limit from claude.ai, off by default, with a warning at 90%",
+   "Crash and sync property tests in the repo (tests/crash_test.sh, tests/sync_property_test.py)"
+  ],
+  "caveats": [
+   "Unofficial, not made by or affiliated with Anthropic; relies on how the Claude desktop app stores its files, and a layout check stops the switch if an update changes them",
+   "Not notarized by Apple, so the first launch needs right-click → Open, and the installer removes the quarantine flag",
+   "Live usage uses an undocumented claude.ai request that can change at any time, and it needs one-time Keychain access; it is off by default",
+   "Requires macOS 14 or later; switches only the Claude desktop app, not the claude CLI in a terminal; a switch stops running Claude tasks"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6428,
+  "output": 1433
+ },
+ "generated": "2026-11-15"
+}

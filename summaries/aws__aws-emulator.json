@@ -1,0 +1,94 @@
+{
+ "id": "aws/aws-emulator",
+ "repo": "aws/aws-emulator",
+ "kind": "star",
+ "description": "AWS Emulator is a local emulator of the AWS APIs.",
+ "topics": [],
+ "language": "Rust",
+ "stars": 8105,
+ "license": "CC0-1.0",
+ "homepage": "https://docs.aws.amazon.com/emulator/latest/userguide/what-is-service.html",
+ "pushed_at": "2026-11-14",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "dckr k8s",
+  "programming",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "AWS Emulator is a local, no-account-needed emulator of AWS APIs for testing software without calling real AWS, runnable as a server or embedded in Rust tests.",
+  "category": "local aws emulation",
+  "keywords": [
+   "aws emulator",
+   "local aws",
+   "aws api emulator",
+   "mock aws",
+   "localstack alternative",
+   "aws testing",
+   "offline aws",
+   "emulate aws locally",
+   "aws cli local endpoint",
+   "aws sdk testing",
+   "rust",
+   "embedded emulator",
+   "in-process test",
+   "ci testing",
+   "continuous integration",
+   "dev-dependency",
+   "smithy",
+   "self-signed https",
+   "docker container",
+   "test without aws account",
+   "aws mock server",
+   "test aws code locally",
+   "fidelity",
+   "cargo workspace",
+   "aws-emulator-router",
+   "telemetry opt out"
+  ],
+  "what_it_does": "The emulator is a local program that serves an AWS API endpoint, with no graphical interface. In server mode you start it and set environment variables so the AWS CLI or any AWS SDK sends requests to it instead of AWS. In embedded mode you add it as a Rust dev-dependency and run one isolated instance per test, passing its HTTP client directly to the SDK client. The repository is a Cargo workspace with one crate per AWS service, each driven by a Smithy model, plus a router binary that mounts all services on one endpoint. The README says the router serves HTTPS on 127.0.0.1:9297 with a self-signed certificate. Fidelity scores against real AWS are published per release, and known gaps are tracked in an issues directory. Telemetry is on by default and can be turned off by a command-line flag, an environment variable, a config file, or the embedded API.",
+  "use_cases": [
+   "test AWS SDK code without an AWS account",
+   "run AWS CLI commands against a local endpoint",
+   "integration tests in CI without calling AWS",
+   "embedded AWS mocks in Rust unit tests",
+   "develop AWS applications offline on a laptop"
+  ],
+  "how_to_run": [
+   "cargo build -p aws-emulator-router",
+   "cargo run -p aws-emulator-router",
+   "aws-emulator --telemetry off"
+  ],
+  "stack": [
+   "Rust",
+   "Cargo workspace",
+   "Smithy models",
+   "Docker"
+  ],
+  "notable": [
+   "Embedded mode runs one isolated emulator instance per Rust test with no endpoint or environment variables to set",
+   "One crate per AWS service, generated from Smithy models",
+   "Published fidelity scores per release show how closely each service matches AWS",
+   "Ships as RPM/Debian packages or a Docker container, and has an AI coding agent skill install path",
+   "Telemetry can be disabled per process, per shell, per machine, or in embedded code"
+  ],
+  "caveats": [
+   "Not for production workloads or security testing",
+   "Building from source is supported only on Linux (x86_64 and aarch64); Windows and macOS use Docker",
+   "Requires at least 100 GB free disk and a multi-core machine for a full build; first build is slow",
+   "The README says the repository does not accept pull requests; bugs go to GitHub Issues"
+  ],
+  "license": "CC0-1.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4115,
+  "output": 1182
+ },
+ "generated": "2026-11-15"
+}

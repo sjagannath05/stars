@@ -1,0 +1,77 @@
+{
+ "id": "092c4b4ee2b4077f",
+ "url": "https://docs.python.org/3/library/dataclasses.html",
+ "final_url": "https://docs.python.org/3/library/dataclasses.html",
+ "kind": "tool",
+ "method": "direct",
+ "page_title": "dataclasses — Data Classes",
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Built-in Classes Enhancement",
+   "entry": "dataclasses - (Python standard library) Adds generated special methods such as init() and repr() to your classes."
+  }
+ ],
+ "summary": {
+  "name": "dataclasses",
+  "one_liner": "Python standard library module providing the @dataclass decorator, which auto-generates special methods such as __init__() and __repr__() for classes based on type-annotated fields.",
+  "category": "python standard library module",
+  "keywords": [
+   "python dataclasses",
+   "dataclass decorator",
+   "@dataclass",
+   "python data classes",
+   "__init__ generation",
+   "__repr__ generation",
+   "auto generate init",
+   "boilerplate reduction python",
+   "pep 557",
+   "pep 526 type annotations",
+   "dataclasses.field",
+   "default_factory",
+   "frozen dataclass",
+   "immutable dataclass python",
+   "__post_init__",
+   "initvar",
+   "kw_only keyword-only fields",
+   "asdict",
+   "astuple",
+   "make_dataclass",
+   "dataclasses.replace",
+   "__match_args__",
+   "python struct-like class",
+   "python record class",
+   "attrs alternative",
+   "namedtuple alternative"
+  ],
+  "use_cases": [
+   "Reduce boilerplate when writing simple data-holding classes",
+   "Create immutable value objects with frozen=True",
+   "Convert nested objects to dicts or tuples for serialization",
+   "Set default values and mutable defaults for class fields",
+   "Dynamically create classes from field specifications with make_dataclass"
+  ],
+  "what_it_does": "The @dataclass decorator inspects a class for fields defined as type-annotated class variables and adds generated methods such as __init__(), __repr__(), __eq__(), and optionally ordering and hash methods. Options like frozen, order, slots, kw_only and match_args control the generated code. The field() function sets per-field defaults, default factories, and repr, compare, and hash behavior. Helper functions include fields(), asdict(), astuple(), replace(), is_dataclass() and make_dataclass(). Support for __post_init__() and InitVar pseudo-fields allows computed or init-only values.",
+  "pricing": "open source",
+  "platforms": [
+   "Python"
+  ],
+  "notable": [
+   "Generates __init__, __repr__ and __eq__ from PEP 526 type annotations, added in Python 3.7",
+   "frozen=True emulates immutable instances; slots=True generates __slots__ (3.10+)",
+   "Helpers asdict(), astuple(), replace() and make_dataclass() for conversion and dynamic creation",
+   "Listed in awesome-python under Built-in Classes Enhancement"
+  ],
+  "caveats": [
+   "Frozen instances are only emulated, not truly immutable; frozen=True adds a small performance cost",
+   "slots=True raises TypeError if base class __init_subclass__ is passed parameters (gh-91126)",
+   "Some features require newer Python versions (match_args and kw_only from 3.10, weakref_slot from 3.11)"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9609,
+  "output": 1053
+ },
+ "generated": "2026-11-15"
+}

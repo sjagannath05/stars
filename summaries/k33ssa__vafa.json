@@ -1,0 +1,95 @@
+{
+ "id": "k33ssa/vafa",
+ "repo": "k33ssa/vafa",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Proxy and VPN Tools",
+   "entry": "Vafa - Open-source VPN kill switch that freezes chosen apps and blocks their network until a VPN with an allowed exit country is up. [![Open-Source Software][OSS Icon]](https://github.com/k33ssa/vafa) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Vafa is a free, open-source VPN kill switch for macOS and Windows that freezes chosen apps and blocks their network until a VPN with an allowed exit country is detected.",
+  "category": "vpn kill switch",
+  "keywords": [
+   "vpn kill switch",
+   "kill switch",
+   "vpn guard",
+   "app freezer",
+   "network blocker",
+   "pf firewall",
+   "windows firewall",
+   "exit country check",
+   "geo block vpn",
+   "menu bar shield",
+   "system tray app",
+   "anthropic",
+   "claude code",
+   "launch blocker",
+   "freeze processes",
+   "vpn required for apps",
+   "block apps without vpn",
+   "pf anchor",
+   "wintun",
+   "wireguard",
+   "openvpn",
+   "homebrew cask",
+   "swift",
+   "powershell",
+   "cloudflare",
+   "split tunneling",
+   "privacy",
+   "open source vpn tool"
+  ],
+  "what_it_does": "Vafa runs a system daemon (root on macOS, a SYSTEM scheduled task on Windows) that checks the VPN every second and immediately on network changes. The VPN counts only when internet traffic goes through a tunnel adapter and Cloudflare, queried through that tunnel, reports an exit country outside the configured blocked list (Russia, China, Belarus and Iran by default). When the VPN is missing, it closes network access to protected hosts (Anthropic networks and telemetry by default) using pf on macOS or a Windows Firewall rule, freezes the chosen apps (or quits them with ON_DOWN=kill), and removes execute permission from app binaries so they cannot launch. A menu bar or tray shield shows the state and lets you pick apps and blocked countries. Claude Code CLI installs are also frozen on macOS by developer signature. Settings are kept across updates, and the README describes a separate unlock command to disable protection.",
+  "use_cases": [
+   "stop apps from running or reaching the internet when the VPN is off",
+   "keep Claude or Claude Code from connecting without a VPN",
+   "block apps from exiting in certain countries",
+   "automatically freeze apps on VPN drop",
+   "enforce a VPN kill switch on macOS or Windows",
+   "protect against traffic leaking when a VPN reconnects"
+  ],
+  "how_to_run": [
+   "brew install --cask k33ssa/tap/vafa",
+   "sudo vpn-guard status",
+   "cd ~ && git clone <repo-url> && cd vafa && ./app/build.sh && sudo ./install.sh  (build from source on macOS)",
+   "Windows: unzip Vafa-1.0.3-windows.zip, then double-click install.cmd and allow the UAC prompt"
+  ],
+  "stack": [
+   "Bash",
+   "Swift (macOS menu bar app)",
+   "PowerShell (Windows service and tray)",
+   "pf (macOS packet filter)",
+   "Windows Firewall",
+   "Homebrew",
+   "Cloudflare 1.1.1.1 for exit-country check",
+   "Wintun, WireGuard, OpenVPN and other tunnel adapters recognised by name"
+  ],
+  "notable": [
+   "Country check goes only through the VPN tunnel by IP, never from the real address",
+   "Network to protected hosts is closed by default at startup and during re-checks",
+   "Claude Code CLI freezing on macOS works by developer signature, covering npm, Homebrew, native and Claude.app copies",
+   "Windows service includes a watchdog that restarts the daemon if it crashes or hangs",
+   "Settings and app selection survive updates; Homebrew upgrades keep protection on since 1.0.1"
+  ],
+  "caveats": [
+   "Windows does not support system-proxy VPN mode; it needs a tunnel (TUN) mode VPN",
+   "Split tunneling that sends protected hosts outside the tunnel is treated as no VPN, so apps get blocked",
+   "Updating from version 1.0.0 on macOS briefly lifts protection for a few seconds",
+   "Requires the admin password on install because the daemon runs as root; Windows install needs UAC approval"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9456,
+  "output": 1467
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

@@ -1,0 +1,108 @@
+{
+ "id": "jakeschincariol/founder-skill",
+ "repo": "Jakeschincariol/founder-skill",
+ "kind": "star",
+ "description": "Eleven free Claude skills that test a business before you launch it: a board trained on Hormozi, Thiel and Jobs, a marketing director, a CFO, and a consumer panel of 100 buyer agents. Free, MIT.",
+ "topics": [
+  "business-plan",
+  "claude-code",
+  "claude-skills",
+  "startup",
+  "subagents",
+  "unit-economics"
+ ],
+ "language": "Python",
+ "stars": 3663,
+ "license": "MIT",
+ "homepage": "",
+ "pushed_at": "2026-10-07",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "A set of eleven free Claude skills that test a business idea before launch, covering a simulated advisory board, competitor research, a 100-agent consumer panel, pricing, offers, unit economics, marketing, branding, operations, launch planning and a compiled business plan.",
+  "category": "claude skills for startups",
+  "keywords": [
+   "claude skills",
+   "claude code",
+   "claude-skills",
+   "startup validation",
+   "business plan generator",
+   "unit economics",
+   "break-even calculator",
+   "profit margin calculator",
+   "van westendorp pricing",
+   "price sensitivity survey",
+   "simulated customers",
+   "synthetic buyer panel",
+   "persona simulation",
+   "subagents",
+   "board of directors advisor",
+   "competitor analysis",
+   "marketing plan",
+   "launch plan",
+   "brand naming",
+   "operations checklist",
+   "cash flow forecast",
+   "year 1 projection",
+   "test my business idea",
+   "should i launch my business",
+   "validate a product idea",
+   "free business planning tool",
+   "pricing strategy",
+   "offer design",
+   "startup cfo",
+   "python standard library",
+   "mit license"
+  ],
+  "what_it_does": "The repo provides eleven Claude skills, each a folder with a SKILL.md, run in a fixed order and sharing files through a founder/ folder in the user's project. A board skill has three sub-agents apply published-framework lenses to score an idea, name its kill risks and vote fund, fund-if or pass. Competitor and consumer skills map public competitors and run a panel of 100 simulated buyer agents by default, tallying who buys and why. Pricing, offer, CFO, marketing, brand, ops and launch skills build on those outputs, and a planning skill compiles everything into a business plan with a computed verdict of Profitable, Not yet or Incomplete. Four standard-library Python tools handle unit economics, panel dealing and tallying, Van Westendorp price range calculation, and plan compilation; none touch the network. The README includes a worked example (a matcha cafe) with its numbers.",
+  "use_cases": [
+   "test a business idea before spending money on launch",
+   "model unit economics and break-even for a product or cafe",
+   "find price range and objections using simulated buyers",
+   "build a 30-day marketing launch campaign",
+   "compile a business plan with a computed profitability verdict",
+   "plan operations, suppliers and permits for a new business",
+   "run a cheap pop-up test before a full launch"
+  ],
+  "how_to_run": [
+   "Paste the repo link into Claude and say 'install skill', or install as a Claude Code plugin with /plugin marketplace add Jakeschincariol/founder-skill",
+   "Copy the folders instead: git clone the repo, then cp -r founder-skill/skills/founder-* ~/.claude/skills/",
+   "Run the skills in order: board, competitors, consumer, pricing, offer, cfo, marketing, brand, ops, launch, plan",
+   "python3 skills/founder-cfo/unit_economics.py founder/numbers.json --out founder/cfo.md",
+   "python3 skills/founder-consumer/panel.py init --customer founder/customer.json --pitch founder/pitch.md",
+   "python3 -m unittest discover -s tests -v"
+  ],
+  "stack": [
+   "Python 3.8+ (standard library only)",
+   "Claude / Claude Code skills and sub-agents",
+   "Claude Code plugin marketplace"
+  ],
+  "notable": [
+   "Eleven skills that share outputs through a founder/ folder, run in a defined order",
+   "Consumer panel spins up 100 buyer agents from a target customer profile, each with its own income, habits and objection",
+   "Plan verdict is computed from the numbers (Profitable, Not yet or Incomplete), not written by the model",
+   "Python tools use only the standard library and do not touch the network",
+   "Van Westendorp tool finds acceptable price range from panel or real survey answers"
+  ],
+  "caveats": [
+   "Simulated buyers are not real customers; the README says language models lean agreeable, so the buy rate is an upper bound and big calls should be confirmed with real people",
+   "Board lenses are summaries of published frameworks, not the named authors, and the project is not affiliated with them",
+   "Financial figures are estimates that depend on inputs; the README says to check costs with suppliers and tax or payroll with an accountant; not financial, legal or tax advice"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5082,
+  "output": 1557
+ },
+ "generated": "2026-11-15"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "fsspec/filesystem_spec",
+ "repo": "fsspec/filesystem_spec",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "fsspec - A unified filesystem interface for local, cloud, and remote storage."
+  }
+ ],
+ "summary": {
+  "one_liner": "fsspec is a Python specification and library providing a common, pythonic filesystem interface that local, cloud, and remote storage backends implement.",
+  "category": "python filesystem library",
+  "keywords": [
+   "fsspec",
+   "filesystem spec",
+   "python filesystem",
+   "unified filesystem interface",
+   "file abstraction",
+   "storage abstraction",
+   "pythonic filesystem",
+   "s3fs",
+   "gcsfs",
+   "cloud storage",
+   "remote storage",
+   "local storage",
+   "fuse mounting",
+   "key-value store",
+   "file manipulation",
+   "access files uniformly",
+   "read s3 files in python",
+   "read cloud files like local files",
+   "backend implementations",
+   "dask",
+   "pandas",
+   "zarr",
+   "pip install fsspec",
+   "conda-forge",
+   "ssh filesystem",
+   "mount filesystem with fuse",
+   "ruff",
+   "pytest"
+  ],
+  "what_it_does": "fsspec defines a specification for filesystem interfaces that concrete implementations are expected to follow, so applications can rely on common behaviour regardless of the storage backend. The README says many implementations ship in the package itself, and sister projects such as s3fs and gcsfs implement the same spec. The README states that a well-designed spec allows extra functionality, such as a key-value store or FUSE mounting, to be available for all implementations. Optional backend dependencies are installed through pip extras, for example pip install fsspec[ssh] for SSH support or fsspec[full] for all known extras. The README points to Read the Docs for documentation. Development guidance covers the CI setup, Ruff linting and formatting, and pre-commit hooks.",
+  "use_cases": [
+   "read and write files on S3, GCS, or SSH storage with one API",
+   "swap storage backends without changing application code",
+   "build a custom filesystem backend that follows a common spec",
+   "use cloud storage paths with pandas, dask, or zarr",
+   "mount a Python filesystem via FUSE",
+   "install optional backend dependencies selectively"
+  ],
+  "how_to_run": [
+   "pip install fsspec",
+   "pip install fsspec[ssh]",
+   "pip install fsspec[full]",
+   "conda install -c conda-forge fsspec"
+  ],
+  "stack": [
+   "Python",
+   "s3fs",
+   "gcsfs",
+   "Ruff",
+   "pytest",
+   "GitHub Actions",
+   "Docker (for full test suite)",
+   "FUSE (for full test suite)"
+  ],
+  "notable": [
+   "Common filesystem specification that many backends implement, so calling code stays the same across storage types",
+   "Sister projects s3fs and gcsfs are named as implementations of the spec",
+   "Optional backend dependencies are grouped into pip extras such as fsspec[ssh] and fsspec[full]",
+   "Downstream CI runs tests against dask, pandas, and zarr to catch regressions"
+  ],
+  "caveats": [
+   "The full test suite requires system-level Docker, docker-compose, and FUSE installed",
+   "Backend-specific features depend on installing the matching optional extras",
+   "The README gives no list of supported backends beyond the named sister projects and refers to external docs for details"
+  ],
+  "license": "BSD-3-Clause"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2571,
+  "output": 1159
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

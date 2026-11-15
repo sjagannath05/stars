@@ -1,0 +1,101 @@
+{
+ "id": "sventmueller/lowspeak",
+ "repo": "sventmueller/lowspeak",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Voice-to-Text",
+   "entry": "Lowspeak - Native, ultrafast AI dictation written in Rust: hold fn to talk into any app in 35 languages, free online with your own Groq key or offline with Whisper and Parakeet. [![Open-Source Software][OSS Icon]](https://github.com/sventmueller/lowspeak) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Lowspeak is a native macOS menu bar app, written in Rust on AppKit, that dictates text into whatever app has focus while you hold the fn key, using online (Groq, OpenAI) or offline (Whisper, Parakeet) speech models.",
+  "category": "voice dictation app",
+  "keywords": [
+   "speech to text",
+   "voice dictation",
+   "dictation app",
+   "mac dictation",
+   "menu bar app",
+   "hold fn to talk",
+   "push to talk",
+   "offline transcription",
+   "whisper",
+   "parakeet",
+   "whisper.cpp",
+   "fluidaudio",
+   "groq",
+   "openai transcribe",
+   "gpt transcribe",
+   "rust",
+   "appkit",
+   "speech recognition",
+   "voice typing",
+   "transcribe voice to text on mac",
+   "dictate into any app",
+   "private dictation",
+   "offline speech recognition",
+   "alternative to macos dictation",
+   "text from voice notes",
+   "dictate emails",
+   "clipboard paste dictation",
+   "post-processing transcripts",
+   "custom vocabulary transcription",
+   "sparkle updates",
+   "homebrew cask"
+  ],
+  "what_it_does": "Lowspeak lives in the macOS menu bar and records only while fn is held, or while a recording is locked with Shift or a double press of fn (up to five minutes). The transcribed text is pasted at the cursor in the app in front, through the clipboard and ⌘V, and the previous clipboard contents are restored. Transcription can run online through an OpenAI or Groq API key, with audio sent directly to the provider, or fully offline with Whisper models (via whisper.cpp, on the GPU) or NVIDIA Parakeet models (via FluidAudio). If an online request fails, an installed local model transcribes the same recording. Optional post-processing with a language model can remove filler words, fix grammar, or format text for the target app, and a custom vocabulary guides spelling. The last ten dictations are kept in memory in the menu, and the app supports 35 interface languages and dozens of dictation languages depending on the model.",
+  "use_cases": [
+   "dictate text into any Mac app by holding a key",
+   "offline private voice transcription on a Mac",
+   "fast online transcription with a Groq key",
+   "dictating long texts with a locked recording",
+   "fallback transcription when the network drops",
+   "cleaning up spoken text with filler word removal"
+  ],
+  "how_to_run": [
+   "brew install --cask sventmueller/tap/lowspeak",
+   "Or download Lowspeak.dmg from the releases page and drag it to Applications",
+   "From source: make deploy (see Build & Deploy in the README)",
+   "Launch Lowspeak, grant Accessibility, Microphone and Notification permissions",
+   "Choose Set API Key… for an OpenAI or Groq key, or Manage Models to download a local model",
+   "Hold fn, speak, release"
+  ],
+  "stack": [
+   "Rust",
+   "AppKit",
+   "whisper.cpp via whisper-rs",
+   "FluidAudio (Parakeet)",
+   "objc2",
+   "cpal",
+   "rubato",
+   "ureq with rustls",
+   "security-framework",
+   "Sparkle"
+  ],
+  "notable": [
+   "Holding fn to dictate into any app, with no window or Dock icon",
+   "Online models called directly with the user's own Groq or OpenAI key, with no intermediary server",
+   "Offline Whisper and Parakeet models that keep the voice on the Mac",
+   "Automatic fallback to a local model when an online transcription fails",
+   "Retry Failed Dictation keeps the latest failed recording in memory"
+  ],
+  "caveats": [
+   "Requires macOS 14 or later; local models are much slower on Intel Macs",
+   "Local models take 75 MB to 3 GB of disk each, and Whisper models use notable memory",
+   "Online transcription and post-processing need an OpenAI or Groq API key, and OpenAI charges for use",
+   "The fn key can be claimed by macOS settings or other apps such as Warp, which blocks Lowspeak"
+  ],
+  "license": "Apache-2.0 OR MIT (dual licensed, at your option)"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 14473,
+  "output": 1467
+ },
+ "generated": "2026-11-15"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "cyang2020/brk",
+ "repo": "cyang2020/brk",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Browsers",
+   "entry": "Brk - Native Swift and AppKit rebuild of Arc on Chromium, with a Raycast-style command bar and AI that runs on your own Claude Code or Codex plan and local models. [![Open-Source Software][OSS Icon]](https://github.com/cyang2020/brk) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Brk is a native macOS Swift/AppKit web browser on Chromium that rebuilds Arc's interface feature by feature, with a Raycast-style command bar and AI features that run through your existing coding-agent plans or local models.",
+  "category": "macos web browser",
+  "keywords": [
+   "arc browser alternative",
+   "arc browser rebuild",
+   "chromium browser",
+   "macos browser",
+   "swift browser",
+   "appkit",
+   "command bar",
+   "raycast-style launcher",
+   "spaces sidebar",
+   "split view",
+   "claude code",
+   "codex",
+   "local ai models",
+   "embeddinggemma",
+   "semantic search",
+   "browser ai assistant",
+   "ad blocker",
+   "import bookmarks",
+   "import from chrome",
+   "import from safari",
+   "browser history import",
+   "open source browser",
+   "mit license",
+   "tab management",
+   "favorites pinned tabs",
+   "browser for mac",
+   "search files by meaning",
+   "dia browser alternative",
+   "brkcore",
+   "electron browser"
+  ],
+  "what_it_does": "Brk is a macOS web browser built on Chromium (BrkCore) that aims to reproduce Arc 1.170's interface, including the sidebar, Spaces, Favorites, pinned tabs, split view, Little Arc, Peek, Boosts, the Library and the command bar. The command bar handles calculations, unit and currency conversion, a local file index searchable by meaning, app launching, emoji, translation, colour codes, window placement, and searching within sites. An AI panel can read and act on open tabs, and scheduled pages can refresh themselves. The README says AI runs on the coding agent already signed in on the Mac, with small on-device models for tasks like tab naming. A setup flow imports bookmarks, history, passwords and Spaces from Arc, Chromium-based browsers, Safari and Firefox. Builds are distributed as signed DMGs for Apple silicon and Intel, and the README describes a Chromium patch series and test suites in the repository.",
+  "use_cases": [
+   "replace Arc browser on a Mac",
+   "use a keyboard-driven command bar for browsing",
+   "chat with an AI about open tabs",
+   "search local files on a Mac by meaning",
+   "import bookmarks and history from another browser",
+   "run a browser with a sidebar and Spaces",
+   "build a browser from source on macOS"
+  ],
+  "how_to_run": [
+   "python3 engine/download-artifact.py \"$(uname -m)\" --out .build/brkcore",
+   "export BRK_CORE_DIR=\"$PWD/.build/brkcore\"",
+   "scripts/build.sh",
+   "SKIP_TESTS=1 scripts/build.sh",
+   "open dist/Brk.app"
+  ],
+  "stack": [
+   "Swift",
+   "AppKit",
+   "SwiftPM",
+   "Chromium",
+   "BrkCore",
+   "Xcode with Swift 6",
+   "EmbeddingGemma (local embedding model)"
+  ],
+  "notable": [
+   "Rebuilds Arc 1.170 from measurements of Arc's own app; README reports 0.14% pixel difference from Arc in a comparison screenshot",
+   "Command bar with Tab-activated modes and Chinese-language mode words",
+   "Uses the coding agent already signed in on the Mac (Claude, Codex, Gemini, Cursor, OpenCode) rather than a Brk account",
+   "Imports directly from Arc, Chrome-family browsers, Safari and Firefox, and a second import adds only new items",
+   "Local file index and embeddings so semantic search stays on the Mac"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later and, to build from source, Xcode with Swift 6 and a downloaded BrkCore framework",
+   "Many features are marked built but not verified, including tab groups, extensions pop-ups, site permissions, picture-in-picture and printing",
+   "Only 126 of 148 Arc features in the ledger are verified; some Arc features are deliberately left out (accounts, Dia sending, notes)",
+   "Safari import requires exporting data first, and Safari 17 and older need Full Disk Access; Chrome, Firefox and Arc passwords were not tested with real data",
+   "The README says Arc no longer gets new features, and the project is positioned as a continuation for Arc users"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7224,
+  "output": 1541
+ },
+ "generated": "2026-11-15"
+}

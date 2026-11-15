@@ -1,0 +1,97 @@
+{
+ "id": "miurahr/py7zr",
+ "repo": "miurahr/py7zr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "File Manipulation",
+   "entry": "py7zr - A pure-Python library for reading and writing 7-Zip archives."
+  }
+ ],
+ "summary": {
+  "one_liner": "py7zr is a pure-Python library and command-line tool for reading, writing, encrypting and decrypting 7-Zip archives.",
+  "category": "archive file handling",
+  "keywords": [
+   "7z",
+   "7-zip",
+   "7zip archive",
+   "python 7z library",
+   "seven zip python",
+   "archive compression",
+   "archive extraction",
+   "decompress 7z",
+   "compress files python",
+   "7zaes encryption",
+   "password protected archive",
+   "multi-volume archive",
+   "lzma2",
+   "zstandard archive",
+   "brotli compression",
+   "ppmd",
+   "bzip2 deflate",
+   "p7zip alternative",
+   "subprocess 7z alternative",
+   "shutil unpack_archive 7z",
+   "shutil make_archive 7zip",
+   "extract 7z in python",
+   "create encrypted 7z",
+   "pip install 7z",
+   "file manipulation",
+   "archive cli tool",
+   "bcj filter",
+   "delta filter",
+   "symbolic links archive"
+  ],
+  "what_it_does": "py7zr provides a SevenZipFile class for reading and writing 7z archives from Python code, including extractall, extract with selected targets, getnames, and writeall, plus a context manager interface. It also ships a CLI with subcommands to list (l), extract (x), test (t), create (c), append (a), show info (i), and print version, with optional password prompts and multi-volume output via -v. Supported compression methods include LZMA2, LZMA, Bzip2, Deflate, Copy, ZStandard, Brotli, PPMd, and an experimental Enhanced Deflate, along with 7zAES encryption and Delta and BCJ filters. The library can register itself with Python's shutil module for make_archive and unpack_archive. The README notes that some optional algorithms rely on third-party packages listed in its dependency table. Documentation is linked to a user guide and API guide, and a 2022 path traversal vulnerability is described with a recommendation to upgrade to 0.20.2 or later.",
+  "use_cases": [
+   "Extract a 7z archive from a Python script",
+   "Create password-protected 7z archives programmatically",
+   "Extract selected files from a 7z archive",
+   "Compress a directory into a 7z file with zstandard or other filters",
+   "Use 7z support through shutil.make_archive or unpack_archive",
+   "Install Qt or other packages distributed as 7z files"
+  ],
+  "how_to_run": [
+   "pip install py7zr",
+   "conda install -c conda-forge py7zr",
+   "py7zr x test.7z",
+   "py7zr c target.7z test_dir"
+  ],
+  "stack": [
+   "Python (CPython 3.10+, PyPy3.10+)",
+   "lzma module / liblzma",
+   "PyCryptodome",
+   "backports.zstd",
+   "PyPPMd",
+   "Brotli / BrotliCFFI",
+   "inflate64",
+   "pybcj",
+   "multivolumefile",
+   "texttable"
+  ],
+  "notable": [
+   "Pure-Python implementation of the 7z format, with a SevenZipFile API and a py7zr CLI",
+   "Extracts into memory through a factory/Py7zIO callback interface (replaced read/readall in 1.0.0-rc2)",
+   "Supports multi-volume archives and 7zAES encryption",
+   "Registers as a format handler for Python's shutil archive functions",
+   "Includes a CVE-2022-44900 path traversal fix in version 0.20.2"
+  ],
+  "caveats": [
+   "Slower than native 7-zip and p7zip; the README recommends subprocess calls to those tools when speed matters",
+   "Needs roughly 300-700 MiB of free memory for typical compression and decompression",
+   "ZStandard and Brotli archives are not compatible with the original 7-zip tools, and BCJ2 is not supported",
+   "Versions 0.20.0, 0.19.0, 0.18.10 and earlier have a path traversal vulnerability"
+  ],
+  "license": "GNU Lesser General Public License (LGPL), version 2.1 or later"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6025,
+  "output": 1431
+ },
+ "generated": "2026-11-15"
+}

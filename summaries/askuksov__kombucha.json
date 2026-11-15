@@ -1,0 +1,93 @@
+{
+ "id": "askuksov/kombucha",
+ "repo": "askuksov/kombucha",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "Kombucha - Menu bar battery charge limiter that stops charging at a chosen level to extend battery lifespan. [![Open-Source Software][OSS Icon]](https://github.com/askuksov/kombucha) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Kombucha is a native Swift macOS menu bar app that limits MacBook charging to a chosen range to extend battery lifespan.",
+  "category": "macos battery management",
+  "keywords": [
+   "battery charge limiter",
+   "macos menu bar app",
+   "macbook charge limit",
+   "battery lifespan",
+   "stop charging at 80",
+   "charge threshold",
+   "smc keys",
+   "battery health monitor",
+   "battery manager",
+   "swift app",
+   "alternative to aldente",
+   "alternative to battery toolkit",
+   "lithium-ion battery care",
+   "cycle count",
+   "maximum capacity",
+   "heat protection",
+   "discharge to limit",
+   "apple silicon battery",
+   "app intents",
+   "shortcuts siri",
+   "xcodegen",
+   "privileged helper daemon",
+   "charge inhibit",
+   "macbook adapter",
+   "keep battery healthy",
+   "limit laptop charging",
+   "homebrew cask"
+  ],
+  "what_it_does": "Kombucha sits in the macOS menu bar and holds a MacBook battery inside a user-set range: it stops charging at an upper threshold (55–95%, default 80%) and resumes at a lower one (40–85%, default 75%). A helper daemon writes two SMC keys, the charge inhibit and the adapter switch, to control charging. Additional features include a one-time charge to 100%, a heat protection pause at 40 °C, and a discharge-to-limit mode that runs on battery down to the stop level. The app shows seven- and thirty-day history charts stored locally, plus cycle count, maximum capacity, condition, temperature and live power readings. It sends notifications for charge events, capacity drops and hot batteries, and it detects other running battery managers and yields to them. It is localized into ten languages and has no accounts or telemetry; it contacts GitHub only to check for updates.</what_it_does>\n<how_to_run\">[\"brew install --cask askuksov/tap/kombucha\", \"Or download Kombucha-.zip from the latest release, unzip it, and move Kombucha.app to /Applications\", \"Open Kombucha and approve the helper once in System Settings → General → Login Items & Extensions\", \"Building from source: install Xcode 26, XcodeGen and an Apple Development certificate, then run: xcodegen generate\", \"xcodebuild -project Kombucha.xcodeproj -scheme Kombucha -configuration Release -derivedDataPath build/DerivedData build\", \"Run tests with: xcrun swift test --package-path Packages/KombuchaKit\"]</how_to_run>\n<stack\">[\"Swift\", \"Xcode\", \"XcodeGen\", \"XPC\", \"SMC (System Management Controller)\", \"App Intents\", \"Homebrew\"]</stack>\n<notable\">[\"Stops charging at a chosen level and resumes at a lower one, so the Mac runs from the adapter while the battery rests\", \"Privileged helper daemon that writes only two SMC keys and refuses callers it cannot verify, with no network access\", \"Detects other running battery managers (AlDente, BatFi, BattOpt, Juicy, Energiza, Battery Toolkit, Tethered, batt) and leaves charging to them\", \"Charge history and maximum capacity trend stored on the Mac only\", \"App Intents support for Shortcuts, Spotlight and Siri\"]</notable>\n<caveats\">[\"Requires an Apple Silicon MacBook whose SMC publishes the CHTE key\", \"Supports macOS 15 to 26; macOS 27 and later are not supported yet\", \"Building the Xcode 26 app itself needs macOS 26.2 to launch; older macOS needs terminal builds, and an unsigned build cannot change charging\"]</caveats>\n<license>MIT</license>\n<use_cases\">[\"Keep a MacBook battery healthy while always plugged in\", \"Stop charging at 80% to slow battery wear\", \"Monitor battery cycle count and maximum capacity\", \"Pause charging when the battery gets hot\", \"Run a one-time full charge before travel\", \"Control charge limits from Shortcuts or Siri\"]</use_cases>\n",
+  "use_cases": [
+   "Keep a MacBook battery healthy while always plugged in",
+   "Stop charging at 80% to slow battery wear",
+   "Monitor battery cycle count and maximum capacity",
+   "Pause charging when the battery gets hot",
+   "Run a one-time full charge before travel",
+   "Control charge limits from Shortcuts or Siri"
+  ],
+  "how_to_run": [
+   "brew install --cask askuksov/tap/kombucha",
+   "Or download Kombucha-.zip from the latest release, unzip it, and move Kombucha.app to /Applications",
+   "Open Kombucha and approve the helper once in System Settings → General → Login Items & Extensions",
+   "Building from source: install Xcode 26, XcodeGen and an Apple Development certificate, then run: xcodegen generate",
+   "xcodebuild -project Kombucha.xcodeproj -scheme Kombucha -configuration Release -derivedDataPath build/DerivedData build",
+   "Run tests with: xcrun swift test --package-path Packages/KombuchaKit"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "XcodeGen",
+   "XPC",
+   "SMC (System Management Controller)",
+   "App Intents",
+   "Homebrew"
+  ],
+  "notable": [
+   "Stops charging at a chosen level and resumes at a lower one, so the Mac runs from the adapter while the battery rests",
+   "Privileged helper daemon that writes only two SMC keys and refuses callers it cannot verify, with no network access",
+   "Detects other running battery managers (AlDente, BatFi, BattOpt, Juicy, Energiza, Battery Toolkit, Tethered, batt) and leaves charging to them",
+   "Charge history and maximum capacity trend stored on the Mac only",
+   "App Intents support for Shortcuts, Spotlight and Siri"
+  ],
+  "caveats": [
+   "Requires an Apple Silicon MacBook whose SMC publishes the CHTE key",
+   "Supports macOS 15 to 26; macOS 27 and later are not supported yet",
+   "Building the Xcode 26 app itself needs macOS 26.2 to launch; older macOS needs terminal builds, and an unsigned build cannot change charging"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3396,
+  "output": 2228
+ },
+ "generated": "2026-11-15"
+}

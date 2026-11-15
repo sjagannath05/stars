@@ -1,0 +1,85 @@
+{
+ "id": "corydolphin/flask-cors",
+ "repo": "corydolphin/flask-cors",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web Security",
+   "entry": "flask-cors - A Flask extension for handling Cross-Origin Resource Sharing (CORS)."
+  }
+ ],
+ "summary": {
+  "one_liner": "flask-cors is a Flask extension that adds Cross-Origin Resource Sharing (CORS) headers to Flask routes so browsers can make cross-origin AJAX requests.",
+  "category": "web security library",
+  "keywords": [
+   "flask-cors",
+   "flask extension",
+   "cors",
+   "cross-origin resource sharing",
+   "cross origin ajax",
+   "flask cors headers",
+   "allow cross domain requests flask",
+   "access-control-allow-origin",
+   "cors decorator",
+   "cross_origin decorator",
+   "per-route cors",
+   "per-resource cors",
+   "http access control",
+   "python web security",
+   "enable cors flask",
+   "cross-domain api calls",
+   "browser same-origin policy",
+   "csrf considerations",
+   "flask api cors",
+   "pip install flask-cors",
+   "cookies across domains",
+   "credentialed requests",
+   "resource-based cors options",
+   "flask debugging logging"
+  ],
+  "what_it_does": "The package provides a Flask extension that, by default, enables CORS on all routes for all origins and methods. Its CORS options can be set per resource by passing a dictionary that maps URL paths (such as /api/*) to option sets. A decorator named cross_origin can be placed under a Flask route to enable CORS on that single route instead. The README says cookies are not sent across domains by default, and that credentialed requests can be enabled through the documentation, with a reminder to add CSRF protection first. For troubleshooting, it describes turning on DEBUG logging for the flask_cors logger. The README does not list every option; it points to external documentation for the full set.",
+  "use_cases": [
+   "Allow a browser frontend on another domain to call a Flask API",
+   "Enable CORS for all routes of a Flask app",
+   "Restrict CORS to an /api/* path prefix",
+   "Add CORS to a single Flask route with a decorator",
+   "Debug why cross-origin requests fail in a Flask app"
+  ],
+  "how_to_run": [
+   "pip install -U flask-cors",
+   "from flask_cors import CORS; CORS(app)",
+   "cors = CORS(app, resources={r\"/api/*\": {\"origins\": \"*\"}})",
+   "@cross_origin() placed below @app.route(...)",
+   "logging.getLogger('flask_cors').level = logging.DEBUG"
+  ],
+  "stack": [
+   "Python",
+   "Flask",
+   "uv (development environment)"
+  ],
+  "notable": [
+   "Enables CORS for all routes, origins and methods with one line by default",
+   "Per-resource option mapping using path patterns",
+   "Route-level cross_origin decorator",
+   "Based on Armin Ronacher's HTTP Access Control decorator",
+   "Makefile targets with uv for development (make test)"
+  ],
+  "caveats": [
+   "Cookies are not sent cross-domain by default; enabling credentialed requests has security implications and needs CSRF protection",
+   "The README does not list all options inline; full reference is in external documentation",
+   "Designed around a simple all-domains philosophy, so fine-grained control requires per-resource configuration"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2632,
+  "output": 1127
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

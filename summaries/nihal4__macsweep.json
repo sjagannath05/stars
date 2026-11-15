@@ -1,0 +1,93 @@
+{
+ "id": "nihal4/macsweep",
+ "repo": "nihal4/macsweep",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Cleanup and Uninstall",
+   "entry": "MacSweep - Free, open-source Mac cleaner written in Rust (~7 MB) for junk cleanup, large files, app uninstalling with leftovers and orphaned launch agents, with tests ensuring browser profiles, Mail and app data are never deleted. [![Open-Source Software][OSS Icon]](https://github.com/nihal4/macsweep) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "MacSweep is a free, open-source Mac cleaner written in Rust that removes junk files, finds large old files, fully uninstalls apps including leftovers, and removes orphaned launch agents.",
+  "category": "mac cleaner utility",
+  "keywords": [
+   "mac cleaner",
+   "macos cleaner",
+   "rust",
+   "egui",
+   "disk cleanup",
+   "junk cleaner",
+   "system junk",
+   "cache cleaner",
+   "large files finder",
+   "app uninstaller",
+   "launch agents",
+   "orphaned launch agents",
+   "free up disk space",
+   "clean my mac",
+   "remove leftover app files",
+   "empty trash mac",
+   "safe mac cleaner",
+   "open source alternative to paid mac cleaners",
+   "jwalk",
+   "rayon",
+   "developer cache cleanup",
+   "xcode cache cleanup",
+   "huggingface cache",
+   "background helpers remover",
+   "mac storage cleanup",
+   "trash size monitor",
+   "universal binary macos"
+  ],
+  "what_it_does": "MacSweep is a native macOS app that scans for caches, logs, build leftovers and Trash, and shows a per-category summary before cleaning, with per-file checkboxes. It lists large files in the home folder grouped by kind, with a filter for files not opened in a year. The Uninstaller shows each app's size including leftovers and separates leftovers into a safe-to-remove group and a \"Your data\" group that is not pre-selected. The Launch Agents view lists background helpers and flags those whose app is already gone. The sidebar shows free disk space and Trash size and offers an Empty Trash button. The README states that it has no network access, no telemetry and no accounts.",
+  "use_cases": [
+   "free up disk space on a Mac",
+   "remove junk and cache files",
+   "find large forgotten files",
+   "completely uninstall a Mac app with its leftovers",
+   "remove orphaned background login items",
+   "clean developer caches such as Xcode and npm"
+  ],
+  "how_to_run": [
+   "curl --proto '=https' --tlsv1.2 -sSf | sh (one-time Rust install, per README)",
+   "git clone <repo> && cd macsweep",
+   "./scripts/setup-signing.sh (optional, keeps Full Disk Access across rebuilds)",
+   "./bundle.sh (builds dist/MacSweep.app for this Mac)",
+   "UNIVERSAL=1 ./bundle.sh (Apple Silicon and Intel in one app)"
+  ],
+  "stack": [
+   "Rust",
+   "egui (OpenGL)",
+   "jwalk",
+   "rayon",
+   "trash",
+   "icns",
+   "plist"
+  ],
+  "notable": [
+   "Allowlist-based deletion: junk cleaning only deletes inside fixed cache, log and build folders, and each path is rechecked before deletion",
+   "Uninstaller keeps user data such as browser profiles, containers and cookies unless explicitly selected",
+   "Automated tests (cargo test) check that browser profiles, Mail, keychains and Documents cannot be deleted",
+   "Apps, large files and launch agents go to the Trash so Put Back works; only junk is deleted permanently",
+   "Small ~7 MB binary with no web view"
+  ],
+  "caveats": [
+   "Not notarized by Apple, so first launch needs right-click Open or removing the quarantine attribute",
+   "Requires granting Full Disk Access and Finder control permissions for full functionality",
+   "Roadmap items such as duplicate finder, scheduled scans, Homebrew install and notarized builds are not yet implemented",
+   "Browser cache cleanup per browser is listed as a roadmap item only"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3640,
+  "output": 1317
+ },
+ "generated": "2026-11-15"
+}

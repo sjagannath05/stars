@@ -1,0 +1,85 @@
+{
+ "id": "adamchainz/django-cors-headers",
+ "repo": "adamchainz/django-cors-headers",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Web Security",
+   "entry": "django-cors-headers - Handles Cross-Origin Resource Sharing (CORS) headers for Django apps."
+  }
+ ],
+ "summary": {
+  "one_liner": "A Django app that adds Cross-Origin Resource Sharing (CORS) headers to responses so in-browser requests from other origins can reach a Django application.",
+  "category": "django cors middleware",
+  "keywords": [
+   "django cors",
+   "cors headers",
+   "cross-origin resource sharing",
+   "django middleware",
+   "corsheaders",
+   "access-control-allow-origin",
+   "preflight requests",
+   "cors configuration",
+   "allow origins django",
+   "cross-origin api access",
+   "django api browser requests",
+   "cors allowed origins",
+   "cors allow credentials",
+   "csrf trusted origins",
+   "pip django package",
+   "web security django",
+   "same-origin policy",
+   "cors whitelist",
+   "allow all origins",
+   "cors regex origins",
+   "private network access",
+   "check_request_enabled signal",
+   "django rest framework cors",
+   "frontend calling django backend",
+   "cross domain requests"
+  ],
+  "what_it_does": "Installs as a Django app plus a middleware class (CorsMiddleware) that adds CORS response headers. Allowed origins can be set as an explicit list, as regular expressions, or as allow-all, and URL paths can be limited with a regex such as one covering only /api/. Settings control allowed HTTP methods and request headers, exposed headers, preflight max age, credentials (cookies), and Private Network Access headers. The README also covers CSRF integration via CSRF_TRUSTED_ORIGINS and a check_request_enabled signal that lets custom code decide per request whether to allow CORS, for example by looking up origins in a database model.",
+  "use_cases": [
+   "let a separate frontend app call a Django API from the browser",
+   "restrict cross-origin access to specific domains or subdomains",
+   "allow cross-origin requests only to /api/ URLs",
+   "allow cookies in cross-site requests with CORS_ALLOW_CREDENTIALS",
+   "decide CORS access per request from a database of allowed sites",
+   "combine CSRF trusted origins with CORS for cross-site forms"
+  ],
+  "how_to_run": [
+   "python -m pip install django-cors-headers",
+   "Add \"corsheaders\" to INSTALLED_APPS",
+   "Add \"corsheaders.middleware.CorsMiddleware\" near the top of MIDDLEWARE, before CommonMiddleware",
+   "Set at least one of CORS_ALLOWED_ORIGINS, CORS_ALLOWED_ORIGIN_REGEXES, or CORS_ALLOW_ALL_ORIGINS in Django settings"
+  ],
+  "stack": [
+   "Python 3.11 to 3.15",
+   "Django 5.2 to 6.1"
+  ],
+  "notable": [
+   "Settings-driven: allowed origins as list, regex, or allow-all, with legacy alias names still supported",
+   "Optional signal hook (check_request_enabled) for custom per-request allow logic",
+   "Can restrict CORS to URL patterns via CORS_URLS_REGEX",
+   "Documents CSRF_TRUSTED_ORIGINS interaction, since CORS and CSRF are separate",
+   "Maintained since 2016 after earlier unmaintained period, per the About section"
+  ],
+  "caveats": [
+   "CORS_ALLOW_ALL_ORIGINS=True lets any website make cross-origin requests, which the README calls dangerous",
+   "CorsMiddleware must be placed high in MIDDLEWARE or other middleware may generate responses without CORS headers",
+   "Session cookies are SameSite=Lax by default, so cross-site cookie use needs SESSION_COOKIE_SAMESITE changed to 'None'"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6320,
+  "output": 1333
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "pydantic/monty",
+ "repo": "pydantic/monty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "AI and Agents",
+   "entry": "pydantic-monty - A secure Python sandbox written in Rust for running AI-written code."
+  }
+ ],
+ "summary": {
+  "one_liner": "Monty is a secure Python sandbox written in Rust for safely running AI/LLM-generated code without a container-based sandbox.",
+  "category": "python sandboxing",
+  "keywords": [
+   "python sandbox",
+   "secure code execution",
+   "rust",
+   "llm generated code",
+   "ai agent code execution",
+   "code mode",
+   "sandboxed python",
+   "untrusted code",
+   "pydantic-monty",
+   "python interpreter embedding",
+   "lightweight sandbox",
+   "alternative to docker sandbox",
+   "alternative to pyodide",
+   "alternative to wasi",
+   "run model code safely",
+   "execute ai written code",
+   "sandbox for agents",
+   "external functions",
+   "resource limits",
+   "python subset",
+   "pool of sandboxes",
+   "grpc sandbox service",
+   "javascript bindings",
+   "go bindings",
+   "dart bindings",
+   "pydantic ai"
+  ],
+  "what_it_does": "Monty is a Python sandbox written in Rust, intended for running code that an AI model has written. It is installed as a package (pydantic-monty for Python, @pydantic/monty for JavaScript/TypeScript, and the monty crate for Rust). Inside the sandbox there is no filesystem, environment variables, or network; the code can reach the host only through functions and mounts the caller passes in. The Python usage example shows a pool of sandboxes with sessions, where host-side external functions are called from the sandboxed code and inputs are passed in. The README claims a new sandbox starts in under 1ms from a warm pool. A separate commercial option runs the same sandbox as a gRPC-streamed service in a container image. The README also mentions docs covering the security model, resource limits, snapshots, and the supported Python subset.",
+  "use_cases": [
+   "run LLM-generated Python code safely",
+   "sandbox code for AI agents",
+   "execute model-written code without containers",
+   "give sandboxed code controlled access to host functions",
+   "embed a restricted Python interpreter in an application"
+  ],
+  "how_to_run": [
+   "uv add pydantic-monty",
+   "npm install @pydantic/monty",
+   "cargo add monty"
+  ],
+  "stack": [
+   "Rust",
+   "Python 3.14 (sandboxed language)",
+   "Python package pydantic-monty",
+   "JavaScript/TypeScript package @pydantic/monty",
+   "Rust crate monty",
+   "gRPC (commercial server)"
+  ],
+  "notable": [
+   "No filesystem, environment variables, or network access inside the sandbox; host access only through passed-in functions and mounts",
+   "Claimed sandbox startup under 1ms from a running pool, versus about 1500ms for a sandbox service",
+   "Snapshots, resource limits, and a documented Python subset",
+   "Used for Code Mode in Pydantic AI; community bindings for Go and Dart/Flutter",
+   "Part of the Pydantic Stack"
+  ],
+  "caveats": [
+   "Commercial Support (gRPC server, container image) is a paid offering separate from the MIT-licensed OSS package",
+   "Runs a Python 3.14 subset rather than full CPython, per the documentation references",
+   "Latency figures are the project's own claims in the README"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2312,
+  "output": 1168
+ },
+ "generated": "2026-11-15"
+}

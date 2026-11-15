@@ -1,0 +1,95 @@
+{
+ "id": "jithin-sabu/purge-app",
+ "repo": "jithin-sabu/purge-app",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Cleanup and Uninstall",
+   "entry": "Purge - Open-source cache cleaner that moves files to the Trash instead of deleting them, using a fixed allowlist and no telemetry. [![Open-Source Software][OSS Icon]](https://github.com/jithin-sabu/purge-app) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Purge is a free, open-source native macOS app that finds cache, junk, large files, dev tool leftovers and app leftovers, and moves them to the Trash (not permanently deleted) after you review them.",
+  "category": "mac cache cleaner",
+  "keywords": [
+   "mac cache cleaner",
+   "macos cleanup",
+   "free up disk space mac",
+   "cache cleaner",
+   "junk cleaner",
+   "app uninstaller mac",
+   "uninstall apps leftovers",
+   "xcode derived data cleanup",
+   "node_modules cleanup",
+   "large files finder mac",
+   "duplicate file finder",
+   "homebrew cask uninstall",
+   "ollama model cleanup",
+   "ai model storage cleanup",
+   "time machine local snapshots delete",
+   "ios simulator cleanup",
+   "trash instead of delete",
+   "open source mac utility",
+   "swift macos app",
+   "sparkle updates",
+   "clean mac storage",
+   "dev tools cache",
+   "docker desktop cleanup",
+   "icloud keep only in icloud",
+   "disk usage overview mac",
+   "menu bar cleaner",
+   "reclaim disk space",
+   "delete developer caches",
+   "safe mac cleanup allowlist"
+  ],
+  "what_it_does": "Purge scans the Mac for caches and junk in ~/Library/Caches and common system junk, developer tool caches (Xcode, Homebrew, npm, Gradle, Docker Desktop and others), and developer project artifacts like node_modules and Rust target folders. It also finds large personal files in Documents, Desktop, Downloads, Movies, Music and Pictures, including duplicates and local AI models from Ollama, LM Studio and Hugging Face. An App Uninstaller lists installed apps with their leftover caches, preferences and logs, and removes them in one pass. Each item gets a \"Safe to Clean\" or \"Check First\" label with an explanation, and the user chooses what to clean. Most deletions go to the Trash; a few (iOS simulators, Xcode Metal Toolchain, Time Machine local snapshots) are deleted permanently through Apple's tools. Optional features include scheduled cleaning, a menu bar companion, and a deleted-app leftover watcher.",
+  "use_cases": [
+   "clear app caches to free disk space",
+   "remove Xcode and developer tool caches",
+   "uninstall a Mac app along with its leftover files",
+   "find large files and duplicates in home folders",
+   "delete node_modules or build folders from old projects",
+   "review and remove local AI model downloads"
+  ],
+  "how_to_run": [
+   "brew install --cask purge",
+   "Or download the .dmg from the releases page and drag Purge to Applications",
+   "Optional: verify with shasum -a 256 -c Purgev*.dmg.sha256",
+   "Build from source: open purge.xcodeproj in Xcode 26 or later and press ⌘R",
+   "Or build from the command line: xcodebuild -project purge.xcodeproj -scheme purge -configuration Debug build CODE_SIGN_IDENTITY=\"\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode 26",
+   "Swift Package Manager",
+   "Sparkle",
+   "Node.js (only for regenerating icons)",
+   "xcodebuild",
+   "simctl",
+   "tmutil"
+  ],
+  "notable": [
+   "Moves files to the Trash by default and never empties the Trash, so deletions can be undone",
+   "Allowlist-based deletion: only recognized paths are eligible, and unidentified folders are not shown",
+   "App Uninstaller removes apps plus matched leftovers, with Homebrew cask uninstall as an option",
+   "Optional root helper, off by default, for removing admin-installed apps",
+   "Signed in-app updates via Sparkle; notarized by Apple"
+  ],
+  "caveats": [
+   "Requires macOS 13.0 or later; building from source requires Xcode 26 or later",
+   "Full Disk Access is needed for Large Files, the App Uninstaller and leftovers; some features are limited without it",
+   "Some deletions are permanent (simulators, Metal Toolchain, Time Machine snapshots, Homebrew/package-manager uninstalls), not moved to the Trash"
+  ],
+  "license": "MIT License"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 12278,
+  "output": 1554
+ },
+ "generated": "2026-11-15"
+}

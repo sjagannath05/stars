@@ -1,0 +1,101 @@
+{
+ "id": "all-hands-ai/openhands",
+ "repo": "All-Hands-AI/OpenHands",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "OpenHands - Open-source platform for autonomous AI software development agents that can write code, fix bugs, and run shell commands. #free #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "Agent Canvas is a self-hosted control center from the OpenHands project for running coding agents (OpenHands, Claude Code, Codex, Gemini CLI, Pi, OpenCode, or any ACP-compatible agent) locally, in Docker, on VMs, or in the cloud, with Slack/GitHub-triggered automations.",
+  "category": "ai coding agents",
+  "keywords": [
+   "ai coding agent",
+   "agent control center",
+   "self-hosted coding agent",
+   "openhands",
+   "agent canvas",
+   "agent server",
+   "agent-client protocol",
+   "acp agents",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "opencode",
+   "docker sandbox",
+   "agent sandbox",
+   "automation server",
+   "scheduled agent tasks",
+   "webhook automation",
+   "slack bot agent",
+   "github issue automation",
+   "linear integration",
+   "notion integration",
+   "multi-backend agents",
+   "run agents on vm",
+   "remote coding agent",
+   "bring your own llm",
+   "autonomous software engineer",
+   "ai dev team",
+   "agent workflows",
+   "self-host ai agents",
+   "run agent in container",
+   "code review agent",
+   "dependency update bot",
+   "typescript client",
+   "react frontend agent ui"
+  ],
+  "what_it_does": "placeholder",
+  "use_cases": [
+   "Run coding agents on a laptop, dedicated machine, or cloud server",
+   "Automate scheduled reports that publish to Slack",
+   "Decompose GitHub issues into tasks automatically",
+   "Run several agents concurrently in separate Docker containers",
+   "Share an agent server with a team for code review and dependency updates",
+   "Switch one UI between local, remote, and cloud agent backends"
+  ],
+  "how_to_run": [
+   "npm install -g @openhands/agent-canvas",
+   "agent-canvas",
+   "docker run -it --rm -p 127.0.0.1:8000:8000 -e AGENT_CANVAS_ALLOW_LAN_SESSION_KEY=true -v openhands-state:/home/openhands/.openhands -v \"${PROJECTS_PATH}:/projects\" ghcr.io/openhands/agent-canvas:1.40.0",
+   "OH_CONVERSATION_RUNTIME=docker agent-canvas",
+   "git clone <repo> && cd OpenHands && npm ci && npm run dev"
+  ],
+  "stack": [
+   "Node.js 24+",
+   "npm",
+   "uv",
+   "Docker",
+   "Python agent server (OpenHands Agent Server / software-agent-sdk)",
+   "TypeScript client"
+  ],
+  "notable": [
+   "Runs the open-source OpenHands agent out of the box and also drives third-party agents such as Claude Code, Codex, Gemini CLI, Pi, and OpenCode",
+   "One frontend can connect to multiple agent server backends (laptop, Docker, VM, company infrastructure) and switch between them",
+   "Optional Docker mode runs each conversation in its own container with its own Agent Server",
+   "Automations run on a schedule or in response to webhook events, integrating with Slack, GitHub, Linear, and Notion",
+   "Local listeners bind to loopback by default; session key handling is explicit for LAN exposure"
+  ],
+  "caveats": [
+   "The npm and source launchers run the agent server directly on the host, giving the agent full filesystem access; only the Docker sandbox options isolate execution",
+   "Docker-per-conversation mode isolates conversation execution only; the Canvas and automation service are not sandboxed",
+   "Existing local conversations are not converted when switching to Docker mode",
+   "Source install requires npm 11.12.1 pin and a git clone; Windows users are pointed to a separate README.windows.md",
+   "Internet-facing installs need additional hardening per the self-hosting guide"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5433,
+  "output": 1379
+ },
+ "generated": "2026-11-15",
+ "license_source": "LICENSE"
+}

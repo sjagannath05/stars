@@ -1,0 +1,94 @@
+{
+ "id": "hankmonster/arowser",
+ "repo": "HankMonster/arowser",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "arowser - Agent-programmable borderless web windows for macOS, driven by a CLI designed for coding agents. [![Open-Source Software][OSS Icon]](https://github.com/HankMonster/arowser) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "arowser is a macOS app and CLI that opens URLs or local HTML in small borderless windows addressed by stable ids, designed so coding agents can show things to the user.",
+  "category": "macos browser tooling",
+  "keywords": [
+   "macos",
+   "swift",
+   "wkwebview",
+   "borderless window",
+   "floating window",
+   "cli",
+   "coding agent",
+   "ai agent",
+   "agent tooling",
+   "claude code",
+   "multi-agent",
+   "window id",
+   "cookie jar",
+   "session cookies",
+   "static server",
+   "live reload",
+   "file preview",
+   "local html preview",
+   "dashboard window",
+   "notification card",
+   "always on top",
+   "mini browser",
+   "small browser window",
+   "open url from terminal",
+   "show webpage to agent",
+   "keep page in corner of screen",
+   "homebrew cask",
+   "awesome mac",
+   "browser alternative for agents"
+  ],
+  "what_it_does": "The app puts a URL or local file into a window with no title bar, which can be placed and sized from the command line with options like --w, --h, --x, --y and --center. The CLI controls each window by id (open, show, hide, close, reload, list with JSON output), and ownership checks reject id-addressed commands from a different owner unless --force is given. Cookie handling offers a shared persistent jar, a private per-window jar, or a named per-profile jar, and session cookies are mirrored to disk so logins survive restarts. A built-in localhost static server can mount directories for pages that need fetch or XHR, and arowser-watch reloads a window when a local file changes. Other features include fit-to-width scaling, a mobile user agent option, error cards for unreachable URLs, session restore, a window history picker, and global hotkeys.",
+  "use_cases": [
+   "let a coding agent show a dashboard or report in a corner window",
+   "live preview of a local HTML report while editing",
+   "pin notification cards from a background agent",
+   "keep a web page visible while working in other apps",
+   "serve a local data-driven page to a browser window",
+   "open and manage several isolated browser windows from scripts"
+  ],
+  "how_to_run": [
+   "brew tap HankMonster/arowser",
+   "brew install --cask HankMonster/arowser/arowser",
+   "git clone <repository URL> && cd arowser",
+   "./build.sh",
+   "id=$(arowser open --title demo)",
+   "arowser show \"$id\""
+  ],
+  "stack": [
+   "Swift",
+   "WKWebView (system WebKit)",
+   "macOS 12+",
+   "arowser:// URL scheme",
+   "Python (show-info md2window.py pipeline)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Agent-first CLI: windows addressed by stable ids, with owner checks so multiple agents do not interfere",
+   "Cookie mirror keeps session-cookie logins alive across app restarts",
+   "Built-in localhost static server for directories, with no auth and a 127.0.0.1-only listener",
+   "Live-reload preview via arowser-watch with no third-party watcher dependency",
+   "Ships three agent skills in skills/ (arowser, notify-user, show-info)"
+  ],
+  "caveats": [
+   "Uses system WebKit rather than Chromium, so Chrome-only sites may misbehave",
+   "Requires macOS 12+; notarized releases and Homebrew packaging are listed as not yet available, so building from source is needed",
+   "Served directories and the arowser:// scheme are accessible to any local process; ownership is a mistake guard, not a security boundary"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6426,
+  "output": 1262
+ },
+ "generated": "2026-11-15"
+}
