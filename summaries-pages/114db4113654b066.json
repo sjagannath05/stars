@@ -1,0 +1,63 @@
+{
+ "id": "114db4113654b066",
+ "url": "https://web.archive.org/web/2017/https://www.codeproject.com/Articles/1029838/Build-Your-Own-Database",
+ "final_url": "https://web.archive.org/web/20171205125705/https://www.codeproject.com/Articles/1029838/Build-Your-Own-Database",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Build Your Own Database",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Database",
+   "entry": "C#: _Build Your Own Database_"
+  }
+ ],
+ "summary": {
+  "title": "Build Your Own Database",
+  "one_liner": "You learn how to build a simple on-disk database in C# by layering block storage, variable-length record storage, and a disk-based B-Tree index.",
+  "category": "build a database",
+  "keywords": [
+   "build your own database",
+   "custom database c#",
+   "block storage",
+   "record storage",
+   "b-tree index on disk",
+   "b-tree implementation",
+   "variable length records",
+   "sqlite alternative",
+   "sqlite vacuum problem",
+   "deleted space reuse",
+   "fixed size blocks 4kb",
+   "record id free list",
+   "primary and secondary index",
+   "full index scan",
+   "ad-hoc query index",
+   "mono on mac",
+   "file based storage engine",
+   "database indexing tutorial",
+   "how does a database work",
+   "c# dll database library"
+  ],
+  "takeaways": [
+   "Store data in a single file split into fixed-size blocks, with a metadata header per block for links, content length and deleted flag.",
+   "Build variable-length records as linked lists of blocks, and reuse deleted block IDs via a stack kept in record #0.",
+   "Implement a disk-based B-Tree by serializing nodes into records and referencing other nodes by ID rather than memory pointers.",
+   "Combine record storage with primary (Guid) and secondary (Breed, Age) indexes to answer find, delete, update and search operations."
+  ],
+  "summary": "The author wants a database that stays fast as data grows, reuses deleted space and avoids SQLite's vacuum() step, for storing about a million records of 1KB-8KB. The design has three layers: BlockStorage splits one file into equal-size blocks (4KB chosen), RecordStorage chains blocks into variable-length records and recycles freed block IDs, and an on-disk B-Tree index maps keys to record IDs. The article walks through the interfaces, the implementation details and a demo \"CowDatabase\" in C#, with notes on caching, performance on mono and a write-caching issue. The project is presented as a 24-32 hour learning exercise without ACID or transactions.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "C#",
+   "Mono",
+   "SQLite",
+   ".NET"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 7364,
+  "output": 839
+ },
+ "generated": "2026-11-22"
+}

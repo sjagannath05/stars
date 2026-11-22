@@ -1,0 +1,93 @@
+{
+ "id": "sudomichael/search-console-mcp",
+ "repo": "sudomichael/search-console-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Search Engine",
+   "entry": "search-console-mcp - Google Search Console for any MCP client - 30-second login, no Google Cloud project. Read-only. #opensource #mcp"
+  }
+ ],
+ "summary": {
+  "one_liner": "A read-only MCP server that lets Claude, Cursor, or other MCP clients query your Google Search Console data after a one-time browser sign-in, with no Google Cloud project or API keys.",
+  "category": "seo search console tooling",
+  "keywords": [
+   "search console",
+   "google search console",
+   "mcp server",
+   "model context protocol",
+   "seo analytics",
+   "claude integration",
+   "cursor mcp",
+   "search performance data",
+   "striking distance keywords",
+   "keyword cannibalization",
+   "traffic drop analysis",
+   "indexing audit",
+   "url inspection",
+   "sitemap status",
+   "read-only oauth",
+   "npx server",
+   "node mcp",
+   "google discover traffic",
+   "ctr optimization",
+   "internal link planning",
+   "title rewrite",
+   "seo checkup",
+   "search console alternative",
+   "no google cloud project",
+   "chat with my seo data",
+   "find pages near page one",
+   "why did my traffic drop",
+   "check if page is indexed",
+   "gsc mcp",
+   "webmasters readonly"
+  ],
+  "what_it_does": "The server runs locally via npx and signs in to Google Search Console through a browser login, storing tokens in a local folder. It exposes tools to list properties, query search analytics (clicks, impressions, CTR, position) by query, page, date, country, device, including Google Discover, and compare two periods to surface biggest movers. It also provides URL inspection for single and batched URLs (up to 10) and lists submitted sitemaps. The README describes ten prompt-based analyses such as traffic drop diagnosis, striking-distance keywords, cannibalization checks, and indexing audits. The Google scope requested is read-only (webmasters.readonly), so it cannot change properties or submit sitemaps. The README states that API calls go directly from the user's machine to Google.",
+  "use_cases": [
+   "diagnose why organic traffic dropped",
+   "find queries at positions 8-20 to push onto page one",
+   "detect pages cannibalizing each other",
+   "audit which URLs are indexed and why not",
+   "compare clicks this month versus last month",
+   "plan internal links and rewrite titles using real query data"
+  ],
+  "how_to_run": [
+   "npx search-console-mcp-server login",
+   "claude mcp add gsc --scope user -- npx -y search-console-mcp-server",
+   "Or add to an mcpServers config: {\"command\": \"npx\", \"args\": [\"-y\", \"search-console-mcp-server\"]}",
+   "npx search-console-mcp-server logout (to delete local tokens)"
+  ],
+  "stack": [
+   "Node.js",
+   "npx",
+   "Google Search Console API",
+   "Google OAuth (PKCE, localhost callback)",
+   "MCP (Model Context Protocol)",
+   "TypeScript"
+  ],
+  "notable": [
+   "Sign-in uses a shipped Google Desktop OAuth client, so no Google Cloud project or service-account JSON is needed",
+   "Read-only scope enforced by the requested Google permission, not by a disabled-by-default setting",
+   "Ten built-in SEO analysis prompts that return ranked actions",
+   "compare_periods computes period-over-period deltas so the model does not do date arithmetic",
+   "Can use your own OAuth client ID and secret via environment variables"
+  ],
+  "caveats": [
+   "Search Console data lags about 2-3 days and history goes back about 16 months, per the README",
+   "A property only appears if the signed-in Google account has at least Restricted access to it",
+   "The README includes promotional content for Percy, a paid weekly SEO service with plans from $29/month after a 7-day free trial; a labeled note is added to the first analysis result of a session unless SEARCH_CONSOLE_MCP_TIPS=off"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5015,
+  "output": 1344
+ },
+ "generated": "2026-11-22"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "attila-krb/bar27",
+ "repo": "ATTILA-KRB/bar27",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "Bar27 - Menu bar manager for macOS 27 that hides icons per app and reveals them with a click, hover, or shortcut. [![Open-Source Software][OSS Icon]](https://github.com/ATTILA-KRB/bar27) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Bar27 is an open-source menu bar manager for macOS 27 that hides menu bar icons per app and reveals them with a click, hover, or keyboard shortcut.",
+  "category": "macos menu bar tools",
+  "keywords": [
+   "menu bar manager",
+   "macos menu bar",
+   "hide menu bar icons",
+   "menu bar tools",
+   "macos 27",
+   "per-app hiding",
+   "bartender alternative",
+   "ice alternative",
+   "status bar icons",
+   "hidden icons",
+   "always hidden",
+   "reveal menu bar items",
+   "auto hide menu bar",
+   "hover to show menu bar",
+   "keyboard shortcut menu bar",
+   "swift app",
+   "xcodegen",
+   "developer id signing",
+   "full disk access",
+   "menubaragent",
+   "assessment mode assertion",
+   "open source menu bar",
+   "declutter menu bar",
+   "clean up menu bar",
+   "hide app icons macos",
+   "gplv3 macos app",
+   "english french app"
+  ],
+  "what_it_does": "Bar27 lets you sort each application's menu bar icon into Visible, Hidden, or Always hidden states in an \"Arrange the bar\" window. A single click on the Bar27 icon shows or hides everything filed under Hidden. Hidden icons can also be revealed by hovering an empty part of the menu bar or pressing ⌃⌥⌘B, and they re-hide automatically after an adjustable delay. The README says it does not reorder icons, since macOS 27 manages ordering itself. For hiding, it uses the system's per-app switch when Full Disk Access is granted and otherwise falls back to an \"assessment mode\" assertion. The app is available in English and French and is described as having no telemetry.",
+  "use_cases": [
+   "hide menu bar icons I don't need",
+   "clean up a crowded macOS menu bar",
+   "reveal hidden menu bar apps with a click or hotkey",
+   "keep certain apps' icons always out of sight",
+   "auto-hide menu bar items after a delay"
+  ],
+  "how_to_run": [
+   "brew install xcodegen",
+   "git clone (repository URL as given in the README)",
+   "cd bar27",
+   "scripts/install.sh (Release build, Developer ID signed, copied to /Applications)",
+   "Grant Full Disk Access to /Applications/Bar27.app in System Settings → Privacy & Security (optional but recommended)"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode",
+   "XcodeGen",
+   "macOS 27 SDK",
+   "MenuBarAgent (system agent, referenced)"
+  ],
+  "notable": [
+   "Per-app three-state visibility (Visible, Hidden, Always hidden) instead of drag-to-arrange, matching the macOS 27 model",
+   "Uses the native per-app hiding switch when Full Disk Access is granted, with an assessment-mode assertion fallback",
+   "Reveal via click, hover over empty menu bar area, or ⌃⌥⌘B shortcut",
+   "Adapts hiding assertion code from Ice, Barometer and Thaw (GPLv3)"
+  ],
+  "caveats": [
+   "Requires macOS 27 and does not support macOS 26 or earlier",
+   "Must be built from source; not on a package manager yet, and needs Xcode with the macOS 27 SDK and a Developer ID certificate",
+   "Hiding only works reliably for Developer ID-signed builds, since MenuBarAgent honours the assertion only for those",
+   "Full Disk Access is needed for the native switch; otherwise it falls back to the assertion"
+  ],
+  "license": "GPLv3"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2788,
+  "output": 1301
+ },
+ "generated": "2026-11-22"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "mcgeezy/relaytv",
+ "repo": "mcgeezy/relaytv",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Multimedia Streaming",
+   "entry": "RelayTV - Turns a Linux box connected to a television into a local playback endpoint. Send links from a phone, browse Jellyfin or Emby libraries, play IPTV channels, and drive playback from Home Assistant or HTTP (alternative to Chromecast). (Source Code, Clients) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "RelayTV turns a Linux box connected to a TV into a local-first media hub that plays links, library items, and IPTV channels, controlled from a phone or desktop browser.",
+  "category": "media streaming",
+  "keywords": [
+   "relaytv",
+   "home theater",
+   "htpc",
+   "raspberry pi media player",
+   "living room tv",
+   "local media playback",
+   "self-hosted media",
+   "jellyfin",
+   "emby",
+   "plex",
+   "seerr",
+   "iptv",
+   "m3u playlist",
+   "home assistant media_player",
+   "chromecast alternative",
+   "send video to tv",
+   "youtube playlist queue",
+   "media queue",
+   "http api",
+   "android share to tv",
+   "live tv",
+   "qr code remote",
+   "docker",
+   "gpl-3.0",
+   "share links to tv",
+   "local-first media hub"
+  ],
+  "what_it_does": "RelayTV runs on a Linux device (such as a Raspberry Pi or mini PC) attached to a television and owns playback locally. Users paste media URLs in the web UI or share links and local files from Android to the TV, and can play now, queue, or resume from history. It browses Plex, Jellyfin, and Emby libraries, and connects to Seerr for requests. It supports M3U/IPTV live channels with favorites, My Channels, and rewind within the buffered stream window. Phones connect by scanning a QR code on the TV's idle screen or opening the web UI on the same network, and it can import YouTube playlists into the queue. Automation is available through a Home Assistant media_player entity and a local HTTP API.",
+  "use_cases": [
+   "send a video link from phone to TV",
+   "browse Jellyfin or Emby library on the TV",
+   "play IPTV channels on a television",
+   "shared family queue for movie night",
+   "control a TV from Home Assistant",
+   "request movies through Seerr and play them"
+  ],
+  "how_to_run": [
+   "mkdir -p ~/relaytv",
+   "cd ~/relaytv",
+   "curl -fsSL <installer URL from README> | bash",
+   "Scan the QR code on the TV's idle screen or open the Web UI on the same network",
+   "Open Settings to connect media services"
+  ],
+  "stack": [
+   "Linux",
+   "Docker",
+   "Home Assistant",
+   "Plex",
+   "Jellyfin",
+   "Emby",
+   "Seerr",
+   "Android app"
+  ],
+  "notable": [
+   "Playback runs on the Linux box, so the phone can leave the remote page while the TV keeps playing",
+   "Shared queue and QR-code remote so family can add picks from their phones",
+   "Home Assistant media_player entity per screen plus a local HTTP API",
+   "IPTV with rewind limited to the buffered window and return-to-live",
+   "No RelayTV account or cloud dependency for core playback"
+  ],
+  "caveats": [
+   "Designed for a trusted LAN; should be behind a VPN or authenticated reverse proxy rather than exposed publicly",
+   "Optional RELAYTV_API_TOKEN needed to protect control requests on shared networks",
+   "Targets 64-bit arm64 or amd64 Linux hosts connected to a TV; Android companion app is optional",
+   "Private YouTube playlists need configured YouTube cookies; finite playlists capped at 1,000 videos"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4407,
+  "output": 1163
+ },
+ "generated": "2026-11-22"
+}

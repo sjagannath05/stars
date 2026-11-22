@@ -1,0 +1,100 @@
+{
+ "id": "dabusoft-pl/tendbar",
+ "repo": "DabuSoft-pl/tendbar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "AI Tools",
+   "entry": "Tendbar - Native menu bar app that shows which Claude Code sessions are done, waiting for you or failed, jumps back to the right terminal tab, and tracks usage limits for every account. [![Open-Source Software][OSS Icon]](https://github.com/DabuSoft-pl/tendbar) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Tendbar is a native macOS menu bar app that shows the state of your Claude Code sessions (done, waiting, or failed), jumps you back to the right terminal tab, and tracks Claude usage limits across accounts.",
+  "category": "macos menu bar app",
+  "keywords": [
+   "claude code",
+   "claude code monitor",
+   "menu bar app",
+   "macos menu bar",
+   "native mac app",
+   "ai coding session",
+   "session status",
+   "terminal tab switcher",
+   "iterm2",
+   "wezterm",
+   "kitty",
+   "tmux",
+   "usage limits",
+   "rate limit tracker",
+   "claude usage",
+   "permission prompt",
+   "allow deny prompts",
+   "notifications",
+   "notch pill",
+   "claude hooks",
+   "statusline",
+   "sparkle updates",
+   "homebrew cask",
+   "track ai assistant sessions",
+   "see which ai session needs me",
+   "get back to a terminal window",
+   "monitor multiple claude sessions",
+   "claude config dir profiles",
+   "daily stats",
+   "vibe notch alternative",
+   "codexbar alternative",
+   "swift app"
+  ],
+  "what_it_does": "Tendbar lists all Claude Code sessions in one menu bar panel, showing each session's state and the start of Claude's last reply. Clicking a session, using the arrow keys, or a global shortcut switches to its terminal tab or pane; support differs by terminal, with some apps only brought forward. It sends notifications when a session needs you, finishes, or fails, and can add reminders for long waits and warnings for silent working sessions. Permission prompts can be allowed or denied from the panel, the notch pill, or a banner, if you opt in. It tracks five-hour and weekly usage limits for Pro and Max plans across every CLAUDE_CONFIG_DIR profile, with warnings at 80% and 90%, and shows daily turn, working and waiting time stats. Tendbar works by adding hooks to Claude Code via a Connect step in Settings, and it wraps the user's statusLine to read rate limit data.",
+  "use_cases": [
+   "see which Claude Code session is waiting for input",
+   "jump back to the terminal tab running a Claude session",
+   "get notified when a long AI coding task finishes or fails",
+   "monitor Claude usage limits across multiple accounts",
+   "approve or deny Claude permission prompts without switching windows",
+   "review daily Claude Code working and waiting time"
+  ],
+  "how_to_run": [
+   "brew tap dabusoft-pl/tap",
+   "brew trust dabusoft-pl/tap",
+   "brew install --cask tendbar",
+   "Alternatively, download the DMG from the latest release (macOS 26+)",
+   "Open Settings (⌘,) → Claude Code → Connect",
+   "Keep the app in /Applications so the hooks point at the helper"
+  ],
+  "stack": [
+   "Swift",
+   "Xcode 27+",
+   "XcodeGen",
+   "Sparkle (auto-updates)",
+   "Homebrew cask",
+   "Claude Code hooks and statusLine",
+   "Unix socket"
+  ],
+  "notable": [
+   "Attention-focused: highlights which session waits for you, with the fastest path back to it",
+   "Never reads OAuth tokens or the Keychain and never switches accounts; nothing leaves the Mac except an optional daily update check",
+   "Hook helper (tendbar-hook) exits immediately so Claude Code is not slowed, even when Tendbar is not running",
+   "Wraps the user's statusLine to read rate limits and restores it on Disconnect",
+   "Notch pill and screen-edge glow, with notifications silenced during a Focus"
+  ],
+  "caveats": [
+   "Requires macOS 26 or later",
+   "Build from source needs Xcode 27+ and XcodeGen",
+   "Claude desktop app sessions do not update usage limits because it runs no status line",
+   "Kitty click-to-focus requires allow_remote_control and listen_on to be configured",
+   "Ghostty, Warp and other terminals only bring the app forward rather than selecting a tab"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3174,
+  "output": 1444
+ },
+ "generated": "2026-11-22"
+}

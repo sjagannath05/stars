@@ -1,0 +1,98 @@
+{
+ "id": "jiangxingfan1-coder/open-agent-api",
+ "repo": "jiangxingfan1-coder/Open-Agent-API",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Open Agent API - Run a coding agent on your own machine and call it from an existing app, with a local demo that needs no model account. #opensource"
+  }
+ ],
+ "summary": {
+  "one_liner": "Open Agent API is a self-hosted gateway that publishes complete agents (with their own tools, permissions, and sign-in) behind OpenAI, Anthropic, and Gemini compatible endpoints, so an existing SDK client can call an agent by name.",
+  "category": "agent gateway api",
+  "keywords": [
+   "agent api",
+   "ai agent gateway",
+   "self-hosted agent",
+   "openai compatible api",
+   "anthropic compatible api",
+   "gemini compatible api",
+   "base url swap",
+   "coding agent api",
+   "codex cli wrapper",
+   "claude code api",
+   "acp agent",
+   "agent client protocol",
+   "mcp server",
+   "durable approvals",
+   "human approval workflow",
+   "task queue for agents",
+   "background agent tasks",
+   "sqlite memory",
+   "webhook triggers",
+   "cron agent",
+   "llm gateway",
+   "model relay alternative",
+   "run agent on my machine",
+   "call agent from my app",
+   "local agent endpoint",
+   "api key for agents",
+   "multi-protocol ai gateway",
+   "agent orchestration",
+   "openai sdk agent",
+   "langchain compatible",
+   "developer platform credits"
+  ],
+  "what_it_does": "The gateway exposes agents as API endpoints: a caller sends a request with a Base URL, an API key, and an agent name in the model field, and the agent runs a multi-turn tool loop as one task. It accepts requests over OpenAI Chat Completions and Responses, Claude Messages, Gemini generateContent, and MCP, with streaming supported. Agents can be the built-in kernel (defined in OAA-Lang or JSON and backed by a model provider) or local CLI agents such as Codex, Claude Code, Antigravity, and ACP agents that the user already has installed and signed in. Runs that need sensitive actions pause for approval, which can be given from the console, the terminal, or an approve-scoped key. The README also describes cancel, resume, idempotency keys, a console, and an optional developer platform with credit-based billing. A local demo runs the kernel in-process with a deterministic model and no gateway.",
+  "use_cases": [
+   "expose a local coding agent to an existing app via API",
+   "call an agent instead of a raw model from OpenAI SDK code",
+   "require human approval before an agent takes sensitive actions",
+   "wrap Codex or Claude Code behind one API for several apps",
+   "run scheduled or webhook-triggered agent tasks",
+   "try an agent locally without a model account using the demo"
+  ],
+  "how_to_run": [
+   "git clone the repository and install dependencies with npm from a Node.js 24.18+ source checkout",
+   "npm run oaa -- init",
+   "npm run oaa -- serve --detach",
+   "npm run oaa -- quickstart",
+   "npm run demo"
+  ],
+  "stack": [
+   "Node.js (24.18 or newer)",
+   "TypeScript",
+   "SQLite (FTS5 memory)",
+   "Electron (desktop app)",
+   "Playwright (desktop checks)",
+   "OpenAI, Anthropic, and Gemini SDK compatibility",
+   "MCP",
+   "ACP (Agent Client Protocol)",
+   "@anthropic-ai/claude-agent-sdk (installed separately)"
+  ],
+  "notable": [
+   "Swap only Base URL, API key, and model name in an existing OpenAI, Anthropic, or Gemini SDK client to call a full agent",
+   "Durable approvals: runs needing review pause in requires_action and can be approved from console, terminal, or API",
+   "Wraps installed local CLI agents (Codex, Claude Code, Antigravity, ACP agents) without extracting their credentials",
+   "Compatibility lab runs real SDK packages against an offline gateway, reporting 456 scenarios",
+   "Local deterministic demo (npm run demo) runs without any gateway or model account"
+  ],
+  "caveats": [
+   "Source route requires Node.js 24.18 or newer; the package is marked private and not published on npmjs.org",
+   "External agents inherit host privileges unless sandboxed (POSIX only); Windows has no process sandbox per the README",
+   "Desktop installers are not code-signed or Apple-notarized; single SQLite gateway only, with no clustering or Postgres"
+  ],
+  "license": "Apache License 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 11621,
+  "output": 1517
+ },
+ "generated": "2026-11-22"
+}

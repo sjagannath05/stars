@@ -1,0 +1,88 @@
+{
+ "id": "drumandbytes/music-router",
+ "repo": "drumandbytes/music-router",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "Music Router - Stops Music.app from auto-launching and routes media keys to the app you're actually using. [![Open-Source Software][OSS Icon]](https://github.com/drumandbytes/music-router) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu-bar utility that stops Music.app/iTunes from launching and routes media keys to the player you actually want.",
+  "category": "macos menu bar tools",
+  "keywords": [
+   "music.app blocker",
+   "stop music app opening",
+   "itunes blocker",
+   "block apple music",
+   "media keys",
+   "media key router",
+   "now playing",
+   "macos media keys",
+   "menu bar utility",
+   "menu bar app",
+   "nomusic",
+   "notunes alternative",
+   "prevent music launch",
+   "spotify media keys",
+   "vlc media keys",
+   "replacement music player",
+   "airplay launch block",
+   "handoff music",
+   "siri music",
+   "launch at login",
+   "macos keyboard shortcut",
+   "mediaremote adapter",
+   "musicrouter-media cli",
+   "stop itunes from opening",
+   "route media keys to spotify",
+   "homebrew cask",
+   "swift macos app",
+   "pin media key target"
+  ],
+  "what_it_does": "Music Router runs in the macOS menu bar and quits Music.app or iTunes when it launches, so it does not open unexpectedly. Media keys are intercepted before macOS launches Music; other launch triggers such as AirPlay, Handoff or Siri are closed right after they start. If an app or browser tab already owns Now Playing, the media key goes to it unchanged. When nothing is playing, it resumes the last scriptable player or starts a replacement app (Spotify, TIDAL, VLC, a web player, or any app) and actually plays it. You can pin a media-key target among several players from the menu or with a remappable global shortcut (⌃⌥⌘M by default). It includes a fallback CoreAudio check when Now Playing detection fails, plus a Settings window, launch at login, permission reset and opt-in debug logging, and a bundled musicrouter-media command-line tool for scripts.",
+  "use_cases": [
+   "stop Music.app from opening automatically",
+   "send media keys to Spotify or VLC instead of Apple Music",
+   "prevent iTunes launching when pressing play",
+   "stop AirPlay or Siri from opening Music",
+   "resume the last music player with the keyboard",
+   "script media control from a status bar"
+  ],
+  "how_to_run": [
+   "brew install drumandbytes/tap/music-router"
+  ],
+  "stack": [
+   "Swift",
+   "macOS",
+   "MediaRemote adapter (bundled, private framework)",
+   "CoreAudio",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Intercepts media keys before macOS launches Music, so there is no launch-then-quit flash",
+   "Lets whatever is already playing keep the media keys",
+   "Replacement app is started and actually played, not just opened",
+   "Bundled MediaRemote adapter and musicrouter-media command-line tool, no extra install",
+   "Remappable global shortcut to cycle the media-key target"
+  ],
+  "caveats": [
+   "Music launched by AirPlay, Handoff or Siri is closed after it starts, not prevented",
+   "Now Playing detection uses a private framework and may break on macOS updates; a fallback keeps blocking and routing working",
+   "Requires Input Monitoring and Accessibility permissions (Device Control and Data Access on macOS 27)",
+   "Ad-hoc signed, so macOS shows an unidentified developer prompt on first launch"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3448,
+  "output": 1217
+ },
+ "generated": "2026-11-22"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "b3ea21f623a4741b",
+ "url": "https://medium.com/@ahanshankar/creating-a-websocket-server-using-only-the-rfc-doc-part-1-handshakes-6cbbe16552e5",
+ "final_url": "https://medium.com/@ahanshankar/creating-a-websocket-server-using-only-the-rfc-doc-part-1-handshakes-6cbbe16552e5",
+ "kind": "article",
+ "method": "wayback",
+ "page_title": "Creating a WebSocket server using only the RFC doc (Part 1) : Handshakes 🤝",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "JavaScript: _Creating a WebSocket server using only the RFC doc (Part 1): Handshakes_"
+  }
+ ],
+ "summary": {
+  "title": "Creating a WebSocket server using only the RFC doc (Part 1): Handshakes",
+  "one_liner": "You learn how the WebSocket opening handshake works per RFC 6455 and how to implement it in a minimal JavaScript (Node.js) server.",
+  "category": "websocket protocol",
+  "keywords": [
+   "websocket server",
+   "websocket handshake",
+   "rfc 6455",
+   "websocket opening handshake",
+   "sec-websocket-accept",
+   "sec-websocket-key",
+   "sec-websocket-version",
+   "sha-1 base64 accept header",
+   "http upgrade request",
+   "101 switching protocols",
+   "node.js websocket from scratch",
+   "javascript websocket server",
+   "build websocket without library",
+   "websocket vs http",
+   "http server upgrade event",
+   "400 bad request handshake validation",
+   "ws library alternative",
+   "magic guid 258eafa5-e914-47da-95ca-c5ab0dc85b11"
+  ],
+  "takeaways": [
+   "A WebSocket connection starts as an HTTP GET request with Upgrade headers; the client sends the opening handshake.",
+   "The server validates the request (GET, HTTP 1.1+, Host, Upgrade, Connection, Sec-WebSocket-Key of 16 bytes, Sec-WebSocket-Version 13) and rejects invalid ones with 400.",
+   "Sec-WebSocket-Accept is computed as base64(SHA-1(key + GUID)) using the RFC's fixed GUID.",
+   "On success the server replies with HTTP/1.1 101 Switching Protocols; the server can then use the raw socket to handle the upgrade."
+  ],
+  "summary": "The article builds the opening handshake of a minimal WebSocket server in JavaScript, using RFC 6455 as the only reference. It explains that WebSockets run over HTTP as a GET request with upgrade headers, then walks through the client requirements and the server-side checks. The author uses Node's http server 'upgrade' event, a validation function for the required headers, and a SHA-1 and base64 routine to build Sec-WebSocket-Accept. The article is Part 1 of a series and does not cover sending or receiving messages; the author tests the result with Postman.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "JavaScript",
+   "Node.js",
+   "WebSocket",
+   "HTTP",
+   "SHA-1",
+   "Base64",
+   "Postman"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 5620,
+  "output": 932
+ },
+ "generated": "2026-11-22"
+}

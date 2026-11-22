@@ -1,0 +1,97 @@
+{
+ "id": "attila-krb/escale",
+ "repo": "ATTILA-KRB/escale",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Terminal Apps",
+   "entry": "Escale - Native SSH client with tabs, an SFTP browser beside the terminal, tunnels, multi-execution and a built-in X11 server. [![Open-Source Software][OSS Icon]](https://github.com/ATTILA-KRB/escale) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Escale is a free, native macOS SSH client that combines terminal sessions, an SFTP file pane, port tunnels, multi-host command execution and a built-in X11 server in one window.",
+  "category": "macos ssh client",
+  "keywords": [
+   "ssh client",
+   "macos terminal",
+   "native ssh",
+   "sftp browser",
+   "ssh tunnels",
+   "port forwarding",
+   "socks proxy",
+   "x11 forwarding",
+   "multi-execution",
+   "broadcast input",
+   "session manager",
+   "mobaxterm alternative",
+   "termius alternative",
+   "putty alternative",
+   "openssh",
+   "controlmaster",
+   "ssh config",
+   "proxyjump",
+   "swiftui",
+   "swiftterm",
+   "remote file editing",
+   "run command on many servers",
+   "telnet client",
+   "serial port terminal",
+   "vnc client",
+   "rdp file",
+   "mcp server",
+   "keychain ssh passwords",
+   "remote graphical apps",
+   "ssh terminal tabs"
+  ],
+  "what_it_does": "Escale is a session manager for macOS that drives the system's OpenSSH (/usr/bin/ssh) through one ControlMaster connection per host, so existing ~/.ssh/config, ProxyJump, agents and FIDO keys work unchanged. It provides tabs, split panes and detachable tabs with automatic reconnection. A sidebar SFTP pane reuses the existing connection, follows the terminal's current folder, supports drag and drop with Finder, a transfer queue, server-to-server copy and remote file editing. Local, remote and dynamic (SOCKS) tunnels can be opened and edited while running, and the port is probed before showing as active. It can broadcast keystrokes to panes, tabs or a selection, or run one command across a group of hosts and report output, exit code and duration per host. Extras include macros bound to ⌃⌥1 to ⌃⌥9, quick connect, host import from MobaXterm, PuTTY, Termius, CSV or ssh config, optional Telnet, serial, VNC and RDP support, and an opt-in MCP interface for AI agents with per-host permission levels.",
+  "use_cases": [
+   "manage several remote servers in one window",
+   "transfer files to and from a remote server with drag and drop",
+   "open local, remote or SOCKS tunnels to remote hosts",
+   "run the same command on a group of servers in parallel",
+   "run remote graphical apps on a Mac without installing XQuartz",
+   "import saved sessions from MobaXterm, PuTTY or Termius"
+  ],
+  "how_to_run": [
+   "Download the notarized disk image from the Releases page, open it and drag Escale to Applications (requires macOS 15 or later).",
+   "git clone the repository (URL is blank in the README), then cd escale",
+   "scripts/test.sh (core tests and a Debug build)",
+   "brew install xcodegen (build prerequisite)",
+   "xcodegen generate && open Escale.xcodeproj"
+  ],
+  "stack": [
+   "Swift 6",
+   "SwiftUI",
+   "AppKit",
+   "SwiftTerm",
+   "Sparkle",
+   "XcodeGen",
+   "OpenSSH",
+   "XQuartz 2.8.6 (embedded X11 server)"
+  ],
+  "notable": [
+   "Drives the system OpenSSH, so ~/.ssh/config, ProxyJump and agents work as they are; Escale never writes to ~/.ssh",
+   "Tunnels are probed before being shown as active, so a refused forward is not reported as open",
+   "Built-in X11 server starts on demand, listens on no network port and needs no XQuartz install",
+   "Broadcast typing and parallel multi-host command runs, with host values shell-escaped",
+   "Opt-in MCP server for AI agents, off by default, with read-only, confirm, or free per-host levels and logged calls"
+  ],
+  "caveats": [
+   "Requires macOS 15 or later; not available on the Mac App Store because the sandbox blocks system OpenSSH and ~/.ssh/config",
+   "Building from source needs Xcode with Swift 6 and downloads a roughly 120 MB XQuartz installer on first build",
+   "Signing and notarization require your own Apple Developer ID; the README notes the release doc is written in French",
+   "Debug builds are ad-hoc signed with updates disabled"
+  ],
+  "license": "GNU General Public License v3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3447,
+  "output": 1556
+ },
+ "generated": "2026-11-22"
+}

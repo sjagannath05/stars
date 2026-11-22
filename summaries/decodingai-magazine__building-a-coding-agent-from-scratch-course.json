@@ -1,0 +1,106 @@
+{
+ "id": "decodingai-magazine/building-a-coding-agent-from-scratch-course",
+ "repo": "decodingai-magazine/building-a-coding-agent-from-scratch-course",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own AI Model",
+   "entry": "Python: _Building a Coding Agent From Scratch_"
+  }
+ ],
+ "summary": {
+  "one_liner": "An open-source, self-paced course in which you build \"decode,\" a Python coding agent from scratch, with a headless harness around a Pydantic AI tool-calling loop.",
+  "category": "ai coding agent course",
+  "keywords": [
+   "coding agent",
+   "harness engineering",
+   "build claude code from scratch",
+   "claude code alternative",
+   "pydantic ai",
+   "agent loop",
+   "tool calling",
+   "python agent tutorial",
+   "terminal ui agent",
+   "tui coding assistant",
+   "sandboxed agent execution",
+   "modal sandbox",
+   "docker sandbox",
+   "sglang",
+   "open source models on modal",
+   "openrouter",
+   "gemini api agent",
+   "context compaction",
+   "agent memory",
+   "agent skills",
+   "subagents",
+   "lsp diagnostics",
+   "remote headless agents",
+   "cron agent",
+   "webhook agent",
+   "opik tracing",
+   "agent evals",
+   "regression suite for agents",
+   "kitaru replay",
+   "learn to build an ai agent",
+   "agent permission layer",
+   "build your own coding assistant"
+  ],
+  "what_it_does": "The repository is a course plus a codebase for a coding agent called decode. The core is a Pydantic AI ReAct-style loop that alternates between model requests and tool calls, with about nine tools covering file I/O, bash, web, todo, skills, LSP and asking the user. The README describes a headless core with two front ends: an interactive terminal UI built on prompt_toolkit and Rich, and remote runs on Modal serverless functions triggered by CLI, webhook, or cron. Other described layers include a permission system (allow/ask/deny), a sandbox seam (host, Docker, or Modal), context compaction around 80% of the window, memory files (AGENTS.md / MEMORY.md), an agents catalog (build, plan, code reviewer, explore), and session recording and replay through Kitaru. Evals run on Opik with a benchmark and a regression suite. The layout is organized as one Python package under src/decode with matching tests, docs/adr, and evals directories.",
+  "use_cases": [
+   "learn how coding agents work internally",
+   "build a custom agent for another domain",
+   "run open-weight models through a coding agent",
+   "sandbox agent shell commands in Docker or Modal",
+   "run agents headlessly on a schedule or via webhook",
+   "benchmark and regression-test an LLM agent",
+   "record and replay agent runs for debugging"
+  ],
+  "how_to_run": [
+   "git clone the repository and cd into building-a-coding-agent-from-scratch-course",
+   "make install",
+   "cp .env.example .env and set an LLM API key",
+   "uv run decode",
+   "Type /demo- in the TUI to pick a demo skill",
+   "Follow running_the_code/01_install_and_usage.md, then the later guides in order"
+  ],
+  "stack": [
+   "Python",
+   "Pydantic AI",
+   "prompt_toolkit",
+   "Rich",
+   "Click",
+   "Modal",
+   "SGLang",
+   "OpenRouter",
+   "Gemini",
+   "Docker",
+   "Kitaru",
+   "Opik",
+   "LSP (ty)",
+   "uv"
+  ],
+  "notable": [
+   "Teaches harness engineering: the agent loop is about 20 lines, and the surrounding harness (tools, permissions, sandbox, memory, compaction, replay, evals) is the course",
+   "One headless core exposed through an interactive TUI and through Modal serverless remote runs",
+   "Hand-rolled stdio LSP client and a permission layer, built without agent frameworks beyond Pydantic AI",
+   "Eight written lessons and six videos accompany the code, with a guide per stage under running_the_code/",
+   "Lessons cover recording runs in Kitaru and turning failed traces into a regression suite"
+  ],
+  "caveats": [
+   "Several steps depend on third-party accounts and services: Modal credits, Opik, Kitaru, and an LLM API key; the README says the default Gemini tier has limited requests",
+   "Full course takes roughly 4-8 hours, and running all code takes 6-8 hours",
+   "Remote and Modal-based features require Modal setup; the README links separate guides for each step"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 7437,
+  "output": 1483
+ },
+ "generated": "2026-11-22"
+}

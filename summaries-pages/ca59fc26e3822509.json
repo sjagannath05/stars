@@ -1,0 +1,64 @@
+{
+ "id": "ca59fc26e3822509",
+ "url": "https://machinelearningmastery.com/building-a-custom-llm-evaluation-harness-in-python-from-scratch",
+ "final_url": "https://machinelearningmastery.com/building-a-custom-llm-evaluation-harness-in-python-from-scratch/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Building a Custom LLM Evaluation Harness in Python from Scratch - MachineLearningMastery.com",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own AI Model",
+   "entry": "Python: _An LLM Evaluation Harness (test cases, runner, rule-based and LLM judges)_"
+  }
+ ],
+ "summary": {
+  "title": "Building a Custom LLM Evaluation Harness in Python from Scratch",
+  "one_liner": "You learn how to build a minimal Python LLM evaluation harness with a golden dataset, an async LiteLLM inference runner, deterministic and LLM-as-a-judge scoring, and crash-safe JSONL logging.",
+  "category": "llm evaluation",
+  "keywords": [
+   "llm evaluation harness",
+   "custom llm eval python",
+   "golden dataset",
+   "test cases for llm",
+   "llm-as-a-judge",
+   "deterministic judge",
+   "rule-based scoring",
+   "async inference runner",
+   "litellm",
+   "pydantic structured output",
+   "jsonl logging",
+   "crash-safe logs",
+   "rescore outputs without rerunning inference",
+   "regression testing for llm",
+   "model evaluation pipeline",
+   "asyncio gather concurrency",
+   "rate limit semaphore",
+   "mmlu gsm8k alternative",
+   "llm pass rate tracking",
+   "evaluate customer support agent"
+  ],
+  "takeaways": [
+   "Build a golden dataset of 20-50 test cases drawn from real user inputs and known failure modes, each with an id, input, and expected_concept.",
+   "Run inference concurrently with an async LiteLLM runner that returns raw outputs only, keeping scoring separate.",
+   "Use a deterministic substring judge for exact checks and an LLM judge with a Pydantic schema for semantic checks.",
+   "Log raw outputs and scores to an append-only .jsonl file so you can re-score without repeating paid API calls."
+  ],
+  "summary": "The article walks through building a custom LLM evaluation harness in Python from scratch, organized into four modules: a golden dataset, an inference runner, a judge layer, and a logger. It uses LiteLLM for a unified model interface and Pydantic to force structured judge output, with asyncio for concurrent calls. Code samples cover each component, plus a summary function that computes pass rates from the log file. The guide ends with troubleshooting tips for score variance, rate limits, and judge cost, and suggestions for extending the harness.",
+  "format": "tutorial",
+  "level": "intermediate",
+  "technologies": [
+   "Python",
+   "LiteLLM",
+   "Pydantic",
+   "asyncio",
+   "JSON Lines"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 4490,
+  "output": 881
+ },
+ "generated": "2026-11-22"
+}

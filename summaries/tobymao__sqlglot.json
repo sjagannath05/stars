@@ -1,0 +1,93 @@
+{
+ "id": "tobymao/sqlglot",
+ "repo": "tobymao/sqlglot",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "vinta/awesome-python",
+   "section": "Text Processing",
+   "entry": "sqlglot - A no-dependency SQL parser, transpiler, optimizer, and engine."
+  }
+ ],
+ "summary": {
+  "one_liner": "SQLGlot is a no-dependency Python SQL parser, transpiler, optimizer, and engine that translates queries between over 30 SQL dialects.",
+  "category": "sql parsing transpilation",
+  "keywords": [
+   "sql parser",
+   "sql transpiler",
+   "sql translation",
+   "dialect conversion",
+   "sql optimizer",
+   "query optimizer",
+   "sqlglot",
+   "python sql library",
+   "sql formatter",
+   "sql pretty print",
+   "abstract syntax tree",
+   "ast",
+   "expression tree",
+   "sqlparse alternative",
+   "sqlfluff alternative",
+   "sqloxide alternative",
+   "translate spark to duckdb",
+   "convert presto to hive",
+   "migrate sql between databases",
+   "snowflake to bigquery",
+   "parse sql in python",
+   "sql query rewriting",
+   "sql semantic diff",
+   "in-memory sql execution",
+   "run sql on python dicts",
+   "syntax error detection",
+   "custom sql dialect",
+   "mypyc compiled sql",
+   "sql metadata extraction",
+   "find tables and columns in query"
+  ],
+  "what_it_does": "SQLGlot parses SQL into an expression tree and generates SQL back out for a target dialect, covering over 30 dialects such as DuckDB, Presto/Trino, Spark/Databricks, Snowflake, and BigQuery. It can format SQL, translate identifiers, data types, functions, and time formats between dialects, and preserve comments on a best-effort basis. It can detect syntax errors such as unbalanced parentheses and report dialect incompatibilities as warnings or errors depending on configuration. The optimizer rewrites queries into a canonical form, using schema information where provided. Other capabilities include programmatic SQL building, tree transformation, AST diffing, metadata lookup such as finding columns and tables, and a small Python engine that executes SQL over dictionaries.",
+  "use_cases": [
+   "translate queries between SQL dialects",
+   "format and pretty-print SQL",
+   "migrate Snowflake or Spark SQL to another warehouse",
+   "find tables and columns referenced in a query",
+   "validate SQL syntax in a pipeline",
+   "build SQL programmatically in Python",
+   "run SQL against Python objects for unit tests"
+  ],
+  "how_to_run": [
+   "pip3 install sqlglot",
+   "pip3 install \"sqlglot[c]\"  # optional mypyc-compiled version, Python 3.10+",
+   "import sqlglot; sqlglot.transpile(sql, read=\"duckdb\", write=\"hive\")"
+  ],
+  "stack": [
+   "Python",
+   "mypyc (optional compiled build)",
+   "dateutil (optional, for date arithmetic simplification)"
+  ],
+  "notable": [
+   "Pure Python with no required dependencies",
+   "Transpiles between more than 30 SQL dialects, with support levels marked Official, Community, or Plugin",
+   "Optional mypyc-compiled build that the README says is roughly 3-5x faster",
+   "Plugin system that lets third-party packages register new dialects through entry points",
+   "Can execute SQL over in-memory Python dictionaries"
+  ],
+  "caveats": [
+   "The parser is intentionally lenient and may accept SQL that a real engine rejects; it is not a validator",
+   "Subclassing dialects may not work with the sqlglot[c] compiled install, so custom dialects may need the pure Python version",
+   "Some translations are best-effort and may emit warnings or be incomplete; the README says coverage improves over time",
+   "The project accepts pull requests only from maintainers; outside contributions are limited to issues",
+   "Plugin dialects are not maintained by the core team"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 10714,
+  "output": 1337
+ },
+ "generated": "2026-11-22",
+ "license_source": "LICENSE"
+}

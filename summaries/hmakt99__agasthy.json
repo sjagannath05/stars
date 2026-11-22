@@ -1,0 +1,103 @@
+{
+ "id": "hmakt99/agasthy",
+ "repo": "HMAKT99/Agasthy",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "AGASTHY - Open-source app that maps your repos, runtimes, packages and AI coding agents into one knowledge graph, with token usage, impact analysis and safe disk cleanup. [![Open-Source Software][OSS Icon]](https://github.com/HMAKT99/Agasthy) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "AGASTHY is a free, open-source, local-first app that maps your repositories, runtimes, packages, applications and AI coding agents into one knowledge graph, with token-usage tracking, impact analysis and guarded disk cleanup.",
+  "category": "developer machine management",
+  "keywords": [
+   "developer machine inventory",
+   "knowledge graph",
+   "coding agent monitor",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "aider",
+   "cursor agent",
+   "mcp server",
+   "token usage tracker",
+   "llm cost tracking",
+   "impact analysis",
+   "dependency impact",
+   "disk cleanup",
+   "node_modules cleanup",
+   "rebuildable cache cleanup",
+   "quarantine restore",
+   "git repository scanner",
+   "duplicate clones",
+   "homebrew packages",
+   "npm pnpm cargo uv pip inventory",
+   "environment snapshot",
+   "menu bar app",
+   "tauri",
+   "rust",
+   "sqlite",
+   "find what uses my ram",
+   "free up disk space safely",
+   "stale repositories",
+   "ollama local model",
+   "macos developer tools",
+   "alternative to ncdu",
+   "alternative to daisydisk"
+  ],
+  "what_it_does": "AGASTHY scans folders you choose to find Git working trees and reports branch, uncommitted changes, remotes and duplicate clones. It inventories applications, about 75 curated CLI tools and runtimes (which copy is active on PATH), and read-only package lists from Homebrew, npm, pnpm, uv, pip and cargo. It builds a graph linking projects, dependencies, packages and AI configuration, and runs impact analysis to simulate what breaks if an item is removed. It tracks coding-agent sessions and processes with ports, and reads token counts and estimated cost from local agent logs without storing prompt text. Cleanup targets only Git-ignored rebuildable folders and developer caches, moving them to a restorable quarantine after a dry run and confirmation. An AI Operator answers plain-language questions, with a built-in mode that needs no AI model and optional local or cloud model connections.",
+  "use_cases": [
+   "see what my coding agents are running and what they cost",
+   "find out what breaks before removing a package or runtime",
+   "free disk space safely from node_modules and build folders",
+   "find repositories with uncommitted work or duplicate clones",
+   "track token usage and spend across AI coding tools",
+   "give Claude Code or other agents read-only access to machine state",
+   "snapshot a dev setup to rebuild on a new machine"
+  ],
+  "how_to_run": [
+   "curl -fsSL | sh -s -- --cli-only",
+   "brew trust hmakt99/tap && brew install hmakt99/tap/agasthy-cli",
+   "agasthy agents",
+   "agasthy usage",
+   "claude mcp add agasthy -- agasthy mcp",
+   "pnpm install && pnpm dev"
+  ],
+  "stack": [
+   "Rust workspace",
+   "Tauri 2",
+   "React",
+   "TypeScript",
+   "SQLite (FTS5)",
+   "Playwright",
+   "Homebrew",
+   "OSV.dev (opt-in advisories)",
+   "MCP server"
+  ],
+  "notable": [
+   "Read-only MCP server (nine tools) and agent skill so Claude Code, Codex, Cursor and others can query the machine",
+   "Every action is a dry run, requires confirmation, is verified and written to an audit log; never sudo and never deletes Git repos or tracked files",
+   "Facts carry evidence and confidence levels; unmeasurable values show as unavailable rather than 0",
+   "Finds agent-started servers left running after an agent exits and stops them in one reviewed step",
+   "Local-first: single SQLite file, no account, no telemetry"
+  ],
+  "caveats": [
+   "macOS, Windows and Linux builds are not notarized or code-signed, so the first launch shows a security prompt",
+   "Windows and Linux (including ARM64) are marked preview; Intel Mac is not yet tested on hardware",
+   "Windows lacks graceful Stop and WinGet support; Linux lacks GPU details",
+   "Development requires Rust 1.90+, Node.js 20+ and pnpm 10"
+  ],
+  "license": "Apache License 2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9709,
+  "output": 1505
+ },
+ "generated": "2026-11-22"
+}

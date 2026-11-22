@@ -1,0 +1,62 @@
+{
+ "id": "98be42e30dd35e33",
+ "url": "https://blog.jle.im/entry/practical-dependent-types-in-haskell-1.html",
+ "final_url": "https://blog.jle.im/entry/practical-dependent-types-in-haskell-1.html",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Practical Dependent Types in Haskell: Type-Safe Neural Networks (Part 1)",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Neural Network",
+   "entry": "Haskell: _Practical Dependent Types in Haskell: Type-Safe Neural Networks (Part 1)_"
+  }
+ ],
+ "summary": {
+  "title": "Practical Dependent Types in Haskell: Type-Safe Neural Networks (Part 1)",
+  "one_liner": "You learn how to move a feed-forward neural network with back-propagation from runtime-checked matrices to size-indexed types in Haskell, so the compiler catches dimension mismatches.",
+  "category": "dependent types haskell",
+  "keywords": [
+   "haskell dependent types",
+   "type-safe neural network",
+   "size-indexed types haskell",
+   "dependent types tutorial",
+   "haskell neural network from scratch",
+   "back-propagation haskell",
+   "backpropagation implementation haskell",
+   "hmatrix static",
+   "singletons haskell",
+   "datakinds type-level nats",
+   "knownnat constraint",
+   "type-driven development",
+   "phantom types matrix dimensions",
+   "feed-forward network haskell",
+   "type-level list network shape",
+   "gadt network haskell",
+   "partial functions haskell types",
+   "dependent pattern matching"
+  ],
+  "takeaways": [
+   "Start with simple types, find partial functions and bugs, then refine types to make the compiler enforce matrix dimensions.",
+   "Encode weight matrix sizes in types (Weights i o, R n, L m n) so incompatible layers fail to compile.",
+   "Use GADTs and type-level lists of Nats to describe a whole network's input, hidden, and output shapes.",
+   "Singletons and induction are needed to build networks from type-level information at runtime, since types are erased in Haskell."
+  ],
+  "summary": "The post is part 1 of a series on practical dependent types in Haskell, aimed at intermediate programmers. It starts with an untyped feed-forward neural network using hmatrix and walks through its back-propagation training, then examines where partial functions and unchecked dimensions cause bugs. It then reworks the design with size-indexed types (Weights i o, Network i hs o, KnownNat constraints) using hmatrix's Static module, showing how type inference generates correctly sized weights. The post ends by introducing singletons and induction to construct networks from type-level lists.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Haskell",
+   "hmatrix",
+   "singletons",
+   "GHC type-level programming",
+   "MonadRandom"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 9999,
+  "output": 866
+ },
+ "generated": "2026-11-22"
+}

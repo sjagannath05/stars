@@ -1,0 +1,95 @@
+{
+ "id": "mcgeezy/relaytv-android",
+ "repo": "mcgeezy/relaytv-android",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Media Streaming - Multimedia Streaming",
+   "entry": "RelayTV - Turns a Linux box connected to a television into a local playback endpoint. Send links from a phone, browse Jellyfin or Emby libraries, play IPTV channels, and drive playback from Home Assistant or HTTP (alternative to Chromecast). (Source Code, Clients) GPL-3.0 Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "RelayTV Android is an Android companion app that sends links and local media to a RelayTV server on a TV, and provides a remote control for its playback.",
+  "category": "android media remote",
+  "keywords": [
+   "android app",
+   "relaytv",
+   "media remote",
+   "send links to tv",
+   "share to tv",
+   "android share sheet",
+   "playback queue",
+   "mdns discovery",
+   "_relaytv._tcp",
+   "lan scan",
+   "jellyfin client",
+   "emby client",
+   "iptv",
+   "home assistant",
+   "chromecast alternative",
+   "self-hosted media",
+   "bearer token",
+   "websocket",
+   "server-sent events",
+   "media session",
+   "lock screen controls",
+   "kotlin",
+   "gradle",
+   "apk",
+   "tv playback",
+   "linux tv box",
+   "remote control app",
+   "watch later queue",
+   "gpl-3.0"
+  ],
+  "what_it_does": "The app lets an Android phone share links, video, or audio files to a RelayTV server, either to play immediately or add to the queue. It embeds the RelayTV web remote, offering play, pause, seek, skip, volume, queue management, and browsing of Jellyfin, Emby, or IPTV content. It discovers RelayTV servers on the local network via mDNS, checks server health, and stores multiple server profiles with optional API tokens. It publishes the active server as an Android media session with lock-screen and notification controls. Playback itself runs on the RelayTV box connected to the television, not on the phone.",
+  "use_cases": [
+   "send a video link from my phone to the TV",
+   "queue media to watch later on the television",
+   "control TV playback from an Android phone",
+   "discover RelayTV servers on my home network",
+   "browse Jellyfin or Emby libraries from a phone",
+   "remote control for a self-hosted TV player"
+  ],
+  "how_to_run": [
+   "Install and configure a RelayTV server.",
+   "Download the latest APK from GitHub Releases.",
+   "Allow installation from the browser or file manager used to download it.",
+   "Open RelayTV and select Scan LAN, or add the server URL manually.",
+   "Enter the server API token only when RELAYTV_API_TOKEN is enabled."
+  ],
+  "stack": [
+   "Android (minSdk 26, targetSdk 35)",
+   "Java 17",
+   "Gradle",
+   "Android SDK",
+   "WebView",
+   "Playwright (for README screenshot generation)",
+   "Node.js/npm"
+  ],
+  "notable": [
+   "Share sheet targets: Play starts media immediately, Queue adds it next",
+   "Discovers RelayTV servers automatically over _relaytv._tcp mDNS",
+   "Native media controls choose WebSocket, then SSE, then adaptive /status polling",
+   "Works with older RelayTV servers that lack the WebSocket capabilities endpoint",
+   "Server profiles and tokens kept in app-private storage, excluded from Android backup"
+  ],
+  "caveats": [
+   "Requires a separate RelayTV server running on a box connected to the TV; the app alone does not play media",
+   "HTTP is allowed for trusted LAN use; HTTPS or a VPN is advised across untrusted networks",
+   "Local sharing only accepts content Android exposes as video/* or audio/*",
+   "Upgrading from v1.3.1 or earlier requires uninstalling the debug-signed APK first"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4404,
+  "output": 1218
+ },
+ "generated": "2026-11-22"
+}

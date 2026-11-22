@@ -1,0 +1,95 @@
+{
+ "id": "michalstrnadel/agentbar",
+ "repo": "michalstrnadel/AgentBar",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "AgentBar - Menu bar and notch status for AI coding agents (Claude Code, Codex, Cursor, Gemini CLI, Copilot CLI), with one-click Allow or Deny for Claude Code, Codex and Copilot permission requests. [![Open-Source Software][OSS Icon]](https://github.com/michalstrnadel/AgentBar) ![Freeware][Freeware Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar and notch (Dynamic Island) app that shows the status of AI coding agents such as Claude Code, Codex and Copilot CLI and lets you allow or deny their permission requests in one click.",
+  "category": "ai agent monitoring",
+  "keywords": [
+   "ai coding agents",
+   "claude code",
+   "codex",
+   "gemini cli",
+   "copilot cli",
+   "cursor cli",
+   "menu bar app",
+   "macos menu bar",
+   "dynamic island",
+   "notch",
+   "permission requests",
+   "approve agent commands",
+   "allow or deny",
+   "approval queue",
+   "agent status monitor",
+   "session monitor",
+   "terminal tabs",
+   "iterm2",
+   "tmux",
+   "rules engine",
+   "usage quota meter",
+   "keep mac awake",
+   "agentbar cli",
+   "linux cli",
+   "hooks installer",
+   "approve commands from menu bar",
+   "see what my agents are doing",
+   "awesome-mac tool"
+  ],
+  "what_it_does": "AgentBar collects status from AI coding agents (Claude Code, Claude Cowork, Codex, Cursor CLI, Gemini CLI, GitHub Copilot, Google Antigravity, Qwen Code, OpenCode) and shows every session in the macOS menu bar, under the notch, or both. When an agent asks for permission, a card shows the command or a mini-diff with Allow or Deny buttons, and the session can be answered without switching windows. It also records approval history per repo and lets you write rules; new rules start in a watching mode and answer nothing until enabled. Clicking a session row jumps to its terminal tab or app, and the app includes a per-provider quota meter, a daily summary of agent time and cost, and a Keep Mac Awake option tied to agent activity. A Linux `agentbar` CLI provides a similar terminal-based view.",
+  "use_cases": [
+   "approve or deny AI agent commands without switching terminals",
+   "monitor multiple coding agent sessions at once",
+   "see which agent is waiting for input",
+   "track agent token usage and quota left",
+   "jump to the terminal tab running an agent",
+   "keep a Mac awake while agents work",
+   "review a daily summary of agent work"
+  ],
+  "how_to_run": [
+   "brew install --cask michalstrnadel/tap/agentbar",
+   "curl -fsSL <installer URL from README> | bash",
+   "git clone <repo> && cd AgentBar",
+   "./Scripts/build.sh  # add --native if the x86_64 half fails to link",
+   "open \"build/AgentBar.app\"",
+   "./Scripts/cli/agentbar install-hooks  # Linux CLI"
+  ],
+  "stack": [
+   "Swift",
+   "Node.js (hook scripts)",
+   "macOS AppKit/Dynamic Island UI",
+   "Xcode Command Line Tools (build)",
+   "Bash installer"
+  ],
+  "notable": [
+   "One approval queue across agents, with Allow, Deny and Deny-with-note from the menu bar or notch",
+   "Rules you write yourself, starting in a watching mode that logs what it would have answered before it is allowed to act",
+   "Precise jump-back to iTerm2, Terminal, WezTerm and tmux tabs or panes",
+   "Installer snapshots every settings file it changes and offers a diff and undo",
+   "Linux `agentbar` CLI shares the same ~/.agentbar protocol"
+  ],
+  "caveats": [
+   "Requires macOS 12+ for the menu bar app; Linux is CLI only, and Windows is a separate project mentioned in the README",
+   "Needs Node.js for hook scripts and Xcode Command Line Tools to build from source; universal builds need full Xcode",
+   "Some features need macOS permissions (Automation, Accessibility) and exact-tab jump-back is limited to specific terminals; others fall back to bringing the app forward",
+   "Claude quota reporting is off by default and requires signing in or a token; the README describes Keep Mac Awake and lid-closed behaviour that may need a password each time"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 16024,
+  "output": 1450
+ },
+ "generated": "2026-11-22",
+ "license_source": "LICENSE"
+}

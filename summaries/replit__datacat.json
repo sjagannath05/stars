@@ -1,0 +1,117 @@
+{
+ "id": "replit/datacat",
+ "repo": "replit/datacat",
+ "kind": "star",
+ "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+ "topics": [
+  "alerting",
+  "apm",
+  "clickhouse",
+  "dashboards",
+  "logging",
+  "metrics",
+  "monitoring",
+  "observability",
+  "opentelemetry",
+  "postgresql",
+  "self-hosted",
+  "tracing"
+ ],
+ "language": "TypeScript",
+ "stars": 494,
+ "license": "Apache-2.0",
+ "homepage": "",
+ "pushed_at": "2026-11-20",
+ "archived": false,
+ "accounts": [
+  "sjagannath05"
+ ],
+ "lists": [
+  "dckr k8s",
+  "to try",
+  "tools"
+ ],
+ "sources": [],
+ "summary": {
+  "one_liner": "DataCat is a self-hosted observability platform that stores metrics, logs, and distributed traces in PostgreSQL or ClickHouse and accepts OpenTelemetry and Datadog-compatible agent traffic.",
+  "category": "self-hosted observability",
+  "keywords": [
+   "observability",
+   "self-hosted monitoring",
+   "metrics",
+   "logs",
+   "distributed tracing",
+   "tracing",
+   "apm",
+   "dashboards",
+   "alerting",
+   "alerts",
+   "opentelemetry",
+   "otlp",
+   "datadog agent",
+   "datadog-compatible",
+   "postgresql",
+   "clickhouse",
+   "log search",
+   "live tail",
+   "trace waterfall",
+   "service catalog",
+   "host maps",
+   "webhook alerts",
+   "slack notifications",
+   "monitoring stack",
+   "replace datadog",
+   "run my own monitoring",
+   "send traces from my app",
+   "docker compose monitoring"
+  ],
+  "what_it_does": "DataCat provides metrics exploration with formulas, dashboards and host maps, plus searchable logs with facets, live tail and trace correlation. It includes an APM service catalog, a trace explorer and waterfall view. Metric, log and trace monitors can send webhook or Slack notifications. Data intake accepts the Datadog public intake API and OTLP/HTTP (/v1/traces, /v1/metrics, /v1/logs), and the README says a Datadog Agent 7.85.4 and 7.56.2 were tested. Accounts are local email/password with single-use invites and API/application keys. A single production process serves the API, web UI, installer and downloads.",
+  "use_cases": [
+   "monitor application metrics and dashboards on my own servers",
+   "search and tail application logs",
+   "trace requests across services",
+   "send OpenTelemetry data to a self-hosted backend",
+   "receive Datadog Agent data without a hosted account",
+   "set up alerts with Slack or webhook notifications"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> && cd datacat",
+   "cp .env.example .env",
+   "Set POSTGRES_PASSWORD and SESSION_SECRET in .env (e.g. with openssl rand), chmod 600 .env, and mkdir -p downloads",
+   "docker compose up -d --build",
+   "From source: corepack enable && corepack prepare pnpm@10.11.0 --activate && pnpm install --frozen-lockfile && BASE_PATH=/ pnpm run build:selfhost",
+   "From source: set DATABASE_URL, SESSION_SECRET and PUBLIC_URL, then NODE_ENV=production PORT=3000 pnpm start"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 22.15+",
+   "pnpm 10.11.0",
+   "PostgreSQL 14+",
+   "ClickHouse (optional storage)",
+   "Docker Compose",
+   "Go 1.26.11+ (agent)",
+   "OpenTelemetry Collector (host agent)"
+  ],
+  "notable": [
+   "Choice of PostgreSQL or ClickHouse for telemetry storage",
+   "Accepts Datadog Agent traffic and OTLP/HTTP without a hosted service",
+   "Built-in intake stats endpoint showing stored vs dropped items per intake path",
+   "Includes a benchmark kit that checks answers against known values",
+   "Schema migrates automatically on server start"
+  ],
+  "caveats": [
+   "Agent versions 7.57 to 7.84 are untested; agents sending unreadable trace formats receive a 422",
+   "Building from source requires Node 22.15+, pnpm 10.11.0 and PostgreSQL 14+; the agent requires Go 1.26.11+",
+   "Agent binaries and SDK packages are separate release assets that must be placed in downloads/ manually",
+   "Remote agent installs require setting PUBLIC_URL to an externally reachable HTTPS origin"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3473,
+  "output": 1424
+ },
+ "generated": "2026-11-22"
+}

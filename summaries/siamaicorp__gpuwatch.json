@@ -1,0 +1,92 @@
+{
+ "id": "siamaicorp/gpuwatch",
+ "repo": "siamaicorp/GPUWatch",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Menu Bar Tools",
+   "entry": "SIAM.AI GPU Watch - Menu bar app for monitoring NVIDIA GPUs across remote servers over SSH. [![Open-Source Software][OSS Icon]](https://github.com/siamaicorp/GPUWatch) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A macOS menu bar app that monitors NVIDIA and AMD GPUs across remote servers over SSH, showing counts, temperature, utilisation and VRAM for multiple hosts in one panel.",
+  "category": "gpu monitoring tool",
+  "keywords": [
+   "gpu monitoring",
+   "nvidia-smi",
+   "rocm-smi",
+   "amd gpu",
+   "menu bar app",
+   "macos menu bar",
+   "ssh monitoring",
+   "remote gpu status",
+   "gpu temperature",
+   "vram usage",
+   "gpu utilisation",
+   "multi-host dashboard",
+   "gpu baseline",
+   "uuid tracking",
+   "missing gpu detection",
+   "swift",
+   "swiftui",
+   "appkit",
+   "gpu server health",
+   "check gpus over ssh",
+   "monitor gpu servers from mac",
+   "see gpu temps on remote machines",
+   "gpu fleet overview",
+   "ssh agentless monitoring",
+   "gpu notifications",
+   "instinct mi300x",
+   "homelab gpu monitor",
+   "gpu power draw"
+  ],
+  "what_it_does": "The app runs as a menu bar item on macOS 14 or later and polls configured hosts over the system's /usr/bin/ssh, using the user's existing ~/.ssh/config and keys. On each host it runs a fixed nvidia-smi query, or a rocm-smi query for AMD, and parses the result. It shows per-GPU status, temperature, utilisation, memory usage, and power where the driver reports it. Users can save GPU UUIDs as a baseline to flag missing or replacement cards, set optional per-host thresholds for temperature, VRAM and power, and enable notifications. A demo mode with simulated data is included, and the app stores its configuration and last-known readings locally.",
+  "use_cases": [
+   "monitor GPU temperature and usage on several remote servers from a Mac menu bar",
+   "check whether a GPU server lost or swapped a card",
+   "watch AMD Instinct or ROCm hosts alongside NVIDIA machines",
+   "get alerts when a remote GPU overheats or its VRAM fills up",
+   "quick status glance at a lab or homelab GPU fleet"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "cd GPUWatch",
+   "./Scripts/build-app.sh",
+   "open dist/GPUWatch.app",
+   "UNIVERSAL=1 ./Scripts/build-app.sh  (optional: universal Apple Silicon and Intel build)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "AppKit",
+   "Swift Package Manager",
+   "/usr/bin/ssh",
+   "nvidia-smi",
+   "rocm-smi"
+  ],
+  "notable": [
+   "Agentless: uses the server's existing SSH service, with no monitoring agent to install on remote hosts",
+   "Handles both NVIDIA and AMD hosts, detecting the vendor automatically and reporting both on the same panel",
+   "Baseline tracking by GPU UUID, so a card replacement or index change after reboot can be identified",
+   "Separates SSH connectivity, GPU query results and data freshness, so an unreachable host is not reported as a missing GPU",
+   "Has no third-party dependencies and can be built from source with a single script"
+  ],
+  "caveats": [
+   "The downloadable build is ad-hoc signed and not notarised, so macOS Gatekeeper needs a quarantine flag cleared before it will open",
+   "Verified only on macOS 27.2.1 with Apple Silicon per the README; macOS 14-26 and Intel are stated as not verified, and csh/tcsh remote shells are not supported",
+   "AMD support covers rocm-smi only; ROCm 7's amd-smi is not supported, and some consumer AMD cards report a zero GUID so they cannot be tracked across reboots"
+  ],
+  "license": "GPL-3.0-or-later"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 6591,
+  "output": 1417
+ },
+ "generated": "2026-11-22"
+}

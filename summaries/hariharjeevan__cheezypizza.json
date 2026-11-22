@@ -1,0 +1,101 @@
+{
+ "id": "hariharjeevan/cheezypizza",
+ "repo": "hariharjeevan/cheezypizza",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "File Transfer - Peer-to-peer Filesharing",
+   "entry": "CheezyPizza - Send files directly between browsers using WebRTC. No uploads, no cloud storage, and no middleman. Fast, secure, peer-to-peer file sharing. Forked from file.pizza. (Demo, Source Code) BSD-3-Clause Docker"
+  }
+ ],
+ "summary": {
+  "one_liner": "CheezyPizza is a browser-based tool that sends files directly between two browsers over WebRTC, with no upload to a server, forked from FilePizza.",
+  "category": "peer-to-peer file sharing",
+  "keywords": [
+   "webrtc",
+   "peer-to-peer",
+   "p2p file transfer",
+   "browser file sharing",
+   "filepizza",
+   "fork",
+   "send files directly",
+   "no upload",
+   "no cloud storage",
+   "share files with my team",
+   "transfer large files browser",
+   "opfs",
+   "indexeddb",
+   "resumable downloads",
+   "sha-256 verification",
+   "file integrity check",
+   "password protected transfer",
+   "local network share",
+   "zip multiple files",
+   "peerjs",
+   "next.js",
+   "self-hosted file sharing",
+   "docker",
+   "coturn turn server",
+   "stun server",
+   "send file to another computer",
+   "private file transfer",
+   "bsd-3-clause"
+  ],
+  "what_it_does": "CheezyPizza lets a user send files from their browser straight to another person's browser using WebRTC, so the files never pass through a storage server. The uploader keeps the page open and shares a link; downloaders receive the data peer to peer. Each file is hashed with SHA-256 after transfer and verified before it is saved. Files are written incrementally to OPFS or IndexedDB so large transfers do not need to fit in memory, and interrupted downloads can resume from the last saved offset. Multi-file transfers are delivered to the downloader as a zip archive, and transfers can be protected with a password. A Local Share feature uses a websocket server to find and send files to devices on the same network. The README also describes optional Redis for channel metadata and optional TURN/STUN configuration for peers behind NAT.",
+  "use_cases": [
+   "send large files to someone without uploading them to a cloud service",
+   "share a file with a colleague via a browser link",
+   "transfer files between two devices on the same network",
+   "send password-protected files peer to peer",
+   "resume an interrupted large file download",
+   "self-host a private WebRTC file transfer website"
+  ],
+  "how_to_run": [
+   "git clone <repository URL>",
+   "pnpm install",
+   "pnpm dev",
+   "pnpm build",
+   "pnpm start",
+   "pnpm docker:build && pnpm docker:up (frontend, Docker)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Next.js",
+   "React",
+   "Tailwind CSS",
+   "PeerJS (WebRTC)",
+   "Zod",
+   "hash-wasm",
+   "fflate",
+   "Vitest",
+   "Playwright",
+   "Redis (optional)",
+   "coturn (optional TURN)",
+   "Docker"
+  ],
+  "notable": [
+   "Direct browser-to-browser transfer with no intermediary storage; DTLS-encrypted WebRTC channels",
+   "Resumable downloads persisted to OPFS or IndexedDB with automatic reconnect on network change",
+   "SHA-256 integrity check before a file is saved, with per-file error isolation in multi-file transfers",
+   "Local Share mode for discovering and sending files to devices on the same network",
+   "Forked from FilePizza, with the original authors credited"
+  ],
+  "caveats": [
+   "The uploader's browser window must stay open until the transfer completes",
+   "Browser support varies: Safari is marked 'not yet tested', and Brave has limited OPFS and resume support",
+   "The README notes TURN support may have limitations due to the maintainer's resources",
+   "Default PeerJS and STUN servers are third-party hosts unless self-hosted settings are changed"
+  ],
+  "license": "BSD-3-Clause"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4251,
+  "output": 1285
+ },
+ "generated": "2026-11-22"
+}

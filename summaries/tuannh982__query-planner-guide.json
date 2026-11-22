@@ -1,0 +1,79 @@
+{
+ "id": "tuannh982/query-planner-guide",
+ "repo": "tuannh982/query-planner-guide",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Database",
+   "entry": "Scala: _A Practical Guide to Building a Cost-Based Query Planner_"
+  }
+ ],
+ "summary": {
+  "one_liner": "A written guide, with Scala code, to building a small cost-based (Volcano-style) query planner for a tiny SQL-like SELECT/JOIN language.",
+  "category": "database query planner guide",
+  "keywords": [
+   "query planner",
+   "cost-based optimizer",
+   "volcano optimizer",
+   "query optimization",
+   "database internals",
+   "memo",
+   "equivalent groups",
+   "logical plan",
+   "physical plan",
+   "transformation rules",
+   "implementation rules",
+   "projection pushdown",
+   "join reorder",
+   "sql parser",
+   "scala-parser-combinators",
+   "build your own database",
+   "heuristic planner",
+   "plan enumeration",
+   "tree search",
+   "dynamic programming",
+   "relational algebra",
+   "query engine tutorial",
+   "learn how databases pick join order",
+   "write my own sql query optimizer",
+   "dbms tutorial scala"
+  ],
+  "what_it_does": "Explains the design of a cost-based query planner, contrasting heuristic and cost-based approaches and describing the two-phase (exploration and optimization) Volcano-style lifecycle. It defines key terms such as logical and physical plans, equivalent groups, transformation and implementation rules, and the memo. The guide then builds the pieces in Scala: an AST and parser for a tiny SELECT/JOIN dialect, a logical plan with a conversion from the AST, the group/memo data structures, and initialization. It also walks through the exploration loop and two transformation rules, projection pushdown and a narrow three-table join reorder. The text is a guide with code excerpts; the full source files are referenced, not reproduced in the README.",
+  "use_cases": [
+   "learn how a database query planner chooses join order",
+   "build a toy SQL parser and planner in Scala",
+   "understand the Volcano optimizer design",
+   "study memo and equivalent-group data structures",
+   "implement projection pushdown as a transformation rule"
+  ],
+  "how_to_run": [],
+  "stack": [
+   "Scala",
+   "scala-parser-combinators"
+  ],
+  "notable": [
+   "Walks through Volcano-style exploration and optimization with an explicit memo of equivalent groups",
+   "Includes worked Mermaid diagrams showing how the memo grows after each rule fires",
+   "Implements projection pushdown and a narrow three-table join reorder rule",
+   "Dialect is deliberately tiny: only SELECT and JOIN, with fully qualified fields"
+  ],
+  "caveats": [
+   "Supports only SELECT and JOIN; no filters, aggregates, or subqueries except as join sources",
+   "Join reorder is deliberately stripped down and only handles three-table joins",
+   "Exhaustive search is used for simplicity; the guide notes this is impractical in production",
+   "README is truncated; the full Scala code is in linked files not shown here"
+  ],
+  "license": "unknown"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": true,
+ "usage": {
+  "input": 19352,
+  "output": 1054
+ },
+ "generated": "2026-11-22",
+ "license_checked": "2026-11-22"
+}

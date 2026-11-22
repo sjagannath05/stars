@@ -1,0 +1,57 @@
+{
+ "id": "015573f3073074a6",
+ "url": "https://ai.palashkantikundu.in",
+ "final_url": "https://ai.palashkantikundu.in",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Deep Learning from First Principles",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Neural Network",
+   "entry": "Rust: _Deep Learning from First Principles_"
+  }
+ ],
+ "summary": {
+  "title": "Deep Learning from First Principles",
+  "one_liner": "You learn how to build a minimal deep learning engine in Rust using only the standard library, starting with a flat-buffer tensor type, Display formatting, and element-wise arithmetic.",
+  "category": "deep learning from scratch",
+  "keywords": [
+   "deep learning from scratch",
+   "build neural network in rust",
+   "rust tensor implementation",
+   "flat buffer tensor",
+   "row-major indexing",
+   "vec of vec performance",
+   "tensor struct rust",
+   "element-wise matrix operations",
+   "hadamard product",
+   "backpropagation from scratch",
+   "gradient flow explained",
+   "rust standard library only",
+   "tensor display formatting",
+   "test driven development rust",
+   "how pytorch works under the hood",
+   "matrix in memory layout"
+  ],
+  "takeaways": [
+   "Store tensors as a flat Vec<f32> plus a shape vector instead of Vec<Vec<f32>> to avoid pointer chasing and gain cache locality.",
+   "Map 2D indices to flat memory with row-major indexing: index = row * cols + col.",
+   "Validate tensor invariants (rank limited to 1D/2D, data length equals product of shape) with a custom error enum.",
+   "Implement element-wise add, sub, mul and div by sharing one helper that takes a closure, requiring identical shapes."
+  ],
+  "summary": "The guide walks through building a tensor library and neural network engine in Rust with no external crates. It explains tensor ranks, the mathematical notation for matrix elements, and why a flat Vec with a separate shape vector beats nested vectors. Each chapter follows a test-driven approach: write tests in a tests/ directory, implement the struct and methods, then verify with a small main program. The page covers Display formatting for matrices and element-wise operations so far, and says later chapters move on to linear regression and backpropagation.",
+  "format": "tutorial",
+  "level": "advanced",
+  "technologies": [
+   "Rust",
+   "Cargo"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 11460,
+  "output": 785
+ },
+ "generated": "2026-11-22"
+}

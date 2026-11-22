@@ -1,0 +1,92 @@
+{
+ "id": "homer-dashboard/homer",
+ "repo": "homer-dashboard/homer",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "awesome-selfhosted/awesome-selfhosted",
+   "section": "Personal Dashboards",
+   "entry": "Homer - Dead simple static homepage to expose your server services, with an easy yaml configuration and connectivity check. (Demo) Apache-2.0 Docker/K8S/Nodejs"
+  }
+ ],
+ "summary": {
+  "one_liner": "Homer is a static, YAML-configured homepage that gives you a single dashboard of links to the services running on your server.",
+  "category": "self-hosted dashboard",
+  "keywords": [
+   "homepage",
+   "static homepage",
+   "service dashboard",
+   "server dashboard",
+   "self-hosted dashboard",
+   "start page",
+   "yaml configuration",
+   "yml config",
+   "homelab dashboard",
+   "service links",
+   "bookmark dashboard",
+   "fuzzy search",
+   "pwa",
+   "progressive web app",
+   "docker dashboard",
+   "docker compose",
+   "kubernetes dashboard",
+   "k8s",
+   "nodejs",
+   "pnpm",
+   "http-server",
+   "theme customization",
+   "keyboard shortcuts",
+   "multi page dashboard",
+   "awesome-selfhosted",
+   "personal dashboard",
+   "expose services",
+   "organize my self-hosted apps",
+   "landing page for my server",
+   "dashboard for my homelab"
+  ],
+  "what_it_does": "Homer is a static HTML/JS dashboard generated from a single YAML configuration file (assets/config.yml) that lists your services as cards and groups. It is meant to be served by an HTTP server and will not work when index.html is opened directly via file://. The README lists fuzzy search, multiple pages and item grouping, theme customization, smart cards, and an installable PWA. Keyboard shortcuts let you press / to search, Enter to open the first match, and Alt/Option+Enter to open it in a new tab. Official distribution is a Docker image (b4bz/homer) with bind-mounted config, plus a prebuilt release tarball and a manual pnpm build. The README also mentions a Kubernetes installation section and a connectivity check, though its details are not in the provided text.",
+  "use_cases": [
+   "Build a landing page linking to my self-hosted services",
+   "Organize homelab apps into groups and pages",
+   "Quick search across my server's web tools",
+   "Run a dashboard in Docker or on Kubernetes",
+   "Serve a static start page from any web server",
+   "Install a dashboard as a PWA on a device"
+  ],
+  "how_to_run": [
+   "docker run -d --name homer -p 8080:8080 --mount type=bind,source=\"/path/to/config/dir\",target=/www/assets --restart=unless-stopped b4bz/homer:latest",
+   "Or with docker-compose: image b4bz/homer, mount /path/to/config/dir to /www/assets, map port 8080",
+   "Release tarball: download homer.zip, unzip, cp assets/config.yml.dist assets/config.yml, then serve with pnpx http-server or python -m http.server 8010",
+   "Manual build: pnpm install",
+   "pnpm build (output is in /dist)"
+  ],
+  "stack": [
+   "JavaScript",
+   "Node.js",
+   "pnpm",
+   "YAML",
+   "Docker",
+   "Kubernetes"
+  ],
+  "notable": [
+   "Entirely static HTML/JS output driven by one YAML config file, so no backend is needed to serve it",
+   "Official Docker image with bind-mounted config, optional subfolder hosting, and configurable port and IPv6 listening",
+   "Installable as a PWA with fuzzy search and keyboard shortcuts",
+   "Multi-page dashboards with item grouping and theme customization"
+  ],
+  "caveats": [
+   "Must be served over HTTP; opening index.html directly via file:// does not work",
+   "Docker container runs as uid/gid 1000 by default, so the assets directory permissions may need adjusting"
+  ],
+  "license": "Apache-2.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2664,
+  "output": 1285
+ },
+ "generated": "2026-11-22"
+}

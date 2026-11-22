@@ -1,0 +1,63 @@
+{
+ "id": "38df5072b58bba98",
+ "url": "https://jichu4n.com/posts/how-x-window-managers-work-and-how-to-write-one-part-i",
+ "final_url": "https://jichu4n.com/posts/how-x-window-managers-work-and-how-to-write-one-part-i/",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "How X Window Managers Work, And How To Write One (Part I)",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C++: _How X Window Managers work and how to write one_"
+  }
+ ],
+ "summary": {
+  "title": "How X Window Managers Work, And How To Write One (Part I)",
+  "one_liner": "You learn how X window managers fit into the X client-server model, how they intercept window requests via substructure redirection and reparenting, and how compositing window managers work.",
+  "category": "x window managers",
+  "keywords": [
+   "x window manager",
+   "window manager internals",
+   "how window managers work",
+   "write a window manager",
+   "xlib",
+   "x11 window manager tutorial",
+   "substructure redirection",
+   "reparenting",
+   "reparenting window manager",
+   "non-reparenting window manager",
+   "compositing window manager",
+   "x composite extension",
+   "root window",
+   "top level windows",
+   "xfwm",
+   "compiz",
+   "window decorations",
+   "x server client model"
+  ],
+  "takeaways": [
+   "X does not mandate a window manager; a window manager is a normal X client that gets special privileges via the X server.",
+   "A window manager intercepts layout requests for top level windows through substructure redirection on the root window, which also acts as a lock so only one runs per screen.",
+   "Reparenting puts application windows inside WM-created frame windows so the WM can draw decorations; some WMs (e.g., xmonad, dwm) skip reparenting.",
+   "Compositing WMs use the X Composite extension to render windows off-screen and combine them into an overlay for effects like translucency and animations.",
+   "Part II of the series walks through a basic reparenting, non-compositing window manager implementation."
+  ],
+  "summary": "The article explains the role of an X window manager in a Linux/BSD desktop, drawing on the Xlib Programming Manual (quoted heavily, with a recommendation to read it). It covers the X server/client model, the window tree rooted at the root window, and how substructure redirection lets a WM intercept requests for top level windows. It then describes reparenting and frame windows, contrasts reparenting and non-reparenting WMs with examples, and explains compositing via the Composite extension. The post is the first of a series and ends by previewing a code walkthrough of a basic reparenting, non-compositing WM.",
+  "format": "article",
+  "level": "intermediate",
+  "technologies": [
+   "C",
+   "Xlib",
+   "X11",
+   "X Composite extension",
+   "OpenGL"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6482,
+  "output": 847
+ },
+ "generated": "2026-11-22"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "relativty/relativty",
+ "repo": "relativty/Relativty",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Uncategorized",
+   "entry": "C++: _Build your own VR headset for $200_"
+  }
+ ],
+ "summary": {
+  "one_liner": "Relativty is an open-source DIY VR headset build guide with hardware, firmware, and a SteamVR driver, designed to be built from parts by the user.",
+  "category": "diy vr headset",
+  "keywords": [
+   "vr headset",
+   "diy vr",
+   "open source vr",
+   "steamvr driver",
+   "build your own vr headset",
+   "homemade virtual reality headset",
+   "arduino vr",
+   "pro micro imu",
+   "fastimu",
+   "imu head tracking",
+   "3-dof headset",
+   "steam vr hardware",
+   "virtual reality build guide",
+   "3d printed vr headset",
+   "vr display driver board",
+   "relativty",
+   "hadesvr alternative",
+   "low cost vr",
+   "budget vr headset",
+   "open source hardware",
+   "open source firmware",
+   "body tracking webcam",
+   "vrsettings configuration",
+   "atmega32u4 usb hid",
+   "vr lenses 40mm",
+   "build vr at home",
+   "cheap vr headset diy"
+  ],
+  "what_it_does": "The repository is a build guide for a 3-DoF VR headset that is meant to be assembled by hand, with no consumer product offered. The current recommended build uses an ATmega32U4 board such as an Arduino Pro Micro, an IMU supported by the FastIMU library, and a small high-refresh PC display with its driver board. The firmware is an Arduino sketch that sends IMU readings over USB to the computer. A SteamVR driver is copied into the SteamVR drivers folder and configured through a default.vrsettings file that sets the USB VID/PID, display position, resolution, and lens distortion values. A legacy build covers a custom Relativty motherboard based on an Atmel SAM3X8E with an MPU-6050 or MPU-9250, plus an Arduino Due alternative. The README also describes an experimental NVIDIA/CUDA body-tracking option that uses a webcam and a neural network.",
+  "use_cases": [
+   "build a cheap DIY VR headset at home",
+   "connect a custom IMU and microcontroller to SteamVR",
+   "configure a secondary display as a VR viewport",
+   "3D print and assemble a VR headset housing",
+   "experiment with webcam-based body tracking for VR",
+   "test a VR display using a PC monitor before buying parts"
+  ],
+  "how_to_run": [
+   "Install Steam and SteamVR on your computer.",
+   "Install the Arduino IDE, then install the FastIMU library from the library manager.",
+   "Wire the IMU to the MCU (VCC, GND, SDA, SCL) and upload the Examples/Fastimu/Calibrated_relativty sketch.",
+   "Download the master repository and copy Relativty_Driver\\Relativty into your SteamVR drivers directory.",
+   "Edit drivers\\Relativty\\resources\\settings\\default.vrsettings to set hmdPid, hmdVid, and the display window and resolution values.",
+   "Start SteamVR."
+  ],
+  "stack": [
+   "C++ (SteamVR driver)",
+   "Arduino C++ firmware",
+   "Arduino IDE",
+   "FastIMU library",
+   "Python 3.8.4",
+   "PyTorch 1.6.0",
+   "CUDA Toolkit 11.0",
+   "SteamVR",
+   "Eagle (PCB layout files)"
+  ],
+  "notable": [
+   "Fully open source covering hardware, firmware, and driver, with the README stating it is not a consumer product",
+   "Uses SteamVR, so it works with SteamVR games, though it is 3-DoF with no built-in controller support",
+   "Detailed guide for matching SteamVR display coordinates to a multi-monitor layout (windowX/windowY origin at top-left of primary display)",
+   "Includes an IMU calibration sketch that stores calibration data in the IMU EEPROM",
+   "Experimental webcam body tracking that requires an NVIDIA GPU"
+  ],
+  "caveats": [
+   "Requires soldering, 3D printing, and electronics skills; the README assumes basic electronics and Arduino knowledge",
+   "3-DoF only with no built-in controller support, so games needing knuckle-style controllers may be limited",
+   "Body tracking is experimental and only runs on NVIDIA GPUs using CUDA",
+   "Misconfigured display coordinates can crash the driver and leave SteamVR showing nothing",
+   "The README names only Windows paths and tools, so the setup described is Windows-oriented"
+  ],
+  "license": "GPL-3.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 9004,
+  "output": 1582
+ },
+ "generated": "2026-11-22",
+ "license_source": "LICENSE"
+}

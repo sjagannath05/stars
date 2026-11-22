@@ -1,0 +1,64 @@
+{
+ "id": "dfd075abfadc64c0",
+ "url": "https://web.archive.org/web/2012/http://www.codeproject.com/Articles/11285/Neural-Network-OCR",
+ "final_url": "https://web.archive.org/web/20121204003250/http://www.codeproject.com/Articles/11285/Neural-Network-OCR",
+ "kind": "article",
+ "method": "direct",
+ "page_title": "Neural Network OCR",
+ "sources": [
+  {
+   "list": "codecrafters-io/build-your-own-x",
+   "section": "Build your own Neural Network",
+   "entry": "C#: _Neural Network OCR_"
+  }
+ ],
+ "summary": {
+  "title": "Neural Network OCR",
+  "one_liner": "Learn how to build a feed-forward neural network for letter recognition in C# and how to pick a good set of line-based \"receptor\" features using entropy.",
+  "category": "neural network ocr",
+  "keywords": [
+   "optical character recognition",
+   "ocr neural network",
+   "neural network letter recognition",
+   "backpropagation",
+   "feed forward neural network",
+   "bipolar input coding",
+   "receptors feature selection",
+   "entropy feature selection",
+   "inner entropy",
+   "outer entropy",
+   "receptor usability",
+   "aforge.net",
+   "c# neural network",
+   "pattern recognition",
+   "training set generation",
+   "bipolar sigmoid",
+   "how to recognize letters with a neural network",
+   "letter image to neural network input",
+   "resize image for ocr",
+   "scale fonts ocr training"
+  ],
+  "takeaways": [
+   "Letter images can be turned into bipolar (0.5 / -0.5) input vectors, with one output neuron per letter for training a backpropagation network.",
+   "A single-layer network with 30 inputs and 26 outputs can be trained to recognize 5x6 pixel capital letters, and recognition picks the output with the maximum value.",
+   "Line-based receptors that are either crossed or not crossed by a letter can replace pixel inputs, so large images need few input features.",
+   "Receptor usefulness is scored as OuterEntropy * (1 - AverageInnerEntropy), and the best ones are kept from a large random set (e.g. 500 down to 100).",
+   "The author reports the approach works on ideal fonts (0/26 and 0/130 misclassified) but hand-drawn letters give mixed results."
+  ],
+  "summary": "The article reviews neural network approaches to optical character recognition. It first describes a common method: a feed-forward network trained with backpropagation on bipolar-coded pixel vectors, with C# code using the AForge.NET library. It then proposes a second method that replaces pixels with randomly generated line \"receptors\", filtered by an entropy-based usability score. A companion test application is used to show training and misclassification results on regular and italic fonts. The author presents it as research, not a finished OCR solution, and notes limits such as the need for ideal training data.",
+  "format": "article",
+  "level": "advanced",
+  "technologies": [
+   "C#",
+   "AForge.NET",
+   "neural networks",
+   "backpropagation"
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "usage": {
+  "input": 6951,
+  "output": 900
+ },
+ "generated": "2026-11-22"
+}

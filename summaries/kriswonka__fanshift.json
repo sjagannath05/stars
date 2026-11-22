@@ -1,0 +1,91 @@
+{
+ "id": "kriswonka/fanshift",
+ "repo": "KrisWonka/FanShift",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "System Related Tools",
+   "entry": "FanShift - Menu bar fan control for Apple Silicon Macs that cycles through your own temperature curves with one global hotkey. [![Open-Source Software][OSS Icon]](https://github.com/KrisWonka/FanShift) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "FanShift is a macOS menu bar app that cycles through named fan profiles (temperature-to-fan-speed curves) with one global hotkey, driving Apple Silicon fans directly via SMC.",
+  "category": "macos fan control",
+  "keywords": [
+   "fan control",
+   "macos fan control",
+   "apple silicon fan control",
+   "smc",
+   "applesmc",
+   "menu bar app",
+   "menu bar",
+   "global hotkey",
+   "keyboard shortcut",
+   "fan curve",
+   "temperature curve",
+   "fan profile",
+   "thermal management",
+   "cpu temperature",
+   "fan speed",
+   "launchd helper",
+   "xpc",
+   "swift",
+   "swiftui",
+   "macbook fans",
+   "cool down mac",
+   "quiet mode fan",
+   "full blast fan",
+   "keep mac cool",
+   "control mac fans",
+   "temperature monitor",
+   "m1 m2 m3 m4 fan",
+   "menu bar monitor",
+   "open source mac utility",
+   "fan speed menu bar"
+  ],
+  "what_it_does": "FanShift is a menu bar app that shows the current profile letter, temperature and fan speed, and switches profiles on a global hotkey (default ⌃⌥⌘8) with no Accessibility permission. Profile types are Auto (system control), Temperature (follows a curve, with Silence, Performance and Turbo presets), Full Blast (optional 1–60 minute timer), and Cooldown (full speed until average chip temperature falls below a target). The curve editor lets you drag points on a 5 °C / 5 % grid, and a Sensors tab lists every temperature sensor refreshed every 2 seconds. A separate root helper (fanshiftd, started by launchd) writes fan targets over XPC, while the curve logic runs unprivileged in the app. The README says the app is built from source with a build script that can install it to /Applications.",
+  "use_cases": [
+   "control fan speed on an Apple Silicon MacBook",
+   "switch between quiet and performance fan profiles with a hotkey",
+   "build custom temperature-to-fan-speed curves",
+   "keep a Mac cool during heavy workloads",
+   "monitor CPU temperature and fan RPM from the menu bar",
+   "let the system manage fans when idle"
+  ],
+  "how_to_run": [
+   "git clone <repository URL> (the README's clone command has no URL filled in)",
+   "cd FanShift",
+   "bash scripts/build-app.sh --install"
+  ],
+  "stack": [
+   "Swift 5.9 or later",
+   "Xcode Command Line Tools",
+   "C wrapper around AppleSMC (CSMC target)",
+   "launchd",
+   "XPC"
+  ],
+  "notable": [
+   "Drives fans directly through SMC with a root helper; no other fan utility required",
+   "Lease-based safety: fans are handed back to the system if the app stops responding within 10 seconds",
+   "Four profile types including Auto, Temperature curves, Full Blast and Cooldown",
+   "Curve editor with drag-to-edit points and a Stop zone that leaves a temperature range to the system",
+   "Interface available in English, Simplified Chinese, Traditional Chinese and Spanish"
+  ],
+  "caveats": [
+   "Tested on only one machine (MacBook Pro M5 Pro, macOS 27); M1–M4 support is written but untested on hardware",
+   "Intel Macs are not supported; package targets macOS 14 or later",
+   "The app is ad-hoc signed and not notarized, and the helper cannot verify that its caller is FanShift"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 3836,
+  "output": 1284
+ },
+ "generated": "2026-11-22"
+}

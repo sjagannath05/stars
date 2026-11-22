@@ -1,0 +1,94 @@
+{
+ "id": "paveler/agent-monitor",
+ "repo": "paveler/agent-monitor",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Developer Utilities",
+   "entry": "Agent Monitor - Open-source desktop widgets and menu bar app that show which Claude Code and Codex sessions are waiting on you, open them on click, and track usage limits. [![Open-Source Software][OSS Icon]](https://github.com/paveler/agent-monitor) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "A native macOS menu bar app and WidgetKit desktop widgets that show Claude Code and Codex 5-hour and weekly usage limits and which agent sessions are waiting for your input.",
+  "category": "macos desktop widgets",
+  "keywords": [
+   "claude code monitor",
+   "codex cli monitor",
+   "ai agent monitor",
+   "macos menu bar app",
+   "widgetkit widget",
+   "desktop widget",
+   "usage limits",
+   "rate limit tracker",
+   "5-hour limit",
+   "weekly limit",
+   "agent approval requests",
+   "pending approval",
+   "waiting for input",
+   "claude code hooks",
+   "codex hooks",
+   "menu bar companion",
+   "homebrew cask",
+   "swiftui",
+   "sandboxed widget",
+   "keychain token",
+   "session tracker",
+   "terminal session jump",
+   "iterm2",
+   "dashboard for ai coding agents",
+   "check claude usage",
+   "check codex usage",
+   "notification alternative",
+   "open source menu bar utility",
+   "launch at login"
+  ],
+  "what_it_does": "Agent Monitor is a macOS app with two parts: a menu bar app that fetches usage data and watches agent sessions, and WidgetKit widgets in three sizes that display it. For usage, it shows the Claude and Codex rolling 5-hour and weekly windows as rings or bars, with countdowns to each reset, color warnings at 75% and 90%, and a freshness timestamp with a manual refresh. For sessions, it uses the agents' official lifecycle hooks (installed through an Integrations menu) to list sessions that need a tool approval, have a question, or have a plan to review, plus sessions whose turn has finished. Clicking a row opens the session in the Claude or Codex desktop app, or in the matching Terminal or iTerm2 tab; other hosts are just brought to front. The menu bar icon shows a count, red when something is blocked. The app reuses existing CLI logins and writes a JSON snapshot that the sandboxed widget reads.",
+  "use_cases": [
+   "check how much Claude Code or Codex usage is left",
+   "see which AI coding agent is waiting for approval",
+   "get a desktop widget for AI agent rate limits",
+   "track multiple parallel Claude Code sessions",
+   "jump back to a stalled agent session",
+   "monitor Codex CLI usage from the menu bar"
+  ],
+  "how_to_run": [
+   "brew install --cask paveler/tap/agent-monitor",
+   "xattr -dr com.apple.quarantine /Applications/AgentMonitor.app (only if downloaded from Releases)",
+   "Launch Agent Monitor, then right-click desktop > Edit Widgets > add Agent Monitor",
+   "Click the menu bar icon > Integrations > Connect Claude Code and/or Connect Codex",
+   "git clone the repo, cd agent-monitor, ./scripts/install.sh (build from source, needs Xcode 15+)"
+  ],
+  "stack": [
+   "Swift",
+   "SwiftUI",
+   "WidgetKit",
+   "XcodeGen",
+   "Xcode 15+",
+   "macOS 14+",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Waiting-on-you list driven by Claude Code and Codex official lifecycle hooks, with hooks installed and backed up automatically into the agents' settings files",
+   "Real WidgetKit widget in three sizes; the sandboxed widget reads a snapshot written by the menu bar app since widgets cannot read the Keychain",
+   "Click-to-jump opens exact sessions in Claude and Codex desktop apps via deep links, and the matching tab in Terminal and iTerm2",
+   "Zero configuration: reuses existing Claude Code Keychain token and Codex auth file; no analytics or telemetry"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later and Claude Code and/or Codex CLI signed in on the Mac",
+   "Usage endpoints for Claude and Codex are undocumented and may change without notice; Claude endpoint rate-limits and is polled every 5 minutes",
+   "App is ad-hoc signed and not notarized, so downloaded copies need the quarantine flag cleared; Keychain access may be prompted again after updates",
+   "Widgets refresh only roughly every 15-30 minutes in the background; the menu bar is live"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5854,
+  "output": 1564
+ },
+ "generated": "2026-11-22"
+}

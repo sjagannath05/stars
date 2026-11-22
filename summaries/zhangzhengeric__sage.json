@@ -1,0 +1,99 @@
+{
+ "id": "zhangzhengeric/sage",
+ "repo": "ZHangZHengEric/Sage",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "Developer Tools",
+   "entry": "Sage - Open-source agent harness with Desktop, Server and Python hosts, MCP tools, and task-feedback evaluation with user-selected version adoption; configured model providers may charge usage fees. #opensource #agents"
+  }
+ ],
+ "summary": {
+  "one_liner": "Sage is an open-source agent harness (SAgents runtime) with Desktop, Server, and Python SDK hosts that improves agents through task feedback via recursive self-improvement (RSI), keeping every candidate version for user-selected adoption.",
+  "category": "agent harness framework",
+  "keywords": [
+   "agent harness",
+   "ai agents",
+   "recursive self-improvement",
+   "rsi",
+   "agent optimization",
+   "agent versioning",
+   "mcp",
+   "model context protocol",
+   "mcp tools",
+   "agent skills",
+   "python sdk",
+   "desktop app",
+   "agent server",
+   "agent studio",
+   "multi-agent workflows",
+   "sessions and runs",
+   "human approval",
+   "sandbox",
+   "llm agent framework",
+   "prompt optimization",
+   "evaluate agent performance",
+   "compare agent versions",
+   "build ai agent in python",
+   "run agents locally",
+   "self-hosted agent server",
+   "voice agent",
+   "tau-bench",
+   "openai-compatible model providers",
+   "agent packages",
+   "sage.yaml"
+  ],
+  "what_it_does": "Sage is a harness for building and running LLM agents, with a Python runtime called SAgents, a Flutter Desktop app, and a web Server with Agent Studio. Agents are defined as packages (instructions, Skills, tools, resources) in sage.yaml. The RSI workflow starts from a goal or curated usage history, generates candidate package versions, and retains each version with its diffs and evaluation records without activating them automatically. The harness supports sessions with persisted history, streaming output, pause/resume for human input and approvals, and tool policies and sandbox providers configured by the host. It composes native tools, Skills, and MCP services, and includes multi-agent workflows and replaceable model, memory, storage, and scheduling providers. The README also reports an exploratory tau-bench retail experiment comparing a baseline with an RSI candidate.",
+  "use_cases": [
+   "Improve an agent's instructions and tools from task feedback",
+   "Run an AI agent on a desktop without writing code",
+   "Host a multi-user web agent platform",
+   "Embed a custom agent in a Python application",
+   "Connect MCP tool servers to an agent with authorization",
+   "Compare and choose between agent versions before adopting one"
+  ],
+  "how_to_run": [
+   "python -m pip install -e '.[desktop]' (from source; requires Python 3.12+ and Flutter)",
+   "cd app/v2/desktop && flutter pub get && flutter run -d macos",
+   "python -m pip install -e '.[server]' then cp .env.example app/v2/server/.env (requires MySQL and Node.js 22.12+)",
+   "cd app/v2/server/web && npm install && npm run build && cd ../../.. && python -m app.v2.server",
+   "Desktop installers for macOS, Windows, and Linux are available from release builds (see release notes)",
+   "Save the README's quickstart.py, set MODEL_API_KEY, and run python quickstart.py"
+  ],
+  "stack": [
+   "Python 3.12+",
+   "Flutter / Dart (Desktop)",
+   "Node.js 22.12+ (Server web build)",
+   "MySQL (Server persistence)",
+   "YAML manifests (sage.yaml)",
+   "MCP (Model Context Protocol)",
+   "OpenAI Responses-style model provider config"
+  ],
+  "notable": [
+   "RSI workflow keeps each candidate and its evaluation evidence, and leaves adoption to the user rather than activating automatically",
+   "Three hosts share one SAgents runtime: Desktop app, web Server with Agent Studio, and Python SDK",
+   "Single-file Python SDK quickstart with no sage.yaml required",
+   "Desktop app bundles its Python backend in the installers",
+   "Includes an exploratory tau-bench retail measurement (baseline vs. RSI candidate) with paired-improvement and regression counts"
+  ],
+  "caveats": [
+   "Model providers may charge usage fees for the configured model service",
+   "Server supports only one worker; MySQL persistence does not enable horizontal scaling",
+   "Local process execution is not container isolation; built-in configs target a single process or host",
+   "Desktop RSI supports simple types and native tools only; general MCP integration does not imply RSI support",
+   "macOS packages are not notarized and Windows installers are not code-signed; Linux needs GTK and bubblewrap",
+   "Some component guides are only in Chinese; Sage Voice runs from source only on Apple Silicon macOS 15+"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 5991,
+  "output": 1606
+ },
+ "generated": "2026-11-22"
+}

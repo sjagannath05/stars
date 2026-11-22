@@ -1,0 +1,91 @@
+{
+ "id": "atuuuuuuu/scrollr",
+ "repo": "atuuuuuuu/Scrollr",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "jaywcjlove/awesome-mac",
+   "section": "Productivity",
+   "entry": "Scrollr - Open-source menu bar tool that reverses scroll direction for external mice only, so the trackpad keeps natural scrolling, with an on/off switch per mouse. [![Open-Source Software][OSS Icon]](https://github.com/atuuuuuuu/Scrollr) ![Freeware][Freeware Icon] ![Native App][Native Icon]"
+  }
+ ],
+ "summary": {
+  "one_liner": "Scrollr is a free, open-source macOS menu bar app that reverses scroll direction for external mice only, leaving the trackpad on the system Natural scrolling setting.",
+  "category": "macos scroll direction tool",
+  "keywords": [
+   "scroll direction",
+   "natural scrolling",
+   "reverse mouse scrolling",
+   "mouse wheel direction",
+   "macos menu bar",
+   "scroll wheel fix",
+   "per-mouse settings",
+   "external mouse",
+   "trackpad scrolling",
+   "event tap",
+   "iokit",
+   "swift",
+   "swiftui",
+   "accessibility permission",
+   "launch at login",
+   "menu bar app",
+   "open source mac utility",
+   "homebrew cask",
+   "universal binary",
+   "scrolling reversal",
+   "mac mouse settings",
+   "scroll events",
+   "wheel mouse",
+   "bluetooth mouse",
+   "usb mouse",
+   "magic mouse",
+   "reverse scroll on mac",
+   "fix backwards scrolling"
+  ],
+  "what_it_does": "Scrollr sits in the macOS menu bar and flips the scroll direction of external mouse wheels while leaving trackpad scrolling unchanged. It uses a system event tap to identify phase-less scroll events (typical of wheel mice) and reverses only those, and it never changes the global Natural scrolling setting. It lists connected pointing devices through IOKit, watches only their wheel controls, and detects mice when they are plugged in or unplugged, re-arming after sleep. Users can choose which axes to reverse (up/down, left/right, or both), switch reversal off per mouse model, and use a Last scroll check to see whether a scroll was flipped. Other options include launch at login, a hidden menu bar icon, and Restore Defaults. The README says it uses no network access and only reads scroll events.",
+  "use_cases": [
+   "Make a USB or Bluetooth mouse wheel scroll the expected way on a Mac",
+   "Keep natural scrolling on the trackpad while reversing the mouse",
+   "Turn off reversal for one mouse but keep it on for another",
+   "Fix backwards scrolling after switching between Mac and Windows mice",
+   "Run a lightweight scroll tweak from the menu bar at login"
+  ],
+  "how_to_run": [
+   "brew install --cask atuuuuuuu/tap/scrollr",
+   "Or download Scrollr-macOS.zip from the latest GitHub release, unzip it, and move Scrollr to Applications",
+   "Open System Settings → Privacy & Security and click Open Anyway for Scrollr (one time, since the app is not notarized)",
+   "Grant Scrollr Accessibility permission when asked (called Device Control and Data Access on macOS 27)",
+   "Build from source: git clone the repo, run swift test, then Scripts/build.sh"
+  ],
+  "stack": [
+   "Swift",
+   "Swift Package Manager",
+   "SwiftUI",
+   "IOKit",
+   "macOS event tap (Accessibility permission)",
+   "Homebrew cask"
+  ],
+  "notable": [
+   "Reverses only phase-less wheel scroll events, so trackpad and Magic Mouse touch scrolling are not affected",
+   "Per-mouse on/off switches that stick to the mouse model",
+   "Automatic detection of mice on connect, disconnect, and after sleep",
+   "Does not change the system-wide Natural scrolling setting",
+   "Universal app for Apple silicon and Intel"
+  ],
+  "caveats": [
+   "Requires macOS 14 Sonoma or later and Accessibility permission; the README notes macOS ties permission to the app build, so it may need re-granting after updates",
+   "Not notarized by Apple, so macOS blocks the first launch and needs a manual override or xattr command",
+   "Magic Mouse is not reversed because its touch scrolling looks like trackpad scrolling to macOS"
+  ],
+  "license": "MIT"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 4623,
+  "output": 1397
+ },
+ "generated": "2026-11-22"
+}

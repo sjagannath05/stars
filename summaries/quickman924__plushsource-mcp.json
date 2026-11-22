@@ -1,0 +1,93 @@
+{
+ "id": "quickman924/plushsource-mcp",
+ "repo": "quickman924/plushsource-mcp",
+ "kind": "awesome",
+ "accounts": [],
+ "lists": [],
+ "sources": [
+  {
+   "list": "hanishrao/collective-ai-tools",
+   "section": "E-Commerce",
+   "entry": "PlushSource MCP - MCP server that lets AI assistants search and compare the 55 custom plush manufacturers in the PlushSource directory (plushsource.com) by MOQ, lead time and OEM/ODM, with facts compiled from each manufacturer's website. #opensource #mcp #free"
+  }
+ ],
+ "summary": {
+  "one_liner": "An MCP server and open, facts-only CSV/JSON dataset of 55 custom plush manufacturers from the PlushSource directory, searchable by MOQ, lead time and OEM/ODM.",
+  "category": "mcp server, manufacturer directory",
+  "keywords": [
+   "mcp server",
+   "model context protocol",
+   "plush manufacturer",
+   "custom plush",
+   "plush supplier",
+   "stuffed animal manufacturer",
+   "plushie factory",
+   "oem plush",
+   "odm plush",
+   "moq",
+   "minimum order quantity",
+   "lead time",
+   "rfq",
+   "request for quotation",
+   "supplier comparison",
+   "manufacturer search",
+   "plushsource",
+   "npx",
+   "stdio server",
+   "claude desktop",
+   "cursor",
+   "vs code",
+   "open dataset",
+   "csv dataset",
+   "json dataset",
+   "find a plush factory",
+   "compare plush suppliers",
+   "merch manufacturer",
+   "toy manufacturer directory"
+  ],
+  "what_it_does": "The repository provides an MCP server (plushsource-mcp, TypeScript) that lets AI assistants search, filter, and compare custom plush manufacturers. Its tools cover free-text and facet search (country, category, MOQ range, certifications, design inputs, products, industries, OEM/ODM), fetching every fact for one manufacturer, side-by-side comparison of two to five manufacturers, listing available facets, and reporting dataset metadata. It also includes an rfq_draft prompt that turns a project brief into a shortlist of 3–5 manufacturers and an RFQ email. The same data is published as data/manufacturers.csv, a generated JSON file, and a MANUFACTURERS.md table grouped by country. According to the README, the server runs over stdio, needs no API key, and makes no network calls because the dataset is bundled in the package.",
+  "use_cases": [
+   "find a custom plush manufacturer by MOQ or lead time",
+   "compare plush factories side by side",
+   "draft an RFQ email to plush suppliers",
+   "filter plush makers by OEM or ODM capability",
+   "browse plush manufacturers by country",
+   "use plush supplier data inside an AI assistant"
+  ],
+  "how_to_run": [
+   "Requires Node 20 or newer.",
+   "Add to MCP client config: {\"mcpServers\": {\"plushsource\": {\"command\": \"npx\", \"args\": [\"-y\", \"plushsource-mcp\"]}}}",
+   "Or run directly: npx -y plushsource-mcp",
+   "For development: npm install",
+   "npm run build (regenerates data files from the CSV and bundles dist/index.js)",
+   "node dist/index.js (starts the server on stdio)"
+  ],
+  "stack": [
+   "TypeScript",
+   "Node.js 20+",
+   "MCP (Model Context Protocol)",
+   "npm"
+  ],
+  "notable": [
+   "Facts-only dataset: empty fields mean the manufacturer does not publish that fact, and values are never estimated",
+   "Bundled dataset with no API key and no network calls at runtime",
+   "Data published in CSV, JSON and Markdown table formats, with a pull-request workflow for corrections",
+   "MOQ filters exclude records that do not publish an MOQ",
+   "Includes an rfq_draft prompt for turning a project brief into a shortlist and RFQ email"
+  ],
+  "caveats": [
+   "PlushSource does not independently audit or verify manufacturers; facts are as the manufacturers state them",
+   "A listing is not an endorsement, certification, ranking, or quality guarantee",
+   "PlushSource does not quote, sample, or take orders; users must contact manufacturers directly",
+   "Requires Node 20 or newer"
+  ],
+  "license": "Code: MIT; Data (data/ and MANUFACTURERS.md): CC BY 4.0"
+ },
+ "model": "claude-haiku-5-5",
+ "readme_truncated": false,
+ "usage": {
+  "input": 2860,
+  "output": 1379
+ },
+ "generated": "2026-11-22"
+}
